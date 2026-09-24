@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import ArticleCard from './ArticleCard.astro';
+import { articles, SECTION, type ArticleCollection } from '../lib/content';
+import { SITE } from '../consts';
+
+interface Props { collection: ArticleCollection; title: string; intro: string; empty: string; }
+const { collection, title, intro, empty } = Astro.props;
+const list = await articles(collection);
+const base = SECTION[collection].base;
+const jsonld = [{
+  '@type': 'CollectionPage', name: title, description: intro, url: new URL(base, SITE.url).href,
+  hasPart: list.map((e) => ({ '@type': 'CreativeWork', name: e.data.title, url: new URL(`${base}${e.id}/`, SITE.url).href })),
+}];
+---
+<Base title={title} description={intro} jsonld={jsonld}>
+  <header class="page-head wrap">
+    <span class="eyebrow">{SECTION[collection].label}</span>
+    <h1>{title}</h1>
+    <p>{intro}</p>
+  </header>
+  <div class="wrap" style="padding-bottom:4rem">
+    {list.length ? (
+      <div class="grid">
+        {list.map((e, i) => (
+          <ArticleCard href={`${base}${e.id}/`} title={e.data.title} description={e.data.description} date={e.data.published} topic={e.data.topic[0]} draft={e.data.draft} delay={(i % 3) * 0.08} />
+        ))}
+      </div>
+    ) : <p class="empty">{empty}</p>}
+  </div>
+</Base>

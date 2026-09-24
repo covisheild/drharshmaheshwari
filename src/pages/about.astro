@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, PERSON_JSONLD } from '../consts';
+import timeline from '../data/timeline.json';
+import publications from '../data/publications.json';
+
+const fmt = (s: string) => (s ? new Date(`${s}-01`).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' }) : '');
+const jsonld = [{ '@type': 'ProfilePage', url: `${SITE.url}/about/`, mainEntity: { '@id': PERSON_JSONLD['@id'] } }];
+---
+<Base title="About" description={`About ${SITE.name}: training, research, publications and the mission to reverse obesity in India.`} jsonld={jsonld}>
+  <header class="page-head wrap">
+    <span class="eyebrow">About</span>
+    <h1>Dr. Harsh Maheshwari</h1>
+    <p>{SITE.tagline}.</p>
+  </header>
+  <div class="prose-wrap prose">
+    <p>I trained in medicine at King George's Medical University, Lucknow, and am completing an MD in Community Medicine at AIIMS Raipur. My work sits where clinical medicine meets public health: obesity, and the diseases it drives — type 2 diabetes, fatty liver, high blood pressure and heart disease.</p>
+    <p>I reason from first principles and check claims against their sources. This site is where I publish what I learn, in two registers: plain guides for families, and evidence syntheses for doctors. The books and tools are free.</p>
+
+    <h2>Timeline</h2>
+    <ol class="timeline">
+      {timeline.map((t) => (
+        <li class="reveal">
+          <div class="when">{t.date ? `${fmt(t.date)}${t.end ? ` – ${fmt(t.end)}` : ''}` : ''} · {t.category}</div>
+          <b>{t.title}</b>
+          <div class="muted">{t.place}</div>
+          {t.details && <p class="small muted" style="margin:.25rem 0 0">{t.details}</p>}
+        </li>
+      ))}
+    </ol>
+
+    <h2>Publications</h2>
+    {publications.length ? (
+      <ol>{publications.map((p: { citation: string; url?: string }) => <li>{p.url ? <a href={p.url}>{p.citation}</a> : p.citation}</li>)}</ol>
+    ) : <p class="muted">Publication list coming soon.</p>}
+
+    <h2>Contact</h2>
+    <p>For collaboration, teaching or media: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. I don't give individual medical advice by email.</p>
+  </div>
+</Base>

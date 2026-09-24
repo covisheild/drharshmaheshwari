@@ -1,0 +1,35 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { books, fmtDate } from '../../lib/content';
+import { SITE } from '../../consts';
+
+export async function getStaticPaths() {
+  return (await books()).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const url = `${SITE.url}/books/${entry.id}/`;
+const pdfUrl = d.pdf.startsWith('http') ? d.pdf : new URL(d.pdf, SITE.url).href;
+const jsonld = [{
+  '@type': 'Book', '@id': `${url}#book`, name: d.title, alternativeHeadline: d.subtitle, description: d.description, url,
+  author: { '@id': `${SITE.url}/#person` }, datePublished: d.published.toISOString().slice(0, 10), inLanguage: 'en-IN',
+  numberOfPages: d.pages, isAccessibleForFree: true, license: 'https://creativecommons.org/licenses/by-nc-nd/4.0/',
+  audience: { '@type': 'Audience', audienceType: d.audience }, bookFormat: 'https://schema.org/EBook',
+  encoding: { '@type': 'MediaObject', contentUrl: pdfUrl, encodingFormat: 'application/pdf' },
+}];
+---
+<Base title={d.title} description={d.description} jsonld={jsonld} noindex={d.draft}>
+  <article class="prose-wrap" style="padding-block:3rem 4rem">
+    {d.draft && <p class="draft-banner"><b>Draft under review.</b> Visible only on the preview site.</p>}
+    <a class="eyebrow" href="/books/" style="text-decoration:none">Free book</a>
+    <h1>{d.title}</h1>
+    {d.subtitle && <p class="desc muted" style="font-size:1.2rem">{d.subtitle}</p>}
+    <div class="meta" style="margin-bottom:1.5rem"><span>{fmtDate(d.published)}</span>{d.pages && <span>{d.pages} pages</span>}<span>For: {d.audience}</span><span>{d.license}</span></div>
+    <a class="btn btn-primary" href={d.pdf} download>Download free PDF <span class="arrow">↓</span></a>
+    <div class="prose" style="margin-top:2rem"><Content /></div>
+    {d.contents.length > 0 && <><h2>Contents</h2><ol>{d.contents.map((c) => <li>{c}</li>)}</ol></>}
+    <p class="disclaimer">Shared under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">{d.license}</a>: free to copy and share with credit, not for sale or modification. Educational, not personal medical advice.</p>
+  </article>
+</Base>

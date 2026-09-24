@@ -1,0 +1,111 @@
+---
+import Base from '../layouts/Base.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { articles, books } from '../lib/content';
+
+const learn = (await articles('learn')).slice(0, 3);
+const bookList = await books();
+---
+<Base>
+  <section class="hero">
+    <div class="blob a" aria-hidden="true"></div>
+    <div class="blob b" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow reveal">Obesity · Public health · Evidence</span>
+        <h1 class="reveal" style="--d:.05s">Reversing obesity in India, <span class="hl">one clear idea</span> at a time.</h1>
+        <p class="lede reveal" style="--d:.12s">I'm Dr. Harsh Maheshwari, a physician and public health researcher. I turn obesity research into guides, tools and free books that families and doctors can use.</p>
+        <div class="hero-actions reveal" style="--d:.2s">
+          <a class="btn btn-primary" href="/tools/bmi-calculator/">Check your BMI & waist <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="/learn/">Start learning</a>
+        </div>
+      </div>
+      <div class="hero-card reveal" style="--d:.25s">
+        <span class="eyebrow">Why India needs its own numbers</span>
+        <p style="margin:0" class="muted">Indians carry more abdominal fat, and get diabetes at a lower BMI, than the global charts assume.</p>
+        <div class="stat-row">
+          <div class="stat"><b data-count="23">23</b><span>BMI where overweight begins for Indians</span></div>
+          <div class="stat"><b data-count="0.5" data-dec="1">0.5</b><span>waist-to-height ratio to stay under</span></div>
+          <div class="stat"><b data-count="90" data-suffix="/80">90/80</b><span>cm waist cut-off, men / women</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="split">
+        <a class="card public reveal" href="/learn/">
+          <span class="eyebrow">For everyone</span>
+          <h2 style="margin:0">Understand your body, then change your habits</h2>
+          <p>Plain-language guides on food, activity, sleep and weight, with Indian examples and without fads.</p>
+          <span class="more">Explore guides →</span>
+        </a>
+        <a class="card pro reveal" style="--d:.1s" href="/clinicians/">
+          <span class="eyebrow" style="color:var(--accent)">For clinicians</span>
+          <h2 style="margin:0">Evidence synthesised for practice</h2>
+          <p>Trial-level summaries on obesity and its complications, with effect sizes and a note on what the evidence does not show.</p>
+          <span class="more" style="color:var(--accent)">Read syntheses →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Latest guides</span>
+        <h2>Start here</h2>
+      </div>
+      {learn.length ? (
+        <div class="grid">
+          {learn.map((e, i) => <ArticleCard href={`/learn/${e.id}/`} title={e.data.title} description={e.data.description} date={e.data.published} topic={e.data.topic[0]} draft={e.data.draft} delay={i * 0.08} />)}
+        </div>
+      ) : <p class="empty">The first guides are being written.</p>}
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap grid">
+      <a class="card reveal" href="/tools/">
+        <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h8"/></svg></div>
+        <h3>Tools</h3><p>Calculators built on Indian cut-offs. Risk scores for diabetes, liver and heart disease are coming next.</p><span class="more">Open tools →</span>
+      </a>
+      <a class="card reveal" style="--d:.08s" href="/books/">
+        <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></div>
+        <h3>Free books</h3><p>{bookList.length ? `${bookList.length} book${bookList.length > 1 ? 's' : ''}, free to download and share for non-commercial use.` : 'Full-length books on obesity, free to download and share for non-commercial use.'}</p><span class="more">Browse books →</span>
+      </a>
+      <a class="card reveal" style="--d:.16s" href="/videos/">
+        <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></div>
+        <h3>Videos</h3><p>Short explainers for the public, and deeper lectures for doctors and students.</p><span class="more">Watch →</span>
+      </a>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="card reveal" style="padding:clamp(1.5rem,4vw,3rem);text-align:center;align-items:center;background:linear-gradient(135deg,var(--brand-soft),var(--accent-soft))">
+        <span class="eyebrow">Stay in the loop</span>
+        <h2 style="max-width:22ch">New guides, tools and books as they are published</h2>
+        <p class="muted" style="max-width:52ch">Follow by <a href="/rss.xml">RSS</a>, or write to me and I'll add you to the list when the newsletter launches.</p>
+        <a class="btn btn-primary" href="mailto:contact@drharshmaheshwari.com?subject=Add%20me%20to%20the%20newsletter">Email me to subscribe <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Count-up animation for hero stats; skipped when the reader prefers reduced motion.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
+      const target = parseFloat(el.dataset.count!), dec = Number(el.dataset.dec ?? 0), suffix = el.dataset.suffix ?? '';
+      const t0 = performance.now(), dur = 1200;
+      const step = (t: number) => {
+        const p = Math.min((t - t0) / dur, 1), e = 1 - (1 - p) ** 3;
+        el.textContent = (target * e).toFixed(dec) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  }
+</script>

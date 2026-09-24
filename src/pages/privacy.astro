@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../consts';
+---
+<Base title="Privacy" description="What this website collects (almost nothing) and why.">
+  <div class="prose-wrap prose" style="padding-block:3rem 4rem">
+    <h1>Privacy</h1>
+    <p><b>Calculators:</b> every calculation runs in your browser. What you type is never sent to a server or stored.</p>
+    <p><b>Visitor statistics:</b> the site uses Cloudflare Web Analytics, which counts page views without cookies and without identifying you.</p>
+    <p><b>Email:</b> if you write to <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, your address is used only to reply, or to send the newsletter if you asked for it. You can ask for it to be deleted at any time, in line with India's Digital Personal Data Protection Act, 2023.</p>
+    <p>No advertising, no selling of data.</p>
+  </div>
+</Base>

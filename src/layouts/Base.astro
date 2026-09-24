@@ -1,0 +1,116 @@
+---
+import '../styles/global.css';
+import { SITE, NAV, PERSON_JSONLD } from '../consts';
+
+interface Props {
+  title?: string;
+  description?: string;
+  type?: 'website' | 'article';
+  jsonld?: Record<string, unknown>[];
+  noindex?: boolean;
+  progress?: boolean;
+}
+const { title, description = SITE.description, type = 'website', jsonld = [], noindex = false, progress = false } = Astro.props;
+const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} — ${SITE.tagline}`;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const path = Astro.url.pathname;
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', '@id': `${SITE.url}/#website`, url: SITE.url, name: SITE.name, description: SITE.description, inLanguage: 'en-IN', publisher: { '@id': `${SITE.url}/#person` } },
+    PERSON_JSONLD,
+    ...jsonld,
+  ],
+};
+---
+<!doctype html>
+<html lang="en-IN" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="author" content={SITE.name} />
+    <meta name="theme-color" content="#0f6e64" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} — new articles`} href="/rss.xml" />
+    <link rel="alternate" type="text/plain" title="LLM-readable site guide" href="/llms.txt" />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title ?? SITE.name} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:image" content={`${SITE.url}/og.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400..700&display=swap" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+    <script is:inline>document.documentElement.classList.replace('no-js','js')</script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    {progress && <div class="progress" aria-hidden="true"></div>}
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Main">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">HM</span>
+          <span>{SITE.name}<small>Obesity · Public health · Evidence</small></span>
+        </a>
+        <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+        <ul class="nav-links" id="nav-links">
+          {NAV.map((n) => (
+            <li><a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>{n.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main"><slot /></main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">HM</span><span>{SITE.name}</span></a>
+            <p class="muted small" style="margin-top:1rem;max-width:36ch">{SITE.tagline}.</p>
+          </div>
+          <div><h4>Learn</h4><ul><li><a href="/learn/">For everyone</a></li><li><a href="/clinicians/">For clinicians</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+          <div><h4>Use</h4><ul><li><a href="/tools/">Tools</a></li><li><a href="/books/">Free books</a></li><li><a href="/videos/">Videos</a></li></ul></div>
+          <div><h4>Site</h4><ul><li><a href="/about/">About</a></li><li><a href="/disclaimer/">Medical disclaimer</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/rss.xml">RSS</a></li></ul></div>
+        </div>
+        <div class="footer-bottom">
+          <span>© {new Date().getFullYear()} {SITE.name}. Educational content, not personal medical advice.</span>
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.querySelector('.site-header')!;
+      const btn = document.querySelector('.menu-btn')!;
+      btn.addEventListener('click', () => {
+        const open = document.body.classList.toggle('menu-open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+      const bar = document.querySelector<HTMLElement>('.progress');
+      const onScroll = () => {
+        header.classList.toggle('scrolled', scrollY > 8);
+        if (bar) {
+          const h = document.documentElement.scrollHeight - innerHeight;
+          bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+        }
+      };
+      addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      }, { rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

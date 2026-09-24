@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import videos from '../../data/videos.json';
+type Video = { id: string; title: string; audience: 'Public' | 'Clinicians'; description: string };
+const list = videos as Video[];
+---
+<Base title="Videos" description="Video explainers on obesity for the public, and lectures for doctors and students, by Dr. Harsh Maheshwari.">
+  <header class="page-head wrap">
+    <span class="eyebrow">Videos</span>
+    <h1>Videos</h1>
+    <p>Short explainers for everyone, and longer lectures for doctors and students.</p>
+  </header>
+  <div class="wrap" style="padding-bottom:4rem">
+    {list.length ? (
+      <div class="grid">
+        {list.map((v) => (
+          <a class="card reveal" href={`https://www.youtube.com/watch?v=${v.id}`} rel="noopener">
+            <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" loading="lazy" style="border-radius:10px;aspect-ratio:16/9;object-fit:cover" />
+            <span class="chip">{v.audience}</span><h3>{v.title}</h3><p>{v.description}</p>
+          </a>
+        ))}
+      </div>
+    ) : <p class="empty">The first videos are in production.</p>}
+  </div>
+</Base>
