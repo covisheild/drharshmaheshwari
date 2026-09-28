@@ -1,7 +1,7 @@
 ---
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import { books, fmtDate } from '../../lib/content';
+import { books } from '../../lib/content';
 import { SITE } from '../../consts';
 
 export async function getStaticPaths() {
@@ -31,16 +31,40 @@ const jsonld = [{
 }];
 ---
 <Base title={d.title} description={d.description} jsonld={jsonld} noindex={d.draft}>
-  <article class="prose-wrap" style="padding-block:3rem 4rem">
-    {d.draft && <p class="draft-banner"><b>Draft under review.</b> Visible only on the preview site.</p>}
-    <a class="eyebrow" href="/books/" style="text-decoration:none">Free book</a>
-    <h1>{d.title}</h1>
-    {d.subtitle && <p class="desc muted" style="font-size:1.2rem">{d.subtitle}</p>}
-    <div class="meta" style="margin-bottom:1.5rem"><span>{fmtDate(d.published)}</span>{d.pages && <span>{d.pages} pages</span>}<span>For: {d.audience}</span><span>{d.license}</span></div>
-    {d.cover && <img src={d.cover} alt={`Cover of ${d.title}`} width="300" height="400" style="width:min(220px,55%);height:auto;border-radius:10px;box-shadow:var(--shadow);margin:0 0 1.5rem" />}
-    <a class="btn btn-primary" href={d.pdf} rel="noopener">Download free PDF{d.size && ` (${d.size})`} <span class="arrow">↓</span></a>
-    <div class="prose" style="margin-top:2rem"><Content /></div>
-    {d.contents.length > 0 && <><h2>Contents</h2><ol>{d.contents.map((c) => <li>{c}</li>)}</ol></>}
-    <p class="disclaimer">Shared under {licenseUrl ? <a href={licenseUrl}>{d.license}</a> : d.license}{licenseTerms && `: ${licenseTerms}`}. Educational, not personal medical advice.</p>
+  <article class:list={['book', { themed: d.theme }]} style={d.theme && `--book:${d.theme.main};--book-2:${d.theme.second};--book-dark:${d.theme.onDark}`}>
+    <header class="book-head">
+      <div class="wrap book-grid">
+        {d.cover && <img class="book-cover" src={d.cover} alt={`Cover of ${d.title}`} width="600" height="849" />}
+        <div>
+          {d.draft && <p class="draft-banner"><b>Draft under review.</b> Visible only on the preview site.</p>}
+          <a class="eyebrow" href="/books/" style="text-decoration:none">Free book</a>
+          <h1>{d.title}</h1>
+          {d.subtitle && <p class="muted" style="font-size:1.15rem">{d.subtitle}</p>}
+          <div class="meta"><span>For: {d.audience}</span>{d.pages && <span>{d.pages} pages</span>}<span>{d.license}</span></div>
+          <a class="btn btn-primary book-btn" href={d.pdf} rel="noopener">Download free PDF{d.size && ` (${d.size})`} <span class="arrow">↓</span></a>
+        </div>
+      </div>
+    </header>
+    <div class="prose-wrap" style="padding-block:2.5rem 4rem">
+      <div class="prose"><Content /></div>
+      {d.contents.length > 0 && <div class="prose"><h2>Contents</h2><ol>{d.contents.map((c) => <li>{c}</li>)}</ol></div>}
+      <p class="disclaimer">Shared under {licenseUrl ? <a href={licenseUrl}>{d.license}</a> : d.license}{licenseTerms && `: ${licenseTerms}`}. Educational, not personal medical advice.</p>
+    </div>
   </article>
 </Base>
+
+<style>
+  /* A book with a `theme` recolours only its own page, taking the colours from its cover. */
+  .book.themed { --brand: var(--book); --accent: var(--book-2); --brand-soft: color-mix(in oklab, var(--book) 12%, var(--bg)); }
+  :global([data-theme='dark']) .book.themed { --brand: var(--book-dark); --brand-ink: #160c33; }
+  .book-head { padding-block: clamp(2.5rem, 6vw, 4.5rem); background: linear-gradient(160deg, var(--brand-soft), var(--bg) 70%); }
+  .book-grid { display: grid; grid-template-columns: minmax(180px, 300px) 1fr; gap: clamp(1.5rem, 5vw, 3.5rem); align-items: center; }
+  .book-cover { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 2px 6px rgb(0 0 0 / .12), 0 24px 48px -12px color-mix(in oklab, var(--brand) 45%, transparent); }
+  .book-head h1 { margin-bottom: .35em; }
+  .book-head .meta { margin: 1rem 0 1.75rem; }
+  .themed .book-btn { background: linear-gradient(135deg, var(--book), var(--book-2)); color: #fff; box-shadow: 0 8px 22px color-mix(in oklab, var(--book) 35%, transparent); }
+  @media (max-width: 700px) {
+    .book-grid { grid-template-columns: 1fr; }
+    .book-cover { width: min(240px, 70%); }
+  }
+</style>

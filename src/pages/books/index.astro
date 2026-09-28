@@ -14,7 +14,7 @@ const list = await books();
       <div class="grid">
         {list.map((b, i) => (
           <a class="card reveal" href={`/books/${b.id}/`} style={`--d:${(i % 3) * .08}s`}>
-            {b.data.cover && <img src={b.data.cover} alt={`Cover of ${b.data.title}`} loading="lazy" style="border-radius:10px;aspect-ratio:3/4;object-fit:cover;margin-bottom:.5rem" />}
+            {b.data.cover && <img src={b.data.cover} alt={`Cover of ${b.data.title}`} loading="lazy" style="border-radius:10px;aspect-ratio:1/1.414;object-fit:cover;margin-bottom:.5rem" />}
             {b.data.draft && <span class="chip draft">Draft</span>}
             <h3>{b.data.title}</h3><p>{b.data.description}</p><span class="more">Details & free PDF →</span>
           </a>
