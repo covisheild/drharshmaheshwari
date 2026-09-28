@@ -8,7 +8,7 @@ size: "9.5 MB"
 pdf: "https://files.drharshmaheshwari.com/books/Statistics-From_First_Principles_to_Regression_v3.1.pdf"
 cover: "/books/statistics-first-principles-to-regression.svg"
 license: "CC BY-NC-SA 4.0"
-draft: true
+draft: false
 contents:
   - "Statistics – Foundations of Data"
   - "Descriptive Statistics – Central Tendency"
