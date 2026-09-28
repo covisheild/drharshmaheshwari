@@ -30,9 +30,10 @@ const books = defineCollection({
     audience: z.string(),
     published: z.coerce.date(),
     pages: z.number().optional(),
+    size: z.string().optional(), // shown on the download button, e.g. '9.5 MB'
     pdf: z.string(), // path under /public/books/ or an external URL
     cover: z.string().optional(),
-    license: z.string().default('CC BY-NC-ND 4.0'),
+    license: z.string().default('CC BY-NC-SA 4.0'),
     contents: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
   }),

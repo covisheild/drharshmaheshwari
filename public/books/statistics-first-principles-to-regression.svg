@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="300" height="400">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f6e64"/><stop offset="1" stop-color="#0a4a43"/></linearGradient></defs>
+  <rect width="300" height="400" fill="url(#g)"/>
+  <g fill="none" stroke="#e0892b" stroke-width="2" opacity=".9">
+    <path d="M30 300 L270 170"/>
+  </g>
+  <g fill="#fbead6" opacity=".85">
+    <circle cx="48" cy="296" r="4"/><circle cx="75" cy="270" r="4"/><circle cx="96" cy="288" r="4"/><circle cx="122" cy="250" r="4"/>
+    <circle cx="150" cy="262" r="4"/><circle cx="170" cy="226" r="4"/><circle cx="198" cy="232" r="4"/><circle cx="222" cy="196" r="4"/><circle cx="252" cy="190" r="4"/>
+  </g>
+  <text x="30" y="70" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#ffffff">Statistics</text>
+  <text x="30" y="104" font-family="Georgia,serif" font-size="17" font-style="italic" fill="#dff0ec">From First Principles</text>
+  <text x="30" y="126" font-family="Georgia,serif" font-size="17" font-style="italic" fill="#dff0ec">to Regression</text>
+  <text x="30" y="360" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#ffffff">Dr. Harsh Maheshwari</text>
+  <text x="30" y="378" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#dff0ec">Version 3.1</text>
+</svg>
