@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import Avatar from '../components/Avatar.astro';
 import { SITE } from '../consts';
 import { SECTION, fmtDate, type ArticleCollection } from '../lib/content';
 import type { CollectionEntry } from 'astro:content';
@@ -82,7 +83,7 @@ if (d.faq.length) {
       )}
 
       <div class="author-box">
-        <span class="brand-mark" aria-hidden="true">HM</span>
+        <Avatar size={52} />
         <div>
           <b><a href="/about/">{SITE.name}</a></b>
           <div class="muted small">MBBS (KGMU, Lucknow) · MD Community Medicine resident, AIIMS Raipur. Works on obesity prevention and evidence synthesis.</div>

@@ -24,8 +24,9 @@
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
+/* Dark theme. data-theme is set before first paint by the inline script in Base.astro
+   (stored choice, else the system prefers-color-scheme). */
+:root[data-theme='dark'] {
     --bg: #0e1413; --surface: #151d1b; --surface-2: #1c2624;
     --ink: #e8eeec; --ink-2: #b4c0bd; --ink-3: #8c9996; --line: #2a3533;
     --brand: #4fc2b1; --brand-ink: #06201c; --brand-soft: #173a35;
@@ -34,7 +35,6 @@
     --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 8px 24px rgb(0 0 0 / .25);
     color-scheme: dark;
   }
-}
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -72,11 +72,17 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .site-header.scrolled { border-bottom-color: var(--line); }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 1rem; }
 .brand { display: flex; align-items: center; gap: .6rem; color: var(--ink); text-decoration: none; font-weight: 650; }
-.brand-mark { width: 36px; height: 36px; border-radius: 11px; background: linear-gradient(135deg, var(--brand), color-mix(in oklab, var(--brand) 55%, var(--accent))); color: #fff; display: grid; place-items: center; font: 700 .9rem/1 var(--font-display); }
+.avatar { width: var(--avatar-size, 40px); height: var(--avatar-size, 40px); flex: none; border-radius: 50%; object-fit: cover; object-position: 50% 30%; background: var(--surface-2); box-shadow: 0 0 0 2px var(--surface), 0 0 0 3px var(--line); }
+picture:has(> .avatar) { flex: none; display: block; line-height: 0; }
 .brand small { display: block; font-weight: 450; color: var(--ink-3); font-size: .74rem; }
 .nav-links { display: flex; gap: .25rem; list-style: none; margin: 0; padding: 0; }
 .nav-links a { color: var(--ink-2); text-decoration: none; padding: .5rem .75rem; border-radius: 999px; font-size: .95rem; transition: background .2s, color .2s; }
 .nav-links a:hover, .nav-links a[aria-current='page'] { background: var(--surface-2); color: var(--ink); }
+.theme-item { display: flex; align-items: center; }
+.theme-toggle { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.theme-toggle:hover { background: var(--surface-2); color: var(--ink); }
+.theme-toggle .icon-sun, [data-theme='dark'] .theme-toggle .icon-moon { display: none; }
+[data-theme='dark'] .theme-toggle .icon-sun { display: block; }
 .menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--ink); border-radius: 12px; width: 44px; height: 44px; cursor: pointer; }
 .menu-btn span, .menu-btn span::before, .menu-btn span::after { display: block; width: 18px; height: 2px; background: currentColor; margin: auto; position: relative; transition: transform .25s, background .25s; content: ''; }
 .menu-btn span::before { position: absolute; top: -6px; } .menu-btn span::after { position: absolute; top: 6px; }
@@ -92,6 +98,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   }
   .menu-open .nav-links { opacity: 1; transform: none; visibility: visible; }
   .nav-links a { display: block; padding: .85rem .5rem; border-radius: 10px; font-size: 1.05rem; }
+  .theme-item { padding: .5rem .5rem .25rem; }
 }
 
 /* ---------- Buttons & chips ---------- */
@@ -161,7 +168,6 @@ a.card:hover { transform: translateY(-4px); border-color: color-mix(in oklab, va
 .prose th { background: var(--surface-2); }
 .prose blockquote { margin: 1.5rem 0; padding: .5rem 1.25rem; border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; }
 .author-box { display: flex; gap: 1rem; align-items: center; padding: 1.25rem; border: 1px solid var(--line); border-radius: var(--radius); margin: 2.5rem 0 1.5rem; background: var(--surface); }
-.author-box .brand-mark { width: 52px; height: 52px; flex: none; font-size: 1.1rem; }
 .refs ol { font-size: .92rem; color: var(--ink-2); padding-left: 1.3rem; } .refs li { margin: .4rem 0; overflow-wrap: anywhere; }
 .disclaimer { font-size: .88rem; color: var(--ink-3); border-top: 1px solid var(--line); padding-top: 1rem; margin-top: 2rem; }
 .draft-banner { background: var(--accent-soft); color: var(--ink); padding: .75rem 1rem; border-radius: 12px; font-size: .92rem; margin-bottom: 1rem; }

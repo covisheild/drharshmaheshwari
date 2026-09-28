@@ -1,0 +1,22 @@
+---
+// The site's identity image. One source photo, resized per use and served as AVIF/WebP with a JPEG fallback.
+import { Picture } from 'astro:assets';
+import photo from '../assets/harsh-maheshwari.jpg';
+import { SITE } from '../consts';
+
+interface Props { size?: number; decorative?: boolean; eager?: boolean; class?: string; }
+const { size = 40, decorative = false, eager = false, class: className } = Astro.props;
+---
+<Picture
+  src={photo}
+  alt={decorative ? '' : SITE.name}
+  width={size}
+  height={size}
+  densities={[1, 2]}
+  formats={['avif', 'webp']}
+  fallbackFormat="jpg"
+  loading={eager ? 'eager' : 'lazy'}
+  decoding="async"
+  class:list={['avatar', className]}
+  style={`--avatar-size:${size}px`}
+/>
