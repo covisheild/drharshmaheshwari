@@ -10,8 +10,12 @@
     "check": "astro check"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^14.3.3",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "astro": "^7.3.4"
+  },
+  "devDependencies": {
+    "wrangler": "^4.146.0"
   }
 }

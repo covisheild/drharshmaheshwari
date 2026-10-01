@@ -38,6 +38,13 @@ is where Harsh writes drafts and instructions. Never edit Notion content to matc
 
 Questions for Harsh go in the row's **Claude notes** with Stage = Needs your input.
 
+## Deployment config (`wrangler.jsonc`)
+
+Cloudflare Workers Builds deploys `main` (`npx wrangler deploy`) and every other branch as a Preview (`npx wrangler preview`).
+`wrangler.jsonc` is the config Wrangler used to generate on each build (`@astrojs/cloudflare` adapter, assets from `dist`),
+now committed so it is fixed and reviewable, plus the `previews` block that `wrangler preview` requires. Wrangler is a
+local devDependency. Change production settings only on purpose; preview-only settings go inside `previews`.
+
 ## Large files (PDFs, books): Cloudflare R2, never git
 
 - Bucket `drhm-files`, public at `https://files.drharshmaheshwari.com/` (R2 custom domain). Books live under `books/`.
