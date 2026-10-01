@@ -1,0 +1,21 @@
+---
+import Base from '../../../layouts/Base.astro';
+// One entry per clinical trainer. A new trainer (ECG, chest X-ray, fundus) adds a line here and a page beside this one.
+const trainers = [
+  { href: '/tools/trainers/auscultation/', title: 'Auscultation Trainer', text: 'Heart and lung sounds: learn each sound from recordings, then quiz your ear across five levels.', live: true },
+  { title: 'ECG Trainer', text: 'Read rhythms and patterns on 12-lead ECGs.', live: false },
+  { title: 'Chest X-ray Trainer', text: 'Spot common findings on chest radiographs.', live: false },
+];
+---
+<Base title="Clinical trainers" description="Free practice tools for medical students and clinicians: train your ear and eye on recordings and images, with quizzes that get harder as you improve.">
+  <header class="page-head wrap">
+    <span class="eyebrow">Tools</span>
+    <h1>Clinical trainers</h1>
+    <p>Practice for clinical skills, using recordings and images. Each trainer teaches first, then quizzes you, and gets harder as you improve. Your progress stays on your device.</p>
+  </header>
+  <div class="wrap grid" style="padding-bottom:4rem">
+    {trainers.map((t, i) => t.live
+      ? <a class="card reveal" href={t.href} style={`--d:${i * .08}s`}><span class="chip">Ready</span><h3>{t.title}</h3><p>{t.text}</p><span class="more">Open →</span></a>
+      : <div class="card reveal" style={`--d:${i * .08}s;opacity:.75`}><span class="chip draft">Coming later</span><h3>{t.title}</h3><p>{t.text}</p></div>)}
+  </div>
+</Base>

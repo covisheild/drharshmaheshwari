@@ -48,6 +48,17 @@ Questions for Harsh go in the row's **Claude notes** with Stage = Needs your inp
 - Do not add a wildcard `*.drharshmaheshwari.com` route to the site Worker: it hijacks `files.` and breaks R2.
 - Default book licence: CC BY-NC-SA 4.0 (adaptation allowed, share-alike), unless the Notion page says otherwise.
 
+## Clinical trainers (`/tools/trainers/`)
+
+- Shared engine in `src/trainers/core/` (questions, look-alike wrong options, levels, progress in localStorage);
+  media players in `src/trainers/media/`; one folder per trainer in `src/trainers/<name>/`; pages in `src/pages/tools/trainers/`.
+  A new trainer (ECG, X-ray, fundus) reuses the core and adds its own config, data and page, plus a line in `tools/trainers/index.astro`.
+- Auscultation audio: HLS-CMDS v2 (CC BY 4.0, Zenodo 15376628). `scripts/trainers/auscultation/prepare.py` dedupes,
+  levels loudness and encodes MP3s, and writes `src/data/trainers/auscultation/recordings.json`. The MP3 folder is uploaded
+  to R2 at `trainers/auscultation/hls-cmds-v2/`; the page reads `FILES_URL` + that path. Keep the attribution and the
+  list of changes on the page (CC BY requires it).
+- Teaching notes (`src/trainers/auscultation/config.ts`) are clinical content: Harsh reviews changes before they reach `main`.
+
 ## Drafts
 
 `draft: true` in frontmatter shows the page on local dev and Cloudflare preview builds (any branch other than `main`,

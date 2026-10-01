@@ -21,7 +21,7 @@ export async function GET() {
     for (const e of list) lines.push(`- [${e.data.title}](${SITE.url}${SECTION[name].base}${e.id}/): ${e.data.description}`);
     lines.push('');
   }
-  lines.push('## Tools', '', `- [BMI & waist calculator (Indian cut-offs)](${SITE.url}/tools/bmi-calculator/): BMI with Asian/Indian cut-offs (overweight 23–24.9, obesity ≥25 kg/m²), waist-to-height ratio (risk from 0.5) and waist cut-offs (90 cm men, 80 cm women).`, '');
+  lines.push('## Tools', '', `- [BMI & waist calculator (Indian cut-offs)](${SITE.url}/tools/bmi-calculator/): BMI with Asian/Indian cut-offs (overweight 23–24.9, obesity ≥25 kg/m²), waist-to-height ratio (risk from 0.5) and waist cut-offs (90 cm men, 80 cm women).`, `- [Auscultation Trainer](${SITE.url}/tools/trainers/auscultation/): ear training for 16 heart and lung sounds (S3, S4, systolic and diastolic murmurs, AF, AV block, crackles, wheeze, rhonchi, pleural rub) using recordings from the HLS-CMDS dataset (CC BY 4.0), with a five-level quiz.`, '');
   const bookList = (await books()).filter((b) => !b.data.draft);
   if (bookList.length) {
     lines.push('## Free books', '');

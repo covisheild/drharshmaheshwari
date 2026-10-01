@@ -1,0 +1,366 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { SITE } from '../../../consts';
+import { FINDINGS, examples, RECORDINGS } from '../../../trainers/auscultation/config';
+
+const url = `${SITE.url}/tools/trainers/auscultation/`;
+const heart = FINDINGS.filter((f) => f.system === 'heart');
+const lung = FINDINGS.filter((f) => f.system === 'lung');
+const count = (id: string) => examples(id).length;
+const sounds = RECORDINGS.length;
+const dataset = {
+  '@type': 'Dataset',
+  name: 'HLS-CMDS: Heart and Lung Sounds Dataset Recorded from a Clinical Manikin using Digital Stethoscope',
+  url: 'https://doi.org/10.1109/IEEEDATA.2025.3566012',
+  license: 'https://creativecommons.org/licenses/by/4.0/',
+  creator: ['Yasaman Torabi', 'Shahram Shirani', 'James P. Reilly'].map((name) => ({ '@type': 'Person', name })),
+};
+const jsonld = [{
+  '@type': ['WebApplication', 'LearningResource'],
+  '@id': `${url}#app`,
+  name: 'Auscultation Trainer',
+  url,
+  applicationCategory: 'EducationalApplication',
+  operatingSystem: 'Any (runs in the browser)',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
+  description: 'Ear training for heart and lung sounds with recorded audio: learn each sound, then quiz yourself through five levels.',
+  learningResourceType: 'Quiz',
+  educationalLevel: 'Medical students and clinicians',
+  author: { '@id': `${SITE.url}/#person` },
+  isBasedOn: dataset,
+}];
+---
+<Base title="Auscultation Trainer: heart and lung sounds" description="Train your ear on recorded heart and lung sounds: S3, S4, murmurs, AF, crackles, wheeze, rhonchi, pleural rub. Learn, then quiz yourself through five levels." jsonld={jsonld}>
+  <header class="page-head wrap">
+    <span class="eyebrow">Tools · Clinical trainers</span>
+    <h1>Auscultation Trainer</h1>
+    <p>Learn {FINDINGS.length} heart and lung sounds from {sounds} recordings, then test your ear. It starts with normal versus abnormal and ends with heart and lung sounds in the same recording.</p>
+    <div class="notes">
+      <p class="note"><b>Use headphones.</b> Phone and laptop speakers cannot play the lowest sounds, such as S3, S4 and diastolic rumbles, so you would miss them.</p>
+      <p class="note muted"><b>About the recordings.</b> These are recordings of a clinical teaching manikin, made with a digital stethoscope. The sounds are clean and labelled, which is good for learning each one. Real patients are noisier, so practise on real chests too.</p>
+    </div>
+  </header>
+
+  <div class="wrap trainer">
+    <div class="tabs" role="tablist" aria-label="Trainer sections">
+      <button role="tab" id="tab-learn" aria-controls="learn" aria-selected="true">Learn</button>
+      <button role="tab" id="tab-quiz" aria-controls="quiz" aria-selected="false">Quiz</button>
+      <button role="tab" id="tab-progress" aria-controls="progress" aria-selected="false">My progress</button>
+    </div>
+
+    <section id="learn" role="tabpanel" aria-labelledby="tab-learn">
+      {[['Heart sounds', heart], ['Lung sounds', lung]].map(([title, list]) => (
+        <>
+          <h2>{title as string}</h2>
+          <div class="findings">
+            {(list as typeof FINDINGS).map((f) => (
+              <article class="card finding" id={f.id.replace('.', '-')}>
+                <h3>{f.label}</h3>
+                <p><b>Listen for:</b> {f.listen}</p>
+                <p class="small"><b>Usually means:</b> {f.means}</p>
+                <div class="actions">
+                  <button class="play" data-example={f.id} aria-pressed="false">▶ Example <span>1</span> of {count(f.id)}</button>
+                  {!f.id.endsWith('.normal') && <button class="play ghost" data-normal={f.system} aria-pressed="false">▶ Normal, to compare</button>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </>
+      ))}
+      <h2>Heart and lungs together</h2>
+      <article class="card mixdemo">
+        <p>In a real chest you hear both at once. Play the combined recording, then each part on its own, until you can pick out each sound inside the combined one.</p>
+        <p class="mix-label" id="mix-label"></p>
+        <div class="actions">
+          <button class="play" data-mix="mix" aria-pressed="false">▶ Together</button>
+          <button class="play ghost" data-mix="heart" aria-pressed="false">▶ Heart only</button>
+          <button class="play ghost" data-mix="lung" aria-pressed="false">▶ Lungs only</button>
+          <button class="btn-link" id="mix-next">Another recording →</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="quiz" role="tabpanel" aria-labelledby="tab-quiz" hidden>
+      <noscript><p>The quiz needs JavaScript.</p></noscript>
+    </section>
+
+    <section id="progress" role="tabpanel" aria-labelledby="tab-progress" hidden></section>
+  </div>
+
+  <section class="prose-wrap prose" style="padding-top:3rem">
+    <h2>How to train your ear</h2>
+    <ul>
+      <li><b>Learn the normal sound first.</b> Every abnormal sound is a change from normal: an extra sound, a noise in a pause, or a change in rhythm.</li>
+      <li><b>Listen for one thing at a time.</b> First S1 and S2, then systole, then diastole. With breath sounds, inspiration first, then expiration.</li>
+      <li><b>Compare after every mistake.</b> When you get one wrong, play your answer and the right answer one after the other. That comparison is what trains the ear.</li>
+      <li><b>Short and often.</b> One round of 10 a day works better than one long session.</li>
+    </ul>
+    <div class="refs" style="margin-top:2rem">
+      <h2>Sources</h2>
+      <ol>
+        <li>Recordings: <a href="https://doi.org/10.1109/IEEEDATA.2025.3566012">Torabi Y, Shirani S, Reilly JP. Descriptor: Heart and Lung Sounds Dataset Recorded from a Clinical Manikin using Digital Stethoscope (HLS-CMDS). IEEE Data Descriptions, 2025.</a> Data from <a href="https://zenodo.org/records/15376628">Zenodo</a>, licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Changes made here: exact duplicate files removed, one mislabelled file left out, loudness evened out with one volume change per file, and files converted from WAV to MP3. Labels are the dataset authors'.</li>
+      </ol>
+    </div>
+    <p class="disclaimer">For learning only, not for diagnosing patients. See the <a href="/disclaimer/">medical disclaimer</a>.</p>
+  </section>
+</Base>
+
+<style>
+  .notes { display: grid; gap: .6rem; max-width: 70ch; }
+  .note { margin: 0; padding: .7rem .9rem; border-radius: var(--radius-sm); background: var(--surface-2); font-size: .97rem; }
+  .note:first-child { background: var(--accent-soft); }
+  .trainer { padding-bottom: 2rem; }
+  .tabs { scroll-margin-top: 80px; display: flex; gap: .25rem; background: var(--surface-2); border-radius: 999px; padding: 4px; width: fit-content; max-width: 100%; margin-bottom: 1.5rem; position: sticky; top: 76px; z-index: 5; }
+  .tabs button { border: 0; background: transparent; color: var(--ink-2); font: 600 .95rem var(--font-body); padding: .55rem 1rem; border-radius: 999px; cursor: pointer; white-space: nowrap; }
+  .tabs button[aria-selected='true'] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+  [role='tabpanel'] h2 { margin-top: 1.5rem; }
+  .findings { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); }
+  .finding p { margin: 0; }
+  .actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: auto; padding-top: .5rem; align-items: center; }
+  :global(.play) {
+    --p: 0;
+    border: 1px solid var(--brand); color: var(--brand-ink); font: 600 .95rem var(--font-body); cursor: pointer;
+    padding: .6rem 1rem; border-radius: 999px; min-height: 44px;
+    background: linear-gradient(to right, color-mix(in oklab, var(--brand) 70%, black) calc(var(--p) * 100%), var(--brand) 0);
+  }
+  :global(.play.ghost) { color: var(--brand); background: linear-gradient(to right, var(--brand-soft) calc(var(--p) * 100%), var(--surface) 0); }
+  :global(.play.playing) { outline: 3px solid var(--accent-soft); }
+  :global(.play[data-error])::after { content: ' · ' attr(data-error); font-weight: 450; }
+  :global(.btn-link) { border: 0; background: none; color: var(--brand); font: 600 .95rem var(--font-body); cursor: pointer; padding: .6rem .25rem; }
+  .mix-label { font-weight: 600; min-height: 1.6em; }
+
+  /* Quiz (rendered by the script) */
+  #quiz :global(.levels) { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+  #quiz :global(.level[aria-disabled='true']) { opacity: .6; }
+  #quiz :global(.level .meta) { font-size: .88rem; color: var(--ink-3); }
+  #quiz :global(.q) { max-width: 640px; }
+  #quiz :global(.q-head) { display: flex; justify-content: space-between; align-items: center; color: var(--ink-3); font-size: .9rem; margin-bottom: .75rem; }
+  #quiz :global(.big-play) { width: 100%; font-size: 1.15rem; padding: 1.1rem; }
+  #quiz :global(.ask) { margin-top: 1.25rem; }
+  #quiz :global(.ask h3) { font-family: var(--font-body); font-size: 1rem; margin-bottom: .5rem; }
+  #quiz :global(.opts) { display: grid; gap: .5rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
+  #quiz :global(.opt) { text-align: left; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 550 1rem var(--font-body); padding: .8rem 1rem; border-radius: 12px; cursor: pointer; min-height: 48px; }
+  #quiz :global(.opt:hover:not(:disabled)) { border-color: var(--brand); }
+  #quiz :global(.opt[aria-pressed='true']) { border-color: var(--brand); background: var(--brand-soft); }
+  #quiz :global(.opt.right) { border-color: var(--ok); background: var(--ok-soft); color: var(--ok); }
+  #quiz :global(.opt.wrong) { border-color: var(--risk); background: var(--risk-soft); color: var(--risk); }
+  #quiz :global(.opt:disabled) { cursor: default; }
+  #quiz :global(.feedback) { margin-top: 1.25rem; padding: 1rem; border-radius: var(--radius-sm); background: var(--surface-2); }
+  #quiz :global(.feedback p) { margin: 0 0 .5rem; }
+  #quiz :global(.verdict) { font-weight: 700; }
+  #quiz :global(.verdict.ok) { color: var(--ok); } #quiz :global(.verdict.bad) { color: var(--risk); }
+  #quiz :global(.row) { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; align-items: center; }
+  #quiz :global(.score) { font: 600 3rem/1 var(--font-display); }
+  #progress :global(table) { width: 100%; border-collapse: collapse; font-size: .95rem; }
+  #progress :global(td), #progress :global(th) { text-align: left; padding: .45rem .5rem; border-bottom: 1px solid var(--line); }
+  #progress :global(.bar) { height: 8px; border-radius: 999px; background: var(--surface-2); min-width: 60px; }
+  #progress :global(.bar span) { display: block; height: 100%; border-radius: 999px; background: var(--brand); }
+</style>
+
+<script>
+  import { Engine, ROUND, MASTERY, isCorrect, type Question, type Level } from '../../../trainers/core/engine';
+  import { store } from '../../../trainers/core/progress';
+  import { play, stop, preload } from '../../../trainers/media/audio';
+  import { FINDING, OPTIONS, RECORDINGS, LEVELS, NORMAL, examples, src, type Recording } from '../../../trainers/auscultation/config';
+
+  const engine = new Engine<Recording>(RECORDINGS, LEVELS, OPTIONS);
+  const saved = store('auscultation');
+  let progress = saved.load();
+  const pick = <T,>(xs: T[]) => xs[Math.floor(Math.random() * xs.length)];
+  const $ = (id: string) => document.getElementById(id)!;
+
+  // Tiny DOM helper: h('button', { class: 'opt', onclick }, 'text', child)
+  function h(tag: string, attrs: Record<string, any> = {}, ...kids: (Node | string | null | false)[]) {
+    const el = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+      else if (v !== false && v != null) el.setAttribute(k, v === true ? '' : String(v));
+    }
+    for (const k of kids) if (k) el.append(k);
+    return el;
+  }
+  const playBtn = (label: string, id: string, ghost = false) =>
+    h('button', { class: ghost ? 'play ghost' : 'play', 'aria-pressed': 'false', onclick: (e: Event) => play(src(id), e.currentTarget as HTMLElement) }, label);
+
+  // ---------- Tabs ----------
+  const tabs = ['learn', 'quiz', 'progress'];
+  function show(name: string) {
+    if (!tabs.includes(name)) name = 'learn';
+    stop();
+    for (const t of tabs) {
+      $(`tab-${t}`).setAttribute('aria-selected', String(t === name));
+      $(t).hidden = t !== name;
+    }
+    if (name === 'quiz' && !quizActive) renderLevels();
+    if (name === 'progress') renderProgress();
+    if (location.hash !== `#${name}`) history.replaceState(null, '', `#${name}`);
+  }
+  for (const t of tabs) $(`tab-${t}`).addEventListener('click', () => show(t));
+
+  // ---------- Learn ----------
+  const cursor = new Map<string, number>();
+  document.querySelectorAll<HTMLButtonElement>('[data-example]').forEach((b) => b.addEventListener('click', () => {
+    const list = examples(b.dataset.example!);
+    const playing = b.classList.contains('playing');
+    const i = playing ? cursor.get(b.dataset.example!) ?? 0 : ((cursor.get(b.dataset.example!) ?? -1) + 1) % list.length;
+    cursor.set(b.dataset.example!, i);
+    b.querySelector('span')!.textContent = String(i + 1);
+    play(src(list[i].id), b);
+  }));
+  document.querySelectorAll<HTMLButtonElement>('[data-normal]').forEach((b) => b.addEventListener('click', () => {
+    play(src(examples(NORMAL[b.dataset.normal as 'heart' | 'lung'])[0].id), b);
+  }));
+  const mixes = RECORDINGS.filter((r) => r.kind === 'mix' && r.parts?.heart && r.parts?.lung);
+  let mix = pick(mixes);
+  const showMix = () => { $('mix-label').textContent = `${engine.label(mix.heart!)} + ${engine.label(mix.lung!)}`; };
+  document.querySelectorAll<HTMLButtonElement>('[data-mix]').forEach((b) => b.addEventListener('click', () => {
+    const part = b.dataset.mix as 'mix' | 'heart' | 'lung';
+    play(src(part === 'mix' ? mix.id : mix.parts![part]!), b);
+  }));
+  $('mix-next').addEventListener('click', () => { stop(); mix = pick(mixes.filter((m) => m !== mix)); showMix(); });
+  showMix();
+
+  // ---------- Quiz ----------
+  const quiz = $('quiz');
+  let quizActive = false;
+
+  function renderLevels() {
+    quizActive = false;
+    quiz.replaceChildren(
+      h('p', { class: 'muted' }, `Each round has ${ROUND} questions. The next level opens when you get ${MASTERY.pass * 100}% of your last ${MASTERY.window} answers right at the current level.`),
+      h('div', { class: 'levels' }, ...LEVELS.map((lv, i) => {
+        const open = engine.unlocked(i, progress);
+        const s = engine.levelScore(lv.id, progress);
+        const status = engine.mastered(lv.id, progress) ? 'Passed' : s.n ? `Last ${s.n}: ${s.correct} right` : open ? 'Not started' : 'Locked';
+        return h('div', { class: 'card level', 'aria-disabled': String(!open) },
+          h('span', { class: open ? 'chip' : 'chip draft' }, `Level ${i + 1}`),
+          h('h3', {}, lv.title),
+          h('p', {}, lv.blurb),
+          h('p', { class: 'meta' }, status),
+          open ? h('button', { class: 'play', onclick: () => startRound(lv) }, s.n ? 'Play a round' : 'Start') : h('p', { class: 'meta' }, `Pass level ${i} to open.`));
+      })),
+    );
+  }
+
+  function startRound(level: Level<Recording>) {
+    quizActive = true;
+    const used = new Set<string>();
+    let n = 0, right = 0;
+    const next = () => {
+      if (n === ROUND) return finish();
+      n++;
+      const q = engine.question(level, progress, used);
+      used.add(q.item.id);
+      ask(q, n, (ok) => { if (ok) right++; next(); });
+    };
+    const finish = () => {
+      stop();
+      quizActive = false; // the score screen is not a round in progress: switching tabs returns to the levels
+      const passed = engine.mastered(level.id, progress);
+      const idx = LEVELS.indexOf(level);
+      quiz.replaceChildren(h('div', { class: 'card q' },
+        h('span', { class: 'eyebrow' }, level.title),
+        h('p', { class: 'score' }, `${right} / ${ROUND}`),
+        h('p', {}, passed && idx < LEVELS.length - 1 ? `Level ${idx + 2} is open.` : passed ? 'You have passed the last level. Keep a round going now and then to stay sharp.' : `Get ${MASTERY.pass * 100}% of your last ${MASTERY.window} right to open the next level.`),
+        h('div', { class: 'row' },
+          h('button', { class: 'play', onclick: () => startRound(level) }, 'Another round'),
+          h('button', { class: 'btn-link', onclick: renderLevels }, 'All levels'))));
+    };
+    next();
+  }
+
+  function ask(q: Question<Recording>, n: number, done: (ok: boolean) => void) {
+    const item = q.item;
+    const chosen: (string | null)[] = q.parts.map(() => null);
+    const multi = q.parts.length > 1;
+    const big = h('button', { class: 'play big-play', 'aria-pressed': 'false', onclick: (e: Event) => play(src(item.id), e.currentTarget as HTMLElement) }, `▶ Play (${Math.round(item.secs)} s)`);
+    const check = h('button', { class: 'play', disabled: true, onclick: () => submit() }, 'Check');
+    const groups = q.parts.map((p, pi) => h('div', { class: 'ask' },
+      h('h3', {}, p.ask.prompt),
+      h('div', { class: 'opts', role: 'group', 'aria-label': p.ask.prompt }, ...p.options.map((id) => h('button', {
+        class: 'opt', 'data-id': id, 'aria-pressed': 'false',
+        onclick: (e: Event) => {
+          chosen[pi] = id;
+          (e.currentTarget as HTMLElement).parentElement!.querySelectorAll('.opt').forEach((o) => o.setAttribute('aria-pressed', String(o === e.currentTarget)));
+          if (!multi) submit(); else (check as HTMLButtonElement).disabled = chosen.includes(null);
+        },
+      }, engine.label(id))))));
+    const card = h('div', { class: 'q' },
+      h('div', { class: 'q-head' }, h('span', {}, `${q.level.title} · Question ${n} of ${ROUND}`), h('button', { class: 'btn-link', onclick: () => { stop(); renderLevels(); } }, 'Quit')),
+      big, ...groups, multi ? h('div', { class: 'row' }, check) : null);
+    quiz.replaceChildren(card);
+    if (n === 1) $('tab-quiz').scrollIntoView({ block: 'start', behavior: 'smooth' });
+    play(src(item.id), big);
+    // Fetch a likely next clip while this one is being answered.
+    preload(src(pick(q.level.pool(RECORDINGS)).id));
+
+    function submit() {
+      const parts = q.parts.map((p, i) => ({ answer: p.answer, chosen: chosen[i]! }));
+      const entry = { level: q.level.id, item: item.id, parts, t: Date.now() };
+      progress.answers.push(entry);
+      saved.save(progress);
+      const ok = isCorrect(entry);
+      groups.forEach((g, i) => g.querySelectorAll<HTMLButtonElement>('.opt').forEach((o) => {
+        o.disabled = true;
+        if (o.dataset.id === q.parts[i].answer) o.classList.add('right');
+        else if (o.dataset.id === chosen[i]) o.classList.add('wrong');
+      }));
+      check.remove();
+      card.append(feedback(q, parts, ok, () => done(ok)));
+    }
+  }
+
+  const multi = (q: Question<Recording>) => q.parts.length > 1;
+
+  // The true finding behind an answer like "abnormal" is the recording's own finding.
+  const findingOf = (r: Recording, key: string) => key === 'heart' ? r.heart! : key === 'lung' ? r.lung! : r.kind === 'lung' ? r.lung! : r.heart!;
+
+  function feedback(q: Question<Recording>, parts: { answer: string; chosen: string }[], ok: boolean, next: () => void) {
+    const item = q.item;
+    const box = h('div', { class: 'feedback', 'aria-live': 'polite' }, h('p', { class: ok ? 'verdict ok' : 'verdict bad' }, ok ? 'Right.' : 'Not quite.'));
+    const buttons = h('div', { class: 'row' });
+    q.parts.forEach((p, i) => {
+      const truth = FINDING.get(findingOf(item, p.ask.key))!;
+      box.append(h('p', {}, h('b', {}, `${multi(q) ? p.ask.prompt + ': ' : ''}${truth.label}. `), truth.listen));
+      const others = examples(truth.id).filter((r) => r.id !== item.id && r.id !== item.parts?.heart && r.id !== item.parts?.lung);
+      if (others.length) buttons.append(playBtn(`▶ Another: ${truth.label}`, pick(others).id, true));
+      const wrongId = parts[i].chosen;
+      if (wrongId !== p.answer && FINDING.has(wrongId)) {
+        buttons.append(playBtn(`▶ Your answer: ${engine.label(wrongId)}`, pick(examples(wrongId)).id, true));
+      } else if (wrongId !== p.answer && p.ask.key === 'normal') {
+        buttons.append(playBtn('▶ Normal, to compare', examples(NORMAL[item.kind as 'heart' | 'lung'])[0].id, true));
+      }
+    });
+    if (item.parts?.heart) buttons.append(playBtn('▶ Heart only', item.parts.heart, true));
+    if (item.parts?.lung) buttons.append(playBtn('▶ Lungs only', item.parts.lung, true));
+    buttons.append(playBtn('↻ Replay', item.id, true));
+    box.append(buttons, h('div', { class: 'row' }, h('button', { class: 'play', onclick: () => { stop(); next(); } }, 'Next →')));
+    return box;
+  }
+  // ---------- Progress ----------
+  function renderProgress() {
+    const panel = $('progress');
+    const { per, mixups } = engine.stats(progress);
+    const rows = [...FINDING.values()].filter((f) => per.has(f.id));
+    const pct = (s: { n: number; correct: number }) => Math.round((100 * s.correct) / s.n);
+    const unlock = h('input', { type: 'checkbox', checked: !!progress.unlockAll, onchange: (e: Event) => {
+      progress.unlockAll = (e.target as HTMLInputElement).checked; saved.save(progress);
+    } });
+    panel.replaceChildren(
+      h('p', { class: 'muted' }, `${progress.answers.length} answers so far. Saved only in this browser; nothing is sent anywhere.`),
+      rows.length ? h('table', {},
+        h('thead', {}, h('tr', {}, h('th', {}, 'Sound'), h('th', {}, 'Asked'), h('th', {}, 'Right'), h('th', {}, ''))),
+        h('tbody', {}, ...rows.map((f) => { const s = per.get(f.id)!; return h('tr', {},
+          h('td', {}, f.label), h('td', {}, String(s.n)), h('td', {}, `${pct(s)}%`),
+          h('td', {}, h('div', { class: 'bar' }, h('span', { style: `width:${pct(s)}%` })))); }))) : h('p', {}, 'Play a quiz round to see your results here.'),
+      mixups.length ? h('div', {}, h('h3', { style: 'margin-top:1.5rem' }, 'What you mix up most'),
+        h('ul', {}, ...mixups.map((m) => h('li', {}, `${engine.label(m.answer)} → you said ${engine.label(m.chosen)} (${m.count}×)`)))) : '',
+      h('div', { class: 'row', style: 'margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center' },
+        h('label', {}, unlock, ' Open all levels (if you already know the basics)'),
+        h('button', { class: 'btn-link', onclick: () => { if (confirm('Delete all your answers and start again?')) { progress = saved.reset(); renderProgress(); } } }, 'Reset progress')),
+    );
+  }
+
+  show(location.hash.slice(1));
+  addEventListener('hashchange', () => show(location.hash.slice(1)));
+</script>

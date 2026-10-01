@@ -11,6 +11,9 @@ export const SITE = {
   sameAs: [] as string[],
 };
 
+// Large files (books, trainer audio) live on Cloudflare R2, not in git. See CLAUDE.md.
+export const FILES_URL = 'https://files.drharshmaheshwari.com';
+
 export const NAV = [
   { href: '/learn/', label: 'Learn' },
   { href: '/clinicians/', label: 'For Clinicians' },
