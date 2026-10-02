@@ -43,6 +43,14 @@ async function signIn({ sub = 'google-1', email = 'a@example.org', name = 'Dr A'
 const post = (path, sid, body, origin = ORIGIN) => handleApi(req(path, { method: 'POST', headers: { cookie: sid, origin, 'content-type': 'application/json' }, body: JSON.stringify(body) }), env);
 const attempt = (id, t, extra = {}) => ({ id, trainer: 'auscultation', version: 'hls-cmds-v2', item: 'H01', set: 'l1', activity: 'quiz', parts: [{ answer: 's3', chosen: 's3' }], correct: true, t, ...extra });
 
+test('/api/health reports which settings exist, never their values', async () => {
+  assert.deepEqual(await (await handleApi(req('/api/health'), {})).json(), { worker: true, db: false, googleClientId: false, googleClientSecret: false, accounts: false });
+  const body = await (await handleApi(req('/api/health'), env)).text();
+  assert.deepEqual(JSON.parse(body), { worker: true, db: true, googleClientId: true, googleClientSecret: true, accounts: true });
+  assert.ok(!body.includes(env.GOOGLE_CLIENT_SECRET), 'no secret value');
+  assert.ok(!body.includes(CLIENT), 'no client id value');
+});
+
 test('accounts are off until the database and Google credentials are configured', async () => {
   const res = await handleApi(req('/api/me'), {});
   assert.deepEqual(await res.json(), { enabled: false, user: null });

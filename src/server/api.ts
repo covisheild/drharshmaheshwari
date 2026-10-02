@@ -168,6 +168,8 @@ async function putProgress(req: Request, env: Required<Env>, user: User, trainer
 export async function handleApi(req: Request, env: Env, deps: Deps = DEFAULT_DEPS): Promise<Response> {
   const url = new URL(req.url);
   const path = url.pathname.replace(/\/+$/, '');
+  // Which settings this deployment has (yes/no only, never values): lets a person check a deployment from the browser.
+  if (path === '/api/health') return json({ worker: true, db: !!env.DB, googleClientId: !!env.GOOGLE_CLIENT_ID, googleClientSecret: !!env.GOOGLE_CLIENT_SECRET, accounts: enabled(env) });
   if (!enabled(env)) return path === '/api/me' ? json({ enabled: false, user: null }) : json({ error: 'accounts are not enabled' }, 404);
   try {
     if (path === '/api/auth/google' && req.method === 'GET') return startGoogle(req, url, env);

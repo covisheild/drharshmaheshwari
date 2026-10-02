@@ -149,6 +149,17 @@ test('sitemap and llms.txt point to the new locations only', () => {
   assert.match(llms, /\/doctors\/books\/statistics-first-principles-to-regression\//);
 });
 
+test('the build deploys a real Worker (static assets + /api/ runtime), not an assets-only upload', () => {
+  // Astro's Cloudflare adapter writes an assets-only config (no Worker, so no secrets or D1) when no route is
+  // server-rendered. The /api/ route must keep the Worker; Wrangler deploys whatever the redirect points to.
+  const redirect = JSON.parse(readFileSync(new URL('../.wrangler/deploy/config.json', import.meta.url), 'utf8'));
+  assert.match(redirect.configPath, /dist\/server\/wrangler\.json$/, `deploy config is ${redirect.configPath}`);
+  const cfg = JSON.parse(readFileSync(new URL('../dist/server/wrangler.json', import.meta.url), 'utf8'));
+  assert.equal(cfg.main, 'entry.mjs');
+  assert.equal(cfg.assets?.binding, 'ASSETS');
+  assert.ok(!existsSync(join(DIST, 'wrangler.json')), 'no assets-only config in dist/client');
+});
+
 test('/support/: one-time UPI only, closed until a UPI ID is configured, linked from every footer', () => {
   const doc = html.get('/support/');
   assert.ok(doc, '/support/ is missing');
