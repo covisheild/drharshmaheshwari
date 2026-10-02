@@ -11,5 +11,16 @@
 	"observability": {
 		"enabled": true
 	},
-	"previews": {}
+	// Accounts (src/server/api.ts). GOOGLE_CLIENT_SECRET is a secret set in the Cloudflare dashboard, never here.
+	"d1_databases": [
+		{ "binding": "DB", "database_name": "drharshmaheshwari", "database_id": "dccbcb9f-9293-412e-92a6-43eb34c6f48d" }
+	],
+	"vars": { "GOOGLE_CLIENT_ID": "916290480627-mea850qnd8c58il1384j9n5icg75b5vv.apps.googleusercontent.com" },
+	// Previews never touch production data: their own database. Bindings and vars are not inherited, so both are listed.
+	"previews": {
+		"d1_databases": [
+			{ "binding": "DB", "database_name": "drharshmaheshwari-preview", "database_id": "1ec668c6-7746-494c-bf17-e8c4129d24a3" }
+		],
+		"vars": { "GOOGLE_CLIENT_ID": "916290480627-mea850qnd8c58il1384j9n5icg75b5vv.apps.googleusercontent.com" }
+	}
 }

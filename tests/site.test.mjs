@@ -158,6 +158,12 @@ test('the build deploys a real Worker (static assets + /api/ runtime), not an as
   assert.equal(cfg.main, 'entry.mjs');
   assert.equal(cfg.assets?.binding, 'ASSETS');
   assert.ok(!existsSync(join(DIST, 'wrangler.json')), 'no assets-only config in dist/client');
+  // Previews must have their own database, never production's.
+  const prod = cfg.d1_databases?.find((d) => d.binding === 'DB'), prev = cfg.previews?.d1_databases?.find((d) => d.binding === 'DB');
+  assert.ok(prod?.database_id && prev?.database_id, 'DB bound for production and previews');
+  assert.notEqual(prev.database_id, prod.database_id, 'previews use a separate database');
+  assert.equal(cfg.vars?.GOOGLE_CLIENT_ID, cfg.previews?.vars?.GOOGLE_CLIENT_ID);
+  assert.ok(!JSON.stringify(cfg).includes('GOOGLE_CLIENT_SECRET'), 'the secret is never in the config');
 });
 
 test('/support/: one-time UPI only, closed until a UPI ID is configured, linked from every footer', () => {
