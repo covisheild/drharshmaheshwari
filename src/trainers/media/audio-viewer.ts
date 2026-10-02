@@ -6,8 +6,8 @@
 //   Without peaks (missing file, or R2 not sending CORS headers) it shows a plain progress bar instead.
 // - Two views of the waveform: a close-up of a few seconds that follows the playhead (tap to seek, drag to
 //   move along the recording), and below it the whole clip as a thin strip (tap or drag to jump).
-// - Drawn as bars, never smoothed: the picture holds only what is in the peaks file.
-// - Heights are compressed (see displayShape) so quiet sounds show next to S1 and S2.
+// - Drawn at true size as thin vertical lines, never smoothed or rescaled: the picture holds only what is
+//   in the peaks file.
 // - setCues(false) hides the waveform shape and spans, e.g. during a quiz, where the shape of AF or
 //   crackles would give the answer away. Position and seeking still work.
 // - Only one viewer plays at a time on a page.
@@ -87,7 +87,7 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
       loadPeaks(url).then((p) => {
         if (this.media?.peaks !== url || !p) return;
         this.peaks = p;
-        this.shape = displayShape(p);
+        this.shape = p.data;
         this.draw();
       });
     }
@@ -303,16 +303,16 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
     g.fillRect(Math.min(head, w - 2), 0, 2, h);
   }
 
-  /** The waveform from t0 to t1 (s) across w px, as bars. Zoomed out, one bar per pixel holds the extremes
-   *  of the points under it (a 5 ms crackle is never averaged away). Zoomed in, one bar per point, as wide
-   *  as the time it covers: nothing is drawn that is not in the data. */
+  /** The waveform from t0 to t1 (s) across w px, at true size, as thin vertical lines from each point's
+   *  minimum to its maximum. Zoomed out, one line per pixel holds the extremes of the points under it (a
+   *  5 ms crackle is never averaged away); zoomed in, one line per point, at its place in time. */
   private trace(t0: number, t1: number, w: number, h: number, pad: number) {
     const shape = this.shape!, points = shape.length / 2, pps = points / this.peaks!.duration;
     const mid = h / 2, amp = mid - pad, pxPerSec = w / (t1 - t0), perPx = pps / pxPerSec;
     const path = new Path2D();
-    const bar = (x: number, bw: number, lo: number, hi: number) => {
+    const line = (x: number, lo: number, hi: number) => {
       const top = mid - Math.max(hi * amp, 0.5), bot = mid - Math.min(lo * amp, -0.5);
-      path.rect(x, top, bw, bot - top);
+      path.rect(x, top, 1, bot - top);
     };
     if (perPx >= 1) {
       for (let px = 0; px < w; px++) {
@@ -322,12 +322,11 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
           if (shape[2 * i] < lo) lo = shape[2 * i];
           if (shape[2 * i + 1] > hi) hi = shape[2 * i + 1];
         }
-        bar(px, 1, lo, hi);
+        line(px, lo, hi);
       }
     } else {
-      const bw = pxPerSec / pps, gap = bw >= 3 ? 1 : 0; // a hairline between wide bars keeps them readable
       for (let i = Math.max(Math.floor(t0 * pps), 0), end = Math.min(Math.ceil(t1 * pps), points); i < end; i++) {
-        bar((i / pps - t0) * pxPerSec, bw - gap, shape[2 * i], shape[2 * i + 1]);
+        line(Math.round(((i + 0.5) / pps - t0) * pxPerSec), shape[2 * i], shape[2 * i + 1]);
       }
     }
     return path;
@@ -344,15 +343,4 @@ function canvas(c: HTMLCanvasElement, box: HTMLElement) {
   g.setTransform(dpr, 0, 0, dpr, 0, 0);
   g.clearRect(0, 0, w, h);
   return { g, w, h };
-}
-
-/** Amplitude as drawn: relative to the clip's loud parts, then compressed (log), so quiet sounds such as
- *  murmurs, S3/S4 and crackles stay visible next to S1 and S2. Height on screen therefore shows what is
- *  there, not how loud it is relative to S1/S2; the ear judges loudness. */
-const COMPRESS = 10; // a sound at 1/10 of the loud parts is drawn at about 30% height, not 10%
-function displayShape(p: Peaks) {
-  const mags = Array.from(p.data, Math.abs).sort((a, b) => a - b);
-  const ref = Math.max(mags[Math.floor(mags.length * 0.995)] ?? 0, 1e-3); // a single click does not set the scale
-  const k = Math.log1p(COMPRESS);
-  return Float32Array.from(p.data, (v) => Math.sign(v) * Math.log1p(COMPRESS * Math.min(Math.abs(v) / ref, 1)) / k);
 }
