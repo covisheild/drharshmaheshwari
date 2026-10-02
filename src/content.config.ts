@@ -36,6 +36,8 @@ const books = defineCollection({
     // Optional page colours taken from the cover: main (text/buttons on light), second (gradient partner), onDark (main in dark mode).
     theme: z.object({ main: z.string(), second: z.string(), onDark: z.string() }).optional(),
     license: z.string().default('CC BY-NC-SA 4.0'),
+    // Which audience the book is for; decides whether it lives at /books/ or /doctors/books/.
+    mode: z.enum(['everyone', 'doctors']).default('everyone'),
     contents: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
   }),

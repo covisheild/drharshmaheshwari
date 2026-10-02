@@ -1,0 +1,16 @@
+---
+import Base from '../../../layouts/Base.astro';
+import CardList from '../../../components/lists/CardList.astro';
+import { TOOLS } from '../../../data/tools';
+---
+<Base title="Clinical tools" description="Clinical calculators and scores for doctors, with their sources listed, by Dr. Harsh Maheshwari.">
+  <header class="page-head wrap">
+    <span class="eyebrow">Tools</span>
+    <h1>Clinical tools</h1>
+    <p>Scores and calculators for practice, each with its derivation and sources. Everything runs on your device.</p>
+  </header>
+  <div class="wrap" style="padding-bottom:4rem">
+    <CardList items={TOOLS.filter((t) => t.mode === 'doctors')} />
+    <p class="muted" style="margin-top:2rem">To practise a skill rather than calculate a score, see the <a href="/doctors/trainers/">clinical trainers</a>.</p>
+  </div>
+</Base>

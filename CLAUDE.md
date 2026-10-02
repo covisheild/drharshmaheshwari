@@ -1,7 +1,27 @@
 # drharshmaheshwari.com
 
 Personal site of Dr. Harsh Maheshwari: obesity education for the public and for clinicians.
-Astro static site, deployed by Cloudflare Pages from `main`. The owner is not a coder; Claude does all code work.
+Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; other branches get Preview deployments. The owner is not a coder; Claude does all code work.
+
+## Two modes: For Everyone and For Doctors
+
+- The URL decides the mode: `/` and everything not under `/doctors/` is **For Everyone**; `/doctors/...` is **For Doctors**.
+  Nothing about the mode is stored in the browser. Use these exact labels; never "General".
+- `src/lib/modes.ts` holds each mode's label, home, navigation and footer. `Base.astro` sets `<html data-mode>` from the URL.
+- Each mode has its own Books, Videos, Tools and Trainers. Content carries its mode: books have `mode:` in frontmatter
+  (`everyone` → `/books/<slug>/`, `doctors` → `/doctors/books/<slug>/`); videos have `mode` in `src/data/videos.json`;
+  tools are listed in `src/data/tools.ts`; trainers in `src/trainers/registry.ts`. Evidence articles (`src/content/clinicians/`)
+  are published at `/doctors/evidence/<slug>/`.
+- Design tokens: `src/styles/tokens.css` (mode × light/dark). Components use only semantic tokens. The modes differ in colour,
+  type (Fraunces vs Inter headings), shape and density, and For Doctors pages carry a "For Doctors" label in the header.
+  All four combinations must keep 4.5:1 text contrast (checked by `npm run test:e2e`).
+- **Moved URLs get a 301 in `public/_redirects`; never delete a line there.** `tests/site.test.mjs` lists every URL
+  production has served and fails if one breaks.
+
+## Tests
+
+`npm run build && npm test` (static checks, no dependencies). `npm run test:e2e` (browser checks; needs Playwright installed
+globally; set `MEDIA_DIR` to a local copy of the R2 trainer folder to test audio and waveforms offline).
 
 ## Source of truth: Notion → website, one way only
 
@@ -22,13 +42,13 @@ is where Harsh writes drafts and instructions. Never edit Notion content to matc
 1. Query both data sources for rows with `🚀 Publish` ticked.
 2. For each row, route by **Type**:
    - Article (public) → `src/content/learn/<slug>.md`
-   - Evidence (clinicians) → `src/content/clinicians/<slug>.md`
+   - Evidence (clinicians) → `src/content/clinicians/<slug>.md` (published at `/doctors/evidence/<slug>/`)
    - Blog post → `src/content/blog/<slug>.md`
-   - Book → `src/content/books/<slug>.md`. The PDF is **not** copied into the repo: Harsh uploads it to Cloudflare R2
+   - Book → `src/content/books/<slug>.md`, with `mode: doctors` if it is for health professionals. The PDF is **not** copied into the repo: Harsh uploads it to Cloudflare R2
      and puts its `https://files.drharshmaheshwari.com/books/...` link in the Notion page; use that link as the download URL
      (see "Large files" below). Cover image → `public/books/<slug>.<ext>` (if none is attached, render page 1 of the PDF,
      keep it under ~300 KB). Show the licence stated in the Notion page.
-   - Video → append to `src/data/videos.json`
+   - Video → append to `src/data/videos.json` with `mode` (`everyone` or `doctors`)
    - Timeline rows → `src/data/timeline.json`; Publication rows → `src/data/publications.json` (fetch citation from the DOI/PubMed link)
    - Page update / Site change → edit the named page or `src/consts.ts`
    - Stage = Remove from site → delete the file/entry
@@ -55,21 +75,27 @@ local devDependency. Change production settings only on purpose; preview-only se
 - Do not add a wildcard `*.drharshmaheshwari.com` route to the site Worker: it hijacks `files.` and breaks R2.
 - Default book licence: CC BY-NC-SA 4.0 (adaptation allowed, share-alike), unless the Notion page says otherwise.
 
-## Clinical trainers (`/tools/trainers/`)
+## Clinical trainers (`/doctors/trainers/`)
 
-- Shared engine in `src/trainers/core/` (questions, look-alike wrong options, levels, progress in localStorage);
-  media players in `src/trainers/media/`; one folder per trainer in `src/trainers/<name>/`; pages in `src/pages/tools/trainers/`.
-  A new trainer (ECG, X-ray, fundus) reuses the core and adds its own config, data and page, plus a line in `tools/trainers/index.astro`.
-- Auscultation audio: HLS-CMDS v2 (CC BY 4.0, Zenodo 15376628). `scripts/trainers/auscultation/prepare.py` dedupes,
-  levels loudness and encodes MP3s, and writes `src/data/trainers/auscultation/recordings.json`. The MP3 folder is uploaded
-  to R2 at `trainers/auscultation/hls-cmds-v2/`; the page reads `FILES_URL` + that path. Keep the attribution and the
-  list of changes on the page (CC BY requires it).
-- Teaching notes (`src/trainers/auscultation/config.ts`) are clinical content: Harsh reviews changes before they reach `main`.
+- A trainer is an app: `src/layouts/TrainerShell.astro` gives every trainer the same frame (app bar, side rail on desktop,
+  bottom tab bar on phones) and sections, each a static page: Home, Learn (+ one page per finding), Practice, Quiz, Review, Progress.
+- Shared, trainer-agnostic code: `src/trainers/core/` (engine: questions, look-alike distractors, levels; `ProgressStore`;
+  media and adapter contracts), `src/trainers/ui/` (question runner and section views), `src/trainers/media/` (viewers;
+  `AudioViewer` = waveform, playhead, seeking, speed, labelled spans). A new trainer adds `src/trainers/<id>/` (config +
+  adapter), its pages, a registry entry, and a viewer only if it needs a new kind of media.
+- Progress goes only through `ProgressStore` (today `LocalProgressStore`, localStorage `trainer:<id>:v2`). Cloud sync will be a
+  second implementation of the same interface; the UI must never touch localStorage directly.
+- Auscultation audio: HLS-CMDS v2 (CC BY 4.0, Zenodo 15376628). `scripts/trainers/auscultation/prepare.py` dedupes, levels
+  loudness, encodes MP3s, writes `<id>.peaks.json` waveforms (audiowaveform JSON v2) next to each MP3, and writes
+  `src/data/trainers/auscultation/recordings.json`. Both MP3s and peaks are uploaded to R2 at
+  `trainers/auscultation/hls-cmds-v2/`. Peaks are fetched with CORS, so the bucket's CORS policy must allow GET.
+  Keep the attribution and the list of changes on every trainer page (`Credits.astro`; CC BY requires it).
+- Finding slugs (`config.ts`) are permanent URLs. Teaching notes are clinical content: Harsh reviews changes before `main`.
 
 ## Drafts
 
 `draft: true` in frontmatter shows the page on local dev and Cloudflare preview builds (any branch other than `main`,
-via `CF_PAGES_BRANCH`) and hides it on production. Starter articles written by Claude stay `draft: true` until Harsh approves.
+via `WORKERS_CI_BRANCH`, read in `astro.config.mjs`) and hides it on production. Starter articles written by Claude stay `draft: true` until Harsh approves.
 
 ## Rules
 

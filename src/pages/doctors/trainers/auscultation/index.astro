@@ -1,0 +1,41 @@
+---
+import TrainerShell from '../../../../layouts/TrainerShell.astro';
+import Credits from '../../../../trainers/auscultation/Credits.astro';
+import { SITE } from '../../../../consts';
+import { trainer, trainerBase } from '../../../../trainers/registry';
+import { FINDINGS, RECORDINGS } from '../../../../trainers/auscultation/config';
+
+const t = trainer('auscultation');
+const base = trainerBase(t);
+const jsonld = [{
+  '@type': ['WebApplication', 'LearningResource'], '@id': `${SITE.url}${base}#app`, name: t.title, url: `${SITE.url}${base}`,
+  applicationCategory: 'EducationalApplication', operatingSystem: 'Any (runs in the browser)',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
+  description: 'Ear training for heart and lung sounds with recorded audio: learn each sound, then practise, quiz yourself through five levels and review mistakes.',
+  learningResourceType: 'Quiz', educationalLevel: 'Medical students and clinicians', author: { '@id': `${SITE.url}/#person` },
+  isBasedOn: { '@type': 'Dataset', name: 'HLS-CMDS: Heart and Lung Sounds Dataset Recorded from a Clinical Manikin using Digital Stethoscope', url: 'https://doi.org/10.1109/IEEEDATA.2025.3566012', license: 'https://creativecommons.org/licenses/by/4.0/' },
+}];
+---
+<TrainerShell trainer={t} section="home" heading={t.title} title="Auscultation Trainer: heart and lung sounds" description="Train your ear on recorded heart and lung sounds: S3, S4, murmurs, AF, crackles, wheeze, rhonchi, pleural rub. Learn, practise, quiz and review." jsonld={jsonld}>
+  <p slot="intro">Learn {FINDINGS.length} heart and lung findings from {RECORDINGS.length} recordings. Then practise with the waveform, quiz yourself level by level, and review the ones you missed.</p>
+  <div class="t-notes">
+    <p class="t-note warn"><b>Use headphones.</b> Phone and laptop speakers cannot play the lowest sounds, such as S3, S4 and diastolic rumbles.</p>
+    <p class="t-note"><b>About the recordings.</b> They come from a clinical teaching manikin, recorded with a digital stethoscope: clean and clearly labelled, which suits learning each sound. Real patients are noisier, so practise on real chests too.</p>
+  </div>
+  <div id="home-app"><noscript><p>Practice, quiz and progress need JavaScript. The <a href={`${base}learn/`}>Learn pages</a> work without it.</p></noscript></div>
+  <h2>How to train your ear</h2>
+  <ol>
+    <li><b>Learn the normal sound first.</b> Every abnormal sound is a change from normal: an extra sound, a noise in a pause, or a change in rhythm.</li>
+    <li><b>Listen for one thing at a time.</b> First S1 and S2, then systole, then diastole. With breath sounds, inspiration first, then expiration.</li>
+    <li><b>Compare after every mistake.</b> Play your answer and the right answer one after the other. That comparison is what trains the ear.</li>
+    <li><b>Short and often.</b> One quiz round a day works better than one long session. Review clears the ones you missed.</li>
+  </ol>
+  <Fragment slot="credits"><Credits /></Fragment>
+</TrainerShell>
+
+<script>
+  import { adapter, store } from '../../../../trainers/auscultation/adapter';
+  import { mountHome } from '../../../../trainers/ui/sections';
+  import { trainerBase } from '../../../../trainers/registry';
+  mountHome(document.getElementById('home-app')!, adapter, store(), trainerBase(adapter.meta));
+</script>

@@ -1,0 +1,8 @@
+---
+import BookPage from '../../../components/lists/BookPage.astro';
+import { books } from '../../../lib/content';
+export async function getStaticPaths() {
+  return (await books('doctors')).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+---
+<BookPage entry={Astro.props.entry} />

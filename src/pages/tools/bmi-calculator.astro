@@ -1,6 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { SITE } from '../../consts';
+import { articles } from '../../lib/content';
+
+// Link to a guide only once it is published (drafts are not built on production, so a link would 404).
+const live = new Set((await articles('learn')).map((e) => e.id));
 
 const url = `${SITE.url}/tools/bmi-calculator/`;
 const faq = [
@@ -62,7 +66,7 @@ const jsonld = [
       <fieldset>
         <legend>Waist <span class="muted small">(optional, but recommended)</span></legend>
         <div class="row"><label class="field"><input type="number" inputmode="decimal" id="waist" min="40" max="200" placeholder="85" /><span>cm</span></label></div>
-        <p class="small muted" style="margin:.5rem 0 0">Midway between lowest rib and top of hip bone, after breathing out. <a href="/learn/waist-to-height-ratio/">How to measure</a></p>
+        <p class="small muted" style="margin:.5rem 0 0">Midway between lowest rib and top of hip bone, after breathing out.{live.has('waist-to-height-ratio') && <> <a href="/learn/waist-to-height-ratio/">How to measure</a></>}</p>
       </fieldset>
       <p class="small muted" style="margin:0">For adults 18 and over. Not valid in pregnancy.</p>
     </form>
@@ -99,7 +103,7 @@ const jsonld = [
         <tr><td>Waist, women</td><td>below 80 cm</td><td colspan="2">80 cm or more</td></tr>
       </tbody>
     </table>
-    <p>Why lower numbers for Indians? Read <a href="/learn/bmi-cut-offs-for-indians/">Is BMI accurate for Indians?</a></p>
+    {live.has('bmi-cut-offs-for-indians') && <p>Why lower numbers for Indians? Read <a href="/learn/bmi-cut-offs-for-indians/">Is BMI accurate for Indians?</a></p>}
     <div class="faq">
       <h2>Common questions</h2>
       {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}

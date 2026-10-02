@@ -1,0 +1,27 @@
+---
+import { SITE } from '../../consts';
+import { MODES, SHARED_LINKS, type Mode } from '../../lib/modes';
+import Avatar from '../Avatar.astro';
+import ModeSwitch from './ModeSwitch.astro';
+
+interface Props { mode: Mode }
+const { mode } = Astro.props;
+const m = MODES[mode];
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href={m.home}><Avatar size={48} decorative /><span>{SITE.name}</span></a>
+        <p class="muted small" style="margin-top:1rem;max-width:36ch">{SITE.tagline}.</p>
+        <ModeSwitch mode={mode} />
+      </div>
+      {m.footer.map((col) => <div><h4>{col.title}</h4><ul>{col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul></div>)}
+      <div><h4>Site</h4><ul>{SHARED_LINKS.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {new Date().getFullYear()} {SITE.name}. Educational content, not personal medical advice.</span>
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    </div>
+  </div>
+</footer>

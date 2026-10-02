@@ -1,0 +1,11 @@
+---
+// A grid of ready / coming-soon cards, shared by the tool and trainer lists of both modes.
+interface Item { title: string; text: string; href?: string; meta?: string }
+interface Props { items: Item[]; soon?: string }
+const { items, soon = 'Coming soon' } = Astro.props;
+---
+<div class="grid">
+  {items.map((t, i) => t.href
+    ? <a class="card reveal" href={t.href} style={`--d:${(i % 3) * .08}s`}><span class="chip">Ready</span><h3>{t.title}</h3><p>{t.text}</p>{t.meta && <p class="small muted">{t.meta}</p>}<span class="more">Open →</span></a>
+    : <div class="card reveal" style={`--d:${(i % 3) * .08}s;opacity:.75`}><span class="chip draft">{soon}</span><h3>{t.title}</h3><p>{t.text}</p></div>)}
+</div>

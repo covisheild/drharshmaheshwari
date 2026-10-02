@@ -1,0 +1,33 @@
+---
+// The list of books for one audience. /books/ and /doctors/books/ are thin wrappers around this.
+import Base from '../../layouts/Base.astro';
+import { books, bookUrl } from '../../lib/content';
+import { MODES, section, type Mode } from '../../lib/modes';
+
+interface Props { mode: Mode; title: string; description: string; intro: string }
+const { mode, title, description, intro } = Astro.props;
+const list = await books(mode);
+const other: Mode = mode === 'doctors' ? 'everyone' : 'doctors';
+const otherCount = (await books(other)).length;
+---
+<Base title={title} description={description}>
+  <header class="page-head wrap">
+    <span class="eyebrow">Books</span>
+    <h1>{title}</h1>
+    <p>{intro}</p>
+  </header>
+  <div class="wrap" style="padding-bottom:4rem">
+    {list.length ? (
+      <div class="grid">
+        {list.map((b, i) => (
+          <a class="card reveal" href={bookUrl(b)} style={`--d:${(i % 3) * .08}s`}>
+            {b.data.cover && <img src={b.data.cover} alt={`Cover of ${b.data.title}`} loading="lazy" style="border-radius:var(--radius-sm);aspect-ratio:1/1.414;object-fit:cover;margin-bottom:.5rem" />}
+            {b.data.draft && <span class="chip draft">Draft</span>}
+            <h3>{b.data.title}</h3><p>{b.data.description}</p><span class="more">Details & free PDF →</span>
+          </a>
+        ))}
+      </div>
+    ) : <p class="empty">The first books for this section are being prepared.</p>}
+    {otherCount > 0 && <p class="muted" style="margin-top:2rem">Looking for books {other === 'doctors' ? 'for doctors and medical students' : 'for everyone'}? See <a href={section(other, 'books')}>{MODES[other].label} · Books</a>.</p>}
+  </div>
+</Base>

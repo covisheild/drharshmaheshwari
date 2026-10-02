@@ -1,0 +1,17 @@
+---
+import TrainerShell from '../../../../layouts/TrainerShell.astro';
+import Credits from '../../../../trainers/auscultation/Credits.astro';
+import { trainer } from '../../../../trainers/registry';
+---
+<TrainerShell trainer={trainer('auscultation')} section="quiz" heading="Quiz" title="Quiz · Auscultation Trainer" description="Quiz yourself on heart and lung sounds through five levels, from normal-or-not to heart and lungs together.">
+  <p slot="intro">Five levels, from normal-or-not to heart and lungs in the same recording. Each opens when you pass the one before.</p>
+  <div id="app"><noscript><p>This section needs JavaScript.</p></noscript></div>
+  <Fragment slot="credits"><Credits /></Fragment>
+</TrainerShell>
+
+<script>
+  import { adapter, store } from '../../../../trainers/auscultation/adapter';
+  import { mountQuiz } from '../../../../trainers/ui/sections';
+  const el = document.getElementById('app')!, s = store();
+  mountQuiz(el, adapter, s);
+</script>

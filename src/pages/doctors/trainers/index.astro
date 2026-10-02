@@ -1,0 +1,16 @@
+---
+import Base from '../../../layouts/Base.astro';
+import CardList from '../../../components/lists/CardList.astro';
+import { TRAINERS, trainerBase } from '../../../trainers/registry';
+const items = TRAINERS.filter((t) => t.mode === 'doctors').map((t) => ({ title: t.title, text: t.summary, href: t.status === 'ready' ? trainerBase(t) : undefined }));
+---
+<Base title="Clinical trainers" description="Free practice apps for doctors and medical students: learn from recordings and images, then practise, quiz and review, with progress that builds as you improve.">
+  <header class="page-head wrap">
+    <span class="eyebrow">Trainers</span>
+    <h1>Clinical trainers</h1>
+    <p>Practice apps for clinical skills, built on real recordings and images. Each one teaches first, then lets you practise, quiz yourself level by level and review what you missed.</p>
+  </header>
+  <div class="wrap" style="padding-bottom:4rem">
+    <CardList items={items} soon="Coming later" />
+  </div>
+</Base>

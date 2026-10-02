@@ -1,0 +1,30 @@
+---
+// Videos for one audience, from src/data/videos.json ({ id, title, mode, description }).
+import Base from '../../layouts/Base.astro';
+import videos from '../../data/videos.json';
+import type { Mode } from '../../lib/modes';
+
+type Video = { id: string; title: string; mode: Mode; description: string };
+interface Props { mode: Mode; title: string; description: string; intro: string }
+const { mode, title, description, intro } = Astro.props;
+const list = (videos as Video[]).filter((v) => v.mode === mode);
+---
+<Base title={title} description={description}>
+  <header class="page-head wrap">
+    <span class="eyebrow">Videos</span>
+    <h1>{title}</h1>
+    <p>{intro}</p>
+  </header>
+  <div class="wrap" style="padding-bottom:4rem">
+    {list.length ? (
+      <div class="grid">
+        {list.map((v) => (
+          <a class="card reveal" href={`https://www.youtube.com/watch?v=${v.id}`} rel="noopener">
+            <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" loading="lazy" style="border-radius:var(--radius-sm);aspect-ratio:16/9;object-fit:cover" />
+            <h3>{v.title}</h3><p>{v.description}</p>
+          </a>
+        ))}
+      </div>
+    ) : <p class="empty">The first videos are in production.</p>}
+  </div>
+</Base>

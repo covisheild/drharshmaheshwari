@@ -1,0 +1,26 @@
+---
+import { SITE } from '../../consts';
+import { MODES, type Mode } from '../../lib/modes';
+import Avatar from '../Avatar.astro';
+import ThemeToggle from '../ThemeToggle.astro';
+import ModeBar from './ModeBar.astro';
+
+interface Props { mode: Mode; path: string }
+const { mode, path } = Astro.props;
+const m = MODES[mode];
+const current = (href: string) => (href === m.home ? path === href : path.startsWith(href));
+---
+<ModeBar mode={mode} />
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Main">
+    <a class="brand" href={m.home}>
+      <Avatar size={40} decorative eager />
+      <span>{SITE.name}{mode === 'doctors' && <span class="mode-badge">{m.label}</span>}<small>{m.tagline}</small></span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li class="theme-item"><ThemeToggle /></li>
+      {m.nav.map((n) => <li><a href={n.href} aria-current={current(n.href) ? 'page' : undefined}>{n.label}</a></li>)}
+    </ul>
+  </nav>
+</header>

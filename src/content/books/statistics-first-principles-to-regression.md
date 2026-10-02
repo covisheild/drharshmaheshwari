@@ -9,6 +9,7 @@ pdf: "https://files.drharshmaheshwari.com/books/Statistics-From_First_Principles
 cover: "/books/statistics-first-principles-to-regression.webp"
 theme: { main: "#5b35c8", second: "#b8378f", onDark: "#b9a4ff" }
 license: "CC BY-NC-SA 4.0"
+mode: doctors
 draft: false
 contents:
   - "Statistics – Foundations of Data"

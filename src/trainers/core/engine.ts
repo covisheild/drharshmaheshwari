@@ -1,9 +1,9 @@
-// Trainer engine shared by every clinical trainer (auscultation now; ECG, X-ray, fundus later).
-// A trainer supplies: answer options (findings), items (one recording / image each), and levels.
-// The engine builds questions, balances them, picks wrong options, and tracks mastery.
-// It knows nothing about audio or images: the page renders `item` however it likes.
+// Trainer engine shared by every clinical trainer (auscultation now; ECG, X-ray, pathology later).
+// A trainer supplies answer options (findings), items (one recording / image each) and question sets.
+// The engine builds questions, balances them, picks wrong options and tracks mastery. It knows nothing
+// about audio, images or the DOM, so it can be tested on its own.
 
-import type { Progress, Answer } from './progress';
+import type { Attempt } from './progress';
 
 export interface Option {
   id: string;
@@ -24,43 +24,49 @@ export interface Ask<I> {
   near?: boolean;
 }
 
-export interface Level<I> {
+/** A set of questions: a quiz level (counts towards mastery) or a practice set (does not). */
+export interface QuestionSet<I> {
   id: string;
   title: string;
   blurb: string;
   pool(items: I[]): I[];
   asks: Ask<I>[];
 }
+export type Level<I> = QuestionSet<I>;
 
 export interface Part<I> { ask: Ask<I>; answer: string; options: string[] }
-export interface Question<I> { level: Level<I>; item: I; parts: Part<I>[] }
+export interface Question<I> { set: QuestionSet<I>; item: I; parts: Part<I>[] }
 
-export const ROUND = 10;      // questions per round
-export const MASTERY = { window: 10, pass: 0.8 }; // next level opens at 80% of the last 10
+export const ROUND = 10;                          // questions per quiz round
+export const MASTERY = { window: 10, pass: 0.8 }; // a level is passed at 80% of its last 10 quiz answers
 
-const pick = <T>(xs: T[]): T => xs[Math.floor(Math.random() * xs.length)];
-const shuffle = <T>(xs: T[]): T[] => {
+const pick = <T>(xs: readonly T[]): T => xs[Math.floor(Math.random() * xs.length)];
+const shuffle = <T>(xs: readonly T[]): T[] => {
   const a = xs.slice();
   for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
   return a;
 };
 
-export const isCorrect = (a: Answer) => a.parts.every((p) => p.answer === p.chosen);
-
 export class Engine<I extends { id: string }> {
+  readonly byId: Map<string, I>;
+
   constructor(
     readonly items: I[],
     readonly levels: Level<I>[],
     readonly options: Map<string, Option>,
-  ) {}
+    readonly practice: QuestionSet<I>[] = [],
+  ) {
+    this.byId = new Map(items.map((it) => [it.id, it]));
+  }
 
   label(id: string) { return this.options.get(id)?.label ?? id; }
+  set(id: string) { return [...this.levels, ...this.practice].find((s) => s.id === id); }
 
-  /** Pick the next item: each answer class is equally likely (so rare findings come up as often as
-   *  common ones), weighted up for classes the learner gets wrong; never an item already in this round. */
-  question(level: Level<I>, progress: Progress, used: Set<string>): Question<I> {
-    const pool = level.pool(this.items);
-    const first = level.asks[0];
+  /** Next question from a set: each answer class is equally likely (so rare findings come up as often as
+   *  common ones), weighted up for classes the learner gets wrong; never an item already in `used`. */
+  question(set: QuestionSet<I>, attempts: readonly Attempt[], used: Set<string>): Question<I> {
+    const pool = set.pool(this.items);
+    const first = set.asks[0];
     const byClass = new Map<string, I[]>();
     for (const it of pool) {
       if (used.has(it.id)) continue;
@@ -69,17 +75,21 @@ export class Engine<I extends { id: string }> {
     }
     if (!byClass.size) used.clear();
     const classes = byClass.size ? [...byClass.keys()] : [...new Set(pool.map((it) => first.answer(it)))];
-    const recent = progress.answers.filter((a) => a.level === level.id).slice(-200);
+    const recent = attempts.filter((a) => a.set === set.id).slice(-200);
     const weight = (c: string) => {
-      const seen = recent.filter((a) => a.parts[0].answer === c);
-      const wrong = seen.filter((a) => !isCorrect(a)).length;
+      const seen = recent.filter((a) => a.parts[0]?.answer === c);
+      const wrong = seen.filter((a) => !a.correct).length;
       return 1 + 2 * (seen.length ? wrong / seen.length : 0.5);
     };
     const weights = classes.map(weight);
     let r = Math.random() * weights.reduce((s, w) => s + w, 0);
     const c = classes[weights.findIndex((w) => (r -= w) < 0)] ?? classes[0];
-    const item = pick(byClass.get(c) ?? pool.filter((it) => first.answer(it) === c));
-    return { level, item, parts: level.asks.map((ask) => this.part(ask, item)) };
+    return this.questionFor(set, pick(byClass.get(c) ?? pool.filter((it) => first.answer(it) === c)));
+  }
+
+  /** A question about one particular item (used by Review). */
+  questionFor(set: QuestionSet<I>, item: I): Question<I> {
+    return { set, item, parts: set.asks.map((ask) => this.part(ask, item)) };
   }
 
   private part(ask: Ask<I>, item: I): Part<I> {
@@ -96,25 +106,39 @@ export class Engine<I extends { id: string }> {
     return { ask, answer, options: choices.filter((id) => shown.has(id)) };
   }
 
-  levelScore(levelId: string, progress: Progress) {
-    const last = progress.answers.filter((a) => a.level === levelId).slice(-MASTERY.window);
-    return { n: last.length, correct: last.filter(isCorrect).length };
+  /** Only quiz answers count towards a level; practice and review never lock or unlock anything. */
+  levelScore(levelId: string, attempts: readonly Attempt[]) {
+    const last = attempts.filter((a) => a.set === levelId && a.activity === 'quiz').slice(-MASTERY.window);
+    return { n: last.length, correct: last.filter((a) => a.correct).length };
   }
 
-  mastered(levelId: string, progress: Progress) {
-    const s = this.levelScore(levelId, progress);
+  mastered(levelId: string, attempts: readonly Attempt[]) {
+    const s = this.levelScore(levelId, attempts);
     return s.n >= MASTERY.window && s.correct / s.n >= MASTERY.pass;
   }
 
-  unlocked(index: number, progress: Progress) {
-    return progress.unlockAll || index === 0 || this.mastered(this.levels[index - 1].id, progress);
+  unlocked(index: number, attempts: readonly Attempt[], unlockAll = false) {
+    return unlockAll || index === 0 || this.mastered(this.levels[index - 1].id, attempts);
+  }
+
+  /** The level to work on next: the first open level not yet passed. */
+  currentLevel(attempts: readonly Attempt[], unlockAll = false) {
+    const i = this.levels.findIndex((l, k) => this.unlocked(k, attempts, unlockAll) && !this.mastered(l.id, attempts));
+    return i === -1 ? this.levels.length - 1 : i;
+  }
+
+  /** Items whose most recent answer was wrong, newest first: what Review asks again. */
+  toReview(attempts: readonly Attempt[]) {
+    const latest = new Map<string, Attempt>();
+    for (const a of attempts) latest.set(a.item, a);
+    return [...latest.values()].filter((a) => !a.correct && this.byId.has(a.item) && this.set(a.set)).sort((a, b) => b.t - a.t);
   }
 
   /** Accuracy for every option ever asked, and the most common mix-ups (answer -> chosen). */
-  stats(progress: Progress) {
+  stats(attempts: readonly Attempt[]) {
     const per = new Map<string, { n: number; correct: number }>();
     const mixups = new Map<string, number>();
-    for (const a of progress.answers) for (const p of a.parts) {
+    for (const a of attempts) for (const p of a.parts) {
       const s = per.get(p.answer) ?? { n: 0, correct: 0 };
       s.n++; if (p.answer === p.chosen) s.correct++;
       per.set(p.answer, s);

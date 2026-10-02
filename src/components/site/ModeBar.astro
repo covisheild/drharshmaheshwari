@@ -1,0 +1,13 @@
+---
+// The strip above every page holding the For Everyone / For Doctors switch.
+import type { Mode } from '../../lib/modes';
+import ModeSwitch from './ModeSwitch.astro';
+interface Props { mode: Mode }
+const { mode } = Astro.props;
+---
+<div class="mode-bar">
+  <div class="wrap">
+    <ModeSwitch mode={mode} />
+    <span class="hint">{mode === 'doctors' ? 'Evidence, trainers and tools for doctors and medical students' : 'Clear, evidence-based health guides for everyone'}</span>
+  </div>
+</div>

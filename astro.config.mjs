@@ -4,6 +4,11 @@ import sitemap from '@astrojs/sitemap';
 
 import cloudflare from '@astrojs/cloudflare';
 
+// Drafts show on preview builds (any branch except main), never on production. Read here, in Node:
+// pages are prerendered inside workerd, where the build machine's environment variables are not visible.
+// Cloudflare Workers Builds sets WORKERS_CI_BRANCH; CF_PAGES_BRANCH is the older Pages name.
+const branch = process.env.WORKERS_CI_BRANCH ?? process.env.CF_PAGES_BRANCH ?? 'main';
+
 export default defineConfig({
   site: 'https://drharshmaheshwari.com',
   trailingSlash: 'ignore',
@@ -13,4 +18,5 @@ export default defineConfig({
   // SESSION KV binding with no ID, which Worker Previews reject (code 10021).
   session: false,
   adapter: cloudflare(),
+  vite: { define: { __PREVIEW_BUILD__: JSON.stringify(branch !== 'main') } },
 });

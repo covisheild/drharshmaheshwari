@@ -1,7 +1,7 @@
 ---
 import { render } from 'astro:content';
-import Article from '../../layouts/Article.astro';
-import { articles } from '../../lib/content';
+import Article from '../../../layouts/Article.astro';
+import { articles } from '../../../lib/content';
 
 export async function getStaticPaths() {
   return (await articles('clinicians')).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));

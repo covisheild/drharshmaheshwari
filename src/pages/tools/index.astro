@@ -1,22 +1,16 @@
 ---
 import Base from '../../layouts/Base.astro';
-const tools = [
-  { href: '/tools/bmi-calculator/', title: 'BMI & waist calculator', text: 'BMI, waist-to-height ratio and abdominal obesity, using Indian cut-offs.', live: true },
-  { href: '/tools/trainers/auscultation/', title: 'Auscultation Trainer', text: 'For students and clinicians: learn heart and lung sounds from recordings, then quiz your ear.', live: true },
-  { title: 'Indian Diabetes Risk Score (IDRS)', text: 'Four questions that estimate your risk of type 2 diabetes.', live: false },
-  { title: 'FIB-4 for fatty liver', text: 'For clinicians: estimate liver fibrosis risk from routine blood tests.', live: false },
-  { title: 'STOP-BANG', text: 'Screen for obstructive sleep apnoea.', live: false },
-];
+import CardList from '../../components/lists/CardList.astro';
+import { TOOLS } from '../../data/tools';
 ---
-<Base title="Tools" description="Free health calculators built on Indian cut-offs: BMI, waist-to-height ratio, and risk scores for diabetes, fatty liver and sleep apnoea.">
+<Base title="Tools" description="Free health calculators built on Indian cut-offs: BMI, waist-to-height ratio, and risk scores for diabetes and sleep apnoea.">
   <header class="page-head wrap">
     <span class="eyebrow">Tools</span>
     <h1>Tools</h1>
     <p>Calculators built on Indian cut-offs, each with its sources listed. They run on your device, and nothing you type is stored.</p>
   </header>
-  <div class="wrap grid" style="padding-bottom:4rem">
-    {tools.map((t, i) => t.live
-      ? <a class="card reveal" href={t.href} style={`--d:${i * .08}s`}><span class="chip">Ready</span><h3>{t.title}</h3><p>{t.text}</p><span class="more">Open →</span></a>
-      : <div class="card reveal" style={`--d:${i * .08}s;opacity:.75`}><span class="chip draft">Coming soon</span><h3>{t.title}</h3><p>{t.text}</p></div>)}
+  <div class="wrap" style="padding-bottom:4rem">
+    <CardList items={TOOLS.filter((t) => t.mode === 'everyone')} />
+    <p class="muted" style="margin-top:2rem">Clinical scores and trainers for doctors are in <a href="/doctors/tools/">For Doctors · Tools</a>.</p>
   </div>
 </Base>

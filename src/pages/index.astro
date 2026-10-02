@@ -4,7 +4,7 @@ import ArticleCard from '../components/ArticleCard.astro';
 import { articles, books } from '../lib/content';
 
 const learn = (await articles('learn')).slice(0, 3);
-const bookList = await books();
+const bookList = await books('everyone');
 ---
 <Base>
   <section class="hero">
@@ -41,11 +41,11 @@ const bookList = await books();
           <p>Plain-language guides on food, activity, sleep and weight, with Indian examples and without fads.</p>
           <span class="more">Explore guides →</span>
         </a>
-        <a class="card pro reveal" style="--d:.1s" href="/clinicians/">
-          <span class="eyebrow" style="color:var(--accent)">For clinicians</span>
-          <h2 style="margin:0">Evidence synthesised for practice</h2>
-          <p>Trial-level summaries on obesity and its complications, with effect sizes and a note on what the evidence does not show.</p>
-          <span class="more" style="color:var(--accent)">Read syntheses →</span>
+        <a class="card pro reveal" style="--d:.1s" href="/doctors/">
+          <span class="eyebrow" style="color:var(--accent)">For Doctors</span>
+          <h2 style="margin:0">Evidence, trainers and tools for practice</h2>
+          <p>Evidence syntheses with effect sizes, clinical skill trainers such as heart and lung sounds, and books on statistics and research methods.</p>
+          <span class="more" style="color:var(--accent)">Go to For Doctors →</span>
         </a>
       </div>
     </div>
@@ -73,11 +73,11 @@ const bookList = await books();
       </a>
       <a class="card reveal" style="--d:.08s" href="/books/">
         <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></div>
-        <h3>Free books</h3><p>{bookList.length ? `${bookList.length} book${bookList.length > 1 ? 's' : ''}, free to download and share for non-commercial use.` : 'Full-length books on obesity, free to download and share for non-commercial use.'}</p><span class="more">Browse books →</span>
+        <h3>Free books</h3><p>{bookList.length ? `${bookList.length} book${bookList.length > 1 ? 's' : ''}, free to download and share for non-commercial use.` : 'Full-length books on obesity for families are being written. Free to download and share for non-commercial use.'}</p><span class="more">Browse books →</span>
       </a>
       <a class="card reveal" style="--d:.16s" href="/videos/">
         <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></div>
-        <h3>Videos</h3><p>Short explainers for the public, and deeper lectures for doctors and students.</p><span class="more">Watch →</span>
+        <h3>Videos</h3><p>Short explainers on weight, food and health.</p><span class="more">Watch →</span>
       </a>
     </div>
   </section>

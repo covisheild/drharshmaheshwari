@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+import { articles, books, bookUrl, SECTION } from '../../lib/content';
+import { TOOLS } from '../../data/tools';
+import { TRAINERS, trainerBase } from '../../trainers/registry';
+
+const evidence = (await articles('clinicians')).slice(0, 4);
+const bookList = await books('doctors');
+const trainers = TRAINERS.filter((t) => t.mode === 'doctors');
+const tools = TOOLS.filter((t) => t.mode === 'doctors');
+---
+<Base title="For Doctors" description="For doctors and medical students: evidence syntheses on obesity and its complications, clinical skill trainers, clinical tools and free books by Dr. Harsh Maheshwari.">
+  <header class="page-head wrap doc-head">
+    <span class="eyebrow">For Doctors</span>
+    <h1>Evidence, trainers and tools for clinical practice</h1>
+    <p>For doctors and medical students. Evidence syntheses with effect sizes, apps that train clinical skills on real recordings, and free books on statistics and research methods.</p>
+  </header>
+
+  <div class="wrap doc-grid">
+    <section class="doc-panel" aria-labelledby="h-trainers">
+      <div class="doc-panel-head"><h2 id="h-trainers">Clinical trainers</h2><a href="/doctors/trainers/">All trainers →</a></div>
+      <ul class="doc-list">
+        {trainers.map((t) => (
+          <li>{t.status === 'ready' ? <a href={trainerBase(t)}>{t.title}</a> : <span>{t.title}</span>}
+            <span class="doc-tag">{t.status === 'ready' ? 'Ready' : 'Coming later'}</span><p>{t.summary}</p></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="doc-panel" aria-labelledby="h-evidence">
+      <div class="doc-panel-head"><h2 id="h-evidence">Evidence syntheses</h2><a href={SECTION.clinicians.base}>All evidence →</a></div>
+      {evidence.length ? (
+        <ul class="doc-list">{evidence.map((e) => <li><a href={`${SECTION.clinicians.base}${e.id}/`}>{e.data.title}</a><p>{e.data.description}</p></li>)}</ul>
+      ) : <p class="muted">The first syntheses on obesity and its complications are in preparation: what the trials show, effect sizes, and what they do not show.</p>}
+    </section>
+
+    <section class="doc-panel" aria-labelledby="h-books">
+      <div class="doc-panel-head"><h2 id="h-books">Books</h2><a href="/doctors/books/">All books →</a></div>
+      <ul class="doc-list">{bookList.map((b) => <li><a href={bookUrl(b)}>{b.data.title}</a><span class="doc-tag">Free PDF</span><p>{b.data.description}</p></li>)}</ul>
+    </section>
+
+    <section class="doc-panel" aria-labelledby="h-tools">
+      <div class="doc-panel-head"><h2 id="h-tools">Clinical tools</h2><a href="/doctors/tools/">All tools →</a></div>
+      <ul class="doc-list">{tools.map((t) => <li>{t.href ? <a href={t.href}>{t.title}</a> : <span>{t.title}</span>}<span class="doc-tag">{t.href ? 'Ready' : 'Coming soon'}</span><p>{t.text}</p></li>)}</ul>
+    </section>
+  </div>
+  <div class="wrap" style="padding-block:2rem 4rem">
+    <p class="muted small">Content here is written for health professionals and assumes clinical training. For plain-language guides, switch to <a href="/">For Everyone</a>.</p>
+  </div>
+</Base>
+
+<style>
+  .doc-head { border-bottom: 1px solid var(--line); margin-bottom: 1.5rem; padding-bottom: 1.5rem; }
+  .doc-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); }
+  .doc-panel { padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .doc-panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--line); padding-bottom: .5rem; margin-bottom: .25rem; }
+  .doc-panel-head h2 { font-size: 1.05rem; margin: 0; text-transform: uppercase; letter-spacing: .05em; }
+  .doc-panel-head a { font-size: .88rem; font-weight: 600; text-decoration: none; }
+  .doc-list { list-style: none; margin: 0; padding: 0; }
+  .doc-list li { padding: .65rem 0; border-bottom: 1px solid var(--line); }
+  .doc-list li:last-child { border-bottom: 0; }
+  .doc-list a, .doc-list span:first-child { font-weight: 650; }
+  .doc-list p { margin: .2rem 0 0; font-size: .92rem; color: var(--ink-2); }
+  .doc-tag { margin-left: .5rem; padding: .05rem .4rem; border: 1px solid var(--line); border-radius: 4px; font-size: .72rem; font-weight: 600; color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em; }
+</style>

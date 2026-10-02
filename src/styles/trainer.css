@@ -1,0 +1,126 @@
+/* Trainer app shell, media viewers and question UI. Uses only the design tokens, so trainers follow
+   their mode (For Doctors / For Everyone) and light/dark automatically. */
+
+/* ---------- Shell ---------- */
+.tshell { --rail: 208px; --tabbar: 64px; display: grid; grid-template-columns: var(--rail) 1fr; grid-template-rows: auto 1fr; min-height: calc(100dvh - 41px); }
+.t-appbar {
+  grid-column: 1 / -1; position: sticky; top: 0; z-index: 40; display: flex; align-items: center; gap: .75rem;
+  padding: 0 max(16px, calc((100vw - var(--max)) / 2)); height: 56px;
+  background: var(--header-bg); color: var(--header-ink); border-bottom: 1px solid var(--header-line);
+}
+.t-appbar a { color: inherit; text-decoration: none; }
+.t-back { color: var(--header-ink-2) !important; font-weight: 600; font-size: .92rem; white-space: nowrap; }
+.t-name { font-weight: 700; font-size: 1.02rem; letter-spacing: -.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.t-appbar .mode-badge { margin: 0; white-space: nowrap; flex: none; }
+.t-name .short { display: none; }
+@media (max-width: 520px) { .t-name .full { display: none; } .t-name .short { display: inline; } }
+.t-appbar .theme-toggle { margin-left: auto; border-color: var(--header-line); color: var(--header-ink-2); }
+
+.t-nav { position: sticky; top: 56px; align-self: start; display: flex; flex-direction: column; gap: 2px; padding: 1rem .75rem; height: calc(100dvh - 56px); border-right: 1px solid var(--line); background: var(--surface); }
+.t-nav a { display: flex; align-items: center; gap: .65rem; padding: .6rem .75rem; border-radius: var(--radius-sm); color: var(--ink-2); text-decoration: none; font-weight: 600; font-size: .95rem; }
+.t-nav a:hover { background: var(--surface-2); color: var(--ink); }
+.t-nav a[aria-current='page'] { background: var(--brand-soft); color: var(--brand); }
+
+.tshell section { padding-block: 0; } /* the site's section spacing is for content pages, not the app */
+.t-main { min-width: 0; padding: 1.25rem clamp(16px, 3vw, 2.5rem) 3rem; max-width: 1100px; }
+.t-head { margin-bottom: 1.25rem; }
+.t-head h1 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: .35rem; }
+.t-head p { color: var(--ink-2); max-width: 70ch; margin: 0 0 .5rem; }
+.t-body h2 { font-size: 1.2rem; margin-top: 1.75rem; }
+.t-foot { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .86rem; color: var(--ink-3); }
+.t-foot p { margin: 0 0 .5rem; }
+
+/* Phones and small tablets: the section nav becomes a bottom tab bar. */
+@media (max-width: 860px) {
+  .tshell { grid-template-columns: 1fr; padding-bottom: calc(var(--tabbar) + env(safe-area-inset-bottom)); }
+  .t-nav {
+    position: fixed; inset: auto 0 0 0; top: auto; height: calc(var(--tabbar) + env(safe-area-inset-bottom)); z-index: 45;
+    flex-direction: row; justify-content: space-around; gap: 0; padding: 4px 2px env(safe-area-inset-bottom);
+    border-right: 0; border-top: 1px solid var(--line); background: color-mix(in oklab, var(--surface) 94%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  }
+  .t-nav a { flex: 1; flex-direction: column; gap: 2px; padding: 6px 0; font-size: .7rem; justify-content: center; min-width: 0; }
+  .t-nav a[aria-current='page'] { background: none; }
+  .t-back span { display: none; }
+  .t-main { padding-top: 1rem; }
+}
+@media (max-width: 380px) { .t-appbar .mode-badge { display: none; } }
+
+/* ---------- Shared bits ---------- */
+.btn-sm { padding: .5rem .9rem; font-size: .9rem; }
+.btn-link { border: 0; background: none; color: var(--brand); font: 600 .95rem var(--font-body); cursor: pointer; padding: .5rem .25rem; }
+.btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+.t-row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-top: 1rem; }
+.t-cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
+.t-pick { text-align: left; font: inherit; cursor: pointer; color: inherit; }
+.t-pick:hover { border-color: var(--brand); }
+.t-notes { display: grid; gap: .6rem; margin: 1rem 0; }
+.t-note { margin: 0; padding: .7rem .9rem; border-radius: var(--radius-sm); background: var(--surface-2); font-size: .95rem; }
+.t-note.warn { background: var(--accent-soft); }
+.t-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: .75rem; }
+.t-stat { padding: .9rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.t-stat b { display: block; font: 700 1.6rem/1.1 var(--font-display); color: var(--brand); font-variant-numeric: tabular-nums; }
+.t-stat span { font-size: .85rem; color: var(--ink-2); }
+.t-big { font: 700 2.6rem/1 var(--font-display); margin: .25rem 0; font-variant-numeric: tabular-nums; }
+.t-score { max-width: 520px; }
+.t-check { display: flex; gap: .5rem; align-items: center; }
+.t-table { width: 100%; border-collapse: collapse; font-size: .95rem; font-variant-numeric: tabular-nums; }
+.t-table th, .t-table td { text-align: left; padding: .45rem .5rem; border-bottom: 1px solid var(--line); }
+.t-bar { height: 8px; border-radius: 999px; background: var(--surface-2); min-width: 60px; }
+.t-bar span { display: block; height: 100%; border-radius: 999px; background: var(--brand); }
+
+/* Levels */
+.t-levels { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: .75rem; }
+.t-level { flex-direction: row; align-items: center; justify-content: space-between; gap: 1rem; }
+.t-level h3 { margin: .1rem 0 .2rem; }
+.t-level p { margin: 0; }
+.t-level-n { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--brand); }
+.t-level[data-state='locked'] { opacity: .6; }
+.t-level[data-state='passed'] .t-level-n::after { content: ' · Passed ✓'; color: var(--ok); }
+.t-meta { font-size: .86rem; color: var(--ink-3); }
+@media (max-width: 560px) { .t-level { flex-direction: column; align-items: stretch; } }
+
+/* Learn */
+.t-findings { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
+.t-findings a { display: block; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--ink); text-decoration: none; }
+.t-findings a:hover { border-color: var(--brand); }
+.t-findings b { display: block; }
+.t-findings span { font-size: .86rem; color: var(--ink-3); }
+.t-pager { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+
+/* ---------- Question runner ---------- */
+.t-run-head { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: .75rem; }
+.t-run-status { color: var(--ink-3); font-size: .9rem; font-variant-numeric: tabular-nums; margin-right: auto; }
+.t-work { display: grid; gap: 1.25rem; }
+@media (max-width: 1099px) { .t-work > .t-media { order: -1; } } /* on phones the player comes first */
+@media (min-width: 1100px) { .t-work { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; } .t-media { position: sticky; top: 72px; } }
+.t-ask { border: 0; padding: 0; margin: 0 0 1rem; }
+.t-ask legend { font-weight: 700; margin-bottom: .5rem; }
+.t-opts { display: grid; gap: .5rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); }
+.t-opt { display: flex; align-items: center; gap: .6rem; text-align: left; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 550 1rem var(--font-body); padding: .75rem .9rem; border-radius: var(--radius-sm); cursor: pointer; min-height: 48px; }
+.t-opt kbd { font: 600 .75rem var(--font-mono); color: var(--ink-3); min-width: .8em; }
+.t-opt:hover:not(:disabled) { border-color: var(--brand); }
+.t-opt[aria-pressed='true'] { border-color: var(--brand); background: var(--brand-soft); }
+.t-opt.right { border-color: var(--ok); background: var(--ok-soft); color: var(--ok); }
+.t-opt.wrong { border-color: var(--risk); background: var(--risk-soft); color: var(--risk); }
+.t-opt:disabled { cursor: default; }
+.t-opt.right::after { content: '✓'; margin-left: auto; } .t-opt.wrong::after { content: '✗'; margin-left: auto; }
+.t-feedback { padding: 1rem; border-radius: var(--radius); background: var(--surface-2); }
+.t-feedback p { margin: 0 0 .5rem; }
+.t-verdict { font-weight: 800; } .t-verdict.ok { color: var(--ok); } .t-verdict.bad { color: var(--risk); }
+
+/* ---------- Audio viewer ---------- */
+.av { --wave: color-mix(in oklab, var(--ink-3) 55%, transparent); --wave-played: var(--brand); --wave-head: var(--ink);
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: .9rem; }
+.av-label { min-height: 1.4em; font-weight: 600; font-size: .92rem; color: var(--ink-2); margin-bottom: .5rem; }
+.av[data-error] .av-label { color: var(--risk); }
+.av-wave { position: relative; height: 96px; border-radius: var(--radius-sm); background: var(--surface-2); cursor: pointer; touch-action: none; }
+.av-wave canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.av-wave:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.av-controls { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; margin-top: .75rem; }
+.av-play { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; padding: .55rem 1.1rem; border-radius: 999px; border: 0; background: var(--brand); color: var(--brand-ink); font: 700 1rem var(--font-body); cursor: pointer; }
+.av-icon { min-width: 1.1em; text-align: center; letter-spacing: -.15em; }
+.av-time { font-variant-numeric: tabular-nums; color: var(--ink-2); font-size: .92rem; }
+.av-speed { margin-left: auto; font-size: .88rem; color: var(--ink-2); display: inline-flex; gap: .4rem; align-items: center; }
+.av-speed select { font: inherit; padding: .3rem .4rem; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.av.cues-hidden .av-wave::after { content: 'Waveform shown after you answer'; position: absolute; left: 50%; top: 10px; transform: translateX(-50%); font-size: .75rem; color: var(--ink-3); white-space: nowrap; }

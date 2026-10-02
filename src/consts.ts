@@ -14,15 +14,7 @@ export const SITE = {
 // Large files (books, trainer audio) live on Cloudflare R2, not in git. See CLAUDE.md.
 export const FILES_URL = 'https://files.drharshmaheshwari.com';
 
-export const NAV = [
-  { href: '/learn/', label: 'Learn' },
-  { href: '/clinicians/', label: 'For Clinicians' },
-  { href: '/tools/', label: 'Tools' },
-  { href: '/books/', label: 'Books' },
-  { href: '/videos/', label: 'Videos' },
-  { href: '/blog/', label: 'Blog' },
-  { href: '/about/', label: 'About' },
-];
+// Navigation per audience lives in src/lib/modes.ts.
 
 export const PERSON_JSONLD = {
   '@type': 'Person',
@@ -39,5 +31,6 @@ export const PERSON_JSONLD = {
 };
 
 // Drafts are visible on local dev and Cloudflare preview deployments, never on production.
-export const SHOW_DRAFTS =
-  import.meta.env.DEV || (process.env.CF_PAGES_BRANCH ?? 'main') !== 'main';
+// __PREVIEW_BUILD__ is set in astro.config.mjs from the branch being built.
+declare const __PREVIEW_BUILD__: boolean;
+export const SHOW_DRAFTS = import.meta.env.DEV || __PREVIEW_BUILD__;

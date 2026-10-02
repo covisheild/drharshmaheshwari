@@ -1,0 +1,61 @@
+---
+// The app frame shared by every trainer: mode bar, a slim app bar, section navigation (side rail on
+// desktop, bottom tab bar on phones) and the workspace. Each section is its own static page, so every
+// section has a real URL; the interactive parts mount into the page's workspace.
+import '../styles/trainer.css';
+import Base from './Base.astro';
+import ModeBar from '../components/site/ModeBar.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import { MODES, section as modeSection } from '../lib/modes';
+import { SECTIONS, type Section, type TrainerMeta } from '../trainers/core/types';
+import { trainerBase } from '../trainers/registry';
+
+interface Props {
+  trainer: TrainerMeta;
+  section: Section;
+  /** Page heading; defaults to the section name. */
+  heading?: string;
+  title: string;
+  description: string;
+  jsonld?: Record<string, unknown>[];
+}
+const { trainer, section, heading, title, description, jsonld } = Astro.props;
+const base = trainerBase(trainer);
+const ICONS: Record<Section, string> = {
+  home: 'M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z',
+  learn: 'M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5M8 7h7',
+  practice: 'M12 3v18M3 12h18M7 7l10 10',
+  quiz: 'M9 9a3 3 0 1 1 4 2.8c-.6.3-1 .9-1 1.6V14M12 18h.01M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0',
+  review: 'M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5',
+  progress: 'M4 20V10M10 20V4M16 20v-7M22 20H2',
+};
+const sectionLabel = SECTIONS.find((s) => s.id === section)!.label;
+---
+<Base title={title} description={description} jsonld={jsonld} chrome="app">
+  <ModeBar mode={trainer.mode} />
+  <div class="tshell" data-section={section}>
+    <header class="t-appbar">
+      <a class="t-back" href={modeSection(trainer.mode, 'trainers')} aria-label={`All trainers (${MODES[trainer.mode].label})`}>←<span> Trainers</span></a>
+      <a class="t-name" href={base}><span class="full">{trainer.title}</span><span class="short">{trainer.short}</span></a>
+      <span class="mode-badge">{MODES[trainer.mode].label}</span>
+      <ThemeToggle />
+    </header>
+    <nav class="t-nav" aria-label={`${trainer.title} sections`}>
+      {SECTIONS.map((s) => (
+        <a href={`${base}${s.path}`} aria-current={s.id === section ? 'page' : undefined}>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={ICONS[s.id]} /></svg>
+          <span>{s.label}</span>
+        </a>
+      ))}
+    </nav>
+    <div class="t-main">
+      <div class="t-head">
+        <span class="eyebrow">{trainer.title} · {sectionLabel}</span>
+        <h1>{heading ?? sectionLabel}</h1>
+        <slot name="intro" />
+      </div>
+      <div class="t-body"><slot /></div>
+      <footer class="t-foot"><slot name="credits" /></footer>
+    </div>
+  </div>
+</Base>

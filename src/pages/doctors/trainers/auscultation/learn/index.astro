@@ -1,0 +1,22 @@
+---
+import TrainerShell from '../../../../../layouts/TrainerShell.astro';
+import Credits from '../../../../../trainers/auscultation/Credits.astro';
+import { trainer, trainerBase } from '../../../../../trainers/registry';
+import { FINDINGS, MIX_SLUG, examples } from '../../../../../trainers/auscultation/config';
+const t = trainer('auscultation'), base = trainerBase(t);
+const groups = [['Heart sounds', FINDINGS.filter((f) => f.system === 'heart')], ['Lung sounds', FINDINGS.filter((f) => f.system === 'lung')]] as const;
+---
+<TrainerShell trainer={t} section="learn" heading="Learn the sounds" title="Learn heart and lung sounds · Auscultation Trainer" description="What to listen for in each heart and lung sound, with several recorded examples of each and a normal recording to compare.">
+  <p slot="intro">Each finding has what to listen for, what it usually means, and several recordings. Start with the normal sounds.</p>
+  {groups.map(([title, list]) => (
+    <>
+      <h2>{title}</h2>
+      <div class="t-findings">
+        {list.map((f) => <a href={`${base}learn/${f.slug}/`}><b>{f.label}</b><span>{examples(f.id).length} recordings</span></a>)}
+      </div>
+    </>
+  ))}
+  <h2>Heart and lungs together</h2>
+  <div class="t-findings"><a href={`${base}learn/${MIX_SLUG}/`}><b>Heart and lungs together</b><span>Pick each sound out of a combined recording</span></a></div>
+  <Fragment slot="credits"><Credits /></Fragment>
+</TrainerShell>

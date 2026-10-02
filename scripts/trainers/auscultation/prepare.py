@@ -12,6 +12,9 @@ trainers/auscultation/hls-cmds-v2/. src/data/trainers/auscultation/recordings.js
 Of the 535 files only ~344 hold distinct audio: the heart and lung sources behind the mixes reuse
 the same recordings many times. Each distinct sound is encoded once; mixes point to the shared copy.
 
+Next to each MP3 it writes <id>.peaks.json: the waveform outline (audiowaveform JSON v2, 50 points
+per second), uploaded to R2 with the audio so browsers never have to decode audio to draw it.
+
 Processing is a single linear gain per file (no compression, no filtering), so the sounds keep
 their shape; then a 10 ms fade at each end and MP3 encoding (mono, 16 kHz, 32 kbps). The source
 is sampled at 4 kHz, so nothing audible is lost.
@@ -31,6 +34,7 @@ REPO = Path(__file__).resolve().parents[3]
 DATA_OUT = REPO / 'src/data/trainers/auscultation/recordings.json'
 SET = 'hls-cmds-v2'
 
+PEAKS_PER_SECOND = 50  # waveform resolution: 750 min/max pairs for a 15 s clip (~4 KB)
 TARGET_DB = -20.0  # loudness of the loud parts (gated RMS), dBFS
 PEAK_DB = -1.0     # never let a sample go above this
 
@@ -82,11 +86,25 @@ def process(src, dst):
     y[-fade:] *= ramp[::-1]
     pcm = (np.clip(y, -1, 1) * 32767).astype('<i2').tobytes()
     dst.parent.mkdir(parents=True, exist_ok=True)
+    write_peaks(y, rate, dst.with_suffix('.peaks.json'))
     subprocess.run(
         ['ffmpeg', '-v', 'error', '-y', '-f', 's16le', '-ar', str(rate), '-ac', '1', '-i', '-',
          '-ar', '16000', '-ac', '1', '-c:a', 'libmp3lame', '-b:a', '32k', '-map_metadata', '-1', str(dst)],
         input=pcm, check=True)
     return round(gain_db, 1), round(len(x) / rate, 1)
+
+
+def write_peaks(y, rate, path):
+    """Waveform outline in audiowaveform JSON v2 (8-bit), read by src/trainers/media/peaks.ts.
+    Made from the same levelled signal as the MP3, so the picture matches what is heard."""
+    spp = rate // PEAKS_PER_SECOND
+    n = len(y) // spp
+    blocks = y[:n * spp].reshape(n, spp)
+    lo = np.clip(np.round(blocks.min(axis=1) * 128), -128, 127).astype(int)
+    hi = np.clip(np.round(blocks.max(axis=1) * 128), -128, 127).astype(int)
+    data = np.column_stack([lo, hi]).ravel().tolist()
+    peaks = {'version': 2, 'channels': 1, 'sample_rate': rate, 'samples_per_pixel': spp, 'bits': 8, 'length': n, 'data': data}
+    path.write_text(json.dumps(peaks, separators=(',', ':')), encoding='utf-8')
 
 
 def main(src_dir, out_dir):

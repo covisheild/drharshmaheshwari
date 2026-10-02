@@ -1,25 +1,4 @@
 ---
-import Base from '../../layouts/Base.astro';
-import { books } from '../../lib/content';
-const list = await books();
+import BookList from '../../components/lists/BookList.astro';
 ---
-<Base title="Free books" description="Free books on obesity and its downstream diseases by Dr. Harsh Maheshwari. Download and share for non-commercial use.">
-  <header class="page-head wrap">
-    <span class="eyebrow">Books</span>
-    <h1>Free books</h1>
-    <p>Full-length books on obesity, medicine and research methods. Free to download, read and share for non-commercial use.</p>
-  </header>
-  <div class="wrap" style="padding-bottom:4rem">
-    {list.length ? (
-      <div class="grid">
-        {list.map((b, i) => (
-          <a class="card reveal" href={`/books/${b.id}/`} style={`--d:${(i % 3) * .08}s`}>
-            {b.data.cover && <img src={b.data.cover} alt={`Cover of ${b.data.title}`} loading="lazy" style="border-radius:10px;aspect-ratio:1/1.414;object-fit:cover;margin-bottom:.5rem" />}
-            {b.data.draft && <span class="chip draft">Draft</span>}
-            <h3>{b.data.title}</h3><p>{b.data.description}</p><span class="more">Details & free PDF →</span>
-          </a>
-        ))}
-      </div>
-    ) : <p class="empty">The first books are being prepared for download.</p>}
-  </div>
-</Base>
+<BookList mode="everyone" title="Free books" description="Free books on obesity and health for everyone, by Dr. Harsh Maheshwari. Download and share for non-commercial use." intro="Full-length books on weight, food and health for families. Free to download, read and share for non-commercial use." />

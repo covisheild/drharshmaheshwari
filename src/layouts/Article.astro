@@ -2,7 +2,8 @@
 import Base from './Base.astro';
 import Avatar from '../components/Avatar.astro';
 import { SITE } from '../consts';
-import { SECTION, fmtDate, type ArticleCollection } from '../lib/content';
+import { SECTION, fmtDate, modeHome, type ArticleCollection } from '../lib/content';
+import { MODES } from '../lib/modes';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props { entry: CollectionEntry<ArticleCollection>; collection: ArticleCollection; }
@@ -33,7 +34,7 @@ const jsonld: Record<string, unknown>[] = [
   {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 1, name: MODES[sec.mode].label, item: new URL(modeHome(sec.mode), SITE.url).href },
       { '@type': 'ListItem', position: 2, name: sec.label, item: new URL(sec.base, SITE.url).href },
       { '@type': 'ListItem', position: 3, name: d.title, item: url },
     ],

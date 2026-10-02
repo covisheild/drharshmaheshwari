@@ -1,0 +1,101 @@
+---
+// One static page per finding (and one for heart and lungs together), so each sound has its own
+// shareable, searchable URL. Slugs are permanent: see Finding.slug in config.ts.
+import TrainerShell from '../../../../../layouts/TrainerShell.astro';
+import Credits from '../../../../../trainers/auscultation/Credits.astro';
+import { trainer, trainerBase } from '../../../../../trainers/registry';
+import { FINDINGS, FINDING, MIX_SLUG, NORMAL, examples } from '../../../../../trainers/auscultation/config';
+
+export function getStaticPaths() {
+  return [...FINDINGS.map((f) => ({ params: { slug: f.slug } })), { params: { slug: MIX_SLUG } }];
+}
+const { slug } = Astro.params;
+const t = trainer('auscultation'), base = trainerBase(t);
+const order = [...FINDINGS.map((f) => ({ slug: f.slug, label: f.label })), { slug: MIX_SLUG, label: 'Heart and lungs together' }];
+const i = order.findIndex((o) => o.slug === slug);
+const prev = order[i - 1], next = order[i + 1];
+const f = FINDINGS.find((x) => x.slug === slug);
+const mix = slug === MIX_SLUG;
+const title = f ? f.label : 'Heart and lungs together';
+const normal = f && !f.id.endsWith('.normal') ? FINDING.get(NORMAL[f.system])! : null;
+---
+<TrainerShell trainer={t} section="learn" heading={title} title={`${title} · Learn · Auscultation Trainer`}
+  description={f ? `${f.label}: ${f.listen}`.slice(0, 160) : 'Pick the heart sound and the lung sound out of one combined recording, then hear each part on its own.'}>
+  <p slot="intro"><a href={`${base}learn/`}>← All sounds</a></p>
+  {f ? (
+    <div class="t-work">
+      <section>
+        <p><b>Listen for:</b> {f.listen}</p>
+        <p><b>Usually means:</b> {f.means}</p>
+        <p class="t-meta">{examples(f.id).length} recordings of this finding.{normal && ` Compare with ${normal.label.toLowerCase()} to hear the difference.`}</p>
+      </section>
+      <section class="t-media">
+        <div id="viewer" data-finding={f.id}></div>
+        <div class="t-row">
+          <button class="btn btn-ghost btn-sm" type="button" data-step="-1">← Previous example</button>
+          <button class="btn btn-primary btn-sm" type="button" data-step="1">Next example →</button>
+          {normal && <button class="btn btn-ghost btn-sm" type="button" data-normal={normal.id}>▶ {normal.label}, to compare</button>}
+        </div>
+      </section>
+    </div>
+  ) : mix && (
+    <div class="t-work">
+      <section>
+        <p>In a real chest you hear both at once. Play the combined recording, then each part on its own, until you can pick each one out of the combined sound.</p>
+        <p><b>Now:</b> <span id="mix-label"></span></p>
+      </section>
+      <section class="t-media">
+        <div id="viewer" data-mix></div>
+        <div class="t-row">
+          <button class="btn btn-primary btn-sm" type="button" data-part="mix">▶ Together</button>
+          <button class="btn btn-ghost btn-sm" type="button" data-part="heart">▶ Heart only</button>
+          <button class="btn btn-ghost btn-sm" type="button" data-part="lung">▶ Lungs only</button>
+          <button class="btn-link" type="button" data-another>Another recording →</button>
+        </div>
+      </section>
+    </div>
+  )}
+  <nav class="t-pager" aria-label="More sounds">
+    {prev ? <a href={`${base}learn/${prev.slug}/`}>← {prev.label}</a> : <span></span>}
+    {next && <a href={`${base}learn/${next.slug}/`}>{next.label} →</a>}
+  </nav>
+  <Fragment slot="credits"><Credits /></Fragment>
+</TrainerShell>
+
+<script>
+  import { AudioViewer } from '../../../../../trainers/media/audio-viewer';
+  import { BY_ID, FINDING, RECORDINGS, examples, media, type Recording } from '../../../../../trainers/auscultation/config';
+
+  const host = document.getElementById('viewer');
+  if (host) {
+    const viewer = new AudioViewer(host);
+    const findingId = host.dataset.finding;
+    if (findingId) {
+      const list = examples(findingId);
+      let i = 0;
+      const show = (autoplay: boolean) => viewer.load(media(list[i]), { autoplay, label: `${FINDING.get(findingId)!.label}: example ${i + 1} of ${list.length}` });
+      document.querySelectorAll<HTMLButtonElement>('[data-step]').forEach((b) => b.addEventListener('click', () => {
+        i = (i + Number(b.dataset.step) + list.length) % list.length; show(true);
+      }));
+      document.querySelectorAll<HTMLButtonElement>('[data-normal]').forEach((b) => b.addEventListener('click', () => {
+        viewer.load(media(examples(b.dataset.normal!)[0]), { autoplay: true, label: `For comparison: ${FINDING.get(b.dataset.normal!)!.label}` });
+      }));
+      show(false);
+    } else {
+      const mixes = RECORDINGS.filter((r) => r.kind === 'mix' && r.parts?.heart && r.parts?.lung);
+      let mix: Recording = mixes[Math.floor(Math.random() * mixes.length)];
+      const name = () => `${FINDING.get(mix.heart!)!.label} + ${FINDING.get(mix.lung!)!.label}`;
+      const play = (part: string, autoplay = true) => {
+        const r = part === 'mix' ? mix : BY_ID.get(mix.parts![part as 'heart' | 'lung']!)!;
+        viewer.load(media(r), { autoplay, label: part === 'mix' ? 'Together' : part === 'heart' ? 'Heart only' : 'Lungs only' });
+      };
+      const label = document.getElementById('mix-label')!;
+      const setMix = () => { label.textContent = name(); play('mix', false); };
+      document.querySelectorAll<HTMLButtonElement>('[data-part]').forEach((b) => b.addEventListener('click', () => play(b.dataset.part!)));
+      document.querySelector('[data-another]')!.addEventListener('click', () => {
+        mix = mixes.filter((m) => m !== mix)[Math.floor(Math.random() * (mixes.length - 1))]; setMix();
+      });
+      setMix();
+    }
+  }
+</script>

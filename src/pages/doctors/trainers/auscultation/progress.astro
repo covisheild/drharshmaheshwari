@@ -1,0 +1,17 @@
+---
+import TrainerShell from '../../../../layouts/TrainerShell.astro';
+import Credits from '../../../../trainers/auscultation/Credits.astro';
+import { trainer } from '../../../../trainers/registry';
+---
+<TrainerShell trainer={trainer('auscultation')} section="progress" heading="Your progress" title="Your progress · Auscultation Trainer" description="Your accuracy for each heart and lung sound, what you mix up most, and your levels.">
+  <p slot="intro">Accuracy for each finding, the pairs you confuse most, and your levels.</p>
+  <div id="app"><noscript><p>This section needs JavaScript.</p></noscript></div>
+  <Fragment slot="credits"><Credits /></Fragment>
+</TrainerShell>
+
+<script>
+  import { adapter, store } from '../../../../trainers/auscultation/adapter';
+  import { mountProgress } from '../../../../trainers/ui/sections';
+  const el = document.getElementById('app')!, s = store();
+  mountProgress(el, adapter, s);
+</script>

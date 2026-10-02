@@ -1,0 +1,114 @@
+/* ---------- Design tokens ----------
+   Two axes, set on <html> by Base.astro before first paint:
+     data-mode  = everyone | doctors   (from the URL)
+     data-theme = light | dark         (stored choice, else the system setting)
+   Components use only these semantic tokens, never raw colours, so every component works in all four
+   combinations. The modes differ in colour, typography, shape and density, not colour alone. */
+
+:root {
+  /* For Everyone, light: warm paper, deep teal, saffron. */
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --surface-2: #f2f0ea;
+  --ink: #16211f;
+  --ink-2: #4a5754;
+  --ink-3: #66726f;
+  --line: #e3e0d7;
+  --brand: #0f6e64;
+  --brand-ink: #ffffff;
+  --brand-soft: #dff0ec;
+  --accent: #9a520a;
+  --accent-soft: #fbead6;
+  --ok: #2a7048; --ok-soft: #e1f2e7;
+  --warn: #8f5a00; --warn-soft: #fbf0d6;
+  --risk: #b3402e; --risk-soft: #f8e1dc;
+  --header-bg: color-mix(in oklab, var(--bg) 82%, transparent);
+  --header-ink: var(--ink);
+  --header-ink-2: var(--ink-2);
+  --header-line: var(--line);
+  --modebar-bg: var(--surface-2);
+
+  /* Shape and density */
+  --radius: 18px;
+  --radius-sm: 10px;
+  --shadow: 0 1px 2px rgb(20 30 28 / .06), 0 8px 24px rgb(20 30 28 / .06);
+  --card-pad: 1.5rem;
+  --card-border: 1px solid var(--line);
+  --section-pad: clamp(3.5rem, 8vw, 6.5rem);
+  --page-head-pad: clamp(3rem, 7vw, 5rem);
+  --grid-min: 300px;
+
+  /* Type */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --text: 1.0625rem;
+  --leading: 1.65;
+  --h-weight: 600;
+  --h-tracking: -.01em;
+  --h1: clamp(2.1rem, 5.2vw, 3.6rem);
+  --h2: clamp(1.6rem, 3.4vw, 2.3rem);
+  --eyebrow-tracking: .12em;
+
+  --max: 1160px;
+  --prose: 70ch;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #0e1413; --surface: #151d1b; --surface-2: #1c2624;
+  --ink: #e8eeec; --ink-2: #b4c0bd; --ink-3: #8c9996; --line: #2a3533;
+  --brand: #4fc2b1; --brand-ink: #06201c; --brand-soft: #173a35;
+  --accent: #f0a857; --accent-soft: #3a2a17;
+  --ok: #6fcf97; --ok-soft: #173327; --warn: #f2c14e; --warn-soft: #362c14; --risk: #f08a78; --risk-soft: #3a1d18;
+  --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 8px 24px rgb(0 0 0 / .25);
+  color-scheme: dark;
+}
+
+/* For Doctors: cool clinical blue on grey-white, a sans-serif display face, tighter shapes, thin borders
+   instead of soft shadows, smaller type and less white space. The header is a solid navy band. */
+:root[data-mode='doctors'] {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --surface-2: #e9eef5;
+  --ink: #0e1a2b;
+  --ink-2: #3a485c;
+  --ink-3: #56647a;
+  --line: #d3dbe6;
+  --brand: #1b4f9c;
+  --brand-ink: #ffffff;
+  --brand-soft: #e2ebf8;
+  --accent: #0a6c7d;
+  --accent-soft: #daf0f3;
+  --header-bg: #0f2342;
+  --header-ink: #eef3fb;
+  --header-ink-2: #b9c7dd;
+  --header-line: #23395e;
+  --modebar-bg: #0a1930;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: none;
+  --card-pad: 1.1rem;
+  --section-pad: clamp(2.25rem, 5vw, 4rem);
+  --page-head-pad: clamp(2rem, 4.5vw, 3rem);
+  --grid-min: 260px;
+
+  --font-display: var(--font-body);
+  --text: 1rem;
+  --leading: 1.55;
+  --h-weight: 680;
+  --h-tracking: -.022em;
+  --h1: clamp(1.8rem, 4vw, 2.6rem);
+  --h2: clamp(1.35rem, 2.6vw, 1.75rem);
+  --eyebrow-tracking: .08em;
+}
+
+:root[data-mode='doctors'][data-theme='dark'] {
+  --bg: #0a111c; --surface: #101a29; --surface-2: #172336;
+  --ink: #e6edf7; --ink-2: #b2bfd2; --ink-3: #8a98ad; --line: #243247;
+  --brand: #84b2ff; --brand-ink: #071425; --brand-soft: #15284a;
+  --accent: #56d2e2; --accent-soft: #0f3038;
+  --header-bg: #08101c; --header-ink: #e6edf7; --header-ink-2: #9fb0c8; --header-line: #1c2a40;
+  --modebar-bg: #050b14;
+}

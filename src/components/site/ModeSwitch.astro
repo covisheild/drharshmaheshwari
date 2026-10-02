@@ -1,0 +1,11 @@
+---
+// The For Everyone / For Doctors switch. Each side links to that mode's home; the current mode is marked.
+import { MODES, type Mode } from '../../lib/modes';
+interface Props { mode: Mode }
+const { mode } = Astro.props;
+---
+<nav class="mode-switch" aria-label="Choose who this site is for">
+  {Object.values(MODES).map((m) => (
+    <a href={m.home} aria-current={m.id === mode ? 'true' : undefined} data-mode-link={m.id}>{m.label}</a>
+  ))}
+</nav>
