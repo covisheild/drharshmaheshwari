@@ -4,6 +4,7 @@
 // about audio, images or the DOM, so it can be tested on its own.
 
 import type { Attempt } from './progress';
+import { dueItems, nextDue } from './schedule';
 
 export interface Option {
   id: string;
@@ -127,11 +128,15 @@ export class Engine<I extends { id: string }> {
     return i === -1 ? this.levels.length - 1 : i;
   }
 
-  /** Items whose most recent answer was wrong, newest first: what Review asks again. */
-  toReview(attempts: readonly Attempt[]) {
-    const latest = new Map<string, Attempt>();
-    for (const a of attempts) latest.set(a.item, a);
-    return [...latest.values()].filter((a) => !a.correct && this.byId.has(a.item) && this.set(a.set)).sort((a, b) => b.t - a.t);
+  /** What Review asks now (spaced repetition, see schedule.ts): items missed last time, then items whose
+   *  predicted recall has fallen to 90%. Only items and sets that still exist. */
+  toReview(attempts: readonly Attempt[], now = Date.now()) {
+    return dueItems(attempts, now).filter((s) => this.byId.has(s.item) && this.set(s.set));
+  }
+
+  /** The next time something becomes due, counting only items that still exist. */
+  nextReview(attempts: readonly Attempt[], now = Date.now()) {
+    return nextDue(attempts.filter((a) => this.byId.has(a.item) && this.set(a.set)), now);
   }
 
   /** Accuracy for every option ever asked, and the most common mix-ups (answer -> chosen). */

@@ -2,11 +2,21 @@
 import Base from '../layouts/Base.astro';
 import { SITE } from '../consts';
 ---
-<Base title="Privacy" description="What this website collects (almost nothing) and why.">
+<Base title="Privacy" description="What this website collects, why, and how to delete it: calculators, visitor statistics, optional trainer accounts, email.">
   <div class="prose-wrap prose" style="padding-block:3rem 4rem">
     <h1>Privacy</h1>
     <p><b>Calculators:</b> every calculation runs in your browser. What you type is never sent to a server or stored.</p>
     <p><b>Visitor statistics:</b> the site uses Cloudflare Web Analytics, which counts page views without cookies and without identifying you.</p>
+    <h2 id="accounts">Trainer accounts (optional)</h2>
+    <p>The trainers work without an account: your answers are then saved only in your browser. If you choose to sign in with Google, the site stores:</p>
+    <ul>
+      <li>your Google account ID, email address and name, to recognise you when you sign in again;</li>
+      <li>your trainer answers (which recording, what you chose, whether it was right, and when) and your trainer settings, so your progress and review schedule follow you across devices;</li>
+      <li>a sign-in session for each device (a random token, kept only as a one-way hash, which expires after 180 days).</li>
+    </ul>
+    <p>Nothing else is taken from your Google account: no contacts, no files, and no access to your Google account after you sign in. Your data is stored on Cloudflare's servers (Cloudflare D1), used only to run the trainers, never shared or sold, and never used for advertising.</p>
+    <p><b>Deleting it:</b> on any trainer's Progress page, <i>Delete account</i> permanently removes your account and all its progress straight away. <i>Sign out</i> also clears the progress kept in that browser. You can also write to <a href={`mailto:${SITE.email}`}>{SITE.email}</a> to ask what is stored about you or to have it deleted, in line with India's Digital Personal Data Protection Act, 2023.</p>
+    <h2>Other</h2>
     <p><b>Email:</b> if you write to <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, your address is used only to reply, or to send the newsletter if you asked for it. You can ask for it to be deleted at any time, in line with India's Digital Personal Data Protection Act, 2023.</p>
     <p>No advertising, no selling of data.</p>
   </div>

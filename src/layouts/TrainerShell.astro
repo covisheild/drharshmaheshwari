@@ -39,6 +39,7 @@ const sectionLabel = SECTIONS.find((s) => s.id === section)!.label;
       <a class="t-name" href={base}><span class="full">{trainer.title}</span><span class="short">{trainer.short}</span></a>
       <span class="mode-badge">{MODES[trainer.mode].label}</span>
       <ThemeToggle />
+      <span class="t-account" id="t-account" data-progress={`${base}progress/`}></span>
     </header>
     <nav class="t-nav" aria-label={`${trainer.title} sections`}>
       {SECTIONS.map((s) => (
@@ -59,3 +60,9 @@ const sectionLabel = SECTIONS.find((s) => s.id === section)!.label;
     </div>
   </div>
 </Base>
+
+<script>
+  import { mountAccountBadge } from '../trainers/ui/account';
+  const el = document.getElementById('t-account');
+  if (el) void mountAccountBadge(el, el.dataset.progress!);
+</script>

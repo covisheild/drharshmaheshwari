@@ -1,7 +1,7 @@
 // Connects the auscultation content to the shared trainer UI (src/trainers/ui/).
 
 import { Engine } from '../core/engine';
-import { LocalProgressStore } from '../core/progress';
+import { SyncedProgressStore } from '../core/sync';
 import type { TrainerAdapter } from '../core/types';
 import { trainer } from '../registry';
 import { BY_ID, FINDING, LEVELS, NORMAL, OPTIONS, PRACTICE, RECORDINGS, VERSION, examples, media, type Recording } from './config';
@@ -44,4 +44,4 @@ export const adapter: TrainerAdapter<Recording> = {
   },
 };
 
-export const store = () => new LocalProgressStore('auscultation', VERSION);
+export const store = () => new SyncedProgressStore('auscultation', VERSION);

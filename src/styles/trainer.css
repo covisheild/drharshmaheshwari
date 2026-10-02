@@ -45,6 +45,12 @@
   .t-main { padding-top: 1rem; }
 }
 @media (max-width: 380px) { .t-appbar .mode-badge { display: none; } }
+.t-account:empty { display: none; }
+.t-signin { font-weight: 600; font-size: .9rem; white-space: nowrap; padding: .35rem .7rem; border: 1px solid var(--header-line); border-radius: 999px; color: var(--header-ink-2) !important; }
+.t-avatar { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--brand); color: var(--brand-ink) !important; font-weight: 700; font-size: .9rem; }
+.t-account-card { margin-bottom: 1.25rem; }
+.t-account-card p { margin-top: 0; }
+.t-flash { margin-top: .75rem; }
 
 /* ---------- Shared bits ---------- */
 .btn-sm { padding: .5rem .9rem; font-size: .9rem; }

@@ -34,7 +34,8 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 
 ## Tests
 
-`npm run build && npm test` (static checks, no dependencies). `npm run test:e2e` (browser checks; needs Playwright installed
+`npm run build && npm test`: static checks on `dist/`, UPI links, the review scheduler, and `/api/` against a local D1
+database with a fake Google (`tests/api.test.mjs`, `tests/wrangler.test.jsonc`; never deployed). `npm run test:e2e` (browser checks; needs Playwright installed
 globally; set `MEDIA_DIR` to a local copy of the R2 trainer folder to test audio and waveforms offline).
 
 ## Source of truth: Notion → website, one way only
@@ -97,8 +98,23 @@ local devDependency. Change production settings only on purpose; preview-only se
   media and adapter contracts), `src/trainers/ui/` (question runner and section views), `src/trainers/media/` (viewers;
   `AudioViewer` = waveform, playhead, seeking, speed, labelled spans). A new trainer adds `src/trainers/<id>/` (config +
   adapter), its pages, a registry entry, and a viewer only if it needs a new kind of media.
-- Progress goes only through `ProgressStore` (today `LocalProgressStore`, localStorage `trainer:<id>:v2`). Cloud sync will be a
-  second implementation of the same interface; the UI must never touch localStorage directly.
+- Progress goes only through `ProgressStore`; the UI never touches localStorage directly. `LocalProgressStore` keeps it in
+  the browser (`trainer:<id>:v2`); `SyncedProgressStore` (`core/sync.ts`, what trainers use) wraps it and, when signed in,
+  merges the account copy on each page load and uploads each answer. Attempt ids make every upload idempotent.
+- Review is spaced repetition (`core/schedule.ts`, FSRS via `ts-fsrs`): rebuilt from the attempts each time, nothing
+  extra stored. Wrong last time = due now; otherwise due when predicted recall falls to 90% (max 1 year).
+
+## Accounts (optional Google sign-in) and `/api/`
+
+- Only `/api/*` runs server code (`src/pages/api/[...path].ts` → `src/server/api.ts`); every page stays static.
+- Google OAuth authorization-code flow with PKCE, state and nonce; ID-token claims validated; no Google tokens kept.
+  Session: random token in an HttpOnly, SameSite=Lax cookie `sid` (180 days), only its SHA-256 hash stored.
+- D1 binding `DB` (schema in `src/server/schema.ts`, applied automatically; add migrations, never edit shipped ones).
+  `GOOGLE_CLIENT_ID` (var) and `GOOGLE_CLIENT_SECRET` (secret). If any is missing, `/api/me` says accounts are off and
+  the trainers keep progress in the browser only, with no sign-in shown.
+- Previews must use their own D1 database (`previews.d1_databases`), never production's.
+- People can delete their account and all data themselves (Progress page); sign-out clears the browser copy.
+  Keep `/privacy/#accounts` in step with what is stored.
 - Auscultation audio: HLS-CMDS v2 (CC BY 4.0, Zenodo 15376628). `scripts/trainers/auscultation/prepare.py` dedupes, levels
   loudness, encodes MP3s, writes `<id>.peaks.json` waveforms (audiowaveform JSON v2) next to each MP3, and writes
   `src/data/trainers/auscultation/recordings.json`. Both MP3s and peaks are uploaded to R2 at

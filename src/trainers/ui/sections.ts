@@ -25,11 +25,11 @@ export function mountHome<I extends { id: string }>(el: HTMLElement, a: A<I>, st
         h('div', { class: 't-stat' }, h('b', {}, `${passed}/${e.levels.length}`), h('span', {}, 'levels passed')),
         h('div', { class: 't-stat' }, h('b', {}, String(at.length)), h('span', {}, 'answers so far')),
         h('div', { class: 't-stat' }, h('b', {}, quizAt.length ? `${pct({ n: quizAt.length, correct: quizAt.filter((x) => x.correct).length })}%` : '–'), h('span', {}, 'quiz accuracy')),
-        h('div', { class: 't-stat' }, h('b', {}, String(review)), h('span', {}, 'to review'))),
+        h('div', { class: 't-stat' }, h('b', {}, String(review)), h('span', {}, 'due for review'))),
       h('div', { class: 't-row' },
         h('a', { class: 'btn btn-primary', href: `${base}quiz/#${lv.id}` }, at.length ? `Continue: Level ${li + 1}, ${lv.title} →` : 'Start the quiz →'),
         h('a', { class: 'btn btn-ghost', href: `${base}learn/` }, 'Learn the sounds first'),
-        review ? h('a', { class: 'btn btn-ghost', href: `${base}review/` }, `Review ${review} missed`) : null));
+        review ? h('a', { class: 'btn btn-ghost', href: `${base}review/` }, `Review ${review} due`) : null));
   };
   render();
   store.subscribe(render);
@@ -84,17 +84,26 @@ export function mountQuiz<I extends { id: string }>(el: HTMLElement, a: A<I>, st
   levels();
 }
 
-/** Review: the items whose latest answer was wrong, asked again in the set they came from. */
+/** Review: spaced repetition. Items missed last time, and items due because they are about to be forgotten,
+ *  asked again in the set they came from. */
 export function mountReview<I extends { id: string }>(el: HTMLElement, a: A<I>, store: ProgressStore, base: string) {
   const e = a.engine;
+  let busy = false;
   const menu = () => {
-    const due = e.toReview(store.attempts());
+    busy = false;
+    const at = store.attempts(), due = e.toReview(at), missed = due.filter((d) => !d.lastCorrect).length, next = e.nextReview(at);
+    const when = next ? h('p', { class: 'muted' }, `Next: ${plural(next.count, 'recording')} ${relDay(next.at)}.`) : null;
     el.replaceChildren(due.length
-      ? h('div', {}, h('p', {}, `${due.length} recording${due.length > 1 ? 's' : ''} you got wrong last time. Answer one right and it leaves the list.`),
-          h('button', { class: 'btn btn-primary', type: 'button', onclick: () => start() }, `Review ${Math.min(due.length, ROUND)} now`))
-      : h('div', { class: 'empty' }, h('p', {}, 'Nothing to review: every recording you have answered, you got right last time.'), h('a', { href: `${base}quiz/` }, 'Go to the quiz →')));
+      ? h('div', {},
+          h('p', {}, `${plural(due.length, 'recording')} due: ${[missed && `${missed} you got wrong last time`, due.length - missed && `${due.length - missed} coming back before you forget ${due.length - missed > 1 ? 'them' : 'it'}`].filter(Boolean).join(', ')}.`),
+          h('button', { class: 'btn btn-primary', type: 'button', onclick: () => start() }, `Review ${Math.min(due.length, ROUND)} now`),
+          h('p', { class: 'muted' }, 'Spaced repetition: each recording comes back just before you are likely to forget it, at longer gaps each time you get it right.'))
+      : h('div', { class: 'empty' },
+          h('p', {}, at.length ? 'Nothing due right now.' : 'Nothing to review yet: answer some questions first.'), when,
+          h('a', { href: `${base}quiz/` }, 'Go to the quiz →')));
   };
   const start = () => {
+    busy = true;
     const due = e.toReview(store.attempts()).slice(0, ROUND);
     let i = 0;
     runQuestions(el, a, store, {
@@ -106,6 +115,16 @@ export function mountReview<I extends { id: string }>(el: HTMLElement, a: A<I>, 
     });
   };
   menu();
+  store.subscribe(() => { if (!busy) menu(); });
+}
+
+const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`;
+
+/** "today", "tomorrow", "in 5 days" (or a date beyond a month). */
+function relDay(t: number) {
+  const day = (x: number) => Math.floor((x - new Date(x).getTimezoneOffset() * 60000) / 86400000);
+  const d = day(t) - day(Date.now());
+  return d <= 0 ? 'later today' : d === 1 ? 'tomorrow' : d <= 30 ? `in ${d} days` : `on ${new Date(t).toLocaleDateString(undefined, { day: 'numeric', month: 'short' })}`;
 }
 
 /** Progress: accuracy per finding, common mix-ups, levels, and settings. */
@@ -115,7 +134,7 @@ export function mountProgress<I extends { id: string }>(el: HTMLElement, a: A<I>
     const at = store.attempts(), { per, mixups } = e.stats(at);
     const rows = [...e.options.values()].filter((o) => per.has(o.id) && o.group);
     el.replaceChildren(
-      h('p', { class: 'muted' }, `${at.length} answers so far. Saved in this browser only; nothing is sent anywhere.`),
+      h('p', { class: 'muted' }, `${at.length} answers so far.`),
       rows.length ? h('table', { class: 't-table' },
         h('thead', {}, h('tr', {}, h('th', {}, 'Finding'), h('th', {}, 'Asked'), h('th', {}, 'Right'), h('th', { 'aria-hidden': 'true' }, ''))),
         h('tbody', {}, ...rows.map((o) => {

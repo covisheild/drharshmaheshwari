@@ -1,10 +1,9 @@
 // Progress storage for every trainer, behind one interface.
 //
-// The trainer UI only ever talks to a ProgressStore. Today that is LocalProgressStore (this browser's
-// localStorage). When accounts arrive, a SyncedProgressStore will implement the same interface: it keeps
-// this local copy as its cache (so the UI stays instant and works offline) and uploads new attempts in
-// the background. Attempts carry an id made in the browser, so uploading one twice never counts it twice.
-// Nothing in the UI changes when that happens.
+// The trainer UI only ever talks to a ProgressStore. LocalProgressStore keeps progress in this browser's
+// localStorage. SyncedProgressStore (sync.ts) wraps it for people who sign in: the local copy stays the
+// cache (so the UI is instant and works offline) and new attempts upload in the background. Attempts
+// carry an id made in the browser, so uploading one twice never counts it twice.
 
 export type Activity = 'quiz' | 'practice' | 'review';
 
@@ -78,6 +77,16 @@ export class LocalProgressStore implements ProgressStore {
   }
 
   setPrefs(p: Partial<Prefs>) { this.data.prefs = { ...this.data.prefs, ...p }; this.write(); }
+
+  /** Adds attempts from elsewhere (the account copy), skipping ids already here; keeps time order. */
+  merge(incoming: readonly Attempt[], prefs?: Partial<Prefs> | null) {
+    const have = new Set(this.data.attempts.map((a) => a.id));
+    const added = incoming.filter((a) => a.trainer === this.trainer && !have.has(a.id));
+    if (!added.length && !prefs) return;
+    this.data.attempts = [...this.data.attempts, ...added].sort((a, b) => a.t - b.t).slice(-KEEP);
+    if (prefs) this.data.prefs = { ...DEFAULT_PREFS, ...prefs };
+    this.write();
+  }
 
   reset() {
     this.data = { v: 2, attempts: [], prefs: { ...DEFAULT_PREFS } };

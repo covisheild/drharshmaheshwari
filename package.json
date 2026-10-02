@@ -8,17 +8,20 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "node --test tests/site.test.mjs tests/upi.test.mjs",
+    "test": "node --import ./tests/ts-hooks.mjs --test tests/site.test.mjs tests/upi.test.mjs tests/schedule.test.mjs tests/api.test.mjs",
     "test:e2e": "node tests/e2e.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.3",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.3.4"
+    "astro": "^7.3.4",
+    "ts-fsrs": "^5.4.2"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "qrcode-generator": "^2.0.4",
+    "typescript": "^6.0.3",
     "wrangler": "^4.146.0"
   }
 }

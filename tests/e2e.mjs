@@ -19,7 +19,11 @@ try { ({ chromium } = await import('playwright')); } catch {
 const PORT = 4329;
 const started = !process.env.BASE_URL;
 const BASE = process.env.BASE_URL ?? `http://localhost:${PORT}`;
-if (started) execSync(`npx astro preview --port ${PORT}`, { stdio: 'ignore' });
+if (started) {
+  execSync(`npx astro preview --port ${PORT}`, { stdio: 'ignore' });
+  // The preview server keeps starting in the background; wait until it answers.
+  for (let i = 0; i < 60; i++) { if (await fetch(BASE + '/').then((r) => r.ok, () => false)) break; await new Promise((r) => setTimeout(r, 500)); }
+}
 const MEDIA = process.env.MEDIA_DIR;
 const T = '/doctors/trainers/auscultation/';
 const failures = [];

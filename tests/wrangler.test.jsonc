@@ -1,0 +1,6 @@
+// Used only by tests/api.test.mjs: a local, throwaway D1 database (never deployed).
+{
+	"name": "drharshmaheshwari-test",
+	"compatibility_date": "2026-10-01",
+	"d1_databases": [{ "binding": "DB", "database_name": "test", "database_id": "local-test-only" }]
+}
