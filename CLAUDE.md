@@ -20,9 +20,10 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 
 ## Support this project (`/support/`)
 
-- One-time support by **direct UPI only**: QR code (generated at build time, `src/lib/upi-qr.ts`), "Open your UPI
-  app" link on phones (best effort), "Copy UPI ID". No gateway, no backend, no records, no email, no login.
-- All settings in `UPI_CONFIG` (`src/lib/support.ts`): `enabled`, `upiId`, `payeeName`, `note`, `amountInQr`.
+- One-time support by **direct UPI only**: QR code (generated at build time, `src/lib/upi-qr.ts`), "Copy UPI ID",
+  and on phones "screenshot the QR and scan it from your gallery". The "Open your UPI app" link is off
+  (`appLink: false`): apps decline link-started payments to a personal UPI ID; enable only with a merchant ID. No gateway, no backend, no records, no email, no login.
+- All settings in `UPI_CONFIG` (`src/lib/support.ts`): `enabled`, `upiId`, `payeeName`, `note`, `amountInQr`, `appLink`.
   While `enabled` is false or `upiId` is empty, the page shows "Contributions open soon." Never commit a
   placeholder UPI ID: a made-up ID could belong to a real person.
 - Recurring support is **parked** (future): no UI, code or infrastructure for it. Design notes stay in

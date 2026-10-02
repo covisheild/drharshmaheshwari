@@ -7,6 +7,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import { UPI_CONFIG } from '../src/lib/support.ts';
 
 const DIST = new URL('../dist/client/', import.meta.url).pathname;
 
@@ -164,7 +165,9 @@ test('/support/: one-time UPI only, closed until a UPI ID is configured, linked 
   } else {
     assert.match(doc, /data-qr="any"/, 'open QR (no amount) missing');
     assert.match(doc, /id="upi-copy"/);
-    assert.match(doc, /id="upi-open"[^>]*href="upi:\/\/pay\?pa=/);
+    if (UPI_CONFIG.appLink) assert.match(doc, /id="upi-open"[^>]*href="upi:\/\/pay\?pa=/);
+    else assert.doesNotMatch(doc, /id="upi-open"/, 'app link must be absent while appLink is off');
+    assert.match(doc, /scan it from your gallery/);
   }
   const text = doc.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ');
   // No recurring support anywhere on the page (parked feature).

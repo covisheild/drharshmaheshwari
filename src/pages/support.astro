@@ -75,11 +75,13 @@ const helps = [
             </div>
             <p class="qr-hint" id="qr-hint">Scan with any UPI app.</p>
             <div class="pay-actions">
-              <a class="btn btn-primary" id="upi-open" href={upiUri()} hidden>Open your UPI app</a>
+              {cfg.appLink && <a class="btn btn-primary" id="upi-open" href={upiUri()} hidden>Open your UPI app</a>}
               <button class="btn btn-ghost" type="button" id="upi-copy">Copy UPI ID</button>
               <span class="copied" id="copied" role="status" aria-live="polite"></span>
             </div>
-            <p class="small muted mobile-only" hidden id="app-hint">If your UPI app doesn't open or declines the payment, take a screenshot of the QR code and scan it from your gallery in the app, or copy the UPI ID.</p>
+            <p class="small muted mobile-only" hidden id="app-hint">{cfg.appLink
+              ? "If your UPI app doesn't open or declines the payment, take a screenshot of the QR code and scan it from your gallery in the app, or copy the UPI ID."
+              : 'On a phone: take a screenshot of the QR code and scan it from your gallery in any UPI app, or copy the UPI ID.'}</p>
           </div>
         ) : (
           <div class="qr-box qr-placeholder" aria-hidden="true"><span>UPI QR code</span></div>
@@ -150,10 +152,10 @@ const helps = [
   const openLink = document.getElementById('upi-open') as HTMLAnchorElement | null;
   const appHint = document.getElementById('app-hint');
 
-  // "Open your UPI app" only where a UPI app can exist (phones and tablets). Best effort: some apps decline
-  // payments started from a link, so the QR and the UPI ID stay right there.
+  // Phone guidance (and "Open your UPI app", when UPI_CONFIG.appLink is on) only where a UPI app can exist.
+  // The link is best effort: some apps decline payments started from a link, so the QR and UPI ID stay there.
   const mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
-  if (open && mobile) { openLink!.hidden = false; appHint!.hidden = false; }
+  if (open && mobile) { if (openLink) openLink.hidden = false; appHint!.hidden = false; }
 
   function chosen(): number | 'none' | 'invalid' {
     const v = (root.querySelector<HTMLInputElement>('input[name=amount]:checked'))?.value;
@@ -179,7 +181,7 @@ const helps = [
     hint!.textContent = !amount ? 'Scan with any UPI app and enter the amount you choose.'
       : qrKey !== 'any' ? `Scan with any UPI app. ${formatINR(amount)} is filled in; check it before you pay.`
       : `Scan with any UPI app, then enter ${formatINR(amount)} in the app.`;
-    openLink!.href = upiUri(amount, cfg);
+    if (openLink) openLink.href = upiUri(amount, cfg);
   }
 
   document.getElementById('upi-copy')?.addEventListener('click', async () => {

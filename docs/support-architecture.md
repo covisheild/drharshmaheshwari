@@ -16,11 +16,14 @@ of it exists in code. Provider research was gathered on 2 October 2026; re-check
   are generated **at build time** (`src/lib/upi-qr.ts`, using the `qrcode-generator` package) as inline SVG:
   no QR library in the browser and no third-party QR service. One QR per preset amount (when
   `amountInQr` is true) plus one without an amount, used for custom amounts and when nothing is chosen.
-- **"Open your UPI app"** on phones only, best effort: UPI apps sometimes decline payments started from a
-  web link, so the QR and **"Copy UPI ID"** sit right beside it.
+- **"Open your UPI app"** is built but **off** (`appLink: false`). Tested on 2 October 2026 with the personal
+  UPI ID: Google Pay and PhonePe opened but declined ₹100+ with "bank limit exceeded" (₹2 went through),
+  while QR scans, including a screenshot scanned from the gallery, paid normally. Phones instead see "take a
+  screenshot of the QR code and scan it from your gallery" plus **"Copy UPI ID"**. Turn the link on only
+  with a merchant UPI ID, after a real payment through it succeeds.
 - When the shown QR has no amount, the page says exactly which amount to enter in the UPI app.
 - The payee name and UPI ID are shown in full above the QR.
-- Configuration lives in one place, `UPI_CONFIG`: `enabled`, `upiId`, `payeeName`, `note`, `amountInQr`.
+- Configuration lives in one place, `UPI_CONFIG`: `enabled`, `upiId`, `payeeName`, `note`, `amountInQr`, `appLink`.
   The link format is NPCI's `upi://pay?pa=…&pn=…&am=…&cu=INR&tn=…`, every value percent-encoded and the
   amount written with two decimals (`upiUri()`, unit-tested in `tests/upi.test.mjs`).
 - Contribution ≠ purchase ≠ entitlement still holds: a one-time contribution grants nothing and leaves no

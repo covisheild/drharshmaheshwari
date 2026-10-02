@@ -112,10 +112,13 @@ try {
       check(await page.isVisible('.payee b'), `${name} support: payee name visible`);
       check((await page.textContent('#qr-hint')).includes('enter ₹300'), `${name} support: custom amount tells the payer which amount to enter`);
       check(await page.isVisible('[data-qr="any"]'), `${name} support: open QR shown for a custom amount`);
+      check(/scan it from your gallery/.test(await page.textContent('#app-hint')), `${name} support: scan-from-gallery hint present (shown on phone user-agents)`);
       await page.click('text=₹500');
-      const href = await page.getAttribute('#upi-open', 'href');
-      check(href.startsWith('upi://pay?pa=') && href.includes('am=500.00') && href.includes('cu=INR'), `${name} support: app link carries the amount`);
-      check(name === 'phone' || !(await page.isVisible('#upi-open')), `${name} support: app link only on phones`);
+      if (await page.$('#upi-open')) {
+        const href = await page.getAttribute('#upi-open', 'href');
+        check(href.startsWith('upi://pay?pa=') && href.includes('am=500.00') && href.includes('cu=INR'), `${name} support: app link carries the amount`);
+        check(name === 'phone' || !(await page.isVisible('#upi-open')), `${name} support: app link only on phones`);
+      }
     }
     check((await overflow(page)) <= 0 && errs.length === 0, `${name} support: no sideways scroll, no script errors`);
     await ctx.close();

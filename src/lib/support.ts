@@ -15,6 +15,10 @@ export const UPI_CONFIG = {
   /** Put the chosen amount into the QR and the app link. Set false if the receiving UPI ID is a merchant
    *  ID whose QR must not carry an amount; the page then tells people which amount to enter. */
   amountInQr: true,
+  /** Show "Open your UPI app" on phones. Off for a personal UPI ID: Google Pay and PhonePe decline payments
+   *  started from a web link to a personal ID above a few rupees ("bank limit exceeded"), while QR scans work.
+   *  Turn on only with a merchant UPI ID, after testing a real payment through the link. */
+  appLink: false,
 };
 
 /** Rupees. */
