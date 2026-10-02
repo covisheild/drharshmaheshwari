@@ -1,9 +1,9 @@
 # Support, purchases and entitlements: architecture
 
 Status: **one-time support by direct UPI is built; recurring support is parked.** `/support/` offers
-one-time contributions only, by UPI, with no payment gateway, backend or records (section 0). It stays
-closed ("Contributions open soon.") until `UPI_CONFIG.enabled` is true and a UPI ID is set in
-`src/lib/support.ts`. Sections 3–6 describe the **parked** recurring design, kept for when it is built; none
+one-time contributions only, by UPI, with no payment gateway, backend or records (section 0). It is open
+(since 2 October 2026) with the UPI ID set in `src/lib/support.ts`; setting `UPI_CONFIG.enabled` to false
+takes the contribution card down ("Contributions open soon."). Sections 3–6 describe the **parked** recurring design, kept for when it is built; none
 of it exists in code. Provider research was gathered on 2 October 2026; re-check every figure before use.
 
 ## 0. Current phase: one-time direct UPI

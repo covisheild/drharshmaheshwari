@@ -3,11 +3,11 @@
 // Recurring support is parked as a future feature; nothing on the site offers it.
 
 export const UPI_CONFIG = {
-  /** Turn on only when you are cleared to receive contributions (see the doc's open decisions). */
-  enabled: false,
+  /** Set false to take the contribution card down (the page then shows "Contributions open soon."). */
+  enabled: true,
   /** The UPI ID (VPA) that receives contributions, e.g. "name@bank". Leave empty until it is final:
    *  never put a placeholder here, a made-up ID could belong to a real person. */
-  upiId: '',
+  upiId: 'info.harshmaheshwari@okhdfcbank',
   /** Shown on the page and in the payer's UPI app. */
   payeeName: 'Dr. Harsh Maheshwari',
   /** Note pre-filled in the UPI app (keep it short; some apps cut long notes). */
