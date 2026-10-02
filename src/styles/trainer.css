@@ -51,6 +51,10 @@
 .t-account-card { margin-bottom: 1.25rem; }
 .t-account-card p { margin-top: 0; }
 .t-flash { margin-top: .75rem; }
+.t-refs { margin-top: 2rem; font-size: .9rem; color: var(--ink-2); }
+.t-refs h2 { font-size: 1rem; margin: 0 0 .5rem; }
+.t-refs ol { padding-left: 1.25rem; margin: 0; }
+.t-refs li { margin: .3rem 0; }
 
 /* ---------- Shared bits ---------- */
 .btn-sm { padding: .5rem .9rem; font-size: .9rem; }

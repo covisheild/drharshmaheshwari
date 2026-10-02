@@ -120,7 +120,9 @@ local devDependency. Change production settings only on purpose; preview-only se
   `src/data/trainers/auscultation/recordings.json`. Both MP3s and peaks are uploaded to R2 at
   `trainers/auscultation/hls-cmds-v2/`. Peaks are fetched with CORS, so the bucket's CORS policy must allow GET.
   Keep the attribution and the list of changes on every trainer page (`Credits.astro`; CC BY requires it).
-- Finding slugs (`config.ts`) are permanent URLs. Teaching notes are clinical content: Harsh reviews changes before `main`.
+- Finding slugs (`config.ts`) are permanent URLs. Teaching notes live in `src/content/trainers/auscultation/<slug>.md`
+  (listen, means, references; at least one reference each; the build fails if a finding has no note). They are
+  clinical content: Harsh reviews changes before `main`. Cite only references checked in PubMed or the actual book.
 
 ## Drafts
 

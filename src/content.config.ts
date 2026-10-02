@@ -43,4 +43,17 @@ const books = defineCollection({
   }),
 });
 
-export const collections = { learn, clinicians, blog, books };
+// Teaching notes for the Auscultation Trainer: one file per finding, named by its permanent slug.
+// Clinical content: Harsh reviews every change before it reaches main. Every note needs at least one reference.
+const auscultationNotes = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/trainers/auscultation' }),
+  schema: z.object({
+    finding: z.string(),       // the finding id in src/trainers/auscultation/config.ts
+    title: z.string(),
+    listen: z.string(),        // what to listen for (also shown after each quiz answer)
+    means: z.string(),         // what it usually means
+    references: z.array(reference).min(1),
+  }),
+});
+
+export const collections = { learn, clinicians, blog, books, auscultationNotes };

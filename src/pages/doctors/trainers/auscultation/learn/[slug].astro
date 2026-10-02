@@ -5,6 +5,7 @@ import TrainerShell from '../../../../../layouts/TrainerShell.astro';
 import Credits from '../../../../../trainers/auscultation/Credits.astro';
 import { trainer, trainerBase } from '../../../../../trainers/registry';
 import { FINDINGS, FINDING, MIX_SLUG, NORMAL, examples } from '../../../../../trainers/auscultation/config';
+import { notesByFinding } from '../../../../../trainers/auscultation/notes.server';
 
 export function getStaticPaths() {
   return [...FINDINGS.map((f) => ({ params: { slug: f.slug } })), { params: { slug: MIX_SLUG } }];
@@ -18,15 +19,16 @@ const f = FINDINGS.find((x) => x.slug === slug);
 const mix = slug === MIX_SLUG;
 const title = f ? f.label : 'Heart and lungs together';
 const normal = f && !f.id.endsWith('.normal') ? FINDING.get(NORMAL[f.system])! : null;
+const note = f ? (await notesByFinding()).get(f.id)! : null;
 ---
 <TrainerShell trainer={t} section="learn" heading={title} title={`${title} · Learn · Auscultation Trainer`}
-  description={f ? `${f.label}: ${f.listen}`.slice(0, 160) : 'Pick the heart sound and the lung sound out of one combined recording, then hear each part on its own.'}>
+  description={note ? `${f!.label}: ${note.listen}`.slice(0, 160) : 'Pick the heart sound and the lung sound out of one combined recording, then hear each part on its own.'}>
   <p slot="intro"><a href={`${base}learn/`}>← All sounds</a></p>
   {f ? (
     <div class="t-work">
       <section>
-        <p><b>Listen for:</b> {f.listen}</p>
-        <p><b>Usually means:</b> {f.means}</p>
+        <p><b>Listen for:</b> {note!.listen}</p>
+        <p><b>Usually means:</b> {note!.means}</p>
         <p class="t-meta">{examples(f.id).length} recordings of this finding.{normal && ` Compare with ${normal.label.toLowerCase()} to hear the difference.`}</p>
       </section>
       <section class="t-media">
@@ -54,6 +56,12 @@ const normal = f && !f.id.endsWith('.normal') ? FINDING.get(NORMAL[f.system])! :
         </div>
       </section>
     </div>
+  )}
+  {note && (
+    <section class="t-refs" aria-labelledby="refs-h">
+      <h2 id="refs-h">References</h2>
+      <ol>{note.references.map((r) => <li>{r.url ? <a href={r.url} rel="noopener">{r.text}</a> : r.text}</li>)}</ol>
+    </section>
   )}
   <nav class="t-pager" aria-label="More sounds">
     {prev ? <a href={`${base}learn/${prev.slug}/`}>← {prev.label}</a> : <span></span>}
