@@ -25,6 +25,10 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 - Contributions are voluntary support. They never create entitlements; future paid products use separate
   purchases and `hasEntitlement()`. UI words: "support", "contribution"; never "donation" or "charity"; no
   urgency, pop-ups or refund-policy promises. Nothing recurring is ever pre-selected.
+- Recurring amounts show only the commitment ("₹20/week"), never annualised totals. "Cancel anytime" stays
+  prominent; cancelling is at most two steps with no retention screens. Don't claim "everything is free":
+  core educational resources are intended to remain freely accessible; paid advanced features may come later.
+- No provider is chosen; code stays provider-neutral (provider logic only inside future adapters).
 
 ## Tests
 

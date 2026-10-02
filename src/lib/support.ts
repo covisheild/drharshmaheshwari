@@ -31,10 +31,6 @@ export const formatINR = (rupees: number) => inr.format(rupees);
 
 export const perLabel = (f: Frequency) => (f === 'week' ? 'week' : 'month');
 
-/** The yearly total of a recurring contribution, stated honestly: a year has a little over 52 weeks,
- *  so weekly totals are approximate ("≈") and monthly totals exact ("="). */
-export function yearly(amount: number, f: Frequency) {
-  return f === 'week'
-    ? { sign: '≈', total: amount * 52, text: `≈ ${formatINR(amount * 52)}/year` }
-    : { sign: '=', total: amount * 12, text: `= ${formatINR(amount * 12)}/year` };
-}
+/** How a recurring amount is shown: only the actual commitment, e.g. "₹20/week". No annualised or long-term
+ *  totals are ever displayed (a product decision: keep the commitment as small as it really is). */
+export const commitment = (amount: number, f: Frequency) => `${formatINR(amount)}/${perLabel(f)}`;

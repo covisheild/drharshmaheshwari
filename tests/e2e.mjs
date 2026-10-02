@@ -105,14 +105,16 @@ try {
     check((await page.$$eval('input[name=rec-amount]', (r) => r.filter((x) => x.checked).length)) === 0, `${name} support: no recurring option pre-selected`);
     await page.click('text=₹20/week');
     const s = await page.textContent('#summary');
-    check(s.includes('₹20 every week') && s.includes('≈ ₹1,040/year'), `${name} support: weekly total shown (${s.trim().slice(0, 40)})`);
+    check(s.includes('₹20/week') && s.includes('Cancel anytime') && !/year|≈/.test(s), `${name} support: shows only the commitment and Cancel anytime (${s.trim().slice(0, 40)})`);
+    check(await page.isVisible('.cancel-note'), `${name} support: "Cancel anytime" note visible next to recurring options`);
+    check(!/year|≈/.test(await page.textContent('#support-form')), `${name} support: no annualised totals anywhere in the form`);
     await page.click('text=₹100/month');
-    check((await page.textContent('#summary')).includes('= ₹1,200/year'), `${name} support: monthly total shown`);
+    check((await page.textContent('#summary')).includes('₹100/month'), `${name} support: monthly commitment shown`);
     await page.check('input[name=authorise]');
     check(await page.$eval('#submit', (b) => b.disabled && b.textContent === 'Set up ₹100 every month'), `${name} support: recurring label, disabled while payments are off`);
     await page.click('text=Other amount >> nth=-1');
     await page.fill('input[name=rec-custom]', '30');
-    check((await page.textContent('#summary')).includes('₹30 every week'), `${name} support: custom weekly amount`);
+    check((await page.textContent('#summary')).includes('₹30/week'), `${name} support: custom weekly amount`);
     check((await overflow(page)) <= 0 && errs.length === 0, `${name} support: no sideways scroll, no script errors`);
     await ctx.close();
   }

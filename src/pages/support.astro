@@ -4,7 +4,7 @@
 // Design and rules: docs/support-architecture.md.
 import Base from '../layouts/Base.astro';
 import { SITE } from '../consts';
-import { LIMITS, ONE_TIME_PRESETS, PAYMENTS_ENABLED, RECURRING_PRESETS, formatINR, perLabel, yearly } from '../lib/support';
+import { LIMITS, ONE_TIME_PRESETS, PAYMENTS_ENABLED, RECURRING_PRESETS, commitment, formatINR } from '../lib/support';
 
 const helps = [
   ['Hosting and storage', 'Keeping the site, the books and the trainer recordings online and fast.'],
@@ -14,12 +14,12 @@ const helps = [
   ['New educational tools', 'Building the next trainers and calculators.'],
 ];
 ---
-<Base title="Support this project" description="Help keep this project free and support its continued development. Voluntary one-time or recurring contributions; nothing on the site requires payment.">
+<Base title="Support this project" description="Help keep this project free and support its continued development. Voluntary one-time or recurring contributions; recurring support can be cancelled anytime.">
   <header class="page-head wrap support-head">
     <span class="eyebrow">Support</span>
     <h1>Support this project</h1>
     <p>Help keep this project free and support its continued development.</p>
-    <p class="muted">Everything on this site is free to use, and will stay that way whether or not you contribute.</p>
+    <p class="muted">The core educational resources on this site are intended to remain freely accessible. Your support helps us keep building and maintaining the platform.</p>
   </header>
 
   <div class="wrap support-grid">
@@ -61,11 +61,12 @@ const helps = [
 
         <fieldset class="amounts" data-kind="recurring" hidden>
           <legend>Choose an amount and how often</legend>
+          <p class="cancel-note"><b>Cancel anytime.</b> One link in your email, then one button. No questions, no account needed.</p>
           <div class="chips">
             {RECURRING_PRESETS.map((p) => (
               <label class="chip-opt tall">
                 <input type="radio" name="rec-amount" value={`${p.amount}/${p.frequency}`} />
-                <span><b>{formatINR(p.amount)}/{perLabel(p.frequency)}</b>{p.note && <small>{p.note}</small>}<small>{yearly(p.amount, p.frequency).text}</small></span>
+                <span><b>{commitment(p.amount, p.frequency)}</b>{p.note && <small>{p.note}</small>}</span>
               </label>
             ))}
             <label class="chip-opt tall"><input type="radio" name="rec-amount" value="custom" /> <span><b>Other amount</b><small>weekly or monthly</small></span></label>
@@ -95,7 +96,7 @@ const helps = [
 
         <div class="fine">
           <p><b>Payment methods:</b> UPI, and debit or credit cards. Regular contributions use UPI AutoPay or a card that supports recurring payments. Indian payment methods, in rupees.</p>
-          <p class="rec-only" hidden><b>Regular contributions:</b> you approve once, in your UPI app or with your card. You are notified before each payment. Cancel any time from the link in your email, or from your UPI app or bank; cancelling stops all future payments.</p>
+          <p class="rec-only" hidden><b>Regular contributions:</b> you approve the amount and frequency once, in your UPI app or with your card, and you are notified before each payment. <b>Cancel anytime:</b> open the link in your email and press Cancel, or cancel from your UPI app or bank. Cancelling stops all future payments straight away.</p>
           <p>No account is needed. Contributions are voluntary support for the project: they do not buy access, features or medical advice, and they are not tax-deductible.</p>
           <p>If you think a payment went wrong (charged twice, or a payment you did not make), write to <a href={`mailto:${SITE.email}?subject=Payment%20query`}>{SITE.email}</a>.</p>
         </div>
@@ -138,6 +139,8 @@ const helps = [
   input:disabled { background: var(--surface-2); color: var(--ink-3); }
   .summary { padding: .75rem .9rem; border-radius: var(--radius-sm); background: var(--surface-2); font-weight: 600; }
   .summary :global(small) { display: block; margin-top: .2rem; font-weight: 450; font-size: .9rem; color: var(--ink-2); }
+  .cancel-note { margin: 0 0 .75rem; padding: .55rem .8rem; border-radius: var(--radius-sm); background: var(--ok-soft); color: var(--ink); font-size: .92rem; }
+  .cancel-note b { color: var(--ok); }
   .authorise { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; }
   .authorise[hidden] { display: none; }
   .authorise input { margin-top: .25rem; }
@@ -150,7 +153,7 @@ const helps = [
 </style>
 
 <script>
-  import { LIMITS, PAYMENTS_ENABLED, formatINR, yearly, type Frequency } from '../lib/support';
+  import { LIMITS, PAYMENTS_ENABLED, commitment, formatINR, type Frequency } from '../lib/support';
 
   const form = document.getElementById('support-form') as HTMLFormElement;
   const summary = document.getElementById('summary')!;
@@ -197,8 +200,8 @@ const helps = [
       submit.textContent = `Support with ${formatINR(c.amount)}`;
     } else {
       const every = c.frequency === 'week' ? 'every week' : 'every month';
-      summary.replaceChildren(`${formatINR(c.amount)} ${every} ${yearly(c.amount, c.frequency).text}`,
-        Object.assign(document.createElement('small'), { textContent: 'Collected automatically until you cancel. You are notified before each payment.' }));
+      summary.replaceChildren(`${commitment(c.amount, c.frequency)} · Cancel anytime`,
+        Object.assign(document.createElement('small'), { textContent: `${formatINR(c.amount)} is collected ${every} until you cancel. You are notified before each payment.` }));
       submit.textContent = `Set up ${formatINR(c.amount)} ${every}`;
       authoriseText.textContent = `I authorise ${formatINR(c.amount)} to be collected ${every} until I cancel.`;
     }

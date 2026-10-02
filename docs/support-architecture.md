@@ -23,12 +23,20 @@ Provider research below was gathered on 2 October 2026; re-check every figure be
 - Shared page at `/support/` (root, like `/about/`), linked from the footer in both modes and by one quiet
   line at the end of trainer pages and book pages. No banners, pop-ups, countdowns, urgency or guilt.
 - Exact title "Support this project"; subheading "Help keep this project free and support its continued
-  development." Words: *support*, *contribution*. Never *donation* or *charity* in the product UI.
+  development." Then: "The core educational resources on this site are intended to remain freely accessible.
+  Your support helps us keep building and maintaining the platform." (Not "everything is free": paid
+  advanced features may come later.) Words: *support*, *contribution*. Never *donation* or *charity* in the UI.
 - One-time: ₹100, ₹250, ₹500, custom (₹10–₹50,000). Button states the action: "Support with ₹250".
 - Recurring: ₹20/week ("One coffee a week"), ₹50/week, ₹100/month, ₹250/month, custom (₹20–₹5,000) with
-  weekly/monthly. The yearly total is always shown: weekly ×52 as "≈" (a year is slightly over 52 weeks),
-  monthly ×12 as "=". Nothing recurring is ever pre-selected; recurring requires an explicit authorisation
-  checkbox naming the amount and frequency.
+  weekly/monthly. ₹20/week stays in the design; its viability is decided once provider pricing is confirmed
+  (section 6).
+- Recurring amounts are shown **only as the actual commitment** ("₹20/week", "₹100/month"). No annualised or
+  long-term totals, anywhere in the UI, receipts or emails.
+- Nothing recurring is ever pre-selected. Before paying, the supporter sees the exact amount and frequency and
+  ticks an authorisation naming both ("I authorise ₹20 to be collected every week until I cancel").
+- **Cancel anytime**, stated prominently next to the recurring options. Cancelling takes at most two steps:
+  open the manage link from the email, press "Cancel future contributions". No retention screen, survey,
+  offer, guilt message or account. Cancelling in the UPI app or bank works too.
 - No account needed. Email only for the receipt and (recurring) the manage/cancel link.
 - No consumer refund policy on the page. Cancelling stops future payments. Exceptional corrections
   (duplicate charge, unauthorised transaction, processing error, accidental recurring charge, provider
@@ -64,7 +72,7 @@ cron (daily) ── reconcile: provider payments/mandates/refunds since T−3 da
 
 ```ts
 interface PaymentProvider {
-  readonly id: string;                                            // 'razorpay' | 'cashfree' | ...
+  readonly id: string;                                            // the adapter's provider name
   createOneTimePayment(i: { amountPaise: number; ref: string; customer: CustomerRef }): Promise<CheckoutParams>;
   createRecurringMandate(i: { amountPaise: number; interval: 'week' | 'month'; ref: string; customer: CustomerRef }): Promise<CheckoutParams>;
   cancelMandate(providerMandateId: string): Promise<void>;
@@ -99,7 +107,7 @@ Adapters call provider REST APIs with `fetch` and verify webhook HMACs with Web 
 |---|---|
 | Weekly / monthly | Provider-managed schedule (subscription/plan) rather than charging ourselves; the provider sends the pre-debit notice |
 | Custom amounts | Validated server-side; whole paise; recurring kept far below the ₹15,000 no-AFA limit |
-| Cancellation | Manage link (single-use, hashed, expiring token; re-request by email without revealing whether the email exists) → provider `cancelMandate` → webhook confirms. Cancellation in the UPI app or bank arrives as a webhook |
+| Cancellation | Two steps, no friction: the manage link (hashed, expiring token; re-request by email without revealing whether the email exists) opens a page showing the amount and frequency with one "Cancel future contributions" button → provider `cancelMandate` → confirmation shown and emailed; the webhook confirms the provider's state. No retention screens or offers. Cancellation in the UPI app or bank arrives as a webhook |
 | Failed recurring payment | Provider retries within its rules; after it halts, one email with a re-authorise link, then nothing |
 | Exceptional correction | Admin-only, with a reason code; provider reversal API; a reversal row is added, records are never edited or deleted |
 | Webhooks | Signature check → raw event stored, unique `(provider, provider_event_id)` → 200 quickly → handler applies only allowed, newer transitions; when unsure, re-fetch from the provider (events arrive out of order and twice) |
@@ -202,7 +210,8 @@ directly [S1].
 
 ### The economics of ₹20 a week
 
-Cost of collecting, including 18% GST on fees (one-off mandate fees excluded except where noted):
+Internal analysis only (the UI never shows yearly figures). Cost of collecting, including 18% GST on fees
+(one-off mandate fees excluded except where noted):
 
 | Contribution | Razorpay Subscriptions (2% + 0.9%) + GST ≈ 3.42% | Cashfree UPI AutoPay (₹5 + GST = ₹5.90 per debit) |
 |---|---|---|
@@ -216,16 +225,17 @@ about 30% of the contribution goes to the gateway. With a **percentage-only** pr
 whatever the amount, and ₹20/week is acceptable. Weekly collection still has non-fee costs: 52 pre-debit
 notices a year to the supporter, 52 chances of failure and retry, and more reconciliation rows.
 
-Alternatives if the chosen provider charges flat fees: drop weekly presets and make **₹100/month** the
-smallest recurring option; or keep the "one coffee a week" idea but collect **monthly** ("₹90/month, about
-₹20 a week"), which keeps the framing and divides fixed costs by four.
+**Decision deferred:** ₹20/week stays in the product design. Whether it is offered at launch is decided once
+the chosen provider's pricing is confirmed in writing. If that pricing turns out to be a flat fee per debit, the
+options to weigh then are: keep it anyway, collect the same support monthly, or raise the smallest weekly amount.
 
-### Recommendation
+### Provisional candidate (not a decision)
 
-**Provisional: Razorpay**, because it is the only option found with published percentage-only recurring
+The application stays **provider-neutral**: no provider is chosen, configured or named in code, and only an
+adapter will contain provider-specific logic. **Razorpay is a provisional candidate**, because it is the only option found with published percentage-only recurring
 pricing (which keeps ₹20/week viable), weekly plans, UPI AutoPay and card mandates, documented subscription
-webhooks including `halted`, and documented onboarding for individuals without business registration. It is
-**not** yet a clear fit; before choosing, get written answers to:
+webhooks including `halted`, and documented onboarding for individuals without business registration. Before
+choosing any provider, get written answers to:
 
 1. Does Razorpay Subscriptions offer **UPI AutoPay to an individual/unregistered account**? (One Razorpay doc
    page lists only cards for Subscriptions [R5]; the product page lists UPI and e-mandate [R2].)
@@ -285,3 +295,19 @@ apply to it.
 | `purchases`, `products`, `entitlements`, `hasEntitlement()` | API routes, webhooks, Turnstile, rate limits, CSP, cron reconciliation, receipts and email provider |
 | Private R2 bucket + signed URLs for paid media | Test-mode end-to-end run on Preview, then live keys on production only |
 | Showing a signed-in user their contributions | Switching `PAYMENTS_ENABLED` on, in the same release as the working API |
+
+## 9. Decisions still open before payments are activated
+
+1. **Provider:** written answers to the four questions in section 6 from the candidate(s); then choose. Until
+   then no provider is configured anywhere.
+2. **₹20/week:** keep, adjust or collect monthly, once the chosen provider's per-debit cost is confirmed.
+3. **Institutional permission:** whether residency/service rules at AIIMS Raipur allow receiving contributions.
+4. **Tax and form:** income-tax treatment, GST threshold, and whether to receive as an individual,
+   proprietorship or later entity (professional advice).
+5. **Gateway business category:** the truthful description and category/MCC accepted by the provider.
+6. **Privacy notice (DPDP Act):** wording for email collection, retention of financial records versus deletion
+   requests, grievance contact; update `/privacy/` in the same release.
+7. **Email provider** for receipts, manage links and the one halted-mandate message.
+8. **Receipt wording and numbering** (financial-year sequence), confirmed with the accountant.
+9. **Operations:** who handles exceptional corrections and disputes, and the internal reason codes and response
+   time (internal, not published as a refund policy).

@@ -162,7 +162,10 @@ test('/support/ exists, is reachable from every page footer, and stays switched 
   }
   // Language rules for the support page.
   const text = doc.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ');
-  for (const banned of [/donat/i, /charit/i, /refund polic/i, /money.back/i, /only \d+ left/i, /hurry|last chance|act now|countdown/i, /tax.deductible donation/i]) {
+  assert.match(text, /Cancel anytime/, 'recurring cancellation must be prominent');
+  assert.match(text, /core educational resources on this site are intended to remain freely accessible/);
+  assert.doesNotMatch(text, /whether or not you contribute|everything on this site is free/i);
+  for (const banned of [/donat/i, /charit/i, /refund polic/i, /money.back/i, /only \d+ left/i, /hurry|last chance|act now|countdown/i, /tax.deductible donation/i, /\/\s*year|per year|a year|annual|≈/i]) {
     assert.doesNotMatch(text, banned, `support page uses ${banned}`);
   }
   for (const [url, page] of html) {
