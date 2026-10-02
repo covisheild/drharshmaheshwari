@@ -1,8 +1,32 @@
 # Support, purchases and entitlements: architecture
 
-Status: **design only.** `/support/` exists with payments switched off (`PAYMENTS_ENABLED = false` in
-`src/lib/support.ts`). No payment provider, API credentials, webhooks, D1 tables or recurring mandates exist.
-Provider research below was gathered on 2 October 2026; re-check every figure before signing up.
+Status: **one-time support by direct UPI is built; recurring support is parked.** `/support/` offers
+one-time contributions only, by UPI, with no payment gateway, backend or records (section 0). It stays
+closed ("Contributions open soon.") until `UPI_CONFIG.enabled` is true and a UPI ID is set in
+`src/lib/support.ts`. Sections 3–6 describe the **parked** recurring design, kept for when it is built; none
+of it exists in code. Provider research was gathered on 2 October 2026; re-check every figure before use.
+
+## 0. Current phase: one-time direct UPI
+
+- Options: ₹100, ₹250, ₹500, or a custom amount (₹10–₹50,000). Nothing is pre-selected.
+- The money goes straight from the supporter's UPI app to the configured UPI ID. No gateway (no Razorpay,
+  Cashfree, PayU or Juspay), no server code, no database, no email, no login, no verification, no records.
+  The supporter's UPI app keeps the record.
+- **QR code first** (works on desktop and on phones: scan, or screenshot and scan from the gallery). QR codes
+  are generated **at build time** (`src/lib/upi-qr.ts`, using the `qrcode-generator` package) as inline SVG:
+  no QR library in the browser and no third-party QR service. One QR per preset amount (when
+  `amountInQr` is true) plus one without an amount, used for custom amounts and when nothing is chosen.
+- **"Open your UPI app"** on phones only, best effort: UPI apps sometimes decline payments started from a
+  web link, so the QR and **"Copy UPI ID"** sit right beside it.
+- When the shown QR has no amount, the page says exactly which amount to enter in the UPI app.
+- The payee name and UPI ID are shown in full above the QR.
+- Configuration lives in one place, `UPI_CONFIG`: `enabled`, `upiId`, `payeeName`, `note`, `amountInQr`.
+  The link format is NPCI's `upi://pay?pa=…&pn=…&am=…&cu=INR&tn=…`, every value percent-encoded and the
+  amount written with two decimals (`upiUri()`, unit-tested in `tests/upi.test.mjs`).
+- Contribution ≠ purchase ≠ entitlement still holds: a one-time contribution grants nothing and leaves no
+  record that could be linked to anything.
+- Extending later: recurring support would add its own option and flow beside this one; the one-time path
+  needs no change.
 
 ## 1. Three concepts that never mix
 
@@ -18,7 +42,7 @@ Provider research below was gathered on 2 October 2026; re-check every figure be
   ("grant `supporter-badge` to …"), implemented in the entitlement service, not in payment code.
 - Application code asks only `hasEntitlement(key)`. It never looks at amounts, providers or payment status.
 
-## 2. Product rules for `/support/`
+## 2. Product rules for `/support/` (the recurring rules apply only when that feature is built)
 
 - Shared page at `/support/` (root, like `/about/`), linked from the footer in both modes and by one quiet
   line at the end of trainer pages and book pages. No banners, pop-ups, countdowns, urgency or guilt.
@@ -45,7 +69,7 @@ Provider research below was gathered on 2 October 2026; re-check every figure be
 - No public supporters list in the first version.
 - INR and Indian payment methods only. No foreign contributions at this stage.
 
-## 3. Payment architecture (to build at activation)
+## 3. Recurring payment architecture (parked; not built)
 
 ```
 Browser ── POST /api/support/intents ──► Worker API ── PaymentProvider adapter ──► provider

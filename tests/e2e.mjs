@@ -92,29 +92,31 @@ try {
     await ctx.close();
   }
 
-  // ---------- Support page: options work, nothing pre-selected, nothing can be submitted ----------
+  // ---------- Support page: one-time UPI; closed until configured, QR/app link/copy when open ----------
   for (const [name, vp] of [['phone', { width: 390, height: 844 }], ['desktop', { width: 1280, height: 900 }]]) {
     const ctx = await context(vp);
     const page = await ctx.newPage();
     const errs = errorsOf(page);
     await page.goto(BASE + '/support/');
-    check(await page.$eval('#submit', (b) => b.disabled && b.textContent === 'Choose an amount'), `${name} support: nothing chosen, button disabled`);
+    const open = (await page.getAttribute('#support-upi', 'data-open')) === 'true';
+    check((await page.$$eval('input[name=amount]', (r) => r.filter((x) => x.checked).length)) === 0, `${name} support: no amount pre-selected`);
+    check(!(await page.isVisible('text=Regularly')) && (await page.$$('input[name=kind]')).length === 0, `${name} support: no recurring option`);
     await page.click('text=₹250');
-    check(await page.$eval('#submit', (b) => b.textContent === 'Support with ₹250' && b.disabled), `${name} support: one-time label, still disabled`);
-    await page.click('.kind >> text=Regularly');
-    check((await page.$$eval('input[name=rec-amount]', (r) => r.filter((x) => x.checked).length)) === 0, `${name} support: no recurring option pre-selected`);
-    await page.click('text=₹20/week');
-    const s = await page.textContent('#summary');
-    check(s.includes('₹20/week') && s.includes('Cancel anytime') && !/year|≈/.test(s), `${name} support: shows only the commitment and Cancel anytime (${s.trim().slice(0, 40)})`);
-    check(await page.isVisible('.cancel-note'), `${name} support: "Cancel anytime" note visible next to recurring options`);
-    check(!/year|≈/.test(await page.textContent('#support-form')), `${name} support: no annualised totals anywhere in the form`);
-    await page.click('text=₹100/month');
-    check((await page.textContent('#summary')).includes('₹100/month'), `${name} support: monthly commitment shown`);
-    await page.check('input[name=authorise]');
-    check(await page.$eval('#submit', (b) => b.disabled && b.textContent === 'Set up ₹100 every month'), `${name} support: recurring label, disabled while payments are off`);
-    await page.click('text=Other amount >> nth=-1');
-    await page.fill('input[name=rec-custom]', '30');
-    check((await page.textContent('#summary')).includes('₹30/week'), `${name} support: custom weekly amount`);
+    check((await page.textContent('#summary')).includes('₹250, once.'), `${name} support: one-time amount shown`);
+    await page.click('text=Other amount');
+    await page.fill('input[name=custom]', '300');
+    check((await page.textContent('#summary')).includes('₹300, once.'), `${name} support: custom amount`);
+    if (!open) {
+      check(await page.isVisible('text=Contributions open soon.') && (await page.$$('[data-qr]')).length === 0, `${name} support: closed, no QR or UPI details`);
+    } else {
+      check(await page.isVisible('.payee b'), `${name} support: payee name visible`);
+      check((await page.textContent('#qr-hint')).includes('enter ₹300'), `${name} support: custom amount tells the payer which amount to enter`);
+      check(await page.isVisible('[data-qr="any"]'), `${name} support: open QR shown for a custom amount`);
+      await page.click('text=₹500');
+      const href = await page.getAttribute('#upi-open', 'href');
+      check(href.startsWith('upi://pay?pa=') && href.includes('am=500.00') && href.includes('cu=INR'), `${name} support: app link carries the amount`);
+      check(name === 'phone' || !(await page.isVisible('#upi-open')), `${name} support: app link only on phones`);
+    }
     check((await overflow(page)) <= 0 && errs.length === 0, `${name} support: no sideways scroll, no script errors`);
     await ctx.close();
   }

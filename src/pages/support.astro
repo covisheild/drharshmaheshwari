@@ -1,10 +1,21 @@
 ---
 // Support this project. A shared page (like /about/): linked from both modes' footers.
-// Payments are not active (PAYMENTS_ENABLED = false): the options can be explored, nothing can be paid.
-// Design and rules: docs/support-architecture.md.
+// One-time support by direct UPI only: QR code (built here, at build time), an app link on phones, and
+// "Copy UPI ID". No gateway, no backend, no records. Settings: UPI_CONFIG in src/lib/support.ts.
 import Base from '../layouts/Base.astro';
 import { SITE } from '../consts';
-import { LIMITS, ONE_TIME_PRESETS, PAYMENTS_ENABLED, RECURRING_PRESETS, commitment, formatINR } from '../lib/support';
+import { LIMITS, ONE_TIME_PRESETS, UPI_CONFIG, formatINR, supportOpen, upiUri } from '../lib/support';
+import { qrSvg } from '../lib/upi-qr';
+
+const open = supportOpen();
+const cfg = UPI_CONFIG;
+// One QR per preset amount (when amounts go in the QR) plus one without an amount, for "Other amount".
+const qrs = open
+  ? [
+      ...(cfg.amountInQr ? ONE_TIME_PRESETS.map((a) => ({ amount: String(a), svg: qrSvg(upiUri(a), `UPI QR code to pay ${formatINR(a)} to ${cfg.payeeName}`) })) : []),
+      { amount: 'any', svg: qrSvg(upiUri(), `UPI QR code to pay ${cfg.payeeName}`) },
+    ]
+  : [];
 
 const helps = [
   ['Hosting and storage', 'Keeping the site, the books and the trainer recordings online and fast.'],
@@ -14,7 +25,7 @@ const helps = [
   ['New educational tools', 'Building the next trainers and calculators.'],
 ];
 ---
-<Base title="Support this project" description="Help keep this project free and support its continued development. Voluntary one-time or recurring contributions; recurring support can be cancelled anytime.">
+<Base title="Support this project" description="Help keep this project free and support its continued development. Voluntary one-time contributions by UPI.">
   <header class="page-head wrap support-head">
     <span class="eyebrow">Support</span>
     <h1>Support this project</h1>
@@ -38,69 +49,48 @@ const helps = [
 
     <section class="card support-form-card" aria-labelledby="form-h">
       <h2 id="form-h">Make a contribution</h2>
-      {!PAYMENTS_ENABLED && <p class="soon" role="status"><b>Contributions open soon.</b> You can look through the options below, but nothing can be paid yet.</p>}
+      {!open && <p class="soon" role="status"><b>Contributions open soon.</b> You can look through the options below; the UPI details will appear here when contributions open.</p>}
 
-      <form id="support-form" class="support-form" novalidate data-enabled={String(PAYMENTS_ENABLED)}>
-        <fieldset class="kind">
-          <legend class="sr-only">How often</legend>
-          <label><input type="radio" name="kind" value="once" checked /> <span>Once</span></label>
-          <label><input type="radio" name="kind" value="recurring" /> <span>Regularly</span></label>
-        </fieldset>
-
-        <fieldset class="amounts" data-kind="once">
+      <div id="support-upi" class="support-form" data-open={String(open)} data-amount-in-qr={String(cfg.amountInQr)}
+        data-upi-id={open ? cfg.upiId.trim() : undefined} data-payee={cfg.payeeName} data-note={cfg.note}>
+        <fieldset class="amounts">
           <legend>Choose an amount</legend>
           <div class="chips">
-            {ONE_TIME_PRESETS.map((a) => <label class="chip-opt"><input type="radio" name="once-amount" value={a} /> <span>{formatINR(a)}</span></label>)}
-            <label class="chip-opt"><input type="radio" name="once-amount" value="custom" /> <span>Other amount</span></label>
+            {ONE_TIME_PRESETS.map((a) => <label class="chip-opt"><input type="radio" name="amount" value={a} /> <span>{formatINR(a)}</span></label>)}
+            <label class="chip-opt"><input type="radio" name="amount" value="custom" /> <span>Other amount</span></label>
           </div>
           <label class="custom" hidden>
             <span>Amount in ₹</span>
-            <input type="number" inputmode="numeric" name="once-custom" min={LIMITS.oneTime.min} max={LIMITS.oneTime.max} step="1" placeholder="e.g. 300" />
+            <input type="number" inputmode="numeric" name="custom" min={LIMITS.min} max={LIMITS.max} step="1" placeholder="e.g. 300" />
           </label>
         </fieldset>
 
-        <fieldset class="amounts" data-kind="recurring" hidden>
-          <legend>Choose an amount and how often</legend>
-          <p class="cancel-note"><b>Cancel anytime.</b> One link in your email, then one button. No questions, no account needed.</p>
-          <div class="chips">
-            {RECURRING_PRESETS.map((p) => (
-              <label class="chip-opt tall">
-                <input type="radio" name="rec-amount" value={`${p.amount}/${p.frequency}`} />
-                <span><b>{commitment(p.amount, p.frequency)}</b>{p.note && <small>{p.note}</small>}</span>
-              </label>
-            ))}
-            <label class="chip-opt tall"><input type="radio" name="rec-amount" value="custom" /> <span><b>Other amount</b><small>weekly or monthly</small></span></label>
+        <div class="summary" aria-live="polite" id="summary">Choose an amount, or pay any amount you like.</div>
+
+        {open ? (
+          <div class="pay">
+            <p class="payee">Paying <b>{cfg.payeeName}</b><br /><span class="upi-id">UPI ID: <code id="upi-id">{cfg.upiId.trim()}</code></span></p>
+            <div class="qr-box">
+              {qrs.map((q) => <figure class="qr" data-qr={q.amount} hidden={q.amount !== 'any'} set:html={q.svg} />)}
+            </div>
+            <p class="qr-hint" id="qr-hint">Scan with any UPI app.</p>
+            <div class="pay-actions">
+              <a class="btn btn-primary" id="upi-open" href={upiUri()} hidden>Open your UPI app</a>
+              <button class="btn btn-ghost" type="button" id="upi-copy">Copy UPI ID</button>
+              <span class="copied" id="copied" role="status" aria-live="polite"></span>
+            </div>
+            <p class="small muted mobile-only" hidden id="app-hint">If your UPI app doesn't open or declines the payment, take a screenshot of the QR code and scan it from your gallery in the app, or copy the UPI ID.</p>
           </div>
-          <div class="custom" hidden>
-            <label><span>Amount in ₹</span>
-              <input type="number" inputmode="numeric" name="rec-custom" min={LIMITS.recurring.min} max={LIMITS.recurring.max} step="1" placeholder="e.g. 30" /></label>
-            <label><span>Every</span>
-              <select name="rec-frequency"><option value="week">week</option><option value="month">month</option></select></label>
-          </div>
-        </fieldset>
-
-        <div class="summary" aria-live="polite" id="summary">Choose an amount to see the total.</div>
-
-        <label class="authorise" hidden>
-          <input type="checkbox" name="authorise" />
-          <span id="authorise-text">I authorise this amount to be collected automatically until I cancel.</span>
-        </label>
-
-        <label class="email">
-          <span>Email <small>for your receipt{' '}<span class="rec-only" hidden>and a link to manage or cancel</span></small></span>
-          <input type="email" name="email" autocomplete="email" placeholder="you@example.com" disabled={!PAYMENTS_ENABLED} />
-        </label>
-
-        <button class="btn btn-primary submit" type="submit" disabled id="submit">Choose an amount</button>
-        {!PAYMENTS_ENABLED && <p class="small muted center">Contributions open soon.</p>}
+        ) : (
+          <div class="qr-box qr-placeholder" aria-hidden="true"><span>UPI QR code</span></div>
+        )}
 
         <div class="fine">
-          <p><b>Payment methods:</b> UPI, and debit or credit cards. Regular contributions use UPI AutoPay or a card that supports recurring payments. Indian payment methods, in rupees.</p>
-          <p class="rec-only" hidden><b>Regular contributions:</b> you approve the amount and frequency once, in your UPI app or with your card, and you are notified before each payment. <b>Cancel anytime:</b> open the link in your email and press Cancel, or cancel from your UPI app or bank. Cancelling stops all future payments straight away.</p>
-          <p>No account is needed. Contributions are voluntary support for the project: they do not buy access, features or medical advice, and they are not tax-deductible.</p>
-          <p>If you think a payment went wrong (charged twice, or a payment you did not make), write to <a href={`mailto:${SITE.email}?subject=Payment%20query`}>{SITE.email}</a>.</p>
+          <p><b>How it works:</b> you pay directly by UPI from your own app. Your UPI app keeps the record of the payment; this site doesn't collect your details or keep any record.</p>
+          <p>Contributions are voluntary support for the project: they do not buy access, features or medical advice, and they are not tax-deductible. No account is needed.</p>
+          <p>If you think a payment went wrong (for example, paid twice by mistake), write to <a href={`mailto:${SITE.email}?subject=Payment%20query`}>{SITE.email}</a>.</p>
         </div>
-      </form>
+      </div>
     </section>
   </div>
   <div class="wrap" style="padding-bottom:4rem"></div>
@@ -120,97 +110,89 @@ const helps = [
   .support-form { display: grid; gap: 1rem; }
   fieldset { border: 0; padding: 0; margin: 0; }
   legend { font-weight: 650; margin-bottom: .5rem; }
-  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  .kind { display: inline-flex; background: var(--surface-2); border-radius: 999px; padding: 4px; gap: 2px; justify-self: start; }
-  .kind input, .chip-opt input { position: absolute; opacity: 0; pointer-events: none; }
-  .kind span { display: block; padding: .5rem 1.2rem; border-radius: 999px; font-weight: 600; color: var(--ink-2); cursor: pointer; }
-  .kind input:checked + span { background: var(--surface); color: var(--ink); box-shadow: var(--shadow), 0 0 0 1px var(--line); }
-  .kind input:focus-visible + span, .chip-opt input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .chip-opt input { position: absolute; opacity: 0; pointer-events: none; }
+  .chip-opt input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
   .chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: .5rem; }
-  [data-kind='recurring'] .chips { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   .chip-opt span { display: flex; flex-direction: column; justify-content: center; min-height: 48px; padding: .55rem .75rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); text-align: center; font-weight: 600; cursor: pointer; }
-  .chip-opt small { display: block; font-weight: 450; font-size: .8rem; color: var(--ink-3); }
   .chip-opt input:checked + span { border-color: var(--brand); background: var(--brand-soft); color: var(--brand); }
-  .chip-opt input:checked + span small { color: var(--ink-2); }
-  .custom { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .75rem; }
-  .custom[hidden] { display: none; }
-  .custom label, label.custom, .email { display: grid; gap: .3rem; font-size: .92rem; color: var(--ink-2); }
-  input[type='number'], input[type='email'], select { font: 500 1rem var(--font-body); padding: .65rem .75rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); min-width: 0; }
-  input:disabled { background: var(--surface-2); color: var(--ink-3); }
+  .custom { display: grid; gap: .3rem; margin-top: .75rem; font-size: .92rem; color: var(--ink-2); max-width: 220px; }
+  input[type='number'] { font: 500 1rem var(--font-body); padding: .65rem .75rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); min-width: 0; }
   .summary { padding: .75rem .9rem; border-radius: var(--radius-sm); background: var(--surface-2); font-weight: 600; }
-  .summary :global(small) { display: block; margin-top: .2rem; font-weight: 450; font-size: .9rem; color: var(--ink-2); }
-  .cancel-note { margin: 0 0 .75rem; padding: .55rem .8rem; border-radius: var(--radius-sm); background: var(--ok-soft); color: var(--ink); font-size: .92rem; }
-  .cancel-note b { color: var(--ok); }
-  .authorise { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; }
-  .authorise[hidden] { display: none; }
-  .authorise input { margin-top: .25rem; }
-  .submit { justify-content: center; width: 100%; }
-  .submit:disabled { opacity: .55; cursor: not-allowed; transform: none; box-shadow: none; }
-  .center { text-align: center; margin: -.5rem 0 0; }
+  .pay { display: grid; gap: .75rem; justify-items: center; text-align: center; }
+  .payee { margin: 0; font-size: 1rem; }
+  .payee b { font-size: 1.1rem; }
+  .upi-id { font-size: .92rem; color: var(--ink-2); }
+  .upi-id code { font: 600 .95rem var(--font-mono); color: var(--ink); overflow-wrap: anywhere; }
+  /* QR codes stay dark-on-white in every theme: scanners need the contrast. */
+  .qr-box { width: min(260px, 100%); aspect-ratio: 1; padding: 10px; border-radius: var(--radius-sm); background: #fff; border: 1px solid var(--line); justify-self: center; }
+  .qr { margin: 0; width: 100%; height: 100%; }
+  .qr :global(svg) { width: 100%; height: 100%; display: block; }
+  .qr-placeholder { display: grid; place-items: center; background: var(--surface-2); color: var(--ink-3); font-size: .9rem; border-style: dashed; }
+  .qr-hint { margin: 0; font-weight: 600; }
+  .pay-actions { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; align-items: center; }
+  .copied { font-size: .88rem; color: var(--ok); min-width: 4em; }
   .fine { font-size: .86rem; color: var(--ink-3); border-top: 1px solid var(--line); padding-top: .75rem; }
   .fine p { margin: 0 0 .5rem; }
   [hidden] { display: none !important; }
 </style>
 
 <script>
-  import { LIMITS, PAYMENTS_ENABLED, commitment, formatINR, type Frequency } from '../lib/support';
+  import { LIMITS, formatINR, upiUri } from '../lib/support';
 
-  const form = document.getElementById('support-form') as HTMLFormElement;
+  const root = document.getElementById('support-upi')!;
+  const open = root.dataset.open === 'true';
+  const amountInQr = root.dataset.amountInQr === 'true';
+  const cfg = { upiId: root.dataset.upiId ?? '', payeeName: root.dataset.payee ?? '', note: root.dataset.note ?? '', amountInQr };
   const summary = document.getElementById('summary')!;
-  const submit = document.getElementById('submit') as HTMLButtonElement;
-  const authorise = form.querySelector('.authorise') as HTMLElement;
-  const authoriseBox = form.querySelector('input[name=authorise]') as HTMLInputElement;
-  const authoriseText = document.getElementById('authorise-text')!;
-  const val = (name: string) => (form.elements.namedItem(name) as RadioNodeList | HTMLInputElement | null)?.value ?? '';
+  const customBox = root.querySelector<HTMLElement>('.custom')!;
+  const customInput = root.querySelector<HTMLInputElement>('input[name=custom]')!;
+  const hint = document.getElementById('qr-hint');
+  const openLink = document.getElementById('upi-open') as HTMLAnchorElement | null;
+  const appHint = document.getElementById('app-hint');
 
-  /** The current choice, or null when it is incomplete or out of bounds. Nothing is chosen until the person chooses. */
-  function choice(): { kind: 'once'; amount: number } | { kind: 'recurring'; amount: number; frequency: Frequency } | null {
-    if (val('kind') === 'once') {
-      const v = val('once-amount');
-      const amount = v === 'custom' ? Math.floor(Number(val('once-custom'))) : Number(v);
-      return amount >= LIMITS.oneTime.min && amount <= LIMITS.oneTime.max ? { kind: 'once', amount } : null;
-    }
-    const v = val('rec-amount');
-    if (!v) return null;
-    const [a, f] = v === 'custom' ? [Math.floor(Number(val('rec-custom'))), val('rec-frequency')] : v.split('/');
-    const amount = Number(a), frequency = f as Frequency;
-    return amount >= LIMITS.recurring.min && amount <= LIMITS.recurring.max ? { kind: 'recurring', amount, frequency } : null;
+  // "Open your UPI app" only where a UPI app can exist (phones and tablets). Best effort: some apps decline
+  // payments started from a link, so the QR and the UPI ID stay right there.
+  const mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
+  if (open && mobile) { openLink!.hidden = false; appHint!.hidden = false; }
+
+  function chosen(): number | 'none' | 'invalid' {
+    const v = (root.querySelector<HTMLInputElement>('input[name=amount]:checked'))?.value;
+    if (!v) return 'none';
+    if (v !== 'custom') return Number(v);
+    const n = Math.floor(Number(customInput.value));
+    return n >= LIMITS.min && n <= LIMITS.max ? n : 'invalid';
   }
 
   function render() {
-    const kind = val('kind');
-    form.querySelectorAll<HTMLElement>('.amounts').forEach((fs) => { fs.hidden = fs.dataset.kind !== kind; });
-    form.querySelectorAll<HTMLElement>('.rec-only').forEach((el) => { el.hidden = kind !== 'recurring'; });
-    form.querySelector<HTMLElement>('[data-kind="once"] .custom')!.hidden = val('once-amount') !== 'custom';
-    form.querySelector<HTMLElement>('[data-kind="recurring"] .custom')!.hidden = val('rec-amount') !== 'custom';
-    authorise.hidden = kind !== 'recurring';
+    const custom = root.querySelector<HTMLInputElement>('input[name=amount]:checked')?.value === 'custom';
+    customBox.hidden = !custom;
+    const a = chosen();
+    if (a === 'invalid') summary.textContent = `Enter an amount between ${formatINR(LIMITS.min)} and ${formatINR(LIMITS.max)}.`;
+    else if (a === 'none') summary.textContent = 'Choose an amount, or pay any amount you like.';
+    else summary.textContent = `${formatINR(a)}, once.`;
+    if (!open) return;
 
-    const c = choice();
-    if (!c) {
-      const custom = (kind === 'once' ? val('once-amount') : val('rec-amount')) === 'custom';
-      const lim = kind === 'once' ? LIMITS.oneTime : LIMITS.recurring;
-      summary.textContent = custom ? `Enter an amount between ${formatINR(lim.min)} and ${formatINR(lim.max)}.` : 'Choose an amount to see the total.';
-      submit.textContent = 'Choose an amount';
-      authoriseBox.checked = false;
-      submit.disabled = true;
-      return;
-    }
-    if (c.kind === 'once') {
-      summary.textContent = `${formatINR(c.amount)}, once. Nothing more will be collected.`;
-      submit.textContent = `Support with ${formatINR(c.amount)}`;
-    } else {
-      const every = c.frequency === 'week' ? 'every week' : 'every month';
-      summary.replaceChildren(`${commitment(c.amount, c.frequency)} · Cancel anytime`,
-        Object.assign(document.createElement('small'), { textContent: `${formatINR(c.amount)} is collected ${every} until you cancel. You are notified before each payment.` }));
-      submit.textContent = `Set up ${formatINR(c.amount)} ${every}`;
-      authoriseText.textContent = `I authorise ${formatINR(c.amount)} to be collected ${every} until I cancel.`;
-    }
-    // While payments are off, the button stays disabled whatever is chosen.
-    submit.disabled = !PAYMENTS_ENABLED || (c.kind === 'recurring' && !authoriseBox.checked);
+    const amount = typeof a === 'number' ? a : undefined;
+    // A QR with the amount exists only for preset amounts (built ahead of time); otherwise show the open QR.
+    const qrKey = amount && amountInQr && root.querySelector(`[data-qr="${amount}"]`) ? String(amount) : 'any';
+    root.querySelectorAll<HTMLElement>('[data-qr]').forEach((f) => { f.hidden = f.dataset.qr !== qrKey; });
+    hint!.textContent = !amount ? 'Scan with any UPI app and enter the amount you choose.'
+      : qrKey !== 'any' ? `Scan with any UPI app. ${formatINR(amount)} is filled in; check it before you pay.`
+      : `Scan with any UPI app, then enter ${formatINR(amount)} in the app.`;
+    openLink!.href = upiUri(amount, cfg);
   }
 
-  form.addEventListener('input', render);
-  form.addEventListener('change', render);
-  form.addEventListener('submit', (e) => e.preventDefault()); // no payment flow exists yet
+  document.getElementById('upi-copy')?.addEventListener('click', async () => {
+    const status = document.getElementById('copied')!;
+    try { await navigator.clipboard.writeText(cfg.upiId); status.textContent = 'Copied'; }
+    catch {
+      const sel = getSelection(); const r = document.createRange();
+      r.selectNodeContents(document.getElementById('upi-id')!); sel?.removeAllRanges(); sel?.addRange(r);
+      status.textContent = 'Selected: copy it now';
+    }
+    setTimeout(() => { status.textContent = ''; }, 3000);
+  });
+  root.addEventListener('input', render);
+  root.addEventListener('change', render);
   render();
 </script>

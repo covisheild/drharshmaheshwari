@@ -20,15 +20,16 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 
 ## Support this project (`/support/`)
 
-- Payments are **not active**: `PAYMENTS_ENABLED = false` in `src/lib/support.ts`. The page shows the options
-  and keeps the button disabled. Design, provider research and open questions: `docs/support-architecture.md`.
-- Contributions are voluntary support. They never create entitlements; future paid products use separate
-  purchases and `hasEntitlement()`. UI words: "support", "contribution"; never "donation" or "charity"; no
-  urgency, pop-ups or refund-policy promises. Nothing recurring is ever pre-selected.
-- Recurring amounts show only the commitment ("₹20/week"), never annualised totals. "Cancel anytime" stays
-  prominent; cancelling is at most two steps with no retention screens. Don't claim "everything is free":
-  core educational resources are intended to remain freely accessible; paid advanced features may come later.
-- No provider is chosen; code stays provider-neutral (provider logic only inside future adapters).
+- One-time support by **direct UPI only**: QR code (generated at build time, `src/lib/upi-qr.ts`), "Open your UPI
+  app" link on phones (best effort), "Copy UPI ID". No gateway, no backend, no records, no email, no login.
+- All settings in `UPI_CONFIG` (`src/lib/support.ts`): `enabled`, `upiId`, `payeeName`, `note`, `amountInQr`.
+  While `enabled` is false or `upiId` is empty, the page shows "Contributions open soon." Never commit a
+  placeholder UPI ID: a made-up ID could belong to a real person.
+- Recurring support is **parked** (future): no UI, code or infrastructure for it. Design notes stay in
+  `docs/support-architecture.md`.
+- Contributions are voluntary support; they never create entitlements (future paid products use purchases and
+  `hasEntitlement()`). Words: "support", "contribution"; never "donation" or "charity"; no urgency or pop-ups;
+  no refund-policy promises. Core educational resources are intended to remain freely accessible.
 
 ## Tests
 

@@ -148,26 +148,31 @@ test('sitemap and llms.txt point to the new locations only', () => {
   assert.match(llms, /\/doctors\/books\/statistics-first-principles-to-regression\//);
 });
 
-test('/support/ exists, is reachable from every page footer, and stays switched off', () => {
+test('/support/: one-time UPI only, closed until a UPI ID is configured, linked from every footer', () => {
   const doc = html.get('/support/');
   assert.ok(doc, '/support/ is missing');
   assert.match(doc, /<h1[^>]*>Support this project<\/h1>/);
   assert.match(doc, /Help keep this project free and support its continued development\./);
-  assert.match(doc, /Contributions open soon\./);
-  assert.match(doc, /<button[^>]*id="submit"[^>]*disabled|<button[^>]*disabled[^>]*id="submit"/, 'the contribute button must be disabled');
-  assert.match(doc, /data-enabled="false"/);
-  // Nothing pre-selected except the "Once" tab: no amount and never anything recurring.
-  for (const m of doc.matchAll(/<input[^>]*type="radio"[^>]*>/g)) {
-    if (/checked/.test(m[0])) assert.match(m[0], /name="kind"[^>]*value="once"|value="once"[^>]*name="kind"/, `pre-selected: ${m[0]}`);
+  assert.match(doc, /core educational resources on this site are intended to remain freely accessible/);
+  for (const a of ['₹100', '₹250', '₹500', 'Other amount']) assert.ok(doc.includes(a), `missing option ${a}`);
+  assert.doesNotMatch(doc, /<input[^>]*type="radio"[^>]*checked/, 'no amount may be pre-selected');
+  const open = /data-open="true"/.test(doc);
+  const markup = doc.replace(/<script[\s\S]*?<\/script>/g, '');
+  if (!open) {
+    assert.match(doc, /Contributions open soon\./);
+    assert.doesNotMatch(markup, /upi:\/\/pay|data-qr=|data-upi-id=/, 'no UPI ID, link or QR in the page while closed');
+  } else {
+    assert.match(doc, /data-qr="any"/, 'open QR (no amount) missing');
+    assert.match(doc, /id="upi-copy"/);
+    assert.match(doc, /id="upi-open"[^>]*href="upi:\/\/pay\?pa=/);
   }
-  // Language rules for the support page.
   const text = doc.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ');
-  assert.match(text, /Cancel anytime/, 'recurring cancellation must be prominent');
-  assert.match(text, /core educational resources on this site are intended to remain freely accessible/);
-  assert.doesNotMatch(text, /whether or not you contribute|everything on this site is free/i);
-  for (const banned of [/donat/i, /charit/i, /refund polic/i, /money.back/i, /only \d+ left/i, /hurry|last chance|act now|countdown/i, /tax.deductible donation/i, /\/\s*year|per year|a year|annual|≈/i]) {
+  // No recurring support anywhere on the page (parked feature).
+  assert.doesNotMatch(text, /recurring|regularly|\bweek\b|\/week|\bmonth\b|\/month|autopay|mandate|subscri|cancel anytime/i);
+  for (const banned of [/donat/i, /charit/i, /refund polic/i, /money.back/i, /only \d+ left/i, /hurry|last chance|act now|countdown/i, /tax.deductible donation/i]) {
     assert.doesNotMatch(text, banned, `support page uses ${banned}`);
   }
+  assert.doesNotMatch(doc, /api\.qrserver|chart\.googleapis|quickchart|qr-code-generator|razorpay|cashfree|payu|juspay/i, 'no third-party QR service or gateway');
   for (const [url, page] of html) {
     if (url.startsWith('/doctors/trainers/auscultation/')) assert.match(page, /href="\/support\/"/, `${url} lacks the quiet support line`);
     else if (/<footer class="site-footer"/.test(page)) assert.match(page.match(/<footer class="site-footer"[\s\S]*?<\/footer>/)[0], /href="\/support\/"/, `${url} footer lacks /support/`);
