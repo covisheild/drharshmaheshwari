@@ -12,8 +12,8 @@ trainers/auscultation/hls-cmds-v2/. src/data/trainers/auscultation/recordings.js
 Of the 535 files only ~344 hold distinct audio: the heart and lung sources behind the mixes reuse
 the same recordings many times. Each distinct sound is encoded once; mixes point to the shared copy.
 
-Next to each MP3 it writes <id>.peaks.json: the waveform outline (audiowaveform JSON v2, 50 points
-per second), uploaded to R2 with the audio so browsers never have to decode audio to draw it.
+Next to each MP3 it writes <id>.peaks.json: the waveform outline (audiowaveform JSON v2, 16-bit,
+200 points per second, so a 5 ms crackle or a split S2 shows in the zoomed view), uploaded to R2 with the audio so browsers never have to decode audio to draw it.
 
 Processing is a single linear gain per file (no compression, no filtering), so the sounds keep
 their shape; then a 10 ms fade at each end and MP3 encoding (mono, 16 kHz, 32 kbps). The source
@@ -34,7 +34,7 @@ REPO = Path(__file__).resolve().parents[3]
 DATA_OUT = REPO / 'src/data/trainers/auscultation/recordings.json'
 SET = 'hls-cmds-v2'
 
-PEAKS_PER_SECOND = 50  # waveform resolution: 750 min/max pairs for a 15 s clip (~4 KB)
+PEAKS_PER_SECOND = 200  # waveform resolution: one min/max pair per 5 ms, 3000 for a 15 s clip (~30 KB, ~10 KB gzipped)
 TARGET_DB = -20.0  # loudness of the loud parts (gated RMS), dBFS
 PEAK_DB = -1.0     # never let a sample go above this
 
@@ -95,15 +95,16 @@ def process(src, dst):
 
 
 def write_peaks(y, rate, path):
-    """Waveform outline in audiowaveform JSON v2 (8-bit), read by src/trainers/media/peaks.ts.
-    Made from the same levelled signal as the MP3, so the picture matches what is heard."""
-    spp = rate // PEAKS_PER_SECOND
+    """Waveform outline in audiowaveform JSON v2 (16-bit), read by src/trainers/media/peaks.ts.
+    Made from the same levelled signal as the MP3, so the picture matches what is heard. 16-bit because
+    the viewer magnifies quiet sounds (murmurs, crackles), where 8-bit steps would show as stairs."""
+    spp = max(1, rate // PEAKS_PER_SECOND)
     n = len(y) // spp
     blocks = y[:n * spp].reshape(n, spp)
-    lo = np.clip(np.round(blocks.min(axis=1) * 128), -128, 127).astype(int)
-    hi = np.clip(np.round(blocks.max(axis=1) * 128), -128, 127).astype(int)
+    lo = np.clip(np.round(blocks.min(axis=1) * 32768), -32768, 32767).astype(int)
+    hi = np.clip(np.round(blocks.max(axis=1) * 32768), -32768, 32767).astype(int)
     data = np.column_stack([lo, hi]).ravel().tolist()
-    peaks = {'version': 2, 'channels': 1, 'sample_rate': rate, 'samples_per_pixel': spp, 'bits': 8, 'length': n, 'data': data}
+    peaks = {'version': 2, 'channels': 1, 'sample_rate': rate, 'samples_per_pixel': spp, 'bits': 16, 'length': n, 'data': data}
     path.write_text(json.dumps(peaks, separators=(',', ':')), encoding='utf-8')
 
 

@@ -144,8 +144,10 @@ try {
     const drawn = await page.$eval('.av-wave canvas', (c) => { const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data; let n = 0; for (let i = 3; i < d.length; i += 4) if (d[i]) n++; return n / (d.length / 4); });
     if (MEDIA) check(drawn > 0.08, `${name} learn page draws the waveform from peaks (${(drawn * 100).toFixed(0)}% of pixels)`);
     check(await page.$eval('.av-play', (b) => b.getAttribute('aria-pressed') === 'true'), `${name} learn example plays`);
-    // seeking by click
-    const box = await page.$eval('.av-wave', (w) => { const r = w.getBoundingClientRect(); return { x: r.x, y: r.y, w: r.width, h: r.height }; });
+    // seeking by click: on the whole-clip strip when the close-up is shown, else on the progress bar
+    if (MEDIA) check(await page.isVisible('.av-overview'), `${name} learn page shows the close-up and the whole-clip strip`);
+    const target = (await page.isVisible('.av-overview')) ? '.av-overview' : '.av-wave';
+    const box = await page.$eval(target, (w) => { const r = w.getBoundingClientRect(); return { x: r.x, y: r.y, w: r.width, h: r.height }; });
     await page.mouse.click(box.x + box.w * 0.5, box.y + box.h / 2);
     check(Number(await page.getAttribute('.av-wave', 'aria-valuenow')) >= 6, `${name} clicking the waveform seeks`);
     await page.selectOption('.av-speed select', '0.5');

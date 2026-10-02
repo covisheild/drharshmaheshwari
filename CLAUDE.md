@@ -96,7 +96,7 @@ local devDependency. Change production settings only on purpose; preview-only se
   bottom tab bar on phones) and sections, each a static page: Home, Learn (+ one page per finding), Practice, Quiz, Review, Progress.
 - Shared, trainer-agnostic code: `src/trainers/core/` (engine: questions, look-alike distractors, levels; `ProgressStore`;
   media and adapter contracts), `src/trainers/ui/` (question runner and section views), `src/trainers/media/` (viewers;
-  `AudioViewer` = waveform, playhead, seeking, speed, labelled spans). A new trainer adds `src/trainers/<id>/` (config +
+  `AudioViewer` = waveform close-up that follows the playhead plus a whole-clip strip, compressed heights so quiet sounds show, seeking, speed, labelled spans). A new trainer adds `src/trainers/<id>/` (config +
   adapter), its pages, a registry entry, and a viewer only if it needs a new kind of media.
 - Progress goes only through `ProgressStore`; the UI never touches localStorage directly. `LocalProgressStore` keeps it in
   the browser (`trainer:<id>:v2`); `SyncedProgressStore` (`core/sync.ts`, what trainers use) wraps it and, when signed in,

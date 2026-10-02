@@ -4,6 +4,9 @@
 //   iPhone silent switch on. Clips are never looped (a looped 15 s clip puts a false beat at the join).
 // - The waveform comes from pre-generated peaks (see peaks.ts); the audio is never decoded in the browser.
 //   Without peaks (missing file, or R2 not sending CORS headers) it shows a plain progress bar instead.
+// - Two views of the waveform: a close-up of a few seconds that follows the playhead (tap to seek, drag to
+//   move along the recording), and below it the whole clip as a thin strip (tap or drag to jump).
+// - Heights are compressed (see displayShape) so quiet sounds show next to S1 and S2.
 // - setCues(false) hides the waveform shape and spans, e.g. during a quiz, where the shape of AF or
 //   crackles would give the answer away. Position and seeking still work.
 // - Only one viewer plays at a time on a page.
@@ -13,6 +16,7 @@ import { loadPeaks, type Peaks } from './peaks';
 
 const SPEEDS = [0.5, 0.75, 1, 1.25];
 const viewers = new Set<AudioViewer>();
+const REDUCED_MOTION = matchMedia('(prefers-reduced-motion: reduce)');
 
 const fmt = (s: number) => {
   if (!Number.isFinite(s)) s = 0;
@@ -24,11 +28,14 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
   private audio = new Audio();
   private media: AudioMedia | null = null;
   private peaks: Peaks | null = null;
+  private shape: Float32Array | null = null;
   private cues = true;
   private raf = 0;
   private el: HTMLElement;
   private canvas: HTMLCanvasElement;
   private wave: HTMLElement;
+  private overview: HTMLElement;
+  private overviewCanvas: HTMLCanvasElement;
   private playBtn: HTMLButtonElement;
   private time: HTMLElement;
   private labelEl: HTMLElement;
@@ -44,6 +51,7 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
       <div class="av-wave" role="slider" tabindex="0" aria-label="Position in recording" aria-valuemin="0">
         <canvas aria-hidden="true"></canvas>
       </div>
+      <div class="av-overview" aria-hidden="true"><canvas></canvas></div>
       <div class="av-controls">
         <button type="button" class="av-play" aria-pressed="false"><span class="av-icon" aria-hidden="true">▶</span> <span class="av-text">Play</span></button>
         <span class="av-time">0:00 / 0:00</span>
@@ -52,6 +60,8 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
     root.replaceChildren(this.el);
     this.canvas = this.el.querySelector('canvas')!;
     this.wave = this.el.querySelector('.av-wave')!;
+    this.overview = this.el.querySelector('.av-overview')!;
+    this.overviewCanvas = this.overview.querySelector('canvas')!;
     this.playBtn = this.el.querySelector('.av-play')!;
     this.time = this.el.querySelector('.av-time')!;
     this.labelEl = this.el.querySelector('.av-label')!;
@@ -64,6 +74,7 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
     this.stop();
     this.media = media;
     this.peaks = null;
+    this.shape = null;
     this.labelEl.textContent = opts.label ?? '';
     delete this.el.dataset.error;
     this.audio.src = media.src;
@@ -72,7 +83,12 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
     this.update();
     if (media.peaks) {
       const url = media.peaks;
-      loadPeaks(url).then((p) => { if (this.media?.peaks === url) { this.peaks = p; this.draw(); } });
+      loadPeaks(url).then((p) => {
+        if (this.media?.peaks !== url || !p) return;
+        this.peaks = p;
+        this.shape = displayShape(p);
+        this.draw();
+      });
     }
     if (opts.autoplay) this.play();
   }
@@ -110,20 +126,46 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
     a.addEventListener('error', () => { this.el.dataset.error = 'true'; this.labelEl.textContent = 'Could not load this sound. Check your connection.'; this.sync(); });
     this.speed.addEventListener('change', () => { a.playbackRate = Number(this.speed.value); });
 
-    const seekTo = (clientX: number) => {
-      const r = this.wave.getBoundingClientRect();
-      const d = this.duration();
-      if (!d) return;
-      a.currentTime = Math.min(Math.max((clientX - r.left) / r.width, 0), 1) * d;
-      this.update();
-    };
+    const clampT = (t: number) => Math.min(Math.max(t, 0), this.duration());
+    // Close-up: a tap seeks to the sound under the finger; a drag moves along the recording like tape.
     this.wave.addEventListener('pointerdown', (e) => {
+      if (!this.duration()) return;
       this.wave.setPointerCapture(e.pointerId);
-      seekTo(e.clientX);
-      const move = (ev: PointerEvent) => seekTo(ev.clientX);
-      const up = () => { this.wave.removeEventListener('pointermove', move); this.wave.removeEventListener('pointerup', up); };
+      const r = this.wave.getBoundingClientRect(), [v0, v1] = this.view();
+      const x0 = e.clientX, t0 = a.currentTime, secPerPx = (v1 - v0) / r.width;
+      const zoomed = this.zoomed();
+      let dragging = false;
+      if (!zoomed) { a.currentTime = clampT(v0 + (x0 - r.left) * secPerPx); this.update(); }
+      const move = (ev: PointerEvent) => {
+        if (!zoomed) a.currentTime = clampT(v0 + (ev.clientX - r.left) * secPerPx);
+        else if (dragging || Math.abs(ev.clientX - x0) > 4) { dragging = true; a.currentTime = clampT(t0 - (ev.clientX - x0) * secPerPx); }
+        this.update();
+      };
+      const up = () => {
+        if (zoomed && !dragging) a.currentTime = clampT(v0 + (x0 - r.left) * secPerPx);
+        this.update();
+        this.wave.removeEventListener('pointermove', move);
+        this.wave.removeEventListener('pointerup', up);
+        this.wave.removeEventListener('pointercancel', up);
+      };
       this.wave.addEventListener('pointermove', move);
       this.wave.addEventListener('pointerup', up);
+      this.wave.addEventListener('pointercancel', up);
+    });
+    // Whole-clip strip: tap or drag to jump anywhere.
+    this.overview.addEventListener('pointerdown', (e) => {
+      const seek = (clientX: number) => {
+        const r = this.overview.getBoundingClientRect();
+        a.currentTime = clampT(((clientX - r.left) / r.width) * this.duration());
+        this.update();
+      };
+      this.overview.setPointerCapture(e.pointerId);
+      seek(e.clientX);
+      const move = (ev: PointerEvent) => seek(ev.clientX);
+      const up = () => { this.overview.removeEventListener('pointermove', move); this.overview.removeEventListener('pointerup', up); this.overview.removeEventListener('pointercancel', up); };
+      this.overview.addEventListener('pointermove', move);
+      this.overview.addEventListener('pointerup', up);
+      this.overview.addEventListener('pointercancel', up);
     });
     this.wave.addEventListener('keydown', (e) => {
       const d = this.duration();
@@ -139,6 +181,7 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
 
     const ro = new ResizeObserver(() => this.draw());
     ro.observe(this.wave);
+    ro.observe(this.overview);
     const mo = new MutationObserver(() => this.draw()); // theme or mode changed: colours change
     mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'data-mode'] });
     this.observers.push(ro, mo);
@@ -169,45 +212,148 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
   }
 
   private draw() {
-    const c = this.canvas, w = this.wave.clientWidth, h = this.wave.clientHeight;
-    if (!w || !h) return;
-    const dpr = Math.min(devicePixelRatio || 1, 2);
-    if (c.width !== Math.round(w * dpr) || c.height !== Math.round(h * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); }
-    const g = c.getContext('2d')!;
-    g.setTransform(dpr, 0, 0, dpr, 0, 0);
-    g.clearRect(0, 0, w, h);
-    const css = getComputedStyle(this.el);
-    const played = css.getPropertyValue('--wave-played').trim() || '#0f6e64';
-    const rest = css.getPropertyValue('--wave').trim() || '#999';
+    this.el.classList.toggle('zoomed', this.zoomed()); // shows the whole-clip strip
+    this.drawDetail();
+    this.drawOverview();
+  }
+
+  /** Seconds shown in the close-up: about 140 px per second, 2.5 to 6 s. */
+  private windowSecs() { return Math.min(Math.max(this.wave.clientWidth / 140, 2.5), 6); }
+
+  /** Close-up only when there is a waveform to look at and the clip is longer than the window. */
+  private zoomed() { return !!this.shape && this.cues && this.duration() > this.windowSecs() * 1.2; }
+
+  /** Start and end (s) of what the close-up shows. It follows the playhead, which sits 30% from the left;
+   *  with reduced motion it turns a page at a time instead of scrolling. */
+  private view(): [number, number] {
     const d = this.duration();
-    const x = d ? (this.audio.currentTime / d) * w : 0;
+    if (!this.zoomed()) return [0, d];
+    const win = this.windowSecs(), t = this.audio.currentTime;
+    const s = REDUCED_MOTION.matches ? Math.floor(t / (win * 0.8)) * win * 0.8 : t - win * 0.3;
+    const start = Math.min(Math.max(s, 0), d - win);
+    return [start, start + win];
+  }
+
+  private drawDetail() {
+    const c = canvas(this.canvas, this.wave);
+    if (!c) return;
+    const { g, w, h } = c;
+    const css = getComputedStyle(this.el);
+    const col = (name: string, fallback: string) => css.getPropertyValue(name).trim() || fallback;
+    const played = col('--wave-played', '#0f6e64'), rest = col('--wave', '#999'), grid = col('--wave-grid', 'rgb(127 127 127 / .25)');
+    const d = this.duration(), t = this.audio.currentTime;
+    const [v0, v1] = this.view();
+    const span = v1 - v0 || 1;
+    const xOf = (s: number) => ((s - v0) / span) * w;
+    const head = d ? Math.min(Math.max(xOf(t), 0), w) : 0;
     const mid = h / 2;
 
-    if (this.peaks && this.cues) {
-      const { data, points } = this.peaks;
-      const cover = d ? Math.min(this.peaks.duration / d, 1) : 1; // peaks may end a hair before the audio
-      for (let px = 0; px < w; px++) {
-        const i0 = Math.floor((px / w / cover) * points), i1 = Math.max(i0 + 1, Math.floor(((px + 1) / w / cover) * points));
-        if (i0 >= points) break;
-        let lo = 0, hi = 0;
-        for (let i = i0; i < Math.min(i1, points); i++) { lo = Math.min(lo, data[2 * i]); hi = Math.max(hi, data[2 * i + 1]); }
-        g.fillStyle = px < x ? played : rest;
-        g.fillRect(px, mid - hi * mid * 0.95, 1, Math.max(1, (hi - lo) * mid * 0.95));
+    if (this.shape && this.cues) {
+      if (this.zoomed()) {
+        // One faint line per second, labelled, so beats and gaps can be timed.
+        g.font = '500 10px Inter, system-ui, sans-serif';
+        for (let s = Math.ceil(v0); s < v1; s++) {
+          const x = Math.round(xOf(s));
+          g.fillStyle = grid; g.fillRect(x, 0, 1, h);
+          g.fillStyle = col('--wave-label', '#777'); g.fillText(`${s} s`, x + 3, h - 4);
+        }
       }
+      g.fillStyle = grid; g.fillRect(0, Math.round(mid), w, 1);
+      const path = this.trace(v0, v1, w, h, 6);
+      g.fillStyle = rest; g.fill(path);
+      g.save(); g.beginPath(); g.rect(0, 0, head, h); g.clip();
+      g.fillStyle = played; g.fill(path);
+      g.restore();
     } else {
       // No waveform (or cues hidden): a plain track that still shows position.
       g.fillStyle = rest; g.fillRect(0, mid - 3, w, 6);
-      g.fillStyle = played; g.fillRect(0, mid - 3, x, 6);
+      g.fillStyle = played; g.fillRect(0, mid - 3, head, 6);
     }
     if (this.cues && this.media?.spans?.length && d) {
       g.font = '600 11px Inter, system-ui, sans-serif';
       for (const s of this.media.spans) {
-        const x0 = (s.start / d) * w, x1 = (s.end / d) * w;
+        if (s.end < v0 || s.start > v1) continue;
+        const x0 = xOf(s.start), x1 = xOf(s.end);
         g.fillStyle = 'rgb(127 127 127 / .14)'; g.fillRect(x0, 0, x1 - x0, h);
-        g.fillStyle = played; g.fillText(s.label, x0 + 3, 12);
+        g.fillStyle = played; g.fillText(s.label, Math.max(x0, 0) + 3, 12);
       }
     }
-    g.fillStyle = css.getPropertyValue('--wave-head').trim() || '#000';
-    g.fillRect(Math.min(x, w - 2), 0, 2, h);
+    g.fillStyle = col('--wave-head', '#000');
+    g.fillRect(Math.min(head, w - 2), 0, 2, h);
   }
+
+  /** The whole clip in a thin strip, with the stretch the close-up shows marked. Hidden without a waveform. */
+  private drawOverview() {
+    if (!this.zoomed()) return;
+    const c = canvas(this.overviewCanvas, this.overview);
+    if (!c) return;
+    const { g, w, h } = c;
+    const css = getComputedStyle(this.el);
+    const d = this.duration(), head = (this.audio.currentTime / d) * w;
+    const [v0, v1] = this.view();
+    g.fillStyle = css.getPropertyValue('--wave-window').trim() || 'rgb(127 127 127 / .2)';
+    g.fillRect((v0 / d) * w, 0, ((v1 - v0) / d) * w, h);
+    const path = this.trace(0, d, w, h, 2);
+    g.fillStyle = css.getPropertyValue('--wave').trim() || '#999'; g.fill(path);
+    g.save(); g.beginPath(); g.rect(0, 0, head, h); g.clip();
+    g.fillStyle = css.getPropertyValue('--wave-played').trim() || '#0f6e64'; g.fill(path);
+    g.restore();
+    g.fillStyle = css.getPropertyValue('--wave-head').trim() || '#000';
+    g.fillRect(Math.min(head, w - 2), 0, 2, h);
+  }
+
+  /** Filled outline of the waveform from t0 to t1 (s) across w px. Where several points fall in one pixel
+   *  it keeps their extremes (a 5 ms crackle is never averaged away); where a point spans several pixels
+   *  it interpolates between neighbours, so the outline stays smooth when zoomed in. */
+  private trace(t0: number, t1: number, w: number, h: number, pad: number) {
+    const shape = this.shape!, points = shape.length / 2, pps = points / this.peaks!.duration;
+    const mid = h / 2, amp = mid - pad, perPx = ((t1 - t0) / w) * pps;
+    const cols = Math.ceil(w), top = new Float32Array(cols + 1), bot = new Float32Array(cols + 1);
+    const at = (i: number, k: 0 | 1) => (i >= 0 && i < points ? shape[2 * i + k] : 0);
+    for (let px = 0; px <= cols; px++) {
+      const p = (t0 + (px / w) * (t1 - t0)) * pps; // position in points
+      let lo = 0, hi = 0;
+      if (perPx >= 1) {
+        for (let i = Math.floor(p), end = Math.min(Math.ceil(p + perPx), points); i < end; i++) {
+          if (shape[2 * i] < lo) lo = shape[2 * i];
+          if (shape[2 * i + 1] > hi) hi = shape[2 * i + 1];
+        }
+      } else {
+        const f = p - 0.5, i = Math.floor(f), k = f - i; // point i is centred on (i + 0.5) / pps
+        lo = at(i, 0) * (1 - k) + at(i + 1, 0) * k;
+        hi = at(i, 1) * (1 - k) + at(i + 1, 1) * k;
+      }
+      top[px] = mid - Math.max(hi * amp, 0.5);
+      bot[px] = mid - Math.min(lo * amp, -0.5);
+    }
+    const path = new Path2D();
+    path.moveTo(0, top[0]);
+    for (let px = 1; px <= cols; px++) path.lineTo(px, top[px]);
+    for (let px = cols; px >= 0; px--) path.lineTo(px, bot[px]);
+    path.closePath();
+    return path;
+  }
+}
+
+/** Size a canvas to its box at the screen's pixel density; null while the box has no size (hidden). */
+function canvas(c: HTMLCanvasElement, box: HTMLElement) {
+  const w = box.clientWidth, h = box.clientHeight;
+  if (!w || !h) return null;
+  const dpr = Math.min(devicePixelRatio || 1, 2);
+  if (c.width !== Math.round(w * dpr) || c.height !== Math.round(h * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); }
+  const g = c.getContext('2d')!;
+  g.setTransform(dpr, 0, 0, dpr, 0, 0);
+  g.clearRect(0, 0, w, h);
+  return { g, w, h };
+}
+
+/** Amplitude as drawn: relative to the clip's loud parts, then compressed (log), so quiet sounds such as
+ *  murmurs, S3/S4 and crackles stay visible next to S1 and S2. Height on screen therefore shows what is
+ *  there, not how loud it is relative to S1/S2; the ear judges loudness. */
+const COMPRESS = 10; // a sound at 1/10 of the loud parts is drawn at about 30% height, not 10%
+function displayShape(p: Peaks) {
+  const mags = Array.from(p.data, Math.abs).sort((a, b) => a - b);
+  const ref = Math.max(mags[Math.floor(mags.length * 0.995)] ?? 0, 1e-3); // a single click does not set the scale
+  const k = Math.log1p(COMPRESS);
+  return Float32Array.from(p.data, (v) => Math.sign(v) * Math.log1p(COMPRESS * Math.min(Math.abs(v) / ref, 1)) / k);
 }

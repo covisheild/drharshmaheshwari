@@ -117,11 +117,16 @@
 
 /* ---------- Audio viewer ---------- */
 .av { --wave: color-mix(in oklab, var(--ink-3) 55%, transparent); --wave-played: var(--brand); --wave-head: var(--ink);
+  --wave-grid: color-mix(in oklab, var(--ink-3) 22%, transparent); --wave-label: var(--ink-3);
+  --wave-window: color-mix(in oklab, var(--brand) 16%, transparent);
   border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: .9rem; }
 .av-label { min-height: 1.4em; font-weight: 600; font-size: .92rem; color: var(--ink-2); margin-bottom: .5rem; }
 .av[data-error] .av-label { color: var(--risk); }
-.av-wave { position: relative; height: 96px; border-radius: var(--radius-sm); background: var(--surface-2); cursor: pointer; touch-action: none; }
+.av-wave { position: relative; height: 112px; border-radius: var(--radius-sm); background: var(--surface-2); cursor: pointer; touch-action: none; }
 .av-wave canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.av-overview { display: none; position: relative; height: 30px; margin-top: .4rem; border-radius: var(--radius-sm); background: var(--surface-2); cursor: pointer; touch-action: none; }
+.av.zoomed .av-overview { display: block; }
+.av-overview canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .av-wave:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .av-controls { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; margin-top: .75rem; }
 .av-play { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; padding: .55rem 1.1rem; border-radius: 999px; border: 0; background: var(--brand); color: var(--brand-ink); font: 700 1rem var(--font-body); cursor: pointer; }
