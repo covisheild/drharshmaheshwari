@@ -104,6 +104,16 @@ local devDependency. Change production settings only on purpose; preview-only se
 - Review is spaced repetition (`core/schedule.ts`, FSRS via `ts-fsrs`): rebuilt from the attempts each time, nothing
   extra stored. Wrong last time = due now; otherwise due when predicted recall falls to 90% (max 1 year).
 
+## Book reader (`/doctors/books/obesity-expertise/`)
+
+- Plan and settled decisions: `docs/book-reader-plan.md`. For Doctors only. White and pure black themes.
+- Text: `src/data/books/obesity-expertise/` (`series.json`, `<id>/book.json`, `<id>/sections/*.json`), written by
+  `obesity-course/check/web/export.py --frozen --out <this repo>/src/data/books/obesity-expertise`. Never edit
+  these files by hand; re-export. Book URLs use the book id (`b0`, `s01-r1`) and are permanent.
+- Figures and PDFs are on R2 (`books/obesity-expertise/figures/`, `books/obesity-expertise/<ID>-v<version>.pdf`).
+  `PUBLIC_BOOK_FIGURES` overrides the figure base for local testing.
+- Progress goes only through `BookProgressStore` (`src/reader/store.ts`, `book:<id>:v1`), never localStorage directly.
+
 ## Accounts (optional Google sign-in) and `/api/`
 
 - Only `/api/*` runs server code (`src/pages/api/[...path].ts` → `src/server/api.ts`); every page stays static.

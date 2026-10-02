@@ -127,3 +127,18 @@ passes `npm run build && npm test` and the 390 px / desktop screenshots in `CLAU
 - Inspect the Statistics sources in `drhm-sources/stats/` and pick its converter.
 - Confirm `R2_*` access and the network allow-list (`*.r2.cloudflarestorage.com`,
   `files.drharshmaheshwari.com`) at the start of the next session.
+
+## Progress (2 Oct 2026, second session)
+
+- **Phase 0 done.** `obesity-course/check/web/export.py` writes the format above (plus `series.json`) into
+  `src/data/books/obesity-expertise/`; figures go to a folder for R2 (`books/obesity-expertise/figures/`).
+  Glossary taps are marked at export: whole-word, from the section that teaches the term on, never for the
+  everyday words listed in `EVERYDAY`. A raw caret, record id or repo path stops the export; a tilde is
+  reported only (S02-R1 quotes "~90 g/day").
+- **Phase 1 built on this branch:** series page, reader, all 8 frozen books, local progress, practice reveal
+  with self-mark, glossary and reference pop-ups. Browser checks in `tests/e2e.mjs` ("Book reader").
+- **Before merging:** upload the figures and the 8 PDFs to R2 (`books/obesity-expertise/figures/<file>` and
+  `books/obesity-expertise/<ID>-v<version>.pdf`) and check each link returns the file; then tick 🌐 in Notion.
+- **Blocked in the session:** the environment has no `R2_*` variables, and its "Cloudflare R2" proxy credential
+  is set up as an AWS credential, so the proxy refuses to sign `*.r2.cloudflarestorage.com`;
+  `files.drharshmaheshwari.com` is not on the network allow-list. The Statistics sources could not be inspected.
