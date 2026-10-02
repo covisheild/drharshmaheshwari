@@ -8,8 +8,8 @@ export const UPI_CONFIG = {
   /** The UPI ID (VPA) that receives contributions, e.g. "name@bank". Leave empty until it is final:
    *  never put a placeholder here, a made-up ID could belong to a real person. */
   upiId: 'info.harshmaheshwari@okhdfcbank',
-  /** Shown on the page and in the payer's UPI app. */
-  payeeName: 'Dr. Harsh Maheshwari',
+  /** Shown on the page and in the payer's UPI app; keep it the same as the bank-registered name. */
+  payeeName: 'Harsh Maheshwari',
   /** Note pre-filled in the UPI app (keep it short; some apps cut long notes). */
   note: 'Support drharshmaheshwari.com',
   /** Put the chosen amount into the QR and the app link. Set false if the receiving UPI ID is a merchant
