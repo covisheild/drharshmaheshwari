@@ -36,6 +36,6 @@ export async function GET() {
     for (const b of bookList) lines.push(`- [${b.data.title}](${SITE.url}${bookUrl(b)}): ${b.data.description}`);
     lines.push('');
   }
-  lines.push('## Optional', '', `- [About ${SITE.name}](${SITE.url}/about/)`, `- [Medical disclaimer](${SITE.url}/disclaimer/)`, '');
+  lines.push('## Optional', '', `- [About ${SITE.name}](${SITE.url}/about/)`, `- [Medical disclaimer](${SITE.url}/disclaimer/)`, `- [Support this project](${SITE.url}/support/): voluntary contributions; everything on the site is free to use`, '');
   return new Response(lines.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 }

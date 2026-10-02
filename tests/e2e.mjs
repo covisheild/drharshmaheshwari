@@ -74,7 +74,7 @@ try {
     const ctx = await context(vp);
     const page = await ctx.newPage();
     const errs = errorsOf(page);
-    for (const url of ['/', '/learn/', '/tools/', '/tools/bmi-calculator/', '/books/', '/videos/', '/about/', '/doctors/', '/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/', '/doctors/books/', '/doctors/books/statistics-first-principles-to-regression/', '/doctors/videos/', T, `${T}learn/`, `${T}learn/s3/`, `${T}learn/heart-and-lungs-together/`, `${T}practice/`, `${T}quiz/`, `${T}review/`, `${T}progress/`]) {
+    for (const url of ['/', '/learn/', '/tools/', '/tools/bmi-calculator/', '/books/', '/videos/', '/about/', '/doctors/', '/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/', '/doctors/books/', '/doctors/books/statistics-first-principles-to-regression/', '/doctors/videos/', '/support/', T, `${T}learn/`, `${T}learn/s3/`, `${T}learn/heart-and-lungs-together/`, `${T}practice/`, `${T}quiz/`, `${T}review/`, `${T}progress/`]) {
       const r = await page.goto(BASE + url);
       check(r.status() === 200 && (await overflow(page)) <= 0, `${name} ${url}: 200, no sideways scroll`);
     }
@@ -89,6 +89,31 @@ try {
     await page.click('.mode-bar a[data-mode-link="everyone"]');
     check(await page.evaluate(() => location.pathname === '/' && document.documentElement.dataset.mode === 'everyone'), `${name} mode switch back to For Everyone`);
     check(errs.length === 0, `${name} no script errors (${errs.join('; ')})`);
+    await ctx.close();
+  }
+
+  // ---------- Support page: options work, nothing pre-selected, nothing can be submitted ----------
+  for (const [name, vp] of [['phone', { width: 390, height: 844 }], ['desktop', { width: 1280, height: 900 }]]) {
+    const ctx = await context(vp);
+    const page = await ctx.newPage();
+    const errs = errorsOf(page);
+    await page.goto(BASE + '/support/');
+    check(await page.$eval('#submit', (b) => b.disabled && b.textContent === 'Choose an amount'), `${name} support: nothing chosen, button disabled`);
+    await page.click('text=₹250');
+    check(await page.$eval('#submit', (b) => b.textContent === 'Support with ₹250' && b.disabled), `${name} support: one-time label, still disabled`);
+    await page.click('.kind >> text=Regularly');
+    check((await page.$$eval('input[name=rec-amount]', (r) => r.filter((x) => x.checked).length)) === 0, `${name} support: no recurring option pre-selected`);
+    await page.click('text=₹20/week');
+    const s = await page.textContent('#summary');
+    check(s.includes('₹20 every week') && s.includes('≈ ₹1,040/year'), `${name} support: weekly total shown (${s.trim().slice(0, 40)})`);
+    await page.click('text=₹100/month');
+    check((await page.textContent('#summary')).includes('= ₹1,200/year'), `${name} support: monthly total shown`);
+    await page.check('input[name=authorise]');
+    check(await page.$eval('#submit', (b) => b.disabled && b.textContent === 'Set up ₹100 every month'), `${name} support: recurring label, disabled while payments are off`);
+    await page.click('text=Other amount >> nth=-1');
+    await page.fill('input[name=rec-custom]', '30');
+    check((await page.textContent('#summary')).includes('₹30 every week'), `${name} support: custom weekly amount`);
+    check((await overflow(page)) <= 0 && errs.length === 0, `${name} support: no sideways scroll, no script errors`);
     await ctx.close();
   }
 

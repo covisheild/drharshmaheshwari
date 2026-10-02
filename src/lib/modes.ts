@@ -56,6 +56,7 @@ export const MODES: Record<Mode, ModeInfo> = {
 /** Site-wide pages that belong to neither audience in particular. They live at the root (For Everyone). */
 export const SHARED_LINKS: Link[] = [
   { href: '/about/', label: 'About' },
+  { href: '/support/', label: 'Support this project' },
   { href: '/disclaimer/', label: 'Medical disclaimer' },
   { href: '/privacy/', label: 'Privacy' },
   { href: '/rss.xml', label: 'RSS' },

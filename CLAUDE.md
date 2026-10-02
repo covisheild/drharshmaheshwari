@@ -18,6 +18,14 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 - **Moved URLs get a 301 in `public/_redirects`; never delete a line there.** `tests/site.test.mjs` lists every URL
   production has served and fails if one breaks.
 
+## Support this project (`/support/`)
+
+- Payments are **not active**: `PAYMENTS_ENABLED = false` in `src/lib/support.ts`. The page shows the options
+  and keeps the button disabled. Design, provider research and open questions: `docs/support-architecture.md`.
+- Contributions are voluntary support. They never create entitlements; future paid products use separate
+  purchases and `hasEntitlement()`. UI words: "support", "contribution"; never "donation" or "charity"; no
+  urgency, pop-ups or refund-policy promises. Nothing recurring is ever pre-selected.
+
 ## Tests
 
 `npm run build && npm test` (static checks, no dependencies). `npm run test:e2e` (browser checks; needs Playwright installed

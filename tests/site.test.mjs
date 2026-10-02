@@ -147,3 +147,26 @@ test('sitemap and llms.txt point to the new locations only', () => {
   assert.match(llms, /\/doctors\/trainers\/auscultation\//);
   assert.match(llms, /\/doctors\/books\/statistics-first-principles-to-regression\//);
 });
+
+test('/support/ exists, is reachable from every page footer, and stays switched off', () => {
+  const doc = html.get('/support/');
+  assert.ok(doc, '/support/ is missing');
+  assert.match(doc, /<h1[^>]*>Support this project<\/h1>/);
+  assert.match(doc, /Help keep this project free and support its continued development\./);
+  assert.match(doc, /Contributions open soon\./);
+  assert.match(doc, /<button[^>]*id="submit"[^>]*disabled|<button[^>]*disabled[^>]*id="submit"/, 'the contribute button must be disabled');
+  assert.match(doc, /data-enabled="false"/);
+  // Nothing pre-selected except the "Once" tab: no amount and never anything recurring.
+  for (const m of doc.matchAll(/<input[^>]*type="radio"[^>]*>/g)) {
+    if (/checked/.test(m[0])) assert.match(m[0], /name="kind"[^>]*value="once"|value="once"[^>]*name="kind"/, `pre-selected: ${m[0]}`);
+  }
+  // Language rules for the support page.
+  const text = doc.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ');
+  for (const banned of [/donat/i, /charit/i, /refund polic/i, /money.back/i, /only \d+ left/i, /hurry|last chance|act now|countdown/i, /tax.deductible donation/i]) {
+    assert.doesNotMatch(text, banned, `support page uses ${banned}`);
+  }
+  for (const [url, page] of html) {
+    if (url.startsWith('/doctors/trainers/auscultation/')) assert.match(page, /href="\/support\/"/, `${url} lacks the quiet support line`);
+    else if (/<footer class="site-footer"/.test(page)) assert.match(page.match(/<footer class="site-footer"[\s\S]*?<\/footer>/)[0], /href="\/support\/"/, `${url} footer lacks /support/`);
+  }
+});

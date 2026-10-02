@@ -55,7 +55,7 @@ const sectionLabel = SECTIONS.find((s) => s.id === section)!.label;
         <slot name="intro" />
       </div>
       <div class="t-body"><slot /></div>
-      <footer class="t-foot"><slot name="credits" /></footer>
+      <footer class="t-foot"><slot name="credits" /><p>This trainer is free to use. If it helps you, you can <a href="/support/">support this project</a>.</p></footer>
     </div>
   </div>
 </Base>

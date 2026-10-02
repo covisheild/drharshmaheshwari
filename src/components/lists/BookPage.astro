@@ -49,6 +49,7 @@ const jsonld = [{
       <div class="prose"><Content /></div>
       {d.contents.length > 0 && <div class="prose"><h2>Contents</h2><ol>{d.contents.map((c) => <li>{c}</li>)}</ol></div>}
       <p class="disclaimer">Shared under {licenseUrl ? <a href={licenseUrl}>{d.license}</a> : d.license}{licenseTerms && `: ${licenseTerms}`}. Educational, not personal medical advice.</p>
+      <p class="small muted">This book is free. If it helps you, you can <a href="/support/">support this project</a>.</p>
     </div>
   </article>
 </Base>
