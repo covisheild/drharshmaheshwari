@@ -1,0 +1,169 @@
+{
+ "format": 1,
+ "id": "b0-r0-c27",
+ "label": "D4",
+ "title": "Variation: what differs and by how much",
+ "part": "D",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A distribution is the set of values a quantity takes, across the people, occasions or measurements counted, together with how often each value turns up.</p>\n<p>A <dfn data-g=\"68\">frequency table</dfn> lists each value, or each band of values, against the count of times it occurred. Dividing a count by the total number counted gives the <dfn data-g=\"158\">relative frequency</dfn>.</p>\n<p>The range of a distribution is its largest value minus its smallest.</p>\n<p>The shape of a distribution describes where its values sit relative to each other. They can be bunched together near the middle, or spread evenly across it. Or they can thin out slowly on one side and quickly on the other, which is a <dfn data-g=\"109\">long tail</dfn>.</p>\n<p>A spread of measured values comes from one or more of three sources. It can be a real difference between the people or things measured. It can be a real difference within one person or thing from one occasion to another. Or it can be a difference between repeated measurements of the same person or thing at the same moment.</p>",
+   "refs": [
+    19,
+    20,
+    21
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Write down every value you get. That list, together with how often each value shows up, is a distribution.</p>\n<p>One column lists the values, or bands of values. The other column counts how many times each one turned up.</p>\n<p>Divide a count by the total number of values in the table and you have the relative frequency. It is the <dfn data-g=\"147\">proportion</dfn> from the section on ratios, rates and proportions, under a longer name.</p>\n<p>The range is the largest value minus the smallest. It uses two numbers out of the whole table and says nothing about the rest.</p>\n<p>Many distributions bunch up somewhere in the middle. Others thin out slowly on one side and quickly on the other. The side that thins out slowly is called a long tail.</p>\n<p>Count how many values sit above some line and how many sit below it. That tells you about shape only when the line sits in the true middle, with equal room on each side. Watch that fail on eleven bare numbers, as symmetric a set as exists: five below the middle number, five above it, one dead centre.</p>\n<div class=\"working\">\n<p>1    2    3    4    5    6    7    8    9    10    11</p>\n</div>\n<table style=\"width:25%;\">\n\n<thead>\n<tr>\n<th>band</th>\n<th>count</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1 to 3</td>\n<td>3</td>\n</tr>\n<tr>\n<td>4 to 8</td>\n<td>5</td>\n</tr>\n<tr>\n<td>9 to 11</td>\n<td>3</td>\n</tr>\n</tbody>\n</table>\n<p>Three below the middle band, three above it.</p>\n<table style=\"width:25%;\">\n\n<thead>\n<tr>\n<th>band</th>\n<th>count</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>2 to 8</td>\n<td>7</td>\n</tr>\n<tr>\n<td>9 to 11</td>\n<td>3</td>\n</tr>\n</tbody>\n</table>\n<p>One below the new middle band, three above it. Nothing about the eleven numbers changed. Only where the band edges sat changed, and the count on each side changed with it. A set that is perfectly symmetric can be made to look like it has a long tail just by moving the bands. Count how many values sit above a band and how many sit below it. That tells you about shape only once you know the band is centred and equally wide on both sides. Otherwise it tells you about the band.</p>\n<p>A set of numbers can look spread out for three completely different reasons, and telling them apart is the main use of this section.</p>\n<p>The first is a real difference between people, or between things. Two students really do have different heights.</p>\n<p>The second is a real difference within one person or thing, from one time to another. The same student, weighed in the morning and again in the evening, gives two different numbers.</p>\n<p>The third has nothing to do with the person at all. The scale, the tape, or the hand holding it produced the difference, not the person. An error of this kind can also hide completely. Two readings agreeing is not proof that either one is right.</p>\n<p>Before you explain a spread, or act on it, decide which one you are looking at.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Open the paper by Kiran, Harshitha and Bhargava, published in Heliyon in 2022, on arm and neck measurements in 282 medical students in Mangaluru. In its abstract, the paper defines overweight by body-mass index, written BMI.</p>\n<blockquote>\n<p>to screen overweight (BMI ≥25 kg/m2)</p>\n</blockquote>\n<p>The sign ≥ means “at or above”.</p>\n<blockquote>\n<p>Of the 282 participants, 83 (29.4%) were overweight</p>\n</blockquote>\n<p>Run the check a frequency table always deserves: divide the count by the total.</p>\n<div class=\"working\">\n<p>83 divided by 282 = 0.294326241…<br />\n0.294326241 times 100 = 29.4326241</p>\n</div>\n<p>That rounds to the 29.4 per cent printed, so the division check passes. Does 83 actually match the definition just quoted?</p>\n<p>Table 2 of the same paper sorts all 282 students into four bands of body-mass index.</p>\n<table style=\"width:90%;\">\n\n<tbody>\n<tr>\n<td>band of body-mass index (kg/m<sup>2</sup>)</td>\n<td>count</td>\n<td>relative frequency</td>\n</tr>\n<tr>\n<td>under 18.5</td>\n<td>24</td>\n<td>8.5 per cent</td>\n</tr>\n<tr>\n<td>18.5 to 24.9</td>\n<td>160</td>\n<td>56.7 per cent</td>\n</tr>\n<tr>\n<td>25 to 29.9</td>\n<td>83</td>\n<td>29.4 per cent</td>\n</tr>\n<tr>\n<td>30 or more</td>\n<td>15</td>\n<td>5.3 per cent</td>\n</tr>\n</tbody>\n</table>\n<p>Now look at which band the reported 83 actually comes from. It is the count beside the band “25 to 29.9”, not beside “25 or more”. The paper’s own bands stop at 29.9 and start a new one at 30.</p>\n<div class=\"working\">\n<p>83 plus 15 = 98</p>\n</div>\n<p>Ninety-eight students, not 83, have a body-mass index of 25 or more.</p>\n<div class=\"working\">\n<p>98 divided by 282 = 0.347517730…<br />\n0.347517730 times 100 = 34.7517730</p>\n</div>\n<p>That rounds to 34.8 per cent, not the 29.4 per cent printed beside the reported 83. The paper’s own definition and its own headline count describe two different groups of students. This is not two counts disagreeing with each other. It is a label attached to the wrong slice of its own table. Dividing the count by the total could not catch it, because 83 out of 282 really is 29.4 per cent. Only matching the label to the band it covers did.</p>\n<p>Table 2 also tempts a claim about shape. Ninety-eight students sit in the two bands above the middle one, against 24 in the band below it. Resist calling that a tail. The section above showed why a comparison like this proves nothing on its own.</p>\n<p>These four bands are the World Health Organization’s (WHO), which the paper adopted. They were not drawn around these students. They are not equally wide: 18.5 to 24.9 spans about 6.5 units, 25 to 29.9 about 5. The two outer bands have no outer edge.</p>\n<p>Notice what the table cannot give you, either way. It cannot give you the range of body-mass index among these 282 students. The range needs the single largest and the single smallest value in the whole group. Once every value has been sorted into one of four bands, those two individual numbers are gone. The table can tell you which band held them and nothing about where inside it they sat.</p>\n<p>Two students landing in different bands need not be a real difference between people. Two students either side of 25.0 can be separated by the measurement alone.</p>\n<p>Table 2 gives you only one reading per student. It cannot tell you which of the three you would be looking at if you went back and measured again.</p>",
+   "numberRefs": [
+    18
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The check above only catches a label attached to the wrong band.</p>\n<p>A frequency table built from bands, like this one, can never give you back the range. It cannot give you the exact position of a value inside its own band either. Both are lost the moment individual numbers are grouped.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Two distributions can share exactly the same range and look nothing alike. The range cannot tell the two apart, because it only ever looks at the two most extreme values.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you trust a frequency table’s percentages, divide each count by the printed total and check you get back the <dfn data-g=\"133\">percentage</dfn> beside it. Then match each label to the band it covers. A count can pass the first check and still sit under the wrong label.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A frequency table built from bands has already thrown away the individual values inside each band. Ask for the raw values when any of those is what you actually need.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you explain why two readings differ, decide which of three sources produced it. Call a scale’s own error a difference between people, and you invent a health difference that is not there. Call a real change within a person a measurement glitch, and you miss it.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>An instrument that is wrong by the same amount every time gives two matching readings, and both are wrong. Two readings agreeing is not, by itself, a reason to trust either one.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A single figure, such as the share of a group above one band’s edge, says nothing about the rest of the group. The edge itself may not sit where you assume it does. Do not let one band, or one comparison between two bands, stand in for a whole distribution.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A colleague sends you two facts about the same set of 500 patients’ waiting times at a clinic.</p>\n<blockquote>\n<p>The shortest wait was 2 minutes and the longest 340, a range of 338 minutes. The average patient waits about 45 minutes.</p>\n</blockquote>\n<p>They conclude: “So most patients wait somewhere between 2 and 340 minutes.” Say what is wrong with that conclusion. Say what you would ask for instead.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The range only tells you the two most extreme waiting times out of the 500. It says nothing about where the other 498 patients fall between them. A single patient waiting 340 minutes sets the top of the range alone; everybody else could be clustered anywhere below it.</p>\n<p>“Most patients wait somewhere between 2 and 340” is true only in a trivial sense. Every value lies between the smallest and the largest. That is not the same claim as most patients waiting somewhere in the middle of that stretch. Nothing given so far tells you which is true.</p>\n<p>What to ask for instead: a frequency table of waiting times in useful bands. Or ask how many of the 500 patients waited more than an hour. Either one describes where patients actually sit, rather than where the two extremes happen to be.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident keeps saying “the readings don’t match” whenever two measurements on the same patient disagree, and treats every mismatch the same way.</p>\n<p>You have ten minutes and a whiteboard. Teach them the three sources of difference, so they leave able to ask the right next question about a real disagreement.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Ten minutes, for somebody who expects a mechanism.</p>\n<p>Draw three labelled boxes on the board: between people, within a person, between measurements. Ask the resident for a patient’s two weight readings that disagreed, taken at the same visit.</p>\n<p>Ask the first question: were the two readings taken on two different patients by mistake? If so, the difference is between people, and it says nothing about either patient’s own weight.</p>\n<p>Ask the second: were the two readings taken on the same patient, but hours or days apart? If so, part of the gap can be a real change in that one patient. Food, fluid and the time of day can each move it, and that is a difference within a person.</p>\n<p>Ask the third: were the two readings taken minutes apart, on the same scale, with nothing about the patient changing? If so, any gap left over is a difference between measurements. It comes from the scale or from how the reading was taken, not from the patient.</p>\n<p>Close by having them re-sort their own mismatched readings into the three boxes, out loud. The box a disagreement lands in decides what they do next: trust the first reading, the second, their average, or neither. That decision is the whole reason the three boxes exist.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A count of 50 events is sorted into four categories with these counts.</p>\n<div class=\"working\">\n<p>10    25    10    5</p>\n</div>\n<p>Work out the relative frequency of each category, and check that the four add to 1.</p>",
+   "level": 1,
+   "answer": "<p>Divide each count by the total, 50.</p>\n<div class=\"working\">\n<p>10 divided by 50 = 0.2<br />\n25 divided by 50 = 0.5<br />\n10 divided by 50 = 0.2<br />\n5 divided by 50 = 0.1</p>\n</div>\n<p>Add the four relative frequencies to check them.</p>\n<div class=\"working\">\n<p>0.2 plus 0.5 = 0.7<br />\n0.7 plus 0.2 = 0.9<br />\n0.9 plus 0.1 = 1.0</p>\n</div>\n<p>They add to 1, as every set of relative frequencies covering a whole count must.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Work out the range of this list of six numbers.</p>\n<div class=\"working\">\n<p>3    17    9    42    8    15</p>\n</div>",
+   "level": 2,
+   "answer": "<p>Find the largest and the smallest, then subtract.</p>\n<div class=\"working\">\n<p>largest = 42<br />\nsmallest = 3<br />\n42 minus 3 = 39</p>\n</div>\n<p>The range is 39.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Two sets of six numbers are given below.</p>\n<table style=\"width:53%;\">\n\n<tbody>\n<tr>\n<td>set A</td>\n<td>10</td>\n<td>11</td>\n<td>12</td>\n<td>13</td>\n<td>14</td>\n<td>50</td>\n</tr>\n<tr>\n<td>set B</td>\n<td>10</td>\n<td>20</td>\n<td>30</td>\n<td>40</td>\n<td>45</td>\n<td>50</td>\n</tr>\n</tbody>\n</table>\n<p>Work out the range of each set. Say what you notice, and say what it does not tell you about the two sets.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>set A: 50 minus 10 = 40<br />\nset B: 50 minus 10 = 40</p>\n</div>\n<p>Both sets have a range of 40.</p>\n<p>What it does not tell you: how the six values inside each set are actually spread out. Set A sits bunched between 10 and 14, with one value, 50, sitting a long way out on its own. Set B is spread almost evenly across the whole distance from 10 to 50. Two sets with the same range can have completely different shapes, because the range only ever looks at the two most extreme values.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Three pairs of readings are listed below, each under stated conditions. For each pair, say which source of difference mainly produced the gap. The three are: between people, within a person, and between measurements.</p>\n<ol type=\"a\">\n<li><p>Two different patients are weighed once each, on the same scale. The readings are 58 kilograms and 71 kilograms.</p></li>\n<li><p>The same patient is weighed on Monday morning and again on Friday evening. The readings are 64.0 kilograms and 65.2 kilograms.</p></li>\n<li><p>The same patient is weighed twice on the same scale, one minute apart. Nothing about them changes in between. The readings are 70.4 kilograms and 70.6 kilograms.</p></li>\n</ol>",
+   "level": 4,
+   "answer": "<ol type=\"a\">\n<li><p>Between people. Two different patients were weighed, so the 13-kilogram gap is a real difference between them. Nothing here says either reading is wrong.</p></li>\n<li><p>Mostly within a person. The same patient gave two different numbers days apart. What they ate, what they drank and the time of day can each move a weight reading. Part of the 1.2 kilograms could still come from the scale, and nothing here separates the two.</p></li>\n<li><p>Between measurements. The same patient, the same scale, one minute apart, with nothing about the patient changing. The 0.2-kilogram gap came from the act of measuring, not from the patient.</p></li>\n</ol>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Table 2 of Kiran et al. (2022) sorts 282 medical students into four bands of body-mass index. The counts are 24 under 18.5, 160 from 18.5 to 24.9, 83 from 25 to 29.9, and 15 at 30 or more.</p>\n<p>Work out the relative frequency of the band at 30 or more, and give it as a percentage.</p>",
+   "level": 4,
+   "answer": "<p>Divide the count in that band by the total counted.</p>\n<div class=\"working\">\n<p>15 divided by 282 = 0.053191489…<br />\n0.053191489 times 100 = 5.3191489</p>\n</div>\n<p>That rounds to about 5.3 per cent, matching the percentage the paper itself prints beside the count.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>The same table, split by sex, gives the men’s counts across the four bands as 5, 74, 42 and 10. There are 131 men in the study.</p>\n<p>Check that the four counts add up to 131. Then work out the relative frequency, among the men only, of the band at 30 or more.</p>",
+   "level": 5,
+   "answer": "<p>Add the four counts first.</p>\n<div class=\"working\">\n<p>5 plus 74 = 79<br />\n79 plus 42 = 121<br />\n121 plus 10 = 131</p>\n</div>\n<p>They add to 131, which matches the stated number of men, so this row of the table passes the check.</p>\n<p>Now the relative frequency of the band at 30 or more, among the men.</p>\n<div class=\"working\">\n<p>10 divided by 131 = 0.076335878…<br />\n0.076335878 times 100 = 7.6335878</p>\n</div>\n<p>About 7.6 per cent of the 131 men are in that band.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>The same paper, describing what it counts as its own strength, says this.</p>\n<blockquote>\n<p>The strength of the study was single observer measurements with minimum inter-observer variation.</p>\n</blockquote>\n<p>Inter-observer means between different people taking the measurement.</p>\n<p>Say which of the three sources of difference having one observer take every measurement reduces, and which two it leaves untouched.</p>",
+   "level": 5,
+   "answer": "<p>One observer removes differences between observers. Two different people measuring the same student can place the tape or read the scale a little differently. That gap is one kind of difference between measurements. One observer, measuring everyone the same way, removes it.</p>\n<p>It does not touch a real difference between the people being measured. Two students still really differ in weight and height, whoever measures them.</p>\n<p>It does not touch a real difference within one person from one occasion to the next. If a student weighs more in the evening than in the morning, one observer does not change that.</p>\n<p>And it does not remove every difference between measurements, either. The same observer, with the same tool on the same person, can still get two slightly different readings a few minutes apart. One observer only removes the part of the gap that comes from who holds the tool.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Among the 151 women in the same study, 41 have a body-mass index from 25 to 29.9, and 5 more are at 30 or more.</p>\n<p>Work out what <dfn data-g=\"66\">fraction</dfn> of the 151 women have a body-mass index of 25 or more, as a percentage.</p>",
+   "level": 6,
+   "answer": "<p>Add the two bands first, since both are at 25 or more.</p>\n<div class=\"working\">\n<p>41 plus 5 = 46</p>\n</div>\n<p>Now divide by the total number of women.</p>\n<div class=\"working\">\n<p>46 divided by 151 = 0.304635762…<br />\n0.304635762 times 100 = 30.4635762</p>\n</div>\n<p>About 30.5 per cent of the 151 women have a body-mass index of 25 or more.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer to this question, using Table 2 of Kiran et al. (2022): what share of the men are in the band from 25 to 29.9?</p>\n<div class=\"working\">\n<p>42 divided by 282 = 0.148936170<br />\n0.148936170 times 100 = 14.8936170<br />\nso about 14.9 per cent of the men are in the band from 25 to 29.9</p>\n</div>\n<p>Find the step that broke.</p>",
+   "level": 7,
+   "answer": "<p>The division itself is correct arithmetic. The step that broke is the choice of <dfn data-g=\"47\">denominator</dfn>: 282 is the total number of students, not the total number of men.</p>\n<p>There are 131 men, not 282, and the 42 is a count of men. Divide by the count it actually came out of.</p>\n<div class=\"working\">\n<p>42 divided by 131 = 0.320610687…<br />\n0.320610687 times 100 = 32.0610687</p>\n</div>\n<p>About 32.1 per cent of the men are in that band, not 14.9 per cent.</p>\n<p>Why it looks reasonable: 282 is a number from the very same table. It is also the biggest number on the page, which makes it look like the obvious total to divide by. The table has more than one total in it: one for everybody, one for each sex. Only one of them matches the count in the <dfn data-g=\"129\">numerator</dfn>.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A colleague looks at Table 2 of Kiran et al. (2022) and says this.</p>\n<p>“The band under 18.5 holds 8.5 per cent of the 282 students, and the band at 30 or more holds 5.3 per cent. Those two are close in size, so the distribution of body-mass index in this sample must be roughly symmetric.”</p>\n<p>Find the flaw in that reasoning.</p>",
+   "level": 8,
+   "answer": "<p>Two bands being close in size is not the same claim as the whole distribution being symmetric. Symmetry is about how far every value sits from the middle, on both sides. It is not about how many people fall into two chosen bands at the edges.</p>\n<p>The flaw is that band counts depend on where the band edges fall. The band “under 18.5” and the band “30 or more” are both open-ended, and the table does not say how far either one actually reaches. Comparing their sizes tests nothing about shape. A wide-reaching open band and a narrow one can hold similar counts for reasons that have nothing to do with symmetry.</p>\n<p>The comparison also rests on very little of the sample.</p>\n<div class=\"working\">\n<p>24 plus 15 = 39<br />\n282 minus 39 = 243</p>\n</div>\n<p>The two bands being compared hold 39 students between them. The other 243, in the two middle bands, never enter the comparison at all.</p>\n<p>Why it looks reasonable: 8.5 and 5.3 really are close numbers, and “the two ends look similar” sounds like exactly what symmetry means. It checks only the two ends, and it never looks at where the other 243 students, out of 282, actually are.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A note about the same study says this.</p>\n<p>“In our sample of 282 students, body-mass index ranges from underweight to 30 or more. So weight varies enormously in this group.”</p>\n<p>Underweight is the paper’s name for its band under 18.5.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: where the 282 students actually sit across the four bands, rather than just which bands are occupied.</p>\n<div class=\"working\">\n<p>24 plus 160 = 184<br />\n184 plus 83 = 267<br />\n267 plus 15 = 282</p>\n</div>\n<p>Well over half of the group, 160 of 282, sits in one single band, from 18.5 to 24.9. Only 24 students, 8.5 per cent, are below it. Add the two bands above it.</p>\n<div class=\"working\">\n<p>83 plus 15 = 98</p>\n</div>\n<p>So 98 students, about a third of the group, are above it.</p>\n<p>What this does not establish. Naming the two extreme bands says nothing about how many people are actually in them. Here it is a small minority on the low side and a larger minority on the high side. Of the 282, 160 sit in the one band from 18.5 to 24.9.</p>\n<p>It also does not establish the true range of body-mass index in this sample. Once every value has been sorted into one of four bands, the single largest and single smallest values are gone. No band boundary can give them back. “Varies enormously” needs the individual numbers this table no longer holds.</p>\n<p>And a spread of body-mass index bands is not a spread of weight. The table sorts body-mass index, not weight. Two students with the same index can differ in weight by many kilograms if their heights differ. The note’s own last sentence swaps one quantity for another without saying so.</p>"
+  }
+ ]
+}

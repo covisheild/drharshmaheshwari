@@ -1,0 +1,250 @@
+{
+ "format": 1,
+ "id": "s37-r1-c07",
+ "label": "7",
+ "title": "What Indians eat and spend on food, measured",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>India’s <dfn data-g=\"170\">Household Consumption Expenditure Survey</dfn> (HCES) is run by the Ministry of Statistics and Programme Implementation (MoSPI). Its headline figure is the <dfn data-g=\"237\">monthly per capita consumption expenditure</dfn> (MPCE): a household’s spending in a month, divided by the number of people in it. The share of a food group in MPCE is the group’s MPCE divided by total MPCE, times 100.</p>\n<p>In 2022-23, food took 46.38 per cent of MPCE in rural India and 39.17 per cent in urban India. Cereals and cereal substitutes took 10.75 per cent of rural MPCE in 2011-12 and 4.91 per cent in 2022-23. The group “beverages, refreshments and processed food” rose from 7.90 to 9.62 per cent rural and from 8.98 to 10.64 per cent urban over the same years.</p>\n<p>These are shares of rupees spent, at the prices of each survey year, as the respondents reported them. The headline shares leave out the value of food received free through welfare programmes. From 2022-23 the survey records that food separately and reports a second set of estimates that includes it.</p>\n<p>The National Sample Survey’s Report 594, built on the same HCES rounds, converts the food each household recorded as consumed into energy with a <dfn data-g=\"75\">conversion table</dfn>. It gives an all-India average of 2,233 kilocalories a person a day in rural areas in 2011-12 and 2,212 in 2023-24.</p>",
+   "refs": [
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>One government survey, used two ways, tells you most of what is known about Indian food at the scale of the country. It weighs nobody’s plate.</p>\n<p>The first use asks households what they spent. Divide what went on one kind of food by what went on everything, and you have that food’s share of the budget.</p>\n<p>The survey’s second use takes the quantities of food each household recorded. It turns those amounts into kilocalories with a table of how much energy each food holds. Between 2011-12 and 2023-24 its average hardly moved: about 2,200 kilocalories a person a day in rural India.</p>\n<p>The budget changed shape a great deal. The energy total barely changed. A share of spending is a share of rupees. It is not kilograms and it is not kilocalories. Before you say what Indians eat, say which of these numbers you are reading.</p>\n<p>Rung 2 reads these changes against the <dfn data-g=\"254\">nutrition transition</dfn>. That is Popkin and colleagues’ name for a shift in the world’s diets towards processed food, edible oils and sweet drinks.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c07-rural-shares.png",
+   "alt": "Grouped bars for three surveys. Cereals: 10.75, 4.91, 4.99 per cent. Beverages, refreshments and processed food: 7.90, 9.62, 9.84 per cent. The two groups swap places after 2011-12.",
+   "w": 1357,
+   "h": 654,
+   "caption": "Share of rural MPCE, per cent, from the HCES. Cereals and cereal substitutes fell from 10.75 in 2011-12 to 4.91 in 2022-23 and 4.99 in 2023-24. Beverages, refreshments and processed food rose from 7.90 to 9.62 and 9.84. Shares of rupees, not amounts eaten. The first gap is eleven years, the second one year."
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c07-cereal-rupees.png",
+   "alt": "Two bars: 153.7 rupees in 2011-12 and 185 rupees in 2022-23, the second taller.",
+   "w": 1357,
+   "h": 653,
+   "caption": "Rural spending on cereals and cereal substitutes, Rs a person a month, each year’s own prices (HCES). 2011-12: 10.75 per cent of Rs 1,430, about Rs 153.7. 2022-23: Rs 185, up by 31.3 while the share fell to 4.91 per cent. Rupees, not grain."
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c07-rural-energy.png",
+   "alt": "Two nearly equal bars from zero: 2233 kilocalories in 2011-12 and 2212 in 2023-24.",
+   "w": 1357,
+   "h": 653,
+   "caption": "Estimated rural energy intake, kilocalories a person a day (NSS Report 594). 2,233 in 2011-12 and 2,212 in 2023-24: almost no change, over the years in which cereals’ share of the rural budget halved."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a sentence you could easily write, and watch it fail.</p>\n<blockquote>\n<p>Cereals’ share of rural spending fell from 10.75 per cent to 4.91 per cent between 2011-12 and 2022-23. So rural households now eat less than half the cereal they did.</p>\n</blockquote>\n<p>Open the Ministry of Statistics and Programme Implementation’s <em>Survey on Household Consumption Expenditure, Fact Sheet: 2022-23</em> at https://www.mospi.gov.in/sites/default/files/publication_reports/Factsheet_HCES_2022-23.pdf. Find Statement 3. The two shares are there, in the rural column.</p>\n<p>First, the size of the fall. A fall in a share can be said two ways, and Book 0’s section on percentages (A4) taught both. In <dfn data-g=\"262\">percentage</dfn> points, subtract. As a per cent change, divide the fall by where it started.</p>\n<div class=\"working\">\n<p>10.75 minus 4.91 = 5.84<br />\n5.84 divided by 10.75 = 0.543</p>\n</div>\n<p>So the share fell by 5.84 percentage points, which is a fall of about 54 per cent of the old share. The sentence above is using the second number and treating it as a quantity eaten.</p>\n<p>Now turn each share back into rupees. A <dfn data-g=\"336\">share of MPCE</dfn> times the MPCE gives the rupees. Statement 2 gives average rural MPCE: Rs 1,430 in 2011-12. Statement 5 gives the rupees on cereals in 2022-23 directly: Rs 185 a person a month.</p>\n<div class=\"working\">\n<p>1,430 times 10.75 divided by 100 = 153.7<br />\n185 minus 153.7 = 31.3</p>\n</div>\n<p>Rural households spent about Rs 154 a person a month on cereals in 2011-12 and Rs 185 in 2022-23. The rupees went up while the share came down. The share fell because everything else in the budget grew faster.</p>\n<p>Even the rise in rupees is not a rise in grain. The factsheet says its values are nominal, as the respondents reported them: rupees of each year’s prices. And from 2022-23 the headline figures leave out grain received free through the public distribution system (the PDS). The survey counts it only in a second set of estimates.</p>\n<p>Last, the number that does speak to energy. Report 594 of the National Sample Survey puts rural intake at 2,233 kilocalories a person a day in 2011-12 and 2,212 in 2023-24. That is almost no change, while the cereal share halved. The report does not say, in the pages held here, whether its 2011-12 figure was worked out again with the 2025 conversion table, so treat ‘almost no change’ as approximate.</p>\n<p>So the honest sentence is this. Cereals’ share of the rural budget fell from 10.75 to 4.91 per cent. Over roughly the same years, estimated energy per person hardly moved.</p>",
+   "numberRefs": [
+    97,
+    98
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The rupee figures hold for the all-India rural average in the years named, at each year’s own prices. They say nothing about any one state, income group or household. The 2011-12 rupees and the 2022-23 rupees cannot be set side by side as amounts of grain, because prices changed in between and the survey did not report quantities of cereal here.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now work a share out yourself, then track it across one year.</p>\n<p>Stay with Statement 5 of the 2022-23 factsheet. In rural India the average person’s household spent Rs 363 a month on beverages, refreshments and processed food, out of Rs 3,773 on everything. The share is the part divided by the whole, times 100. Written with symbols, divided by is ÷ and times is ×, so the rule is part ÷ whole × 100.</p>\n<div class=\"working\">\n<p>363 divided by 3,773 is about 0.0962<br />\n0.0962 times 100 = 9.62</p>\n</div>\n<p>That is the 9.62 per cent the table prints beside it. Check one row like this whenever you first open a table. It tells you which column is the whole.</p>\n<p>Read the footnote on that row before you name it: it “includes purchased cooked meals”. So this group is not only packets and bottles. A thali eaten at a dhaba sits in it too.</p>\n<p>Now 2023-24. The Press Information Bureau’s release of 30 January 2025 gives 9.84 per cent rural and 11.09 per cent urban. Set them beside 2022-23.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>survey</th>\n<th>cereals and cereal substitutes, rural (% of MPCE)</th>\n<th>beverages, refreshments and processed food, rural (% of MPCE)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>2011-12</td>\n<td>10.75</td>\n<td>7.90</td>\n</tr>\n<tr>\n<td>2022-23</td>\n<td>4.91</td>\n<td>9.62</td>\n</tr>\n<tr>\n<td>2023-24</td>\n<td>4.99</td>\n<td>9.84</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>9.84 minus 9.62 = 0.22<br />\n4.99 minus 4.91 = 0.08</p>\n</div>\n<p>Beverages and processed food rose by 0.22 of a <dfn data-g=\"264\">percentage point</dfn> in rural India in one year. Cereals rose too, by 0.08 of a point. It was not a fall. Over eleven years the direction is clear. Over one year, the moves are small enough that you should not build a story on either.</p>",
+   "numberRefs": [
+    97,
+    99
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 2023-24 shares come from a press release that names only a few food groups. Only groups named the same way in both, such as these two, can be compared. Surveys before 2009-10 used a different reference period for some items, so a chain of shares back to 1999-00 mixes two methods.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A falling share of spending is not a falling amount eaten. Cereals’ share of rural MPCE halved between 2011-12 and 2022-23 while the rupees spent on them rose, in each year’s prices.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Say points or per cent, every time. Cereals fell 5.84 percentage points in the rural budget, which is a fall of about 54 per cent of the old share.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>In 2023-24 beverages, refreshments and processed food was the largest food group in both rural and urban spending: 9.84 per cent of rural MPCE, followed by milk and milk products at 8.44 (Press Information Bureau, 30 January 2025). It includes purchased cooked meals. Neither the factsheet nor the 2023-24 release splits the group further, so no share of it can be called snacks or sweet drinks.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The headline shares leave out the value of grain received free through welfare programmes. When you read cereal spending among poorer households, find the survey’s second set of estimates, the one that imputes free items.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Both uses of the survey count what a household bought or used, not what each person ate.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you set two rounds side by side, check that they measured the same way. The factsheet puts 2009-10, 2011-12 and 2022-23 on the same basis, the modified mixed reference period (MMRP). Earlier rounds used another. Report 594 used a conversion table from a committee set up in 2025. Ask which table each <dfn data-g=\"42\">calorie</dfn> figure came from.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When someone cites the nutrition transition for India, ask for the Indian numbers.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here are two rows of Statement 5 of the HCES 2022-23 factsheet, rural and urban India.</p>\n<table style=\"width:97%;\">\n\n<thead>\n<tr>\n<th>item group</th>\n<th>MPCE rural (Rs)</th>\n<th>MPCE urban (Rs)</th>\n<th>share rural (%)</th>\n<th>share urban (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>milk &amp; milk products</td>\n<td>314</td>\n<td>466</td>\n<td>8.33</td>\n<td>7.22</td>\n</tr>\n<tr>\n<td>vegetables</td>\n<td>203</td>\n<td>245</td>\n<td>5.38</td>\n<td>3.80</td>\n</tr>\n</tbody>\n</table>\n<p>Say what the table shows about milk and vegetables in town and village. Then say two things it does not show.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>It shows that urban households spent more rupees a person a month on both groups than rural ones. Milk took Rs 466 against Rs 314. Vegetables took Rs 245 against Rs 203. It also shows that both groups take a smaller share of the urban budget than of the rural one. Both are true at once, because the urban budget is much larger (Rs 6,459 against Rs 3,773).</p>\n<p>It does not show quantities. Prices differ between town and village, so more rupees need not mean more litres or kilograms.</p>\n<p>It does not show who ate the food. These are household purchases divided by household size. It also does not show free food received through welfare schemes, which the headline figures leave out.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist has three minutes. They want to write: “Indians now spend more on junk food than on cereals.” Tell them what the survey supports, in words they can quote, and what it does not.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Lead with what is true. “In 2023-24, rural households put about 10 per cent of their spending into drinks, snacks, processed food and bought meals. They put about 5 per cent into cereals. The government’s own survey says so.”</p>\n<p>Then the two corrections. The group is not junk food. It includes a meal bought at a dhaba or a canteen. And spending is not eating. Cereals are cheap, and free ration grain is left out of these figures. So a smaller rupee share of cereals does not mean less cereal on the plate.</p>\n<p>Give the calibrated sentence. “Indian household budgets have shifted sharply towards bought and processed food. Whether diets have shifted as much in energy terms is a separate question, and the survey’s calorie estimates show total energy per person almost flat.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A draft report says this.</p>\n<blockquote>\n<p>Food’s share of rural spending fell from 52.90 per cent in 2011-12 to 46.38 per cent in 2022-23. This shows that rural food security has worsened.</p>\n</blockquote>\n<p>Find the flaw.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>A falling food share usually comes with a rising total budget, not a shrinking plate. Work out the rupees. In 2011-12 rural MPCE was Rs 1,430, and 52.90 per cent of it is about Rs 756. In 2022-23 food took Rs 1,750. Rupees on food more than doubled, at each year’s prices.</p>\n<p>So the fall in the share says the rest of the budget grew faster. It says nothing directly about food security. That needs measures of intake, of who goes short, and of prices. The report has drawn a conclusion about hunger from a <dfn data-g=\"307\">ratio</dfn> of rupees.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A household spends 450 in a month, and 54 of it goes on one item. What share of the month’s spending is that item, in per cent?</p>",
+   "level": 1,
+   "answer": "<p>Part divided by whole, times 100.</p>\n<div class=\"working\">\n<p>54 divided by 450 = 0.12<br />\n0.12 times 100 = 12</p>\n</div>\n<p>12 per cent.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A share was 12 per cent and is now 9 per cent. Give the change in percentage points, and the change as a per cent of the old share.</p>",
+   "level": 2,
+   "answer": "<p>Points: subtract.</p>\n<div class=\"working\">\n<p>12 minus 9 = 3</p>\n</div>\n<p>A fall of 3 percentage points.</p>\n<p>Per cent: divide the fall by where it started.</p>\n<div class=\"working\">\n<p>3 divided by 12 = 0.25</p>\n</div>\n<p>A fall of 25 per cent of the old share. Same change, two numbers.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A total is 2,000 and one item’s share of it is 7.5 per cent. How much is the item?</p>",
+   "level": 3,
+   "answer": "<p>Go the other way: share times whole.</p>\n<div class=\"working\">\n<p>7.5 divided by 100 = 0.075<br />\n0.075 times 2,000 = 150</p>\n</div>\n<ol start=\"150\" type=\"1\">\n<li></li>\n</ol>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>In the HCES 2022-23 factsheet, rural households spent Rs 136 a person a month on edible oil, out of an MPCE of Rs 3,773. Work out edible oil’s share of MPCE. The factsheet prints 3.59 per cent. Say why your answer may differ in the second <dfn data-g=\"85\">decimal</dfn> place.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>136 divided by 3,773 is about 0.03605<br />\n0.03605 times 100 = 3.605</p>\n</div>\n<p>About 3.60 per cent of rural MPCE, against the printed 3.59.</p>\n<p>The table prints rupees rounded to whole rupees. A rupee figure between 135.5 and 136.5 prints as 136. The share was worked out from the unrounded figure, so recomputing from rounded rupees can move the second decimal. A difference that small is <dfn data-g=\"321\">rounding</dfn>, not an error.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Take urban India in 2022-23. The factsheet gives Rs 687 a person a month on beverages, refreshments and processed food. It gives Rs 235 on cereals and cereal substitutes. MPCE was Rs 6,459. Work out each group’s share of MPCE. Then say how many times the first is the second.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>687 divided by 6,459 is about 0.1064<br />\n235 divided by 6,459 is about 0.0364</p>\n</div>\n<p>10.64 per cent and 3.64 per cent of urban MPCE, as the factsheet prints.</p>\n<p>The ratio needs no MPCE at all, because both shares share the same whole.</p>\n<div class=\"working\">\n<p>687 divided by 235 is about 2.92</p>\n</div>\n<p>Urban households spent about 2.9 times as much on the first group as on cereals.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Food’s share of rural MPCE was 52.90 per cent in 2011-12 and 46.38 per cent in 2022-23 (HCES 2022-23 factsheet, Statement 3). Give the change in percentage points and as a per cent of the 2011-12 share.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>52.90 minus 46.38 = 6.52<br />\n6.52 divided by 52.90 = 0.123</p>\n</div>\n<p>A fall of 6.52 percentage points, which is about 12 per cent of the 2011-12 share.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Report 594 of the National Sample Survey gives urban per capita <dfn data-g=\"115\">energy intake</dfn>. It was 2,206 kilocalories a day in 2011-12 and 2,240 in 2023-24. Give the change in kilocalories a day and as a per cent of the 2011-12 figure, with the units kept on each.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>2,240 minus 2,206 = 34<br />\n34 divided by 2,206 is about 0.0154</p>\n</div>\n<p>A rise of 34 kilocalories a person a day, about 1.5 per cent of the 2011-12 figure.</p>\n<p>The report calls the change from 2009-10 to 2023-24 slight; this one is smaller still. Table 3.14 prints no margin of error beside its figures. Without one, you cannot tell a change this small from the survey’s own wobble between samples.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>In rural India in 2011-12, MPCE was Rs 1,430 and cereals and cereal substitutes took 10.75 per cent of it. In 2022-23 the factsheet gives Rs 185 on the same group. Work out the 2011-12 rupees, then the change in rupees as a per cent of 2011-12. Then say what this does not tell you about cereal eaten.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>1,430 times 10.75 divided by 100 = 153.7<br />\n185 minus 153.7 = 31.3<br />\n31.3 divided by 153.7 = 0.204</p>\n</div>\n<p>About Rs 154 a person a month in 2011-12. Rupees on cereals rose by about Rs 31, about 20 per cent, while the share fell.</p>\n<p>It does not tell you whether more or less cereal was eaten. The rupees are at each year’s prices, so some or all of the rise could be prices. And from 2022-23 grain received free through the PDS is left out of the headline figures.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>cereals’ share of rural MPCE: 10.75 per cent in 2011-12, 4.91 per cent in 2022-23<br />\n10.75 minus 4.91 = 5.84<br />\nso cereals’ share fell by 5.84 per cent</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The subtraction is right. The unit on the last line is wrong. A difference between two percentages is in percentage points.</p>\n<div class=\"working\">\n<p>10.75 minus 4.91 = 5.84 percentage points<br />\n5.84 divided by 10.75 = 0.543</p>\n</div>\n<p>As a per cent of the old share, the fall is about 54 per cent.</p>\n<p>Why the wrong answer looks reasonable: both numbers are percentages, so “per cent” feels like the natural unit for their difference. Said aloud, “fell by 5.84 per cent” makes a halving sound like a small drift.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>urban MPCE 2022-23: food 39.17 per cent, beverages, refreshments and processed food 10.64 per cent<br />\nso beverages, refreshments and processed food are 10.64 per cent of urban food spending</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The base is wrong. 10.64 per cent is a share of all spending, MPCE. As a share of food spending, divide by food’s share instead.</p>\n<div class=\"working\">\n<p>10.64 divided by 39.17 = 0.272</p>\n</div>\n<p>About 27 per cent of urban food spending. Check it from the rupees in Statement 5: Rs 687 out of Rs 2,530 on food.</p>\n<div class=\"working\">\n<p>687 divided by 2,530 is about 0.272</p>\n</div>\n<p>Why it looks reasonable: the table’s column is headed “% share”, and the row sits inside the food block. It is easy to read the share as a share of the block it sits in. Always ask “per cent of what”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A press line reads: “Rural Indians now spend nearly twice as much on beverages and processed food as on cereals.” Decide what to compute from the 2023-24 survey, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the ratio of the two shares of rural MPCE for 2023-24: 9.84 per cent and 4.99 per cent.</p>\n<div class=\"working\">\n<p>9.84 divided by 4.99 = 1.97</p>\n</div>\n<p>1.97 times. The sentence is right about spending.</p>\n<p>It does not establish that rural Indians eat twice as much of that group, by weight or by energy. Cereals are cheap per <dfn data-g=\"192\">kilocalorie</dfn>. Free ration grain is left out of these shares. The group includes meals bought ready-made. And it says nothing about any one household, since this is an average over all rural households.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>In a meeting someone says: “Rural households spend a smaller share on food than in 2011-12, so they are eating less.” Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Two things to compute: rupees on food, and energy per person.</p>\n<p>Rupees first. Food’s share was 52.90 per cent of Rs 1,430 in 2011-12. In 2022-23 the factsheet gives Rs 1,750 on food.</p>\n<div class=\"working\">\n<p>1,430 times 52.90 divided by 100 = 756.5<br />\n1,750 divided by 756.5 = 2.31</p>\n</div>\n<p>Rupees on food were about 2.3 times their 2011-12 level, at each year’s prices.</p>\n<p>Energy next. Report 594 gives rural intake of 2,233 kilocalories a person a day in 2011-12 and 2,212 in 2023-24.</p>\n<div class=\"working\">\n<p>2,233 minus 2,212 = 21</p>\n</div>\n<p>About 21 kilocalories less, about 1 per cent. The report does not say, in the pages held here, whether its 2011-12 figure was worked out again with the 2025 conversion table, so treat this comparison as approximate. The report calls the longer trend a slight increase. Neither number supports “eating less” for the average rural person.</p>\n<p>What the answer does not establish: whether any group, such as the poorest households, eats less. Both are averages over everyone. It does not say whether diets are better or worse, only that the budget changed shape while energy stayed about level.</p>"
+  }
+ ]
+}

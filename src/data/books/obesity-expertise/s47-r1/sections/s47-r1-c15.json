@@ -1,0 +1,214 @@
+{
+ "format": 1,
+ "id": "s47-r1-c15",
+ "label": "15",
+ "title": "Reading the frame in a public argument",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In section 12 you met the <dfn data-g=\"167\">four jobs</dfn> a frame does. Reading the frame of a public argument applies them to one passage at a time. You write down five things, and each one carries the passage’s own words as its evidence.</p>\n<p>The problem is what the passage says is wrong or at stake. The cause is whom or what it holds responsible. The judgement is what its value words say: how bad the problem is, whose duty it is, what is fair. The remedy is what it says should be done, and by whom. The fifth is what the passage leaves out: the causes, remedies and actors that a rival account of the same problem would put in.</p>\n<p>A slot the passage does not fill is recorded as not stated. It is never filled from what the reader already believes.</p>",
+   "refs": [
+    380,
+    381,
+    382,
+    383,
+    384,
+    385,
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Write five lines. Next to each, copy the words from the passage that put it there.</p>\n<ol type=\"1\">\n<li><strong>Problem.</strong> What does the passage say is wrong, or at stake?</li>\n<li><strong>Cause.</strong> Whom or what does it hold responsible?</li>\n<li><strong>Judgement.</strong> Which value words does it use?</li>\n<li><strong>Remedy.</strong> What does it say should be done, and who is to do it?</li>\n<li><strong>Left out.</strong> What would someone who sees the problem differently put in?</li>\n</ol>\n<p>If you cannot copy words for a line, write “not stated”. Do not fill the line from what you already think.</p>\n<p>Watch for cue words — a word or short phrase that carries a frame in a few letters. A metaphor is one kind: a “sea” of cheap food puts the cause outside the eater, and a “war” makes the problem an enemy. A <dfn data-g=\"92\">cue word</dfn> is a clue, not a verdict. The whole passage decides the frame.</p>\n<p>Then do two more things. Write the <dfn data-g=\"88\">counter-frame</dfn> — the problem, cause, judgement and remedy an opponent would give the same facts. Then run all five lines on your own draft. Your note has a frame too.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a reading that goes wrong. You are collecting public texts on your department’s first <dfn data-g=\"329\">proposal</dfn>, a higher tax on sugar-sweetened drinks. You open the Press Information Bureau (PIB) release of 3 September 2025 on the 56th meeting of the GST Council.</p>\n<p>You already know the Council recommended moving sugar-added drinks to a 40% rate. So the tempting reading writes itself: a health frame, with obesity as the problem, sugary drinks as the cause, and a higher tax as the remedy. Before you write that down, run the five lines. For each one, copy words from the release.</p>\n<p>The opening points name the focus of the reform: “Common-man, Labour-intensive Industries, Farmers and Agriculture, Health, Key Drivers of the economy”. “Health” is in that list, but the release’s health items are others, such as “Exemption of GST on all individual health insurance policies”. No sentence in the body ties health to the drinks. The opening points describe the change as turning a four-rate structure into a “citizen-friendly ‘Simple Tax’”. That has “a Standard Rate of 18% and a Merit Rate of 5%”, and “a special de-merit rate of 40% for a select few goods and services”. The next paragraph gives the purpose: to “provide relief to individuals, common man, aspirational middle class”. Sugar-added drinks appear only in an annexure, as one line in a list headed “(28% to 40%)”, beside pan masala.</p>\n<p>Now fill the grid from those words alone.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Slot</th>\n<th>Words in the release</th>\n<th>What the tempting reading put there</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>problem</td>\n<td>a “4-tiered” rate structure; “relief” owed to “common man”</td>\n<td>obesity</td>\n</tr>\n<tr>\n<td>cause</td>\n<td>not stated</td>\n<td>sugary drinks</td>\n</tr>\n<tr>\n<td>judgement</td>\n<td>“citizen-friendly”, “relief”, “de-merit”</td>\n<td>drinks harm health</td>\n</tr>\n<tr>\n<td>remedy</td>\n<td>two main rates, and a “de-merit” rate for “a select few goods”</td>\n<td>a higher tax on drinks</td>\n</tr>\n<tr>\n<td>left out</td>\n<td>why any good is “de-merit”; obesity; who drinks these drinks</td>\n<td>—</td>\n</tr>\n</tbody>\n</table>\n<p>The body of the release, and the annexure rows on drinks, do not name obesity or say why these drinks are in the 40% list. The health frame in the right-hand column was yours. You brought it to the text, because you know what your proposal is for.</p>\n<p>One word in the release does carry a judgement: “de-merit”. It says these goods deserve less favour than the “merit” goods at 5%. It does not say what is wrong with them. So in your grid, “de-merit” goes in the judgement line, and the cause line stays “not stated”.</p>\n<p>This matters as soon as you write. Suppose your note says “the GST Council recommended a higher rate on sugary drinks to fight obesity”. You have put a reason in the Council’s mouth that its own release does not give.</p>",
+   "numberRefs": [
+    207
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>An empty slot in one press release shows what that text says. It does not show that the Council had no health reason. Other texts may state one, such as the questions and answers the release says were issued with it, or a minister’s speech. Read those before you say what the Council intended.</p>\n<p>Researchers read the same classification differently. Summan and colleagues write that the drinks “have been classified as demerit goods and taxed at the highest rate, signalling a shift towards public health considerations”. That is their reading of the classification, and a frame of their own. Cite it as theirs, not as the Council’s.</p>\n<p>The 40% is the combined rate the Council recommended in 2025, and the rate can change. The reading lesson does not depend on the number.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a clean case, and the two steps that finish the method. In its section on investment, the National Health Policy 2017 of the Ministry of Health and Family Welfare mentions food taxes in one sentence. The section is 3.1, whose heading is “Ensuring Adequate Investment”.</p>\n<p>“The Government could consider imposing taxes on specific commodities-such as the taxes on tobacco, alcohol and foods having negative impact on health”. The sentence before it reads: “General taxation will remain the predominant means for financing care.”</p>\n<p>Run the five lines.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Slot</td>\n<td>Words in the policy</td>\n</tr>\n<tr>\n<td>problem</td>\n<td>money for health care (“Ensuring Adequate Investment”, “financing care”)</td>\n</tr>\n<tr>\n<td>cause</td>\n<td>not stated</td>\n</tr>\n<tr>\n<td>judgement</td>\n<td>“foods having negative impact on health”</td>\n</tr>\n<tr>\n<td>remedy</td>\n<td>“taxes on specific commodities”, which “the Government could consider”</td>\n</tr>\n<tr>\n<td>left out</td>\n<td>the tax as a way to change what people eat or drink; who pays it</td>\n</tr>\n</tbody>\n</table>\n<p>The frame is financing. The food tax appears as one source of money for care, next to taxes on “tobacco, alcohol”. The judgement on the foods is there, but the tax is not offered as a way to make people buy less of them.</p>\n<p><strong>Write the counter-frame.</strong> Ask what an opponent of a food tax would say, using the same facts. You do not have to invent this. Koon and colleagues list a 2011 study by Fogarty and Chapman, a content and frame analysis of Australian newspaper coverage of a tax on drinks the study calls alcopops. Koon and colleagues’ table gives no sample size or years. The study found two frames for the tax and two against it: “2 in favor of alcopops tax (consumption reduction, loophole) and 2 against (<dfn data-g=\"407\">substitution</dfn>, revenue raising)”.</p>\n<p>Look at “revenue raising”. The National Health Policy places the food tax under raising money for care, and says so with approval. The opponents’ frame uses the same idea as an accusation: the tax is about money, not health. One idea sits in the judgement slot of two frames, with opposite signs.</p>\n<p>An Indian version of a counter-frame is on record too. Summan and colleagues quote a health finance official they interviewed: “You can’t have too many objectives thrust into tax policy, the tax policy is supposed to raise revenue and that’s it”. Here the judgement is a rule about what a tax is for, and the remedy is to keep health out of it.</p>\n<p><strong>Run it on your own sentence.</strong> Suppose your department’s draft, which is made up, says: “Sugary drinks are cheap and sold at every school gate, so the GST Council should raise the rate further to protect children.”</p>\n<table>\n\n<tbody>\n<tr>\n<td>Slot</td>\n<td>Words in your draft</td>\n</tr>\n<tr>\n<td>problem</td>\n<td>not stated outright; children drinking sugary drinks is implied</td>\n</tr>\n<tr>\n<td>cause</td>\n<td>“cheap and sold at every school gate”</td>\n</tr>\n<tr>\n<td>judgement</td>\n<td>“protect children”</td>\n</tr>\n<tr>\n<td>remedy</td>\n<td>“the GST Council should raise the rate further”</td>\n</tr>\n<tr>\n<td>left out</td>\n<td>who pays the higher price; what a higher rate would change; any other remedy</td>\n</tr>\n</tbody>\n</table>\n<p>Your draft puts the cause in the surroundings, the price and the place of sale. Its judgement is a duty to children. That frame is a choice you made, and an opponent can see it as clearly as you can see the policy’s. The next step is not to scrub the frame out. You cannot write without one. It is to know which one you chose, and what it leaves out.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Fogarty and Chapman’s study is of alcohol, in Australia, in newspapers. It shows that a tax can be argued in a frame and a counter-frame. It does not show which frames appear in Indian arguments about sugary drinks, or how often.</p>\n<p>The official’s words are one person’s, quoted in one article. They show that a revenue frame exists among Indian officials. They do not show how widely it is held, or that it is the Ministry of Finance’s position.</p>\n<p>The National Health Policy sentence is one line of a long document. Reading it as a financing frame describes that line, in that section. Elsewhere the same policy may frame diet differently.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to read into a text the frame you expected to find. Copy words for every slot, and write “not stated” where there are none.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>For every passage you quote in a note, write five lines first: problem, cause, judgement, remedy and what it leaves out.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The same idea can be praise in one frame and an accusation in another. Label the judgement from the words around the idea, never from the idea alone.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Before you argue for a proposal in a meeting, write its counter-frame: the problem, cause, judgement and remedy an opponent would give.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Never put a reason in a body’s mouth that its own text does not give.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A trainee will often call a paragraph “neutral” because it opens with a fact. The judgement and remedy usually turn up in the last sentence.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>One passage is not a body’s frame, and one body is not “the government”.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The method tells you what a text says, and what it leaves out. It does not tell you whether the cause it names is the real cause, or whether its remedy would work.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“A paragraph that states only facts has no frame.” Every account chooses which facts to put in, in what order, and in which words. A paragraph of true sentences still has a problem, a cause, a judgement and a remedy, or leaves some of them out on purpose. Run the five lines on it, and the frame shows.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A classmate writes in a draft note (made up for this exercise): “The Government of India frames obesity as a matter of personal choice.” Here are short passages from three Government of India texts.</p>\n<ul>\n<li>The Prime Minister, in his Mann Ki Baat address of 23 February 2025: “To become a fit and healthy nation, we will certainly have to deal with the problem of obesity.” Later: “You can decide that while buying oil for cooking, you will buy 10% less oil.”</li>\n<li>The Food Safety and Standards Authority of India (FSSAI), on its Eat Right India page: “Eat Right India adopts an integrative or ‘whole of the government’ approach, since the movement brings together food-related mandates of the agriculture, health, environment, and other ministries.”</li>\n<li>The National Health Policy 2017: “seven priority areas for improving the environment for health”, one of which is “Balanced, healthy diets and regular exercises.”</li>\n</ul>\n<p>For each passage, say whether it supports or goes against the classmate’s sentence, and which slot shows it. Then rewrite the sentence so it says only what these passages show.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Read each passage for its remedy and who carries it out, because that slot decides whether a frame is about personal choice.</p>\n<table style=\"width:100%;\">\n\n<thead>\n<tr>\n<th>Passage</th>\n<th>Remedy in its words</th>\n<th>Supports or goes against</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mann Ki Baat</td>\n<td>“while buying oil for cooking, you will buy 10% less oil”</td>\n<td>supports: the remedy is a household’s purchase, though the problem is set for “a fit and healthy nation”</td>\n</tr>\n<tr>\n<td>Eat Right India</td>\n<td>a “‘whole of the government’ approach” joining the “food-related mandates of the agriculture, health, environment, and other ministries”</td>\n<td>goes against: the remedy sits with ministries</td>\n</tr>\n<tr>\n<td>National Health Policy</td>\n<td>action on “the environment for health”</td>\n<td>goes against: diet is listed under the environment, not under personal choice</td>\n</tr>\n</tbody>\n</table>\n<p>So the classmate’s sentence is wrong as written. One text puts the remedy in the household. Two put it with ministries or in the environment for health.</p>\n<p>A rewrite that says only what the passages show:</p>\n<p>“Government of India texts frame obesity in more than one way. The Prime Minister’s address of February 2025 places the remedy in each household’s purchase of cooking oil. FSSAI’s Eat Right India page places it with several ministries, and the National Health Policy 2017 lists diet under the environment for health.”</p>\n<p>Notice that the rewrite names its texts. A claim about how a government frames something is a claim about documents, and the reader should be able to open them.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist has three minutes. She asks: “My report on the sugary-drinks tax just gave the facts. How can it have a frame?” Explain, with no jargon, and give her one sentence she could quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with her own report. Ask which facts she put in, and which she left out. Perhaps she gave the new rate and quoted a drinks company and a doctor. Perhaps she did not say who pays the tax or what the money is used for. Every report makes those choices, because there is not room for everything.</p>\n<p>Then say what the choices do. The facts at the top tell the reader what the story is about. The person quoted last often gets the last word on what should happen. A single word, such as “burden” or “relief”, tells the reader how to feel about it.</p>\n<p>So a report can be accurate in every line and still lead the reader somewhere. That is not a charge of bias. It is how writing works. The fix is to know which way you are leading, and to give room to the strongest view on the other side.</p>\n<p>One sentence she could quote: “Every report on a tax chooses which facts come first and whose voice comes last. Those choices tell readers what the tax is about before anyone argues.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>From memory: write the five lines this section asks you to fill for a passage. Then say what you write when the passage gives you no words for one of them, and the two further steps that finish the reading.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The five lines are problem, cause, judgement, remedy, and what the passage leaves out. Each carries words copied from the passage.</p>\n<p>When the passage gives no words for a line, you write “not stated”. You do not fill it from what you already believe.</p>\n<p>The first further step is the counter-frame: the problem, cause, judgement and remedy an opponent would give. The second is running the five lines on your own draft.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Label the problem, the cause, the judgement and the remedy in this made-up passage.</p>\n<p>“Fried snacks are sold at the gate of every school in the town, and children buy them every day. It is wrong that parents cannot protect their children from this. The municipality should license the stalls at school gates.”</p>",
+   "level": 1,
+   "answer": "<p>The five lines:</p>\n<table>\n\n<tbody>\n<tr>\n<td>Slot</td>\n<td>Words in the passage</td>\n</tr>\n<tr>\n<td>problem</td>\n<td>“children buy them every day” (children eating fried snacks daily)</td>\n</tr>\n<tr>\n<td>cause</td>\n<td>“sold at the gate of every school” (the stalls and where they stand)</td>\n</tr>\n<tr>\n<td>judgement</td>\n<td>“It is wrong that parents cannot protect their children”</td>\n</tr>\n<tr>\n<td>remedy</td>\n<td>“The municipality should license the stalls at school gates”</td>\n</tr>\n</tbody>\n</table>\n<p>The passage fills all four slots, and names who is to act: the municipality. The cause is placed in the place of sale, not in the children or their parents. The judgement is about fairness and a duty to protect children.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Label the four slots in each made-up sentence. Where a slot is not stated, write “not stated”. Where you think a slot is implied, say so separately.</p>\n<ol type=\"a\">\n<li>“Obesity is rising among young adults in the district.”</li>\n<li>“Each of us must take charge of what is on our own plate.”</li>\n<li>“Food companies spend crores advertising to children, and the regulator does nothing.”</li>\n</ol>",
+   "level": 2,
+   "answer": "<p>Sentence by sentence:</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Sentence</td>\n<td>Problem</td>\n<td>Cause</td>\n<td>Judgement</td>\n<td>Remedy</td>\n</tr>\n<tr>\n<td>a</td>\n<td>“Obesity is rising among young adults”</td>\n<td>not stated</td>\n<td>not stated</td>\n<td>not stated</td>\n</tr>\n<tr>\n<td>b</td>\n<td>not stated</td>\n<td>not stated</td>\n<td>“must” (a duty placed on each person)</td>\n<td>“take charge of what is on our own plate”</td>\n</tr>\n<tr>\n<td>c</td>\n<td>not stated</td>\n<td>“spend crores advertising to children”</td>\n<td>“the regulator does nothing” (blame on the regulator)</td>\n<td>not stated</td>\n</tr>\n</tbody>\n</table>\n<p>Implied, but not stated:</p>\n<ol type=\"a\">\n<li>Nothing beyond the problem. A bare statement of a problem is the start of many frames, and you cannot yet tell which.</li>\n<li>The cause is implied to be what each person eats. The sentence never says so.</li>\n<li>The problem is implied to be what children eat. The remedy is implied to be that the regulator should act on advertising.</li>\n</ol>\n<p>Keep the implied column separate. If you put an implied cause in the cause line, you can no longer tell your reading from the text.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Each made-up phrase below comes from a different argument about obesity. For each, say which slot it mainly fills, and what it suggests about where the cause lies.</p>\n<ol type=\"a\">\n<li>“a sea of cheap, sugary choices”</li>\n<li>“a personal choice”</li>\n<li>“a burden on the public purse”</li>\n<li>“protect our children”</li>\n<li>“a war on sugar”</li>\n</ol>",
+   "level": 3,
+   "answer": "<p>Phrase by phrase:</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Phrase</td>\n<td>Slot it mainly fills</td>\n<td>What it suggests about cause</td>\n</tr>\n<tr>\n<td>a</td>\n<td>cause</td>\n<td>outside the person: the surroundings are full of cheap options</td>\n</tr>\n<tr>\n<td>b</td>\n<td>judgement</td>\n<td>inside the person: it is the individual’s matter</td>\n</tr>\n<tr>\n<td>c</td>\n<td>problem</td>\n<td>defines the problem as cost to public money, not as health</td>\n</tr>\n<tr>\n<td>d</td>\n<td>judgement</td>\n<td>a duty owed to children, so someone other than the children must act</td>\n</tr>\n<tr>\n<td>e</td>\n<td>problem and remedy</td>\n<td>makes sugar an enemy to be fought; names no one who fights or how</td>\n</tr>\n</tbody>\n</table>\n<p>Two of these are metaphors: “sea” and “war”. A metaphor carries a cause and a duty in one word, which is why it is a strong cue.</p>\n<p>Each answer is a clue, not a verdict. “A personal choice” can appear in a sentence that goes on to say “not just a personal choice”. Read the whole passage before you name its frame.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>The National Health Policy 2017 says, in its section on preventive and promotive health:</p>\n<p>“The policy prerequisite is for an empowered public health cadre to address social determinants of health effectively, by enforcing regulatory provisions. The policy identifies coordinated action on seven priority areas for improving the environment for health”</p>\n<p>The second of the seven areas is “Balanced, healthy diets and regular exercises.”</p>\n<p>Fill the five lines for diet, as this passage presents it.</p>",
+   "level": 4,
+   "answer": "<p>The five lines:</p>\n<table>\n\n<tbody>\n<tr>\n<td>Slot</td>\n<td>Words in the policy</td>\n</tr>\n<tr>\n<td>problem</td>\n<td>“the environment for health” needs “improving”</td>\n</tr>\n<tr>\n<td>cause</td>\n<td>“social determinants of health” (the passage does not define the phrase)</td>\n</tr>\n<tr>\n<td>judgement</td>\n<td>“priority”, “empowered”, “effectively”</td>\n</tr>\n<tr>\n<td>remedy</td>\n<td>“coordinated action”, “enforcing regulatory provisions”, by “an empowered public health cadre”</td>\n</tr>\n<tr>\n<td>left out</td>\n<td>which regulations; which bodies act on food; how diets would change; who sells the food</td>\n</tr>\n</tbody>\n</table>\n<p>The diet item, read alone, sounds personal: “regular exercises” is something a person does. The passage puts it somewhere else. It is listed under “improving the environment for health”, and the means named is “enforcing regulatory provisions”. So the frame of this passage is the environment, with a goal stated in personal words.</p>\n<p>You do not need to define “social determinants of health” to place it. The passage puts it as the thing the cadre is to “address”, which is the cause slot.</p>\n<p>The item states a goal, not a means. The passage does not say how diets would become balanced. That gap goes in the “left out” line.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>In the Mann Ki Baat broadcast of 23 February 2025, the Prime Minister played messages from guests. This one is from the athlete Neeraj Chopra, in his own words, not the Prime Minister’s. He opens by calling obesity “a very important issue for our country”, then says:</p>\n<p>“And I would also like to tell that parents should also play some outdoor sport or the other and take their children along and create a good healthy lifestyle, eat well and give your body an hour or however much time you can in a day for exercise. And I would like to add one more thing, recently our Prime Minister had said that the oil used in food should be reduced by upto 10%, because many times we eat a lot of fried food items which have a huge impact on obesity. So I would like to tell everyone to avoid these things and take care of their health.”</p>\n<p>Fill the five lines.</p>",
+   "level": 5,
+   "answer": "<p>The five lines:</p>\n<table>\n\n<tbody>\n<tr>\n<td>Slot</td>\n<td>Words in the message</td>\n</tr>\n<tr>\n<td>problem</td>\n<td>“obesity”</td>\n</tr>\n<tr>\n<td>cause</td>\n<td>“many times we eat a lot of fried food items which have a huge impact on obesity”</td>\n</tr>\n<tr>\n<td>judgement</td>\n<td>“a very important issue for our country”; “should” (a duty placed on parents)</td>\n</tr>\n<tr>\n<td>remedy</td>\n<td>parents “play some outdoor sport” and “take their children along”; “eat well”; “an hour” a day “for exercise”; “avoid these things”</td>\n</tr>\n<tr>\n<td>left out</td>\n<td>who makes, sells or prices fried food; any body that could act; why people eat it so often</td>\n</tr>\n</tbody>\n</table>\n<p>The cause is what “we eat”, and the remedy is what parents and each person do. The judgement makes obesity the country’s issue, but the remedy stays at home. That pairing, a national problem with a household remedy, is the frame.</p>\n<p>The message repeats the Prime Minister’s call on oil. In your grid it belongs in the remedy line, quoted as his call, not as the athlete’s own.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Write the counter-frame to the passage in problem 5, from FSSAI’s Eat Right India page. In section 14 you placed this page’s cause in the <dfn data-g=\"164\">food system</dfn>, and its menu in regulation, training, joint work and informing people. Take the cause from there. Fill the other three slots only from these two sentences of the page:</p>\n<ul>\n<li>“Further, it builds on the collective action of all stakeholders — the government, food businesses, civil society organizations, experts and professionals, development agencies, and citizens at large.”</li>\n<li>“Furthermore, since foodborne illnesses and various diet-related diseases cut across all age groups and all sections of society, it also adopts a ‘whole of society’ approach, bringing all stakeholders together on a common platform.”</li>\n</ul>\n<p>Then say in which slot the two frames differ most.</p>",
+   "level": 6,
+   "answer": "<p>The two frames, line by line:</p>\n<table style=\"width:100%;\">\n\n<tbody>\n<tr>\n<td>Slot</td>\n<td>Problem 5 (Neeraj Chopra)</td>\n<td>Counter-frame from the Eat Right India page</td>\n</tr>\n<tr>\n<td>problem</td>\n<td>“obesity”</td>\n<td>“foodborne illnesses and various diet-related diseases”, across “all age groups and all sections of society”</td>\n</tr>\n<tr>\n<td>cause</td>\n<td>what “we eat”: “fried food items”</td>\n<td>the food system</td>\n</tr>\n<tr>\n<td>judgement</td>\n<td>“a very important issue for our country”, with the duty on parents</td>\n<td>a shared task: “the collective action of all stakeholders”</td>\n</tr>\n<tr>\n<td>remedy</td>\n<td>parents “play some outdoor sport” and “take their children along”; “eat well”</td>\n<td>a “‘whole of society’ approach, bringing all stakeholders together on a common platform”</td>\n</tr>\n</tbody>\n</table>\n<p>The frames differ most in the remedy, and in who carries it out. In one, parents and each person change how they eat and move. In the other, the government, food businesses, civil society and citizens act together.</p>\n<p>Both name food as the cause. The athlete means the food people eat. The page means the system that supplies it. The same word sits in the cause slot of two frames, with different owners.</p>\n<p>Notice where the counter-frame came from. Both texts reached the public through the Government of India. A counter-frame need not come from an opponent. It is a different answer to the same four questions.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked reading of the “Why ‘Eat Right’?” page on FSSAI’s Eat Right India portal. It read these three sentences:</p>\n<ul>\n<li>“Safe foods and healthy diets are critical in the context of India’s high burden of food borne diseases, under-nutrition, micronutrient deficiencies and growing incidence of obesity and non-communicable diseases (NCDs) like hypertension, diabetes and heart related diseases.”</li>\n<li>“In addition, the current food production and consumption food practices are threatening the environment and the future of our planet.”</li>\n<li>“This underlines the need to focus on preventive healthcare through ensuring safe, healthy food for all people in an environmentally sustainable way.”</li>\n</ul>\n<p>Find the lines that broke.</p>\n<div class=\"working\">\n<p>text: FSSAI, “Why ‘Eat Right’?” page<br />\nproblem: obesity<br />\ncause: “the current food production and consumption food practices”<br />\njudgement: “critical”<br />\nremedy: “preventive healthcare” (clinics and screening)<br />\nframe: the food system causes obesity</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The problem line, the cause line, the remedy line and the verdict broke. The judgement line holds.</p>\n<p>The problem line kept one item from a list. The page names “food borne diseases, under-nutrition, micronutrient deficiencies and growing incidence of obesity and non-communicable diseases”, and then “the environment and the future of our planet”.</p>\n<p>The cause line moved a cause from one problem to another. The page says production and consumption practices “are threatening the environment and the future of our planet”. It does not say they cause obesity. For obesity, the cause line is “not stated”.</p>\n<p>The remedy line stopped too early and added clinics and screening, which the page does not name. The sentence goes on: “through ensuring safe, healthy food for all people in an environmentally sustainable way”. The means is the food supplied.</p>\n<p>A corrected verdict: a safe-and-healthy-food frame with several problems, the planet among them. It states a cause only for the harm to the environment.</p>\n<p>Why the wrong reading looks reasonable: the production sentence comes right after the list that names obesity. A reader who expects a food-system cause from FSSAI joins the two. That is reading in the frame you expected.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A made-up paragraph from a draft department note reads:</p>\n<p>“Sugar-sweetened drinks are now at the highest GST rate. Children in our district are flooded with these drinks at every school gate. The rate should go higher still.”</p>\n<p>A classmate’s worked reading follows. Find what broke.</p>\n<div class=\"working\">\n<p>problem: none stated; the paragraph reports facts<br />\ncause: none stated<br />\njudgement: none<br />\nremedy: none<br />\nverdict: neutral, no frame</p>\n</div>",
+   "level": 8,
+   "answer": "<p>Every line broke, and the verdict with them.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Slot</td>\n<td>Words in the paragraph</td>\n</tr>\n<tr>\n<td>problem</td>\n<td>“Children in our district are flooded with these drinks”</td>\n</tr>\n<tr>\n<td>cause</td>\n<td>“at every school gate” (where the drinks are sold)</td>\n</tr>\n<tr>\n<td>judgement</td>\n<td>“flooded” (a metaphor of something overwhelming)</td>\n</tr>\n<tr>\n<td>remedy</td>\n<td>“The rate should go higher still”</td>\n</tr>\n<tr>\n<td>left out</td>\n<td>which body would act (the paragraph names none); who pays; what a higher rate would change</td>\n</tr>\n</tbody>\n</table>\n<p>The first sentence is a checkable fact. The release of 3 September 2025 recommended the 40% rate for these drinks, the highest it lists. The second sentence is a claim about the district with no source given. The third is a remedy.</p>\n<p>Why the wrong reading looks reasonable: the paragraph opens with a fact, and a fact at the top makes the rest read like a report. The frame sits in one metaphor and one “should”. The paragraph is not wrong to have a frame. It is wrong to be called neutral.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Summan and colleagues, in a 2026 study of food taxes in India, quote a health finance official they interviewed:</p>\n<p>“You can’t have too many objectives thrust into tax policy, the tax policy is supposed to raise revenue and that’s it…”</p>\n<p>In section 13 and section 14 you read this as a revenue frame. Do the two parts they did not: fill its “left out” line, and say what your reading does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Left out: the health effects of what is taxed; who is harmed by the drinks; what the revenue is spent on.</p>\n<p>Each item is something a frame in which a tax changes what people buy would put in. The <dfn data-g=\"338\">quotation</dfn> keeps them out by a rule: tax policy is “supposed to raise revenue and that’s it”.</p>\n<p>What your reading does not establish:</p>\n<ul>\n<li>Whether the official is right. The quotation states a view about what a tax is for. That is a value premise, not a finding, and evidence alone cannot settle it.</li>\n<li>How widely the view is held. It is one interviewee in one article. The same article reports that other interviewees thought directing the revenue to health could win public support.</li>\n<li>That it is the Ministry of Finance’s position. An official speaking in an interview is not the Ministry deciding.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A made-up newspaper headline reads: “Centre declares war on sugar”.</p>\n<p>Read its frame. Then say what you would have to check before you repeated the headline’s claim in your note, and what the frame reading cannot tell you.</p>",
+   "level": 10,
+   "answer": "<p>The five lines:</p>\n<table>\n\n<tbody>\n<tr>\n<td>Slot</td>\n<td>Words in the headline</td>\n</tr>\n<tr>\n<td>problem</td>\n<td>“sugar”</td>\n</tr>\n<tr>\n<td>cause</td>\n<td>not stated; sugar itself is cast as the enemy</td>\n</tr>\n<tr>\n<td>judgement</td>\n<td>“war” (an enemy, and urgency)</td>\n</tr>\n<tr>\n<td>remedy</td>\n<td>the “Centre” fights; no instrument named</td>\n</tr>\n<tr>\n<td>left out</td>\n<td>which body acted; under what power; what the measure is; whom it affects</td>\n</tr>\n</tbody>\n</table>\n<p>The war metaphor does two things at once. It makes the problem an enemy, and it makes the government the side that fights. It leaves out what was actually done. A war can be a tax, a label rule, a speech or nothing.</p>\n<p>What to check before you repeat it:</p>\n<ul>\n<li>Find the text behind the headline: a press release, a <dfn data-g=\"279\">notification</dfn>, a speech.</li>\n<li>Trace what it is, with the tracing method: which instrument, which body, under which provision. “The Centre” is everyday usage for the Union government; it names no particular body. Find which one acted.</li>\n<li>If no instrument exists, your note says a speech or a statement was made, not that a policy was.</li>\n</ul>\n<p>What the frame reading cannot tell you: whether any policy exists, or whether it would change what people eat. It cannot even tell you whether the words are the government’s or the newspaper’s.</p>"
+  }
+ ]
+}

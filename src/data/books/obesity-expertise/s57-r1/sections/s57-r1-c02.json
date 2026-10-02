@@ -1,0 +1,254 @@
+{
+ "format": 1,
+ "id": "s57-r1-c02",
+ "label": "2",
+ "title": "Testing a teaching method: the comparison, the delayed test and the size of the difference",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A fair test of a teaching method compares two groups of learners who differ in one thing only: the method. Both groups learn the same content, in the same time, and sit the same test after the same delay. That delay is the <dfn data-g=\"447\">retention interval</dfn>, as the last section defined it.</p>\n<p>The learners are allocated to the two groups <dfn data-g=\"29\">at random</dfn>: a chance process decides who goes where, not the teacher or the learners. Anything else that affects the score is what the OpenStax statistics textbook calls a <dfn data-g=\"298\">lurking variable</dfn>. <dfn data-g=\"416\">Random allocation</dfn> spreads the lurking variables across the groups by chance.</p>\n<p>The <dfn data-g=\"308\">mean difference</dfn>, MD, is the mean score of one group minus the mean score of the other. Its sign says which group scored higher; whether higher is better depends on the scale. So you always state which group was subtracted from which, and which way the score runs.</p>\n<p>The <dfn data-g=\"494\">standardised mean difference</dfn>, SMD, is the MD expressed as a number of standard deviations (SD, Book 0, D5). In words, the SMD is the MD divided by the SD, written</p>\n<div class=\"working\">\n<p>SMD = MD ÷ SD</p>\n</div>\n<p>The choice of SD is part of the definition. The SMD the Cochrane Handbook uses, Hedges’ adjusted g, divides by an SD pooled from both groups. Papers often report an SMD as an “<dfn data-g=\"149\">effect size</dfn>”.</p>\n<p>One group tested before and after its teaching, with no <dfn data-g=\"86\">comparison group</dfn>, gives a change, not a difference between methods. Divided by an SD it gives a number that looks like an SMD. But it measures one group’s change over time, so it cannot be set beside an SMD between two groups.</p>",
+   "refs": [
+    15,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    44,
+    45,
+    46,
+    3,
+    47,
+    48,
+    49,
+    50
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Here is the trap with judging your own teaching. You try a new method with a batch. Their marks go up. It feels like proof.</p>\n<p>But marks go up after almost any teaching. A rise tells you something happened. It cannot tell you that your method did it.</p>\n<p>So you need two groups, and they must differ in one way only: the method. Then you decide who goes in which group by chance, for example by drawing roll numbers from a box.</p>\n<p>Now compare the two groups’ average marks.</p>\n<p>A gap of 8 marks can be large or small. It depends on how spread out the marks are.</p>\n<p>So divide the gap by the <dfn data-g=\"492\">standard deviation</dfn>.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c02-md-and-sd.png",
+   "alt": "Two bars. The comparison group's bar reaches 58 per cent and the new method group's bar reaches 66 per cent. A shaded band runs across the chart from 58 to 74 per cent, and the second bar ends halfway up it.",
+   "w": 1358,
+   "h": 658,
+   "caption": "Made-up numbers. Mean scores on the delayed test: 58% for the comparison group and 66% for the new method’s group, an MD of 8 percentage points. The shaded band runs from 58 to 74, one SD of 16 above the comparison mean. The new method’s bar reaches halfway into it: an SMD of 0.5."
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c02-smd-and-spread.png",
+   "alt": "A curve falling from an SMD of 1 at an SD of 8 to an SMD of 0.5 at an SD of 16, with a point at each end.",
+   "w": 1357,
+   "h": 655,
+   "caption": "Made-up numbers. The same MD of 8 percentage points, divided by different SDs: SMD = 8 ÷ SD. With an SD of 16 the SMD is 0.5; with an SD of 8 it is 1. The gap in marks stays the same; the SMD grows as the scores bunch together."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the attempt that fails. The numbers in it are made up.</p>\n<p>You teach a new way of running the nutrition sessions to a batch of 150 third-year MBBS students. Before the first session, they sit a 20-question test. At the end of the last session, they sit the same 20 questions again. The batch’s mean score rises from 45% to 70%.</p>\n<div class=\"working\">\n<p>70 minus 45 = 25</p>\n</div>\n<p>A rise of 25 <dfn data-g=\"362\">percentage</dfn> points. A colleague asks whether the new way works. Before you answer, list what else could have raised that score.</p>\n<ul>\n<li>Any teaching at all. The old way would also have taught them something.</li>\n<li>The same 20 questions twice. The students had practised this exact test.</li>\n<li>The timing. The second test came at the end of a session, which measures performance, as the last section showed. It says nothing about next month.</li>\n</ul>\n<p>Each of these would raise the score with no help from your method. With one group, you cannot tell how much of the 25 points belongs to which. The rise is real. It is not evidence about the method.</p>\n<p>Now build the fair version. Put all 150 roll numbers in a box. Draw 75 of them. That group gets the new way. The other 75 get the usual way, the comparison group. Give both groups the same topic, the same number of minutes, and the same teacher if you can. Two weeks after the last session, give both groups one new test on the same objectives.</p>\n<p>Does drawing from a box really give you two similar groups? Open Deslauriers and colleagues, “Measuring actual learning versus <dfn data-g=\"186\">feeling of learning</dfn>”, <em>Proceedings of the National Academy of Sciences</em> (PNAS) 2019, at https://pmc.ncbi.nlm.nih.gov/articles/PMC6765278/. Go to Table 1. It describes two groups of physics students who were allocated at random. Later, each group had one topic as a lecture and one in which students solved problems in small groups. Here you look only at how alike chance made the groups before that. Find the row for each group’s average score on two earlier exams.</p>\n<table style=\"width:96%;\">\n\n<thead>\n<tr>\n<th>semester</th>\n<th>group A mean (%)</th>\n<th>group A SD</th>\n<th>group B mean (%)</th>\n<th>group B SD</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>spring</td>\n<td>77.9</td>\n<td>13.4</td>\n<td>78.1</td>\n<td>14.4</td>\n</tr>\n<tr>\n<td>fall</td>\n<td>70.5</td>\n<td>13.0</td>\n<td>72.02</td>\n<td>13.9</td>\n</tr>\n</tbody>\n</table>\n<p>Work out each semester’s gap, group B minus group A.</p>\n<div class=\"working\">\n<p>78.1 minus 77.9 = 0.2<br />\n72.02 minus 70.5 = 1.52</p>\n</div>\n<p>In spring the two groups sit 0.2 percentage points apart. In fall they sit 1.52 apart. Neither group was chosen for being stronger, and they came out nearly level. Nearly, not exactly: chance leaves small gaps, and a real study has to show they are small. That is what this table is for.</p>",
+   "numberRefs": [
+    51
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A box of roll numbers balances a large group better than a small one. With 20 learners, chance alone can leave one group clearly stronger. Check the groups’ earlier marks, as Table 1 does, before you trust the split.</p>\n<p>The table shows balance on earlier exam marks only. It cannot show balance on things nobody measured.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now run the fair comparison and measure the difference. These numbers are made up too.</p>\n<p>Two weeks after the sessions, both groups of 75 sit the same new test. Here are the results.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>group</th>\n<th>mean score on the delayed test (%)</th>\n<th>SD (percentage points)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>comparison</td>\n<td>58</td>\n<td>16</td>\n</tr>\n<tr>\n<td>new method</td>\n<td>66</td>\n<td>16</td>\n</tr>\n</tbody>\n</table>\n<p>First, the mean difference, the new method’s group minus the comparison group.</p>\n<div class=\"working\">\n<p>66 minus 58 = 8</p>\n</div>\n<p>The MD is 8 percentage points in favour of the new method. Its sign is positive, so the new method’s group did better.</p>\n<p>Next, the size of that gap against the spread of the scores. Both groups have an SD of 16 percentage points, so use 16.</p>\n<div class=\"working\">\n<p>8 divided by 16 = 0.5</p>\n</div>\n<p>The SMD is 0.5. The new method’s group scored half a standard deviation higher. To see what one SD is here, add it to the comparison group’s mean.</p>\n<div class=\"working\">\n<p>58 plus 16 = 74</p>\n</div>\n<p>One SD above the comparison mean is 74%. The new method’s mean, 66%, sits halfway there.</p>\n<p>Keep the MD at 8 and change only the spread. Say both SDs had been 8 percentage points.</p>\n<div class=\"working\">\n<p>8 divided by 8 = 1</p>\n</div>\n<p>Now the same 8 points is a whole standard deviation. The gap in marks has not changed. What changed is how unusual that gap is, compared with how much learners differ from one another.</p>\n<p>Now read a published SMD the same way. Open Freeman and colleagues, “Active learning increases student performance in science, engineering, and mathematics”, <em>PNAS</em> 2014, at https://www.pnas.org/doi/10.1073/pnas.1319030111. The authors define active learning: it “engages students in the process of learning through activities and/or discussion in class, as opposed to passively listening to an expert.”</p>\n<p>They combined the results of 158 comparisons between active learning and lecturing into one average. The scores were on exams, concept inventories and similar tests. (A concept inventory is a test mostly designed to find known misconceptions.) The overall SMD is 0.47. It was larger on concept inventories than on course exams. The authors put it in words: performance rose “by just under half a SD”. Turn it back into marks for a batch whose scores have an SD of 16 percentage points.</p>\n<div class=\"working\">\n<p>0.47 times 16 = 7.52</p>\n</div>\n<p>About 7.5 percentage points. That holds only for a test with that spread.</p>\n<p>Last, go to Freeman’s Table 1. It splits the studies by how the students were put into groups. In 16 studies, a chance process decided, or every student had both methods in turn. Their SMD was 0.514. In other studies, students chose their own class section, and the SMDs ranged from 0.362 to 0.534. The authors report that the randomised studies gave results no different from the others.</p>",
+   "numberRefs": [
+    52
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The made-up batch gives both groups the same SD, so there is only one SD to divide by. Real groups rarely match exactly. A published SMD may divide by an SD pooled from both groups, or by the comparison group’s SD alone (Glass’s <dfn data-g=\"128\">delta</dfn>). Some papers name their version, such as Cohen’s d. Each uses an exact formula this book does not work through. Your hand division gives the idea, not the published figure.</p>\n<p>Freeman’s studies were in university science courses in their own time and place. The timing of the tests varied from study to study. So 0.47 is not a promise about a delayed test in your college.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A batch’s rise from a pre-test to a post-test is not evidence that your method works. Call it the change in this batch, and run a comparison before you claim more.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>To compare two ways of teaching, let chance decide who gets which. Then check the two groups’ earlier marks, to see how evenly chance split them.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never quote an MD without saying which group was subtracted from which, and in what unit. A positive 6 and a negative 6 are opposite findings.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An SMD of 0.5 does not mean “50% better”. To turn it into marks, multiply it by the SD of your own test’s scores. That assumes the effect would carry over to your test and learners, which the SMD cannot tell you. Report the MD in marks first, then the SMD with the SD you divided by.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Freeman and colleagues combined 158 comparisons of active learning against lecturing into one SMD of 0.47, just under half an SD. It was larger on concept inventories than on course exams. Use that as your yardstick when someone offers you a new method’s “effect size”. It came from volunteer teachers in university science courses.</p>",
+     "tag": "number",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>The SMD shrinks when learners’ scores are widely spread and grows when they are bunched, even if the gap in marks is the same.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Random allocation makes the groups alike on average, not identical. With a small batch, chance can still leave one group stronger: the spread of a group’s mean shrinks only with the <dfn data-g=\"488\">square root</dfn> of its size (Book 0, D6). How many learners a comparison needs is outside this book.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a committee is shown an “effect size” for a teaching method, ask three things. Compared with what? Who decided who got which? How long after the teaching was the test?</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>An accredited social health activist (ASHA) is a village health worker. Your department has a question about training them. Does a session built on short written questions teach them to read a growth chart better than the usual talk? A growth chart is the printed curve on which a child’s weight is plotted against age. Sixty ASHA workers from one block will attend.</p>\n<p>Plan the comparison. Say how you split them and what you keep the same. Say what you measure and when. Name the one number you will report first.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Split. Write the 60 names on slips and draw 30 at random for the question-based session. The other 30 get the usual talk. That is the comparison group. Before teaching, record something that could affect the result, such as years of service. Check that the two groups come out roughly level on it.</p>\n<p>Kept the same. The content and the handout, the length of the session, the day of the week and the hall. Use the same trainer for both if possible. If you use two trainers, give each of them half of each group, so a trainer’s skill does not travel with one method.</p>\n<p>Measured. One new set of growth-chart questions, the same for everyone, marked by someone who does not know which group each worker was in. Do not reuse the questions from the session.</p>\n<p>When. At a meeting two to four weeks later, not at the end of the session. A test at the end measures performance. The later test measures what lasted.</p>\n<p>Reported first. The mean difference, question-based group minus talk group, in percentage points, with each group’s mean and SD beside it. Then the SMD, with the SD you divided by named.</p>\n<p>Thirty in each group is small. Say plainly that a gap of a few points could be chance, and do not report the SMD without the MD in marks.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist rings. A company says its training app has “an effect size of 0.8, the biggest in medical education”. The company and its claim are made up for this exercise. You have three minutes and no jargon. Explain what that number means and what to ask the company.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>For a journalist: three minutes, one quotable sentence, and plain honesty about what is missing.</p>\n<p>An effect size like this is usually the gap between two groups’ average marks, measured in units of how much individual students’ marks vary. So 0.8 means the app’s group scored, on average, most of one such unit higher than some other group. The number cannot tell you who that other group was.</p>\n<p>Ask the company four things. Compared with what: a good class, or no teaching at all? Who decided which students used the app: a lottery, or the students themselves? When were they tested: at the end of the session, or weeks later? And what was the gap in actual marks?</p>\n<p>The quotable line: “An effect size is only as good as the comparison behind it. Ask what the app was compared with, and whether anyone was tested weeks later.”</p>\n<p>If they cannot answer, say the claim has not been shown. Do not say the app does not work.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Group P has a mean of 72 and group Q a mean of 63. The SD of the scores is 18 in both groups. Find the MD, P minus Q, and the SMD.</p>",
+   "level": 1,
+   "answer": "<p>The MD is P’s mean minus Q’s mean.</p>\n<div class=\"working\">\n<p>72 minus 63 = 9</p>\n</div>\n<p>The SMD is the MD divided by the SD.</p>\n<div class=\"working\">\n<p>9 divided by 18 = 0.5</p>\n</div>\n<p>The MD is 9 and the SMD is 0.5.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A new method’s group has a mean of 47. The comparison group has a mean of 53. The SD is 12 in both groups. Find the MD, new minus comparison, and the SMD. Say what the sign tells you.</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>47 minus 53 = -6<br />\n-6 divided by 12 = -0.5</p>\n</div>\n<p>The MD is -6 and the SMD is -0.5. The minus sign says the new method’s group scored lower, by half a standard deviation.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A study reports an SMD of 0.25. The SD of the scores is 20. What is the MD?</p>",
+   "level": 3,
+   "answer": "<p>The SMD is the MD divided by the SD. So the MD is the SMD times the SD.</p>\n<div class=\"working\">\n<p>0.25 times 20 = 5</p>\n</div>\n<p>The MD is 5. Check it by dividing back.</p>\n<div class=\"working\">\n<p>5 divided by 20 = 0.25</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Two groups’ means differ by 9, and the SMD is 0.6. What SD was used?</p>",
+   "level": 3,
+   "answer": "<p>The SMD is the MD divided by the SD. So the SD is the MD divided by the SMD.</p>\n<div class=\"working\">\n<p>9 divided by 0.6 = 15</p>\n</div>\n<p>The SD was 15. Check it.</p>\n<div class=\"working\">\n<p>9 divided by 15 = 0.6</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>In Roediger and Karpicke’s second experiment, the SSSS group read a passage in four study periods. The STTT group read it once and then took three recall tests. After 5 minutes, SSSS recalled 83% of the passage and STTT recalled 71%. After 1 week, STTT recalled 61% and SSSS recalled 40%. Find the MD, STTT minus SSSS, at each retention interval, with its unit. Say what the two signs tell you.</p>",
+   "level": 4,
+   "answer": "<p>Keep the subtraction the same way round both times: STTT minus SSSS.</p>\n<div class=\"working\">\n<p>71 minus 83 = -12<br />\n61 minus 40 = 21</p>\n</div>\n<p>At 5 minutes the MD is -12 percentage points. At 1 week it is +21 percentage points.</p>\n<p>The sign turns round. At 5 minutes the group that only read did better, by 12 points. A week later the group that was tested did better, by 21 points. Had you subtracted SSSS minus STTT at 5 minutes and STTT minus SSSS at 1 week, both numbers would be positive. Then the reversal would disappear from your report.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Deslauriers and colleagues allocated physics students to two groups at random. Before the experiment, the groups’ averages on two earlier exams were as follows. Spring: group A 77.9% (SD 13.4 percentage points), group B 78.1% (SD 14.4). Fall: group A 70.5% (SD 13.0), group B 72.02% (SD 13.9). For each semester, find the MD, B minus A, and the SMD, dividing by group A’s SD. Say what the two SMDs tell you about the random allocation.</p>",
+   "level": 5,
+   "answer": "<p>Spring first.</p>\n<div class=\"working\">\n<p>78.1 minus 77.9 = 0.2<br />\n0.2 divided by 13.4 = 0.0149</p>\n</div>\n<p>An MD of 0.2 percentage points and an SMD of about 0.01.</p>\n<p>Now fall.</p>\n<div class=\"working\">\n<p>72.02 minus 70.5 = 1.52<br />\n1.52 divided by 13.0 = 0.117</p>\n</div>\n<p>An MD of 1.52 percentage points and an SMD of about 0.12.</p>\n<p>Before any teaching, the groups sat 0.01 and 0.12 SDs apart. Chance made them close, and in fall a little less close. The authors tested these gaps and called the groups “indistinguishable”. Still, a later gap has to be judged against a starting gap of up to 0.12 SD. It was not zero.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Roediger and Karpicke report d, an SMD, for two of their comparisons. After 5 minutes, SSSS beat STTT by 12 percentage points, with d = 1.22. After 1 week, STTT beat SSSS by 21 percentage points, with d = 1.26. The paper does not give the SDs. Taking d as the MD divided by the SD, find the SD each d implies. Why is the second MD nearly twice the first, while d hardly moves?</p>",
+   "level": 6,
+   "answer": "<p>The SD is the MD divided by d.</p>\n<div class=\"working\">\n<p>12 divided by 1.22 = 9.84<br />\n21 divided by 1.26 = 16.7</p>\n</div>\n<p>At 5 minutes, the implied SD is about 9.8 percentage points. At 1 week, it is about 16.7.</p>\n<p>A week later the scores are far more spread out. Some students kept much of the passage and some kept little. The gap in marks grew from 12 to 21 points, but the spread grew almost as much. So the gap, measured in SDs, stayed near 1.2.</p>\n<p>These SDs are implied, not reported. The paper may have computed d another way, so treat them as rough.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. The numbers are made up. Find the step that broke.</p>\n<div class=\"working\">\n<p>comparison group mean 58%, new method group mean 66%, SD 16 percentage points in each group<br />\nMD = 66 minus 58 = 8 percentage points<br />\nSMD = 8 divided by 58 = 0.14<br />\nso the new method’s group scored 0.14 SD higher</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The first two lines are right. The MD is 8 percentage points.</p>\n<p>The third line broke. It divides the MD by the comparison group’s mean, 58. The SMD divides by the SD, 16.</p>\n<div class=\"working\">\n<p>8 divided by 16 = 0.5</p>\n</div>\n<p>The SMD is 0.5, not 0.14.</p>\n<p>Why it looks reasonable: dividing a change by the value it started from is exactly how you work out a per cent change. Here it gives the gap as a share of the comparison mean, about 14%. That is a real number, but it is not an SMD. The SMD asks how big the gap is against how much individual learners differ.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. The numbers are made up. Find the step that broke.</p>\n<div class=\"working\">\n<p>usual method group mean 64%, new method group mean 58%, SD 12 percentage points in each group<br />\nMD = 64 minus 58 = 6 percentage points<br />\nSMD = 6 divided by 12 = 0.5<br />\nso the new method is half an SD better</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The arithmetic in lines 2 and 3 is right. The subtraction is the wrong way round for the claim in line 4.</p>\n<p>The MD in this book is the new method’s group minus the comparison group.</p>\n<div class=\"working\">\n<p>58 minus 64 = -6<br />\n-6 divided by 12 = -0.5</p>\n</div>\n<p>The SMD is -0.5. The new method’s group scored half an SD lower, not higher.</p>\n<p>Why it looks reasonable: taking the bigger number minus the smaller one is a habit, and it always gives a positive answer. A positive answer then reads as a win for whatever you were hoping for. Fix the order before you subtract, and write it beside the answer.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. The numbers are made up. Find the step that broke.</p>\n<div class=\"working\">\n<p>ASHA workers each plot ten children’s weights on a growth chart; the score is the number of mistakes<br />\nquestion-based group: mean 2.1 mistakes, SD 1.4; usual talk group: mean 3.5 mistakes, SD 1.4<br />\nMD = 2.1 minus 3.5 = -1.4 mistakes<br />\nSMD = -1.4 divided by 1.4 = -1<br />\nthe SMD is negative, so the question-based session did worse, by one SD</p>\n</div>",
+   "level": 8,
+   "answer": "<p>Lines 1 to 4 are right. The MD is -1.4 mistakes and the SMD is -1.</p>\n<p>The last line broke. On this score, fewer is better. A negative MD means the question-based group made fewer mistakes: 1.4 fewer on average. That is one SD better, not worse.</p>\n<p>The Cochrane Handbook warns that some scales have higher scores for a better outcome and some have lower. Before you read a sign, find out which way the score runs. If you are putting several studies side by side, turn round the ones that run the other way, by multiplying by -1.</p>\n<div class=\"working\">\n<p>-1 times -1 = 1</p>\n</div>\n<p>Reported on a “higher is better” footing, the SMD is +1 in favour of the question-based session.</p>\n<p>Why it looks reasonable: nearly every test you set scores right answers, so “negative means worse” becomes automatic. Counting mistakes turns that round, and nothing in the arithmetic warns you.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A speaker at a medical-education meeting says: “Active learning raises exam scores by 6%. Freeman proved it.” Freeman’s own words are that a change of 0.47 SDs “would produce an increase of about 6% in average examination scores”.</p>\n<p>Suppose your course’s exam marks have a mean of 77.9% and an SD of 13.4 percentage points. Those are the figures for one group in Deslauriers’s Table 1. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Turn 0.47 SD into marks for a test with this spread, by multiplying the SMD by the SD.</p>\n<div class=\"working\">\n<p>0.47 times 13.4 = 6.298</p>\n</div>\n<p>About 6.3 percentage points. Now as a share of the mean score.</p>\n<div class=\"working\">\n<p>6.3 divided by 77.9 = 0.081</p>\n</div>\n<p>About 8% of the mean.</p>\n<p>So “6%” could mean two different things. As percentage points, 6.3 is close to 6. As a per cent of the score, it would be about 8% here. The paper’s text does not say which it means. It bases its 6% on three courses, analysed in its supplementary material.</p>\n<p>What this does not establish:</p>\n<ul>\n<li>That your course would gain 6 points. The conversion assumes your SD, and your SD is not theirs.</li>\n<li>That the gain lasts. The timing of the exams varied across Freeman’s studies, and none of this is a delayed test of your own.</li>\n<li>That every teacher would get it. The teachers in Freeman’s studies were volunteers. The authors call it an <dfn data-g=\"351\">open question</dfn> whether the gain would hold if all teachers had to do it.</li>\n<li>That “Freeman proved it” for your setting. The studies were undergraduate science courses, not an Indian medical college.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A colleague writes this in the department’s annual report. The words are made up for this problem.</p>\n<p>“My case-based sessions raised the batch’s mean score from 52% on the pre-test to 68% on the post-test. The pre-test SD was 16 percentage points. So that is an effect size of 1.0, more than double Freeman’s 0.47.”</p>\n<p>Decide what to compute, compute it, and say what the claim does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Check the arithmetic first. The change, post-test minus pre-test:</p>\n<div class=\"working\">\n<p>68 minus 52 = 16<br />\n16 divided by 16 = 1</p>\n</div>\n<p>The rise is 16 percentage points, and 16 divided by the pre-test SD is 1. The division is right.</p>\n<p>What it does not establish:</p>\n<ul>\n<li>That the case-based sessions caused the rise. There is one group and no comparison group. Any teaching raises a post-test score. If the post-test repeated the pre-test’s questions, practice on them raises it too.</li>\n<li>That this is comparable with Freeman’s 0.47. Freeman’s figure is a gap between two groups taught differently, measured against the spread of scores. This 1.0 is one group’s change over time. The two numbers answer different questions, so “more than double” compares nothing.</li>\n<li>That anything lasted. If the post-test came at the end of the posting, it measures performance, not learning.</li>\n</ul>\n<p>What would establish it? Split the next batch by lot into case-based and usual sessions. Give both groups the same new test, two weeks or more later. Then report the MD in marks, with the SMD beside it.</p>"
+  }
+ ]
+}

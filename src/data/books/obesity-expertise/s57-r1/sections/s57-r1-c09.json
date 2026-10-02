@@ -1,0 +1,133 @@
+{
+ "format": 1,
+ "id": "s57-r1-c09",
+ "label": "9",
+ "title": "Writing a learning objective that can be assessed",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"282\">learning objective</dfn> is one sentence that states what a named learner will be able to do at the end of a piece of teaching, in a form that someone else could watch or mark. It has six parts.</p>\n<ol type=\"1\">\n<li>Who: the learners.</li>\n<li>The action: one verb whose result can be seen or marked.</li>\n<li>The content the action is done to.</li>\n<li>The condition: what the learner is given, or is not allowed, while doing it.</li>\n<li>The standard: how much, or how well, counts as done.</li>\n<li>By when: the point at which it will be checked. In this book that is the end of the session and again on a delayed test.</li>\n</ol>\n<p>Chatterjee and Corral name five of these parts: who, will do, how much or how well, of what, and by when. The condition is this book’s addition.</p>\n<p>A verb that names a state of mind cannot be watched or marked. Understand, know, learn, appreciate, believe, be familiar with and comprehend are such verbs, and they do not belong in an objective. Each objective carries one action. Two actions make two objectives.</p>\n<p>Bloom’s taxonomy is a sorted list of kinds of thinking skill. It was revised in 2001. The revision sorts the skills into six levels, from lowest to highest: remember, understand, apply, analyse, evaluate and create. Chatterjee and Corral’s table says what the learner does at each level.</p>\n<table>\n\n<tbody>\n<tr>\n<td>level</td>\n<td>what the learner does</td>\n</tr>\n<tr>\n<td>remember</td>\n<td>Retrieve relevant knowledge from long term memory</td>\n</tr>\n<tr>\n<td>understand</td>\n<td>Construct meaning from instructional messages, including oral, written and graphic communication</td>\n</tr>\n<tr>\n<td>apply</td>\n<td>Carry out or use a procedure in a given situation</td>\n</tr>\n<tr>\n<td>analyse</td>\n<td>Break material into its constituent parts and determine how the parts relate to one another and to an overall structure or purpose</td>\n</tr>\n<tr>\n<td>evaluate</td>\n<td>Make judgments based on criteria and standards</td>\n</tr>\n<tr>\n<td>create</td>\n<td>Put elements together to form a coherent or functional whole</td>\n</tr>\n</tbody>\n</table>",
+   "refs": [
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Many session plans open with a line like “Students will understand obesity.” Nobody can check that. You cannot see understanding. You can see what a person does with it.</p>\n<p>Here is the test of a finished objective. Hand it to a colleague and ask them to write the question that checks it. If they cannot, the sentence is not finished.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a list that fails. Chatterjee and Corral open their article with it. An anaesthesiologist is giving <dfn data-g=\"220\">grand rounds</dfn>, a teaching talk for a whole department. The topic is malignant hyperthermia (MH), an emergency that can arise during an operation under anaesthesia. You need to know nothing more about MH to follow this. He opens with these four objectives:</p>\n<ol type=\"1\">\n<li>Understand the pathophysiology of MH.</li>\n<li>Review the clinical presentation of MH.</li>\n<li>Discuss the treatment of MH.</li>\n<li>Become familiar with caffeine-halothane contracture testing for MH.</li>\n</ol>\n<p>Now run the first line through the six parts. Who? Not said. The action? “Understand”. You cannot watch it, so you cannot write a question that checks it. The content is there: the pathophysiology, the way the disease works. The condition, the standard and the by-when are missing.</p>\n<p>Run the other three lines through. “Review” and “discuss” could name what the learners do, but here they read as the speaker’s plan for the hour. “Become familiar with” names a state of mind. None of the four lines says who, how well or by when. The slide tells the audience what the talk will cover. It does not tell them what they will be able to do afterwards.</p>\n<p>Now read the authors’ rewrite that covers the treatment. The stem, “Upon completion of the grand rounds presentation, participants will be able to”, supplies who and by when.</p>\n<blockquote>\n<p>Summarize, in order, the critical steps in the intraoperative management of an MH crisis according to recommendations from the Malignant Hyperthermia Association of the United States.</p>\n</blockquote>\n<p>Find the parts. The action is “summarize”. The content is the steps for managing a crisis during an operation. “According to recommendations from” the association names the list the answer is marked against. “In order” is part of the standard.</p>\n<p>Now write the check. Give each participant a blank sheet: “Write the steps for managing an MH crisis during an operation, in order.” You can mark that. Notice one thing the rewrite still leaves open: how many steps must be right. Add it and the objective is finished.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The rewrite is the authors’ own, for one talk to trained anaesthesiologists. It shows the form of an objective. It says nothing about what an Indian MBBS batch needs to be able to do; the level and the standard come from your learners’ job, not from this example.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now write one for a session of your own. You are teaching a batch of final-year MBBS (Bachelor of Medicine and Bachelor of Surgery) students on <dfn data-g=\"45\">body mass index</dfn>, BMI, which Book 0 built (Book 0, B6). Your first draft is the one most people write.</p>\n<blockquote>\n<p>Students will understand BMI.</p>\n</blockquote>\n<p>Take the parts in turn.</p>\n<p>Who: “each student in this final-year batch”. Say each, so the objective is about every learner, not the batch on average.</p>\n<p>The action: ask what the students will have to do with BMI in the job. In a clinic or a survey they will be handed a weight and a height and will have to say which category the person falls in. That is two actions, working out the number and placing it in a category. Pick the one the job ends on: classify. Working out the number becomes a step inside it.</p>\n<p>The content: an adult’s BMI, from a measured weight in kilograms and a height in centimetres.</p>\n<p>The condition: given a printed table of BMI categories, without notes. Handing over the table matters. Book 0 showed that a cut-off is a decision some body made, not part of the arithmetic. The objective tests the classifying, not the memory of one body’s cut-offs.</p>\n<p>The standard: correct for at least eight of ten adults.</p>\n<p>By when: at the end of the session, and again on a test one week later. As section 1 showed, the second check is the one that counts: learning is what lasts.</p>\n<p>Put it together.</p>\n<blockquote>\n<p>At the end of this session, each student in this final-year batch, given the weight in kilograms and the height in centimetres of ten adults and a printed table of BMI categories, will classify each adult’s BMI into the table’s category, without notes, correct for at least eight of the ten, on the day and again on a test one week later.</p>\n</blockquote>\n<p>It is long. Chatterjee and Corral hear the same complaint from teachers. The length is where the check lives: a colleague can now write your test from this sentence alone.</p>\n<p>Last, find its level. Here the two sources disagree, and the disagreement teaches something. Chatterjee and Corral’s verb table lists “classify” under analyse. Adams lists “classifying items in groups” as a sign of comprehension, the old name for understand. Neither verb list settles it. Look at the task instead. Reading a number against a printed table is carrying out a procedure in a given situation, which is the table’s own description of apply. So the level is apply, whatever the verb.</p>",
+   "numberRefs": [
+    277
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Eight of ten is a standard chosen for this session, not a figure from any study. Set yours from what a wrong answer would cost. For a classification a student will use on patients next month, you might demand ten of ten.</p>\n<p>Placing the objective at apply works because the student classifies adults they have not seen before. If the ten adults on the test are the ten from the session, the same sentence is tested at remember.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Understand” is the name of a Bloom level, and it is also a verb Chatterjee and Corral tell you never to use in an objective. The level is shown by actions you can see: explain, summarise, estimate. When you want understanding, write the action that would show it.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A verb does not fix the level. “Describe” sits under both remember and understand in Chatterjee and Corral’s table, and the two sources in this section put “classify” at different levels. Decide the level from the task. Ask whether the learner meets a case they have not seen before, or repeats something they were shown.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>One action per objective. When a draft says “diagnose and manage”, write two objectives.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Before you settle on remember, ask what the learner will have to do with the material in the job. Write the objective at that level.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Bloom’s levels sort thinking skills. So the list cannot grade weighing a child. For a skill like that, still write an action you can watch, such as “weigh” or “demonstrate”. Then judge it by watching, not by the verb list.</p>",
+     "tag": "boundary",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>An objective states what you intend. Never report a well-written objective as an outcome.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>For your build session, write one objective, not a list. The one-objective rule is this book’s choice, not a research finding.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here are three objectives of the kind you will find in teaching plans. For each one, name every part that is missing or broken. Then rewrite it as a finished objective.</p>\n<ol type=\"1\">\n<li>For a batch of MBBS students: “Students will know the causes of childhood obesity.”</li>\n<li>For a session for accredited social health activists (ASHAs), village health workers: “ASHAs will appreciate the importance of weighing children every month.”</li>\n<li>For a journal club of residents: “Residents will understand and critically appraise the trial.”</li>\n</ol>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li><p>“Know” is a state of mind: you cannot watch it. Who is too loose (“students”); there is no condition, no standard and no by-when. A rewrite:</p>\n<blockquote>\n<p>At the end of this session, each student, given a one-paragraph history of a child with obesity, will list the possible causes the history points to, without notes, naming at least three that the marking key accepts, on the day and on a test one week later.</p>\n</blockquote>\n<p>The level depends on the history: if the student meets a new history, it is above remember.</p></li>\n<li><p>“Appreciate” names an attitude, and nothing in the sentence can be watched. Ask what an ASHA who appreciated it would do: she would weigh the child. A rewrite:</p>\n<blockquote>\n<p>At the end of this session, each ASHA, given a child and the scale used at her centre, will weigh the child, completing every step on the programme’s weighing checklist, including writing the weight in the register, observed by the trainer.</p>\n</blockquote>\n<p>Recording is a step on the checklist, not a second action. This is a hands skill, so Bloom’s thinking-skill list does not grade it.</p></li>\n<li><p>Two actions, and one of them (“understand”) cannot be watched. Drop it: appraising shows the understanding. A rewrite:</p>\n<blockquote>\n<p>At the end of the journal club, each resident, given the trial’s abstract and methods, will judge whether the comparison between its groups was fair, giving in writing the one reason that matters most, marked by the convener against a key.</p>\n</blockquote>\n<p>“Judge” and “appraise” name evaluate, the fifth level.</p></li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Choose the session you will teach for this book’s build: a real group of learners and one topic. Write its single objective with all six parts. Then hand it to a colleague and ask them, without talking to you, to write one test question from it. Compare their question with what you meant. Revise the objective until the question they write is the one you would have written.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>There is no single right objective; judge yours against the six parts and the colleague test.</p>\n<ul>\n<li>Who is named, and says “each”.</li>\n<li>The action is one verb you can watch or mark.</li>\n<li>The content is stated.</li>\n<li>The condition says what the learner is given and what they may not use.</li>\n<li>The standard is a number or a list the answer is marked against.</li>\n<li>By when includes a check days after the session, not only at its end.</li>\n</ul>\n<p>Suppose your colleague’s question could be answered by repeating a sentence from your session, and you meant more than remember. Then your action or your condition is not yet doing its job. The usual fix is a condition that hands the learner a case they have not seen.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident is preparing her first teaching session. She asks why “understand” is forbidden in an objective, when it is the name of one of Bloom’s levels. You have ten minutes and a whiteboard.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw two columns. On the left, write the six revised levels, remember to create. On the right, beside “understand”, write three actions: explain in your own words, summarise, estimate.</p>\n<p>Say that the level is the target and the verb is the evidence. “Understand” names what you hope is happening in the learner’s head. You cannot see that, so you cannot mark it. What you can see is the learner explaining, summarising or estimating something. Those are the words that go in the objective.</p>\n<p>Then show that a verb is not a level. Take “describe”. Ask her to describe the parts of an objective from memory: that is remember. Ask her to describe what is missing from a colleague’s objective she has never seen: that is at least understand. Same verb, different task, different level.</p>\n<p>Close with the check she can use on her own: write the question that tests the objective. If she cannot, the objective is not finished.</p>"
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "format": 1,
+ "id": "s36-r1-c06",
+ "label": "6",
+ "title": "The topic guide",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"310\">topic guide</dfn> is the written list of areas and questions an interviewer takes into a <dfn data-g=\"276\">semi-structured interview</dfn>.</p>\n<p>It is a guide, not a script. The interviewer changes the order and the wording of the questions to fit the <dfn data-g=\"262\">respondent</dfn> and the moment.</p>\n<p>The questions run from easy to hard. The questions come from the study’s research question, which DeJonckheere and Vaughn call the driving force of the whole design.</p>\n<p>A guide is tried out before the study, in a pilot interview.</p>",
+   "refs": [
+    84,
+    85,
+    86,
+    78,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A topic guide is the sheet you take into the interview, with all your questions on it in the order you expect to use them.</p>\n<p>It is not a script. You do not read it out top to bottom.</p>\n<p>A guide has four parts.</p>\n<ul>\n<li><strong>A <dfn data-g=\"322\">warm-up question</dfn>.</strong> Something easy the person knows all about, to get them talking. “Tell me about a usual day for you.”</li>\n<li><strong>Main questions.</strong> These are the questions your study turns on.</li>\n<li><strong>Prompts under each <dfn data-g=\"175\">main question</dfn>.</strong> Short notes of the things you hope the answer covers. You use a prompt only if the respondent does not get there on their own. A prompt names a topic, never an answer: “the journey”, not “Was it the bus?”</li>\n<li><strong>A <dfn data-g=\"44\">closing question</dfn>.</strong> “Is there anything I have not asked about that I should have?”</li>\n</ul>\n<p>Three rules for the order and the words:</p>\n<ul>\n<li>Easy and factual first, personal later.</li>\n<li>Every main question comes from your study question.</li>\n<li>Use the respondent’s words, not the clinic’s.</li>\n</ul>\n<p>Last, a guide is never finished on paper. Try it in a pilot interview, see which questions fall flat, and change it. A question falls flat when it gets a one-line answer, is heard as a different question, or never draws the person’s own words.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s36-r1-c06-time-plan.png",
+   "alt": "A bar chart of planned minutes for seven parts of the guide in order: warm-up 5, main 1 5, main 2 10, main 3 10, main 4 10, main 5 5, closing 5.",
+   "w": 1358,
+   "h": 655,
+   "caption": "The made-up time plan for the clinic guide in the second illustration, in minutes: 5 for the warm-up, 5, 10, 10, 10 and 5 for main questions 1 to 5, and 5 for the closing question, 50 minutes in all. Most of the time goes to main questions 2, 3 and 4: the events and the most personal part, where the reasons are most likely to come out."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a guide that goes wrong. Here are the first five lines of a made-up first draft for the clinic study, from a guide that runs to nineteen questions.</p>\n<table style=\"width:65%;\">\n\n<thead>\n<tr>\n<th>No.</th>\n<th>Question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>How do you feel about your weight?</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Why did you stop coming for follow-up?</td>\n</tr>\n<tr>\n<td>3</td>\n<td>How many times did you come last year?</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Are you compliant with the diet chart?</td>\n</tr>\n<tr>\n<td>5</td>\n<td>What is your BMI?</td>\n</tr>\n</tbody>\n</table>\n<p>Read it the way a respondent would hear it.</p>\n<ul>\n<li>It opens on the most personal question in the whole study, before the person has said a word about anything easier.</li>\n<li>Question 2 is the “why” trap from the last section. It takes for granted that the person decided to stop, and asks them to defend it.</li>\n<li>“Follow-up”, “compliant”, “diet chart” and “BMI” (<dfn data-g=\"29\">body mass index</dfn>) are the clinic’s words. A patient may not use them, and may not know the last one.</li>\n<li>Every line is a full question to read out. There are no prompts, so every answer the person gives has to be followed by the next line on the sheet.</li>\n<li>Nineteen questions is a questionnaire, not a guide. There is no time left to follow what the respondent says.</li>\n</ul>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The draft is made up, and every fault is put in on purpose. A real first draft usually has one or two of these faults, not all five, and they are harder to see in your own writing than in someone else’s.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now build the guide properly. Suppose your study question is: why do adult patients with obesity at a district hospital non-communicable disease (NCD) clinic in Chhattisgarh stop coming back for follow-up? The study question can use the clinic’s word. The questions you ask patients cannot.</p>\n<p>Break the study question into the parts of a patient’s experience it covers. Getting to the clinic. What happens at a visit. What happens after it. What being talked to about weight is like. What the person would change. Each part becomes one main question. The guide below is made up for this book. Respondents would be asked in Hindi or Chhattisgarhi.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Question</td>\n<td>Prompts, only if not covered</td>\n</tr>\n<tr>\n<td>warm-up</td>\n<td>Tell me about a usual day for you.</td>\n<td>work; who lives at home</td>\n</tr>\n<tr>\n<td>main 1</td>\n<td>How did you first come to this clinic?</td>\n<td>who suggested it; how you travel here</td>\n</tr>\n<tr>\n<td>main 2</td>\n<td>Tell me about the last time you came here.</td>\n<td>the journey; the wait; what happened inside; what you were told</td>\n</tr>\n<tr>\n<td>main 3</td>\n<td>What happened after that visit?</td>\n<td>the tablets; meals at home; the next date on the card</td>\n</tr>\n<tr>\n<td>main 4</td>\n<td>What is it like to talk about your weight at the clinic?</td>\n<td>who brings it up; how it is said; what you do afterwards</td>\n</tr>\n<tr>\n<td>main 5</td>\n<td>If you could change something about coming here, what would it be?</td>\n<td>the day; the place; the people</td>\n</tr>\n<tr>\n<td>closing</td>\n<td>Is there anything I have not asked about that I should have?</td>\n<td>anything you want to ask me</td>\n</tr>\n</tbody>\n</table>\n<p>Check the order. The warm-up and main 1 are easy and factual. Main 2 and main 3 are about events. Main 4 is the most personal, and it comes after the person has been talking for a while. Main 5 lets them end on what they would do, not on what was hard.</p>\n<p>Check each question against the last section’s three checks. Six of the seven are open. The closing question is closed in form, which is fine: a yes is followed by “Tell me”. None takes the person’s experience for granted. None asks two things. The prompts are not questions to read out. They are notes for you, so that if the person talks about the wait but not the journey, you remember to ask.</p>\n<p>Now plan the time. A guide that runs out of time before main 4 has lost the question the study most needs. Here is a plan, which is your own choice, not a rule.</p>\n<table style=\"width:39%;\">\n\n<thead>\n<tr>\n<th>part</th>\n<th>planned minutes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>warm-up</td>\n<td>5</td>\n</tr>\n<tr>\n<td>main 1</td>\n<td>5</td>\n</tr>\n<tr>\n<td>main 2</td>\n<td>10</td>\n</tr>\n<tr>\n<td>main 3</td>\n<td>10</td>\n</tr>\n<tr>\n<td>main 4</td>\n<td>10</td>\n</tr>\n<tr>\n<td>main 5</td>\n<td>5</td>\n</tr>\n<tr>\n<td>closing</td>\n<td>5</td>\n</tr>\n</tbody>\n</table>\n<p>Add it up.</p>\n<div class=\"working\">\n<p>5 plus 5 plus 10 plus 10 plus 10 plus 5 plus 5 = 50</p>\n</div>\n<p>The plan comes to 50 minutes. Most of it goes to main 2, main 3 and main 4: the events and the most personal part, where the reasons are most likely to come out. Main 1 is easy and main 5 closes.</p>\n<p>Then you try it. Suppose that in your first pilot interview, main 1 gets a one-line answer and main 2 takes twenty minutes. That is not a failure. It tells you to cut main 1’s time and give main 2 more. If a question falls flat in two pilots running, replace it. Write the new version of the guide with its date on it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The guide fits one study question about one clinic. A different study question gives different main questions, even with the same patients. The minutes are a plan, not a finding. A real interview runs to whatever length the respondent needs, and the plan only tells you where you are when you look at the clock.</p>\n<p>Main 4 assumes weight is talked about at an obesity clinic, which is the reason the patients are there. At another kind of clinic the same question would carry a premise.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A topic guide read out word for word, in order, is a <dfn data-g=\"299\">structured interview</dfn> with extra steps. Change the order to follow what the respondent says, and use their words in your follow-ups.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Put the easy, factual questions first and the most personal one late, after the person has been talking for a while.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Write each main question from a part of your study question, and cut any main question you cannot tie to one.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>DeJonckheere and Vaughn suggest five to 10 core questions, their name for main questions. Treat ten as a ceiling for a pilot guide.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Refuse the clinic’s words in your questions: “follow-up”, “compliance”, “BMI”. Use the words patients use, and once a respondent gives you their own word, switch to it.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A guide on paper cannot tell you whether its questions work. Only a pilot interview can. Keep every version dated, because respondents who heard different versions answered different questions, and your analysis has to know which was which.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Write a topic guide for the five pilot interviews you will run at the end of this book. Choose a study question you can ask of people you can reach who are not your patients. For example: how do families in which one adult has obesity decide what is cooked for the evening meal?</p>\n<p>Your guide should have a warm-up question and five to 10 main questions, with prompts under each. End it with a closing question. Add a time plan that adds up. Then put every question through the three checks from the last section.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Here is one guide for the example study question. Yours will differ. Check it against the list that follows the guide, not against this guide.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Question</td>\n<td>Prompts, only if not covered</td>\n</tr>\n<tr>\n<td>warm-up</td>\n<td>Tell me about the people who live in your home.</td>\n<td>who eats together; who works outside</td>\n</tr>\n<tr>\n<td>main 1</td>\n<td>Tell me about yesterday’s evening meal, from when it was first thought of to when it was eaten.</td>\n<td>who decided; who bought; who cooked</td>\n</tr>\n<tr>\n<td>main 2</td>\n<td>How is it decided what to cook on a usual day?</td>\n<td>who is asked; who has the last word</td>\n</tr>\n<tr>\n<td>main 3</td>\n<td>How is it different on a festival or when guests come?</td>\n<td>who decides then; what changes</td>\n</tr>\n<tr>\n<td>main 4</td>\n<td>Has anyone at home ever asked for food to be cooked differently for their health?</td>\n<td>what was asked; what happened next</td>\n</tr>\n<tr>\n<td>main 5</td>\n<td>What would make cooking for the family easier for you?</td>\n<td>time; money; what others want</td>\n</tr>\n<tr>\n<td>closing</td>\n<td>Is there anything I have not asked about that I should have?</td>\n<td>anything you want to ask me</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>5 plus 10 plus 10 plus 5 plus 10 plus 5 plus 5 = 50</p>\n</div>\n<p>A plan of 5, 10, 10, 5, 10, 5 and 5 minutes comes to 50 minutes.</p>\n<p>Main 4 is closed as written (yes or no). It is kept because a “no” is itself informative, and the prompts turn a “yes” into an account. It is placed late, because it touches health.</p>\n<p>Check your own guide:</p>\n<ul>\n<li>Does every main question come from a part of your study question?</li>\n<li>Is the first question easy, and the most personal question late?</li>\n<li>Is every main question open, or closed for a reason you can state?</li>\n<li>Does any question take the person’s experience for granted, or ask two things?</li>\n<li>Are the words ones your respondents use?</li>\n<li>Does the time plan add up, and does most of it go to the main questions?</li>\n</ul>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A trainee shows you this made-up guide for the clinic study and says it is ready.</p>\n<ol type=\"1\">\n<li>Warm-up: What is your name, age, address, occupation and monthly income?</li>\n<li>Do you think obesity is a disease?</li>\n<li>Tell me about the last time you came to the clinic.</li>\n<li>Why don’t you follow the diet?</li>\n<li>Closing: Thank you.</li>\n</ol>\n<p>Say what to change, in order of how much it matters.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>Question 4 matters most. It takes for granted that the person does not follow the diet, and “why don’t you” asks them to defend it. Replace it with an event: “What happened with the diet after your last visit?”</li>\n<li>Question 2 asks for an opinion on a medical category, in the clinic’s word, as a <dfn data-g=\"43\">closed question</dfn>. It does not come from the study question, which is about coming back. Cut it.</li>\n<li>The warm-up is five questions in one, and income is sensitive. It is a form, not a warm-up. Ask a plain fact such as age as a single short question, or on a sheet at the end. Leave income out unless the study needs it. Open with “Tell me about a usual day for you.”</li>\n<li>There is only one main question left that serves the study: question 3. Question 3 is good, but the guide needs more main questions, one for each part of the study question, with prompts under each.</li>\n<li>The closing gives the respondent no last word. Add “Is there anything I have not asked about that I should have?”</li>\n</ol>\n<p>Then pilot it before calling it ready.</p>"
+  }
+ ]
+}

@@ -1,0 +1,152 @@
+{
+ "format": 1,
+ "id": "s47-r1-c16",
+ "label": "16",
+ "title": "What evidence can settle in a policy choice, and what it cannot",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Evidence is facts, actual or asserted, known through experience or observation, offered in support of a conclusion. It is not the conclusion.</p>\n<p>In a policy choice, evidence can answer three kinds of question: how big a problem is, and for whom; what an option does, compared with doing something else; and what it costs. The choice also turns on questions that evidence does not settle.</p>\n<p>Oxman and colleagues use “<dfn data-g=\"136\">evidence-informed policymaking</dfn>” for policymaking in which the evidence used, and the judgements made about it, are found and stated systematically and openly. The rest of the process need not be. As an analyst, the researcher’s part in it is to set out the options with the evidence for each, its uncertainty, and the judgements the choice still needs.</p>",
+   "refs": [
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Take any policy choice and split it into questions. Some of them, evidence can answer:</p>\n<ul>\n<li><strong>How big is the problem, and for whom?</strong> A survey can count it.</li>\n<li><strong>What does an option do, compared with something else?</strong> A study or a model can estimate it.</li>\n<li><strong>What does it cost?</strong> That can be worked out.</li>\n</ul>\n<p>Others, evidence cannot settle on its own:</p>\n<ul>\n<li><strong>Which outcomes matter most?</strong> That is a question of values.</li>\n<li><strong>Who gains and who loses, and is that fair?</strong> Whether it is fair is a value judgement.</li>\n<li><strong>Can it be done?</strong> This is called <dfn data-g=\"152\">feasibility</dfn>. Evidence can inform it (costs, capacity, what the law allows), but whether the bodies with the power will commit to it is a judgement.</li>\n<li><strong>Is now the time?</strong> That is a judgement of timing.</li>\n</ul>\n<p>So any sentence that says “the government should” has a hidden premise. It is a <dfn data-g=\"432\">value premise</dfn> — a premise that says what matters, or what ought to be done. Leave it hidden, and the evidence seems to say something it cannot say.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a sentence that goes wrong. Suppose a made-up draft of your department’s note ends:</p>\n<p>“Modelling evidence proves that the GST Council should raise the tax on sugary drinks further.”</p>\n<p>Take it apart the way you take apart any argument: premises first, then the conclusion. The evidence is a modelling study that Summan and colleagues report in their 2026 paper on food taxes in India. It “found that a 10%–30% additional health tax could reduce demand by 7%–30% for SSBs”. SSBs are sugar-sweetened beverages: drinks with sugar added.</p>\n<p>Premise: a model projects that an extra tax of 10% to 30% could cut demand for sugar-sweetened drinks by 7% to 30%.</p>\n<p>Conclusion: the GST Council should raise the tax further.</p>\n<p>Grant the premise. Now ask whether the conclusion follows. It does not, and you can name each gap.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Question the conclusion needs</td>\n<td>Can evidence settle it?</td>\n<td>What it needs</td>\n</tr>\n<tr>\n<td>Would a further rise cut demand here, now?</td>\n<td>partly</td>\n<td>a judgement that the model applies to India’s drinks at today’s rate</td>\n</tr>\n<tr>\n<td>Would less demand mean less obesity?</td>\n<td>partly</td>\n<td>evidence on weight, which a demand model does not give</td>\n</tr>\n<tr>\n<td>Is a fall in demand worth the higher price paid by those who keep buying?</td>\n<td>no</td>\n<td>a value premise</td>\n</tr>\n<tr>\n<td>Who pays more, and who loses income?</td>\n<td>partly</td>\n<td>evidence can say who; whether that is fair is a value premise</td>\n</tr>\n<tr>\n<td>Would the Council, where the Union and the States sit, agree?</td>\n<td>no</td>\n<td>a judgement of feasibility</td>\n</tr>\n<tr>\n<td>Is this the moment, soon after the 2025 change?</td>\n<td>no</td>\n<td>a judgement of timing</td>\n</tr>\n</tbody>\n</table>\n<p>Three of these gaps are questions evidence can at least narrow. Three are not. The draft hid all six inside one word: “proves”.</p>\n<p>Notice the starting point too. The 2025 reform already moved sugar-added drinks to a combined rate of 40%. The study Summan and colleagues cite modelled an “additional” tax. Their sentence does not say what the tax was additional to. So you cannot tell from it whether the model’s starting rate matches today’s.</p>\n<p>Now rewrite the sentence so that it says only what it can:</p>\n<p>“Summan and colleagues report a modelling study projecting that an additional health tax of 10% to 30% could reduce demand for sugar-sweetened drinks by 7% to 30%. We have not read the study, and the range is wide. Whether a further rise is worth its cost to the households that pay it, and whether the GST Council would agree, are judgements this evidence does not make.”</p>\n<p>The rewrite is longer and less exciting. It is also the version that survives a hostile reader.</p>",
+   "numberRefs": [
+    238,
+    207
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 7% to 30% is a projection of demand from a model, as Summan and colleagues report it. It is not a measured fall, and it is not a change in weight or in obesity. This book has not read the study, so the figures can be stated only as theirs. They hold for the tax range the study modelled, 10% to 30% extra, and for the setting it modelled, which the quoted sentence does not name.</p>\n<p>The table’s “partly” and “no” are not fixed for all time. A good study of who buys sugary drinks at each income level would turn “who pays more” from partly into mostly. No study turns “is it worth it” into a fact.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now watch the same evidence produce two conclusions. Suppose two members of your department, both made up, read the same projection and agree on it. They still disagree about what to propose.</p>\n<p>The first says: “Cutting how much sugary drink children consume matters most. A higher price is a cost worth paying. Propose a further rise.”</p>\n<p>The second says: “A tax on a drink that poorer households also buy may be regressive.” The textbook meaning of a <dfn data-g=\"353\">regressive tax</dfn> is “a tax applied at a lower overall rate as individuals’ income rises”. In other words, it takes a bigger share of a poorer household’s income. “I would propose a rise only if the money went back into children’s health in the same districts.”</p>\n<p>Write each argument with all its premises.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th></th>\n<th>First colleague</th>\n<th>Second colleague</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>evidence premise</td>\n<td>an extra tax could cut demand by 7% to 30%</td>\n<td>the same</td>\n</tr>\n<tr>\n<td>value premise</td>\n<td>less sugary drink for children outweighs a higher price</td>\n<td>a cost that falls harder on poorer households must be returned to them</td>\n</tr>\n<tr>\n<td>conclusion</td>\n<td>propose a further rise</td>\n<td>propose a rise only with the money returned</td>\n</tr>\n</tbody>\n</table>\n<p>The evidence row is the same. The conclusions differ because the value row differs. More modelling of demand would not move either of them.</p>\n<p>Some of the disagreement is about facts, though. How much of the extra tax would poorer households actually pay? A study of purchases by household income could answer that. It would tell the second colleague how large the regressive effect is. It would not tell her whether that size is acceptable.</p>\n<p>Then check feasibility, because the second option depends on it. Summan and colleagues write that earmarking — tying a tax’s money to one use — “would be challenging as India does not allow for the earmarking of tax revenues, and would require additional legislation”. So the second <dfn data-g=\"329\">proposal</dfn> needs a new law before it needs a new rate. That changes who must act, and the tracing method tells you how to find them.</p>\n<p>As the analyst here, your job is not to pick between the colleagues. It is to lay out both options, with the same evidence, its uncertainty, and the value premise each one rests on, so that the people who decide can see what they are deciding.</p>",
+   "numberRefs": [
+    238
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The two colleagues and their sentences are made up. Summan and colleagues do report that “concerns over regressivity, farmer livelihoods, and administrative feasibility” have to be engaged with. They do not measure how regressive a tax on sugary drinks in India is, and neither does this section.</p>\n<p>Their statement on earmarking is theirs, and the law behind it is not traced here. Before a note relies on it, find the provision.</p>\n<p>Not every value disagreement hides a factual one. This one did. Some do not, and then the honest note says the choice is a value choice and stops there.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to write “the evidence shows we should”. “Should” needs a value premise. Write that premise out in your note, as a premise.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Before you write a recommendation, split the choice into questions. Give each side its own sentences.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A projected effect from a model, or a result from another country, is evidence about that setting. Using it for your district is a judgement that it applies. Say so in the same sentence as the number.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Summan and colleagues report a modelling study of an extra health tax of 10% to 30%. It projects that demand for sugar-sweetened drinks could fall by 7% to 30%. Quote it as their report, and never as a fall in obesity.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When someone in a meeting says “the evidence is not settled”, ask which question is unsettled.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Say how sure the evidence is, in the note, by naming its kind and its range: “one modelling study, reported by others, projects 7% to 30%” is not “several measured studies found”.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A trainee’s discussion section often ends “hence the government should”. Ask them to write the value premise that sentence needs, and to name the body that would act.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Sorting the questions shows which ones evidence can answer. Judging a study’s quality is a separate skill.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>“The best available evidence, [named source], suggests that [option] would [effect, with its range], in [the setting it was measured or modelled in]. Whether that effect is worth [the cost, and who bears it] is a judgement the evidence does not make. So is whether [deciding body] can act on it now.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A made-up abstract ends: “Our survey found that most college canteens in the district sell sugary drinks. Therefore the State must ban the sale of sugary drinks in college canteens.”</p>\n<p>Lay the argument out as premises and a conclusion. Name each premise the conclusion needs that the survey does not supply, and say whether evidence could supply it.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Premise (evidence): a survey found that most college canteens in the district sell sugary drinks. The abstract and its finding are made up for this exercise.</p>\n<p>Conclusion: the State must ban the sale of sugary drinks in college canteens.</p>\n<p>Grant the premise. The conclusion still needs these, and the survey supplies none of them.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Missing premise</td>\n<td>Could evidence supply it?</td>\n</tr>\n<tr>\n<td>sugary drinks sold in canteens add to the problem the ban is meant to solve</td>\n<td>partly: studies of what students drink, and where they buy it</td>\n</tr>\n<tr>\n<td>a ban would change what students drink, rather than where they buy it</td>\n<td>partly: studies of similar bans, judged for whether they apply here</td>\n</tr>\n<tr>\n<td>the change is worth the limit on choice and the canteens’ lost sales</td>\n<td>no: a value premise</td>\n</tr>\n<tr>\n<td>the State holds the power to ban sales in these canteens</td>\n<td>no: a question of law, answered by tracing the power, not by a survey</td>\n</tr>\n<tr>\n<td>the ban can be enforced in every canteen</td>\n<td>partly: evidence on enforcement, plus a judgement of feasibility</td>\n</tr>\n</tbody>\n</table>\n<p>The survey describes how big one part of the problem is in one district. That is useful. It is the first of the three things evidence can do, and only the first.</p>\n<p>A version the survey supports: “Most college canteens in the district sold sugary drinks. This tells us how widely they are sold. It does not tell us whether a ban would change what students drink, or whether the State should impose one.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist has three minutes. She asks: “Does the evidence prove that a tax on sugary drinks works?” Answer her with no jargon, with honest confidence, and give her one sentence she could quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start by splitting her word “works”. It could mean that people buy fewer sugary drinks. It could mean that fewer people develop obesity. It could mean that the tax is worth what it costs. These are three different questions.</p>\n<p>Then give each its answer. On buying, there is modelling evidence. Summan and colleagues report a study projecting that an extra tax of 10% to 30% could cut demand by 7% to 30%. That is a projection, with a wide range, and it is about buying, not about weight. On obesity, a demand model says nothing directly. On whether it is worth it, no study can answer. That depends on how much weight you give to health, to prices for poorer families and to jobs. The people deciding should argue that out in the open.</p>\n<p>End by saying what would change the picture: studies that follow what happens to buying and to weight after a real tax.</p>\n<p>One sentence she could quote: “The evidence suggests a higher tax would cut how much sugary drink people buy. Whether it is worth doing is a choice no study can make for us.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>From memory: name the three kinds of question evidence can answer in a policy choice, and the four it cannot settle on its own. Then say what extra premise any sentence containing “should” needs.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Evidence can answer how big a problem is and for whom, what an option does compared with something else, and what it costs.</p>\n<p>It cannot settle four things on its own. Which outcomes matter most. Whether the spread of gains and losses is fair. Whether the option can be carried out. Whether now is the time.</p>\n<p>A sentence containing “should” needs a value premise: a premise saying what matters, or what ought to be done.</p>"
+  }
+ ]
+}

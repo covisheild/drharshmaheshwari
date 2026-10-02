@@ -1,0 +1,110 @@
+{
+ "format": 1,
+ "id": "s36-r1-c13",
+ "label": "13",
+ "title": "The quotation as data",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In a qualitative report, a <dfn data-g=\"245\">quotation</dfn> from a <dfn data-g=\"262\">respondent</dfn> is evidence offered for a claim the author makes about the data. It is not decoration.</p>\n<p>A reader checks a quotation with the four acts used on any reference. Find the <dfn data-g=\"312\">transcript</dfn>. Confirm the speaker is the one named. Find the passage. Read whether it says what it was quoted for.</p>\n<p>Cutting a quotation so that it fits fails the last of those checks. Choosing only the quotations that fit passes all four. You catch it only by reading the other transcripts for what runs against the claim. Both are <dfn data-g=\"39\">cherry-picking</dfn>.</p>",
+   "refs": [
+    214,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A report on interviews usually carries quotations: a respondent’s own words, set in quotation marks. They make the page come alive. That is not their job.</p>\n<p>Their job is to be evidence. The author claims something about what people said. The quotation is offered as a reason to believe it. The words may not be what the person said, or not what they meant. Or they may be true, and still not carry the claim built on them.</p>\n<p>So you check a quotation the way you check any reference (Book 0, the section on <dfn data-g=\"38\">checking a reference</dfn>). Find the transcript. Confirm the speaker is the person named. Find the lines. Then read them, and read the lines around them, and ask: does this say what it was quoted for?</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Suppose a colleague has drafted a short report on practice interviews at the district hospital clinic in Chhattisgarh, where adult patients with obesity stop coming back. Everything below is made up, and the respondent’s words are translated from Hindi. The report says:</p>\n<blockquote>\n<p>Patients stop coming because the clinic is too far. As one woman put it, “The bus is the problem” (R3, woman, 40s).</p>\n</blockquote>\n<p>Check it with the four acts, one at a time.</p>\n<p>First, find it. Open R3’s transcript. Search inside it for “bus”. There is a hit.</p>\n<p>Second, confirm the speaker. Read the line before the hit, not only the hit itself.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>So it is the bus that is the problem?</td>\n</tr>\n<tr>\n<td>R3</td>\n<td>The bus is the problem, yes. But I came for two years on that bus.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Mm.</td>\n</tr>\n<tr>\n<td>R3</td>\n<td>I stopped when I started work at the brick kiln. They do not give a day off. If I go to the clinic, I lose the job.</td>\n</tr>\n</tbody>\n</table>\n<p>R3 did say “The bus is the problem”. But the words were the interviewer’s first. They arrived in a <dfn data-g=\"163\">leading question</dfn>, and she agreed with it (the section on open, closed and leading questions). The quotation is hers only in the sense that she repeated it.</p>\n<p>Third, find the exact place. You have it: her first answer.</p>\n<p>Fourth, read it, with the lines around it. The rest of her answer says the bus was not the reason. She rode it for two years. She stopped when a job came that gives no day off. The quotation is real, spoken by the right person, found at the right place. It says the opposite of what it was quoted for.</p>\n<p>Now write it as evidence. The claim changes, and the quotation carries its context:</p>\n<blockquote>\n<p>R3 (woman, 40s) had managed the bus journey for two years. She stopped when she began work that gives no day off: “If I go to the clinic, I lose the job.”</p>\n</blockquote>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Inside a study, you can open the transcripts. A reader of a published report usually cannot. They see only the lines the author chose, so the author’s label, context and statement of typical or exception are all they have. That is why reporting standards for quotations exist, and they are taught at the next level of this subject.</p>\n<p>The four acts also test only whether a quotation matches the transcript. They cannot test whether the transcript matches the recording, or whether a translation kept the sense. When a claim turns on one quotation, ask for that passage of the audio, and the words in the language spoken.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Take the corrected claim from the first case and ask the next question: what does the quotation stand for? Suppose there are five practice transcripts, R1 to R5, all made up.</p>\n<p>Read each one for anything about work and clinic days. Here is what you find, set out by respondent.</p>\n<table>\n\n<thead>\n<tr>\n<th>Respondent</th>\n<th>What they said about work and clinic days</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>R1</td>\n<td>Nothing about work.</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>Her son takes unpaid leave to bring her.</td>\n</tr>\n<tr>\n<td>R3</td>\n<td>Stopped when she began kiln work with no day off.</td>\n</tr>\n<tr>\n<td>R4</td>\n<td>Works too, and still comes. The clinic’s Saturday session fits his shift.</td>\n</tr>\n<tr>\n<td>R5</td>\n<td>Keeps the shop closed on clinic days, and nobody earns that day.</td>\n</tr>\n</tbody>\n</table>\n<p>Three people tie a clinic visit to a lost day of work, their own or a relative’s. One, R4, runs the other way. He works and still comes, because a session fits his shift.</p>\n<p>So a fair report says who said what. For example: “R2, R3 and R5 each described a clinic visit costing a day of paid work, their own or a family member’s. R4 also works, and has kept coming because the Saturday session fits his shift.” R3’s quotation goes under that sentence, marked as one of the three.</p>\n<p>Look at what R4 does to the report. Without him, the page reads as “work stops people coming”. With him, it reads as “a visit that costs a working day stops people coming, and a session outside working hours may let them keep coming”. That second sentence is something the clinic could test.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>“Three of five” here describes these five people and nobody else. They were chosen for what they could tell you, not drawn <dfn data-g=\"17\">at random</dfn> (the section on who you talk to). So the count says how the pattern sits inside this set of transcripts. It does not say how common the reason is among the clinic’s patients.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A vivid quotation does not show that something is common. It shows that one person said it, in those words.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Run the four reference checks on any quotation you are handed. Expect the failure at the last act, where the words are real and the claim is not.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Read the line before a quotation. If the interviewer said the words first and the respondent agreed, the quotation is the interviewer’s idea in the respondent’s mouth.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Give enough of the surrounding talk for the sense to be clear. Say whether others said something like it. Tie it to a label such as R3, never a name.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before a service is changed on the strength of a quoted reason, ask for the transcript lines around the quotation. Moving the clinic nearer does nothing for R3, whose reason was a job with no day off.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Keep the quotation that runs against the author’s claim in the report, beside the ones that support it.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>These checks tell you whether a quotation is faithful to the transcript. When a claim rests on one quotation, check that passage against the audio and the words in the language spoken.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A draft report on practice interviews at the clinic says, with no other quotation on the topic:</p>\n<blockquote>\n<p>Patients feel judged by the staff. “They look at me like I have done something wrong” (R2).</p>\n</blockquote>\n<p>Here are the lines around it in R2’s transcript. They are made up, and translated from Chhattisgarhi.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>How do the staff treat you?</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>The sister is good to me. Only once, at the registration desk, a new boy was there. He looked at me like I had done something wrong. The next time it was the usual lady and it was fine.</td>\n</tr>\n</tbody>\n</table>\n<p>Run the four checks, and say what the report should write instead.</p>",
+   "type": "critique",
+   "confidence": true,
+   "answer": "<p>Find it: open R2’s transcript and search for the quoted words. They are not there, which is the first failure. The nearest line is “He looked at me like I had done something wrong.”</p>\n<p>Confirm the speaker: that line is R2’s own, and the question before it was open, so it is not an echo of the interviewer.</p>\n<p>Find the place: the nearest line is her third sentence. The quotation is not her words. “He looked” became “They look”. One person on one day became all the staff, every time.</p>\n<p>Read it, with the lines around it: this is where the claim fails outright. R2 describes one occasion with one new person at the registration desk. She says the nurse (“the sister”) is good to her, and that the next visit was fine. The draft turns that into “Patients feel judged by the staff”: one incident into a habit, and one woman into all the patients.</p>\n<p>The lines just before and after the quotation reverse its sense, and they were left out. That is cherry-picking, whether or not it was meant.</p>\n<p>A fair version: “R2 described one visit on which a new person at the registration desk made her feel she had done something wrong. She said the nurse is good to her and that the next visit was fine.” If other transcripts describe something similar, say which. If none do, say that too.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A health secretary has read a district report. It quotes one patient saying “The clinic is too far to come every month”. On that basis the secretary proposes to fund a mobile van. Write the one page you would send, with no methods section: answer first, then what to ask for, then what would change the answer.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The page should open with the answer. For example: “One quotation is not enough to fund the van on. Ask the team for three things first.”</p>\n<p>Then the three things, in plain words:</p>\n<ol type=\"1\">\n<li>The lines around the quotation, from the transcript. They may say more than the report shows. In this section, R3’s words about distance were followed by her real reason.</li>\n<li>Which other patients said something about distance, and which said something else. One quotation can be the exception.</li>\n<li>Whether the words were the patient’s own, or an answer to a question that suggested them.</li>\n</ol>\n<p>Close with what would justify the van. Several patients would describe distance, in their own words, as the reason they stopped. And nobody in similar circumstances would keep coming. Then say what the interviews cannot tell them. They show reasons, not how many patients hold each one. How many patients a van would bring back needs a count of its own.</p>\n<p>What not to write: an explanation of qualitative methods. The secretary needs the decision and the check, not the theory.</p>"
+  }
+ ]
+}

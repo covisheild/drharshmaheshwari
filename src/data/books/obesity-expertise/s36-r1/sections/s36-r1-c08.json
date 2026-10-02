@@ -1,0 +1,147 @@
+{
+ "format": 1,
+ "id": "s36-r1-c08",
+ "label": "8",
+ "title": "Running the interview without leading it",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"276\">semi-structured interview</dfn> runs through the same parts in the same order: opening, questions, close. Within them it follows the <dfn data-g=\"262\">respondent</dfn>.</p>\n<p>It opens with who you are, why you are talking to this person, the consent steps and the recorder. The first question after that is an open one the respondent can answer easily.</p>\n<p>From then on the interviewer’s main work is listening. The interviewer follows the respondent’s words with probes. In this book a probe is a short follow-up that asks for more of what the respondent just said without suggesting what that should be. DeJonckheere and Vaughn list, among others, a pause, after a question or when the person trails off (“wait time”), repeating or summarising the respondent’s words (“echo”), short affirming words such as “yes… okay…” (“verbal agreement”), asking them to say more (“expansion”) and asking what they meant by a word (“explanation”). Their table also has a probe they call “leading”: asking the person to explain their reasoning, in their own words. That is not leading in this book’s sense. Britten warns against summarising too early, so echo their words rather than your summary.</p>\n<p>Either person may leave the <dfn data-g=\"310\">topic guide</dfn> to follow an idea. Britten stresses that the interviewer keeps control, knowing what they want to find out. So come back to the guide when a thread has stopped giving new material, or time for the remaining questions is running out. Come back through their words: “You said earlier that … Can I ask about …?” On Whyte’s scale, which Britten prints, probing an idea from earlier is less directive than introducing a new topic.</p>\n<p>The interviewer does not judge, teach, advise or correct. Questions the respondent asks can be answered at the end.</p>\n<p>The interview closes in order: any answer you promised, the guide’s <dfn data-g=\"44\">closing question</dfn>, thanks, then the recorder off.</p>",
+   "refs": [
+    161,
+    161,
+    162,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    173,
+    173,
+    175,
+    176,
+    176,
+    176,
+    177,
+    177,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Listening sounds passive. It is not. You are deciding, all the time, which of the person’s words to follow.</p>\n<p>You stay quiet and wait. You repeat the person’s own words back. You say “tell me more”, or “can you give me an example?”, or “what do you mean by that?”. None of these adds an idea of yours.</p>\n<p>Some things feel helpful and damage the interview. Giving advice is one. So is correcting a wrong belief, or finishing the person’s sentence. Agreeing with what they said, as opposed to showing that you heard it, is another. Each one tells the person what you think.</p>\n<p>Then write <dfn data-g=\"108\">field notes</dfn> (DeJonckheere and Vaughn call them memos) — what happened, where, how it felt, what surprised you. This book’s rule is to write them the same day.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is a made-up exchange, translated from Hindi, from the running example: the district hospital non-communicable disease (NCD) clinic in Chhattisgarh, and patients with obesity who stop coming back. The respondent, R2, is a man who works for a daily wage. Read it and count the moments where the interviewer, I, takes the interview away from him.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Tell me about the last time you came to the clinic.</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>That was before the rains. After that, the bus fare, and the queue…</td>\n</tr>\n<tr>\n<td>I</td>\n<td>…takes the whole day, yes. But the doctor does need to check your sugar every month.</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>Yes, madam.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>So you will try to come next month?</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>Yes, I will come.</td>\n</tr>\n</tbody>\n</table>\n<p>There are three. First, I finished his sentence, so the words about the queue are the interviewer’s, not his. Second, I gave clinic advice. Now he is a patient being told what to do, and his next answer is the one a patient gives. Third, I asked a <dfn data-g=\"43\">closed question</dfn> with the answer built in. “Yes, I will come” is the least useful line in the transcript. It is what anyone would say to that question, so it tells you almost nothing about him.</p>\n<p>Now the same moment, run the other way. This version is made up too.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Tell me about the last time you came to the clinic.</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>That was before the rains. After that, the bus fare, and the queue…</td>\n</tr>\n<tr>\n<td>I</td>\n<td>(waits)</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>The queue is the whole day. If I come here, I do not work that day. No work, no money.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>No work that day.</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>And my son says, why go? They only tell you to lose weight.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Tell me more about what your son says.</td>\n</tr>\n</tbody>\n</table>\n<p>Name what the interviewer did. A pause, until he finished his own sentence. An echo, “no work that day”, in his words. Then an expansion, “tell me more”, on the thread he opened.</p>\n<p>Now look at your guide. Its next question was about the tablets. Leave it for now. The son’s view of the clinic is a reason for not coming back that your guide did not have. Follow it to its end, and come back to the tablets after.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A pause works when the person is gathering words. It fails when they have finished and are waiting for you, or are uneasy. A silence that runs on can feel like pressure, and in the consent section’s terms a very short reply or restlessness may be a sign they want to stop. Then ask, in plain words, whether they want to go on.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is a made-up moment from later in the same interview. R2 turns to you.</p>\n<table style=\"width:93%;\">\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>Madam, if my sugar is fine now, can I stop the tablet?</td>\n</tr>\n</tbody>\n</table>\n<p>You may know the answer. If you are a clinician, the pull to answer is strong. Answer it now, and you undo the last half-hour. You become the clinic again, and he goes back to saying what a patient says. Refuse flatly, and he may stop answering you.</p>\n<p>Britten (1995) offers a middle way: say that such questions can be answered at the end. She notes this is not always satisfying. So say it with care, and keep the thread open:</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>That is an important question. I am not the right person to answer it, but before I go I will tell you who at the clinic can. What makes you think about stopping it?</td>\n</tr>\n</tbody>\n</table>\n<p>At the end, keep your word. Give him the name of the clinic’s doctor or nurse to ask. Ask your topic guide’s closing question. Then thank him for helping you understand his experience, and switch off the recorder.</p>\n<p>The same day, before you listen again, write your field notes: the setting, the person, your own slips. Three made-up lines: “Sat on the bench outside the clinic; queue noise throughout.” “He went quiet after asking about the tablet.” “Surprised: the son’s view.” These notes are what you will need when you read the transcript later.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Waiting until the end works for questions that can wait. It stops working when what the person says suggests danger to their life or someone else’s. The Indian Council of Medical Research (ICMR) guidelines give researchers a responsibility to disclose such information to save life. If such findings are likely, the guidelines want the plan in the protocol. Know that plan before the interview, not during it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Running an interview well does not mean never steering. Britten’s point is that the amount of steering should be right for the moment, not zero.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Showing you heard is not agreeing with what was said. “Yes… okay…” keeps a person talking. “You are right, the diet is impossible” tells them which answer you like, and the next answers will lean towards it.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you say a probe, check it for words the respondent has not used. A probe made of their words, a pause, or “tell me more” adds nothing of yours. A probe that brings in a new word, such as “was it the cost?”, has already suggested the answer.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a respondent says something medically wrong, do not correct it. What they believe is the data.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>If a respondent asks you a medical question, say you will come back to it at the end. Then do come back to it: give them a name at the clinic to ask. Answering in the middle turns the interview into a consultation.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Write field notes after every interview; DeJonckheere and Vaughn call them memos. This book’s rule is to write them the same day, before you listen again. The recording keeps the words. It does not keep the room, who else was near, or the moment the person went quiet.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>What someone says after the recorder is off goes in your field notes, marked as said off the recording. Ask before you use it, because they chose not to say it on the record. This is the book’s advice; no source covers it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>If what a person says suggests danger to their life or another’s, the ICMR guidelines give you a responsibility to disclose it to save life. Know your protocol’s plan for this before the interview starts, and say the limits from the consent section’s script (section 7).</p>",
+     "tag": "boundary",
+     "bearing": "clinical"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here is a made-up exchange from an interview at the NCD clinic, translated from Chhattisgarhi. R4 is a woman who stopped coming for follow-up. Find each line where the interviewer takes the interview away from her, say what the line does, and rewrite it.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>What was it like, coming here for your check-ups?</td>\n</tr>\n<tr>\n<td>R4</td>\n<td>The sister (the nurse) weighs me in front of everyone. Then the doctor…</td>\n</tr>\n<tr>\n<td>I</td>\n<td>I know, the doctors can be very strict about weight.</td>\n</tr>\n<tr>\n<td>R4</td>\n<td>Hmm.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>You should still come, though. Obesity leads to diabetes.</td>\n</tr>\n<tr>\n<td>R4</td>\n<td>Yes.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Was it the weighing that stopped you, or the travel?</td>\n</tr>\n</tbody>\n</table>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The interviewer’s second line does two things. It finishes her thought for her, since she had begun on the doctor and had not said what. It also agrees with a view she had not yet stated, that doctors are strict. A better line is a pause, or an echo in her words: “In front of everyone.”</p>\n<p>The third line is advice, and a correction of sorts. She is now a patient being told what to do, and her answer shrinks to “Yes”. Drop the line. If her health comes up, leave it to the end and point her to the clinic.</p>\n<p>The fourth line is a closed question that offers two answers, weighing or travel. Neither is her word: “travel” is new, and “the weighing that stopped you” puts a cause in her mouth. Ask instead: “What happened after that?”, or go back to her unfinished sentence: “You said, then the doctor…”</p>\n<p>Her replies shrink from a sentence to “Hmm” to “Yes”. That shrinking is the sign to watch for. It also fits the consent section’s warning that very short replies may mean a person wants to stop.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a made-up answer from a respondent. “After my knee got bad, I stopped walking to the bus stand. And my daughter-in-law does not like to bring me.” Write three probes, each of a different kind, that use no word the respondent did not use. Name the kind of each.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Many answers work. For example:</p>\n<ul>\n<li>A pause, then waiting. The respondent may carry on with the daughter-in-law without any prompt.</li>\n<li>An echo: “Your daughter-in-law does not like to bring you.”</li>\n<li>An expansion: “Tell me more about the bus stand.”</li>\n<li>An explanation: “What do you mean when you say she does not like to?”</li>\n</ul>\n<p>Check each against the rule. “Does not like to”, “bus stand” and “daughter-in-law” are all the respondent’s words. A probe such as “Is she too busy?” or “Is it the cost?” fails. It brings in a reason the respondent never gave.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident has just run a practice interview. Every time the patient spoke, the resident said “Right, exactly”. They think this built rapport. You have ten minutes and a whiteboard. Teach them what it did.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Write two lines on the board: “Yes… okay…” and “Right, exactly.”</p>\n<p>The first says: I heard you, go on. DeJonckheere and Vaughn list it as a probe, because it keeps a person talking.</p>\n<p>The second says: that is the right answer. After the third time, the patient knows which answers get approval. They are talking to a doctor they want to please.</p>\n<p>Then show them their own transcript. Point to the place where the patient’s answers got shorter, or started to echo the resident’s words. That is where the agreeing began to steer.</p>\n<p>End with the move to practise: acknowledge the person, never the content. “Mm”, a nod, or an echo of their words, and never “exactly”.</p>"
+  }
+ ]
+}

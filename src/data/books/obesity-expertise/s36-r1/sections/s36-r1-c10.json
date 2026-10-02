@@ -1,0 +1,118 @@
+{
+ "format": 1,
+ "id": "s36-r1-c10",
+ "label": "10",
+ "title": "Recording and transcribing",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>An audio recording of an interview is the record of what was said. A <dfn data-g=\"312\">transcript</dfn> is a written version of that recording, made by a person or a program, and it is the text that analysis works on.</p>",
+   "refs": [
+    191,
+    192,
+    193,
+    193,
+    193,
+    194,
+    195,
+    196,
+    197,
+    197,
+    198,
+    198,
+    199,
+    200,
+    201,
+    202
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The recording is what was said in the room. The transcript is what you will read, mark and quote from for the rest of the study. They are not the same thing.</p>\n<p><dfn data-g=\"118\">Full verbatim</dfn> keeps everything: every filler, every repeated word, every broken-off sentence. <dfn data-g=\"42\">Cleaned transcription</dfn> (papers often call it intelligent verbatim) tidies speech into readable sentences and drops the fillers and repeats. Choose before you start, write the choice down, and use it for every interview.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s36-r1-c10-transcribing-hours.png",
+   "alt": "Two straight lines rising from left to right against hours of audio. The lower line, 3 hours a recorded hour, passes 2.35 at 0.7833, 3 at 1 and 15 at 5. The upper line, 8 hours a recorded hour, passes 6.27 at 0.7833, 8 at 1 and 40 at 5.",
+   "w": 1357,
+   "h": 654,
+   "caption": "Typing time rises in step with the length of the recording: 3 hours of work for each hour of audio at the quick end of McMullin’s range, 8 at the slow end. The 47-minute first pilot, 0.7833 of an hour, needs 2.35 to 6.27 hours. Five pilots of about an hour need 15 to 40 hours, and 40 is not a ceiling."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Suppose you are interviewing a woman at the district hospital non-communicable disease clinic in Chhattisgarh. She has stopped coming for follow-up, and you want to know why. What follows is a made-up stretch of that interview, about twenty seconds of it, written in English.</p>\n<p>Here is the trap. Two people can type those twenty seconds and produce two different transcripts, and both can say they wrote down “what she said”.</p>\n<p>First, the full verbatim version. <code>I</code> is you, the interviewer. <code>R1</code> is the <dfn data-g=\"262\">respondent</dfn>.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>And after that, what happened?</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>After that… um… I, I did not- I thought I will come next month. [pause, 4 seconds] But my husband, he said, what is the use, you are going there and the weight is not going.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Mm-hm.</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>[laughs] So. My son [son’s name] also cannot take leave. [inaudible, 00:12:41] and the bus also.</td>\n</tr>\n</tbody>\n</table>\n<p>Now the cleaned version of the same twenty seconds.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>And after that, what happened?</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>After that I thought I will come next month. But my husband said, what is the use, you are going there and the weight is not going. So my son also cannot take leave, and the bus also.</td>\n</tr>\n</tbody>\n</table>\n<p>Read the two side by side. Here are five of the things the cleaned one dropped.</p>\n<ul>\n<li>The broken-off “I did not-”.</li>\n<li>The four-second pause before her husband comes in.</li>\n<li>The laugh before “So”.</li>\n<li>Your own “Mm-hm”, a whole turn of yours, gone.</li>\n<li>The place where something could not be heard.</li>\n</ul>\n<p>Now ask whether any of that matters for your question. A reader of the cleaned version sees a smooth list of reasons. A reader of the full version sees her hesitate at one of them.</p>\n<p>There is no single standard set, so here is one simple set to use in your pilot.</p>\n<table>\n\n<thead>\n<tr>\n<th>Mark</th>\n<th>What it means</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>I, R1, R2</td>\n<td>who is speaking: you, then each respondent by number</td>\n</tr>\n<tr>\n<td>[pause, 4 seconds]</td>\n<td>a silence long enough to notice, with its length</td>\n</tr>\n<tr>\n<td>[laughs]</td>\n<td>a sound that is not a word</td>\n</tr>\n<tr>\n<td>did not-</td>\n<td>a word or sentence broken off</td>\n</tr>\n<tr>\n<td>[inaudible, 00:12:41]</td>\n<td>could not be heard, and the minute and second on the recording where it falls</td>\n</tr>\n<tr>\n<td>[son’s name]</td>\n<td>a name taken out, replaced by who the person is</td>\n</tr>\n</tbody>\n</table>\n<p>The time on the inaudible mark is what lets you, or anyone checking you, go straight to that second of the recording.</p>\n<p>McMullin puts transcription at between three hours and over eight hours of work for one hour of audio, depending on typing speed. You plan five pilot interviews. Suppose each one runs about an hour. A shorter one is a <dfn data-g=\"115\">fraction</dfn> of an hour: 30 minutes is 30 divided by 60 = 0.5 hours. Work out the typing time at each end of her range.</p>\n<div class=\"working\">\n<p>5 times 3 = 15 hours at the quick end<br />\n5 times 8 = 40 hours at the slow end</p>\n</div>\n<p>Forty is not a ceiling. Plan the hours before you book the interviews, not after.</p>",
+   "numberRefs": [
+    203
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The exchange is made up, and it is written in English. A real recording would be in Chhattisgarhi. Putting it into English adds a second set of choices. This example does not show those.</p>\n<p>The hours are for one person typing from a recording. They do not tell you how long it takes to check a draft made by speech-to-text software.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A transcript is not the recording. Keep the recording until your analysis is finished. When a quotation or a reading turns on one line, go back and listen to that line.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Decide full verbatim or cleaned before you type a word. Write the choice at the top of each transcript, and use the same one for all five pilots. There is no one best style. For a pilot, this course advises full verbatim, because the point of a pilot is to hear your own interviewing, and cleaning takes out the fillers, interruptions and half-questions that show it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Budget three to more than eight hours of typing for every hour of recording.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Speech-to-text software gives you a first draft, not a transcript. Check every line of a machine draft against the recording. Before a patient’s voice leaves your own recorder, ask your institutional <dfn data-g=\"98\">ethics committee</dfn> where it may be kept.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A transcript holds only what the recorder caught: not faces, gestures or the room. For those go to your <dfn data-g=\"108\">field notes</dfn>, and say when a reading rests on them.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Putting their words into English is a second round of choices on top of transcription. This course’s advice: transcribe in the language spoken, translate only the passages you quote, and note who translated and any word left untranslated. Say which version any count or quotation comes from, so that anyone checking you can find the words.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Some papers say only “interviews were recorded and transcribed”. Ask who transcribed, full verbatim or cleaned, and whether anyone checked the text against the audio.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Your first pilot recording runs 47 minutes. McMullin’s range is three hours to over eight hours of work for one hour of audio. Work out how long transcribing it could take at each end. Give the answers in hours, to one <dfn data-g=\"70\">decimal</dfn> place, and say which of the two you would plan around.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>Turn the recording into hours first. There are 60 minutes in an hour.</p>\n<div class=\"working\">\n<p>47 divided by 60 = 0.7833… hours</p>\n</div>\n<p>Then multiply by each end of the range.</p>\n<div class=\"working\">\n<p>0.7833… times 3 = 2.35, about 2.4 hours at the quick end<br />\n0.7833… times 8 = 6.27, about 6.3 hours at the slow end</p>\n</div>\n<p>Plan around the slow end. The source says “over eight hours”, so 6.3 hours is not even a ceiling. A first transcript is the slowest you will type, because the marks and the choices are new to you.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is the whole of what a made-up draft report says about its transcripts.</p>\n<blockquote>\n<p>Interviews were conducted in Chhattisgarhi with twelve patients, recorded, and transcribed.</p>\n</blockquote>\n<p>List what a reader cannot tell from this sentence, and say for each why it matters to someone judging the findings.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Four things are missing.</p>\n<p>Who transcribed. The researcher who sat in the room, or a typist who never met the respondents. McMullin says that, at a minimum, a report should say who transcribed.</p>\n<p>Full verbatim or cleaned. A cleaned transcript has already dropped the pauses, repeats and false starts. Any claim about hesitation, or about how the interviewer spoke, cannot be checked from it.</p>\n<p>What happened to the language. Were the transcripts typed in Chhattisgarhi and then translated, or typed straight into English? Who translated, and which version was analysed? Every quotation in the report depends on that answer.</p>\n<p>Whether anyone checked the text against the recordings. A transcript nobody checked is one person’s hearing of the tape, and a machine draft nobody checked is less than that.</p>\n<p>The sentence is not dishonest. It is simply empty. The reporting standards that ask for these details (COREQ, the Consolidated criteria for Reporting <dfn data-g=\"242\">Qualitative research</dfn>) are taught at the next stage.</p>"
+  }
+ ]
+}

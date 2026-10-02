@@ -1,0 +1,124 @@
+{
+ "format": 1,
+ "id": "b0-r0-c36",
+ "label": "E6",
+ "title": "Metabolism as chemistry happening in a body",
+ "part": "E",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"113\">Metabolism</dfn> is the sum of all of the chemical reactions that are involved in <dfn data-g=\"29\">catabolism</dfn> and <dfn data-g=\"11\">anabolism</dfn>. Catabolic reactions break down large organic molecules into smaller ones, releasing the energy contained in their chemical bonds. Anabolic reactions use the energy produced by catabolic reactions to build larger molecules from smaller ones. Both sets of reactions run continuously in the same body.</p>\n<p>A living cell cannot store significant amounts of <dfn data-g=\"67\">free energy</dfn>. Part of the energy released is transferred to adenosine triphosphate, written <dfn data-g=\"14\">ATP</dfn>, and the remainder is given off as heat, which tissues and body fluids absorb.</p>\n<p>ATP carries energy between the reactions that release it and the reactions that consume it. ATP is therefore a carrier and not a store.</p>\n<p>Removing its terminal phosphate group releases energy, leaving adenosine diphosphate (<dfn data-g=\"4\">ADP</dfn>), and the released phosphate group activates the <dfn data-g=\"119\">molecule</dfn> it binds.</p>\n<p>Food molecules are absorbed only after being reduced in size. All carbohydrates are absorbed in the form of monosaccharides. Triglycerides are broken into free fatty acids, which cross the intestinal membrane and are recombined into <dfn data-g=\"188\">triglyceride</dfn> molecules once across.</p>\n<p>Not everything eaten is absorbed. The human body produces no <dfn data-g=\"59\">enzyme</dfn> that can break down most fibrous polysaccharides, such as cellulose.</p>\n<p><dfn data-g=\"76\">Glucose</dfn> is the body’s most readily available source of energy. Excess glucose is either stored as an energy reserve in the liver and skeletal muscles as the complex polymer <dfn data-g=\"77\">glycogen</dfn>, or converted into fat, that is triglyceride, in adipose cells.</p>\n<p>A triglyceride is the molecular form that fat takes both in food and in the body. Glucose beyond what the body needs can be turned into fat, as well as stored as glycogen. Triglycerides are stored in <dfn data-g=\"3\">adipose tissue</dfn> until they are needed.</p>\n<p>Where catabolic reactions release more energy than anabolic reactions use, the body stores the excess energy by building fat molecules for long-term storage. Where catabolic reactions release less energy than anabolic reactions use, the body uses stored energy to compensate. Nothing in this account fixes the size of either flow, the rate at which any of it happens, or the <dfn data-g=\"66\">fraction</dfn> of energy that survives any step.</p>",
+   "refs": [
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Metabolism is a word people use as though it were a thing you could have more or less of. It is not a thing. It is a name for all the chemical reactions going on in a body at once, added together.</p>\n<p>Some reactions take a big molecule and break it into smaller ones. Reactions that go this way are called catabolism.</p>\n<p>Other reactions take small molecules and join them into bigger ones. Building costs energy. Reactions that go this way are called anabolism.</p>\n<p>A cell cannot hold a useful amount of loose energy, which the textbooks call free energy. So the energy goes into a small molecule first, and you have already met that molecule: adenosine triphosphate, written ATP.</p>\n<p>Think of ATP as a coin. Breaking food earns coins. Building things spends coins.</p>\n<p>Here is what the coin is, physically. ATP has three phosphate groups on it, sitting in a row. Knock the last one off and energy comes out, and that loose phosphate goes and sticks onto whatever the cell wanted to set going. What is left is called ADP, which is the same molecule one phosphate short.</p>\n<p>Put a phosphate back on and you have ATP again. Paying for that is what the energy from food is for.</p>\n<p>Not all the energy in a food molecule ends up in coins. Some of it comes off as heat, and the tissue and fluid around it soak that heat up.</p>\n<p>ATP is not where a body keeps its energy. It is what a body moves energy with. Anyone who tells you the body stores its energy as ATP has mistaken the coin for the bank.</p>\n<p>Food has to get in. In, through the wall of the gut and into your blood.</p>\n<p>So the gut takes the food apart, cutting big molecules down into pieces small enough to pass through the lining. That passing through has a name, and the name is <dfn data-g=\"0\">absorption</dfn>.</p>\n<p>What you eat and what you absorb are two different amounts.</p>\n<p>Some of what is on your plate never crosses. Your body makes no tool for breaking down most plant fibre, so fibre goes in at one end and out at the other.</p>\n<p>A figure on a packet is a figure about the food. It is not a figure about you.</p>\n<p>Break a <dfn data-g=\"181\">starch</dfn> — the stuff that rice, wheat and potato are mostly made of — and you get single sugar molecules, called monosaccharides. A chain of them, such as starch, is a <dfn data-g=\"141\">polysaccharide</dfn>. The commonest of them, and the fuel a body reaches for first, is glucose.</p>\n<p>Glucose crosses the gut wall into the blood, and that blood runs first to the liver. A cell that takes glucose in breaks it down and makes coins with the energy.</p>\n<p>The <dfn data-g=\"171\">small store</dfn> is glycogen. Glycogen is a great many glucose molecules strung together, kept in the liver and in the muscles.</p>\n<p>The <dfn data-g=\"103\">large store</dfn> is fat, and the fat in food and the fat in a body are the same kind of molecule. It has a name: triglyceride.</p>\n<p>Triglyceride gets into a body two ways. You eat it. Or the body builds it, out of sugar there is more of than there is a use for right now.</p>\n<p>The store is a tissue, and its name is adipose tissue. It is made of cells whose job is to hold triglyceride, and they hold it until it is needed.</p>\n<p>A triglyceride is pulled apart into its two kinds of piece, fatty acids and glycerol. The pieces are then broken down like any other fuel.</p>\n<p>So read the two stores as what they are. Filling them and emptying them is the system working. That is what a store is for.</p>\n<p>Catabolism lets energy go. Anabolism uses it. ATP carries it from one to the other.</p>\n<p>And when catabolism lets go of more than anabolism is using, the extra is put away, in the small store and the large one. When it lets go of less, the body draws on what was put away before.</p>\n<p>All of it is a direction. None of it is a size. You do not know how much, or how fast, or how much of it survives each step, and nothing in this section will tell you.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>The obvious next question is how much. So go and get the figure.</p>\n<p>Open OpenStax Anatomy and Physiology 2e, section 24.1, Overview of Metabolic Reactions, at https://openstax.org/books/anatomy-and-physiology-2e/pages/24-1-overview-of-metabolic-reactions. Open your browser’s find box. Search the page for the word percent.</p>\n<p>It gives you a figure for how much of the released energy goes into ATP, and another for how much leaves as heat.</p>\n<p>Find out where those two numbers came from.</p>\n<p>Look at the end of the sentence. There is no reference number. Look at the paragraph around it. No study is named. Look at the foot of the page. There is no reference list.</p>\n<p><strong>A number is a different kind of claim from a mechanism, and it needs a different kind of source.</strong> This course does not take that figure, and neither should you.</p>\n<p>Section 24.7 of the same book, Nutrition and Diet, will hand you a figure for how many calories make a pound of body weight. It is stated the same way, with no study behind it.</p>\n<p>What a kilogram of change in a body is made of decides the answer. Nobody quoting the figure has told you what it is made of.</p>\n<p>Take a plate you have actually eaten from. Rice, a bowl of dal, a spoonful of oil in the tadka, and a raw onion sliced on the side. Follow each of the four, using only what this section has given you.</p>\n<p>Rice is mostly starch, which is a long chain of sugar molecules. The gut cuts the chain into single sugars, and glucose is the one to watch. It crosses the gut wall into the blood. The blood carries it to the liver.</p>\n<p>What the body has no immediate use for does not stay in the blood. Some goes into the small store, as glycogen in the liver and the muscles. Some goes into the large store, turned into triglyceride in adipose tissue.</p>\n<p>Now the dal, and follow the <dfn data-g=\"148\">protein</dfn> in it. Protein is a chain too, made of amino acids. The gut cuts it into single amino acids and those cross the wall. On the far side they go one of two ways: into new proteins, or broken down further to make coins like anything else.</p>\n<p>Now the oil. Oil is triglyceride, and a whole triglyceride molecule will not cross the gut wall. So it is broken into its pieces first. The pieces cross. On the far side they are put back together into triglyceride again. That triglyceride goes into the body, to be used or stored.</p>\n<p>Now the onion, and follow the fibre in it. Your body makes no enzyme that can break most plant fibre down, so it is not absorbed as it stands. It travels on down the gut. While it is inside it is doing something useful: it helps move everything else along. Whether any energy reaches you from it further down, this section does not say.</p>\n<p>So look at what happens if you price that plate out of a food table. The table gives a figure for each of the four, onion included. Your total is a number about the plate. It is not a number about the person.</p>\n<p>When somebody hands you a figure for what a person ate, ask three questions in this order. Where was it measured — at the mouth, or anywhere else? Was it measured at all, or looked up in a table? And what happened to it between the plate and the blood?</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A cell does not keep a purse. It makes coins and spends them almost at once.</p>\n<p>This section gives no rule about which store is drawn on first, or how fast either fills or empties.</p>\n<p>The dead end at section 24.1 was found on 23 September 2026 in the edition of the book at that address. The habit — find the number, then go and find where it came from — survives the edition.</p>\n<p>Everything in this section is a direction and none of it is a size. Any question whose answer is a number is outside it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>What a person eats and what a person takes up are two different amounts. Some of what is eaten never crosses the gut wall at all, because the body makes no tool for most plant fibre. So a figure for intake is a figure about food.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Adipose tissue holds triglyceride until it is needed. So describe fat storage as a store doing its work.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>ATP is what a body moves energy with. It is not where a body keeps it. The stores are glycogen and triglyceride. Correct a trainee who says energy is stored as ATP, because that error spoils every later sentence they write about stores.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Somebody will hand you a figure for how many kilocalories make a kilogram of body weight. Book 0 does not give you one. Ask what the change is made of before you accept any sum built on it.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Catabolism and anabolism are directions, not departments. Both run in the same cells at the same time, and a person is never in one or the other. The answer is always both.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Metabolism is the name for every chemical reaction in a body added together. So a drink that boosts your metabolism has named nothing at all. Ask which reaction, in which direction, in which tissue, and how the change was measured.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Direction is the whole of what you have here, and size is no part of it. Spare energy goes to glycogen and to fat. Refuse any sum that needs one of those numbers and does not say where it was measured.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back, write down what happens to a mouthful of rice. Start at the moment it is chewed and stop when its energy is either used or put away. Then do the same for a spoonful of oil.</p>\n<p>Then say in one sentence what is true of both, and in one sentence what is different.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>The rice first. Rice is mostly starch, which is a long chain of sugar molecules. The gut cuts the chain into single sugars. Glucose is the one that matters.</p>\n<p>It crosses the wall of the small intestine into the blood, and the blood carries it to the liver first. From there it goes round the body.</p>\n<p>A cell that takes glucose in breaks it down, and the energy that comes out goes into ATP. Whatever is not needed at once is put away, as glycogen in the liver and muscles, or turned into triglyceride in adipose tissue.</p>\n<p>Now the oil. Oil is triglyceride. A whole triglyceride molecule cannot cross the gut wall, so it is broken into fatty acids first. Those cross. On the far side they are put back together into triglyceride.</p>\n<p>That triglyceride is either used for energy or stored in adipose tissue. To get energy out of it, it is pulled apart again into fatty acids and glycerol. Those are then broken down to make ATP.</p>\n<p>What is true of both. Neither crosses the gut wall in the form it was eaten in. The energy from both goes into ATP before it does any work.</p>\n<p>What is different: the sugar goes to the small store as well as the large one, and the fat only goes to the large one.</p>\n<p>One check on your own answer. Did you write ATP into both?</p>\n<p>If your version has energy going from food straight to the job that used it, go back. You have left out the step this section is mostly about.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A district nutrition note contains this paragraph.</p>\n<blockquote>\n<p>We recorded what each woman in the sample ate over three days and looked every item up in the food composition tables. The mean intake was well above what these women need. Energy intake is therefore not the problem in this block.</p>\n</blockquote>\n<p>The block, the sample and the finding are made up for this exercise. Say what is wrong, and say what you would ask for.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Three separate things are wrong, and it is worth keeping them apart, because they need different fixes.</p>\n<p>The first is the one this section is about. A food table gives an average estimate for a food. It does not give what crossed these women’s gut walls, and nothing in the note measured that. Some of what was eaten was never absorbed at all. No human makes an enzyme for most plant fibre, so fibre is eliminated rather than taken up. So the number computed here is a number about plates. The sentence written under it is a claim about bodies.</p>\n<p>The second is that nothing was measured. Somebody said what they ate, and somebody else looked it up. Two estimates were stacked and the result was reported as an observation.</p>\n<p>The third is the word therefore. Even if the intake figure were exact, “intake is not the problem” is a claim about a cause. An intake figure on its own establishes nothing about a cause.</p>\n<p>What to ask for. First, say what the figure is a figure of. It is a table estimate for the food recorded, not a measure of energy absorbed, and that belongs on the same line as the number. Second, ask how the food record was taken and over what days. Three days of reporting is a measurement with an error of its own, and that error belongs beside the estimate. Third, ask what the comparison figure is and where it came from.</p>\n<p>And say the last thing out loud, because it is the one that will otherwise be waved through. Nothing in this note measured what crossed a gut wall. Nothing in this course lets you get from the plate to the blood by arithmetic.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has three minutes and no jargon. They have been sent an advertisement for a drink that says it boosts your metabolism. They want to know whether that is a real thing.</p>\n<p>Say what you would tell them, and give them one quotable sentence.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Three minutes, no jargon, and they want to know whether there is anything there.</p>\n<p>Start with what the word means, because the answer sits inside it. Metabolism is not an organ and not a setting. It is a name for all the chemical reactions going on in a body at once, added together. Thousands of them, going in both directions.</p>\n<p>Then the point. If you add up thousands of reactions and call the total metabolism, then “boosts your metabolism” has not named anything. It has not said which reaction, or which direction, or in which part of the body, or by how much.</p>\n<p>Give them the questions to put to the company, because that is what they can use. Which reaction. In which tissue. Measured how, and in whom. And how big was the change.</p>\n<p>Then tell them what a real answer would look like, so they can tell one from this. A real claim names a measured quantity in a named group of people and gives a size. This claim names nothing, so there is nothing for the evidence to be evidence about.</p>\n<p>The quotable sentence: “Metabolism is not a dial. It is the name for every chemical reaction in your body added together. Saying a drink boosts it is like saying a lorry boosts traffic.”</p>\n<p>What not to offer: a figure for how much anything changes anybody’s metabolism. You do not have one, this section does not carry one, and a number invented to fill a pause is the part that gets printed.</p>"
+  }
+ ]
+}

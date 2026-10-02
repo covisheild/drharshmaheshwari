@@ -1,0 +1,121 @@
+{
+ "format": 1,
+ "id": "b0-r0-c37",
+ "label": "E7",
+ "title": "Genes, DNA and inheritance in outline",
+ "part": "E",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"51\">DNA</dfn> is a <dfn data-g=\"119\">molecule</dfn> built from repeating units called nucleotides. Each <dfn data-g=\"127\">nucleotide</dfn> has three parts: a base containing nitrogen, a sugar with five carbons, and a phosphate group. The base is one of four — adenine, guanine, cytosine and thymine, written A, G, C and T.</p>\n<p>A DNA molecule is two strands twisted around each other into a right-handed helix. A pairs with T, and C pairs with G. Bases that pair in this way are called <dfn data-g=\"34\">complementary</dfn>. Because the pairing is fixed, the order of the bases along one strand fixes the order along the other.</p>\n<p>Genes are carried on chromosomes. An organism holding two matching copies of each <dfn data-g=\"32\">chromosome</dfn>, one inherited from each parent, is <dfn data-g=\"50\">diploid</dfn>. The <dfn data-g=\"71\">gene</dfn> that encodes a <dfn data-g=\"148\">protein</dfn> determines the order of amino acids in that protein.</p>\n<p>Where one gene exists in more than one version, the versions are called alleles.</p>\n<p>The traits an organism visibly expresses are its <dfn data-g=\"136\">phenotype</dfn>. Its underlying genetic make-up, counting both the alleles that are expressed and those that are not, is its <dfn data-g=\"73\">genotype</dfn>.</p>\n<p>The account of alleles, genotype and phenotype above describes the case in which a single gene controls a single characteristic. A gene fixes the order of amino acids in a protein. It does not by itself fix when that protein is made. Whether the protein works once made depends on the conditions it sits in.</p>",
+   "refs": [
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Start with the molecule. DNA is long, and it is built from small units joined end to end. Each unit carries one part that matters here: a base. There are four bases and they have names. Adenine, guanine, cytosine and thymine. Nobody says those out loud. They are written A, G, C and T, and that is how you will meet them.</p>\n<p>So a strand of DNA is a long line of letters. The order of those letters is the information.</p>\n<p>DNA is not one strand. It is two, twisted around each other, which is why you have seen it drawn as a spiral staircase.</p>\n<p>Each letter on one strand sits opposite one particular letter on the other. A always faces T. C always faces G. A pair that goes together this way is called complementary — a word meaning each one completes the other.</p>\n<p>If you know one strand, you know the other. That is how a cell makes a second copy when it divides, and it is how a copy gets into an egg and a sperm.</p>\n<p>What a gene does is this: it fixes the order of the amino acids in one protein. The protein is the thing that goes and does the work in the body.</p>\n<p>Genes sit along structures called chromosomes, in a fixed order. The information a gene carries is written in the DNA. The cell turns the information in its DNA into the order of amino acids in a protein.</p>\n<p>You get two copies of each chromosome, one from your mother and one from your father. An egg or a sperm carries only one copy of each chromosome, so when they join, the child has two. So you carry two copies of each gene, not one.</p>\n<p>Where a gene comes in more than one version, the versions are called alleles.</p>\n<p>What you can see about a person — the traits they show — is their phenotype. What they actually carry in their DNA, including the alleles that are not showing, is their genotype.</p>\n<p>For some genes, one <dfn data-g=\"6\">allele</dfn> is <dfn data-g=\"52\">dominant</dfn> and the other <dfn data-g=\"157\">recessive</dfn>. Dominant means it shows whenever it is present. Recessive means it shows only when both copies are that version.</p>\n<p>So a person with two dominant copies and a person with one of each look exactly alike. Same phenotype. Different genotype. You cannot get from what you see to what they carry.</p>\n<p>The dominant-and-recessive picture is about one gene controlling one characteristic. It is describing a case.</p>\n<p>So do not carry the picture over to a human trait and assume it holds.</p>\n<p>A gene fixes the order of parts in a protein. It does not fix when that protein gets made.</p>\n<p>A signal reaches a cell and crosses into it. Inside, it lands on a <dfn data-g=\"156\">receptor</dfn>, as the section on the cell showed you. What is new here is what some of these receptors then do: they set the making of a protein going. That is one route.</p>\n<p>Then there is what happens after the protein exists. Whether it works depends on where it is. Heat, acidity and the chemicals around it can all change its shape. A protein that has lost its shape has lost its job.</p>\n<p>So the chain from a letter in DNA to a thing that happens in a person has several steps in it. “It is in her genes” names the first step and says nothing about the rest.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Open OpenStax Biology 2e, section 14.2, DNA Structure and Sequencing, at https://openstax.org/books/biology-2e/pages/14-2-dna-structure-and-sequencing. Search inside the page for the word gene.</p>\n<p>You will find it twice and neither one is a definition. The section that tells you what DNA is made of, and how the two strands pair, never says what a gene is.</p>\n<p>Now do the same search on the genetics section. Open section 12.2, Characteristics and Traits, at https://openstax.org/books/biology-2e/pages/12-2-characteristics-and-traits. Genotype and phenotype are defined there.</p>\n<p>When you want a definition, search the page for the word before you cite it. A section title tells you what a page is about. It does not tell you what the page says.</p>\n<p>Take a gene that comes in two versions and call them A and a. Capital A is the dominant one, small a the recessive one. Everyone carries two copies, so there are three ways to be:</p>\n<table style=\"width:56%;\">\n\n<tbody>\n<tr>\n<td>what the person carries</td>\n<td>what shows</td>\n</tr>\n<tr>\n<td>A and A</td>\n<td>the A trait</td>\n</tr>\n<tr>\n<td>A and a</td>\n<td>the A trait</td>\n</tr>\n<tr>\n<td>a and a</td>\n<td>the a trait</td>\n</tr>\n</tbody>\n</table>\n<p>Two different people, carrying different things, showing the same thing. Look at them and you cannot tell them apart.</p>\n<p>A person is in front of you showing the A trait. What do they carry? You do not know. They are the first row or the second row and nothing you can see decides it.</p>\n<p>Take a sentence you will hear in a clinic in Chennai or in Chandigarh, said kindly and meaning well.</p>\n<blockquote>\n<p>It runs in her family, so it is genetic, so there is not much point.</p>\n</blockquote>\n<p><em>It runs in her family.</em> That is an observation and it may well be right. Families share more than DNA. They share a kitchen, a neighbourhood, a food budget, the hours people work and the distance to somewhere safe to walk. A trait appearing in several members of one family is consistent with shared alleles. It is just as consistent with shared circumstances. The observation on its own does not separate the two.</p>\n<p><em>So it is genetic.</em> This is the step that does not follow, and nothing in this section supports it. This section gives you what a gene is and what an allele is. It gives you no way at all to move from a family pattern to a cause.</p>\n<p><em>So there is not much point.</em> This is the step that does harm, and it is wrong for a reason you now hold. A gene fixes the order of parts in a protein. It does not fix what happens next. A signal can reach a cell, cross into it, and set the making of a protein going. And whether the protein works once made depends on the heat, the acidity and the chemicals around it. There are several steps between the letters and the person, and every one of them answers to something.</p>\n<p>So the reply is not “no, it is not genetic”. You do not know that either. The reply is that the sentence has three claims in it. Only the first has been observed. The third does not follow from either of the others.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Do not take the three-row table to a trait and assume it has three rows.</p>\n<p>Not every gene works by one version hiding the other.</p>\n<p>The A and a labels are letters on a page. They carry no quantity.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Carrying a gene variant is one claim. Having a fixed outcome is another, and the second does not follow from the first. A gene fixes the order of parts in a protein. It does not fix when that protein gets made.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A trait showing up in several members of one family is an observation, not a cause. Families share alleles and they also share a kitchen, a work schedule, a food budget and a neighbourhood.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Two people with different genotypes can show the same phenotype, so what you can see about a person does not fix what they carry.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>What this section gives you about dominant and recessive alleles is one case. So do not use it to say how many genes lie behind a trait in a person. And do not use it to say that a trait is or is not largely inherited. Both of those need a study that measured it.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Call a variant a variant. An allele is one of the versions a gene comes in, and the neutral word is the accurate one. Calling a person’s variant a defect or a fault adds a judgement the biology does not carry. A patient hears that word exactly as it sounds.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Search the page for the word before you cite a source for a definition. A title tells you the topic and not the contents.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a journalist asks whether obesity is genetic, do not answer yes or no. Say that a gene sets the order of parts in a protein. Say that several steps sit between that and a person, and that each step answers to something. Then say what would settle the actual question, which is a study and not an opinion.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>One sentence hides three claims: “it runs in the family, so it is genetic, so there is not much point”. Teach a trainee to write the three out on separate lines. Set out separately on the page, the second and third are visibly unsupported.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back, write down the four bases by their letters. Say which pairs with which. Then say what that pairing lets a cell do.</p>\n<p>Then say, in one sentence each, what a genotype is and what a phenotype is.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>The four letters are A, G, C and T. They stand for adenine, guanine, cytosine and thymine.</p>\n<p>A pairs with T. C pairs with G. Bases that go together in this way are called complementary.</p>\n<p>What the pairing lets a cell do: because each letter has exactly one partner, the order along one strand fixes the order along the other. Read one strand and you can write the second. That is how a cell makes a copy of its DNA, and it is how a copy is passed on.</p>\n<p>A genotype is what a person carries. It is the alleles in their DNA, counting the ones that are not showing as well as the ones that are.</p>\n<p>A phenotype is what shows — the traits you can observe.</p>\n<p>One check on your own answer. If your sentence for phenotype used the word gene, go back. The point of having two words is that one of them is about what you can see and the other is about what is there.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A district programme note contains this paragraph.</p>\n<blockquote>\n<p>Three of the four adults in this household are living with obesity. Obesity is known to be strongly genetic. Counselling on diet in this household is therefore unlikely to be a good use of the worker’s time, and the household should be deprioritised.</p>\n</blockquote>\n<p>Say what is wrong with it. Say which sentence you would remove, which you would change, and what you would ask for before writing anything in its place.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Three things are wrong and they are three different kinds of wrong.</p>\n<p>The first sentence is an observation about one household. It may be accurate. It is also four people, which is not a number you can conclude anything from, and it says nothing about why.</p>\n<p>The second sentence is a claim about the world and the note gives no source for it. Nothing in this section establishes it. This section tells you what a gene is, what an allele is, and that the same phenotype can sit on more than one genotype. It gives you no way to move from a family pattern to a cause, and no figure for how strongly anything is inherited. A sentence beginning “is known to be” with no citation attached is the sentence to stop at.</p>\n<p>The third sentence is the one that does harm, and it does not follow even if the second were true. A gene fixes the order of parts in a protein. It does not fix when that protein is made. A signal reaching the cell can set the making of one going. And whether the protein works depends on the conditions around it. Several steps sit between an allele and a person, and each answers to something.</p>\n<p>There is also a fourth problem, which is not about genetics. The note moves from a claim about causes to a decision about who gets a service. That move needs its own justification and it has none here.</p>\n<p>What to do with it. Remove the third sentence entirely. Change the second to say what was actually observed, which is that the trait appears in three of four adults in one household. Keep the first.</p>\n<p>What to ask for before writing anything in its place. Ask whether the household shares more than DNA. The same kitchen, the same food budget, the same working hours, the same distance to anywhere safe to walk. Those are shared circumstances and they produce family patterns too. Nothing in an observed family pattern separates the two, so a note that names only one of them has chosen rather than found.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. They have just told a patient that her weight is “in her genes”.</p>\n<p>Teach them why that sentence, said in a clinic, is doing something different from what they intended. They should leave with a replacement sentence they can actually say.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Ten minutes and a whiteboard, and they meant to be kind. Start by saying so, because they did.</p>\n<p>Draw a line across the board with four stops on it. Write at the first stop: a gene. At the second: a protein. At the third: whether that protein is made right now. At the fourth: what happens in a person.</p>\n<p>Now go along it with them.</p>\n<p>Stop one to stop two. A gene fixes the order of the parts in a protein. That step is solid and it is the step their sentence is about.</p>\n<p>Stop two to stop three. The gene does not fix when the protein gets made. A signal can arrive at the cell, cross into it, and set the making of the protein going. Ask them what a signal lands on. They met it in the section on the cell. They will say a receptor. Good — that is this step, and it is one route of several.</p>\n<p>Stop three to stop four. A protein has to hold its shape to work. Heat, acidity and the chemicals around it change that shape, and a protein that has lost its shape has lost its job.</p>\n<p>Then stand back and ask them the question. Their sentence was about the first arrow. Which of the other two did it make a claim about? They will see that it made a claim about all of them.</p>\n<p>Now the second half, which is about what the patient heard. She did not hear a statement about proteins. She heard “this is settled, and nothing you do matters”. That is not what they said. It is what she has taken home, and she will act on what she took home.</p>\n<p>Give them the replacement, and make them say it out loud before they leave the room.</p>\n<p>“What you inherit is real and it is part of the picture. It sets some things about how your body handles food. It does not settle what happens next, and that is the part we work on together.”</p>\n<p>Then one last instruction, which is the one that sticks. Whenever they are about to say a sentence about a patient’s body, they should finish it silently with “and therefore”. Then listen to what comes out. If what comes out is “and therefore nothing can be done”, the sentence needs rewriting before it is said.</p>"
+  }
+ ]
+}

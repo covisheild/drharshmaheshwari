@@ -1,0 +1,130 @@
+{
+ "format": 1,
+ "id": "s36-r1-c04",
+ "label": "4",
+ "title": "The focus group, and choosing between it and the interview",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"113\">focus group</dfn> is a form of <dfn data-g=\"131\">group interview</dfn> that uses the talk between participants to produce its data. A group interview can be run simply as a quick way to hear several people at once, each answering the researcher in turn. A focus group is different in method: participants are asked to talk to one another.</p>\n<p>The person who runs the group is the <dfn data-g=\"190\">moderator</dfn>. Kitzinger calls this person the facilitator, and says the facilitator should explain that the aim is for people to talk to each other rather than to the researcher.</p>\n<p>The talk between participants gives what a one-to-one interview cannot.</p>\n<p>The same group process has costs. A shared norm, once voiced, may silence someone who disagrees.</p>\n<p>The choice between the two follows from the question. A questionnaire suits counting how many people hold an opinion.</p>",
+   "refs": [
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A focus group puts several people in a room with one moderator.</p>\n<p>Here is the trap. A room of six people answering one at a time is not a focus group. It is six short interviews with an audience. In a focus group the moderator asks people to talk to each other. That talk between them is the data.</p>\n<p>Kitzinger, who wrote a guide to the method for health researchers, puts the ideal size at four to eight people. Her sessions last one to two hours, sometimes longer. Other guides give other numbers. Blackstone’s textbook prefers three to five for a heated topic, and reports recommendations from three to twelve. There is no fixed rule.</p>\n<p>What a group does well:</p>\n<ul>\n<li>It shows what a group takes for granted — the things everyone nods at.</li>\n<li>It shows the words people use among themselves, which are often not the clinic’s words.</li>\n<li>It can bring in people who would not sit through an interview alone, and people who cannot read or write.</li>\n</ul>\n<p>What a group does badly:</p>\n<ul>\n<li>One loud voice can set the line, and the rest may go along with it.</li>\n<li>Everyone hears everything. You cannot promise a person that what they say stays private.</li>\n<li>A person of higher standing in the room, such as a staff member among patients, can hold others back.</li>\n</ul>\n<p>So choose from the question you are asking.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>If you want to know</td>\n<td>Use</td>\n<td>Because</td>\n</tr>\n<tr>\n<td>how patients at a clinic talk about coming back, and the reasons they share</td>\n<td>a focus group</td>\n<td>the shared words and reasons come out when they talk to each other</td>\n</tr>\n<tr>\n<td>one woman’s own story of the months after she stopped coming</td>\n<td>an interview</td>\n<td>it is one person’s story, and she tells it without an audience</td>\n</tr>\n<tr>\n<td>how many patients missed their last visit</td>\n<td>neither: the clinic’s register or a survey</td>\n<td>that is a count</td>\n</tr>\n</tbody>\n</table>\n<p>This book teaches you to recognise a focus group and choose it. Running one is left to the next level.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s36-r1-c04-who-answers-whom.png",
+   "alt": "A bar chart with two groups of two bars. First group: 6 turns answering the moderator, 0 answering another participant. Second group: 2 answering the moderator, 6 answering another participant.",
+   "w": 1357,
+   "h": 654,
+   "caption": "In the two made-up groups below, who each respondent’s turn answered. In the first group all 6 turns answer the moderator and none answers another participant: a group interview. In the second, 2 answer the moderator and 6 answer another participant: a focus group."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Suppose you want to know why adult patients with obesity at a district hospital NCD clinic in Chhattisgarh stop coming back for follow-up. NCD stands for non-communicable disease. You invite six patients to talk as a group. What follows is a made-up exchange, written to show the method. The patients spoke Chhattisgarhi, and their words are given here in English. M is the moderator; R1 to R6 are the patients.</p>\n<table>\n\n<thead>\n<tr>\n<th>Speaker</th>\n<th>Words</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>M</td>\n<td>Why do people stop coming back to this clinic? R1, you start.</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>The doctors here are good. People are careless, that is all.</td>\n</tr>\n<tr>\n<td>M</td>\n<td>R2?</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>He is right. We are careless.</td>\n</tr>\n<tr>\n<td>M</td>\n<td>R3?</td>\n</tr>\n<tr>\n<td>R3</td>\n<td>Yes. Careless.</td>\n</tr>\n<tr>\n<td>M</td>\n<td>R4?</td>\n</tr>\n<tr>\n<td>R4</td>\n<td>Same as them.</td>\n</tr>\n<tr>\n<td>M</td>\n<td>R5?</td>\n</tr>\n<tr>\n<td>R5</td>\n<td>Yes.</td>\n</tr>\n<tr>\n<td>M</td>\n<td>R6?</td>\n</tr>\n<tr>\n<td>R6</td>\n<td>We should come. It is our own fault.</td>\n</tr>\n</tbody>\n</table>\n<p>Go through the respondents’ turns with a pencil. Beside each one, write M if the person is answering the moderator, and P if they are answering another participant. All six turns are M. Nobody spoke to anybody but the moderator.</p>\n<p>That is a group interview, not a focus group. The moderator asked each person in turn, so the one thing a group can give you never happened. The first answer set the line, and five people followed it.</p>\n<p>Now look at what you cannot write in your report. You cannot write “all six patients said people stop coming because they are careless”. Kitzinger warns against giving percentages from focus groups. She says to tell apart one person’s view from what the group actually agreed. Here you do not know what R2 to R6 think. You know only that they did not contradict R1 in front of each other.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The exchange is made up, and so short that every turn can be marked. In a real two-hour group, many turns answer the moderator and the group at once. A turn can also change the subject without answering anyone. The M and P marks are then a rough reading aid, not a measurement.</p>\n<p>A group that agrees quickly has not always been silenced. Sometimes people simply agree. The transcript alone cannot tell the two apart. What tells them apart is whether anyone, given a real chance, says something different.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is a second made-up group of six patients from the same clinic. This time the moderator reads out a sentence written on a card and asks the group to talk about it with each other. Kitzinger describes group exercises built on statements written on cards; this uses one card in a simpler way.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>M</td>\n<td>I will read out a sentence. Talk about it with each other, not with me. “People stop coming because the visit takes the whole day.”</td>\n</tr>\n<tr>\n<td>R3</td>\n<td>That is true. The bus from our village leaves at six. By the time the doctor sees you it is past two.</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>But you get a month of tablets. Is one day a month so much?</td>\n</tr>\n<tr>\n<td>R3</td>\n<td>For you, maybe. My husband loses a day’s wages when he brings me.</td>\n</tr>\n<tr>\n<td>R5</td>\n<td>Same for us. And after the whole day they weigh you and say the same thing.</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>What do they say to you?</td>\n</tr>\n<tr>\n<td>R5</td>\n<td>Eat less, walk more. Every time.</td>\n</tr>\n<tr>\n<td>R4</td>\n<td>R5 is right about the words. For me it is the scale. It stands in the corridor, and the whole queue watches.</td>\n</tr>\n<tr>\n<td>M</td>\n<td>R4, say more about that.</td>\n</tr>\n<tr>\n<td>R4</td>\n<td>I would rather not, here.</td>\n</tr>\n</tbody>\n</table>\n<p>Mark the respondents’ turns again. The first R3 turn answers the moderator’s card, so it is M. The next six turns each answer another participant, so they are P. R4’s last turn answers the moderator, so it is M.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>group</th>\n<th>answers to the moderator</th>\n<th>answers to another participant</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>first group</td>\n<td>6</td>\n<td>0</td>\n</tr>\n<tr>\n<td>second group</td>\n<td>2</td>\n<td>6</td>\n</tr>\n</tbody>\n</table>\n<p>Now look at what the talk between them produced. You could not have got it by asking six people in turn.</p>\n<ul>\n<li>A shared phrase, “the whole day”, which the group uses for the cost of a visit.</li>\n<li>A disagreement. R1 thinks one day a month is small. R3 answers that it is not her day that is lost but her husband’s wages. So the cost depends on who pays it.</li>\n<li>A question you might not have thought to ask. R2 asks what the staff actually say.</li>\n<li>Set beside the first group, a move away from blaming themselves, towards the bus, the wages and the scale in the corridor. Kitzinger describes group talk allowing exactly this shift, from personal, self-blaming explanations towards structural ones.</li>\n</ul>\n<p>R4’s last turn shows the limit. Being weighed in front of the queue is something R4 will mention in the group but will not describe there. That is a private, possibly painful experience. It is the kind of thing one person’s story in an interview is for. So you might offer R4, and anyone else, a one-to-one conversation later, away from the group.</p>",
+   "numberRefs": [
+    72,
+    73
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Both groups are made up, and each was written to show one thing clearly. A real group mixes the two: some stretches of real talk between participants, some stretches of each person answering the moderator.</p>\n<p>Kitzinger’s account of what groups do well and badly comes from a guide to the method, built on her own studies and others’. It is not a trial comparing the two methods on the same people. It gives no effect size. A study that ran groups and interviews on the same topic and the same kind of people, and found the groups added nothing the interviews missed, would count against it. Until then, treat its claims as practical guidance from experience.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A focus group is not a quick way to interview six people. Read your transcript and check whether anyone ever answers anyone other than you.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Refuse the sentence “the group agreed”, and any count like “five of six said”. First check who spoke first, and whether anyone was given a real chance to differ.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Choose the method from the question. If your question is “how many”, a group is the wrong tool however well it is run.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When many of the people you need to hear from cannot read or write, a written questionnaire shuts them out. A group or an interview does not; choose between those two by the question.</p>",
+     "tag": "india_deviation",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Where the topic is a private or stigmatised experience a person may not want neighbours to hear, the group stops being trustworthy for it. Offer that person an interview instead, and keep staff out of patient groups.</p>",
+     "tag": "boundary",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>If someone tells you focus groups give “more honest” or “truer” data than interviews, or the reverse, do not accept it. Kitzinger holds that group data are neither more nor less authentic than other data.</p>",
+     "tag": "dispute",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here is a made-up excerpt from a session at the same clinic. The respondents’ words are translated from Hindi.</p>\n<table style=\"width:97%;\">\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>M</td>\n<td>What do you all think of the diet sheet the clinic gives?</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>I cannot read it. My daughter reads it to me.</td>\n</tr>\n<tr>\n<td>R6</td>\n<td>You are lucky. Nobody at home reads it to me.</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>Then how do you know what is on it?</td>\n</tr>\n<tr>\n<td>R6</td>\n<td>I ask the woman in the next bed at the ward.</td>\n</tr>\n<tr>\n<td>R3</td>\n<td>The sheet says no rice. How can we eat no rice?</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>Nobody eats no rice. They just write that.</td>\n</tr>\n</tbody>\n</table>\n<p>Is this a focus group or a group interview? Say what it shows that an interview with R2 alone could not. Then say one thing you could not write in your report on the strength of it.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>It is working as a focus group. The moderator asks the group one question and then stays out.</p>\n<p>Mark the respondents’ turns. R2’s first turn answers the moderator. R6 answers R2, R2 answers R6 with a question, and R6 answers it. R3 goes back to the moderator’s question. R1 answers R3. Four of the six turns answer another participant.</p>\n<p>What it shows that an interview with R2 alone could not:</p>\n<ul>\n<li>that people compare how they get the sheet read, and that some have nobody to read it;</li>\n<li>a norm, voiced by R3 and R1 and not challenged: R3 and R1 do not take the “no rice” line on the sheet as meant.</li>\n</ul>\n<p>What you could not write:</p>\n<ul>\n<li>“Most patients cannot read the diet sheet.” Two people mention reading. A group gives no count, and Kitzinger advises against percentages from focus groups.</li>\n<li>“Patients agree the diet sheet is unrealistic.” R1 speaks for “nobody”, and the others do not reply. Silence after a confident line is not agreement. You would need to see whether anyone, given the chance, said otherwise.</li>\n</ul>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>For each of these three questions about the clinic, choose a focus group, an interview, or neither. Give one reason for each choice.</p>\n<ol type=\"1\">\n<li>What do patients at this clinic call the follow-up visit among themselves, and what do they say about it to each other?</li>\n<li>What happened in the life of one man in the months after he stopped coming?</li>\n<li>How many patients registered in 2025 came back at least once?</li>\n</ol>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>A focus group. The question is about shared words and what people say to each other. That is the talk between participants, which only a group produces.</li>\n<li>An interview. It is one person’s own story over time. It may include things he would not say in front of other patients.</li>\n<li>Neither. It is a count, and the clinic’s register answers it. Asking people in a group or an interview would give reasons, not a number, and the number would not be trustworthy.</li>\n</ol>"
+  }
+ ]
+}

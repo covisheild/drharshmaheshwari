@@ -1,0 +1,174 @@
+{
+ "format": 1,
+ "id": "s47-r1-c07",
+ "label": "7",
+ "title": "How a rule or regulation is made, and where the public gets in",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A rule or a regulation is made by the body an <dfn data-g=\"3\">Act</dfn> names, under the power that Act gives, and by the procedure that Act sets. For rules, the General Clauses Act adds a procedure of its own. The section that gives the power can carry three conditions. “By <dfn data-g=\"279\">notification</dfn>”: the instrument is made by publishing it in the <dfn data-g=\"174\">Gazette</dfn>. “With the previous approval of” another authority: a second body must agree first. “After <dfn data-g=\"318\">previous publication</dfn>”: a draft must be published first.</p>\n<p>Section 23 of the General Clauses Act, 1897 applies where a Central Act gives a power to make “rules or bye-laws” subject to previous publication. The authority must publish a draft for the information of persons likely to be affected. It must publish with the draft a notice of the date on or after which the draft will be taken into consideration. It, and any authority whose sanction, approval or concurrence is needed, must consider any objection or suggestion received from any person before that date.</p>\n<p>The order of the words in a power is not the order of the steps. The draft comes first. Because the approving authority must consider objections received before the notice’s date, it acts after that date. For an FSSAI regulation, the Food Safety and Standards Act does not set this order in words.</p>",
+   "refs": [
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    26,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    104,
+    142,
+    143,
+    107,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Parliament passes an Act. The Act often leaves the detail to someone else.</p>\n<p>Some Acts, the Food Safety and Standards Act among them, say a rule or regulation may be made only “after previous publication”. That means a draft comes first, with a date on it. Anyone may send an objection or a suggestion before that date. For rules, section 23 of the General Clauses Act makes the body consider it. Then the final text appears in the Gazette, the government’s official newspaper.</p>\n<p>Under the Food Safety and Standards Act it then goes before Parliament, which can change it or cancel it. A State rule goes before the State <dfn data-g=\"231\">Legislature</dfn>. But by then it has already been made.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s47-r1-c07-packaging-path.png",
+   "alt": "Three bars of days since 19 March 2018: 14 for Gazette copies reaching the public, 44 for the close of objections, 280 for the final notification. A dashed line at 30 sits between the first two bars.",
+   "w": 1358,
+   "h": 658,
+   "caption": "The FSSAI Packaging Regulations, 2018, counted in days from the draft’s date, 19 March 2018. Gazette copies reached the public on day 14 (2 April). The thirty days for objections ran from then, so they closed about day 44. Counting thirty from 19 March would have stopped at the dashed line, 14 days too soon. The final notification came on day 280 (24 December)."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is the trap with a draft’s deadline. The date printed on the draft is not always the day the clock starts.</p>\n<p>Open the Food Safety and Standards (Packaging) Regulations, 2018, notified by FSSAI on 24 December 2018 (Gazette of India, Extraordinary, No. 535). The top of the page says it appeared in the Gazette of India, Extraordinary, Part III, Section 4. Go to the English text. Read the paragraphs that begin “Whereas”. Write down what each one tells you.</p>\n<p>The first gives the draft’s date, 19 March 2018. It says the draft invited objections “before the expiry of a period of thirty days from date on which the copies of Gazette containing the said notification was made available to the public”. A later paragraph gives that date: 2 April 2018.</p>\n<p>Suppose you had counted thirty days from 19 March. Work out how early you would have stopped.</p>\n<div class=\"working\">\n<p>31 minus 19 = 12 days left in March<br />\n12 plus 2 = 14 days</p>\n</div>\n<p>Your deadline would have fallen 14 days too soon. Read the notice for the day it counts from, not the date at the top of the draft.</p>\n<p>The next paragraph says the objections received “have been considered”. It does not say how many came, what they said, or what changed because of them.</p>\n<p>Now read the paragraph that begins “Now, therefore”. It names the power: clause (k) of section 92(2), “read with section 23 of the Food Safety and Standards Act”. That section 23 is the Act’s own section on packaging and labelling. It is not section 23 of the General Clauses Act. Two laws carry a section with the same number, and a note that mixes them up cites the wrong one.</p>\n<p>Last, count the whole path, from the draft’s date to the final notification.</p>\n<div class=\"working\">\n<p>12 days left in March<br />\n30 plus 31 plus 30 plus 31 plus 31 plus 30 plus 31 plus 30 = 244 days, April to November<br />\n12 plus 244 plus 24 = 280 days</p>\n</div>\n<p>The window for objections was thirty days. The whole path took 280. Regulation 1(2) then gave food businesses until 1 July 2019 to comply.</p>",
+   "numberRefs": [
+    155
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This is one regulation’s path. Another draft, from another body or under another Act, may set a different period or count it from a different day, so read each notice for itself. The 280 days hold for this regulation only. The notification does not say when it was laid before Parliament, so the Gazette alone cannot tell you whether that step has happened.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>The section that gives a power also tells you whether you will see a draft. Read three sections of the Food Safety and Standards Act side by side (https://indiacode.gov.in/handle/123456789/586348). In each, look for three phrases: “by notification”, “with the previous approval of”, and “after previous publication”.</p>\n<table style=\"width:98%;\">\n\n<thead>\n<tr>\n<th>Section</th>\n<th>Who makes it</th>\n<th>A draft first?</th>\n<th>Whose approval first?</th>\n<th>Laid before</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>91(1), rules</td>\n<td>the Central Government</td>\n<td>the section does not say so</td>\n<td>none named</td>\n<td>Parliament (s.93)</td>\n</tr>\n<tr>\n<td>92(1), regulations</td>\n<td>FSSAI</td>\n<td>yes: “after previous publication”</td>\n<td>the Central Government’s</td>\n<td>Parliament (s.93)</td>\n</tr>\n<tr>\n<td>94(1), State rules</td>\n<td>a State Government</td>\n<td>yes: “after previous publication”</td>\n<td>FSSAI’s</td>\n<td>the State Legislature (s.94(3))</td>\n</tr>\n</tbody>\n</table>\n<p>Now take the third <dfn data-g=\"329\">proposal</dfn> on your department’s list, a warning label on packaged foods high in sugar, salt or fat. The 2018 packaging regulation was made under section 92(2)(k), which covers “the manner of marking and labelling of foods under section 23”. A label rule made by FSSAI is a regulation under section 92, so a draft must come first. That draft, and the date in its notice, is your department’s door.</p>\n<p>A rule under section 91 is different. The Act’s words promise no draft, so the Act gives you no date to work to. The <dfn data-g=\"313\">Pre-legislative Consultation Policy</dfn> of 2014 asks departments to put drafts in public for at least thirty days anyway, and its heading says it covers subordinate legislation. But it is a decision of senior officials, not a law. A department may skip it and record its reasons in the note for the <dfn data-g=\"45\">Cabinet</dfn>. In 2022 the Law Ministry told the Rajya Sabha it keeps no record of compliance.</p>\n<p>Then think about who reads your comment. Where section 23 of the General Clauses Act applies, the body making the rule must consider it. So must any authority whose approval the Act requires. The policy also asks for a summary of the feedback on the department’s website. Write your comment as a public document with your name on it, because it may be read as one.</p>\n<p>After the final text is made, section 93 lays it before Parliament for a total of thirty days while it is in session, which may run across two or more sessions. That is a second thirty, and it is not the period for objections.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table is true of one Act. Every Act writes its own power, so read the section each time and never assume the pattern carries over. And “after previous publication” tells you a draft must come. It does not tell you how long the period is, which the draft’s own notice sets.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“A regulation takes effect only once Parliament approves it” is wrong for the Food Safety and Standards Act. Section 93 lays each Central rule and each FSSAI regulation before Parliament after it is made; section 94(3) lays a State’s rules before the State Legislature. The Houses may then modify or annul it, and anything already done under it stays valid. Do not tell anyone they can wait for Parliament.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Before you plan a comment, open the section that gives the power. Find “by notification”, “with the previous approval of” and “after previous publication”. They tell you whether a draft will appear, and which bodies act before the final text.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Count the objection period from the day the notice names. For the 2018 packaging draft, that was the day Gazette copies reached the public, 2 April 2018, not the draft’s date of 19 March. If the notice does not say whether the first day counts, send the objection a day early.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Two different thirties sit in the same process. The 2018 packaging draft’s period for objections was thirty days. Section 93 keeps a made regulation before Parliament for a total of thirty days while it is in session, which may run across two or more sessions. Say which one you mean.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Section 23 of the General Clauses Act makes the body consider an objection. It does not make the body accept it, or answer it. Once the final rule is in the Official Gazette, that publication is conclusive proof it was duly made.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Ministries are “required to adhere” to the 2014 consultation policy as a decision of the Committee of Secretaries. It is not a law, so do not call a missing consultation unlawful on its strength alone; check whether the Act itself asks for previous publication.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The final notification tells you the steps were taken. To find out what changed, set the draft beside the final text, clause by clause.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Objections considered” in a final notification is read as “objections accepted”. It records only that a step was taken. Whether any comment changed the text shows only when you compare the draft with the final version.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>FSSAI may make this regulation only after publishing a draft, and only with the Central Government’s approval (Food Safety and Standards Act, 2006, section 92(1)). Objections must reach it within the period its draft notice states.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, list what section 23 of the General Clauses Act, 1897 requires when an Act gives a power to make rules “after previous publication”. Then say what section 93 of the Food Safety and Standards Act adds after a rule is made.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Section 23 asks for three things. First, a draft goes out for the people likely to be affected. Second, a notice goes with it, giving the date from which the draft will be taken up. Third, the body making the rule must consider every objection or suggestion that arrives before that date. So must any body whose approval is needed. It then adds a consequence: once the final rule is in the Gazette, that is conclusive proof it was duly made.</p>\n<p>Section 93 adds a step after the rule is made. It goes before each House of Parliament for a total of thirty days while it is in session, which may run across two or more sessions. If both Houses agree, they can change it or cancel it. What was done under it before that stays valid.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is part of section 94(1) of the Food Safety and Standards Act.</p>\n<blockquote>\n<p>the State Government may, after previous publication and with the previous approval of the Food Authority, by notification in the Official Gazette, make rules …</p>\n</blockquote>\n<p>Suppose your State’s food safety department plans rules under it. List the steps the section requires, in order, and name every body that must act. Then say one thing the section does not tell you.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Steps: the State Government publishes a draft first (“after previous publication”). FSSAI, the Food Authority, must approve before the rules are made. The State Government then makes them by notification in the Official Gazette. Section 94(3) also has every State rule laid before the State Legislature after it is made.</p>\n<p>Bodies: the State Government and FSSAI.</p>\n<p>The section does not say how long the objection period is, or from which day it runs. The draft’s own notice sets that. Nor does it say which State department drafts the rules.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Here is a made-up note from a colleague.</p>\n<blockquote>\n<p>FSSAI’s draft on warning labels is dated 1 June, so we have thirty days from 1 June. If we miss it, no matter. The regulation cannot take effect until Parliament votes on it. We can write to our member of Parliament then.</p>\n</blockquote>\n<p>Find the errors.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>First, the period runs from the day the draft’s notice names. In the 2018 packaging case that was the day Gazette copies reached the public, two weeks after the draft’s date. Read the notice before counting.</p>\n<p>Second, “thirty days” is assumed. The notice sets the period; check it.</p>\n<p>Third, Parliament does not vote a regulation into effect. Section 93 lays it before both Houses after it is made. The Houses may modify or annul it, but it has been made already, and what was done under it stays valid.</p>\n<p>The fix: “Find the draft notice and the date it counts from. Send our objection before that date, to FSSAI, and copy the Central Government, whose approval section 92 requires.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident in your department asks why you will not start writing a comment on a food regulation until you have read the Act. You have ten minutes and a whiteboard. Explain.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw a line from “Act” to “rule or regulation”. Write on it the three phrases the power can carry: “by notification”, “with the previous approval of”, “after previous publication”.</p>\n<p>Then explain what each changes. “After previous publication” means a draft will come, with a date. That date is when the comment must arrive. “With the previous approval of” names a second body that must agree. Where section 23 of the General Clauses Act applies, that body must consider objections too. “By notification” tells you the final text will appear in the Gazette. For a rule made after previous publication, section 23 of the General Clauses Act makes that publication conclusive proof it was duly made.</p>\n<p>Show the contrast on the board: FSSAI regulations under section 92 need a draft; Central Government rules under section 91 do not say so. Finish with the 2018 packaging case: the clock ran from 2 April 2018, not from the draft’s date of 19 March. Reading the Act first is how you find the door and the deadline.</p>"
+  }
+ ]
+}

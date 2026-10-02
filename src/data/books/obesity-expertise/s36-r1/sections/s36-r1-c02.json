@@ -1,0 +1,134 @@
+{
+ "format": 1,
+ "id": "s36-r1-c02",
+ "label": "2",
+ "title": "Who you talk to, and what the answers can claim",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In a qualitative study the people who answer, called respondents, are chosen on purpose, for what they can tell the researcher about the question. The choice and its reasons are written down.</p>\n<p>A deliberate choice is not a <dfn data-g=\"59\">convenience sample</dfn>. A convenience sample takes whoever is available.</p>\n<p>Because the people were chosen and not drawn, the findings describe the range of experiences, reasons and meanings among them, and how these connect. They do not estimate how common any of these is in a population. What carries beyond the study is an idea, a reason and how it works, that a reader can test in another setting. This is conceptual, not statistical, generalisation.</p>\n<p>Such a study is judged by its own tests. It gives a clear account of how people were chosen and how the data were gathered and analysed. It searches for cases that contradict the emerging explanation, and reports them. The number of people interviewed is not the test, and there is no <dfn data-g=\"230\">power calculation</dfn>, the sum a survey or trial does to decide how many people it needs.</p>",
+   "refs": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Book 0 taught you two ways to get a sample. A <dfn data-g=\"248\">random sample</dfn> lets chance pick who is in it. A convenience sample takes whoever is easy to reach. A qualitative study uses a third way. You choose people on purpose, for what they can tell you.</p>\n<p>Suppose you want to know why patients stop coming to a clinic. The people who can tell you are the ones who stopped, so you go and find them. You choose some who live far away and some who live near, men and women, younger and older. You are after the widest spread of reasons, not an average.</p>\n<p>That choice has a price. Say seven of your twelve respondents, the people who answer, mention the bus fare. That does not mean 58 per cent of patients stop because of the fare. You might have picked more people from far villages. Pick differently, and the seven changes.</p>\n<p>What the study can claim is different, and it is still worth having. It can say what the reasons are, how each one works, and how they connect. A reader in another district can take that idea and test it against their own clinic.</p>\n<p>So a qualitative study is not judged by how many people it asked. Ask three things instead. Did the authors say how they chose people, and why? Did they say how they gathered and read what was said? Did they look for people whose story did not fit, and report them?</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s36-r1-c02-share-follows-choice.png",
+   "alt": "A bar chart with two bars. The share of respondents who talked about the fare is about 58 per cent when 7 of 12 did, and 50 per cent when 7 of 14 did.",
+   "w": 1357,
+   "h": 654,
+   "caption": "The same 7 respondents talked about the bus fare both times. Among the 12 you chose, that is 58 per cent; choose two more from within walking distance who do not mention it, and among 14 it is 50 per cent. The clinic did not change; your choice did, so the share describes your choice, not the clinic."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is a plan that fails, in the made-up clinic from the last section. You have one Tuesday free. You decide to interview whoever is in the waiting room that morning. It is easy, and the patients are right there.</p>\n<p>Now ask who is in that room. Every one of them came back. The people you want to hear from, the ones who stopped, are exactly the people who are not there. This convenience sample has left out the whole question.</p>\n<p>So build the group on purpose. Open the clinic register. Mark the adults with obesity who came once or twice and then missed their next date. From those, choose people who differ in the ways you suspect might matter. Write your reason beside each choice.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Choose some who…</td>\n<td>Because…</td>\n</tr>\n<tr>\n<td>live more than an hour away</td>\n<td>travel may be one reason</td>\n</tr>\n<tr>\n<td>live within walking distance</td>\n<td>if they stopped too, travel is not the whole story</td>\n</tr>\n<tr>\n<td>look after small children or older relatives</td>\n<td>a clinic day may cost them more than the fare</td>\n</tr>\n<tr>\n<td>work for a daily wage</td>\n<td>a clinic day may be a day’s pay lost</td>\n</tr>\n<tr>\n<td>came only once</td>\n<td>the first visit itself may have put them off</td>\n</tr>\n<tr>\n<td>came several times, then stopped</td>\n<td>something may have changed later</td>\n</tr>\n</tbody>\n</table>\n<p>Look at the second row. You chose those people because their story might break your first guess. Mays and Pope wrote a 2000 paper on judging <dfn data-g=\"242\">qualitative research</dfn>. They count this as one of the tests of a good study: looking for the case that contradicts the explanation, and discussing it.</p>\n<p>Keep the table. That written record of whom you chose, and why, is part of the study. A reader judging it will ask for it first.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The register helps only if the clinic keeps one and it is complete. Patients who never gave a working phone number or address cannot be found this way, and they may have the most to tell you. Say so in your account of how you chose people, so a reader knows who could not be reached.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now suppose you have interviewed twelve people chosen this way. The numbers here are made up. Seven of the twelve talked about the bus fare. A first draft of your report says: “58 per cent of patients stop coming because of the fare.” Check the arithmetic first.</p>\n<div class=\"working\">\n<p>7 divided by 12 = 0.5833333333<br />\n0.5833333333 times 100 = 58.33333333</p>\n</div>\n<p>The arithmetic is right. The claim is still wrong. Lay it out the way Book 0’s section on argument taught.</p>\n<ul>\n<li><em>Premise:</em> seven of these twelve respondents talked about the fare.</li>\n<li><em>Conclusion:</em> 58 per cent of the clinic’s patients stop because of the fare.</li>\n</ul>\n<p>The <dfn data-g=\"140\">inference</dfn> needs a premise nobody wrote down: that the twelve stand for the clinic’s patients in known proportions. They do not. You chose them, and you chose several from far villages on purpose. Suppose you had also chosen two more people from within walking distance, and neither mentioned the fare.</p>\n<div class=\"working\">\n<p>7 divided by 14 = 0.5</p>\n</div>\n<p>The clinic has not changed. The share has, because your choice changed. So the share describes your choice, not the clinic. Pope, Ziebland and Mays, in a 2000 paper on analysing qualitative data, give the same warning: results written as relative frequencies may mislead when the sample was never meant to be representative.</p>\n<p>Here is what the twelve can support. The fare came up often, and you can say how it works. In the made-up interviews, one woman explains she pays it twice, for herself and for the grandchild she cannot leave at home. And one <dfn data-g=\"262\">respondent</dfn>, R11, lives ten minutes’ walk away and stopped too. She says she was weighed in the corridor, where other people could see. That case does not fit “the fare”. You keep it and report it. It shows distance is not the whole story, and it names a reason no count of the first answers would have found.</p>\n<p>If a decision needs to know how common the fare is as a reason, say to budget for bus passes, that is a how-many question again. It needs a count from a random sample, or from the whole register.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Counts are not forbidden in a qualitative report. Authors sometimes give a simple count as a summary of what they heard. Read such a count as a description of the group they chose, never as a rate for the population.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A count of respondents is not a rate. “Seven of twelve mentioned the fare” describes the twelve you chose.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you read a qualitative study, find the account of how people were chosen before you read the findings.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A reviewer trained on trials will ask for your sample-size or power calculation. There is none to give, because the study does not estimate a rate.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A small number is not, by itself, a weakness in this kind of study. DeJonckheere and Vaughn note that an interview project with as few as 8 to 12 people can be highly meaningful.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The easiest people to reach can be the ones your question is not about.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A qualitative study tells you which reasons exist and how they work among the people you chose. It cannot tell you how common any reason is. If a budget or a target depends on “how many”, ask for a count from a random sample or a complete register.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When a trainee writes percentages into the results of an interview study, have them replace each one with what was said and how it works. Then have them add the case that did not fit.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here is a made-up newspaper line. “A study interviewed 15 women with obesity in Raipur. It found that 60 per cent avoid clinic visits because of long waiting times.”</p>\n<p>Say what is wrong with the sentence, and rewrite it so that it claims only what an interview study can support.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>First the arithmetic behind the 60 per cent.</p>\n<div class=\"working\">\n<p>60 divided by 100 = 0.6<br />\n0.6 times 15 = 9</p>\n</div>\n<p>So nine of the fifteen women spoke about waiting times. That count is probably right. What is wrong is the move from nine women to “60 per cent avoid clinic visits”. The fifteen were chosen for what they could say, not drawn <dfn data-g=\"17\">at random</dfn> from women with obesity in Raipur. Choose fifteen others and the nine changes. So the share describes the choice, not the city.</p>\n<p>Here is a rewrite that claims only what the study can support. “In interviews with 15 women with obesity in Raipur, long waits at the clinic came up as one reason for staying away. The women described how the wait costs them: [what they said]. Some gave other reasons.” The rewrite names the reason and how it works. It says who was asked. It makes no claim about how common the reason is.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>You want to know why men with obesity in your district stop coming to follow-up at a non-communicable disease (NCD) clinic. Write the list of the kinds of men you would choose to interview, at least five, with one line on why you chose each. Then say which row is there because it might break your first guess.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>One reasonable list, made up for this answer; others are as good if each row has a reason.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Choose some who…</td>\n<td>Because…</td>\n</tr>\n<tr>\n<td>work for a daily wage</td>\n<td>a clinic day may be a day’s pay lost</td>\n</tr>\n<tr>\n<td>have salaried jobs with fixed hours</td>\n<td>the clinic’s hours may clash with work</td>\n</tr>\n<tr>\n<td>live more than an hour away</td>\n<td>travel may be a reason</td>\n</tr>\n<tr>\n<td>live close to the clinic</td>\n<td>if they stopped too, travel is not the whole story</td>\n</tr>\n<tr>\n<td>came once only</td>\n<td>the first visit may have put them off</td>\n</tr>\n<tr>\n<td>came for months, then stopped</td>\n<td>something may have changed later</td>\n</tr>\n</tbody>\n</table>\n<p>The row that might break a first guess is the men who live close by. If you expect distance to explain most of it, these men will show you if it does not. Mays and Pope call searching for such contradicting cases one of the tests of a good study.</p>\n<p>Notice what the list is not. It is not a random sample, and it will not tell you what share of men stop for each reason. It is built to find the range of reasons.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A health secretary has asked for one page. A made-up qualitative study of 20 patients found that bus fares keep some of them from the clinic. An officer wants to use “14 of 20 said fares” to size a bus-pass budget for the whole district. Write the page in this order: the answer in one sentence; why; what the study does give you; what to do.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first: do not use “14 of 20” to size the budget. Use the study to decide what to count, and count it.</p>\n<p>Why: the 20 patients were chosen on purpose to cover a range of situations, not drawn at random. Fourteen of twenty is 70 per cent of that chosen group.</p>\n<div class=\"working\">\n<p>14 divided by 20 = 0.7</p>\n</div>\n<p>A different choice of 20 would give a different share. The figure tells you about the choice, not about the district.</p>\n<p>What the study does give you is worth having. It shows that fares are a real reason. It shows how they work: for example, whether patients pay for a companion too, or lose a day’s wage as well. That tells you what a bus pass would need to cover.</p>\n<p>What to do: add one question on fares to the clinic’s follow-up call, or check a random sample of patient files, and count. That count sizes the budget. What it costs is staff time on calls and files, not a new study.</p>"
+  }
+ ]
+}

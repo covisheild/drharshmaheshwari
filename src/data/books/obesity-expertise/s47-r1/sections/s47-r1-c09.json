@@ -1,0 +1,185 @@
+{
+ "format": 1,
+ "id": "s47-r1-c09",
+ "label": "9",
+ "title": "When no single body decides",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Authority over one <dfn data-g=\"329\">proposal</dfn> is often shared, in three common shapes.</p>\n<p>First, two legislatures may make law on the same subject.</p>\n<p>Second, one body may seat members of both governments. The Goods and Services Tax (GST) Council is set up under Article 279A. The Union Finance Minister chairs it. Its other members are the Union Minister of State in charge of Revenue or Finance, and from each State its Finance or Taxation Minister or another minister its government nominates. Each decision needs not less than three-fourths of the <dfn data-g=\"439\">weighted votes</dfn> of the members present and voting.</p>\n<p>A recommendation is not a tax. The Central Government notifies the rate of central goods and services tax (CGST), under section 9(1) of the Central Goods and Services Tax <dfn data-g=\"3\">Act</dfn>, 2017. It does so “on the recommendations of the Council”, at a rate not exceeding 20 per cent.</p>\n<p>Third, several bodies may each hold a power over part of one thing. A food advertisement that misleads falls under section 24 of the Food Safety and Standards Act, 2006. It also falls under section 21 of the Consumer Protection Act, 2019, which lets the Central Consumer Protection Authority (CCPA) order it discontinued or modified.</p>\n<p>A proposal addressed to “the government” names none of these bodies.</p>",
+   "refs": [
+    50,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Sometimes no one body can say yes on its own. Here is the trap: a note that writes “the government should” has named no one, so no one has to answer it.</p>\n<p>The GST Council is the clearest case. It recommends tax rates. It does not levy them. The Central Government then issues the <dfn data-g=\"279\">notification</dfn> that sets the central rate.</p>\n<p>When several bodies must act, ask which one goes first. Address your note to it, and name every other body whose agreement is needed.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s47-r1-c09-gst-votes.png",
+   "alt": "Three bars against a dashed line at 75. The Centre alone reaches 33.3 and all the States alone 66.7, both below the line. The third bar, the Centre's 33.3 plus 41.7 from the States, reaches the line at 75.",
+   "w": 1340,
+   "h": 658,
+   "caption": "Weighted votes in the GST Council under Article 279A(9), per cent of votes cast. The Central Government (the Centre) alone has 33.3 and all the States alone 66.7; a decision needs three-fourths, 75, so neither side carries it alone. With the Centre in favour, 41.7 more must come from the States."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is the trap with a tax rate. The body you hear about is not always the body that sets it.</p>\n<p>Suppose a colleague’s draft says this. It is made up.</p>\n<blockquote>\n<p>The GST Council imposed a 40 per cent tax on sugary drinks from 22 September 2025.</p>\n</blockquote>\n<p>Step 1. Open the Press Information Bureau release of 3 September 2025, “Recommendations of the 56th Meeting of the GST Council” (https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163555). In Annexure-I, find 2202 10. It is the code under which the tax tables list these drinks; the tables classify goods by numbered chapter, heading, sub-heading and tariff item. “All goods (including aerated waters), containing added sugar or other sweetening matter or flavoured” go to 40%. Now go to the note at the end. The recommendations “would be given effect through the relevant circulars/ notifications/ law amendments which alone shall have the force of law”. The Council recommended. It did not impose.</p>\n<p>Step 2. Find the notification. Open Notification No. 9/2025-Central Tax (Rate) of 17 September 2025 (https://egazette.gov.in/WriteReadData/2025/266209.pdf). The Central Government, “on the recommendations of the Council”, notifies central tax at “20 per cent. in respect of goods specified in Schedule III”. Serial number 1 of Schedule III is entry 2202 10, with the same description. Paragraph 2 puts the notification in force from 22 September 2025.</p>\n<p>Step 3. Check the power. Section 9(1) of the Central Goods and Services Tax Act (https://taxinformation.cbic.gov.in/content/html/tax_repository/gst/acts/2017_CGST_act/active/chapter3/section9_v1.00.html) lets the Government notify central tax “at such rates, not exceeding twenty per cent., as may be notified by the Government on the recommendations of the Council”. So the central rate on these drinks is 20 per cent. Under that section it could not be 40.</p>\n<p>Step 4. Check it still stands. Notification No. 01/2026-Central Tax (Rate), in force from 1 May 2026, changes the tariff codes in serial numbers 2 and 3 of Schedule III. It leaves serial number 1 alone. Its note says the 2025 notification was last amended by No. 19/2025, which this book does not hold. So date the rate “as amended up to 01/2026-Central Tax (Rate), in force 1 May 2026”.</p>\n<p>Step 5. The States. Article 279A sends the Council’s recommendations to the Union and to the States. The release calls 40% “a special de-merit rate” of GST, beside a Standard Rate of 18% and a Merit Rate of 5%. It does not split it between Union and States. The central notification sets central tax at 20%. What each State issued is not among this book’s sources, so your note says no more about it than the release does.</p>\n<p>Now rewrite the sentence.</p>\n<blockquote>\n<p>At its 56th meeting on 3 September 2025 the GST Council recommended a 40 per cent rate on sugar-added and flavoured drinks. The Central Government notified central tax on them at 20 per cent from 22 September 2025 (Notification 9/2025-Central Tax (Rate), as amended up to 01/2026, in force 1 May 2026).</p>\n</blockquote>\n<p>Notice the order. The Council moved first. The notification is made “on the recommendations of the Council”, so it could not come before them.</p>",
+   "numberRefs": [
+    207,
+    208
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This traces the central side only. The States’ notifications are not held, so the split of the 40 per cent between Union and States is not shown here. <dfn data-g=\"16\">Amendment</dfn> 19/2025 is not held either; the date to quote is the newest amendment you have opened. The rates hold until the Council recommends and the government notifies a change.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now see why neither side can go round the Council. Open the <dfn data-g=\"81\">Constitution</dfn> at Article 279A(9) (https://indiacode.gov.in/handle/123456789/618394). A decision needs “not less than three-fourths of the weighted votes of the members present and voting”. The vote of the Central Government (the Centre) weighs “one-third of the total votes cast”. The votes of all the State Governments together weigh “two-thirds”.</p>\n<p>Turn the fractions into percentages.</p>\n<div class=\"working\">\n<p>3 divided by 4 = 0.75, so three-fourths is 75 per cent<br />\n100 divided by 3 = 33.3 per cent, the Centre’s weight<br />\n200 divided by 3 = 66.7 per cent, all the States together</p>\n</div>\n<p>Now test each side alone.</p>\n<div class=\"working\">\n<p>The States in favour, the Centre against: 66.7 per cent, short of 75<br />\nThe Centre in favour, every State against: 33.3 per cent, short of 75<br />\nThe Centre in favour: 75 minus 33.3 = 41.7 per cent still needed from the States</p>\n</div>\n<p>Neither side can carry a decision alone. So a proposal for a higher tax on sugary drinks has to persuade the Union and enough of the State ministers on the Council. A note that argues only to the Union Finance Ministry has done half the job.</p>\n<p>The Article does not say how the States’ two-thirds is shared among the States present. It leaves the Council to set its own procedure (Article 279A(8)), which this book does not hold. So do not work out how many States a decision needs.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The arithmetic counts only votes of members present and voting, under the rule in Article 279A(9). It says nothing about how often the Council votes rather than agrees, how any member voted at the 56th meeting, or how the States’ share divides among them.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Now a different shape: no shared body, but two separate powers over one thing.</p>\n<p>Suppose an advertisement for a packaged drink makes a claim your department thinks is misleading. The case is made up. Two Acts reach it.</p>\n<p>Open the Food Safety and Standards Act (https://indiacode.gov.in/handle/123456789/586348) at section 24(1): “No advertisement shall be made of any food which is misleading or deceiving”. Then open the Consumer Protection Act, 2019 (https://indiacode.gov.in/handle/123456789/613632) at section 21(1). Where the Central Consumer Protection Authority is “satisfied after investigation that any advertisement is false or misleading”, it may order it discontinued or modified.</p>\n<p>Now ask which department owns each Act. Open the <dfn data-g=\"14\">Allocation of Business Rules</dfn> (https://cabsec.gov.in/allocationofbusinessrules/completeaobrules/), Second Schedule. The Food Safety and Standards Act sits under the Department of Health and Family Welfare. The Consumer Protection Act, 2019 sits under the Department of Consumer Affairs. Two Acts, two departments, one advertisement. Your note names both and says which one you are asking to act.</p>\n<p>Last, the orphan. Here is a made-up line from a department memo.</p>\n<blockquote>\n<p>The government should stop the sale of sugary drinks to school children.</p>\n</blockquote>\n<p>Which instrument? Which government? Whose subject? The memo answers none of these. Sort your department’s three proposals by what you already know.</p>\n<table style=\"width:100%;\">\n\n<tbody>\n<tr>\n<td>Proposal</td>\n<td>Who holds a part</td>\n<td>Who moves first</td>\n</tr>\n<tr>\n<td>higher tax on sugar-sweetened drinks</td>\n<td>the GST Council; the Central Government; the States</td>\n<td>the GST Council, since the notification follows its recommendation</td>\n</tr>\n<tr>\n<td>a misleading drink advertisement</td>\n<td>the Food Safety and Standards Act, section 24 (who enforces it is not traced here); the CCPA, under the Consumer Protection Act, section 21</td>\n<td>each Act works on its own, so name the one you ask</td>\n</tr>\n<tr>\n<td>a rule on what school canteens may sell</td>\n<td>not yet traced: it touches food and it touches schools</td>\n<td>trace it before you write</td>\n</tr>\n</tbody>\n</table>\n<p>The third row is honest about a gap. A later section of this book builds the full method for closing it. Until then, “not yet traced” is a better line in a note than “the government”.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These texts show that each power exists. They do not show whether either body will use it, how fast, or that the two would agree on the same advertisement. The CCPA’s power to order applies only after an investigation. And the canteen row stays open: this section does not settle whose subject it is.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The GST Council set the tax on sugary drinks” is wrong. The Council recommends, under Article 279A(4). The Central Government notifies the central rate under section 9(1) of the Central Goods and Services Tax Act.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Central tax on sugar-added and flavoured drinks (entry 2202 10) is 20 per cent. It sits in Schedule III of Notification 9/2025-Central Tax (Rate), in force 22 September 2025, as amended up to 01/2026 from 1 May 2026 (amendment 19/2025 not read). Never write that the Union levies 40 per cent: section 9(1) caps the central rate at twenty.</p>",
+     "tag": "number",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Under Article 279A(9) a GST Council decision needs three-fourths of the weighted votes, with the Centre holding one-third and the States together two-thirds. Neither side reaches 75 per cent alone.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When several bodies must act, write down the order. Ask whose act the others rest on. That body moves first. Address your note to it, and name every other body that must act.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A proposal addressed to “the government” is addressed to no one. If you cannot yet name the body, write “not yet traced” and list what you will open next.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>One tax change carries several dates: recommended 3 September 2025, notified 17 September, in force 22 September, amended in force 1 May 2026. Quote the date of the instrument that supports your sentence.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A map of who shares a decision tells you whom to address and in what order. It does not tell you how they will vote, or how the States’ votes divide.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Recommended by the GST Council” is read as “in force”. A recommendation becomes a tax only when a notification issues, and the notification carries its own date. The release of 3 September 2025 changed no rate by itself.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>The GST Council recommends this rate under Article 279A, and its recommendation goes to the Union and the States. The Central Government notifies central tax under section 9(1) of the CGST Act.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: who sits on the GST Council, what share of the weighted votes does a decision need, and how are the votes weighted? What does section 9(1) of the CGST Act cap?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>The Union Finance Minister chairs it. The Union Minister of State in charge of Revenue or Finance sits on it. So does, from each State, its Finance or Taxation Minister or another minister its government nominates. A decision needs at least three-fourths of the weighted votes of those present and voting. The Centre’s vote weighs one-third. All the States together weigh two-thirds.</p>\n<p>Section 9(1) caps central tax at 20 per cent. The Government notifies the rate on the Council’s recommendations.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here are rows 1 to 4 of Schedule III of Notification No. 9/2025-Central Tax (Rate), 17 September 2025. The heading of the Schedule is “Schedule III– 20%”.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>S. No.</th>\n<th>Chapter, heading, sub-heading or tariff item</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>2202 10</td>\n<td>All goods (including aerated waters), containing added sugar or other sweetening matter or flavoured</td>\n</tr>\n<tr>\n<td>2</td>\n<td>2202 91 00, 2202 99 90</td>\n<td>Other non-alcoholic beverages [other than those specified in Schedule I of this notification]</td>\n</tr>\n<tr>\n<td>3</td>\n<td>2202 99 90</td>\n<td>Caffeinated Beverages</td>\n</tr>\n<tr>\n<td>4</td>\n<td>2202</td>\n<td>Carbonated beverages of fruit drink or carbonated beverages with fruit juice</td>\n</tr>\n</tbody>\n</table>\n<p>Say what the 20% is, who set it and under what power, and two things the table does not tell you.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The 20% is the rate of central tax on these goods. The Central Government set it by this notification, “on the recommendations of the Council”. Its power is section 9(1) of the Central Goods and Services Tax Act, which caps central tax at 20 per cent.</p>\n<p>The table does not give the States’ share, so it does not give the full rate a buyer pays. It does not show later changes: Notification 01/2026, in force 1 May 2026, changed the codes in rows 2 and 3. It also does not show which drinks are taxed at a lower rate under Schedule I; row 2 points there.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Here is a made-up line from a draft press note.</p>\n<blockquote>\n<p>From 22 September 2025 the Union Government has levied 40% GST on cola, and it can raise this further whenever it chooses.</p>\n</blockquote>\n<p>Find the errors and rewrite the sentence.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>First, the Union did not levy 40%. The GST Council recommended a 40% rate for these drinks. The Central Government notified central tax at 20%, the most section 9(1) of the CGST Act allows.</p>\n<p>Second, the Union cannot raise it whenever it chooses. Central tax is notified “on the recommendations of the Council”, and a Council decision needs three-fourths of the weighted votes. The Centre holds one-third. Central tax is also already at the 20 per cent ceiling in section 9(1). To go higher, Parliament would first have to amend that section.</p>\n<p>Rewrite: “The GST Council made its recommendation on 3 September 2025. Since 22 September 2025, central tax on sugar-added and flavoured drinks has been 20% (Notification 9/2025-Central Tax (Rate), as amended). A change needs a fresh Council recommendation.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A journalist has three minutes and asks: “Who actually decided the tax on sugary drinks?” Answer in plain words, with one quotable sentence.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Quotable: “The GST Council, where the Union and every State sit together, recommended it. The Central Government then put central tax into force by notification.”</p>\n<p>Then the detail. The Council recommended a 40% rate on 3 September 2025. The Central Government’s notification set central tax at 20% from 22 September 2025. The Union’s vote on the Council weighs one-third, so it could not have done this alone.</p>\n<p>Calibrate: “I have read the central notification. I have not checked each State’s, so I can’t tell you how every State gave effect to it.”</p>"
+  }
+ ]
+}

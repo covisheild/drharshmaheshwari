@@ -1,0 +1,108 @@
+{
+ "format": 1,
+ "id": "b0-r0-c09",
+ "label": "B1",
+ "title": "What a unit is, and the SI base and derived units",
+ "part": "B",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-22.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A measurement is a number together with a unit. A number given without its unit is not a measurement.</p>\n<p>The International System of Units (SI) is the system of units in which the numerical values of seven defining constants are fixed exactly. Since 20 May 2019 all SI units are defined in terms of constants that describe the natural world.</p>\n<p>Seven base units keep their role inside that system: the second, the metre, the kilogram, the ampere, the kelvin, the mole and the candela.</p>\n<p>A <dfn data-g=\"49\">derived unit</dfn> is a product of powers of the base units. The <dfn data-g=\"97\">joule</dfn>, written J, is the SI unit of energy, and J = kg m<sup>2</sup> s<sup>-2</sup>.</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A measurement has two halves. A number, and a unit. Take one half away and the other half says nothing.</p>\n<p>A unit is an agreed amount that everybody measures against. One metre is an agreed length.</p>\n<p>The agreement is only worth something if it is the same agreement everywhere. That is the job the SI does.</p>\n<p>Seven units are called base units. They are the second, the metre, the kilogram, the ampere, the kelvin, the mole and the candela.</p>\n<p>Every other unit is built out of those seven by multiplying and dividing. A unit built that way is called a derived unit.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>A strip of tablets is labelled 500. Five hundred what? Five hundred milligrams and five hundred micrograms are both ordinary strengths, and one is a thousand times the other. So you go and find the unit, every time, and you never carry a bare number into a calculation.</p>\n<p>Now build some units yourself. You only need two to start: the metre for length and the second for time.</p>\n<p>Speed is how far, divided by how long. So its unit is a length divided by a time.</p>\n<div class=\"working\">\n<p>metres divided by seconds<br />\n= m/s</p>\n</div>\n<p>Area is a length times a length.</p>\n<div class=\"working\">\n<p>metres times metres<br />\n= m<sup>2</sup></p>\n</div>\n<p>Volume is a length three times over, which gives m<sup>3</sup>. Density is a mass divided by a volume, which gives kg/m<sup>3</sup>.</p>\n<p>Now go and read the SI’s own words. The page is called The International System of Units (SI), and it is published by the International Bureau of Weights and Measures (BIPM) at https://www.bipm.org/en/measurement-units. Open it and search inside the page for “J =”.</p>\n<div class=\"working\">\n<p>J = kg m2 s-2</p>\n</div>\n<p>Say it out loud as a sentence. A joule is a kilogram, times a square metre, divided by a second squared.</p>\n<p>A prefix is a name for a power of ten stuck on the front of a unit. It changes the size of the unit and nothing else.</p>\n<table style=\"width:92%;\">\n\n<thead>\n<tr>\n<th>prefix</th>\n<th>multiply the unit by</th>\n<th>so</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>kilo</td>\n<td>10<sup>3</sup></td>\n<td>one kilometre is 1,000 metres</td>\n</tr>\n<tr>\n<td>centi</td>\n<td>10<sup>-2</sup></td>\n<td>one centimetre is 0.01 metres</td>\n</tr>\n<tr>\n<td>milli</td>\n<td>10<sup>-3</sup></td>\n<td>one milligram is 0.001 grams</td>\n</tr>\n<tr>\n<td>micro</td>\n<td>10<sup>-6</sup></td>\n<td>one microgram is 0.000001 grams</td>\n</tr>\n</tbody>\n</table>\n<p>The symbol for kilo is k, for centi is c and for milli is m. The symbol for micro is the Greek letter mu, written µ.</p>\n<p>One minute is 60 seconds. One hour is 3,600 seconds.</p>",
+   "numberRefs": [
+    8
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Building a unit out of base units tells you what kind of quantity you are holding. It tells you nothing about whether the number beside it is right.</p>\n<p>And all of this is decided, not discovered.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>It is not a measurement at all. Send it back for the unit. Never work out which unit was meant from how big the number looks.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Read the unit off the label or the report before you read the number.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>On its own m is the metre; in front of another unit it is milli, meaning a thousandth. So mg is a milligram.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A derived unit is a recipe rather than a label. When an unfamiliar quantity turns up in a paper, read its unit before you read its value.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The SI fixes every unit through seven constants with exact values. One of them is the speed of light in vacuum, at 299 792 458 metres per second.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Getting the units right proves nothing about accuracy. A machine reading twice the true value still reports in correct units.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back, write down the seven SI base units. Then say in one sentence what makes a unit a derived unit, and build two derived units yourself from base units alone.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>The seven base units are the second, the metre, the kilogram, the ampere, the kelvin, the mole and the candela.</p>\n<p>Four of them do nearly all the work in this course. The second measures time, the metre measures length, the kilogram measures mass, and the mole measures an amount of a substance. The ampere is for electric current, the kelvin for temperature and the candela for the brightness of a light source. You will meet those three rarely.</p>\n<p>A derived unit is one built out of base units by multiplying and dividing them.</p>\n<p>Two you can build without being told.</p>\n<div class=\"working\">\n<p>speed    = metres divided by seconds = m/s<br />\narea    = metres times metres    = m<sup>2</sup></p>\n</div>\n<p>If you also wrote kg/m<sup>3</sup> for density, or m<sup>3</sup> for volume, those are right too. There is no fixed list to have learnt. There is a way of building them.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a column out of a block stores register. The header says Rice. The entries under it are 250, 180, 4.2 and 300.</p>\n<p>Say what you would ask for before using any of it, and say what the 4.2 tells you.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>What is missing is the unit. The header names the thing measured and not the quantity, so none of the four numbers is a measurement yet.</p>\n<p>Ask for two things, in this order. First, the unit each column is recorded in. Second, who enters it and on what form. A column with no unit in its header is usually one where the unit lives in somebody’s habit.</p>\n<p>Now the 4.2. The tempting move is to work out what it must be from its size. It sits beside numbers in the hundreds. So it looks like a different unit, or a typing slip.</p>\n<p>Do not do that. You can say that the 4.2 is evidence the column is not uniform, which is a reason to stop and ask. You cannot say what it is. Guessing the unit from the size of the number is the habit this section exists to remove. A guess written into a report becomes a figure somebody else quotes.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident tells you they can never remember whether the joule is kg m<sup>2</sup> s<sup>-2</sup> or kg m s<sup>-2</sup>. You have ten minutes and a whiteboard. Teach them so that the question stops arising.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Ten minutes, for a resident who expects a mechanism.</p>\n<p>Start by agreeing with them. Memorising it is a bad plan, and forgetting it is what happens to everybody who tries.</p>\n<p>Then show the two halves of the answer.</p>\n<p>First, where the statement lives. Open the SI’s own page at bipm.org and search for “J =”. The line is there, on the SI’s own page. A unit is decided by a body. So the body’s own page is where you settle it. That takes twenty seconds and you never have to trust your memory again.</p>\n<p>Second, how to read it once you have it. Write on the board.</p>\n<div class=\"working\">\n<p>J = kg m<sup>2</sup> s<sup>-2</sup></p>\n</div>\n<p>Say it as a sentence: a kilogram, times a square metre, divided by a second squared. Ask them to say it back. Then ask what kg m s<sup>-2</sup> would be a sentence about instead. Let them notice that it names a different quantity. It is not a worse way of writing the same one.</p>\n<p>Close on the move you actually want them to keep. When they meet a unit they do not recognise, write it out in base units and read it as a sentence. That works for every unit they will ever meet, and there is nothing in it to forget.</p>"
+  }
+ ]
+}

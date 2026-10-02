@@ -1,0 +1,222 @@
+{
+ "format": 1,
+ "id": "s02-r1-c16",
+ "label": "16",
+ "title": "Following a derivation without skipping",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"66\">derivation</dfn> is a chain of equations in which each line follows from lines above it by one move that can be named. The moves this book uses are these.</p>\n<ul>\n<li>Substitute: replace a symbol by something an earlier line states is equal to it.</li>\n<li>Rearrange: do the same thing to both sides, by the four operations of Book 0, C2.</li>\n<li>Divide by a time interval and shrink it: turn a change over an interval into a rate at an instant, the <dfn data-g=\"67\">derivative</dfn> of section 2.</li>\n<li>Differentiate both sides, or integrate both sides over an interval, as section 3 and section 5 do.</li>\n<li>Assume: bring in a new premise.</li>\n</ul>\n<p>Putting a value in place of a symbol is a <dfn data-g=\"263\">substitution</dfn>. Doing the arithmetic on one side, or collecting like terms, is part of rearranging. An assumed line carries nothing from above.</p>\n<p>A <dfn data-g=\"282\">where-clause</dfn> fixes each symbol’s meaning, its unit and its sign. The same printed equation can say opposite things under two readings of its where-clause.</p>",
+   "refs": [
+    126,
+    127,
+    128,
+    37,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A derivation is a staircase. Each step down is one small move you could make yourself.</p>\n<p>Some steps are not moves at all. The author brings in something new: “suppose intake minus expenditure stays fixed”. That line is a premise. Everything below it depends on it, however careful the steps that follow.</p>\n<p>So read a derivation with a pencil. Beside every line, write the move that got you there.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c16-two-readings.png",
+   "alt": "Two straight lines from 180 pounds at day 0. One falls through 170 at day 70 to 160 at day 140. The other rises through 190 at day 70 to 200 at day 140.",
+   "w": 1358,
+   "h": 654,
+   "caption": "The printed equation W(t) = W0 − ΔEB × t / 3500 under two readings of ΔEB, for a made-up start of 180 pounds and a deficit of 500 kcal a day. Read as expenditure minus intake, weight falls to 160 by day 140; read the other way, the same equation makes it rise to 200. The weight axis does not start at zero."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c16-line-six.png",
+   "alt": "A flat line just below zero, at minus 500 divided by 3,500 pounds a day, from day 0 to day 140, with the rectangle between it and zero shaded.",
+   "w": 1357,
+   "h": 654,
+   "caption": "Line 5, with ΔEB as line 4 defines it (intake minus expenditure, so −500), makes the rate of change of weight a constant: minus 500 divided by 3,500 pounds a day, for a deficit of 500 kcal a day. Line 6 integrates it from day 0 to day 140. The shaded area, 140 times that rate, is minus 20 pounds, the fall from 180 to 160 in the table. The area is a rectangle only because line 4 assumed the gap never changes."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Start with the rule Book 1 called the <dfn data-g=\"260\">static rule</dfn>, as Thomas and colleagues print it (Thomas 2013). They write W(t) for the expected weight, in pounds, on day t, and W0, said “W nought”, for the weight at the start. They write ΔEB for “the change in <dfn data-g=\"81\">energy balance</dfn> in kcal/d”.</p>\n<div class=\"working\">\n<p>W(t) = W0 − ΔEB × t / 3500</p>\n</div>\n<p>Rebuild it from the identity, one move per line.</p>\n<p>Line 1 is the identity as a rate.</p>\n<div class=\"working\">\n<p>dES/dt = EI − EE (line 1: the identity, taken as given)</p>\n</div>\n<p>Line 2 brings in something new. The rule assumes every 3,500 kcal of stored energy gained or lost is one <dfn data-g=\"204\">pound</dfn> of body weight.</p>\n<div class=\"working\">\n<p>dES/dt = 3500 × dW/dt (line 2: assumed, 3,500 kcal in every pound, written as rates: divide the change by the interval and shrink it)</p>\n</div>\n<div class=\"working\">\n<p>3500 × dW/dt = EI − EE (line 3: substitute)</p>\n</div>\n<p>Line 4 is a second assumption. Intake minus expenditure stays the same number on every day. Call that number ΔEB.</p>\n<div class=\"working\">\n<p>3500 × dW/dt = ΔEB (line 4: assumed, the gap never changes)</p>\n</div>\n<div class=\"working\">\n<p>dW/dt = ΔEB / 3500 (line 5: rearrange)</p>\n</div>\n<div class=\"working\">\n<p>W(t) − W0 = ΔEB × t / 3500 (line 6: integrate both sides from 0 to t)</p>\n</div>\n<div class=\"working\">\n<p>W(t) = W0 + ΔEB × t / 3500 (line 7: rearrange)</p>\n</div>\n<p>Now set your line 7 beside the printed equation. Yours has a plus where theirs has a minus. The difference sits in the where-clause. Thomas and colleagues define ΔEB as “the difference between the rate of <dfn data-g=\"85\">energy intake</dfn> and the rate of <dfn data-g=\"84\">energy expenditure</dfn>”. That phrase does not say which is taken from which.</p>\n<p>The printed equation predicts a fall only if ΔEB is expenditure minus intake: the <dfn data-g=\"63\">deficit</dfn>, written as a positive number.</p>\n<p>Take a made-up case: start at 180 pounds, with a deficit of 500 kcal a day.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>day</th>\n<th>W(t) in lb, ΔEB read as expenditure minus intake</th>\n<th>W(t) in lb, ΔEB read as intake minus expenditure</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>180</td>\n<td>180</td>\n</tr>\n<tr>\n<td>35</td>\n<td>175</td>\n<td>185</td>\n</tr>\n<tr>\n<td>70</td>\n<td>170</td>\n<td>190</td>\n</tr>\n<tr>\n<td>105</td>\n<td>165</td>\n<td>195</td>\n</tr>\n<tr>\n<td>140</td>\n<td>160</td>\n<td>200</td>\n</tr>\n</tbody>\n</table>\n<p>Line 1 is physics. Lines 3, 5, 6 and 7 are safe moves. Lines 2 and 4 are assumptions. Hall and colleagues reject line 4. Expenditure falls as weight falls, so the gap in line 4 shrinks.</p>\n<p>Polidori and colleagues work out the change in each person’s energy intake from their weights, with their Equation 1 (Polidori 2016). Here W is in kilograms again, as in the rest of the book. The equation’s first two terms, in this book’s symbols (W for their BW), are:</p>\n<div class=\"working\">\n<p>ΔEI = ρ × dW/dt + ε × (W − W0)</p>\n</div>\n<p>Its other terms, for activity and for <dfn data-g=\"113\">glucose</dfn> lost in the urine, come back in problem 9.</p>\n<p>The Greek letter rho, ρ, is “the effective <dfn data-g=\"82\">energy density</dfn> associated with the body weight change”, in kcal per kg. The Greek letter epsilon, ε, sets “how energy expenditure depends on body weight”, in kcal a day per kg.</p>\n<p>Line 1 is the model of section 7.</p>\n<div class=\"working\">\n<p>ρ × dW/dt = EI − EE(W) (line 1: the model, taken as given)</p>\n</div>\n<p>Line 2 assumes expenditure is a straight line in weight near the start. It is its starting value, EE0, plus ε times the change in weight.</p>\n<div class=\"working\">\n<p>EE(W) = EE0 + ε × (W − W0) (line 2: assumed, a straight line near the start)</p>\n</div>\n<p>Line 3 writes intake as its starting value, EI0, plus a change, ΔEI. This defines ΔEI. It assumes nothing.</p>\n<div class=\"working\">\n<p>EI = EI0 + ΔEI (line 3: definition)</p>\n</div>\n<div class=\"working\">\n<p>ρ × dW/dt = EI0 + ΔEI − EE0 − ε × (W − W0) (line 4: substitute)</p>\n</div>\n<p>Line 5 needs a premise. At the start, weight was steady, so its rate was zero. That is the <dfn data-g=\"87\">equilibrium</dfn> of section 8: intake equalled expenditure, and EI0 minus EE0 is zero.</p>\n<div class=\"working\">\n<p>ρ × dW/dt = ΔEI − ε × (W − W0) (line 5: assumed, steady at the start)</p>\n</div>\n<div class=\"working\">\n<p>ΔEI = ρ × dW/dt + ε × (W − W0) (line 6: rearrange)</p>\n</div>\n<p>The equation that turns weights into intake is the balance of section 7 plus premises. Each premise is a place a reader can push.</p>",
+   "numberRefs": [
+    9
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The two straight lines in the table hold only while lines 2 and 4 hold.</p>\n<p>The rebuild also takes ρ and ε as given. The paper does not print this route, and its ρ and ε are built from further parts (its Equations 2 and 3). The rebuild shows the equation’s shape, not how the authors reached it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Beside every line of a derivation, write the move that produced it. If you cannot name one, the line is a skipped step or a premise.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A result derived from the first law is not thereby proved. When someone says an equation “comes from physics”, ask which lines are physics and which are assumptions.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Test a printed equation on a case whose answer you know. A deficit must lower weight. If your reading makes it raise weight, your reading is wrong.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Check the unit of every term on every line.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Following a derivation tells you whether each line follows. It cannot tell you whether an assumed line is true; that needs evidence, as the passive fall in expenditure (section 3) is for the 3500 kcal rule.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you teach a derivation, have the trainee mark assumed lines differently from derived ones, before they say anything about the result.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When a press line says a diet “must” produce a steady loss “because of physics”, the accurate reply is short. The physics gives one line. The steady loss needs a second line, that intake minus expenditure stays fixed, and it does not.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A first-year resident asks where the rule “3,500 kcal a pound” comes from and why the consensus panel dropped it. You have ten minutes and a whiteboard. Plan what you will write, line by line.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Write the seven lines of the rebuild, each with its move beside it.</p>\n<div class=\"working\">\n<p>dES/dt = EI − EE (the identity)<br />\ndES/dt = 3500 × dW/dt (assumed: 3,500 kcal in every pound)<br />\n3500 × dW/dt = EI − EE (substitute)<br />\n3500 × dW/dt = ΔEB (assumed: the gap never changes)<br />\ndW/dt = ΔEB / 3500 (rearrange)<br />\nW(t) − W0 = ΔEB × t / 3500 (integrate from 0 to t)<br />\nW(t) = W0 + ΔEB × t / 3500 (rearrange)</p>\n</div>\n<p>Then box the two assumed lines in a different colour. Say that the first line is physics and the other four are safe moves, so the rule is exactly as good as those two lines.</p>\n<p>Take the second box. Ask the resident what happens to expenditure as weight falls. It falls, because a smaller body spends less. So the gap in that line shrinks, and weight loss slows. That is the panel’s reason, in its own words: weight change “will slow over time due to passive compensatory changes in energy expenditure”.</p>\n<p>Take the first box last. It is also an assumption: what a pound of lost weight is made of. Book 1 showed that a pound of fat and a pound of lean tissue hold very different energy.</p>\n<p>End on the sign. Thomas and colleagues print a minus where the rebuild has a plus. The resident should say why before you do: their ΔEB must be the deficit, expenditure minus intake.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A trainee’s journal-club slide says: “Polidori and colleagues derive Equation 1 from the <dfn data-g=\"98\">first law of thermodynamics</dfn>, so the intake changes it gives are exact.”</p>\n<p>Find the specific flaw.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The first law gives only one line of the derivation, the balance. The rest are premises.</p>\n<p>Expenditure is drawn as a straight line in weight; the paper calls Equation 1 “a linearization”. Equation 1 has no term for a gap between intake and expenditure at the start, so it takes weight as steady then. And the change in physical activity is set to zero where it was not measured. The paper says this makes the calculated intake changes possibly “in error, especially at the individual level”.</p>\n<p>For a group the paper puts the bias from that last premise at “&lt;40 kcal/day when studying &gt;100 individuals”. That is a bound for a large group’s mean, not for any one person. It comes from an earlier validation study this slide has not examined.</p>\n<p>So the equation is exactly as good as its premises. It is not exact, and the paper does not claim it is.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Write the move that produced each line from the line above it.</p>\n<div class=\"working\">\n<p>4x + 6 = 26<br />\n4x = 20<br />\nx = 5</p>\n</div>",
+   "level": 1,
+   "answer": "<p>Line 2 subtracts 6 from both sides.</p>\n<div class=\"working\">\n<p>26 minus 6 = 20</p>\n</div>\n<p>Line 3 divides both sides by 4.</p>\n<div class=\"working\">\n<p>20 divided by 4 = 5</p>\n</div>\n<p>Check by putting 5 back into line 1.</p>\n<div class=\"working\">\n<p>4 times 5 plus 6 = 26</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Write the move that produced the third line.</p>\n<div class=\"working\">\n<p>y = 3x<br />\nx = 5<br />\ny = 15</p>\n</div>",
+   "level": 1,
+   "answer": "<p>Substitute: line 2 says x equals 5, so put 5 in place of x in line 1.</p>\n<div class=\"working\">\n<p>3 times 5 = 15</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>The author went from the first line to the last in one step. Fill in the skipped lines, one move each, and name each move.</p>\n<div class=\"working\">\n<p>5x − 4 = 2x + 11<br />\nx = 5</p>\n</div>",
+   "level": 2,
+   "answer": "<p>Three moves are missing.</p>\n<div class=\"working\">\n<p>3x − 4 = 11 (subtract 2x from both sides)<br />\n3x = 15 (add 4 to both sides)<br />\nx = 5 (divide both sides by 3)</p>\n</div>\n<p>Check in the first line: both sides give 21.</p>\n<div class=\"working\">\n<p>5 times 5 minus 4 = 21<br />\n2 times 5 plus 11 = 21</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Name the move from the first line to the second, and the rule it uses.</p>\n<div class=\"working\">\n<p>y = 4t + 3<br />\ndy/dt = 4</p>\n</div>",
+   "level": 2,
+   "answer": "<p>Differentiate both sides with respect to t. The rule is that a straight line’s derivative is its <dfn data-g=\"247\">slope</dfn>, from section 3: the 4t gives 4 and the constant 3 gives 0. The <dfn data-g=\"222\">rate of change</dfn> of y is 4 at every t.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A quantity W is 80 at t = 0 and its rate of change is dW/dt = −0.2 at every t. Write the lines that give W at t = 10, with the move beside each.</p>",
+   "level": 3,
+   "answer": "<p>Integrate both sides from 0 to 10. The rate is constant, so the <dfn data-g=\"130\">integral</dfn> is rate times time.</p>\n<div class=\"working\">\n<p>W(10) − W(0) = −0.2 times 10 (integrate both sides from 0 to 10)<br />\nW(10) − 80 = −2 (substitute W(0) = 80)<br />\nW(10) = 78 (add 80 to both sides)</p>\n</div>\n<div class=\"working\">\n<p>-0.2 times 10 = -2<br />\n-2 plus 80 = 78</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Find the line that does not follow from the one above it, and say what it should be.</p>\n<div class=\"working\">\n<p>4x + 8 = 20<br />\nx + 8 = 5<br />\nx = -3</p>\n</div>",
+   "level": 3,
+   "answer": "<p>Line 2 does not follow. Dividing both sides by 4 divides the whole left side, both of its terms, the rule from Book 0, C2. The 8 was left undivided.</p>\n<div class=\"working\">\n<p>x + 2 = 5 (divide both sides by 4)<br />\nx = 3 (subtract 2 from both sides)</p>\n</div>\n<p>Check in line 1.</p>\n<div class=\"working\">\n<p>4 times 3 plus 8 = 20</p>\n</div>\n<p>Line 3 of the original is a correct move from line 2. The whole error came in at one line, which is why you check every line and not only the last.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Use the equation W(t) = W0 − ΔEB × t / 3500, with W in pounds and ΔEB in kcal a day (Thomas 2013). Take the reading that makes a deficit lower weight. A person starts at 200 pounds with a deficit of 700 kcal a day, figures made up for this problem.</p>\n<p>Work out W(28), and say which reading of ΔEB you used.</p>",
+   "level": 4,
+   "answer": "<p>ΔEB is read as expenditure minus intake, so it is 700.</p>\n<div class=\"working\">\n<p>700 times 28 divided by 3500 = 5.6<br />\n200 minus 5.6 = 194.4</p>\n</div>\n<p>W(28) is 194.4 pounds on this rule. Under the other reading, ΔEB would be minus 700. The printed equation would then give 205.6 pounds, a rise during a deficit. That tells you the reading is wrong.</p>\n<div class=\"working\">\n<p>200 plus 5.6 = 205.6</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Chow and Hall describe one step in words (Chow and Hall 2008). They “divide Equation 1 by some interval of time and take the limit of infinitesimal change” (infinitesimal: shrinking towards zero, the limit of section 2).</p>\n<p>Apply that step to Book 1’s identity over an interval of Δt days. Write ES for body energy stores in kcal.</p>\n<div class=\"working\">\n<p>ΔES = (energy taken in over the interval) − (energy spent over the interval)</p>\n</div>\n<p>Write the lines that take it to Hall’s rate form, naming each move, and give the unit of each side at each line.</p>",
+   "level": 5,
+   "answer": "<p>Divide both sides by Δt. A side that is a difference is divided as a whole, so each term is divided.</p>\n<div class=\"working\">\n<p>ΔES / Δt = (energy taken in over the interval) / Δt − (energy spent over the interval) / Δt (divide both sides by Δt)</p>\n</div>\n<p>Each side is now in kcal a day. The left is the <dfn data-g=\"21\">average rate of change</dfn> of stores over the interval. The right is the average rate of intake minus the average rate of expenditure.</p>\n<p>Now shrink Δt towards zero. Each average rate settles on the rate at an instant, as in section 2.</p>\n<div class=\"working\">\n<p>dES/dt = EI − EE (shrink the interval: take the limit)</p>\n</div>\n<p>Every term is in kcal a day. This is the form Hall and colleagues write as ES = EI − EO, where their ES stands for the rate, dES/dt, and their EO is expenditure, EE.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>In Polidori and colleagues’ trial the drug makes the body lose extra glucose in the urine, which the paper calls UGE (urinary glucose excretion). Write it U, energy lost a day, zero before the drug starts. The balance becomes:</p>\n<div class=\"working\">\n<p>ρ × dW/dt = EI − EE(W) − U</p>\n</div>\n<p>Using the same premises as the section’s rebuild, derive an equation for ΔEI, naming each move. Then compare it with the paper’s Equation 1 with Δδ = 0 (Polidori 2016).</p>",
+   "level": 6,
+   "answer": "<p>Same premises: expenditure a straight line near the start, intake written as start plus change, weight steady at the start with U zero then.</p>\n<div class=\"working\">\n<p>EE(W) = EE0 + ε × (W − W0) (assumed: a straight line near the start)<br />\nEI = EI0 + ΔEI (definition)<br />\nρ × dW/dt = EI0 + ΔEI − EE0 − ε × (W − W0) − U (substitute)<br />\nρ × dW/dt = ΔEI − ε × (W − W0) − U (assumed: steady at the start, so EI0 − EE0 = 0)<br />\nΔEI = ρ × dW/dt + ε × (W − W0) + U (add ε × (W − W0) and U to both sides, swap sides)</p>\n</div>\n<p>With Δδ = 0 the paper’s Equation 1 is ΔEIi = ρ × dBWi/dt + ε × (BWi − BW0) + UGE. The label i numbers the measurement interval. It is the same form.</p>\n<p>One check the derivation forces: every term must be in kcal a day. The paper assumes the glucose lost is about 90 grams a day, a mass. Before it goes into Equation 1 it has to be turned into energy a day.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer, with made-up intake and expenditure. Find the step that broke.</p>\n<div class=\"working\">\n<p>3500 × dW/dt = EI − EE<br />\ndW/dt = EI − EE / 3500<br />\nwith EI = 2000 and EE = 2500, dW/dt = 2000 − 0.714 = 1999.3 pounds a day</p>\n</div>",
+   "level": 7,
+   "answer": "<p>Line 2 broke. Dividing both sides by 3,500 divides the whole right side, not only its last term, the rule of Book 0, C2.</p>\n<div class=\"working\">\n<p>dW/dt = (EI − EE) / 3500<br />\n2000 minus 2500 = -500</p>\n</div>\n<p>Minus 500 divided by 3,500 is about minus 0.143 pounds a day.</p>\n<p>Why the wrong answer looks reasonable: line 2 looks like line 1 with the 3,500 moved across. And the arithmetic in line 3 is done correctly. A unit check catches it at once. EI is in kcal a day, and EE divided by 3,500 is in pounds a day. Two terms in different units cannot be subtracted, so line 2 cannot have followed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>ρ × dW/dt = EI − EE(W)<br />\nEE(W) = EE0 + ε × (W − W0), and EI = EI0 + ΔEI<br />\nρ × dW/dt = EI0 + ΔEI − EE0 − ε × (W − W0)<br />\nso ΔEI = ρ × dW/dt + ε × (W − W0)</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The last line broke, or rather it needed a premise nobody wrote. Rearranging line 3 gives:</p>\n<div class=\"working\">\n<p>ΔEI = ρ × dW/dt + ε × (W − W0) − (EI0 − EE0)</p>\n</div>\n<p>Dropping the last term needs EI0 equal to EE0: weight steady at the start. If weight was already falling or rising at the start, that term is not zero, and the equation gives the wrong change in intake.</p>\n<p>Why the wrong answer looks reasonable: the result is the equation Polidori and colleagues use, so it looks confirmed. It is confirmed only under the premise. Write “assumed: steady at the start” beside the line, and a reader can check it against the baseline weights.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a made-up rate of change of weight: dW/dt = −0.1 plus 0.001 t, in kg a day, t in days<br />\nintegrate both sides from 0 to 60: the change is the rate times the time<br />\nat t = 60 the rate is −0.1 plus 0.06 = −0.04<br />\nchange = −0.04 times 60 = −2.4 kg</p>\n</div>",
+   "level": 8,
+   "answer": "<p>Line 2 broke. “Rate times time” is the rectangle, which works only for a rate that stays the same. This rate changes along a straight line, so the area under it is a trapezium. As section 5 taught, that is the mean of the starting and ending rates, times the time.</p>\n<div class=\"working\">\n<p>-0.1 plus -0.04 = -0.14<br />\n-0.14 divided by 2 = -0.07<br />\n-0.07 times 60 = -4.2</p>\n</div>\n<p>The change is minus 4.2 kg, not minus 2.4.</p>\n<p>Why the wrong answer looks reasonable: every line of arithmetic is right, and the rule “rate times time” was correct in the section’s own derivation. There the rate was constant by assumption. Here it is not, and the move stopped applying without anyone saying so.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>Thomas and colleagues report a mean deficit of 1439 kcal a day over a mean of 64.8 days (Thomas 2013). The mean loss the 3500 kcal rule predicted was 27.6 pounds.</p>\n<p>A colleague says: “1439 times 64.8 divided by 3500 is 26.6, not 27.6, so their prediction has an arithmetic slip.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the colleague’s figure, and then whether it is the figure the paper would get.</p>\n<div class=\"working\">\n<p>1439 times 64.8 = 93247.2<br />\n93247.2 divided by 3500 = 26.64</p>\n</div>\n<p>The colleague’s arithmetic is right: about 26.6 pounds.</p>\n<p>But follow the derivation. The rule gives each person a prediction: their own deficit times their own days, divided by 3,500. The paper’s 27.6 is the mean of those predictions. The colleague took the mean deficit times the mean duration. The mean of products is not in general the product of means. They match only when deficit and duration do not vary together. If the people with larger deficits were also treated for longer, the mean of the products is larger, which would fit the gap here.</p>\n<p>So the two figures are different quantities, and the gap is not evidence of a slip.</p>\n<p>What this does not establish. It does not show that the paper’s 27.6 is right; you would need each person’s figures. It does not show how deficit and duration were related. Nor does it show that the predictions used the prescribed deficit; if they used each person’s achieved intake, the gap has a second source. And it says nothing for or against the 3500 kcal rule itself. The paper tests that by setting these predictions beside the losses people actually had.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A health column says: “Physics proves that cutting 500 kcal a day loses a pound a week, for as long as you keep it up.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: what the rebuilt rule gives, and which of its lines are physics.</p>\n<div class=\"working\">\n<p>500 times 7 = 3500<br />\n3500 divided by 3500 = 1</p>\n</div>\n<p>On the rule, 3,500 kcal a week is one pound a week. So the column’s arithmetic matches the static rule.</p>\n<p>Now read the derivation. Only line 1, the identity, is physics. “A pound” needs line 2, that every 3,500 kcal is a pound of weight. “For as long as you keep it up” needs line 4, that the gap between intake and expenditure never changes. Hall and colleagues state that weight change “will slow over time” because expenditure falls as weight falls. So line 4 fails, and with it the steady pound a week.</p>\n<p>What this does not establish. It does not tell you how much a real person loses in a week, a month or a year. That needs a model in which expenditure changes with weight. It also does not say whether they can hold the 500 kcal cut, which is a separate question about appetite.</p>"
+  }
+ ]
+}

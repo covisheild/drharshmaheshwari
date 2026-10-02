@@ -1,0 +1,186 @@
+{
+ "format": 1,
+ "id": "b0-r0-c29",
+ "label": "D6",
+ "title": "Sampling: how a part can tell you about a whole",
+ "part": "D",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A parameter is a number that describes the population, if every member of it could be measured. A statistic is the same kind of number, computed instead from a sample.</p>\n<p>A <dfn data-g=\"152\">random sample</dfn> is picked <dfn data-g=\"12\">at random</dfn>: every member of the population has exactly the same chance of being the one picked, and an actual chance process decides it, not the person picking. A <dfn data-g=\"40\">convenience sample</dfn> is built the other way, out of whoever happens to be available, and the chance that any one member of the population ends up in it is neither equal nor known.</p>\n<p>Draw a second random sample of the same size from the same population and its statistic will not match the first sample’s exactly. This is <dfn data-g=\"163\">sampling variation</dfn>.</p>\n<p>Take the average of a random sample. Over many samples of the same size, that average has its own spread, meaning its <dfn data-g=\"179\">standard deviation</dfn> as the section on average and spread taught it. The <dfn data-g=\"177\">square-root law</dfn> states that this spread equals the spread of the individual values in the population, divided by the <dfn data-g=\"176\">square root</dfn> of the sample size. Multiplying the sample size by four divides that spread by two. This spread does not depend on how big the population is, only on how big the sample is. Papers name this spread the <dfn data-g=\"180\">standard error of the mean</dfn>.</p>\n<p>The square-root law describes how far a random sample’s average is likely to sit from the average of the population it was actually drawn from. It says nothing about whether that population is the one the sample was meant to stand for. Enlarging the sample does not close that gap.</p>",
+   "refs": [
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Call the whole group a question is about the population. Call the part of that group that was actually measured the sample.</p>\n<p>A number that describes the whole population exactly is called a parameter. You could only get it by measuring everyone, which is usually too slow, too costly or simply impossible. A number worked out the same way from your sample is called a statistic. Since a sample is not the whole population, a statistic is not the parameter. It is an estimate of it, a number made from part of the group and used to stand in for the whole.</p>\n<p>A random sample is picked at random: every member of the population has exactly the same chance of being the one picked. A convenience sample is whoever happens to be available: volunteers, people who answered an advertisement, the first hundred people through a door. Nothing forces a convenience sample to look like the population it gets used to describe.</p>\n<p>Draw one random sample of a hundred people and work out its average. Draw a second random sample of a hundred different people, from the same population, the same way, and work out its average too. The two averages will not be the same number. This bouncing around from sample to sample is called sampling variation, and every sample has it.</p>\n<p>Take a sample four times the size, and the bounce in its average shrinks to half of what it was. This is the square-root law. A paper that reports this spread usually calls it the standard error of the mean.</p>\n<p>Suppose a convenience sample of volunteers is not representative of the group it is meant to describe. No amount of enlarging it brings it any closer.</p>\n<p>Sample size protects you against sampling variation. It buys you nothing against a sample that was never random to begin with.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "d6-sample-means.png",
+   "alt": "Two histograms on the same horizontal scale, one above the other. The top one, for samples of 10, runs from 3 to about 7.6. The bottom one, for samples of 40, is taller and about half as wide, from 4 to about 6.2. Both are centred on a vertical line at 5.",
+   "w": 1357,
+   "h": 782,
+   "caption": "Each bar counts how many of 5,000 sample means landed there. Top: samples of 10. Bottom: samples of 40, four times bigger. Both crowd around the population mean of 5, and the bottom crowd is half as wide, 0.317 against 0.633, which is the square-root law happening rather than being stated. The draw was made by computer from the eight numbers 2, 4, 4, 4, 5, 5, 7 and 9, each put back after it was drawn."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Kiran and colleagues did the study you have already met three times.</p>\n<p>Before recruiting anyone, they set their target using a figure from the National Family Health Survey, NFHS-4, run in 2015-16. The study itself ran in July to September 2019. The paper gives the <dfn data-g=\"145\">prevalence</dfn> of overweight as 19 per cent in men and 21 per cent in women. It reports these as NFHS-4’s figures for India, without saying which ages or which people they cover. The authors rounded them to a planning figure of 20 per cent to size their study. NFHS-4’s figures are themselves a survey result that reaches this book second-hand, through the paper, not a fixed truth.</p>\n<p>They measured a sample: 282 medical students at one college in Mangaluru who came forward after the study was announced on campus. Nobody drew these 282 by chance.</p>\n<p>They chose to come forward, from the one college that was convenient to the researchers.</p>\n<p>Table 2 puts 83 of the 282 students at a body-mass index of 25 to 29.9, and another 15 at 30 or more. Add the two bands together.</p>\n<div class=\"working\">\n<p>83 plus 15 = 98<br />\n98 divided by 282 = 0.3475177305</p>\n</div>\n<p>Ninety-eight of the 282 students, about 34.8 per cent, had a body-mass index of 25 or more. The gap between that and the 20 per cent planning figure is about 14.8 <dfn data-g=\"133\">percentage</dfn> points.</p>\n<p>Take the population made of these eight numbers: 2, 4, 4, 4, 5, 5, 7, 9. Work out its mean the way the section on average and spread taught.</p>\n<div class=\"working\">\n<p>2 plus 4 plus 4 plus 4 plus 5 plus 5 plus 7 plus 9 = 40<br />\n40 divided by 8 = 5</p>\n</div>\n<p>Now its spread, the same way: each value’s distance from 5, squared, then averaged, then square-rooted.</p>\n<table style=\"width:50%;\">\n\n<tbody>\n<tr>\n<td>value</td>\n<td>distance from 5</td>\n<td>squared</td>\n</tr>\n<tr>\n<td>2</td>\n<td>-3</td>\n<td>9</td>\n</tr>\n<tr>\n<td>4</td>\n<td>-1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>4</td>\n<td>-1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>4</td>\n<td>-1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>5</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>5</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>7</td>\n<td>2</td>\n<td>4</td>\n</tr>\n<tr>\n<td>9</td>\n<td>4</td>\n<td>16</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>9 plus 1 plus 1 plus 1 plus 0 plus 0 plus 4 plus 16 = 32<br />\n32 divided by 8 = 4<br />\nsquare root of 4 = 2</p>\n</div>\n<p>This is the whole population, not a sample from it, so the division is by 8, the full count, not by 7. This population’s spread is 2.</p>\n<p>Draw a sample of four numbers from it, one at a time, putting each one back before the next draw. Here are three such samples.</p>\n<table style=\"width:69%;\">\n\n<thead>\n<tr>\n<th>sample</th>\n<th>numbers</th>\n<th>sum</th>\n<th>mean</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>first sample of four</td>\n<td>5, 4, 7, 2</td>\n<td>18</td>\n<td>4.5</td>\n</tr>\n<tr>\n<td>second sample of four</td>\n<td>4, 4, 5, 2</td>\n<td>15</td>\n<td>3.75</td>\n</tr>\n<tr>\n<td>third sample of four</td>\n<td>4, 2, 4, 7</td>\n<td>17</td>\n<td>4.25</td>\n</tr>\n</tbody>\n</table>\n<p>That bouncing around is sampling variation. The square-root law says how big it typically is: divide the population’s spread, 2, by the square root of the sample size, which is 2.</p>\n<div class=\"working\">\n<p>2 divided by 2 = 1</p>\n</div>\n<p>For samples of four, the law predicts a spread of 1 around the true mean of 5.</p>\n<p>Now return to the medical students. Suppose the 282 had instead been drawn at random from young adults, the group the paper set out to study. A share is itself an average: count each yes as 1 and each no as 0. So the square-root law would then say how far 34.8 per cent was likely to sit from that group’s own figure.</p>\n<p>They were not drawn at random. They were students at one college who chose to come forward.</p>\n<p>Nothing in this arithmetic can say which of several things produced the 14.8-point gap. It could be that these are medical students at one college. It could be the years between when NFHS-4 was measured and when the study ran. It could simply be who chose to volunteer. Size cannot settle that question.</p>",
+   "numberRefs": [
+    18,
+    39
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A real population’s spread is usually not known in advance. Papers estimate it from the same sample they are using. That estimate adds its own extra uncertainty, which this demonstration does not show.</p>\n<p>Real surveys never ask the same person twice, so they sample without replacement. That matters only when the sample is a large share of a small population, such as one village. There the scatter is a little less than the law predicts.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A bigger sample is not a repair for a biased one. Enlarging a convenience sample tightens its estimate of whatever population it actually came from.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before trusting a report’s sample size, ask how the people in it were found. A small random sample can outperform a huge convenience sample.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Kiran and colleagues’ 282 medical students gave 34.8 per cent with a body-mass index of 25 or more, worked out from Table 2. The planning figure the authors rounded from NFHS-4 was 20 per cent. Size alone cannot tell you what made the two figures differ.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The square-root law describes only how a random sample’s answer scatters around the population it was actually drawn from. Quoting it does not rescue a sample that was never random.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Halving the scatter of a sample’s average costs four times as many people, every time.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Teach a trainee to name the intended population before looking at a study’s sample size. If they cannot say who a convenience sample leaves out, they have not learned the part of this that matters.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A hospital’s social media post reads: “We surveyed 4,000 followers and found 60 per cent support a new clinic timing. With a sample this large, the result is extremely reliable.”</p>\n<p>Say what the sample size claim gets right and what it leaves out.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>It is right that 4,000 is a large number. A genuinely random sample of 4,000 would have a small spread around whatever population it was drawn from. Size does buy precision against sampling variation, and the claim is not wrong about that part.</p>\n<p>What it leaves out is how the 4,000 were chosen. A hospital’s social media followers are a particular kind of person. They may be more engaged, more online, younger or more urban than the hospital’s whole patient population. That is a convenience sample, whatever its size.</p>\n<p>So “extremely reliable” is doing two different jobs in that sentence, and only one of them is supported. The 60 per cent is a precise estimate of what these 4,000 followers think. It is not shown to be a precise estimate of what the hospital’s patients, or the public it serves, think. Enlarging the survey to 40,000 followers would sharpen the first claim and do nothing for the second.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident says a colleague’s finding “must be right because they had a huge sample size.” You have ten minutes and a whiteboard.</p>\n<p>Teach them the difference between a sample being big and a sample being random.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Ten minutes, for someone who expects a mechanism rather than a slogan.</p>\n<p>Draw two circles on the board. Label the first “population” and put a hundred dots in it. Circle a random handful of dots inside it and label that circle “sample”. Ask what decided which dots got circled. The honest answer is: nothing about the dots themselves, only chance.</p>\n<p>Now draw a second population circle. This time circle a cluster of dots sitting together in one corner, leaving the rest of the circle untouched. Ask the same question. This time the answer is: something about those dots, namely being easy to reach, decided the circling.</p>\n<p>Write the square-root law on the board.</p>\n<div class=\"working\">\n<p>spread of a sample average = spread of the population, divided by square root of sample size</p>\n</div>\n<p>Point at the first picture. Say that this formula describes exactly how far the circled dots’ average will typically sit from the true average of the hundred dots. Say too that a bigger circle makes that distance smaller, in a way you can calculate.</p>\n<p>Then point at the second picture. Ask what the formula has to say about the gap between the corner cluster’s average and the true average of all hundred dots. The honest answer is nothing, because the formula was never about that gap. Let the resident sit with that before moving on. The move you want them to keep is: ask how a sample was drawn before asking how big it was.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A population has a spread (standard deviation) of 10. Work out the spread of the average of a sample of size 4 from it.</p>",
+   "level": 1,
+   "answer": "<p>The square-root law: divide the population’s spread by the square root of the sample size.</p>\n<div class=\"working\">\n<p>square root of 4 = 2<br />\n10 divided by 2 = 5</p>\n</div>\n<p>The spread of the sample average is 5.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A population has a spread of 8. Work out the spread of the average of a sample of size 16. Then work out the spread of the average of a sample of size 64, and say what happened to it.</p>",
+   "level": 2,
+   "answer": "<p>Size 16 first.</p>\n<div class=\"working\">\n<p>square root of 16 = 4<br />\n8 divided by 4 = 2</p>\n</div>\n<p>A spread of 2. Now size 64.</p>\n<div class=\"working\">\n<p>square root of 64 = 8<br />\n8 divided by 8 = 1</p>\n</div>\n<p>A spread of 1. Sixty-four is four times sixteen, and the spread has gone from 2 to 1: exactly halved. That is the square-root law again — four times the sample, half the spread — on a different pair of numbers.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A population has a spread of 15. What sample size gives a sample average with a spread of 3?</p>",
+   "level": 3,
+   "answer": "<p>Run the law backwards. The spread of the sample average is the population’s spread divided by the square root of the sample size. So the square root of the sample size is the population’s spread divided by the target spread.</p>\n<div class=\"working\">\n<p>15 divided by 3 = 5</p>\n</div>\n<p>The square root of the sample size is 5, so the sample size itself is 5 times 5.</p>\n<div class=\"working\">\n<p>5 times 5 = 25</p>\n</div>\n<p>A sample of 25 gives a spread of 3. Check it forwards: square root of 25 is 5, and 15 divided by 5 is 3, which matches.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Kiran and colleagues report a standard deviation of 3.9 kg/m² for body-mass index among the 131 men in their sample (Table 1). Suppose a fresh sample of 25 men is drawn from a population with that same spread. Work out the spread of that sample’s average body-mass index.</p>",
+   "level": 4,
+   "answer": "<p>Divide the spread by the square root of the sample size.</p>\n<div class=\"working\">\n<p>square root of 25 = 5<br />\n3.9 divided by 5 = 0.78</p>\n</div>\n<p>The spread of the sample average is 0.78 kg/m². Sampled at 25 people, a population this variable would typically give an average within a kilogram per square metre of its own true average.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Kiran and colleagues report a body-mass index spread of 3.9 kg/m² for the men in their own sample. Suppose a random sample of 131 men is drawn from a population with that same spread. Work out the spread of the sample average. Then say what the spread would be for a fresh sample of 524 men from the same population.</p>",
+   "level": 5,
+   "answer": "<p>First the 131 men.</p>\n<div class=\"working\">\n<p>square root of 131 = 11.4455<br />\n3.9 divided by 11.4455 = 0.3407</p>\n</div>\n<p>A spread of about 0.34 kg/m² around the population’s own average.</p>\n<p>Now 524 men. 524 is four times 131. The square-root law says four times the sample halves the spread, so there is no need to work out a second square root.</p>\n<div class=\"working\">\n<p>0.3407 divided by 2 = 0.17035</p>\n</div>\n<p>About 0.17 kg/m². Four times the sample bought exactly half the spread, as the law predicts.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Suppose a population’s spread for body-mass index is 3.9 kg/m². What sample size would bring the spread of the sample average down to 0.1 kg/m²?</p>",
+   "level": 6,
+   "answer": "<p>Run the law backwards, as before.</p>\n<div class=\"working\">\n<p>3.9 divided by 0.1 = 39<br />\n39 times 39 = 1521</p>\n</div>\n<p>A sample of 1,521 people would be needed. Notice how much bigger this jump is than the jump from a spread of 0.34 to 0.17 in the previous problem. The sample size itself is never squared here. What gets squared is the factor by which the spread has to shrink.</p>\n<div class=\"working\">\n<p>0.3407 divided by 0.1 = 3.407<br />\n3.407 times 3.407 = 11.607649<br />\n131 times 11.607649 = 1520.602</p>\n</div>\n<p>Shrinking the previous problem’s spread of about 0.34 down to 0.1 is a shrink of about 3.4 times. That shrink has to be squared to get the growth in sample size: about 3.4 times 3.4, which is roughly 11.6. Multiplying 131 by that comes out close to 1,521, matching the direct working above.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A colleague writes in a report: “Kiran and colleagues’ men have a mean body-mass index of 24.2 kg/m². The standard deviation is 3.9. So the true mean for the population lies between 20.3 and 28.1.”</p>\n<p>Find the step that broke.</p>",
+   "level": 7,
+   "answer": "<p>Check the arithmetic first.</p>\n<div class=\"working\">\n<p>24.2 minus 3.9 = 20.3<br />\n24.2 plus 3.9 = 28.1</p>\n</div>\n<p>Both sums are right. The step that broke is calling that interval a range for “the true mean”.</p>\n<p>The standard deviation, 3.9, describes how the individual men’s own body-mass index values are spread out around 24.2. It answers how far from the mean one man typically sits. A different question is how far the sample’s own mean, 24.2, might sit from the true mean of the wider population. Answering that needs the spread of the sample average. Suppose, for the moment, that these 131 men were a random sample from a population whose spread is 3.9. The square-root law then gives that spread from the same two numbers.</p>\n<div class=\"working\">\n<p>square root of 131 = 11.4455<br />\n3.9 divided by 11.4455 = 0.3407</p>\n</div>\n<p>A spread of about 0.34 kg/m² for the sample’s own mean, not 3.9. That 0.34 describes random samples. These men volunteered, so it says nothing about how far 24.2 sits from any wider population’s mean.</p>\n<p>Why it looks reasonable: both numbers, 24.2 and 3.9, are real figures straight from the same table. Adding and subtracting a spread from a mean looks like a natural move. The flaw is using the spread of the people in place of the spread of the average. Those are two different numbers describing two different questions.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a population has a spread of 50<br />\na sample of 100 has a spread of 50 divided by square root of 100, which is 5<br />\ndoubling the sample to 200 should halve the spread<br />\nso the new spread is 5 divided by 2, which is 2.5</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The first two lines are right: the square root of 100 is 10, and 50 divided by 10 is 5.</p>\n<p>The step that broke is the third line. The square-root law does not halve when the sample size doubles. Halving the spread needs the square root of the sample-size <dfn data-g=\"155\">ratio</dfn> to equal 2. That needs the sample size itself to be multiplied by 4, not by 2.</p>\n<p>Work it out properly for a sample of 200.</p>\n<div class=\"working\">\n<p>square root of 200 = 14.142<br />\n50 divided by 14.142 = 3.5355</p>\n</div>\n<p>The correct spread at 200 is about 3.54, not 2.5. Doubling the sample only takes the spread down to about 71 per cent of what it was, not to half.</p>\n<p>Why it looks reasonable: “double the sample, halve the spread” sounds like the same idea as “four times the sample, halve the spread”. The two are easy to blur together. The law scales with the square root of the sample size, not with the sample size itself. That is exactly the distinction this section exists to fix.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a note passed round a department.</p>\n<div class=\"working\">\n<p>Kiran and colleagues found 98 of 282 medical students, 34.8%, at a body-mass index of 25 or more<br />\nNFHS-4 gives 20% for young adults nationally<br />\na sample four times the size, 1,128, would have half the sampling spread by the square-root law<br />\nso a bigger sample would bring the 34.8% much closer to the true national 20%</p>\n</div>\n<p>Find the step that broke.</p>",
+   "level": 8,
+   "answer": "<p>The first line is worked out from Table 2 and is right: 83 plus 15 is 98, and 98 of 282 is 34.8 per cent. The second line claims more than the paper does. The paper gives 19 and 21 per cent for men and women. It reports these as NFHS-4’s figures for India, without saying which ages or which people they cover. The authors rounded them to 20 for planning. The third line is correct arithmetic. The square-root law really does say that quadrupling a random sample’s size halves the spread of its average around the population it was drawn from.</p>\n<p>The step that broke is the fourth line, and it is not an arithmetic error. It applies a fact about random-sample spread to a gap that random-sample spread never produced. Line 4 also calls 20 per cent the true national figure. It is the authors’ rounded planning number, not a true value.</p>\n<p>The 282 medical students were not drawn at random. They were volunteers from one college who came forward after an announcement. Nothing in this arithmetic can say why the gap between 34.8 and 20 per cent is there. It could be that. It could be the years between NFHS-4 and this study. It could be how each drew its own line for “overweight”. The <dfn data-g=\"160\">rounding</dfn> in the second line moves it by at most a point either way.</p>\n<p>Quadrupling the invitation would shrink the spread around whatever these particular medical student volunteers answer. It does nothing to settle which of those explanations is right.</p>\n<p>Why it looks reasonable: the square-root law is applied correctly right up to the conclusion. A reader who checks only the arithmetic finds nothing wrong. The mistake is in which quantity the arithmetic was ever entitled to say something about.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A colleague sends you this line for a newsletter.</p>\n<blockquote>\n<p>Kiran and colleagues found that medical students are far more overweight than India’s young adults generally.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the study’s own numbers, and how far they sit from the comparison figure the claim leans on. Table 2 puts 83 students at 25 to 29.9 and 15 at 30 or more.</p>\n<div class=\"working\">\n<p>83 plus 15 = 98<br />\n98 divided by 282 = 0.3475177305</p>\n</div>\n<p>Ninety-eight of 282 students, about 34.8 per cent, had a body-mass index of 25 or more. The researchers themselves used 20 per cent to plan the study. They rounded that from 19 and 21 per cent for men and women. The paper reports these as NFHS-4’s figures for India, without saying which ages or which people they cover. The sample’s 34.8 and the planning figure’s 20 differ by about fifteen percentage points.</p>\n<p>What it is not is a gap the square-root law can explain or explain away. The law describes how a random sample’s own answer scatters. These 282 were not a random sample of anything. So the law has nothing to say about why their figure differs from the authors’ planning figure.</p>\n<p>So the arithmetic shows a difference between this sample’s figure and the planning figure. What it does not establish is the sentence as written.</p>\n<p>“Medical students are far more overweight than India’s young adults generally” makes a claim about two groups: medical students, and young Indian adults. Said carefully, about 34.8 per cent of these 282 students had a body-mass index of 25 or more. That is more than the 20 per cent the authors rounded from the paper’s NFHS-4 figures.</p>\n<p>The 282 students were volunteers from one college. They came forward after an announcement. That is not a random sample of medical students anywhere, still less of young adults generally. People who choose to come forward for a study may differ from those who do not. That difference need not have anything to do with being a medical student. They may be more health-conscious, more curious, or more worried about their weight — or the opposite.</p>\n<p>Nothing in this arithmetic can tell “medical students, as a group, have a higher body-mass index” apart from a narrower claim. That narrower claim is “the kind of medical student who volunteers for a study like this has a higher body-mass index”. A bigger sample of volunteers from more colleges would narrow the estimate of what such volunteers look like. It would still not answer the question the newsletter line is actually asking.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A colleague says: “A random sample of 2,000 people can’t possibly tell us anything reliable about a whole country. You would need several million to get a trustworthy number.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: how the spread of a sample average changes between a sample of 2,000 and a sample of several million. Use the square-root law on a stated spread, not a real one, since no real figure for this quantity is given.</p>\n<p>Say the quantity being measured has a spread of 40, in whatever units it is recorded in.</p>\n<div class=\"working\">\n<p>square root of 2000 = 44.7214<br />\n40 divided by 44.7214 = 0.8944</p>\n</div>\n<p>A sample of 2,000 gives a spread of about 0.89 around the true population average. Now a sample of 2 million, a thousand times as large.</p>\n<div class=\"working\">\n<p>square root of 2000000 = 1414.2136<br />\n40 divided by 1414.2136 = 0.0283</p>\n</div>\n<p>A spread of about 0.028. Going from 2,000 to 2 million is a thousandfold increase. It only shrinks the spread by about thirty-two times. That is because the square-root law shrinks spread with the square root of the sample size, not with the sample size itself. The claim that “several million” is needed does not follow from how sampling spread behaves. A sample of 2,000 already has a fairly tight spread relative to the population’s own variation. The colleague’s number is not doing the arithmetic work they think it is.</p>\n<p>Notice that the country’s size appears nowhere in this working. The spread of a random sample’s average depends on the sample’s own size, not on the size of the population it was drawn from. “A whole country” sounds like it should demand a bigger sample. The square-root law has no term for it at all.</p>\n<p>What this does not establish. It does not establish that 2,000 is always enough. The right sample size depends on how variable the quantity is, and how tight an answer needs to be. Neither of those was stated here.</p>\n<p>It also does not establish that any sample of 2,000 is trustworthy, regardless of how it was chosen. Say those 2,000 people were a convenience sample rather than a random one. Then no sample size, however large, closes the gap between who was asked and who the answer is supposed to be about. This arithmetic only answers “how big a random sample needs to be”. It never answers “was this particular sample drawn that way”.</p>"
+  }
+ ]
+}

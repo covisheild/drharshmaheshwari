@@ -1,0 +1,216 @@
+{
+ "format": 1,
+ "id": "b0-r0-c01",
+ "label": "A1",
+ "title": "Counting, place value, and what a calculator is actually doing",
+ "part": "A",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A number written in digits carries two things at once: which digits were used, and the place each one occupies. The place fixes what the digit is worth.</p>\n<p>Each place is worth ten times the place immediately to its right. That is the whole of what a written number means, and it is why the system is called <dfn data-g=\"17\">base ten</dfn>.</p>\n<p>A <dfn data-g=\"122\">negative number</dfn> is a number less than zero. On the number line it lies as far below zero as the matching positive number lies above it, and it is written with a minus sign in front.</p>\n<p>The operations in a written calculation are carried out in a fixed, agreed order: anything in brackets first, then powers, then multiplication and division, then addition and subtraction. Within multiplication and division, and within addition and subtraction, the work runs from left to right.</p>",
+   "refs": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Take 4,505. There are two fives in it, and one of them is worth five hundred while the other is worth five. Move one step to the left and a digit is worth ten times as much.</p>\n<p>Now the part that catches people in India. Where you put the commas is a different question from what the digits are worth. And India does not do it the way most places do. Here the last three digits go together and everything above that is grouped in pairs: 10,00,000. In most other places they run in threes all the way along: 1,000,000. Same number, same value, different commas.</p>\n<p>The names follow the commas. India counts thousand, <dfn data-g=\"102\">lakh</dfn>, <dfn data-g=\"43\">crore</dfn>. Most other places count thousand, million, billion. One lakh is a hundred thousand and one crore is ten million, so the two ladders never line up.</p>\n<p>A calculator does base ten for you, fast and without complaint, but it cannot read your mind. Type one zero too many and it will work the sum out correctly and hand you an answer ten times too big.</p>\n<p>Numbers do not stop at zero. Take 240 away from 52 and the 52 runs out after 52 steps. The other 188 steps carry on below zero, and you land on minus 188. It is written -188, with the sign in front of the number.</p>\n<p>So the minus sign has two jobs. Between two numbers it means take away, as in 52 minus 240. In front of one number it says the number is below zero, as in -188. People say “minus 3” out loud for both, so ask which job the sign is doing.</p>\n<p>A negative answer makes sense only if the thing you are measuring can go below zero. A temperature can fall below zero. A bank balance can be a debt. A room cannot hold minus two people. When a thing like that comes out negative, something went wrong before the answer. Either a mistake happened earlier, or a rule was run past the point where it holds.</p>\n<p>A written line of sums is also worked in a fixed order. You multiply and divide before you add and take away. So 3 plus 2 times 4 is 11, not 20. Nobody discovered that order. Everybody agreed to it, so that one line of sums has one answer. Anything in brackets comes first, so (3 plus 2) times 4 is 20.</p>\n<p>A calculator that shows the whole line as you type it, as most phone and scientific ones do, follows this order. A basic desk calculator does not. It works each step out as you press the next key. Test yours with 3 plus 2 times 4. If it shows 11, it follows the order.</p>\n<p>The catch is the equals key. Press it part way through a line, and you have chosen the order yourself.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Open the Food Safety and Standards Act, 2006, which you can open at <a href=\"https://indiacode.gov.in/handle/123456789/586348\" class=\"uri\">https://indiacode.gov.in/handle/123456789/586348</a>. Search inside it for “misleading advertisement”.</p>\n<p>Every Indian Act opens with a list of its section names, so your first hit is the line 53. Penalty for misleading advertisement in that list. Search again and take the second hit, which is section 53 itself.</p>\n<p>It says ten lakh rupees. Write that in digits, the Indian way, and then the international way.</p>\n<div class=\"working\">\n<p>10,00,000    1,000,000</p>\n</div>\n<p>Count the zeros in each. Five, and five. The number has not changed. Only the commas moved.</p>\n<p>Somebody reading the Act writes a note in English for a reader abroad. Ten lakh, they think, and lakh sounds like million. So ten lakh becomes ten million, and they type this.</p>\n<div class=\"working\">\n<p>1,00,00,000</p>\n</div>\n<p>Ten million is one crore. They have multiplied the penalty by ten, in a note that other people will quote back at them.</p>\n<p>Ten lakh is one million. One crore is ten million.</p>\n<p>Section 53’s ceiling is ten lakh and section 51’s is five lakh. Type one million, then divide by five hundred thousand, and it returns 2. That is right: the first ceiling is twice the second. Now type it again and leave one zero off the second number. It returns 20.</p>\n<p>The calculator did not object either time, and it never will. Checking the question is your job. Counting the digits before you press equals is how you do it.</p>\n<p>Two more things the calculator does without telling you. It handles numbers below zero, and it follows an order.</p>\n<p>Start with a number line. Draw a line, mark 0 in the middle, and mark 1, 2, 3 going right. Now keep marking to the left of 0, at the same spacing: -1, -2, -3. Every number left of zero is negative. The further left, the smaller it is, so -200 is smaller than -3.</p>\n<p>Work out 52 minus 240 on it. Start at 52 and step left 240 times. After 52 steps you are at zero, and 188 steps are still to go. They carry on past zero.</p>\n<div class=\"working\">\n<p>240 minus 52 = 188    (steps still to go at zero)<br />\n52 minus 240 = -188</p>\n</div>\n<p>Take away another 48 and you go further left, not back up.</p>\n<div class=\"working\">\n<p>-188 minus 48 = -236</p>\n</div>\n<p>Now look at your calculator. The key that takes one number from another is the minus key. Many calculators have a second key for the sign of one number. A key marked (-) types a minus in front of the next number. A key marked +/- flips the sign of the number already showing.</p>\n<p>Type 52, the minus key, 240, and equals. The display shows -188. The minus key did the taking away. The dash on the display is the other job: the sign of one number.</p>\n<p>Three rules cover everything this book does with negatives. Here is each one once.</p>\n<p>Adding a negative number is the same as taking away the positive one. Taking away a negative number is the same as adding the positive one.</p>\n<div class=\"working\">\n<p>10 plus -4 = 6<br />\n10 minus -4 = 14</p>\n</div>\n<p>Multiplying and dividing share one rule. If the two numbers have the same sign, the answer is positive. If the signs differ, the answer is negative.</p>\n<div class=\"working\">\n<p>3 times -4 = -12<br />\n-3 times -4 = 12<br />\n-12 divided by 4 = -3<br />\n-12 divided by -4 = 3</p>\n</div>\n<p>So a negative divided by a positive is negative. And two negatives multiplied give a positive.</p>\n<p>Now the check that matters most. A negative number means something only if the quantity can go below zero. Some quantities have a direction built in. A temperature can fall below zero. A budget can run a deficit, which is spending more than there was. A bank balance can be a debt. For these, the minus sign says which way, and it is a real answer.</p>\n<p>Other quantities are amounts of something: the mass of a thing, a count of people, a volume of water. None of these can be less than nothing.</p>\n<p>So when one of them comes out negative, stop. Do not report it as the amount, and do not round it to zero. Report that the figures do not add up. Something went wrong before the answer. A figure was copied wrongly, a step was done in the wrong order, or a sign was dropped. Or a rule was run past the point where it holds, like a stock worked forward past the day it runs out. Go back and find which.</p>\n<p>The last thing a calculator does is follow an order. Type 3 plus 2 times 4. Should it add first, or multiply first? The two choices give different answers.</p>\n<div class=\"working\">\n<p>adding first<br />\n3 plus 2 = 5<br />\n5 times 4 = 20<br />\nmultiplying first<br />\n2 times 4 = 8<br />\n3 plus 8 = 11</p>\n</div>\n<p>Both lines of working are correct arithmetic, so the arithmetic cannot settle it. People settled it by agreement. The order of operations is a rule that was chosen, not a fact that was found. It exists so that one written line has one answer, and here that answer is 11.</p>\n<p>The order runs like this.</p>\n<ol type=\"1\">\n<li>Anything inside brackets.</li>\n<li>Powers, meaning a number multiplied by itself a set number of times. A later section teaches them.</li>\n<li>Multiplying and dividing.</li>\n<li>Adding and taking away.</li>\n</ol>\n<p>Within one level, work from left to right. So 12 divided by 2 times 3 is 18, not 2. And 10 minus 4 plus 3 is 9, not 3.</p>\n<div class=\"working\">\n<p>3 plus 2 times 4 = 11<br />\n(3 plus 2) times 4 = 20<br />\n12 divided by 2 times 3 = 18<br />\n10 minus 4 plus 3 = 9</p>\n</div>\n<p>Brackets are how you get the other answer when you want it. Put them round the part that has to happen first.</p>\n<p>Here is where a calculator catches people. A calculator that shows the whole line as you type it follows this order. Press equals part way through, and you have chosen the order yourself.</p>\n<p>Go back to the two ceilings in the Act. Say a note needs the section 53 ceiling plus twice the section 51 ceiling. As one line, that is ten lakh plus 2 times five lakh. Type it whole and press equals once.</p>\n<div class=\"working\">\n<p>10,00,000 plus 2 times 5,00,000 = 20,00,000</p>\n</div>\n<p>Now press the same keys in a different rhythm. Press equals straight after the 2, then carry on.</p>\n<div class=\"working\">\n<p>10,00,000 plus 2 = 10,00,002<br />\n10,00,002 times 5,00,000 = 5,00,00,10,00,000</p>\n</div>\n<p>Same keys, different answer. The right one has seven digits and the wrong one has twelve. Counting the digits catches it here, as it caught the extra zero.</p>\n<p>Some small desk calculators work out each step as soon as you press the next key. That is the same as pressing equals every time. Test yours. Type 3 plus 2 times 4 and press equals once. If it shows 11, it follows the order. If it shows 20, it does not, and you must press the keys in the order you want the work done.</p>",
+   "numberRefs": [
+    4
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p><dfn data-g=\"139\">Place value</dfn> is a rule about writing numbers down. It tells you nothing about whether ten lakh rupees is a large penalty or a small one.</p>\n<p>The commas break in a second way, and quietly. A spreadsheet or a website prints the grouping it was built for, and does not say which one that is. So count the digits, not the commas. Where the two disagree, the digits are right.</p>\n<p>A calculator is only as good as what you typed. It will divide a sum of money by a count of children and hand you an answer. That answer is arithmetic rather than sense.</p>\n<p>The below-zero check works on amounts, not on changes. A mass cannot be negative, but a change in mass can. A count of people cannot, but the change in that count from one year to the next can. So before you run the check, say whether the number is an amount or a change.</p>\n<p>The order of operations is an agreement about how to read a written line. It says nothing about which order the sum needed. A line typed without the brackets it needed is read by the agreed order, and gives the wrong answer without complaint.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A lakh is not a million. One lakh is a hundred thousand. One crore is ten million.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you press equals, count the digits in each number you typed. Then say the number out loud, in the naming system you are writing in.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Indian statutes, budgets and ministry papers state money in lakh and crore. Journals and international agencies state it in million and billion. Every time a figure crosses between the two, write it in digits first and count them.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Asked on the spot how big a crore is, do not answer “a lot”. Say ten million, say a hundred lakh, and say how many digits that is.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A trainee who cannot move between the two groupings will hand you a broken table. When a table looks odd, check the conversion before you check the arithmetic.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When a quantity that cannot go below zero comes out negative, do not report it as the amount and do not round it to zero. Report that the figures do not add up. A mass, a count of people or a volume below zero means a figure, a step or a sign went wrong earlier. Or a rule was run past where it holds. Go back and find which.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A calculator that shows the whole line follows the agreed order, and only on a line you type whole. A basic desk calculator does not follow it at all, so test yours with 3 plus 2 times 4. Press equals part way and you have chosen the order yourself. Type mixed sums as one line, with brackets round whatever must happen first.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Section 50 of the Food Safety and Standards Act, 2006 sets a ceiling of five lakh rupees. A proviso lowers it to twenty-five thousand rupees for small food businesses — petty retailers, hawkers, temporary stalls and the like. Write both figures in digits, in both groupings. Then say how many times larger the ceiling is than the proviso figure.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>Five lakh, Indian grouping: 5,00,000. International grouping: 500,000. Six digits either way.</p>\n<p>Twenty-five thousand, in the Indian grouping: 25,000. In the international grouping: 25,000. They are identical, and that is worth noticing. Below one lakh the two systems group the digits the same way, so every number under a hundred thousand looks the same in both. The ladders only separate above that, which is exactly why the mistake feels safe right up to the point where it happens.</p>\n<p>Now the division, line by line.</p>\n<div class=\"working\">\n<p>500,000 divided by 25,000<br />\n= 500 divided by 25    (take three zeros off each)<br />\n= 20</p>\n</div>\n<p>The ceiling is twenty times the proviso figure.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a sentence from a report.</p>\n<blockquote>\n<p>The maximum penalty for a misleading food advertisement in India is one million rupees. That is about ten crore.</p>\n</blockquote>\n<p>Find the mistake, and say which step it happened at.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The first half is right. Section 53 of the Food Safety and Standards Act, 2006 caps that penalty at ten lakh rupees, and ten lakh is one million.</p>\n<p>“Ten crore” is wrong. One crore is ten million, so ten crore is a hundred million. That is a hundred times the real figure.</p>\n<p>The step it happened at matters more than the size of it. No arithmetic was done here, so no arithmetic went wrong. The writer converted a number by matching names instead of by counting digits. Had they written 10,00,000 and 1,000,000 side by side, there would have been nothing left to get wrong.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>In the number 90,807, say what each digit is worth. Then say how many digits the number has.</p>",
+   "level": 1,
+   "answer": "<p>Going from the left, one digit at a time.</p>\n<table style=\"width:32%;\">\n\n<tbody>\n<tr>\n<td>9</td>\n<td>ninety thousand</td>\n</tr>\n<tr>\n<td>0</td>\n<td>no thousands</td>\n</tr>\n<tr>\n<td>8</td>\n<td>eight hundred</td>\n</tr>\n<tr>\n<td>0</td>\n<td>no tens</td>\n</tr>\n<tr>\n<td>7</td>\n<td>seven</td>\n</tr>\n</tbody>\n</table>\n<p>Five digits. The two zeros are doing work: they hold the other digits in their places. Take them out and you have 987, which is a different number entirely.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Work these out. 15 minus 40. 8 minus -5. -6 plus -9. -6 times -7. -36 divided by 4.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>15 minus 40 = -25<br />\n8 minus -5 = 13<br />\n-6 plus -9 = -15<br />\n-6 times -7 = 42<br />\n-36 divided by 4 = -9</p>\n</div>\n<p>Taking 40 from 15 runs 25 steps past zero. Taking away a negative is the same as adding, so 8 minus -5 is 8 plus 5. Adding two negatives goes further below zero. Two negatives multiplied give a positive. A negative divided by a positive is negative.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Write each of these in digits, twice: once in the Indian grouping and once in the international one. Two lakh. Twelve lakh. Three crore.</p>",
+   "level": 2,
+   "answer": "<table style=\"width:57%;\">\n\n<tbody>\n<tr>\n<td>two lakh</td>\n<td>2,00,000</td>\n<td>200,000</td>\n</tr>\n<tr>\n<td>twelve lakh</td>\n<td>12,00,000</td>\n<td>1,200,000</td>\n</tr>\n<tr>\n<td>three crore</td>\n<td>3,00,00,000</td>\n<td>30,000,000</td>\n</tr>\n</tbody>\n</table>\n<p>Check each pair by counting digits rather than commas. Six, seven and eight digits, and the two columns agree every time.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Work these out in the agreed order. 5 plus 3 times 6. (5 plus 3) times 6. 20 divided by 4 times 5. 18 minus 6 divided by 3. Then say which of the four would give a different answer if you worked strictly from left to right.</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>5 plus 3 times 6 = 5 plus 18 = 23<br />\n(5 plus 3) times 6 = 8 times 6 = 48<br />\n20 divided by 4 times 5 = 5 times 5 = 25<br />\n18 minus 6 divided by 3 = 18 minus 2 = 16</p>\n</div>\n<p>Now strictly left to right, ignoring the order.</p>\n<div class=\"working\">\n<p>5 plus 3 = 8<br />\n8 times 6 = 48<br />\n18 minus 6 = 12<br />\n12 divided by 3 = 4</p>\n</div>\n<p>The first and the fourth change. In each, a multiplying or dividing comes after an adding or taking away. Strict left to right then does the lower step first, which the agreed order does not. Mixing the two is not enough on its own. A line like 3 times 4 plus 5 comes out the same either way, because the multiplying already comes first. The second has brackets, so it comes out the same. The third has only multiplying and dividing, which run left to right anyway.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Which is larger, 90,90,000 or 9,900,000? Say how you decided, in one line.</p>",
+   "level": 3,
+   "answer": "<p>Count the digits first. Seven in each, so they are the same size of number and the commas are the only difference.</p>\n<p>Now read the digits themselves, left to right.</p>\n<div class=\"working\">\n<p>90,90,000    = 9090000<br />\n9,900,000    = 9900000</p>\n</div>\n<p>The first two digits are 90 against 99, so the second number is larger. It is ninety-nine lakh against ninety lakh and ninety thousand.</p>\n<p>How you decided: count the digits, then compare digit by digit from the left. Never compare comma patterns, because the two systems put them in different places.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A school kitchen has a budget of 3,50,000 rupees for a month and spends 4,20,000 rupees. Its store starts the month with 40 sacks of rice, receives 25 sacks, and records 70 sacks issued. All of these figures are made up for this problem. Work out the money left and the sacks left. For each answer, say whether its sign makes sense.</p>",
+   "level": 4,
+   "answer": "<p>The money first.</p>\n<div class=\"working\">\n<p>3,50,000 minus 4,20,000 = -70,000</p>\n</div>\n<p>Minus 70,000 rupees. The kitchen has spent 70,000 rupees more than it had. That is a deficit, and a budget can run one. So the sign is a real answer: the kitchen is 70,000 rupees short.</p>\n<p>Now the rice.</p>\n<div class=\"working\">\n<p>40 plus 25 = 65<br />\n65 minus 70 = -5</p>\n</div>\n<p>Minus five sacks. A store cannot hold less than nothing, so this is not a fact about the store. It says the register is wrong somewhere. A delivery may not have been written down, or a sack written out twice. Somebody should count the sacks before anyone uses the figure.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Section 34(1) of the Consumer Protection Act, 2019 gives the District Commission complaints worth up to one crore rupees. Section 47 gives the State Commission up to ten crore. Write both in both groupings and count the digits in each.</p>",
+   "level": 5,
+   "answer": "<table style=\"width:72%;\">\n\n<tbody>\n<tr>\n<td>one crore</td>\n<td>1,00,00,000</td>\n<td>10,000,000</td>\n<td>8 digits</td>\n</tr>\n<tr>\n<td>ten crore</td>\n<td>10,00,00,000</td>\n<td>100,000,000</td>\n<td>9 digits</td>\n</tr>\n</tbody>\n</table>\n<p>One digit apart, so one is ten times the other.</p>\n<p>Notice what the Indian commas do here and the international ones do not. The Indian grouping puts a break at the crore, so the word and the comma agree. The international grouping breaks at the million, which falls in a different place, so the same number looks unfamiliar.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>The second schedule of the National Food Security Act, 2013 sets a lower primary meal at 450 calories. A school serves 1,200 of those meals in a week, and adds 50,000 calories of fruit. The 1,200 meals and the 50,000 calories of fruit are made up for this problem. Write the total as one line and work it out. Then say what a calculator shows if you press equals straight after the first addition.</p>",
+   "level": 5,
+   "answer": "<p>The line is 50,000 plus 1,200 times 450. The agreed order multiplies first.</p>\n<div class=\"working\">\n<p>1,200 times 450 = 5,40,000<br />\n50,000 plus 5,40,000 = 5,90,000</p>\n</div>\n<p>Five lakh ninety thousand calories, which is 590,000 in the international grouping.</p>\n<p>Now press equals after 50,000 plus 1,200, and carry on.</p>\n<div class=\"working\">\n<p>50,000 plus 1,200 = 51,200<br />\n51,200 times 450 = 2,30,40,000</p>\n</div>\n<p>That is two crore thirty lakh forty thousand calories. It has eight digits against six. Two extra digits say it is roughly a hundred times too big, and that is only a rough guide. Divide to get the real size of the error.</p>\n<div class=\"working\">\n<p>2,30,40,000 divided by 5,90,000<br />\n= 2,304 divided by 59    (take four zeros off each)<br />\n= about 39</p>\n</div>\n<p>It is about 39 times too big. The pressing did it. The calculator added the fruit to the count of meals, then multiplied calories by the result. Keep the label on each figure and that mistake shows itself: 50,000 calories and 1,200 meals cannot be added.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A district serves 1,00,000 lower primary meals. The second schedule of the National Food Security Act, 2013 sets that meal at 450 calories. Work out the total calories. Write the answer in digits in both groupings, and name it in both naming systems.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>450 times 1,00,000<br />\n= 450 times 100000<br />\n= 4,50,00,000    (Indian grouping)<br />\n= 45,000,000    (international grouping)</p>\n</div>\n<p>Eight digits either way, so nothing has slipped.</p>\n<p>Named: four crore fifty lakh calories, or forty-five million calories.</p>\n<p>Keep the label on it. These are calories, not rupees and not meals, and the number is meaningless the moment the word comes off it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A colleague is checking two ceilings in the Food Safety and Standards Act, 2006. Section 53 sets ten lakh rupees for a misleading advertisement. Section 51 sets five lakh rupees for sub-standard food. They want to know how many times larger the first one is. Here is what they typed, and what came back.</p>\n<div class=\"working\">\n<p>10000000 divided by 500000 = 20</p>\n</div>\n<blockquote>\n<p>The advertising ceiling is twenty times the sub-standard food ceiling.</p>\n</blockquote>\n<p>Find the step that broke, and say why the answer looks reasonable.</p>",
+   "level": 7,
+   "answer": "<p>The calculator is not the step that broke. It divided exactly what it was handed, and 20 is the right answer to the sum that was typed.</p>\n<p>The step that broke is the typing. Count the digits in each number against the Act.</p>\n<div class=\"working\">\n<p>ten lakh    10,00,000 = 1000000    7 digits    typed 8 digits<br />\nfive lakh    5,00,000 = 500000    6 digits    typed 6 digits</p>\n</div>\n<p>One zero too many went into the first number. What they actually divided was one crore.</p>\n<p>Done properly:</p>\n<div class=\"working\">\n<p>1000000 divided by 500000<br />\n= 10 divided by 5<br />\n= 2</p>\n</div>\n<p>Twice, not twenty times.</p>\n<p>Why it looks reasonable: 20 is a clean whole number, and a clean answer feels like a confirmed one. Nothing on the display marks a mistyped figure, because from the calculator’s side nothing went wrong. The only place this can be caught is before the equals sign, by counting the digits you typed against the digits in the source.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A colleague wants the average number of meals served over two days: the two days added together, then divided by 2. Monday had 1,150 meals and Tuesday 1,250. These figures are made up for this problem. They type one line into a phone calculator, and here is what came back.</p>\n<div class=\"working\">\n<p>1150 plus 1250 divided by 2 = 1775</p>\n</div>\n<blockquote>\n<p>The average is 1,775 meals a day.</p>\n</blockquote>\n<p>Find the step that broke, and say why the answer looks reasonable.</p>",
+   "level": 7,
+   "answer": "<p>The calculator did what the agreed order says. It divided first, so it halved only Tuesday’s figure.</p>\n<div class=\"working\">\n<p>1250 divided by 2 = 625<br />\n1150 plus 625 = 1775</p>\n</div>\n<p>The step that broke is the typing. The adding had to happen first, and nothing on the line said so. Brackets say so.</p>\n<div class=\"working\">\n<p>(1150 plus 1250) divided by 2 = 1200</p>\n</div>\n<p>The average is 1,200 meals a day. Pressing equals after the 1250 would also have worked, because then you choose the order yourself.</p>\n<p>Why it looks reasonable: 1,775 has four digits, like both days, and the calculator gave it without complaint. But there is a quick check it fails. An average of two numbers must sit between them, and 1,775 is bigger than both.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A colleague adds three penalty ceilings — ten lakh, three lakh and five lakh — and reports the total as “18,00,000, or about 1.8 crore”. Find the step that broke and say what the total should be called.</p>",
+   "level": 8,
+   "answer": "<p>The addition first.</p>\n<div class=\"working\">\n<p>10,00,000<br />\n+ 3,00,000<br />\n+ 5,00,000<br />\n= 18,00,000</p>\n</div>\n<p>That is right. Eighteen lakh.</p>\n<p>Now the naming. A crore is 1,00,00,000, which is eight digits. 18,00,000 has seven.</p>\n<div class=\"working\">\n<p>1.8 crore = 1,80,00,000    eight digits<br />\n18 lakh    =    18,00,000    seven digits</p>\n</div>\n<p>So the report is out by a factor of ten. The total should be called eighteen lakh, or 1.8 million.</p>\n<p>Why it looks reasonable: the digits 1 and 8 appear in both, in that order. Only the digit count separates them, which is exactly why you count digits.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A ration shop’s register shows 120 sacks of wheat at the start of the month, 30 sacks received and 165 sacks issued. These figures are made up for this problem. A clerk works out the stock at the end of the month.</p>\n<div class=\"working\">\n<p>120 plus 30 = 150<br />\n150 minus 165 = 15</p>\n</div>\n<blockquote>\n<p>Stock at the end of the month: 15 sacks.</p>\n</blockquote>\n<p>Find the step that broke, and say why the wrong answer looks reasonable.</p>",
+   "level": 8,
+   "answer": "<p>The first line is right. The second is not.</p>\n<div class=\"working\">\n<p>150 minus 165 = -15</p>\n</div>\n<p>Taking 165 from 150 goes 15 steps past zero. The clerk worked out 165 minus 150 instead, and dropped the sign.</p>\n<p>Now read what the right answer says. Minus fifteen sacks cannot exist. So the register is wrong somewhere: more sacks were written out than came in. The shelf needs counting, and the entries need checking.</p>\n<p>Why the wrong answer looks reasonable: 15 sacks is an ordinary stock. Dropping the sign did more than get the number wrong. It hid the only evidence that the register did not add up.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>Here is a press line.</p>\n<blockquote>\n<p>India’s food regulator can fine a company up to ten million rupees for a misleading food advertisement.</p>\n</blockquote>\n<p>You have the Food Safety and Standards Act, 2006 open. Decide what to check, check it, then say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to check: the figure, by converting it into the grouping the Act uses.</p>\n<p>Section 53 caps the penalty at ten lakh rupees.</p>\n<div class=\"working\">\n<p>ten lakh    = 10,00,000 = 1,000,000 = one million<br />\nten million    = 1,00,00,000    = one crore</p>\n</div>\n<p>So the line is out by a factor of ten. It should say one million, or ten lakh.</p>\n<p>What this does not establish. It does not tell you whether any such penalty has ever been imposed, or what was actually collected. It does not tell you who imposes it. And the figure comes from a copy of the Act that names no change to it after 2008. It is what this copy says, not what is in force today.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 15,
+   "prompt": "<p>In a meeting somebody says this.</p>\n<blockquote>\n<p>Enrolment at the school changed by plus 300 last year and by minus 400 this year. So enrolment is now minus 100.</p>\n</blockquote>\n<p>The figures are made up for this problem. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>The two figures are changes, not amounts. Add them to get the change across both years.</p>\n<div class=\"working\">\n<p>300 plus -400 = -100</p>\n</div>\n<p>Across the two years, enrolment went down by 100. That part is right.</p>\n<p>The mistake is the word “enrolment”. Enrolment is a count of children, and a count cannot go below zero. The change in it can. What the speaker has found is a fall of 100 from two years ago, not a school with minus 100 children.</p>\n<p>What it does not establish. How many children are enrolled now. For that you need the count two years ago, and nobody gave it. Why the number fell. Whether a fall of 100 is large, which depends on whether the school had 200 children or 2,000.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 16,
+   "prompt": "<p>In a meeting somebody says this.</p>\n<blockquote>\n<p>The scheme costs 400 crore, which is about 4 billion rupees. That is roughly 4,000 rupees for each of the ten lakh people it reaches.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Two claims are buried in that sentence. Check them separately.</p>\n<p>First, 400 crore against 4 billion.</p>\n<div class=\"working\">\n<p>400 crore = 400 times 1,00,00,000<br />\n= 4,00,00,00,000<br />\n= 4,000,000,000<br />\n= 4 billion    correct</p>\n</div>\n<p>Second, the figure per person.</p>\n<div class=\"working\">\n<p>4,000,000,000 divided by 10,00,000<br />\n= 4,000,000,000 divided by 1,000,000<br />\n= 4,000 rupees per person    correct</p>\n</div>\n<p>Both hold. This is worth feeling: checking is not the same as finding a mistake, and a check that confirms is not wasted.</p>\n<p>What it does not establish. Nothing here says whether 4,000 rupees a person is a lot or a little, what it buys, or whether the money was spent. Nor whether ten lakh is who the scheme reaches or who it was designed for. The arithmetic is sound and the sentence is still not yet a fact about the world.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 17,
+   "prompt": "<p>A note to a district office says this.</p>\n<blockquote>\n<p>Cost per child: 4,00,000 plus 2,00,000 divided by 400 children, which comes to 1,500 rupees a child.</p>\n</blockquote>\n<p>The figures are made up for this problem. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>First read the line the way the agreed order reads it, dividing first.</p>\n<div class=\"working\">\n<p>2,00,000 divided by 400 = 500<br />\n4,00,000 plus 500 = 4,00,500</p>\n</div>\n<p>Read that way, the line says 4,00,500 rupees a child. That cannot be what the writer meant. They meant the two costs added together, then shared among 400 children.</p>\n<div class=\"working\">\n<p>4,00,000 plus 2,00,000 = 6,00,000<br />\n(4,00,000 plus 2,00,000) divided by 400 = 1,500</p>\n</div>\n<p>So 1,500 rupees a child is right, and the line as written is wrong. Anyone who types it whole into a calculator that shows the whole line gets 4,00,500. They will either trust it or throw the note away. A basic desk calculator works each step as the next key is pressed, so it gives 1,500. That is the right figure from a line that is still wrong. The fix is brackets round the two costs.</p>\n<p>What it does not establish. Whether the two sums are the whole cost. Whether 400 is the number of children served or the number enrolled. Whether 1,500 rupees buys what the scheme promises.</p>"
+  }
+ ]
+}

@@ -1,0 +1,222 @@
+{
+ "format": 1,
+ "id": "b0-r0-c40",
+ "label": "F2",
+ "title": "Reading a figure, and the ways a figure misleads",
+ "part": "F",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Reading a figure means settling four things before its shape. What one mark stands for. What each axis measures, and in what unit. Where each axis starts, and how it is spaced. Where the numbers came from.</p>\n<p>A length carries a value only when it is measured from zero. So the <dfn data-g=\"192\">value axis</dfn> of a bar chart must start at zero. The value axis is the one a bar’s length is read against: the side axis when bars stand up, the bottom axis when they lie flat.</p>\n<p>A figure can mislead while every number on it is correct. A bar chart’s value axis may start above zero. Pictures or areas may stand in for lengths. Bins or time steps may be unequally spaced. The window of time shown may be chosen to suit a claim. Counts may be shown where rates are needed. And two vertical axes may be used, so that where the lines cross is set by the two scales chosen.</p>",
+   "refs": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p><strong>What one mark is.</strong> A mark is anything drawn that stands for one number: a bar, a point, a slice of a pie, a picture. Find what one mark stands for. It may be one group, one district or one year. This is the question you asked about one row of a table.</p>\n<p><strong>What each axis measures, and in what unit.</strong> Read the label along the bottom and the label up the side. If an axis is a rate or a <dfn data-g=\"133\">percentage</dfn>, ask what it is out of, as you did for a table’s columns.</p>\n<p><strong>Where each axis starts, and how it is spaced.</strong> Read the lowest number printed on each axis. Then read along it, and check that equal steps on the page are equal steps in the numbers.</p>\n<p><strong>Where the numbers came from.</strong> Look under the figure for a source. With no source, you have nothing to check it against.</p>\n<p>Only then look at the shape.</p>\n<p>Next, see how a mark carries its number. There are three common ways, and each can mislead in its own way.</p>\n<p>By position. A point on a line chart carries its value by where it sits. You read it by looking across to the numbers on the side.</p>\n<p>By length. A bar carries its value by how long it is. Your eye compares bars by comparing their lengths. So a bar’s length has to be its value, and that holds only when the bar starts at zero.</p>\n<p>By area. A picture, a bubble or a slice of a pie carries its value by how much of the page it covers. The eye takes in area more readily than height. A <dfn data-g=\"138\">pie chart</dfn> is a circle standing for a whole. Each slice’s share of the circle is its share of the total, so a slice shows a share, not an amount.</p>\n<p>So a bar chart must start at zero, and a line chart need not. The section on graphs told you to redraw an alarming line from zero before you repeat it. Keep doing that. It is a check on the impression a <dfn data-g=\"170\">slope</dfn> gives, not a rule of honesty. A line on a printed non-zero axis is honest; a bar on one is not.</p>\n<p>The two rules do not fight. A line chart asks you to read positions, and a printed axis starting at 400, stated in the caption, tells you where they are. A bar chart asks you to compare lengths, and a bar cut off at 400 has the wrong length. A line’s steepness is still somebody’s choice, as the section on graphs showed. So read the size of a change off the numbers, not off the slope.</p>\n<p>Double the height and the width of a picture, and it covers four times the page. The number you multiply every length by is called the <dfn data-g=\"165\">scale factor</dfn>. The area goes up by the scale factor squared.</p>\n<p>Here are six ways a figure misleads while every number on it is right.</p>\n<p><strong>A bar chart whose side axis does not start at zero.</strong> Read the lowest number on the axis. If it is not zero, subtract it from each value to see how long each bar was drawn.</p>\n<p><strong>Pictures in place of bars.</strong> Compare the numbers, never the pictures. A picture scaled both ways shows the scale factor squared where the numbers show only the scale factor. Two pie charts drawn the same size for two years hide any change in the total.</p>\n<p><strong>Unequal spacing.</strong> A bar can stand for a range of values grouped together, called a bin. Read the range printed under each bar, and check that each covers the same span of values. A label such as “over 80” does not say where its range ends, so ask.</p>\n<p>A bar covering a wider span catches more values. It may be drawn wider, or drawn the same width and taller. Either way it cannot be compared with the others as it stands. To compare it fairly, divide its count by how many of the ordinary spans it covers. That gives the count for each ordinary span, on average.</p>\n<p>A time axis can also change its step part way across, say from years to months. Read the date under each point and work out the gap to the next.</p>\n<p><strong>A chosen window.</strong> A chart over time starts and ends where somebody chose. That stretch is its window. A short window can show a fall inside a long rise. Ask for the whole series, and ask why the chart starts where it does.</p>\n<p><strong>Counts where rates are needed.</strong> A district with more people has more of almost everything. Divide each count by the population before you rank, as in the section on rates.</p>\n<p><strong>Two side axes on one figure.</strong> One line is read against the left axis and one against the right. Where the two lines cross depends on how the two axes were chosen. Read each line against its own axis, and never read the crossing as the moment the two were equal.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "f2-baseline.png",
+   "alt": "Two bar charts, one above the other, each with six bars for 500, 500, 800, 450, 700 and 600 kilocalories. In the upper chart the side axis runs from 0 to 900 and the bars differ modestly. In the lower chart the side axis runs from 400 to 900; the 450 bar is a short stub and the 800 bar towers over it.",
+   "w": 1441,
+   "h": 1225,
+   "caption": "The six energy values of Schedule II drawn twice. In the upper panel every bar starts at zero, so each length is its value and the 800 bar is under twice the 450 bar. In the lower panel the side axis starts at 400, so the same 800 bar is drawn eight times as long as the 450 bar. Every printed number is correct in both panels."
+  },
+  {
+   "t": "figure",
+   "src": "f2-area.png",
+   "alt": "Left panel: two bars from zero, 450 and 700 kilocalories tall, the taller about one and a half times the shorter. Right panel: two plate pictures whose heights match the same two values; the larger plate is also wider and covers well over twice the area of the smaller.",
+   "w": 1529,
+   "h": 722,
+   "caption": "Two meal energies, 450 and 700 kilocalories, drawn as bars and as pictures. The larger picture is 1.556 times as tall as the smaller and, to keep its shape, 1.556 times as wide, so it covers 2.42 times the page for 1.556 times the energy."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Schedule II of the National Food Security Act, 2013 sets the energy that each meal or ration under the Act is to give.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>the group</th>\n<th>the meal</th>\n<th>kilocalories</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>children, 6 months to 3 years</td>\n<td>take home ration</td>\n<td>500</td>\n</tr>\n<tr>\n<td>children, 3 to 6 years</td>\n<td>morning snack and hot cooked meal</td>\n<td>500</td>\n</tr>\n<tr>\n<td>children, 6 months to 6 years, who are malnourished</td>\n<td>take home ration</td>\n<td>800</td>\n</tr>\n<tr>\n<td>lower primary classes</td>\n<td>hot cooked meal</td>\n<td>450</td>\n</tr>\n<tr>\n<td>upper primary classes</td>\n<td>hot cooked meal</td>\n<td>700</td>\n</tr>\n<tr>\n<td>pregnant women and lactating mothers</td>\n<td>take home ration</td>\n<td>600</td>\n</tr>\n</tbody>\n</table>\n<p>Picture these six as a bar chart on a slide. The side axis starts at 400 kilocalories.</p>\n<p>Each bar is drawn up from 400, so its length is its value minus 400.</p>\n<div class=\"working\">\n<p>450 minus 400 = 50<br />\n800 minus 400 = 400</p>\n</div>\n<div class=\"working\">\n<p>400 divided by 50 = 8</p>\n</div>\n<p>The long bar is drawn eight times as long as the short one.</p>\n<div class=\"working\">\n<p>800 divided by 450 = 1.7777…</p>\n</div>\n<p>About 1.78, which is under twice. Every number on the slide is correct, including the 400 at the bottom.</p>\n<p>Redraw the chart with the side axis starting at zero. Each bar is now as long as its value. Or keep the axis from 400 and draw each value as a dot with no bar under it. A dot carries its value by position.</p>\n<p>That is why the zero rule belongs to bars.</p>\n<p>Take the hot cooked meals: 450 kilocalories for lower primary classes and 700 for upper primary. An <dfn data-g=\"87\">infographic</dfn> — a chart decorated with pictures — draws each meal as a plate. The bigger plate is made as tall as its value requires.</p>\n<div class=\"working\">\n<p>700 divided by 450 = 1.5555…</p>\n</div>\n<p>The bigger plate is 1.556 times as tall. A plate stretched upward alone would look wrong, so it is widened by the same amount.</p>\n<p>Whatever its shape, a plate made 1.556 times as tall and 1.556 times as wide covers 1.556 times 1.556 as much of the page.</p>\n<div class=\"working\">\n<p>1.556 times 1.556 = 2.42</p>\n</div>\n<p>The bigger plate covers 2.42 times the page, for 1.556 times the energy.</p>\n<p>Before the shape, ask yourself how each mark carries its number. A point carries it by position, so read the scale. A bar carries it by length, so find the zero. A picture carries it by area, so compare the numbers and ignore the pictures.</p>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The eight times belongs to an axis starting at 400. Start at 440 and the same two bars come apart far further.</p>\n<div class=\"working\">\n<p>800 minus 440 = 360<br />\n450 minus 440 = 10<br />\n360 divided by 10 = 36</p>\n</div>\n<p>The closer the start sits to the shortest bar, the larger the distortion.</p>\n<p>Stretch a picture upward only, and its area grows in step with its value. It will look stretched, which is its own warning.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Every chart must start at zero” is the error. A bar chart must, because a bar’s length is its value. A line chart need not, because a point carries its value by position, read off the printed scale.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Settle four things before you look at the shape. What is one mark? What does each axis measure, and in what unit? Where does each axis start, and how is it spaced? Where did the numbers come from?</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A picture enlarged by some factor in height and width covers that factor squared. When you are shown an infographic, compare the numbers and never the pictures.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>When a bar chart in a meeting starts above zero, ask for it redrawn from zero before anybody discusses the size of a gap.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Ask for each count divided by its population before any district is named as the worst.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>On a figure with two side axes, where the lines cross is set by the two scales somebody chose.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Teach a trainee to ask one question of every mark: is its number carried by position, by length or by area?</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>These checks catch a figure that draws true numbers unfairly. They cannot catch a wrong number, and they cannot tell you whether a real gap matters.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Look at the lower panel of the first figure: the six Schedule II values as bars, on a side axis starting at 400 kilocalories. A colleague says a line in the caption, stating that the axis starts at 400, would make it acceptable.</p>\n<p>Say whether it would, and why. Then describe two honest ways to redraw it.</p>",
+   "type": "interpretation",
+   "confidence": true,
+   "answer": "<p>It would not. On a line chart a start printed on the axis and stated in the caption is enough, because the reader reads positions. On a bar chart the reader compares lengths, at a glance, before reading any caption.</p>\n<p>Work out what the glance sees.</p>\n<div class=\"working\">\n<p>450 minus 400 = 50<br />\n800 minus 400 = 400<br />\n400 divided by 50 = 8</p>\n</div>\n<p>The lower primary bar is drawn 50 kilocalories long and the bar for children who are malnourished 400 long. That is eight times as long, for a value 1.78 times as large. A caption tells the reader the lengths are wrong. It does not make them right.</p>\n<p>The first honest redraw: start the side axis at zero, so each bar is as long as its value.</p>\n<p>The second: keep the axis from 400 and change the mark. Draw each value as a dot at the right height, with no bar under it. A dot carries its value by position. So the axis start no longer misleads, as long as it is printed on the axis and stated in the caption. This works because the top of each bar was at the right height all along.</p>\n<p>What neither redraw tells you is whether the six values are right for these groups. That is a question about the Schedule, not about the chart.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A budget document shows two pie charts of the same size, one for each of two years. Each is split into spending on grain, on cooking and on transport. The presenter says this.</p>\n<blockquote>\n<p>Look how the grain slice has shrunk. We are spending less on grain.</p>\n</blockquote>\n<p>In the first year the scheme spent 100 <dfn data-g=\"43\">crore</dfn> rupees, 40 per cent of it on grain. In the second year it spent 150 crore rupees, 30 per cent of it on grain. The scheme and all four figures are made up for this problem.</p>\n<p>Say what is wrong with what the presenter said, and what you would ask for.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>A slice shows a share of the total, not an amount. Two pies drawn the same size hide the fact that the total changed. Work out the amounts.</p>\n<div class=\"working\">\n<p>0.4 times 100 = 40<br />\n0.3 times 150 = 45</p>\n</div>\n<p>Forty crore rupees on grain in the first year, and 45 crore in the second. Spending on grain rose by 5 crore while its slice shrank. The presenter read a share as an amount.</p>\n<p>This is a known fault of pie charts set side by side. The total changes from year to year while the pie stays one size. So the slices of two years can be compared as shares, never as amounts.</p>\n<p>What to ask for: the amount in rupees for each part in each year, drawn as bars from zero and set side by side. Then the share and the amount can each be read for what it is.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has three minutes and no jargon. They have heard that every chart must start at zero. They want to know whether that is true before they file a story about a chart that does not.</p>\n<p>Say what you would tell them, and give them one quotable sentence.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Three minutes, no jargon, and a line they can print.</p>\n<p>Start with the answer. It is true for bar charts and not true for line charts.</p>\n<p>Then the reason, as a picture. A bar tells you its number by how long it is. Your eye compares two bars by their length, in a glance. Cut the bottom off and the lengths go wrong. A short bar can look an eighth of a long one when it is more than half of it.</p>\n<p>A line tells you its numbers by where the points sit, and you read them off the side. Nothing asks you to compare lengths. So a line chart that starts at 400 is honest, as long as the 400 is printed and the caption says so. But read the change off the numbers, not off how steep the line looks. The steepness is somebody’s choice. If the line looks alarming, redraw it from zero to check the impression. That is a check, not a sign that the first drawing was dishonest.</p>\n<p>Then the one thing to check on the chart in their story. Is it bars or a line? If it is bars, find the lowest number up the side. If that is not zero, the chart exaggerates every difference on it.</p>\n<p>The quotable sentence: “A bar tells you its number by its length, so it has to start at zero. A line tells you by position, so read its numbers, not its steepness.”</p>\n<p>What not to say: that the chart’s numbers are wrong. They may be exactly right. Only the drawing misleads.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A bar chart has a side axis that starts at 60. One bar stands for 80 and another for 100.</p>\n<p>Work out how long each bar is drawn, in the units of the axis. Then work out how many times as long the second bar is drawn as the first, and how many times as large its value is.</p>",
+   "level": 1,
+   "answer": "<p>Each bar is drawn up from 60, so its drawn length is its value minus 60.</p>\n<div class=\"working\">\n<p>80 minus 60 = 20<br />\n100 minus 60 = 40</p>\n</div>\n<p>Compare the drawn lengths.</p>\n<div class=\"working\">\n<p>40 divided by 20 = 2</p>\n</div>\n<p>The second bar is drawn twice as long. Now compare the values.</p>\n<div class=\"working\">\n<p>100 divided by 80 = 1.25</p>\n</div>\n<p>Its value is one and a quarter times as large. The drawing says twice, and the numbers say a quarter more.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A picture is enlarged so that its height and its width are both multiplied by the same number. Work out how many times its area grows when that number is 3, when it is 1.5, and when it is 0.5.</p>\n<p>Then work backwards. A second picture was enlarged the same way and covers 16 times the area of the original. Work out what its height was multiplied by.</p>",
+   "level": 2,
+   "answer": "<p>Whatever the shape, its area is multiplied by the height’s factor times the width’s factor. Both were multiplied by the same number. So the area is multiplied by that number times itself.</p>\n<div class=\"working\">\n<p>3 times 3 = 9<br />\n1.5 times 1.5 = 2.25<br />\n0.5 times 0.5 = 0.25</p>\n</div>\n<p>Nine times, 2.25 times, and a quarter. The last one shrinks the picture. Its area shrinks faster than its height, as it grew faster in the other two.</p>\n<p>In the notation of the section on powers, the first is this.</p>\n<div class=\"working\">\n<p>3<sup>2</sup> = 9</p>\n</div>\n<p>Working backwards, you need the number that gives 16 when it is multiplied by itself. That is the <dfn data-g=\"176\">square root</dfn> of 16.</p>\n<div class=\"working\">\n<p>4 times 4 = 16</p>\n</div>\n<p>The height was multiplied by 4. A picture four times as tall, kept in shape, covers 16 times the page.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>The side axis of a chart is printed with 200 at the bottom and 300 at the top, with a numbered line every 20.</p>\n<p>Point A sits level with the third numbered line above the bottom. Point B sits halfway between the numbered lines for 220 and 240. Point C sits a quarter of the way from the numbered line for 280 to the numbered line for 300.</p>\n<p>Read the value of each point. Then work out how far C is above A.</p>",
+   "level": 3,
+   "answer": "<p>List the numbered lines first. They start at 200 and go up in steps of 20: 200, 220, 240, 260, 280 and 300.</p>\n<p>The third numbered line above the bottom is 260. That is A.</p>\n<p>Halfway between 220 and 240 is half a step above 220.</p>\n<div class=\"working\">\n<p>20 divided by 2 = 10<br />\n220 plus 10 = 230</p>\n</div>\n<p>B is 230.</p>\n<p>A quarter of the way from 280 to 300 is a quarter of a step above 280.</p>\n<div class=\"working\">\n<p>20 divided by 4 = 5<br />\n280 plus 5 = 285</p>\n</div>\n<p>C is 285. Now the gap.</p>\n<div class=\"working\">\n<p>285 minus 260 = 25</p>\n</div>\n<p>C is 25 above A. Notice that you never treated the bottom edge of the chart as zero. The bottom here is 200, and every value came from the printed numbers.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Schedule II of the National Food Security Act, 2013 sets 450 kilocalories for a hot cooked meal in lower primary classes. It sets 600 kilocalories for the take home ration for pregnant women and lactating mothers.</p>\n<p>A slide draws the two as bars on a side axis that starts at 400 kilocalories. Work out how long each bar is drawn, with its unit. Work out how many times as long the longer bar looks, and how many times as large its value is. Then say what a chart redrawn from zero would show.</p>",
+   "level": 4,
+   "answer": "<p>Each bar is drawn up from 400 kilocalories.</p>\n<div class=\"working\">\n<p>450 minus 400 = 50<br />\n600 minus 400 = 200</p>\n</div>\n<p>The meal bar is drawn 50 kilocalories long on the axis, and the ration bar 200 kilocalories long.</p>\n<div class=\"working\">\n<p>200 divided by 50 = 4</p>\n</div>\n<p>The ration bar looks four times as long as the meal bar.</p>\n<div class=\"working\">\n<p>600 divided by 450 = 1.3333…</p>\n</div>\n<p>Its value is about 1.33 times as large, which is a third more.</p>\n<p>Redrawn from zero, the two bars are 450 and 600 kilocalories long, and the longer is 1.33 times the shorter. The slide showed a gap of four times. The Schedule sets a gap of a third.</p>\n<p>One thing is the same on both charts. The tops of the bars sit 150 kilocalories apart.</p>\n<div class=\"working\">\n<p>600 minus 450 = 150</p>\n</div>\n<p>The difference read off the scale was never wrong. Only the lengths were.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Schedule II of the National Food Security Act, 2013 sets 500 kilocalories for the take home ration for children from 6 months to 3 years. It sets 800 kilocalories for the take home ration for children from 6 months to 6 years who are malnourished.</p>\n<p>An infographic draws each ration as a picture of a packet. The larger packet is as tall as its value requires, and it is widened by the same factor to keep its shape. Work out the scale factor, and how many times the page the larger packet covers. Then work out what the scale factor would have to be for the areas to match the values.</p>",
+   "level": 5,
+   "answer": "<p>The scale factor is the <dfn data-g=\"155\">ratio</dfn> of the two values.</p>\n<div class=\"working\">\n<p>800 divided by 500 = 1.6</p>\n</div>\n<p>The larger packet is 1.6 times as tall and 1.6 times as wide.</p>\n<div class=\"working\">\n<p>1.6 times 1.6 = 2.56</p>\n</div>\n<p>It covers 2.56 times the page, for 1.6 times the kilocalories.</p>\n<p>For the areas to match the values, the area must grow by 1.6. So the scale factor must be the number that gives 1.6 when multiplied by itself. That is the square root of 1.6, from the section on powers. Check it.</p>\n<div class=\"working\">\n<p>1.265 times 1.265 = 1.600</p>\n</div>\n<p>A scale factor of about 1.265.</p>\n<p>Now look at what that does to the height. The larger packet is only 1.265 times as tall as the smaller. A reader who compares heights sees about a quarter more, for a ration with three fifths more energy. No scale factor makes a picture honest to a reader who may compare either its height or its area. Draw bars.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A printed bar chart shows two values from Schedule II of the National Food Security Act, 2013. One is the hot cooked meal for lower primary classes, 450 kilocalories. The other is the hot cooked meal for upper primary classes, 700 kilocalories. The side axis carries no numbers.</p>\n<p>With a ruler you measure the bars at 10 millimetres and 60 millimetres. Work out how many kilocalories one millimetre stands for, and where the side axis starts.</p>",
+   "level": 6,
+   "answer": "<p>The gap between the tops of two bars does not depend on where the axis starts. So use the gap.</p>\n<div class=\"working\">\n<p>60 minus 10 = 50<br />\n700 minus 450 = 250</p>\n</div>\n<p>Fifty millimetres of bar stand for 250 kilocalories.</p>\n<div class=\"working\">\n<p>250 divided by 50 = 5</p>\n</div>\n<p>One millimetre stands for 5 kilocalories. The unit is kilocalories divided by millimetres, which is kilocalories per millimetre.</p>\n<p>Now the short bar. Its 10 millimetres stand for this much.</p>\n<div class=\"working\">\n<p>10 times 5 = 50</p>\n</div>\n<p>Fifty kilocalories of that bar are showing. Its value is 450, so the bar starts 50 below it.</p>\n<div class=\"working\">\n<p>450 minus 50 = 400</p>\n</div>\n<p>The side axis starts at 400 kilocalories. Check it with the long bar.</p>\n<div class=\"working\">\n<p>60 times 5 = 300<br />\n700 minus 300 = 400</p>\n</div>\n<p>The same 400. So a chart with no numbers on its side axis still gives its start away, if you know two of its values. Without them, its lengths cannot be read at all.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a picture is enlarged 2 times in height and 2 times in width<br />\nits area grows 2 plus 2 = 4 times<br />\na second picture is enlarged 3 times in height and 3 times in width<br />\nits area grows 3 plus 3 = 6 times<br />\nso the second picture covers 6 times the area of the original</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the second, even though its answer is right. Whatever the shape, its area is multiplied by the height’s factor times the width’s factor, and the working added them. The fourth line is where the break shows.</p>\n<p>With 2, adding and multiplying give the same answer.</p>\n<div class=\"working\">\n<p>2 plus 2 = 4<br />\n2 times 2 = 4</p>\n</div>\n<p>With 3 they part.</p>\n<div class=\"working\">\n<p>3 times 3 = 9</p>\n</div>\n<p>The second picture covers 9 times the area of the original, not 6.</p>\n<p>Why it looks reasonable: the first case came out right, and a method that has worked once gets trusted. Two plus two and two times two are the one pair of equal numbers where the error hides.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a line chart shows six readings, one at each printed date<br />\nthe dates along the bottom are 2000, 2005, 2010, 2011, 2012 and 2013<br />\nthe six points are spaced evenly across the page<br />\nthe readings are 20, 30, 40, 42, 44 and 46<br />\nthe line climbs steeply over its first two steps and then flattens<br />\nso the quantity grew fast until 2010 and has slowed sharply since</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the last. The steepness on the page was read as a rate, without checking what each step across the page stands for.</p>\n<p>Read the dates. The first two steps are five years each. The last three are one year each. All five are drawn the same width.</p>\n<p>Work out the rate over each step: the change, divided by the years it took.</p>\n<div class=\"working\">\n<p>30 minus 20 = 10<br />\n10 divided by 5 = 2<br />\n40 minus 30 = 10<br />\n10 divided by 5 = 2<br />\n42 minus 40 = 2<br />\n2 divided by 1 = 2<br />\n44 minus 42 = 2<br />\n2 divided by 1 = 2<br />\n46 minus 44 = 2<br />\n2 divided by 1 = 2</p>\n</div>\n<p>Two a year, at every step. The quantity grew at the same rate throughout. The bend in the line is made entirely by the spacing.</p>\n<p>Why it looks reasonable: the third line says the points are evenly spaced, and it reads like a neutral fact. It is the fact that should have stopped the reading, because the dates under those points are not evenly spaced.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A bar chart groups 60 readings into ranges. The readings and every number here are made up for this problem. Here is a worked answer about the chart. Find the step that broke.</p>\n<div class=\"working\">\n<p>the ranges printed under the bars are 0 to 20, 20 to 40, 40 to 60, 60 to 80 and over 80<br />\nthe five bars are drawn the same width<br />\nthe bars are 6, 10, 14, 12 and 18 readings tall<br />\nthe largest reading in the data is 190<br />\nthe last bar is the tallest<br />\nso readings over 80 are the most common kind</p>\n</div>\n<p>Then say what you would check on any chart like this.</p>",
+   "level": 7,
+   "answer": "<p>The step that broke is the last. It compared the heights of bars that do not cover the same span of values.</p>\n<p>Read the ranges. Each of the first four covers 20. The last is labelled “over 80”, and the largest reading tells you where it really ends.</p>\n<div class=\"working\">\n<p>190 minus 80 = 110<br />\n110 divided by 20 = 5.5</p>\n</div>\n<p>The last bar covers a span of 110, five and a half times the span of each of the others. It is drawn the same width, so nothing on the page shows that.</p>\n<p>Put it on the same footing as the others. Work out how many readings it holds for each 20 of its span, on average.</p>\n<div class=\"working\">\n<p>18 divided by 5.5 = 3.2727…</p>\n</div>\n<p>About 3 readings for each 20. Every one of the first four bars holds more than that: 6, 10, 14 and 12. Averaged over their span, the readings over 80 are the thinnest, not the most common.</p>\n<p>That is an average, and the chart cannot say more. All 18 could sit between 80 and 100, and then that stretch would be the busiest of all. The broken step claimed something the drawing cannot show either way.</p>\n<p>Why it looks reasonable: the five bars are the same width, so they look like five equal ranges. The label “over 80” reads like a range, and it never says where it stops.</p>\n<p>What to check on any chart like this. Read the range printed under every bar. Check that each covers the same span. Where a label is open, such as “over 80”, ask where it ends. Then ask for that range split into steps of the same size as the rest.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a figure has two lines and two side axes<br />\nline A is read against the left axis, which runs from 0 to 100<br />\nline B is read against the right axis, which runs from 0 to 20<br />\nthe two lines cross at year 4, 40 per cent of the way up the figure<br />\nso in year 4 the two quantities were equal</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the fifth. Where two lines cross on a figure with two side axes depends on the axes, not on the quantities.</p>\n<p>Read each line at the crossing against its own axis. The crossing is 40 per cent of the way up.</p>\n<div class=\"working\">\n<p>0.4 times 100 = 40<br />\n0.4 times 20 = 8</p>\n</div>\n<p>Line A is at 40 and line B is at 8. They are not equal. They may not even be in the same unit.</p>\n<p>Now change only the right axis, so that it runs from 0 to 10. Line B’s value of 8 now sits here.</p>\n<div class=\"working\">\n<p>8 divided by 10 = 0.8</p>\n</div>\n<p>Eighty per cent of the way up, while line A stays at 40 per cent. The lines no longer cross at year 4, and nothing about either quantity changed.</p>\n<p>Why it looks reasonable: on a figure with one side axis, a crossing does mean the two are equal. The rule is sound there, and it has been carried to a figure it does not fit.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A colleague reviewing a district report says this.</p>\n<blockquote>\n<p>This chart is dishonest. Its side axis starts at 400 kilocalories, not at zero.</p>\n</blockquote>\n<p>The chart is a line through six points, one a year, showing the average energy of a school meal in the district. The side axis runs from 400 to 500 kilocalories, and both numbers are printed. The caption says the axis starts at 400. The line runs from 440 in the first year to 470 in the sixth. The district, the report and every figure are made up for this problem.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to decide first: how the chart’s marks carry their numbers. They are points joined by a line, so they carry them by position. Nothing asks you to compare lengths. On a line chart, an axis starting at 400 is honest when the 400 is printed on the axis and stated in the caption. The colleague has taken the rule for bars and applied it to a line.</p>\n<p>What to compute: the size of the change, with its unit, and how much of the chart’s height it fills.</p>\n<div class=\"working\">\n<p>470 minus 440 = 30</p>\n</div>\n<p>Thirty kilocalories. Six readings a year apart span five years.</p>\n<div class=\"working\">\n<p>30 divided by 5 = 6</p>\n</div>\n<p>Six kilocalories a year, on average. Now the share of the height.</p>\n<div class=\"working\">\n<p>500 minus 400 = 100<br />\n30 divided by 100 = 0.3</p>\n</div>\n<p>The change fills three tenths of the height. On an axis from zero to 500 it would fill six hundredths.</p>\n<div class=\"working\">\n<p>30 divided by 500 = 0.06</p>\n</div>\n<p>Now see when the colleague would be right. Draw the first and last values as bars from 400.</p>\n<div class=\"working\">\n<p>440 minus 400 = 40<br />\n470 minus 400 = 70<br />\n70 divided by 40 = 1.75</p>\n</div>\n<p>The last bar would look 1.75 times the first, for a rise of under 7 per cent.</p>\n<div class=\"working\">\n<p>30 divided by 440 = 0.0681…</p>\n</div>\n<p>That chart would be the dishonest one.</p>\n<p>What this does not establish. It does not establish that the line gives a fair impression. How steep it looks was still somebody’s choice, as the section on graphs showed. Redrawing it from zero, as that section advised, checks the impression. It does not make the first drawing dishonest. And it does not tell you whether 30 kilocalories matters. That is a question about meals, not about drawing.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A press line reads like this.</p>\n<blockquote>\n<p>District P reported 1,800 cases of the illness last year and District Q only 900. The chart makes it plain: the burden in P is twice that in Q.</p>\n</blockquote>\n<p>The chart shows the two counts as bars from zero. District P has 12 <dfn data-g=\"102\">lakh</dfn> people and District Q has 3 lakh. The illness, both districts and all four figures are made up for this problem.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the rate in each district, which is the count divided by the population, as in the section on rates. The chart is an honest picture of counts. The press line uses it for a claim about burden, and a count cannot carry that.</p>\n<p>Write the populations out. Twelve lakh is 12,00,000 and three lakh is 3,00,000.</p>\n<div class=\"working\">\n<p>1800 divided by 1200000 = 0.0015<br />\n0.0015 times 1000 = 1.5</p>\n</div>\n<p>In P, 1.5 cases for every 1,000 people.</p>\n<div class=\"working\">\n<p>900 divided by 300000 = 0.003<br />\n0.003 times 1000 = 3</p>\n</div>\n<p>In Q, 3 cases for every 1,000 people.</p>\n<div class=\"working\">\n<p>3 divided by 1.5 = 2</p>\n</div>\n<p>Measured as a rate, the burden is twice as high in Q. The press line has it the wrong way round. P has more cases because it has four times the people.</p>\n<div class=\"working\">\n<p>1200000 divided by 300000 = 4</p>\n</div>\n<p>What this does not establish. It does not establish that the counts are complete in both districts. A district that finds and records more of its cases shows a higher rate for that reason alone. And it does not say why Q’s rate is higher. Before either district is named in public, ask how the cases were found and counted in each.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A note from a block office says this.</p>\n<blockquote>\n<p>Meals served in our schools have fallen in every one of the last four years. The chart shows it clearly.</p>\n</blockquote>\n<p>The chart covers years 6 to 10. You ask for the whole series and get this. The block, the note and every figure are made up for this problem.</p>\n<table style=\"width:39%;\">\n\n<thead>\n<tr>\n<th>year</th>\n<th>meals served a day</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>5000</td>\n</tr>\n<tr>\n<td>2</td>\n<td>5400</td>\n</tr>\n<tr>\n<td>3</td>\n<td>5900</td>\n</tr>\n<tr>\n<td>4</td>\n<td>6300</td>\n</tr>\n<tr>\n<td>5</td>\n<td>6800</td>\n</tr>\n<tr>\n<td>6</td>\n<td>7400</td>\n</tr>\n<tr>\n<td>7</td>\n<td>7300</td>\n</tr>\n<tr>\n<td>8</td>\n<td>7200</td>\n</tr>\n<tr>\n<td>9</td>\n<td>7150</td>\n</tr>\n<tr>\n<td>10</td>\n<td>7100</td>\n</tr>\n</tbody>\n</table>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: whether the note’s sentence is true, the change over the stretch the chart shows, and the change over the whole series.</p>\n<p>The sentence first. Each of years 7, 8, 9 and 10 is below the year before it. The sentence is true.</p>\n<p>The change over the chart’s stretch, from year 6 to year 10.</p>\n<div class=\"working\">\n<p>7100 minus 7400 = -300<br />\n-300 divided by 4 = -75</p>\n</div>\n<p>A fall of 300 meals a day across four years, 75 a year on average.</p>\n<div class=\"working\">\n<p>300 divided by 7400 = 0.0405…</p>\n</div>\n<p>About 4 per cent of the year 6 figure.</p>\n<p>The change over the whole series, from year 1 to year 10.</p>\n<div class=\"working\">\n<p>7100 minus 5000 = 2100<br />\n2100 divided by 5000 = 0.42</p>\n</div>\n<p>A rise of 2,100 meals a day, 42 per cent above year 1. Drawn whole, the chart shows a long climb that levels off and dips a little at the end. Drawn from year 6, it shows only the dip.</p>\n<p>What this does not establish. The window is not a lie, since the note’s sentence is true. The question is what the chart is being used to argue, and which window serves that argument.</p>\n<p>It does not establish why meals fell. Meals served is a count. If enrolment fell by more than meals did, about 4 per cent, the meals for each enrolled child went up. So ask for enrolment in each year, and divide.</p>\n<p>And it does not establish that the fall will continue. Four small falls after a long rise fit several stories, and these ten numbers cannot choose between them.</p>\n<p>What to ask for: the whole series on one chart, and the reason the chart starts at year 6.</p>"
+  }
+ ]
+}

@@ -1,0 +1,152 @@
+{
+ "format": 1,
+ "id": "s57-r1-c15",
+ "label": "15",
+ "title": "Leading people is a craft of its own",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>To lead people is to get a group to move towards a change and to keep them at the work it takes.</p>\n<p>Stoller, reviewing physician <dfn data-g=\"279\">leadership</dfn>, argues that skill at the work and skill at leading others in it are different competencies. Kotter (1990) argued that leadership has nothing to do with charisma or other exotic personality traits, and is not the province of a chosen few.</p>\n<p>Leadership is taught to physicians, and the teaching has been evaluated. Frich and colleagues’ <dfn data-g=\"512\">systematic review</dfn> found 45 published studies of leadership development programmes for physicians, searched in one database up to November 2013. All 45 reported positive outcomes. Four had a <dfn data-g=\"86\">comparison group</dfn> (the Results text says five; see section 13).</p>\n<p>That such training changes what physicians do at work, or the results of the service they work in, has been tested in very few studies.</p>\n<p>In this book, a <dfn data-g=\"516\">teaching lineage</dfn> means the people you teach, and the people they go on to teach. A <dfn data-g=\"517\">team you run</dfn> means a set of people whose work on one job you direct, for as long as the job lasts. An <dfn data-g=\"251\">institution that outlives you</dfn> means a standing group, with written terms, roles and a named successor, that keeps working after you leave it.</p>\n<p>In this book, a <dfn data-g=\"402\">professional body</dfn> means an association whose members share one profession or discipline. A <dfn data-g=\"73\">civil society organisation</dfn> means a group formed by citizens, outside government and outside business, to work for a public cause.</p>",
+   "refs": [
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    312,
+    311,
+    354,
+    355,
+    356,
+    357,
+    358,
+    313,
+    359,
+    360,
+    361,
+    362,
+    363
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Here is the usual path. The resident who knows the most is made chief resident. Everyone assumes the skill carries over. It need not. Stoller argues that knowing the work and getting others to do it well are different skills.</p>\n<p>So is leading a gift you have or do not have? Kotter says no: it is not the province of a chosen few. Companies find people with the potential and develop it through early challenge. He adds that not everyone becomes a strong leader.</p>\n<p>Many programmes teach leadership to doctors, and every study in one large review reported success. Most of that success is what the doctors said about themselves. It was mostly measured straight after the course. Leadership is taught, and doctors say they learn from it. Whether it changes what they do is barely tested.</p>\n<p>You will be asked to build three different things. To tell them apart, ask one question: what happens to it the day you go?</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c15-study-designs.png",
+   "alt": "Three bars. Measured after the programme only: 22. Measured before and after: 23. Had a comparison group: 4.",
+   "w": 1357,
+   "h": 654,
+   "caption": "How the 45 studies in Frich and colleagues’ review were designed. 22 measured after the programme only and 23 before and after; 22 plus 23 = 45. The 4 with a comparison group are among those 45, so 41 had nothing to compare against."
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c15-mentees.png",
+   "alt": "Points rising in a straight line from 0 at the start: 3 students after year 1, 6 after year 2, 9 after year 3, 12 after year 4 and 15 after year 5, on the line students = 3 × years.",
+   "w": 1357,
+   "h": 655,
+   "caption": "Mentees under the CBME Curriculum 2024: three new first-year students each year. Stay five years in one college and 3 × 5 = 15 students have been yours. The five years are the example’s; the three a year are the curriculum’s."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is the trap. A senior colleague tells your department meeting: “Leadership can be taught. A review of 45 studies found that every leadership programme for doctors worked.”</p>\n<p>Open the review, Frich and colleagues, “Leadership development programs for physicians: a systematic review”, <em>Journal of General Internal Medicine</em> 2015, at https://pmc.ncbi.nlm.nih.gov/articles/PMC4395611/. Search the page for “Positive outcomes”.</p>\n<blockquote>\n<p>Positive outcomes were reported in all studies, although the majority of studies relied on learner satisfaction scores and self-assessed knowledge or behavioral change.</p>\n</blockquote>\n<p>So your colleague is right that every study reported a positive outcome. The section on liking a session sorted these same outcomes by level, and most sat at the bottom two. Now ask a different question: what was each study compared with? Find Table 2 and read its rows under “Evaluation design”.</p>\n<table style=\"width:75%;\">\n\n<tbody>\n<tr>\n<td>how the study was designed</td>\n<td>studies (of 45)</td>\n</tr>\n<tr>\n<td>measured after the programme only</td>\n<td>22</td>\n</tr>\n<tr>\n<td>measured before and after</td>\n<td>23</td>\n</tr>\n<tr>\n<td>had a comparison group</td>\n<td>4</td>\n</tr>\n</tbody>\n</table>\n<p>The first two rows cover every study once.</p>\n<div class=\"working\">\n<p>22 plus 23 = 45</p>\n</div>\n<p>The four with a comparison group are among those 45, not extra to them. That leaves 41 studies with nothing to compare against.</p>\n<div class=\"working\">\n<p>45 minus 4 = 41</p>\n</div>\n<p>A study measured after the programme only cannot show a change. A study measured before and after shows a change, but not that the programme caused it: the section on testing a teaching method set out why. Only the four could compare trained physicians with untrained ones.</p>\n<p>Now search for “publication bias”. The authors expect that studies finding no effect were less likely to be published. So “every study worked” is partly a fact about what gets printed.</p>\n<p>Here is what you can say instead. Leadership programmes for doctors are common. Doctors report learning from them. Whether the programmes change what doctors do at work has been tested in very few studies.</p>",
+   "numberRefs": [
+    317
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The counts describe published studies of leadership programmes for physicians, found in one database up to November 2013. A newer review may find more comparison-group studies: search for one before you quote these numbers.</p>\n<p>Weak evidence that training works is not evidence that it does not. The claim is untested more than it is refuted.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Picture your first year as an Assistant Professor of Community Medicine. By its end, three things are in your hands.</p>\n<p>The first is your mentees. The <dfn data-g=\"87\">Competency Based</dfn> Medical Education (CBME) Curriculum 2024 gives each mentor three first-year students during the Foundation Course. They stay with you until they finish internship, and three more are added each year. Stay five years in one college and the count is easy.</p>\n<div class=\"working\">\n<p>3 times 5 = 15</p>\n</div>\n<p>Fifteen students have been yours.</p>\n<p>The second is a survey team. For one month you run four interns and two accredited social health activists, weighing and measuring children in two villages.</p>\n<p>The third is the department’s monthly journal club, which you started.</p>\n<p>Now ask each one the same question. What happens to it the day you leave?</p>\n<ul>\n<li>The mentees carry what you taught them. If some of them teach it to their own juniors, it goes on spreading without you. That is a teaching lineage. It is measured in people, over years, and it grows only through teaching and time with each person.</li>\n<li>The survey stops, or passes to whoever runs it next. That is a team you run. It exists for one job. It needs direction, roles and work handed out, and the next section gives you the words for those.</li>\n<li>The journal club either stops, or keeps meeting because it has written rules, a rota of convenors and a named successor. Only in the second case is it an institution that outlives you. Building one means making yourself unnecessary to it, on purpose.</li>\n</ul>\n<p>Kotter, writing about companies, puts the last of these highest: “Institutionalizing a leadership-centered culture is the ultimate act of leadership.” That is his judgement, not a finding. It does tell you which of the three is hardest to fake.</p>",
+   "numberRefs": [
+    346
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The survey team, the journal club and the five years are made up for this example; the mentor numbers are the curriculum’s.</p>\n<p>The three are not always separate. A team you run well can turn into a lineage, and an institution needs a team to run it in any given year. The question “what happens when I leave?” sorts what you have built. It does not tell you how to build it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Being the best at the work does not make you able to lead others in it. When you are chosen to run something because you know the most, expect to have to learn a second skill.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not say leadership programmes are shown to change practice. In Frich’s review, 2 of 45 studies measured behaviour at work objectively, and 4 had a comparison group (the Results text says five; see section 13).</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>You lead before you have a title. Take the small chances now: run the journal club, lead the camp, own one change on the ward.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Ask of anything you run: what happens to it the day I leave? If the answer is “it stops”, you have built a team, however long it has run. If you want it to last, write its rules and name a successor while you are still there.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Your first lineage is handed to you. From your first post as Assistant Professor you can be made a mentor. You get three first-year students a year, and they stay with you until they finish internship.</p>",
+     "tag": "india_deviation",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Join one professional body and one civil society organisation, and be useful to both. This course asks it of you at the next rung. A body gives you peers who check your work. An organisation outside government gives your evidence a use. The next book names the bodies.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The claim that leading can be learned rests on argument and on programme reports, not on trials. Judge a course as you would judge a teaching session: ask what was measured, at what level, and against what comparison.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Name the three things a leader is asked to build, as this section defines them. Give the one question that tells them apart, and what the answer is for each.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>A teaching lineage, a team you run, and an institution that outlives you.</p>\n<p>The question is: what happens to it the day you leave? The lineage goes on in the people you taught, and in the people they teach. The team’s work stops or passes to its next leader. The institution keeps working without you, because it has written rules, roles and a successor.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>The Dean says at a committee meeting: “Dr Rao is the best physician we have. She has published more on obesity than anyone in the state. Make her head of the new obesity clinic and it will run itself.” Find the step in the argument that does not follow, and say what you would want to know before agreeing.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The premises may all be true. Dr Rao may be the best physician and the most published. The step that fails is from “best at the work” to “able to lead the people who do the work”. Stoller argues that knowing the work and leading others in it are different skills.</p>\n<p>“It will run itself” is a second slip. A new clinic is a change. Someone has to decide what it is for, and bring the nurses, dietitians and referring doctors round to it. Someone also has to draw up its rota and its budget.</p>\n<p>Before agreeing, ask what Dr Rao has led before: a unit, a project, a team of any size. Ask what she wants to do, since the job will take time from the work she is best at. And ask who will run the clinic day to day if she decides what it is for. None of this says she is the wrong choice. It says her record as a physician does not settle it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>For a journalist, three minutes, no jargon. The journalist asks: “Can you teach doctors to be leaders, or are leaders born?” Give one quotable sentence, and be honest about how strong the evidence is.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The quotable sentence: “Leading is probably a skill doctors can learn, but we have mostly asked the doctors whether it worked, and hardly ever checked.”</p>\n<p>Then the detail. One of the best-known writers on leadership, John Kotter, says it does not depend on charisma. Leadership courses for doctors are common: one review found 45 published studies of them by 2013. Every one reported a benefit. But most of the benefit was what the doctors said about themselves, measured straight after the course. Only four studies compared trained doctors with untrained ones. Studies that found nothing were probably less likely to be published.</p>\n<p>So: probably learnable, taught often, and tested badly. The evidence is weak, not negative.</p>"
+  }
+ ]
+}

@@ -1,0 +1,207 @@
+{
+ "format": 1,
+ "id": "s02-r1-c06",
+ "label": "6",
+ "title": "Undoing a derivative: antiderivatives and the fundamental theorem",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>An <dfn data-g=\"16\">antiderivative</dfn> of a function f is a function F whose <dfn data-g=\"67\">derivative</dfn> is f, so that dF/dt = f(t).</p>\n<p>Each of these is checked by differentiating back, with the rules of section 3 and section 4:</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>the function f(t)</td>\n<td>an antiderivative F(t)</td>\n</tr>\n<tr>\n<td>a constant c</td>\n<td>c times t</td>\n</tr>\n<tr>\n<td>t<sup>(n)</sup>, for n a whole number</td>\n<td>t<sup>(n plus 1)</sup> divided by (n plus 1)</td>\n</tr>\n<tr>\n<td>e<sup>(kt)</sup>, for k not zero</td>\n<td>e<sup>(kt)</sup> divided by k</td>\n</tr>\n</tbody>\n</table>\n<p>Sums and constant multiples are done term by term.</p>\n<p>The <dfn data-g=\"105\">fundamental theorem of calculus</dfn>, in the part called the evaluation theorem, says this. If f is continuous from a to b (its graph has no jumps; every rate in this book is) and F is any antiderivative of f, then ∫ from a to b of f(t) dt = F(b) minus F(a).</p>",
+   "refs": [
+    40,
+    41,
+    42,
+    43
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>section 5 worked out integrals from shapes: rectangles, triangles, trapeziums. That works only for a rate that is steady or changes in a straight line. Most rates bend. This section gives a way that does not need a shape.</p>\n<p>Given a rate, find a function whose rate it is. That function is called an antiderivative.</p>\n<p>Say the rate is 2t. Which function has the rate 2t? The <dfn data-g=\"205\">power rule</dfn> says t<sup>2</sup> does. So t<sup>2</sup> is an antiderivative of 2t.</p>\n<p>So is t<sup>2</sup> plus 5, and t<sup>2</sup> plus any fixed number. A fixed number has a rate of zero, so adding one changes nothing about the rate. That is why an antiderivative is written with plus C on the end, where C is any constant.</p>\n<p>You never have to trust an antiderivative. Differentiate it and see whether the rate comes back.</p>\n<table style=\"width:93%;\">\n\n<tbody>\n<tr>\n<td>the rate</td>\n<td>an antiderivative</td>\n</tr>\n<tr>\n<td>a steady rate c</td>\n<td>c times t</td>\n</tr>\n<tr>\n<td>t<sup>(n)</sup>, n a whole number</td>\n<td>t<sup>(n plus 1)</sup> divided by (n plus 1)</td>\n</tr>\n<tr>\n<td>e<sup>(kt)</sup></td>\n<td>e<sup>(kt)</sup> divided by k</td>\n</tr>\n</tbody>\n</table>\n<p>The fundamental theorem of calculus says an <dfn data-g=\"130\">integral</dfn> is the antiderivative at the end minus the antiderivative at the start.</p>\n<div class=\"working\">\n<p>∫ from a to b of f(t) dt = F(b) minus F(a)</p>\n</div>\n<p>Here F is any antiderivative of f. The C cancels, because it is added at both ends and then subtracted. So leave it out when you work out an integral.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c06-plus-c.png",
+   "alt": "Two identical rising curves from t = 0 to 3, one 5 above the other: 0, 1, 4 and 9, and 5, 6, 9 and 14. At t = 2 each has a straight tangent line, and the two tangents are parallel.",
+   "w": 1357,
+   "h": 654,
+   "caption": "Two antiderivatives of the rate 2t: t<sup>2</sup>, and t<sup>2</sup> plus 5. One is the other lifted by 5 at every t, so they rise equally fast. At t = 2 both tangents have slope 4, which is 2t there. Adding a constant changes the level, never the rate."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c06-halving-deficit.png",
+   "alt": "A falling curve from 730 at year 0 through 365.1 at year 1 to 182.6 at year 2, under a dashed level line at 730. From year 0 to year 1 the area under the curve is shaded in one colour and the strip between the curve and the level line in another.",
+   "w": 1358,
+   "h": 655,
+   "caption": "The made-up deficit D(t) = 730 e<sup>(-0.693t)</sup> megajoules a year, which halves each year, against a steady 730. Over the first year the area under the halving deficit is F(1) minus F(0) = 526.6 megajoules. The steady rectangle is 730, and the strip between them, 203.4, is what the steady rule over-counts."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c06-steady-and-halving.png",
+   "alt": "Two lines over 0 to 3 years. A straight line rises through 730 at year 1 to 2190 at year 3. A curve rises through 526.6 at year 1 to 921.7 at year 3, bending under a dashed level at 1053.4.",
+   "w": 1357,
+   "h": 654,
+   "caption": "Totals so far. A steady deficit of 730 megajoules a year adds up in a straight line: 730 after 1 year, 2190 after 3. The halving deficit adds up to 526.6 in the first year and 921.7 by year 3, and levels off under 1053.4 megajoules, which it never passes."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Hall and colleagues model a man who cuts his intake by 2 megajoules a day, which is 480 kilocalories a day (<em>Lancet</em> 2011). Keep the <dfn data-g=\"63\">deficit</dfn> at 2 megajoules a day, as the <dfn data-g=\"260\">static rule</dfn> of Book 1, section 7 does. Then one year of it is a rectangle.</p>\n<div class=\"working\">\n<p>2 times 365 = 730</p>\n</div>\n<p>So a deficit of 2 megajoules a day is 730 megajoules a year.</p>\n<p>His expenditure falls as his weight falls, so his real deficit shrinks. Suppose, to see the arithmetic, that it halves every year. This shape is made up here, and it is not the paper’s model. A <dfn data-g=\"117\">half-time</dfn> of 1 year means k = 0.693 per year (section 4). With t in years, the deficit in megajoules a year is this.</p>\n<div class=\"working\">\n<p>D(t) = 730 e<sup>(-0.693t)</sup></p>\n</div>\n<p>The rate of 730 e<sup>(-0.693t)</sup> is -0.693 times 730 e<sup>(-0.693t)</sup>. That is not the deficit. It is -0.693 times the deficit. So divide by -0.693 to cancel that factor.</p>\n<div class=\"working\">\n<p>730 divided by 0.693 = 1053.4<br />\nF(t) = -1053.4 e<sup>(-0.693t)</sup></p>\n</div>\n<p>Check it: differentiate F and see whether 730 e<sup>(-0.693t)</sup> comes back. The rate of F is -0.693 times -1053.4 e<sup>(-0.693t)</sup>, which is 730 e<sup>(-0.693t)</sup>. Now work out F(1) minus F(0) on your calculator. e<sup>(-0.693)</sup> is 0.5001, and e<sup>0</sup> is 1.</p>\n<div class=\"working\">\n<p>F(1) minus F(0) = -1053.4 times 0.5001 plus 1053.4<br />\n1053.4 times (1 minus 0.5001) = 1053.4 times 0.4999<br />\n1053.4 times 0.4999 = 526.6</p>\n</div>\n<p>About 526.6 megajoules in the first year, against 730 for the steady deficit.</p>\n<p>Take the total up to any later time T. It is F(T) minus F(0), which is 1053.4 times (1 minus e<sup>(-0.693T)</sup>). As T grows, e<sup>(-0.693T)</sup> shrinks towards zero, so the total creeps up towards 1053.4 megajoules and never passes it.</p>\n<p>A deficit that shrinks adds up to less.</p>",
+   "numberRefs": [
+    32
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Every total here is energy, in megajoules. Turning it into kilograms needs to know what tissue was lost (Book 1, section 2).</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Check every antiderivative by differentiating it. If the rate you started with does not come back, the antiderivative is wrong, however reasonable it looks. It takes one line.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The antiderivative of e<sup>(kt)</sup> is e<sup>(kt)</sup> divided by k, not e<sup>(kt)</sup>. Dropping the k gives the wrong size. For a shrinking curve, e<sup>(-kt)</sup>, dropping the k also gives the wrong sign: the antiderivative is e<sup>(-kt)</sup> divided by -k.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“The deficit never quite reaches zero, so the loss keeps going for ever” is wrong as arithmetic. A deficit D0 e<sup>(-kt)</sup>, where D0 is its value at the start, adds up to at most D0 divided by k, however long it runs.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>These rules cover steady rates, whole-number powers of t, e<sup>(kt)</sup>, and sums and multiples of them. When no antiderivative is at hand, go back to rectangles and bound the error as Book 0, C8 does.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A figure made by multiplying a daily deficit by 365, and then by a number of years, is a steady-deficit total. Any deficit that shrinks adds up to less. In a committee, call such a figure an upper limit, reached only if the deficit never shrinks.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Take F at the upper limit minus F at the lower limit, in that order. The reverse gives the right size with the wrong sign.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A deficit shrinks as D(t) = D0 e<sup>(-kt)</sup>, where D0 is its size at t = 0 and k is above zero. Derive the total from t = 0 to t = T. Write beside each line the move you made. Then say what the total approaches as T grows, and why.</p>",
+   "type": "calculation",
+   "confidence": false,
+   "answer": "<p>Find an antiderivative, check it, then take the end minus the start.</p>\n<div class=\"working\">\n<p>F(t) = D0 e<sup>(-kt)</sup> divided by -k    (the rule for e<sup>(kt)</sup>, with -k in place of k)<br />\nthe rate of F = -k times D0 e<sup>(-kt)</sup> divided by -k = D0 e<sup>(-kt)</sup>    (check by differentiating back)<br />\ntotal = F(T) minus F(0)    (the fundamental theorem)<br />\nF(0) = D0 divided by -k    (e<sup>0</sup> is 1)<br />\ntotal = D0 e<sup>(-kT)</sup> divided by -k minus D0 divided by -k    (substitute)<br />\ntotal = D0 times (1 minus e<sup>(-kT)</sup>) divided by k    (multiply top and bottom by -1 and collect)</p>\n</div>\n<p>As T grows, e<sup>(-kT)</sup> shrinks towards zero. So 1 minus e<sup>(-kT)</sup> climbs towards 1, and the total climbs towards D0 divided by k. It never gets there and never passes it.</p>\n<p>For example, take D0 = 730 and k = 0.693, as in the illustration.</p>\n<div class=\"working\">\n<p>730 divided by 0.693 = 1053.4</p>\n</div>\n<p>The total over all time is at most 1053.4, however long the deficit runs.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Write an antiderivative of each: 6, 4t, 3 t<sup>2</sup>, and t<sup>3</sup> plus 2t. Check each by differentiating it.</p>",
+   "level": 1,
+   "answer": "<p>Use the table’s rules term by term.</p>\n<div class=\"working\">\n<p>6 gives 6t<br />\n4t gives 4 times t<sup>2</sup> divided by 2, which is 2 t<sup>2</sup><br />\n3 t<sup>2</sup> gives 3 times t<sup>3</sup> divided by 3, which is t<sup>3</sup><br />\nt<sup>3</sup> plus 2t gives t<sup>4</sup> divided by 4 plus t<sup>2</sup></p>\n</div>\n<p>Now differentiate each back with the power rule.</p>\n<div class=\"working\">\n<p>the rate of 6t is 6<br />\nthe rate of 2 t<sup>2</sup> is 2 times 2t, which is 4t<br />\nthe rate of t<sup>3</sup> is 3 t<sup>2</sup><br />\nthe rate of t<sup>4</sup> divided by 4 plus t<sup>2</sup> is t<sup>3</sup> plus 2t</p>\n</div>\n<p>Each rate comes back. Any of these plus a constant would do as well.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Work out ∫ from 1 to 3 of 3 t<sup>2</sup> dt.</p>",
+   "level": 1,
+   "answer": "<p>An antiderivative of 3 t<sup>2</sup> is t<sup>3</sup>. Take it at the upper limit minus the lower limit.</p>\n<div class=\"working\">\n<p>3<sup>3</sup> = 27<br />\n1<sup>3</sup> = 1<br />\n27 minus 1 = 26</p>\n</div>\n<p>The integral is 26.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Work out ∫ from 0 to 2 of e<sup>(3t)</sup> dt, to two <dfn data-g=\"62\">decimal</dfn> places.</p>",
+   "level": 2,
+   "answer": "<p>An antiderivative of e<sup>(3t)</sup> is e<sup>(3t)</sup> divided by 3. At t = 2 the <dfn data-g=\"92\">exponent</dfn> is 6. At t = 0 it is 0, and e<sup>0</sup> is 1.</p>\n<p>On the calculator, e<sup>6</sup> is 403.43. Take the antiderivative at 2 minus the antiderivative at 0.</p>\n<div class=\"working\">\n<p>403.43 divided by 3 minus 1 divided by 3 = (403.43 minus 1) divided by 3<br />\n403.43 minus 1 = 402.43<br />\n402.43 divided by 3 = 134.14</p>\n</div>\n<p>The integral is 134.14.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Work out ∫ from 0 to 4 of 10 e<sup>(-0.5t)</sup> dt, to two decimal places.</p>",
+   "level": 2,
+   "answer": "<p>An antiderivative of 10 e<sup>(-0.5t)</sup> is 10 e<sup>(-0.5t)</sup> divided by -0.5, which is -20 e<sup>(-0.5t)</sup>. Check: its rate is -0.5 times -20 e<sup>(-0.5t)</sup>, which is 10 e<sup>(-0.5t)</sup>.</p>\n<p>At t = 4 the exponent is -2. At t = 0, e<sup>0</sup> is 1.</p>\n<div class=\"working\">\n<p>e<sup>(-2)</sup> = 0.1353<br />\n-20 times 0.1353 = -2.706<br />\n-20 times 1 = -20<br />\n-2.706 minus -20 = 17.294</p>\n</div>\n<p>The integral is about 17.29.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Work out ∫ from 2 to 5 of 2t dt twice: once with the antiderivative t<sup>2</sup>, and once with t<sup>2</sup> plus 5. Say what happened to the 5.</p>",
+   "level": 3,
+   "answer": "<p>With t<sup>2</sup>:</p>\n<div class=\"working\">\n<p>5<sup>2</sup> = 25<br />\n2<sup>2</sup> = 4<br />\n25 minus 4 = 21</p>\n</div>\n<p>With t<sup>2</sup> plus 5:</p>\n<div class=\"working\">\n<p>25 plus 5 = 30<br />\n4 plus 5 = 9<br />\n30 minus 9 = 21</p>\n</div>\n<p>Both give 21. The 5 is added at the upper limit and again at the lower limit, and the subtraction takes it away. That is why the plus C is left out when you work out an integral between two limits.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A rate is 10 e<sup>(-0.5t)</sup>. Work out its total from t = 0 onwards, over all time. Then work out how long it takes to add up to 95% of that.</p>",
+   "level": 3,
+   "answer": "<p>The total from 0 to T is 10 times (1 minus e<sup>(-0.5T)</sup>) divided by 0.5. As T grows, e<sup>(-0.5T)</sup> shrinks towards zero.</p>\n<div class=\"working\">\n<p>10 divided by 0.5 = 20</p>\n</div>\n<p>Over all time the total approaches 20.</p>\n<p>It reaches 95% of 20 when 1 minus e<sup>(-0.5T)</sup> is 0.95. That is when e<sup>(-0.5T)</sup> is 0.05, which is one twentieth. From section 4, that happens at ln 20 divided by k.</p>\n<div class=\"working\">\n<p>2.996 divided by 0.5 = 5.992</p>\n</div>\n<p>At about T = 5.99.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Hall and colleagues (<em>Lancet</em> 2011) model a cut in intake of 480 kilocalories a day. Suppose a person’s net deficit starts at 480 and falls by 0.5 kilocalories a day every day. That fall is made up for this problem. Use an antiderivative to work out the total deficit over 200 days. Then check it with the trapezium.</p>",
+   "level": 4,
+   "answer": "<p>The deficit is 480 minus 0.5t, with t in days. Take it term by term.</p>\n<div class=\"working\">\n<p>0.5 divided by 2 = 0.25<br />\nF(t) = 480t minus 0.25 t<sup>2</sup></p>\n</div>\n<p>Check: the rate of F is 480 minus 2 times 0.25t, which is 480 minus 0.5t. Now F at 200 minus F at 0. F at 0 is 0.</p>\n<div class=\"working\">\n<p>480 times 200 = 96000<br />\n200 times 200 = 40000<br />\n0.25 times 40000 = 10000<br />\n96000 minus 10000 = 86000</p>\n</div>\n<p>The total deficit is 86,000 kilocalories.</p>\n<p>Check with the trapezium. On day 200 the deficit is 480 minus 100, which is 380.</p>\n<div class=\"working\">\n<p>480 plus 380 = 860<br />\n860 divided by 2 = 430<br />\n430 times 200 = 86000</p>\n</div>\n<p>The same 86,000 kilocalories.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Take the same deficit of 480 kilocalories a day (<em>Lancet</em> 2011). Over the first 90 days, compare two totals. In the first, the deficit holds steady. In the second, it halves every 365 days, which is made up for this problem. Give the second as a share of the first.</p>",
+   "level": 5,
+   "answer": "<p>Steady: a rectangle.</p>\n<div class=\"working\">\n<p>480 times 90 = 43200</p>\n</div>\n<p>Halving every 365 days: the <dfn data-g=\"220\">rate constant</dfn> is ln 2 divided by 365, per day.</p>\n<div class=\"working\">\n<p>0.693 divided by 365 = 0.001899<br />\n0.001899 times 90 = 0.1709</p>\n</div>\n<p>On the calculator, e<sup>(-0.1709)</sup> is 0.8429. The total is 480 times (1 minus 0.8429) divided by 0.001899.</p>\n<div class=\"working\">\n<p>1 minus 0.8429 = 0.1571<br />\n480 times 0.1571 = 75.408<br />\n75.408 divided by 0.001899 = 39709.3</p>\n</div>\n<p>About 39,700 kilocalories.</p>\n<div class=\"working\">\n<p>39709.3 divided by 43200 = 0.919</p>\n</div>\n<p>The halving deficit gives about 92% of the steady one over 90 days. Over three months the shrinking hardly shows. It grows with time, which is why a rule tested only in the first weeks can look better than it is.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A deficit shrinks as D0 e<sup>(-0.693t)</sup>, with t in years, so it halves every year. Over the first year it adds up to 400 megajoules. Work out D0, in megajoules a year and then in megajoules a day.</p>",
+   "level": 6,
+   "answer": "<p>Run the total backwards. Over the first year the total is D0 times (1 minus e<sup>(-0.693)</sup>) divided by 0.693. On the calculator, e<sup>(-0.693)</sup> is 0.5001, so the bracket is 0.4999.</p>\n<div class=\"working\">\n<p>D0 times 0.4999 divided by 0.693 = 400</p>\n</div>\n<p>Multiply both sides by 0.693, then divide both sides by 0.4999.</p>\n<div class=\"working\">\n<p>400 times 0.693 = 277.2<br />\n277.2 divided by 0.4999 = 554.5</p>\n</div>\n<p>D0 is about 554.5 megajoules a year. Divide by 365 for a daily figure.</p>\n<div class=\"working\">\n<p>554.5 divided by 365 = 1.519</p>\n</div>\n<p>About 1.52 megajoules a day at the start.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>∫ from 0 to 3 of (12 minus 2t) dt<br />\nan antiderivative is F(t) = 12t minus t<sup>2</sup><br />\nthe integral = F(0) minus F(3)<br />\nF(0) = 0 and F(3) = 36 minus 9 = 27<br />\n0 minus 27 = -27</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The third line broke. The theorem takes F at the upper limit minus F at the lower limit, so it is F(3) minus F(0).</p>\n<div class=\"working\">\n<p>27 minus 0 = 27</p>\n</div>\n<p>The integral is 27.</p>\n<p>Why it looks reasonable: the antiderivative is right, and so are both values of F. Only the order is wrong. The check that catches it: the rate 12 minus 2t is above zero all the way from 0 to 3. So its total must be above zero.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>∫ from 0 to 3 of t<sup>2</sup> dt<br />\nraise the power by one: an antiderivative is t<sup>3</sup><br />\n3<sup>3</sup> minus 0<sup>3</sup> = 27</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. Raising the power by one is half the rule. The other half divides by the new power. An antiderivative of t<sup>2</sup> is t<sup>3</sup> divided by 3.</p>\n<div class=\"working\">\n<p>27 divided by 3 = 9</p>\n</div>\n<p>The integral is 9.</p>\n<p>Differentiating back catches it at once. The rate of t<sup>3</sup> is 3 t<sup>2</sup>, not t<sup>2</sup>. The broken answer is three times too big.</p>\n<p>Why it looks reasonable: the power went up by one, which is the part of the rule people remember. Nothing on the page is checked.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a deficit of 480 kcal/day halves every year, so k = 0.693<br />\nthe total over the first 30 days = 480 times (1 minus e<sup>(-0.693 times 30)</sup>) divided by 0.693<br />\ne<sup>(-20.79)</sup> is almost 0<br />\n480 divided by 0.693 = 692.6<br />\nso the deficit adds up to about 693 kcal over the month</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line broke. The rate constant is 0.693 per year, and 30 is in days. The deficit is also per day. Put everything in days first.</p>\n<div class=\"working\">\n<p>0.693 divided by 365 = 0.001899<br />\n0.001899 times 30 = 0.05697</p>\n</div>\n<p>On the calculator, e<sup>(-0.05697)</sup> is 0.9446.</p>\n<div class=\"working\">\n<p>1 minus 0.9446 = 0.0554<br />\n480 times 0.0554 = 26.592<br />\n26.592 divided by 0.001899 = 14003.2</p>\n</div>\n<p>About 14,000 kilocalories over the month. A steady 480 a day would give 14,400, so the shrinking barely shows yet.</p>\n<p>Why it looks reasonable: the formula is the right one, and each line after the second is correct arithmetic. But a total of 693 kilocalories over a month is less than two days of the starting deficit. A deficit that halves over a year cannot have shrunk that fast.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A patient information leaflet says this. The wording is made up for this problem.</p>\n<blockquote>\n<p>Your deficit gets smaller as you lose weight, but it never reaches zero. So the weight loss keeps going for ever, and in the end you lose what the old calorie rule said you would.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the total a shrinking deficit adds up to over all time, against the total of a steady one.</p>\n<p>Take a deficit D0 e<sup>(-kt)</sup> that never reaches zero. Its total from 0 to T is D0 times (1 minus e<sup>(-kT)</sup>) divided by k, and that approaches D0 divided by k. Put in the numbers from this section’s illustration: 730 megajoules a year at the start, halving each year.</p>\n<div class=\"working\">\n<p>730 divided by 0.693 = 1053.4</p>\n</div>\n<p>However long it runs, the total stays below 1,053.4 megajoules. The steady deficit, the old rule’s picture, passes that within a year and a half.</p>\n<div class=\"working\">\n<p>730 times 1.5 = 1095</p>\n</div>\n<p>So “never reaches zero” does not mean “adds up to anything”. A rate can stay above zero for ever and still have a total that stops growing.</p>\n<p>What this does not establish. It does not establish that a real deficit shrinks as an <dfn data-g=\"93\">exponential</dfn>. That was an assumption, chosen to show the arithmetic. It says nothing about kilograms, which need what the lost tissue was made of. And it does not say the loss stops at a fixed date. It says the total levels off, which is a different claim.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A journalist tells you this.</p>\n<blockquote>\n<p>A modelling paper says the old rule overstates first-year weight loss by about 100%. So to correct any figure from the old rule, just halve it.</p>\n</blockquote>\n<p>Hall and colleagues (<em>Lancet</em> 2011) do say the static rule’s first-year loss is “about 100% greater” than their model’s. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: whether the gap between a steady deficit and a shrinking one is the same at every time. Use the made-up halving deficit from this section, 730 megajoules a year at the start, halving each year. It is not the paper’s model, but it shows how such a gap behaves.</p>\n<p>Take the shrinking total as a share of the steady total, at 1, 3 and 10 years. At 3 years, e<sup>(-2.079)</sup> is 0.125, so the shrinking total is 1053.4 times 0.875, which is 921.7. At 10 years, e<sup>(-6.93)</sup> is 0.001, so the shrinking total is 1053.4 times 0.999.</p>\n<div class=\"working\">\n<p>526.6 divided by 730 = 0.721<br />\n921.7 divided by 2190 = 0.421<br />\n1053.4 times 0.999 = 1052.3<br />\n730 times 10 = 7300<br />\n1052.3 divided by 7300 = 0.144</p>\n</div>\n<p>For this made-up deficit, the share falls from about 72% at one year to 42% at three years and 14% at ten. The gap grows with time. So no one factor fits every year.</p>\n<p>What this does not establish. It does not give the paper’s own correction for any year but the first, for the one modelled man. The “about 100%” is a first-year comparison. It does not establish that halving is right even at one year for a different person or deficit. And the made-up halving deficit is not the paper’s model, so its percentages are not the paper’s.</p>\n<p>What to say instead: the old rule’s error is not a fixed factor. It grows with time, because a shrinking deficit adds up to less and less of what a steady one would.</p>"
+  }
+ ]
+}

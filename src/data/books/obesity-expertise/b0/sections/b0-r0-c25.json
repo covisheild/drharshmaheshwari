@@ -1,0 +1,184 @@
+{
+ "format": 1,
+ "id": "b0-r0-c25",
+ "label": "D2",
+ "title": "Counting outcomes; independence",
+ "part": "D",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Tossing a coin n times has 2 to the power n outcomes, one factor of 2 for every toss.</p>\n<p>Independence is checked, not assumed: A and B are independent exactly when P(A and B) — the <dfn data-g=\"146\">probability</dfn> that A and B both happen — equals P(A) times P(B), and dependent otherwise. Where no joint figure exists, the check is an argument that knowing one tells you nothing about the other. If you can make neither, treat them as dependent. When they are independent, multiply to get P(A and B).</p>\n<p>When A and B cannot both happen — they are <dfn data-g=\"121\">mutually exclusive</dfn> — P(A or B), the probability that at least one of A or B happens, equals P(A) plus P(B): add.</p>",
+   "refs": [
+    12,
+    13,
+    14,
+    15
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Toss a coin twice and write out every pair: heads-heads, heads-tails, tails-heads, tails-tails. Four outcomes, because each toss has two and there are two tosses. Every extra toss doubles the list. Two tosses give 2 squared outcomes. Three tosses give 2 cubed, which is 2 to the power 3, and n tosses give 2 to the power n.</p>\n<p>The word “and” points at multiplying, but only on one condition. The two events have to be independent — meaning that finding out one of them happened tells you nothing new about the other. Multiply their probabilities to get the probability of both.</p>\n<p>The word “or” points at adding, and it too has a condition: the two events have to be mutually exclusive, meaning they cannot both happen. If they can both happen, plain adding counts the overlap twice, and the fix is to take the overlap back out once.</p>\n<p>Never multiply two probabilities together just because a sentence has the word “and” in it. Check first: does knowing one change the chance of the other?</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Section 3(1) of the National Food Security Act, 2013 entitles every person belonging to a priority household to five kilograms of foodgrains a month. Section 3(2) caps how far that entitlement reaches: up to 75 per cent of the rural population. Treat 0.75 as the probability, at most, that a rural person picked <dfn data-g=\"12\">at random</dfn> is covered — the figure from the section before this one.</p>\n<p>Pick two rural people entirely at random, from two different, unrelated households. Knowing whether the first is covered tells you nothing about the second, so treat the two as independent. Multiply.</p>\n<div class=\"working\">\n<p>0.75 times 0.75 = 0.5625</p>\n</div>\n<p>At most 0.5625, so a little over half, that both are covered.</p>\n<p>Now pick two people from the same household instead. If the household is covered, every person belonging to it is covered along with it. The Act gives the entitlement to “every person belonging to priority households”. It is households that the State Government identifies. The two outcomes are not independent, and multiplying is the wrong move.</p>\n<div class=\"working\">\n<p>P(both covered, same household) is at most 0.75</p>\n</div>\n<p>Not 0.5625.</p>\n<p>Pick three rural people, each from a different household, and ask for the probability that at least one of them is covered. Go by the complement instead: work out the probability that none of the three is covered, and subtract that from 1. If the three “covered” events are independent, the three “not covered” events are too. So multiply the three “not covered” chances. Each “1 minus” step turns a ceiling into a floor, or a floor into a ceiling.</p>\n<div class=\"working\">\n<p>1 minus 0.75 = 0.25</p>\n</div>\n<p>P(not covered) is at least 0.25.</p>\n<div class=\"working\">\n<p>0.25 times 0.25 = 0.0625</p>\n</div>\n<div class=\"working\">\n<p>0.0625 times 0.25 = 0.015625</p>\n</div>\n<p>P(none covered) is at least 0.015625.</p>\n<div class=\"working\">\n<p>1 minus 0.015625 = 0.984375</p>\n</div>\n<p>P(at least one covered) is at most 0.984375. At most, about 98.4 per cent that at least one of the three is covered.</p>",
+   "numberRefs": [
+    11
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Two people can look like two separate draws and actually be one draw, counted twice. Before multiplying, name what would have to be true for the two events to be independent. Then check whether it is.</p>\n<p>“At most 0.5625” and “at most 98.4 per cent” are bounds built from a bound, not measured figures. Every extra multiplication carries that same qualification forward. It does not sharpen it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Independence is a checkable claim, not a default. Test it by asking whether P(A and B) equals P(A) times P(B).</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Two people drawn from the same unit that a decision is made about are almost never independent. Think of the same household, the same clinic, the same litter. This holds even when the underlying probability looks identical to two people drawn from different units. Ask what the decision was actually made about, before you multiply.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The word “and” in a sentence is not permission to multiply, and the word “or” is not permission to add.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“At least one of several things happens” is answered fastest through the complement. Work out the probability that none of them happen, and subtract from 1.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Multiplying ceilings gives a ceiling, and multiplying floors gives a floor. Every “1 minus” step turns one into the other. Label each line “at most” or “at least” as you go.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When you teach this to a trainee, put the independence check before the arithmetic every time, even in a case where it is obviously true.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A colleague claims that the chance two randomly chosen rural residents are both covered is 0.75 times 0.75, which is 0.5625. No further detail about the two residents is given.</p>\n<p>Say what is missing from the claim before it can be checked. Then say what changes if it turns out the two residents live in the same household.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>What is missing is any statement about independence. Multiplying is only correct if knowing that the first resident is covered tells you nothing about the second. The sentence does not say whether that holds.</p>\n<p>If the two are from different, unrelated households, the multiplication is a reasonable approximation, at most.</p>\n<div class=\"working\">\n<p>0.75 times 0.75 = 0.5625</p>\n</div>\n<p>If the two are from the same household, coverage is decided once for the household. So the second resident’s status is fixed the moment the first one’s is known. The correct figure is not 0.5625. It is the same 0.75 the household itself carries.</p>\n<div class=\"working\">\n<p>P(both covered, same household) is at most 0.75</p>\n</div>\n<p>So the answer 0.5625 is only right for one of the two cases the sentence could have meant. The sentence gives no way to tell which.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident keeps multiplying probabilities together whenever a question uses the word “and”. You have ten minutes and a whiteboard.</p>\n<p>Teach them the actual test for independence, so they leave able to catch themselves the next time they reach for multiplication.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start from something they already trust: two rolls of a fair die. Ask whether the first roll changes anything about the second. They will say no. Write that down as the test in words: does knowing one change the chance of the other?</p>\n<p>Then break the habit on purpose. Describe two people from the same household under the food security law’s entitlement, where the household is covered or not as one unit. Ask what happens to the second person’s chance once you know the first is covered. Let them work out that it becomes certain, not 0.75 again.</p>\n<p>Write the test as arithmetic once they have felt it. A and B are independent exactly when P(A and B) equals P(A) times P(B), and dependent otherwise. Have them check the household case at the ceiling itself. If coverage is 0.75, P(both covered) is 0.75. P(A) times P(B) would have been 0.5625. So the two do not match. That mismatch is the proof, not just the arithmetic slip.</p>\n<p>Close with the standing rule: when you do not know whether two events are independent, assume they are not, until you can show it. A resident who defaults to “assume independent” will eventually be wrong in a way that reads as confident.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A coin is tossed 3 times. List every outcome, and say how many there are.</p>",
+   "level": 1,
+   "answer": "<p>Each toss has two outcomes, and there are three tosses, so list every combination.</p>\n<table style=\"width:33%;\">\n\n<tbody>\n<tr>\n<td>HHH</td>\n<td>HHT</td>\n<td>HTH</td>\n<td>THH</td>\n</tr>\n<tr>\n<td>HTT</td>\n<td>THT</td>\n<td>TTH</td>\n<td>TTT</td>\n</tr>\n</tbody>\n</table>\n<p>Eight outcomes.</p>\n<div class=\"working\">\n<p>2 times 2 times 2 = 8</p>\n</div>\n<p>Each extra toss doubles the list, which is 2 to the power of the number of tosses: three tosses give 2 cubed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Event A has a probability of 0.6 and event B has a probability of 0.5, and A and B are independent. Work out P(A and B).</p>\n<p>Separately, event C has a probability of 0.3 and event D has a probability of 0.4, and C and D are mutually exclusive. Work out P(C or D).</p>",
+   "level": 2,
+   "answer": "<p>A and B are independent, so multiply.</p>\n<div class=\"working\">\n<p>0.6 times 0.5 = 0.3</p>\n</div>\n<p>P(A and B) is 0.3.</p>\n<p>C and D are mutually exclusive, so add.</p>\n<div class=\"working\">\n<p>0.3 plus 0.4 = 0.7</p>\n</div>\n<p>P(C or D) is 0.7.</p>\n<p>Same shape of question, two different words, two different operations. Multiplying for the second pair, or adding for the first, would both be wrong.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Two independent events each have a probability of 0.2. Work out the probability that at least one of them happens.</p>",
+   "level": 2,
+   "answer": "<p>Go by the complement: the probability that neither happens, subtracted from 1.</p>\n<div class=\"working\">\n<p>1 minus 0.2 = 0.8</p>\n</div>\n<div class=\"working\">\n<p>0.8 times 0.8 = 0.64</p>\n</div>\n<div class=\"working\">\n<p>1 minus 0.64 = 0.36</p>\n</div>\n<p>A probability of 0.36 that at least one happens. Working this out directly would mean adding the probability of “just the first”, “just the second” and “both” separately. The complement reaches the same answer in three short steps.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>You are told P(A) = 0.5, P(B) = 0.4 and P(A and B) = 0.2. Check whether A and B are independent.</p>",
+   "level": 3,
+   "answer": "<p>The test is whether P(A and B) equals P(A) times P(B).</p>\n<div class=\"working\">\n<p>0.5 times 0.4 = 0.2</p>\n</div>\n<p>That matches the given P(A and B) of 0.2, so A and B are independent.</p>\n<p>Notice that this is a check, not an assumption. If P(A and B) had been given as, say, 0.3, the same test would have told you the two events are dependent. No amount of the sentence sounding plausible would change that.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Two fair coins, each equally likely to land heads or tails, are tossed. Let A be the event that the first toss is heads, and B be the event that the second toss is heads. List the <dfn data-g=\"162\">sample space</dfn>, then check whether A and B are independent by counting outcomes.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>HH    HT    TH    TT</p>\n</div>\n<p>Four outcomes. A is {HH, HT}, so P(A) is 2 divided by 4.</p>\n<div class=\"working\">\n<p>2 divided by 4 = 0.5</p>\n</div>\n<p>B is {HH, TH}, so P(B) is 0.5 as well, by the same count.</p>\n<p>A and B together is {HH}, one outcome out of four.</p>\n<div class=\"working\">\n<p>1 divided by 4 = 0.25</p>\n</div>\n<p>Check the independence rule.</p>\n<div class=\"working\">\n<p>0.5 times 0.5 = 0.25</p>\n</div>\n<p>P(A and B) is 0.25, which matches P(A) times P(B). The two tosses are independent, exactly as common sense says they should be. Now you have the arithmetic to prove it, rather than assert it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Under section 3(2) of the National Food Security Act, 2013, the rural coverage ceiling is 0.75. Pick two rural people at random from two different, unrelated households.</p>\n<p>Work out the probability, at most, that both are covered.</p>",
+   "level": 4,
+   "answer": "<p>Different households, so treat the two as independent and multiply.</p>\n<div class=\"working\">\n<p>0.75 times 0.75 = 0.5625</p>\n</div>\n<p>At most 0.5625 that both are covered. Note the “at most” carries through from the ceiling in the Act itself. The multiplication does not make the figure any more exact than it started.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Now pick two rural people from the same household. Using the same 0.75 ceiling, work out the probability, at most, that both are covered. Then compare your answer with the previous problem’s.</p>",
+   "level": 5,
+   "answer": "<p>Coverage under section 3(1) is decided for the household as a whole: every person belonging to a priority household is entitled together. If the household is covered, both people are; if it is not, neither is. There is one draw, not two. So the two people’s covered-or-not status is not independent.</p>\n<div class=\"working\">\n<p>P(both covered, same household) is at most 0.75</p>\n</div>\n<p>Not 0.5625. Multiplying 0.75 by itself would have treated the second person’s status as a fresh, independent draw. But it is fixed the moment the first person’s status is known.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Pick three rural people at random, each from a different household. Use the 0.75 coverage ceiling from section 3(2) of the National Food Security Act, 2013.</p>\n<p>Work out the probability, at most, that at least one of the three is covered.</p>",
+   "level": 6,
+   "answer": "<p>Go by the complement: the chance none of the three is covered, subtracted from 1.</p>\n<div class=\"working\">\n<p>1 minus 0.75 = 0.25</p>\n</div>\n<div class=\"working\">\n<p>0.25 times 0.25 = 0.0625</p>\n</div>\n<div class=\"working\">\n<p>0.0625 times 0.25 = 0.015625</p>\n</div>\n<div class=\"working\">\n<p>1 minus 0.015625 = 0.984375</p>\n</div>\n<p>At most, about 98.4 per cent. With a ceiling this high on a single person, it takes very few independent draws before “at least one covered” becomes close to certain. This is worth noticing on its own. It is easy to assume “at least one” always needs a large group.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>event A has a probability of 0.7, event B has a probability of 0.6, and they are independent<br />\nthe probability of A or B happening is P(A) plus P(B)<br />\n0.7 plus 0.6 = 1.3<br />\nso P(A or B) is 1.3</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the second line. Adding is the rule for “or” only when the two events are mutually exclusive, and independent is not the same claim as mutually exclusive. In fact two independent events with positive probabilities can always happen together. So they are never mutually exclusive.</p>\n<p>The correct rule for “or” subtracts the overlap.</p>\n<div class=\"working\">\n<p>0.7 times 0.6 = 0.42</p>\n</div>\n<div class=\"working\">\n<p>0.7 plus 0.6 = 1.3</p>\n</div>\n<div class=\"working\">\n<p>1.3 minus 0.42 = 0.88</p>\n</div>\n<p>P(A or B) is 0.88, not 1.3.</p>\n<p>There is a check that would have caught this without any of the correct arithmetic. A probability can never exceed 1, and 1.3 already says the working is wrong. Independent events can and usually do overlap. Treating “independent” as though it meant “cannot both happen” is the confusion behind the broken line.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>two rural people are picked from the same household<br />\nthe coverage ceiling is 0.75 for each person<br />\nP(both covered) = 0.75 times 0.75<br />\n0.75 times 0.75 = 0.5625<br />\nso at most 0.5625 of same-household pairs have both people covered</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the third line, where the two people are treated as independent.</p>\n<p>Coverage is decided for the household as a whole under section 3(1), so the two people in the same household are not two separate draws. If one is covered, so is the other, with certainty.</p>\n<div class=\"working\">\n<p>P(both covered, same household) is at most 0.75</p>\n</div>\n<p>At most 0.75, not 0.5625.</p>\n<p>Why it looks reasonable: the arithmetic of multiplying two 0.75s is the same move that was correct for two different households in an earlier problem. Nothing in “two rural people” on its own tells you which case you are in. The fix is always the same question: what was the decision actually made about? Here it was made about the household, not the person.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>three rural people are picked, each from a different household, coverage ceiling 0.75 each<br />\nthe probability that at least one is covered is found by adding the three probabilities<br />\n0.75 plus 0.75 plus 0.75 = 2.25<br />\nso at most 2.25 of the three are covered, meaning it is virtually certain at least one is</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the addition. “At least one” is not found by adding the individual probabilities. The answer itself gives the game away: a probability can never exceed 1. And 2.25 already cannot be a probability, before you even read the conclusion drawn from it.</p>\n<p>Go by the complement instead.</p>\n<div class=\"working\">\n<p>1 minus 0.75 = 0.25</p>\n</div>\n<div class=\"working\">\n<p>0.25 times 0.25 = 0.0625</p>\n</div>\n<div class=\"working\">\n<p>0.0625 times 0.25 = 0.015625</p>\n</div>\n<div class=\"working\">\n<p>1 minus 0.015625 = 0.984375</p>\n</div>\n<p>At most about 98.4 per cent, not 2.25. The conclusion in the broken answer happens to point the right way — it is indeed close to certain. But it is close to certain because of the correct figure, 0.984, not because of the 2.25.</p>\n<p>The 2.25 is not meaningless, though. Adding the three gives the most people you would expect covered on average, 2.25. That is a real number, and it answers a different question. It is not the chance that at least one is covered.</p>\n<p>Why it looks reasonable: “at least one” sounds like it should be built by combining the three individual chances. Addition is the most familiar way to combine numbers. The combination that is actually needed runs through the complement. A total above 1 is the signal that adding was the wrong move here.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A note says: “Two rural residents are picked at random; the chance both are covered is 0.5625.”</p>\n<p>Decide what has to be true for that figure to be correct, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What has to be true: the two residents are treated as independent, which means, in this setting, that they come from two different, unrelated households.</p>\n<div class=\"working\">\n<p>0.75 times 0.75 = 0.5625</p>\n</div>\n<p>The arithmetic is right on that assumption.</p>\n<p>What this does not establish. If the two residents happen to be from the same household, the correct figure is 0.75, not 0.5625, because coverage is decided once per household. The note does not say which case applies. So 0.5625 could be the right answer, or it could be badly wrong for the actual pair being discussed. It also says nothing about how many people are actually covered anywhere real. Every figure here is still built from the Act’s “up to” ceiling rather than a count.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A district report says coverage is up to 75 per cent of the rural population. Pick one rural person at random. They live in a household of four. The report concludes that the chance at least one member of that household is not covered is high.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>The tempting route treats the four household members as four independent draws and finds the chance at least one is not covered through the complement.</p>\n<div class=\"working\">\n<p>0.75 times 0.75 = 0.5625</p>\n</div>\n<div class=\"working\">\n<p>0.5625 times 0.75 = 0.421875</p>\n</div>\n<div class=\"working\">\n<p>0.421875 times 0.75 = 0.31640625</p>\n</div>\n<div class=\"working\">\n<p>1 minus 0.31640625 = 0.68359375</p>\n</div>\n<p>That route gives about 68 per cent, and it is wrong, because it repeats the same mistake as the same-household problem earlier in this set. Coverage is decided once for the whole household under section 3(1), not once per member. A household of four is covered or not covered as one draw, and every member shares that single outcome.</p>\n<p>The question “at least one member is not covered” is therefore the same question as “is the household not covered”. So it is one chance, not four: the chance this one person is not covered. The Act’s 75 per cent is a ceiling on all rural people together. For a rural person drawn with nothing else known, it gives a floor on that chance.</p>\n<div class=\"working\">\n<p>1 minus 0.75 = 0.25</p>\n</div>\n<p>But this person is known to live in a household of four. A ceiling on all rural people puts no bound on any one group within them, such as people in households of four. The section has no figure for that group. So the report’s ‘high’ has nothing under it, and nothing here rules it out either.</p>\n<p>What this does not establish. A district report cannot quote section 3(2) as a district ceiling. Section 3(2) names no State or district. Section 9 leaves each State’s own share to the Central Government, so nothing here is a fact about this particular district.</p>\n<p>It also does not say how many households actually sit on the wrong side of the ceiling. That needs a count, not a probability. And it says nothing about a household reached only partly in practice. The “covered as one unit” model is the Act’s own structure. Any real slippage inside a household would need data this section does not have.</p>"
+  }
+ ]
+}

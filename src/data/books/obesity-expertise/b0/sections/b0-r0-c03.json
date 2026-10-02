@@ -1,0 +1,160 @@
+{
+ "format": 1,
+ "id": "b0-r0-c03",
+ "label": "A3",
+ "title": "Decimals, rounding, and significant figures",
+ "part": "A",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"45\">decimal</dfn> continues <dfn data-g=\"139\">place value</dfn> to the right of a point. Each place to the right is worth one tenth of the place on its left, so the places run tenths, hundredths, thousandths.</p>\n<p><dfn data-g=\"160\">Rounding</dfn> is choosing which place to stop at and adjusting the last kept digit for what follows it.</p>\n<p>The <dfn data-g=\"169\">significant figures</dfn> of a number are the digits that carry information about the quantity, counted from the first digit that is not zero. A quantity calculated from other quantities cannot carry more significant figures than the least precise of them.</p>",
+   "refs": [
+    7
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A decimal is the same place-value rule, carried on past the point. To the right, each step is ten times smaller: tenths, then hundredths, then thousandths.</p>\n<p>Rounding is deciding where to stop. Pick the place you want to stop at and look at the very next digit. If it is four or less, leave your last digit alone. If it is five or more, push it up by one.</p>\n<p>Significant figures are the digits that carry the information. Start counting at the first digit that is not a zero. Stop at the last digit written down. Everything in between counts, zeros included.</p>\n<p>So 0.00420 has three of them: the four, the two and the final zero. The zeros in front are only holding the place. The zero at the end is holding nothing, so somebody put it there on purpose, and it says the measurement reached that far.</p>\n<p>Whole numbers ending in zeros are the awkward case. Write 4,200 and nobody can tell whether you counted to the nearest hundred or to the nearest one. The digits cannot tell you. The person, the table heading or the document has to. If none of them does, you do not know how precise the number is. Do not treat it as exact until somebody tells you it is.</p>\n<p>Your answer cannot be more exact than the numbers you put in. Divide something you know to two digits by something you know to two digits, and you know the answer to about two digits.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Open the National Food Security Act, 2013 again and search inside it for “five kilograms”. The first is section 3(1), which gives a person in a priority household five kilograms of foodgrains per person per month.</p>\n<p>How much is that a day?</p>\n<p>Type five, divide by thirty, and read what the calculator says.</p>\n<div class=\"working\">\n<p>5 divided by 30 = 0.1666666667</p>\n</div>\n<p>Here is the mistake, and it goes into real documents. The figure is copied straight across, and a report goes out saying each person receives 0.1666666667 kilograms of grain a day.</p>\n<p>Count the digits after the point. Ten of them. Nothing you did could possibly support that.</p>\n<p>The five is exact: it is not a measurement, it is a figure written into an Act, and it is five and nothing else. The thirty is not exact at all. You chose it. A month is twenty-eight days, or thirty, or thirty-one.</p>\n<p>So work the two ends instead of one middle.</p>\n<div class=\"working\">\n<p>5 divided by 31 = 0.16129…<br />\n5 divided by 28 = 0.17857…</p>\n</div>\n<p>The honest answer sits somewhere between 0.16 and 0.18 kilograms a day. Two digits, not ten.</p>\n<p>Now round the middle case properly, so you can see the rule work. You have 0.1666666667 and you want two places after the point. The next digit along is a 6, which is five or more, so the 6 you are keeping goes up to 7.</p>\n<div class=\"working\">\n<p>0.1666666667 rounds to 0.17</p>\n</div>\n<p>Round to 0.17, then multiply by 30 to get back to a month.</p>\n<div class=\"working\">\n<p>0.17 times 30 = 5.1</p>\n</div>\n<p>You started with exactly 5 and came back with 5.1. The rounding leaked.</p>\n<p>If somebody needs a daily figure, give them 0.16 to 0.18 kilograms and say where the spread came from.</p>",
+   "numberRefs": [
+    6
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Significant figures are a rough guide to precision, not a measure of it. They do not tell you how wrong the number might be.</p>\n<p>The rounding rule itself has an edge. When the digit you are dropping is exactly five and nothing follows it, the rule above always pushes up. That nudges a long column of numbers slightly high. It rarely matters. It matters when you are rounding thousands of values and then adding them.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The digits on a calculator display are not precision. They are what the division produced.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Keep full precision while you work and round once, at the end, to what your weakest input earned.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Five kilograms in an Act is exactly five. Five kilograms on a scale is not. Ask which kind you are holding before you decide how to round it.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Indian entitlements are commonly written per month while reporting wants a daily figure. That one division is where false precision enters.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When a number you are given carries more digits than its source could support, say so at the time.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not quote a spuriously precise figure in public even when it is the one you were handed.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A household of six people is in a priority household under section 3(1) of the National Food Security Act, 2013. Work out the household’s monthly entitlement, then its daily entitlement. Give the daily figure to a precision you can defend, and say in one line why you stopped there.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>Monthly first.</p>\n<div class=\"working\">\n<p>5 kilograms per person per month, times 6 people<br />\n= 30 kilograms per household per month</p>\n</div>\n<p>That figure is exact. Both numbers that went into it are counts, not measurements.</p>\n<p>Now daily. A month is not a fixed number of days, so work both ends.</p>\n<div class=\"working\">\n<p>30 divided by 31 = 0.9677…<br />\n30 divided by 28 = 1.0714…</p>\n</div>\n<p>So the household gets roughly one kilogram a day, somewhere between 0.97 and 1.07.</p>\n<p>Where to stop: one figure. Round it to 1 kilogram a day. The spread across the ends is more than a tenth of a kilogram. A second decimal place would claim to know something the month length has already taken away from you.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A district report reads: “Average grain lifted per beneficiary was 4.8732 kg per month against an entitlement of 5 kg.” Nothing here is arithmetically wrong. Name what you would ask about the figure 4.8732, and say what you expect the answer to be.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Ask two things, in this order.</p>\n<p>First: what two numbers were divided to make it? An average per person is a total divided by a count of people. Say the total was in tonnes, rounded to the nearest tonne, and the count was a registered beneficiary count. Then the fourth decimal place is carrying a precision that neither input had.</p>\n<p>Second: how exact is the count on the bottom? A beneficiary list is almost never exact to the last person, and the divisor moving by a few hundred would change the third decimal place.</p>\n<p>What you expect: that 4.8732 is what the spreadsheet printed and nobody chose it. The defensible version is 4.9 kilograms, and the interesting sentence is not the average at all. It is the gap from 5, and whether that gap is real.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>In the number 0.408, say what each digit after the point is worth. Then put these four numbers in order, smallest first.</p>\n<div class=\"working\">\n<p>0.7    0.65    0.089    0.7000</p>\n</div>",
+   "level": 1,
+   "answer": "<p>Take 0.408 one place at a time, starting just after the point.</p>\n<table style=\"width:35%;\">\n\n<tbody>\n<tr>\n<td>4</td>\n<td>four tenths</td>\n</tr>\n<tr>\n<td>0</td>\n<td>no hundredths</td>\n</tr>\n<tr>\n<td>8</td>\n<td>eight thousandths</td>\n</tr>\n</tbody>\n</table>\n<p>Each place is worth a tenth of the place on its left. The zero is holding the 8 in the thousandths place. Take the zero out and you have 0.48, which is a different number.</p>\n<p>Now the ordering. Line the numbers up by place rather than by how long they look.</p>\n<table style=\"width:74%;\">\n\n<tbody>\n<tr>\n<td>0.7</td>\n<td>7 tenths,</td>\n<td>0 hundredths,</td>\n<td>0 thousandths</td>\n</tr>\n<tr>\n<td>0.65</td>\n<td>6 tenths,</td>\n<td>5 hundredths,</td>\n<td>0 thousandths</td>\n</tr>\n<tr>\n<td>0.089</td>\n<td>0 tenths,</td>\n<td>8 hundredths,</td>\n<td>9 thousandths</td>\n</tr>\n<tr>\n<td>0.7000</td>\n<td>7 tenths,</td>\n<td>0 hundredths,</td>\n<td>0 thousandths</td>\n</tr>\n</tbody>\n</table>\n<p>Smallest first: 0.089, then 0.65, then 0.7 and 0.7000, which are equal.</p>\n<p>Two things to notice. First, 0.65 is smaller than 0.7 even though it has more digits, so compare the tenths first and stop as soon as they differ. Second, 0.7000 has the same value as 0.7. The extra zeros change nothing about its size. They do say the figure was carried to four places, and that is what the rest of this section is about.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Round each of these to two places after the point.</p>\n<div class=\"working\">\n<p>0.3849    12.0761    0.0955    7.2950</p>\n</div>",
+   "level": 1,
+   "answer": "<p>Look at the third digit after the point each time. Four or less, the second digit stands. Five or more, it goes up by one.</p>\n<table style=\"width:54%;\">\n\n<tbody>\n<tr>\n<td>0.3849</td>\n<td>third digit 4</td>\n<td>-&gt;</td>\n<td>0.38</td>\n</tr>\n<tr>\n<td>12.0761</td>\n<td>third digit 6</td>\n<td>-&gt;</td>\n<td>12.08</td>\n</tr>\n<tr>\n<td>0.0955</td>\n<td>third digit 5</td>\n<td>-&gt;</td>\n<td>0.10</td>\n</tr>\n<tr>\n<td>7.2950</td>\n<td>third digit 5</td>\n<td>-&gt;</td>\n<td>7.30</td>\n</tr>\n</tbody>\n</table>\n<p>The third one is worth a second look. Rounding 0.09 up carries into the next place and gives 0.10, not 0.1. Both are the same number, and 0.10 is the one that shows you stopped at two places on purpose.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>How many significant figures does each of these carry?</p>\n<div class=\"working\">\n<p>450    0.0072    6.030    1,200</p>\n</div>",
+   "level": 2,
+   "answer": "<p>Count from the first digit that is not zero.</p>\n<table style=\"width:88%;\">\n\n<tbody>\n<tr>\n<td>450</td>\n<td>2 or 3</td>\n<td>the trailing zero is ambiguous</td>\n</tr>\n<tr>\n<td>0.0072</td>\n<td>2</td>\n<td>leading zeros only hold the place</td>\n</tr>\n<tr>\n<td>6.030</td>\n<td>4</td>\n<td>the trailing zero after a point is real</td>\n</tr>\n<tr>\n<td>1,200</td>\n<td>2, 3 or 4</td>\n<td>ambiguous the same way as 450</td>\n</tr>\n</tbody>\n</table>\n<p>Two of the four cannot be answered from the number alone, and that is the useful part of this problem. A trailing zero with no point after it may be a measured digit or a placeholder. Only whoever wrote it down knows, and if they are not available, say so rather than guess.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Work out 17 divided by 7. Write the calculator’s full display, then give the answer to three significant figures.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>17 divided by 7 = 2.428571429</p>\n</div>\n<p>To three significant figures, count from the 2.</p>\n<div class=\"working\">\n<p>2.42|8571429<br />\nthe next digit is 8, which is five or more<br />\nso the 2 goes up to 3<br />\n= 2.43</p>\n</div>\n<p>Two point four three. The other seven digits the calculator offered were never yours to give away.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Section 3(1) of the National Food Security Act, 2013 gives five kilograms of foodgrains per person per month. Work out the figure per week, using 4 weeks in a month, and give it to a precision you can defend.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>5 divided by 4 = 1.25 kilograms a week</p>\n</div>\n<p>That division is exact: it stops after two places on its own, with nothing rounded away.</p>\n<p>But the 4 is not exact. A month is not four weeks — it is closer to 4.3 — so work the honest end too.</p>\n<div class=\"working\">\n<p>5 divided by 4.3 = 1.16… kilograms a week</p>\n</div>\n<p>So the answer sits between about 1.16 and 1.25. Report it as roughly 1.2 kilograms a week, two significant figures, and say you assumed a month of about four and a third weeks.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A hot cooked meal is set at 450 calories by the second schedule of the National Food Security Act, 2013. A child attends on 196 of the year’s school days. Work out the year’s calories from the meal, and say how many significant figures the answer deserves.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>450 times 196 = 88,200 calories</p>\n</div>\n<p>Now the precision. Both inputs are exact counts: 450 is fixed by the schedule and 196 is a count of days, not a measurement. Nothing was rounded on the way in.</p>\n<p>So 88,200 is exact, and all of it is significant. Write it as 88,200 calories.</p>\n<p>This is the case worth noticing. The rule that an answer cannot beat its weakest input is about measurements. Where both inputs are exact, the answer is exact too, and rounding it away would throw something real overboard.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A store issues 1,850 kilograms of grain to 387 households in a month. Work out the average per household and report it to a precision you can defend. Say in one line what fixed the precision.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>1,850 divided by 387 = 4.780361757…</p>\n</div>\n<p>Now ask what each input was worth. The 1,850 is a weight, and a weight recorded to the nearest ten kilograms is good to three significant figures at best. The 387 is a count, and counts are exact if the register is right.</p>\n<p>So the weakest input carries three significant figures, and the answer carries three.</p>\n<div class=\"working\">\n<p>4.78 kilograms per household</p>\n</div>\n<p>What fixed the precision: the weight, not the division and not the household count.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>2.4 times 3.6 = 8.64<br />\n8.64 rounded to 2 significant figures = 8.6<br />\n8.6 divided by 4 = 2.15<br />\nfinal answer, to 2 significant figures = 2.2</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The arithmetic in every line is right. The step that broke is the second one: the rounding happened in the middle.</p>\n<p>Carry the full figure through instead and compare.</p>\n<div class=\"working\">\n<p>2.4 times 3.6 = 8.64<br />\n8.64 divided by 4 = 2.16<br />\nto 2 significant figures = 2.2</p>\n</div>\n<p>Here the two routes agree, at 2.2. That is the trap. Rounding in the middle does not always change the answer, so it survives every time it happens to be harmless and then bites once.</p>\n<p>Why it looks reasonable: the worked answer rounds to the stated precision at every stage, which looks like care. It is the opposite. Round once, at the end.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A district report reads: “Coverage stands at 64.8135 per cent.”</p>\n<p>It was computed from a count of covered households and a count of total households, both taken from a register. Find what is wrong with the figure as reported.</p>",
+   "level": 8,
+   "answer": "<p>Nothing is wrong with the arithmetic. Both inputs are counts, so the division is exact and the digits are all really there.</p>\n<p>What is wrong is what those digits claim. Four places after the point in a percentage means the figure is being pinned to one part in a million.</p>\n<div class=\"working\">\n<p>64.8135 per cent of 10,000 households = 6,481.35 households</p>\n</div>\n<p>You cannot have 0.35 of a household. The fourth decimal place is describing a <dfn data-g=\"66\">fraction</dfn> of a household that does not exist, so it carries no information about the world.</p>\n<p>And the register itself is not exact in practice, whatever the arithmetic says. Report 64.8 per cent, or 65 per cent, and give the two counts underneath.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Somebody sends you a one-line finding and asks whether to publish it.</p>\n<blockquote>\n<p>Mean intake fell from 2,014.6 to 1,987.3 calories a day, a fall of 1.36 per cent.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Check the stated figure first.</p>\n<div class=\"working\">\n<p>2,014.6 minus 1,987.3 = 27.3<br />\n27.3 divided by 2,014.6 = 0.013550…<br />\ntimes 100 = 1.36 per cent</p>\n</div>\n<p>The arithmetic holds. Now ask where five significant figures in a mean intake could have come from. Dietary intake is estimated, not weighed, and the estimate for one person is uncertain by a long way more than 27 calories.</p>\n<p>So the decimal place on each mean is claiming a precision the method cannot deliver. The difference between the two means is smaller than the uncertainty in either.</p>\n<p>What this does not establish. It does not establish that intake fell at all. The two figures could be two draws from the same underlying quantity. Before publishing, ask how intake was measured and how precise a single mean is. Those are later sections of this book. This section is enough to know the question has to be asked.</p>"
+  }
+ ]
+}

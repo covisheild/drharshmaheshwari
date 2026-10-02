@@ -1,0 +1,147 @@
+{
+ "format": 1,
+ "id": "s37-r1-c15",
+ "label": "15",
+ "title": "The double burden, and double-duty action",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Undernutrition and <dfn data-g=\"261\">overweight</dfn> are measured with different yardsticks. India’s National Family Health Survey, fifth round (NFHS-5, 2019-21), uses these. A child under five is <dfn data-g=\"359\">stunted</dfn> when height-for-age is more than two standard deviations below the World Health Organization (WHO) growth standard. The child is <dfn data-g=\"388\">wasted</dfn> when weight-for-height is more than two standard deviations below it, and <dfn data-g=\"380\">underweight</dfn> when weight-for-age is. The child is overweight when weight-for-height is more than two standard deviations above it. NFHS-5 counts women and men aged 15 to 49 as adults. An adult has a below-normal <dfn data-g=\"35\">body mass index</dfn> (BMI) below 18.5 kg/m<sup>2</sup>, and is overweight or obese at 25.0 kg/m<sup>2</sup> or more. These are the cut-offs the fact sheet uses.</p>\n<p>Among women aged 15 to 49, 18.7 per cent had a below-normal BMI and 24.0 per cent were overweight or obese.</p>\n<p>The WHO calls the coexistence of undernutrition (wasting, stunting, micronutrient deficiency) with overweight, obesity or diet-related noncommunicable diseases the <dfn data-g=\"100\">double burden of malnutrition</dfn>. It can occur in one person, one household or one population.</p>\n<p>In the WHO’s 2017 policy brief, <em>Double-duty actions for nutrition</em>, a <dfn data-g=\"102\">double-duty action</dfn> is an intervention, programme or policy with the potential to reduce the risk or burden of both at once. The WHO sets out three levels. <dfn data-g=\"97\">Do no harm</dfn>: check that an existing action does not raise the risk of the other forms. <dfn data-g=\"319\">Retrofit</dfn>: change an existing action so that it also acts on the other burden. <dfn data-g=\"84\">De novo</dfn>: design a new action for both from the start.</p>\n<p>This book adds two reading words, in plain terms, for sorting a proposed change to a ration, a school meal or a <dfn data-g=\"367\">take-home ration</dfn>. They are this book’s tools, not an official classification. A <dfn data-g=\"340\">single-duty change</dfn> acts on one burden and does not aim at the other. A change <dfn data-g=\"391\">working against the other burden</dfn> acts on one and, by its design, raises the risk of the other. Do no harm is the check that sorts a single-duty change from one working against the other burden. Retrofit and de novo produce double-duty actions. A change is shown to work against the other burden only by an outcome measured on that side.</p>",
+   "refs": [
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    234,
+    230,
+    207,
+    246
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>India is often described as having a hunger problem. It also has an overweight problem.</p>\n<p>A programme built against one burden can feed the other. A ration or a meal designed only to fill a <dfn data-g=\"42\">calorie</dfn> gap can add to overweight where overweight is rising.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c15-double-burden-bars.png",
+   "alt": "Paired bars for six measures. Children stunted 38.4 then 35.5; wasted 21.0 then 19.3; underweight 35.8 then 32.1; overweight 2.1 then 3.4. Women with BMI below 18.5, 22.9 then 18.7; overweight or obese 20.6 then 24.0.",
+   "w": 1357,
+   "h": 660,
+   "caption": "Six NFHS measures, India, in per cent, NFHS-4 (2015-16) beside NFHS-5 (2019-21). Stunting fell from 38.4 to 35.5 and thin women from 22.9 to 18.7. Overweight or obese women rose from 20.6 to 24.0, and overweight children from 2.1 to 3.4. Both burdens in one survey, moving in opposite directions."
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c15-point-changes.png",
+   "alt": "Four bars from a zero line: children stunted -2.9, women with BMI below 18.5 -4.2, women overweight or obese +3.4, children overweight +1.3.",
+   "w": 1357,
+   "h": 660,
+   "caption": "The change from NFHS-4 to NFHS-5 in percentage points, NFHS-5 minus NFHS-4. Stunting fell 2.9 points and thin women 4.2. Overweight or obese women rose 3.4 points and overweight children 1.3. The two burdens moved in opposite directions."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the sentence you will hear in a meeting, because the table in front of you refutes it.</p>\n<blockquote>\n<p>India’s nutrition problem is undernutrition. Obesity is a rich country’s problem.</p>\n</blockquote>\n<p>Open the NFHS-5 India fact sheet at https://dhsprogram.com/pubs/pdf/OF43/India_National_Fact_Sheet.pdf and find the key indicators 81 to 89. Each row gives four numbers: NFHS-5 urban, rural and total, then the NFHS-4 total from 2015-16. Read it as Book 0, F1 taught: what a row is, what each column reports, in what unit.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Group</td>\n<td>Measure</td>\n<td>NFHS-4, 2015-16, per cent</td>\n<td>NFHS-5, 2019-21, per cent</td>\n</tr>\n<tr>\n<td>children under 5</td>\n<td>stunted</td>\n<td>38.4</td>\n<td>35.5</td>\n</tr>\n<tr>\n<td>children under 5</td>\n<td>wasted</td>\n<td>21.0</td>\n<td>19.3</td>\n</tr>\n<tr>\n<td>children under 5</td>\n<td>underweight</td>\n<td>35.8</td>\n<td>32.1</td>\n</tr>\n<tr>\n<td>children under 5</td>\n<td>overweight</td>\n<td>2.1</td>\n<td>3.4</td>\n</tr>\n<tr>\n<td>women 15 to 49</td>\n<td>BMI below 18.5</td>\n<td>22.9</td>\n<td>18.7</td>\n</tr>\n<tr>\n<td>women 15 to 49</td>\n<td>overweight or obese, BMI 25.0 or more</td>\n<td>20.6</td>\n<td>24.0</td>\n</tr>\n</tbody>\n</table>\n<p>Both burdens are there, in one survey of one country. Now read the direction. Take each change in <dfn data-g=\"262\">percentage</dfn> points, the plain difference between two percentages (Book 0, A4).</p>\n<div class=\"working\">\n<p>35.5 minus 38.4 = -2.9<br />\n18.7 minus 22.9 = -4.2<br />\n24.0 minus 20.6 = 3.4<br />\n3.4 minus 2.1 = 1.3</p>\n</div>\n<p>Stunting fell by 2.9 points and thin women by 4.2. Overweight or obese women rose by 3.4 points and overweight children by 1.3. By NFHS-5 the two women’s rows had crossed: more women were overweight or obese than thin. Split by place, 33.2 per cent of urban women were overweight or obese against 19.7 per cent of rural women.</p>\n<p>Now the second trap. Add the two women’s rows.</p>\n<div class=\"working\">\n<p>18.7 plus 24.0 = 42.7</p>\n</div>\n<p>That is allowed. A woman cannot have a BMI both below 18.5 and at 25.0 or more, and both rows exclude the same pregnant women. So 42.7 per cent of women aged 15 to 49 sat outside the band from 18.5 to just under 25.</p>\n<p>Try the same with the children’s rows for stunting and underweight: 35.5 plus 32.1. Stop. A short child is often also light for age, so the same child can sit in both rows. The sum counts her twice and means nothing. Add rows only when no one can be in both.</p>",
+   "numberRefs": [
+    247
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The figures are national averages for 2019-21. They show the two burdens in one population. They cannot show whether the thin woman and the overweight woman live in the same house, or whether one stunted child is also overweight. For that you need the survey’s unit-level data, cross-tabulated, which a fact sheet does not give.</p>\n<p>The adult rows cover ages 15 to 49 only, and join overweight and obese in one figure. They are not an obesity rate for Indian adults.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now use the WHO’s levels, and this book’s two words, on programmes you have already met.</p>\n<p>Open the Mission Saksham <dfn data-g=\"18\">Anganwadi</dfn> and Poshan 2.0 Scheme Guidelines (Ministry of Women and Child Development, 2022) at https://wcd.gov.in/documents/uploaded/Mission%20Saksham%20Anganwadi%20and%20Poshan%202.0%20scheme%20guidelines.pdf and search for “calorie sufficiency”. The sentence is about the anganwadi services of the Integrated Child Development Services (ICDS), the programme Poshan 2.0 brought under it.</p>\n<blockquote>\n<p>The Anganwadi Services under ICDS have focused on ensuring calorie sufficiency, neglecting quality and diversity of diets</p>\n</blockquote>\n<p>The ICDS programme, in the state’s own words, was built to close a calorie gap. That is a single-duty design: it aimed at one burden and set no check on the other.</p>\n<p>Now open the Press Information Bureau’s backgrounder of 14 April 2026 on Mission Poshan 2.0, at https://www.pib.gov.in/PressReleasePage.aspx?PRID=2251769&amp;reg=3&amp;lang=1, and search for “calorie-specific”.</p>\n<blockquote>\n<p>The old norms were largely calorie-specific; however, the revised norms are more comprehensive and balanced in terms of both quantity and quality of supplementary nutrition</p>\n</blockquote>\n<p>Further down, the 2025 Poshan Maah, a nutrition month run through anganwadi centres among others, lists “reduction in sugar and oil consumption to address obesity” among its themes. That is an existing programme against undernutrition being asked to carry an obesity aim as well. It has the shape of the WHO’s second level, retrofit. The backgrounder reports no effect, so it shows the intention, not the result.</p>\n<p>The third word needs a change you can test. Here is one, made up for this illustration: a State proposes to raise the energy of a take-home ration by adding sugar and refined oil, leaving its <dfn data-g=\"292\">protein</dfn> where it was. It would close a calorie gap faster. Among the women and older children who may share the packet, it would add energy with nothing else. Nationally a quarter of women aged 15 to 49 are already overweight or obese, and about one in five even among rural women. Those are national figures, not figures for the women in that State’s anganwadi households, so treat them as a warning, not a measurement. On its design, read it as working against the other burden. The WHO’s first level, do no harm, is the question that catches it.</p>",
+   "numberRefs": [
+    247
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The sorting reads what a programme or a change is designed to do. It does not show what it did. A retrofit on paper can fail on the plate, and a single-duty programme can happen to help the other burden. Only measured outcomes on both sides settle which it was.</p>\n<p>Single-duty and working against the other burden are this book’s reading words, not an official classification. The WHO brief does not use them, and no other source quoted here does, so do not present them as anyone else’s terms.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“India’s problem is hunger; obesity is for rich countries” is wrong on India’s own survey. Say both in the same breath, every time.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Between NFHS-4 and NFHS-5 the share of women aged 15 to 49 who were overweight or obese rose from 20.6 to 24.0 per cent. The burden is moving, not only sitting. So a programme designed for the burden as it was can be wrong for the burden as it is.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Add <dfn data-g=\"283\">prevalence</dfn> rows only when nobody can sit in both. A sum of overlapping rows counts the same child twice.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A national fact sheet shows the two burdens in one population. Do not claim a household-level double burden from it.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never quote 24.0 per cent as “the obesity rate among Indian women”. It is overweight and obesity together, in women of reproductive age.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Someone proposes a change to a ration, a school meal or a take-home ration. Before you back it, ask the WHO’s first question out loud: does it raise the risk of the other burden? A change that adds energy and nothing else should be checked against it. Ask whose overweight trend it must be read against: NFHS-5 holds women 15 to 49 and children under five, not school-age children.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The anganwadi guidelines describe their predecessor as built for “calorie sufficiency, neglecting quality and diversity of diets”. Quote the state’s own sentence when you argue that the schemes need retrofitting.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“Single-duty” and “working against the other burden” are this book’s words for sorting a change. Define them when you use them in a committee, or a hostile reader will ask whose terms they are. Only an outcome measured on the other side shows that a change worked against it.</p>",
+     "tag": "boundary",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Three proposals reach a State nutrition committee. Sort each as double-duty, single-duty, or working against the other burden, using the WHO’s three levels and this book’s two words. Say what evidence would change your answer. All three proposals are made up for the exercise.</p>\n<ol type=\"a\">\n<li><p>Raise the energy of the take-home ration for children aged 6 months to 3 years by adding more sugar, keeping protein the same.</p></li>\n<li><p>Replace part of the rice in the school meal with a pulse and add a vegetable, keeping the meal’s energy the same.</p></li>\n<li><p>Add one more kilogram of rice a month to every <dfn data-g=\"285\">priority household</dfn>’s ration.</p></li>\n</ol>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<ol type=\"a\">\n<li>Working against the other burden, on its design. It closes an energy gap by adding energy alone. A packet taken home may be shared, so older children and adults may eat some of it too. A quarter of women aged 15 to 49 are overweight or obese nationally. The figure for the women in these households is not known, and nobody should assume it is lower.</li>\n</ol>\n<p>It also fails the WHO’s first level, do no harm, as it stands. It also breaks the Poshan 2.0 guidelines’ own rule that white sugar should not be used. Evidence that would change the answer: the extra energy reaching only wasted children, with growth measured.</p>\n<ol start=\"2\" type=\"a\">\n<li><p>A candidate for double duty, as a retrofit of an existing programme. Protein and diet variety rise with no rise in energy, which helps on the undernutrition side and adds nothing on the overweight side. Evidence that would change the answer: the swap costing so much that portions shrink, or the vegetable not reaching the plate.</p></li>\n<li><p>Single-duty. It acts on one burden, energy supply, and does not aim at the other. Whether it works against the other burden depends on who eats the extra rice. In a household whose members are already overweight it could; in one short of food it would not. Evidence that would change the answer: who in the household eats it, and what it replaces.</p></li>\n</ol>\n<p>In every case the sorting is of the design. Only outcomes measured on both sides settle it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist has three minutes and asks: “Is India’s problem hunger or obesity?” Give one quotable sentence and the confidence you have in it.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Quotable: “Both, in one survey. More than a third of our young children are stunted. A quarter of women of child-bearing age are overweight or obese.”</p>\n<p>Then the numbers, with their source. NFHS-5, 2019-21: 35.5 per cent of children under five stunted, 24.0 per cent of women aged 15 to 49 overweight or obese. Stunting fell and overweight rose since the round before.</p>\n<p>Confidence, said plainly. The figures are from a very large national survey and are solid for the country as a whole. What the survey’s summary cannot tell you is whether the two burdens sit in the same homes. That needs a deeper analysis than a fact sheet.</p>\n<p>What not to say: that obesity has replaced hunger. Both are large; neither has replaced the other.</p>"
+  }
+ ]
+}

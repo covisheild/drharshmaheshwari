@@ -1,0 +1,155 @@
+{
+ "format": 1,
+ "id": "s57-r1-c14",
+ "label": "14",
+ "title": "Where teaching sits in Indian medical education",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Undergraduate medical education in India is governed by the Graduate Medical Education Regulations, 2023 (GMER 2023). The National Medical Commission (NMC) made them under the National Medical Commission <dfn data-g=\"4\">Act</dfn>, 2019, sections 24(1) and 57(2). NMC notified them in the <dfn data-g=\"211\">Gazette</dfn> on 2 June 2023. They direct NMC’s undergraduate board to publish the model curriculum on the NMC website from time to time.</p>\n<p>The curriculum in force is NMC’s <dfn data-g=\"87\">Competency Based</dfn> Medical Education (CBME) Curriculum 2024, enclosed with a letter of 12 September 2024. It calls itself guidelines, and it was issued by letter. GMER 2023 requires every student to be trained as the board’s published guidelines say. So the <dfn data-g=\"224\">guideline</dfn> binds through the regulation.</p>\n<p>The CBME Curriculum 2024 names seven roles for the <dfn data-g=\"241\">Indian Medical Graduate</dfn> (IMG): clinician; leader and member of the health care team and system; communicator; lifelong learner; professional; critical thinker; and researcher. The Regulations on Graduate Medical Education (<dfn data-g=\"18\">Amendment</dfn>), 2019 named the first five.</p>\n<p>The CBME Curriculum 2024 limits large group teaching to one third of a subject’s allotted hours. It counts any large group method, an interactive lecture included. Its definition sets no group size. Phase I opens with a Foundation Course of two weeks and 80 hours.</p>\n<p>The Medical Institutions (Qualifications of Faculty) Regulations, 2025 were notified on 30 June 2025. They superseded the Teachers Eligibility Qualifications in Medical Institutions Regulations, 2022. Their Table E covers faculty in the broad specialties: the subjects of the Doctor of Medicine and Master of Surgery degrees. There a Professor or an Associate Professor “shall be required to undergo” the Basic Course in Medical Education. The proviso is that the specialty is covered under undergraduate training.</p>",
+   "refs": [
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>At the top sits a regulation, the Graduate Medical Education Regulations, 2023 (GMER 2023). It was notified in the Gazette, so it binds.</p>\n<p>Under it sits the detail, in a guideline — a document NMC’s undergraduate board sent out by letter and put on its website. The regulation says every student is trained as that guideline says, so the guideline binds too. “Competency based” means the course is built from what a graduate must be able to do, not from a list of topics to cover.</p>\n<p>That guideline names the doctor the course is meant to produce: the Indian Medical Graduate, or IMG. It gives the IMG seven roles.</p>\n<p>Teaching to a large group, by any method, may take at most a third of a subject’s hours.</p>\n<p>A third paper decides what you need to hold as a teacher. It is the faculty regulations of 2025. They tie a course, the Basic Course in Medical Education, to two posts: Associate Professor and Professor. This holds in subjects of the Doctor of Medicine and Master of Surgery degrees that are taught to undergraduates. Community Medicine is one of them.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c14-img-roles.png",
+   "alt": "Three bars. 2019 regulation: 5 roles. CBME 2024 guidelines, section 5: 7 roles. The manual's extract in the same document: 5 roles.",
+   "w": 1357,
+   "h": 656,
+   "caption": "How many roles of the Indian Medical Graduate each list names. The 2019 regulation named five. The CBME Curriculum 2024’s guidelines, section 5, name seven, including critical thinker and researcher, which were added after 2019. The manual inside the same document says it copies the guidelines, yet still lists five. Teach seven."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>You are asked to take the Foundation Course session on the roles of the Indian Medical Graduate for a new batch of first-year MBBS students. A senior hands you last year’s slides. They show five roles.</p>\n<p>Open NMC’s CBME Curriculum 2024 at https://nmc.org.in/storage/cms/rules-regulation-nmc/YTW423v3EsCFdtPv3I5qZkaNNhuXfub42UZITDRM.pdf. Find Goals for the Learner in the guidelines at the front, section 5. Read the list. It runs from a to g: clinician; leader and member of the health care team and system; communicator; lifelong learner; professional; critical thinker; researcher. That is seven.</p>\n<p>Now search for “Roles (global competencies)”. It takes you further down the same document, to the curriculum volume’s “How to use the Manual”. Its Section 1 says it gives the roles “extracted from” the CBME Guidelines, 2024. Read its list, under 2.3. It stops at e, professional. That is five.</p>\n<p>So the slides were not made up. The five are exactly the roles the 2019 regulation named. Critical thinker and researcher came later, and one copy inside NMC’s own document was never brought up to date.</p>\n<p>Now decide which to teach. The manual says it is copying the guidelines, so the guidelines are the thing to quote. Teach seven. Then show the batch the second list, and tell them why a copy can disagree with what it copies.</p>",
+   "numberRefs": [
+    346,
+    347
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This settles what NMC’s document of 12 September 2024 says. It does not tell you whether a later letter has changed the list. Before the session, open NMC’s Rules and Regulations page, https://nmc.org.in/page/rules-regulations-rules-regulations-nmc, and look for anything under the undergraduate board dated after 12 September 2024.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>You will hear it said that every medical teacher must do the Basic Course in Medical Education. Check it against the instrument.</p>\n<p>Open the Medical Institutions (Qualifications of Faculty) Regulations, 2025 at https://nmc.org.in/storage/cms/rules-regulation-nmc/QZSDeGu7WXS9MMI0dL5ZR1EbS48kLaFbvMTpww2B.pdf. The first paragraph says they are made “in <dfn data-g=\"508\">supersession</dfn> of” the teachers’ eligibility regulations of 2022. Supersession means the new instrument takes the old one’s place. So anything you learnt from the 2022 regulations needs checking again.</p>\n<p>Go to the Schedule and find Table E, for faculty in the broad specialties. Read it one row at a time and write down what each row says about the course.</p>\n<p>The Professor row says the Professor “shall be required to undergo Basic Course in Medical Education provided their broad specialty subject is covered under undergraduate training”. The Associate Professor row says the same. The Assistant Professor row does not name the course at all.</p>\n<p>Now apply the proviso to yourself. Is Community Medicine covered under undergraduate training? Search the CBME Curriculum 2024 for Community Medicine. It is one of the subjects of the Phase III Part 1 university examination. So yes. Under this table, the course reaches you at Associate Professor.</p>\n<p>Go back to the Professor row and read it again, slowly. The research course is worded “have completed”. The teaching course is worded “shall be required to undergo”. Those are different words. May you take the teaching course after the promotion? For one route the table says so. Its Note 2 lets an experienced non-teaching consultant, specialist or medical officer become an Associate Professor. That person must take the teaching course “within two years of the appointment”. For the ordinary route the table does not say. Do not settle that from the wording. Read NMC’s published FAQs on these regulations. If they do not answer it, ask NMC in writing.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This reads one table of one regulation, as notified on 30 June 2025. Dental faculty have their own table, which words the course differently. The table does not tell you what your own college or state requires on top of it. And an amendment or a published answer from NMC can change the reading.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The Indian Medical Graduate has five roles” is out of date. The CBME Curriculum 2024 lists seven: critical thinker and researcher were added to the 2019 five.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When a department asks you to lecture, count its large-group hours first. Over one third of a subject’s hours in large groups puts a timetable out of line with the curriculum. Good lectures do not change that.</p>",
+     "tag": "number",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Mentoring is in the curriculum, not an optional extra. Each mentor gets three students during the Foundation Course and keeps them until they finish internship. Mentors are drawn from Assistant Professor upwards, so expect to be one from your first post as Assistant Professor.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>The Basic Course in Medical Education is tied to posts, not to teaching as such. Its Assistant Professor row does not name it. Say that, not “every teacher must do it”.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Know which kind of paper you are quoting. Mahajan and Gupta (2024) report that a circular of 12 June 2023, issuing guidelines under GMER 2023, was withdrawn eleven days later. The regulations themselves were not. A CBME guideline of 1 August 2023 was later revised by the 2024 curriculum. So “the 2023 guidelines” can mean either paper. Ask for the date, and check which one it is.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Two papers in force can disagree. GMER 2023 bars a student from continuing after nine years from admission. The CBME Curriculum 2024 says a learner may not graduate later than ten years from joining, internship included. When a student’s case turns on the limit, name both papers and their words.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>These instruments tell you what a college must provide and what a teacher must hold. They say nothing about whether any session works.</p>",
+     "tag": "boundary",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Name the seven roles of the Indian Medical Graduate in the CBME Curriculum 2024. Say which two were not among the five named in 2019.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Clinician; leader and member of the health care team and system; communicator; lifelong learner; professional; critical thinker; researcher.</p>\n<p>Critical thinker and researcher are the two added after 2019. The first five are the 2019 list.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A new Assistant Professor of Community Medicine is told by a colleague: “You cannot teach until you have done the Basic Course in Medical Education. It is in the 2022 regulations.” Using only what this section gives, say what is wrong with each half of the sentence, and what you would check before saying anything more.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The second half names the wrong paper. The 2022 rules on who may teach were replaced on 30 June 2025. The new ones are the Medical Institutions (Qualifications of Faculty) Regulations, 2025. Quote those.</p>\n<p>The first half claims more than Table E says. Table E names the course for Professors and Associate Professors in broad specialty subjects taught to undergraduates. Its Assistant Professor row does not name it. Community Medicine is taught to undergraduates. So the course will apply when you become an Associate Professor.</p>\n<p>Before saying more, check three things. The parts of the 2025 rules not read here. Your college’s and your state’s own rules. Any later change or written answer from NMC. The table does not say “cannot teach until”. Do not claim it does, and do not claim the opposite either.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>For a first-year resident, ten minutes with a whiteboard. The CBME Curriculum 2024 caps large group teaching at one third of a subject’s hours. What does the cap force a department to do, what argument from this book supports it, and what does the cap not guarantee?</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with what the cap does. It forces at least two thirds of a subject’s hours into small groups, practicals, clinics, self-directed learning and similar work.</p>\n<p>The curriculum states the rule, and the paragraph that sets it cites no study. So the argument has to come from this book. section 10 says to choose activities that make learners do what the test will ask. This book suggests those formats leave more room for that than a large group does.</p>\n<p>Then the limit. A small group can still be a lecture to twelve people. The cap counts hours by format, and says nothing about what happens in them. Whether learners can do the objective afterwards is shown only by testing it.</p>"
+  }
+ ]
+}

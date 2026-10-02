@@ -1,0 +1,3540 @@
+{
+ "format": 1,
+ "id": "B0",
+ "slug": "b0",
+ "url": "/doctors/books/obesity-expertise/b0/",
+ "series": "Obesity Expertise",
+ "number": 0,
+ "title": "Ground floor",
+ "subtitle": "Numbers, units, change, uncertainty, the body's chemistry, and reading evidence",
+ "coverLine": "The foundation every later book stands on",
+ "subject": null,
+ "level": "Ground floor",
+ "part": "Book 0",
+ "hue": 174,
+ "colours": {
+  "ink": "#145d55",
+  "accent": "#1fad9f",
+  "accent2": "#1d67c9",
+  "tint": "#effbfa",
+  "tint2": "#d7f4f1",
+  "rule": "#b5e3de"
+ },
+ "version": "1.2",
+ "date": "2026-09-24",
+ "author": "Dr. Harsh Maheshwari",
+ "licence": "CC BY-NC-SA 4.0",
+ "pdf": "https://files.drharshmaheshwari.com/books/obesity-expertise/B0-v1.2.pdf",
+ "figureBase": "https://files.drharshmaheshwari.com/books/obesity-expertise/figures/",
+ "about": {
+  "why": "<p>Every other book in this series stands on this one. It teaches, once, the ground floor the other 195 books assume: numbers you can trust, units and dimensions, relationships and change, uncertainty, the chemistry of a body, and how to read evidence. It assumes you can read English and use a calculator. It assumes nothing else: no medicine, no biology, no remembered mathematics.</p>",
+  "howToRead": "<p>Read it in order. Each section assumes everything before it and nothing after it. If a section looks easy, read it anyway and read it quickly: it is here because something later needs it.</p>",
+  "prerequisites": null
+ },
+ "blurb": "Forty-three short sections that take you from place value to reading a statute: the arithmetic, units, graphs, probability, measurement, energy and biology that every later book in the series takes for granted. Every claim is checked against a source you can open. Every worked answer is recomputed. Every section ends with exercises and practice problems you can do.",
+ "requires": [],
+ "words": 150846,
+ "outline": [
+  {
+   "id": "A",
+   "title": "Part A · Numbers you can trust",
+   "sections": [
+    {
+     "id": "b0-r0-c01",
+     "label": "A1",
+     "title": "Counting, place value, and what a calculator is actually doing",
+     "words": 5326,
+     "practice": 19
+    },
+    {
+     "id": "b0-r0-c02",
+     "label": "A2",
+     "title": "Fractions",
+     "words": 2716,
+     "practice": 12
+    },
+    {
+     "id": "b0-r0-c03",
+     "label": "A3",
+     "title": "Decimals, rounding, and significant figures",
+     "words": 2521,
+     "practice": 12
+    },
+    {
+     "id": "b0-r0-c04",
+     "label": "A4",
+     "title": "Percentages, and the percentage of a percentage",
+     "words": 2690,
+     "practice": 13
+    },
+    {
+     "id": "b0-r0-c05",
+     "label": "A5",
+     "title": "Ratios, rates and proportions",
+     "words": 2830,
+     "practice": 13
+    },
+    {
+     "id": "b0-r0-c06",
+     "label": "A6",
+     "title": "Powers, roots and scientific notation",
+     "words": 3023,
+     "practice": 15
+    },
+    {
+     "id": "b0-r0-c07",
+     "label": "A7",
+     "title": "Logarithms — what they are for before how they work",
+     "words": 3148,
+     "practice": 15
+    },
+    {
+     "id": "b0-r0-c08",
+     "label": "A8",
+     "title": "Orders of magnitude and the back-of-envelope sanity check",
+     "words": 3541,
+     "practice": 13
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "title": "Part B · Units and dimensions",
+   "sections": [
+    {
+     "id": "b0-r0-c09",
+     "label": "B1",
+     "title": "What a unit is, and the SI base and derived units",
+     "words": 1333,
+     "practice": 3
+    },
+    {
+     "id": "b0-r0-c10",
+     "label": "B2",
+     "title": "Converting units as multiplication by one",
+     "words": 2471,
+     "practice": 10
+    },
+    {
+     "id": "b0-r0-c11",
+     "label": "B3",
+     "title": "Dimensional analysis as an error check",
+     "words": 4125,
+     "practice": 16
+    },
+    {
+     "id": "b0-r0-c12",
+     "label": "B4",
+     "title": "Energy units: joule, kilojoule, calorie, kilocalorie",
+     "words": 2893,
+     "practice": 14
+    },
+    {
+     "id": "b0-r0-c13",
+     "label": "B5",
+     "title": "Concentration units: mg/dL, mmol/L, and converting between them",
+     "words": 3749,
+     "practice": 15
+    },
+    {
+     "id": "b0-r0-c14",
+     "label": "B6",
+     "title": "Body-size units: kg, m, cm and kg/m<sup>2</sup>",
+     "words": 2288,
+     "practice": 10
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "title": "Part C · Relationships and change",
+   "sections": [
+    {
+     "id": "b0-r0-c15",
+     "label": "C1",
+     "title": "Variables and algebra: what a letter stands for",
+     "words": 2581,
+     "practice": 9
+    },
+    {
+     "id": "b0-r0-c16",
+     "label": "C2",
+     "title": "Rearranging an equation",
+     "words": 4529,
+     "practice": 14
+    },
+    {
+     "id": "b0-r0-c17",
+     "label": "C3",
+     "title": "Two equations at once",
+     "words": 4703,
+     "practice": 12
+    },
+    {
+     "id": "b0-r0-c18",
+     "label": "C4",
+     "title": "Functions: input, rule, output",
+     "words": 3127,
+     "practice": 10
+    },
+    {
+     "id": "b0-r0-c19",
+     "label": "C5",
+     "title": "Graphs: axes, scale, slope and intercept",
+     "words": 4765,
+     "practice": 15
+    },
+    {
+     "id": "b0-r0-c20",
+     "label": "C6",
+     "title": "Recognising shapes: linear, exponential, saturating",
+     "words": 4507,
+     "practice": 12
+    },
+    {
+     "id": "b0-r0-c21",
+     "label": "C7",
+     "title": "Rate of change, average and instantaneous, without the machinery",
+     "words": 5748,
+     "practice": 17
+    },
+    {
+     "id": "b0-r0-c22",
+     "label": "C8",
+     "title": "Accumulation, a running total, without the machinery",
+     "words": 5237,
+     "practice": 15
+    },
+    {
+     "id": "b0-r0-c23",
+     "label": "C9",
+     "title": "Stocks and flows",
+     "words": 5313,
+     "practice": 14
+    }
+   ]
+  },
+  {
+   "id": "D",
+   "title": "Part D · Uncertainty",
+   "sections": [
+    {
+     "id": "b0-r0-c24",
+     "label": "D1",
+     "title": "What a probability is",
+     "words": 2524,
+     "practice": 11
+    },
+    {
+     "id": "b0-r0-c25",
+     "label": "D2",
+     "title": "Counting outcomes; independence",
+     "words": 3329,
+     "practice": 15
+    },
+    {
+     "id": "b0-r0-c26",
+     "label": "D3",
+     "title": "Conditional probability through the two-way table",
+     "words": 4105,
+     "practice": 15
+    },
+    {
+     "id": "b0-r0-c27",
+     "label": "D4",
+     "title": "Variation: what differs and by how much",
+     "words": 3639,
+     "practice": 13
+    },
+    {
+     "id": "b0-r0-c28",
+     "label": "D5",
+     "title": "Average and spread, and why the average is not the person",
+     "words": 4599,
+     "practice": 18
+    },
+    {
+     "id": "b0-r0-c29",
+     "label": "D6",
+     "title": "Sampling: how a part can tell you about a whole",
+     "words": 4411,
+     "practice": 13
+    },
+    {
+     "id": "b0-r0-c30",
+     "label": "D7",
+     "title": "Random error and systematic error as different things",
+     "words": 4217,
+     "practice": 14
+    }
+   ]
+  },
+  {
+   "id": "E",
+   "title": "Part E · The physical and living world",
+   "sections": [
+    {
+     "id": "b0-r0-c31",
+     "label": "E1",
+     "title": "Atoms, molecules and bonds — enough to see where energy is stored",
+     "words": 2130,
+     "practice": 3
+    },
+    {
+     "id": "b0-r0-c32",
+     "label": "E2",
+     "title": "Chemical energy, combustion, and the bomb calorimeter",
+     "words": 6493,
+     "practice": 15
+    },
+    {
+     "id": "b0-r0-c33",
+     "label": "E3",
+     "title": "Conservation of energy, and a system with a boundary",
+     "words": 5386,
+     "practice": 11
+    },
+    {
+     "id": "b0-r0-c34",
+     "label": "E4",
+     "title": "Heat and temperature; how heat moves",
+     "words": 5387,
+     "practice": 11
+    },
+    {
+     "id": "b0-r0-c35",
+     "label": "E5",
+     "title": "The cell, membranes, proteins and receptors",
+     "words": 2395,
+     "practice": 3
+    },
+    {
+     "id": "b0-r0-c36",
+     "label": "E6",
+     "title": "Metabolism as chemistry happening in a body",
+     "words": 2983,
+     "practice": 3
+    },
+    {
+     "id": "b0-r0-c37",
+     "label": "E7",
+     "title": "Genes, DNA and inheritance in outline",
+     "words": 2779,
+     "practice": 3
+    },
+    {
+     "id": "b0-r0-c38",
+     "label": "E8",
+     "title": "Organs and systems that matter for metabolism",
+     "words": 3516,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "F",
+   "title": "Part F · Reading and reasoning",
+   "sections": [
+    {
+     "id": "b0-r0-c39",
+     "label": "F1",
+     "title": "Reading a table",
+     "words": 832,
+     "practice": 2
+    },
+    {
+     "id": "b0-r0-c40",
+     "label": "F2",
+     "title": "Reading a figure, and the ways a figure misleads",
+     "words": 5995,
+     "practice": 16
+    },
+    {
+     "id": "b0-r0-c41",
+     "label": "F3",
+     "title": "Checking a reference",
+     "words": 989,
+     "practice": 2
+    },
+    {
+     "id": "b0-r0-c42",
+     "label": "F4",
+     "title": "Argument: premise, inference, conclusion",
+     "words": 841,
+     "practice": 2
+    },
+    {
+     "id": "b0-r0-c43",
+     "label": "F5",
+     "title": "How government works, in the shape you need to read a regulation",
+     "words": 1132,
+     "practice": 3
+    }
+   ]
+  }
+ ],
+ "references": [
+  {
+   "part": "A",
+   "items": [
+    {
+     "n": 1,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 1, Whole Numbers. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 2,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 3, Integers, §3.1 Introduction to Integers and §3.4 Multiply and Divide Integers. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 3,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 2, §2.1 Use the Language of Algebra, Simplify Expressions Using the Order of Operations. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 4,
+     "html": "Government of India. The Food Safety and Standards Act, 2006. Act 34 of 2006. Consulted at ss. 91-93 (power to make rules and regulations; laying before Parliament). figures quoted in the text. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/586348\" class=\"uri\">https://indiacode.gov.in/handle/123456789/586348</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 5,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 4, Fractions. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 6,
+     "html": "Government of India. The National Food Security Act, 2013. Act 20 of 2013. figures quoted in the text. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/496105\" class=\"uri\">https://indiacode.gov.in/handle/123456789/496105</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 7,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 5, Decimals. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 8,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 6, Percents. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 9,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 5, Decimals, sections on ratios and rates. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 10,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 10, Polynomials, integer exponents and scientific notation. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 11,
+     "html": "OpenStax. College Algebra 2e. Openly licensed. Carries logarithms, which Prealgebra does not - the reason Part A needs two anchors rather than one. ch. 6, Exponential and Logarithmic Functions. <a href=\"https://openstax.org/books/college-algebra-2e\" class=\"uri\">https://openstax.org/books/college-algebra-2e</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 12,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 10, Polynomials, scientific notation. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    }
+   ],
+   "note": "<em>An entry marked outstanding has not yet been checked against the source itself. Nothing in these sections rests on one: the reasoning is a derivation you can check with a calculator, and the entry records an anchor still to be supplied.</em>"
+  },
+  {
+   "part": "B",
+   "items": [
+    {
+     "n": 1,
+     "html": "Bureau International des Poids et Mesures. The International System of Units (SI). 2019. SI definition, opening statement on how the units are defined. BIPM. <a href=\"https://www.bipm.org/en/measurement-units\" class=\"uri\">https://www.bipm.org/en/measurement-units</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 2,
+     "html": "Bureau International des Poids et Mesures. The International System of Units (SI). 2019. SI definition, the list of seven defining constants. BIPM. <a href=\"https://www.bipm.org/en/measurement-units\" class=\"uri\">https://www.bipm.org/en/measurement-units</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 3,
+     "html": "Bureau International des Poids et Mesures. The International System of Units (SI). 2019. SI definition, the relations between the derived units and the base units. BIPM. <a href=\"https://www.bipm.org/en/measurement-units\" class=\"uri\">https://www.bipm.org/en/measurement-units</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 4,
+     "html": "Bureau International des Poids et Mesures. The International System of Units (SI). 2019. closing paragraph, the list naming the seven base units. BIPM. <a href=\"https://www.bipm.org/en/measurement-units\" class=\"uri\">https://www.bipm.org/en/measurement-units</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 5,
+     "html": "Bureau International des Poids et Mesures. The International System of Units (SI). 2019. closing paragraph, the sentence on the continuing role of the base units. BIPM. <a href=\"https://www.bipm.org/en/measurement-units\" class=\"uri\">https://www.bipm.org/en/measurement-units</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 6,
+     "html": "Bureau International des Poids et Mesures. The International System of Units (SI). 2019. closing paragraph, the sentence naming the vote to revise the SI. BIPM. <a href=\"https://www.bipm.org/en/measurement-units\" class=\"uri\">https://www.bipm.org/en/measurement-units</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 7,
+     "html": "Bureau International des Poids et Mesures. The International System of Units (SI). 2019. “For more information”, the line naming the instrument that defines the SI. BIPM. <a href=\"https://www.bipm.org/en/measurement-units\" class=\"uri\">https://www.bipm.org/en/measurement-units</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 8,
+     "html": "Bureau International des Poids et Mesures. The International System of Units (SI). 2019. figures quoted in the text. BIPM. <a href=\"https://www.bipm.org/en/measurement-units\" class=\"uri\">https://www.bipm.org/en/measurement-units</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 9,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 4, Fractions, on equivalent fractions and multiplying by a fraction equal to one. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 10,
+     "html": "Government of India. The National Food Security Act, 2013. Act 20 of 2013. figures quoted in the text. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/496105\" class=\"uri\">https://indiacode.gov.in/handle/123456789/496105</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 11,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 5, Decimals, sections on ratios and rates. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 12,
+     "html": "Bureau International des Poids et Mesures. The International System of Units (SI). 2019. SI definition, the paragraph relating the joule to the base units. BIPM. <a href=\"https://www.bipm.org/en/measurement-units\" class=\"uri\">https://www.bipm.org/en/measurement-units</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 13,
+     "html": "National Institute of Standards and Technology. Guide for the Use of the International System of Units (SI), NIST Special Publication 811, Footnotes. Page updated 18 August 2025. Carries the exact definitions of the thermochemical and International Table calorie. Footnotes, the paragraph fixing the thermochemical calorie. NIST. <a href=\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes\" class=\"uri\">https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 14,
+     "html": "National Institute of Standards and Technology. Guide for the Use of the International System of Units (SI), NIST Special Publication 811, Footnotes. Page updated 18 August 2025. Carries the exact definitions of the thermochemical and International Table calorie. Footnotes, the paragraph fixing the International Table calorie. NIST. <a href=\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes\" class=\"uri\">https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 15,
+     "html": "National Institute of Standards and Technology. Guide for the Use of the International System of Units (SI), NIST Special Publication 811, Footnotes. Page updated 18 August 2025. Carries the exact definitions of the thermochemical and International Table calorie. Footnotes, the paragraph on the kilocalorie as the food unit. NIST. <a href=\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes\" class=\"uri\">https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 16,
+     "html": "Food Safety and Standards Authority of India. Food Safety and Standards (Labelling and Display) Regulations, 2020. 2020. Regulation 5(3)(b), nutritional information to be given on the label. FSSAI. <a href=\"https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf\" class=\"uri\">https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 17,
+     "html": "Food Safety and Standards Authority of India. Food Safety and Standards (Labelling and Display) Regulations, 2020. 2020. Regulation 5(3)(b)(i), the energy line of the nutritional information panel. FSSAI. <a href=\"https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf\" class=\"uri\">https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 18,
+     "html": "Food Safety and Standards Authority of India. Food Safety and Standards (Labelling and Display) Regulations, 2020. 2020. Regulation 5(3)(b)(ii), the amounts the nutritional information panel must give. FSSAI. <a href=\"https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf\" class=\"uri\">https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 19,
+     "html": "Food Safety and Standards Authority of India. Food Safety and Standards (Labelling and Display) Regulations, 2020. 2020. Regulation 5(3)(c), foods exempted from mandatory nutritional labelling. FSSAI. <a href=\"https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf\" class=\"uri\">https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 20,
+     "html": "Food Safety and Standards Authority of India. Food Safety and Standards (Labelling and Display) Regulations, 2020. 2020. Regulation 8(1), exemptions from certain labelling requirements. FSSAI. <a href=\"https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf\" class=\"uri\">https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 21,
+     "html": "Food Safety and Standards Authority of India. Food Safety and Standards (Labelling and Display) Regulations, 2020. 2020. Regulation 5(3)(e)(i), Calculation of Energy, opening line. FSSAI. <a href=\"https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf\" class=\"uri\">https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 22,
+     "html": "Food Safety and Standards Authority of India. Food Safety and Standards (Labelling and Display) Regulations, 2020. 2020. Regulation 5(3)(e)(i), the table of conversion factors. FSSAI. <a href=\"https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf\" class=\"uri\">https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 23,
+     "html": "National Institute of Standards and Technology. Guide for the Use of the International System of Units (SI), NIST Special Publication 811, Footnotes. Page updated 18 August 2025. Carries the exact definitions of the thermochemical and International Table calorie. figures quoted in the text. NIST. <a href=\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes\" class=\"uri\">https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 24,
+     "html": "National Center for Biotechnology Information. PubChem Compound Summary: D-Glucose (CID 5793) and Cholesterol (CID 5997). Molecular weight for D-glucose computed by PubChem 2.2, release 2025.09.15. D-Glucose, PubChem CID 5793, Molecular Weight field. PubChem, US National Library of Medicine. <a href=\"https://pubchem.ncbi.nlm.nih.gov/compound/5793\" class=\"uri\">https://pubchem.ncbi.nlm.nih.gov/compound/5793</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 25,
+     "html": "National Center for Biotechnology Information. PubChem Compound Summary: D-Glucose (CID 5793) and Cholesterol (CID 5997). Molecular weight for D-glucose computed by PubChem 2.2, release 2025.09.15. D-Glucose, the provenance line printed under the molecular weight. PubChem, US National Library of Medicine. <a href=\"https://pubchem.ncbi.nlm.nih.gov/compound/5793\" class=\"uri\">https://pubchem.ncbi.nlm.nih.gov/compound/5793</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 26,
+     "html": "National Center for Biotechnology Information. PubChem Compound Summary: D-Glucose (CID 5793) and Cholesterol (CID 5997). Molecular weight for D-glucose computed by PubChem 2.2, release 2025.09.15. Cholesterol, PubChem CID 5997, and the note recording what was not captured. PubChem, US National Library of Medicine. <a href=\"https://pubchem.ncbi.nlm.nih.gov/compound/5793\" class=\"uri\">https://pubchem.ncbi.nlm.nih.gov/compound/5793</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 27,
+     "html": "National Center for Biotechnology Information. PubChem Compound Summary: D-Glucose (CID 5793) and Cholesterol (CID 5997). Molecular weight for D-glucose computed by PubChem 2.2, release 2025.09.15. figures quoted in the text. PubChem, US National Library of Medicine. <a href=\"https://pubchem.ncbi.nlm.nih.gov/compound/5793\" class=\"uri\">https://pubchem.ncbi.nlm.nih.gov/compound/5793</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 28,
+     "html": "Marecek, Lynn and Anthony-Smith, MaryAnne and Mathis, Andrea Honeycutt. Prealgebra 2e. 2020. ch. 10, Polynomials, integer exponents and scientific notation. <a href=\"https://openstax.org/books/prealgebra-2e/pages/1-introduction\" class=\"uri\">https://openstax.org/books/prealgebra-2e/pages/1-introduction</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    }
+   ],
+   "note": "<em>An entry marked outstanding has not yet been checked against the source itself. Nothing in these sections rests on one: the reasoning is a derivation you can check with a calculator, and the entry records an anchor still to be supplied.</em>"
+  },
+  {
+   "part": "C",
+   "items": [
+    {
+     "n": 1,
+     "html": "OpenStax. College Algebra 2e. Openly licensed. Carries logarithms, which Prealgebra does not - the reason Part A needs two anchors rather than one. ch. 1, Prerequisites, and ch. 2, Equations and Inequalities - on algebraic expressions, variables and substitution. <a href=\"https://openstax.org/books/college-algebra-2e\" class=\"uri\">https://openstax.org/books/college-algebra-2e</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 2,
+     "html": "Food Safety and Standards Authority of India. Food Safety and Standards (Labelling and Display) Regulations, 2020. 2020. figures quoted in the text. FSSAI. <a href=\"https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf\" class=\"uri\">https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 3,
+     "html": "OpenStax. College Algebra 2e. Openly licensed. Carries logarithms, which Prealgebra does not - the reason Part A needs two anchors rather than one. ch. 2, Equations and Inequalities - on solving linear equations in one variable and on solving a formula for a named variable. <a href=\"https://openstax.org/books/college-algebra-2e\" class=\"uri\">https://openstax.org/books/college-algebra-2e</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 4,
+     "html": "OpenStax. College Algebra 2e. Openly licensed. Carries logarithms, which Prealgebra does not - the reason Part A needs two anchors rather than one. ch. 7, Systems of Equations and Inequalities - on systems of linear equations in two variables, and on solving them by substitution and by elimination. <a href=\"https://openstax.org/books/college-algebra-2e\" class=\"uri\">https://openstax.org/books/college-algebra-2e</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 5,
+     "html": "OpenStax. College Algebra 2e. Openly licensed. Carries logarithms, which Prealgebra does not - the reason Part A needs two anchors rather than one. ch. 3, Functions. <a href=\"https://openstax.org/books/college-algebra-2e\" class=\"uri\">https://openstax.org/books/college-algebra-2e</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 6,
+     "html": "Government of India. The National Food Security Act, 2013. Act 20 of 2013. figures quoted in the text. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/496105\" class=\"uri\">https://indiacode.gov.in/handle/123456789/496105</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 7,
+     "html": "OpenStax. College Algebra 2e. Openly licensed. Carries logarithms, which Prealgebra does not - the reason Part A needs two anchors rather than one. ch. 2, on the rectangular coordinate system and graphs, and ch. 4, Linear Functions. <a href=\"https://openstax.org/books/college-algebra-2e\" class=\"uri\">https://openstax.org/books/college-algebra-2e</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 8,
+     "html": "OpenStax. College Algebra 2e. Openly licensed. Carries logarithms, which Prealgebra does not - the reason Part A needs two anchors rather than one. ch. 4-6, Linear Functions through Exponential and Logarithmic Functions. <a href=\"https://openstax.org/books/college-algebra-2e\" class=\"uri\">https://openstax.org/books/college-algebra-2e</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 9,
+     "html": "Strang, Gilbert and Herman, Edwin and OpenStax. Calculus Volume 1. 2016. ch. 3, Derivatives, and the sections on average and instantaneous rate of change. <a href=\"https://openstax.org/details/books/calculus-volume-1\" class=\"uri\">https://openstax.org/details/books/calculus-volume-1</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 10,
+     "html": "Strang, Gilbert and Herman, Edwin and OpenStax. Calculus Volume 1. 2016. ch. 5, Integration, and the sections on approximating areas and the definite integral. <a href=\"https://openstax.org/details/books/calculus-volume-1\" class=\"uri\">https://openstax.org/details/books/calculus-volume-1</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 11,
+     "html": "Strang, Gilbert and Herman, Edwin and OpenStax. Calculus Volume 1. 2016. ch. 5, Integration, and the sections on net change and accumulation over an interval. <a href=\"https://openstax.org/details/books/calculus-volume-1\" class=\"uri\">https://openstax.org/details/books/calculus-volume-1</a> (accessed 2026-09-22). <em>Outstanding — see the note below.</em>"
+    }
+   ],
+   "note": "<em>An entry marked outstanding has not yet been checked against the source itself. Nothing in these sections rests on one: the reasoning is a derivation you can check with a calculator, and the entry records an anchor still to be supplied.</em>"
+  },
+  {
+   "part": "D",
+   "items": [
+    {
+     "n": 1,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.1 Terminology (sample space). <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 2,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.1 Terminology (event). <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 3,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.1 Terminology. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 4,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.1 Terminology (equally likely outcomes). <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 5,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.1 Terminology (counting equally likely outcomes). <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 6,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.1 Terminology (complement). <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 7,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.1 Terminology (probability scale). <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 8,
+     "html": "Kirk, Donna and OpenStax. Contemporary Mathematics. 2023. s. 7.7 What Are the Odds?. <a href=\"https://openstax.org/books/contemporary-mathematics/pages/7-7-what-are-the-odds\" class=\"uri\">https://openstax.org/books/contemporary-mathematics/pages/7-7-what-are-the-odds</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 9,
+     "html": "Kirk, Donna and OpenStax. Contemporary Mathematics. 2023. s. 7.7 What Are the Odds? (Computing Odds). <a href=\"https://openstax.org/books/contemporary-mathematics/pages/7-7-what-are-the-odds\" class=\"uri\">https://openstax.org/books/contemporary-mathematics/pages/7-7-what-are-the-odds</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 10,
+     "html": "Government of India. The National Food Security Act, 2013. Act 20 of 2013. s. 9 Coverage of population under Targeted Public Distribution System. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/496105\" class=\"uri\">https://indiacode.gov.in/handle/123456789/496105</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 11,
+     "html": "Government of India. The National Food Security Act, 2013. Act 20 of 2013. figures quoted in the text. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/496105\" class=\"uri\">https://indiacode.gov.in/handle/123456789/496105</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 12,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.2 Independent and Mutually Exclusive Events. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 13,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.2 Independent and Mutually Exclusive Events (mutually exclusive). <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 14,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.2 Independent and Mutually Exclusive Events (assume dependent). <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 15,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.3 Two Basic Rules of Probability (mutually exclusive means no overlap). <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 16,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.1 Terminology (conditional probability). <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 17,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 3.4 Contingency Tables. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 18,
+     "html": "Kiran, R and Harshitha and Bhargava, Madhavi. Mid-upper arm circumference and neck circumference to screen for overweight-obesity in young adults in South India. Open access, PMC9791811. Used in Book 0 Part D as real material to compute with, not as evidence about screening. figures quoted in the text. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9791811/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC9791811/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 19,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 1.2 Data, Sampling, and Variation in Data and Sampling, Variation in Data. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 20,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 2.5 Measures of the Center of the Data, Calculating the Mean of Grouped Frequency Tables. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 21,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 2.7 Measures of the Spread of the Data. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 22,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 1.1 Definitions of Statistics, Probability, and Key Terms. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 23,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 2.5 Measures of the Center of the Data. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 24,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 2.3 Measures of the Location of the Data. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 25,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 2.7 Measures of the Spread of the Data, Calculating the Standard Deviation. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 26,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 2.7 Measures of the Spread of the Data, Formulas for the Sample Standard Deviation. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 27,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. s. 2.7 Measures of the Spread of the Data, Explanation of the standard deviation calculation shown in the table. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 28,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 1.1 Definitions of Statistics, Probability, and Key Terms - Key Terms, on sampling. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 29,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 1.1 Definitions of Statistics, Probability, and Key Terms - Key Terms, on the statistic. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 30,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 1.1 Definitions of Statistics, Probability, and Key Terms - Key Terms, on parameter and estimate. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 31,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 1.2 Data, Sampling, and Variation in Data and Sampling - Sampling, opening paragraph on random sampling. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 32,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 1.2 Data, Sampling, and Variation in Data and Sampling - Sampling, on convenience sampling. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 33,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 1.2 Data, Sampling, and Variation in Data and Sampling - Sampling, on variation between samples. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 34,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 1.2 Data, Sampling, and Variation in Data and Sampling - Sampling, note on large samples being biased. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 35,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 1.2 Data, Sampling, and Variation in Data and Sampling - Sampling, definition of a sampling bias. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 36,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 1.2 Data, Sampling, and Variation in Data and Sampling - Sampling, note on sample size against population size. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 37,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 7.1 The Central Limit Theorem for Sample Means (Averages) - statement of the square-root law. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 38,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 2.7 Measures of the Spread of the Data - Sampling Variability of a Statistic, on the standard error of the mean. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 39,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. figures quoted in the text. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 40,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 1.2 Data, Sampling, and Variation in Data and Sampling - Sampling, on sampling and nonsampling error. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 41,
+     "html": "Illowsky, Barbara and Dean, Susan and OpenStax. Introductory Statistics 2e. 2023. 1.2 Data, Sampling, and Variation in Data and Sampling - Sampling, the example of a nonsampling error. <a href=\"https://openstax.org/details/books/introductory-statistics-2e\" class=\"uri\">https://openstax.org/details/books/introductory-statistics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 42,
+     "html": "Joint Committee for Guides in Metrology. International vocabulary of metrology - Basic and general concepts and associated terms (VIM), 3rd edition, JCGM 200:2012. Online version with informative annotations. 2012. Entry 2.13, measurement accuracy. BIPM / JCGM. <a href=\"https://jcgm.bipm.org/vim/en/index.html\" class=\"uri\">https://jcgm.bipm.org/vim/en/index.html</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 43,
+     "html": "Joint Committee for Guides in Metrology. International vocabulary of metrology - Basic and general concepts and associated terms (VIM), 3rd edition, JCGM 200:2012. Online version with informative annotations. 2012. Entry 2.14, measurement trueness. BIPM / JCGM. <a href=\"https://jcgm.bipm.org/vim/en/index.html\" class=\"uri\">https://jcgm.bipm.org/vim/en/index.html</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 44,
+     "html": "Joint Committee for Guides in Metrology. International vocabulary of metrology - Basic and general concepts and associated terms (VIM), 3rd edition, JCGM 200:2012. Online version with informative annotations. 2012. Entry 2.15, measurement precision. BIPM / JCGM. <a href=\"https://jcgm.bipm.org/vim/en/index.html\" class=\"uri\">https://jcgm.bipm.org/vim/en/index.html</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 45,
+     "html": "Joint Committee for Guides in Metrology. International vocabulary of metrology - Basic and general concepts and associated terms (VIM), 3rd edition, JCGM 200:2012. Online version with informative annotations. 2012. Entry 2.16, measurement error. BIPM / JCGM. <a href=\"https://jcgm.bipm.org/vim/en/index.html\" class=\"uri\">https://jcgm.bipm.org/vim/en/index.html</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 46,
+     "html": "Joint Committee for Guides in Metrology. International vocabulary of metrology - Basic and general concepts and associated terms (VIM), 3rd edition, JCGM 200:2012. Online version with informative annotations. 2012. Entry 2.17, systematic measurement error. BIPM / JCGM. <a href=\"https://jcgm.bipm.org/vim/en/index.html\" class=\"uri\">https://jcgm.bipm.org/vim/en/index.html</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 47,
+     "html": "Joint Committee for Guides in Metrology. International vocabulary of metrology - Basic and general concepts and associated terms (VIM), 3rd edition, JCGM 200:2012. Online version with informative annotations. 2012. Entry 2.18, measurement bias. BIPM / JCGM. <a href=\"https://jcgm.bipm.org/vim/en/index.html\" class=\"uri\">https://jcgm.bipm.org/vim/en/index.html</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 48,
+     "html": "Joint Committee for Guides in Metrology. International vocabulary of metrology - Basic and general concepts and associated terms (VIM), 3rd edition, JCGM 200:2012. Online version with informative annotations. 2012. Entry 2.19, random measurement error. BIPM / JCGM. <a href=\"https://jcgm.bipm.org/vim/en/index.html\" class=\"uri\">https://jcgm.bipm.org/vim/en/index.html</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 49,
+     "html": "Joint Committee for Guides in Metrology. International vocabulary of metrology - Basic and general concepts and associated terms (VIM), 3rd edition, JCGM 200:2012. Online version with informative annotations. 2012. Entry 4.14, resolution. BIPM / JCGM. <a href=\"https://jcgm.bipm.org/vim/en/index.html\" class=\"uri\">https://jcgm.bipm.org/vim/en/index.html</a> (accessed 2026-09-23)."
+    }
+   ],
+   "note": null
+  },
+  {
+   "part": "E",
+   "items": [
+    {
+     "n": 1,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 2.3 Atomic Structure and Symbolism, the opening paragraph. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 2,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 2.3 Atomic Structure and Symbolism, the same paragraph, on volume. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 3,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 2.3 Atomic Structure and Symbolism, the sentence comparing the two diameters. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 4,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 2.4 Chemical Formulas, the structural-formula paragraph. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 5,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 2.4 Chemical Formulas, the paragraph on elements that exist as molecules. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 6,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 2.4 Chemical Formulas, the paragraph on compounds and empirical formulas. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 7,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 2.4 Chemical Formulas, the opening paragraph. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 8,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 7.2 Covalent Bonding, the opening paragraph. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 9,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 7.2 Covalent Bonding, the opening paragraph, on the shared pair. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 10,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 7.5 Strengths of Ionic and Covalent Bonds, the opening paragraph. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 11,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 7.5 Strengths of Ionic and Covalent Bonds, the paragraph on measuring bond strength. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 12,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 7.5 Strengths of Ionic and Covalent Bonds, the paragraph stating the enthalpy change. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 13,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 7.5 Strengths of Ionic and Covalent Bonds, the paragraph on exothermic and endothermic reactions. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 14,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.1 Energy Basics, the opening sentence. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 15,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.1 Energy Basics, the paragraph classifying energy into two types. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 16,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 7.1 Work: The Scientific Definition, the boxed definition of work. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 17,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. figures quoted in the text. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 18,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.1 Energy Basics, the paragraph on exothermic and endothermic processes. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 19,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.3 Enthalpy, the paragraph defining the standard enthalpy of combustion. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 20,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, the opening paragraph. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 21,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, the paragraph defining the calorimeter. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 22,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, the bomb calorimeter paragraph, opening sentence. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 23,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, the bomb calorimeter paragraph, on how it is built and fired. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 24,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, the bomb calorimeter paragraph, on calibration. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 25,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, the bomb calorimeter paragraph, on how calibration is done. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 26,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, the bomb calorimeter paragraph, closing sentence. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 27,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, Measuring Nutritional Calories, on burning a food. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 28,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, Measuring Nutritional Calories, on preparing the sample. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 29,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, Measuring Nutritional Calories, on where a label figure comes from. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 30,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, Measuring Nutritional Calories, on the fibre discount. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 31,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, Measuring Nutritional Calories, on doing the sum. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 32,
+     "html": "Food and Agriculture Organization of the United Nations. Food energy — methods of analysis and conversion factors. 2003. ch. 3, s.3.3, first paragraph (gross energy to metabolizable energy). <a href=\"https://www.fao.org/4/y5022e/y5022e04.htm\" class=\"uri\">https://www.fao.org/4/y5022e/y5022e04.htm</a>."
+    },
+    {
+     "n": 33,
+     "html": "Food and Agriculture Organization of the United Nations. Food energy — methods of analysis and conversion factors. 2003. ch. 3, s.3.5.1, the Atwater general factor system. <a href=\"https://www.fao.org/4/y5022e/y5022e04.htm\" class=\"uri\">https://www.fao.org/4/y5022e/y5022e04.htm</a>."
+    },
+    {
+     "n": 34,
+     "html": "Food Safety and Standards Authority of India. Food Safety and Standards (Labelling and Display) Regulations, 2020. 2020. Regulation 5(3)(e)(i), the factors for calculating energy. FSSAI. <a href=\"https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf\" class=\"uri\">https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 35,
+     "html": "Food and Agriculture Organization of the United Nations. Food energy — methods of analysis and conversion factors. 2003. figures quoted in the text. <a href=\"https://www.fao.org/4/y5022e/y5022e04.htm\" class=\"uri\">https://www.fao.org/4/y5022e/y5022e04.htm</a>."
+    },
+    {
+     "n": 36,
+     "html": "Government of India. The National Food Security Act, 2013. Act 20 of 2013. figures quoted in the text. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/496105\" class=\"uri\">https://indiacode.gov.in/handle/123456789/496105</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 37,
+     "html": "National Institute of Standards and Technology. Guide for the Use of the International System of Units (SI), NIST Special Publication 811, Footnotes. Page updated 18 August 2025. Carries the exact definitions of the thermochemical and International Table calorie. figures quoted in the text. NIST. <a href=\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes\" class=\"uri\">https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 38,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 7.6 Conservation of Energy, the law as printed under the heading Law of Conservation of Energy. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 39,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 7.6 Conservation of Energy, under the heading Some of the Many Forms of Energy. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 40,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 7.6 Conservation of Energy, step 1 of the problem-solving strategy. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 41,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 7.1 Work: The Scientific Definition, the paragraph on the unit of work and energy. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 42,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.2 Calorimetry, the paragraph on the heat of a reaction and the heat of the solution. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 43,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. figures quoted in the text. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 44,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 14.1 Heat, the definitional paragraph. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 45,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 14.1 Heat, the definitional paragraph, on contact and equilibrium. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 46,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 14.1 Heat, the paragraph on the unit of heat. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 47,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 14.1 Heat, the closing paragraph on heat against temperature. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 48,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.1 Energy Basics, the paragraph defining heat capacity. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 49,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 14.2 Temperature Change and Heat Capacity, the lead-in to the heat-transfer equation. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 50,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 14.2 Temperature Change and Heat Capacity, the paragraph following Table 14.1. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 51,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.1 Energy Basics, the paragraph on the sign of q. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 52,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 14.4 Heat Transfer Methods, the paragraph introducing the numbered list. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 53,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 14.4 Heat Transfer Methods, item 1 of the numbered list. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 54,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 14.4 Heat Transfer Methods, item 2 of the numbered list. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 55,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 14.4 Heat Transfer Methods, item 3 of the numbered list. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 56,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 4.1 Studying Cells, opening paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 57,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 4.1 Studying Cells, the unified cell theory paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 58,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 4.3 Eukaryotic Cells, the plasma membrane paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 59,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 4.3 Eukaryotic Cells, the paragraph on what the membrane lets through. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 60,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 4.3 Eukaryotic Cells, the nucleus and ribosome paragraphs. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 61,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 4.3 Eukaryotic Cells, the nucleus paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 62,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 4.3 Eukaryotic Cells, the mitochondria paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 63,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 5.1 Components and Structure, the membrane function paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 64,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 5.1 Components and Structure, the fluid mosaic paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 65,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 5.1 Components and Structure, the phospholipid bilayer paragraphs. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 66,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 5.3 Active Transport, the paragraph on gradients and pumps. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 67,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 5.3 Active Transport, the paragraph on carrier proteins. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 68,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 3.4 Proteins, the paragraph on protein shape. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 69,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 3.4 Proteins, the enzyme paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 70,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 3.4 Proteins, the enzyme paragraph, on specificity. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 71,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 9.1 Signaling Molecules and Cellular Receptors, the ligand paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 72,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 9.1 Signaling Molecules and Cellular Receptors, the internal receptor paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 73,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 9.1 Signaling Molecules and Cellular Receptors, the cell-surface receptor paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 74,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 4.3 Eukaryotic Cells, the cytoplasm paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 75,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 4.3 Eukaryotic Cells, the cytoplasm paragraph, opening sentence. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 76,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. § 4.3 Eukaryotic Cells, the cytoplasm paragraph, on what it holds. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 77,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. § 17.9 The Endocrine Pancreas, the paragraph on insulin’s function. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 78,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.1 Overview of Metabolic Reactions, the opening paragraph. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 79,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.1 Overview of Metabolic Reactions, the paragraph on anabolic reactions. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 80,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.1 Overview of Metabolic Reactions, the paragraph on catabolic reactions and ATP. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 81,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.1 Overview of Metabolic Reactions, the same paragraph, on how much of the released energy reaches ATP. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 82,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.1 Overview of Metabolic Reactions, the same paragraph, on heat. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 83,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 7.1 Energy in Living Systems, the opening paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 84,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 7.1 Energy in Living Systems, the paragraph on breaking ATP down. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 85,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 7.1 Energy in Living Systems, the hydrolysis paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 86,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 7.1 Energy in Living Systems, the closing paragraph. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 87,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.7 Chemical Digestion and Absorption, the paragraph on breaking food down. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 88,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.7 Chemical Digestion and Absorption, the paragraph on fibrous polysaccharides. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 89,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.7 Chemical Digestion and Absorption, the carbohydrate absorption paragraph. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 90,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.7 Chemical Digestion and Absorption, the paragraph on what reaches the large intestine. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 91,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.2 Carbohydrate Metabolism, the opening paragraph on glucose. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 92,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.2 Carbohydrate Metabolism, the paragraph on the route glucose takes. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 93,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.1 Overview of Metabolic Reactions, the paragraph on carbohydrates. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 94,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.1 Overview of Metabolic Reactions, the paragraph on proteins. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 95,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.3 Lipid Metabolism, the opening paragraph. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 96,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.3 Lipid Metabolism, the paragraph on absorbing fat. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 97,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.3 Lipid Metabolism, the paragraph on getting energy out of fat. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 98,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.3 Lipid Metabolism, the paragraph on building fat from excess carbohydrate. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 99,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.3 Lipid Metabolism, the closing paragraph. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 100,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.1 Overview of Metabolic Reactions, the paragraph on balance between the two directions. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 101,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.7 Nutrition and Diet, the paragraph on daily calorie needs. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 102,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 14.2 DNA Structure and Sequencing, the paragraph on nucleotides. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 103,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 14.2 DNA Structure and Sequencing, the paragraph on the double helix, the opening sentence. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 104,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 14.2 DNA Structure and Sequencing, the paragraph on the double helix, on base pairing. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 105,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 14.2 DNA Structure and Sequencing, the paragraph on the double helix, on complementary pairs. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 106,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 14.2 DNA Structure and Sequencing, the paragraph on the double helix, on the backbone. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 107,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 12.2 Characteristics and Traits, the opening paragraph, first sentence. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 108,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 12.2 Characteristics and Traits, the opening paragraph, on the order of genes. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 109,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 12.2 Characteristics and Traits, the opening paragraph on chromosomes. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 110,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 12.2 Characteristics and Traits, the opening paragraph on chromosomes, on gametes. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 111,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 12.2 Characteristics and Traits, the paragraph defining alleles, opening clause. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 112,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 12.2 Characteristics and Traits, the paragraph defining alleles. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 113,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 12.2 Characteristics and Traits, the paragraph on phenotype and genotype. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 114,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 12.2 Characteristics and Traits, the paragraph on dominant and recessive alleles. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 115,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 3.4 Proteins, the paragraph on the gene encoding a protein. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 116,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 3.4 Proteins, the paragraph on protein shape and denaturation. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 117,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 9.1 Signaling Molecules and Cellular Receptors, the paragraph on internal receptors. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 118,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 9.1 Signaling Molecules and Cellular Receptors, the paragraph on internal receptors, closing sentence. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 119,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.7 Chemical Digestion and Absorption, the paragraph on the goal of digestion. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 120,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.7 Chemical Digestion and Absorption, the paragraph on water-soluble nutrients. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 121,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.7 Chemical Digestion and Absorption, the paragraph on lipid-soluble nutrients. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 122,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.6 Accessory Organs in Digestion, the opening paragraph. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 123,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.6 Accessory Organs in Digestion, the paragraph introducing the liver. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 124,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.6 Accessory Organs in Digestion, the paragraph introducing the liver, closing sentence. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 125,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.6 Accessory Organs in Digestion, the paragraph on hepatic portal circulation. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 126,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.6 Accessory Organs in Digestion, the same paragraph, on what arrives with the nutrients. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 127,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.6 Accessory Organs in Digestion, the paragraph on bile. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 128,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.6 Accessory Organs in Digestion, the paragraph on what emulsification does. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 129,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 23.6 Accessory Organs in Digestion, the paragraph on the pancreatic islets. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 130,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the opening paragraph. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 131,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the alpha cell paragraph. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 132,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the alpha cell paragraph, on what triggers glucagon. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 133,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the beta cell paragraph. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 134,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the beta cell paragraph, on what triggers insulin. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 135,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the paragraph on sensing blood glucose. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 136,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the paragraph on glucose as fuel, on where spare glucose goes. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 137,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the paragraph on what insulin does. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 138,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the paragraph on how insulin works. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 139,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the paragraph on which cells lack insulin receptors. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 140,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the same paragraph, on which cells insulin acts on most. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 141,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the paragraph on insulin and the liver. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 142,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the same paragraph, on what else insulin promotes. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 143,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the same paragraph, on feedback. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 144,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the list of glucagon’s effects. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 145,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the list of glucagon’s effects, second effect. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 146,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the list of glucagon’s effects, third effect. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 147,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the paragraph closing the glucagon list. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 148,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the paragraph closing the glucagon list, on feedback. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 149,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.9 The Endocrine Pancreas, the paragraph on glucose as fuel. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 150,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 24.2 Carbohydrate Metabolism, the paragraph on why the body makes new glucose. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 151,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.1 An Overview of the Endocrine System, the paragraph on chemical signalling. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 152,
+     "html": "Clark, Mary Ann and Douglas, Matthew and Choi, Jung. Biology 2e. 2018. section 9.1 Signaling Molecules and Cellular Receptors, the paragraph on endocrine signals. <a href=\"https://openstax.org/books/biology-2e\" class=\"uri\">https://openstax.org/books/biology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 153,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.1 An Overview of the Endocrine System, the same paragraph, on how hormones travel. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 154,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.1 An Overview of the Endocrine System, the paragraph on specificity. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 155,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.1 An Overview of the Endocrine System, the paragraph on chemical signalling, on how long it takes. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 156,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.1 An Overview of the Endocrine System, the paragraph on endocrine glands. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 157,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.1 An Overview of the Endocrine System, the paragraph contrasting endocrine and exocrine glands. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 158,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. section 17.1 An Overview of the Endocrine System, the same paragraph, on tissues with endocrine function. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    }
+   ],
+   "note": null
+  },
+  {
+   "part": "F",
+   "items": [
+    {
+     "n": 1,
+     "html": "A textbook chapter on tabular presentation of data. <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 2,
+     "html": "Kirk, Donna and others. Contemporary Mathematics. Openly licensed CC BY-NC-SA 4.0. s.8.2 Visualizing Data, subsection Misleading Graphs, opening paragraph. <a href=\"https://openstax.org/books/contemporary-mathematics/pages/8-2-visualizing-data\" class=\"uri\">https://openstax.org/books/contemporary-mathematics/pages/8-2-visualizing-data</a>."
+    },
+    {
+     "n": 3,
+     "html": "Kirk, Donna and others. Contemporary Mathematics. Openly licensed CC BY-NC-SA 4.0. s.8.2 Visualizing Data, subsection Bar Charts, opening paragraph. <a href=\"https://openstax.org/books/contemporary-mathematics/pages/8-2-visualizing-data\" class=\"uri\">https://openstax.org/books/contemporary-mathematics/pages/8-2-visualizing-data</a>."
+    },
+    {
+     "n": 4,
+     "html": "Kirk, Donna and others. Contemporary Mathematics. Openly licensed CC BY-NC-SA 4.0. s.8.2 Visualizing Data, subsection Misleading Graphs, Step 3. <a href=\"https://openstax.org/books/contemporary-mathematics/pages/8-2-visualizing-data\" class=\"uri\">https://openstax.org/books/contemporary-mathematics/pages/8-2-visualizing-data</a>."
+    },
+    {
+     "n": 5,
+     "html": "Kirk, Donna and others. Contemporary Mathematics. Openly licensed CC BY-NC-SA 4.0. s.8.2 Visualizing Data, subsection Misleading Graphs, Step 4. <a href=\"https://openstax.org/books/contemporary-mathematics/pages/8-2-visualizing-data\" class=\"uri\">https://openstax.org/books/contemporary-mathematics/pages/8-2-visualizing-data</a>."
+    },
+    {
+     "n": 6,
+     "html": "Kirk, Donna and others. Contemporary Mathematics. Openly licensed CC BY-NC-SA 4.0. s.8.2 Visualizing Data, subsection Misleading Graphs, Step 7. <a href=\"https://openstax.org/books/contemporary-mathematics/pages/8-2-visualizing-data\" class=\"uri\">https://openstax.org/books/contemporary-mathematics/pages/8-2-visualizing-data</a>."
+    },
+    {
+     "n": 7,
+     "html": "Holmes, Alexander and Illowsky, Barbara and Dean, Susan. Introductory Business Statistics 2e. Openly licensed CC BY-NC-SA 4.0. s.2.1 Display Data, subsection How NOT to Lie with Statistics, paragraph on histograms. <a href=\"https://openstax.org/books/introductory-business-statistics-2e/pages/2-1-display-data\" class=\"uri\">https://openstax.org/books/introductory-business-statistics-2e/pages/2-1-display-data</a>."
+    },
+    {
+     "n": 8,
+     "html": "Holmes, Alexander and Illowsky, Barbara and Dean, Susan. Introductory Business Statistics 2e. Openly licensed CC BY-NC-SA 4.0. s.2.1 Display Data, subsection How NOT to Lie with Statistics, paragraph on time series graphs. <a href=\"https://openstax.org/books/introductory-business-statistics-2e/pages/2-1-display-data\" class=\"uri\">https://openstax.org/books/introductory-business-statistics-2e/pages/2-1-display-data</a>."
+    },
+    {
+     "n": 9,
+     "html": "Holmes, Alexander and Illowsky, Barbara and Dean, Susan. Introductory Business Statistics 2e. Openly licensed CC BY-NC-SA 4.0. s.2.1 Display Data, subsection How NOT to Lie with Statistics, paragraph on pie charts. <a href=\"https://openstax.org/books/introductory-business-statistics-2e/pages/2-1-display-data\" class=\"uri\">https://openstax.org/books/introductory-business-statistics-2e/pages/2-1-display-data</a>."
+    },
+    {
+     "n": 10,
+     "html": "Government of India. The National Food Security Act, 2013. Act 20 of 2013. figures quoted in the text. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/496105\" class=\"uri\">https://indiacode.gov.in/handle/123456789/496105</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 11,
+     "html": "A textbook chapter on citation and source verification. <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 12,
+     "html": "Government of India. The Constitution of India. 2026. Article 279A(1). India Code. <a href=\"https://indiacode.gov.in/handle/123456789/618394\" class=\"uri\">https://indiacode.gov.in/handle/123456789/618394</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 13,
+     "html": "Government of India. The Constitution of India. 2026. Article 279A(4)(e). India Code. <a href=\"https://indiacode.gov.in/handle/123456789/618394\" class=\"uri\">https://indiacode.gov.in/handle/123456789/618394</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 14,
+     "html": "Government of India. The Constitution of India. 2026. Article 279A, footnote 1. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/618394\" class=\"uri\">https://indiacode.gov.in/handle/123456789/618394</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 15,
+     "html": "An introductory textbook chapter on argument structure. <em>Outstanding — see the note below.</em>"
+    },
+    {
+     "n": 16,
+     "html": "Government of India. The Constitution of India. 2026. Articles 32, 53, 79, 226, 245 and 246. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/618394\" class=\"uri\">https://indiacode.gov.in/handle/123456789/618394</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 17,
+     "html": "Government of India. The Constitution of India. 2026. Article 368(2). India Code. <a href=\"https://indiacode.gov.in/handle/123456789/618394\" class=\"uri\">https://indiacode.gov.in/handle/123456789/618394</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 18,
+     "html": "Government of India. The Constitution of India. 2026. Article 368(2), proviso, clause (c). India Code. <a href=\"https://indiacode.gov.in/handle/123456789/618394\" class=\"uri\">https://indiacode.gov.in/handle/123456789/618394</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 19,
+     "html": "Government of India. The Constitution of India. 2026. Article 368(2), proviso. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/618394\" class=\"uri\">https://indiacode.gov.in/handle/123456789/618394</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 20,
+     "html": "Government of India. The Food Safety and Standards Act, 2006. Act 34 of 2006. Consulted at ss. 91-93 (power to make rules and regulations; laying before Parliament). section 4(1). India Code. <a href=\"https://indiacode.gov.in/handle/123456789/586348\" class=\"uri\">https://indiacode.gov.in/handle/123456789/586348</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 21,
+     "html": "Government of India. The Food Safety and Standards Act, 2006. Act 34 of 2006. Consulted at ss. 91-93 (power to make rules and regulations; laying before Parliament). section 23(1). India Code. <a href=\"https://indiacode.gov.in/handle/123456789/586348\" class=\"uri\">https://indiacode.gov.in/handle/123456789/586348</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 22,
+     "html": "Government of India. The Food Safety and Standards Act, 2006. Act 34 of 2006. Consulted at ss. 91-93 (power to make rules and regulations; laying before Parliament). section 92(1). India Code. <a href=\"https://indiacode.gov.in/handle/123456789/586348\" class=\"uri\">https://indiacode.gov.in/handle/123456789/586348</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 23,
+     "html": "Government of India. The Food Safety and Standards Act, 2006. Act 34 of 2006. Consulted at ss. 91-93 (power to make rules and regulations; laying before Parliament). section 93. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/586348\" class=\"uri\">https://indiacode.gov.in/handle/123456789/586348</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 24,
+     "html": "Government of India. The Food Safety and Standards Act, 2006. Act 34 of 2006. Consulted at ss. 91-93 (power to make rules and regulations; laying before Parliament). section 3(1)(zj). India Code. <a href=\"https://indiacode.gov.in/handle/123456789/586348\" class=\"uri\">https://indiacode.gov.in/handle/123456789/586348</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 25,
+     "html": "Government of India. The Food Safety and Standards Act, 2006. Act 34 of 2006. Consulted at ss. 91-93 (power to make rules and regulations; laying before Parliament). section 3(1)(zg). India Code. <a href=\"https://indiacode.gov.in/handle/123456789/586348\" class=\"uri\">https://indiacode.gov.in/handle/123456789/586348</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 26,
+     "html": "Government of India. The Food Safety and Standards Act, 2006. Act 34 of 2006. Consulted at ss. 91-93 (power to make rules and regulations; laying before Parliament). section 3(1)(j), proviso. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/586348\" class=\"uri\">https://indiacode.gov.in/handle/123456789/586348</a> (accessed 2026-09-19)."
+    },
+    {
+     "n": 27,
+     "html": "Food Safety and Standards Authority of India. Food Safety and Standards (Labelling and Display) Regulations, 2020. 2020. regulation 5(3)(b). FSSAI. <a href=\"https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf\" class=\"uri\">https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 28,
+     "html": "Government of India. The Constitution of India. 2026. figures quoted in the text. India Code. <a href=\"https://indiacode.gov.in/handle/123456789/618394\" class=\"uri\">https://indiacode.gov.in/handle/123456789/618394</a> (accessed 2026-09-19)."
+    }
+   ],
+   "note": "<em>An entry marked outstanding has not yet been checked against the source itself. Nothing in these sections rests on one: the reasoning is a derivation you can check with a calculator, and the entry records an anchor still to be supplied.</em>"
+  }
+ ],
+ "glossary": [
+  {
+   "term": "absorption",
+   "senses": [
+    {
+     "term": "absorption",
+     "plain": "a molecule passing through the wall of the gut and into the blood",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "accuracy",
+   "senses": [
+    {
+     "term": "accuracy",
+     "plain": "how close a measured value comes to the true value",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "Act",
+   "senses": [
+    {
+     "term": "Act",
+     "plain": "the name each statute passed by Parliament or a State Legislature is called by",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "adipose tissue",
+   "senses": [
+    {
+     "term": "adipose tissue",
+     "plain": "the tissue whose cells hold triglyceride until it is needed",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "ADP",
+   "senses": [
+    {
+     "term": "ADP",
+     "plain": "what is left when ATP&#x27;s last phosphate group is knocked off: the same molecule, one phosphate short",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "alimentary canal",
+   "senses": [
+    {
+     "term": "alimentary canal",
+     "plain": "the gut tube",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "allele",
+   "senses": [
+    {
+     "term": "allele",
+     "plain": "one of the versions a gene comes in",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "alpha cell",
+   "senses": [
+    {
+     "term": "alpha cell",
+     "plain": "the islet cell that makes glucagon",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "amendment",
+   "senses": [
+    {
+     "term": "amendment",
+     "plain": "a later change stitched into the law",
+     "where": "Book 0, F3"
+    }
+   ]
+  },
+  {
+   "term": "amino acid",
+   "senses": [
+    {
+     "term": "amino acid",
+     "plain": "one of a small fixed set of kinds of link a protein chain is built from",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "amount-of-substance concentration",
+   "senses": [
+    {
+     "term": "amount-of-substance concentration",
+     "plain": "an amount of substance in a volume, such as millimoles per litre (mmol/L): it says how many",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "anabolism",
+   "senses": [
+    {
+     "term": "anabolism",
+     "plain": "reactions that join small molecules into bigger ones, which costs energy",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "at random",
+   "senses": [
+    {
+     "term": "at random",
+     "plain": "every member has exactly the same chance of being the one you pick",
+     "where": "Book 0, D1"
+    }
+   ]
+  },
+  {
+   "term": "atom",
+   "senses": [
+    {
+     "term": "atom",
+     "plain": "a tiny heavy centre with much lighter electrons around it",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "ATP",
+   "senses": [
+    {
+     "term": "ATP",
+     "plain": "adenosine triphosphate, the small molecule a cell uses to carry energy from one reaction to another",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "Atwater general factors",
+   "senses": [
+    {
+     "term": "Atwater general factors",
+     "plain": "one fixed energy value for each of protein, fat and carbohydrate, used whatever the food",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "average rate of change",
+   "senses": [
+    {
+     "term": "average rate of change",
+     "plain": "the change between the two ends of an interval divided by its length; it uses nothing in between",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "base ten",
+   "senses": [
+    {
+     "term": "base ten",
+     "plain": "the counting system in which each place is worth ten times the place to its right",
+     "where": "Book 0, A1"
+    }
+   ]
+  },
+  {
+   "term": "base unit",
+   "senses": [
+    {
+     "term": "base unit",
+     "plain": "one of the seven units the SI builds on: the second, metre, kilogram, ampere, kelvin, mole and candela",
+     "where": "Book 0, B1"
+    }
+   ]
+  },
+  {
+   "term": "beta cell",
+   "senses": [
+    {
+     "term": "beta cell",
+     "plain": "the islet cell that makes insulin",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "bile",
+   "senses": [
+    {
+     "term": "bile",
+     "plain": "what the liver makes to break a large blob of fat into many tiny ones",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "blood sugar",
+   "senses": [
+    {
+     "term": "blood sugar (blood glucose)",
+     "plain": "the glucose in the blood",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "body mass index",
+   "senses": [
+    {
+     "term": "body mass index (BMI)",
+     "plain": "a person&#x27;s mass in kilograms divided by the square of their height in metres, in kg/m^2",
+     "where": "Book 0, B6"
+    }
+   ]
+  },
+  {
+   "term": "bomb calorimeter",
+   "senses": [
+    {
+     "term": "bomb calorimeter",
+     "plain": "a sealed steel pot in a water tank, used to burn a weighed sample",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "calibration",
+   "senses": [
+    {
+     "term": "calibration",
+     "plain": "measuring a machine against something already known, so its readings mean something",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "calibration weight",
+   "senses": [
+    {
+     "term": "calibration weight",
+     "plain": "a weight already checked and trusted to be correct",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "calorie",
+   "senses": [
+    {
+     "term": "calorie",
+     "plain": "a unit of energy outside the SI, whose size in joules was fixed by agreement, and two agreements are in use",
+     "where": "Book 0, B4"
+    }
+   ]
+  },
+  {
+   "term": "calorimeter",
+   "senses": [
+    {
+     "term": "calorimeter",
+     "plain": "a machine that measures energy from the temperature change it causes",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "capillaries",
+   "senses": [
+    {
+     "term": "capillaries",
+     "plain": "the smallest blood vessels",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "catabolism",
+   "senses": [
+    {
+     "term": "catabolism",
+     "plain": "reactions that break a big molecule into smaller ones and let its energy go",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "checking a reference",
+   "senses": [
+    {
+     "term": "checking a reference",
+     "plain": "four acts, each of which can fail on its own: find the source, confirm it is the source named, find the exact passage pointed to, read it to see whether it supports the claim",
+     "where": "Book 0, F3"
+    }
+   ]
+  },
+  {
+   "term": "chord",
+   "senses": [
+    {
+     "term": "chord",
+     "plain": "the straight line laid across two points on a curve, whose slope is the average rate between them",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "chromosome",
+   "senses": [
+    {
+     "term": "chromosome",
+     "plain": "one of the structures genes sit along, in a fixed order; a person gets two copies of each, one from each parent",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "combustion",
+   "senses": [
+    {
+     "term": "combustion",
+     "plain": "burning, a substance joining with oxygen",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "complementary",
+   "senses": [
+    {
+     "term": "complementary",
+     "plain": "each one completes the other; A always faces T and C always faces G",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "concentration",
+   "senses": [
+    {
+     "term": "concentration",
+     "plain": "an amount of something held in a volume of something else",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "conduction",
+   "senses": [
+    {
+     "term": "conduction",
+     "plain": "heat moving through matter that is staying put, by contact",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "conservation of energy",
+   "senses": [
+    {
+     "term": "conservation of energy",
+     "plain": "energy is never made and never destroyed; it changes form and it moves",
+     "where": "Book 0, E3"
+    }
+   ]
+  },
+  {
+   "term": "Constitution",
+   "senses": [
+    {
+     "term": "Constitution",
+     "plain": "the founding law that every statute must fit",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "convection",
+   "senses": [
+    {
+     "term": "convection",
+     "plain": "heat moving because a liquid or a gas moves and takes it along",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "convenience sample",
+   "senses": [
+    {
+     "term": "convenience sample",
+     "plain": "whoever happens to be available",
+     "where": "Book 0, D6"
+    }
+   ]
+  },
+  {
+   "term": "conversion factor",
+   "senses": [
+    {
+     "term": "conversion factor",
+     "plain": "a fraction whose top and bottom are the same quantity written in two different units, so it is equal to one",
+     "where": "Book 0, B2"
+    }
+   ]
+  },
+  {
+   "term": "covalent bond",
+   "senses": [
+    {
+     "term": "covalent bond",
+     "plain": "a bond where two atoms share a pair of electrons",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "crore",
+   "senses": [
+    {
+     "term": "crore",
+     "plain": "ten million, or a hundred lakh",
+     "where": "Book 0, A1"
+    }
+   ]
+  },
+  {
+   "term": "cytoplasm",
+   "senses": [
+    {
+     "term": "cytoplasm",
+     "plain": "the watery jelly a cell is a bag of",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "decimal",
+   "senses": [
+    {
+     "term": "decimal",
+     "plain": "place value carried on past the point: tenths, then hundredths, then thousandths",
+     "where": "Book 0, A3"
+    }
+   ]
+  },
+  {
+   "term": "delta",
+   "senses": [
+    {
+     "term": "delta",
+     "plain": "the standard way of writing &quot;the change in&quot;, using the Greek letter written as a triangle",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "denominator",
+   "senses": [
+    {
+     "term": "denominator",
+     "plain": "(1) the number below the line, saying how many equal parts the whole was cut into (Book 0, A2); (2) of a percentage, what it is a percentage of (Book 0, F1)",
+     "where": "Book 0, A2, Book 0, F1"
+    }
+   ]
+  },
+  {
+   "term": "derivative",
+   "senses": [
+    {
+     "term": "derivative",
+     "plain": "the mathematicians&#x27; name for the rate at a moment, written dy/dx",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "derived unit",
+   "senses": [
+    {
+     "term": "derived unit",
+     "plain": "a unit built out of the base units by multiplying and dividing",
+     "where": "Book 0, B1"
+    }
+   ]
+  },
+  {
+   "term": "diploid",
+   "senses": [
+    {
+     "term": "diploid",
+     "plain": "holding two matching copies of each chromosome, one inherited from each parent",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "DNA",
+   "senses": [
+    {
+     "term": "DNA",
+     "plain": "the long molecule a cell&#x27;s instructions are written in",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "dominant",
+   "senses": [
+    {
+     "term": "dominant",
+     "plain": "an allele that shows whenever it is present",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "electron",
+   "senses": [
+    {
+     "term": "electron",
+     "plain": "one of the much lighter particles in the cloud round an atom&#x27;s tiny heavy centre",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "elimination",
+   "senses": [
+    {
+     "term": "elimination",
+     "plain": "adding or subtracting the two equations, after multiplying where needed, so that one letter cancels",
+     "where": "Book 0, C3"
+    }
+   ]
+  },
+  {
+   "term": "endocrine",
+   "senses": [
+    {
+     "term": "endocrine",
+     "plain": "putting a chemical straight into the blood rather than sending it down a tube",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "endothermic",
+   "senses": [
+    {
+     "term": "endothermic",
+     "plain": "a change that takes heat in",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "energy balance",
+   "senses": [
+    {
+     "term": "energy balance",
+     "plain": "the energy inside the boundary at the end equals the energy inside at the start, plus everything that crossed in, minus everything that crossed out",
+     "where": "Book 0, E3"
+    }
+   ]
+  },
+  {
+   "term": "energy equivalent",
+   "senses": [
+    {
+     "term": "energy equivalent",
+     "plain": "how many joules one degree is worth in one particular calorimeter",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "enzyme",
+   "senses": [
+    {
+     "term": "enzyme",
+     "plain": "a protein that makes one particular reaction go faster",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "exocrine",
+   "senses": [
+    {
+     "term": "exocrine",
+     "plain": "sending a secretion down a tube to where it is needed",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "exothermic",
+   "senses": [
+    {
+     "term": "exothermic",
+     "plain": "a change that gives heat out",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "expanding a bracket",
+   "senses": [
+    {
+     "term": "expanding a bracket",
+     "plain": "multiplying every term inside it by what stands outside",
+     "where": "Book 0, C1"
+    }
+   ]
+  },
+  {
+   "term": "exponent",
+   "senses": [
+    {
+     "term": "exponent",
+     "plain": "the small raised number that says how many copies to multiply together",
+     "where": "Book 0, A6"
+    }
+   ]
+  },
+  {
+   "term": "exponential",
+   "senses": [
+    {
+     "term": "exponential",
+     "plain": "equal steps in the input multiply the output by the same factor every time",
+     "where": "Book 0, C6"
+    }
+   ]
+  },
+  {
+   "term": "extracellular fluid",
+   "senses": [
+    {
+     "term": "extracellular fluid",
+     "plain": "the fluid around a gland&#x27;s own cells, into which it lets its hormone out",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "fraction",
+   "senses": [
+    {
+     "term": "fraction",
+     "plain": "a division that has not yet been carried out; a sum you have not done yet",
+     "where": "Book 0, A2"
+    }
+   ]
+  },
+  {
+   "term": "free energy",
+   "senses": [
+    {
+     "term": "free energy",
+     "plain": "loose energy, of which a cell cannot hold a useful amount",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "frequency table",
+   "senses": [
+    {
+     "term": "frequency table",
+     "plain": "lists each value, or each band of values, against the count of times it occurred",
+     "where": "Book 0, D4"
+    }
+   ]
+  },
+  {
+   "term": "gallbladder",
+   "senses": [
+    {
+     "term": "gallbladder",
+     "plain": "a small bag next to the liver that holds bile, concentrates it and lets it out",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "Gazette",
+   "senses": [
+    {
+     "term": "Gazette",
+     "plain": "the government&#x27;s official newspaper",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "gene",
+   "senses": [
+    {
+     "term": "gene",
+     "plain": "what fixes the order of the amino acids in one protein",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "general circulation",
+   "senses": [
+    {
+     "term": "general circulation",
+     "plain": "the blood that goes round the whole body",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "genotype",
+   "senses": [
+    {
+     "term": "genotype",
+     "plain": "what a person actually carries in their DNA, including the alleles that are not showing",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "gland",
+   "senses": [
+    {
+     "term": "gland",
+     "plain": "an organ whose job is to make something and let it out",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "glucagon",
+   "senses": [
+    {
+     "term": "glucagon",
+     "plain": "the hormone released when blood sugar is low, which empties the stores",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "glucose",
+   "senses": [
+    {
+     "term": "glucose",
+     "plain": "the single sugar a body reaches for first as fuel",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "glycogen",
+   "senses": [
+    {
+     "term": "glycogen",
+     "plain": "a great many glucose molecules strung together, kept in the liver and the muscles",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "grand total",
+   "senses": [
+    {
+     "term": "grand total",
+     "plain": "what you get when you add up everything in the table",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "gross energy",
+   "senses": [
+    {
+     "term": "gross energy",
+     "plain": "all the energy a food gives up when it is burnt to nothing, also called ingested energy",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "heat capacity",
+   "senses": [
+    {
+     "term": "heat capacity",
+     "plain": "the joules one particular object needs to go up by one degree",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "hepatic portal circulation",
+   "senses": [
+    {
+     "term": "hepatic portal circulation",
+     "plain": "the route that takes every drop of blood leaving the gut through the liver before it goes anywhere else",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "hepatic portal vein",
+   "senses": [
+    {
+     "term": "hepatic portal vein",
+     "plain": "the vein along which blood from the gut runs straight to the liver",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "hormone",
+   "senses": [
+    {
+     "term": "hormone",
+     "plain": "a chemical made in one part of the body that affects other parts some distance away",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "hydrophilic",
+   "senses": [
+    {
+     "term": "hydrophilic",
+     "plain": "water-loving: mixes with water",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "hydrophobic",
+   "senses": [
+    {
+     "term": "hydrophobic",
+     "plain": "water-hating: does not mix with water",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "inference",
+   "senses": [
+    {
+     "term": "inference",
+     "plain": "the move from the reasons to the conclusion",
+     "where": "Book 0, F4"
+    }
+   ]
+  },
+  {
+   "term": "infographic",
+   "senses": [
+    {
+     "term": "infographic",
+     "plain": "a chart decorated with pictures",
+     "where": "Book 0, F2"
+    }
+   ]
+  },
+  {
+   "term": "instantaneous rate",
+   "senses": [
+    {
+     "term": "instantaneous rate",
+     "plain": "how fast the quantity is changing at one moment: the steepness of the curve at that single point",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "insulin",
+   "senses": [
+    {
+     "term": "insulin",
+     "plain": "the hormone released when blood sugar is high, which fills the stores",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "integral",
+   "senses": [
+    {
+     "term": "integral",
+     "plain": "the total under a rate line, written with the sign ∫",
+     "where": "Book 0, C8"
+    }
+   ]
+  },
+  {
+   "term": "intercept",
+   "senses": [
+    {
+     "term": "intercept",
+     "plain": "the height of the line where the x quantity is zero",
+     "where": "Book 0, C5"
+    }
+   ]
+  },
+  {
+   "term": "International Table calorie",
+   "senses": [
+    {
+     "term": "International Table calorie",
+     "plain": "4.1868 joules, settled in 1956",
+     "where": "Book 0, B4"
+    }
+   ]
+  },
+  {
+   "term": "interquartile range",
+   "senses": [
+    {
+     "term": "interquartile range",
+     "plain": "the third quartile minus the first",
+     "where": "Book 0, D5"
+    }
+   ]
+  },
+  {
+   "term": "ion",
+   "senses": [
+    {
+     "term": "ion",
+     "plain": "an atom left carrying a charge",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "ionic bond",
+   "senses": [
+    {
+     "term": "ionic bond",
+     "plain": "a bond where one atom hands an electron to another and the opposite charges pull",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "islets",
+   "senses": [
+    {
+     "term": "islets (pancreatic islets)",
+     "plain": "the small islands of another kind of cell scattered through the pancreas, which put chemicals straight into the blood",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "joule",
+   "senses": [
+    {
+     "term": "joule",
+     "plain": "the SI unit of energy, written J",
+     "where": "Book 0, B1"
+    }
+   ]
+  },
+  {
+   "term": "kilocalorie",
+   "senses": [
+    {
+     "term": "kilocalorie",
+     "plain": "a thousand calories, the unit used for the energy in food, where it is often written just calories",
+     "where": "Book 0, B4"
+    }
+   ]
+  },
+  {
+   "term": "kilojoule",
+   "senses": [
+    {
+     "term": "kilojoule",
+     "plain": "a thousand joules; kilo means a thousand",
+     "where": "Book 0, B4"
+    }
+   ]
+  },
+  {
+   "term": "kinetic energy",
+   "senses": [
+    {
+     "term": "kinetic energy",
+     "plain": "energy a thing has because it is moving",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "lacteals",
+   "senses": [
+    {
+     "term": "lacteals",
+     "plain": "the lymph vessels of the villi, which take in what dissolves in fat",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "lakh",
+   "senses": [
+    {
+     "term": "lakh",
+     "plain": "a hundred thousand",
+     "where": "Book 0, A1"
+    }
+   ]
+  },
+  {
+   "term": "large store",
+   "senses": [
+    {
+     "term": "large store",
+     "plain": "fat: triglyceride, held in adipose tissue",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "legislature",
+   "senses": [
+    {
+     "term": "legislature",
+     "plain": "the body that makes law: Parliament for the country, a State Legislature for its own state",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "ligand",
+   "senses": [
+    {
+     "term": "ligand",
+     "plain": "the molecule that fits into a protein shaped to hold it",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "lipolysis",
+   "senses": [
+    {
+     "term": "lipolysis",
+     "plain": "the breakdown of stored triglycerides into free fatty acids and glycerol",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "logarithm",
+   "senses": [
+    {
+     "term": "logarithm",
+     "plain": "the power you have to raise ten to, to get the number",
+     "where": "Book 0, A7"
+    }
+   ]
+  },
+  {
+   "term": "logarithmic axis",
+   "senses": [
+    {
+     "term": "logarithmic axis",
+     "plain": "an axis on which equal distances stand for equal multiplications, not equal additions",
+     "where": "Book 0, A7"
+    }
+   ]
+  },
+  {
+   "term": "long tail",
+   "senses": [
+    {
+     "term": "long tail",
+     "plain": "the side of a distribution that thins out slowly",
+     "where": "Book 0, D4"
+    }
+   ]
+  },
+  {
+   "term": "mass concentration",
+   "senses": [
+    {
+     "term": "mass concentration",
+     "plain": "a weight in a volume, such as milligrams per decilitre (mg/dL): it says how heavy",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "measurement bias",
+   "senses": [
+    {
+     "term": "measurement bias",
+     "plain": "an error that points one way and does not shrink when you collect more (VIM 2.18: an &quot;estimate of a systematic measurement error&quot;)",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "median",
+   "senses": [
+    {
+     "term": "median",
+     "plain": "the middle value of the set once it is ordered from smallest to largest; with an even count, the mean of the two middle values",
+     "where": "Book 0, D5"
+    }
+   ]
+  },
+  {
+   "term": "metabolism",
+   "senses": [
+    {
+     "term": "metabolism",
+     "plain": "the name for every chemical reaction in a body added together",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "metabolizable energy",
+   "senses": [
+    {
+     "term": "metabolizable energy",
+     "plain": "what is left of a food&#x27;s energy after the losses in faeces, gas and urine",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "millimole",
+   "senses": [
+    {
+     "term": "millimole",
+     "plain": "one thousandth of a mole",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "mitochondria",
+   "senses": [
+    {
+     "term": "mitochondria",
+     "plain": "the parts of a cell that make ATP",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "molar mass",
+   "senses": [
+    {
+     "term": "molar mass",
+     "plain": "how heavy one mole of a substance is, in grams per mole (g/mol); it belongs to the substance",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "mole",
+   "senses": [
+    {
+     "term": "mole",
+     "plain": "a fixed count of things, molecules here",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "molecule",
+   "senses": [
+    {
+     "term": "molecule",
+     "plain": "a group of atoms held together by bonds",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "monosaccharide",
+   "senses": [
+    {
+     "term": "monosaccharide",
+     "plain": "a single sugar molecule, which is what breaking a starch gives you",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "mutually exclusive",
+   "senses": [
+    {
+     "term": "mutually exclusive",
+     "plain": "they cannot both happen",
+     "where": "Book 0, D2"
+    }
+   ]
+  },
+  {
+   "term": "negative number",
+   "senses": [
+    {
+     "term": "negative number",
+     "plain": "a number less than zero, as far below zero as the matching positive number is above it, written with a minus sign in front",
+     "where": "Book 0, A1"
+    }
+   ]
+  },
+  {
+   "term": "negative predictive value",
+   "senses": [
+    {
+     "term": "negative predictive value",
+     "plain": "the share of negative results that are right",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "net flow",
+   "senses": [
+    {
+     "term": "net flow",
+     "plain": "the inflow minus the outflow",
+     "where": "Book 0, C9"
+    }
+   ]
+  },
+  {
+   "term": "net metabolizable energy",
+   "senses": [
+    {
+     "term": "net metabolizable energy",
+     "plain": "metabolizable energy with the energy the body itself spends on digesting the food and handling it taken off",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "notification",
+   "senses": [
+    {
+     "term": "notification",
+     "plain": "an order issued under a power a statute gives, and published in the Gazette",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "nucleotide",
+   "senses": [
+    {
+     "term": "nucleotide",
+     "plain": "the repeating unit DNA is built from: a base, a sugar and a phosphate group",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "nucleus",
+   "senses": [
+    {
+     "term": "nucleus",
+     "plain": "the compartment that holds the cell&#x27;s instructions, written in its DNA",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "numerator",
+   "senses": [
+    {
+     "term": "numerator",
+     "plain": "the number above the line, saying how many of the parts are being counted",
+     "where": "Book 0, A2"
+    }
+   ]
+  },
+  {
+   "term": "odds",
+   "senses": [
+    {
+     "term": "odds",
+     "plain": "how many times more likely the event is than its opposite: p divided by (1 minus p)",
+     "where": "Book 0, D1"
+    }
+   ]
+  },
+  {
+   "term": "order of magnitude",
+   "senses": [
+    {
+     "term": "order of magnitude",
+     "plain": "which power of ten a number is nearest to",
+     "where": "Book 0, A8"
+    }
+   ]
+  },
+  {
+   "term": "order-of-magnitude estimate",
+   "senses": [
+    {
+     "term": "order-of-magnitude estimate",
+     "plain": "every input rounded to one digit and a power of ten, the answer claimed only to the nearest power of ten; it tests a figure rather than producing one",
+     "where": "Book 0, A8"
+    }
+   ]
+  },
+  {
+   "term": "percentage",
+   "senses": [
+    {
+     "term": "percentage",
+     "plain": "a fraction whose denominator is one hundred; per cent means per hundred",
+     "where": "Book 0, A4"
+    }
+   ]
+  },
+  {
+   "term": "percentage change",
+   "senses": [
+    {
+     "term": "percentage change",
+     "plain": "the change divided by the value it started from, times one hundred",
+     "where": "Book 0, A4"
+    }
+   ]
+  },
+  {
+   "term": "percentage point",
+   "senses": [
+    {
+     "term": "percentage point",
+     "plain": "the plain difference between two percentages, as against per cent, which divides",
+     "where": "Book 0, A4"
+    }
+   ]
+  },
+  {
+   "term": "phenotype",
+   "senses": [
+    {
+     "term": "phenotype",
+     "plain": "what you can see about a person, the traits they show",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "phospholipid",
+   "senses": [
+    {
+     "term": "phospholipid",
+     "plain": "the one kind of molecule a membrane is built from, with one end that mixes with water and one that does not",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "pie chart",
+   "senses": [
+    {
+     "term": "pie chart",
+     "plain": "a circle standing for a whole, each slice&#x27;s share of the circle being its share of the total",
+     "where": "Book 0, F2"
+    }
+   ]
+  },
+  {
+   "term": "place value",
+   "senses": [
+    {
+     "term": "place value",
+     "plain": "what a digit is worth because of where it sits",
+     "where": "Book 0, A1"
+    }
+   ]
+  },
+  {
+   "term": "plasma membrane",
+   "senses": [
+    {
+     "term": "plasma membrane",
+     "plain": "the skin round a cell, which decides what gets in and what stays out",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "polysaccharide",
+   "senses": [
+    {
+     "term": "polysaccharide",
+     "plain": "a chain of single sugar molecules, such as starch",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "positive predictive value",
+   "senses": [
+    {
+     "term": "positive predictive value",
+     "plain": "the share of positive results that are right, written P(condition present given test positive)",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "potential energy",
+   "senses": [
+    {
+     "term": "potential energy",
+     "plain": "energy a thing has because of where it is, what it is made of, or what state it is in",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "precision",
+   "senses": [
+    {
+     "term": "precision",
+     "plain": "how closely repeated readings agree with each other",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "prevalence",
+   "senses": [
+    {
+     "term": "prevalence",
+     "plain": "how many people in a group have the condition, written P(condition present), with no test involved",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "probability",
+   "senses": [
+    {
+     "term": "probability",
+     "plain": "a number from 0 to 1 that states how often an outcome would turn up if the same chance process were repeated a great many times",
+     "where": "Book 0, D1"
+    }
+   ]
+  },
+  {
+   "term": "proportion",
+   "senses": [
+    {
+     "term": "proportion",
+     "plain": "a part out of the whole it came from, never more than one",
+     "where": "Book 0, A5"
+    }
+   ]
+  },
+  {
+   "term": "protein",
+   "senses": [
+    {
+     "term": "protein",
+     "plain": "a folded chain of amino acids, whose shape is what it does",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "quartile",
+   "senses": [
+    {
+     "term": "quartile",
+     "plain": "the first quartile is the median of the lower half of the ordered values, the third the median of the upper half, the second the median of the whole set",
+     "where": "Book 0, D5"
+    }
+   ]
+  },
+  {
+   "term": "radiation",
+   "senses": [
+    {
+     "term": "radiation",
+     "plain": "heat crossing as light or as the invisible light below red, with nothing needed in between",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "random error",
+   "senses": [
+    {
+     "term": "random error",
+     "plain": "the part that varies unpredictably from one reading to the next (VIM 2.19)",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "random sample",
+   "senses": [
+    {
+     "term": "random sample",
+     "plain": "picked at random: every member of the population has exactly the same chance of being the one picked, and an actual chance process decides it, not the person picking",
+     "where": "Book 0, D6"
+    }
+   ]
+  },
+  {
+   "term": "rate line",
+   "senses": [
+    {
+     "term": "rate line",
+     "plain": "the line the rate over each interval makes across a figure with time along the bottom",
+     "where": "Book 0, C8"
+    }
+   ]
+  },
+  {
+   "term": "rate of change",
+   "senses": [
+    {
+     "term": "rate of change",
+     "plain": "a change divided by the time it took",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "ratio",
+   "senses": [
+    {
+     "term": "ratio",
+     "plain": "two quantities of the same kind set side by side by dividing one by the other",
+     "where": "Book 0, A5"
+    }
+   ]
+  },
+  {
+   "term": "receptor",
+   "senses": [
+    {
+     "term": "receptor",
+     "plain": "the protein a ligand fits into, which changes shape when it does",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "recessive",
+   "senses": [
+    {
+     "term": "recessive",
+     "plain": "an allele that shows only when both copies are that version",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "relative frequency",
+   "senses": [
+    {
+     "term": "relative frequency",
+     "plain": "a count divided by the total number counted; the proportion, under a longer name",
+     "where": "Book 0, D4"
+    }
+   ]
+  },
+  {
+   "term": "ribosome",
+   "senses": [
+    {
+     "term": "ribosome",
+     "plain": "the machine in a cell that builds proteins",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "rounding",
+   "senses": [
+    {
+     "term": "rounding",
+     "plain": "choosing which place to stop at, and adjusting the last kept digit for what follows it",
+     "where": "Book 0, A3"
+    }
+   ]
+  },
+  {
+   "term": "running total",
+   "senses": [
+    {
+     "term": "running total",
+     "plain": "the amounts for successive intervals, each a rate times a time, added up as you go",
+     "where": "Book 0, C8"
+    }
+   ]
+  },
+  {
+   "term": "sample space",
+   "senses": [
+    {
+     "term": "sample space",
+     "plain": "the complete list of everything that could happen",
+     "where": "Book 0, D1"
+    }
+   ]
+  },
+  {
+   "term": "sampling variation",
+   "senses": [
+    {
+     "term": "sampling variation",
+     "plain": "a second random sample of the same size from the same population gives a statistic that does not match the first sample&#x27;s exactly",
+     "where": "Book 0, D6"
+    }
+   ]
+  },
+  {
+   "term": "saturating",
+   "senses": [
+    {
+     "term": "saturating",
+     "plain": "rises, then flattens against a level it does not pass",
+     "where": "Book 0, C6"
+    }
+   ]
+  },
+  {
+   "term": "scale factor",
+   "senses": [
+    {
+     "term": "scale factor",
+     "plain": "the number you multiply every length of a picture by",
+     "where": "Book 0, F2"
+    }
+   ]
+  },
+  {
+   "term": "scientific notation",
+   "senses": [
+    {
+     "term": "scientific notation",
+     "plain": "a number between one and ten, times a power of ten",
+     "where": "Book 0, A6"
+    }
+   ]
+  },
+  {
+   "term": "sensitivity",
+   "senses": [
+    {
+     "term": "sensitivity",
+     "plain": "the share of people with the condition that the test catches, written P(test positive given condition present)",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "signal transduction",
+   "senses": [
+    {
+     "term": "signal transduction",
+     "plain": "a signal outside the cell converted into a signal inside it",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "significant figures",
+   "senses": [
+    {
+     "term": "significant figures",
+     "plain": "the digits in a number that carry information about the quantity",
+     "where": "Book 0, A3"
+    }
+   ]
+  },
+  {
+   "term": "slope",
+   "senses": [
+    {
+     "term": "slope",
+     "plain": "how steep a line is: the change up divided by the change across",
+     "where": "Book 0, C5"
+    }
+   ]
+  },
+  {
+   "term": "small store",
+   "senses": [
+    {
+     "term": "small store",
+     "plain": "glycogen, kept in the liver and the muscles",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "solving for a letter",
+   "senses": [
+    {
+     "term": "solving for a letter",
+     "plain": "reaching an equation with that letter alone on one side and nowhere on the other",
+     "where": "Book 0, C2"
+    }
+   ]
+  },
+  {
+   "term": "special majority",
+   "senses": [
+    {
+     "term": "special majority",
+     "plain": "a majority of all the members of a House, and two-thirds of those present and voting",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "specific heat",
+   "senses": [
+    {
+     "term": "specific heat",
+     "plain": "the joules one kilogram of a material needs to go up by one degree",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "specificity",
+   "senses": [
+    {
+     "term": "specificity",
+     "plain": "the share of people without the condition that the test correctly clears, written P(test negative given condition absent)",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "square root",
+   "senses": [
+    {
+     "term": "square root",
+     "plain": "the number which, multiplied by itself, gives you the one you started with",
+     "where": "Book 0, A6"
+    }
+   ]
+  },
+  {
+   "term": "square-root law",
+   "senses": [
+    {
+     "term": "square-root law",
+     "plain": "the spread of a sample&#x27;s average equals the spread of the individual values in the population, divided by the square root of the sample size",
+     "where": "Book 0, D6"
+    }
+   ]
+  },
+  {
+   "term": "squaring",
+   "senses": [
+    {
+     "term": "squaring",
+     "plain": "multiplying a number by itself",
+     "where": "Book 0, A6"
+    }
+   ]
+  },
+  {
+   "term": "standard deviation",
+   "senses": [
+    {
+     "term": "standard deviation",
+     "plain": "the square root of the variance, in the same unit as the original values",
+     "where": "Book 0, D5"
+    }
+   ]
+  },
+  {
+   "term": "standard error of the mean",
+   "senses": [
+    {
+     "term": "standard error of the mean",
+     "plain": "that spread of a random sample&#x27;s average, over many samples of the same size",
+     "where": "Book 0, D6"
+    }
+   ]
+  },
+  {
+   "term": "starch",
+   "senses": [
+    {
+     "term": "starch",
+     "plain": "the stuff rice, wheat and potato are mostly made of",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "statute",
+   "senses": [
+    {
+     "term": "statute",
+     "plain": "a law enacted by Parliament or a State Legislature, each called an Act",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "substitution",
+   "senses": [
+    {
+     "term": "substitution",
+     "plain": "(1) putting a number in place of a letter, everywhere it appears (Book 0, C1); (2) to solve two equations, rearranging one to give a letter on its own and putting that into the other (Book 0, C3)",
+     "where": "Book 0, C1, Book 0, C3"
+    }
+   ]
+  },
+  {
+   "term": "system of two equations",
+   "senses": [
+    {
+     "term": "system of two equations",
+     "plain": "a pair of equations that have to hold at the same time",
+     "where": "Book 0, C3"
+    }
+   ]
+  },
+  {
+   "term": "systematic error",
+   "senses": [
+    {
+     "term": "systematic error",
+     "plain": "pushes every reading the same way, by close to the same amount, every time",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "tangent",
+   "senses": [
+    {
+     "term": "tangent",
+     "plain": "the straight line that touches a curve at one point and runs along it, whose slope is the rate at that point",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "thermochemical calorie",
+   "senses": [
+    {
+     "term": "thermochemical calorie",
+     "plain": "4.184 joules exactly",
+     "where": "Book 0, B4"
+    }
+   ]
+  },
+  {
+   "term": "triglyceride",
+   "senses": [
+    {
+     "term": "triglyceride",
+     "plain": "the molecule fat is made of, in food and in a body alike",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "trueness",
+   "senses": [
+    {
+     "term": "trueness",
+     "plain": "how close the average of many repeated readings sits to the true value",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "two-way table",
+   "senses": [
+    {
+     "term": "two-way table",
+     "plain": "a table that sorts the same people twice, one way down the columns and the other way across the rows",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "unit of observation",
+   "senses": [
+    {
+     "term": "unit of observation",
+     "plain": "what one row of a table stands for",
+     "where": "Book 0, F1"
+    }
+   ]
+  },
+  {
+   "term": "value axis",
+   "senses": [
+    {
+     "term": "value axis",
+     "plain": "the axis a bar&#x27;s length is read against: the side axis when bars stand up, the bottom axis when they lie flat",
+     "where": "Book 0, F2"
+    }
+   ]
+  },
+  {
+   "term": "variance",
+   "senses": [
+    {
+     "term": "variance",
+     "plain": "worked out from the squared deviations: add them, then divide by the count for a whole population, or by one less than the count for a sample",
+     "where": "Book 0, D5"
+    }
+   ]
+  },
+  {
+   "term": "villi",
+   "senses": [
+    {
+     "term": "villi",
+     "plain": "the tiny fingers lining the gut",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "x-axis",
+   "senses": [
+    {
+     "term": "x-axis",
+     "plain": "the flat line along the bottom of a graph",
+     "where": "Book 0, C5"
+    }
+   ]
+  },
+  {
+   "term": "y-axis",
+   "senses": [
+    {
+     "term": "y-axis",
+     "plain": "the upright line up the side of a graph",
+     "where": "Book 0, C5"
+    }
+   ]
+  },
+  {
+   "term": "zero error",
+   "senses": [
+    {
+     "term": "zero error",
+     "plain": "an instrument reading something other than zero where it should read zero, as a thermometer in melting ice reading 0.3 °C",
+     "where": "Book 0, D7"
+    }
+   ]
+  }
+ ]
+}

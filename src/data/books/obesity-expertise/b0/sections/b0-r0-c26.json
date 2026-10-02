@@ -1,0 +1,187 @@
+{
+ "format": 1,
+ "id": "b0-r0-c26",
+ "label": "D3",
+ "title": "Conditional probability through the two-way table",
+ "part": "D",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>P(A given B), written P(A|B), is the count of people who are both A and B, divided by the count of people who are B. P(A|B) and P(B|A) divide the same top count by two different totals and are not generally equal.</p>\n<p><dfn data-g=\"167\">Sensitivity</dfn> is the share of people with the condition that the test catches, written P(test positive given condition present).</p>\n<p><dfn data-g=\"175\">Specificity</dfn> is the share of people without the condition that the test correctly clears, written P(test negative given condition absent).</p>\n<p>The <dfn data-g=\"142\">positive predictive value</dfn> is the share of positive results that are right, written P(condition present given test positive).</p>\n<p><dfn data-g=\"145\">Prevalence</dfn> is how many people in a group have the condition, written P(condition present), with no test involved.</p>",
+   "refs": [
+    16,
+    17
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Given a positive result, how likely is the condition actually there?</p>\n<p>A <dfn data-g=\"190\">two-way table</dfn> sorts the same people twice. Sort them one way down the columns, by whether they truly have the thing you care about. Sort them the other way across the rows, by what a quick measurement says. Where a row meets a column is a count of people who are both — that count is a cell.</p>\n<p>Add up everything and you get the <dfn data-g=\"78\">grand total</dfn>.</p>\n<p>A conditional <dfn data-g=\"146\">probability</dfn> is the same move with a chosen <dfn data-g=\"47\">denominator</dfn>. “Of those who test positive, how many truly have it” divides by the row of positive results. “Of those who truly have it, how many test positive” divides by the column of people who truly have it. Ask which one you have been handed before you read anything into it.</p>\n<p>The positive predictive value is the share of positive results that are right. Its mirror is the <dfn data-g=\"123\">negative predictive value</dfn>, the share of negative results that are right. Prevalence — how many people in a group have the condition — needs no test at all. It is a fact about the group before anyone is measured.</p>\n<p>The positive predictive value belongs to the room the test is used in, not to the test by itself.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Kiran, Harshitha and Bhargava measured 282 medical students in Mangaluru, including their body-mass index and the circumference of the upper arm. This section uses only the 131 men.</p>\n<p>The study’s Table 3 reports a 31.3 centimetre arm cut-off for men, labelled “overweight, body-mass index 25 or more”. The arm is measured with a tape, and a man whose arm measures 31.3 centimetres or more counts as a positive result. It gives sensitivity 86 per cent and specificity 74 per cent. Table 2 gives 42 men with an index from 25 to 29.9, and 10 more at 30 or more.</p>\n<div class=\"working\">\n<p>42 plus 10 = 52</p>\n</div>\n<div class=\"working\">\n<p>131 minus 52 = 79</p>\n</div>\n<p>Try to rebuild the table the label describes: 52 men against 79. Sensitivity of 86 per cent should mean some whole number of the 52 caught by the tape. Check it yourself: work out 0.86 times 52, then try the whole numbers either side of it.</p>\n<div class=\"working\">\n<p>0.86 times 52 = 44.72<br />\n44 divided by 52 = 0.8461…<br />\n45 divided by 52 = 0.8653…</p>\n</div>\n<p>Rounded, 44 gives 85 per cent and 45 gives 87 per cent. Neither is 86. No whole number of 52 rounds to exactly 86 per cent. Try the 79 the same way, against the specificity of 74 per cent.</p>\n<div class=\"working\">\n<p>0.74 times 79 = 58.46<br />\n58 divided by 79 = 0.7341…<br />\n59 divided by 79 = 0.7468…</p>\n</div>\n<p>Neither is 74 either. The label’s own group sizes, 52 and 79, cannot have produced the paper’s printed percentages.</p>\n<p>This is a denominator question, the kind this whole section teaches. Somewhere else in Table 2 is a group of men that does divide back cleanly. Try the 42 men in the 25-to-29.9 band on their own, against the other 89 men in the study.</p>\n<div class=\"working\">\n<p>131 minus 42 = 89</p>\n</div>\n<div class=\"working\">\n<p>0.86 times 42 = 36.12<br />\n36 divided by 42 = 0.8571…</p>\n</div>\n<p>Thirty-six of the 42 rounds to exactly 86 per cent.</p>\n<div class=\"working\">\n<p>0.74 times 89 = 65.86<br />\n66 divided by 89 = 0.7415…</p>\n</div>\n<p>Sixty-six of the 89 rounds to exactly 74 per cent. Both round back to the printed figure.</p>\n<p>On that <dfn data-g=\"160\">rounding</dfn> this row fits the 42 and not the 52.</p>\n<p>The rest of each row and column follow by subtraction.</p>\n<div class=\"working\">\n<p>42 minus 36 = 6<br />\n89 minus 66 = 23<br />\n36 plus 23 = 59<br />\n6 plus 66 = 72</p>\n</div>\n<table style=\"width:97%;\">\n\n<tbody>\n<tr>\n<td></td>\n<td>in the 25-29.9 band</td>\n<td>not in the band</td>\n<td>total</td>\n</tr>\n<tr>\n<td>arm 31.3 cm or more</td>\n<td>36</td>\n<td>23</td>\n<td>59</td>\n</tr>\n<tr>\n<td>arm under 31.3 cm</td>\n<td>6</td>\n<td>66</td>\n<td>72</td>\n</tr>\n<tr>\n<td>total</td>\n<td>42</td>\n<td>89</td>\n<td>131</td>\n</tr>\n</tbody>\n</table>\n<p>This table is rebuilt, not printed by the paper in this form.</p>\n<p>Take the row of men the tape flags — arm 31.3 centimetres or more — 59 of them in total.</p>\n<div class=\"working\">\n<p>36 divided by 59 = 0.6101…</p>\n</div>\n<p>About 61 per cent. This is the positive predictive value: of the men the arm measurement flags, the share who are actually in the 25-to-29.9 band.</p>\n<p>The 89 include the 10 men at 30 or more, so a flagged man at 30 or more counts here as a wrong result. For the question ‘is his index 25 or more?’, 61 per cent is the least the share could be.</p>\n<p>Now reverse the question. Take the column of men in the 25-to-29.9 band — 42 of them.</p>\n<div class=\"working\">\n<p>36 divided by 42 = 0.8571…</p>\n</div>\n<p>About 86 per cent. This second <dfn data-g=\"155\">ratio</dfn> is the sensitivity, and it is the number the paper itself reports. P(in the band given arm 31.3 or more) is not P(arm 31.3 or more given in the band).</p>\n<p>Specificity is the share of the 89 men outside the band whom the measurement correctly clears.</p>\n<div class=\"working\">\n<p>66 divided by 89 = 0.7415…</p>\n</div>\n<p>Prevalence is how many of the 131 men are in the band in the first place, no measurement involved. Table 2 already gives it directly: 42 of 131.</p>\n<div class=\"working\">\n<p>42 divided by 131 = 0.3206…</p>\n</div>\n<p>About 32 per cent, among these 131 men.</p>\n<p>Keep the same cut-off, the same 86 per cent sensitivity and the same 74 per cent specificity. Apply them to a stated group instead: 1,000 young men in which one in five is in the band.</p>\n<div class=\"working\">\n<p>0.20 times 1,000 = 200<br />\n1,000 minus 200 = 800</p>\n</div>\n<div class=\"working\">\n<p>0.86 times 200 = 172<br />\n0.74 times 800 = 592</p>\n</div>\n<div class=\"working\">\n<p>200 minus 172 = 28<br />\n800 minus 592 = 208<br />\n172 plus 208 = 380</p>\n</div>\n<table style=\"width:86%;\">\n\n<thead>\n<tr>\n<th></th>\n<th>in the band</th>\n<th>not in the band</th>\n<th>total</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>arm 31.3 cm or more</td>\n<td>172</td>\n<td>208</td>\n<td>380</td>\n</tr>\n<tr>\n<td>arm under 31.3 cm</td>\n<td>28</td>\n<td>592</td>\n<td>620</td>\n</tr>\n<tr>\n<td>total</td>\n<td>200</td>\n<td>800</td>\n<td>1,000</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>172 divided by 380 = 0.4526…</p>\n</div>\n<p>About 45 per cent, against about 61 per cent among the medical students themselves.</p>",
+   "numberRefs": [
+    18
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 36-23-6-66 table is rebuilt, not measured. It was built by applying two rounded percentages to two counts. Of the two group sizes tried, only one rounds back to both 86 and 74. Wherever you see a sensitivity and a specificity with no counts behind them, run the same check before you trust which group they describe.</p>\n<p>The positive predictive value of 61 per cent describes these 131 medical students and nobody else. Sensitivity and specificity stayed the same. Never quote a positive predictive value without saying whose prevalence produced it.</p>\n<p>Whether the measurement is worth taking in a clinic is a separate question.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>P(A given B) is not P(B given A). Sensitivity and the positive predictive value are built from the same top count. They divide it by different totals.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Run the same test where the condition is common, and most positive results are right. Run it where the condition is rare, and most positive results are wrong.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Before dividing anything, say out loud which row or column you are dividing by.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Carrying sensitivity and specificity forward to a new group is itself an assumption. Say so whenever you do it.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Divide back. Try every whole number of the stated group. A row’s own label is not proof that it matches the count behind it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A headline that reports a test as some per cent “accurate” tells you nothing on its own. It names none of the sensitivity, the specificity or the positive predictive value. Ask which one was meant, then ask for the prevalence the third one needs.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>When two published figures for the same measurement disagree, check whether either one conflicts with something else printed alongside it. A shared total, or rows that must add up, can settle which figure the paper actually computed from. Do this before you assume the more prominent figure is correct.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A health secretary has one page and wants an answer first. The briefing says an arm-measurement test for a weight-related condition is “86 per cent accurate”. Write the page.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first. Eighty-six per cent of what? “Accurate” could mean three different figures.</p>\n<p>Suppose it is the sensitivity, the share of people with the condition that the test catches. Then it says nothing yet about how often a positive result is right.</p>\n<p>The reason in one line: how many of the test’s positive results are actually right depends on the group tested, not only on the test. The more common the condition is there, the more of the positive results are right.</p>\n<p>Here is the number that matters, worked from a real study’s own figures. Among these medical students, about 32 per cent of the 131 men are in the band. A positive result there was right about 61 times in 100. In a group where one in five is in the band, the same test’s positive results would be right about 45 times in 100.</p>\n<p>What to ask before approving anything: what share of the population actually targeted has the condition. Without that figure, “86 per cent accurate” cannot be turned into a number of people. It cannot say how many a positive result would wrongly reassure or wrongly worry.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>The paper defines higher percent body fat (PBF) separately for men and women. It measures body fat with a machine that passes a small current through the body. Its abstract states the cut-off in one place as “(men: ≥20%; women: ≥30%)”. Its methods section, Table 2 and Table 3 all use “≥28” per cent for women instead.</p>\n<p>Say how you would check which of the two women’s figures, 30 or 28 per cent, the paper’s own numbers are actually built on.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Nothing taught so far settles it by arithmetic. A later section will give a way.</p>\n<p>What can be checked is how many places in the paper repeat each number. The methods section, Table 2 and Table 3 all give the women’s cut-off as 28 per cent. Only the abstract’s one sentence gives 30 per cent instead.</p>\n<p>Three places agree on 28, and only one place states 30. That makes 28 the figure the study’s own numbers were almost certainly built on, and 30 in the abstract the more likely slip. Report both figures, and say which three places agree, rather than assuming a headline abstract figure is always the right one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Of 100 people, 20 truly have a condition and 80 do not. A test is positive for 15 of the 20 who have it, and positive for 10 of the 80 who do not.</p>\n<p>Build the two-way table, with row and column totals.</p>",
+   "level": 1,
+   "answer": "<p>Start from what you are given. Fifteen of the 20 with the condition test positive, so 5 of the 20 test negative.</p>\n<div class=\"working\">\n<p>20 minus 15 = 5</p>\n</div>\n<p>Ten of the 80 without the condition test positive, so 70 test negative.</p>\n<div class=\"working\">\n<p>80 minus 10 = 70</p>\n</div>\n<p>Add across for the two row totals.</p>\n<div class=\"working\">\n<p>15 plus 10 = 25<br />\n5 plus 70 = 75</p>\n</div>\n<table style=\"width:88%;\">\n\n<thead>\n<tr>\n<th></th>\n<th>condition present</th>\n<th>condition absent</th>\n<th>total</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>test positive</td>\n<td>15</td>\n<td>10</td>\n<td>25</td>\n</tr>\n<tr>\n<td>test negative</td>\n<td>5</td>\n<td>70</td>\n<td>75</td>\n</tr>\n<tr>\n<td>total</td>\n<td>20</td>\n<td>80</td>\n<td>100</td>\n</tr>\n</tbody>\n</table>\n<p>Every number in the finished table is invented, to practise the move of filling one in.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Using the table you built in the previous problem, work out P(test positive given condition present) and P(condition present given test positive). Say which total each one divides by.</p>",
+   "level": 1,
+   "answer": "<p>P(test positive given condition present) divides by the column of people who have the condition, which totals 20.</p>\n<div class=\"working\">\n<p>15 divided by 20 = 0.75</p>\n</div>\n<p>P(condition present given test positive) divides by the row of people who test positive, which totals 25.</p>\n<div class=\"working\">\n<p>15 divided by 25 = 0.6</p>\n</div>\n<p>Same top number, 15. Two different bottom numbers, the column total of 20 and the row total of 25, give 0.75 and 0.6. The two questions are not the same question.</p>\n<p>Separately, check whether the test and the condition are independent, using last section’s test. Does P(test positive and condition present) equal P(test positive) times P(condition present)?</p>\n<div class=\"working\">\n<p>15 divided by 100 = 0.15<br />\n25 divided by 100 = 0.25<br />\n20 divided by 100 = 0.2<br />\n0.25 times 0.2 = 0.05</p>\n</div>\n<p>P(test positive and condition present) is 0.15. P(test positive) times P(condition present) is 0.05. They do not match, so the test and the condition are not independent — which is exactly the point of running a test at all.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Using the same invented table, work out P(test negative given condition absent).</p>",
+   "level": 2,
+   "answer": "<p>This divides by the column of people without the condition, which totals 80.</p>\n<div class=\"working\">\n<p>70 divided by 80 = 0.875</p>\n</div>\n<p>A <dfn data-g=\"147\">proportion</dfn> of 0.875. This, and the P(test positive given condition present) from the previous problem, are the two proportions a table like this is usually built to report.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Still using the invented table, name which cell and which total each of these divides by: sensitivity, specificity, and the positive predictive value. Give the value of each.</p>",
+   "level": 3,
+   "answer": "<p>Sensitivity is the share of people with the condition that the test catches. It is the test-positive cell in the column of people who have the condition, divided by that column’s own total.</p>\n<div class=\"working\">\n<p>15 divided by 20 = 0.75</p>\n</div>\n<p>Specificity is the share of people without the condition that the test correctly clears. It is the test-negative cell in the column of people who do not have it, divided by that column’s total.</p>\n<div class=\"working\">\n<p>70 divided by 80 = 0.875</p>\n</div>\n<p>The positive predictive value is the share of positive results that are right. It is the same condition-present cell as before, but now divided by the row total for everyone who tested positive.</p>\n<div class=\"working\">\n<p>15 divided by 25 = 0.6</p>\n</div>\n<p>Three questions. Three different totals. The same handful of cells does all the work each time.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Kiran, Harshitha and Bhargava’s 2022 study found that 52 of 131 men had a body-mass index of 25 or more. Work out this share as a <dfn data-g=\"133\">percentage</dfn>, and the percentage of men under 25.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>52 divided by 131 = 0.3969…</p>\n</div>\n<p>About 39.7 per cent have an index of 25 or more, among the 131 men.</p>\n<div class=\"working\">\n<p>131 minus 52 = 79</p>\n</div>\n<div class=\"working\">\n<p>79 divided by 131 = 0.6031…</p>\n</div>\n<p>About 60.3 per cent are under 25. The two add to 100 per cent, as a group and its complement must.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Table 3 also reports a women’s arm-circumference cut-off. Sensitivity is 88 per cent and specificity 83 per cent, labelled “body-mass index 25 or more” the same way the men’s row was. Table 2 gives 41 women in the 25-to-29.9 band and 5 more at 30 or more. Together that is 46 women carrying the label, out of 151 women in the study.</p>\n<p>Try to reproduce 88 per cent from whole numbers of 46, and 83 per cent from whole numbers of 105 (151 minus 46). Say what the check shows.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>151 minus 46 = 105</p>\n</div>\n<p>Try the nearest whole numbers of 46 against 88 per cent.</p>\n<div class=\"working\">\n<p>40 divided by 46 = 0.8695…<br />\n41 divided by 46 = 0.8913…</p>\n</div>\n<p>Forty gives 87 per cent, and 41 gives 89. Neither is 88. No whole number of 46 reproduces the sensitivity exactly.</p>\n<p>Now try 105 against 83 per cent.</p>\n<div class=\"working\">\n<p>87 divided by 105 = 0.8285…</p>\n</div>\n<p>Eighty-seven of 105 rounds to exactly 83 per cent. This side does reproduce the label’s own total. That shows a check can pass by coincidence on one side and still fail on the other. One passing side is not enough to trust the label.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Table 2’s own women’s row gives 41 women in the 25-to-29.9 band on its own, and 151 minus 41 women outside it. Use these two totals with the same 88 per cent sensitivity and 83 per cent specificity, and work out the positive predictive value.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>151 minus 41 = 110</p>\n</div>\n<div class=\"working\">\n<p>0.88 times 41 = 36.08<br />\n36 divided by 41 = 0.8780…</p>\n</div>\n<p>Thirty-six of 41 rounds to exactly 88 per cent, the sensitivity the paper reports.</p>\n<div class=\"working\">\n<p>0.83 times 110 = 91.3<br />\n91 divided by 110 = 0.8272…</p>\n</div>\n<p>Ninety-one of 110 rounds to exactly 83 per cent, the specificity. Both round back to the printed figure, the same way the men’s 42-against-89 split did.</p>\n<div class=\"working\">\n<p>41 minus 36 = 5<br />\n110 minus 91 = 19<br />\n36 plus 19 = 55</p>\n</div>\n<div class=\"working\">\n<p>36 divided by 55 = 0.6545…</p>\n</div>\n<p>About 65 per cent of the women the arm measurement flags are actually in the 25-to-29.9 band. The women’s row appears to carry the same mislabelling problem the men’s row did, and the same fix.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Using the men’s rebuilt table — 36, 6, 23 and 66 — work out the negative predictive value. Of the men the arm measurement clears, what share truly are outside the 25-to-29.9 band?</p>",
+   "level": 6,
+   "answer": "<p>The row of cleared men totals 72.</p>\n<div class=\"working\">\n<p>6 plus 66 = 72</p>\n</div>\n<div class=\"working\">\n<p>66 divided by 72 = 0.9166…</p>\n</div>\n<p>About 92 per cent. Being cleared by the tape is a stronger signal, in this group, than being flagged by it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the abstract says 113 had abdominal obesity — the paper’s label for a waist of 90<br />\ncentimetres or more in men and 80 or more in women<br />\n113 divided by 282 = 0.4007…<br />\n0.4007 rounds to 40.1 per cent, close enough to the abstract’s own 38.7 per cent<br />\nso 113 is confirmed as the paper’s count for abdominal obesity</p>\n</div>\n<p>The results text and Table 2 give the same group as 109.</p>",
+   "level": 7,
+   "answer": "<p>The step that broke is calling 40.1 per cent “close enough” to 38.7. A gap of about 1.4 percentage points is not rounding noise. It is a real mismatch, on a figure printed to one <dfn data-g=\"45\">decimal</dfn> place.</p>\n<p>Try the paper’s other count for the same measurement, 109, from its own results text and Table 2.</p>\n<div class=\"working\">\n<p>109 divided by 282 = 0.3865…</p>\n</div>\n<p>That rounds to 38.7 per cent exactly, matching the printed figure. The results text and Table 2’s own 109 is the count the paper’s arithmetic actually supports. The abstract’s 113 is the slip.</p>\n<p>Why it looks reasonable: 40.1 and 38.7 both round to about 40. A reader skimming past two similar percentages assumes they are the same claim written two ways. Dividing back and comparing the decimal is the only way to catch that they are not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the abstract reports 186 (66%) had higher percent body fat (PBF), out of 282<br />\nTable 2 reports the same measure as 185 (65.6%)<br />\n185 divided by 282 = 0.6560…, which rounds to 66 per cent<br />\n186 divided by 282 = 0.6596…, which also rounds to 66 per cent<br />\nboth numbers are consistent with their own printed percentages, so nothing in the paper<br />\ncan decide which count is right</p>\n</div>\n<p>Table 2 also gives 71 men and 114 women in the high row, and 97 students in the normal-range row.</p>",
+   "level": 7,
+   "answer": "<p>The step that broke is the conclusion. Both counts do round to 66 per cent, but the paper’s own addition settles the question without needing to round anything.</p>\n<div class=\"working\">\n<p>71 plus 114 = 185</p>\n</div>\n<p>Table 2 gives 71 men and 114 women with high PBF, and they add to 185, not 186.</p>\n<div class=\"working\">\n<p>97 plus 185 = 282</p>\n</div>\n<p>The normal-range row, 97, plus the high row, 185, gives exactly the study’s total of 282.</p>\n<div class=\"working\">\n<p>97 plus 186 = 283</p>\n</div>\n<p>Adding 186 instead gives 283, one more person than the study actually has. That is impossible, so 185 is the paper’s own figure and 186 in the abstract is the slip.</p>\n<p>Why it looks reasonable: both percentages round to the same whole number, so a check that stops at rounding finds nothing wrong. The paper’s own row-plus-row arithmetic is a second, independent check, and it is the one that actually decides it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>Table 3 gives its 31.2 cm arm cut-off’s sensitivity as 85 per cent for spotting the 41 men<br />\nwhose waist is 90 centimetres or more (Table 2)<br />\n0.85 times 41 = 34.85<br />\nso 34 of the 41 men were caught by the tape<br />\n34 divided by 41 rounds to 85 per cent, matching the paper</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is rounding 34.85 down to 34. The nearest whole number is 35. Divide both back to see which one fits.</p>\n<div class=\"working\">\n<p>34 divided by 41 = 0.8292…<br />\n35 divided by 41 = 0.8536…</p>\n</div>\n<p>Thirty-four gives 83 per cent, not 85. Thirty-five gives 85, the printed figure. The last line claimed a match it never computed.</p>\n<p>Why it looks reasonable: 34.85 sits between 34 and 35, and cutting it down feels cautious. The last line then states the result it expects instead of dividing. Checking the answer means dividing back and comparing the result with the number you started from.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A district officer says: “The tape correctly identified men in the 25-to-29.9 body-mass-index band most of the time among these medical students. It will be right about as often wherever I use it.”</p>\n<p>Suppose one in three men in the district were in the band. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the positive predictive value at that one-in-three share. Use the same sensitivity and specificity as before, in a group of 900 men, to keep the arithmetic in whole people.</p>\n<div class=\"working\">\n<p>900 divided by 3 = 300<br />\n900 minus 300 = 600</p>\n</div>\n<div class=\"working\">\n<p>0.86 times 300 = 258<br />\n0.74 times 600 = 444</p>\n</div>\n<div class=\"working\">\n<p>600 minus 444 = 156<br />\n258 plus 156 = 414</p>\n</div>\n<div class=\"working\">\n<p>258 divided by 414 = 0.6231…</p>\n</div>\n<p>About 62 per cent, close to the 61 per cent found among the medical students.</p>\n<p>What this does not show. The two numbers are close because one in three is close to the students’ 32 per cent. At a different share they would not be. The one-in-three figure is supposed, not measured, and nothing here checks it. The sensitivity and specificity are still the students’ own figures, used here as if they hold true in a new district too.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A note says: “Neck circumference correctly identifies men with a body-mass index of 25 or more, most of the time. It should replace body-mass index screening everywhere.”</p>\n<p>Table 3 gives a neck-circumference cut-off for men: sensitivity 81 per cent, specificity 71 per cent.</p>\n<p>Decide what to compute, compute it, and say what the claim does not show.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: which split of the 131 men reproduces 81 and 71 as whole counts. Then the positive predictive value each split gives.</p>\n<div class=\"working\">\n<p>0.81 times 52 = 42.12<br />\n42 divided by 52 = 0.8076…</p>\n</div>\n<p>Forty-two of 52 rounds to exactly 81 per cent.</p>\n<div class=\"working\">\n<p>0.71 times 79 = 56.09<br />\n56 divided by 79 = 0.7088…</p>\n</div>\n<p>Fifty-six of 79 rounds to exactly 71 per cent. Now try the band’s split, 42 against 89.</p>\n<div class=\"working\">\n<p>0.81 times 42 = 34.02<br />\n34 divided by 42 = 0.8095…<br />\n0.71 times 89 = 63.19<br />\n63 divided by 89 = 0.7078…</p>\n</div>\n<p>Both 52 against 79 and 42 against 89 round back to 81 and 71, so this row alone cannot say which group the paper used.</p>\n<div class=\"working\">\n<p>52 minus 42 = 10<br />\n79 minus 56 = 23<br />\n42 plus 23 = 65</p>\n</div>\n<div class=\"working\">\n<p>42 divided by 65 = 0.6461…</p>\n</div>\n<p>On the 52-against-79 split, about 65 per cent of the men the neck measurement flags are at 25 or more, among these medical students.</p>\n<div class=\"working\">\n<p>89 minus 63 = 26<br />\n34 plus 26 = 60<br />\n34 divided by 60 = 0.5666…</p>\n</div>\n<p>On the band’s split, 34 of the 60 men flagged are in the band, about 57 per cent. The figure moves with the group.</p>\n<div class=\"working\">\n<p>0.20 times 1,000 = 200<br />\n1,000 minus 200 = 800</p>\n</div>\n<div class=\"working\">\n<p>0.81 times 200 = 162<br />\n0.71 times 800 = 568</p>\n</div>\n<div class=\"working\">\n<p>800 minus 568 = 232<br />\n162 plus 232 = 394</p>\n</div>\n<div class=\"working\">\n<p>162 divided by 394 = 0.4111…</p>\n</div>\n<p>About 41 per cent in a stated group where one in five is at 25 or more.</p>\n<p>What the claim does not establish. None of 65, 57 or 41 per cent is “most of the time” in a way that supports “everywhere”. Each belongs to one group, the students or a stated one, not to the measurement on its own.</p>\n<p>The paper’s own running text gives a different specificity for this same row, 82 rather than 71. This section has not settled which of the two the paper actually used. Replacing one measurement with another is also not a decision that turns on sensitivity and specificity alone. Cost, ease of use and what the measurement is needed for all matter too. And nothing here establishes that either measurement is a good screening tool in the first place. This section has deliberately not tried to answer that.</p>"
+  }
+ ]
+}

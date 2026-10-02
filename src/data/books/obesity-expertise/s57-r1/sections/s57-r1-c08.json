@@ -1,0 +1,136 @@
+{
+ "format": 1,
+ "id": "s57-r1-c08",
+ "label": "8",
+ "title": "Working memory is small: cognitive load, and effort that helps",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>New information is handled first in <dfn data-g=\"553\">working memory</dfn>, which can hold and work on only a limited number of new elements (pieces of information held as one) at a time, and only for a short time. What has been learned is kept in <dfn data-g=\"296\">long-term memory</dfn>, which has no known limit.</p>\n<p><dfn data-g=\"80\">Cognitive load</dfn> is the demand a learning task makes on working memory. Cognitive load theory, set out by Sweller and colleagues, separates two sources of it. <dfn data-g=\"261\">Intrinsic load</dfn> comes from the material itself and from how much the learner already knows; it changes only if what is taught or the learner’s knowledge changes. <dfn data-g=\"178\">Extraneous load</dfn> comes from how the material is presented and what the learner is made to do; the teacher can change it. If the load becomes too high, learning and transfer to new problems suffer.</p>\n<p>For novices, studying a <dfn data-g=\"551\">worked example</dfn>, a problem shown with its full solution, can teach more than solving the same problem. That held for problems whose steps depend on each other. For mathematical definitions it reversed: students made to produce the answer did better than students shown it. So, this book suggests, <dfn data-g=\"448\">retrieval practice</dfn> (section 3) still has a place with beginners.</p>\n<p>A diagram alone has taught more than the same diagram with text that repeats it. Spoken information is gone in seconds, so the learner may have to hold it in working memory, which adds load and can reduce learning.</p>\n<p>These effects shrink, then vanish, and can reverse as learners gain expertise. <dfn data-g=\"256\">Interleaving</dfn>, mixing different problem types in one session instead of doing one type in a block, gave college students better test results a week later.</p>",
+   "refs": [
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    239,
+    240,
+    241,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    216,
+    255,
+    256,
+    218
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Your working memory is the part of your mind that holds what you are thinking about right now. It is small. It can juggle only a limited number of new pieces at once, and only for a short time. The review behind this section gives no number for either.</p>\n<p>Your long-term memory is where learned things are kept, and it has no known limit. Anything already learned comes back from it as one piece. For you, “<dfn data-g=\"362\">percentage</dfn>” is one piece. A learner meeting it for the first time has several pieces to hold.</p>\n<p>Overload working memory and less is learned. Some of the load comes from the material itself, and you cannot remove it without changing what is taught. Some comes from how you teach it, and that part is yours to cut.</p>\n<p>For a beginner, a problem shown worked out, step by step, often teaches more than being made to solve it cold. As they learn, take the help away a step at a time.</p>\n<p>Once the basics are held, effort helps. The same effort that swamps a beginner is what moves a more advanced learner on.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c08-knowledge-and-why.png",
+   "alt": "Two bars: gain from \"why\" questions over reading only, 24% for what the student knew well and 12% for what the student knew less.",
+   "w": 1358,
+   "h": 657,
+   "caption": "In one study, students answered “why” questions about facts on Canadian provinces and German states. Over reading alone, the review reports a 24% increase on the facts they knew well and a 12% increase on those they knew less (whether points or a share is not stated): twice as much where knowledge was greater."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the usual way it goes wrong. You explain aloud, once, how to turn a score into a percentage, then set a batch of first-year medical students three problems. Your words were gone within seconds. Each student now has to hold what you said in working memory while also holding the numbers and trying the steps. That is load you added, and it is load you can take away.</p>\n<p>Instead, write a worked example on the board and leave it there. The numbers here are made up. 26 of 40 students answered question 3 correctly. What percentage is that?</p>\n<div class=\"working\">\n<p>26 divided by 40 = 0.65<br />\n0.65 times 100 = 65%</p>\n</div>\n<p>Then give a partly worked problem, with the last step left for them. 18 of 24 students answered question 4 correctly.</p>\n<div class=\"working\">\n<p>18 divided by 24 = 0.75<br />\n0.75 times 100 = ?</p>\n</div>\n<p>Then give a whole problem with nothing worked: 31 of 50 students answered question 5 correctly. What percentage is that? They should reach 62%.</p>\n<p>You have faded the help: a full example, then one with a step left out, then a bare problem. A percentage is the skill of Book 0, A4. For you it is a single step. For these students it may not be yet.</p>\n<p>Now take the same three problems to a batch of residents who have done this a hundred times. For them the worked example is text to read and ignore, and reading it costs time. Give them the bare problem from the start.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The numbers are made up, to show the order of the steps; they report no class. The review behind this section says that worked examples teach novices more than problems do, and that the benefit fades and can reverse with expertise. It does not say at what point a particular learner has crossed over. You find that by watching whether they can do the bare problem.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the other side. Once learners can do each kind of problem on its own, make them work.</p>\n<p>Mix the problem types. Suppose your batch can now find a percentage, a <dfn data-g=\"425\">ratio</dfn> and a mean when each is asked in a block of its own. Next session, shuffle them: a percentage, then a mean, then a ratio, then a percentage. This is interleaving. Open Weinstein and colleagues, “Teaching the science of learning”, 2018, at https://pmc.ncbi.nlm.nih.gov/articles/PMC5780548/ and search for shuffling.</p>\n<blockquote>\n<p>Rohrer and Taylor (2007) found that shuffling math problems that involved calculating the volume of different shapes resulted in better test performance 1 week later</p>\n</blockquote>\n<p>The reason the authors give is that mixing makes the student choose the method each time, which a block of one type never asks them to do.</p>\n<p>“Why” questions also pay more to learners who already know more. Take the “why is this true?” questions of section 7. Open Dunlosky and colleagues’ review at https://doi.org/10.1177/1529100612453266 and search for Canadian provinces. Woloshyn and colleagues gave Canadian and German students facts about Canadian provinces and German states, so each student knew one set well and the other less. Students who answered “why” questions about the facts gained more over reading alone where they knew more.</p>\n<blockquote>\n<p>in their high-knowledge domain (a 24% increase) than in their low-knowledge domain (a 12% increase)</p>\n</blockquote>\n<table style=\"width:81%;\">\n\n<thead>\n<tr>\n<th>Facts about</th>\n<th>Gain over reading only (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>what the student knew well</td>\n<td>24</td>\n</tr>\n<tr>\n<td>what the student knew less</td>\n<td>12</td>\n</tr>\n</tbody>\n</table>\n<p>The same “why” questions paid twice as much where the learner already knew more.</p>\n<div class=\"working\">\n<p>24 divided by 12 = 2</p>\n</div>",
+   "numberRefs": [
+    257,
+    116
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Interleave problems that are related, like three calculations from the same unit. Mixing different subjects in one sitting has not been shown to help. The 24% and 12% come from one study of facts about places, and the review does not say whether they are percentage points or a share of the reading-only score; read them as “about twice as much”, not as a size to expect. They show that “why” questions help less where knowledge is thin, not that they never help a beginner.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Saying more is not teaching more. Put the steps where they stay: on the board, a chart on the wall, a handout. Written steps that add what the picture cannot show (the order, what to check) are not <dfn data-g=\"429\">redundant</dfn>; a paragraph that repeats the labels is.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>For beginners, show a worked example before you set a problem. Then give a problem with part of the solution done, then a whole problem. Take the help away as they gain skill.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>What helps a learner new to a topic can hold back one who already knows it. For them, set problems.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Before you put the same content on a slide twice, as a diagram and as text that repeats it, ask what the second copy adds.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Once the basics are held, make learners work: mix related problem types and have them produce answers rather than read them.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Do not tell a colleague a session “overloaded” learners as though you measured it. Say what the learners could and could not do afterwards.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A colleague plans a one-hour session for 30 accredited social health activists. The topic is reading a weighing scale and recording a child’s weight. For the first 40 minutes the colleague talks through every step. Each slide shows a labelled picture of the scale. Beside it, a paragraph says the same thing in words.</p>\n<p>In the last 20 minutes each worker weighs a child alone and records the weight. Nobody has seen a weighing worked through first. Name what in the plan adds load that could be cut, and say what you would change.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Three things add load the teacher could remove.</p>\n<p>Talk is gone within seconds. Each worker has to hold the steps in working memory until the practice at the end, up to 40 minutes later. Put the steps on a chart that stays on the wall. Break the talk into short pieces, and after each piece have the workers do that step.</p>\n<p>The slide gives the same information twice, as a labelled picture and as text that repeats it. Keep the picture and drop the repeating paragraph.</p>\n<p>The workers are beginners at this task, and the plan sends them straight to a whole problem. Show one weighing worked through in full, step by step. Then have each worker do one while you finish the last steps with them. Then each does one alone. Last, cover the chart and have each worker write the steps from memory (section 3).</p>\n<p>Say what the critique does not show: whether the session as planned would fail. That is found by testing what the workers can do afterwards, not by counting load.</p>"
+  }
+ ]
+}

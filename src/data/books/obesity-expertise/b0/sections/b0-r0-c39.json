@@ -1,0 +1,87 @@
+{
+ "format": 1,
+ "id": "b0-r0-c39",
+ "label": "F1",
+ "title": "Reading a table",
+ "part": "F",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A table presents values in a grid, so that every value is identified by the row and the column it sits in.</p>\n<p>Reading a table means settling four things before reading any number. What does one row stand for? What does each column report about it? What units and denominators do the columns use? Where did the numbers come from?</p>",
+   "refs": [
+    1
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A number on its own tells you nothing.</p>\n<p>You have to settle four things first. What does one row stand for — one person, one household, one whole state? That is called the <dfn data-g=\"191\">unit of observation</dfn>. What does each column report about that row? What units does a column use, and if it is a <dfn data-g=\"133\">percentage</dfn>, what is it a percentage of — its <dfn data-g=\"47\">denominator</dfn>? And where did the numbers come from, who counted them, and how?</p>\n<p>Forty-five could be a headcount, a percentage, or a rank.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<table>\n<thead>\n<tr>\n<th>State</th>\n<th>Women surveyed</th>\n<th>Overweight or obese (%)</th>\n<th>Year</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>A</td>\n<td>42,100</td>\n<td>24.1</td>\n<td>2019-21</td>\n</tr>\n<tr>\n<td>B</td>\n<td>18,750</td>\n<td>39.6</td>\n<td>2019-21</td>\n</tr>\n</tbody>\n</table>\n<p>States A and B and all four figures in this table are made up for this section.</p>\n<p>Ask first what one row stands for. Run your finger along the first row under the headings. It is one state, not one woman. So the figure 24.1 describes nobody in particular.</p>\n<p>Ask next what each column reports. The second column counts people. The third column, sitting right beside it, looks like the same kind of thing and is not. It is a percentage — a <dfn data-g=\"66\">fraction</dfn>, always of something. Of what? Of the count in the column next to it.</p>\n<p>‘Overweight or obese’ is one category, made by cutting a measurement at chosen values. It counts the overweight and the obese together, so it is larger than ‘obese’ alone. The heading does not say whose cut-offs were used, and that is a question to ask.</p>\n<p>Look at the last column and read it slowly. It is not a single year but a span, 2019 to 2021, telling you the fieldwork ran across those years and not on one date.</p>\n<p>Search the table for a line naming the source. There is none here.</p>\n<p>Now put the question you were going to ask anyway: is state B worse than state A?</p>\n<p>You cannot tell from this table alone. The two percentages differ, and that much sits on the page. But you have not been shown who was surveyed in each state, how those women were chosen, or how precise either figure is.</p>\n<p>Say only what you can defend: the two reported figures differ.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Two people can build two honest tables from the same underlying numbers and leave two opposite impressions. Neither has lied. A table settles what was measured and reported. It does not settle whether the comparison you want to make is a fair one.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Before comparing two percentages across rows, check the count sitting beside each one. Twenty-four per cent of 42,100 women and twenty-four per cent of two hundred women are not the same evidence. The section on sampling says why: for a <dfn data-g=\"152\">random sample</dfn>, the typical error shrinks with the <dfn data-g=\"176\">square root</dfn> of the count. For a sample that was not random, no count rescues it.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Ask the four questions in order, every time, before you look at any value.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In an Indian national survey table, check the count in every row: states need not have been sampled equally.</p>",
+     "tag": "india_deviation",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a table arrives in a ministry deck or a press release, somebody chose its rows and columns before you saw it. Ask what was left out.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>If asked which of two percentages is higher, do not stop at naming the bigger number. Say whether the table supports a comparison at all, and name what is missing.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>This section gets you only to what a table says. It does not tell you whether the numbers are right, how precise they are, or whether a gap is real.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>In the table above, what exactly does the number 39.6 describe? Write one sentence, and make sure it contains the unit of observation, the denominator and the time span.</p>",
+   "type": "interpretation",
+   "confidence": true,
+   "answer": "<p>Among the 18,750 women surveyed in state B during fieldwork conducted across 2019 to 2021, 39.6 per cent were recorded as overweight or obese. It is a property of a surveyed group, in one state, over a period. It is not a property of any woman, of the state’s whole population, or of a date.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is what a colleague writes. “State B has 15.5 percentage points more obesity than state A.” Name two things wrong with that sentence, read as a description of this table.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>First, it describes the states, when the table reports surveyed samples.</p>\n<p>Second, it treats the gap as a measured quantity. Nothing in the table tells you the <dfn data-g=\"144\">precision</dfn> of either figure. The difference may be solid or may be noise, and the table cannot tell you which.</p>\n<p>A third and subtler point: “obesity” and “overweight or obese” are different categories, and the column heading says the second one.</p>"
+  }
+ ]
+}

@@ -1,0 +1,136 @@
+{
+ "format": 1,
+ "id": "s47-r1-c03",
+ "label": "3",
+ "title": "Where a body’s power comes from",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In India every lawful exercise of public power rests on an instrument above it. The chain runs downward from the <dfn data-g=\"81\">Constitution</dfn>. An <dfn data-g=\"3\">Act</dfn> made by a <dfn data-g=\"231\">legislature</dfn> may give a named body the power to make rules or regulations, or to issue notifications and orders. Each lower instrument must stay within the one above it.</p>\n<p>A lower instrument normally names the provision it is made under, in words such as “in exercise of the powers conferred by”.</p>\n<p><dfn data-g=\"138\">Executive power</dfn> is the second source. Article 73 extends the executive power of the Union to the matters on which Parliament has power to make laws. Article 162 extends the executive power of a State to the matters on which its Legislature has power to make laws. The words are “has power to make laws”, not “has made laws”.</p>\n<p>An Act can be passed and not yet in force. Section 1(2) of the Digital <dfn data-g=\"295\">Personal Data</dfn> Protection Act, 2023 leaves the date to the Central Government, by <dfn data-g=\"279\">notification</dfn>, and allows different dates for different provisions. Notification G.S.R. 843(E) of 13 November 2025 brought its provisions into force in three stages: some on the date of publication, some one year from it, and the rest eighteen months from it (the stages and their sections are in the second illustration). G.S.R. stands for General Statutory Rules, and 843 is the notification’s number. It was printed in the <dfn data-g=\"174\">Gazette</dfn> of India, Extraordinary.</p>",
+   "refs": [
+    33,
+    34,
+    26,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Picture a ladder. The Constitution is the top rung. Below it are Acts, made by Parliament or a State Legislature. An Act can hand a named body the power to make rules or regulations. Below those are notifications and orders, each issued under some section that allows it. A rung cannot go further than the rung above lets it.</p>\n<p>Most notifications tell you their own rung. Near the start they say “in exercise of the powers conferred by” and name a section.</p>\n<p>A government can also act by <dfn data-g=\"137\">executive decision</dfn> — a decision of the government itself, with no new Act behind it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a sentence that cannot be checked. Suppose a made-up draft letter from your department ends like this:</p>\n<blockquote>\n<p>We request the Government to use its powers to stop the sale of sugary drinks near schools.</p>\n</blockquote>\n<p>Ask the question this section is about: under what authority? The letter does not say. “The Government” could be the Union or the State. “Its powers” names no provision. Nobody can act on it, and nobody has to answer it. Your department has written a request to no one.</p>\n<p>Now see what a checkable answer looks like, on a real instrument. Open the Digital Personal Data Protection Rules, 2025, notification G.S.R. 846(E) of 13 November 2025. The letters and number are the label the Gazette gives the notification, and the way you cite it. It was published by the Ministry of Electronics and Information Technology (https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf). Search for “in exercise of powers”. The rules are made “in exercise of powers conferred by sub-sections (1) and (2) of section 40” of the Digital Personal Data Protection Act, 2023.</p>\n<p>Climb one rung. Open the Act (https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf) and go to section 40(1). The Central Government may “make rules not inconsistent with the provisions of this Act”. So the rules rest on the Act, and the Act sets their limits.</p>\n<p>Climb again. The Act is an Act of Parliament. Article 245 of the Constitution says that Parliament “may make laws for the whole or any part of the territory of India”. Which subjects it may make laws on is the next section’s work.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Rung</th>\n<th>Instrument</th>\n<th>What it says about the rung above</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Constitution of India, article 245</td>\n<td>Parliament may make laws</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Digital Personal Data Protection Act, 2023, section 40(1)</td>\n<td>rules must be “not inconsistent” with the Act</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Digital Personal Data Protection Rules, 2025, G.S.R. 846(E)</td>\n<td>made “in exercise of powers conferred by” section 40</td>\n</tr>\n</tbody>\n</table>\n<p>Now try the same climb on a decision you met in the last section. Open the release of 13 May 2026 on minimum support prices (https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260617). Search it for “Act”, then “section”, then “article”. None appears. The release says the Cabinet Committee on Economic Affairs “has approved” the prices. It names no <dfn data-g=\"401\">statute</dfn>.</p>\n<p>That does not make the decision baseless. It tells you which ladder to climb. When a decision names no Act, look at executive power. Article 73 extends the Union’s executive power “to the matters with respect to which Parliament has power to make laws”. Read those words slowly: “has power to make laws”, not “has made laws”. The government can act in that field by its own decision, within the limits the Constitution sets (one of them is in the must-know points below). Which field minimum support prices fall in is a question about subjects, and it waits for the next section.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The ladder shows where a power claims to come from. It does not show that the lower rung really stays inside the upper one. Whether a rule goes beyond its Act is a legal question, and the words “not inconsistent” do not answer it for you.</p>\n<p>The <dfn data-g=\"257\">minimum support price</dfn> step is a method, not a finding. A release that names no Act tells you to look at executive power. It does not prove that no Act applies. A decision can rest on a statute that its press release does not mention.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is a trap that catches careful people. An Act exists, you can download it, it has a year in its title. You quote it. It is not in force.</p>\n<p>Take the same Act. The Gazette copy says it “received the assent of the President on the 11th August, 2023”. Now read its section 1(2). It “shall come into force on such date as the Central Government may, by notification in the Official Gazette, appoint”, and “different dates may be appointed for different provisions”.</p>\n<p>So the Act was passed in 2023, and the date it starts was left for later. Now open the notification that did the switching: G.S.R. 843(E), dated 13 November 2025 (https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf). It opens “In exercise of the powers conferred by sub-section (2) of section 1”. It then sets three stages.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Stage</th>\n<th>When, in the notification’s words</th>\n<th>Some of the sections it covers</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Stage (a)</td>\n<td>the date of publication of this notification</td>\n<td>section 2, sections 18 to 26</td>\n</tr>\n<tr>\n<td>Stage (b)</td>\n<td>one year from the date of publication</td>\n<td>section 6(9)</td>\n</tr>\n<tr>\n<td>Stage (c)</td>\n<td>eighteen months from the date of publication</td>\n<td>sections 3 to 5, 7 to 17</td>\n</tr>\n</tbody>\n</table>\n<p>The notification gives no calendar dates for stages (b) and (c). Work them out yourself from the date printed on it, 13 November 2025.</p>\n<div class=\"working\">\n<p>13 November 2025, plus one year: 13 November 2026<br />\n13 November 2025, plus eighteen months: 13 May 2027</p>\n</div>\n<p>Now place today on that line. This book is written on 2 October 2026. Stage (a) is in force. On the notification’s own words, stages (b) and (c) are not yet. So a note that says “the Act requires” something in sections 3 to 17 is wrong today, though the Act was passed more than three years earlier.</p>\n<p>Here is the habit to keep. Before you write “the Act requires”, open section 1 and find the <dfn data-g=\"68\">commencement</dfn>. Then find the notification that brought the section you need into force.</p>",
+   "numberRefs": [
+    46,
+    47
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The two calendar dates are your own arithmetic from the date printed on the notification. The Gazette’s electronic copy carries a code with 14 November in it, and the notification does not say which day counts as “the date of publication”. So each date could be a day later.</p>\n<p>The status holds only for the notifications read here. A later notification could change any date. Before you rely on a stage, search for a newer notification under section 1(2).</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to answer “under what authority?” with “the government’s powers”. The answer is a named provision: an article, a section or a rule, with the body it gives the power to.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Read a notification backwards. Find the words “in exercise of the powers conferred by”, open the section they name, and then open the Act that section sits in.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An Act that has been passed is not always in force. Before you write “the Act requires”, read its commencement section and find the notification that brought your section into force.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>When a decision names no Act, look at executive power. Then ask for the order that records the decision and the body that took it.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Some matters are open to both Parliament and the State Legislatures. On those, do not assume the Union can act inside a State by executive decision. The proviso to article 73 says it cannot, unless the Constitution or an Act of Parliament expressly provides for it.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Write “X has power under Y”. Do not write “X can lawfully do Z” unless a source says so.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, list the rungs of the <dfn data-g=\"57\">chain of authority</dfn> from the top. Then name the two articles of the Constitution that set how far executive power reaches, and say which government each is for.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>First the Constitution. Then an Act of Parliament or of a State Legislature. Then a rule or regulation, made under a section of an Act. Last, a notification or order, issued under a provision.</p>\n<p>Article 73 sets how far the executive power of the Union reaches: to the matters Parliament has power to make laws on. Article 162 does the same for a State: to the matters its Legislature has power to make laws on.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here are the opening words of notification G.S.R. 843(E) of 13 November 2025:</p>\n<blockquote>\n<p>In exercise of the powers conferred by sub-section (2) of section 1 of the Digital Personal Data Protection Act, 2023 (22 of 2023), the Central Government hereby appoints —</p>\n</blockquote>\n<p>“22 of 2023” is the Act’s number: Act No. 22 of that year.</p>\n<p>Name the body acting, the provision it acts under, and the Act. Then say what you must open next to check that the provision gives this body this power, and what the opening words alone cannot tell you.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The body acting is the Central Government. The provision is section 1(2). The Act is the Digital Personal Data Protection Act, 2023, Act 22 of 2023.</p>\n<p>Open section 1(2) of the Act next. It leaves the date the Act starts to the Central Government, by notification in the Gazette. It also lets different provisions start on different dates. So the provision does give this body the power to set the dates by notification.</p>\n<p>The opening words cannot tell you which sections came into force on which date. That is in clauses (a) to (c) further down. They also cannot tell you whether a later notification has changed those dates.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Here is a made-up line from a classmate’s draft note. “The Digital Personal Data Protection Act was passed in 2023. Since then, every school health app in Chhattisgarh has been bound by sections 3 to 17.” Find the error and fix the sentence.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The note treats an Act that has been passed as an Act in force. Section 1(2) leaves the starting date to the Central Government, by notification, and allows different dates for different provisions.</p>\n<p>Notification G.S.R. 843(E) of 13 November 2025 brings most of sections 3 to 17 into force only eighteen months from the date of publication. Counting from 13 November 2025, that is 13 May 2027. Section 6(9) comes in after one year. So on 2 October 2026 these sections were not in force, on the notification’s own words.</p>\n<p>The error looks reasonable because the Act carries “2023” in its title and can be downloaded. A title year is the year of passing, not the year of starting.</p>\n<p>A fixed sentence: “The Act was passed in 2023. Under notification G.S.R. 843(E), most of sections 3 to 17 come into force eighteen months after 13 November 2025.” Whether a school health app falls within the Act at all is a separate question that the note would have to check.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Another of your department’s proposals is a warning label on packaged foods high in sugar, salt or fat. The previous section traced the jobs for a food regulation. Write the one sentence your note should use to answer “who would decide, and under what authority?” Use only what the earlier sections and this one have shown.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>“The Food Safety and Standards Authority of India would decide. It would make a regulation under section 92(1) of the Food Safety and Standards Act, 2006. It needs the Central Government’s previous approval, and the draft must be published first. The regulation is made by notification.”</p>\n<p>The answer names the body, the provision, the Act, the second body whose approval is needed, and the kind of instrument. It does not claim that the Authority will act, or what the label would say. Those are separate questions. That a warning label is a matter on which the Authority may make regulations is a further step this answer has not checked.</p>"
+  }
+ ]
+}

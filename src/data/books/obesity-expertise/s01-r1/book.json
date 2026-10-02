@@ -1,0 +1,2787 @@
+{
+ "format": 1,
+ "id": "S01-R1",
+ "slug": "s01-r1",
+ "url": "/doctors/books/obesity-expertise/s01-r1/",
+ "series": "Obesity Expertise",
+ "number": 1,
+ "title": "Energy balance and dynamic weight-change modelling · Rung 1",
+ "subtitle": "Why energy balance is arithmetically true and practically insufficient",
+ "coverLine": "The accounting identity, its units, and why it is not a lever",
+ "subject": "S01",
+ "level": "Introductory",
+ "part": "Physical and mathematical foundations",
+ "hue": 212,
+ "colours": {
+  "ink": "#14365d",
+  "accent": "#1f61ad",
+  "accent2": "#3f1dc9",
+  "tint": "#eff4fb",
+  "tint2": "#d7e5f4",
+  "rule": "#b5cae3"
+ },
+ "version": "1.2",
+ "date": "2026-09-24",
+ "author": "Dr. Harsh Maheshwari",
+ "licence": "CC BY-NC-SA 4.0",
+ "pdf": "https://files.drharshmaheshwari.com/books/obesity-expertise/S01-R1-v1.2.pdf",
+ "figureBase": "https://files.drharshmaheshwari.com/books/obesity-expertise/figures/",
+ "about": {
+  "why": "<p>Every claim about body weight passes, sooner or later, through energy balance. This book teaches the one piece of physics that no argument about obesity is allowed to break: body fat is stored chemical energy, energy is conserved, so fat changes only when what comes in differs from what goes out. It also teaches why that true sentence is not an instruction: intake and expenditure are outputs of a regulated body, not dials you set.</p>",
+  "howToRead": "<p>Read Book 0 first, or at least the sections this book names as it goes. Then read this one in order: each section assumes everything before it. Do every exercise before you read on.</p>",
+  "prerequisites": null
+ },
+ "blurb": "A short book on the first law of thermodynamics as it applies to a human body: what a kilocalorie is, how large a day of eating, a day of spending and a kilogram of fat are, how to spot a claim that breaks conservation of energy, and why \"eat less\" does not follow from \"energy is conserved\".",
+ "requires": [
+  "B0"
+ ],
+ "words": 16425,
+ "outline": [
+  {
+   "id": "R1",
+   "title": "Rung 1 · Introductory",
+   "sections": [
+    {
+     "id": "s01-r1-c01",
+     "label": "1",
+     "title": "Body fat as stored chemical energy; fat mass and fat-free mass",
+     "words": 457,
+     "practice": 0
+    },
+    {
+     "id": "s01-r1-c02",
+     "label": "2",
+     "title": "How much energy a kilogram of body fat holds",
+     "words": 2986,
+     "practice": 10
+    },
+    {
+     "id": "s01-r1-c03",
+     "label": "3",
+     "title": "A day of intake and a day of expenditure: the sizes",
+     "words": 1447,
+     "practice": 1
+    },
+    {
+     "id": "s01-r1-c04",
+     "label": "4",
+     "title": "What expenditure is made of, and why a bigger body spends more",
+     "words": 949,
+     "practice": 1
+    },
+    {
+     "id": "s01-r1-c05",
+     "label": "5",
+     "title": "The accounting identity for a body",
+     "words": 2570,
+     "practice": 9
+    },
+    {
+     "id": "s01-r1-c06",
+     "label": "6",
+     "title": "The first law for a body in one sentence, without a lever",
+     "words": 851,
+     "practice": 1
+    },
+    {
+     "id": "s01-r1-c07",
+     "label": "7",
+     "title": "Sizing an imbalance, and the static rule",
+     "words": 2516,
+     "practice": 10
+    },
+    {
+     "id": "s01-r1-c08",
+     "label": "8",
+     "title": "Spotting a claim that breaks conservation",
+     "words": 2813,
+     "practice": 10
+    },
+    {
+     "id": "s01-r1-c09",
+     "label": "9",
+     "title": "Intake and expenditure are outputs of a regulated system",
+     "words": 903,
+     "practice": 1
+    },
+    {
+     "id": "s01-r1-c10",
+     "label": "10",
+     "title": "Arithmetically true, practically insufficient",
+     "words": 933,
+     "practice": 2
+    }
+   ]
+  }
+ ],
+ "references": [
+  {
+   "part": "",
+   "items": [
+    {
+     "n": 1,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. § 24.3 Lipid Metabolism, the paragraph on chylomicrons. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 2,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. § 24.3 Lipid Metabolism, the closing paragraph on lipogenesis. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 3,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Energy density of fat mass change, the paragraph on adipose tissue. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 4,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Energy density of fat mass change, the paragraph before it, on the Forbes equation. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 5,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Opening paragraphs, on what an energy deficit draws on. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 6,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Figure 1 caption. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 7,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Resting Energy Expenditure, first paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 8,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Components of Daily Energy Expenditure, opening sentence. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 9,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Resting Energy Expenditure, first paragraph, on obesity. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 10,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Energy density of fat mass change, the paragraph on adipose tissue, next sentence. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 11,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. § 23.6 Accessory Organs in Digestion, the paragraph on hepatocytes. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 12,
+     "html": "National Institute of Standards and Technology. Guide for the Use of the International System of Units (SI), NIST Special Publication 811, Appendix B.8 and Footnotes. The avoirdupois pound: 0.453 592 37 kg exactly. Footnotes page updated 18 August 2025. Footnotes page, the pound footnote. NIST. <a href=\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes\" class=\"uri\">https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 13,
+     "html": "Food and Agriculture Organization of the United Nations. Food energy — methods of analysis and conversion factors. 2003. ch. 3, s.3.5.1, the Atwater general factor system. <a href=\"https://www.fao.org/4/y5022e/y5022e04.htm\" class=\"uri\">https://www.fao.org/4/y5022e/y5022e04.htm</a>."
+    },
+    {
+     "n": 14,
+     "html": "Food and Agriculture Organization of the United Nations. Food energy — methods of analysis and conversion factors. 2003. ch. 3, s.3.5.1, footnote 9, on the rounded kilojoule values. <a href=\"https://www.fao.org/4/y5022e/y5022e04.htm\" class=\"uri\">https://www.fao.org/4/y5022e/y5022e04.htm</a>."
+    },
+    {
+     "n": 15,
+     "html": "Food and Agriculture Organization of the United Nations. Food energy — methods of analysis and conversion factors. 2003. ch. 3, s.3.5.1, the Atwater general factor system, on what the factors correct for. <a href=\"https://www.fao.org/4/y5022e/y5022e04.htm\" class=\"uri\">https://www.fao.org/4/y5022e/y5022e04.htm</a>."
+    },
+    {
+     "n": 16,
+     "html": "Food and Agriculture Organization of the United Nations. Food energy — methods of analysis and conversion factors. 2003. ch. 3, s.3.2, on why not all combustible energy is available. <a href=\"https://www.fao.org/4/y5022e/y5022e04.htm\" class=\"uri\">https://www.fao.org/4/y5022e/y5022e04.htm</a>."
+    },
+    {
+     "n": 17,
+     "html": "Food and Agriculture Organization of the United Nations. Food energy — methods of analysis and conversion factors. 2003. ch. 3, s.3.2, the next sentence but one. <a href=\"https://www.fao.org/4/y5022e/y5022e04.htm\" class=\"uri\">https://www.fao.org/4/y5022e/y5022e04.htm</a>."
+    },
+    {
+     "n": 18,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Opening paragraphs, on the energy densities of glycogen, protein and fat. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 19,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Introduction, on the origin of the classic weight-loss rule. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 20,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Energy density of fat mass change against adipose tissue, on why the change in body fat is not the loss of adipose tissue. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 21,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Introduction, opening sentence stating the classic rule. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 22,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Glycogen, protein and water, closing sentence of that section. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 23,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Energy density of lean mass change, on why it is not lean tissue as a whole. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 24,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Introduction, the sentence after the origin of the rule. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 25,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Abstract, closing sentence, on where the rule fits the data. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 26,
+     "html": "Bureau International des Poids et Mesures. The International System of Units (SI): Prefixes. The table of SI prefixes, as extended by CGPM Resolution 3 (2022). The SI prefixes table. BIPM. <a href=\"https://www.bipm.org/en/measurement-units/si-prefixes\" class=\"uri\">https://www.bipm.org/en/measurement-units/si-prefixes</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 27,
+     "html": "National Institute of Standards and Technology. Guide for the Use of the International System of Units (SI), NIST Special Publication 811, Footnotes. Page updated 18 August 2025. Carries the exact definitions of the thermochemical and International Table calorie. Footnotes, the paragraph fixing the thermochemical calorie. NIST. <a href=\"https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes\" class=\"uri\">https://www.nist.gov/pml/special-publication-811/nist-guide-si-footnotes</a> (accessed 2026-09-22)."
+    },
+    {
+     "n": 28,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. Chapter 2 page, glossary, physical activity level. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 29,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. Chapter 2 page, glossary, basal metabolic rate. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 30,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. Chapter 5 page, PAL, the worked example under Table 5.1, sedentary or light activity. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 31,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. Chapter 5 page, PAL, the worked example under Table 5.1, active or moderately active. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 32,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. Chapter 5 page, PAL, the worked example under Table 5.1, vigorous or vigorously active. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 33,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. Chapter 2 page, glossary, doubly labelled water. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 34,
+     "html": "ICMR-National Institute of Nutrition. A Brief Note on Nutrient Requirements for Indians, the Recommended Dietary Allowances (RDA) and the Estimated Average Requirements (EAR). ICMR-NIN’s summary of its 2020 report, not the full report. Energy method and adult energy requirement tables quoted. Table 1a, Adult Men rows. <a href=\"https://www.nin.res.in/rdabook/brief_note.pdf\" class=\"uri\">https://www.nin.res.in/rdabook/brief_note.pdf</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 35,
+     "html": "ICMR-National Institute of Nutrition. A Brief Note on Nutrient Requirements for Indians, the Recommended Dietary Allowances (RDA) and the Estimated Average Requirements (EAR). ICMR-NIN’s summary of its 2020 report, not the full report. Energy method and adult energy requirement tables quoted. Table 1a, Adult Women rows. <a href=\"https://www.nin.res.in/rdabook/brief_note.pdf\" class=\"uri\">https://www.nin.res.in/rdabook/brief_note.pdf</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 36,
+     "html": "ICMR-National Institute of Nutrition. A Brief Note on Nutrient Requirements for Indians, the Recommended Dietary Allowances (RDA) and the Estimated Average Requirements (EAR). ICMR-NIN’s summary of its 2020 report, not the full report. Energy method and adult energy requirement tables quoted. Table 1b, adult rows (body weight kg, kcal/d, kcal/kg/day). <a href=\"https://www.nin.res.in/rdabook/brief_note.pdf\" class=\"uri\">https://www.nin.res.in/rdabook/brief_note.pdf</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 37,
+     "html": "ICMR-National Institute of Nutrition. A Brief Note on Nutrient Requirements for Indians, the Recommended Dietary Allowances (RDA) and the Estimated Average Requirements (EAR). ICMR-NIN’s summary of its 2020 report, not the full report. Energy method and adult energy requirement tables quoted. Table 1b, footnote *. <a href=\"https://www.nin.res.in/rdabook/brief_note.pdf\" class=\"uri\">https://www.nin.res.in/rdabook/brief_note.pdf</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 38,
+     "html": "ICMR-National Institute of Nutrition. A Brief Note on Nutrient Requirements for Indians, the Recommended Dietary Allowances (RDA) and the Estimated Average Requirements (EAR). ICMR-NIN’s summary of its 2020 report, not the full report. Energy method and adult energy requirement tables quoted. Recommendation on energy requirement, opening sentence. <a href=\"https://www.nin.res.in/rdabook/brief_note.pdf\" class=\"uri\">https://www.nin.res.in/rdabook/brief_note.pdf</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 39,
+     "html": "ICMR-National Institute of Nutrition. A Brief Note on Nutrient Requirements for Indians, the Recommended Dietary Allowances (RDA) and the Estimated Average Requirements (EAR). ICMR-NIN’s summary of its 2020 report, not the full report. Energy method and adult energy requirement tables quoted. Recommendation on energy requirement, physical activity level paragraph. <a href=\"https://www.nin.res.in/rdabook/brief_note.pdf\" class=\"uri\">https://www.nin.res.in/rdabook/brief_note.pdf</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 40,
+     "html": "ICMR-National Institute of Nutrition. A Brief Note on Nutrient Requirements for Indians, the Recommended Dietary Allowances (RDA) and the Estimated Average Requirements (EAR). ICMR-NIN’s summary of its 2020 report, not the full report. Energy method and adult energy requirement tables quoted. Recommendation on energy requirement, BMR paragraph. <a href=\"https://www.nin.res.in/rdabook/brief_note.pdf\" class=\"uri\">https://www.nin.res.in/rdabook/brief_note.pdf</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 41,
+     "html": "National Statistics Office. Nutritional Intake in India (2022-23 &amp; 2023-24). 2025. Chapter Two, 2.9.6.0, how household intake of energy is calculated. <a href=\"https://www.mospi.gov.in/sites/default/files/publication_reports/Nutritional_Intake_in_India_L.pdf\" class=\"uri\">https://www.mospi.gov.in/sites/default/files/publication_reports/Nutritional_Intake_in_India_L.pdf</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 42,
+     "html": "National Statistics Office. Nutritional Intake in India (2022-23 &amp; 2023-24). 2025. Chapter Two, 2.9.6.0, what the conversion table gives, and the caution. <a href=\"https://www.mospi.gov.in/sites/default/files/publication_reports/Nutritional_Intake_in_India_L.pdf\" class=\"uri\">https://www.mospi.gov.in/sites/default/files/publication_reports/Nutritional_Intake_in_India_L.pdf</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 43,
+     "html": "National Statistics Office. Nutritional Intake in India (2022-23 &amp; 2023-24). 2025. Table 3.1, All-India row, 2023-24. <a href=\"https://www.mospi.gov.in/sites/default/files/publication_reports/Nutritional_Intake_in_India_L.pdf\" class=\"uri\">https://www.mospi.gov.in/sites/default/files/publication_reports/Nutritional_Intake_in_India_L.pdf</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 44,
+     "html": "National Statistics Office. Nutritional Intake in India (2022-23 &amp; 2023-24). 2025. Chapter Three, 3.1.1.0, per consumer unit against per capita. <a href=\"https://www.mospi.gov.in/sites/default/files/publication_reports/Nutritional_Intake_in_India_L.pdf\" class=\"uri\">https://www.mospi.gov.in/sites/default/files/publication_reports/Nutritional_Intake_in_India_L.pdf</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 45,
+     "html": "Polidori, David and Sanghvi, Arjun and Seeley, Randy J and Hall, Kevin D. How strongly does appetite counter weight loss? Quantification of the feedback control of human energy intake. 2016. Introduction, on self-reported intake. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 46,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. § 24.6 Energy and Heat Balance, the metabolic rate paragraph. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 47,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. Chapter 2 page, components of energy requirements, basal metabolism. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 48,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. Chapter 2 page, components of energy requirements, metabolic response to food. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 49,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. Chapter 2 page, components of energy requirements, physical activity. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 50,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Components of Daily Energy Expenditure, Thermic Effect of Food paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 51,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Components of Daily Energy Expenditure, Resting Energy Expenditure paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 52,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Components of Daily Energy Expenditure, Physical Activity Expenditure paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 53,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Components of Daily Energy Expenditure, Physical Activity Expenditure paragraph, on weight loss. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 54,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. § 24.1 Overview of Metabolic Reactions, the paragraph on catabolic and anabolic balance. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 55,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. § 5.1 Energy Basics, the paragraph naming the law of conservation of energy. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 56,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. opening paragraphs, the sentence introducing the energy-balance framework. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 57,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. opening paragraphs, the two sentences on energy balance and causal explanation. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 58,
+     "html": "Thomas, Diana M and Martin, Corby K and Lettieri, Steven and Bredlau, Carl and Kaiser, Kathryn and Church, Timothy and Bouchard, Claude and Heymsfield, Steven B. Can a weight loss of one pound a week be achieved with a 3500-kcal deficit? Commentary on a commonly accepted rule. 2013. Introduction, first paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4024447/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC4024447/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 59,
+     "html": "Hall, Kevin D and Sacks, Gary and Chandramohan, Dhruva and Chow, Carson C and Wang, Y Claire and Gortmaker, Steven L and Swinburn, Boyd A. Quantification of the effect of energy imbalance on bodyweight. PMID 21872751, PMC3880593 (NIH author manuscript). Quoted from the author manuscript text. Introduction, second paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3880593/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC3880593/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 60,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Opening paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 61,
+     "html": "Betts, J. Gordon and Young, Kelly A. and Wise, James A. and Johnson, Eddie and Poe, Brandon and Kruse, Dean H. and Korol, Oksana and Johnson, Jody E. and Womble, Mark and DeSaix, Peter. Anatomy and Physiology 2e. 2022. § 24.7 Nutrition and Diet, the paragraph stating the calorie rule. <a href=\"https://openstax.org/books/anatomy-and-physiology-2e\" class=\"uri\">https://openstax.org/books/anatomy-and-physiology-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 62,
+     "html": "Thomas, Diana M and Martin, Corby K and Lettieri, Steven and Bredlau, Carl and Kaiser, Kathryn and Church, Timothy and Bouchard, Claude and Heymsfield, Steven B. Can a weight loss of one pound a week be achieved with a 3500-kcal deficit? Commentary on a commonly accepted rule. 2013. figures quoted in the text. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4024447/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC4024447/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 63,
+     "html": "Hall, Kevin D and Sacks, Gary and Chandramohan, Dhruva and Chow, Carson C and Wang, Y Claire and Gortmaker, Steven L and Swinburn, Boyd A. Quantification of the effect of energy imbalance on bodyweight. PMID 21872751, PMC3880593 (NIH author manuscript). Quoted from the author manuscript text. figures quoted in the text. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3880593/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC3880593/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 64,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. figures quoted in the text. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 65,
+     "html": "Urone, Paul Peter and Hinrichs, Roger. College Physics 2e. 2022. § 7.6 Conservation of Energy, the law as printed under the heading Law of Conservation of Energy. <a href=\"https://openstax.org/books/college-physics-2e\" class=\"uri\">https://openstax.org/books/college-physics-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 66,
+     "html": "Hall, Kevin D and Sacks, Gary and Chandramohan, Dhruva and Chow, Carson C and Wang, Y Claire and Gortmaker, Steven L and Swinburn, Boyd A. Quantification of the effect of energy imbalance on bodyweight. PMID 21872751, PMC3880593 (NIH author manuscript). Quoted from the author manuscript text. Panel, “Does diet composition matter?”, first paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3880593/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC3880593/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 67,
+     "html": "Hall, Kevin D and Sacks, Gary and Chandramohan, Dhruva and Chow, Carson C and Wang, Y Claire and Gortmaker, Steven L and Swinburn, Boyd A. Quantification of the effect of energy imbalance on bodyweight. PMID 21872751, PMC3880593 (NIH author manuscript). Quoted from the author manuscript text. Panel, “Does diet composition matter?”, first paragraph, the sentence after the one above. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3880593/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC3880593/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 68,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Opening paragraphs, the sentence before the energy densities. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 69,
+     "html": "Hall, Kevin D. What is the required energy deficit per unit weight loss?. PMID 17848938, PMC2376744 (NIH author manuscript NIHMS47767). Quoted from the author manuscript. Glycogen, protein and water, first paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC2376744/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 70,
+     "html": "Federal Trade Commission. Gut Check: A Reference Guide for Media on Spotting False Weight Loss Claims. 2014. The 7 Gut Check Claims, Claim 1 and its explanation. US Federal Trade Commission, business guidance. <a href=\"https://www.ftc.gov/business-guidance/resources/gut-check-reference-guide-media-spotting-false-weight-loss-claims\" class=\"uri\">https://www.ftc.gov/business-guidance/resources/gut-check-reference-guide-media-spotting-false-weight-loss-claims</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 71,
+     "html": "Federal Trade Commission. Gut Check: A Reference Guide for Media on Spotting False Weight Loss Claims. 2014. Claim #7, the explanation. US Federal Trade Commission, business guidance. <a href=\"https://www.ftc.gov/business-guidance/resources/gut-check-reference-guide-media-spotting-false-weight-loss-claims\" class=\"uri\">https://www.ftc.gov/business-guidance/resources/gut-check-reference-guide-media-spotting-false-weight-loss-claims</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 72,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. Chapter 5 page, Table 5.2 (Schofield BMR equations), Males, rows 18-30 and 30-60; kcal/day column, kg = body weight. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 73,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. Chapter 5 page, Table 5.2 (Schofield BMR equations), Females, rows 18-30 and 30-60; kcal/day column, kg = body weight. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 74,
+     "html": "Federal Trade Commission. Gut Check: A Reference Guide for Media on Spotting False Weight Loss Claims. 2014. figures quoted in the text. US Federal Trade Commission, business guidance. <a href=\"https://www.ftc.gov/business-guidance/resources/gut-check-reference-guide-media-spotting-false-weight-loss-claims\" class=\"uri\">https://www.ftc.gov/business-guidance/resources/gut-check-reference-guide-media-spotting-false-weight-loss-claims</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 75,
+     "html": "FAO/WHO/UNU. Human energy requirements. 2004. figures quoted in the text. <a href=\"https://www.fao.org/4/y5686e/y5686e00.htm\" class=\"uri\">https://www.fao.org/4/y5686e/y5686e00.htm</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 76,
+     "html": "Rosenbaum, Michael and Leibel, Rudolph L. Adaptive thermogenesis in humans. PMID 20935667, PMC3673773 (NIH author manuscript). Quoted from the author manuscript text. Metabolic responses to attempts to sustain weight loss: Energy expenditure, first paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3673773/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC3673773/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 77,
+     "html": "Polidori, David and Sanghvi, Arjun and Seeley, Randy J and Hall, Kevin D. How strongly does appetite counter weight loss? Quantification of the feedback control of human energy intake. 2016. Abstract, Results sentence. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 78,
+     "html": "Polidori, David and Sanghvi, Arjun and Seeley, Randy J and Hall, Kevin D. How strongly does appetite counter weight loss? Quantification of the feedback control of human energy intake. 2016. Results, paragraph on the strength of energy intake feedback control. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 79,
+     "html": "Polidori, David and Sanghvi, Arjun and Seeley, Randy J and Hall, Kevin D. How strongly does appetite counter weight loss? Quantification of the feedback control of human energy intake. 2016. Discussion, limitations paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 80,
+     "html": "Polidori, David and Sanghvi, Arjun and Seeley, Randy J and Hall, Kevin D. How strongly does appetite counter weight loss? Quantification of the feedback control of human energy intake. 2016. Discussion, limitations paragraph on group means. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 81,
+     "html": "Polidori, David and Sanghvi, Arjun and Seeley, Randy J and Hall, Kevin D. How strongly does appetite counter weight loss? Quantification of the feedback control of human energy intake. 2016. Results, paragraph on the trial’s weight and energy intake changes. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 82,
+     "html": "Polidori, David and Sanghvi, Arjun and Seeley, Randy J and Hall, Kevin D. How strongly does appetite counter weight loss? Quantification of the feedback control of human energy intake. 2016. Discussion, paragraph on the range of weight losses. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 83,
+     "html": "Polidori, David and Sanghvi, Arjun and Seeley, Randy J and Hall, Kevin D. How strongly does appetite counter weight loss? Quantification of the feedback control of human energy intake. 2016. Introduction, paragraph on self-reported intake. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 84,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Opening paragraphs, third paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 85,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Static, Settling Point, and Set-Point Models, first paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 86,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Influence of Energy Intake on Energy Expenditure, first paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 87,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Feedback Control of Energy Intake, last paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 88,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Static, Settling Point, and Set-Point Models, closing paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 89,
+     "html": "Rosenbaum, Michael and Leibel, Rudolph L. Adaptive thermogenesis in humans. PMID 20935667, PMC3673773 (NIH author manuscript). Quoted from the author manuscript text. figures quoted in the text. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3673773/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC3673773/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 90,
+     "html": "Polidori, David and Sanghvi, Arjun and Seeley, Randy J and Hall, Kevin D. How strongly does appetite counter weight loss? Quantification of the feedback control of human energy intake. 2016. figures quoted in the text. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 91,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. figures quoted in the text. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 92,
+     "html": "Flowers, Paul and Theopold, Klaus and Langley, Richard and Robinson, William R. Chemistry 2e. 2019. 5.1 Energy Basics, paragraph on the law of conservation of energy. <a href=\"https://openstax.org/books/chemistry-2e\" class=\"uri\">https://openstax.org/books/chemistry-2e</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 93,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Opening paragraphs, second and third paragraphs. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 94,
+     "html": "Hall, Kevin D and Guo, Juen. Obesity energetics: body weight regulation and the effects of diet composition. PMID 28193517, PMC5568065 (NIH author manuscript). Quoted from the author manuscript text. Opening paragraphs, third paragraph, opening sentence. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/</a> (accessed 2026-09-23)."
+    },
+    {
+     "n": 95,
+     "html": "Polidori, David and Sanghvi, Arjun and Seeley, Randy J and Hall, Kevin D. How strongly does appetite counter weight loss? Quantification of the feedback control of human energy intake. 2016. Discussion, summary paragraph. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/\" class=\"uri\">https://pmc.ncbi.nlm.nih.gov/articles/PMC5108589/</a> (accessed 2026-09-23)."
+    }
+   ],
+   "note": null
+  }
+ ],
+ "glossary": [
+  {
+   "term": "absorption",
+   "senses": [
+    {
+     "term": "absorption",
+     "plain": "a molecule passing through the wall of the gut and into the blood",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "accounting identity",
+   "senses": [
+    {
+     "term": "accounting identity (for a body)",
+     "plain": "the change in body energy stores over an interval equals the energy intake minus the energy expenditure over that same interval",
+     "where": "Book 1, section 5"
+    }
+   ]
+  },
+  {
+   "term": "accuracy",
+   "senses": [
+    {
+     "term": "accuracy",
+     "plain": "how close a measured value comes to the true value",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "Act",
+   "senses": [
+    {
+     "term": "Act",
+     "plain": "the name each statute passed by Parliament or a State Legislature is called by",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "adaptive part",
+   "senses": [
+    {
+     "term": "adaptive part (of the fall in expenditure)",
+     "plain": "the extra fall in expenditure after a weight loss, beyond what the loss of fat and lean mass alone accounts for",
+     "where": "Book 1, section 9"
+    }
+   ]
+  },
+  {
+   "term": "adipocyte",
+   "senses": [
+    {
+     "term": "adipocyte",
+     "plain": "a fat cell",
+     "where": "Book 1, section 1"
+    }
+   ]
+  },
+  {
+   "term": "adipose tissue",
+   "senses": [
+    {
+     "term": "adipose tissue",
+     "plain": "the tissue whose cells hold triglyceride until it is needed",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "adopted requirement",
+   "senses": [
+    {
+     "term": "adopted requirement",
+     "plain": "a number a body of experts has set, not measured in the person in front of you",
+     "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "ADP",
+   "senses": [
+    {
+     "term": "ADP",
+     "plain": "what is left when ATP&#x27;s last phosphate group is knocked off: the same molecule, one phosphate short",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "alimentary canal",
+   "senses": [
+    {
+     "term": "alimentary canal",
+     "plain": "the gut tube",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "allele",
+   "senses": [
+    {
+     "term": "allele",
+     "plain": "one of the versions a gene comes in",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "alpha cell",
+   "senses": [
+    {
+     "term": "alpha cell",
+     "plain": "the islet cell that makes glucagon",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "amendment",
+   "senses": [
+    {
+     "term": "amendment",
+     "plain": "a later change stitched into the law",
+     "where": "Book 0, F3"
+    }
+   ]
+  },
+  {
+   "term": "amino acid",
+   "senses": [
+    {
+     "term": "amino acid",
+     "plain": "one of a small fixed set of kinds of link a protein chain is built from",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "amount-of-substance concentration",
+   "senses": [
+    {
+     "term": "amount-of-substance concentration",
+     "plain": "an amount of substance in a volume, such as millimoles per litre (mmol/L): it says how many",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "anabolism",
+   "senses": [
+    {
+     "term": "anabolism",
+     "plain": "reactions that join small molecules into bigger ones, which costs energy",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "at random",
+   "senses": [
+    {
+     "term": "at random",
+     "plain": "every member has exactly the same chance of being the one you pick",
+     "where": "Book 0, D1"
+    }
+   ]
+  },
+  {
+   "term": "atom",
+   "senses": [
+    {
+     "term": "atom",
+     "plain": "a tiny heavy centre with much lighter electrons around it",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "ATP",
+   "senses": [
+    {
+     "term": "ATP",
+     "plain": "adenosine triphosphate, the small molecule a cell uses to carry energy from one reaction to another",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "Atwater general factors",
+   "senses": [
+    {
+     "term": "Atwater general factors",
+     "plain": "one fixed energy value for each of protein, fat and carbohydrate, used whatever the food",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "average rate of change",
+   "senses": [
+    {
+     "term": "average rate of change",
+     "plain": "the change between the two ends of an interval divided by its length; it uses nothing in between",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "basal metabolic rate",
+   "senses": [
+    {
+     "term": "basal metabolic rate (BMR)",
+     "plain": "the energy spent lying at rest after a fast",
+     "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "base ten",
+   "senses": [
+    {
+     "term": "base ten",
+     "plain": "the counting system in which each place is worth ten times the place to its right",
+     "where": "Book 0, A1"
+    }
+   ]
+  },
+  {
+   "term": "base unit",
+   "senses": [
+    {
+     "term": "base unit",
+     "plain": "one of the seven units the SI builds on: the second, metre, kilogram, ampere, kelvin, mole and candela",
+     "where": "Book 0, B1"
+    }
+   ]
+  },
+  {
+   "term": "beta cell",
+   "senses": [
+    {
+     "term": "beta cell",
+     "plain": "the islet cell that makes insulin",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "bile",
+   "senses": [
+    {
+     "term": "bile",
+     "plain": "what the liver makes to break a large blob of fat into many tiny ones",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "blood sugar",
+   "senses": [
+    {
+     "term": "blood sugar (blood glucose)",
+     "plain": "the glucose in the blood",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "body mass index",
+   "senses": [
+    {
+     "term": "body mass index (BMI)",
+     "plain": "a person&#x27;s mass in kilograms divided by the square of their height in metres, in kg/m^2",
+     "where": "Book 0, B6"
+    }
+   ]
+  },
+  {
+   "term": "bomb calorimeter",
+   "senses": [
+    {
+     "term": "bomb calorimeter",
+     "plain": "a sealed steel pot in a water tank, used to burn a weighed sample",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "breaks conservation",
+   "senses": [
+    {
+     "term": "breaks conservation (of a claim)",
+     "plain": "asserts a fat change that could not have happened, given the energy that could plausibly have crossed the boundary drawn round the person over the stated time",
+     "where": "Book 1, section 8"
+    }
+   ]
+  },
+  {
+   "term": "calibration",
+   "senses": [
+    {
+     "term": "calibration",
+     "plain": "measuring a machine against something already known, so its readings mean something",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "calibration weight",
+   "senses": [
+    {
+     "term": "calibration weight",
+     "plain": "a weight already checked and trusted to be correct",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "calorie",
+   "senses": [
+    {
+     "term": "calorie",
+     "plain": "a unit of energy outside the SI, whose size in joules was fixed by agreement, and two agreements are in use",
+     "where": "Book 0, B4"
+    }
+   ]
+  },
+  {
+   "term": "calorimeter",
+   "senses": [
+    {
+     "term": "calorimeter",
+     "plain": "a machine that measures energy from the temperature change it causes",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "capillaries",
+   "senses": [
+    {
+     "term": "capillaries",
+     "plain": "the smallest blood vessels",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "catabolism",
+   "senses": [
+    {
+     "term": "catabolism",
+     "plain": "reactions that break a big molecule into smaller ones and let its energy go",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "checking a reference",
+   "senses": [
+    {
+     "term": "checking a reference",
+     "plain": "four acts, each of which can fail on its own: find the source, confirm it is the source named, find the exact passage pointed to, read it to see whether it supports the claim",
+     "where": "Book 0, F3"
+    }
+   ]
+  },
+  {
+   "term": "chord",
+   "senses": [
+    {
+     "term": "chord",
+     "plain": "the straight line laid across two points on a curve, whose slope is the average rate between them",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "chromosome",
+   "senses": [
+    {
+     "term": "chromosome",
+     "plain": "one of the structures genes sit along, in a fixed order; a person gets two copies of each, one from each parent",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "combustion",
+   "senses": [
+    {
+     "term": "combustion",
+     "plain": "burning, a substance joining with oxygen",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "complementary",
+   "senses": [
+    {
+     "term": "complementary",
+     "plain": "each one completes the other; A always faces T and C always faces G",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "concentration",
+   "senses": [
+    {
+     "term": "concentration",
+     "plain": "an amount of something held in a volume of something else",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "conduction",
+   "senses": [
+    {
+     "term": "conduction",
+     "plain": "heat moving through matter that is staying put, by contact",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "conservation of energy",
+   "senses": [
+    {
+     "term": "conservation of energy",
+     "plain": "energy is never made and never destroyed; it changes form and it moves",
+     "where": "Book 0, E3"
+    }
+   ]
+  },
+  {
+   "term": "Constitution",
+   "senses": [
+    {
+     "term": "Constitution",
+     "plain": "the founding law that every statute must fit",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "consumer unit",
+   "senses": [
+    {
+     "term": "consumer unit",
+     "plain": "the survey&#x27;s per-head measure that allows for age and sex, as against a plain count per person",
+     "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "convection",
+   "senses": [
+    {
+     "term": "convection",
+     "plain": "heat moving because a liquid or a gas moves and takes it along",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "convenience sample",
+   "senses": [
+    {
+     "term": "convenience sample",
+     "plain": "whoever happens to be available",
+     "where": "Book 0, D6"
+    }
+   ]
+  },
+  {
+   "term": "conversion factor",
+   "senses": [
+    {
+     "term": "conversion factor",
+     "plain": "a fraction whose top and bottom are the same quantity written in two different units, so it is equal to one",
+     "where": "Book 0, B2"
+    }
+   ]
+  },
+  {
+   "term": "conversion table",
+   "senses": [
+    {
+     "term": "conversion table",
+     "plain": "a table giving the energy in a unit of each food",
+     "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "covalent bond",
+   "senses": [
+    {
+     "term": "covalent bond",
+     "plain": "a bond where two atoms share a pair of electrons",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "crore",
+   "senses": [
+    {
+     "term": "crore",
+     "plain": "ten million, or a hundred lakh",
+     "where": "Book 0, A1"
+    }
+   ]
+  },
+  {
+   "term": "cytoplasm",
+   "senses": [
+    {
+     "term": "cytoplasm",
+     "plain": "the watery jelly a cell is a bag of",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "decimal",
+   "senses": [
+    {
+     "term": "decimal",
+     "plain": "place value carried on past the point: tenths, then hundredths, then thousandths",
+     "where": "Book 0, A3"
+    }
+   ]
+  },
+  {
+   "term": "deficit",
+   "senses": [
+    {
+     "term": "deficit (of energy)",
+     "plain": "expenditure larger than intake; a surplus is the reverse",
+     "where": "Book 1, section 2"
+    }
+   ]
+  },
+  {
+   "term": "delta",
+   "senses": [
+    {
+     "term": "delta",
+     "plain": "the standard way of writing &quot;the change in&quot;, using the Greek letter written as a triangle",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "denominator",
+   "senses": [
+    {
+     "term": "denominator",
+     "plain": "(1) the number below the line, saying how many equal parts the whole was cut into (Book 0, A2); (2) of a percentage, what it is a percentage of (Book 0, F1)",
+     "where": "Book 0, A2, Book 0, F1"
+    }
+   ]
+  },
+  {
+   "term": "derivative",
+   "senses": [
+    {
+     "term": "derivative",
+     "plain": "the mathematicians&#x27; name for the rate at a moment, written dy/dx",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "derived unit",
+   "senses": [
+    {
+     "term": "derived unit",
+     "plain": "a unit built out of the base units by multiplying and dividing",
+     "where": "Book 0, B1"
+    }
+   ]
+  },
+  {
+   "term": "diploid",
+   "senses": [
+    {
+     "term": "diploid",
+     "plain": "holding two matching copies of each chromosome, one inherited from each parent",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "DNA",
+   "senses": [
+    {
+     "term": "DNA",
+     "plain": "the long molecule a cell&#x27;s instructions are written in",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "dominant",
+   "senses": [
+    {
+     "term": "dominant",
+     "plain": "an allele that shows whenever it is present",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "doubly labelled water",
+   "senses": [
+    {
+     "term": "doubly labelled water",
+     "plain": "the method that measures what was actually spent: a person drinks water carrying rare, stable forms of hydrogen and oxygen, and how fast they leave the body over the next 10 to 14 days gives the average energy spent",
+     "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "dynamic model",
+   "senses": [
+    {
+     "term": "dynamic model",
+     "plain": "a model built on energy balance, with expenditure allowed to change",
+     "where": "Book 1, section 7"
+    }
+   ]
+  },
+  {
+   "term": "electron",
+   "senses": [
+    {
+     "term": "electron",
+     "plain": "one of the much lighter particles in the cloud round an atom&#x27;s tiny heavy centre",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "elimination",
+   "senses": [
+    {
+     "term": "elimination",
+     "plain": "adding or subtracting the two equations, after multiplying where needed, so that one letter cancels",
+     "where": "Book 0, C3"
+    }
+   ]
+  },
+  {
+   "term": "endocrine",
+   "senses": [
+    {
+     "term": "endocrine",
+     "plain": "putting a chemical straight into the blood rather than sending it down a tube",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "endothermic",
+   "senses": [
+    {
+     "term": "endothermic",
+     "plain": "a change that takes heat in",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "energy balance",
+   "senses": [
+    {
+     "term": "energy balance",
+     "plain": "the energy inside the boundary at the end equals the energy inside at the start, plus everything that crossed in, minus everything that crossed out",
+     "where": "Book 0, E3"
+    }
+   ]
+  },
+  {
+   "term": "energy equivalent",
+   "senses": [
+    {
+     "term": "energy equivalent",
+     "plain": "how many joules one degree is worth in one particular calorimeter",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "energy expenditure",
+   "senses": [
+    {
+     "term": "energy expenditure",
+     "plain": "the energy a body burns, or spends, in a day",
+     "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "energy intake",
+   "senses": [
+    {
+     "term": "energy intake",
+     "plain": "the energy a person eats in a day",
+     "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "enzyme",
+   "senses": [
+    {
+     "term": "enzyme",
+     "plain": "a protein that makes one particular reaction go faster",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "exocrine",
+   "senses": [
+    {
+     "term": "exocrine",
+     "plain": "sending a secretion down a tube to where it is needed",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "exothermic",
+   "senses": [
+    {
+     "term": "exothermic",
+     "plain": "a change that gives heat out",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "expanding a bracket",
+   "senses": [
+    {
+     "term": "expanding a bracket",
+     "plain": "multiplying every term inside it by what stands outside",
+     "where": "Book 0, C1"
+    }
+   ]
+  },
+  {
+   "term": "exponent",
+   "senses": [
+    {
+     "term": "exponent",
+     "plain": "the small raised number that says how many copies to multiply together",
+     "where": "Book 0, A6"
+    }
+   ]
+  },
+  {
+   "term": "exponential",
+   "senses": [
+    {
+     "term": "exponential",
+     "plain": "equal steps in the input multiply the output by the same factor every time",
+     "where": "Book 0, C6"
+    }
+   ]
+  },
+  {
+   "term": "extracellular fluid",
+   "senses": [
+    {
+     "term": "extracellular fluid",
+     "plain": "the fluid around a gland&#x27;s own cells, into which it lets its hormone out",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "fat mass",
+   "senses": [
+    {
+     "term": "fat mass",
+     "plain": "the triglyceride held in adipose tissue",
+     "where": "Book 1, section 1"
+    }
+   ]
+  },
+  {
+   "term": "fat-free mass",
+   "senses": [
+    {
+     "term": "fat-free mass",
+     "plain": "everything else the body weighs; some papers call it lean body mass, or lean mass",
+     "where": "Book 1, section 1"
+    }
+   ]
+  },
+  {
+   "term": "first law of thermodynamics",
+   "senses": [
+    {
+     "term": "first law of thermodynamics",
+     "plain": "the physicists&#x27; name for one version of conservation of energy: energy is never made or destroyed, only changed in form",
+     "where": "Book 1, section 6"
+    }
+   ]
+  },
+  {
+   "term": "fraction",
+   "senses": [
+    {
+     "term": "fraction",
+     "plain": "a division that has not yet been carried out; a sum you have not done yet",
+     "where": "Book 0, A2"
+    }
+   ]
+  },
+  {
+   "term": "free energy",
+   "senses": [
+    {
+     "term": "free energy",
+     "plain": "loose energy, of which a cell cannot hold a useful amount",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "frequency table",
+   "senses": [
+    {
+     "term": "frequency table",
+     "plain": "lists each value, or each band of values, against the count of times it occurred",
+     "where": "Book 0, D4"
+    }
+   ]
+  },
+  {
+   "term": "gallbladder",
+   "senses": [
+    {
+     "term": "gallbladder",
+     "plain": "a small bag next to the liver that holds bile, concentrates it and lets it out",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "Gazette",
+   "senses": [
+    {
+     "term": "Gazette",
+     "plain": "the government&#x27;s official newspaper",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "gene",
+   "senses": [
+    {
+     "term": "gene",
+     "plain": "what fixes the order of the amino acids in one protein",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "general circulation",
+   "senses": [
+    {
+     "term": "general circulation",
+     "plain": "the blood that goes round the whole body",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "genotype",
+   "senses": [
+    {
+     "term": "genotype",
+     "plain": "what a person actually carries in their DNA, including the alleles that are not showing",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "gland",
+   "senses": [
+    {
+     "term": "gland",
+     "plain": "an organ whose job is to make something and let it out",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "glucagon",
+   "senses": [
+    {
+     "term": "glucagon",
+     "plain": "the hormone released when blood sugar is low, which empties the stores",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "glucose",
+   "senses": [
+    {
+     "term": "glucose",
+     "plain": "the single sugar a body reaches for first as fuel",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "glycogen",
+   "senses": [
+    {
+     "term": "glycogen",
+     "plain": "a great many glucose molecules strung together, kept in the liver and the muscles",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "grand total",
+   "senses": [
+    {
+     "term": "grand total",
+     "plain": "what you get when you add up everything in the table",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "gross energy",
+   "senses": [
+    {
+     "term": "gross energy",
+     "plain": "all the energy a food gives up when it is burnt to nothing, also called ingested energy",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "heat capacity",
+   "senses": [
+    {
+     "term": "heat capacity",
+     "plain": "the joules one particular object needs to go up by one degree",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "hepatic portal circulation",
+   "senses": [
+    {
+     "term": "hepatic portal circulation",
+     "plain": "the route that takes every drop of blood leaving the gut through the liver before it goes anywhere else",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "hepatic portal vein",
+   "senses": [
+    {
+     "term": "hepatic portal vein",
+     "plain": "the vein along which blood from the gut runs straight to the liver",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "hormone",
+   "senses": [
+    {
+     "term": "hormone",
+     "plain": "a chemical made in one part of the body that affects other parts some distance away",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "hydrophilic",
+   "senses": [
+    {
+     "term": "hydrophilic",
+     "plain": "water-loving: mixes with water",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "hydrophobic",
+   "senses": [
+    {
+     "term": "hydrophobic",
+     "plain": "water-hating: does not mix with water",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "inference",
+   "senses": [
+    {
+     "term": "inference",
+     "plain": "the move from the reasons to the conclusion",
+     "where": "Book 0, F4"
+    }
+   ]
+  },
+  {
+   "term": "infographic",
+   "senses": [
+    {
+     "term": "infographic",
+     "plain": "a chart decorated with pictures",
+     "where": "Book 0, F2"
+    }
+   ]
+  },
+  {
+   "term": "instantaneous rate",
+   "senses": [
+    {
+     "term": "instantaneous rate",
+     "plain": "how fast the quantity is changing at one moment: the steepness of the curve at that single point",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "insulin",
+   "senses": [
+    {
+     "term": "insulin",
+     "plain": "the hormone released when blood sugar is high, which fills the stores",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "integral",
+   "senses": [
+    {
+     "term": "integral",
+     "plain": "the total under a rate line, written with the sign ∫",
+     "where": "Book 0, C8"
+    }
+   ]
+  },
+  {
+   "term": "intercept",
+   "senses": [
+    {
+     "term": "intercept",
+     "plain": "the height of the line where the x quantity is zero",
+     "where": "Book 0, C5"
+    }
+   ]
+  },
+  {
+   "term": "International Table calorie",
+   "senses": [
+    {
+     "term": "International Table calorie",
+     "plain": "4.1868 joules, settled in 1956",
+     "where": "Book 0, B4"
+    }
+   ]
+  },
+  {
+   "term": "interquartile range",
+   "senses": [
+    {
+     "term": "interquartile range",
+     "plain": "the third quartile minus the first",
+     "where": "Book 0, D5"
+    }
+   ]
+  },
+  {
+   "term": "ion",
+   "senses": [
+    {
+     "term": "ion",
+     "plain": "an atom left carrying a charge",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "ionic bond",
+   "senses": [
+    {
+     "term": "ionic bond",
+     "plain": "a bond where one atom hands an electron to another and the opposite charges pull",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "islets",
+   "senses": [
+    {
+     "term": "islets (pancreatic islets)",
+     "plain": "the small islands of another kind of cell scattered through the pancreas, which put chemicals straight into the blood",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "joule",
+   "senses": [
+    {
+     "term": "joule",
+     "plain": "the SI unit of energy, written J",
+     "where": "Book 0, B1"
+    }
+   ]
+  },
+  {
+   "term": "kilocalorie",
+   "senses": [
+    {
+     "term": "kilocalorie",
+     "plain": "a thousand calories, the unit used for the energy in food, where it is often written just calories",
+     "where": "Book 0, B4"
+    }
+   ]
+  },
+  {
+   "term": "kilojoule",
+   "senses": [
+    {
+     "term": "kilojoule",
+     "plain": "a thousand joules; kilo means a thousand",
+     "where": "Book 0, B4"
+    }
+   ]
+  },
+  {
+   "term": "kinetic energy",
+   "senses": [
+    {
+     "term": "kinetic energy",
+     "plain": "energy a thing has because it is moving",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "lacteals",
+   "senses": [
+    {
+     "term": "lacteals",
+     "plain": "the lymph vessels of the villi, which take in what dissolves in fat",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "lakh",
+   "senses": [
+    {
+     "term": "lakh",
+     "plain": "a hundred thousand",
+     "where": "Book 0, A1"
+    }
+   ]
+  },
+  {
+   "term": "large store",
+   "senses": [
+    {
+     "term": "large store",
+     "plain": "fat: triglyceride, held in adipose tissue",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "lean body mass",
+   "senses": [
+    {
+     "term": "lean body mass",
+     "plain": "what some papers call fat-free mass",
+     "where": "Book 1, section 1"
+    }
+   ]
+  },
+  {
+   "term": "legislature",
+   "senses": [
+    {
+     "term": "legislature",
+     "plain": "the body that makes law: Parliament for the country, a State Legislature for its own state",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "ligand",
+   "senses": [
+    {
+     "term": "ligand",
+     "plain": "the molecule that fits into a protein shaped to hold it",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "lipid fraction",
+   "senses": [
+    {
+     "term": "lipid fraction",
+     "plain": "the proportion of a tissue&#x27;s mass that is fat",
+     "where": "Book 1, section 2"
+    }
+   ]
+  },
+  {
+   "term": "lipolysis",
+   "senses": [
+    {
+     "term": "lipolysis",
+     "plain": "the breakdown of stored triglycerides into free fatty acids and glycerol",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "logarithm",
+   "senses": [
+    {
+     "term": "logarithm",
+     "plain": "the power you have to raise ten to, to get the number",
+     "where": "Book 0, A7"
+    }
+   ]
+  },
+  {
+   "term": "logarithmic axis",
+   "senses": [
+    {
+     "term": "logarithmic axis",
+     "plain": "an axis on which equal distances stand for equal multiplications, not equal additions",
+     "where": "Book 0, A7"
+    }
+   ]
+  },
+  {
+   "term": "long tail",
+   "senses": [
+    {
+     "term": "long tail",
+     "plain": "the side of a distribution that thins out slowly",
+     "where": "Book 0, D4"
+    }
+   ]
+  },
+  {
+   "term": "maintenance requirement",
+   "senses": [
+    {
+     "term": "maintenance requirement",
+     "plain": "the energy it takes to keep a person at a steady weight",
+     "where": "Book 1, section 4"
+    }
+   ]
+  },
+  {
+   "term": "mass concentration",
+   "senses": [
+    {
+     "term": "mass concentration",
+     "plain": "a weight in a volume, such as milligrams per decilitre (mg/dL): it says how heavy",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "measurement bias",
+   "senses": [
+    {
+     "term": "measurement bias",
+     "plain": "an error that points one way and does not shrink when you collect more (VIM 2.18: an &quot;estimate of a systematic measurement error&quot;)",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "median",
+   "senses": [
+    {
+     "term": "median",
+     "plain": "the middle value of the set once it is ordered from smallest to largest; with an even count, the mean of the two middle values",
+     "where": "Book 0, D5"
+    }
+   ]
+  },
+  {
+   "term": "megajoule",
+   "senses": [
+    {
+     "term": "megajoule",
+     "plain": "a million joules, a thousand kilojoules; mega means 10^6, a million",
+     "where": "Book 1, section 2"
+    }
+   ]
+  },
+  {
+   "term": "metabolically active tissue",
+   "senses": [
+    {
+     "term": "metabolically active tissue",
+     "plain": "the tissue that spends most of the energy spent at rest",
+     "where": "Book 1, section 1"
+    }
+   ]
+  },
+  {
+   "term": "metabolism",
+   "senses": [
+    {
+     "term": "metabolism",
+     "plain": "the name for every chemical reaction in a body added together",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "metabolizable energy",
+   "senses": [
+    {
+     "term": "metabolizable energy",
+     "plain": "what is left of a food&#x27;s energy after the losses in faeces, gas and urine",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "millimole",
+   "senses": [
+    {
+     "term": "millimole",
+     "plain": "one thousandth of a mole",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "mitochondria",
+   "senses": [
+    {
+     "term": "mitochondria",
+     "plain": "the parts of a cell that make ATP",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "molar mass",
+   "senses": [
+    {
+     "term": "molar mass",
+     "plain": "how heavy one mole of a substance is, in grams per mole (g/mol); it belongs to the substance",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "mole",
+   "senses": [
+    {
+     "term": "mole",
+     "plain": "a fixed count of things, molecules here",
+     "where": "Book 0, B5"
+    }
+   ]
+  },
+  {
+   "term": "molecule",
+   "senses": [
+    {
+     "term": "molecule",
+     "plain": "a group of atoms held together by bonds",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "monosaccharide",
+   "senses": [
+    {
+     "term": "monosaccharide",
+     "plain": "a single sugar molecule, which is what breaking a starch gives you",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "mutually exclusive",
+   "senses": [
+    {
+     "term": "mutually exclusive",
+     "plain": "they cannot both happen",
+     "where": "Book 0, D2"
+    }
+   ]
+  },
+  {
+   "term": "negative number",
+   "senses": [
+    {
+     "term": "negative number",
+     "plain": "a number less than zero, as far below zero as the matching positive number is above it, written with a minus sign in front",
+     "where": "Book 0, A1"
+    }
+   ]
+  },
+  {
+   "term": "negative predictive value",
+   "senses": [
+    {
+     "term": "negative predictive value",
+     "plain": "the share of negative results that are right",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "net flow",
+   "senses": [
+    {
+     "term": "net flow",
+     "plain": "the inflow minus the outflow",
+     "where": "Book 0, C9"
+    }
+   ]
+  },
+  {
+   "term": "net metabolizable energy",
+   "senses": [
+    {
+     "term": "net metabolizable energy",
+     "plain": "metabolizable energy with the energy the body itself spends on digesting the food and handling it taken off",
+     "where": "Book 0, E2"
+    }
+   ]
+  },
+  {
+   "term": "notification",
+   "senses": [
+    {
+     "term": "notification",
+     "plain": "an order issued under a power a statute gives, and published in the Gazette",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "nucleotide",
+   "senses": [
+    {
+     "term": "nucleotide",
+     "plain": "the repeating unit DNA is built from: a base, a sugar and a phosphate group",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "nucleus",
+   "senses": [
+    {
+     "term": "nucleus",
+     "plain": "the compartment that holds the cell&#x27;s instructions, written in its DNA",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "numerator",
+   "senses": [
+    {
+     "term": "numerator",
+     "plain": "the number above the line, saying how many of the parts are being counted",
+     "where": "Book 0, A2"
+    }
+   ]
+  },
+  {
+   "term": "odds",
+   "senses": [
+    {
+     "term": "odds",
+     "plain": "how many times more likely the event is than its opposite: p divided by (1 minus p)",
+     "where": "Book 0, D1"
+    }
+   ]
+  },
+  {
+   "term": "order of magnitude",
+   "senses": [
+    {
+     "term": "order of magnitude",
+     "plain": "which power of ten a number is nearest to",
+     "where": "Book 0, A8"
+    }
+   ]
+  },
+  {
+   "term": "order-of-magnitude estimate",
+   "senses": [
+    {
+     "term": "order-of-magnitude estimate",
+     "plain": "every input rounded to one digit and a power of ten, the answer claimed only to the nearest power of ten; it tests a figure rather than producing one",
+     "where": "Book 0, A8"
+    }
+   ]
+  },
+  {
+   "term": "percentage",
+   "senses": [
+    {
+     "term": "percentage",
+     "plain": "a fraction whose denominator is one hundred; per cent means per hundred",
+     "where": "Book 0, A4"
+    }
+   ]
+  },
+  {
+   "term": "percentage change",
+   "senses": [
+    {
+     "term": "percentage change",
+     "plain": "the change divided by the value it started from, times one hundred",
+     "where": "Book 0, A4"
+    }
+   ]
+  },
+  {
+   "term": "percentage point",
+   "senses": [
+    {
+     "term": "percentage point",
+     "plain": "the plain difference between two percentages, as against per cent, which divides",
+     "where": "Book 0, A4"
+    }
+   ]
+  },
+  {
+   "term": "phenotype",
+   "senses": [
+    {
+     "term": "phenotype",
+     "plain": "what you can see about a person, the traits they show",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "phospholipid",
+   "senses": [
+    {
+     "term": "phospholipid",
+     "plain": "the one kind of molecule a membrane is built from, with one end that mixes with water and one that does not",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "physical activity expenditure",
+   "senses": [
+    {
+     "term": "physical activity expenditure",
+     "plain": "the energy spent moving, whether as deliberate exercise or as the ordinary movement of a day",
+     "where": "Book 1, section 4"
+    }
+   ]
+  },
+  {
+   "term": "physical activity level",
+   "senses": [
+    {
+     "term": "physical activity level (PAL)",
+     "plain": "a multiplier for how active the group is",
+     "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "pie chart",
+   "senses": [
+    {
+     "term": "pie chart",
+     "plain": "a circle standing for a whole, each slice&#x27;s share of the circle being its share of the total",
+     "where": "Book 0, F2"
+    }
+   ]
+  },
+  {
+   "term": "place value",
+   "senses": [
+    {
+     "term": "place value",
+     "plain": "what a digit is worth because of where it sits",
+     "where": "Book 0, A1"
+    }
+   ]
+  },
+  {
+   "term": "plasma membrane",
+   "senses": [
+    {
+     "term": "plasma membrane",
+     "plain": "the skin round a cell, which decides what gets in and what stays out",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "polysaccharide",
+   "senses": [
+    {
+     "term": "polysaccharide",
+     "plain": "a chain of single sugar molecules, such as starch",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "positive predictive value",
+   "senses": [
+    {
+     "term": "positive predictive value",
+     "plain": "the share of positive results that are right, written P(condition present given test positive)",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "potential energy",
+   "senses": [
+    {
+     "term": "potential energy",
+     "plain": "energy a thing has because of where it is, what it is made of, or what state it is in",
+     "where": "Book 0, E1"
+    }
+   ]
+  },
+  {
+   "term": "pound",
+   "senses": [
+    {
+     "term": "pound",
+     "plain": "a unit this course does not use; exactly 0.453 592 37 kilogram",
+     "where": "Book 1, section 2"
+    }
+   ]
+  },
+  {
+   "term": "precision",
+   "senses": [
+    {
+     "term": "precision",
+     "plain": "how closely repeated readings agree with each other",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "prevalence",
+   "senses": [
+    {
+     "term": "prevalence",
+     "plain": "how many people in a group have the condition, written P(condition present), with no test involved",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "probability",
+   "senses": [
+    {
+     "term": "probability",
+     "plain": "a number from 0 to 1 that states how often an outcome would turn up if the same chance process were repeated a great many times",
+     "where": "Book 0, D1"
+    }
+   ]
+  },
+  {
+   "term": "proportion",
+   "senses": [
+    {
+     "term": "proportion",
+     "plain": "a part out of the whole it came from, never more than one",
+     "where": "Book 0, A5"
+    }
+   ]
+  },
+  {
+   "term": "protein",
+   "senses": [
+    {
+     "term": "protein",
+     "plain": "a folded chain of amino acids, whose shape is what it does",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "quartile",
+   "senses": [
+    {
+     "term": "quartile",
+     "plain": "the first quartile is the median of the lower half of the ordered values, the third the median of the upper half, the second the median of the whole set",
+     "where": "Book 0, D5"
+    }
+   ]
+  },
+  {
+   "term": "radiation",
+   "senses": [
+    {
+     "term": "radiation",
+     "plain": "heat crossing as light or as the invisible light below red, with nothing needed in between",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "random error",
+   "senses": [
+    {
+     "term": "random error",
+     "plain": "the part that varies unpredictably from one reading to the next (VIM 2.19)",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "random sample",
+   "senses": [
+    {
+     "term": "random sample",
+     "plain": "picked at random: every member of the population has exactly the same chance of being the one picked, and an actual chance process decides it, not the person picking",
+     "where": "Book 0, D6"
+    }
+   ]
+  },
+  {
+   "term": "rate line",
+   "senses": [
+    {
+     "term": "rate line",
+     "plain": "the line the rate over each interval makes across a figure with time along the bottom",
+     "where": "Book 0, C8"
+    }
+   ]
+  },
+  {
+   "term": "rate of change",
+   "senses": [
+    {
+     "term": "rate of change",
+     "plain": "a change divided by the time it took",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "ratio",
+   "senses": [
+    {
+     "term": "ratio",
+     "plain": "two quantities of the same kind set side by side by dividing one by the other",
+     "where": "Book 0, A5"
+    }
+   ]
+  },
+  {
+   "term": "receptor",
+   "senses": [
+    {
+     "term": "receptor",
+     "plain": "the protein a ligand fits into, which changes shape when it does",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "recessive",
+   "senses": [
+    {
+     "term": "recessive",
+     "plain": "an allele that shows only when both copies are that version",
+     "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "regulated system",
+   "senses": [
+    {
+     "term": "regulated system",
+     "plain": "a system that senses body weight, or a signal that tracks it, and pushes back when weight falls",
+     "where": "Book 1, section 9"
+    }
+   ]
+  },
+  {
+   "term": "relative frequency",
+   "senses": [
+    {
+     "term": "relative frequency",
+     "plain": "a count divided by the total number counted; the proportion, under a longer name",
+     "where": "Book 0, D4"
+    }
+   ]
+  },
+  {
+   "term": "resting energy expenditure",
+   "senses": [
+    {
+     "term": "resting energy expenditure (REE)",
+     "plain": "the energy spent at rest",
+     "where": "Book 1, section 1"
+    }
+   ]
+  },
+  {
+   "term": "ribosome",
+   "senses": [
+    {
+     "term": "ribosome",
+     "plain": "the machine in a cell that builds proteins",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "rounding",
+   "senses": [
+    {
+     "term": "rounding",
+     "plain": "choosing which place to stop at, and adjusting the last kept digit for what follows it",
+     "where": "Book 0, A3"
+    }
+   ]
+  },
+  {
+   "term": "running total",
+   "senses": [
+    {
+     "term": "running total",
+     "plain": "the amounts for successive intervals, each a rate times a time, added up as you go",
+     "where": "Book 0, C8"
+    }
+   ]
+  },
+  {
+   "term": "sample space",
+   "senses": [
+    {
+     "term": "sample space",
+     "plain": "the complete list of everything that could happen",
+     "where": "Book 0, D1"
+    }
+   ]
+  },
+  {
+   "term": "sampling variation",
+   "senses": [
+    {
+     "term": "sampling variation",
+     "plain": "a second random sample of the same size from the same population gives a statistic that does not match the first sample&#x27;s exactly",
+     "where": "Book 0, D6"
+    }
+   ]
+  },
+  {
+   "term": "saturating",
+   "senses": [
+    {
+     "term": "saturating",
+     "plain": "rises, then flattens against a level it does not pass",
+     "where": "Book 0, C6"
+    }
+   ]
+  },
+  {
+   "term": "scale factor",
+   "senses": [
+    {
+     "term": "scale factor",
+     "plain": "the number you multiply every length of a picture by",
+     "where": "Book 0, F2"
+    }
+   ]
+  },
+  {
+   "term": "scientific notation",
+   "senses": [
+    {
+     "term": "scientific notation",
+     "plain": "a number between one and ten, times a power of ten",
+     "where": "Book 0, A6"
+    }
+   ]
+  },
+  {
+   "term": "sensitivity",
+   "senses": [
+    {
+     "term": "sensitivity",
+     "plain": "the share of people with the condition that the test catches, written P(test positive given condition present)",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "signal transduction",
+   "senses": [
+    {
+     "term": "signal transduction",
+     "plain": "a signal outside the cell converted into a signal inside it",
+     "where": "Book 0, E5"
+    }
+   ]
+  },
+  {
+   "term": "significant figures",
+   "senses": [
+    {
+     "term": "significant figures",
+     "plain": "the digits in a number that carry information about the quantity",
+     "where": "Book 0, A3"
+    }
+   ]
+  },
+  {
+   "term": "slope",
+   "senses": [
+    {
+     "term": "slope",
+     "plain": "how steep a line is: the change up divided by the change across",
+     "where": "Book 0, C5"
+    }
+   ]
+  },
+  {
+   "term": "small store",
+   "senses": [
+    {
+     "term": "small store",
+     "plain": "glycogen, kept in the liver and the muscles",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "solving for a letter",
+   "senses": [
+    {
+     "term": "solving for a letter",
+     "plain": "reaching an equation with that letter alone on one side and nowhere on the other",
+     "where": "Book 0, C2"
+    }
+   ]
+  },
+  {
+   "term": "special majority",
+   "senses": [
+    {
+     "term": "special majority",
+     "plain": "a majority of all the members of a House, and two-thirds of those present and voting",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "specific heat",
+   "senses": [
+    {
+     "term": "specific heat",
+     "plain": "the joules one kilogram of a material needs to go up by one degree",
+     "where": "Book 0, E4"
+    }
+   ]
+  },
+  {
+   "term": "specificity",
+   "senses": [
+    {
+     "term": "specificity",
+     "plain": "the share of people without the condition that the test correctly clears, written P(test negative given condition absent)",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "square root",
+   "senses": [
+    {
+     "term": "square root",
+     "plain": "the number which, multiplied by itself, gives you the one you started with",
+     "where": "Book 0, A6"
+    }
+   ]
+  },
+  {
+   "term": "square-root law",
+   "senses": [
+    {
+     "term": "square-root law",
+     "plain": "the spread of a sample&#x27;s average equals the spread of the individual values in the population, divided by the square root of the sample size",
+     "where": "Book 0, D6"
+    }
+   ]
+  },
+  {
+   "term": "squaring",
+   "senses": [
+    {
+     "term": "squaring",
+     "plain": "multiplying a number by itself",
+     "where": "Book 0, A6"
+    }
+   ]
+  },
+  {
+   "term": "standard deviation",
+   "senses": [
+    {
+     "term": "standard deviation",
+     "plain": "the square root of the variance, in the same unit as the original values",
+     "where": "Book 0, D5"
+    }
+   ]
+  },
+  {
+   "term": "standard error of the mean",
+   "senses": [
+    {
+     "term": "standard error of the mean",
+     "plain": "that spread of a random sample&#x27;s average, over many samples of the same size",
+     "where": "Book 0, D6"
+    }
+   ]
+  },
+  {
+   "term": "starch",
+   "senses": [
+    {
+     "term": "starch",
+     "plain": "the stuff rice, wheat and potato are mostly made of",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "static rule",
+   "senses": [
+    {
+     "term": "static rule",
+     "plain": "a kilogram of body fat is taken to hold a fixed number of kilocalories, so a surplus or deficit summed over time converts into fat at that fixed rate, every other quantity held constant; commonly 3,500 kilocalories a pound",
+     "where": "Book 1, section 7"
+    }
+   ]
+  },
+  {
+   "term": "statute",
+   "senses": [
+    {
+     "term": "statute",
+     "plain": "a law enacted by Parliament or a State Legislature, each called an Act",
+     "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "substitution",
+   "senses": [
+    {
+     "term": "substitution",
+     "plain": "(1) putting a number in place of a letter, everywhere it appears (Book 0, C1); (2) to solve two equations, rearranging one to give a letter on its own and putting that into the other (Book 0, C3)",
+     "where": "Book 0, C1, Book 0, C3"
+    }
+   ]
+  },
+  {
+   "term": "system of two equations",
+   "senses": [
+    {
+     "term": "system of two equations",
+     "plain": "a pair of equations that have to hold at the same time",
+     "where": "Book 0, C3"
+    }
+   ]
+  },
+  {
+   "term": "systematic error",
+   "senses": [
+    {
+     "term": "systematic error",
+     "plain": "pushes every reading the same way, by close to the same amount, every time",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "tangent",
+   "senses": [
+    {
+     "term": "tangent",
+     "plain": "the straight line that touches a curve at one point and runs along it, whose slope is the rate at that point",
+     "where": "Book 0, C7"
+    }
+   ]
+  },
+  {
+   "term": "thermic effect of food",
+   "senses": [
+    {
+     "term": "thermic effect of food",
+     "plain": "the energy spent digesting, absorbing and processing what was eaten",
+     "where": "Book 1, section 4"
+    }
+   ]
+  },
+  {
+   "term": "thermochemical calorie",
+   "senses": [
+    {
+     "term": "thermochemical calorie",
+     "plain": "4.184 joules exactly",
+     "where": "Book 0, B4"
+    }
+   ]
+  },
+  {
+   "term": "total energy expenditure",
+   "senses": [
+    {
+     "term": "total energy expenditure (TEE)",
+     "plain": "the product of physical activity level and basal metabolic rate: what a group spends in a day",
+     "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "triglyceride",
+   "senses": [
+    {
+     "term": "triglyceride",
+     "plain": "the molecule fat is made of, in food and in a body alike",
+     "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "trueness",
+   "senses": [
+    {
+     "term": "trueness",
+     "plain": "how close the average of many repeated readings sits to the true value",
+     "where": "Book 0, D7"
+    }
+   ]
+  },
+  {
+   "term": "two-way table",
+   "senses": [
+    {
+     "term": "two-way table",
+     "plain": "a table that sorts the same people twice, one way down the columns and the other way across the rows",
+     "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "type 2 diabetes",
+   "senses": [
+    {
+     "term": "type 2 diabetes",
+     "plain": "a condition in which blood glucose runs high",
+     "where": "Book 1, section 9"
+    }
+   ]
+  },
+  {
+   "term": "unit of observation",
+   "senses": [
+    {
+     "term": "unit of observation",
+     "plain": "what one row of a table stands for",
+     "where": "Book 0, F1"
+    }
+   ]
+  },
+  {
+   "term": "value axis",
+   "senses": [
+    {
+     "term": "value axis",
+     "plain": "the axis a bar&#x27;s length is read against: the side axis when bars stand up, the bottom axis when they lie flat",
+     "where": "Book 0, F2"
+    }
+   ]
+  },
+  {
+   "term": "variance",
+   "senses": [
+    {
+     "term": "variance",
+     "plain": "worked out from the squared deviations: add them, then divide by the count for a whole population, or by one less than the count for a sample",
+     "where": "Book 0, D5"
+    }
+   ]
+  },
+  {
+   "term": "villi",
+   "senses": [
+    {
+     "term": "villi",
+     "plain": "the tiny fingers lining the gut",
+     "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "x-axis",
+   "senses": [
+    {
+     "term": "x-axis",
+     "plain": "the flat line along the bottom of a graph",
+     "where": "Book 0, C5"
+    }
+   ]
+  },
+  {
+   "term": "y-axis",
+   "senses": [
+    {
+     "term": "y-axis",
+     "plain": "the upright line up the side of a graph",
+     "where": "Book 0, C5"
+    }
+   ]
+  },
+  {
+   "term": "zero error",
+   "senses": [
+    {
+     "term": "zero error",
+     "plain": "an instrument reading something other than zero where it should read zero, as a thermometer in melting ice reading 0.3 °C",
+     "where": "Book 0, D7"
+    }
+   ]
+  }
+ ]
+}

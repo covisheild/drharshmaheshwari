@@ -1,0 +1,66 @@
+{
+ "format": 1,
+ "id": "s01-r1-c01",
+ "label": "1",
+ "title": "Body fat as stored chemical energy; fat mass and fat-free mass",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Fat is stored in the body as <dfn data-g=\"217\">triglyceride</dfn>, packed inside fat cells, adipocytes, which together make up <dfn data-g=\"6\">adipose tissue</dfn>.</p>\n<p>Body weight is not one substance on a scale. Split it into two compartments. <dfn data-g=\"79\">Fat mass</dfn> is the body’s fat, wherever it sits. Liver cells hold some of it too. <dfn data-g=\"80\">Fat-free mass</dfn> is everything else the body weighs. Some papers call it <dfn data-g=\"120\">lean body mass</dfn>, or lean mass.</p>\n<p>Adipose tissue also holds fluid and <dfn data-g=\"172\">protein</dfn>. On this split, those count as fat-free mass.</p>\n<p>Naming a change in body weight is not yet naming a change in fat.</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Pack enough fat cells together and you have adipose tissue, the fatty layer and the pockets of fat scattered round a body. That is the store.</p>\n<p>It is a <dfn data-g=\"119\">large store</dfn>. For most people, the fat sitting in adipose tissue holds more spare energy than anything else in the body does.</p>\n<p>A person carrying more body fat is not simply carrying fat mass in place of fat-free mass. They generally carry more of both.</p>\n<p>So weight on a scale is one number covering two different things. A kilogram gained or lost could be mostly fat, mostly the other compartment, or some mixture, and the scale alone cannot tell you which.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>You are handed a weighing scale and a number: 90 kilograms.</p>\n<p>Open the review, Hall and Guo, “Obesity energetics”, <em>Gastroenterology</em> 2017, at https://pmc.ncbi.nlm.nih.gov/articles/PMC5568065/. Open your browser’s find box and search for fat-free mass. <dfn data-g=\"184\">Resting energy expenditure</dfn> (REE) is the energy spent at rest. <dfn data-g=\"133\">Metabolically active tissue</dfn> is the tissue that spends most of it.</p>\n<blockquote>\n<p>It has long been recognized that fat-free mass comprises the metabolically active tissues of the body and therefore contributes more to REE than body fat.</p>\n</blockquote>\n<p>Read on, in the same paragraph.</p>\n<blockquote>\n<p>Fat-free mass is elevated in obesity, along with body fat, resulting in increased REE compared with lean subjects.</p>\n</blockquote>\n<p>Two people can carry the same 90 kilograms and split it differently between fat mass and fat-free mass. Neither split is visible in the number 90.</p>\n<p>Now search the same page for vast majority.</p>\n<blockquote>\n<p>Body fat represents the vast majority of energy stores in the body compared with the energy content of body protein and glycogen.</p>\n</blockquote>\n<p>Protein and <dfn data-g=\"93\">glycogen</dfn> are the other stores. When intake falls short, the body draws on all three.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>It does not say how much of adipose tissue’s own weight is fat, or how much energy either compartment holds for each kilogram. That is the next section.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A kilogram of body weight is not a kilogram of fat.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A person carrying more body fat generally carries more fat-free mass too, not less.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Ask how a fat-mass or fat-free-mass figure was measured before you accept it. A scale alone cannot give it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    }
+   ]
+  }
+ ]
+}

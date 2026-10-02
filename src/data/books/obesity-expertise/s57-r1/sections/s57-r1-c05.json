@@ -1,0 +1,160 @@
+{
+ "format": 1,
+ "id": "s57-r1-c05",
+ "label": "5",
+ "title": "What does not work: rereading and highlighting",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"436\">Rereading</dfn> is studying a text again after a first reading: the <dfn data-g=\"445\">restudy</dfn> of section 3, done with a text. <dfn data-g=\"229\">Highlighting</dfn> is marking the parts of a text that seem important while reading it.</p>\n<p>Dunlosky and colleagues reviewed ten study techniques and gave each an overall <dfn data-g=\"537\">utility</dfn> rating: low, moderate or high. The rating asks two things. How widely does the benefit hold, across learners, kinds of material, kinds of final test and real classrooms? And how does the technique compare with the others? They rated both rereading and highlighting low utility. Practice testing, the <dfn data-g=\"448\">retrieval practice</dfn> of section 3, and distributed practice, the spacing of section 4, were rated high.</p>\n<p>Highlighting, in most situations studied and with most learners, did little to boost performance. It may help when learners know enough to pick out what matters, or when the text is hard.</p>\n<p>Rereading does improve recall over a single reading. But in direct comparisons, rereading has consistently done worse than practice testing and than two techniques of explaining: explaining why a stated fact is true, and explaining how new material connects to what you already know.</p>\n<p>So low utility is not zero effect. It means the same time spent another way does more.</p>\n<p>Fluency is the ease with which a text reads or a fact comes to mind. Pashler and colleagues (2008) warn that this ease and familiarity can come from things unrelated to understanding.</p>",
+   "refs": [
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Ask a batch how they revise, and you will probably hear two things. They read their notes again. They mark the important lines with a highlighter.</p>\n<p>Read a page a second time and it goes down easily. That ease is fluency, and it can feel like knowing. But it only tells you the page is familiar.</p>\n<p>Read once. Then close the book, write down what you remember, and check it against the page.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c05-sure-and-kept.png",
+   "alt": "Three points. SSSS at a rating of 4.8 and 40% recalled; SSST at 4.2 and 56%; STTT at 4.0 and 61%. The rereading group rated itself highest and recalled least; the other two ratings did not differ reliably.",
+   "w": 1358,
+   "h": 655,
+   "caption": "Roediger and Karpicke (2006), second experiment, group means. The SSSS group, which only reread, expected to remember best (4.8 out of 7) and recalled least after 1 week (40%). The STTT group, which studied in one period and was tested in three, expected least (4.0) and recalled most (61%). The ratings differ by under 1 point of the 1-to-7 scale; the bottom axis shows only that part of it."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>A student in your batch shows you her textbook. The chapter on nutritional anaemia is yellow from top to bottom. She has been through it twice. What does the yellow tell you?</p>\n<p>Open Dunlosky, Rawson, Marsh, Nathan and Willingham, “Improving students’ learning with effective learning techniques”, <em>Psychological Science in the Public Interest</em> 2013, at https://doi.org/10.1177/1529100612453266. Go to section 4, Highlighting and underlining, and search for Fowler and Barker.</p>\n<p>Undergraduates read articles of about 8,000 words. One group only read them. A second group highlighted as much as they liked. A third read copies the second group had marked. Every group had 1 hour. A week later, each student had 10 minutes to look over their copy, then took a 54-question multiple-choice test. Search for did not outperform.</p>\n<blockquote>\n<p>Overall, the highlighting groups did not outperform the control group on the final test, a result that has unfortunately been echoed in much of the literature</p>\n</blockquote>\n<p>The control group is the group that only read. Read on. The students who highlighted did better on questions about lines they had marked. They paid for it with a small loss on questions about lines they had not marked. Highlighting moved what they remembered around the text. It did not add to the total.</p>\n<p>Now search for marking almost everything.</p>\n<blockquote>\n<p>with some students marking almost nothing and others marking almost everything</p>\n</blockquote>\n<p>A marked line helps because it stands out from the rest of the page. When most of the page is marked, nothing stands out. So her yellow chapter tells you she spent time on it. It does not tell you what she can recall with the book shut.</p>",
+   "numberRefs": [
+    116
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Fowler and Barker’s students were undergraduates reading magazine articles, tested with multiple-choice questions a week later. That is one experiment. The low rating rests on many.</p>\n<p>The review also reports exceptions. In one classroom study, statements the instructors had underlined in red were answered better on the exam. Highlighting may also help a reader who knows enough to pick out what matters. So “highlighting never helps” goes further than the evidence. “Highlighting as students usually do it adds little” does not.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now see how the review rates the techniques side by side. In the same article, go to the Closing Remarks and find Table 4. Before you read a single letter, settle what a row is and what a column is (Book 0, F1).</p>\n<p>A row is one technique. The Utility column is the overall rating. The next three columns ask whether the benefit holds for different learners, for different materials, and for different kinds of final test. The review calls the final test the <dfn data-g=\"113\">criterion task</dfn>. The last two ask whether the technique is easy to put into use, and whether it has been shown in real classrooms. Each cell holds a letter. Search for negative (N) rating to read the key.</p>\n<blockquote>\n<p>A positive (P) rating indicates that available evidence demonstrates efficacy of a learning technique with respect to a given variable or issue. A negative (N) rating indicates that a technique is largely ineffective for a given variable.</p>\n</blockquote>\n<p>Q means it worked in some conditions or groups and not in others. I means there is not enough evidence to say. A cell with two letters, such as P-I, is positive on one part of that column and short of evidence on another. Here are three of the ten rows.</p>\n<table style=\"width:96%;\">\n\n<tbody>\n<tr>\n<td>technique</td>\n<td>utility</td>\n<td>learners</td>\n<td>materials</td>\n<td>criterion tasks</td>\n<td>issues for implementation</td>\n<td>educational contexts</td>\n</tr>\n<tr>\n<td>Highlighting</td>\n<td>Low</td>\n<td>Q</td>\n<td>Q</td>\n<td>N</td>\n<td>P</td>\n<td>N</td>\n</tr>\n<tr>\n<td>Rereading</td>\n<td>Low</td>\n<td>I</td>\n<td>P</td>\n<td>Q-I</td>\n<td>P</td>\n<td>I</td>\n</tr>\n<tr>\n<td>Practice testing</td>\n<td>High</td>\n<td>P-I</td>\n<td>P</td>\n<td>P</td>\n<td>P</td>\n<td>P</td>\n</tr>\n</tbody>\n</table>\n<p>Read the Rereading row first. Materials has a P: a second reading helped across many kinds of text. Issues for implementation has a P: it is easy to do. Yet the rating is Low. Search the rereading section for largest strike.</p>\n<blockquote>\n<p>The relative disadvantage of rereading to other techniques is the largest strike against rereading</p>\n</blockquote>\n<p>So Low is a comparison. Rereading does something. The same minutes spent on practice testing do more. Now read the Highlighting row. It has an N under criterion tasks: across the kinds of final test studied, highlighting did not raise the score.</p>\n<p>Last, put both rows beside the Practice testing row, which holds no Q and no N. That is the swap. Take the minutes a learner would spend on a second reading or a highlighter. Spend them on a closed-book attempt at recall, then a check (section 3).</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A letter in this table is the reviewers’ judgement of a body of studies, not a measurement. Two techniques with the same letters need not have effects of the same size. The table gives you no effect sizes at all.</p>\n<p>The ratings are from 2013. For rereading, all but two of the studies the review knew of were of undergraduates. Your own batch is not in any of them.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>section 1 walked you through Roediger and Karpicke’s second experiment. Look at it again with one group in mind: SSSS, the students who spent all four periods reading the passage. It is the purest case of rereading in this book.</p>\n<p>Open “Test-enhanced learning”, <em>Psychological Science</em> 2006, at https://doi.org/10.1111/j.1467-9280.2006.01693.x. Search for 14.2. On average, each SSSS student read the passage through 14.2 times across the four periods. Now find Table 2. Before any final test, each student rated how well they would remember the passage in 1 week, from 1 (not very well) to 7 (very well).</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>group</td>\n<td>read it through (mean times)</td>\n<td>expected to remember (mean, 1 to 7)</td>\n<td>recalled after 1 week (%)</td>\n</tr>\n<tr>\n<td>SSSS</td>\n<td>14.2</td>\n<td>4.8</td>\n<td>40</td>\n</tr>\n<tr>\n<td>SSST</td>\n<td>10.3</td>\n<td>4.2</td>\n<td>56</td>\n</tr>\n<tr>\n<td>STTT</td>\n<td>3.4</td>\n<td>4.0</td>\n<td>61</td>\n</tr>\n</tbody>\n</table>\n<p>Read down the last two columns together. The group that reread most was the surest it would remember. It remembered least. The other two groups’ ratings did not differ reliably.</p>\n<p>Why would reading more make a group surer? Pashler and colleagues give one reason.</p>\n<p>Open Pashler, McDaniel, Rohrer and Bjork, “Learning styles: concepts and evidence”, <em>Psychological Science in the Public Interest</em> 2008, at https://doi.org/10.1111/j.1539-6053.2009.01038.x. Near the end, search for sense of familiarity.</p>\n<blockquote>\n<p>As learners, we can also be fooled by subjective impressions, such as the ease or sense of familiarity we gain on reading expository text</p>\n</blockquote>\n<p>Expository text is text that explains, like a textbook. That ease is what this section calls fluency. The ease is real. Pashler’s point is that it can come from things that have nothing to do with understanding.</p>",
+   "numberRefs": [
+    14
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The SSSS group did not only reread more. It also took no test before the final one. So the comparison is rereading instead of recall practice, not rereading against doing nothing.</p>\n<p>The ratings are group means on a 7-point scale. They show which group felt surest, not that any one student’s feeling was wrong. And on a test 5 minutes after the last period, the SSSS group recalled the most (section 1).</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“I read it three times and it all looks familiar now” describes fluency, not learning. When a learner says this, ask them to shut the book and say it back.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Replace the second reading with a test. Teach your batch the order: read once, close the notes, write what you remember, then check it against the notes.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Do not tell learners that rereading does not work. It is rated low because practice testing does more with the same time.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A heavily highlighted book is a sign of time spent, not of learning. Check what a learner can recall with the book shut.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Expect rereading to be your learners’ default. At one highly selective university, 84% of students listed it among their study methods. Ask a batch how they revise before you teach them how.</p>",
+     "tag": "number",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>These ratings come mostly from laboratory studies of undergraduates. By 2013 no experiment had tested rereading’s effect on learning in a real course. Later classroom experiments often set rereading against retrieval practice (section 3). Your own batch was in none of them.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A journalist writing for a newspaper’s education page gives you three minutes. Her question: “Is highlighting a waste of students’ time?” Say what you would tell her, including one quotable sentence, and say how sure the evidence lets you be.</p>",
+   "type": "teaching",
+   "confidence": true,
+   "answer": "<p>Answer first. Mostly, yes, as students usually do it. A large 2013 review of the research rated highlighting low: in most studies it did little beyond reading the text.</p>\n<p>Give one concrete result. In one experiment, students who highlighted articles did no better on a test a week later than students who only read them. They did better on what they had marked, and slightly worse on what they had not.</p>\n<p>Give the fair exception, so the answer stays true. It may help a reader who already knows what matters in a text. Teachers underlining a few key lines has helped in a classroom study.</p>\n<p>Give the better use of the time: close the book, write down what you remember, check it.</p>\n<p>A quotable sentence: “Highlighting shows where a student has been on the page, not what they can recall with the book shut.”</p>\n<p>Calibrate. The evidence is consistent that highlighting adds little. It comes mostly from laboratory studies, and few were run in real classrooms. Do not say highlighting harms learning: that rests on a single study the reviewers say needs repeating.</p>"
+  }
+ ]
+}

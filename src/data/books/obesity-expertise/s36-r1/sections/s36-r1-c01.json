@@ -1,0 +1,104 @@
+{
+ "format": 1,
+ "id": "s36-r1-c01",
+ "label": "1",
+ "title": "Two kinds of question: how many, and why and how",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A research question of the first kind asks how many or how much: how common something is, how large a quantity is, or how large a difference a treatment makes. Research of this kind is called <dfn data-g=\"243\">quantitative research</dfn>.</p>\n<p>A question of the second kind asks what something is, what it means to the people involved, how it comes about and why. It is answered by <dfn data-g=\"242\">qualitative research</dfn>: research that gathers people’s own words and actions, by interview, group discussion or watching, and analyses them without turning them into counts.</p>\n<p>The two kinds answer different questions, and neither is a weaker version of the other.</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Some questions ask how many or how much. How many adults with obesity seen at a clinic last year came back for a second visit? By how much does a reminder message raise that number?</p>\n<p>Other questions ask what, how and why. Why do patients stop coming? You answer these by asking people and listening to what they say, in their own words. That is qualitative research.</p>\n<p>One way to test a treatment is a trial: chance decides who gets it, then the groups are compared. This is a <dfn data-g=\"250\">randomised controlled trial</dfn>. A trial cannot tell you why patients stop coming. An interview cannot tell you how many do.</p>\n<p>Green and Britten argue that good evidence goes further than the pooled results of randomised controlled trials. Different questions need different kinds of research.</p>\n<p>The two kinds also feed each other.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Here is the setting this book uses from start to finish. It is made up. A district hospital in Chhattisgarh runs a non-communicable disease (NCD) clinic. Many of its adult patients with obesity come once or twice and then stop coming. You want to know why.</p>\n<p>Start with an attempt that fails. Suppose the clinic adds a question to its follow-up phone call: “Why did you not come back? Distance, cost, felt better, or other.”</p>\n<p>Ask where the four choices came from. The clinic staff wrote them, before anyone had asked a patient. The count is exact. It is an exact count of the staff’s guesses.</p>\n<p>Now sort four questions about the same clinic yourself, before you read the table. For each one, say whether it asks how many or how much, or what, how and why. Then say what would answer it.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Question</td>\n<td>Kind</td>\n<td>What answers it</td>\n</tr>\n<tr>\n<td>How many adults with obesity seen last year came back for a second visit?</td>\n<td>how many</td>\n<td>Count the clinic register</td>\n</tr>\n<tr>\n<td>Does a reminder text message the day before raise the share who come back?</td>\n<td>how much</td>\n<td>A trial: chance decides who gets the message, then the groups are compared</td>\n</tr>\n<tr>\n<td>Why do adults with obesity stop coming back?</td>\n<td>why</td>\n<td>Find people who stopped, ask them, and listen</td>\n</tr>\n<tr>\n<td>What is a clinic day like for someone who works for a daily wage?</td>\n<td>what and how</td>\n<td>Ask such people, and listen</td>\n</tr>\n</tbody>\n</table>\n<p>Look hard at the third row. No count answers it, because you do not yet know what to count.</p>\n<p>Suppose you go and ask. In a made-up example, one woman says the clinic is on the first floor. Her knees hurt on the stairs, and she waits standing because the benches are full. Nobody on the staff had put “stairs” on the tick-list. Now it can go on one.</p>\n<p>So the two kinds pass the work back and forth. Asking finds what matters and in what words. Counting says how common it is. A trial says whether a fix works.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The line between the two kinds is not always this clean. “Which patients stop coming, and why?” asks for a count and a reason at once. Split a question like that into its two halves before you choose a method, and give each half its own method.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to treat an interview study as a trial that could not afford enough people. It is not a small trial. It answers a question a trial cannot, such as why patients stop coming.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you choose a method, write the research question as one sentence and look at its first words. “How many” and “how much” send you to counting and measuring. “What”, “how” and “why” send you to asking people.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Someone in a meeting will call interview findings “anecdotal”. Answer that an anecdote is a story told without analysis. A rigorous interview study chooses people on a stated plan and analyses what they said step by step. And it answers a question a trial cannot: why patients leave.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A drop-out number tells a programme how big its problem is. It does not say what to change.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Asking people tells you which reasons exist and how they work. It cannot tell you how common each reason is, or whether a fix works.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here are five questions about the clinic in this section. For each, say whether it asks how many or how much, or what, how and why, and say what kind of study would answer it.</p>\n<ol type=\"1\">\n<li>What share of adults with obesity attending the clinic have also been told they have diabetes?</li>\n<li>How do patients decide whether a follow-up date is worth keeping?</li>\n<li>Does moving the clinic to the ground floor raise the share of patients who come back?</li>\n<li>What do patients understand the word “follow-up” to mean?</li>\n<li>Which patients stop coming, and why?</li>\n</ol>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>How many. A share of a group is a count divided by a total. Count it from the clinic register, or from a <dfn data-g=\"248\">random sample</dfn> of patient files.</li>\n<li>How and why. It asks how people reach a decision. Ask patients who kept dates and patients who did not, and listen to how they describe it.</li>\n<li>How much. It asks how large a difference a change makes. Compare the share who come back with the stairs and without them. When the whole clinic moves, chance cannot decide which patients get the ground floor. So this is likely to be a before-and-after comparison, weaker than a trial. It is still a counting question.</li>\n<li>What. It asks what a word means to the people who hear it. Ask them. Pope and Mays note that the simplest use of this kind of work is to find which words people understand before a survey uses them. If “follow-up” means nothing to patients, a survey that asks about it counts nothing.</li>\n<li>Both. “Which patients” is a how-many question: count, from the register, who stops. “Why” is a why question: ask the people who stopped. Split it and give each half its own method.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A district programme officer writes: “Interviews are the weakest kind of evidence. We will wait for a trial before we look at why patients leave the clinic.”</p>\n<p>Lay the argument out as premises and a conclusion. Then say where it fails.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Premise: interviews are the weakest kind of evidence. Conclusion: wait for a trial before looking at why patients leave.</p>\n<p>Test the <dfn data-g=\"140\">inference</dfn> first, as Book 0’s section on argument taught. Weakest for what? To test whether a treatment works, a trial beats asking people, because only a trial lets chance decide who is treated. To learn why patients leave, a trial gives no answer at all. So “weakest” has quietly moved from one kind of question to another.</p>\n<p>There is a second fault. A trial tests a fix that already exists. To run one, you must already know what to change. Finding out why patients leave is how you would learn what fix to test. So waiting for the trial first puts the steps in the wrong order.</p>\n<p>A fair version of the officer’s worry survives: an interview study cannot say how common each reason is. That is a reason to count after asking, not a reason not to ask.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has three minutes and asks you: “Isn’t qualitative research just people’s opinions?” Answer without jargon, and give one sentence they could quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with the kind of question. Some questions are about how many: how many patients stop coming to a clinic. You answer those by counting. Others are about why: why they stop. No count answers that, because you do not yet know what to count. You have to ask the people who stopped, and listen.</p>\n<p>Then separate it from opinion. A good study does not collect whatever people happen to say. It chooses people on a stated plan, including those whose story may not fit. It works through what they said step by step. And it looks for explanations that would prove its first idea wrong.</p>\n<p>Be honest about the limit. It tells you what the reasons are and how they work, not how common each one is.</p>\n<p>A quotable sentence: “Counting tells you how many patients stop coming; only asking them tells you why.”</p>"
+  }
+ ]
+}

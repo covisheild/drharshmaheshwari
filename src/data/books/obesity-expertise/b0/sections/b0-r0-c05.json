@@ -1,0 +1,172 @@
+{
+ "format": 1,
+ "id": "b0-r0-c05",
+ "label": "A5",
+ "title": "Ratios, rates and proportions",
+ "part": "A",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"155\">ratio</dfn> compares two quantities of the same kind by division, and is written a to b. It has no unit, because the units cancel.</p>\n<p>A <dfn data-g=\"147\">proportion</dfn> is a part divided by the whole it came from. It runs from zero to one, and a <dfn data-g=\"133\">percentage</dfn> is a proportion multiplied by one hundred.</p>\n<p>A rate is a count divided by the quantity of something else it was counted over: time, or people, or both at once.</p>\n<p>Two rates may be compared only when their denominators are the same.</p>",
+   "refs": [
+    9
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Twelve grams against twenty grams is a ratio of twelve to twenty, or three to five.</p>\n<p>If three of every five children in a room had the meal, the proportion is three fifths, or 0.6. A proportion can never be more than one.</p>\n<p>Five kilograms a month is a rate. Fifteen deaths per thousand people per year is a rate.</p>\n<p>The bottom of a rate is not a footnote. It is part of the number. Change it and you have a different quantity, even when the digits look the same.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Go back to section 3(1) of the National Food Security Act, 2013, which you opened two sections ago. It gives a person in a priority household five kilograms of foodgrains per person per month. This time read the sentence after it.</p>\n<p>A proviso just below sets a different figure for households covered by the Antyodaya Anna Yojana. It is thirty-five kilograms of foodgrains per household per month. That figure applies to the extent the Central Government specifies for each State under that scheme.</p>\n<p>Here is the sentence somebody writes.</p>\n<blockquote>\n<p>Antyodaya households get seven times as much as priority households.</p>\n</blockquote>\n<p>Look at where that seven came from. Thirty-five divided by five. The arithmetic is perfect and the claim is meaningless, because the five is per person and the thirty-five is per household. Two different denominators went into one division.</p>\n<p>Make them the same and the picture changes. Take a household of six people.</p>\n<div class=\"working\">\n<p>5 kilograms per person per month, times 6 people<br />\n= 30 kilograms per household per month</p>\n</div>\n<div class=\"working\">\n<p>35 against 30<br />\n35 minus 30 = 5 kilograms more<br />\n5 divided by 30 = 0.1666…, so about 17 per cent more</p>\n</div>\n<p>Seventeen per cent more, not seven times as much.</p>\n<p>Now change the household and watch the answer move.</p>\n<div class=\"working\">\n<p>household of 7:    5 times 7 = 35, so the two are identical<br />\nhousehold of 3:    5 times 3 = 15, so 35 is more than twice as much<br />\nhousehold of 10: 5 times 10 = 50, so 35 is less</p>\n</div>\n<p>The comparison does not have one answer. It depends entirely on the <dfn data-g=\"47\">denominator</dfn> that the original sentence dropped.</p>\n<p>One more thing to take from this, because it comes up in every table you will read. Rates for uncommon events are written per thousand or per hundred thousand people rather than per person. The only reason is to avoid a string of zeros after the point. Fifteen per thousand and 0.015 per person are the same rate.</p>",
+   "numberRefs": [
+    6
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Making the denominators match is arithmetic. Deciding which denominator is the right one is not, and this section cannot help you with it.</p>\n<p>So the conversion above is a tool for catching a false comparison. It is not a way of deciding who is better off.</p>\n<p>And a rate per thousand people says nothing about which thousand. One figure for a state can hold districts that differ several times over. The rate will not show you that. It was never built to.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Two rates with different denominators cannot be compared, and dividing one by the other still produces a number.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Say the denominator out loud before you use any rate: per what, and over how long. If either half is missing you do not have a quantity yet.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Indian entitlements and scheme figures move between per person, per household and per beneficiary without warning. Read the whole provision, including the proviso, before you take a number out of it.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When two schemes are stated on different denominators, find the point at which they are equal and quote that.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Converting a per-household figure to a per-person one using an average household size assumes every household is average.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Asked to say which of two programmes delivers more, do not answer with the larger number. Ask what each is divided by.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Rates per thousand or per hundred thousand exist only to keep the zeros off the page. Convert freely, and check the denominator first whenever two tables disagree.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A block has 1,200 priority households with an average of five people each, and 300 Antyodaya households. Use section 3(1) of the National Food Security Act, 2013 and the proviso beneath it. Work out the monthly foodgrain entitlement of each group, and of the block as a whole. Then state the grain per household per month for each group and say which is higher.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>Priority households first. They are entitled per person, so count the people.</p>\n<div class=\"working\">\n<p>1,200 households times 5 people = 6,000 people<br />\n6,000 people times 5 kilograms per person per month = 30,000 kilograms per month</p>\n</div>\n<p>Antyodaya households are entitled per household, so count the households.</p>\n<div class=\"working\">\n<p>300 households times 35 kilograms per household per month = 10,500 kilograms per month</p>\n</div>\n<p>The block as a whole.</p>\n<div class=\"working\">\n<p>30,000 plus 10,500 = 40,500 kilograms per month</p>\n</div>\n<p>Now put both on the same denominator, which is kilograms per household per month.</p>\n<div class=\"working\">\n<p>priority:    30,000 divided by 1,200 = 25<br />\nAntyodaya: 10,500 divided by 300    = 35</p>\n</div>\n<p>Antyodaya is higher on this denominator, at 35 against 25. Note what did the work: the average of five people a household. At an average of seven they would be equal, and above seven the priority households would come out ahead.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a line from a district presentation.</p>\n<blockquote>\n<p>Grain offtake rose from 1,850 tonnes to 2,050 tonnes, so coverage improved by 11 per cent.</p>\n</blockquote>\n<p>The arithmetic in the percentage is right. Name the step that is missing, and say what you would ask for.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The percentage is a rate of change in tonnes. It is being reported as a change in coverage, which is a proportion of people. Those are different quantities and nothing in the line connects them.</p>\n<p>Tonnes can rise for at least three reasons that have nothing to do with more people being covered.</p>\n<ul>\n<li>More households on the list.</li>\n<li>The same households lifting a larger share of what they were already entitled to.</li>\n<li>A change in what the entitlement is.</li>\n</ul>\n<p>What to ask for, in this order. How many people or households were entitled in each period, so the tonnes have a denominator. How much they were entitled to in total. Then the offtake can be read as a proportion of the entitlement rather than as a bare weight. Only then does the word coverage have anything underneath it.</p>\n<p>And keep the 11 per cent. It is a perfectly good statement about tonnes. It has simply been given the wrong noun.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Reduce each ratio as far as it will go.</p>\n<div class=\"working\">\n<p>18 to 24    45 to 15    200 to 500</p>\n</div>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>18 to 24    = 3 to 4    (divide both by 6)<br />\n45 to 15    = 3 to 1    (divide both by 15)<br />\n200 to 500 = 2 to 5    (divide both by 100)</p>\n</div>\n<p>A ratio reduces the way a <dfn data-g=\"66\">fraction</dfn> does. It is a division written another way.</p>\n<p>None of the three carries a unit. Whatever the 18 and the 24 were measured in has cancelled out, and that is what makes a ratio a bare number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Of 250 households in a block, 90 lift their full entitlement. Write that as a ratio of lifting to not lifting, and as a proportion of all households.</p>",
+   "level": 2,
+   "answer": "<p>The ratio first. Lifting against not lifting means 90 against the rest.</p>\n<div class=\"working\">\n<p>250 minus 90 = 160 not lifting<br />\n90 to 160 = 9 to 16    (divide both by 10)</p>\n</div>\n<p>Now the proportion, which is out of all of them.</p>\n<div class=\"working\">\n<p>90 divided by 250 = 0.36</p>\n</div>\n<p>Nine to sixteen, and 0.36.</p>\n<p>Notice the two denominators. The ratio is against the 160 who did not; the proportion is against all 250. Neither number is wrong and they answer different questions.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A rate is 15 per 1,000 people per year. Write the same rate per 100,000 people per year, and per person per year.</p>",
+   "level": 3,
+   "answer": "<p>Per 100,000 first. That is a hundred times as many people, so a hundred times as many events.</p>\n<div class=\"working\">\n<p>15 times 100 = 1,500 per 100,000 per year</p>\n</div>\n<p>Per person, divide by a thousand.</p>\n<div class=\"working\">\n<p>15 divided by 1,000 = 0.015 per person per year</p>\n</div>\n<p>One rate, three ways of writing it. Nothing has been measured differently, and none of the three is more precise than the others. The denominator was chosen to keep the zeros off the page.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Section 3(1) of the National Food Security Act, 2013 gives 5 kilograms per person per month. A household of four is entitled under it. Work out the household’s entitlement per month and per year, and state the denominator of each answer.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>5 kilograms per person per month, times 4 people<br />\n= 20 kilograms per household per month<br />\n20 times 12 months<br />\n= 240 kilograms per household per year</p>\n</div>\n<p>The denominators, said out loud. The first is per household per month. The second is per household per year.</p>\n<p>Both had to change together when you multiplied by four: the per-person denominator became a per-household one, and that is the step worth watching. The number 20 means nothing until it carries “per household per month” with it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Under the proviso to section 3(1), an Antyodaya household gets 35 kilograms per household per month. Work out the household size at which a priority household on 5 kilograms per person per month receives the same amount.</p>",
+   "level": 5,
+   "answer": "<p>Put both on the same denominator, which is kilograms per household per month.</p>\n<div class=\"working\">\n<p>priority household of n people = 5 times n<br />\nset that equal to 35<br />\n5 times n = 35<br />\nn = 35 divided by 5<br />\nn = 7</p>\n</div>\n<p>Seven people.</p>\n<p>That number is worth carrying. Below seven, an Antyodaya household receives more; above seven, a priority household does. “They match at a household of seven” is a sentence that settles an argument, and it took one division.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A block has 3,200 people and records 48 events in a year. A second block has 12,500 people and records 160 events in a year. Work out each rate per 1,000 people per year and say which is higher.</p>",
+   "level": 6,
+   "answer": "<p>First block.</p>\n<div class=\"working\">\n<p>48 divided by 3,200 = 0.015 per person per year<br />\ntimes 1,000 = 15 per 1,000 per year</p>\n</div>\n<p>Second block.</p>\n<div class=\"working\">\n<p>160 divided by 12,500 = 0.0128 per person per year<br />\ntimes 1,000 = 12.8 per 1,000 per year</p>\n</div>\n<p>The first block is higher, at 15 against 12.8, even though it recorded fewer events.</p>\n<p>That reversal is the point of the problem. The raw counts say 48 against 160. The rates say the opposite, because the second block has nearly four times the people.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>in a block, 72 households lift their full entitlement and 108 do not<br />\nthe ratio of lifting to not lifting is 72 to 108, or 2 to 3<br />\n72 divided by 108 = 0.6666…<br />\nso about 67 per cent of households lift their full entitlement</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The first two lines hold. Seventy-two against 108 is the ratio, and it does reduce to 2 to 3.</p>\n<p>The step that broke is the last one. A ratio has been divided out and the answer read as a proportion. A ratio compares one part with another part. A proportion is a part over the whole it came from, and the whole here is every household in the block.</p>\n<div class=\"working\">\n<p>72 plus 108 = 180 households in all<br />\n72 divided by 180 = 0.4<br />\ntimes 100 = 40 per cent lift their full entitlement</p>\n</div>\n<p>Forty per cent, not 67.</p>\n<p>The 0.6666 is not a meaningless number. It says the lifting households are two thirds as many as the households that do not lift. That is true. It has been given the wrong denominator and then the wrong noun.</p>\n<p>Why it looks reasonable: a ratio and a proportion are both one number divided by another, and both come out as a <dfn data-g=\"45\">decimal</dfn>. A decimal below one invites being read as a percentage. The check is to say the denominator out loud. Divided by 108 is per non-lifting household. Divided by 180 is per household.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>block A: 15 cases per 1,000 people<br />\nblock B: 40 cases per 100,000 people<br />\n40 is more than 15, so block B is worse</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the comparison, which sets two rates side by side without matching their denominators.</p>\n<p>Put both on the same denominator.</p>\n<div class=\"working\">\n<p>block A: 15 per 1,000<br />\n= 15 times 100<br />\n= 1,500 per 100,000<br />\nblock B: 40 per 100,000</p>\n</div>\n<p>Block A is nearly forty times block B, not the other way round.</p>\n<p>Why it looks reasonable: both lines end in “people”, both numbers are small, and the larger number belongs to the block being called worse. Everything about the shape of the sentence is right except the only thing that mattered.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a scheme delivers 2 kg per person per week<br />\na month is 4 weeks<br />\nso it delivers 8 kg per person per month<br />\na household has 5 people<br />\nso it delivers 8 kg per household per month</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The first three lines hold. Two kilograms a week for four weeks is eight kilograms a month.</p>\n<p>The step that broke is the last one. The denominator was changed from per person to per household with no arithmetic done at all.</p>\n<div class=\"working\">\n<p>8 kilograms per person per month, times 5 people<br />\n= 40 kilograms per household per month</p>\n</div>\n<p>Forty, not eight.</p>\n<p>Why it looks reasonable: the household size appears in the line just above, so the reader feels it has been used. It has been mentioned. Mentioning a denominator is not the same as dividing or multiplying by it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A note crosses your desk with one line in it.</p>\n<blockquote>\n<p>Households here average five people, so an Antyodaya household gets 40 per cent more grain.</p>\n</blockquote>\n<p>Section 3(1) of the National Food Security Act, 2013 gives 5 kilograms per person per month. The proviso beneath it gives an Antyodaya household 35 kilograms per household per month. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: both entitlements on one denominator, which is kilograms per household per month.</p>\n<div class=\"working\">\n<p>priority household of 5: 5 times 5 = 25 kilograms per household per month<br />\nAntyodaya household:    35 kilograms per household per month<br />\n35 minus 25 = 10<br />\n10 divided by 25 = 0.4, so 40 per cent more</p>\n</div>\n<p>The 40 per cent is right, for a household of five.</p>\n<p>Now the part the line hides. It is a statement about the average household, and the average household is a calculation rather than an address. Run the same division at other sizes.</p>\n<div class=\"working\">\n<p>household of 3: 5 times 3 = 15, so 35 is well over twice as much<br />\nhousehold of 7: 5 times 7 = 35, so the two are equal<br />\nhousehold of 9: 5 times 9 = 45, so the priority household gets more</p>\n</div>\n<p>The gap is 40 per cent at one household size, nothing at all at another, and the other way round above seven.</p>\n<p>What this does not establish. It says nothing about how household sizes are spread here. An average of five holds whether every household has five people or half have two and half have eight. It says nothing about how many households are in either group. And it says nothing about whether either figure feeds anybody, which is a different question from which is larger.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A journalist calls with one line and wants a comment by the evening.</p>\n<blockquote>\n<p>District A has twice the case rate of district B, so it needs twice the resources.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Nothing can be computed until one thing is known: what each rate is divided by.</p>\n<p>Suppose both are per 1,000 people, and A has 2 <dfn data-g=\"102\">lakh</dfn> people and B has 8 lakh. Then a doubled rate is not a doubled count.</p>\n<div class=\"working\">\n<p>district A: 20 per 1,000, times 200 thousand people = 4,000 cases<br />\ndistrict B: 10 per 1,000, times 800 thousand people = 8,000 cases</p>\n</div>\n<p>Twice the rate and half the cases. Resources follow people, so the conclusion is backwards.</p>\n<p>Those population figures are made up, to show the move. The move is not. Ask for the two denominators before you agree or disagree with the sentence.</p>\n<p>What this does not establish. Even with both counts in hand, nothing here says what resource a case needs, or whether the two districts counted cases the same way. A rate comparison decides which question to ask next, not what to do.</p>"
+  }
+ ]
+}

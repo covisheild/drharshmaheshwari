@@ -1,0 +1,260 @@
+{
+ "format": 1,
+ "id": "s02-r1-c08",
+ "label": "8",
+ "title": "Equilibrium: where the rate is zero",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>An <dfn data-g=\"87\">equilibrium</dfn>, or steady state, of a <dfn data-g=\"69\">differential equation</dfn> dW/dt = f(W) is a constant value of the state at which the rule gives a rate of zero. It is written W<em>, read “W star”, so f(W</em>) = 0. To find the equilibria, set the right-hand side equal to zero and solve for the state.</p>\n<p>Take the equation of the last section, ρ × dW/dt = ΔEI − ε × (W − W0). Setting its right side to zero gives ε × (W* − W0) = ΔEI. So W* − W0 = ΔEI ÷ ε.</p>\n<p>When intake also depends on weight, it rises by a fixed number of kilocalories a day for each kilogram lost. Polidori and colleagues write that number kP, k with a P for proportional. They measured it in people with <dfn data-g=\"275\">type 2 diabetes</dfn> taking a drug that makes them lose <dfn data-g=\"113\">glucose</dfn> in urine. The model is then ρ × dW/dt = ΔEI − (ε + kP) × (W − W0). Here ΔEI is the shift the diet makes; the change appetite makes is the kP term. The two slopes add, and the shift becomes ΔEI ÷ (ε + kP). Hall and Guo call a model with feedback on both intake and expenditure a <dfn data-g=\"242\">set point model</dfn>. The name is theirs; the equilibrium still moves when intake is shifted.</p>\n<p>In either model, a weight that starts away from the equilibrium approaches it along an <dfn data-g=\"93\">exponential</dfn>. Its <dfn data-g=\"270\">time constant</dfn>, written tau (τ), is ρ divided by the total <dfn data-g=\"247\">slope</dfn>, in days. The gap shrinks as e<sup>(-t/τ)</sup>, so τ is 1 divided by k, the <dfn data-g=\"220\">rate constant</dfn> of section 4. The gap halves every τ × ln 2 days.</p>\n<p>An equilibrium is stable if a state pushed a little away from it returns to it, and unstable if the state moves further away.</p>",
+   "refs": [
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    63,
+    65,
+    66,
+    67,
+    68
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A weight stops moving when its <dfn data-g=\"222\">rate of change</dfn> is zero. So take the equation, put zero where the rate is, and solve for the weight. That weight is the equilibrium.</p>\n<p>Picture it as two lines on one graph, with weight along the bottom and kilocalories a day up the side.</p>\n<ul>\n<li>Expenditure rises as weight rises.</li>\n<li>Intake is a flat line, if it ignores weight.</li>\n</ul>\n<p>Where the two lines cross, intake equals expenditure, and the weight stops moving. Cut intake, and the flat line drops. The crossing slides to a lower weight. How far it slides is the cut divided by the slope of the expenditure line.</p>\n<p>Now let intake rise as weight falls, which is what appetite does. The two slopes add, and the crossing slides a much shorter way.</p>\n<ul>\n<li>The weight does not arrive at the crossing on a date. It closes the gap by the same <dfn data-g=\"102\">fraction</dfn> every day, fast at first and then ever more slowly.</li>\n<li>Push the weight a little either side of the crossing, and the rate sends it back. That is what stable means here.</li>\n<li>At the crossing, intake and expenditure are equal. Both are still large.</li>\n</ul>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c08-settling-point.png",
+   "alt": "Change from the start in kcal a day against change in weight in kg, from minus 15 to 0. A flat line at minus 300. Two lines through the origin, with slopes 20 and 30, meet it at minus 15 and minus 10.",
+   "w": 1358,
+   "h": 655,
+   "caption": "Hall and Guo’s settling point model after a 300 kcal a day cut. Flat intake crosses expenditure 15 kg down when the slope is 20 kcal a day per kg, and 10 kg down when it is 30."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c08-approach.png",
+   "alt": "Kilograms lost against days, 0 to 1095. One curve rises through 3.12 at day 90 and 9.18 at day 365 to 14.12 at day 1095, below a dashed line at 15. The other rises steeply through 0.93 at day 30 and 1.88 at day 90, and is flat at 2.50 from day 730. Dotted lines mark days 44.57 and 267.4.",
+   "w": 1358,
+   "h": 654,
+   "caption": "Loss after the same 300 kcal a day cut, with ρ = 7,716.18: the settling point model (slope 20) is still closing on 15 kg at day 1095, and reaches half of it only at day 267.4. With intake also responding (slopes 100 + 20) the loss is halfway to 2.5 kg by day 44.57 and flat within months."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c08-rate-zero.png",
+   "alt": "Kilocalories a day against body weight from 72 to 100 kg. A falling straight line crosses zero at 76 kg, at a dashed vertical line, and reaches −480 at 100 kg. A flat line sits at −480 across the whole range.",
+   "w": 1357,
+   "h": 655,
+   "caption": "The right side of Hall’s man’s equation after a 480 kcal a day cut. With ε = 20 it is 80 at 72 kg, 0 at 76 kg and −80 at 80 kg: positive below the equilibrium and negative above it, so the weight is pushed back to 76 from either side. With ε = 0 it is −480 at every weight and never reaches zero."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c08-set-point-crossing.png",
+   "alt": "Change from the start in kcal a day against change in weight in kg, from minus 5 to 0. A steep line falls from 200 at minus 5 to minus 300 at 0. A shallow line rises from minus 100 at minus 5 to 0 at 0. They cross at minus 2.5 kg and minus 50 kcal a day.",
+   "w": 1358,
+   "h": 655,
+   "caption": "The set point model after a 300 kcal a day cut. Intake now rises by 100 kcal a day for each kilogram lost, so it meets expenditure (slope 20) only 2.5 kg down, against 15 kg when intake is flat."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Start with the model that has no sensible equilibrium: the <dfn data-g=\"260\">static rule</dfn>. Its expenditure ignores weight, so ε is 0. Hall and colleagues’ man cuts 480 kilocalories a day. Set the rate to zero in his equation and see what is left.</p>\n<div class=\"working\">\n<p>0 = −480 − 0 × (W* − 100)<br />\n0 = −480</p>\n</div>\n<p>That is false for every weight. There is no equilibrium, so the weight falls for ever, which is the static rule’s straight line. Now let him go back to his old intake, so ΔEI is 0.</p>\n<div class=\"working\">\n<p>0 = 0 − 0 × (W* − 100)</p>\n</div>\n<p>This is true for every weight. Every weight is an equilibrium, so whatever he weighs, he stays there.</p>\n<p>Now use the equation of the last section, with ε = 20 kilocalories a day per kilogram.</p>\n<div class=\"working\">\n<p>0 = −480 − 20 × (W* − 100)<br />\n20 × (W* − 100) = −480<br />\nW* − 100 = −480 ÷ 20 = −24<br />\nW* = 76</p>\n</div>\n<p>The equilibrium is 76 kilograms.</p>\n<p>You can check that 76 is stable. Put the man 4 kilograms above it, at 80, and 4 below it, at 72.</p>\n<div class=\"working\">\n<p>at 80: −480 − 20 × (80 − 100) = −480 + 400 = −80<br />\nat 72: −480 − 20 × (72 − 100) = −480 + 560 = 80</p>\n</div>\n<p>Above 76 the rate is negative, so the weight falls back. Below 76 it is positive, so the weight rises back.</p>\n<p>Now the two models Hall and Guo (2017) draw side by side.</p>\n<p>In the <dfn data-g=\"243\">settling point model</dfn>, intake is flat and expenditure rises “with a slope of about 20–30 kcal/d per kg”. The shift in the equilibrium is the cut divided by the slope.</p>\n<div class=\"working\">\n<p>300 divided by 20 = 15<br />\n300 divided by 30 = 10</p>\n</div>\n<p>Ten to 15 kilograms lower.</p>\n<p>In the set point model, intake also depends on weight, “with a slope of about -100 kcal/d per kg”. Write the model with both slopes.</p>\n<div class=\"working\">\n<p>ρ × dW/dt = −300 − 100 × (W − W0) − ε × (W − W0)<br />\n= −300 − (100 + ε) × (W − W0)</p>\n</div>\n<p>Hall and Guo’s −100 is intake against weight, so a fall in weight raises intake by 100 a kilogram. In intake minus expenditure it enters as −100 × (W − W0), and expenditure’s +20 enters as −20 × (W − W0). The two terms have the same sign, so their sizes add. Set the rate to zero, with ε = 20 and then 30.</p>\n<div class=\"working\">\n<p>0 = −300 − 120 × (W* − W0)<br />\n120 × (W* − W0) = −300<br />\nW* − W0 = −300 ÷ 120 = −2.5<br />\nW* − W0 = −300 ÷ 130 = −2.307692308</p>\n</div>\n<p>About 2.3 to 2.5 kilograms, against 10 to 15.</p>\n<p>The last section’s solution can be written as a gap that shrinks.</p>\n<div class=\"working\">\n<p>W(t) − W* = (W0 − W*) × e<sup>(-t/τ)</sup>,    with τ = ρ ÷ (total slope)</p>\n</div>\n<p>Take ρ = 7,716.18 kilocalories per kilogram, the stand-in of the last section. For the settling point model with slope 20 the total slope is 20. For the set point model it is 100 + 20 = 120.</p>\n<div class=\"working\">\n<p>7716.18 divided by 20 = 385.809<br />\n7716.18 divided by 120 = 64.3015</p>\n</div>\n<p>Time constants of about 386 and 64 days. Each gap halves every τ × ln 2 days. From the section on e, ln 2 is 0.6931.</p>\n<div class=\"working\">\n<p>385.809 times 0.6931 = 267.4<br />\n64.3015 times 0.6931 = 44.57</p>\n</div>\n<p>Here is the loss, in kilograms, after Hall and Guo’s 300 <dfn data-g=\"139\">kilocalorie</dfn> cut, with each model.</p>\n<table style=\"width:88%;\">\n\n<tbody>\n<tr>\n<td>day</td>\n<td>settling point, slope 20</td>\n<td>set point, slopes 100 + 20</td>\n</tr>\n<tr>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>30</td>\n<td>1.12</td>\n<td>0.93</td>\n</tr>\n<tr>\n<td>60</td>\n<td>2.16</td>\n<td>1.52</td>\n</tr>\n<tr>\n<td>90</td>\n<td>3.12</td>\n<td>1.88</td>\n</tr>\n<tr>\n<td>180</td>\n<td>5.59</td>\n<td>2.35</td>\n</tr>\n<tr>\n<td>365</td>\n<td>9.18</td>\n<td>2.49</td>\n</tr>\n<tr>\n<td>730</td>\n<td>12.74</td>\n<td>2.50</td>\n</tr>\n<tr>\n<td>1095</td>\n<td>14.12</td>\n<td>2.50</td>\n</tr>\n</tbody>\n</table>\n<p>The set point curve flattens sooner and lower.</p>\n<p>And if intake goes back to where it was, the equilibrium goes back to the starting weight. The weight follows it, along the same kind of curve. Regain here is the equation working, not a person failing.</p>",
+   "numberRefs": [
+    32,
+    25,
+    10,
+    57
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Every equilibrium here comes from straight lines. The slopes are group averages, and Hall and Guo expect “a wide degree of individual variation”.</p>\n<p>The time constants use the static rule’s ρ as a stand-in, so their sizes are illustrative.</p>\n<p>A scale does not show an equilibrium over the short term. Hall and colleagues (2012) warn that “changes in body weight also include changes in body water, which may be variable”.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>To find where a model says weight will settle, set the rate to zero and solve for the weight. Do not run the model forward and read off where it seems to stop.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In the settling point model, a lasting cut of 300 kilocalories a day moves the equilibrium down 10 to 15 kilograms, by Hall and Guo’s slopes. Before you give a patient a target from a cut in food, say which model it came from.</p>",
+     "tag": "number",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>“Go back to your old intake and you will stay at your new weight” is the static model. When expenditure falls with weight, going back to the old intake moves the equilibrium back to the old weight. Tell a patient that regain is this equation at work.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A steady weight means intake equals expenditure, not that either is small.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A weight that stops falling for a few weeks is not thereby at an equilibrium. The rate is zero at an equilibrium and stays zero. It can pass through zero for a moment while intake is still moving, and water shifts can hide the true rate over the short term.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>An equilibrium worked out from straight lines is only as good as the lines. So quote such a figure as the model’s answer for a group, and name the slopes.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee adds up the slopes, check the signs first. Both push the weight back, so their slopes add. Subtract them, and the pull looks weaker and the shift looks larger.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A policy note says this.</p>\n<blockquote>\n<p>A population-wide cut of 100 kcal a day, sustained, will lower average weight every year. The loss is 100 × 365 ÷ 7,700 = 4.7 kg a year.</p>\n</blockquote>\n<p>Say what is wrong, using the idea of an equilibrium. Then give the figure you would put in its place, with the source of every number in it.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>What is wrong: the note runs the static rule, which has no equilibrium when intake changes. It predicts the same loss every year for ever.</p>\n<p>Put in its place an equilibrium. Hall and colleagues (2011) give a rule of thumb for an average overweight adult. Every 100 kilojoules a day of change in intake leads to “an eventual bodyweight change of about 1 kg”. “Eventual” is the equilibrium. Convert the cut to kilojoules with 4.184 kilojoules per kilocalorie.</p>\n<div class=\"working\">\n<p>100 times 4.184 = 418.4<br />\n418.4 divided by 100 = 4.184</p>\n</div>\n<p>About 4.2 kilograms, once, eventually, not every year. The same paper says half the change comes in about 1 year and 95% in about 3 years.</p>\n<p>What the replacement still does not say. The rule of thumb leaves out intake rising as weight falls, which would shrink the figure. It is for an average overweight adult, not a population with a spread of weights. And a cut “sustained” across a population is itself an assumption, not a measurement.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist has three minutes and no jargon. They ask: “Why do people who lose weight so often put it back on?” Give them the idea of an equilibrium without the word, and one quotable sentence.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with a picture. Two lines on a graph. One is what the body spends, and it rises as the body gets heavier. The other is what the person eats. Where they cross, the weight stays put.</p>\n<p>Then the diet. Eating less lowers the eating line. The crossing moves to a lower weight, and the body drifts down to it over months to years.</p>\n<p>Then the part people miss. When the diet ends and eating goes back to where it was, the crossing goes back to where it was. The body drifts back up to it. Nobody has to lose discipline for that to happen. It is where the lines cross.</p>\n<p>Then the second push. Appetite rises as weight falls. The first study to measure it, in 2016, in people living normally, found about 100 kilocalories a day for each kilogram lost. That tilts the eating line and pulls the crossing back toward the old weight.</p>\n<p>The quotable sentence: “A body settles where what it eats meets what it spends. Go back to the old eating and you go back to the old weight. That is physics and physiology, not weakness.”</p>\n<p>What not to say: that everyone regains, or by how much. The figures are group averages, and people differ widely.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Find the equilibrium of dy/dt = 12 − 0.4 × y.</p>",
+   "level": 1,
+   "answer": "<p>Set the rate to zero and solve.</p>\n<div class=\"working\">\n<p>0 = 12 − 0.4 × y<br />\n0.4 × y = 12<br />\n12 divided by 0.4 = 30</p>\n</div>\n<p>The equilibrium is y = 30. Check: 0.4 × 30 is 12, and 12 − 12 is 0.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Find the equilibrium of dy/dt = −0.05 × (y − 70). Then work out the rate at y = 60 and at y = 80, and say what each tells you.</p>",
+   "level": 1,
+   "answer": "<p>The rate is zero when y − 70 is zero, so the equilibrium is y = 70.</p>\n<div class=\"working\">\n<p>60 minus 70 = -10<br />\n-0.05 times -10 = 0.5<br />\n80 minus 70 = 10<br />\n-0.05 times 10 = -0.5</p>\n</div>\n<p>At 60 the rate is plus 0.5, so y rises toward 70. At 80 it is minus 0.5, so y falls toward 70. From either side the state returns. The equilibrium is stable.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Intake is a flat line at 2,000 units. Expenditure is 500 + 25 × W. Find the W where they cross. Then drop intake to 1,800 and find the new crossing. How far did it move?</p>",
+   "level": 2,
+   "answer": "<p>At the crossing, intake equals expenditure.</p>\n<div class=\"working\">\n<p>2000 = 500 + 25 × W<br />\n2000 minus 500 = 1500<br />\n1500 divided by 25 = 60</p>\n</div>\n<p>W = 60. Now with intake at 1,800.</p>\n<div class=\"working\">\n<p>1800 minus 500 = 1300<br />\n1300 divided by 25 = 52<br />\n60 minus 52 = 8</p>\n</div>\n<p>The crossing moves from 60 to 52, a shift of 8. Check it the short way: the drop in intake divided by the slope.</p>\n<div class=\"working\">\n<p>200 divided by 25 = 8</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Intake is 5,700 − 60 × W and expenditure is 500 + 20 × W. Find the crossing. Then lower intake by 400 at every W and find the new crossing.</p>",
+   "level": 2,
+   "answer": "<p>Set the two equal and gather the W terms on one side by adding 60 × W to both sides.</p>\n<div class=\"working\">\n<p>5700 − 60 × W = 500 + 20 × W<br />\n5700 minus 500 = 5200<br />\n60 plus 20 = 80<br />\n5200 divided by 80 = 65</p>\n</div>\n<p>W = 65. With intake 400 lower, the left side starts at 5,300.</p>\n<div class=\"working\">\n<p>5300 minus 500 = 4800<br />\n4800 divided by 80 = 60</p>\n</div>\n<p>W = 60, a shift of 5. The short way uses the two slopes added.</p>\n<div class=\"working\">\n<p>400 divided by 80 = 5</p>\n</div>\n<p>Had intake been flat, the shift would have been 400 divided by 20, which is 20. The sloping intake line cut it to a quarter.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Take dy/dt = −0.02 × (y − 50), with y = 60 at t = 0. Give the time constant, the <dfn data-g=\"117\">half-time</dfn>, and y at t = 50. Use ln 2 = 0.6931 and e<sup>(-1)</sup> = 0.3679.</p>",
+   "level": 3,
+   "answer": "<p>The gap y − 50 is multiplied by e<sup>(-0.02t)</sup>. The time constant is 1 divided by 0.02.</p>\n<div class=\"working\">\n<p>1 divided by 0.02 = 50<br />\n50 times 0.6931 = 34.655</p>\n</div>\n<p>The time constant is 50 and the half-time about 34.7. At t = 50 the gap has been multiplied by e<sup>(-1)</sup>.</p>\n<div class=\"working\">\n<p>10 times 0.3679 = 3.679<br />\n50 plus 3.679 = 53.679</p>\n</div>\n<p>y is about 53.68. After one time constant, a little over a third of the gap is left, not none of it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A flat intake line is lowered by 300. The equilibrium moves by 12. What is the slope of the expenditure line?</p>",
+   "level": 3,
+   "answer": "<p>The shift is the change in intake divided by the slope. Rearrange for the slope by multiplying both sides by the slope and dividing both by the shift.</p>\n<div class=\"working\">\n<p>slope = change in intake ÷ shift<br />\n300 divided by 12 = 25</p>\n</div>\n<p>A slope of 25. Check: 300 divided by 25 is 12.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Hall and Guo (2017) cut 300 kilocalories a day from the diet in their settling point model. Expenditure rises with weight at about 20 to 30 kilocalories a day per kilogram. Work out how far the equilibrium weight moves at each end of that range.</p>",
+   "level": 4,
+   "answer": "<p>Intake is flat, so the shift is the cut divided by the slope.</p>\n<div class=\"working\">\n<p>300 divided by 20 = 15<br />\n300 divided by 30 = 10</p>\n</div>\n<p>The equilibrium falls by 10 to 15 kilograms. Check the unit: kilocalories a day, divided by kilocalories a day per kilogram, leaves kilograms.</p>\n<p>The range comes from the range of slopes. Quote both ends, not the middle.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Now Hall and Guo’s set point model. The same 300 kilocalories a day is cut, and intake also changes with weight, with a slope of about −100 kilocalories a day per kilogram. Work out the shift in the equilibrium at each end of the 20 to 30 range for expenditure. Compare with the settling point model.</p>",
+   "level": 5,
+   "answer": "<p>Intake rises as weight falls, and expenditure falls as weight falls. Both push the weight back, so the slopes add.</p>\n<div class=\"working\">\n<p>100 plus 20 = 120<br />\n300 divided by 120 = 2.5<br />\n100 plus 30 = 130<br />\n300 divided by 130 = 2.307692308</p>\n</div>\n<p>About 2.3 to 2.5 kilograms. The settling point model gave 10 to 15.</p>\n<div class=\"working\">\n<p>15 divided by 2.5 = 6<br />\n10 divided by 2.307692308 = 4.333333333</p>\n</div>\n<p>The set point shift is about a sixth to a quarter of the settling point shift, depending on the slope of expenditure.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Hall and colleagues (2011) give a rule of thumb. Every change of intake of 100 kJ a day leads to “an eventual bodyweight change of about 1 kg”. The paper adds “(equivalently, 10 kcal per day per <dfn data-g=\"204\">pound</dfn> of weight change)”. Turn each form into kilocalories a day per kilogram. Then give the equilibrium shift each form predicts for a cut of 300 kilocalories a day. One kilocalorie is 4.184 kilojoules. One pound is 0.45359237 kilograms.</p>",
+   "level": 5,
+   "answer": "<p>The first form, 100 kilojoules a day per kilogram.</p>\n<div class=\"working\">\n<p>100 divided by 4.184 = 23.90</p>\n</div>\n<p>The second form, 10 kilocalories a day per pound. There are 1 divided by 0.45359237 pounds in a kilogram, so divide by 0.45359237.</p>\n<div class=\"working\">\n<p>10 divided by 0.45359237 = 22.05</p>\n</div>\n<p>About 23.90 and 22.05 kilocalories a day per kilogram. Both sit inside Hall and Guo’s 20 to 30. The shifts:</p>\n<div class=\"working\">\n<p>300 divided by 23.90 = 12.55<br />\n300 divided by 22.05 = 13.61</p>\n</div>\n<p>About 12.6 and 13.6 kilograms. The paper’s “equivalently” is a <dfn data-g=\"231\">rounding</dfn>, and the two forms differ by about 8%. That is fine for a rule of thumb. Quote which form you used.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Polidori and colleagues ran a drug trial. At steady state, “<dfn data-g=\"85\">energy intake</dfn> was calculated to have increased by ~350 kcal/day” (about 350). Their Equation 4 says the change in intake that appetite makes, which they write ΔEI, is minus kP times the change in weight. kP is about 100 kilocalories a day per kilogram. Work out the weight change at steady state. Compare it with the paper’s “new equilibrium several kilograms lower”.</p>",
+   "level": 6,
+   "answer": "<p>Equation 4 is ΔEI = −kP × ΔW. Divide both sides by minus kP.</p>\n<div class=\"working\">\n<p>ΔW = −ΔEI ÷ kP<br />\n350 divided by 100 = 3.5</p>\n</div>\n<p>ΔW is about minus 3.5 kilograms. The paper says the new equilibrium was “several kilograms lower”. The sizes agree.</p>\n<p>Both figures are rounded (“~350”, about 100), so this checks that the paper’s numbers fit together. It does not replace the paper’s own weight curve.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Hall and colleagues’ 100 kg man cuts 480 kilocalories a day. Their model predicts a plateau “at about 75 kg”. Their rule of thumb, 100 kilojoules a day per kilogram, is 23.90 kilocalories a day per kilogram. Work out the plateau the rule of thumb gives him. Then say why the two might differ. The paper’s summary helps: “adults with greater adiposity have a larger expected weight loss for the same change of energy intake”. Adiposity means how much body fat a person carries.</p>",
+   "level": 6,
+   "answer": "<p>The shift is the cut divided by the slope.</p>\n<div class=\"working\">\n<p>480 divided by 23.90 = 20.08<br />\n100 minus 20.08 = 79.92</p>\n</div>\n<p>About 80 kilograms by the rule of thumb, against about 75 from the paper’s model. The model’s loss is about 25 kilograms, the rule’s about 20.</p>\n<p>The rule of thumb is for “an average overweight adult”. If he carries more body fat than the average overweight adult the rule was built for, the paper says his loss will be larger. Then the rule’s single slope is too steep for him, and its equilibrium comes out too high.</p>\n<p>A single slope is the simplification. The model lets the slope depend on the body.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>set point model: 300 kcal/day cut, intake slope −100, expenditure slope 20<br />\ncombined slope = 100 − 20 = 80<br />\nshift = 300 ÷ 80 = 3.75 kg</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the second. Both feedbacks push the weight back toward where it was, so their slopes add.</p>\n<div class=\"working\">\n<p>100 plus 20 = 120<br />\n300 divided by 120 = 2.5</p>\n</div>\n<p>The shift is 2.5 kilograms, not 3.75.</p>\n<p>Why the wrong answer looks reasonable. The intake slope is written with a minus sign and the expenditure slope without one. Subtracting feels like respecting the signs. Check the direction instead. As weight falls, intake goes up and expenditure goes down. Both close the gap, so both count toward the total slope.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>settling point model: ρ = 7716.18 kcal per kg, ε = 20 kcal/day per kg<br />\ntime constant τ = ε ÷ ρ = 20 ÷ 7716.18 = 0.00259<br />\nso the weight is essentially at its new equilibrium within a day</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the second. The time constant is ρ divided by the slope, not the slope divided by ρ.</p>\n<div class=\"working\">\n<p>7716.18 divided by 20 = 385.809</p>\n</div>\n<p>About 386 days.</p>\n<p>A unit check finds it. Kilocalories per kilogram divided by kilocalories a day per kilogram leaves days. The inverted <dfn data-g=\"223\">ratio</dfn> has the unit one over days: it is a rate, 0.00259 of the gap closed per day, not a time. Reading it as days turns “about a year” into “under four minutes”.</p>\n<p>Why the wrong answer looks reasonable. Both numbers are the right ones, and dividing them is the right operation. Only the order is wrong, and a small answer then looks like a quick settling.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>Polidori’s programme: weight lowest at about 8 months, with intake within 100 kcal/day of baseline<br />\nat the lowest point, weight stopped falling, so dW/dt = 0<br />\ndW/dt = 0 is the definition of an equilibrium<br />\nso the lowest weight was the new equilibrium, and the group could hold it on that intake</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the third. An equilibrium is a weight at which the rate is zero and stays zero, because nothing in the rule is changing. At the lowest point the rate was zero for a moment only. Intake was still climbing back toward where it began. The paper describes intake relaxing toward baseline, then “slow weight regain”.</p>\n<p>Check with the settling point model. A year in, the paper has intake “practically at baseline levels while body weight was still reduced by ~5 kg”. With ΔEI = 0 the equilibrium is the starting weight. At about 5 kilograms below it, with ε = 20:</p>\n<div class=\"working\">\n<p>20 times 5 = 100</p>\n</div>\n<p>The right side is plus 100 kilocalories a day, so the weight is rising.</p>\n<p>Why the wrong answer looks reasonable. A zero rate is the test for an equilibrium, and the weight did stop falling. The missing check is whether the rule itself had stopped moving. A ball thrown upward also has zero speed at the top, and it does not stay there.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 15,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>Hall’s man, ε = 20, ρ = 7716.18: equilibrium 76 kg, time constant 385.809 days<br />\nthe time constant is how long it takes to reach equilibrium<br />\nso on day 386 he weighs 76 kg</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the second. After one time constant the gap has been multiplied by e<sup>(-1)</sup>, which is 0.3679. About 37% of it is still left.</p>\n<div class=\"working\">\n<p>1 minus 0.3679 = 0.6321<br />\n24 times 0.6321 = 15.17<br />\n100 minus 15.17 = 84.83</p>\n</div>\n<p>On day 386 he weighs about 84.8 kilograms, not 76. In this model he never quite reaches 76. The gap keeps shrinking by the same fraction.</p>\n<p>Why the wrong answer looks reasonable. “Time constant” sounds like a time to arrive. It is the time over which the gap shrinks by one factor of e. For a date you can use, give the time to 95% of the shift: τ times ln 20, about 1,156 days here.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 16,
+   "prompt": "<p>A newspaper headline reads: “Cut 300 calories a day and lose 15 kg, says top weight scientist.” The headline is made up for this problem.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: which model gives 15 kilograms, over what time, and what the other model in the same paper gives.</p>\n<p>The 15 is the settling point model’s shift at the low end of its slope, from Hall and Guo.</p>\n<div class=\"working\">\n<p>300 divided by 20 = 15<br />\n300 divided by 30 = 10</p>\n</div>\n<p>So 10 to 15 kilograms, eventually. Hall and Guo say it “takes years to equilibrate”. With the stand-in ρ of 7,716.18 and a slope of 20, 95% of the shift takes about 1,156 days.</p>\n<p>The set point model, in the same paragraph of the same paper, adds appetite rising about 100 kilocalories a day per kilogram lost.</p>\n<div class=\"working\">\n<p>300 divided by 120 = 2.5<br />\n300 divided by 130 = 2.307692308</p>\n</div>\n<p>About 2.3 to 2.5 kilograms.</p>\n<p>What this does not establish. It does not say which model fits a given reader; Hall and Guo expect “a wide degree of individual variation”. It does not say the cut can be kept up for years. It does not say the lines stay straight over a loss of 15 kilograms. The paper that measured the appetite slope does not yet know that. A fair headline would say “somewhere between about 2 and 15 kg, over years, depending on how much appetite rises”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 17,
+   "prompt": "<p>A colleague says of a patient: “Her weight has been flat at 82 kg for two months. She’s hit her set point, so no change in what she eats will move it.” The patient and her weight are made up for this problem.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: whether an equilibrium in a set point model is fixed, or moves when intake is shifted. Use Hall and Guo’s slopes: intake about −100 kilocalories a day per kilogram, expenditure 20 to 30. Take a further sustained shift of 200 kilocalories a day in her intake line.</p>\n<div class=\"working\">\n<p>200 divided by 120 = 1.666666667<br />\n200 divided by 130 = 1.538461538</p>\n</div>\n<p>About 1.5 to 1.7 kilograms lower, eventually. Small, and not zero. In Hall and Guo’s set point model the equilibrium moves whenever the intake line moves. “Set point” names the model, in which both flows push back. It does not name a weight that cannot change.</p>\n<p>What this does not establish. It does not show that two flat months are an equilibrium. Water shifts alone can hide a slow trend over the short term, and a flat stretch can be a turning point while intake is still moving. It does not give her own slopes, which may differ widely from the averages. It does not show that a 200 kilocalorie shift is something she can sustain, or what it would cost her in hunger. And the straight lines may not hold over her range; Polidori and colleagues say so of their own. So answer the colleague with “it moves less than you’d hope, not never”, and name the model.</p>"
+  }
+ ]
+}

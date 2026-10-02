@@ -1,0 +1,200 @@
+{
+ "format": 1,
+ "id": "b0-r0-c22",
+ "label": "C8",
+ "title": "Accumulation, a running total, without the machinery",
+ "part": "C",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>An amount is a rate multiplied by the length of time over which that rate held.</p>\n<p>A <dfn data-g=\"161\">running total</dfn> is the sum of those amounts across successive intervals.</p>\n<p>Drawn with time along the bottom and the rate up the side, each amount is the area of a rectangle whose width is the interval and whose height is the rate over it. The running total up to any time is the area under the <dfn data-g=\"153\">rate line</dfn> up to that time.</p>\n<p>The total is certain to be exact only where the rate held steady across each interval. Where the rate moved inside an interval, the rectangle over-counts or under-counts. Take the largest gap between the height used and the rate at any moment inside that interval. That gap, multiplied by the length of the interval, is the most the rectangle can be wrong by. The error is an amount and carries the quantity’s unit.</p>\n<p>Added across the intervals, those amounts are the most the total can be wrong by. That most is zero only where the rate held steady inside every interval.</p>\n<p>Take a rate that only falls, or only rises, with each height read at one end of its interval. Halving the intervals then halves the most the total can be wrong by, and never raises the actual error. Where the rate rises and falls, halving usually lowers the most, but not always. The actual error can then grow or shrink, though it never passes the most for the intervals used.</p>\n<p>A rate and a total are different quantities with different units, and neither can be read off the other without the time it applied over.</p>",
+   "refs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The section before this one took a quantity and got a rate out of it. This one goes the other way. You start with a rate and you get an amount back.</p>\n<p>A rate multiplied by a time gives an amount.</p>\n<div class=\"working\">\n<p>the amount = the rate, times the length of time the rate held for</p>\n</div>\n<p>Twenty kilograms a month, held for three months, gives sixty kilograms.</p>\n<div class=\"working\">\n<p>20 times 3 = 60</p>\n</div>\n<p>Check the unit, because the unit is what tells you the step was done the right way round. Kilograms per month, multiplied by months, leaves kilograms. The months cancel, exactly as they did in the section on dimensional analysis.</p>\n<p>They cancel only when the two time units match. Say water is drawn at 40 litres a day for 2 months, both figures made up. Litres a day times months is not litres. So turn the months into days first. Count a month as 30 days, and say that you did.</p>\n<div class=\"working\">\n<p>2 times 30 = 60<br />\n40 times 60 = 2400</p>\n</div>\n<p>Sixty days at 40 litres a day is 2,400 litres. Now the days cancel.</p>\n<p>Rates change. So you cut the time into intervals short enough that the rate can be treated as steady inside each one. Work out the amount for each interval. Then add them up as you go.</p>\n<p>That sum is called a running total.</p>\n<p>Draw time along the bottom and the rate up the side. Mark the rate over each interval at the height it reached. The line those marks make across the figure is the rate line, and everything below it is what you are about to measure.</p>\n<p>Now take one interval and draw a rectangle on it. Its height is the rate over that interval, so its top sits on the rate line.</p>\n<p>The area of that rectangle is its height times its width. The area of the rectangle is the amount.</p>\n<p>Stack the rectangles side by side across the whole stretch of time. The total area is the running total.</p>\n<p>A rectangle assumes the rate held steady across its whole width. Where the rate was falling, a rectangle drawn at the starting rate counts too much. Where the rate was rising, it counts too little.</p>\n<p>Now cut each interval in half. Where the rate only falls, or only rises, the error does not grow, and it usually shrinks. Where the rate rises and falls, the over-counts and under-counts can partly cancel. Then halving can leave the error larger. Only a rate that held steady inside every interval gives a total you know to be exact.</p>\n<p>One name, so you recognise it on somebody else’s page. The total under a rate line is called an <dfn data-g=\"90\">integral</dfn>. It is written with the sign ∫, which is a stretched letter S for sum. That is all you need. Nothing in this book asks you to work one out.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "c8-rectangles.png",
+   "alt": "Six rectangles of equal width standing on an axis of months, labelled 20, 20, 15, 10, 10 and 5 kilograms a month. Their tops make one stepped line across the figure, which is the rate line. The heights fall in stages with a flat pair at the 20 level and another at the 10 level. The six areas add to 80 kilograms.",
+   "w": 1353,
+   "h": 629,
+   "caption": "Each rectangle is one month’s rate multiplied by one month, so its area is that month’s amount. Stacking them is the running total, and the total is the area under the whole rate line."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>A store issues grain. Somebody records the rate at which it goes out, month by month, for six months.</p>\n<table style=\"width:53%;\">\n\n<thead>\n<tr>\n<th>month</th>\n<th>kilograms a month going out</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>20</td>\n</tr>\n<tr>\n<td>2</td>\n<td>20</td>\n</tr>\n<tr>\n<td>3</td>\n<td>15</td>\n</tr>\n<tr>\n<td>4</td>\n<td>10</td>\n</tr>\n<tr>\n<td>5</td>\n<td>10</td>\n</tr>\n<tr>\n<td>6</td>\n<td>5</td>\n</tr>\n</tbody>\n</table>\n<p>A note on the file says this.</p>\n<blockquote>\n<p>The store issues 20 kilograms a month. Over six months that is 120 kilograms.</p>\n</blockquote>\n<p>The multiplication is right.</p>\n<p>The error is that 20 was the rate in two of the six months and not in the other four. One month’s rate was used as though it held for all six.</p>\n<p>Do it properly. Each month is one interval, and each interval’s amount is its rate times one month.</p>\n<p>Add them as a running total, which is the amount so far after each month.</p>\n<div class=\"working\">\n<p>20 plus 20 = 40<br />\n40 plus 15 = 55<br />\n55 plus 10 = 65<br />\n65 plus 10 = 75<br />\n75 plus 5 = 80</p>\n</div>\n<p>Eighty kilograms over the six months, against the 120 in the note. The note is out by half again.</p>\n<p>Now draw it, because the picture is how everybody else will show you this.</p>\n<p>Put months along the bottom and kilograms a month up the side. Mark each month’s rate at the height it reached, and the six marks make one stepped line across the figure. That line is the rate line.</p>\n<p>Now over month one, draw a rectangle one month wide and 20 kilograms a month tall, so that its top sits on the rate line. Its area is its height times its width.</p>\n<div class=\"working\">\n<p>20 times 1 = 20</p>\n</div>\n<p>Twenty kilograms. Do the same for each month and you get six rectangles standing side by side. Their heights are 20, 20, 15, 10, 10 and 5, and every width is one month. The whole shaded area under the rate line is 80 kilograms, which is the answer you already have.</p>\n<p>Check the unit before you go on.</p>\n<div class=\"working\">\n<p>kilograms per month, times months<br />\n= kilograms</p>\n</div>\n<p>A total is in the unit of the quantity, never in the unit of the rate.</p>\n<p>Those 80 kilograms went out of the store, so for the store itself they are subtracted. Say it held 200 kilograms at the start and nothing came in. That 200 is made up for this line.</p>\n<div class=\"working\">\n<p>200 minus 80 = 120</p>\n</div>\n<p>One hundred and twenty kilograms left. Subtract month by month instead. The running total of grain issued still rises, 20, 40, 55, 65, 75, 80. What falls is the stock left in the store.</p>\n<div class=\"working\">\n<p>200 minus 20 = 180<br />\n180 minus 20 = 160<br />\n160 minus 15 = 145<br />\n145 minus 10 = 135<br />\n135 minus 10 = 125<br />\n125 minus 5 = 120</p>\n</div>\n<p>A flow out is an amount taken away rather than added.</p>\n<p>Last, the part that decides how much your total is worth.</p>\n<p>Take a rate that is falling steadily, from 20 kilograms a month down to nothing over four months. Read it at the start of each month and you get 20, 15, 10 and 5.</p>\n<p>This rate line is a different drawing from the one for the store. There we took each month’s rate as holding for the whole month, so the line was a staircase and the rectangles sat exactly on it. Here the rate falls all the time, so its line is a straight <dfn data-g=\"170\">slope</dfn> from 20 down to nothing. Rectangles always make a staircase. The gap between that staircase and the slope is what the table below measures.</p>\n<p>Build the total from four rectangles, each one month wide.</p>\n<div class=\"working\">\n<p>20 plus 15 plus 10 plus 5 = 50</p>\n</div>\n<p>Fifty kilograms.</p>\n<p>Now cut the intervals in half. Read the rate every half month and you get 20, 17.5, 15, 12.5, 10, 7.5, 5 and 2.5. Each rectangle is half a month wide, so add the eight heights and multiply by half a month.</p>\n<div class=\"working\">\n<p>20 plus 17.5 plus 15 plus 12.5 plus 10 plus 7.5 plus 5 plus 2.5 = 90<br />\n90 times 0.5 = 45</p>\n</div>\n<p>Forty-five kilograms.</p>\n<p>The rate falls in a straight line from 20 to nothing, so its average over the four months is halfway between the two ends.</p>\n<div class=\"working\">\n<p>20 plus 0 = 20<br />\n20 divided by 2 = 10</p>\n</div>\n<p>Ten kilograms a month, for four months.</p>\n<div class=\"working\">\n<p>10 times 4 = 40</p>\n</div>\n<p>Forty kilograms, and that one is exact.</p>\n<p>Put the three answers beside each other and watch the error close.</p>\n<table style=\"width:94%;\">\n\n<thead>\n<tr>\n<th>how the total was built</th>\n<th>answer</th>\n<th>how far above the exact answer</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>four whole-month blocks</td>\n<td>50 kg</td>\n<td>10 kg</td>\n</tr>\n<tr>\n<td>eight half-month blocks</td>\n<td>45 kg</td>\n<td>5 kg</td>\n</tr>\n<tr>\n<td>the exact total</td>\n<td>40 kg</td>\n<td>none</td>\n</tr>\n</tbody>\n</table>\n<p>Halving the interval halved the error, and it did that because this rate falls in a straight line. On a rate like this one, halving again would halve the error again. Read that as a property of a rate that changes steadily, not as a rule about intervals.</p>\n<p>Where a rate bends but keeps falling, halving the intervals still shrinks the error, but by no fixed share you can count on. Where a rate rises over part of the span and falls over the rest, two rectangle errors can point opposite ways and partly cancel. Halving can then leave the total error larger than it was. It still never passes the most from the definition: each interval’s largest gap times its width, added across the intervals.</p>\n<p>In this worked case the error never reaches zero, and every rectangle counts too much, because the rate was falling inside each one of them.</p>\n<p>So a total is not one number. It is one number and one assumption, and the assumption is that the rate held across each interval you used.</p>",
+   "numberRefs": [
+    6
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The six monthly rates in the first table are bare numbers.</p>\n<p>Area is a total only when time is along the bottom and a rate is up the side. Read both axis labels before you shade anything.</p>\n<p>A rectangle built on the rate at the start of an interval counts too much while the rate is falling. While it keeps falling, halving the intervals shrinks that error and never removes it. Where the rate rises and falls, halving can leave the error larger.</p>\n<p>And every amount here is an amount going one way. A flow out of something is an amount subtracted rather than added, and the amount left then falls.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Multiply a rate by the time it held for before you quote any total.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Check the unit of every total. If the unit of your answer still has a time on the bottom, you have added rates instead of accumulating them.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Taking one measurement of a rate and multiplying it by a whole year is the commonest way a total goes wrong.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The area under a rate line is a total and not a rate.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A total carries its interval assumption with it. Halving the intervals usually shrinks the error, but where the rate rises and falls it can make it larger. Only a rate that held steady inside every interval gives a total you know to be exact.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before accepting an annual figure built from one measurement, ask how many times the rate was measured and when. A yearly total from a single reading is a forecast wearing the clothes of a count.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A total says how much has piled up, a rate says how fast it is piling up now, and the two answer different questions.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Teach a trainee to draw the rectangles before reaching for a formula.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A figure has months along the bottom and litres a day up the side. The line starts high, falls for six months, and then runs flat for six more.</p>\n<p>Say what the area under the line stands for, and give its unit. Then say what the figure does not tell you.</p>",
+   "type": "interpretation",
+   "confidence": true,
+   "answer": "<p>The area under the line is the total number of litres over the twelve months. It is the running total, drawn.</p>\n<p>The unit comes off the two axes. Litres a day up the side and months along the bottom, so the area is in litres a day multiplied by months.</p>\n<p>That is not yet a usable unit, and the fix is a conversion from the section on converting units. Turn the months into days, and litres a day multiplied by days leaves litres.</p>\n<p>What the figure does not tell you. It does not tell you the rate now. For that you read the height of the line at the right-hand end, rather than the area under it. Those are two different readings of the same picture, and only one of them answers “how fast”.</p>\n<p>It does not tell you how the rate moved inside each month. A line drawn between monthly readings is an assumption about the days between them.</p>\n<p>And it does not tell you whether a total of that size matters. The picture carries no threshold and no comparison, so nothing in it says whether the number is large.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A district file carries this line.</p>\n<blockquote>\n<p>The depot issued 400 bags in the first week of April. That is 400 a week, so it will issue about 20,800 bags this year.</p>\n</blockquote>\n<p>Take a year as 52 weeks.</p>\n<p>Say what has been assumed, say what you would ask for, and say what you would write in its place.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The arithmetic is right. Fifty-two weeks at 400 bags is 20,800.</p>\n<div class=\"working\">\n<p>400 times 52 = 20800</p>\n</div>\n<p>What has been assumed: that a rate measured across one week held across fifty-two. The file has one rectangle, one week wide, and has stretched it to cover a year.</p>\n<p>That assumption is doing all the work and it is nowhere stated. Ask whether issue rates move with the season or with the month of the entitlement cycle, and get the weekly figures that would show it.</p>\n<p>What to ask for: the weekly issue figures for as many past weeks as exist. Fifty-two readings give fifty-two rectangles and a total that assumes almost nothing. Twelve monthly readings give twelve, which is far better than one.</p>\n<p>What to write in its place. Say that the depot issued 400 bags in the first week of April. Then say that a yearly figure needs the rate across the year. The 20,800 is what the year would come to if every week matched that one. Give the 20,800 as a conditional and never as a count.</p>\n<p>One more line worth adding. Ask whether the first week of April is a typical week, or whether the entitlement cycle makes it the busiest.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A health secretary has one page and three minutes. Two reports have reached them about the same programme. One gives a monthly rate and one gives a yearly total, and the two do not look like they can both be true.</p>\n<p>Write what you would put on that page.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first, because that is what the page is for.</p>\n<p>The two reports may both be right. A rate and a total are different quantities. One says how fast something is happening and the other says how much has happened. Neither can be checked against the other without the time it applied over.</p>\n<p>Then the one line of arithmetic that settles it. Multiply the monthly rate by twelve months. If that lands near the yearly total, the two reports agree.</p>\n<div class=\"working\">\n<p>the yearly total = the monthly rate, times twelve months</p>\n</div>\n<p>Then the question to send back if the two do not agree. Ask how many times the rate was measured across the year. A single month stretched to twelve is a forecast, and a figure built from twelve monthly readings is a count. The two arrive on the page looking identical.</p>\n<p>Then one sentence on what to require in future. Every total should say what readings it was built from. Every rate should say the interval it covers.</p>\n<p>No methods section. The secretary does not need rectangles. They need to know that a rate and a total are different things, and that the multiplication between them hides an assumption.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A quantity grows at a steady rate of 7 for each unit of time.</p>\n<p>Work out how much is added over 9 units of time, over 20 units of time, and over half a unit of time.</p>",
+   "level": 1,
+   "answer": "<p>The amount is the rate multiplied by the time.</p>\n<div class=\"working\">\n<p>7 times 9 = 63</p>\n</div>\n<div class=\"working\">\n<p>7 times 20 = 140</p>\n</div>\n<div class=\"working\">\n<p>7 times 0.5 = 3.5</p>\n</div>\n<p>So 63, then 140, then 3.5.</p>\n<p>The last one is worth a second look. A time shorter than one unit gives an amount smaller than the rate, which is what multiplying by a number below one always does.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A quantity changes at different rates over three successive stretches of time.</p>\n<table style=\"width:56%;\">\n\n<thead>\n<tr>\n<th>stretch</th>\n<th>the rate</th>\n<th>how long it held</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>first</td>\n<td>12</td>\n<td>4 units of time</td>\n</tr>\n<tr>\n<td>second</td>\n<td>5</td>\n<td>6 units of time</td>\n</tr>\n<tr>\n<td>third</td>\n<td>20</td>\n<td>2 units of time</td>\n</tr>\n</tbody>\n</table>\n<p>Work out the amount over each stretch, and the total over all three.</p>",
+   "level": 2,
+   "answer": "<p>Each amount is the rate multiplied by the time it held for.</p>\n<div class=\"working\">\n<p>12 times 4 = 48<br />\n5 times 6 = 30<br />\n20 times 2 = 40</p>\n</div>\n<p>So 48, then 30, then 40.</p>\n<p>Now add them.</p>\n<div class=\"working\">\n<p>48 plus 30 = 78<br />\n78 plus 40 = 118</p>\n</div>\n<p>A total of 118.</p>\n<p>Notice the third stretch. It had the highest rate of the three and it contributed less than the first, because it lasted two units of time instead of four. A rate on its own does not tell you how much a stretch contributed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A quantity is added at these rates over six successive intervals, each one unit of time long: 9, 9, 4, 4, 4, 2.</p>\n<p>Write the running total after each interval.</p>",
+   "level": 2,
+   "answer": "<p>Each interval is one unit of time long, so each amount is the rate itself.</p>\n<p>Add them one at a time.</p>\n<div class=\"working\">\n<p>9 plus 9 = 18<br />\n18 plus 4 = 22<br />\n22 plus 4 = 26<br />\n26 plus 4 = 30<br />\n30 plus 2 = 32</p>\n</div>\n<p>So the running total reads 9, 18, 22, 26, 30, 32.</p>\n<p>Two things to notice. The running total never falls, because every rate here is positive. And it climbs in steps of different sizes, because the rate changed while the intervals did not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A quantity accumulates over three stretches. Over the first it grows at 10 for 5 units of time. Over the second it grows at 6 for 5 units of time. Over the third it grows at 6 for 10 units of time.</p>\n<p>Work out the total. Then work out the average rate over the whole twenty units of time.</p>",
+   "level": 3,
+   "answer": "<p>Each stretch first.</p>\n<div class=\"working\">\n<p>10 times 5 = 50<br />\n6 times 5 = 30<br />\n6 times 10 = 60</p>\n</div>\n<p>Now the total.</p>\n<div class=\"working\">\n<p>50 plus 30 = 80<br />\n80 plus 60 = 140</p>\n</div>\n<p>A total of 140.</p>\n<p>Now the average rate. The whole time is 5 plus 5 plus 10.</p>\n<div class=\"working\">\n<p>5 plus 5 = 10<br />\n10 plus 10 = 20</p>\n</div>\n<p>Twenty units of time. The average rate is the total divided by the time.</p>\n<div class=\"working\">\n<p>140 divided by 20 = 7</p>\n</div>\n<p>Seven for each unit of time.</p>\n<p>That 7 is the height of a single rectangle twenty units wide that would hold the same area as the three real ones. It is a useful summary and it matches the rate over none of the three stretches.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains per person per month.</p>\n<p>Work out the grain a household of seven is counted for over a full year. Show the rate you used and the time you multiplied it by, and give the unit at every line. Then say which figure in your working comes from the Act and which are yours.</p>",
+   "level": 4,
+   "answer": "<p>Start with the monthly rate for the household.</p>\n<div class=\"working\">\n<p>5 times 7 = 35</p>\n</div>\n<p>Thirty-five kilograms a month. The unit comes from the Act’s own rate: kilograms per person per month, multiplied by seven people, leaves kilograms per month.</p>\n<p>Now multiply by the time.</p>\n<div class=\"working\">\n<p>35 times 12 = 420</p>\n</div>\n<p>Four hundred and twenty kilograms.</p>\n<p>Check the unit before accepting it.</p>\n<div class=\"working\">\n<p>kilograms per month, times months<br />\n= kilograms</p>\n</div>\n<p>The months cancel, so the answer is a mass and not a rate. Four hundred and twenty kilograms a year for the household.</p>\n<p>Which figure is whose. The five kilograms per person per month is the Act’s. The seven people, the twelve months, the 35 and the 420 are all yours. Say so whenever you quote the 420. A figure that came out of your calculator reads exactly like one that came out of a statute.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A rate is recorded once a month for six months, in litres a month: 300, 300, 450, 450, 200, 100.</p>\n<p>Work out the running total after each month, and the total over the six months. Then state the assumption the total rests on.</p>",
+   "level": 5,
+   "answer": "<p>Each month is one interval, so each amount is that month’s rate multiplied by one month.</p>\n<div class=\"working\">\n<p>300 plus 300 = 600<br />\n600 plus 450 = 1050<br />\n1050 plus 450 = 1500<br />\n1500 plus 200 = 1700<br />\n1700 plus 100 = 1800</p>\n</div>\n<p>So the running total reads 300, 600, 1,050, 1,500, 1,700 and 1,800 litres.</p>\n<p>The total over the six months is 1,800 litres.</p>\n<p>Check the unit. Litres per month multiplied by months leaves litres, so the answer is a volume and not a rate.</p>\n<p>The assumption. Each figure was read once and then treated as the rate for that whole month. Where the rate moved inside a month, the rectangle for that month is too tall or too short. Nothing in the six readings shows which, and nothing in the total warns you about it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A rate is measured every three months and comes out at 40 units a month, then 60, then 60, then 20. Each reading is the rate for the three months that start on the day it was taken, and the four together cover the year.</p>\n<p>Work out the total across the year. Then work out what you would get by adding the four readings, and say what unit that sum is in.</p>",
+   "level": 5,
+   "answer": "<p>Each reading stands for a three-month interval, so each amount is the rate multiplied by three months.</p>\n<div class=\"working\">\n<p>40 times 3 = 120<br />\n60 times 3 = 180<br />\n60 times 3 = 180<br />\n20 times 3 = 60</p>\n</div>\n<p>Now add the four amounts.</p>\n<div class=\"working\">\n<p>120 plus 180 = 300<br />\n300 plus 180 = 480<br />\n480 plus 60 = 540</p>\n</div>\n<p>Five hundred and forty units across the year.</p>\n<p>Now the other sum, which is what people write down when they are hurrying.</p>\n<div class=\"working\">\n<p>40 plus 60 = 100<br />\n100 plus 60 = 160<br />\n160 plus 20 = 180</p>\n</div>\n<p>A hundred and eighty. Its unit is units a month, because adding four rates gives a rate and never an amount.</p>\n<p>So 180 is not a wrong total. It is not a total at all. It is four rates added together, and the unit says so before the number does.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A quantity accumulates over 8 months and the total comes to 96 kilograms. Over the first 2 months the rate was 18 kilograms a month.</p>\n<p>Work out the average rate over the whole 8 months. Then work out the total over the remaining 6 months, and the average rate over those 6 months.</p>",
+   "level": 6,
+   "answer": "<p>This one runs backwards from the total, which is the direction you will need more often than the other.</p>\n<p>The average rate over the whole stretch is the total divided by the time.</p>\n<div class=\"working\">\n<p>96 divided by 8 = 12</p>\n</div>\n<p>Twelve kilograms a month.</p>\n<p>Now the first two months. Their amount is the rate multiplied by the time.</p>\n<div class=\"working\">\n<p>18 times 2 = 36</p>\n</div>\n<p>Thirty-six kilograms. So the remaining six months hold the rest.</p>\n<div class=\"working\">\n<p>96 minus 36 = 60</p>\n</div>\n<p>Sixty kilograms over six months. Their average rate is that amount divided by that time.</p>\n<div class=\"working\">\n<p>60 divided by 6 = 10</p>\n</div>\n<p>Ten kilograms a month.</p>\n<p>Look at the three figures together. The average over the whole stretch is 12, the early rate was 18 and the later average is 10. The whole-stretch average sits between them and describes neither part.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a tank is filling and the rate is measured at four times<br />\nthe readings are 12, 9, 6 and 3 litres a minute<br />\nthe total is 12 plus 9 plus 6 plus 3<br />\n12 plus 9 plus 6 plus 3 = 30<br />\nso 30 litres went in</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the third. Four rates were added together, and a sum of rates is not a total.</p>\n<p>The units say it first. Litres a minute added to litres a minute gives litres a minute. The answer is labelled litres, so somewhere a unit was dropped rather than cancelled.</p>\n<p>An amount needs a time. Each reading has to be multiplied by the length of the interval it stands for, and the working never says what that length is. Take the readings as five minutes apart and each rectangle is five minutes wide.</p>\n<div class=\"working\">\n<p>12 times 5 = 60<br />\n9 times 5 = 45<br />\n6 times 5 = 30<br />\n3 times 5 = 15</p>\n</div>\n<p>Now add the four amounts.</p>\n<div class=\"working\">\n<p>60 plus 45 = 105<br />\n105 plus 30 = 135<br />\n135 plus 15 = 150</p>\n</div>\n<p>A hundred and fifty litres, if the readings are five minutes apart.</p>\n<p>Notice what that means. The broken answer cannot be corrected from what it gives you, because the interval was never recorded. Without it there is no total to be had.</p>\n<p>Why it looks reasonable: adding a column of numbers is what a total feels like, and the four readings are right there in a column. The arithmetic is correct. The step that never happened is the one that leaves no trace on the page.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a figure has months along the bottom and kilograms in the store up the side<br />\nthe line runs at about 300 kilograms for all twelve months<br />\nthe area under the line is 300 times 12<br />\n300 times 12 = 3600<br />\nso 3,600 kilograms passed through the store during the year</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the third, and it broke on the side axis rather than on the arithmetic.</p>\n<p>Read the axis label again. It carries kilograms in the store, which is a quantity, not kilograms a month, which would be a rate.</p>\n<p>The area under a line is a total only where the side axis carries a rate. Here the area is in kilograms multiplied by months, which is not a quantity of grain and not a quantity of anything else anybody uses.</p>\n<p>What the figure does say is worth stating, because it is useful and it is not what was claimed. The store held about 300 kilograms at every month of the year. The line is flat, so the amount in the store did not change.</p>\n<p>What the figure does not say: how much passed through. A store can hold a steady 300 kilograms while thousands of kilograms move in and out. It can also hold a steady 300 kilograms with nothing moving at all. The picture cannot tell those apart, and that is the next section.</p>\n<p>Why it looks reasonable: the phrase “area under the line” is exactly right for a rate graph. Here it has been carried across to a graph of a quantity, and nobody reread the axis. The number 3,600 is plausible, has a unit attached, and answers a question nobody could have answered from this figure.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A note reaches you from a block office.</p>\n<blockquote>\n<p>Our vehicle used 8 litres of fuel an hour on the day we measured it. It runs about 6 hours a day. So budget for about 17,500 litres this year.</p>\n</blockquote>\n<p>The office, the vehicle and all three figures are made up for this problem. No real service is being described.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the daily amount from the rate, and then the yearly total the note is claiming, so you can see what it assumed.</p>\n<p>The daily amount is the rate multiplied by the hours.</p>\n<div class=\"working\">\n<p>8 times 6 = 48</p>\n</div>\n<p>Forty-eight litres a day. Check the unit: litres an hour multiplied by hours leaves litres.</p>\n<p>Now a year of that.</p>\n<div class=\"working\">\n<p>48 times 365 = 17520</p>\n</div>\n<p>About 17,520 litres, so the note’s arithmetic holds.</p>\n<p>What this does not establish. It does not establish that the vehicle runs every day of the year. Three hundred and sixty-five is the note’s own assumption and it is nowhere stated. At 250 working days the figure is different.</p>\n<div class=\"working\">\n<p>48 times 250 = 12000</p>\n</div>\n<p>Twelve thousand litres, which is about a third less.</p>\n<p>It does not establish that 8 litres an hour is the rate on other days. One measurement was stretched across a year, which is one rectangle drawn a year wide.</p>\n<p>And it does not establish that six hours is typical. Every one of the three numbers is a single reading doing the work of a year of readings.</p>\n<p>What to ask for: the fuel actually drawn over the last twelve months. A count beats a total built from one day, and the depot already holds it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A line in a review meeting goes like this.</p>\n<blockquote>\n<p>The scheme distributed 24 lakh kilograms of grain last year. The year before it was 20 lakh. It is clearly reaching more people than ever.</p>\n</blockquote>\n<p>The scheme and both figures are made up for this problem. No real scheme is being described.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the change between the two totals, and what a monthly rate would have to be to produce each of them.</p>\n<p>Write both figures out in full first.</p>\n<div class=\"working\">\n<p>24 lakh = 24 times 10<sup>5</sup> = 2400000<br />\n20 lakh = 20 times 10<sup>5</sup> = 2000000</p>\n</div>\n<p>Now the change.</p>\n<div class=\"working\">\n<p>2400000 minus 2000000 = 400000</p>\n</div>\n<p>Four <dfn data-g=\"102\">lakh</dfn> kilograms more, which as a share of the earlier year is this.</p>\n<div class=\"working\">\n<p>400000 divided by 2000000 = 0.2</p>\n</div>\n<p>A fifth more, or twenty per cent.</p>\n<p>Now turn the later total back into a rate, since a total on its own hides the year it came from.</p>\n<div class=\"working\">\n<p>2400000 divided by 12 = 200000</p>\n</div>\n<p>Two lakh kilograms a month, averaged across the twelve months.</p>\n<p>What this does not establish. It does not establish that more people were reached. A total of grain divided among fewer people, at a larger amount each, gives exactly the same number. Kilograms are not people, and the note has swapped one for the other with no working in between.</p>\n<p>It does not establish that the rise happened evenly. A yearly total is one rectangle. Two good months and ten flat ones give the same total as twelve steady ones.</p>\n<p>And it does not establish that either year met what was owed. That question needs the entitlement, the number of people entitled, and a comparison against those. None of the three is in the sentence.</p>\n<p>What to ask for: the monthly distribution figures, and the number of people who collected in each month. The second is the one the claim was actually about.</p>"
+  }
+ ]
+}

@@ -1,0 +1,124 @@
+{
+ "format": 1,
+ "id": "s37-r1-c08",
+ "label": "8",
+ "title": "Built against hunger",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>India’s central food institutions were set up in answer to shortages of grain. The Department of Food and Public Distribution (DFPD) says so in its own account. The Food Corporation of India (FCI) was set up in 1965, under an <dfn data-g=\"3\">Act</dfn> of 1964, because the country faced a major shortage of foodgrains, especially wheat.</p>\n<p>The Department describes the FCI’s job today in terms of grain. Its Annual Report 2025-26 calls the FCI the main instrument of the Government of India for <dfn data-g=\"290\">procurement</dfn> and distribution of wheat, rice and coarse grains, and for maintaining the <dfn data-g=\"39\">buffer stock</dfn> of foodgrains.</p>\n<p>The national scoreboard is also a quantity. The Economic Survey 2025-26’s Table 1.19 gives <dfn data-g=\"245\">net imports</dfn> of cereals for 2022-23 of minus 30,352 thousand tonnes: India exported more cereal than it imported.</p>\n<p>The nutrition standards that the National Food Security Act, 2013 attaches to its meals are floors. No instrument quoted here sets an upper limit on energy, sugar, fat or salt.</p>",
+   "refs": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The government’s own history gives a plain answer. Each time, the trigger was too little grain. A Food Department was set up in 1942, in the war, because of acute food shortage. The ration shops of the public distribution system started in the 1960s to manage scarcity. What a ration shop hands out is grain, mainly rice and wheat.</p>\n<p>So the tools were built to buy grain, store it, move it and sell it cheaply. Read how the Department describes the Food Corporation today. It is the main instrument for buying and distributing wheat, rice and coarse grains, the millets and other cereals besides those two. And the score the country keeps is in tonnes and grams of grain. By that score the shortage is over: in 2022-23 India sent out more cereal than it brought in.</p>\n<p>Nothing in that design asks whether people eat too much of anything. That is not an oversight in a system built for obesity. It is a system built for a different problem, and it did what it was built to do.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c08-net-imports.png",
+   "alt": "Bars drawn from a baseline. The rice, wheat and other cereals bars point down, to -22347, -4682 and -3323 thousand tonnes. The pulses bar points up, to 1733.",
+   "w": 1358,
+   "h": 655,
+   "caption": "Net imports in 2022-23, thousand tonnes (Economic Survey 2025-26, Table 1.19). Rice -22347, wheat -4682 and other cereals -3323 are net exports, together -30352. Pulses, 1733, are still a net import."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Open two instruments and one table, and ask each the same question: what does it count?</p>\n<p>First, the Department of Food and Public Distribution’s Annual Report 2025-26 (https://dfpd.gov.in/WriteReadData/AnnualRecordUploadDocuments/43bf089b-73cc-4329-aeb6-c883d2f2ea55_Food%20AR%202025-26%20English.pdf). Search it for “main instrument”. Paragraph 3.64 comes up.</p>\n<p>Procurement means the state buying grain from farmers. A buffer stock is grain held in reserve. Now read the whole paragraph again and look for “nutrition”. It is not there.</p>\n<p>Second, the National Food Security Act, 2013 (https://indiacode.gov.in/handle/123456789/496105). Go to Schedule II, “Nutritional Standards”. A standard you must meet is a floor. Look along each row for a maximum, or for sugar, fat or salt. There is none.</p>\n<p>Third, the Economic Survey 2025-26, Statistical Appendix, Table 1.19 (https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab1.19.pdf). This is the scoreboard. Find the 2022-23 rows. Net imports, in thousand tonnes, read like this.</p>\n<table style=\"width:78%;\">\n\n<tbody>\n<tr>\n<td>group</td>\n<td>net imports 2022-23 (thousand tonnes)</td>\n</tr>\n<tr>\n<td>rice</td>\n<td>-22347</td>\n</tr>\n<tr>\n<td>wheat</td>\n<td>-4682</td>\n</tr>\n<tr>\n<td>other cereals</td>\n<td>-3323</td>\n</tr>\n<tr>\n<td>pulses</td>\n<td>1733</td>\n</tr>\n</tbody>\n</table>\n<p>A minus sign here means India sent out more than it brought in.</p>\n<p>The system built to end a grain shortage now exports more cereal than it imports. In 2022-23 it also drew its cereal stocks down by 18,155 thousand tonnes.</p>\n<p>None of them has a place to record too much.</p>",
+   "numberRefs": [
+    75
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The net import figures hold for the financial year 2022-23 and for all India. They describe grain available, not grain eaten. They say nothing about any state or household, and a single year of trade can swing with one harvest.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Indian food policy ignored nutrition” is the wrong charge. It was built against a grain shortage and keeps score in tonnes of grain. By that measure it has ended the shortage it was built for.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Before you ask an institution to do nutrition work, read what the state says it is for. A plan for it to buy vegetables or oils changes its job. Argue it as a change, not as a small fix.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>In 2022-23 India’s net imports of cereals were minus 30,352 thousand tonnes, a net export of about 30 million tonnes (Economic Survey 2025-26, Table 1.19).</p>",
+     "tag": "number",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The nutrition standards in Schedule II of the National Food Security Act are floors, “required to be met”.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The PDS was never meant to be a whole diet. The Department calls it “supplemental in nature”. Do not judge the ration as if it had to supply everything a family eats.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The departmental histories give the state’s own reasons, in its own words. Do not quote an annual report as proof of what happened in 1965.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Grams of foodgrain available a day per person is not grams eaten. Do not set it beside a requirement as if it were intake.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Write one page for a health secretary, answer first. The question is: “Why does the ration give rice and wheat, and nothing that would help with obesity?”</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first. The ration gives rice and wheat because the system behind it was built to end a shortage of grain, and it did.</p>\n<p>The evidence is the state’s own. The Food Corporation of India was set up in 1965 “as the country was facing major shortage of foodgrains, especially wheat”. The Department still describes it as the main instrument for buying and distributing wheat, rice and coarse grains and for the buffer stock. The PDS began in the 1960s to manage grain scarcity.</p>\n<p>The system keeps score in tonnes of grain, and by that count the shortage is over. In 2022-23 India exported about 30 million tonnes more cereal than it imported.</p>\n<p>The law sets <dfn data-g=\"42\">calorie</dfn> and <dfn data-g=\"292\">protein</dfn> floors for meals and no ceilings. So nothing in the machinery asks about excess. Changing the basket is possible. It means changing what the Corporation buys and what the Act’s schedules count, and that is a decision, not a correction.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A draft article says: “The fact that India now exports cereals proves its people are well fed.” Find the flaw, using only what this section has shown you.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Net exports of cereals show that the country produces more cereal than it uses at home, in tonnes. They say nothing about who eats it.</p>\n<p>Availability is not intake. The Economic Survey’s table says its per person figure is “not strictly representative of actual level of consumption”. And cereals are one food. The same table shows pulses were still a net import.</p>\n<p>The claim measures a national store of grain and reads it as people’s diets. It also treats energy from cereal as the whole of being well fed. That is exactly the measure this section says the system was built on.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>The Department of Food and Public Distribution’s Annual Report 2025-26 gives the Food Corporation of India three jobs. Name them, and the grains they apply to. Then give the year the Department’s history gives for the Corporation’s setting-up.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Procurement, distribution, and maintaining the buffer stock. The grains are wheat, rice and coarse grains. The Department’s history gives 1965, under an Act of 1964.</p>"
+  }
+ ]
+}

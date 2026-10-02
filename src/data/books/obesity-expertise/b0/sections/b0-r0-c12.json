@@ -1,0 +1,204 @@
+{
+ "format": 1,
+ "id": "b0-r0-c12",
+ "label": "B4",
+ "title": "Energy units: joule, kilojoule, calorie, kilocalorie",
+ "part": "B",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-22.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The <dfn data-g=\"97\">joule</dfn> is the SI unit of energy.</p>\n<p>A <dfn data-g=\"99\">kilojoule</dfn> is one thousand joules. The prefix kilo means one thousand.</p>\n<p>The <dfn data-g=\"26\">calorie</dfn> is not an SI unit. Its size in joules is fixed by agreement, not by measurement, and two agreements are in use at once. The <dfn data-g=\"187\">thermochemical calorie</dfn> is 4.184 joules exactly. The <dfn data-g=\"92\">International Table calorie</dfn>, settled at the Fifth International Conference on the Properties of Steam in July 1956, is 4.1868 joules.</p>\n<p>A <dfn data-g=\"98\">kilocalorie</dfn> is one thousand calories. It is the calorie used to express the energy content of foods, and in food writing the prefix kilo is usually dropped.</p>\n<p>In India, where a pre-packaged food has to carry nutritional information, the energy is declared in kilocalories. Regulation 5(3)(b) of the Food Safety and Standards (Labelling and Display) Regulations, 2020 requires the label to carry the energy value in kcal. Those regulations require no kilojoule figure anywhere.</p>\n<p>Regulation 5(3)(e)(i) of the same regulations fixes the factors by which the declared energy is calculated rather than measured.</p>",
+   "refs": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Energy is measured, so energy has a unit. The SI unit is the joule.</p>\n<p>A thousand joules is one kilojoule. Kilo means a thousand, here and everywhere else.</p>\n<p>The calorie is not part of the SI. Its size was decided by committees, and two of them decided differently.</p>\n<p>Both numbers are exact, because both are decisions. Nobody went to a laboratory and got 4.184.</p>\n<p>A kilocalorie is a thousand calories. It is the unit used for the energy in food.</p>\n<p>In food work people write calories when they mean kilocalories. So when a packet, a paper or a scheme document says calories, read kilocalories. Then check the size of the number to be sure.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Start with the mistake, because it is the one waiting for you.</p>\n<p>Open the National Food Security Act, 2013, and go to Schedule II. Find the row for lower primary classes. The hot cooked meal is set at 450.</p>\n<p>Take that 450 as calories and turn it into joules.</p>\n<div class=\"working\">\n<p>450 times 4.184 = 1,882.8</p>\n</div>\n<p>A meal of 1,882.8 joules. Something has gone wrong, and it is not the arithmetic.</p>\n<p>Go back to the table and read the head of the column instead of the number under it. It says Calories, and then, in brackets, Kcal.</p>\n<p>So the meal is 450 kilocalories. Do it again properly, one line at a time.</p>\n<div class=\"working\">\n<p>450 kilocalories, first into calories<br />\n450 times 1,000 = 4,50,000<br />\nnow into joules<br />\n4,50,000 times 4.184 = 18,82,800<br />\nand into kilojoules<br />\n18,82,800 divided by 1,000 = 1,882.8</p>\n</div>\n<p>The digits are the same and the unit is not. Kilocalories to kilojoules uses the same 4.184 as calories to joules, because both sides of the sum were multiplied by a thousand.</p>\n<p>Take the upper primary figure from the same table, 700 kilocalories, and convert it with each of the two calories in turn.</p>\n<div class=\"working\">\n<p>700 times 4.184 = 2,928.8<br />\n700 times 4.1868 = 2,930.76</p>\n</div>\n<p>Two answers, from one figure, both correct.</p>\n<div class=\"working\">\n<p>2,930.76 minus 2,928.8 = 1.96</p>\n</div>\n<p>Just under two kilojoules apart. The gap is in the fourth digit.</p>\n<p>If their kilojoule figure and yours part company in the fourth digit, neither of you has slipped. You used different calories.</p>",
+   "numberRefs": [
+    10,
+    23
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The two conversion factors are exact and they stay exact.</p>\n<p>What a conversion cannot do is improve the number you started with. It renames an amount.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Nobody measured the calorie. Committees fixed it, and both of their values are exact by definition.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>One thermochemical calorie is 4.184 joules. That is the factor to use unless a paper tells you otherwise, and the same 4.184 turns kilocalories into kilojoules.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A second calorie is in use. The International Table calorie is 4.1868 joules. Check which calorie each of them used before you tell either of them they are wrong.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When food material says calories, read kilocalories, because the prefix is usually left off in practice. Then check the size. A meal in the hundreds is kilocalories.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Say the unit out loud with every energy figure you quote, in clinic and in a meeting.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Converting a figure never improves it. A two-digit figure written out to six digits after conversion has gained nothing but the look of precision.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Schedule II of the National Food Security Act, 2013 heads its energy column Calories, with Kcal in brackets.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>An Indian food packet that must show nutritional information gives its energy in kilocalories. The rule is regulation 5(3)(b) of the labelling regulations of 2020. It asks for no kilojoule figure at all, so you must be able to convert.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The energy printed on an Indian label is worked out, not measured. Regulation 5(3)(e)(i) of the same 2020 rules fixes the factors. Carbohydrate and protein are 4 kcal/g each, fat is 9 kcal/g and alcohol is 7 kcal/g. So take the grams printed on the label, multiply each by its factor, and add them up.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here is a line from a draft teaching note.</p>\n<blockquote>\n<p>Careful measurement has established that one calorie is equal to 4.184 joules.</p>\n</blockquote>\n<p>Say what is wrong with it, and write the sentence you would put in its place.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The word that fails is measurement. The value is a definition. A committee set the thermochemical calorie at 4.184 joules exactly, and a different committee set the International Table calorie at 4.1868 joules.</p>\n<p>You can tell from the number itself. A measured quantity comes with a spread and gets sharper as instruments improve. This one is exact and always was, because it was chosen.</p>\n<p>The replacement sentence names the decision and leaves the door open.</p>\n<blockquote>\n<p>The thermochemical calorie is defined as 4.184 joules exactly. A second definition, the International Table calorie, is 4.1868 joules, so a paper should say which one it used.</p>\n</blockquote>\n<p>One more thing follows. Nothing an experiment finds can change either figure. Only a standards body can, which is why this section carries an as-of date and the arithmetic sections do not.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist has three minutes and asks you what the energy number on a food packet actually means. Explain it without jargon. Give one quotable sentence, and say plainly how much the two-calorie business matters to a reader.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first, in their words.</p>\n<blockquote>\n<p>The number on the packet is in kilocalories, even when the packet just says calories. One kilocalorie is 4.184 kilojoules, and that factor is fixed by agreement rather than measured.</p>\n</blockquote>\n<p>Then the part they asked about without knowing it. There are two calories in use and they differ by about seven parts in ten thousand. For a reader looking at a packet that difference is invisible. It only shows up when two published figures are compared to four digits.</p>\n<p>Say the confidence out loud. The conversion is exact and not in doubt. What is worth doubting is the energy figure itself, and that is a different question from the unit.</p>\n<p>What not to say: that one of the two calories is the right one. Neither is. They are two decisions, and a paper should tell you which it used.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Write each of these as the other unit asks for.</p>\n<div class=\"working\">\n<p>1,000 joules into kilojoules<br />\n2.5 kilojoules into joules<br />\n3 kilocalories into calories<br />\n7,000 calories into kilocalories</p>\n</div>",
+   "level": 1,
+   "answer": "<p>Kilo means a thousand, so every line here is a multiplication or a division by 1,000.</p>\n<div class=\"working\">\n<p>1,000 divided by 1,000 = 1<br />\n2.5 times 1,000 = 2,500<br />\n3 times 1,000 = 3,000<br />\n7,000 divided by 1,000 = 7</p>\n</div>\n<p>Going to the bigger unit divides. Going to the smaller unit multiplies. Nothing about the amount of energy changed on any line.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Turn each of these into joules, using the thermochemical calorie.</p>\n<div class=\"working\">\n<p>1    10    250    1,500</p>\n</div>",
+   "level": 2,
+   "answer": "<p>Multiply each by 4.184.</p>\n<div class=\"working\">\n<p>1 times 4.184 = 4.184<br />\n10 times 4.184 = 41.84<br />\n250 times 4.184 = 1,046<br />\n1,500 times 4.184 = 6,276</p>\n</div>\n<p>Every answer is bigger than the number you started with. A joule is smaller than a calorie, so it takes more of them to hold the same energy.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Now go the other way. Turn each of these joule figures into thermochemical calories.</p>\n<div class=\"working\">\n<p>8.368    2,092    4,184</p>\n</div>",
+   "level": 3,
+   "answer": "<p>Divide each by 4.184, because you are going back the way you came.</p>\n<div class=\"working\">\n<p>8.368 divided by 4.184 = 2<br />\n2,092 divided by 4.184 = 500<br />\n4,184 divided by 4.184 = 1,000</p>\n</div>\n<p>Check the direction on the last one. Four thousand joules is a thousand calories, so the calorie figure is the smaller of the two. If your answer came out larger, you multiplied where you should have divided.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Schedule II of the National Food Security Act, 2013 sets the hot cooked meal for lower primary classes at 450 kilocalories. Give that figure in kilojoules, using the thermochemical calorie, and keep the unit on the answer. Then say how many digits you would write down.</p>",
+   "level": 4,
+   "answer": "<p>Kilocalories to kilojoules uses the same factor as calories to joules.</p>\n<div class=\"working\">\n<p>450 times 4.184 = 1,882.8</p>\n</div>\n<p>So 1,882.8 kilojoules.</p>\n<p>Now the digits. The Act gives 450, which carries two digits you can trust. Writing 1,882.8 claims five. Write 1,900 kilojoules, or say about 1,900 kilojoules a meal.</p>\n<p>Keep the label with it. Kilojoules of food energy per hot cooked meal, not per child per day.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>The same Schedule sets the upper primary hot cooked meal at 700 kilocalories. Convert it twice, once with the thermochemical calorie and once with the International Table calorie. Say how far apart the two answers are, in kilojoules and as a share of the figure.</p>",
+   "level": 5,
+   "answer": "<p>Once each way.</p>\n<div class=\"working\">\n<p>700 times 4.184 = 2,928.8<br />\n700 times 4.1868 = 2,930.76</p>\n</div>\n<p>The gap between them.</p>\n<div class=\"working\">\n<p>2,930.76 minus 2,928.8 = 1.96</p>\n</div>\n<p>Just under two kilojoules. As a share of the figure, divide the gap by either answer.</p>\n<div class=\"working\">\n<p>1.96 divided by 2,928.8 = 0.00067</p>\n</div>\n<p>About seven parts in ten thousand, which is under a tenth of one per cent.</p>\n<p>Both answers are right. Which one you report depends on which calorie you say you used, and the Act’s two digits cannot tell the two apart.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A figure of 2,000 kilojoules is handed to you and the meeting wants it in kilocalories. Convert it, then say which of the two calorie definitions could have changed your answer at two digits.</p>",
+   "level": 5,
+   "answer": "<p>Divide, because kilojoules are the smaller unit and the count must come down.</p>\n<div class=\"working\">\n<p>2,000 divided by 4.184 = 478.0</p>\n</div>\n<p>So 478 kilocalories, or about 480 with the digits the figure deserves.</p>\n<p>Now the same sum with the other calorie.</p>\n<div class=\"working\">\n<p>2,000 divided by 4.1868 = 477.7</p>\n</div>\n<p>478.0 one way and 477.7 the other. At two digits both are 480 kilocalories, so the choice of calorie could not have changed the answer you say out loud. Note which one you used anyway, so somebody checking you to four digits knows.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A note gives a day’s energy figure as 8,400 kilojoules. Turn it into kilocalories, then turn your answer back into kilojoules and say whether you get the number you started with.</p>",
+   "level": 6,
+   "answer": "<p>Into kilocalories first.</p>\n<div class=\"working\">\n<p>8,400 divided by 4.184 = 2,007.6</p>\n</div>\n<p>Round it the way a four-digit figure allows, and you would report about 2,000 kilocalories.</p>\n<p>Now back again, starting from the rounded figure.</p>\n<div class=\"working\">\n<p>2,000 times 4.184 = 8,368</p>\n</div>\n<p>Eight thousand three hundred and sixty-eight against the 8,400 you began with. Not the same number.</p>\n<p>The conversion did not lose anything. The <dfn data-g=\"160\">rounding</dfn> did. Convert once, from the figure you were given, and never chain a conversion onto a rounded answer.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A food packet gives, for every 100 g, 60 g of carbohydrate, 8 g of protein and 22 g of fat.</p>\n<p>Regulation 5(3)(e)(i) of the labelling regulations of 2020 fixes the factors. Carbohydrate is 4 kcal/g. Protein is 4 kcal/g. Fat is 9 kcal/g.</p>\n<p>Work out the energy the label should declare for every 100 g. Then give the same figure in kilojoules, using the thermochemical calorie.</p>",
+   "level": 6,
+   "answer": "<p>Take each part of the food in turn, grams times its factor.</p>\n<div class=\"working\">\n<p>60 times 4 = 240<br />\n8 times 4 = 32<br />\n22 times 9 = 198</p>\n</div>\n<p>Now add the three together.</p>\n<div class=\"working\">\n<p>240 plus 32 plus 198 = 470</p>\n</div>\n<p>So 470 kcal for every 100 g. That is the figure the label should carry, because the regulation says the declared energy is worked out this way rather than measured.</p>\n<p>Now into kilojoules, with the same 4.184 that turns kilocalories into kilojoules.</p>\n<div class=\"working\">\n<p>470 times 4.184 = 1,966.48</p>\n</div>\n<p>Round it before you write it. The grams on the label carry two digits each, so the last digits of 1,966.48 are not yours to keep. Report about 2,000 kilojoules for every 100 g.</p>\n<p>Two things follow from this problem. Where a label declares only carbohydrate, protein and fat, you can reproduce its energy figure from the grams beside it, with no equipment. Where the food carries dietary fibre, polyols or organic acid, the panel need not print those grams. Your total then falls short of the declared figure, and nothing is wrong. And the regulation asks for no kilojoule figure, so the number you have just produced is one the label will never show you.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a meal is set at 450 kilocalories<br />\none calorie is 4.184 joules<br />\n450 divided by 4.184 = 107.6<br />\nso the meal is 107.6 kilojoules</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The third line divides where it should multiply.</p>\n<p>A kilojoule is smaller than a kilocalorie, so the same energy needs more of them. The number has to go up, and this one went down.</p>\n<div class=\"working\">\n<p>450 times 4.184 = 1,882.8</p>\n</div>\n<p>One thousand eight hundred and eighty-three kilojoules, not a hundred and eight.</p>\n<p>Why it looks reasonable: the working names the right factor and uses it once, so it has the shape of a finished conversion. Nothing in the digits shouts. Only the direction is wrong, and direction is the one thing the number cannot tell you.</p>\n<p>The habit that prevents it: before you touch the calculator, say which unit is the smaller one and whether your answer should grow or shrink.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a portion is 250 kilocalories<br />\none calorie is 4.184 joules<br />\n250 times 4.184 = 1,046<br />\nso the portion is 1,046 joules</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The arithmetic on line three is right and the unit on line four is wrong. The 250 was in kilocalories and the factor was applied as though it were in calories.</p>\n<p>Take it in two steps.</p>\n<div class=\"working\">\n<p>250 times 1,000 = 2,50,000<br />\n2,50,000 times 4.184 = 10,46,000</p>\n</div>\n<p>Ten <dfn data-g=\"102\">lakh</dfn> forty-six thousand joules, which is 1,046 kilojoules. The digits 1,046 were right all along. The prefix was dropped.</p>\n<p>Why it looks reasonable: the answer carries a plausible number and a real unit, and the multiplication checks out if you redo it. A prefix error never shows up in the digits. It shows up only as a factor of a thousand, and you have to be looking for it.</p>\n<p>The habit that prevents it: write the prefix into every line of the working, not just the first.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A colleague sends you this line.</p>\n<blockquote>\n<p>The two papers disagree. One gives the energy content of the food as 2,510 kilojoules. The other gives 600 kilocalories. So at least one of them is wrong.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: put the two figures in the same unit before deciding anything.</p>\n<div class=\"working\">\n<p>600 times 4.184 = 2,510.4</p>\n</div>\n<p>Two thousand five hundred and ten kilojoules, against the 2,510 in the other paper. The two papers agree exactly at the digits they printed. Nobody is wrong.</p>\n<p>What this does not establish. The agreement is arithmetic, not evidence. Both papers may be quoting one original measurement, and a conversion between two units cannot tell you whether that measurement was any good. It does not tell you the two papers measured the same food, or prepared it the same way, or counted the same parts of it.</p>\n<p>Two numbers agreeing after a conversion tells you the arithmetic is consistent. It says nothing about either number being true.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>In a planning meeting somebody says this.</p>\n<blockquote>\n<p>Their dataset is in kilojoules and ours is in kilocalories, so the two cannot be compared. We would have to collect ours again.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: whether the unit is the obstacle. Take a figure in one form and put it in the other, then reverse it.</p>\n<div class=\"working\">\n<p>500 times 4.184 = 2,092<br />\n2,092 divided by 4.184 = 500</p>\n</div>\n<p>The number came back unchanged. The <dfn data-g=\"41\">conversion factor</dfn> is exact, so moving between kilocalories and kilojoules loses nothing at all. No data need collecting again for this reason, and the proposal in the room would spend money on a rename.</p>\n<p>What this does not establish. It does not show that the two datasets can be compared. Two sets of energy figures can differ because different foods were sampled. They can differ because the energy was worked out by different methods. No conversion touches either of those.</p>\n<p>Say both halves out loud in the meeting. The unit is not the problem. Whether the two sets measured the same thing still is, and that is the question worth the money.</p>"
+  }
+ ]
+}

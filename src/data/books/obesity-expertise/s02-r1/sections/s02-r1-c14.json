@@ -1,0 +1,222 @@
+{
+ "format": 1,
+ "id": "s02-r1-c14",
+ "label": "14",
+ "title": "Expectation",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Let X be a <dfn data-g=\"71\">discrete</dfn> <dfn data-g=\"219\">random variable</dfn>, as in section 13, taking the values x1, x2, …, xk. Its expected value, or expectation, is written E[X]. It is each value times its <dfn data-g=\"209\">probability</dfn>, all added up: x1 times P(X = x1), plus x2 times P(X = x2), and so on up to xk times P(X = xk). In the <dfn data-g=\"244\">sigma</dfn> notation of section 1, E[X] = Σ x P(X = x), the sum running over every value x that X can take. It carries the unit of X.</p>\n<p>E[X] is a probability-weighted average. When every listed case is equally likely, as with the households of the village below, E[X] is the ordinary mean of Book 0, D5. In general it is not. It need not be a value X can take.</p>\n<p>It is the long-run average: repeat the chance process many times, and the average of the values X takes settles towards E[X]. That is the <dfn data-g=\"145\">law of large numbers</dfn>. E[X] is a property of the <dfn data-g=\"211\">probability distribution</dfn>, a parameter in the sense of Book 0, D6. The mean of a sample of observed values is a statistic. It estimates E[X] and differs from it from one sample to the next.</p>\n<p>Two rules follow from the definition. The first: for fixed numbers a and b, E[aX + b] = aE[X] + b. Each value x becomes ax + b, with the same probability. Multiply out, as in Book 0, C1.</p>\n<div class=\"working\">\n<p>Σ (ax + b) P(X = x) = a Σ x P(X = x) + b Σ P(X = x) = aE[X] + b</p>\n</div>\n<p>The last step uses the fact that the probabilities add to 1.</p>\n<p>The second: for any two random variables X and Y, E[X + Y] = E[X] + E[Y]. A random variable gives a number to each outcome, so E[X] is also the sum, over outcomes, of X’s number times the outcome’s probability. Outcomes that give the same number group back into Σ x P(X = x). X + Y gives each outcome X’s number plus Y’s. So its sum splits into the sum for X plus the sum for Y. No step asked whether X and Y are independent. Independent means that knowing one tells you nothing about the other, the idea of Book 0, D2 carried to random variables. Together the rules give E[aX + bY] = aE[X] + bE[Y].</p>\n<p>Neither rule reaches products, ratios or squares. E[XY] is not in general E[X] times E[Y], and E[X/Y] is not in general E[X] divided by E[Y]. For those, go back to the distribution.</p>\n<p>In papers on <dfn data-g=\"81\">energy balance</dfn>, E with a label, as in EI, EE or ES, is an energy quantity: a store in kcal, or a rate in kcal a day. E followed by square brackets around a random variable, E[X], is expectation. Some books write E(X) with round brackets.</p>",
+   "refs": [
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    37
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Take a chance process that gives a number, and imagine running it a very large number of times. The average of all those numbers is the expected value.</p>\n<p>Multiply each value by its chance and add.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c14-surplus-balance.png",
+   "alt": "Four bars: 0.2 at minus 300, 0.3 at 0, 0.4 at 200 and 0.1 at 500 kilocalories a day. A dashed line at 70 marks the expected value, and a second dashed line at 100 marks the unweighted average.",
+   "w": 1356,
+   "h": 654,
+   "caption": "The made-up distribution of a day’s energy surplus, in kilocalories a day. The expected value, 70, is where the four bars would balance, each weighted by its probability. No bar sits at 70. Averaging the four values as if each were equally likely gives 100, pulled right by the 500 that has probability only 0.1."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c14-week-expected.png",
+   "alt": "Three lines from zero at day 0: the expected total rising to 490 at day 7, the highest possible total rising to 3,500 and the lowest falling to minus 2,100.",
+   "w": 1358,
+   "h": 654,
+   "caption": "The expected running total of surplus over a week grows by 70 kilocalories a day, to 490 by day 7. The possible totals fan out much wider, from seven days at minus 300 (minus 2,100) to seven days at 500 (3,500), so 490 is not what any one week will show."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c14-dependent-days.png",
+   "alt": "Four points on a falling line: (minus 300, 440), (0, 140), (200, minus 60) and (500, minus 360). Dashed lines at x = 70 and y = 70 cross on the line.",
+   "w": 1357,
+   "h": 654,
+   "caption": "Day 2’s surplus is always 140 minus day 1’s, so the four possible pairs all lie on the line x + y = 140, as dependent as two days can be. The expected values, 70 for each day, meet on the same line: E[X + Y] is 70 plus 70, which is 140, and the sum rule needs no independence."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c14-logged-shift.png",
+   "alt": "Two straight lines from zero at day 0: the true expected total rising through 70 at day 1 to 490 at day 7, and the logged expected total rising through 190 to 1,330.",
+   "w": 1358,
+   "h": 654,
+   "caption": "A fixed 120 kcal added to every logged day moves the expected surplus from 70 to 190 kcal a day. Over the week the expected log reaches 1,330 kcal against a true 490: 840 apart, which is 7 times 120. More days of logging widen the gap; they never close it."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Suppose a person’s energy surplus on a day, intake minus expenditure as in Book 1, section 5, is a random variable X, in kilocalories a day. The distribution below is made up.</p>\n<table style=\"width:47%;\">\n\n<thead>\n<tr>\n<th>surplus x (kcal/day)</th>\n<th>P(X = x)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>-300</td>\n<td>0.2</td>\n</tr>\n<tr>\n<td>0</td>\n<td>0.3</td>\n</tr>\n<tr>\n<td>200</td>\n<td>0.4</td>\n</tr>\n<tr>\n<td>500</td>\n<td>0.1</td>\n</tr>\n</tbody>\n</table>\n<p>The move you will reach for first is to average the four values, as if each were equally likely.</p>\n<div class=\"working\">\n<p>-300 plus 0 plus 200 plus 500 = 400<br />\n400 divided by 4 = 100</p>\n</div>\n<p>That gives 100, and it is wrong. Weight each value by its probability instead.</p>\n<div class=\"working\">\n<p>-300 times 0.2 = -60<br />\n0 times 0.3 = 0<br />\n200 times 0.4 = 80<br />\n500 times 0.1 = 50<br />\n-60 plus 0 plus 80 plus 50 = 70</p>\n</div>\n<p>E[X] is 70 kcal a day. It is where the four bars would balance, each weighted by its probability. You will never see a day with a surplus of 70 in this model.</p>\n<p>Now a week. Let W be the surplus over seven days: X1 for day 1, plus X2 for day 2, and so on to X7. If each day has this same distribution, each has expected value 70. The sum rule gives the week.</p>\n<div class=\"working\">\n<p>7 times 70 = 490</p>\n</div>\n<p>E[W] is 490 kcal.</p>\n<p>So 490 is the long-run average of weeks. It is not what any one week will show.</p>\n<p>Does the sum rule need the days to be independent? Try a pair that is as tied together as possible. Say that on day 2 this person’s surplus is always 140 minus day 1’s. A big day is followed by a small one. Call day 2’s surplus Y. Each value of X fixes Y.</p>\n<table style=\"width:81%;\">\n\n<tbody>\n<tr>\n<td>day 1, x (kcal/day)</td>\n<td>day 2, y (kcal/day)</td>\n<td>probability</td>\n</tr>\n<tr>\n<td>-300</td>\n<td>440</td>\n<td>0.2</td>\n</tr>\n<tr>\n<td>0</td>\n<td>140</td>\n<td>0.3</td>\n</tr>\n<tr>\n<td>200</td>\n<td>-60</td>\n<td>0.4</td>\n</tr>\n<tr>\n<td>500</td>\n<td>-360</td>\n<td>0.1</td>\n</tr>\n</tbody>\n</table>\n<p>Work out E[Y] from its own values and probabilities.</p>\n<div class=\"working\">\n<p>440 times 0.2 plus 140 times 0.3 plus -60 times 0.4 plus -360 times 0.1 = 70</p>\n</div>\n<p>E[Y] is 70 too. On every row, X plus Y is 140, so E[X + Y] is 140. The sum rule gives the same.</p>\n<div class=\"working\">\n<p>70 plus 70 = 140</p>\n</div>\n<p>The two days could hardly be more dependent, and the rule still holds.</p>\n<p>Now a fixed shift. Say an app adds a fixed 120 kcal to every day’s logged intake, a <dfn data-g=\"266\">systematic error</dfn> as in Book 0, D7. The logged surplus is X + 120. By the first rule its expected value is E[X] + 120.</p>\n<div class=\"working\">\n<p>70 plus 120 = 190<br />\n7 times 190 = 1330</p>\n</div>\n<p>Over a week the log expects 1,330 kcal against a true 490. Logging more weeks will not close that gap.</p>\n<p>Go back to the made-up village of section 13: ten households of 2, 3, 4, 4, 5, 5, 5, 6, 7 and 9 people. Pick one <dfn data-g=\"17\">at random</dfn>, and let X be its size. Each household has probability 0.1, so E[X] is 0.1 times the sum of the sizes.</p>\n<div class=\"working\">\n<p>2 plus 3 plus 4 plus 4 plus 5 plus 5 plus 5 plus 6 plus 7 plus 9 = 50<br />\n0.1 times 50 = 5.0</p>\n</div>\n<p>The survey’s four households held 5, 9, 4 and 5 people.</p>\n<div class=\"working\">\n<p>5 plus 9 plus 4 plus 5 = 23<br />\n23 divided by 4 = 5.75</p>\n</div>\n<p>The sample mean is 5.75. It is a statistic that estimates E[X], and it misses by 0.75. A bigger <dfn data-g=\"218\">random sample</dfn> would tend to land closer.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The surplus distribution is made up, and it is the same on every day only because this model says so. A real person’s daily surplus has no known distribution. It also drifts as their weight and habits change, and then “7 times 70” no longer describes the week. The sum rule still holds with seven different expectations.</p>\n<p>The village is made up.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The expected value is not what any one person or day will show. Never tell a patient “you can expect to lose 4 kg” as if it were their outcome. Say what happened on average, and how widely people differed.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Averaging the possible values without their probabilities can be trusted only when every value is equally likely. Weight each value by its probability, every time.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The expected value of a sum is the sum of the expected values, with no condition of independence. Do not refuse the sum because the days are dependent.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The rules stop at sums and fixed multiples. The expected BMI is not the expected weight divided by the square of the expected height. For a product, a <dfn data-g=\"223\">ratio</dfn> or a square, go back to the distribution and work value by value.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A fixed error of b in every reading moves the expected value by exactly b. Find the size of the shift against a known reference, as in Book 0, D7, and subtract it.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>E[X] belongs to the model. Before you quote a paper’s “expected value”, ask whether it was computed from a stated distribution or averaged from data.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In an energy-balance paper, check which E you are reading.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A methods section contains these two lines.</p>\n<blockquote>\n<p>E(X) = Σ x_i P(X = x_i), where X is the daily energy surplus in kcal/day.</p>\n<p>Mean EI was 2,400 kcal/day.</p>\n</blockquote>\n<p>Read the first line aloud in words, symbol by symbol, with units. Then say which E in the two lines is energy and which is expectation, and how you can tell.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The first line in words: the expected value of X equals a sum. For every value x_i that X can take, multiply that value by the probability that X takes it. Then add up the products. The Greek capital sigma, Σ, means “the sum of”, as in section 1. The i is a label that runs through the values, so x_i is the i-th value. P(X = x_i) is the probability that X equals x_i, and it has no unit. Each term x_i times P(X = x_i) is in kcal/day, so E(X) is in kcal/day.</p>\n<p>In the first line, E is followed by a bracket holding a random variable, X. That E is an expected value. The paper writes it with round brackets; this book writes E[X].</p>\n<p>In the second line, E carries the label I, for intake, and no bracket. EI is <dfn data-g=\"85\">energy intake</dfn>, and it is a rate, in kcal/day.</p>\n<p>The test is what follows the E. A label means energy. A bracket around a random variable means an expected value.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>X takes the values 1, 2 and 3, with probabilities 0.2, 0.5 and 0.3.</p>\n<p>Work out E[X].</p>",
+   "level": 1,
+   "answer": "<p>Multiply each value by its probability, and add.</p>\n<div class=\"working\">\n<p>1 times 0.2 plus 2 times 0.5 plus 3 times 0.3 = 2.1</p>\n</div>\n<p>E[X] is 2.1.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>X takes the values −2, 1 and 4, with probabilities 0.5, 0.25 and 0.25.</p>\n<p>Work out E[X]. Is it a value X can take?</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>-2 times 0.5 = -1<br />\n1 times 0.25 = 0.25<br />\n4 times 0.25 = 1<br />\n-1 plus 0.25 plus 1 = 0.25</p>\n</div>\n<p>E[X] is 0.25. X takes only −2, 1 and 4, so the expected value is not a value X can take.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>E[X] is 3.</p>\n<p>Work out E[2X + 5], E[−X] and E[X − 3].</p>",
+   "level": 2,
+   "answer": "<p>Use E[aX + b] = aE[X] + b each time.</p>\n<div class=\"working\">\n<p>2 times 3 plus 5 = 11<br />\n-1 times 3 = -3<br />\n3 minus 3 = 0</p>\n</div>\n<p>E[2X + 5] is 11. E[−X] is minus 3, with a = −1 and b = 0. E[X − 3] is 0, with a = 1 and b = −3.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>E[X] is 4 and E[Y] is −1. Nothing is known about whether X and Y are independent.</p>\n<p>Work out E[X + Y], E[X − Y] and E[3X − 2Y].</p>",
+   "level": 3,
+   "answer": "<p>The sum rule needs no independence, so nothing more is needed. Use E[aX + bY] = aE[X] + bE[Y].</p>\n<div class=\"working\">\n<p>4 plus -1 = 3<br />\n4 minus -1 = 5<br />\n3 times 4 minus 2 times -1 = 14</p>\n</div>\n<p>E[X + Y] is 3, E[X − Y] is 5 and E[3X − 2Y] is 14.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>X takes only the values 0 and 10. E[X] is 2.5.</p>\n<p>Work out P(X = 10).</p>",
+   "level": 3,
+   "answer": "<p>Call P(X = 10) q. Then P(X = 0) is 1 minus q, and E[X] is 0 times (1 minus q) plus 10 times q. The first term is 0, so 10 times q is 2.5.</p>\n<div class=\"working\">\n<p>2.5 divided by 10 = 0.25</p>\n</div>\n<p>P(X = 10) is 0.25. Check it.</p>\n<div class=\"working\">\n<p>0 times 0.75 plus 10 times 0.25 = 2.5</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>The FAO/WHO/UNU report on human energy requirements gives this example. A man has a PAL of 1.75 and a mean BMR of 7.10 MJ/day. The report multiplies them to get his mean energy requirement.</p>\n<p>Treat BMR as a random variable with expected value 7.10 MJ/day, and PAL as fixed at 1.75. TEE is PAL times BMR. Work out E[TEE], and compare it with the report’s figure of 12.42 MJ/day.</p>",
+   "level": 4,
+   "answer": "<p>With PAL fixed, TEE is 1.75 times BMR, so this is E[aX] with a = 1.75.</p>\n<div class=\"working\">\n<p>1.75 times 7.10 = 12.425</p>\n</div>\n<p>E[TEE] is 12.425 MJ/day. The report prints 12.42, which is the same figure cut to two <dfn data-g=\"62\">decimal</dfn> places.</p>\n<p>The rule works here only because PAL is a fixed number. If PAL were a random variable that moved with BMR, E[PAL times BMR] would not in general be E[PAL] times E[BMR].</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>In a made-up model, a person’s daily energy surplus has expected value −150 kcal/day on every day. Their days are not independent: a low day tends to be followed by a high one.</p>\n<p>Work out the expected surplus over 7 days and over 28 days.</p>",
+   "level": 5,
+   "answer": "<p>The expected value of a sum is the sum of the expected values, with or without independence. Every day has the same expected value, so multiply.</p>\n<div class=\"working\">\n<p>7 times -150 = -1050<br />\n28 times -150 = -4200</p>\n</div>\n<p>Minus 1,050 kcal over 7 days and minus 4,200 kcal over 28 days. The link between days changes how widely the totals spread. It does not change these expected values.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>In a made-up model, a person’s true daily surplus has expected value 30 kcal/day. Their food app adds a fixed 120 kcal to every day’s logged intake.</p>\n<p>Work out the expected logged surplus for a day and for a week. Then work out how far the week’s expected logged surplus is from the true one.</p>",
+   "level": 5,
+   "answer": "<p>The logged surplus is the true surplus plus 120. Use E[X + b] = E[X] + b.</p>\n<div class=\"working\">\n<p>30 plus 120 = 150<br />\n7 times 150 = 1050<br />\n7 times 30 = 210<br />\n1050 minus 210 = 840</p>\n</div>\n<p>The log expects 150 kcal a day and 1,050 kcal a week, against a true 210 kcal a week. The gap is 840 kcal a week, which is 7 times the 120. More weeks of logging repeat it every week.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Go back to the made-up village of ten households with 2, 3, 4, 4, 5, 5, 5, 6, 7 and 9 people. Its E[X] for one household picked at random is 5.0 people. A second survey picks five households at random and finds 4, 7, 5, 5 and 9 people.</p>\n<p>Work out the second survey’s mean. Say which number is the parameter and which the statistic, and what would tend to happen to the statistic with a much bigger sample.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>4 plus 7 plus 5 plus 5 plus 9 = 30<br />\n30 divided by 5 = 6.0</p>\n</div>\n<p>The survey’s mean is 6.0 people.</p>\n<p>E[X], 5.0, is the parameter. It is fixed by the whole village and the way you pick. The 6.0 is a statistic from five households, and it estimates 5.0. It misses by 1.0, and the first survey’s 5.75 missed by less. Neither survey changes the village.</p>\n<p>With a much bigger random sample, picking with replacement (a household can be picked more than once), the sample mean would tend to land closer to 5.0. That is the law of large numbers. It says what tends to happen over many picks. It does not say that any one survey will land close.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a day’s surplus X is -300, 0, 200 or 500 kcal, with probabilities 0.2, 0.3, 0.4 and 0.1<br />\nE[X] = (-300 plus 0 plus 200 plus 500) divided by 4<br />\n= 400 divided by 4 = 100<br />\nso the expected surplus is 100 kcal a day</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. It averages the four values as if each had probability 0.25. They do not. Weight each by its own probability.</p>\n<div class=\"working\">\n<p>-300 times 0.2 plus 0 times 0.3 plus 200 times 0.4 plus 500 times 0.1 = 70</p>\n</div>\n<p>E[X] is 70 kcal a day, not 100.</p>\n<p>Why the wrong answer looks reasonable: it is the ordinary mean of Book 0, D5, a move the reader has done a hundred times. It is right when every value is equally likely. The probabilities were given, and the working never used them.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>each day’s surplus has expected value 70 kcal a day<br />\nthe week’s expected surplus is the average of the seven days’ expected values<br />\n(70 plus 70 plus 70 plus 70 plus 70 plus 70 plus 70) divided by 7 = 70<br />\nso the expected surplus for the week is 70 kcal</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. The week’s surplus is the sum of the seven days, not their average. So its expected value is the sum of the seven expected values.</p>\n<div class=\"working\">\n<p>70 plus 70 plus 70 plus 70 plus 70 plus 70 plus 70 = 490</p>\n</div>\n<p>The expected surplus for the week is 490 kcal. The working found the expected surplus per day over the week, 70 kcal a day, and then labelled it as a weekly total.</p>\n<p>Why the wrong answer looks reasonable: “the expected value is an average” is true, and it invites averaging again. The units give it away. 70 kcal a day and 490 kcal over a week are different quantities.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke. BMI, from Book 0, B6, is weight in kilograms divided by the square of height in metres.</p>\n<div class=\"working\">\n<p>two made-up adults, each picked with probability 0.5: 50 kg and 1.5 m, or 90 kg and 1.8 m<br />\nE[weight] = 0.5 times 50 plus 0.5 times 90 = 70<br />\nE[height] = 0.5 times 1.5 plus 0.5 times 1.8 = 1.65<br />\nE[BMI] = E[weight] divided by E[height] squared = 70 divided by 2.7225 = 25.7</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The last line broke. BMI is a ratio, and E[weight divided by height squared] is not E[weight] divided by E[height] squared. The rules for expected values cover sums and fixed multiples. They do not cover a ratio or a square. Go back to the distribution: work out each adult’s BMI, then weight by probability.</p>\n<div class=\"working\">\n<p>1.5 times 1.5 = 2.25<br />\n50 divided by 2.25 = 22.22<br />\n1.8 times 1.8 = 3.24<br />\n90 divided by 3.24 = 27.78<br />\n0.5 times 22.22 plus 0.5 times 27.78 = 25.0</p>\n</div>\n<p>E[BMI] is 25.0 kg/m<sup>2</sup>, not 25.7.</p>\n<p>Why the wrong answer looks reasonable: every line before the last is correct, and “put the averages into the formula” works for sums. It fails as soon as the formula divides or squares.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A programme leaflet says this.</p>\n<blockquote>\n<p>The expected weight loss on our programme is 4 kg. So you will lose 4 kg.</p>\n</blockquote>\n<p>Here is the leaflet’s model, which is made up. The loss is 0 kg with probability 0.3, 4 kg with probability 0.4, and 8 kg with probability 0.3. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the expected value of the model, and then the chance of the thing the leaflet promises.</p>\n<div class=\"working\">\n<p>0 times 0.3 plus 4 times 0.4 plus 8 times 0.3 = 4.0</p>\n</div>\n<p>The expected loss is 4.0 kg, so the first sentence matches the model. The chance of losing exactly 4 kg in this model is 0.4. The chance of losing nothing is 0.3.</p>\n<p>What this does not establish. “You will lose 4 kg” is a claim about one person. The expected value is an average over many, and here three in ten lose nothing. A person who loses nothing has not failed the programme’s arithmetic; they are one of its outcomes.</p>\n<p>It also does not say where the model came from. Perhaps the 0.3, 0.4 and 0.3 came from one group of participants. Then they are relative frequencies, and 4.0 is a sample mean that estimates the true expected loss. And it says nothing about later on: an average at one time point says nothing about weight in the months after it.</p>\n<p>What to say instead: “On average people lost 4 kg. Three in ten lost none, and three in ten lost 8 kg.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A health talk says this.</p>\n<blockquote>\n<p>Eating just 100 kcal a day more adds up to 36,500 kcal in a year, and all of it is stored.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the talk treats the extra 100 kcal of intake as a surplus of 100 on every day. Then the expected surplus over 365 days is 365 times 100.</p>\n<div class=\"working\">\n<p>365 times 100 = 36500</p>\n</div>\n<p>36,500 kcal. The arithmetic of the expected value is right on that condition.</p>\n<p>What this does not establish. The condition is the whole claim. The sum rule gives 365 times 100 only if every one of the 365 days has an expected surplus of 100. Book 1 shows why that fails. As stores and weight rise, expenditure rises with them (Book 1, section 4). So the same intake gives a shrinking surplus. This is the <dfn data-g=\"260\">static rule</dfn> of Book 1, section 7, and it shares that rule’s flaw.</p>\n<p>It is also an expected value, not a forecast for one person. Real days scatter around any expected value, and so do real years.</p>\n<p>And “all of it is stored” is the energy-balance identity of Book 1, section 5 applied to the total. That part is right by definition, whatever the surplus turns out to be. What is wrong is the 36,500.</p>"
+  }
+ ]
+}

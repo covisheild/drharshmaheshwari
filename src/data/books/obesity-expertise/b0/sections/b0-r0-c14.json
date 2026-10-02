@@ -1,0 +1,146 @@
+{
+ "format": 1,
+ "id": "b0-r0-c14",
+ "label": "B6",
+ "title": "Body-size units: kg, m, cm and kg/m<sup>2</sup>",
+ "part": "B",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A centimetre, written cm, is one hundredth of a metre, so one metre is 100 cm.</p>\n<p>Dividing a mass in kilograms by the square of a length in metres gives a quantity whose unit is the kilogram per metre squared, written kg/m<sup>2</sup>.</p>\n<p>A person’s mass in kilograms divided by the square of their height in metres is the <dfn data-g=\"22\">body mass index</dfn>, written BMI.</p>\n<p>A height entered in centimetres rather than metres therefore divides the index by 10<sup>4</sup>.</p>\n<p>The index is a number together with its unit. Nothing in its construction states which values are high or low. That is a separate decision, made by a body rather than by the arithmetic.</p>",
+   "refs": [
+    28
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Mass is measured in kilograms, written kg. Length is measured in metres, written m. So 100 cm make one metre, and any height in centimetres becomes metres when you divide by 100.</p>\n<p>Take a mass in kilograms. Take a height in metres and multiply it by itself, which is the <dfn data-g=\"178\">squaring</dfn> you met in the section on powers. Divide the first by the second.</p>\n<p>What you get is called the body mass index, written BMI. It puts a mass and a height together into one number, and the short name for it here is the index.</p>\n<p>It carries a unit, and the unit comes out of the division: kilograms on top, metres times metres underneath.</p>\n<p>That is a <dfn data-g=\"49\">derived unit</dfn>.</p>\n<p>The height must be in metres. Put centimetres in and the answer is not slightly off. It is ten thousand times too small, because the squaring squares the mistake as well.</p>\n<p>And the index does not mean anything on its own. Whether a value counts as high or low is a decision somebody made, and this section does not make it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Do the calculation the wrong way first, because the mistake is the thing worth seeing.</p>\n<p>A person weighs 70 kg and stands 168 cm tall. The height is in centimetres, which is how a clinic form usually collects it. Square it as it stands, then divide the 70 by what you get.</p>\n<div class=\"working\">\n<p>168 times 168 = 28,224<br />\n70 divided by 28,224 = 0.00248 kg/cm<sup>2</sup></p>\n</div>\n<p>Read the unit that fell out of that division. It is kilograms per centimetre squared, not kilograms per metre squared.</p>\n<p>Now do it properly. Put the height into metres first.</p>\n<div class=\"working\">\n<p>168 divided by 100 = 1.68<br />\n1.68 times 1.68 = 2.8224<br />\n70 divided by 2.8224 = 24.8</p>\n</div>\n<p>24.8 kg/m<sup>2</sup>. Say it out loud as kilograms per metre squared, because the unit is what tells you the first answer was not an answer at all.</p>\n<p>One hundred centimetres in a metre, and the <dfn data-g=\"47\">denominator</dfn> is squared, so the mistake is squared too.</p>\n<div class=\"working\">\n<p>100 times 100 = 10,000</p>\n</div>\n<p>Take a shape and make every length twice as long, keeping everything else the same. Mass goes with volume, and volume has three lengths in it, so the mass goes up by 2 times 2 times 2.</p>\n<div class=\"working\">\n<p>2 times 2 times 2 = 8</p>\n</div>\n<p>The denominator has only two lengths in it.</p>\n<div class=\"working\">\n<p>2 times 2 = 4</p>\n</div>\n<p>So the index itself goes up.</p>\n<div class=\"working\">\n<p>8 divided by 4 = 2</p>\n</div>\n<p>Dividing by the square of a height does not remove size from the number. It removes some of it, and a squared denominator is a choice somebody made rather than a law you can check.</p>",
+   "numberRefs": [
+    8
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The doubling argument holds only while the shape and the density stay the same. Real bodies are not scaled copies of each other.</p>\n<p>The ten-thousand check holds only for centimetres against metres.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A height in centimetres does not give a slightly wrong index. It gives one ten thousand times too small, because the denominator squares the error.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Convert the height to metres before anything else, by dividing by 100.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Say the unit with the number: 24.8 kilograms per metre squared.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>In a dataset, find out which unit height was collected in before you compute a single row.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Dividing by the square of a height does not take size out of the number. Scale a shape up and the index rises with it.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The arithmetic stops at the number and its unit. What counts as a high value is not in it. Somebody decided that, and decisions like that get revised. Quote a cut-off only with whose it is and when it was set.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A person weighs 64 kg and is 155 cm tall. Work out the index, showing the height conversion as its own line, and state the unit. Then write one sentence saying what your answer does not tell you.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>Height into metres first.</p>\n<div class=\"working\">\n<p>155 divided by 100 = 1.55</p>\n</div>\n<p>Square it.</p>\n<div class=\"working\">\n<p>1.55 times 1.55 = 2.4025</p>\n</div>\n<p>Divide the mass by that.</p>\n<div class=\"working\">\n<p>64 divided by 2.4025 = 26.6</p>\n</div>\n<p>26.6 kilograms per metre squared.</p>\n<p>What it does not tell you: anything about this person’s health. The number is a mass divided by a squared length. Turning it into a judgement needs a cut-off, and a cut-off is a decision taken by some body, on some date, for some population. Book 0 gives you the arithmetic and the unit. The subject books take up whose line it is and whether it holds here.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. They ask why the height is squared and why it matters that the answer is in kilograms per metre squared. Explain it so they could reconstruct it afterwards, and give them one error to watch for.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with the unit, not the formula. Write kg on the board, then m times m underneath it, and say that dividing one quantity by another divides their units too. That is where kg/m<sup>2</sup> comes from. It was built, not chosen from a list.</p>\n<p>Then square it on purpose. Draw a shape, then the same shape with every length doubled. Mass follows volume and volume carries three lengths, so mass goes up eight times. The denominator carries two lengths, so it goes up four times. Eight divided by four is two: the index doubles for the same shape at a different size. That is the honest statement of what the square does and does not do.</p>\n<p>The error to watch for is the centimetre. Show it on the board once.</p>\n<div class=\"working\">\n<p>100 times 100 = 10,000</p>\n</div>\n<p>Tell them the value comes out ten thousand times too small. It looks nothing like a small slip, so it usually survives a read-through of a spreadsheet.</p>\n<p>Then stop. Do not go on to what any value means. That is a separate decision, taken by a named body on a named date. A resident who learns a cut-off as though it fell out of the arithmetic has learned something to unlearn later.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Work each of these out. Square the second number, then divide the first by it.</p>\n<div class=\"working\">\n<p>72 and 1.8<br />\n81 and 1.5<br />\n45 and 1.5</p>\n</div>",
+   "level": 1,
+   "answer": "<p>Square first, divide second.</p>\n<div class=\"working\">\n<p>1.8 times 1.8 = 3.24<br />\n72 divided by 3.24 = 22.2</p>\n</div>\n<div class=\"working\">\n<p>1.5 times 1.5 = 2.25<br />\n81 divided by 2.25 = 36</p>\n</div>\n<div class=\"working\">\n<p>1.5 times 1.5 = 2.25<br />\n45 divided by 2.25 = 20</p>\n</div>\n<p>The last two share a denominator, so the answers are in the same <dfn data-g=\"155\">ratio</dfn> as the two masses. That is worth noticing: with the height fixed, the index moves in step with the mass.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Turn each of these lengths into metres.</p>\n<div class=\"working\">\n<p>168 cm    155 cm    180 cm    96 cm</p>\n</div>",
+   "level": 2,
+   "answer": "<p>One metre is 100 cm, so divide each by 100.</p>\n<div class=\"working\">\n<p>168 divided by 100 = 1.68<br />\n155 divided by 100 = 1.55<br />\n180 divided by 100 = 1.8<br />\n96 divided by 100 = 0.96</p>\n</div>\n<p>The <dfn data-g=\"45\">decimal</dfn> point moved two places left every time, which is what dividing by 100 does.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A quantity is divided by the square of a length. Somebody supplies the length in centimetres when metres were wanted. By what factor is the answer wrong, and in which direction? Show the step that produces the factor.</p>",
+   "level": 3,
+   "answer": "<p>One metre is 100 cm, so the number in centimetres is 100 times the number in metres. The denominator is squared, so the factor is squared with it.</p>\n<div class=\"working\">\n<p>100 times 100 = 10,000</p>\n</div>\n<p>The denominator comes out 10,000 times too big, so the answer comes out 10,000 times too small.</p>\n<p>Say the direction out loud. A bigger denominator makes a smaller answer, every time.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A person weighs 58 kg and is 1.52 m tall. Work out the index and give it with its unit, showing every line.</p>",
+   "level": 4,
+   "answer": "<p>The height is already in metres, so square it.</p>\n<div class=\"working\">\n<p>1.52 times 1.52 = 2.3104</p>\n</div>\n<p>Divide the mass by that.</p>\n<div class=\"working\">\n<p>58 divided by 2.3104 = 25.1</p>\n</div>\n<p>25.1 kilograms per metre squared.</p>\n<p>Keep both parts of the answer. The number without the unit could be anything, and the unit is how anybody checks you used metres.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Two rows come out of a clinic register. The first records a mass of 61.5 kg and a height of 158 cm. The second records a mass of 73.4 kg and a height of 1.72 m.</p>\n<p>Work out the index for each row, showing every line, and give each answer with its unit. Then say which row needed a conversion first, and how the row itself told you.</p>",
+   "level": 5,
+   "answer": "<p>Read the height in each row before you compute anything. The first is in centimetres and the second is in metres, so the two rows do not take the same working.</p>\n<p>The first row needs the conversion.</p>\n<div class=\"working\">\n<p>158 divided by 100 = 1.58<br />\n1.58 times 1.58 = 2.4964<br />\n61.5 divided by 2.4964 = 24.6</p>\n</div>\n<p>24.6 kilograms per metre squared.</p>\n<p>The second row is already in metres, so square it and divide.</p>\n<div class=\"working\">\n<p>1.72 times 1.72 = 2.9584<br />\n73.4 divided by 2.9584 = 24.8</p>\n</div>\n<p>24.8 kilograms per metre squared.</p>\n<p>How the row told you: by the size of the number. A height in metres is a small number with a decimal point near the front. The same height in centimetres is a three-digit whole number. A row holding 158 is not a row holding metres, whatever the column heading says.</p>\n<p>The two answers come out close together. The two rows did not. A register that holds both units at once hands you one right answer and one that is out by ten thousand. Find out which unit each row is in before you compute any of them.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a person weighs 65 kg and is 170 cm tall<br />\n170 divided by 100 = 1.7<br />\n65 divided by 1.7 = 38.2<br />\nso the index is 38.2 kg/m<sup>2</sup></p>\n</div>",
+   "level": 7,
+   "answer": "<p>The conversion on line two is right. The division on line three is by the height, not by the square of the height.</p>\n<p>Square it first.</p>\n<div class=\"working\">\n<p>1.7 times 1.7 = 2.89<br />\n65 divided by 2.89 = 22.5</p>\n</div>\n<p>22.5 kilograms per metre squared, not 38.2.</p>\n<p>Look at the unit the broken working actually produced. Kilograms divided by metres is kg/m, and the last line claims kg/m<sup>2</sup>. The label was written from memory rather than read off the division.</p>\n<p>Why it looks reasonable: the centimetre conversion was done, which is the step everybody warns about, so the working feels careful. The answer is a two-digit number of the ordinary size, so nothing about it looks alarming. Only the unit gives it away.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a person weighs 62 kg and is 158 cm tall<br />\n158 times 158 = 24,964<br />\n62 divided by 24,964 = 0.00248<br />\nthat is far too small, so multiply by 100<br />\nthe index is 0.248 kg/m<sup>2</sup></p>\n</div>",
+   "level": 8,
+   "answer": "<p>Two things broke, and the second one hides the first.</p>\n<p>The height was never converted. Line two squares 158 centimetres, so line three is kilograms per centimetre squared, whatever the last line calls it.</p>\n<p>Then the repair used the wrong factor. There are 100 centimetres in a metre, but the denominator is squared, so the factor is 100 times 100.</p>\n<div class=\"working\">\n<p>100 times 100 = 10,000</p>\n</div>\n<p>Do it from the start instead of patching it.</p>\n<div class=\"working\">\n<p>158 divided by 100 = 1.58<br />\n1.58 times 1.58 = 2.4964<br />\n62 divided by 2.4964 = 24.8</p>\n</div>\n<p>24.8 kilograms per metre squared. The patched answer, 0.248, is a hundred times too small.</p>\n<p>Why it looks reasonable: the working noticed its own error and did something about it, which reads as care. A correction applied in the right direction feels finished even when the size of it is wrong. And 0.248 still looks like a number from a calculation rather than an absurdity, where 0.00248 did not.</p>\n<p>The habit that prevents it: convert the unit before the arithmetic, never after it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A colleague sends you this line about a survey.</p>\n<blockquote>\n<p>Our height column turned out to be in centimetres, and the index column looks wrong because of it. It is only a scaling problem, so we can multiply the whole column by 100 and move on.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the factor that a centimetre height actually puts into the index.</p>\n<p>The height enters the denominator squared, so the factor is squared.</p>\n<div class=\"working\">\n<p>100 times 100 = 10,000</p>\n</div>\n<p>The values are 10,000 times too small, not 100 times. Multiplying the column by 100 leaves every value a hundred times too small. The repaired figures will look far more plausible than the ones they started with. That is the dangerous part of the proposal.</p>\n<p>What this does not establish. It does not establish that every row was in centimetres. A column filled in by different people can hold both units at once. One multiplication applied to all of it repairs some rows and ruins the rest. Before multiplying anything, look at the heights themselves and see which unit each row is in.</p>\n<p>It also says nothing about whether the heights and masses are any good. Fixing a unit fixes a unit. It does not make a badly taken measurement into a good one.</p>"
+  }
+ ]
+}

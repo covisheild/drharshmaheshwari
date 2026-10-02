@@ -1,0 +1,199 @@
+{
+ "format": 1,
+ "id": "s02-r1-c05",
+ "label": "5",
+ "title": "The integral of a rate is the change in the stock",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Let f(t) be a rate that depends on time t. The definite <dfn data-g=\"130\">integral</dfn> of f from a to b is written ∫ from a to b of f(t) dt. Cover the time from a to b with thin intervals of width Δt. Over each, draw a rectangle whose height is the rate in that interval. The integral is the limit of the sum of the rectangles’ areas as the widths shrink towards zero.</p>\n<p>If f is the <dfn data-g=\"222\">rate of change</dfn> of a quantity Q, then ∫ from a to b of f(t) dt equals Q(b) minus Q(a). This is the <dfn data-g=\"178\">net change theorem</dfn>: the integral of a rate over an interval is the change in the stock over that interval.</p>\n<p>Two cases can be done exactly with no limit. In both, every slicing gives the same total, so letting the slices shrink changes nothing. A constant rate c gives a rectangle, c times (b minus a). A rate that changes along a straight line gives a trapezium, the average of the two end rates times (b minus a).</p>\n<p>The <dfn data-g=\"22\">average value</dfn> of f from a to b is the integral divided by (b minus a).</p>\n<p>Applied to a body, with stored energy ES, <dfn data-g=\"85\">energy intake</dfn> EI and <dfn data-g=\"84\">energy expenditure</dfn> EE, the identity of Book 1, section 5 written as rates is dES/dt = EI minus EE. So ES(b) minus ES(a) = ∫ from a to b of (EI minus EE) dt.</p>",
+   "refs": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Here is how a paper writes an integral, the total under a <dfn data-g=\"221\">rate line</dfn> that Book 0 drew as rectangles (Book 0, C8).</p>\n<div class=\"working\">\n<p>∫ from a to b of f(t) dt</p>\n</div>\n<p>The ∫ is a stretched S, for sum. The a at its foot is where the time starts, and the b at its top is where it stops. Those two are the <dfn data-g=\"150\">limits of integration</dfn>.</p>\n<p>Next comes f(t), the rate being added up. Its name is the <dfn data-g=\"131\">integrand</dfn>. Last, dt says the adding runs over time t.</p>\n<p>It means this. Cut the time from a to b into thin slices. Multiply the rate in each slice by its width. Add them all. Then let the slices get thinner, until the total stops changing.</p>\n<p>Here a rate can drop below zero, because a stock can lose as well as gain. A rectangle below the time axis has a negative height, so its area counts as negative. Area below the axis is subtracted. The result is called the <dfn data-g=\"181\">net signed area</dfn>.</p>\n<p>The integral of a rate over an interval equals the change in the stock over that interval. This is called the net change theorem.</p>\n<div class=\"working\">\n<p>the stock at b minus the stock at a = ∫ from a to b of the rate dt</p>\n</div>\n<p>Run the time backwards, from b to a, and the same change is undone. So the integral from b to a is minus the integral from a to b.</p>\n<p>For a body’s energy stores, the rate is intake minus expenditure (Book 1, section 5). Write the stores as ES, intake as EI and expenditure as EE.</p>\n<div class=\"working\">\n<p>dES/dt = EI minus EE<br />\nES(b) minus ES(a) = ∫ from a to b of (EI minus EE) dt</p>\n</div>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c05-net-rate-line.png",
+   "alt": "A straight line falling from 300 at day 0 to minus 200 at day 50 through six points, crossing zero at day 30. The triangle between the line and the axis from day 0 to day 30 is shaded as a gain; the triangle below the axis from day 30 to day 50 is shaded in a second colour as a loss.",
+   "w": 1357,
+   "h": 654,
+   "caption": "A made-up net rate falling in a straight line from 300 to minus 200 kilocalories a day over 50 days, crossing zero at day 30. The area above the axis is 4500 kilocalories gained, the area below is 2000 lost, and the change in stores is the net signed area, 4500 minus 2000 = 2500."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c05-average-rate.png",
+   "alt": "The falling line from 300 at day 0 to minus 200 at day 50, with a dashed level line at 50 and the rectangle under that level, from day 0 to day 50, shaded.",
+   "w": 1357,
+   "h": 654,
+   "caption": "The same net rate with its average value, 50 kilocalories a day, the mean of the end rates 300 and minus 200. A rectangle 50 high and 50 days wide has area 2500 kilocalories, the same as the net signed area under the line: that is the trapezium’s one-line way."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Take a made-up case, with numbers chosen so that the rate is a straight line. A person’s net rate, intake minus expenditure, is 300 kilocalories a day on day 0. It falls by 10 kilocalories a day, every day, for 50 days.</p>\n<table style=\"width:43%;\">\n\n<thead>\n<tr>\n<th>day</th>\n<th>EI minus EE (kcal/day)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>300</td>\n</tr>\n<tr>\n<td>10</td>\n<td>200</td>\n</tr>\n<tr>\n<td>20</td>\n<td>100</td>\n</tr>\n<tr>\n<td>30</td>\n<td>0</td>\n</tr>\n<tr>\n<td>40</td>\n<td>-100</td>\n</tr>\n<tr>\n<td>50</td>\n<td>-200</td>\n</tr>\n</tbody>\n</table>\n<p>A trainee is asked how much the person’s energy stores changed over the 50 days. They draw the line and shade everything between it and the time axis. There are two triangles, and a triangle’s area is half its base times its height. They work out both and add them.</p>\n<div class=\"working\">\n<p>0.5 times 30 times 300 = 4500<br />\n0.5 times 20 times 200 = 2000<br />\n4500 plus 2000 = 6500</p>\n</div>\n<p>They report a gain of 6,500 kilocalories. Find the flaw before you read on.</p>\n<p>From day 30 to day 50 the rate is below zero. The 2,000 kilocalories under the axis is energy taken out, not put in. It has to be subtracted.</p>\n<div class=\"working\">\n<p>4500 minus 2000 = 2500</p>\n</div>\n<p>The stores rose by 2,500 kilocalories over the 50 days.</p>\n<p>Now the one-line way. The rate is a straight line, so the whole shape counts as one trapezium. Take the average of the two end rates, keeping the minus sign, and multiply by the time.</p>\n<div class=\"working\">\n<p>300 plus -200 = 100<br />\n100 divided by 2 = 50<br />\n50 times 50 = 2500</p>\n</div>\n<p>The same 2,500 kilocalories. The middle number, 50 kilocalories a day, is the average value of the rate.</p>\n<p>The rate is 300 minus 10t, with t in days.</p>\n<div class=\"working\">\n<p>∫ from 0 to 50 of (300 minus 10t) dt = 2500</p>\n</div>\n<p>Check its unit. It is kilocalories a day times days, which is kilocalories.</p>\n<p>Hall and colleagues’ consensus statement (<em>American Journal of Clinical Nutrition</em> 2012) writes it as ES = EI minus EO. EO is the expenditure this book writes EE (section 1). So in their equation ES is the rate of change of the stores, not the stores.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The straight-line rate is made up. A real person’s net rate does not change in a straight line and is never measured at every moment.</p>\n<p>Stored energy is not body weight. Turning 2,500 kilocalories into kilograms needs to know what tissue was gained or lost (Book 1, section 2).</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Area below the time axis is subtracted. Before you accept a change in stores, check that the days of loss were taken away.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A shrinking surplus is still a surplus. While intake minus expenditure stays above zero, the stores rise, however fast the surplus is shrinking.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>The trapezium is exact only for a rate that changes in a straight line between the two readings. For any other rate it is an estimate.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Hall’s ES = EI minus EO is an equation between rates. Before you quote any figure called ES, ask whether its unit is kilocalories or kilocalories a day.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Check the unit of every integral: the rate’s unit times the time’s unit.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A small error in a daily rate grows in the integral. Hall and colleagues put the uncertainty of <dfn data-g=\"75\">doubly labelled water</dfn> at more than 100 kilocalories a day.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Hall and colleagues’ consensus statement (<em>American Journal of Clinical Nutrition</em> 2012) says this about the <dfn data-g=\"81\">energy balance</dfn> equation.</p>\n<blockquote>\n<p>the rate of change in body ES is equal to the difference between the rates of EI and EO.</p>\n</blockquote>\n<p>They add that every term is energy per unit of time.</p>\n<p>Write the sentence first as an equation between rates, in this book’s notation. Then write it as an integral that gives the change in stores between day a and day b. Say what each symbol stands for and give its unit.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>As rates, with EE for what the paper calls EO:</p>\n<div class=\"working\">\n<p>dES/dt = EI minus EE</p>\n</div>\n<p>In words: the rate of change of the stored energy ES with respect to time t equals intake minus expenditure.</p>\n<p>Each symbol and its unit:</p>\n<table style=\"width:75%;\">\n\n<tbody>\n<tr>\n<td>symbol</td>\n<td>what it stands for</td>\n<td>unit</td>\n</tr>\n<tr>\n<td>ES</td>\n<td>the energy stored in the body</td>\n<td>kcal</td>\n</tr>\n<tr>\n<td>t</td>\n<td>time</td>\n<td>days</td>\n</tr>\n<tr>\n<td>dES/dt</td>\n<td>the rate of change of ES</td>\n<td>kcal a day</td>\n</tr>\n<tr>\n<td>EI</td>\n<td>energy intake, a rate</td>\n<td>kcal a day</td>\n</tr>\n<tr>\n<td>EE</td>\n<td>energy expenditure, a rate</td>\n<td>kcal a day</td>\n</tr>\n</tbody>\n</table>\n<p>As an integral, by the net change theorem:</p>\n<div class=\"working\">\n<p>ES(b) minus ES(a) = ∫ from a to b of (EI minus EE) dt</p>\n</div>\n<p>The left side is a change in the stores, in kilocalories. The right side is kilocalories a day times days, also kilocalories. The two sides carry the same unit, which is the check that the equation is written right.</p>\n<p>As section 1 said, the paper’s own shorthand is ES = EI minus EO, and there ES is the rate. In this book ES is the store and dES/dt its rate.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Look at ∫ from 2 to 7 of (3t plus 1) dt. Name the lower limit, the upper limit, the integrand and the variable. Then work out the integral.</p>",
+   "level": 1,
+   "answer": "<p>The lower limit is 2 and the upper limit is 7. The integrand is 3t plus 1. The variable is t.</p>\n<p>The integrand is a straight line, so use the trapezium. Work out the two end rates.</p>\n<div class=\"working\">\n<p>3 times 2 plus 1 = 7<br />\n3 times 7 plus 1 = 22</p>\n</div>\n<p>Average them and multiply by the width, 7 minus 2.</p>\n<div class=\"working\">\n<p>7 plus 22 = 29<br />\n29 divided by 2 = 14.5<br />\n7 minus 2 = 5<br />\n14.5 times 5 = 72.5</p>\n</div>\n<p>The integral is 72.5.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Work out ∫ from 0 to 6 of 4 dt, and ∫ from 0 to 6 of -4 dt.</p>",
+   "level": 1,
+   "answer": "<p>Each is a steady rate, so each is a rectangle: the rate times the width.</p>\n<div class=\"working\">\n<p>4 times 6 = 24<br />\n-4 times 6 = -24</p>\n</div>\n<p>The first is 24. The second is minus 24, because its rectangle sits below the axis.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Work out ∫ from 0 to 8 of 5t dt.</p>",
+   "level": 2,
+   "answer": "<p>At t = 0 the rate is 0, and at t = 8 it is 5 times 8, which is 40. The shape is a triangle with base 8 and height 40.</p>\n<div class=\"working\">\n<p>5 times 8 = 40<br />\n0.5 times 8 times 40 = 160</p>\n</div>\n<p>The integral is 160. The trapezium gives the same: the average of 0 and 40 is 20, and 20 times 8 is 160.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Work out ∫ from 0 to 10 of (6 minus t) dt. Then work out the total area between the line and the axis, counting all of it as positive, and say why the two differ.</p>",
+   "level": 2,
+   "answer": "<p>The rate is 6 at t = 0 and minus 4 at t = 10. It crosses zero at t = 6.</p>\n<p>Above the axis is a triangle from 0 to 6, with height 6. Below is a triangle from 6 to 10, with depth 4.</p>\n<div class=\"working\">\n<p>0.5 times 6 times 6 = 18<br />\n0.5 times 4 times 4 = 8<br />\n18 minus 8 = 10</p>\n</div>\n<p>The integral is 10. Check with the trapezium, keeping the sign.</p>\n<div class=\"working\">\n<p>6 plus -4 = 2<br />\n2 divided by 2 = 1<br />\n1 times 10 = 10</p>\n</div>\n<p>The total area, all counted positive, is 18 plus 8, which is 26. The two differ because the integral subtracts the part below the axis, and the total area adds it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Work out the average value of 2t plus 4 from t = 1 to t = 5.</p>",
+   "level": 3,
+   "answer": "<p>First the integral. The end rates are 6 and 14.</p>\n<div class=\"working\">\n<p>2 times 1 plus 4 = 6<br />\n2 times 5 plus 4 = 14<br />\n6 plus 14 = 20<br />\n20 divided by 2 = 10<br />\n10 times 4 = 40</p>\n</div>\n<p>The integral is 40, over a width of 5 minus 1, which is 4. The average value is the integral divided by the width.</p>\n<div class=\"working\">\n<p>40 divided by 4 = 10</p>\n</div>\n<p>The average is 10. For a straight line it is halfway between the ends, and halfway between 6 and 14 is 10.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A rate f(t) has ∫ from 0 to 10 of f(t) dt = 50 and ∫ from 0 to 4 of f(t) dt = 18. Work out ∫ from 4 to 10 of f(t) dt, and ∫ from 10 to 4 of f(t) dt.</p>",
+   "level": 3,
+   "answer": "<p>The change from 0 to 10 is the change from 0 to 4 plus the change from 4 to 10. So subtract.</p>\n<div class=\"working\">\n<p>50 minus 18 = 32</p>\n</div>\n<p>The integral from 4 to 10 is 32.</p>\n<p>Running from 10 back to 4 undoes the same change, so it has the opposite sign. It is minus 32. Swapping the limits always flips the sign.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Doubly labelled water measures what a person spends (Book 1, section 3). Hall and colleagues put the uncertainty of its figure for expenditure at more than 100 kilocalories a day (<em>American Journal of Clinical Nutrition</em> 2012). Take a measuring period of 14 days. That is the upper end of the range in Book 1, section 3. Work out what that uncertainty becomes in the total spent over the 14 days.</p>",
+   "level": 4,
+   "answer": "<p>A steady uncertainty in a rate, held over a time, is a rectangle.</p>\n<div class=\"working\">\n<p>100 times 14 = 1400</p>\n</div>\n<p>More than 1,400 kilocalories over the 14 days. The unit is kilocalories a day times days, which is kilocalories.</p>\n<p>The method gives one average rate for the whole period (Book 1, section 3). So the uncertainty in that average is multiplied by the 14 days. It is “more than” because the paper says more than 100 a day.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Hall and colleagues (<em>Lancet</em> 2011) model a cut in intake of 480 kilocalories a day. First suppose the person’s net <dfn data-g=\"63\">deficit</dfn> stays at 480 a day for 365 days. Then suppose instead that it falls in a straight line from 480 to 240 a day over the same 365 days. That second shape is made up for this problem. Work out the total deficit each way, and the average daily deficit in the second case.</p>",
+   "level": 5,
+   "answer": "<p>A steady deficit is a rectangle.</p>\n<div class=\"working\">\n<p>480 times 365 = 175200</p>\n</div>\n<p>175,200 kilocalories.</p>\n<p>A straight-line deficit is a trapezium.</p>\n<div class=\"working\">\n<p>480 plus 240 = 720<br />\n720 divided by 2 = 360<br />\n360 times 365 = 131400</p>\n</div>\n<p>131,400 kilocalories. The average daily deficit is the middle number, 360 kilocalories a day.</p>\n<p>The shrinking deficit gives about a quarter less over the year. Which shape is right is not something this arithmetic can tell you. Only the 480 is from the paper.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A person’s energy stores fall by 9,000 kilocalories over 30 days. The figures are made up for this problem. Work out their average net rate. Then suppose the rate changed along a straight line and started at minus 500 kilocalories a day. Work out where it ended.</p>",
+   "level": 6,
+   "answer": "<p>The average rate is the change divided by the time.</p>\n<div class=\"working\">\n<p>-9000 divided by 30 = -300</p>\n</div>\n<p>Minus 300 kilocalories a day on average.</p>\n<p>For a straight line, the average is halfway between the ends. So the two ends add to twice the average.</p>\n<div class=\"working\">\n<p>-300 times 2 = -600<br />\n-600 minus -500 = -100</p>\n</div>\n<p>The rate ended at minus 100 kilocalories a day. Check: the average of minus 500 and minus 100 is minus 300, and minus 300 times 30 is minus 9,000.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the net rate starts at -400 kcal/day and rises in a straight line to 200 kcal/day over 30 days<br />\nit crosses zero at day 20<br />\narea below the axis = 0.5 times 20 times 400 = 4000<br />\narea above the axis = 0.5 times 10 times 200 = 1000<br />\ntotal = 4000 plus 1000 = 5000<br />\nso the stores fell by 5000 kcal</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The fifth line broke. The two areas have opposite signs. The part below the axis is a loss and the part above is a gain, so they are combined by subtraction.</p>\n<div class=\"working\">\n<p>-4000 plus 1000 = -3000</p>\n</div>\n<p>The stores fell by 3,000 kilocalories. Check with the trapezium, keeping the signs.</p>\n<div class=\"working\">\n<p>-400 plus 200 = -200<br />\n-200 divided by 2 = -100<br />\n-100 times 30 = -3000</p>\n</div>\n<p>Why it looks reasonable: both areas are right, and the answer is called a fall, which feels as if the sign has been handled. But the last 10 days put 1,000 kilocalories back. Adding them to the loss counted them the wrong way.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a surplus of 300 kcal/day is held for 4 weeks<br />\nthe change in stores = ∫ from 0 to 4 of 300 dt<br />\n300 times 4 = 1200<br />\nso the stores rose by 1200 kcal</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. The rate is per day, but the limits run from 0 to 4 in weeks. The time in the limits has to be in the same unit as the time in the rate.</p>\n<div class=\"working\">\n<p>4 times 7 = 28<br />\n300 times 28 = 8400</p>\n</div>\n<p>The stores rose by 8,400 kilocalories.</p>\n<p>Why it looks reasonable: “4 weeks” became “4” and the unit was dropped. Kilocalories a day times weeks is not kilocalories, and the unit check would have caught it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the net deficit was read three times: 400 kcal/day on day 0, 300 on day 10, 0 on day 40<br />\ntake the rate as a straight line between readings<br />\naverage rate = (400 plus 300 plus 0) divided by 3 = 233.3<br />\ntotal = 233.3 times 40 = 9333</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line broke. It averages the three readings as if each stood for the same length of time. The first gap is 10 days and the second is 30 days.</p>\n<p>Work each stretch as its own trapezium, then add.</p>\n<div class=\"working\">\n<p>400 plus 300 = 700<br />\n700 divided by 2 = 350<br />\n350 times 10 = 3500<br />\n300 plus 0 = 300<br />\n300 divided by 2 = 150<br />\n150 times 30 = 4500<br />\n3500 plus 4500 = 8000</p>\n</div>\n<p>The total deficit is 8,000 kilocalories. The average rate is that divided by 40 days.</p>\n<div class=\"working\">\n<p>8000 divided by 40 = 200</p>\n</div>\n<p>200 kilocalories a day, not 233.3.</p>\n<p>Why it looks reasonable: averaging readings is what an average usually means. That works only when the readings are equally spaced. Here the lowest reading covers the longest stretch, so the plain average overstates the deficit.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A trial report says this. The trial and its figures are made up for this problem.</p>\n<blockquote>\n<p>Participants’ average energy imbalance was minus 150 kcal a day over 12 weeks, so each lost 12,600 kcal from their stores.</p>\n</blockquote>\n<p>Hall and colleagues (<em>American Journal of Clinical Nutrition</em> 2012) say the combined error in measuring energy imbalance “can easily reach 1000 kcal/d”.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: whether the 12,600 follows from the rate, and how large the error could be beside it.</p>\n<p>Twelve weeks is 84 days.</p>\n<div class=\"working\">\n<p>12 times 7 = 84<br />\n-150 times 84 = -12600</p>\n</div>\n<p>The arithmetic holds. An average rate times the time gives the change, and the unit is kilocalories.</p>\n<p>Now the error. The paper says the error in the rate can reach 1,000 kilocalories a day. That is more than six times the imbalance being reported.</p>\n<div class=\"working\">\n<p>1000 divided by 150 is about 6.7</p>\n</div>\n<p>What this does not establish. It does not establish that each participant lost 12,600 kilocalories. The figure is an average rate times a time, so it is an average change, not each person’s. It does not establish that the imbalance was measured well enough to mean anything, since the possible error is several times the signal. And it says nothing about body weight. That needs to know what the lost stores were made of.</p>\n<p>What to ask for: how the imbalance was measured. And ask whether the change in stores was measured directly, for example from body composition, rather than worked out from rates.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A colleague says this about a patient. The patient and the figures are made up for this problem.</p>\n<blockquote>\n<p>Her surplus has been falling for two months, from 400 kcal a day to zero. So she has been losing weight.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the change in stores over the two months, from the rate. Take two months as 60 days, and take the fall as a straight line, since only the two ends are given.</p>\n<p>The rate is above zero the whole time, falling from 400 to 0. The shape is a triangle.</p>\n<div class=\"working\">\n<p>0.5 times 60 times 400 = 12000</p>\n</div>\n<p>Her stores rose by about 12,000 kilocalories. A falling surplus is still a surplus. The stores rose more slowly each day, but they rose every day until the rate reached zero.</p>\n<p>What this does not establish. It does not establish the exact figure. The straight line is an assumption, and a surplus that fell fast at first would give less. It does not tell you her weight change. That needs what the stored energy was made of, and a scale also sees water. And it says nothing about why the surplus fell, or what it will do next.</p>\n<p>What to say instead: “Her surplus has been shrinking, so her stores have been rising more slowly. They have not been falling.”</p>"
+  }
+ ]
+}

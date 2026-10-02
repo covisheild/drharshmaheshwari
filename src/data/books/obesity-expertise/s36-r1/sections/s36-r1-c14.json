@@ -1,0 +1,120 @@
+{
+ "format": 1,
+ "id": "s36-r1-c14",
+ "label": "14",
+ "title": "Five pilot interviews: what they test and what you do after each",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"222\">pilot interview</dfn> is a practice run of the whole procedure of an interview study, done with a few people before the study proper. It tests the <dfn data-g=\"310\">topic guide</dfn> and the interviewer, and it is your first real use of the recorder and the consent talk. It does not test an answer to the study question.</p>\n<p>The task that finishes this level of the subject is five pilot interviews. Before the first, get an <dfn data-g=\"98\">ethics committee</dfn>’s written answer (section 7). Then each pilot runs the same seven steps, in order.</p>\n<ol type=\"1\">\n<li>Consent, including separate agreement to be recorded.</li>\n<li>The recorded interview.</li>\n<li><dfn data-g=\"108\">Field notes</dfn>, written the same day, before you listen to the recording.</li>\n<li>A <dfn data-g=\"312\">transcript</dfn>.</li>\n<li>A first reading, with rough codes and a memo.</li>\n<li>The interviewer’s <dfn data-g=\"305\">talk share</dfn>.</li>\n<li>A revised topic guide, before the next interview.</li>\n</ol>",
+   "refs": [
+    220,
+    221,
+    173,
+    222,
+    223,
+    224,
+    225,
+    226,
+    186,
+    227,
+    228,
+    229,
+    213
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A pilot is a practice run. You are not yet finding out why patients stop coming to a clinic. The thing under test is you and your topic guide.</p>\n<p>Choose five people you can reach who know the topic from their own lives. Avoid your own patients if you can. A patient may worry that what they say will change their care. Ask through someone who is not their doctor, because then saying no costs them nothing. Say what the talk is for, how long it takes, and that no is a fine answer.</p>\n<p>Before each pilot, test the recorder where you will talk. Place it where it hears both voices. Carry spare batteries. The consent talk has worked when the person can tell you, in their own words, what they agreed to.</p>\n<p>Transcribe each pilot yourself. One interview can take several hours and fill 20 to 40 pages.</p>\n<p>Then look across the five. Which questions fell flat every time? Where did you lead? Is your share of the words falling as you get better at waiting?</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s36-r1-c14-talk-share.png",
+   "alt": "Five bars for pilots 1 to 5 at 46, 38, 26, 20 and 43 per cent. They fall across the first four and rise at the fifth. All sit below a dashed line at 50 per cent.",
+   "w": 1358,
+   "h": 655,
+   "caption": "Your share of the words in five made-up pilot interviews: 46, 38, 26, 20 and 43 per cent. All five are under the dashed line at 50 per cent, where you and the respondent would speak equally. The rise at pilot 5 is explained by its transcript, not by the chart."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Here is how five pilots might go. Everything below is made up: the people, the counts and the changes.</p>\n<p>After pilot 1 you count the words in the transcript. You said 1,150 words and R1 said 1,350. Your share is your words divided by all the words.</p>\n<div class=\"working\">\n<p>1,150 plus 1,350 = 2,500<br />\n1,150 divided by 2,500 = 0.46<br />\n0.46 times 100 = 46 per cent</p>\n</div>\n<p>Your share is 46 per cent. You asked “Don’t you find the clinic timings difficult?” and R1 said “Yes.” Later you spent two minutes explaining why the clinic wants monthly visits. That is advice, not listening (the section on running the interview without leading it).</p>\n<p>So you change two things before pilot 2. The timings question becomes “Tell me about a clinic day, from when you leave home.” And you write at the top of your guide: do not explain the clinic.</p>\n<table style=\"width:96%;\">\n\n<thead>\n<tr>\n<th>Pilot</th>\n<th>Your words</th>\n<th>Respondent’s words</th>\n<th>All words</th>\n<th>Your share (per cent)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>1,150</td>\n<td>1,350</td>\n<td>2,500</td>\n<td>46</td>\n</tr>\n<tr>\n<td>2</td>\n<td>950</td>\n<td>1,550</td>\n<td>2,500</td>\n<td>38</td>\n</tr>\n<tr>\n<td>3</td>\n<td>780</td>\n<td>2,220</td>\n<td>3,000</td>\n<td>26</td>\n</tr>\n<tr>\n<td>4</td>\n<td>600</td>\n<td>2,400</td>\n<td>3,000</td>\n<td>20</td>\n</tr>\n<tr>\n<td>5</td>\n<td>1,290</td>\n<td>1,710</td>\n<td>3,000</td>\n<td>43</td>\n</tr>\n</tbody>\n</table>\n<p>The share falls across the first four pilots, from 46 per cent to 20. Then pilot 5 jumps back to 43 per cent. Your own words more than doubled, from 600 to 1,290.</p>\n<p>R5 is a man in his forties who answers in short lines. Each time he stopped, you filled the silence with a new question. You stopped waiting. The change for next time is the pause: ask, then wait, and let the silence do the asking (the section on running the interview).</p>\n<p>Pilot 3 also had a question that fell flat. “What does the clinic do for you?” drew one-word answers. A question has fallen flat when it gets yes, no or one word, or is answered as a different question.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A falling share shows only that you spoke less. It does not show that you led less. Read the transcript for the questions themselves.</p>\n<p>Nothing a pilot finds about the clinic is a finding. It is a question to ask properly in the study itself.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A pilot tests your guide and you, not the study question. Do not report what five pilot respondents said as the reason patients stop coming.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Avoid your own patients if you can. If a patient of yours does take part, tell them plainly that nothing they say will affect their care, and tell them they may say what they really think.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Transcribe and read each pilot before the next one. If you run them all and read them afterwards, you have done one pilot five times.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When your talk share moves, read the transcript before you explain it. A rise can mean you stopped waiting, or that one <dfn data-g=\"262\">respondent</dfn> speaks briefly.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Listen to your own recording for four things. How much you steered. Whether you asked leading questions. Whether you picked up what the respondent offered. Whether you gave them time to say what they meant.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Keep a dated copy of your topic guide after every pilot, with a line saying what changed and why.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>You plan to keep the transcripts for the next level’s analysis. So say so when you take consent, and keep them only if the person agrees. Ask an ethics committee (section 7 says which) before the first pilot, and keep its answer in writing.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Conduct five pilot interviews on a topic you can reach respondents for. The clinic question used in this book is one choice. Avoid your own patients if you can.</p>\n<p>For each interview, produce seven things.</p>\n<ul>\n<li>The signed consent form, which carries the name, kept apart from the recording and transcript.</li>\n<li>The recording.</li>\n<li>Field notes written the same day, before you listen to the recording.</li>\n<li>A transcript with speaker labels and no names.</li>\n<li>Your codes and a memo.</li>\n<li>Your talk share, with the working.</li>\n<li>The topic guide you will use next, with a line saying what changed and why.</li>\n</ul>\n<p>Then write one page across all five. Which questions fell flat? Where did you lead? How did your talk share move, and what does each transcript say about why?</p>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>There is no single right set of transcripts. The work is judged by what it contains, so check it against this list.</p>\n<ol type=\"1\">\n<li>Five signed consent forms, kept apart from the recordings and transcripts, each with a separate yes to recording and to keeping the transcript. Your ethics committee’s written answer is filed with them.</li>\n<li>Five transcripts, labelled I and R1 to R5, with no names or places that identify anyone.</li>\n<li>Field notes dated the day of each interview.</li>\n<li>Codes and a memo for each transcript, written before the next interview. The dates show this.</li>\n<li>A talk share for each interview, worked as your words divided by all the words, times 100. The gate for this level is met when the respondent spoke more than you, that is when your share is under 50 per cent. Aim well under.</li>\n<li>Five dated versions of the topic guide, each with its change and its reason.</li>\n<li>The one-page reading across the five. It names at least one question you changed. It names one place you led, and what you did about it. And it explains each rise in your share from the transcript, not from memory.</li>\n</ol>\n<p>If your share never fell below half, do not run a sixth interview straight away. Listen to your recordings first, then find the places where you explained, agreed, or asked a second question before the first was answered. Fix those, then run the next one.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a question from a made-up first-draft topic guide for the clinic study, and the lines it produced in pilot 1, translated from Hindi.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Do you think the clinic should give appointments, so people don’t have to wait all day and lose work?</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>Yes, that would be good.</td>\n</tr>\n</tbody>\n</table>\n<p>Say what went wrong, and rewrite the question, with two probes, for pilot 2.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>The question does three things wrong at once.</p>\n<p>It is closed: it can be answered “yes”, and was. It is leading: it names the answer it expects, waiting and lost work, before R1 has said anything about either. And it is a <dfn data-g=\"84\">double question</dfn>, asking about appointments and about waiting in one breath. Her “yes” tells you only that she agreed with you.</p>\n<p>A rewrite for pilot 2:</p>\n<blockquote>\n<p>Tell me about your last clinic day, from when you left home to when you got back.</p>\n</blockquote>\n<p>Two probes to write under it, to use only if they are needed:</p>\n<ul>\n<li>“You mentioned [her words]. Tell me more about that.”</li>\n<li>The pause: wait, and say nothing, when she stops.</li>\n</ul>\n<p>Neither probe names waiting or work. If the wait matters to her, she will bring it up, and then it is her account rather than yours.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A trainee reports after five pilots: “Four of my five respondents said the clinic is too far. So the pilots show distance is the main reason people stop. My talk share was 45, 44, 47, 46 and 45 per cent, so I passed the gate.” What would you say?</p>",
+   "type": "critique",
+   "confidence": true,
+   "answer": "<p>Two separate problems.</p>\n<p>The first is the claim about distance. A pilot tests the guide and the interviewer, not the study question. Five people chosen because they could be reached cannot show the “main reason” anyone stops. “Four of five” also describes only those five (the section on who you talk to). What the pilots do give is a question worth asking properly: is distance the reason, or the first thing people mention? And were the answers about distance given to an <dfn data-g=\"209\">open question</dfn>, or to one that named it?</p>\n<p>The second is the share. Every figure is under 50 per cent, so the gate is technically met. But the share never fell, which means the pilots did not change the interviewing. Five pilots at a steady 45 per cent is one interview done five times. Ask for the transcripts and the guide versions. Then look for what the trainee changed between pilots, and where they explained, agreed or led.</p>"
+  }
+ ]
+}

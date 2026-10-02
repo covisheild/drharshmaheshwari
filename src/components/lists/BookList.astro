@@ -17,6 +17,7 @@ const otherCount = (await books(other)).length;
     <p>{intro}</p>
   </header>
   <div class="wrap" style="padding-bottom:4rem">
+    <slot name="lead" />
     {list.length ? (
       <div class="grid">
         {list.map((b, i) => (

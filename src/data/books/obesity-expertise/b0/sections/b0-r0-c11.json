@@ -1,0 +1,193 @@
+{
+ "format": 1,
+ "id": "b0-r0-c11",
+ "label": "B3",
+ "title": "Dimensional analysis as an error check",
+ "part": "B",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Every measured quantity has a dimension, which is the kind of thing it is: a length, a mass, a time, or a combination of these built by multiplication and division. The unit is how that dimension is measured. Two quantities of the same dimension may be measured in different units.</p>\n<p>An equation between physical quantities must carry the same dimension on both sides, and two quantities may be added or subtracted only when they have the same dimension.</p>\n<p>Multiplying quantities multiplies their units, and dividing them divides their units.</p>\n<p>Matching dimensions on both sides cannot confirm a formula, because a wrong dimensionless factor changes no unit.</p>",
+   "refs": [
+    11
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>You can often show that a formula is wrong without knowing the right formula. You do it by looking at the units and ignoring the numbers.</p>\n<p>Both sides of an equals sign have to carry the same kind of quantity. The word for the kind of thing a quantity is, is its dimension.</p>\n<p>You can only add or subtract quantities of the same dimension, and then only once both are written in the same unit. Three metres plus four seconds is not seven of anything, because a length and a time are different kinds of thing.</p>\n<p>Multiplying and dividing behave the way they do with plain numbers. Metres times metres give the unit m<sup>2</sup>. You can cancel them the way you cancel a shared number in a <dfn data-g=\"155\">ratio</dfn>.</p>\n<p>So here is the check, in four steps.</p>\n<ol type=\"1\">\n<li>Throw the numbers away and keep the units.</li>\n<li>Write the unit of every quantity on both sides.</li>\n<li>Cancel anything that appears on the top and on the bottom.</li>\n<li>Compare the two sides. Different units mean the formula is wrong.</li>\n</ol>\n<p>Matching units do not make a formula right. Halving a quantity, doubling it, or multiplying it by 3.14 leaves every unit exactly where it was.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<blockquote>\n<p>The stretch is 12 km and the bus averages 40 kilometres an hour, so allow 480 minutes.</p>\n</blockquote>\n<p>Take the numbers out and watch what the units do.</p>\n<div class=\"working\">\n<p>km times km per hour<br />\n= km<sup>2</sup> per hour</p>\n</div>\n<p>A square kilometre per hour is an area divided by a time. It is not a time at all.</p>\n<p>You want hours to be left standing at the end.</p>\n<div class=\"working\">\n<p>km divided by km per hour<br />\n= km times hour over km<br />\n= hours</p>\n</div>\n<p>Dividing does it. The kilometres cancel and the hours are left.</p>\n<p>Put the numbers back.</p>\n<div class=\"working\">\n<p>12 divided by 40 = 0.3</p>\n</div>\n<p>That is 0.3 hours. Turn it into minutes with a <dfn data-g=\"41\">conversion factor</dfn>, as you did in the section before this one.</p>\n<div class=\"working\">\n<p>0.3 h times 60 min over 1 h<br />\n= 18 min</p>\n</div>\n<p>Eighteen minutes, not 480.</p>\n<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains per person per month. Somebody proposes a way of working out a household’s grain for a year.</p>\n<blockquote>\n<p>yearly grain = 5, divided by the number of people, times 12</p>\n</blockquote>\n<p>Strip the numbers out again and write only the units.</p>\n<div class=\"working\">\n<p>kilograms per person per month<br />\ndivided by persons<br />\ntimes months<br />\n= kilograms per person squared</p>\n</div>\n<p>The months cancelled, which is right. You are left with kilograms per person squared, and there is no such quantity.</p>\n<p>Ask what arrangement would leave kilograms standing instead.</p>\n<div class=\"working\">\n<p>kilograms per person per month<br />\ntimes persons<br />\ntimes months<br />\n= kilograms</p>\n</div>\n<p>So you multiply by the number of people. You do not divide by it. Now put the numbers in, for a household of four.</p>\n<div class=\"working\">\n<p>5 times 4 times 12 = 240</p>\n</div>\n<p>240 kilograms per household per year. The 240 is your arithmetic on it, and it is not a figure the Act carries.</p>\n<p>A unit check throws out wrong arrangements. It never hands you a right formula.</p>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This check catches a formula of the wrong shape. It cannot catch a formula of the right shape and the wrong size.</p>\n<p>Halving a quantity leaves every unit where it was. A formula can pass this check and still give you an answer twice the truth.</p>\n<p>It also says nothing about the quantities themselves. Kilograms of grain and kilograms of anything else carry the same unit.</p>\n<p>And the persons in the working above are not an SI unit.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Run the check in four steps when a formula you did not write lands in front of you.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Matching units never make a formula right.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The same letters are not the same units. Read the powers before you agree that two units match.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>You can reject a formula in a paper, a protocol or a spreadsheet without being able to derive the right one.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Read the unit that falls out of any calculated dose before you act on it.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>This check finds an error in the shape of a formula and never an error in a plain number multiplying it.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Teach a trainee who cannot remember a formula to check the units of the one in front of them.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A colleague has checked somebody’s formula and reports back in one line.</p>\n<blockquote>\n<p>The units come out right on both sides, so the formula is correct.</p>\n</blockquote>\n<p>Say why that does not follow. Then give an example of a formula that passes a unit check and is still wrong.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>A unit check tests the shape of a formula. It cannot see a plain number multiplying it, because a plain number carries no unit and changes none.</p>\n<p>So the check can reject, and it can never confirm. What your colleague has established is that the formula is not wrong in one particular way.</p>\n<p>An example. The area of a circle is worked out from its radius, which is a length.</p>\n<div class=\"working\">\n<p>radius times radius<br />\n= m times m<br />\n= m<sup>2</sup></p>\n</div>\n<p>Anything of the form “a number times the radius squared” comes out in square metres. So all of these pass the unit check.</p>\n<div class=\"working\">\n<p>3.14 times r<sup>2</sup><br />\n2 times 3.14 times r<sup>2</sup><br />\n6 times r<sup>2</sup></p>\n</div>\n<p>Only the first is the area of a circle. The other two are square metres of something that does not exist, and no unit check will ever tell you which one you are holding.</p>\n<p>What to say back. Ask where the formula came from, and check the number in front. The unit check is the first gate, not the last one.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident says they can never remember formulas, and treats that as the end of the matter. You have ten minutes and a whiteboard.</p>\n<p>Teach them the unit check so that they leave able to use it on the next formula they meet.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Ten minutes, for somebody who expects a mechanism rather than a rule.</p>\n<p>Open by moving the goalposts. Tell them they are not going to remember formulas, and that you do not either. The useful skill is being able to throw the wrong ones out.</p>\n<p>Write a wrong one on the board without saying it is wrong.</p>\n<div class=\"working\">\n<p>time for the journey = distance times speed</p>\n</div>\n<p>Ask them for the units of each piece. They will give you kilometres and kilometres per hour. Write those in.</p>\n<div class=\"working\">\n<p>km times km per hour<br />\n= km<sup>2</sup> per hour</p>\n</div>\n<p>Ask what kind of quantity that is. Let them get to “an area divided by a time” on their own, and then ask whether it can be a journey time. That is the moment the idea lands, and it lands because they did it rather than watched it.</p>\n<p>Now turn it round. Ask what you would have to do to those two units to be left with hours. They will find the division. Write the four steps under it.</p>\n<div class=\"working\">\n<ol type=\"1\">\n<li>throw the numbers away<br />\n</li>\n<li>write the unit of every quantity<br />\n</li>\n<li>cancel what appears on the top and the bottom<br />\n</li>\n<li>compare the two sides</li>\n</ol>\n</div>\n<p>Close with the limit, because a resident who over-trusts this will be caught out by it. Tell them the check throws out wrong formulas and never certifies a right one, and give them the circle example if there is time.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Simplify each of these unit expressions.</p>\n<div class=\"working\">\n<p>m/s times s<br />\nm times m times m<br />\nkg divided by m<sup>3</sup>, times m<sup>3</sup></p>\n</div>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>m/s times s    = m<br />\nm times m times m    = m<sup>3</sup><br />\nkg divided by m<sup>3</sup>, times m<sup>3</sup> = kg</p>\n</div>\n<p>In the first, the seconds on the top cancel the seconds on the bottom, and metres are left.</p>\n<p>In the second, three metres multiplied together give metres to the power three.</p>\n<p>In the third, the m<sup>3</sup> on the bottom cancels the m<sup>3</sup> on the top, and kilograms are left. That one is worth remembering as a shape: a density multiplied by a volume gives a mass.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Which of these pairs can be added together as they stand, which can be added after a conversion, and which cannot be added at all?</p>\n<div class=\"working\">\n<p>3 m and 4 m<br />\n3 m and 4 s<br />\n3 kg and 4 g<br />\n3 m<sup>2</sup> and 4 m</p>\n</div>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>3 m and 4 m    as they stand    3 plus 4 = 7, so 7 m<br />\n3 m and 4 s    never<br />\n3 kg and 4 g    after converting<br />\n3 m<sup>2</sup> and 4 m    never</p>\n</div>\n<p>The second pair is a length and a time. There is no conversion between them, because they are not the same kind of quantity.</p>\n<p>The third pair is two masses in different units, so convert one and add.</p>\n<div class=\"working\">\n<p>3 kg times 1,000 g over 1 kg = 3,000 g<br />\n3,000 plus 4 = 3,004</p>\n</div>\n<p>Three thousand and four grams.</p>\n<p>The fourth pair is an area and a length. Squared metres and metres are not the same unit, whatever they look like on the page. That is the pair people actually get wrong, because both of them say “metres” out loud.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Work out the unit of each of these quantities from what it is built out of. Use metres, kilograms and seconds.</p>\n<div class=\"working\">\n<p>a mass divided by a volume<br />\na length divided by a time<br />\na length divided by a time, and then divided by a time again<br />\na number of people divided by an area</p>\n</div>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>a mass divided by a volume    = kg divided by m<sup>3</sup>    = kg/m<sup>3</sup><br />\na length divided by a time    = m divided by s    = m/s<br />\nthat, divided by a time again    = m/s divided by s    = m/s<sup>2</sup><br />\npeople divided by an area    = people divided by m<sup>2</sup></p>\n</div>\n<p>The third one is worth a second look. Dividing by seconds twice gives seconds squared on the bottom, which you write as m/s<sup>2</sup> or as m s<sup>-2</sup>.</p>\n<p>The fourth is a reminder that a count can sit in a unit. People per square metre is a perfectly good unit, and you will more often meet it as people per square kilometre.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Cancel each of these down as far as it will go.</p>\n<div class=\"working\">\n<p>kg m<sup>2</sup> s<sup>-2</sup> divided by kg<br />\nkg m<sup>2</sup> s<sup>-2</sup> divided by s<br />\nm<sup>2</sup> divided by m</p>\n</div>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>kg m<sup>2</sup> s<sup>-2</sup> divided by kg = m<sup>2</sup> s<sup>-2</sup><br />\nkg m<sup>2</sup> s<sup>-2</sup> divided by s    = kg m<sup>2</sup> s<sup>-3</sup><br />\nm<sup>2</sup> divided by m    = m</p>\n</div>\n<p>The first: the kilograms cancel outright.</p>\n<p>The second: there was already a second squared on the bottom, and dividing by another second makes it a second cubed. The <dfn data-g=\"63\">exponent</dfn> went from minus two to minus three, which is the rule for dividing powers you already have.</p>\n<p>The third: two metres on the top, one on the bottom, one left over.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>The SI states that J = kg m<sup>2</sup> s<sup>-2</sup>, where J is the <dfn data-g=\"97\">joule</dfn>. Write out the unit of each of these in base units, cancelled as far as it will go.</p>\n<div class=\"working\">\n<p>J divided by kg<br />\nJ times s<sup>2</sup>, divided by m<sup>2</sup><br />\nJ divided by s</p>\n</div>",
+   "level": 3,
+   "answer": "<p>Put kg m<sup>2</sup> s<sup>-2</sup> in place of J every time, then cancel.</p>\n<div class=\"working\">\n<p>J divided by kg    = kg m<sup>2</sup> s<sup>-2</sup> divided by kg    = m<sup>2</sup> s<sup>-2</sup><br />\nJ times s<sup>2</sup> over m<sup>2</sup>    = kg m<sup>2</sup> s<sup>-2</sup> times s<sup>2</sup> over m<sup>2</sup>    = kg<br />\nJ divided by s    = kg m<sup>2</sup> s<sup>-2</sup> divided by s    = kg m<sup>2</sup> s<sup>-3</sup></p>\n</div>\n<p>The middle one is the one to notice. Multiplying by s<sup>2</sup> cancelled the s<sup>-2</sup>, and dividing by m<sup>2</sup> cancelled the m<sup>2</sup>, so a kilogram was left standing on its own.</p>\n<p>That is what it means to say the joule is built out of base units. You can take it apart again and get them back.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A protocol works out a total amount of a drug like this.</p>\n<blockquote>\n<p>total amount = strength times volume</p>\n</blockquote>\n<p>The strength is recorded in milligrams per millilitre. The volume is recorded in millilitres.</p>\n<p>Check the units of the right-hand side and say what unit the total amount comes out in.</p>",
+   "level": 4,
+   "answer": "<p>Write the units and cancel.</p>\n<div class=\"working\">\n<p>mg per mL, times mL<br />\n= mg times mL over mL<br />\n= mg</p>\n</div>\n<p>The millilitres cancel and milligrams are left. So the total amount comes out in milligrams, which is a unit an amount of a drug is measured in. The formula is the right shape.</p>\n<p>Now try it the other way round, so you can see the check working.</p>\n<div class=\"working\">\n<p>mg per mL, divided by mL<br />\n= mg per mL squared</p>\n</div>\n<p>Milligrams per square millilitre is not a quantity anybody uses. Had the protocol divided, the units alone would have told you to send it back.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A district note plans grain for a priority household of six people. It says the household should be counted for 360 kilograms of foodgrains in a year.</p>\n<p>Work back to the rate for one person for one month, keeping the unit on the answer. Say which units you cancelled to get there. Then say whether the rate you land on is the one section 3(1) of the National Food Security Act, 2013 states.</p>",
+   "level": 5,
+   "answer": "<p>You are given kilograms per household per year and asked for kilograms per person per month. So two things have to come off the answer: the year has to become months, and the household has to become people.</p>\n<p>Write the units first and decide the arrangement from them.</p>\n<div class=\"working\">\n<p>kilograms per household per year<br />\ndivided by months per year<br />\ndivided by persons per household<br />\n= kilograms per person per month</p>\n</div>\n<p>The years cancel against the years and the households cancel against the households. Kilograms, one person and one month are what is left standing.</p>\n<p>Now the numbers. A year holds twelve months, and the note’s household holds six people.</p>\n<div class=\"working\">\n<p>360 divided by 12 = 30</p>\n</div>\n<p>Thirty kilograms per household per month.</p>\n<div class=\"working\">\n<p>30 divided by 6 = 5</p>\n</div>\n<p>Five kilograms per person per month.</p>\n<p>That is the rate section 3(1) of the Act states for a person in a priority household. The 360 in the note is not in the Act. It is somebody’s arithmetic on the monthly rate, and working back down is how you check whose arithmetic it was.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A bus covers 18 kilometres in 30 minutes. A note says the speed is worked out as the time divided by the distance.</p>\n<p>Say what unit that gives and what it is not. Then write the arrangement whose units come out as a speed, and work the speed out.</p>",
+   "level": 5,
+   "answer": "<p>Units first.</p>\n<div class=\"working\">\n<p>minutes divided by kilometres<br />\n= min/km</p>\n</div>\n<p>Minutes per kilometre is a real quantity. It is a pace, which is how long each kilometre takes. It is not a speed, because a speed is a distance divided by a time.</p>\n<p>Turn it over and you get kilometres divided by minutes.</p>\n<div class=\"working\">\n<p>kilometres divided by minutes<br />\n= km/min</p>\n</div>\n<p>That is a speed, and it is not yet the speed you were asked for. Kilometres an hour is what a road speed is quoted in, so the minutes have to become hours. Use the conversion factor from the section before this one, with the minutes where they cancel.</p>\n<div class=\"working\">\n<p>km/min, times 60 min over 1 h<br />\n= km/h</p>\n</div>\n<p>Now the numbers. The time is in minutes and the speed you want is per hour, so convert first.</p>\n<div class=\"working\">\n<p>30 min times 1 h over 60 min = 0.5 h</p>\n</div>\n<p>Then divide.</p>\n<div class=\"working\">\n<p>18 divided by 0.5 = 36</p>\n</div>\n<p>Thirty-six kilometres an hour.</p>\n<p>Both quantities are useful and they answer different questions. The unit is what tells you which of the two you are holding.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A block of material has a mass of 2,400 kilograms and a volume of 1.2 cubic metres. A note works out its density as the volume divided by the mass.</p>\n<p>A density is a mass in every unit of volume. Check the note’s units against that, fix the arrangement, and work the density out.</p>",
+   "level": 6,
+   "answer": "<p>A density is a mass divided by a volume, so its unit has to be kilograms per cubic metre.</p>\n<p>Now the note’s arrangement.</p>\n<div class=\"working\">\n<p>m<sup>3</sup> divided by kg<br />\n= m<sup>3</sup>/kg</p>\n</div>\n<p>Cubic metres per kilogram is upside down. It is a volume in every kilogram, which is a real quantity and is not what was asked for.</p>\n<p>Turn it up the right way.</p>\n<div class=\"working\">\n<p>kg divided by m<sup>3</sup><br />\n= kg/m<sup>3</sup></p>\n</div>\n<p>Now the numbers.</p>\n<div class=\"working\">\n<p>2,400 divided by 1.2 = 2,000</p>\n</div>\n<p>Two thousand kilograms per cubic metre.</p>\n<p>Run the size check on that answer as well. A cubic metre is a large volume, so a density in kilograms per cubic metre is a large number. Had the note’s arrangement been used, the answer would have been 0.0005, and a number that small for a heavy block is its own warning.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a rectangular plot measures 30 m by 20 m<br />\nthe fencing needed is 30 times 20 = 600<br />\nso 600 m of fencing is needed</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the second one, and the units say so before the arithmetic does.</p>\n<div class=\"working\">\n<p>30 m times 20 m<br />\n= 600 m<sup>2</sup></p>\n</div>\n<p>Metres times metres give square metres. That is an area, and fencing is a length. The formula is the wrong shape for what was asked.</p>\n<p>Fencing runs round the edge, so add the four sides.</p>\n<div class=\"working\">\n<p>30 plus 20 = 50<br />\n50 times 2 = 100</p>\n</div>\n<p>A hundred metres of fencing.</p>\n<p>Why it looks reasonable: multiplying the two sides of a rectangle is a move everybody knows, and 600 is a plausible-looking quantity of fencing. The word “metres” even appears in the answer. It appears because somebody typed it, not because it fell out of the working, and that is the difference this section is about.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the entitlement is 5 kilograms per person per month<br />\na year is 365 days<br />\n5 times 365 = 1,825<br />\nso the entitlement is 1,825 kilograms per person per year</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the third. A quantity given for each month was multiplied by a number of days.</p>\n<p>Write the units of that multiplication out.</p>\n<div class=\"working\">\n<p>kilograms per person per month<br />\ntimes days<br />\n= kilogram days per person per month</p>\n</div>\n<p>Kilogram days per person per month is not a quantity of grain. Nothing cancelled, because nothing matched: there is a month on the bottom and a day on the top.</p>\n<p>What goes on the top has to be months, and a year holds twelve of them.</p>\n<div class=\"working\">\n<p>kilograms per person per month, times 12 months<br />\n= kilograms per person per year<br />\n5 times 12 = 60</p>\n</div>\n<p>Sixty kilograms per person per year. That figure is your arithmetic and not the Act’s. What the Act states is five kilograms per person per month. So whenever you quote the sixty, say that you multiplied by twelve months to get it.</p>\n<p>Why it looks reasonable: the 365 is a real and familiar number, and the arithmetic is right. The answer is even labelled per year, which is the label that was wanted. Every part of it is correct except the one that mattered, which is what the 365 was counting.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>energy in the SI has the unit kg m<sup>2</sup> s<sup>-2</sup><br />\na note proposes that energy is a mass times a speed<br />\na mass is in kg and a speed is in m/s<br />\nkg times m/s gives kg m/s<br />\nkg m/s contains kg, m and s, and so does kg m<sup>2</sup> s<sup>-2</sup><br />\nso the units match and the formula is fine</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the fifth. Containing the same letters is not carrying the same units.</p>\n<p>Write both out with their powers side by side.</p>\n<table style=\"width:43%;\">\n\n<thead>\n<tr>\n<th>what it is</th>\n<th>its unit</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>the proposal</td>\n<td>kg m s<sup>-1</sup></td>\n</tr>\n<tr>\n<td>the joule</td>\n<td>kg m<sup>2</sup> s<sup>-2</sup></td>\n</tr>\n</tbody>\n</table>\n<p>The metre is to the power one in the proposal and to the power two in the joule. The second is to the power minus one in the proposal and minus two in the joule. Two of the three powers differ, so these are different quantities that happen to be built from the same three base units.</p>\n<p>So the proposal is rejected. A mass times a speed is not an energy.</p>\n<p>Notice what you cannot say. You cannot say what energy is a mass times, because the check does not produce right formulas. It only throws out wrong ones, and here it has thrown one out.</p>\n<p>Why it looks reasonable: the last two lines have the form of a check. The units are written down and compared, so the working looks like the work. Reading the letters and ignoring the powers is the commonest way this check is done badly. It is worse than not doing it at all, because it ends with the word “fine”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A press note crosses your desk with this line in it.</p>\n<blockquote>\n<p>The plant treats 4.5 crore litres a day, which works out at 135 litres a person for the city’s 30 lakh people.</p>\n</blockquote>\n<p>The plant, the city and both figures are made up for this problem. No real plant and no real population is being described.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: litres per person per day. The unit tells you the arrangement, because litres per person per day means litres divided by people.</p>\n<div class=\"working\">\n<p>litres per day, divided by people<br />\n= litres per person per day</p>\n</div>\n<p>Write both figures out in full first.</p>\n<div class=\"working\">\n<p>4.5 crore litres a day = 4.5 times 10<sup>7</sup> = 45,000,000 litres a day<br />\n30 lakh people    = 3 times 10<sup>6</sup>    = 3,000,000 people</p>\n</div>\n<p>Now divide.</p>\n<div class=\"working\">\n<p>45,000,000 divided by 3,000,000 = 15</p>\n</div>\n<p>Fifteen litres per person per day, not 135. The line is out by a factor of nine.</p>\n<p>What this does not establish. It does not tell you what a person needs. Both 15 and 135 are only numbers until somebody names a standard and says who set it. It does not tell you that the water reaches anybody, since a plant treating water and a household receiving it are two different claims. And both figures came from the note itself, so the arithmetic being wrong is the only thing here you have checked.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A supplier’s brochure makes this claim about a water treatment unit for a village tank.</p>\n<blockquote>\n<p>It doses at 2 milligrams per litre. So a 5,000 litre tank needs 2 divided by 5,000, which is 0.0004 grams of chlorine a fill.</p>\n</blockquote>\n<p>The brochure, the unit and both figures are made up for this problem. Do not carry the 2 milligrams per litre away as a chlorine dose. What a tank should be dosed at is set by whoever sets the standard. This problem is about the arrangement of the units and nothing else.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the mass of chlorine for one fill. Start from the units, because the brochure has divided and you should check whether dividing can give a mass.</p>\n<div class=\"working\">\n<p>milligrams per litre, divided by litres<br />\n= mg per litre squared</p>\n</div>\n<p>Milligrams per square litre is not a mass. So the arrangement is wrong, whatever the number comes out as.</p>\n<p>Multiplying is what leaves a mass standing.</p>\n<div class=\"working\">\n<p>milligrams per litre, times litres<br />\n= milligrams</p>\n</div>\n<p>Now the numbers.</p>\n<div class=\"working\">\n<p>2 times 5,000 = 10,000</p>\n</div>\n<p>Ten thousand milligrams. Convert that to grams, since the brochure answered in grams.</p>\n<div class=\"working\">\n<p>10,000 divided by 1,000 = 10</p>\n</div>\n<p>Ten grams a fill, against the 0.0004 grams claimed. The brochure is out by a factor of twenty-five thousand, and the error is one inverted arrangement.</p>\n<p>What this does not establish. It says nothing about whether 2 milligrams per litre is the right dose for that tank, which is a question for whoever sets the standard. It says nothing about whether the unit delivers what it claims to deliver. And it says nothing about what the chlorine is mixed with. Ten grams of a product is ten grams of chlorine only if the product is pure.</p>"
+  }
+ ]
+}

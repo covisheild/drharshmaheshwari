@@ -58,6 +58,7 @@ const graph = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400..700&display=swap" rel="stylesheet" />
+    <slot name="head" />
     <script type="application/ld+json" set:html={JSON.stringify(graph)} />
     <script is:inline>
       // Runs before first paint: stored choice, else the system setting. Prevents a flash of the wrong theme.

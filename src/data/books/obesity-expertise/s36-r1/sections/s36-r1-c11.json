@@ -1,0 +1,191 @@
+{
+ "format": 1,
+ "id": "s36-r1-c11",
+ "label": "11",
+ "title": "Who did the talking: the talk share",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A turn is one unbroken stretch of speech by one speaker in a <dfn data-g=\"312\">transcript</dfn>. A word, for this count, is whatever stands between two spaces in the transcript being counted. Speaker labels and bracketed marks are not counted. A broken-off word and an “Mm-hm” are.</p>\n<p>The interviewer’s <dfn data-g=\"305\">talk share</dfn> for one interview is the number of words the interviewer says, divided by the number of words everyone says, multiplied by one hundred. The <dfn data-g=\"262\">respondent</dfn>’s talk share is one hundred minus the interviewer’s. The <dfn data-g=\"263\">respondent-to-interviewer ratio</dfn> is the respondent’s words divided by the interviewer’s words.</p>\n<p>Across several interviews, the <dfn data-g=\"180\">mean share</dfn> is the sum of the interviewers’ shares divided by the number of interviews. The <dfn data-g=\"226\">pooled share</dfn> is all the interviewer’s words across the interviews divided by all the words. The two can differ when the interviews differ in length. When every interview is the same length, they are equal.</p>",
+   "refs": [
+    204,
+    174,
+    205
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>This book ends with a simple test. In your interview, did the respondent speak more than you did?</p>\n<p>Your words divided by all the words, times a hundred, is your share. If it is under 50 per cent, the respondent spoke more.</p>\n<p>Count words, not turns.</p>\n<p>A low share is good news about one thing only: who spoke more. It cannot tell you whether your questions pushed the answers in one direction. For that you read the questions.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s36-r1-c11-five-shares.png",
+   "alt": "Five bars. Interviews 1, 2, 4 and 5 stand at 23.0, 20.0, 22.5 and 18.0 per cent, below a dashed line at 50 per cent. Interview 3 stands at 52.5 per cent, above the line. A second dashed line marks the mean at 27.2 per cent.",
+   "w": 1358,
+   "h": 654,
+   "caption": "Your share of the words in each of five made-up pilot interviews: 23.0, 20.0, 52.5, 22.5 and 18.0 per cent. Their mean, 27.2 per cent, sits well under half. Interview 3 is over half on its own."
+  },
+  {
+   "t": "figure",
+   "src": "s36-r1-c11-share-and-ratio.png",
+   "alt": "A curve falling steeply from left to right. It passes through the second excerpt at ratio 0.0769 and share 92.9, the gate at ratio 1 and share 50, a respondent's share of 64 per cent at ratio 1.78 and share 36, the 450-and-1,350 transcript at ratio 3 and share 25, and the first excerpt at ratio 7.2 and share 12.2. A dashed line marks 50 per cent.",
+   "w": 1356,
+   "h": 655,
+   "caption": "The share and the ratio are two readings of the same count. Your share is 100 divided by 1 plus the respondent’s ratio. A ratio of 1 is a share of 50 per cent, the gate. R1’s 7.2 is your 12.2 per cent; R2’s 0.0769 is your 92.9."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Suppose you have interviewed two women at the district hospital non-communicable disease (NCD) clinic in Chhattisgarh. Both have stopped coming back for follow-up. Here are two made-up stretches of those interviews, put into English from Chhattisgarhi. <code>I</code> is you.</p>\n<p>The first one.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>What happened after your last visit here?</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>I went home with the tablets and the diet paper. The tablets finished in a month. To get more I had to come back, and coming back means a whole day. My husband drops me at the bus stand at seven, and the clinic bus is often full.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>A whole day?</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>Yes. By the time the doctor sees me it is afternoon. Then there is the line at the pharmacy. I reach home after dark and the cooking is not done.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Tell me more about that.</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>My mother-in-law does not say anything, but I can see she is tired. So the next month I thought, let the tablets wait. And then I did not come again.</td>\n</tr>\n</tbody>\n</table>\n<p>The second one.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Last time you were here the doctor gave you tablets and a diet chart and asked you to come back in a month, and you did not come, so I wanted to ask whether it was the distance or the cost or something about the clinic itself, because many patients tell us the waiting is very long?</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>The distance.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>The distance. So is it the bus fare, or is it more that it takes the whole day and you have work at home and cannot leave the children?</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>The whole day.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>I see. And did anyone at home say anything about you coming here, or did they support you?</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>They support me.</td>\n</tr>\n</tbody>\n</table>\n<p>Here is the trap. Count the turns first. In each excerpt you spoke three times, and the respondent spoke three times. By turns, both are an even split. By turns, the two interviews look the same.</p>\n<p>Now count words. A word is whatever stands between two spaces, so “mother-in-law” is one word. Count each turn, then add up each speaker’s turns.</p>\n<div class=\"working\">\n<p>first excerpt, you: 7 plus 3 plus 5 = 15 words<br />\nfirst excerpt, R1: 48 plus 30 plus 30 = 108 words<br />\nsecond excerpt, you: 57 plus 29 plus 18 = 104 words<br />\nsecond excerpt, R2: 2 plus 3 plus 3 = 8 words</p>\n</div>\n<p>Now each share. Your words, divided by all the words, times a hundred.</p>\n<div class=\"working\">\n<p>15 plus 108 = 123 words in the first excerpt<br />\n15 divided by 123 = 0.1219…<br />\n0.1219… times 100 = 12.2 per cent<br />\n104 plus 8 = 112 words in the second excerpt<br />\n104 divided by 112 = 0.9285…<br />\n0.9285… times 100 = 92.9 per cent</p>\n</div>\n<table style=\"width:96%;\">\n\n<thead>\n<tr>\n<th>Excerpt</th>\n<th>Your turns</th>\n<th>Respondent’s turns</th>\n<th>Your words</th>\n<th>Respondent’s words</th>\n<th>All words</th>\n<th>Your share (per cent)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>first</td>\n<td>3</td>\n<td>3</td>\n<td>15</td>\n<td>108</td>\n<td>123</td>\n<td>12.2</td>\n</tr>\n<tr>\n<td>second</td>\n<td>3</td>\n<td>3</td>\n<td>104</td>\n<td>8</td>\n<td>112</td>\n<td>92.9</td>\n</tr>\n</tbody>\n</table>\n<p>The same three turns each. In one you said about an eighth of the words. In the other you said more than nine words in every ten.</p>\n<p>The <dfn data-g=\"254\">ratio</dfn> says the same thing another way. Divide the respondent’s words by yours.</p>\n<div class=\"working\">\n<p>108 divided by 15 = 7.2<br />\n8 divided by 104 = 0.0769…</p>\n</div>\n<p>In the first, R1 said 7.2 words for each one of yours. In the second, R2 said less than a tenth of a word for each of yours. Above 1 means the respondent spoke more.</p>\n<p>The ratio gives your share back. For each 1 word of yours, R1 said 7.2. So all the words come in parts of 1 plus 7.2, and your part is 1 of them.</p>\n<div class=\"working\">\n<p>100 divided by (1 plus 7.2) = 12.2 per cent, your share again</p>\n</div>\n<p>Look at what the second interviewer did with all those words. The answers are offered inside the questions, the distance or the cost, and R2 picks one. The section on open, closed and leading questions showed why that happens.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Both excerpts are made up and short. A real interview runs to thousands of words, and the share over a whole interview can differ from the share over any stretch of it.</p>\n<p>The counts are of the English version. The same talk counted in Chhattisgarhi would give other numbers. The two speakers’ counts need not change by the same amount, so compare shares only when both were counted on the same version.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now suppose you have done all five pilot interviews for this book and transcribed them. The word counts below are made up, to show the move.</p>\n<table style=\"width:96%;\">\n\n<thead>\n<tr>\n<th>Interview</th>\n<th>Your words</th>\n<th>Respondent’s words</th>\n<th>All words</th>\n<th>Your share (per cent)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>1,150</td>\n<td>3,850</td>\n<td>5,000</td>\n<td>23.0</td>\n</tr>\n<tr>\n<td>2</td>\n<td>800</td>\n<td>3,200</td>\n<td>4,000</td>\n<td>20.0</td>\n</tr>\n<tr>\n<td>3</td>\n<td>2,730</td>\n<td>2,470</td>\n<td>5,200</td>\n<td>52.5</td>\n</tr>\n<tr>\n<td>4</td>\n<td>1,080</td>\n<td>3,720</td>\n<td>4,800</td>\n<td>22.5</td>\n</tr>\n<tr>\n<td>5</td>\n<td>900</td>\n<td>4,100</td>\n<td>5,000</td>\n<td>18.0</td>\n</tr>\n</tbody>\n</table>\n<p>Work out each share the same way as before. Here is interview 3, the one that stands out.</p>\n<div class=\"working\">\n<p>2,730 divided by 5,200 = 0.525<br />\n0.525 times 100 = 52.5 per cent</p>\n</div>\n<p>Now the mean of the five shares, as Book 0 taught the mean: add them, then divide by how many there are.</p>\n<div class=\"working\">\n<p>23.0 plus 20.0 plus 52.5 plus 22.5 plus 18.0 = 136<br />\n136 divided by 5 = 27.2 per cent</p>\n</div>\n<p>A mean of 27.2 per cent sounds like a clear pass. It hides interview 3, where you said more than the respondent did. Four interviews passed the gate and one did not.</p>\n<p>So open transcript 3 and find where your words went. Suppose you find it quickly. Halfway through, the respondent asked what the numbers on her report meant. You spent several minutes explaining them, as you would in clinic. That is a useful thing to find in a pilot. The respondent asked a clinical question, and you slipped from interviewing into consulting.</p>\n<p>Why aim well below half, and not just below it? Your counts depend on choices from the last section. A cleaned transcript drops your “Mm-hm”s and her repeats. A count on the English version differs from a count on the Chhattisgarhi one. A share of 48 per cent can become 52 per cent under a different counting rule. A share of 25 per cent is very unlikely to. The gate asks only that the respondent speak more. A wide margin means the answer does not depend on how you counted.</p>\n<p>You can also work backwards, from a share and one count to the other count. Suppose you know only that in interview 2 the respondent said 3,200 words and your share was 20 per cent. Her words are the other 80 per cent of all the words.</p>\n<div class=\"working\">\n<p>100 minus 20 = 80 per cent<br />\n3,200 divided by 0.80 = 4,000 words in all<br />\n4,000 minus 3,200 = 800 words, yours</p>\n</div>\n<p>That is interview 2’s row in the table.</p>\n<p>You will not find this rule in the methods papers. DeJonckheere and Vaughn advise “prioritising listening over talking”, and they set no number. The 50 per cent line is this course’s own gate for this book.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The five counts are made up. Real pilot interviews vary more in length than these, and the more they vary, the further the mean share can sit from the share of all your words taken together.</p>\n<p>Nothing in the table says whether the respondents’ long answers were their own. A respondent can speak at length in answer to a <dfn data-g=\"163\">leading question</dfn> and still have the gate met.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Count words, not turns. Turns alternate, so they split close to evenly in almost any interview.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The share and the ratio are different numbers. Say which one you are quoting.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A low talk share does not show that you did not lead. Once the share passes, read your own questions for leading, turn by turn. The count cannot do that part for you.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A mean share across five interviews can pass while one interview fails. Report each interview’s share, and open the transcript of any that sits near or above half.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Aim well under half, not just under it. Write down how you counted beside every share you report.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The 50 per cent line is this course’s gate, not a published standard.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When a trainee says “I barely spoke”, ask for the two word counts.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Do this on the transcript of your first pilot interview (section 14). Until then, use the two excerpts above. Count your words and the respondent’s, and work out your talk share. Then find your three longest turns and read them. For each, say what you were doing with those words, and whether the respondent’s next answer took up your words or her own.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>There is no single right number here, because the transcript is yours. The working has a fixed shape, though.</p>\n<p>First the count. Add your words turn by turn, then the respondent’s. Add the two for all the words. Your words divided by all the words, times a hundred, is your share. Write beside it which transcript you counted, <dfn data-g=\"118\">full verbatim</dfn> or cleaned, and in which language.</p>\n<p>Then the three longest turns. Long interviewer turns in a first interview are often one of these four things. The first is a question with its possible answers built in (“was it the distance or the cost”). The second is an explanation or advice, which is the clinician coming back. The third is a summary of what the respondent said, which invites her to agree. The fourth is a story of your own. Name which one each turn is.</p>\n<p>Then look at the answer that follows each long turn. If it repeats your words back (“yes, the distance”), the turn steered her. If it goes somewhere you did not mention, it did not.</p>\n<p>If your share is under half and none of the three turns steered her, you have met the gate. If your share is under half and a turn did steer her, the share has passed and the interview has not. That second case is the one this exercise exists to catch.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>In a transcript, the interviewer says 450 words and the respondent says 1,350. Work out the interviewer’s talk share, the respondent’s talk share, and the ratio of the respondent’s words to the interviewer’s.</p>",
+   "level": 1,
+   "answer": "<p>All the words first.</p>\n<div class=\"working\">\n<p>450 plus 1,350 = 1,800 words</p>\n</div>\n<p>The interviewer’s share.</p>\n<div class=\"working\">\n<p>450 divided by 1,800 = 0.25<br />\n0.25 times 100 = 25 per cent</p>\n</div>\n<p>The respondent’s share is what is left of the hundred.</p>\n<div class=\"working\">\n<p>100 minus 25 = 75 per cent</p>\n</div>\n<p>The ratio, respondent’s words over interviewer’s.</p>\n<div class=\"working\">\n<p>1,350 divided by 450 = 3</p>\n</div>\n<p>Three words from the respondent for every one from the interviewer.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A respondent’s talk share is 64 per cent. What is the interviewer’s share? What is the ratio of the respondent’s words to the interviewer’s?</p>",
+   "level": 2,
+   "answer": "<p>The two shares make a hundred between them.</p>\n<div class=\"working\">\n<p>100 minus 64 = 36 per cent</p>\n</div>\n<p>The ratio does not need the word counts. The shares are the counts scaled by the same amount, so their ratio is the ratio of the counts.</p>\n<div class=\"working\">\n<p>64 divided by 36 = 1.777…</p>\n</div>\n<p>The respondent said about 1.78 words for each word of the interviewer’s. Above 1, so the respondent spoke more.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Count the words in each line, then give the first speaker’s share of all the words, to one <dfn data-g=\"70\">decimal</dfn> place.</p>\n<blockquote>\n<p>What did you eat yesterday, from morning to night?</p>\n</blockquote>\n<blockquote>\n<p>Tea in the morning, then rice and dal at noon, and roti at night.</p>\n</blockquote>",
+   "level": 3,
+   "answer": "<p>Count what stands between the spaces.</p>\n<div class=\"working\">\n<p>first line: 9 words<br />\nsecond line: 14 words<br />\n9 plus 14 = 23 words</p>\n</div>\n<p>The first speaker’s share.</p>\n<div class=\"working\">\n<p>9 divided by 23 = 0.3913…<br />\n0.3913… times 100 = 39.1 per cent</p>\n</div>\n<p>Short exchanges often give the asker a large share. One question and one answer is not an interview, and the share only means something over a whole transcript.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Here is a made-up stretch of a transcript from the NCD clinic, put into English from Hindi.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>How did you first come to this clinic?</td>\n</tr>\n<tr>\n<td>R4</td>\n<td>The health worker in our village told me. She checked my pressure at the village centre and said it was high, and that I should get my sugar tested at the district hospital.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>What was that first visit like?</td>\n</tr>\n<tr>\n<td>R4</td>\n<td>Long. I left the children with my sister. The doctor was kind, but she wrote many things on the paper and I could not read all of it.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>And what did you do with the paper?</td>\n</tr>\n<tr>\n<td>R4</td>\n<td>I kept it in the tin with the ration card.</td>\n</tr>\n</tbody>\n</table>\n<p>Work out the interviewer’s talk share over this stretch, and say whether it would meet the gate.</p>",
+   "level": 4,
+   "answer": "<p>Count each turn.</p>\n<div class=\"working\">\n<p>interviewer: 8 plus 6 plus 8 = 22 words<br />\nR4: 33 plus 28 plus 10 = 71 words<br />\n22 plus 71 = 93 words</p>\n</div>\n<p>The interviewer’s share.</p>\n<div class=\"working\">\n<p>22 divided by 93 = 0.2365…<br />\n0.2365… times 100 = 23.7 per cent</p>\n</div>\n<p>Under half, and well under it, so this stretch would meet the gate. The questions are short and open. The respondent takes each one somewhere of her own: the health worker, her sister, the tin with the ration card.</p>\n<p>Keep two limits in view. This is one stretch, not the whole interview. And the count is of the English version.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Here are the word counts from five practice interviews.</p>\n<table style=\"width:64%;\">\n\n<thead>\n<tr>\n<th>Interview</th>\n<th>Interviewer’s words</th>\n<th>All words</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>A</td>\n<td>600</td>\n<td>4,000</td>\n</tr>\n<tr>\n<td>B</td>\n<td>1,400</td>\n<td>3,500</td>\n</tr>\n<tr>\n<td>C</td>\n<td>900</td>\n<td>4,500</td>\n</tr>\n<tr>\n<td>D</td>\n<td>700</td>\n<td>5,000</td>\n</tr>\n<tr>\n<td>E</td>\n<td>2,100</td>\n<td>3,000</td>\n</tr>\n</tbody>\n</table>\n<p>Work out the interviewer’s share in each, the mean of the five shares, and which interviews met the gate.</p>",
+   "level": 5,
+   "answer": "<p>Each share: interviewer’s words divided by all the words, times a hundred.</p>\n<div class=\"working\">\n<p>600 divided by 4,000 = 0.15, so 15 per cent<br />\n1,400 divided by 3,500 = 0.4, so 40 per cent<br />\n900 divided by 4,500 = 0.2, so 20 per cent<br />\n700 divided by 5,000 = 0.14, so 14 per cent<br />\n2,100 divided by 3,000 = 0.7, so 70 per cent</p>\n</div>\n<p>The mean of the five.</p>\n<div class=\"working\">\n<p>15 plus 40 plus 20 plus 14 plus 70 = 159<br />\n159 divided by 5 = 31.8 per cent</p>\n</div>\n<p>A, B, C and D met the gate. E did not: the interviewer said 70 per cent of the words, more than twice what the respondent said. B passed, but at 40 per cent it is the next one to read.</p>\n<p>The mean of 31.8 per cent would pass on its own. It is the wrong number to report, because it hides interview E.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>In a practice interview, the respondent said 3,500 words. You want your talk share to be no more than 30 per cent. What is the largest number of words you could have said?</p>",
+   "level": 6,
+   "answer": "<p>If your share is 30 per cent, the respondent’s is what is left.</p>\n<div class=\"working\">\n<p>100 minus 30 = 70 per cent</p>\n</div>\n<p>So her 3,500 words are 70 per cent of all the words. Find all the words from that.</p>\n<div class=\"working\">\n<p>70 per cent = 0.70<br />\n3,500 divided by 0.70 = 5,000 words in all</p>\n</div>\n<p>Your words are what remains.</p>\n<div class=\"working\">\n<p>5,000 minus 3,500 = 1,500 words</p>\n</div>\n<p>Check it the forward way.</p>\n<div class=\"working\">\n<p>1,500 divided by 5,000 = 0.3, so 30 per cent</p>\n</div>\n<p>At most 1,500 words. Any fewer and your share drops below 30 per cent.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>interviewer: 22 turns, 1,100 words<br />\nrespondent: 22 turns, 4,400 words<br />\n22 turns each, so the interviewer’s share is 50 per cent<br />\nso the gate was not met</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the third line. It counts turns where it should count words.</p>\n<p>Redo it on words.</p>\n<div class=\"working\">\n<p>1,100 plus 4,400 = 5,500 words<br />\n1,100 divided by 5,500 = 0.2<br />\n0.2 times 100 = 20 per cent</p>\n</div>\n<p>The interviewer’s share is 20 per cent. The respondent said four words for every one of the interviewer’s, and the gate was met with room to spare.</p>\n<p>Why the wrong answer looks reasonable: a turn feels like a fair unit of “speaking”, and 22 each looks like balance. But turns alternate by the nature of an interview, so equal turns are almost guaranteed. They say nothing about how long each person spoke.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>I said 1,200 words and R2 said 4,800 words<br />\n1,200 divided by 4,800 = 0.25<br />\nso my talk share was 25 per cent</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The division is right. The step that broke is the last line. It calls a ratio a share.</p>\n<p>1,200 divided by 4,800 compares your words with hers. A share compares your words with all the words.</p>\n<div class=\"working\">\n<p>1,200 plus 4,800 = 6,000 words<br />\n1,200 divided by 6,000 = 0.2<br />\n0.2 times 100 = 20 per cent</p>\n</div>\n<p>Your share was 20 per cent. The 0.25 is the ratio of your words to hers: a quarter of a word from you for each of hers.</p>\n<p>Why it looks reasonable: both numbers are “your words divided by something”, and both come out small. Your words divided by hers is always the larger of the two, because it divides by less. So the mix-up always makes your share look bigger than it is. Here both numbers pass. At 2,000 words against 3,000 they would not agree. The real share is 2,000 divided by 5,000 = 0.4, which is 40 per cent, and passes. The ratio is 2,000 divided by 3,000, about 0.667, and read as 66.7 per cent it would fail.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>interview A: I said 200 words, the respondent 800, so my share was 20 per cent<br />\ninterview B: I said 3,000 words, the respondent 2,000, so my share was 60 per cent<br />\n20 plus 60 = 80<br />\n80 divided by 2 = 40<br />\nso across the two interviews I said 40 per cent of all the words</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The two shares are right, and so is their mean. The step that broke is the last line, which reads the mean of two shares as the share of all the words.</p>\n<p>The mean of the shares gives each interview an equal say. But interview A has 1,000 words and interview B has 5,000. Pool the words instead.</p>\n<div class=\"working\">\n<p>200 plus 3,000 = 3,200 of your words<br />\n1,000 plus 5,000 = 6,000 words in all<br />\n3,200 divided by 6,000 = 0.5333…<br />\n0.5333… times 100 = 53.3 per cent</p>\n</div>\n<p>Across the two interviews you said 53.3 per cent of all the words, which is more than half. The worked answer said 40.</p>\n<p>Why it looks reasonable: averaging two percentages feels like the natural way to combine them. It is right only when the two interviews are the same length. Here the long interview is the one where you talked most, so the pooled share is pulled up towards it.</p>\n<p>And one thing neither number should hide. Interview B failed the gate on its own, whichever way the two are combined.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A trainee hands you this note about a practice interview, with the stretch of transcript it is about. The exchange is made up.</p>\n<blockquote>\n<p>I barely spoke in this part. R3 did nearly all the talking.</p>\n</blockquote>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Most of our patients tell us the diet is too hard to follow when you are cooking for a whole family, so I think you also found it hard, no? Tell me about that.</td>\n</tr>\n<tr>\n<td>R3</td>\n<td>Yes, it is hard. I cook for six people. They want rice and I am told to eat less rice, so I make two things, and that is too much work, so I stopped.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>So the diet was the reason you stopped coming?</td>\n</tr>\n<tr>\n<td>R3</td>\n<td>Yes, the diet.</td>\n</tr>\n</tbody>\n</table>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>The claim is about who spoke more, so compute the trainee’s talk share over this stretch.</p>\n<div class=\"working\">\n<p>trainee: 34 plus 9 = 43 words<br />\nR3: 34 plus 3 = 37 words<br />\n43 plus 37 = 80 words<br />\n43 divided by 80 = 0.5375<br />\n0.5375 times 100 = 53.75, about 53.8 per cent</p>\n</div>\n<p>The trainee said more than half the words in this stretch. “Barely spoke” is wrong, and so is “nearly all the talking”. The trainee did not meet the gate here.</p>\n<p>What the count does not establish is the bigger problem. Suppose the numbers had come out the other way, with R3 saying most of the words. The stretch would still be steered. The first question tells R3 what other patients say and what the trainee thinks she found. The second question hands her a conclusion to agree with. Her “Yes, the diet” is an answer to that, not a reason she offered.</p>\n<p>So the count answers the trainee’s claim and nothing more. It cannot tell you whether the diet is really why R3 stopped coming. After this exchange, nobody can.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A colleague’s pilot report says:</p>\n<blockquote>\n<p>All five of my pilot interviews met the gate. My average talk share was 38 per cent.</p>\n</blockquote>\n<p>The appendix gives the five shares as 22, 31, 64, 35 and 38 per cent. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Two claims are made. The average, and “all five met the gate”. Check the average first.</p>\n<div class=\"working\">\n<p>22 plus 31 plus 64 plus 35 plus 38 = 190<br />\n190 divided by 5 = 38 per cent</p>\n</div>\n<p>The average is right. The first sentence is not. The third interview has a share of 64 per cent, so in that interview the colleague said more than the respondent. Four of the five met the gate.</p>\n<p>The slip is reading an average below 50 as meaning every value is below 50. Book 0 warned about exactly this with means and cut-offs.</p>\n<p>What the check does not establish. The report gives shares, not word counts, so you cannot work out the pooled share of all the words. You cannot tell whether the four passing interviews were free of leading questions, because a share cannot show that. And the shares may have been counted on cleaned or translated transcripts, so ask which version was counted before comparing them with anyone else’s.</p>"
+  }
+ ]
+}

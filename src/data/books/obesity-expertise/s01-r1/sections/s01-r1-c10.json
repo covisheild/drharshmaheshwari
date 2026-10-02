@@ -1,0 +1,81 @@
+{
+ "format": 1,
+ "id": "s01-r1-c10",
+ "label": "10",
+ "title": "Arithmetically true, practically insufficient",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>“Eat less, move more” is usually offered as an argument with an unstated premise. Written out in full, its eat-less half runs like this. Premise one: the <dfn data-g=\"178\">rate of change</dfn> of stored energy equals intake minus expenditure. Premise two, unstated: once intake is cut, expenditure and appetite stay where they were. Premise three: a fall in stored energy shows up as a fall in weight. Conclusion: cutting intake is a sufficient instruction for losing weight.</p>\n<p>The <dfn data-g=\"102\">inference</dfn> holds: grant every premise and the conclusion follows. What fails is premise two, which is false. Once a person acts on the instruction, expenditure and appetite move. They move in response to the fall in body weight, or a signal that tracks it, in the direction that opposes it, as section 9 shows.</p>\n<p>This is not a claim that the accounting is wrong.</p>",
+   "refs": [
+    92,
+    93,
+    94,
+    76,
+    95
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Stores go up when intake is bigger than expenditure, and down when it is smaller. So cut intake, with expenditure unchanged, and stores must fall.</p>\n<p>But the instruction says more than the arithmetic does. It quietly assumes expenditure does stay unchanged. Cut intake, and expenditure itself falls, further than the lost weight alone explains. Appetite rises, and pulls harder than expenditure falls.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Suppose a newspaper runs a quote like this from a doctor: “Weight loss is just maths. Calories in, calories out. If someone isn’t losing weight, they aren’t sticking to the plan.”</p>\n<p>Premise one: stored energy changes at a rate equal to intake minus expenditure. True; it is the identity.</p>\n<p>Premise two, left unsaid: once intake is cut, expenditure and appetite stay where they were.</p>\n<p>Premise three, also unsaid: a fall in stored energy shows up as a fall in weight. True; the stores are body tissue (section 1).</p>\n<p>Conclusion: a person not losing weight has not really cut intake.</p>\n<p>The evidence in this book says premise two is false. Expenditure falls as weight falls, and further than the lost mass explains. So a held cut produces a loss that slows and stops. Appetite rises as well. That is why the cut is so hard to hold, and why a stall is no evidence about effort.</p>\n<p>The doctor’s quote does not misstate the arithmetic. It misstates what follows from it, by adding a premise that was never checked and is not true.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This section shows the instruction rests on a false premise; it does not say the instruction never works. Some people do lose weight and keep it off this way, with long-term, sustained effort.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The identity is never in dispute and is never what breaks. State the identity and the instruction as two separate claims, every time, so the second one can be checked rather than assumed.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“They must not be sticking to it” is the same unlicensed move as the instruction itself: an observation (the scale has stalled) explained by inventing a premise (lack of effort) instead of checking the one already shown to be false.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>You can give this whole argument to a non-specialist in about three minutes, using no mechanism and no moral claim: the accounting is true, the instruction adds an assumption, the assumption is false, and the difficulty that follows is physiological.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Do not turn this argument into advice for a patient; it says what the arithmetic cannot license, not what to do instead.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A health secretary has one page and wants the one paragraph they can put in front of a minister who has just said “obesity is simple, it’s calories in versus calories out.” Write it. No methods section, answer first.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The accounting is correct: stored energy changes at a rate equal to intake minus expenditure, and that is always true. What is not correct is the instruction built on it - “eat less, move more, and the rest follows” - because it assumes expenditure and appetite hold still once a person acts on it. They do not. Cutting intake makes the body burn somewhat less and want to eat somewhat more, automatically. So the accounting supports the direction of the policy and does not support the assumption that the arithmetic alone will carry a person the rest of the way. A policy built only on the arithmetic will under-predict how much support people need to keep the change going.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Write a one-page explanation of why <dfn data-g=\"68\">energy balance</dfn> is arithmetically true and practically insufficient. State the identity, name the instruction people draw from it, name the unstated premise, and say what the evidence in this book shows about that premise. No mechanism, no verdict on any individual’s effort. Then read it to a non-medical reader and note where they stopped you to ask a question. You should be able to give the same explanation from memory in about three minutes.</p>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>There is no single correct page; the answer is judged against the four things the prompt names. A page that states the identity without also stating that it is an identity - always true by the way stores are defined - has not done the first job. A page that names the instruction but not the unstated premise (once intake is cut, expenditure and appetite stay where they were) has not done the second. A page that cites evidence without naming a number (the 20-25% fall in expenditure, and the rise in intake of about 100 kcal a day per kg lost, as the reason a cut is hard to hold, both from section 9) has not done the third. A page that slides into “so it isn’t the patient’s fault” as a moral verdict, rather than stopping at the physiological explanation, has broken the prompt’s no-verdict condition.</p>"
+  }
+ ]
+}

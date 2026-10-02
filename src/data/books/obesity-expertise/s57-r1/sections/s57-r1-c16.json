@@ -1,0 +1,162 @@
+{
+ "format": 1,
+ "id": "s57-r1-c16",
+ "label": "16",
+ "title": "Words for how a team works",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Kotter (1990) sets management and <dfn data-g=\"279\">leadership</dfn> apart as two different and <dfn data-g=\"88\">complementary</dfn> systems of action. Management copes with complexity. Leadership copes with change.</p>\n<p>Management has three activities. <dfn data-g=\"374\">Planning and budgeting</dfn> is setting targets, laying down detailed steps to reach them, and allocating resources to those steps. <dfn data-g=\"355\">Organizing and staffing</dfn> is creating a structure of jobs, filling the jobs with qualified people, communicating the plan to them, delegating responsibility for it, and setting up systems to monitor it. <dfn data-g=\"105\">Controlling and problem solving</dfn> is monitoring results against the plan, identifying where they depart from it, and planning and organizing to fix that.</p>\n<p>Leadership has three matching activities. <dfn data-g=\"473\">Setting a direction</dfn> is developing a vision of the future, often the distant future, with strategies for making the changes it needs. <dfn data-g=\"12\">Aligning people</dfn> is communicating that direction to everyone who can help carry it out or can block it, so that they understand it and are committed to it. <dfn data-g=\"330\">Motivating and inspiring</dfn> is keeping people moving in that direction, despite obstacles, by appealing to their needs, values and emotions.</p>\n<p>Kotter holds that an organisation needs both, each balancing the other.</p>\n<p>The words below are this book’s working definitions, not Kotter’s, and not findings. The next book in this subject gives the evidence on each. In this book, authority is the right to decide or to direct that comes with a post. Power is the capacity to get things done through other people, from any source: authority, expertise, relationships, reputation, or control of something others need.</p>\n<p>In this book, <dfn data-g=\"127\">delegation</dfn> is handing a task, and the authority it needs, to another person, while you stay <dfn data-g=\"24\">answerable</dfn> for the result. How much direction and checking you give is matched to that person’s competence and commitment for that task, not to their seniority in general.</p>\n<p>In this book, <dfn data-g=\"451\">role clarity</dfn> is a written statement, for each decision or piece of work, of who decides, who does the work, and who is asked first. The statement can add one more line: who tells whom when the work goes wrong. That line shows how feedback travels in the team.</p>\n<p>In this book, <dfn data-g=\"96\">conflict about the work</dfn> is disagreement over what to do, how to do it, or on what evidence. <dfn data-g=\"95\">Conflict about the person</dfn> is friction over who someone is: blame, dislike, a remark about their character or motives.</p>",
+   "refs": [
+    350,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Kotter’s short way of saying it: management copes with complexity, leadership copes with change.</p>\n<p>People follow a direction only if they believe the person giving it. Kotter calls that <dfn data-g=\"112\">credibility</dfn>. It rests on your record, and on whether what you do matches what you say.</p>\n<p>In this book, authority comes with the post. The senior resident everyone trusts may have more power over the ward than the unit head.</p>\n<p>The same intern may need close watching on one job and none on another.</p>\n<p>Role clarity means writing down, for each decision, who makes it, who does the work, and who is asked first. When a team argues over whose job something was, look for the missing line on that sheet first.</p>\n<p>Last, two kinds of disagreement. They are named apart because they are handled apart. How to handle each is for the next book in this subject.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c16-crandall-reach.png",
+   "alt": "Three bars on one scale. Each weekly meeting, direct reports: 12, a sliver. Each monthly meeting, one part of the organisation: 80 to 100, drawn at the upper end, 100. Yearly goal, every employee: 1,500, the tallest bar.",
+   "w": 1357,
+   "h": 658,
+   "caption": "How many people Crandall’s aligning reached, in Kotter’s account: his 12 direct reports at each weekly meeting; 80 to 100 people at each monthly meeting (drawn at the upper end, 100); and a goal of all 1,500 employees in a small meeting each year. The first two bars count one meeting, the third a whole year. Kotter’s sentence: aligning talks to many more people than organizing does."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is a week in the life of a head of a Community Medicine department. The department has decided that every MBBS student’s family-study visits will now include weighing each adult and measuring their waist. The eight things below are made up for this example. Before you read the right-hand columns, cover them and name each activity yourself.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>what the head of department did</td>\n<td>Kotter’s name</td>\n<td>job</td>\n</tr>\n<tr>\n<td>Wrote one page on what the department should teach about weight in five years</td>\n<td>setting a direction</td>\n<td>leading</td>\n</tr>\n<tr>\n<td>Put the new visits into the term’s timetable, and asked for scales in the budget</td>\n<td>planning and budgeting</td>\n<td>managing</td>\n</tr>\n<tr>\n<td>Gave each tutor a group of students and a village</td>\n<td>organizing and staffing</td>\n<td>managing</td>\n</tr>\n<tr>\n<td>Met the medical officer of the primary health centre the students visit</td>\n<td>aligning people</td>\n<td>leading</td>\n</tr>\n<tr>\n<td>Asked the Medicine department to take the students’ referrals</td>\n<td>aligning people</td>\n<td>leading</td>\n</tr>\n<tr>\n<td>Asked the tutors how they would run the next round, and used their answer</td>\n<td>motivating and inspiring</td>\n<td>leading</td>\n</tr>\n<tr>\n<td>Checked each month how many families each group had measured</td>\n<td>controlling and problem solving</td>\n<td>managing</td>\n</tr>\n<tr>\n<td>Found why one group skipped the waist measurement, and changed the form</td>\n<td>controlling and problem solving</td>\n<td>managing</td>\n</tr>\n</tbody>\n</table>\n<p>Notice three things.</p>\n<p>The same person did all eight. Leading and managing are two jobs, not two people.</p>\n<p>Two of the leading rows are about people the head of department has no authority over: the medical officer and another department. Kotter’s point about aligning is exactly this. Anyone who can help or block the change is someone you must talk to.</p>\n<p>Now imagine the plan failed. The timetable was right, the scales arrived, and the groups were counted every month. But the medical officer was never met, and the families were not told why students were at their door. That is a well-managed change that nobody led. The names let you say so in one sentence, instead of “it just did not work”.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Kotter’s six names sort activities; they do not rank them. A department that only leads, and never checks results against its plan, fails as surely as one that only manages.</p>\n<p>Some activities sit on the line. Asking the tutors for their views is motivating if it gives them a real say, and only a courtesy if you have already decided. The label depends on what you do with the answer.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now watch aligning at the scale Kotter wrote about. His article describes Bob Crandall, who ran engineering and manufacturing in Eastman Kodak’s copier business in the mid-1980s, and who set out to change how it worked.</p>\n<p>Crandall met his own 12 direct reports every week. Once a month he and all of them met 80 to 100 people from one part of the organisation, to discuss anything they wanted. He then set a goal: to get all of his 1,500 employees into at least one small meeting on a specific topic each year.</p>\n<p>Kotter counts every one of these as a way of aligning people. Notice how far they reach beyond the 12 who reported to Crandall: 80 to 100 people a month, and then all 1,500. Kotter’s sentence for it: “Aligning invariably involves talking to many more individuals than organizing does.”</p>\n<p>Scale it down to your own department. Organizing the family-study visits means talking to your tutors. Aligning them means talking to the students, the medical officer, the accredited social health activists in the village, and the Medicine department too.</p>",
+   "numberRefs": [
+    378
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This is Kotter’s account of one company’s change, written to illustrate his argument. It reports that quality and costs improved afterwards. With nothing to compare, that does not show the meetings caused it. Its numbers belong to an organisation of 1,500 people in the 1980s. A department of fifteen does not need a monthly forum; the principle, not the format, is what carries over.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>You run the department’s monthly journal club. Write its role sheet before the first meeting, not after the first muddle.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>what</td>\n<td>who decides</td>\n<td>who does it</td>\n<td>who is asked first</td>\n</tr>\n<tr>\n<td>choosing the paper</td>\n<td>the month’s convenor</td>\n<td>the presenter proposes three</td>\n<td>the head of department</td>\n</tr>\n<tr>\n<td>presenting it</td>\n<td>the month’s convenor</td>\n<td>the presenter</td>\n<td>the convenor, a week out</td>\n</tr>\n<tr>\n<td>booking the room, telling staff</td>\n<td>the month’s convenor</td>\n<td>the department office</td>\n<td>nobody</td>\n</tr>\n</tbody>\n</table>\n<p>Now delegate one task. The presenter for March is an intern who has never read a trial critically. The presenter for April is a senior resident who has run three journal clubs. The task is the same. The delegation is not. With the intern, you go through the paper together once and hear a practice run. With the senior resident, you agree the date and look at the slides the day before. Next month the intern may present a topic they know well, and need almost nothing from you.</p>\n<p>Then, at the April meeting, two things happen. Two residents argue over whether the trial’s <dfn data-g=\"86\">comparison group</dfn> was fair. That is conflict about the work, to be settled on the evidence. Later, one of them says the other “only picks papers to look clever”. That is conflict about the person. It has left the paper behind. Name which one you are in before you decide what to do.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The journal club and its people are made up for this example.</p>\n<p>A role sheet makes the roles clear. It does not make them fair, and it does not make anyone keep to them. And a disagreement can start about the work and turn into one about the person halfway through a sentence. The names help you notice the turn; they do not stop it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Leading and managing are two sets of activities. Kotter argues that an organisation needs both done, by one person or by different people on one team. When a change stalls, ask which half was missing.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A detailed plan is not a direction. Before you write the timetable for a change, write in a few sentences where it is going and why.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Aligning means talking to everyone who can help or block the change, not only the people who report to you. List them before you start, and meet the ones you have no authority over first.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When people do not do what you ask, find out whether you lack authority or lack power. An order from the post does not reach a department you do not head. Trust built over time can reach people no post does. The fix for each is different.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Delegate to the person and the task, not to the rank. Before you hand over a task, ask how well this person has done this task before, and how much they want it.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Write down who decides, who does the work and who is asked first, before the work starts, so that when something is not done, you can see whose line was missing.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not answer a disagreement about the work as if it were a personal attack, or the reverse. This book’s stance: settle a disagreement about the work on the evidence. Whether such disagreement helps a team is for the next book.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>These are words, not a diagnosis. Using the words does not show that a team will do better.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Write Kotter’s three management activities and his three leadership activities, each management activity beside the leadership activity that matches it.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Planning and budgeting, beside setting a direction.</p>\n<p>Organizing and staffing, beside aligning people.</p>\n<p>Controlling and problem solving, beside motivating and inspiring.</p>\n<p>Management copes with complexity; leadership copes with change.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>These five sentences come from the notes of a meeting after a school weight-screening camp run by a Community Medicine department. For each, name the word from this section that fits best, and say why.</p>\n<ol type=\"1\">\n<li>“The Principal put me in charge of the camp, so the Paediatrics department had to send two residents. They did not come.”</li>\n<li>“Nobody knew who was meant to book the school hall.”</li>\n<li>“Anita and Ravi disagreed about whether to screen with waist measurement or with <dfn data-g=\"45\">body mass index</dfn>.”</li>\n<li>“Ravi said Anita always sides with whoever is senior.”</li>\n<li>“We gave the new intern the same one-line instruction as the senior resident, and her forms were all incomplete.”</li>\n</ol>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>Authority against power. Being put in charge of the camp gave authority over the camp, not over another department. Getting Paediatrics to send residents needed their agreement, which is aligning, and power from outside the post.</li>\n<li>Role clarity. No one had been written down as the person who decides, or does, the booking.</li>\n<li>Conflict about the work: which measure to use, on what evidence.</li>\n<li>Conflict about the person: a remark about Anita’s motives, not about the screening.</li>\n<li>Delegation not matched to the person. The task was the same, but the intern needed more direction and checking than the senior resident.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Write the role sheet for the teaching session you are planning for this book’s build. Cover at least four decisions or pieces of work: for example, the objective, the time slot, the tests, and the teaching itself. For each, name who decides, who does it, and who is asked first.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>One worked sheet, for a session for MBBS students in Community Medicine:</p>\n<ul>\n<li>The objective: you decide, you write it, the batch’s tutor is asked first.</li>\n<li>The time slot: the head of department decides, the department office enters it in the timetable, you are asked first.</li>\n<li>The <dfn data-g=\"387\">pre-test</dfn>, <dfn data-g=\"381\">post-test</dfn> and delayed test: you decide and you write them. A colleague who teaches the topic is asked first, to check that they match the objective.</li>\n<li>The teaching: you decide and you do it. A colleague observes, if you want a second view.</li>\n</ul>\n<p>A good sheet has a name in every “decides” cell. Where two names appear there, the decision will stall; pick one.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>For a first-year resident, ten minutes with a whiteboard. “What is the difference between leading and managing, and why would a unit need both?”</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw two columns. Write “copes with complexity” over the left and “copes with change” over the right: Kotter’s short version.</p>\n<p>Under the left, write planning and budgeting, organizing and staffing, controlling and problem solving. Under the right, beside each, write setting a direction, aligning people, motivating and inspiring.</p>\n<p>Then take a real change on your unit, for example starting a weight and waist check for every admitted adult. Ask the resident which column each step belongs in. Writing the form and the rota is the left. Getting the nurses and the other units to see why it matters is the right.</p>\n<p>Finish with Kotter’s warning: strong leadership with weak management is no better than the reverse. A unit where the new check was explained well but nobody wrote the rota will not do it. Nor will one with a perfect rota that nobody believes in. Say that this is Kotter’s argument, not a measured result.</p>"
+  }
+ ]
+}

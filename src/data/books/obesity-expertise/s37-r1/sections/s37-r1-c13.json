@@ -1,0 +1,254 @@
+{
+ "format": 1,
+ "id": "s37-r1-c13",
+ "label": "13",
+ "title": "What a ration, a meal or a take-home ration provides",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A food <dfn data-g=\"116\">entitlement</dfn> is stated as a mass of food, over a period, for a unit of people. An <dfn data-g=\"20\">Antyodaya household</dfn> is entitled to thirty-five kilograms a month for the whole household. What an entitlement provides is the energy and <dfn data-g=\"292\">protein</dfn> in that food, per person per day.</p>\n<p>Getting from one to the other is a chain of unit conversions. First put the entitlement into grams per person per day. Divide a monthly amount by the number of days you take the month to have. Divide a household amount by the number of people in the household. Then multiply the grams by the food’s energy and protein per 100 grams, and divide by 100. For a meal of several foods, work out each one and add them.</p>\n<p>The contents per 100 grams come from a <dfn data-g=\"139\">food composition table</dfn>. India’s is the Indian Food Composition Tables 2017 (IFCT) of the Indian Council of Medical Research’s National Institute of Nutrition (ICMR-NIN). IFCT prints energy in kilojoules only. The figures are physiologically available energy, worked out by the Atwater system. IFCT converts them to kilocalories with 1 kcal = 4.18 kJ. This factor and Book 0’s 4.184 differ by less than 0.1 per cent (4.184 divided by 4.18 is 1.00096). The gap never changes a verdict against a norm.</p>\n<p>ICMR-NIN’s 2020 adult requirement is 1660 kcal a day for a woman of 55 kg doing sedentary work (a physical activity <dfn data-g=\"307\">ratio</dfn> of 1.40). For a man of 65 kg it is 2110 kcal. The 55 and 65 kg are the body weights the table assumes. This section calls these two the reference woman and man.</p>\n<p>The arithmetic gives the energy in the food handed over. It does not give the energy any person eats.</p>",
+   "refs": [
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A ration is written as a weight of food. What you usually want to know is how much energy and protein that is, for one person, on one day.</p>\n<p>One trap sits in the tables. They give energy in kilojoules, not kilocalories.</p>\n<p>The answer is the energy in the food handed over. It is not what anybody ate.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c13-school-meal-energy.png",
+   "alt": "Four bars: the total 1,952.8 kJ, then its parts, rice 1,491 kJ, tur dal 276.8 kJ and oil 185 kJ, with a dashed line at 1,881 kJ marking the 450 kcal norm; only the total bar crosses it.",
+   "w": 1358,
+   "h": 658,
+   "caption": "A primary school meal built to the PM POSHAN food norms, in kilojoules. The 100 g of raw milled rice gives 1,491, the 20 g of tur dal 276.8, and the 5 g of oil at most 185. The 50 g of vegetables is not counted. The total, 1,952.8, is already above the norm of 450 kcal, which is 1,881 kJ. About three quarters of it is the rice."
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c13-ration-kj-trap.png",
+   "alt": "Four bars in kcal a day: the kJ misread as kcal, 2,485; the ration correctly converted, 594.5; the sedentary reference woman's requirement, 1,660; the sedentary reference man's, 2,110.",
+   "w": 1357,
+   "h": 658,
+   "caption": "Five kg of raw milled rice a month, as energy a day. Read the table’s kJ as kcal and the ration seems to give 2,485 kcal, more than the reference man’s 2,110. Divided by 4.18 it is 594.5 kcal: about 36 per cent of the reference woman’s 1,660 and 28 per cent of the man’s 2,110."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the mistake, because the table sets it for you.</p>\n<p>A person in a <dfn data-g=\"285\">priority household</dfn> is entitled to five kilograms of grain a month, under section 3(1) of the National Food Security <dfn data-g=\"3\">Act</dfn>, 2013. The Act says foodgrains: rice, wheat or coarse grains. Take the grain as raw milled rice. That is a choice, and you will see what it costs below.</p>\n<p>Open the Indian Food Composition Tables 2017 at https://www.nin.res.in/ebooks/IFCT2017.pdf and go to Table 1. Find row A015, Rice, raw, milled.</p>\n<blockquote>\n<p>A015 Rice, raw, milled (Oryza sativa ) 6 9.93±0.75 7.94±0.58 0.56±0.08 0.52±0.05 2.81±0.42 1.99±0.39 0.82±0.22 78.24±1.07 1491±15</p>\n</blockquote>\n<p>The last number is the energy in 100 g of rice: 1491. The second after the name is the protein: 7.94 g. Take 1491 as kilocalories and work out a day.</p>\n<div class=\"working\">\n<p>5,000 times 1,491 divided by 100 = 74,550<br />\n74,550 divided by 30 = 2,485</p>\n</div>\n<p>That says 2,485 kilocalories a day from the ration alone. A sedentary man’s requirement, set by ICMR-NIN in 2020 for a reference man of 65 kg, is 2,110. So the ration would feed a grown man completely, with some left over. Something has gone wrong, and it is not the arithmetic.</p>\n<p>Go back to the head of the table and read the unit over the last column. It says KJ. The table prints energy in kilojoules and nothing else.</p>\n<p>Do it again properly. The tables give their own factor in section 3.6: 1 kcal = 4.18 kJ. Use that one, since it is the one the table’s own numbers were made with.</p>\n<div class=\"working\">\n<p>5,000 times 1,491 divided by 100 = 74,550<br />\n74,550 divided by 30 = 2,485<br />\n2,485 divided by 4.18 = 594.5</p>\n</div>\n<p>About 595 kilocalories a day. The first line is kilojoules for the month. The second takes a month to be 30 days, which is a choice you must say out loud. The third turns the day’s kilojoules into kilocalories.</p>\n<p>Now the protein, the same way.</p>\n<div class=\"working\">\n<p>5,000 times 7.94 divided by 100 = 397<br />\n397 divided by 30 is about 13.2</p>\n</div>\n<p>About 13 grams of protein a day.</p>\n<p>Set the energy against a requirement. ICMR-NIN’s 2020 figure for a sedentary reference woman of 55 kg is 1,660 kilocalories a day. Divide.</p>\n<div class=\"working\">\n<p>594.5 divided by 1,660 = 0.358<br />\n594.5 divided by 2,110 = 0.282</p>\n</div>\n<p>About 36 per cent of the reference woman’s day, and 28 per cent of the reference man’s.</p>\n<p>Last, the factor. With Book 0’s 4.184 instead, the energy is 2,485 divided by 4.184, which is 593.9 kilocalories. The two answers part in the fourth digit. Neither is wrong. Mixing them in one sum is.</p>",
+   "numberRefs": [
+    153,
+    208,
+    209
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 594.5 kilocalories holds for raw milled rice at the tables’ average, for a month taken as 30 days, for the person the grain is issued to. Parboiled milled rice (row A014) is 1471 kJ per 100 g, and a 31-day month gives less per day. The table’s 1491 carries a spread of 15 across its six regions, so the answer has three trustworthy digits, not four.</p>\n<p>The shares hold only against ICMR-NIN’s reference woman and man. A priority household’s entitlement covers every member, children included, and the section gives no child’s requirement. And the Department of Food and Public Distribution says in its own annual report that the public distribution system (PDS) is supplemental, not meant to meet a household’s whole requirement.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a meal. The same move runs on each food, and then the foods are added.</p>\n<p>PM POSHAN sets food norms for each child per day. A Press Information Bureau (PIB) release of 1 April 2022 gives them for a primary school child: 100 g of foodgrains, 20 g of pulses, 50 g of vegetables and 5 g of oil and fat. The release does not say whether these are raw weights; this sum takes them as raw, the grain as issued. The energy and protein norms in the same table are 450 kilocalories and 12 g, the same as Schedule II of the Act. The release does not say which classes are primary; the Schedule calls them lower and upper primary classes.</p>\n<p>Take the grain as raw milled rice again, and the pulse as tur dal, which the tables call red gram dal (row B021): 21.70 g protein and 1384 kJ per 100 g. The tables’ Table 4 gives fat 37 kJ a gram. Count the oil as if it were all fat. That can only overstate its energy, never understate it. Leave the vegetables out: the tables’ vegetable rows are not used here, so the total you get is short by whatever the 50 g of vegetables holds.</p>\n<table style=\"width:97%;\">\n\n<tbody>\n<tr>\n<td>Food</td>\n<td>Grams per child per day</td>\n<td>kJ per 100 g</td>\n<td>Protein, g per 100 g</td>\n<td>kJ in the meal</td>\n<td>Protein in the meal, g</td>\n</tr>\n<tr>\n<td>raw milled rice</td>\n<td>100</td>\n<td>1491</td>\n<td>7.94</td>\n<td>1491</td>\n<td>7.94</td>\n</tr>\n<tr>\n<td>tur dal</td>\n<td>20</td>\n<td>1384</td>\n<td>21.70</td>\n<td>276.8</td>\n<td>4.34</td>\n</tr>\n<tr>\n<td>oil, counted as fat</td>\n<td>5</td>\n<td>3700</td>\n<td>0</td>\n<td>185</td>\n<td>0</td>\n</tr>\n<tr>\n<td>vegetables</td>\n<td>50</td>\n<td>not counted</td>\n<td>not counted</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>total, without vegetables</td>\n<td></td>\n<td></td>\n<td></td>\n<td>1952.8</td>\n<td>12.28</td>\n</tr>\n</tbody>\n</table>\n<p>The oil’s 3700 is the fat factor of 37 kJ a gram written per 100 g. Each line of the last two columns is grams times the content, divided by 100.</p>\n<div class=\"working\">\n<p>100 times 1,491 divided by 100 = 1,491<br />\n20 times 1,384 divided by 100 = 276.8<br />\n5 times 37 = 185<br />\n1,491 plus 276.8 plus 185 = 1,952.8<br />\n1,952.8 divided by 4.18 = 467.2</p>\n</div>\n<div class=\"working\">\n<p>100 times 7.94 divided by 100 = 7.94<br />\n20 times 21.70 divided by 100 = 4.34<br />\n7.94 plus 4.34 = 12.28</p>\n</div>\n<p>About 467 kilocalories and 12.3 g of protein, against a norm of 450 and 12. In kilojoules the energy norm is 450 times 4.18, which is 1,881. On paper the meal meets both norms before the vegetables are counted.</p>\n<p>Now ask where the energy comes from. Divide the rice’s share by the whole.</p>\n<div class=\"working\">\n<p>1,491 divided by 1,952.8 = 0.764<br />\n7.94 divided by 12.28 = 0.647</p>\n</div>\n<p>About three quarters of the meal’s energy, and about two thirds of its protein, is the cereal. The norms fix how much energy and protein a meal holds. They say nothing about where it comes from.</p>",
+   "numberRefs": [
+    178,
+    208
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The totals hold for raw milled rice, tur dal and oil at the tables’ averages, with the vegetables left out. Another grain or pulse gives other totals: problems 5 and 6 below swap the grain. The meal on paper is not the meal on the plate, which depends on the recipe, the cooking and whether the child eats it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>A <dfn data-g=\"367\">take-home ration</dfn> (THR) runs the other way. It is not raw grain: the Poshan 2.0 guidelines of 2022 say, at 3.6, that THR “shall not be given in the form of raw ration”. So there is no row in the tables to look up. What you have is the norm, and the sum goes from the norm to the packet.</p>\n<p>Schedule II of the Act sets a THR for a child of 6 months to 3 years at 500 kilocalories and 12 to 15 g of protein a day. The guidelines, at 3.3, say supplementary nutrition is served on at least 300 days a year, on average 25 days a month. At 3.7 they say THR is handed out twice a month.</p>\n<div class=\"working\">\n<p>500 times 25 = 12,500<br />\n12,500 divided by 2 = 6,250<br />\n6,250 times 4.18 = 26,125</p>\n</div>\n<p>A month’s THR for one child should carry 12,500 kilocalories. Each of the two hand-outs should carry 6,250 kilocalories, which is 26,125 kilojoules. To check a packet, read the manufacturer’s energy per 100 g and ask how many grams make 6,250 kilocalories. The guidelines ask each State to publish the <dfn data-g=\"42\">calorie</dfn> and protein content of every THR product on its website, which is where you find it.</p>\n<p>One warning about the norm itself. The 2022 guidelines print this table with a note that the norms are “under revision”. The <dfn data-g=\"18\">anganwadi</dfn> supplementary-nutrition norms in Schedule II (take-home ration and <dfn data-g=\"169\">hot cooked meal</dfn>) were revised in January 2023, a PIB backgrounder of 14 April 2026 says; the revised figures are not held. Nothing held says the school-meal rows were revised. The 500 here is the older norm.</p>",
+   "numberRefs": [
+    153,
+    176
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The arithmetic assumes 25 days a month and two equal hand-outs, and it uses the pre-2023 norm. It gives what the packet should carry, not what the child eats. A packet taken home may be shared with whoever else is at home, and nothing in this sum can see that.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The Indian Food Composition Tables give energy in kilojoules only. Read the unit over the column before you read the number under it.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The priority-household entitlement is five kilograms of grain a month. As raw milled rice, it holds about 595 kilocalories and 13 g of protein a day for the person it is issued to. That uses the 2017 tables’ average across six regions and a 30-day month. Quote it with both.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The Indian tables use 4.18, not Book 0’s 4.184. Say which one you used, and never use both in one calculation, or a difference in the fourth digit will look like a finding.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An Antyodaya entitlement is 35 kg for the whole household. What it gives one person depends on how many people share it, which the Act does not fix. Never quote a per-person figure for it without the household size you assumed.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“The ration supplies a third of a person’s energy” compares the ration with a reference 55 kg sedentary woman. So say whose requirement you divided by, or do not give the share.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The Department of Food and Public Distribution itself calls the ration supplemental. So never present a ration’s energy as a person’s intake.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A primary school meal built to the PM POSHAN food norms meets the 450 kcal and 12 g norms on paper. About three quarters of its energy is cereal. The norms fix the amounts. They do not fix where the energy comes from.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The anganwadi supplementary-nutrition norms in Schedule II (take-home ration and hot cooked meal) were revised in January 2023, a PIB backgrounder of 14 April 2026 says; the revised figures are not held. Nothing held says the school-meal rows were revised. Any THR sum built on 500 or 600 kilocalories uses the older norm, and must say so.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A health secretary has one page and asks you what the free PDS ration gives a person in a priority household, in energy and protein. Answer first. Then say what the figure does not tell her, in a way she can repeat in a meeting.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first. Five kilograms of raw milled rice a month holds about 595 kilocalories and 13 grams of protein a day. That is roughly a third of what ICMR-NIN sets for a sedentary 55 kg woman. It is a little over a quarter of the figure for a sedentary 65 kg man. Wheat gives a little less energy and more protein: about 537 kilocalories and 18 grams a day.</p>\n<p>What it does not tell her, as three short lines she can repeat.</p>\n<ul>\n<li>It is the food handed over, not the food eaten. Who at home eats it, and what it replaces, are not in the sum.</li>\n<li>The share is against a reference adult. Children and heavy workers need different amounts.</li>\n<li>The Department’s own annual report calls the ration supplemental: it was never meant to meet the whole requirement.</li>\n</ul>\n<p>All of what the ration gives is cereal energy, because the Act’s foodgrains are cereals.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A food holds 1,400 kJ in every 100 g. How many kilojoules are in 250 g of it? And in 35 g?</p>",
+   "level": 1,
+   "answer": "<p>Multiply the grams by the content per 100 g, then divide by 100.</p>\n<div class=\"working\">\n<p>250 times 1,400 divided by 100 = 3,500<br />\n35 times 1,400 divided by 100 = 490</p>\n</div>\n<p>3,500 kJ and 490 kJ.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Using 1 kcal = 4.18 kJ, turn 2,090 kJ into kilocalories. Then turn 450 kcal into kilojoules.</p>",
+   "level": 2,
+   "answer": "<p>Kilojoules to kilocalories divides, because a <dfn data-g=\"192\">kilocalorie</dfn> is the bigger unit.</p>\n<div class=\"working\">\n<p>2,090 divided by 4.18 = 500</p>\n</div>\n<p>Kilocalories to kilojoules multiplies.</p>\n<div class=\"working\">\n<p>450 times 4.18 = 1,881</p>\n</div>\n<p>500 kcal and 1,881 kJ.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A household receives 7 kg of grain a month. Taking a month as 30 days, how many grams is that a day? If four people share it equally, how many grams a day is that for each?</p>",
+   "level": 3,
+   "answer": "<p>Put the kilograms into grams, then divide by the days.</p>\n<div class=\"working\">\n<p>7 times 1,000 = 7,000<br />\n7,000 divided by 30 is about 233.3</p>\n</div>\n<p>Now divide by the people.</p>\n<div class=\"working\">\n<p>233.3 divided by 4 = 58.3</p>\n</div>\n<p>About 233 g a day for the household, and about 58 g a day for each person.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A priority household member takes the 5 kg a month entitlement as whole wheat. The Indian Food Composition Tables 2017 give whole wheat 1347 kJ and 10.59 g of protein per 100 g. Taking a month as 30 days, how much energy, in kilocalories, and how much protein does the entitlement hold a day? Use the tables’ own factor.</p>",
+   "level": 4,
+   "answer": "<p>Energy for the month, then the day, then kilocalories.</p>\n<div class=\"working\">\n<p>5,000 times 1,347 divided by 100 = 67,350<br />\n67,350 divided by 30 = 2,245<br />\n2,245 divided by 4.18 = 537.1</p>\n</div>\n<p>Protein the same way.</p>\n<div class=\"working\">\n<p>5,000 times 10.59 divided by 100 = 529.5<br />\n529.5 divided by 30 = 17.65</p>\n</div>\n<p>About 537 kcal and 17.7 g of protein a day. Against rice’s 594.5 kcal and 13.2 g, wheat gives a little less energy and a good deal more protein.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>The PM POSHAN food norms give an upper primary child 150 g of foodgrains a day. They add 30 g of pulses, 75 g of vegetables and 7.5 g of oil and fat. The nutrition norms are 700 kcal and 20 g of protein.</p>\n<p>Build the meal from three foods and leave the vegetables out. Raw milled rice has 1491 kJ and 7.94 g protein per 100 g. Tur dal has 1384 kJ and 21.70 g per 100 g. Count the oil as fat, at 37 kJ a gram. Does the meal meet each norm?</p>",
+   "level": 5,
+   "answer": "<p>Energy, food by food.</p>\n<div class=\"working\">\n<p>150 times 1,491 divided by 100 = 2,236.5<br />\n30 times 1,384 divided by 100 = 415.2<br />\n7.5 times 37 = 277.5<br />\n2,236.5 plus 415.2 plus 277.5 = 2,929.2<br />\n2,929.2 divided by 4.18 = 700.8</p>\n</div>\n<p>Protein, with the oil counted as none.</p>\n<div class=\"working\">\n<p>150 times 7.94 divided by 100 = 11.91<br />\n30 times 21.70 divided by 100 = 6.51<br />\n11.91 plus 6.51 = 18.42</p>\n</div>\n<p>About 701 kcal, which meets the 700 kcal norm. About 18.4 g of protein, which is 1.6 g short of the 20 g norm. The vegetables would add a little of both, and this sum cannot say how much.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Build the same upper primary meal again, with whole wheat in place of the rice. Whole wheat has 1347 kJ and 10.59 g of protein per 100 g. Keep the rest: 30 g of tur dal, 7.5 g of oil counted as fat, no vegetables. What happens to the energy and the protein?</p>",
+   "level": 5,
+   "answer": "<p>Only the grain line changes.</p>\n<div class=\"working\">\n<p>150 times 1,347 divided by 100 = 2,020.5<br />\n2,020.5 plus 415.2 plus 277.5 = 2,713.2<br />\n2,713.2 divided by 4.18 = 649.1</p>\n</div>\n<div class=\"working\">\n<p>150 times 10.59 divided by 100 = 15.885<br />\n15.885 plus 6.51 = 22.395</p>\n</div>\n<p>About 649 kcal and 22.4 g of protein. The wheat meal falls about 51 kcal short of the energy norm and clears the protein norm. The rice meal did the opposite. Which grain is served decides which norm the meal meets, with the same grams on the plate.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Schedule II of the National Food Security Act, 2013 sets a take-home ration for pregnant women and new mothers. It is 600 kcal a day. The Poshan 2.0 guidelines say the food is served on 25 days a month, on average. The ration is handed out twice a month. How many kilocalories should each hand-out carry? How many kilojoules is that, with the Indian tables’ factor? Say which version of the norm you used.</p>",
+   "level": 6,
+   "answer": "<p>A month’s worth, then half of it.</p>\n<div class=\"working\">\n<p>600 times 25 = 15,000<br />\n15,000 divided by 2 = 7,500<br />\n7,500 times 4.18 = 31,350</p>\n</div>\n<p>Each hand-out should carry 7,500 kcal, or 31,350 kJ.</p>\n<p>The 600 is the Schedule II figure as the Act prints it. The anganwadi norms were revised in January 2023; the revised figures are not held, so this is the older norm.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>An Antyodaya household takes its 35 kg a month entitlement as raw milled rice (1491 kJ per 100 g). Work out the energy per person per day, in kilocalories, for a household of seven and for a household of three. The two household sizes are made up for the problem. Take a month as 30 days.</p>",
+   "level": 6,
+   "answer": "<p>Grams per person per day first, for seven people.</p>\n<div class=\"working\">\n<p>35,000 divided by 7 = 5,000<br />\n5,000 divided by 30 is about 166.7<br />\n166.7 times 1,491 divided by 100 = 2,485.5<br />\n2,485.5 divided by 4.18 = 594.6</p>\n</div>\n<p>Now for three.</p>\n<div class=\"working\">\n<p>35,000 divided by 3 is about 11,666.7<br />\n11,666.7 divided by 30 = 388.9<br />\n388.9 times 1,491 divided by 100 = 5,798.5<br />\n5,798.5 divided by 4.18 = 1,387.2</p>\n</div>\n<p>About 595 kcal a person a day for seven, the same as a priority household member gets, and about 1,387 kcal for three. The same entitlement gives more than twice as much to each person in the smaller household. A per-person figure for Antyodaya means nothing without the household size.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>entitlement: 5 kg of raw milled rice a month<br />\nrice: 1,491 kJ per 100 g<br />\n5 times 1,491 = 7,455 kJ a month<br />\n7,455 divided by 30 = 248.5 kJ a day<br />\n248.5 divided by 4.18 = 59.4 kcal a day</p>\n</div>\n<p>“So the ration gives under 60 kcal a day, which is next to nothing.”</p>",
+   "level": 7,
+   "answer": "<p>The third line multiplies kilograms by a content given per 100 grams. Five kilograms is 5,000 grams, which is 50 lots of 100 g, not 5.</p>\n<div class=\"working\">\n<p>5,000 times 1,491 divided by 100 = 74,550<br />\n74,550 divided by 30 = 2,485<br />\n2,485 divided by 4.18 = 594.5</p>\n</div>\n<p>About 595 kcal a day, ten times the worked answer.</p>\n<p>Why it looks reasonable: every unit named in the working is a real one and the conversion to kilocalories is right. The slip is in the one line where the mass unit changed silently from grams to kilograms. A factor of ten hides well in a small number. Write the grams on every line.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>Antyodaya entitlement: 35 kg of raw milled rice a month<br />\n35,000 divided by 30 = 1,166.7 g a day<br />\n1,166.7 times 1,491 divided by 100 = 17,395.5 kJ a day<br />\n17,395.5 divided by 4.18 = 4,161.6 kcal a day</p>\n</div>\n<p>“So each Antyodaya beneficiary gets about 4,160 kcal a day, nearly twice a sedentary man’s requirement of 2,110. The ration is too generous.”</p>",
+   "level": 8,
+   "answer": "<p>The arithmetic is right on every line. What broke is the unit of people. The 35 kg is for the whole household, under the first proviso to section 3(1). The 4,161.6 kcal is the household’s day, not one person’s.</p>\n<p>To get to a person you need the household’s size, and the Act does not give it. For a household of seven, divide by seven.</p>\n<div class=\"working\">\n<p>4,161.6 divided by 7 = 594.5</p>\n</div>\n<p>About 595 kcal each, the same as a priority household member.</p>\n<p>Why it looks reasonable: the working is careful, the units are named, and the comparison with 2,110 is a real figure. The error sits in the sentence after the working, where “a day” quietly became “each beneficiary a day”. Then the comparison makes a household look like one man.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A briefing note says this.</p>\n<blockquote>\n<p>The free PDS ration meets more than a third of every beneficiary’s daily energy needs.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the ration’s energy per person per day, then its share of a stated requirement. Take the 5 kg priority entitlement as raw milled rice and a 30-day month.</p>\n<div class=\"working\">\n<p>5,000 times 1,491 divided by 100 = 74,550<br />\n74,550 divided by 30 = 2,485<br />\n2,485 divided by 4.18 = 594.5<br />\n594.5 divided by 1,660 = 0.358<br />\n594.5 divided by 2,110 = 0.282</p>\n</div>\n<p>About 36 per cent of a sedentary 55 kg reference woman’s requirement, and 28 per cent of a sedentary 65 kg reference man’s. So “more than a third” holds for one reference person and fails for another. With whole wheat it is 537.1 divided by 1,660, which is 32 per cent, and fails for both.</p>\n<p>What this does not establish. “Every beneficiary” is wrong on its face: the requirement differs by age, sex, size and work, and an Antyodaya member’s share depends on household size. The sum is the energy handed over, not eaten. It cannot see sharing within the household, cooking losses or what the ration replaces. And “needs” is a reference figure, which ICMR-NIN itself says must be adjusted for a group’s actual weight and activity.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>In a meeting somebody says this.</p>\n<blockquote>\n<p>If the PDS gave bajra instead of rice, poor households would get fewer calories, and that would help with obesity.</p>\n</blockquote>\n<p>Bajra is 1456 kJ and 10.96 g of protein per 100 g in the Indian Food Composition Tables 2017. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the energy and protein of the 5 kg entitlement as bajra, set beside rice, per person per day on a 30-day month.</p>\n<div class=\"working\">\n<p>5,000 times 1,456 divided by 100 = 72,800<br />\n72,800 divided by 4.18 = 17,416.3<br />\n17,416.3 divided by 30 = 580.5<br />\n5,000 times 10.96 divided by 100 = 548<br />\n548 divided by 30 is about 18.3</p>\n</div>\n<p>About 580 kcal and 18.3 g of protein a day, against rice’s 594.5 kcal and 13.2 g. The energy falls by 14 kcal a day, about 2 per cent. The protein rises by about 5 g.</p>\n<div class=\"working\">\n<p>594.5 minus 580.5 = 14<br />\n14 divided by 594.5 = 0.024</p>\n</div>\n<p>So the first half of the claim is true and tiny. By this arithmetic, swapping the grain changes what the ration holds far more than how much energy it holds.</p>\n<p>What this does not establish. Nothing here says anything about obesity. The sum is the food handed over, not eaten. It cannot see whether a household eats the bajra, or sells it, or buys rice to replace it. A 14 kcal gap on paper is well inside what cooking and household sharing can move. And the tables’ averages carry their own spread: 18 kJ per 100 g for bajra, across its regions.</p>"
+  }
+ ]
+}

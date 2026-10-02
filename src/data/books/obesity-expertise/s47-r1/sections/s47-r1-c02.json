@@ -1,0 +1,132 @@
+{
+ "format": 1,
+ "id": "s47-r1-c02",
+ "label": "2",
+ "title": "Four jobs around a decision: propose, advise, decide, carry out",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Around any public decision, <dfn data-g=\"167\">four jobs</dfn> can be told apart. Someone proposes a course of action. Someone advises or recommends. A body with the legal power decides. Offices carry the decision out and enforce it.</p>\n<p>Take minimum support prices (MSP), the prices at which the government will buy certain crops. The <dfn data-g=\"70\">Commission for Agricultural Costs and Prices</dfn> (CACP) recommends them. For the 14 crops of the kharif season of 2026-27, paddy among them, the Cabinet Committee on Economic Affairs (CCEA) approved them. The government’s press releases on this approval name no power for it; the next section shows where to look. Public <dfn data-g=\"327\">procurement</dfn> agencies buy wheat and paddy at MSP.</p>\n<p>Now take food regulations under the Food Safety and Standards (FSS) <dfn data-g=\"3\">Act</dfn>, 2006. The Food Safety and Standards Authority of India (the Food Authority) gets scientific opinions from its Scientific Committee (section 14(2)). One of the Authority’s scientific panels is on labelling (section 13(3)(g)). The Central Advisory Committee advises the Food Authority on its work programme and priorities (section 12(2)). The Food Authority makes regulations by <dfn data-g=\"279\">notification</dfn>, with the previous approval of the Central Government and after <dfn data-g=\"318\">previous publication</dfn> (section 92(1)). Previous publication means the draft is published first so that the public can object; a later section covers how. So the decide job needs two bodies. The State Government appoints a Commissioner of Food Safety for efficient implementation (section 30(1)), and there is a Designated Officer for each district (section 36(2)).</p>\n<p>The Supreme Court may issue directions, orders or writs to enforce fundamental rights (Article 32 of the <dfn data-g=\"81\">Constitution</dfn>); a High Court may issue them for those rights and for any other purpose (Article 226).</p>\n<p>“Who decides” names the body that holds the decide job under a named power.</p>",
+   "refs": [
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Four jobs happen around almost every public decision.</p>\n<ol type=\"1\">\n<li><strong>Propose.</strong> Someone puts an idea forward.</li>\n<li><strong>Advise.</strong> Someone studies the idea and recommends what to do. An adviser has no power to decide.</li>\n<li><strong>Decide.</strong> One body holds the legal power to make the decision.</li>\n<li><strong>Carry out.</strong> Offices put the decision into effect and make sure people follow it.</li>\n</ol>\n<p>Here is the trap. People name whoever they heard about.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a made-up headline that sounds right and is not:</p>\n<blockquote>\n<p>Expert commission fixes higher price for paddy.</p>\n</blockquote>\n<p>Check it against two real releases. First open the Press Information Bureau’s backgrounder of 10 October 2025, “Minimum Support Prices: From Safety Net to Self-Sufficiency” (https://www.pib.gov.in/PressNoteDetails.aspx?ModuleId=3&amp;NoteId=155448&amp;reg=48&amp;lang=2). Search for “recommendations”. The Government announces the prices “based on the recommendations of the Commission for Agricultural Costs &amp; Prices (CACP)”. It also considers “the views of the concerned State Governments and Central Ministries/Departments”.</p>\n<p>Then open the release of 13 May 2026 (https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260617). Read its first sentence. The Cabinet Committee on Economic Affairs (CCEA) “has approved” the minimum support prices for the 14 crops of the kharif season of 2026-27, paddy among them.</p>\n<p>So the commission recommends. It does not fix. A <dfn data-g=\"257\">minimum support price</dfn> is a price at which the government will buy, not a price every farmer gets; Book 4 on the <dfn data-g=\"164\">food system</dfn> explains it. Here you need only who does what. Sort each body into its job.</p>\n<table style=\"width:100%;\">\n\n<tbody>\n<tr>\n<td>Job</td>\n<td>Who holds it for minimum support prices</td>\n<td>Where it says so</td>\n</tr>\n<tr>\n<td>propose</td>\n<td>not named in these releases</td>\n<td>none</td>\n</tr>\n<tr>\n<td>advise</td>\n<td>the Commission for Agricultural Costs and Prices (CACP) recommends; State Governments and Central Ministries give views</td>\n<td>PIB backgrounder, 10 October 2025</td>\n</tr>\n<tr>\n<td>decide</td>\n<td>the Cabinet Committee on Economic Affairs (CCEA) approves</td>\n<td>PIB release, 13 May 2026</td>\n</tr>\n<tr>\n<td>carry out</td>\n<td>public procurement agencies buy wheat and paddy at specified centres</td>\n<td>Department of Food and Public Distribution, Year End Review 2025</td>\n</tr>\n</tbody>\n</table>\n<p>For the last row, search the Department of Food and Public Distribution’s Year End Review 2025 (https://www.pib.gov.in/PressReleasePage.aspx?PRID=2210211) for “specified centres”. Wheat and paddy that meet the specifications “are bought by the public procurement agencies” at MSP.</p>\n<p>Look at the first row. Neither release says who first proposed a price. That blank is honest. You leave it blank rather than fill it with a guess. The headline’s error was to put the adviser in the decider’s row.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table describes who holds each job on paper, as the releases state it. It does not say how much the CCEA departs from what the commission recommends, or how far State views change the result. The releases held do not say.</p>\n<p>Minimum support prices are the cleanest split held here, because the releases name each body. Many decisions are less tidy. One body may advise and decide, or the release may not name the adviser at all.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now use the four jobs on the department’s third <dfn data-g=\"329\">proposal</dfn>: a warning label on packaged foods high in sugar, salt or fat. Here it is only a worked example of tracing jobs. A later book takes the labelling rules themselves apart.</p>\n<p>Open the Food Safety and Standards Act, 2006 (https://indiacode.gov.in/handle/123456789/586348). Book 0’s section on how government works showed you that the Food Authority makes food regulations under section 92. Go back to section 92(1) and read the whole sentence. The Food Authority may make regulations “with the previous approval of the Central Government and after previous publication, by notification”.</p>\n<p>Count the bodies in that sentence. The Food Authority makes the regulation. The Central Government must approve it first. So the decide job needs two signatures. A note that asks only the Food Authority has missed one. A note that asks only the Central Government has missed the other.</p>\n<p>Now find the advisers. Search for “scientific opinions”. Section 14(2) makes the Scientific Committee “responsible for providing the scientific opinions to the Food Authority”. Section 13(3)(g) lists a scientific panel on “labelling”. The Central Advisory Committee advises on the Authority’s work programme and priorities (section 12(2)).</p>\n<p>Now find who carries a regulation out in your own district. Search for “Commissioner of Food Safety”. Section 30(1) says the State Government appoints one “for efficient implementation”. Then search for “each district”. Section 36(2) says: “There shall be a Designated Officer for each district.”</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Job</td>\n<td>Who holds it for a food regulation</td>\n<td>Provision</td>\n</tr>\n<tr>\n<td>propose</td>\n<td>anyone, including your department</td>\n<td>none needed</td>\n</tr>\n<tr>\n<td>advise</td>\n<td>the Scientific Committee and its panels, one of them on labelling; the Central Advisory Committee on the work programme and priorities</td>\n<td>sections 14(2), 13(3)(g) and 12(2)</td>\n</tr>\n<tr>\n<td>decide</td>\n<td>the Food Authority, with the previous approval of the Central Government</td>\n<td>section 92(1)</td>\n</tr>\n<tr>\n<td>carry out</td>\n<td>the State’s Commissioner of Food Safety, and a Designated Officer in each district</td>\n<td>sections 30(1) and 36(2)</td>\n</tr>\n</tbody>\n</table>\n<p>Look at where the jobs sit. The decide row is in the Union government. The carry-out row is in the State government and your own district. So a label decided in Delhi is checked in Chhattisgarh by the State’s officers.</p>\n<p>Last, suppose a made-up petition asks a High Court to make the food regulator act. Article 226 gives every High Court power to issue “directions, orders or writs”, including to “any Government”. A court can direct a body to act. The power to make the regulation remains the Food Authority’s under section 92.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table shows who holds each job under the Act. It does not show whether the Scientific Committee was consulted on any particular regulation, or how often the Central Government refuses approval. Those are facts about practice, and the Act does not record them.</p>\n<p>The court line is deliberately thin. What Indian courts have in fact ordered on food, and how far they have gone, is left to a later book.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to name the body that recommends as the body that decides. The Commission for Agricultural Costs and Prices recommends minimum support prices; the Cabinet Committee on Economic Affairs approves them.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>For any proposal, write four lines: who proposes, who advises, who decides, who carries it out. Fill each with a named body and the place that says so.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A food regulation needs the Food Authority and the previous approval of the Central Government (FSS Act, section 92(1)). Address your note to the body that holds the decide job for the instrument your proposal needs. Where several bodies must act, name all of them and say which one moves first.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The body that decides and the body that carries out can sit in different governments. Food regulations are made at the Union level and implemented by each State’s Commissioner of Food Safety and the district’s Designated Officer.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A court can direct a body to act. Making the regulation is still the job of the body the <dfn data-g=\"401\">statute</dfn> names.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The four jobs tell you who holds formal power. They do not tell you who has influence, or whether the decider will act.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, name the four jobs around a decision. Then, for minimum support prices, name the body that recommends and the body that approved them for the kharif season of 2026-27.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Propose, advise, decide, carry out.</p>\n<p>For minimum support prices, the Commission for Agricultural Costs and Prices (CACP) recommends. The Cabinet Committee on Economic Affairs (CCEA) approved the kharif prices for 2026-27.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Read section 92(1) of the Food Safety and Standards Act, 2006:</p>\n<blockquote>\n<p>The Food Authority may, with the previous approval of the Central Government and after previous publication, by notification, make regulations consistent with this Act and the rules made thereunder to carry out the provisions of this Act.</p>\n</blockquote>\n<p>Name every body in the sentence and give each its job. Then name the two steps that must happen before a regulation can be made. Say what the sentence does not tell you.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Two bodies are named. The Food Authority makes the regulation: it holds the decide job. The Central Government must give its previous approval: it shares the decide job, because without its approval no regulation can be made.</p>\n<p>Two steps come first. The Central Government’s approval must be given. The draft must have been published first, so that the public can object (“after previous publication”). Then it is made by notification.</p>\n<p>The sentence does not say who proposes or advises. It does not say how long the previous publication must last, or who carries the regulation out. Other sections answer some of these. Section 14(2) makes the Scientific Committee responsible for scientific opinions to the Food Authority, and section 13(3)(g) lists a panel on labelling. Section 12(2) has the Central Advisory Committee advise on the Authority’s work programme and priorities. Sections 30(1) and 36(2) name the State’s Commissioner of Food Safety and the district’s Designated Officer.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Here is a made-up draft note from your department. “The Food Safety and Standards Authority of India (FSSAI) enforces the Act. So we will write to FSSAI. We will ask it to check that school canteens in our district follow the food safety rules.” Find what is wrong with whom the note writes to, and fix it.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The note puts the Food Authority (FSSAI) in the carry-out job. Under the Act, the State Government appoints a Commissioner of Food Safety “for efficient implementation” (section 30(1)). There is a Designated Officer for each district (section 36(2)). Checking that food businesses in a district follow the rules is work for those State officers.</p>\n<p>The error looks reasonable because the Food Authority is the best-known name in food safety. It does hold the decide job for regulations. But the body that makes a rule is not the body that checks it in a district.</p>\n<p>The fix: “We will write to the Commissioner of Food Safety, Chhattisgarh, and to the Designated Officer for the district.” Whether school canteens fall within the Act at all is a separate question this note must not assume.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A journalist has three minutes and asks: “So who actually sets the price farmers are promised for paddy, the expert commission or the government?” Answer in plain words, with one quotable sentence.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Quotable: “The expert commission recommends the price. A Cabinet committee decides it.”</p>\n<p>Then the detail. The Commission for Agricultural Costs and Prices studies costs and recommends prices. The Government also considers the views of the States and the Central Ministries. For the 2026-27 kharif crops, the Cabinet Committee on Economic Affairs approved the prices.</p>\n<p>Calibrate. The releases do not say how often the committee changes what the commission recommends. So do not claim that it always agrees, or that it often overrules.</p>"
+  }
+ ]
+}

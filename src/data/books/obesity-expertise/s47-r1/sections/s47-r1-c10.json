@@ -1,0 +1,161 @@
+{
+ "format": 1,
+ "id": "s47-r1-c10",
+ "label": "10",
+ "title": "The people around a decision",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>An <dfn data-g=\"4\">actor</dfn> around a policy decision is a person or organisation that tries to shape the decision, or is affected by it, without holding the power to take it.</p>\n<p>An actor’s interest is what it stands to gain or lose from the decision. Every policy favours some and costs others, so every actor around it has an interest.</p>\n<p><dfn data-g=\"236\">Lobbying</dfn> is representing an organisation’s case before government in order to influence policy. <dfn data-g=\"204\">Inside lobbying</dfn> takes the case directly to lawmakers and officials. When you put your own or your department’s case to an official, this book calls that lobbying too.</p>\n<p><dfn data-g=\"109\">Disclosure</dfn> is stating the interest, so that others can weigh the advice. Disclosure does not remove the interest.</p>\n<p>A conflict of interest is what an adviser or researcher has when they stand to gain from one answer to the question they inform.</p>\n<p>An interest does not remove a right to be heard.</p>",
+   "refs": [
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    13,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Around every decision stand many more people and organisations. They do not hold that power, and they still try to move it. Call each of them an actor.</p>\n<p>Here are the usual ones. Professional bodies, such as an association of doctors. Non-governmental organisations (NGOs) and consumer groups. The media. Researchers, which includes you.</p>\n<p>A government department that advises, but does not decide, is an actor too.</p>\n<p>For each actor, ask one question: what does it stand to gain or lose? The answer is its interest. A group that works for clean air or children’s health has one too.</p>\n<p>Actors push in two ways. Inside lobbying takes the case straight to the people in government: a meeting, a letter, a comment on a draft. <dfn data-g=\"289\">Outside lobbying</dfn> takes it to the public, through the press or a campaign, so that the public presses the government.</p>\n<p>An interest does not take away the right to speak. What you do with an actor’s interest is weigh it, not silence it.</p>\n<p>The same goes for you. You might gain from one answer through a grant, a job or a result that makes your name. Then you have a conflict of interest. Write it down at the front of your note. That is disclosure. It lets the reader weigh your advice. It does not make the pull go away.</p>\n<p>A later book in this series gives all this a formal shape, the policy triangle of Walt and Gilson. It looks at four things together: the content of a policy, its context, its process and its actors. This section gives you the actors.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a first draft that fails. Suppose your department’s made-up note proposing a higher tax on sugar-sweetened drinks has this paragraph under “Stakeholders”, the word drafts often use for what this section calls actors:</p>\n<p>“Stakeholders: the government, the public, industry and doctors. All stakeholders support action on obesity.”</p>\n<p>Read it with two questions for each name. Does it decide, or does it push? What does it stand to gain or lose?</p>\n<p>“The government” fails the first question. The last section found that the GST Council recommends the rate and the Central Government notifies it. The Ministry of Health and Family Welfare is also “the government”, and it sets no tax rate. In their study of food taxes in India, Summan and colleagues describe the health ministries as playing “a largely advisory role” in tax decisions. One word has hidden a decider and an adviser.</p>\n<p>“The public” and “industry” fail the second question. They name no one, so they name no interest. Which industry? A company selling sweetened drinks and a mill selling it sugar can both lose sales. Summan and colleagues also report that farmers’ incomes depend partly on sugar supplied to the drinks industry. Which public? A student buying a drink, a parent, a shopkeeper.</p>\n<p>“All stakeholders support action” fails both. It is a claim about what other people want, and the draft gives no evidence for it. Actors whose interests point in opposite directions do not all support the same thing.</p>\n<p>Now rebuild it. The rows below use groups that Summan and colleagues interviewed or listed for Indian food taxes, from 18 interviews held between February and September 2024 and a review of documents. The third column keeps to what their paper reports. Two names need expanding: the Breastfeeding Promotion Network of India (BPNI), and Nutrition Advocacy in Public Interest (NAPi). Both are civil society organisations (CSOs): groups formed by citizens, outside government and outside business, to work for a public cause.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Actor</td>\n<td>Job around the decision</td>\n<td>What it stands to gain or lose</td>\n<td>How it pushes</td>\n</tr>\n<tr>\n<td>GST Council</td>\n<td>shares the decision: recommends the rate</td>\n<td>revenue, balanced against keeping taxed goods affordable</td>\n<td>not applicable: it decides</td>\n</tr>\n<tr>\n<td>Central Government, Ministry of Finance</td>\n<td>shares the decision: notifies the central rate</td>\n<td>revenue</td>\n<td>not applicable: it decides</td>\n</tr>\n<tr>\n<td>Ministry of Health and Family Welfare</td>\n<td>advises</td>\n<td>its health programmes and aims</td>\n<td>inside government</td>\n</tr>\n<tr>\n<td>Food and beverage industry associations</td>\n<td>pushes</td>\n<td>sales and profit</td>\n<td>lobbying; the paper reports lobbying against front-of-pack labels</td>\n</tr>\n<tr>\n<td>Sugar mills and cane farmers</td>\n<td>pushes</td>\n<td>income from sugar sold to drinks makers</td>\n<td>industry associations, such as the Indian Sugar Mills Association, which the paper lists</td>\n</tr>\n<tr>\n<td>CSOs such as BPNI and NAPi</td>\n<td>pushes</td>\n<td>the public health aims they campaign for</td>\n<td>complaints to authorities, campaigns</td>\n</tr>\n<tr>\n<td>Researchers</td>\n<td>inform</td>\n<td>funding for their research</td>\n<td>evidence and briefs</td>\n</tr>\n<tr>\n<td>Students and young adults who buy the drinks, and their families</td>\n<td>affected</td>\n<td>what they pay, if the tax reaches the price</td>\n<td>not reported in the paper</td>\n</tr>\n</tbody>\n</table>\n<p>Read down the second column. Two rows hold a share of the decision. Six push, advise, inform or are affected. That is the usual shape: a few deciders, many actors.</p>\n<p>Then read the third column. The interests point in different directions. The industry rows stand to lose from a higher tax. The civil society row stands to gain what it campaigns for. That is why “all stakeholders support action” could not have been true.</p>\n<p>The media are not in the table, on purpose. Summan and colleagues report what their interviewees said about media coverage, but not what media organisations themselves stand to gain or lose. Leave a row out rather than fill it with a guess.</p>",
+   "numberRefs": [
+    238
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table says who stands around the decision and which way each interest points. It does not say how strong any actor is, or who will win. Do not forecast the outcome from it.</p>\n<p>The rows come from one paper. Its findings rest on 18 interviews with informants who were mostly based in Delhi, and on a review of documents. Its Table 3 calls its entries “examples”. So the table is a starting list for this <dfn data-g=\"329\">proposal</dfn>, not a complete or measured map, and a different proposal, such as a school-canteen rule, has a different set of actors.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now take two made-up events, one after the other, and sort what each one changes.</p>\n<p>First event. Suppose the Food Safety and Standards Authority of India (FSSAI) publishes a draft regulation on warning labels for packaged foods, and a made-up association of snack makers sends a long objection. A colleague says the objection should go in the bin, because the association has a commercial interest.</p>\n<p>Check that against what a draft is for. The FSSAI’s own Packaging Regulations of 2018 record that their draft was published “inviting objections and suggestions from the person likely to be affected thereby”, and that the objections received “have been considered”. The section on how a rule is made showed the same pattern for rules that an <dfn data-g=\"3\">Act</dfn> requires to be published in draft. A snack maker is plainly a person likely to be affected. Its interest is plain, and so is its right to object.</p>\n<p>So do not bin the objection. Read it as you would read anyone’s argument. Are its premises true? Does its conclusion follow from them? Knowing the association’s interest tells you where to look hardest. It does not tell you the answer.</p>\n<p>Second event. Suppose a made-up drinks company offers your department a grant to survey what school canteens in the district sell. Now the interest is yours.</p>\n<p>Ask the question from the definition: do you gain from one answer? If the grant might be renewed, a report the funder likes is worth more to the department than one it dislikes. That is a conflict of interest, even if nobody means to bend anything. Ioannidis and colleagues, writing about medical research, note that conflicts of interest “can also affect the design, analysis, and interpretation of results”. The pull works at every step, not only at the end.</p>\n<p>Three responses are open to you. Decline the grant. Accept it and disclose it. Accept it and say nothing. This book’s rule is that the third is never open. Disclosure means writing the funder, and any other gain, at the front of the report, where a reader meets it before the findings. It lets the reader weigh the work. It does not remove the pull, and that is why some departments decline.</p>\n<p>Your interests are not only money. Walt and colleagues observe that funders increasingly require researchers to translate their research, “forcing them to become policy actors”. Once your department sends a note to a district officer, you are an actor around that decision. Your interests include your department’s name, and the answer you hoped to find before you looked.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Both events are made up. The Packaging Regulations show one real draft that invited objections; they do not show how the FSSAI weighed any particular objection, and nothing here says how much weight an objection with a commercial interest behind it gets.</p>\n<p>Disclosure is the floor, not the whole answer. For tobacco, a treaty goes further: Article 5.3 of the World Health Organization (WHO) Framework Convention on Tobacco Control requires the countries that joined it to protect their tobacco control policies from the tobacco industry’s commercial interests. How far that reasoning carries to food companies, and the guidance of WHO and the United Nations Children’s Fund (UNICEF) on industry interference, belong to a later book in this series.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to treat the loudest actor as the decider. A campaign, a press storm or a powerful company can move a decision. None of them can take it.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Refuse a stakeholder list that says “industry”, “the public” or “the government”. Ask for each actor by name. Ask what it stands to gain or lose.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>An interest is not a reason to silence an actor. Use the objector’s interest to decide where to look hardest.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When an advocacy group’s figure appears in your note, check it as hard as an industry figure.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Disclose every interest you have in the decision you write about, money or not, at the front of the note.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>For a food tax in India, do not send your note to the Ministry of Health as if it decided. Summan and colleagues held 18 interviews in 2024 and reviewed documents. They report that the Ministry of Finance and the GST Council “determine tax design and rates”.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When a trainee hands you a stakeholder table, point at each row and ask two questions aloud: does this actor decide, or push? What does it lose if the proposal goes through?</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A map of actors tells you who will push and in which direction. It does not tell you who will win. Judge the argument on its evidence, and do not forecast the outcome from the map.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“This group works for a public good, so it has no interest to declare.” A <dfn data-g=\"331\">public interest group</dfn> seeks a good that reaches everyone. It still stands to gain when the decision goes its way: a campaign won, a reputation made, future funding. Its interest points in a different direction from a company’s. It is still an interest, and its claims are checked like anyone else’s.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Interests: this note was prepared by [names], [department]. Its funding came from [funder, or “no outside source”]. [If the funder has a stake in the decision: X sells Y.] The authors have [no other interests in this decision / these other interests: …].</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back, answer three questions. What is an actor’s interest? What is the difference between inside and outside lobbying? What does disclosure of a conflict of interest do, and what does it not do?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>An actor’s interest is what it stands to gain or lose from the decision.</p>\n<p>Inside lobbying takes an organisation’s case directly to lawmakers and officials. Outside lobbying takes it to the public, through the media and campaigns, so that the public presses the lawmakers.</p>\n<p>Disclosure states the interest, so that readers can weigh the advice. It does not remove the interest, or its pull on the work.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a made-up “Stakeholders” paragraph from a department’s proposal for a rule on what school canteens in the district may sell.</p>\n<p>“School principals, parents and the canteen contractors all agree that junk food should be removed from canteens. The local soft-drink distributor has a conflict of interest and so should not be consulted. Our department has no interests to declare, because we receive no money from industry.”</p>\n<p>Find three errors. For each, say what is wrong and what the paragraph should say instead.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The three errors:</p>\n<ol type=\"1\">\n<li><p>“All agree” is a claim about other people’s views, with no evidence. It is also unlikely, because their interests differ. A canteen contractor stands to lose sales on the items a rule would remove. Write instead what each actor stands to gain or lose, and leave their views to evidence: a meeting, a survey, a written objection. “Junk food” is also undefined; name the items, as a rule would have to.</p></li>\n<li><p>The distributor has an interest, not a conflict of interest. A conflict of interest belongs to someone who advises or decides and gains from one answer. The distributor is an actor pushing openly for its own side, which it is entitled to do. Consult it, and weigh what it says knowing what it stands to lose.</p></li>\n<li><p>Interests are not only industry money. The department may hold a position it has argued before. It may want the survey to show a problem worth acting on. Its name may be attached to the proposal. Say so in a short statement of interests, and declare any funder, whoever it is.</p></li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has three minutes and asks: “Should drinks companies even be allowed to comment on a tax on sugary drinks? They will just protect their profits.” Answer without jargon, and give one sentence they can quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Yes, they should be heard, and you should be clear about why their view needs checking.</p>\n<p>Companies that make sugary drinks stand to lose sales and profit from a higher tax. That is their interest, and everyone knows it. Having an interest does not take away the right to speak. In India, when a rule must be published in draft, anyone may object before the date the draft names, and a company is one of them.</p>\n<p>What changes is how their claims are read. If a company says a tax will cost jobs, ask for the numbers and check them, as you would check an advocacy group’s numbers. The decision itself belongs to the bodies that set the tax, not to any of the people pushing.</p>\n<p>Quotable sentence: “Drinks companies have every right to be heard on this tax, and their claims should be checked as hard as anyone’s.”</p>"
+  }
+ ]
+}

@@ -1,0 +1,99 @@
+{
+ "format": 1,
+ "id": "s36-r1-c12",
+ "label": "12",
+ "title": "Reading a transcript, and what a code is",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Reading a <dfn data-g=\"312\">transcript</dfn> for analysis starts with reading all of it once. On the second reading you mark each passage that bears on the study question. You write a short label beside it. That label is a code.</p>\n<p>A memo is a note, written while you read, of what you notice and what you want to ask next. <dfn data-g=\"108\">Field notes</dfn> (section 8) are written straight after the interview. Some authors call both memos.</p>\n<p>A passage that runs against the pattern the other passages seem to show is a deviant or negative case. It is kept and marked, not dropped, because it is what tests and sharpens the pattern.</p>",
+   "refs": [
+    206,
+    206,
+    207,
+    208,
+    208,
+    209,
+    210,
+    211,
+    211,
+    212,
+    173,
+    213,
+    213
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>First, read the whole transcript once, start to end, with the pen down.</p>\n<p>Then read it again, line by line. When a passage bears on your question, mark it. Write a short label in the margin saying what it is about. That label is a code.</p>\n<p>A passage is the stretch that says one thing. It bears on the question if it says something about why the person came or stopped.</p>\n<p>Keep a memo as you go.</p>\n<p>Watch for the passage that does not fit. Mark it and keep it. It tells you where your pattern stops being true.</p>\n<p>Last, you do not wait until every interview is done. You read the second transcript before the third interview, and what you read changes what you ask.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Suppose you are running the practice interviews for the clinic question: why do adult patients with obesity stop coming back to a district hospital clinic in Chhattisgarh? The exchange below is made up, and translated from Hindi. The <dfn data-g=\"262\">respondent</dfn>, R2, is a woman in her fifties who came for a year and then stopped.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Tell me about the last time you came to the clinic.</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>It was in the rains. The bus from our village goes only in the morning, so I lose the whole day. My son has to take leave to bring me.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Mm.</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>And that time the sugar was fine. The doctor said it is under control. So I thought, if it is fine, why go every month?</td>\n</tr>\n<tr>\n<td>I</td>\n<td>You said the sugar was fine. What was coming every month for, then?</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>Standing in the line for the weighing. Everybody is there. The sister reads the number out loud. I did not want the whole line to hear it.</td>\n</tr>\n</tbody>\n</table>\n<p>Read all six lines first, pen down.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Passage</td>\n<td>Code</td>\n</tr>\n<tr>\n<td>The bus goes only in the morning, so I lose the whole day</td>\n<td>a whole day lost to one visit</td>\n</tr>\n<tr>\n<td>My son has to take leave to bring me</td>\n<td>needs family to take time off</td>\n</tr>\n<tr>\n<td>If it is fine, why go every month?</td>\n<td>“if it is fine, why go”</td>\n</tr>\n<tr>\n<td>The sister reads the number out loud</td>\n<td>weighed in front of the line</td>\n</tr>\n</tbody>\n</table>\n<p>The third label is her own words, because nothing you could write names it better.</p>\n<p>Then write a memo. For example: “Distance came up first, but she did not stop when the bus was hard. She stopped after she was told her sugar was under control. Next time, ask what a visit is for, in their words. Ask what happens from the moment they arrive, and do not name the weighing first.”</p>\n<p>Suppose, last, that R4, a man in his sixties, lives further out than R2 and has not missed a visit. Mark it and keep it. It tells you distance alone does not decide who stops, and it gives you a question: what does R4 have that R2 does not?</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A code here is your own label for finding and comparing passages. It is not yet a finding. Suppose two transcripts out of five carry “weighed in front of the line”. That does not tell you what share of the clinic’s patients stop for that reason. The five were chosen, not drawn <dfn data-g=\"17\">at random</dfn> (the section on who you talk to).</p>\n<p>The labels also belong to one reader. The next level of this subject takes up checking them with a second person.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Coding is not counting. If you tally how many transcripts carry it and report a <dfn data-g=\"213\">percentage</dfn>, you have made a rate out of people who were chosen, not drawn. Write “two respondents described…” and say who they were, not “two in five patients”.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Read the whole transcript once before you mark anything. An early label can steer how you read the rest.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Label with the respondent’s words or a plain description of what happened, never with the clinic’s verdict. “Non-compliance” names the patient as the problem before you have understood her reason.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Keep the case that does not fit, and mark it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write a memo after each transcript, before the next interview, and let it change the <dfn data-g=\"310\">topic guide</dfn>.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Many researchers check first codes by having a second person apply them; whether that is required is disputed. Until your codes have been checked in some way, present them as your working notes.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here is a made-up passage from a practice interview for the clinic question, translated from Hindi. R5 is a man in his forties.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>What happens on a clinic day, from when you leave home?</td>\n</tr>\n<tr>\n<td>R5</td>\n<td>I leave before six. At the clinic there is a token, then a long wait. By the time the doctor sees me it is afternoon. The shop stays closed that day.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Tell me more about the shop.</td>\n</tr>\n<tr>\n<td>R5</td>\n<td>It is my shop. If it is closed, nobody earns that day. My wife says go, your health comes first. But she is not the one who has to open the shop late.</td>\n</tr>\n</tbody>\n</table>\n<p>Read it through once. Then write a code beside each passage that bears on why people stop coming, using his own words for at least one of them. Then write a one-line memo for your next interview.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>One reasonable set of codes, passage by passage:</p>\n<ul>\n<li>“I leave before six … it is afternoon”: <em>a whole day for one visit</em>.</li>\n<li>“The shop stays closed that day … nobody earns that day”: <em>“nobody earns that day”</em>, his own words, because they name the cost exactly.</li>\n<li>“My wife says go, your health comes first”: <em>family urges him to go</em>.</li>\n<li>“she is not the one who has to open the shop late”: <em>he carries the cost of going</em>.</li>\n</ul>\n<p>His second turn carries two codes that pull against each other: the family pushes him to go, and the cost falls on him. Both belong on the page.</p>\n<p>A memo, for example: “Waiting time, not travel, took his day. Ask the next person how long the visit itself takes, and who in the family decides whether they go.”</p>\n<p>Your labels need not match these words. Check three things. Did you label what he said rather than judge him? Did one label use his words? Did the memo end with something to ask next time?</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague has read five practice transcripts from the clinic and hands you this note:</p>\n<blockquote>\n<p>Codes: non-compliance (4 of 5). Main reason: distance, 80 per cent. R4 left out, as he is not typical.</p>\n</blockquote>\n<p>Say what is wrong with the note, point by point, and what the note should say instead.</p>",
+   "type": "critique",
+   "confidence": true,
+   "answer": "<p>Three things are wrong.</p>\n<p>First, the label. <em>Non-compliance</em> is a verdict from the clinic’s side. It names the patients as the problem and says nothing about their reasons. Replace it with labels that describe what each person said, in their words where possible.</p>\n<p>Second, the count. “80 per cent” turns five chosen people into a rate. The five were picked for what they could tell you, not drawn at random, so the percentage describes nobody beyond them. Write which respondents described distance, and what each said about it.</p>\n<p>Third, R4. He is the case that does not fit, which is why he has to stay. Leaving him out makes distance look like the whole story. Keeping him asks the useful question: what lets him keep coming from further away?</p>\n<p>A better note, for example: “R1, R2 and R5 described a whole day lost to a visit, from travel or the wait. R2 stopped after being told her sugar was under control. R4 lives furthest out and has not missed a visit. Next interview: ask what a visit is for, and what makes one possible.”</p>"
+  }
+ ]
+}

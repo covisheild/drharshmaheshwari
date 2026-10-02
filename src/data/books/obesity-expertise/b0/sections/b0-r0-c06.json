@@ -1,0 +1,184 @@
+{
+ "format": 1,
+ "id": "b0-r0-c06",
+ "label": "A6",
+ "title": "Powers, roots and scientific notation",
+ "part": "A",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A power is repeated multiplication of one number by itself. The number being multiplied is the base and the small raised number is the <dfn data-g=\"63\">exponent</dfn>, which counts how many copies of the base are multiplied together.</p>\n<p>A negative exponent means repeated division by the base rather than repeated multiplication, so 10<sup>-3</sup> is one thousandth. Any base raised to the power zero is one.</p>\n<p>Multiplying two powers of the same base adds their exponents, and dividing subtracts them.</p>\n<p>A root is the inverse of a power. The <dfn data-g=\"176\">square root</dfn> of a quantity is the number which, multiplied by itself, yields that quantity. Equivalently it is that quantity raised to the exponent one half, which is the case that shows an exponent need not be a whole number.</p>\n<p><dfn data-g=\"166\">Scientific notation</dfn> writes a quantity as a number between one and ten multiplied by a power of ten.</p>",
+   "refs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Ten to the power three is written 10<sup>3</sup>. The ten is the base. The small raised three is the exponent, and all it does is count how many tens are being multiplied. Ten to the power three is one thousand.</p>\n<p>A quick way to read any power of ten: the exponent is the number of zeros.</p>\n<p>A minus sign in the exponent flips it from multiplying to dividing. So 10<sup>-3</sup> is one divided by a thousand, which is 0.001.</p>\n<p>Multiply two powers of ten and you add the exponents. Divide, and you subtract them.</p>\n<p><dfn data-g=\"178\">Squaring</dfn> a number means multiplying it by itself. Three squared is nine.</p>\n<p>A square root runs that backwards. The square root of nine is three, because three times three is nine. Ask it as a question. What number, multiplied by itself, gives me this one?</p>\n<p>Some roots come out whole. The square root of 144 is 12. Most do not. The square root of two starts 1.414 and never stops. Take what the calculator gives you and round it the way the section on <dfn data-g=\"160\">rounding</dfn> told you to.</p>\n<p>There is a second way to write a root, and you need it further on. An exponent of one half means the square root. So 9<sup>(1/2)</sup> is 3, the same answer, written in the language of powers.</p>\n<p>That is worth a pause, because it breaks the rule you started with. An exponent does not have to count copies. Once one half is allowed, so is 1.6, and 10<sup>1.6</sup> is an ordinary number the calculator gives as about 40. Logarithms, two sections on, are built on exactly that.</p>\n<p>Write a quantity as a number between one and ten, times a power of ten. Thirty-five thousand becomes 3.5 times 10<sup>4</sup>.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Build the ladder of powers of ten yourself, in two columns, with the Indian names on one side and the international names on the other.</p>\n<table style=\"width:83%;\">\n\n<thead>\n<tr>\n<th>power</th>\n<th>written out</th>\n<th>Indian name</th>\n<th>international name</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>10<sup>1</sup></td>\n<td>10</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>10<sup>2</sup></td>\n<td>100</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>10<sup>3</sup></td>\n<td>1,000</td>\n<td>thousand</td>\n<td>thousand</td>\n</tr>\n<tr>\n<td>10<sup>4</sup></td>\n<td>10,000</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>10<sup>5</sup></td>\n<td>1,00,000</td>\n<td>one lakh</td>\n<td></td>\n</tr>\n<tr>\n<td>10<sup>6</sup></td>\n<td>10,00,000</td>\n<td></td>\n<td>one million</td>\n</tr>\n<tr>\n<td>10<sup>7</sup></td>\n<td>1,00,00,000</td>\n<td>one crore</td>\n<td></td>\n</tr>\n<tr>\n<td>10<sup>8</sup></td>\n<td>10,00,00,000</td>\n<td>ten crore</td>\n<td></td>\n</tr>\n<tr>\n<td>10<sup>9</sup></td>\n<td>1,00,00,00,000</td>\n<td></td>\n<td>one billion</td>\n</tr>\n</tbody>\n</table>\n<p>Read the gaps. A <dfn data-g=\"102\">lakh</dfn> is 10<sup>5</sup> and a <dfn data-g=\"43\">crore</dfn> is 10<sup>7</sup>, so the Indian ladder steps by two powers of ten. A million is 10<sup>6</sup> and a billion is 10<sup>9</sup>, so the international ladder steps by three.</p>\n<p>Now the failure, and it is one of the commonest in real work. A spreadsheet has a column of grain tonnages in it. The column is narrow, so the spreadsheet prints one cell like this.</p>\n<div class=\"working\">\n<p>1.5E+06</p>\n</div>\n<p>Somebody copies the visible part into a report and writes 1.5 tonnes.</p>\n<p>Read what the cell actually said. That E means “times ten to the power”, so the cell held 1.5 times 10<sup>6</sup> tonnes.</p>\n<div class=\"working\">\n<p>1.5 times 10<sup>6</sup><br />\n= 1.5 times 1,000,000<br />\n= 1,500,000</p>\n</div>\n<p>Take a lakh and multiply it by a hundred.</p>\n<div class=\"working\">\n<p>1,00,000 times 100<br />\n= 10<sup>5</sup> times 10<sup>2</sup><br />\n= 10<sup>(5 plus 2)</sup><br />\n= 10<sup>7</sup><br />\n= 1,00,00,000, which is one crore</p>\n</div>\n<p>Try the other direction. Divide a crore by a lakh.</p>\n<div class=\"working\">\n<p>10<sup>7</sup> divided by 10<sup>5</sup><br />\n= 10<sup>(7 minus 5)</sup><br />\n= 10<sup>2</sup><br />\n= 100</p>\n</div>\n<p>A crore is a hundred lakh.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>“The exponent is the number of zeros” is a rule about powers of ten and nothing else. Two to the power three is eight, and there is no zero anywhere in it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A negative exponent does not make a number negative. It makes it small. Ten to the power minus three is one thousandth, an ordinary positive quantity.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Whenever a number contains an E, or a small raised number, write it out in full before you use it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The Indian ladder steps by two powers of ten: lakh is 10<sup>5</sup> and crore is 10<sup>7</sup>. The international ladder steps by three: million is 10<sup>6</sup> and billion is 10<sup>9</sup>.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Write any large figure as a digit or two times a power of ten before you compare it with another.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Asked to check a colleague’s calculation quickly, check the exponents first and the digits second.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>The square root of a sum is not the sum of the square roots. Work out what sits under the root first, then take the root of that one number.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An exponent does not have to be a whole number. One half means the square root, and a value in between is an ordinary number the calculator will give you.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Write each of these as a number between one and ten times a power of ten. The list: one lakh, thirty-five thousand, ten lakh, one crore, one thousandth. Then work out, using the exponent rules alone, how many lakh there are in a crore and how many thousand there are in a million.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>In scientific notation.</p>\n<div class=\"working\">\n<p>one lakh    = 1 times 10<sup>5</sup><br />\nthirty-five thousand = 3.5 times 10<sup>4</sup><br />\nten lakh    = 1 times 10<sup>6</sup><br />\none crore    = 1 times 10<sup>7</sup><br />\none thousandth = 1 times 10<sup>-3</sup></p>\n</div>\n<p>Lakh in a crore, by subtracting exponents.</p>\n<div class=\"working\">\n<p>10<sup>7</sup> divided by 10<sup>5</sup> = 10<sup>(7 minus 5)</sup> = 10<sup>2</sup> = 100</p>\n</div>\n<p>A hundred lakh in a crore.</p>\n<p>Thousand in a million, the same way.</p>\n<div class=\"working\">\n<p>10<sup>6</sup> divided by 10<sup>3</sup> = 10<sup>(6 minus 3)</sup> = 10<sup>3</sup> = 1,000</p>\n</div>\n<p>A thousand thousand in a million.</p>\n<p>Notice that both answers came out of subtracting two small numbers, with no long division anywhere. That is what the notation is for.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a colleague’s note.</p>\n<blockquote>\n<p>Daily production is 2.4E+05 units, which is about 2.4 lakh. So annual production is roughly 8.8E+07, or about 8.8 crore.</p>\n</blockquote>\n<p>Check every step. Say which are right and which are not.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Step one is right. 2.4 times 10<sup>5</sup> is 240,000, and 2.4 lakh is 2,40,000. The same number.</p>\n<p>Step two, the yearly figure, is right in its arithmetic.</p>\n<div class=\"working\">\n<p>2.4 times 10<sup>5</sup>, times 365 days<br />\n= 876 times 10<sup>5</sup><br />\n= 8.76 times 10<sup>7</sup>, which rounds to 8.8 times 10<sup>7</sup></p>\n</div>\n<p>Step three is wrong, and it is the naming step again rather than the arithmetic. 8.8 times 10<sup>7</sup> is 8,80,00,000. A crore is 10<sup>7</sup>, so this is 8.8 crore. That part is right too.</p>\n<p>So all three steps hold. The thing to challenge is not in the notation at all: it is the 365. Production every single day of the year, with no closure and no maintenance, is an assumption the note never states. Check the exponents, then check the assumption hiding in the multiplier.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A square plot of land covers 2,025 square metres. Work out the length of one side.</p>\n<p>Then do the same for a second square plot covering 2,000 square metres. Say how many digits of that answer you would be willing to write down.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>A square’s area is one side multiplied by itself. So the side is the square root of the area.</p>\n<div class=\"working\">\n<p>side = 2,025<sup>(1/2)</sup> = 45 metres</p>\n</div>\n<p>Check it by multiplying back. 45 times 45 is 2,025.</p>\n<p>The second one does not come out whole.</p>\n<div class=\"working\">\n<p>side = 2,000<sup>(1/2)</sup> = 44.72135…</p>\n</div>\n<p>The calculator will offer you eight digits. The area you were given has four. Write 44.72 metres, or say about 45 metres. Digits the question never gave you are not yours to pass on.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Write each of these out as an ordinary number.</p>\n<div class=\"working\">\n<p>10<sup>2</sup>    10<sup>5</sup>    10<sup>0</sup>    10<sup>-2</sup>    9<sup>(1/2)</sup>    144<sup>(1/2)</sup></p>\n</div>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>10<sup>2</sup>    = 100<br />\n10<sup>5</sup>    = 1,00,000    (one lakh)<br />\n10<sup>0</sup>    = 1<br />\n10<sup>-2</sup>    = 0.01<br />\n9<sup>(1/2)</sup>    = 3<br />\n144<sup>(1/2)</sup> = 12</p>\n</div>\n<p>Two of these are worth a second look. Anything to the power zero is one, which surprises people and falls straight out of the rules. Divide 10<sup>2</sup> by 10<sup>2</sup> and the exponents subtract to give 10<sup>0</sup>. Any number divided by itself is one, so 10<sup>0</sup> is one.</p>\n<p>And 10<sup>-2</sup> is small, not negative. It sits between zero and one.</p>\n<p>Check the last two by multiplying back. Three times three is nine. Twelve times twelve is 144. A root is the only operation here you can check without trusting the calculator.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Work these out using the exponent rules alone, without writing the numbers in full.</p>\n<div class=\"working\">\n<p>10<sup>4</sup> times 10<sup>3</sup>    10<sup>8</sup> divided by 10<sup>5</sup>    10<sup>3</sup> times 10<sup>-1</sup></p>\n</div>",
+   "level": 2,
+   "answer": "<p>Multiplying adds the exponents. Dividing subtracts them.</p>\n<div class=\"working\">\n<p>10<sup>4</sup> times 10<sup>3</sup>    = 10<sup>(4 plus 3)</sup>    = 10<sup>7</sup><br />\n10<sup>8</sup> divided by 10<sup>5</sup> = 10<sup>(8 minus 5)</sup>    = 10<sup>3</sup><br />\n10<sup>3</sup> times 10<sup>-1</sup>    = 10<sup>(3 minus 1)</sup>    = 10<sup>2</sup></p>\n</div>\n<p>The third one shows why a negative exponent is worth having. Multiplying by 10<sup>-1</sup> is the same as dividing by ten, and the rule handles it without a special case.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Write each of these in scientific notation, as a number between one and ten times a power of ten.</p>\n<div class=\"working\">\n<p>6,200    93,00,000    0.0047    1,00,00,000</p>\n</div>",
+   "level": 3,
+   "answer": "<p>Move the point until one digit is in front of it, and count how far it moved.</p>\n<div class=\"working\">\n<p>6,200    = 6.2 times 10<sup>3</sup><br />\n93,00,000    = 9.3 times 10<sup>6</sup><br />\n0.0047    = 4.7 times 10<sup>-3</sup><br />\n1,00,00,000 = 1 times 10<sup>7</sup></p>\n</div>\n<p>The third moved the other way, so its exponent is negative. The last is one crore, and a crore is exactly 10<sup>7</sup>.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Section 34(1) of the Consumer Protection Act, 2019 caps District Commission complaints at one crore rupees. Section 47 caps State Commission ones at ten crore. Write both in scientific notation and say, from the exponents alone, how many times larger the second is.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>one crore = 1,00,00,000    = 1 times 10<sup>7</sup><br />\nten crore = 10,00,00,000 = 1 times 10<sup>8</sup></p>\n</div>\n<p>Now subtract the exponents rather than dividing the numbers.</p>\n<div class=\"working\">\n<p>10<sup>8</sup> divided by 10<sup>7</sup> = 10<sup>(8 minus 7)</sup> = 10<sup>1</sup> = 10</p>\n</div>\n<p>Ten times larger. No long division, and no zeros counted.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A district serves 1.8 times 10<sup>5</sup> meals in a year. The second schedule of the National Food Security Act, 2013 sets each meal at 450 calories. Work out the total calories in scientific notation, showing the exponent step.</p>",
+   "level": 5,
+   "answer": "<p>Put the 450 into scientific notation first, so both numbers are in the same form.</p>\n<div class=\"working\">\n<p>450 = 4.5 times 10<sup>2</sup></p>\n</div>\n<p>Now multiply the digits and add the exponents, separately.</p>\n<div class=\"working\">\n<p>4.5 times 1.8 = 8.1<br />\n10<sup>2</sup> times 10<sup>5</sup> = 10<sup>7</sup><br />\nso 8.1 times 10<sup>7</sup> calories</p>\n</div>\n<p>Eight point one times ten to the seven. That is 8,10,00,000 calories, or a little over eight crore.</p>\n<p>Keep the label. Calories, not meals and not rupees.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A square plot covers 8.0 times 10<sup>5</sup> square metres. Write the area out in full, then work out the length of one side. Give the side to the number of digits the area gives you, and check your rounded answer by multiplying it back.</p>",
+   "level": 5,
+   "answer": "<p>Write the area out first. That is the habit with any raised number.</p>\n<div class=\"working\">\n<p>8.0 times 10<sup>5</sup> = 8,00,000 square metres</p>\n</div>\n<p>A square’s side is the square root of its area.</p>\n<div class=\"working\">\n<p>side = 8,00,000<sup>(1/2)</sup> = 894.427…</p>\n</div>\n<p>The calculator offers more digits than the question gave you. The area was given as 8.0 times 10<sup>5</sup>, which is two digits. So write 890 metres.</p>\n<p>Now multiply back.</p>\n<div class=\"working\">\n<p>890 times 890 = 7,92,100</p>\n</div>\n<p>Seven lakh ninety-two thousand against eight lakh. Not the same, and that is correct. The rounding threw away the digits that would have closed the gap. A check like this tells you the root is the right size. It does not tell you it is exact.</p>\n<p>Keep the two units apart. The area is in square metres and the side is in metres.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A value is given as 2.5E+04 in a spreadsheet cell and another as 3.0E-02. Write both out in full, then multiply them and give the answer in scientific notation.</p>",
+   "level": 6,
+   "answer": "<p>In full first, because that is the habit.</p>\n<div class=\"working\">\n<p>2.5E+04 = 2.5 times 10<sup>4</sup> = 25,000<br />\n3.0E-02 = 3.0 times 10<sup>-2</sup> = 0.03</p>\n</div>\n<p>Now multiply, digits and exponents separately.</p>\n<div class=\"working\">\n<p>2.5 times 3.0 = 7.5<br />\n10<sup>4</sup> times 10<sup>-2</sup> = 10<sup>(4 minus 2)</sup> = 10<sup>2</sup><br />\nso 7.5 times 10<sup>2</sup> = 750</p>\n</div>\n<p>Seven hundred and fifty. Check it against the full numbers: 25,000 times 0.03 is 750.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>10<sup>6</sup> times 10<sup>3</sup><br />\n= 10<sup>(6 times 3)</sup><br />\n= 10<sup>18</sup></p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the second line. Multiplying two powers <strong>adds</strong> the exponents; it does not multiply them.</p>\n<div class=\"working\">\n<p>10<sup>6</sup> times 10<sup>3</sup> = 10<sup>(6 plus 3)</sup> = 10<sup>9</sup></p>\n</div>\n<p>Check it by counting zeros. Six zeros times three zeros gives nine zeros, and 10<sup>18</sup> would be eighteen.</p>\n<p>Why it looks reasonable: the operation between the two numbers is a multiplication, so multiplying the small raised numbers feels like the matching move. The exponents count how many copies there are, and putting two piles together adds the counts.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>two square plots are to be replaced by one square plot of the same total area<br />\nthe first covers 900 square metres and the second 1,600 square metres<br />\n900<sup>(1/2)</sup> = 30 and 1,600<sup>(1/2)</sup> = 40<br />\nso the new plot has a side of 30 plus 40 = 70 metres</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line took the two roots before the two areas were added. The square root of a sum is not the sum of the square roots.</p>\n<p>Work out what sits under the root first.</p>\n<div class=\"working\">\n<p>900 plus 1,600 = 2,500 square metres<br />\n2,500<sup>(1/2)</sup> = 50 metres</p>\n</div>\n<p>Fifty metres, not seventy.</p>\n<p>Check both by multiplying back.</p>\n<div class=\"working\">\n<p>50 times 50 = 2,500    the area that was asked for<br />\n70 times 70 = 4,900    nearly twice it</p>\n</div>\n<p>Why it looks reasonable: every line that contains arithmetic is right. Both roots come out whole, which makes the working look clean and finished. And splitting a sum into its parts is something you are allowed to do with plenty of operations. A root is not one of them.</p>\n<p>The habit that prevents it: finish everything under the root sign, then take one root of one number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a concentration is 5 times 10<sup>-3</sup><br />\na second is 2 times 10<sup>-6</sup><br />\n10<sup>-3</sup> is smaller than 10<sup>-6</sup> because -3 is greater than -6<br />\nso the first is the smaller concentration</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line inverts the comparison. A more negative exponent means a smaller number, not a larger one.</p>\n<p>Write both out and the question answers itself.</p>\n<div class=\"working\">\n<p>5 times 10<sup>-3</sup> = 0.005<br />\n2 times 10<sup>-6</sup> = 0.000002</p>\n</div>\n<p>The first is the larger, by more than a thousand times.</p>\n<p>Why it looks reasonable: the sentence contains a true statement. Minus three really is greater than minus six. The wrong conclusion is then drawn from it. A true clause sitting next to a wrong one is harder to spot than two wrong ones.</p>\n<p>The habit that prevents it: write the number out in full before comparing anything.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a line from a note.</p>\n<blockquote>\n<p>Annual production is 1.2E+06 tonnes, so at 3 lakh tonnes a quarter the plant is running close to capacity.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Put both figures into the same form before comparing them.</p>\n<div class=\"working\">\n<p>1.2E+06 = 1.2 times 10<sup>6</sup> = 12,00,000 tonnes a year<br />\n3 lakh a quarter = 3,00,000 times 4 = 12,00,000 tonnes a year</p>\n</div>\n<p>The two agree. Annual production and four quarters of capacity are the same number, so “close to capacity” is supported: it is at capacity.</p>\n<p>What this does not establish. It says nothing about whether capacity is the right measure of anything. It says nothing about whether production was steady across the four quarters, or whether the tonnes were produced or merely reported. Two numbers agreeing tells you the arithmetic is consistent. It does not tell you either number is true.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>In a meeting somebody says this.</p>\n<blockquote>\n<p>We reach 2 crore people, so a rupee a head is only 2 lakh rupees.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Do it in powers of ten, which is where the slip will show.</p>\n<div class=\"working\">\n<p>2 crore = 2 times 10<sup>7</sup> people<br />\n1 rupee each<br />\n2 times 10<sup>7</sup> times 1 = 2 times 10<sup>7</sup> rupees<br />\n= 2,00,00,000 = 2 crore rupees</p>\n</div>\n<p>Two crore rupees, not two lakh. The sentence is out by a factor of a hundred.</p>\n<p>The slip is that a rupee a head for a crore of people costs a crore of rupees. The unit changes from people to rupees and the power of ten does not.</p>\n<p>What this does not establish. Nothing here says whether two crore rupees is affordable, whether a rupee a head buys anything, or whether the two crore people figure is real. It establishes that the number in the room is a hundred times too small, which is enough to stop the meeting agreeing to it.</p>"
+  }
+ ]
+}

@@ -186,3 +186,13 @@ a.card:hover { transform: translateY(-4px); border-color: color-mix(in oklab, va
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Book progress cards (series page: Continue reading, Up next for you). Covers in the book's Part hue. */
+.pcard { width: 140px; flex: none; display: flex; flex-direction: column; gap: .4rem; text-decoration: none; color: var(--ink); scroll-snap-align: start; }
+.pcover { display: flex; flex-direction: column; justify-content: flex-end; gap: .3rem; aspect-ratio: 1 / 1.414; padding: 12px; border-radius: 4px 8px 8px 4px; color: #fff;
+  background: linear-gradient(160deg, hsl(var(--h) 55% 16%), hsl(calc(var(--h) + 18) 60% 24%) 55%, hsl(calc(var(--h) + 38) 62% 32%)); }
+.pcover .pn { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .85; }
+.pcover .pt { font-size: .9rem; font-weight: 700; line-height: 1.2; }
+.psub { font-size: .8rem; color: var(--ink-2); font-weight: 600; }
+.pbar { height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.pbar i { display: block; height: 100%; background: var(--brand); }

@@ -1,0 +1,75 @@
+{
+ "format": 1,
+ "id": "s01-r1-c06",
+ "label": "6",
+ "title": "The first law for a body in one sentence, without a lever",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The one-sentence statement: a person’s energy stores change only by the energy that crosses the boundary drawn round them, and the rate of that change equals <dfn data-g=\"71\">energy intake</dfn> minus <dfn data-g=\"70\">energy expenditure</dfn>. It is <dfn data-g=\"43\">conservation of energy</dfn>, the rule Book 0, E3 teaches, applied to a person. That rule says energy is never made or destroyed, only changed in form. Physicists call one version of it the <dfn data-g=\"81\">first law of thermodynamics</dfn>.</p>\n<p>An identity of this kind constrains the numbers on either side of it and names nothing else. The <dfn data-g=\"102\">inference</dfn> most often attached to it — that eating less will therefore make a person’s stores fall — does not follow from the identity alone. It needs a further premise, about what happens to expenditure and appetite when intake changes. The identity is silent on that. A lever is a handle you pull to get a result, and the identity gives you none.</p>",
+   "refs": [
+    55,
+    57
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Here is the whole identity again, in one line.</p>\n<div class=\"working\">\n<p>the change in a person’s energy stores = energy intake minus energy expenditure</p>\n</div>\n<p>Read it as a rule about arithmetic, because that is all it is. It says the two sides have to match.</p>\n<p>A step people take next, all the time, sounds almost like it follows from the line above. “So if you want your stores to stop rising, eat less.” That step is a separate claim. It needs something the identity never supplied. Cutting intake has to lower the left-hand side, instead of expenditure falling just as far.</p>\n<p>Whatever the true answer is, it has to come from evidence about bodies, not from the accounting line.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Lay the “eat less” step out the way Book 0, F4 teaches: premise, inference, conclusion. Then test the inference before you ask whether the premise is true.</p>\n<p><em>Premise:</em> the change in a person’s energy stores equals energy intake minus energy expenditure.</p>\n<p><em>Conclusion:</em> if this person eats less, their energy stores will fall.</p>\n<p>Now ask the inference test’s question: does the conclusion follow?</p>\n<p>It does not, not on the premise alone. The premise says nothing about what happens to expenditure if intake is reduced. If expenditure stayed exactly where it was, the conclusion would follow. If expenditure fell by the same amount intake fell, the difference would stay where it was. The conclusion would fail, while the identity held exactly as before.</p>\n<p>Picture the missing premise written out loud, the way Book 0, F4’s own illustration does it: “and expenditure does not fall by as much as intake did.” A second premise hides behind it too: that the cut in intake can be held, whatever appetite does. People who make the “eat less” argument rarely say either sentence. Both premises do the work anyway, hidden. Both are claims about physiology, not consequences of the accounting line above them.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This illustration tests one inference, from one premise, and it does not settle whether “eat less” works as an instruction.</p>\n<p>The inference that fails is the one that treats the identity as a lever.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>When someone offers “energy in minus energy out” as the reason for an instruction, treat it as one premise of the argument. Then ask what has been assumed about expenditure that was never stated.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The identity is consistent with every serious account of why energy stores, and with them weight, change. Every one of them can be written so the two sides balance.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Say what changed, in energy terms, if you know it. Do not let the identity stand in for an account of why it changed, which you may not have.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A trainee who has just learned this identity will reach for it. Asked why a patient’s weight moved, they will answer “energy in, energy out”. Watch for the sentence doing the work of an inference nobody has actually made.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When a journalist repeats “it’s just calories in, calories out”, the accurate short reply is that the arithmetic is real and settles nothing about cause.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A clinic pamphlet says: “<dfn data-g=\"68\">Energy balance</dfn> is simple physics: calories in minus calories out equals weight change. So weight change is entirely under a person’s control.”</p>\n<p>Lay the argument out as a premise and a conclusion, in the style of Book 0, F4, and say whether the inference holds.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Premise: the change in energy stores equals intake minus expenditure. Conclusion: weight change is entirely under a person’s control.</p>\n<p>The inference does not hold. Granting the premise fully changes nothing about whether either side of it is under anyone’s control. Expenditure includes resting expenditure (section 4), which is not chosen. Nothing in the identity says the two sides move independently. “The two sides must balance” and “a person can freely set either side” are different claims. Only the first follows from physics.</p>\n<p>The pamphlet needed a further premise — that intake and expenditure each respond only and fully to choice — and did not state it. Stated aloud, it is the premise a reader can actually check.</p>\n<p>The pamphlet also writes “weight change” where the identity says “change in energy stores”. Getting from one to the other means knowing what the lost or gained tissue is made of (section 1, section 2).</p>"
+  }
+ ]
+}

@@ -1,0 +1,163 @@
+{
+ "format": 1,
+ "id": "s47-r1-c06",
+ "label": "6",
+ "title": "How an Act is made",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"38\">Bill</dfn> introduced by a Minister is a <dfn data-g=\"182\">Government Bill</dfn>. A Bill introduced by a member who is not a Minister is a Private Member’s Bill.</p>\n<p>Before a Government Bill reaches Parliament, three steps apply inside the Union government. The first is the <dfn data-g=\"313\">Pre-legislative Consultation Policy</dfn>, a decision of 10 January 2014 by the Committee of Secretaries (senior civil servants, chaired by the <dfn data-g=\"45\">Cabinet</dfn> Secretary). The Policy is not a <dfn data-g=\"401\">statute</dfn>. The <dfn data-g=\"421\">Transaction of Business Rules</dfn> require the Ministry of Law to be consulted on proposals for legislation (rule 4(3)(a)), and send cases involving legislation to the Cabinet (Second Schedule, entry (a)). The drafting of Bills is a subject of the Legislative Department of the Ministry of Law and Justice (<dfn data-g=\"14\">Allocation of Business Rules</dfn>, Second Schedule).</p>\n<p>In Parliament, a Bill may start in either House. The exceptions are a <dfn data-g=\"264\">Money Bill</dfn>, and any other Bill that deals with tax or the other matters in Article 110(1)(a) to (f) (Articles 107(1), 109(1) and 117(1)). A Bill is introduced on a motion for leave, the first reading, and published in the <dfn data-g=\"174\">Gazette</dfn>. It may be referred to a Department-related Parliamentary Standing Committee. At the second reading, the House may instead send it to a Select or Joint Committee.</p>\n<p>A Money Bill is a Bill that contains only provisions on the matters in Article 110(1), the first of which is the imposition, abolition, remission, alteration or regulation of any tax. It cannot be introduced in the Rajya Sabha (the Council of States). The Rajya Sabha may only recommend amendments, within fourteen days, which the Lok Sabha (the House of the People) may accept or reject (Article 109). The Speaker of the Lok Sabha decides whether a Bill is a Money Bill (Article 110(3)).</p>",
+   "refs": [
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    88,
+    90,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A Bill is a statute in draft. Government Bills come from a minister’s department. The Union’s own policy asks the department to put the draft in public for at least thirty days first, so that anyone can comment. But that policy is not a law, and a department can skip it if it writes down why.</p>\n<p>Then the Cabinet approves the Bill and it goes to Parliament. Each House reads it three times.</p>\n<p>In the first reading it is introduced. In the second, members debate it and go through it clause by clause, and it may be sent to a committee. In the third, the House votes to pass it. Then the other House does the same.</p>\n<p>For you, two doors matter most: the public consultation before the Bill, and the committee that examines it.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s47-r1-c06-private-members-bills.png",
+   "alt": "Grouped bars for the Lok Sabha and the Rajya Sabha. Bills introduced reach 264 and 160. Bills discussed are short bars at 14 and 11.",
+   "w": 1357,
+   "h": 655,
+   "caption": "Private Members’ Bills in the term of Parliament running in May 2012, as PRS Legislative Research, an independent, not-for-profit group, counted them. Lok Sabha: 264 introduced, 14 discussed. Rajya Sabha: 160 introduced, 11 discussed. Of 424 introduced, 25 had been discussed at all."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is the trap. You hear that a ministry is preparing a Bill on your subject, and you assume you will get a month to comment. You may not.</p>\n<p>Open the Pre-legislative Consultation Policy on the Legislative Department’s website (https://legislative.gov.in/pre-legislative-consultation-policy/). Its heading says it is a set of “Decisions taken in the meeting of the Committee of Secretaries” on 10 January 2014. That is a meeting of senior civil servants. It is not Parliament, and the Policy is not an <dfn data-g=\"3\">Act</dfn>.</p>\n<p>Read paragraph 2. The department “should publish” the draft, or at least its main points. “Such details may be kept in the public domain for a minimum period of thirty days”. Note the verbs: should, may. Paragraph 1 does say departments “shall proactively publish” proposed laws. Paragraph 8 says the Law Ministry “shall” check that the department “has complied with the process of pre-legislative consultation”. But the thirty days is in paragraph 2, under “should” and “may”.</p>\n<p>Now read paragraph 11. If the department thinks consultation is “not feasible or desirable”, it “may record the reasons in the note for the Cabinet”. Nothing in the Policy asks for those reasons to be published. So a draft can go to the Cabinet with no public consultation at all, and you may never learn why.</p>\n<p>Last, search the Press Information Bureau website for release 1797203, of 10 February 2022 (https://www.pib.gov.in/PressReleasePage.aspx?PRID=1797203). The Law Minister told the Rajya Sabha: “The Ministry of Law and Justice does not maintain any record relating to compliance by the Ministries/Departments with the Pre-Legislative Consultation Policy.” Nobody is counting.</p>\n<p>So the thirty days is a door that may open. Watch the department’s website for it. Do not plan as if it must.</p>\n<p>Now the clean case: when the consultation does happen, follow your comment through. Paragraph 6 asks for a summary of the comments to be put on the department’s website. Paragraph 9 asks for a summary, with the department’s response, to go into the note for the Cabinet with the draft. Paragraph 10 asks for the summary to go before the Parliamentary Standing Committee when the Bill is referred to it. A comment that arrives in time can travel with the Bill all the way to Parliament.</p>",
+   "numberRefs": [
+    127
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This is the Union’s policy for Bills and rules made by Union departments. It does not bind a State. Chhattisgarh’s practice for its own Bills is not read in this book. And the Policy says what a department should do, not what any one department did with any one Bill.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now walk a Bill through Parliament. Suppose, as a made-up case, the Cabinet has approved a Bill on food in schools. Open the Rajya Sabha Secretariat’s booklet <em>Legislative Procedure in the Rajya Sabha</em>, of February 2005 (https://cms.rajyasabha.nic.in/UploadedFiles/Procedure/PracticeAndProcedure/English/6/legislative_procedure.pdf). Open the <dfn data-g=\"81\">Constitution</dfn> beside it, at Articles 107 to 111. Fill in this table as you read.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>stage</td>\n<td>what happens</td>\n<td>where it is written</td>\n</tr>\n<tr>\n<td>introduction, the first reading</td>\n<td>a motion for leave to introduce; then the Bill is published in the Gazette</td>\n<td>booklet, I(i)(a)</td>\n</tr>\n<tr>\n<td>standing committee</td>\n<td>the Speaker or the Chairman may refer the Bill to a Department-related Parliamentary Standing Committee for examination and report</td>\n<td>booklet, I(i)(a)</td>\n</tr>\n<tr>\n<td>second reading</td>\n<td>debate on the principle; the House may send it to a Select or Joint Committee, or circulate it for opinion; then clause by clause</td>\n<td>booklet, I(i)(b)</td>\n</tr>\n<tr>\n<td>third reading</td>\n<td>the House votes to pass it; a simple majority of those present and voting is enough</td>\n<td>booklet, I(i)(c)</td>\n</tr>\n<tr>\n<td>the other House</td>\n<td>the same stages again</td>\n<td>booklet, II</td>\n</tr>\n<tr>\n<td>both Houses agree</td>\n<td>the same text, or a joint sitting if they disagree</td>\n<td>Articles 107(2) and 108</td>\n</tr>\n<tr>\n<td>assent</td>\n<td>the President assents or withholds; the Bill becomes an Act only on assent</td>\n<td>Article 111; booklet, VI</td>\n</tr>\n</tbody>\n</table>\n<p>Two rows are doors for your department. A Select or Joint Committee “can also take evidence of associations, public bodies or experts who are interested in the measure”. The booklet says a Standing Committee examines a Bill and reports on it, but not how it gathers evidence. So when a Bill goes to either kind of committee, a short memorandum of evidence from your department is the document to send. And when a Bill is circulated for opinion, the opinions are gathered through the State Governments. Write to the Government of Chhattisgarh, not to Parliament.</p>\n<p>Now change the made-up Bill. Suppose it only raised a tax. Article 110(1) makes a Bill a Money Bill if it “contains only provisions” on matters such as “the imposition, abolition, remission, alteration or regulation of any tax”. A Money Bill cannot start in the Rajya Sabha. The Rajya Sabha may only recommend changes, within fourteen days, and the Lok Sabha may reject every one (Article 109). So for a tax law, the Lok Sabha is where the votes that matter are cast.</p>\n<p>Last, the Bill an ordinary member brings. PRS Legislative Research is, in its own words, “an independent, not-for-profit group”. Open its <em>Indian Parliament at 60 years</em> (https://prsindia.org/articles-by-prs-team/indian-parliament-at-60-years-facts-statistics), written in 2012. “Till date, Parliament has passed 14 Private Members’ Bills.” And: “No Private Members’ Bill has been passed by Parliament since 1970”. In the term of Parliament running in 2012, 264 such Bills had been introduced in the Lok Sabha and 160 in the Rajya Sabha. Only 14 and 11 had been discussed.</p>\n<div class=\"working\">\n<p>264 plus 160 = 424 introduced<br />\n14 plus 11 = 25 discussed</p>\n</div>\n<p>Of 424 Private Members’ Bills introduced in that term to 2012, 25 had been discussed at all. A Private Member’s Bill can put a subject in front of Parliament. On these figures it is not a route you can count on to make law.</p>",
+   "numberRefs": [
+    128,
+    129
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The booklet is of 2005 and the PRS figures stop in 2012; neither shows what happened after. The booklet describes the Rajya Sabha’s practice; the Lok Sabha has its own rules, not read here. The counts of Bills say how many were discussed, not why the rest were not.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Do not count on thirty days to comment on a draft Bill. The Pre-legislative Consultation Policy is a decision of senior civil servants, not a law.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Your evidence can enter at two sourced points. One is the pre-legislative consultation, if it is held. The other is a Select or Joint Committee examining the Bill, which the Rajya Sabha booklet says can take evidence from experts. A Bill may instead go to a Department-related Standing Committee, which reports on it; the booklet does not say how it takes evidence.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“Parliament has passed the Bill” is not yet “the law says”. A Bill becomes an Act only when both Houses have agreed to the same text and the President has assented. An Act may then wait for a <dfn data-g=\"279\">notification</dfn> before it is in force.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Of 424 Private Members’ Bills introduced in the term running in 2012, 25 had been discussed. No Private Member’s Bill had passed since 1970 (PRS, as of 2012). Do not describe one as a likely route to a new law.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A Bill that only deals with tax is a Money Bill. The Rajya Sabha can only recommend changes, within fourteen days, and the Lok Sabha may reject them all.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>This route is the Union’s. A State law passes the State <dfn data-g=\"231\">Legislature</dfn> and goes to the Governor, who may reserve it for the President (Article 200). Read a State’s own procedure before you describe how a State Bill is made.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back:</p>\n<ol type=\"1\">\n<li>Put these in order: <dfn data-g=\"25\">assent</dfn>; Cabinet decision; third reading; introduction; pre-legislative consultation; the other House; second reading.</li>\n<li>Name the two points where a researcher’s evidence can enter, and the document that provides for each.</li>\n<li>Say what makes a Bill a Money Bill, and what the Rajya Sabha can do with one.</li>\n</ol>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Item by item:</p>\n<ol type=\"1\">\n<li>In order:</li>\n</ol>\n<ul>\n<li>pre-legislative consultation</li>\n<li>Cabinet decision</li>\n<li>introduction (the first reading)</li>\n<li>second reading</li>\n<li>third reading</li>\n<li>the other House</li>\n<li>assent</li>\n</ul>\n<ol start=\"2\" type=\"1\">\n<li><p>First, the public consultation on the draft, if the department holds one. The 2014 policy asks for it, in paragraph 2. Second, a committee that examines the Bill. The Rajya Sabha booklet says a Select or Joint Committee can take evidence from experts.</p></li>\n<li><p>It deals only with the matters listed in Article 110(1), such as a new tax or a change to one. The Rajya Sabha may only suggest changes, within fourteen days. The Lok Sabha may take them or leave them (Article 109).</p></li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up news line reads: “Parliament today passed the School Food Bill. From tomorrow, every school canteen must follow it.” Say what has and has not been established, and what you would check.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Established, at most: one House, or perhaps both, voted to pass a Bill.</p>\n<p>Not established:</p>\n<ul>\n<li>That both Houses agreed to the same text (Article 107(2)). A news line can say “Parliament passed” when only one House has voted.</li>\n<li>That the President has assented. The Bill becomes an Act only on assent (Article 111).</li>\n<li>That the Act is in force. Look for its <dfn data-g=\"68\">commencement</dfn> clause, usually in section 1. If it names a date to be notified, look for that notification.</li>\n<li>That canteens must do anything yet. An Act often leaves the detail to rules or regulations, made later.</li>\n</ul>\n<p>What to check: the Bill’s status on the Houses’ websites, the Act in the Gazette after assent, and the notification bringing it into force.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Here is a line from a draft letter by your department. “The Ministry acted illegally by sending the Bill to the Cabinet without publishing it for thirty days, as the law requires.” Find the errors and rewrite the sentence.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>No law requires it. The thirty days comes from the Pre-legislative Consultation Policy. That is a decision of senior civil servants, made on 10 January 2014. It is a policy, not a statute. So “illegally” is wrong.</p>\n<p>The Policy itself lets a department skip consultation and record its reasons in the note for the Cabinet (paragraph 11). Nothing in the Policy asks for those reasons to be published, so your department may not be able to tell whether reasons were recorded.</p>\n<p>A fair version: “The draft was not placed in the public domain before it went to the Cabinet. The Union’s Pre-legislative Consultation Policy of 2014 asks for at least thirty days of public consultation. We ask the Ministry to publish its reasons, and to consult before the Bill is introduced.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>The State health secretary wants one page, answer first. She asks: “Suppose a national Act on food in schools were proposed. Whom would it have to pass through? Where could our department’s evidence get in?”</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first: through the owning Union department, the Law Ministry, the Union Cabinet and both Houses of Parliament, then the President. Our evidence can get in at two points. One is the public consultation on the draft, if one is held. The other is the parliamentary committee that examines the Bill.</p>\n<p>The route, in order:</p>\n<ol type=\"1\">\n<li>The Union department that owns the subject prepares the draft.</li>\n<li>It may publish the draft for at least thirty days under the Pre-legislative Consultation Policy. It may also skip that and record why.</li>\n<li>The Ministry of Law is consulted, and the Cabinet decides.</li>\n<li>Parliament: introduction, possible reference to a committee, debate, clause by clause, passage, then the same in the other House.</li>\n<li>The President’s assent. Then a notification bringing it into force.</li>\n</ol>\n<p>What we should do now: watch the department’s website for a draft. Prepare a two-page memorandum of evidence, ready to send to the committee if the Bill is referred. If the Bill is circulated for opinion, the opinions are gathered through the State Governments, so the Government of Chhattisgarh would be asked.</p>\n<p>What this page cannot say: how long any step takes, or whether such a Bill will be brought at all.</p>"
+  }
+ ]
+}

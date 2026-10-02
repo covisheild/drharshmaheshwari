@@ -1,0 +1,131 @@
+{
+ "format": 1,
+ "id": "s37-r1-c05",
+ "label": "5",
+ "title": "Who decides what is available, at what price, in what place",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The <dfn data-g=\"140\">food environment</dfn> is the part of the <dfn data-g=\"144\">food system</dfn> where a person meets it. On the stages of section 1, it sits mostly at retail, where food is bought or obtained: the shop, the cart, the canteen. The definition used here is that of the High Level Panel of Experts on Food Security and Nutrition (HLPE). It names four key elements that influence food choice: availability and physical access (proximity); economic access (affordability); promotion, advertising and information; and food quality and safety.</p>\n<p>Information here means what reaches the person about the food: a label, an advertisement, a leaflet. A label or an awareness campaign moves that element. It does not move what is there or what it costs.</p>\n<p>Each element is set, before the consumer arrives, by decisions taken by actors further up the supply chain and by the state.</p>\n<p>In the Indian chains the Reserve Bank of India (RBI) studied in 2024, these decisions are observable. Processors and aggregators contract for crops before harvest. Processors spend on brand promotion.</p>\n<p>This is an observed feature of how the chains are organised, not a <dfn data-g=\"89\">derivation</dfn>.</p>",
+   "refs": [
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Stand at a vegetable cart or the shelf of a <dfn data-g=\"195\">kirana</dfn>, a small neighbourhood grocery, and look at what is there. Somebody decided what would be on it before you walked up.</p>\n<p>A farmer decided what to plant. A trader decided which grade of onion went to which city. A state market committee set the fee on the first sale. A shopkeeper decided what to stock, at what <dfn data-g=\"217\">mark-up</dfn>, and what to put at eye level.</p>\n<p>The place where all these decisions meet you is called the food environment. It has four parts that affect what you pick. What is there, and how near? What does it cost? How is it promoted? What quality is it, and is it safe?</p>\n<p>You still choose. But you choose from a shelf that others filled. So when you want to know why people eat what they eat, ask about the shelf as well as the person.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c05-onion-rupee.png",
+   "alt": "Four bars: farmers 36.2, traders 17.6, wholesalers 15.0 and retailer 31.3 per cent of the Delhi onion rupee.",
+   "w": 1358,
+   "h": 655,
+   "caption": "Where the Delhi onion rupee went: the RBI paper’s split of the consumer rupee, per cent (Working Paper 08/2024). Farmers 36.2, traders 17.6, wholesalers 15.0, the retailer 31.3. Four sets of hands each took a part; the four add to 100.1 as printed."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a leaflet from a health camp. It says: “Eat more vegetables and pulses. Cut down on fried snacks.” Hand it to a woman standing at a vegetable cart in a Delhi neighbourhood market. Then ask what, on the cart in front of her, the leaflet changed.</p>\n<p>Walk back along the onion on the cart. Open the Reserve Bank of India (RBI) working paper <em>Vegetables Inflation in India: A Study of Tomato, Onion and Potato</em> (Working Paper 08/2024) at https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=22723 and search for “In the case of onion”.</p>\n<p>What is there. Onions reach Delhi from Maharashtra, Madhya Pradesh, Rajasthan and Gujarat “during different times of the year”. Which state’s onion is on the cart this month was decided by where farmers planted, and by traders who bought at mandis there and paid to move it.</p>\n<p>What quality. The paper says onions reaching Delhi “are of ‘A’ grade quality and fetch the highest price”. Somebody graded the onion before it reached Delhi. For potato the paper says farmers do the first sorting and grading.</p>\n<p>What it costs. Search for “commission agents”. At the first <dfn data-g=\"215\">mandi</dfn>, the paper records “the mandi fees (1 per cent), commission charges (4 per cent)”. Now search for “Agricultural Produce Marketing Committees”. The paper says these state committees “fix mandi fees, official commission charges, and user charges”. So part of the onion’s price was set by a state body at the first sale. The paper’s split of the Delhi onion rupee is this: farmers 36.2 per cent, traders 17.6 per cent, wholesalers 15.0 per cent, retailer 31.3 per cent. Four sets of hands each took a part of the price.</p>\n<p>How it is promoted. Loose onions carry no brand. Now open the RBI pulses paper at https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=22722 and search for “brand promotion”. Processors of packed pulses “spend about Rs. 3–4 per kg for brand promotion activities”. The packet on the kirana shelf behind the cart was promoted. The onion was not.</p>\n<p>Where. The paper says retailers buy at the secondary mandi and “sell it in the neighbourhood markets in urban areas”. The cart is where it is because a retailer chose that street.</p>\n<p>Now go back to the leaflet. It is information for the woman at the cart. It changed none of the other decisions above: not what reached Delhi, not the grade, not the fee, not the mark-ups, not where the cart stands. It may change which of the things on the cart she picks. That is all it can reach.</p>",
+   "numberRefs": [
+    31,
+    55
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The onion’s path is the one the RBI paper traced, to Delhi, from wholesale prices of the three years to 2021-22 and costs gathered in January 2023. A village haat, a supermarket or an app has a different set of deciders.</p>\n<p>Knowing who decided each element does not tell you how much each decision changes what people eat. The paper measured prices, not diets.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>The onion’s deciders acted after harvest. For some foods the decision is taken before the seed goes in.</p>\n<p>Search the RBI tomato-onion-potato paper for “contract farming”. Potato farmers who have contracts with companies making chips and snacks, and the paper names several, “sell it directly to the processors”. The buyer was settled when the contract was signed.</p>\n<p>Open the RBI fruits paper at https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=22721 and search for “PHCs”. Pre-harvest contractors “enter into a contract with farmers prior to the harvest season to fix prices, purchase quantities in tonnage”. The price was fixed before the fruit was picked.</p>\n<p>Open the RBI milk, poultry meat and eggs paper at https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=22720 and search for “integrator model”. Around 70 per cent of broiler farmers follow it, and the marketing of the birds “is taken care of by companies or private entities”. Search the same paper for “NECC”. The National Egg Coordination Council “declares daily region-specific farm gate prices for eggs”. A national body declares a recommended <dfn data-g=\"129\">farm-gate price</dfn> for eggs each day.</p>\n<p>Now set it out as a table. Each element of the food environment, and the actors these papers show deciding it.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Element</td>\n<td>Who decides it, in the chains the RBI papers trace</td>\n</tr>\n<tr>\n<td>What is there, and how near</td>\n<td>Farmers, contracting processors, traders, retailers</td>\n</tr>\n<tr>\n<td>What it costs</td>\n<td>APMCs on fees, NECC’s recommended egg prices, every hand’s mark-up</td>\n</tr>\n<tr>\n<td>How it is promoted</td>\n<td>Processors and their brands</td>\n</tr>\n<tr>\n<td>What quality, and is it safe</td>\n<td>Farmers and traders who grade; the Food Safety and Standards Authority of India (FSSAI), on safety (section 3) |</td>\n</tr>\n</tbody>\n</table>\n<p>One row is missing from every one of these papers: the state as a seller. The HLPE report lists, among the places where people get food, “schools, hospital and public canteens”. There the state decides the whole plate. The state’s own prices and rations come later in this book.</p>",
+   "numberRefs": [
+    57
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Contracts, integrators and NECC prices are described for the products and places the papers studied: potato in western Uttar Pradesh, mango around Malihabad in Uttar Pradesh, broilers and eggs in Maharashtra and Haryana. How far they reach across India is not measured in these texts.</p>\n<p>The table names deciders. It does not rank them, and it does not say which decision matters most for what people eat.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“People eat what they choose” leaves out half of it. People choose among what is there, at the price it is, promoted as it is, in the place it is sold. Others decided each of those first. Say both halves when you explain a diet.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>For any food on a plate, ask four questions in order. Then name who decided each. A question you cannot answer is a gap in the evidence, not a gap in the person.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Advice changes only what the person knows and picks from the shelf. It leaves what is stocked, its price and where it is sold alone. When a plan relies on advice alone, name those.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>In clinic, treat a patient’s account of what is sold near home, and at what price, as evidence about their food environment. It tells you which advice they can act on.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>In India a state body sets part of the price at the first sale. APMCs fix mandi fees and commission charges, and on the RBI’s onion route to Delhi these were 1 and 4 per cent.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Some choices are made before planting. A policy aimed at farmers’ crop choices has to deal with whoever signed the contract.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>This method names who decides. It does not measure how much any one decision changes what people eat. Do not supply the number yourself.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A district obesity plan contains one line on food.</p>\n<blockquote>\n<p>Obesity will be tackled through awareness camps that teach people to choose healthy foods.</p>\n</blockquote>\n<p>Using the four elements of the food environment, find what the line assumes and say what it leaves out. Name one <dfn data-g=\"4\">actor</dfn>, other than the person, that the plan could have addressed for each element.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The unstated premise is that the healthy food is already there, cheap enough, not drowned out by promotion and good enough to buy. On that premise, knowing is the only thing missing. Book 0, F4 would call this a premise that has to be true for the conclusion to follow. Nothing in the plan checks it.</p>\n<p>What the line leaves out, element by element.</p>\n<p>What is there, and how near: which foods the shops and carts in the district stock. The actors are the retailers, and upstream the traders who choose what to bring in.</p>\n<p>What it costs: the price at the shop. The actors include the state market committees that fix fees at the first sale, and every hand’s mark-up. The state’s own ration and meal prices come later in the book.</p>\n<p>How it is promoted: brand spending and shelf placement. The actors are processors and retailers.</p>\n<p>What quality, and is it safe: grading, freshness and safety. The actors are the farmers and traders who grade, the retailers who store, and FSSAI, which sets safety rules.</p>\n<p>A camp changes only what the person knows and picks. It may help. It cannot fill a shelf.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. They ask why the department keeps talking about the food environment when the patient is the one eating. Explain it with a drawing, and end on what the idea does not tell you.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw a line across the board. On the left write the stages: farm, mandi, processor, wholesaler, retailer. On the right, a person. Where the line meets the person, draw a box and label it with the four elements: what is there, price, promotion, quality.</p>\n<p>Then walk one food along it. Take an onion in Delhi. The farmer chose the crop. A trader chose which grade came to Delhi. A state committee fixed the fee at the first mandi.</p>\n<p>Four sets of hands added their mark-ups. A retailer chose the street. Only then does the patient arrive and choose.</p>\n<p>The point for clinic: the patient’s choices are real, and they are made inside that box. Ask what is sold near them and what it costs before you decide what advice they can use.</p>\n<p>End on the limit. The drawing shows who decides. It does not show how much any one decision changes what the patient eats. That needs studies, and the drawing is not one.</p>"
+  }
+ ]
+}

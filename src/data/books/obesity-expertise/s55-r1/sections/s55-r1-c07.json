@@ -1,0 +1,118 @@
+{
+ "format": 1,
+ "id": "s55-r1-c07",
+ "label": "7",
+ "title": "Who is waiting for this answer, and what will they do differently",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The <dfn data-g=\"476\">who-is-waiting test</dfn> asks two things of a candidate <dfn data-g=\"385\">research question</dfn>.</p>\n<p>First, name the person, or the named role in a body, that needs the answer for a decision they actually face. “Policy makers”, “the literature”, “future researchers” and “my thesis” do not pass this part, because each can be said of any question. Nor does a body you cannot name and reach.</p>\n<p>Second, for each answer the study could give, state what they will do, in their own words. A guessed action does not pass. The question passes only when at least two possible answers lead to different actions. If every possible answer leads to the same action, the answer changes nothing for them, and nobody is waiting for it.</p>\n<p>The test is a sharper form of criteria in published guides. Jhangiani and colleagues count an answer’s practical implications as one reason a question is worth asking. Ratan and colleagues ask that a question bear on health decisions made by one or more groups with a stake in them. Ioannidis calls clinical research useful when it can lead to a better decision. The two-part form, and the rule that the same action for every answer fails, are this course’s.</p>",
+   "refs": [
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>So judge a question by who is waiting for its answer, not by whether it will be cited.</p>\n<p>Then ask two things.</p>\n<p><strong>Part 1: who needs this answer?</strong> Name a person, or a named role in a body, with a decision in front of them. It must be someone you could go and talk to.</p>\n<p>Four answers fail Part 1 every time: “policy makers”, “the literature”, “future researchers” and “my thesis”. So does a body you cannot reach.</p>\n<p><strong>Part 2: what will they do with each answer?</strong> Write down what the person will do if the answer comes out one way. Then write what they will do if it comes out the other way. If the two actions differ, someone is waiting. If they do the same thing either way, nobody is waiting, however important the topic sounds.</p>\n<p>Do not guess Part 2. A guessed action fails, just as the same action either way fails. Go and ask the person.</p>\n<p>The test is an argument, in the sense of Book 0’s section on premise, <dfn data-g=\"216\">inference</dfn> and conclusion. Check the premises: did they say it, or did you guess it? Check the inference: are the two actions really different?</p>\n<p>A funder is one kind of party that can be waiting. There are two kinds of money. <dfn data-g=\"384\">Research money</dfn> pays to find out an answer. <dfn data-g=\"213\">Implementation money</dfn> pays to carry a programme out. The kind matters to the test, because a party paying to run a programme may gain if the study says it works. Then they are hoping for a result, not waiting for an answer.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>This setting is made up. You are a postgraduate in community medicine at a medical college in Chhattisgarh.</p>\n<p>Suppose your first candidate is this one.</p>\n<p>“What share of children aged 11 to 14 at government schools in Raipur city in the 2027 school year have obesity as the school health protocol defines it, from weight and height the study measures?”</p>\n<p>Run Part 1. The answer most people write first is “It will add to the literature, and future researchers can use it.” Strike it out. It names nobody.</p>\n<p>Try again, and name someone: the district non-communicable disease (NCD) programme officer. Now run Part 2. You go to her office and ask the two questions.</p>\n<p>Suppose she answers like this. “The school visits for this year are already planned and paid for. Whatever your number is, the plan stays the same.”</p>\n<p>Her two actions are the same. So she is not waiting for this answer.</p>\n<p>Then she mentions a decision she does face. She worries that some adults pass the <dfn data-g=\"41\">body mass index</dfn> check but carry weight around the middle that the check does not catch. She calls them missed. She is deciding whether to buy tape measures and train staff to measure waists as well.</p>\n<p>That gives you a second candidate.</p>\n<p>“Among adults aged 30 and over at the district NCD screening camp in 2027 whom the camp’s body mass index check does not flag, what share have central obesity as the officer’s protocol defines it, from a waist the study team measures?”</p>\n<p>Ask the same two questions. Suppose she says: “If it is more than about one in ten, I add the tape measure. If it is fewer, I leave the checklist as it is.”</p>\n<p>Set the two candidates side by side.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Step</td>\n<td>School survey</td>\n<td>Camp waist question</td>\n</tr>\n<tr>\n<td>Who is waiting</td>\n<td>district NCD programme officer</td>\n<td>district NCD programme officer</td>\n</tr>\n<tr>\n<td>If the answer is high</td>\n<td>same school plan</td>\n<td>adds tape measures and trains staff</td>\n</tr>\n<tr>\n<td>If the answer is low</td>\n<td>same school plan</td>\n<td>leaves the checklist as it is</td>\n</tr>\n<tr>\n<td>Different actions?</td>\n<td>no</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>Result</td>\n<td>fails</td>\n<td>passes</td>\n</tr>\n</tbody>\n</table>\n<p>Now lay the second one out as an argument. Premise: she decides whether the camp measures waists. Premise: she said she adds the tape measure if more than about one in ten are missed, and not if fewer are. Conclusion: she is waiting for this answer.</p>\n<p>Check the premises. She said both things herself, so you did not guess them. Check the inference. Adding tape measures and leaving the checklist alone are different actions, so it carries.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The test is only as good as what the person tells you, and plans change. Ask again before you write up.</p>\n<p>A guideline group, the panel that writes the advice clinicians follow, rarely acts on one study. Ioannidis counts research as useful when it changes a decision “either by itself or when integrated with other studies”. For such a group, ask what they would do with the pooled evidence your study joins, the <dfn data-g=\"443\">systematic review</dfn> of section 3, not with your study alone.</p>\n<p>Some people want one answer and not the other. That person is not waiting for an answer. They are hoping for a result.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to write “this will add to the literature” or “future researchers can use it” in the place of a person. Name a role you could go and talk to.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Ask the person; do not guess for them. Put two questions: “If the study found this, what would you do? And if it found that?” Write down their words, with the date.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Ask each waiting person which result would change their decision. That line tells you what the study has to be able to tell apart.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“That would be very interesting” is not an action. When an officer or a head of department says it, ask again: “And what would you do differently?”</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>If every answer leads to the same action, drop the question for that party.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Your guide and your degree need a thesis. They are waiting for a thesis, not for this answer. Count neither as the waiting party.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A party who gains from one answer has a <dfn data-g=\"87\">conflict of interest</dfn>. Write down who pays and what they gain from each answer, and declare it in the protocol. Keep their influence on design and analysis small.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The test tells you someone would act on the answer. It does not tell you the question can be answered, that the study will be done well, or that the action is a good one.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A textbook may call a question interesting because it interests the scientific community. It does not pass this test, because it names no decision.</p>",
+     "tag": "dispute",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A made-up draft protocol for a thesis on obesity in college students says:</p>\n<p>“This study will be useful to policy makers and will add to the literature on obesity in young adults in India.”</p>\n<p>Lay the claim out as premises and a conclusion. Run the who-is-waiting test on it. Then say what you would need to find out to rewrite the line.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Premise: policy makers will find the study useful. Premise: it adds to the literature. Conclusion: the study is worth doing.</p>\n<p>Run Part 1. “Policy makers” names no one you could go and talk to. “The literature” can be said of any question. So Part 1 fails as written.</p>\n<p>Part 2 cannot be run at all. No person is named, so no one has said what they would do with either answer.</p>\n<p>Check the premises. The first is a guess, not something anyone said. The inference also fails. “Adds to the literature” is true of every published study, so it cannot pick out this one as worth doing.</p>\n<p>To rewrite the line, find out three things.</p>\n<ol type=\"1\">\n<li>Which person decides something about students’ health at this college: for example, the college’s student health officer, or the hostel warden who sets meal times.</li>\n<li>What that person would do if the answer came out one way.</li>\n<li>What they would do if it came out the other way.</li>\n</ol>\n<p>The rewritten line names the role and both actions. Here is a made-up example. “The hostel warden will move dinner earlier if late meals go with larger waists. She will leave the timing as it is if they do not.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a made-up candidate question.</p>\n<p>“Among adults aged 30 and over whom the district hospital NCD clinic records as having obesity in 2027, do those who get a phone call the day before their follow-up visit come back more often within three months than those who do not?”</p>\n<p>Name two people or bodies who might be waiting for the answer. For each, write the two questions you would put to them. Then say what reply would pass the test, and what reply would fail it.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Two possible waiting parties, with the questions for each.</p>\n<ol type=\"1\">\n<li>The clinic’s medical officer, who decides how the staff spend their time.\n<ul>\n<li>“If the calls bring more patients back, what would you do?”</li>\n<li>“If they make no difference, what would you do?”</li>\n<li>Passes if she says, for example: “If they work, I give one staff member an hour a day for calls. If not, I keep that hour for the queue.”</li>\n<li>Fails if she says: “We cannot spare anyone for calls whatever you find.” Then the action is the same either way.</li>\n</ul></li>\n<li>Patients who attend the clinic, and their families.\n<ul>\n<li>“If calls helped people come back, would you want one?”</li>\n<li>“If they made no difference, would you still want one?”</li>\n<li>Passes if, for example, patients would give a phone number only if the calls help.</li>\n<li>Fails if everyone wants a call either way, or no one does.</li>\n</ul></li>\n</ol>\n<p>The medical officer is the stronger party here. She controls the action. The patients’ answers still matter, because a call nobody wants is not answered.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident in your department says: “Every question is useful to someone, so the who-is-waiting test rejects nothing.” You have ten minutes and a whiteboard. Explain why the test does reject questions, with one example that fails and one that passes.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start by writing the test on the board as two parts. Part 1: name the person who needs the answer for a decision. Part 2: say what they will do for each answer.</p>\n<p>Then show where the resident’s claim goes wrong. “Useful to someone” is only Part 1, and a loose version of it. The test also needs Part 2: two answers that lead to two different actions.</p>\n<p>The failing example. A made-up school survey of obesity among children aged 11 to 14. The district programme officer says the school visits are planned and paid for whatever the number. Same action for every answer. So the question fails, even though she is a real person and the topic matters.</p>\n<p>The passing example. A made-up question on adults at a screening camp whom the body mass index check does not flag, but who have central obesity as her protocol defines it, from a waist measured for the study. The officer says she will buy tape measures if more than about one in ten are missed, and not if fewer are. Different actions. So the question passes.</p>\n<p>End with the point on the board: the test does not ask whether a question is useful to someone somewhere. It asks whether a named person will act differently depending on the answer. Many questions fail that.</p>"
+  }
+ ]
+}

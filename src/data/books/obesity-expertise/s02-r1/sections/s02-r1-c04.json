@@ -1,0 +1,223 @@
+{
+ "format": 1,
+ "id": "s02-r1-c04",
+ "label": "4",
+ "title": "The number e, natural logarithms and change proportional to amount",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The number e is the base of the one <dfn data-g=\"93\">exponential</dfn> curve, e<sup>(t)</sup>, whose <dfn data-g=\"247\">slope</dfn> where it crosses the vertical axis, at t = 0, is exactly 1. To five <dfn data-g=\"62\">decimal</dfn> places e = 2.71828.</p>\n<p>The <dfn data-g=\"175\">natural logarithm</dfn> of a positive number x, written ln x, is the power to which e must be raised to give x. It is defined only for numbers above zero, and ln 1 = 0.</p>\n<p>For constants A and k, the function y = A e<sup>(kt)</sup> has <dfn data-g=\"67\">derivative</dfn> dy/dt = k A e<sup>(kt)</sup>, which is k times y.</p>\n<p>Where the quantity shrinks, write y = A e<sup>(-kt)</sup> with k above zero. The time it takes to fall to half of any starting value is the <dfn data-g=\"117\">half-time</dfn>, ln 2 divided by k, which is about 0.693 divided by k. The time to fall to one twentieth, 5% of the start, is ln 20 divided by k, about 3.00 divided by k.</p>\n<p>A quantity W that approaches a level L in this way follows W = L plus (W0 minus L) times e<sup>(-kt)</sup>, where W0 is its value at t = 0. The gap W minus L is the shrinking exponential. Its <dfn data-g=\"222\">rate of change</dfn> is dW/dt = -k times (W minus L).</p>",
+   "refs": [
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Book 0 built powers and logarithms on ten (Book 0, A6 and Book 0, A7). Papers on body weight use a different base, a number written e.</p>\n<p>Take a base, say 2, and ask how steep the curve 2<sup>(t)</sup> is where it starts, at t = 0. Take a very short step, 0.0001, and divide the change by the step.</p>\n<div class=\"working\">\n<p>2<sup>0.0001</sup> = 1.0000693<br />\n(1.0000693 minus 1) divided by 0.0001 = 0.693</p>\n</div>\n<p>The curve 2<sup>(t)</sup> starts with a slope of 0.693. Do the same with 3 and you get 1.099. So somewhere between 2 and 3 is a base whose curve starts with a slope of exactly 1. That base is e, and it is 2.71828 to five decimal places. Your calculator has a key for it, usually marked e<sup>(x)</sup>.</p>\n<p>Take y = e<sup>(kt)</sup>, where k is a fixed number, and find its rate at any time t. Step forward a short time h. Multiplying two powers of the same base adds their exponents (Book 0, A6), so read that rule backwards.</p>\n<div class=\"working\">\n<p>e<sup>(kt plus kh)</sup> = e<sup>(kt)</sup> times e<sup>(kh)</sup><br />\nthe change = e<sup>(kt)</sup> times e<sup>(kh)</sup> minus e<sup>(kt)</sup><br />\nthe change = e<sup>(kt)</sup> times (e<sup>(kh)</sup> minus 1)<br />\nthe change divided by h = e<sup>(kt)</sup> times (e<sup>(kh)</sup> minus 1) divided by h</p>\n</div>\n<p>As h shrinks, (e<sup>(kh)</sup> minus 1) divided by h settles on k. Call kh by one letter, u. Then (e<sup>(kh)</sup> minus 1) divided by h is k times (e<sup>(u)</sup> minus 1) divided by u. And (e<sup>(u)</sup> minus 1) divided by u, for u close to zero, is the slope of e<sup>(t)</sup> at the start, which is 1.</p>\n<p>So the rate of e<sup>(kt)</sup> is k times e<sup>(kt)</sup>. Put a constant A in front, and by the constant-multiple rule (section 3) the rate of A e<sup>(kt)</sup> is k times A e<sup>(kt)</sup>.</p>\n<p>The rate is k times the amount itself. The number k is the <dfn data-g=\"220\">rate constant</dfn>, the rate divided by the amount. Its unit is the rate’s unit divided by the amount’s: (kilograms a day) divided by kilograms is per day. For a quantity that shrinks, written A e<sup>(-kt)</sup> with k above zero, the rate is -k times the amount, so the rate divided by the amount is -k.</p>\n<p>A <dfn data-g=\"154\">logarithm</dfn> undoes a power. The natural logarithm, written ln, undoes a power of e. So ln(e<sup>3</sup>) = 3, ln e = 1 and ln 1 = 0.</p>\n<p>It turns multiplication into addition, for the same reason log<sub>10</sub> does.</p>\n<div class=\"working\">\n<p>ln(ab) = ln a plus ln b<br />\nln 2 plus ln(1/2) = ln 1 = 0, so ln(1/2) = -ln 2</p>\n</div>\n<p>Now a quantity that shrinks, y = A e<sup>(-kt)</sup>, with k above zero. When has it fallen to half? Set the curve equal to half its start, and divide both sides by A.</p>\n<div class=\"working\">\n<p>A e<sup>(-kt)</sup> = A divided by 2<br />\ne<sup>(-kt)</sup> = 1/2</p>\n</div>\n<p>Both sides are the same number, so their natural logarithms are the same number.</p>\n<div class=\"working\">\n<p>-kt = ln(1/2) = -ln 2<br />\nt = ln 2 divided by k</p>\n</div>\n<p>That time is the half-time. It does not depend on A, so the quantity halves in the same time from any starting point. Put one twentieth in place of one half and the same steps work. They give the time to fall to 5% of the start, which is 95% of the way to zero.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c04-base-e.png",
+   "alt": "Three rising curves crossing at one point, height 1 at t = 0, drawn from t = -0.5 to 0.5. At that point 3^(t) is the steepest and 2^(t) the shallowest; e^(t), between them, runs along a straight line of slope 1 through the same point.",
+   "w": 1357,
+   "h": 654,
+   "caption": "Three exponential curves near t = 0, where each passes through 1. 2<sup>(t)</sup> starts with a slope of 0.693 and 3<sup>(t)</sup> with 1.099. e<sup>(t)</sup>, with e = 2.71828, starts with a slope of exactly 1, so it touches the straight line 1 + t there."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c04-two-exponentials.png",
+   "alt": "Two rising curves of the share of the eventual change reached, from 0 at year 0 towards 100 by year 5. The upper curve passes 63.2 at year 1 and 95.0 at year 3. The lower passes 50.0 at year 1 and 87.5 at year 3. Labels mark the paper's figures at 1 year and 3 years.",
+   "w": 1358,
+   "h": 654,
+   "caption": "Two exponentials, each matching one of Hall’s rounded figures. The one with a half-time of 1 year reaches 50% at 1 year and only 87.5% at 3. The one that reaches 95% at 3 years is already at 63.2% after 1. No single exponential passes through both figures."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c04-ratio-steps.png",
+   "alt": "Three bars for each year's gain: 50.0 from year 0 to 1, 25.0 from year 1 to 2 and 12.5 from year 2 to 3, each half the height of the one before.",
+   "w": 1358,
+   "h": 653,
+   "caption": "The one-year half-time curve read once a year, 0.0, 50.0, 75.0 and 87.5, drawn as the gain in each year. Each gain is half the one before: 25.0 divided by 50.0 and 12.5 divided by 25.0 are both 0.5. That steady ratio is e<sup>(-k)</sup> for a step of one year, and gives back k = 0.693 per year."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Here is a claim you will meet, and a test it fails.</p>\n<p>Hall and colleagues modelled a man weighing 100 kilograms who cuts his intake by 2 megajoules a day and keeps it cut (<em>Lancet</em> 2011). Their model has his weight level off at about 75 kilograms. It takes “roughly 1 year to reach half of the maximum weight loss”, and reaches “95% of this value after about 3 years”.</p>\n<p>The tempting reading is that the weight closes its gap as one exponential with a half-time of one year. Test it. Start from the half-time and work out k.</p>\n<div class=\"working\">\n<p>0.693 divided by 1 = 0.693</p>\n</div>\n<p>So k is 0.693 per year. Now the time to 95%.</p>\n<div class=\"working\">\n<p>2.996 divided by 0.693 = 4.32</p>\n</div>\n<p>About 4.3 years, not 3.</p>\n<p>Start from 95% at 3 years and work out k, then the half-time.</p>\n<div class=\"working\">\n<p>2.996 divided by 3 = 0.999<br />\n0.693 divided by 0.999 = 0.694</p>\n</div>\n<p>A half-time of 0.694 years, about 8 months, not 1 year.</p>\n<p>Now put the two curves side by side. The change so far, divided by the whole change W0 minus L, is the share reached.</p>\n<div class=\"working\">\n<p>W0 minus W = (W0 minus L) times (1 minus e<sup>(-kt)</sup>)<br />\n(W0 minus W) divided by (W0 minus L) = 1 minus e<sup>(-kt)</sup></p>\n</div>\n<p>So the share of the eventual change reached by time t is 1 minus e<sup>(-kt)</sup>. Work each row out on your calculator, times 100 for a <dfn data-g=\"191\">percentage</dfn>.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>years</td>\n<td>half-time 1 year (k = 0.693)</td>\n<td>95% at 3 years (k = 0.999)</td>\n<td>the paper’s rounded figures</td>\n</tr>\n<tr>\n<td>0</td>\n<td>0.0</td>\n<td>0.0</td>\n<td></td>\n</tr>\n<tr>\n<td>1</td>\n<td>50.0</td>\n<td>63.2</td>\n<td>about 50</td>\n</tr>\n<tr>\n<td>2</td>\n<td>75.0</td>\n<td>86.4</td>\n<td></td>\n</tr>\n<tr>\n<td>3</td>\n<td>87.5</td>\n<td>95.0</td>\n<td>about 95</td>\n</tr>\n<tr>\n<td>4</td>\n<td>93.7</td>\n<td>98.2</td>\n<td></td>\n</tr>\n<tr>\n<td>5</td>\n<td>96.9</td>\n<td>99.3</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<p>Neither column passes through both figures. One exponential cannot give both, because for one exponential the time to 95% is always 4.32 half-times. The paper’s figures give 3 divided by 1, which is 3.</p>\n<p>Book 0 gave you a test for a shape that flattens against a ceiling (Book 0, C6). Take values at equal steps, subtract each from the next, then divide each difference by the one before. A <dfn data-g=\"223\">ratio</dfn> that holds steady below one means a ceiling you can work out.</p>\n<p>Take the first column of the table above, the curve with a one-year half-time. Read it once a year: 0.0, 50.0, 75.0, 87.5. Subtract each from the next.</p>\n<div class=\"working\">\n<p>50.0 minus 0.0 = 50.0<br />\n75.0 minus 50.0 = 25.0<br />\n87.5 minus 75.0 = 12.5</p>\n</div>\n<p>Now divide each difference by the one before.</p>\n<div class=\"working\">\n<p>25.0 divided by 50.0 = 0.5<br />\n12.5 divided by 25.0 = 0.5</p>\n</div>\n<p>A steady ratio of 0.5.</p>\n<p>The ratio is what the gap to the ceiling, and each year’s gain, is multiplied by over one step, so it is e<sup>(-k)</sup> for a step of one year. Take ln of both sides to get k back.</p>\n<div class=\"working\">\n<p>e<sup>(-k)</sup> = 0.5<br />\n-k = ln 0.5 = -0.693<br />\nk = 0.693 per year</p>\n</div>\n<p>That is the k you started from. Divide minus ln of the ratio by the length of the step.</p>",
+   "numberRefs": [
+    32
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Both columns are what one exponential would give. Neither is the model’s own curve, which the paper does not print as a formula. Nothing here says a real person follows either column.</p>\n<p>Rounded or noisy readings make the ratios wobble, and one wobbling ratio is not evidence of any shape.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>For any single exponential, the time to 95% of the way is 4.32 half-times, because ln 20 divided by ln 2 is 4.32. Hall’s “about 1 year” and “about 3 years” are in another ratio. Do not fill in the months between with an exponential you chose yourself.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Use ln, not log<sub>10</sub>, in a half-time. The calculator key marked log is log<sub>10</sub>, and log<sub>10</sub> 2 divided by k gives 0.301 divided by k, less than half the right answer. The rate constant k was defined with e, so only ln undoes it.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the unit beside k every time. A k of 0.693 per year used with t in days gives an answer 365 times too fast.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>To test whether a claimed curve is exponential, divide its rate by its value, or, for a curve levelling off at L, by its gap to L, at two or more times. With readings at equal steps, divide each difference by the one before; the ratio must hold steady.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A gap that closes exponentially closes fastest at the start and slowest at the end. When a claim calls weight loss “exponential”, ask whether it means growth or a closing gap, and for its k with a unit.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A patient may ask how long a change in intake takes to show in full. Give the model’s figures as rough figures. Roughly a year to half, and about three years to most of it, for the model’s average adult (Hall 2011). Do not give month-by-month figures from one exponential.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A quantity falls as y = A e<sup>(-kt)</sup>, with k above zero. Derive the time at which it has fallen to 5% of its starting value. Write the move you make beside every line, as a word or two: for example “divide both sides by A”. Then say why the answer does not depend on A.</p>",
+   "type": "calculation",
+   "confidence": false,
+   "answer": "<p>Set the curve equal to one twentieth of its start. That is 5%, since 5 divided by 100 is 1/20.</p>\n<div class=\"working\">\n<p>A e<sup>(-kt)</sup> = A divided by 20    (the condition)<br />\ne<sup>(-kt)</sup> = 1/20    (divide both sides by A)<br />\n-kt = ln(1/20)    (take ln of both sides)<br />\n-kt = -ln 20    (ln of one over a number is minus its ln)<br />\nt = ln 20 divided by k    (divide both sides by -k)</p>\n</div>\n<p>Then put the number in.</p>\n<div class=\"working\">\n<p>ln 20 = 2.996</p>\n</div>\n<p>So t is about 3.00 divided by k.</p>\n<p>A cancels in the second line. The curve takes the same time to fall to a twentieth of any starting value, large or small. That is the property that makes one number, a half-time or a 95% time, enough to describe the whole curve. It is also why the number stops meaning anything when the curve is not one exponential.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Use the e<sup>(x)</sup> and ln keys of your calculator. Work out each of these to three decimal places: e<sup>1</sup>, e<sup>2</sup>, e<sup>(-1)</sup>, ln 1, ln 10 and ln(e<sup>3</sup>).</p>",
+   "level": 1,
+   "answer": "<p>Key each one in.</p>\n<div class=\"working\">\n<p>e<sup>1</sup> = 2.718<br />\ne<sup>2</sup> = 7.389<br />\ne<sup>(-1)</sup> = 0.368<br />\nln 1 = 0<br />\nln 10 = 2.303<br />\nln(e<sup>3</sup>) = 3</p>\n</div>\n<p>Two of these need no calculator. The ln of 1 is 0, because e<sup>0</sup> is 1. The ln of e<sup>3</sup> is 3, because ln undoes a power of e. Notice that e<sup>(-1)</sup> is a positive number below one. A minus sign in an <dfn data-g=\"92\">exponent</dfn> makes a number small, not negative.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Show with numbers that ln 20 equals ln 4 plus ln 5. Then show that ln(1/2) equals minus ln 2. Work to three decimal places.</p>",
+   "level": 1,
+   "answer": "<p>First the two parts.</p>\n<div class=\"working\">\n<p>ln 4 = 1.386<br />\nln 5 = 1.609<br />\n1.386 plus 1.609 = 2.995<br />\nln 20 = 2.996</p>\n</div>\n<p>The two agree to the last place, where <dfn data-g=\"231\">rounding</dfn> each part moved the sum by 0.001.</p>\n<p>Now the half.</p>\n<div class=\"working\">\n<p>ln 0.5 = -0.693<br />\nln 2 = 0.693</p>\n</div>\n<p>Equal size, opposite sign. The reason is that 2 times 1/2 is 1, and ln 1 is 0, so the two logarithms must add to zero.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A quantity follows y = 40 e<sup>(0.05t)</sup>. Work out its rate of change, dy/dt. Then work out y, dy/dt and dy/dt divided by y at t = 0 and at t = 10.</p>",
+   "level": 2,
+   "answer": "<p>The rate of A e<sup>(kt)</sup> is k times A e<sup>(kt)</sup>. Here A is 40 and k is 0.05.</p>\n<div class=\"working\">\n<p>0.05 times 40 = 2</p>\n</div>\n<p>So dy/dt = 2 e<sup>(0.05t)</sup>.</p>\n<p>At t = 0, e<sup>0</sup> is 1.</p>\n<div class=\"working\">\n<p>y = 40<br />\ndy/dt = 2<br />\n2 divided by 40 = 0.05</p>\n</div>\n<p>At t = 10, the exponent is 0.05 times 10, which is 0.5.</p>\n<div class=\"working\">\n<p>e<sup>0.5</sup> = 1.6487<br />\ny = 40 times 1.6487 = 65.95<br />\ndy/dt = 2 times 1.6487 = 3.297<br />\n3.297 divided by 65.95 = 0.05</p>\n</div>\n<p>The rate grew from 2 to about 3.3, but the rate divided by the amount stayed at 0.05. That steady ratio is k, and it is what makes the curve exponential.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A quantity follows y = 200 e<sup>(-0.1t)</sup>. Work out its half-time and the time it takes to fall to 5% of its starting value. Then work out y at each of those two times.</p>",
+   "level": 2,
+   "answer": "<p>The half-time is ln 2 divided by k, with k = 0.1.</p>\n<div class=\"working\">\n<p>0.693 divided by 0.1 = 6.93</p>\n</div>\n<p>The time to 5% is ln 20 divided by k.</p>\n<div class=\"working\">\n<p>2.996 divided by 0.1 = 29.96</p>\n</div>\n<p>Now y at each time. At the half-time y is half of 200, which is 100. At the 5% time it is one twentieth of 200.</p>\n<div class=\"working\">\n<p>200 divided by 2 = 100<br />\n200 divided by 20 = 10</p>\n</div>\n<p>Check the second on the calculator: 0.1 times 29.96 is 2.996, and e<sup>(-2.996)</sup> is 0.0500. So y is 200 times 0.0500, which is 10. The half-time is 6.93 and the 5% time is 29.96, in whatever unit t was measured in.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A quantity falls exponentially with a half-time of 14 days. Work out its rate constant k. Then work out the share of the starting value left after 28 days, and after 10.</p>",
+   "level": 3,
+   "answer": "<p>Turn the half-time formula round: k is ln 2 divided by the half-time.</p>\n<div class=\"working\">\n<p>0.693 divided by 14 = 0.0495</p>\n</div>\n<p>So k is 0.0495 per day.</p>\n<p>After 28 days, two half-times have passed, so a half of a half is left, one quarter. Check it with the formula.</p>\n<div class=\"working\">\n<p>0.0495 times 28 = 1.386<br />\ne<sup>(-1.386)</sup> = 0.250</p>\n</div>\n<p>A quarter, 0.250.</p>\n<p>After 10 days, less than one half-time has passed, so more than half is left.</p>\n<div class=\"working\">\n<p>0.0495 times 10 = 0.495<br />\ne<sup>(-0.495)</sup> = 0.610</p>\n</div>\n<p>About 0.610, or 61% of the start.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Solve 100 e<sup>(-0.2t)</sup> = 30 for t.</p>",
+   "level": 3,
+   "answer": "<p>Divide both sides by 100.</p>\n<div class=\"working\">\n<p>e<sup>(-0.2t)</sup> = 0.3</p>\n</div>\n<p>Take ln of both sides.</p>\n<div class=\"working\">\n<p>-0.2t = ln 0.3 = -1.204</p>\n</div>\n<p>Divide both sides by -0.2.</p>\n<div class=\"working\">\n<p>1.204 divided by 0.2 = 6.02</p>\n</div>\n<p>So t = 6.02. Check: e<sup>(-0.2 times 6.02)</sup> is e<sup>(-1.204)</sup>, which is 0.300, and 100 times 0.300 is 30.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A quantity is read at equal steps of 2 units of time: 60, 70, 75, 77.5. Find the level it is approaching, its rate constant k, and its half-time.</p>",
+   "level": 4,
+   "answer": "<p>Subtract each reading from the next.</p>\n<div class=\"working\">\n<p>70 minus 60 = 10<br />\n75 minus 70 = 5<br />\n77.5 minus 75 = 2.5</p>\n</div>\n<p>Divide each difference by the one before.</p>\n<div class=\"working\">\n<p>5 divided by 10 = 0.5<br />\n2.5 divided by 5 = 0.5</p>\n</div>\n<p>A steady ratio of 0.5, so a ceiling can be worked out (Book 0, C6). The next difference is 2.5 times 0.5, and the gap left is that divided by one minus the ratio.</p>\n<div class=\"working\">\n<p>2.5 times 0.5 = 1.25<br />\n1.25 divided by (1 minus 0.5) = 2.5<br />\n77.5 plus 2.5 = 80</p>\n</div>\n<p>The level is 80. The gap to 80 runs 20, 10, 5, 2.5: it halves every step. So the half-time is one step, 2 units of time. The rate constant follows.</p>\n<div class=\"working\">\n<p>0.693 divided by 2 = 0.3465</p>\n</div>\n<p>k is about 0.347 per unit of time. The same comes from the ratio: minus ln 0.5 is 0.693, and 0.693 divided by a step of 2 is 0.3465.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Hall and colleagues (<em>Lancet</em> 2011) give a rule of thumb for an average adult with overweight. It reads: “every change of <dfn data-g=\"85\">energy intake</dfn> of 100 kJ per day will lead to an eventual bodyweight change of about 1 kg”. Half of that change comes “in about 1 year”.</p>\n<p>A person cuts intake by 500 kJ a day and holds it. Work out the eventual change the rule of thumb gives. Then suppose the change comes as one exponential with a half-time of exactly 1 year. Work out how much of it would have come by 6 months and by 2 years. Say which of your figures are the paper’s.</p>",
+   "level": 4,
+   "answer": "<p>Eventual change: 1 kilogram for every 100 kilojoules a day.</p>\n<div class=\"working\">\n<p>500 divided by 100 = 5</p>\n</div>\n<p>About 5 kilograms, eventually.</p>\n<p>Now the supposed exponential. A half-time of 1 year gives k = 0.693 per year. Six months is 0.5 years.</p>\n<div class=\"working\">\n<p>0.693 times 0.5 = 0.3465<br />\ne<sup>(-0.3465)</sup> = 0.7072<br />\n1 minus 0.7072 = 0.2928<br />\n5 times 0.2928 = 1.46</p>\n</div>\n<p>About 1.46 kilograms by 6 months. Two years is two half-times, so three quarters of the way.</p>\n<div class=\"working\">\n<p>5 times 0.75 = 3.75</p>\n</div>\n<p>About 3.75 kilograms by 2 years.</p>\n<p>Whose figures are these? The 100 kJ a day per kilogram and the one-year half are the paper’s, both rounded. The 500 kJ is yours. The exponential is your assumption, so 1.46 and 3.75 are yours too. The paper does not say its curve is one exponential.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Hall and colleagues’ modelled man starts at 100 kilograms and levels off at about 75 kilograms (<em>Lancet</em> 2011). Suppose his weight closes the gap as one exponential that is 95% of the way there at 3 years. Work out his weight at 1 year. Then work it out again for an exponential with a half-time of 1 year, and give the difference.</p>",
+   "level": 5,
+   "answer": "<p>The gap at the start is 100 minus 75, which is 25 kilograms.</p>\n<p>First exponential: 95% at 3 years, so k is ln 20 divided by 3.</p>\n<div class=\"working\">\n<p>2.996 divided by 3 = 0.999<br />\ne<sup>(-0.999)</sup> = 0.368<br />\n25 times 0.368 = 9.2<br />\n75 plus 9.2 = 84.2</p>\n</div>\n<p>About 84.2 kilograms at one year.</p>\n<p>Second exponential: a half-time of 1 year, so after 1 year half the gap is left.</p>\n<div class=\"working\">\n<p>25 divided by 2 = 12.5<br />\n75 plus 12.5 = 87.5<br />\n87.5 minus 84.2 = 3.3</p>\n</div>\n<p>About 87.5 kilograms, 3.3 kilograms higher. Both curves match one of the paper’s rounded figures. They disagree at one year by more than 3 kilograms, which is why neither should be quoted as the model’s prediction.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Take the same man, with a gap of 25 kilograms, and suppose it closes as one exponential with a half-time of 1 year. Work out the rate of change of his weight at the very start, in kilograms a year and in grams a day. Then compare it with his average rate over the first year.</p>",
+   "level": 6,
+   "answer": "<p>The rate of a closing gap is minus k times the gap. Here k is 0.693 per year and the gap is 25 kilograms.</p>\n<div class=\"working\">\n<p>0.693 times 25 = 17.325</p>\n</div>\n<p>At the start the weight falls at about 17.3 kilograms a year. Turn that into a daily rate.</p>\n<div class=\"working\">\n<p>17.325 divided by 365 = 0.0475</p>\n</div>\n<p>About 0.0475 kilograms a day, or 47.5 grams a day.</p>\n<p>Over the first year, half the gap closes, which is 12.5 kilograms. So the average rate over that year is 12.5 kilograms a year.</p>\n<p>The rate at the start, 17.3, is well above the first-year average, 12.5. An exponential closes fastest at the start. So a first-year average is not the rate in the first weeks. And a rate from the first weeks is not the rate for the year.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a quantity falls exponentially with k = 0.1 per day<br />\nhalf-time = log<sub>10</sub> 2 divided by k<br />\nlog<sub>10</sub> 2 = 0.301<br />\n0.301 divided by 0.1 = 3.01<br />\nso it halves every 3.01 days</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. The half-time is ln 2 divided by k, with the natural logarithm, not log<sub>10</sub> 2.</p>\n<div class=\"working\">\n<p>0.693 divided by 0.1 = 6.93</p>\n</div>\n<p>It halves every 6.93 days, more than twice as long as the worked answer says.</p>\n<p>The half-time comes from solving e<sup>(-kt)</sup> = 1/2. Only ln undoes a power of e, because k was defined with e as the base. Using log<sub>10</sub> answers a different question: when does 10<sup>(-kt)</sup> reach one half?</p>\n<p>Why the wrong answer looks reasonable: the calculator key marked log is log<sub>10</sub>, and it is the logarithm Book 0 taught. The arithmetic after the second line is right. Check any half-time by putting it back: e<sup>(-0.1 times 3.01)</sup> is 0.74, not 0.5.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a change reaches its eventual size with k = 0.693 per year<br />\n95% of the way means e<sup>(-kt)</sup> = 0.95<br />\n-kt = ln 0.95 = -0.0513<br />\nt = 0.0513 divided by 0.693 = 0.074<br />\nso 95% of the change comes in 0.074 years, about 27 days</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. The share still to come is e<sup>(-kt)</sup>, not the share already reached. At 95% of the way, 5% is still to come.</p>\n<div class=\"working\">\n<p>e<sup>(-kt)</sup> = 0.05<br />\n-kt = ln 0.05 = -2.996<br />\nt = 2.996 divided by 0.693 = 4.32</p>\n</div>\n<p>About 4.3 years, not 27 days.</p>\n<p>The worked answer found the time for the first 5% of the change. That is a real number, but not the one asked for.</p>\n<p>Why it looks reasonable: 0.95 is the number in the question, so it goes straight into the equation. The check that catches it: 27 days is far less than one half-time, which here is one year, and 95% cannot come before 50% does.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>y = 40 e<sup>(0.05t)</sup><br />\nby the power rule, bring the power down and take one off it<br />\ndy/dt = 40 times 0.05t times e<sup>(0.05t minus 1)</sup><br />\nat t = 0, dy/dt = 0<br />\nso the curve is flat where it starts</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line broke. The <dfn data-g=\"205\">power rule</dfn> (section 3) is for t raised to a fixed power, where the variable is in the base. Here the variable is in the exponent, and the base is the fixed number e. That is a different kind of function with a different rule.</p>\n<p>The rate of A e<sup>(kt)</sup> is k times A e<sup>(kt)</sup>.</p>\n<div class=\"working\">\n<p>0.05 times 40 = 2<br />\ndy/dt = 2 e<sup>(0.05t)</sup><br />\nat t = 0, dy/dt = 2</p>\n</div>\n<p>The curve starts rising at 2 per unit of time, not flat.</p>\n<p>A check that catches it without any rule: step forward a little and divide. At t = 0.001, y is 40 times e<sup>(0.00005)</sup>, which is about 40.002. The change is 0.002 over 0.001, a rate of 2.</p>\n<p>Why it looks reasonable: “bring the power down and take one off” is the first rule most people learn. And 0.05t sits where a power usually sits. The answer even looks like calculus.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a gap closes exponentially with a half-time of 1 year, so k = 0.693<br />\nafter 30 days the share left is e<sup>(-0.693 times 30)</sup><br />\ne<sup>(-20.79)</sup> = 0.000000001<br />\nso the change is complete within a month</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line broke. The rate constant is 0.693 per year, and 30 is in days. The units have to match before they are multiplied.</p>\n<p>Turn 30 days into years.</p>\n<div class=\"working\">\n<p>30 days = 0.0822 years<br />\n0.693 times 0.0822 = 0.057<br />\ne<sup>(-0.057)</sup> = 0.945</p>\n</div>\n<p>After a month, 94.5% of the gap is still there. About 5.5% of the change has happened, not all of it.</p>\n<p>Why it looks reasonable: k is often written as a bare number, 0.693, with its unit dropped. The calculation after that is correct arithmetic on the wrong product. The check that catches it: a one-year half-time cannot finish in a month.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 15,
+   "prompt": "<p>A colleague reads the rule of thumb in Hall and colleagues (<em>Lancet</em> 2011). It has “half of the weight change being achieved in about 1 year and 95% of the weight change in about 3 years”. The colleague says this.</p>\n<blockquote>\n<p>That is an exponential with a one-year half-time. After three years it would be only 87.5% of the way, so the paper contradicts itself.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: what a one-year half-time gives at three years, and whether any one exponential could give both of the paper’s figures.</p>\n<p>Three years is three half-times.</p>\n<div class=\"working\">\n<p>0.5 times 0.5 times 0.5 = 0.125<br />\n1 minus 0.125 = 0.875</p>\n</div>\n<p>So 87.5%, as the colleague says. Now the ratio test. For one exponential, the time to 95% is 4.32 half-times. The paper’s figures give 3 years over 1 year, which is 3. No single exponential gives both.</p>\n<p>What this does not establish. It does not show the paper contradicts itself. The paper never claims its curve is one exponential. It reports two rounded outputs of its model, and a model’s curve can slow in other ways. It is also possible that “about 1 year” rounds something nearer 8 months.</p>\n<p>What it does establish is narrower and useful. You cannot rebuild the paper’s curve from its two figures by assuming one exponential. If you need a figure between them, you need the model’s own output.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 16,
+   "prompt": "<p>A health magazine prints this line. The patient and the 4 kilograms are made up for this problem.</p>\n<blockquote>\n<p>Weight loss slows exponentially. So a patient who has lost 4 kg in the first three months will have lost 16 kg by the end of the year.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: first, how the 16 was reached. Then what an exponential slowing would give instead.</p>\n<p>The 16 is 4 kilograms times four quarters of a year.</p>\n<div class=\"working\">\n<p>4 times 4 = 16</p>\n</div>\n<p>That is a straight line, the same loss every quarter. It contradicts the first half of the sentence, which says the loss slows.</p>\n<p>Now suppose one exponential with a half-time of 1 year. By three months, a quarter of a year, this share of the eventual change has come.</p>\n<div class=\"working\">\n<p>0.693 times 0.25 = 0.1733<br />\ne<sup>(-0.1733)</sup> = 0.841<br />\n1 minus 0.841 = 0.159<br />\n4 divided by 0.159 = 25.2<br />\n25.2 times 0.5 = 12.6</p>\n</div>\n<p>An eventual loss near 25 kilograms, and about 12.6 by the end of the year. Take instead the exponential that is 95% of the way at 3 years, with k = 0.999 per year. At one year this curve is 63.2% of the way (the table above).</p>\n<div class=\"working\">\n<p>0.999 times 0.25 = 0.2498<br />\ne<sup>(-0.2498)</sup> = 0.779<br />\n1 minus 0.779 = 0.221<br />\n4 divided by 0.221 = 18.1<br />\n18.1 times 0.632 = 11.4</p>\n</div>\n<p>About 11.4 kilograms by the end of the year. Either way, the year’s figure is well under 16.</p>\n<p>What this does not establish. It does not establish that this patient follows either curve. Both assume intake stays cut by the same amount, and the curve’s timescale from Hall’s model is for an average adult, not for this person. It does not establish that the first three months were typical: early loss includes water and <dfn data-g=\"114\">glycogen</dfn>, not only tissue. And it says nothing about what the patient should do. The only firm conclusion is the arithmetic one: a loss that slows cannot be extended as a straight line.</p>"
+  }
+ ]
+}

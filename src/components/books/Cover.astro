@@ -1,0 +1,36 @@
+---
+// A generated cover in the book's Part hue, the same colours as the PDF cover (check/pdf/make_pdf.py
+// cover_bg). No hand-made images: 196 books, one rule.
+interface Props { hue: number; number: number; title: string; level?: string; size?: 'sm' | 'md' | 'lg'; faint?: boolean }
+const { hue, number, title, level, size = 'md', faint = false } = Astro.props;
+// "Energy balance ... · Rung 1" -> the subject title; the rung is shown separately.
+const name = title.replace(/\s*·\s*Rung \d$/, '');
+---
+<div class:list={['cover', `cover-${size}`, { faint }]} style={`--h:${hue}`} aria-hidden="true">
+  <span class="cover-n">Book {number}</span>
+  <span class="cover-t">{name}</span>
+  <span class="cover-s">Obesity Expertise{level && ` · ${level}`}</span>
+</div>
+
+<style>
+  .cover {
+    --w: 132px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: .3em;
+    width: var(--w); aspect-ratio: 1 / 1.414; padding: calc(var(--w) * .09); border-radius: 4px 8px 8px 4px; overflow: hidden;
+    color: #fff; font-family: var(--font-body); text-align: left; flex: none;
+    background:
+      radial-gradient(circle at 22% 18%, hsl(calc(var(--h) + 40) 85% 65% / .55) 0 3%, transparent 3.5%),
+      radial-gradient(circle at 70% 12%, hsl(var(--h) 80% 70% / .7) 0 5%, transparent 5.5%),
+      radial-gradient(circle at 48% 34%, hsl(calc(var(--h) - 35) 80% 72% / .5) 0 2.5%, transparent 3%),
+      radial-gradient(circle at 84% 40%, hsl(calc(var(--h) + 40) 85% 65% / .45) 0 4%, transparent 4.5%),
+      radial-gradient(circle at 12% 46%, hsl(var(--h) 80% 70% / .4) 0 2%, transparent 2.5%),
+      linear-gradient(160deg, hsl(var(--h) 55% 16%) 0%, hsl(calc(var(--h) + 18) 60% 24%) 55%, hsl(calc(var(--h) + 38) 62% 32%) 100%);
+    box-shadow: inset 3px 0 0 rgb(255 255 255 / .12), 0 1px 2px rgb(0 0 0 / .2), 0 6px 16px -6px rgb(0 0 0 / .35);
+  }
+  .cover-sm { --w: 96px; }
+  .cover-lg { --w: 180px; }
+  .cover-n { font-size: calc(var(--w) * .085); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .85; }
+  .cover-t { font-size: calc(var(--w) * .105); font-weight: 700; line-height: 1.18; letter-spacing: -.01em;
+    display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  .cover-s { font-size: calc(var(--w) * .062); opacity: .8; }
+  .faint { opacity: .45; filter: saturate(.5); }
+</style>

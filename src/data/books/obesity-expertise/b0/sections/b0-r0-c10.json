@@ -1,0 +1,146 @@
+{
+ "format": 1,
+ "id": "b0-r0-c10",
+ "label": "B2",
+ "title": "Converting units as multiplication by one",
+ "part": "B",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"41\">conversion factor</dfn> is a <dfn data-g=\"66\">fraction</dfn> whose top and bottom are the same quantity written in two different units. Because the top and the bottom are equal, the fraction is equal to one.</p>\n<p>The orientation to use is the one that puts the unwanted unit where it cancels.</p>",
+   "refs": [
+    9
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>One kilometre is 1,000 metres. That is an agreement, and you can write it as a fraction in two ways.</p>\n<div class=\"working\">\n<p>1,000 m over 1 km<br />\n1 km over 1,000 m</p>\n</div>\n<p>Both of those fractions are equal to one.</p>\n<p>Multiplying by one does not change an amount. Only the name on it changes.</p>\n<p>Which of the two do you use? The one that cancels the unit you want to get rid of.</p>\n<p>Turn 7 kilometres into metres. You want the km gone, so put km on the bottom.</p>\n<div class=\"working\">\n<p>7 km times 1,000 m over 1 km<br />\n= 7 times 1,000 m<br />\n= 7,000 m</p>\n</div>\n<p>Metres are left, which is what you asked for.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains per person per month. Somebody on a call asks you what that is in grams a day.</p>\n<p>Here is the answer that comes back first. It is wrong.</p>\n<div class=\"working\">\n<p>5 divided by 1,000 = 0.005</p>\n</div>\n<p>Nothing is wrong with that arithmetic. What is wrong is the choice to divide.</p>\n<p>A gram is smaller than a kilogram, so the number of grams has to be bigger than 5, not smaller. And written out as a factor, the unit that comes out is not grams at all.</p>\n<div class=\"working\">\n<p>5 kg times 1 kg over 1,000 g<br />\n= 0.005 kg squared per gram</p>\n</div>\n<p>Now do it properly. Put the kg where it cancels.</p>\n<div class=\"working\">\n<p>5 kg per person per month, times 1,000 g over 1 kg<br />\n= 5,000 g per person per month</p>\n</div>\n<p>Five thousand grams. Bigger number, smaller unit, as it had to be.</p>\n<p>There is no agreed number of days in a month, so you have to choose one and say so. Take 30 days.</p>\n<div class=\"working\">\n<p>5,000 g per person per month, times 1 month over 30 days<br />\n= 166.67 g per person per day</p>\n</div>\n<p>About 167 grams a day.</p>\n<p>Write the quantity, then each factor, then cancel.</p>\n<div class=\"working\">\n<p>5 kg per person per month<br />\ntimes 1,000 g over 1 kg<br />\ntimes 1 month over 30 days<br />\n= 166.67 g per person per day</p>\n</div>\n<p>A store has 45,000 grams of a commodity and the register wants kilograms.</p>\n<div class=\"working\">\n<p>45,000 g times 1 kg over 1,000 g<br />\n= 45 kg</p>\n</div>\n<p>The same factor, the other way up, chosen for the same reason: it puts the unwanted unit where it cancels.</p>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 30 days is a choice, not a fact.</p>\n<p>The Act gives a monthly entitlement. The daily figure is yours, and you say so when you quote it.</p>\n<p>And conversion only ever works between two units of the same kind. There is no factor from kilograms to litres, or from grams to rupees.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A conversion factor is not a rule about when to multiply and when to divide. It is a fraction equal to one, and which way up you write it is settled by which unit you want to cancel.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Check the unit that fell out of the working. If it is not the unit you were asked for, the factor was upside down.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the unit beside every line while you work, not once at the end.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Run the size check before you act on any converted dose or dispensed amount. A bigger unit gives a smaller number. A smaller unit gives a bigger number.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>There is a conversion factor only between two units of the same kind.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A monthly entitlement becomes a daily figure only by choosing a number of days. You make that choice, and no statute makes it for you.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A ward register records a child’s height as 96 centimetres. It records a sack of grain as 0.4 kilograms per packet, with 25 packets to the sack.</p>\n<p>Write the height in metres. Write the sack in grams. Show the factor you used each time, and say which unit cancelled.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>The height first. One metre is 100 centimetres, so the factor is 1 m over 100 cm, and the cm cancels.</p>\n<div class=\"working\">\n<p>96 cm times 1 m over 100 cm<br />\n= 0.96 m</p>\n</div>\n<p>A metre is bigger than a centimetre, so the number had to get smaller. It did.</p>\n<p>Now the sack, in two steps. First the kilograms in the sack.</p>\n<div class=\"working\">\n<p>0.4 kg per packet, times 25 packets<br />\n= 10 kg</p>\n</div>\n<p>The packets cancelled there, which is worth noticing: a unit does not have to be a unit of measurement to cancel.</p>\n<p>Then kilograms into grams, with the factor the other way up from the height one.</p>\n<div class=\"working\">\n<p>10 kg times 1,000 g over 1 kg<br />\n= 10,000 g</p>\n</div>\n<p>Ten thousand grams. A gram is smaller than a kilogram, so the number had to get bigger.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague sends you this line and asks you to check it before it goes into a note.</p>\n<blockquote>\n<p>Each packet holds 250 millilitres, so the 40-packet carton holds 10 millilitres.</p>\n</blockquote>\n<p>Say what has gone wrong and give the right answer. Then say what you would have them change in how they work, rather than in this one line.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The arithmetic that produced the 10 is a division by 1,000 somewhere, after a correct multiplication.</p>\n<div class=\"working\">\n<p>250 times 40 = 10,000</p>\n</div>\n<p>Ten thousand millilitres. The number is right; the unit on it is not.</p>\n<p>A millilitre is a thousandth of a litre, so ten thousand millilitres is ten litres.</p>\n<div class=\"working\">\n<p>10,000 mL times 1 L over 1,000 mL<br />\n= 10 L</p>\n</div>\n<p>So the carton holds 10 litres, and the sentence dropped the conversion while keeping its result. That is the most dangerous shape of this error, because the 10 survives and only its unit is wrong.</p>\n<p>What to change in how they work. Write the unit on every line. Read the unit off the last line, rather than deciding it from what the sentence is about. The unit is an output of the working, not a label added at the end.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Convert each of these.</p>\n<div class=\"working\">\n<p>3 km into metres<br />\n4,500 g into kilograms<br />\n2.5 m into centimetres</p>\n</div>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>3 km times 1,000 m over 1 km    = 3,000 m<br />\n4,500 g times 1 kg over 1,000 g    = 4.5 kg<br />\n2.5 m times 100 cm over 1 m    = 250 cm</p>\n</div>\n<p>Check each one for direction. Metres are smaller than kilometres, so 3 became 3,000. Kilograms are bigger than grams, so 4,500 became 4.5. Centimetres are smaller than metres, so 2.5 became 250.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Write the conversion factor between kilograms and grams both ways up. Say which one turns grams into kilograms, and say why the other one does not.</p>",
+   "level": 2,
+   "answer": "<p>One kilogram is 1,000 grams, so the two orientations are these.</p>\n<div class=\"working\">\n<p>1,000 g over 1 kg<br />\n1 kg over 1,000 g</p>\n</div>\n<p>Both are equal to one, because the top and the bottom of each are the same mass written two ways.</p>\n<p>The one that turns grams into kilograms is 1 kg over 1,000 g. The grams you start with sit on the top, the grams in the factor sit on the bottom, and they cancel. Kilograms are left.</p>\n<p>The other one does not cancel anything. Grams on the top, multiplied by grams on the top, give grams squared per kilogram, and there is no such quantity in the question.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Do each of these with two factors in one line.</p>\n<div class=\"working\">\n<p>2 hours into seconds<br />\n0.75 kg into milligrams</p>\n</div>",
+   "level": 3,
+   "answer": "<p>Two hours, through minutes.</p>\n<div class=\"working\">\n<p>2 h times 60 min over 1 h times 60 s over 1 min<br />\n= 2 times 60 times 60 s<br />\n= 7,200 s</p>\n</div>\n<p>The hours cancel against the hours, then the minutes cancel against the minutes. Seconds are left.</p>\n<p>Now the mass, through grams.</p>\n<div class=\"working\">\n<p>0.75 kg times 1,000 g over 1 kg times 1,000 mg over 1 g<br />\n= 0.75 times 1,000 times 1,000 mg<br />\n= 750,000 mg</p>\n</div>\n<p>Both answers got bigger, which is right: seconds are smaller than hours and milligrams are smaller than kilograms.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>The proviso to section 3(1) of the National Food Security Act, 2013 covers households under the Antyodaya Anna Yojana. It entitles such a household to 35 kilograms of foodgrains per household per month. Two limits ride with that figure. The entitlement runs to the extent the Central Government specifies for each State under the scheme. And the grain comes at the prices set out in Schedule I of the Act.</p>\n<p>Write that 35 kilograms per household per month in grams per household per month, and in kilograms per household per year. Keep the whole <dfn data-g=\"47\">denominator</dfn> on every answer. Then say in one line what those two limits stop you from saying about any one household.</p>",
+   "level": 4,
+   "answer": "<p>Grams first.</p>\n<div class=\"working\">\n<p>35 kg per household per month, times 1,000 g over 1 kg<br />\n= 35,000 g per household per month</p>\n</div>\n<p>Now the year. Twelve months make a year, so the factor is 12 months over 1 year, and the months cancel.</p>\n<div class=\"working\">\n<p>35 kg per household per month, times 12 months over 1 year<br />\n= 420 kg per household per year</p>\n</div>\n<p>Say both denominators out loud. The first is per household per month. The second is per household per year. Only one half of the denominator changed in the second conversion, and the per-household half was carried through untouched.</p>\n<p>Now the last line. The proviso does not hand 35 kilograms to every Antyodaya household by itself. The figure reads “thirty-five kilograms of foodgrains per household per month at the prices specified in Schedule I”. And the entitlement runs “to such extent as may be specified by the Central Government for each State in the said scheme”. So you can convert the 35. You cannot say, from this clause alone, that a named household in a named State is due 35 kilograms. You cannot say it comes free either.</p>\n<p>What the extent is, in that State, is set under the scheme. Look it up before you quote a figure for anybody.</p>\n<p>The arithmetic was never the risk here. Quoting a conditional entitlement as a flat quantity is.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A chart is written in micrograms and the label on the bottle is in milligrams.</p>\n<p>Write 0.25 milligrams in micrograms. Then write 4,000 micrograms in milligrams. State which orientation of the factor you used each time.</p>",
+   "level": 5,
+   "answer": "<p>One milligram is 1,000 micrograms. The symbol for micro is the Greek letter mu, written µ, so a microgram is µg.</p>\n<p>Going down to the smaller unit, put mg on the bottom.</p>\n<div class=\"working\">\n<p>0.25 mg times 1,000 µg over 1 mg<br />\n= 250 µg</p>\n</div>\n<p>Going back up to the bigger unit, turn the same factor over.</p>\n<div class=\"working\">\n<p>4,000 µg times 1 mg over 1,000 µg<br />\n= 4 mg</p>\n</div>\n<p>Two conversions, one agreement, two orientations. The direction check holds both times: the number grew going to the smaller unit and shrank going to the bigger one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a prescription is written as 0.5 g and the chart wants milligrams<br />\n1 gram is 1,000 milligrams<br />\n0.5 g times 1 g over 1,000 mg<br />\n= 0.0005<br />\nso the chart entry is 0.0005 mg</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The first two lines hold. The agreement is right: one gram is 1,000 milligrams.</p>\n<p>The step that broke is the third. The factor is upside down. It puts grams on the top, where there are already grams, so nothing cancels.</p>\n<p>Turn it over and the grams cancel.</p>\n<div class=\"working\">\n<p>0.5 g times 1,000 mg over 1 g<br />\n= 500 mg</p>\n</div>\n<p>Five hundred milligrams, not 0.0005.</p>\n<p>Two checks would each have caught it on its own. The direction check: a milligram is smaller than a gram, so the number had to get bigger. And the unit check: the working as written leaves grams squared per milligram, which is not a unit anybody prescribes in.</p>\n<p>Why it looks reasonable: the number 0.0005 is small, doses are often small, and the line contains the correct agreement one line above. Every ingredient of a right answer is present, in the wrong arrangement. That is the shape this error always has, and it is why the unit that falls out matters more than the number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a plot covers 12,000 square metres and the report wants square kilometres<br />\n1 kilometre is 1,000 metres<br />\n12,000 divided by 1,000 = 12<br />\nso the plot covers 12 square kilometres</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the third one, and what broke it is the square.</p>\n<p>The factor between metres and kilometres was applied once. The quantity is not a length. It is a length times a length, so the factor has to be applied twice.</p>\n<div class=\"working\">\n<p>1 km<sup>2</sup> = 1 km times 1 km<br />\n= 1,000 m times 1,000 m<br />\n= 1,000,000 m<sup>2</sup></p>\n</div>\n<p>Now convert with that.</p>\n<div class=\"working\">\n<p>12,000 m<sup>2</sup> times 1 km<sup>2</sup> over 1,000,000 m<sup>2</sup><br />\n= 0.012 km<sup>2</sup></p>\n</div>\n<p>Twelve thousandths of a square kilometre, not twelve.</p>\n<p>The answer as given is out by a factor of a thousand, which is the factor that was left out.</p>\n<p>Why it looks reasonable: the arithmetic is right, the agreement quoted is right, and the words “square kilometres” appear in the answer. Nothing in the line says the square was ignored. The guard is to write the unit with its power on every line. Squared metres on one side and plain kilometres on the other is a mismatch you can see. The same mismatch written out in words is not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>In a meeting somebody says this about two strengths of the same medicine.</p>\n<blockquote>\n<p>The new tablet is 500 micrograms and the old one was 0.5 milligrams, so the new one is a thousand times stronger.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: both strengths in one unit, so that they can be compared at all. Take micrograms.</p>\n<div class=\"working\">\n<p>0.5 mg times 1,000 µg over 1 mg<br />\n= 500 µg</p>\n</div>\n<p>The two tablets are the same strength. Five hundred micrograms is 0.5 milligrams, written another way.</p>\n<p>The sentence has read a change of unit as a change of amount. That is what a conversion factor is for, and it is why multiplying by one is worth a whole section: the amount did not move.</p>\n<p>What this does not establish. It says nothing about whether the two tablets behave the same way in a person, because strength is only the amount of drug in them. It says nothing about how many tablets are taken or how often. And it says nothing about why the label changed units, which is the question actually worth asking in that meeting.</p>"
+  }
+ ]
+}

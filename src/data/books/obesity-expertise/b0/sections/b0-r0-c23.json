@@ -1,0 +1,185 @@
+{
+ "format": 1,
+ "id": "b0-r0-c23",
+ "label": "C9",
+ "title": "Stocks and flows",
+ "part": "C",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A stock is a quantity that exists at a moment and can be measured at that moment. A flow is a rate that changes a stock and, like any rate, it is quoted over a stretch of time or at a moment.</p>\n<p>The stock at any time is its starting value, plus everything that flowed in up to that time, minus everything that flowed out. Each of those two totals is a rate multiplied by a time and added across intervals, which is the <dfn data-g=\"161\">running total</dfn> of the previous section.</p>\n<p>The <dfn data-g=\"124\">net flow</dfn> is the inflow minus the outflow. A stock rises while the net flow is positive, falls while it is negative, and holds steady while it is zero.</p>\n<p>A stock and a flow carry different units. A stock carries the unit of the quantity. A flow carries that same unit divided by a unit of time. The two are never added to each other.</p>\n<p>A stock that holds steady is evidence that the inflow and the outflow matched over the period measured, and is no evidence at all that either one was small.</p>",
+   "refs": [
+    11
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Picture a water tank with a tap running into it and a drain running out of it.</p>\n<p><strong>The stock is what is in the tank.</strong> It is an amount, it exists right now, and you could measure it this minute by looking. Litres in the tank is a stock. Kilograms of grain in a store is a stock. A number of people on a waiting list is a stock.</p>\n<p><strong>A flow is what goes in or what goes out.</strong> It is a rate, so it has a time on the bottom of its unit. Litres a minute is a flow. Kilograms a month is a flow. People joining the list each week is a flow.</p>\n<p>Look at the unit. If it has a “per” or an “a” with a time after it, you are holding a flow. If it does not, you are holding a stock.</p>\n<p>Now the one line this whole section is for. Say it in words first.</p>\n<p>The amount in the tank now is the amount you started with, plus everything that came in, minus everything that went out.</p>\n<div class=\"working\">\n<p>the stock now = the starting stock, plus the total in, minus the total out</p>\n</div>\n<p>Each of those two totals is built the way the last section built one. Take the flow, multiply by how long it ran, and add the pieces up.</p>\n<p>The difference between the inflow and the outflow has a name: the net flow.</p>\n<ul>\n<li>More in than out, so the net flow is positive, and the stock rises.</li>\n<li>More out than in, so the net flow is negative, and the stock falls.</li>\n<li>The same in as out, so the net flow is zero, and the stock does not move.</li>\n</ul>\n<p>Read that third line again, because it is the one people get wrong.</p>\n<p>A stock that does not move tells you the two flows matched. It tells you nothing whatever about how big they were.</p>\n<p><strong>A stock can be large, steady and busy all at once.</strong> That is the sentence to carry out of this section.</p>\n<p>A stock and a flow are never added together.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Start where the mistake gets made, which is an inspection.</p>\n<p>A fair price shop keeps its grain in a store room behind the counter. An inspector weighs what is on the shelves at the end of April and finds 2,000 kilograms. She comes back at the end of May and finds 2,000 kilograms again.</p>\n<p>Her note says this.</p>\n<blockquote>\n<p>The stock has not moved in a month. Nothing is being distributed here.</p>\n</blockquote>\n<p>The first sentence is a measurement. The second is a conclusion, and it does not follow.</p>\n<p>Work out what was going through the shop. This one serves 500 priority households and each of them has four people in it. The shop, the 500 households and the 2,000 kilograms are made up for this example. The rate below is not.</p>\n<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains per person per month. So each household is counted for twenty kilograms a month.</p>\n<div class=\"working\">\n<p>5 times 4 = 20</p>\n</div>\n<p>Five hundred households at twenty kilograms a month each.</p>\n<div class=\"working\">\n<p>20 times 500 = 10000</p>\n</div>\n<p>Ten thousand kilograms a month go out of the shop to households. The same ten thousand have to come in from the depot, or the shelves would empty.</p>\n<p>Now put those two flows against the stock on the shelves.</p>\n<div class=\"working\">\n<p>10000 divided by 2000 = 5</p>\n</div>\n<p>Five times the whole contents of the store room passed through it during the month. The shelves held 2,000 kilograms on both days the inspector looked, and they held different grain.</p>\n<p>So write the balance line out for May and watch the two flows cancel.</p>\n<div class=\"working\">\n<p>2000 plus 10000 minus 10000 = 2000</p>\n</div>\n<p>Two thousand kilograms at the end of May, which is what she measured. Nothing in that number could have told her the size of either flow, because the two flows left it exactly where they found it.</p>\n<p>Now make the flows differ, so that you can see the stock move.</p>\n<table style=\"width:96%;\">\n\n<thead>\n<tr>\n<th>month</th>\n<th>stock at the start</th>\n<th>came in</th>\n<th>went out</th>\n<th>stock at the end</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>2,000</td>\n<td>10,000</td>\n<td>10,000</td>\n<td>2,000</td>\n</tr>\n<tr>\n<td>2</td>\n<td>2,000</td>\n<td>9,000</td>\n<td>10,000</td>\n<td>1,000</td>\n</tr>\n<tr>\n<td>3</td>\n<td>1,000</td>\n<td>11,000</td>\n<td>10,000</td>\n<td>2,000</td>\n</tr>\n</tbody>\n</table>\n<p>Check each row with the same line.</p>\n<div class=\"working\">\n<p>2000 plus 10000 minus 10000 = 2000</p>\n</div>\n<p>Month two, where the depot sent a thousand kilograms short.</p>\n<div class=\"working\">\n<p>2000 plus 9000 minus 10000 = 1000</p>\n</div>\n<p>The stock ends where it began, three months later. Read the first row and the last row alone and you would say nothing happened at all.</p>\n<p>Check the units before you go on, because this is where the two kinds of quantity get mixed. The stock is in kilograms. The flows are in kilograms a month. Adding one to the other gives nothing, and multiplying a flow by a month is what turns it into something you can add.</p>\n<div class=\"working\">\n<p>kilograms per month, times months<br />\n= kilograms</p>\n</div>\n<p>A person’s body weight is a stock, in kilograms. Its flows are in the same unit: the mass going into the body, and the mass leaving it. A body gains or loses mass only by mass crossing its edge, so this balance line is as exact as the store room’s.</p>\n<p>The weight now is the weight you started with, plus everything that came in, minus everything that went out.</p>\n<p>So take a weight that has not changed over a year. Its mass in and its mass out came to the same total across that year. It is not a person in whom nothing is happening. Both flows may be large, and the arithmetic says only that they matched.</p>\n<p>There is a second balance in the same body, and people run the two together. The energy stored in a body is a stock too. Food energy taken in is a flow into it and energy spent is a flow out of it. Both are rates, in the kilojoules or kilocalories a day you met in the section on energy units.</p>\n<p>Now run the unit check you just ran on the store room. It says these are two balances and not one. The weight is in kilograms. A flow in kilocalories a day, multiplied by days, gives kilocalories and never kilograms. The energy flows cannot go into the balance line for weight.</p>\n<p>Joining the two balances means saying how much energy a kilogram of change in a body holds. That depends on what the change is made of, which is a claim about the body. Book 0 does not carry that claim, and the subject booklet on energy balance begins from it. The line stops here on purpose, before any number goes into it.</p>\n<p>So be exact about what a steady weight tells you from this book. It tells you the mass going in and the mass going out matched. It does not, on its own, tell you that energy in matched energy out. That is the step this book does not take, and it is the step most arguments about weight take without noticing.</p>\n<p>This section gives you no figure for any of these flows and you should not take one from here. Three questions follow. How large is each flow, how is each one measured, and what happens to one when the other changes? All three are the work of the subject booklet on energy balance. Every one of those needs evidence that this section does not carry.</p>\n<p>What you have is the shape, and it holds for both balances. A level that has not moved is not a level with nothing going through it. That is what stops a steady weight being read as an absence of movement.</p>",
+   "numberRefs": [
+    6
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The shop, the 500 households, the four people in each and the 2,000 kilograms on the shelves are all made up for the example. Only the five kilograms per person per month comes from the Act.</p>\n<p>The store room has one door in and one door out, and every kilogram through either is counted. Count only some of the doors and the traffic you missed turns up in the arithmetic as an error in a flow you did count.</p>\n<p>A store room’s two flows are set from outside it. Grain arrives because a depot sent it. Grain leaves because shops drew it. Neither answers to what is on the shelves.</p>\n<p>That is not true of every stock. In some systems one flow moves when the other moves, or moves with the level of the stock. Change the inflow in a system like that and the balance does not shift by the amount you changed. The balance line still holds. What fails is the assumption that you can alter one term and leave the others where they were.</p>\n<p>Whether a person’s two flows work that way is a question about the body, not about arithmetic. This section does not answer it. That is why you get the shape here and no numbers.</p>\n<p>Two readings a month apart do not make a steady stock.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A stock that is not moving is not a stock with nothing going through it. The level on its own cannot tell the two cases apart.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A time on the bottom means a flow. No time means a stock, and the two answer different questions.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never add or subtract a stock and a flow. Kilograms and kilograms a month are different kinds of quantity.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the balance line out before you argue about any of its parts. Starting stock, plus everything in, minus everything out.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The balance line tells you what must be true of the numbers and never what caused a flow to change. Do not use it to explain why anything moved.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A person whose weight has been steady for a year is not a person in whom nothing is happening. Steadiness means the mass going in and the mass going out matched over the year, not that either was small. It does not, on its own, mean energy in matched energy out. That needs the step from kilojoules to kilograms, which this book does not take.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Auditing a stock cannot find a matched pair of wrong flows.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When a journalist asks whether something is getting worse, separate the level from the traffic through it.</p>",
+     "tag": "move",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A report gives two figures about a district scheme. One is 4,000 kilograms of grain held in the block store on 31 March. The other is 12,000 kilograms a month moving through that store.</p>\n<p>Say which is a stock and which is a flow, and how you can tell. Then say what each one answers and what neither answers.</p>",
+   "type": "interpretation",
+   "confidence": true,
+   "answer": "<p>The 4,000 kilograms is a stock. Its unit is kilograms with no time on the bottom. It is also attached to a date, which is what a quantity existing at a moment needs.</p>\n<p>The 12,000 kilograms a month is a flow. Its unit has a month on the bottom, so it describes an amount for each stretch of time rather than an amount at a moment.</p>\n<p>What the stock answers: how much was on the floor of the store on one day. That is the figure you check by counting sacks.</p>\n<p>What the flow answers: how fast grain is moving through. Multiply it by a length of time and you get the amount that moved over that time.</p>\n<p>What neither answers. Neither tells you whether the store is running short, because that needs the inflow and the outflow separately rather than a single figure for traffic. Neither tells you whether anybody received what they were owed, because kilograms moving is not people served. And the stock on one day says nothing about the days on either side of it.</p>\n<p>One thing to ask for: the two flows written separately, month by month, beside the stock at the end of each month. Three columns make the balance line checkable. One figure of each kind does not.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A monitoring note contains this line.</p>\n<blockquote>\n<p>We counted the store on the first of every month for six months. It held about 2,000 kilograms each time. The scheme is therefore static and no grain is reaching households.</p>\n</blockquote>\n<p>Say what is wrong, and say what you would ask for.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>What is wrong: a stock has been read as though it measured its flows. It cannot.</p>\n<p>Six counts of the same stock, one a month apart, establish one thing. Over each of those months, what came in matched what went out. Write the balance line and the reason is plain.</p>\n<div class=\"working\">\n<p>the stock at the end = the stock at the start, plus the total in, minus the total out</p>\n</div>\n<p>If the two ends are equal, the two totals are equal. That is all the arithmetic gives you, and it holds whether the flows were 10 kilograms a month or 10,000.</p>\n<p>The word “static” is doing the damage. A steady level and a still scheme are different claims, and only one of them has been measured.</p>\n<p>What to ask for. The issue records, which give the outflow to households month by month. The receipt records, which give the inflow from the depot the same way. The two together make the balance line checkable, and they answer the question the note was actually asking.</p>\n<p>One more thing worth asking. Whether the six counts were taken at the same point in the distribution cycle. A store counted on the first of each month may be at the same point of the cycle every time. A steady figure is then the least surprising result available.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has three minutes and no jargon. They ask why a person’s weight can stay the same for a year, when, as they put it, “so much is going in and out”.</p>\n<p>Say what you would tell them, and give them one quotable sentence.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Three minutes, no jargon, and they need a line they can print.</p>\n<p>Start with a picture they already have. A tank with a tap running in and a drain running out. The level in the tank is one thing. The water moving through it is another.</p>\n<p>Then the point. If the tap and the drain run at the same rate, the level does not move. It does not move whether both are trickling or both are roaring. The level tells you the two matched. It tells you nothing about how big either one was.</p>\n<p>Then make the swap, in one sentence. Body weight is the level. What goes into the body and what leaves it are the tap and the drain.</p>\n<p>Then the thing they are about to get wrong, said before they get it wrong. A weight that has not changed is not a body where nothing is happening. It is a body where the two have been matching, which is an entirely different statement and a far harder thing to do.</p>\n<p>The quotable sentence: “A steady weight does not mean nothing is going on. It means two flows, which may be large, have been matching each other, and that is not the same as being still.”</p>\n<p>What not to offer: a figure for either flow. You do not have one here, and a number invented to fill a pause is the part that will get printed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A stock starts at 500. Over one period, 120 flows in and 90 flows out.</p>\n<p>Work out the stock at the end of the period, and the net flow over it.</p>",
+   "level": 1,
+   "answer": "<p>Use the balance line. The stock at the end is the stock at the start, plus what came in, minus what went out.</p>\n<div class=\"working\">\n<p>500 plus 120 = 620<br />\n620 minus 90 = 530</p>\n</div>\n<p>The stock ends at 530.</p>\n<p>The net flow is the inflow minus the outflow.</p>\n<div class=\"working\">\n<p>120 minus 90 = 30</p>\n</div>\n<p>Plus 30 over the period. It is positive, and the stock rose by exactly that amount.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Work out the stock at the end of each of these periods, and say which way the stock moved.</p>\n<table style=\"width:58%;\">\n\n<thead>\n<tr>\n<th>stock at the start</th>\n<th>came in</th>\n<th>went out</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>800</td>\n<td>200</td>\n<td>200</td>\n</tr>\n<tr>\n<td>800</td>\n<td>200</td>\n<td>350</td>\n</tr>\n<tr>\n<td>800</td>\n<td>400</td>\n<td>150</td>\n</tr>\n</tbody>\n</table>",
+   "level": 2,
+   "answer": "<p>Take each row through the balance line.</p>\n<p>The first.</p>\n<div class=\"working\">\n<p>800 plus 200 minus 200 = 800</p>\n</div>\n<p>Eight hundred. The stock did not move, because the two flows matched.</p>\n<p>The second.</p>\n<div class=\"working\">\n<p>800 plus 200 minus 350 = 650</p>\n</div>\n<p>Six hundred and fifty. More went out than came in, so the stock fell.</p>\n<p>The third.</p>\n<div class=\"working\">\n<p>800 plus 400 minus 150 = 1050</p>\n</div>\n<p>One thousand and fifty. More came in than went out, so the stock rose.</p>\n<p>Look at the first row against the other two. Its flows are not the smallest of the three, and it is the only row where nothing appears to have happened.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Say which of these is a stock and which is a flow, and give the reason from the unit.</p>\n<table style=\"width:71%;\">\n\n<tbody>\n<tr>\n<td>the quantity</td>\n<td>its unit</td>\n</tr>\n<tr>\n<td>grain in the block store</td>\n<td>kilograms</td>\n</tr>\n<tr>\n<td>grain arriving at the store</td>\n<td>kilograms a month</td>\n</tr>\n<tr>\n<td>people on a waiting list</td>\n<td>people</td>\n</tr>\n<tr>\n<td>people joining the list</td>\n<td>people a week</td>\n</tr>\n<tr>\n<td>energy spent</td>\n<td>kilocalories a day</td>\n</tr>\n</tbody>\n</table>",
+   "level": 2,
+   "answer": "<p>Read the unit of each one and look for a time on the bottom.</p>\n<p>Grain in the block store is a stock. Kilograms, with no time in the unit, so it is an amount existing at a moment.</p>\n<p>Grain arriving at the store is a flow. Kilograms a month has a month on the bottom.</p>\n<p>People on a waiting list is a stock. People, with no time in the unit.</p>\n<p>People joining the list is a flow. People a week has a week on the bottom.</p>\n<p>Energy spent is a flow. Kilocalories a day has a day on the bottom.</p>\n<p>Notice the pattern down the list. Each flow names an action, and each stock names a thing sitting somewhere. That is a useful second check and the unit is the one that settles it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A stock stood at 1,400 at the start of a month and 1,100 at the end of it. Over that month 2,600 flowed in.</p>\n<p>Work out how much flowed out.</p>",
+   "level": 3,
+   "answer": "<p>This one runs the balance line backwards, which is how most real questions about a stock arrive.</p>\n<p>Start with what the line says.</p>\n<div class=\"working\">\n<p>the stock at the end = the stock at the start, plus the total in, minus the total out</p>\n</div>\n<p>Put in what you know. The start plus the inflow comes to this.</p>\n<div class=\"working\">\n<p>1400 plus 2600 = 4000</p>\n</div>\n<p>Four thousand would be the stock if nothing had gone out. It ended at 1,100, so the difference is what left.</p>\n<div class=\"working\">\n<p>4000 minus 1100 = 2900</p>\n</div>\n<p>Two thousand nine hundred flowed out.</p>\n<p>Check it forwards.</p>\n<div class=\"working\">\n<p>1400 plus 2600 minus 2900 = 1100</p>\n</div>\n<p>Eleven hundred, which is the figure given. The stock fell by 300 while 2,900 went out of it, which is the point of the whole section in two numbers.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains per person per month.</p>\n<p>A fair price shop serves 300 priority households of five people each. Its store room holds 1,500 kilograms today. Every month it issues the full entitlement and receives exactly the same amount from the depot.</p>\n<p>Work out the monthly outflow, then the stock after one month and after six months. Say which figures are yours and which comes from the Act.</p>",
+   "level": 4,
+   "answer": "<p>Work out the entitlement for one household first.</p>\n<div class=\"working\">\n<p>5 times 5 = 25</p>\n</div>\n<p>Twenty-five kilograms a month for each household. Now for all 300.</p>\n<div class=\"working\">\n<p>25 times 300 = 7500</p>\n</div>\n<p>Seven thousand five hundred kilograms a month go out. The same amount comes in.</p>\n<p>Now the balance line for one month.</p>\n<div class=\"working\">\n<p>1500 plus 7500 minus 7500 = 1500</p>\n</div>\n<p>Fifteen hundred kilograms after one month. The two flows matched, so the stock did not move.</p>\n<p>After six months it is the same figure, because the same thing happens each month. The stock is 1,500 kilograms.</p>\n<p>Now the size of the traffic against the size of the stock.</p>\n<div class=\"working\">\n<p>7500 divided by 1500 = 5</p>\n</div>\n<p>Five times the contents of the store room went through it every month, and the count on the shelves never changed.</p>\n<p>Which figures are whose. The five kilograms per person per month is the Act’s. The 300 households, the five people in each and the 1,500 kilograms are yours. So is every number after them.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A tank holds 6,000 litres and holds 6,000 litres again a day later. Water runs in at 15 litres a minute all day, and the drain runs at the same rate. A day is 24 hours.</p>\n<p>Work out how many litres went through the tank in the day. Then work out how many times the contents of the tank were replaced.</p>",
+   "level": 5,
+   "answer": "<p>The inflow is a rate, so turn it into an amount by multiplying by the time it ran.</p>\n<p>A day holds this many minutes.</p>\n<div class=\"working\">\n<p>24 times 60 = 1440</p>\n</div>\n<p>Now the amount that came in.</p>\n<div class=\"working\">\n<p>15 times 1440 = 21600</p>\n</div>\n<p>Twenty-one thousand six hundred litres in, and the same amount out, since the two rates are equal.</p>\n<p>Check the unit, because a rate multiplied by a time has to leave the quantity’s own unit.</p>\n<div class=\"working\">\n<p>litres per minute, times minutes<br />\n= litres</p>\n</div>\n<p>Now the replacements. Divide what went through by what the tank holds.</p>\n<div class=\"working\">\n<p>21600 divided by 6000 = 3.6</p>\n</div>\n<p>Three point six times over.</p>\n<p>So a tank whose level did not move by one litre passed more than three times its own contents in a day. The level and the traffic are two different measurements, and only one of them was taken.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A block store held 4,000 kilograms on 1 January and 4,000 kilograms on 1 July. Over those six months it issued 9,000 kilograms a month to shops.</p>\n<p>Work out the total issued, the total received, and the monthly inflow. Then say what the two January and July counts would have looked like if the depot had sent 8,500 kilograms a month instead.</p>",
+   "level": 6,
+   "answer": "<p>The total issued is a rate multiplied by a time.</p>\n<div class=\"working\">\n<p>9000 times 6 = 54000</p>\n</div>\n<p>Fifty-four thousand kilograms out over the six months.</p>\n<p>The stock ended where it started, so the totals must match.</p>\n<div class=\"working\">\n<p>4000 plus 54000 minus 54000 = 4000</p>\n</div>\n<p>So 54,000 kilograms also came in. The monthly inflow is that total divided by the time.</p>\n<div class=\"working\">\n<p>54000 divided by 6 = 9000</p>\n</div>\n<p>Nine thousand kilograms a month, the same as the outflow.</p>\n<p>Now the other case. At 8,500 a month the total in is this.</p>\n<div class=\"working\">\n<p>8500 times 6 = 51000</p>\n</div>\n<p>Fifty-one thousand in against 54,000 out.</p>\n<div class=\"working\">\n<p>4000 plus 51000 minus 54000 = 1000</p>\n</div>\n<p>The July count would have read 1,000 kilograms.</p>\n<p>That shortfall is 500 kilograms a month, which is under six per cent of the flow. It empties three quarters of the store in half a year. A small difference between two large flows moves a small stock a long way.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a store held 2,000 kilograms in April and 2,000 kilograms in May<br />\nthe stock did not change over the month<br />\na stock that does not change has no flows<br />\nso nothing came into the store and nothing left it<br />\nso the shop distributed no grain in May</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the third. A stock that does not change has a net flow of zero, which is not the same as having no flows.</p>\n<p>Write the balance line and see what the two counts actually fix.</p>\n<div class=\"working\">\n<p>the stock at the end = the stock at the start, plus the total in, minus the total out</p>\n</div>\n<p>Both ends are 2,000, so the total in equals the total out. Nothing in that says how large either total was.</p>\n<p>Take two cases that both fit the measurements exactly. In the first, nothing moved.</p>\n<div class=\"working\">\n<p>2000 plus 0 minus 0 = 2000</p>\n</div>\n<p>In the second, ten thousand kilograms moved each way.</p>\n<div class=\"working\">\n<p>2000 plus 10000 minus 10000 = 2000</p>\n</div>\n<p>Both end at 2,000 kilograms, and the two describe completely different months. The measurement cannot separate them, so the conclusion cannot be drawn from it.</p>\n<p>What would separate them: the issue records and the receipt records, which measure the flows directly.</p>\n<p>Why it looks reasonable: the first two lines are a correct reading of two correct measurements. The third line sounds like arithmetic and is an assumption. It is also the assumption anybody makes who has looked at a shelf rather than at a ledger.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a store holds 3,000 kilograms today<br />\nit receives 800 kilograms a month and issues 950 kilograms a month<br />\nthe net flow is 800 minus 950, which is minus 150<br />\n3,000 minus 150 = 2,850<br />\nso the store will be empty in 2,850 months</p>\n</div>",
+   "level": 8,
+   "answer": "<p>Two things went wrong and the units find both of them.</p>\n<p>The step that broke is the fifth. The 2,850 is a quantity of grain, in kilograms, and it has been read as a number of months.</p>\n<p>Check what the fourth line produced.</p>\n<div class=\"working\">\n<p>kilograms, minus kilograms per month times one month<br />\n= kilograms</p>\n</div>\n<p>Kilograms. So 2,850 is the stock after one month, which is a useful figure with the wrong label on it.</p>\n<p>To get a time, divide the stock by the rate it falls at rather than subtracting. That rate is 150 kilograms a month: the size of the net flow, without its minus sign. Dividing by the minus 150 itself would give minus 20, and a number of months cannot be negative.</p>\n<div class=\"working\">\n<p>3000 divided by 150 = 20</p>\n</div>\n<p>Twenty months, and the unit confirms it.</p>\n<div class=\"working\">\n<p>kilograms, divided by kilograms per month<br />\n= months</p>\n</div>\n<p>The second error hides inside the first. Line four subtracted a flow from a stock without multiplying by a time. It came out right only because the time happened to be one month, and nothing on the page says so.</p>\n<p>Why it looks reasonable: the net flow is computed correctly and carries the right sign. The subtraction is arithmetic anybody would accept. A unit check on the last line catches it. So does a size check, because 2,850 months is a long enough answer to stop anybody.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A note from a district office says this.</p>\n<blockquote>\n<p>The waiting list stood at 1,200 in April and 1,200 in October. Six months and no movement, so the clinic is not clearing anybody.</p>\n</blockquote>\n<p>The office, the clinic and both figures are made up for this problem. No real service is being described.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: what the two counts fix, and what they leave open. The list is a stock. People joining and people leaving are its two flows.</p>\n<p>Write the balance line.</p>\n<div class=\"working\">\n<p>the list in October = the list in April, plus the total joining, minus the total leaving</p>\n</div>\n<p>Both ends are 1,200, so the number joining over the six months equals the number leaving.</p>\n<p>Now take two cases that fit the measurements equally well. In the first, nobody joined and nobody was seen.</p>\n<div class=\"working\">\n<p>1200 plus 0 minus 0 = 1200</p>\n</div>\n<p>In the second, 300 joined each month and 300 were seen each month.</p>\n<div class=\"working\">\n<p>300 times 6 = 1800<br />\n1200 plus 1800 minus 1800 = 1200</p>\n</div>\n<p>Eighteen hundred people joined and 1,800 were seen, and the list ends where it began.</p>\n<p>What this does not establish. It does not establish that nobody was cleared. The second case has 1,800 people cleared in six months and produces the same two counts as the first.</p>\n<p>It does not establish the size of either flow. A stock at two dates fixes the difference between the two totals and never the totals themselves.</p>\n<p>And it does not establish that the list is the thing to watch. A list can hold steady while the wait on it lengthens, if the people leaving are not the people who have waited longest.</p>\n<p>What to ask for: the number added and the number seen, month by month. Those are the flows, and the note’s claim is about them rather than about the level.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A colleague says this in a meeting about a patient.</p>\n<blockquote>\n<p>Her weight is the same as it was a year ago. So whatever she eats and whatever she spends must both be small. Nothing is going on.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: whether a steady stock fixes the size of its flows. Weight is the stock. What goes into her body and what leaves it are the two flows.</p>\n<p>Take any stock and call it 100 units, so that the arithmetic is about the shape rather than about a person. Run the balance line over a year for three different pairs of flows.</p>\n<p>Nothing in and nothing out.</p>\n<div class=\"working\">\n<p>100 plus 0 minus 0 = 100</p>\n</div>\n<p>Nine hundred in and 900 out.</p>\n<div class=\"working\">\n<p>100 plus 900 minus 900 = 100</p>\n</div>\n<p>Twelve hundred in and 1,200 out.</p>\n<div class=\"working\">\n<p>100 plus 1200 minus 1200 = 100</p>\n</div>\n<p>All three end at 100. The stock is the same in every case and the flows differ by as much as you like. So a steady stock fixes the difference between the two totals at zero and fixes neither total.</p>\n<p>That is the answer to your colleague. The steadiness is evidence that the two matched over the year. It is no evidence at all that either was small.</p>\n<p>Her energy balance has the same shape: a steady energy stock would mean her energy in and energy out matched, at any size. But a steady weight is a statement in kilograms. Whether it means her stored energy was steady is the step this book does not take. So do not let “her energy in matched her energy out” slip into the answer as though the scales had shown it.</p>\n<p>What this does not establish. It does not tell you how large either flow was, and nothing in this course so far gives you a figure for one. It does not tell you that the two matched at every moment of the year, only that the totals came out equal across it.</p>\n<p>And it does not tell you what would happen if one flow changed. In a store room the inflow does not care what the shelves are doing. Cut it by a hundred units a year and the balance drops by a hundred units a year. Now take a system where one flow moves when the other moves, or moves with the level of the stock. That subtraction does not survive. The balance line cannot tell you which kind of system is in front of you, because the same line describes both. Which kind a person is, and what follows from it, is the work of the booklet on energy balance.</p>"
+  }
+ ]
+}

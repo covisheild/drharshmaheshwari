@@ -1,0 +1,214 @@
+{
+ "format": 1,
+ "id": "b0-r0-c21",
+ "label": "C7",
+ "title": "Rate of change, average and instantaneous, without the machinery",
+ "part": "C",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"154\">rate of change</dfn> is a change in a quantity divided by the time that change took. Its unit is the unit of the quantity divided by the unit of time.</p>\n<p>The <dfn data-g=\"16\">average rate of change</dfn> over an interval is the change between the two ends of the interval divided by the length of the interval. Drawn on a graph with time along the bottom, it is the <dfn data-g=\"170\">slope</dfn> of the straight line joining the two end points. That joining line is a <dfn data-g=\"31\">chord</dfn>.</p>\n<p>The rate at an instant is the rate of change at one moment rather than over a stretch of time. On a graph it is the steepness of the curve at that one point, which is the slope of the straight line that touches the curve there. That touching line is a <dfn data-g=\"186\">tangent</dfn>.</p>\n<p>For a straight line the average rate over every interval is the same number, and it equals the rate at every instant on the line. For a curve the two differ, and an average over an interval fixes nothing about where inside that interval the change happened.</p>",
+   "refs": [
+    9
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A rate of change is a change divided by the time it took. Take the quantity at the start. Take it at the end. Subtract to get the change. Divide by how long it took.</p>\n<div class=\"working\">\n<p>the rate of change = the change in the quantity, divided by the time it took</p>\n</div>\n<p>The unit falls out of the division, exactly as it did for a slope. Kilograms divided by months is kilograms per month. A rate of change is never in kilograms on its own, and a rate quoted without its unit is a number you cannot check.</p>\n<p>Now the part people get wrong, and it is the whole of this section.</p>\n<p>A rate can be worked out over a stretch of time, or asked for at a single moment. Those are two different quantities and they usually have two different values.</p>\n<p><strong>The average rate over an interval.</strong> It uses the value at the start and the value at the end. It uses nothing in between. So it can tell you nothing about what happened in between.</p>\n<p><strong>The rate at one moment.</strong> This is how fast the quantity is changing right now. Its name is the <dfn data-g=\"88\">instantaneous rate</dfn>. On a graph it is the steepness of the line at that single point.</p>\n<p>For a straight line the two are the same number. A straight line has one steepness and it has it everywhere.</p>\n<p>For a curve they come apart. A curve is steep in some places and nearly flat in others. An average across the whole of it can sit far from its steepness at both ends.</p>\n<p>Somewhere in between, though, the curve is exactly as steep as the average. It has to be. A curve that stayed steeper than the average all the way across would finish higher than it does. One that stayed flatter would finish lower. So the steepness passes through the average on the way. What the average will not tell you is where it passed. Nor will it tell you how far the curve got from the average on either side of that point.</p>\n<p>Here is how you get each one off a drawn curve, with a ruler.</p>\n<p>For the average rate between two points, lay the ruler across those two points. The line you have laid down has a name: it is a chord.</p>\n<p>For the rate at one point, lay the ruler so that it touches the curve at that point and runs along it. Read its slope the same way. That touching line has a name too: it is a tangent.</p>\n<p>A shorter interval gives you a closer answer. Take the average over a month and you get the month. Take it over a day around the same moment and you get much nearer to the moment itself.</p>\n<p>One more thing, so that you recognise it on somebody else’s page. The rate at a moment has a name in mathematics: the <dfn data-g=\"48\">derivative</dfn>. It is written dy/dx, said “dee y by dee x”. The two letters d each mean “a change in”. The whole symbol is the steepness at one point, which is what you have just been reading off a curve with a ruler. That is all you need. Nothing in this book asks you to work one out.</p>\n<p>Last, run the unit check from the section on dimensional analysis before you believe any rate. A quantity in kilograms, changing over months, gives a rate in kilograms per month. If somebody hands you a rate whose unit is not the quantity divided by a time, it is not a rate of change.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "c7-chords.png",
+   "alt": "A curve rising steeply and then flattening, with a reading marked at each of six months. Three straight lines are drawn to the final reading. One comes from the first reading and is labelled as the average over 5 months, 9.22 a month. One comes from the reading two months back and is labelled as the average over 2 months, 3.45 a month. One comes from the reading one month back and is labelled as the average over 1 month, 2.60 a month. The shorter the span, the smaller the average.",
+   "w": 1353,
+   "h": 672,
+   "caption": "One curve and three averages. Each straight line runs to the last reading from a different starting point, and each average is the slope of its own line: 9.22 a month taken over five months, 3.45 a month taken over the last two, 2.60 a month taken over the last one. Every one of the three is an average and none of them is the rate at a moment, which six monthly readings cannot give you."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Start with a sentence that is two thirds right, because the true part is what carries the false part past a reader.</p>\n<p>Take the <dfn data-g=\"164\">saturating</dfn> column from the section before this one. A quantity was recorded six times, one month apart.</p>\n<table style=\"width:54%;\">\n\n<thead>\n<tr>\n<th>months from the start</th>\n<th>the quantity</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>10</td>\n</tr>\n<tr>\n<td>1</td>\n<td>30</td>\n</tr>\n<tr>\n<td>2</td>\n<td>42</td>\n</tr>\n<tr>\n<td>3</td>\n<td>49.2</td>\n</tr>\n<tr>\n<td>4</td>\n<td>53.5</td>\n</tr>\n<tr>\n<td>5</td>\n<td>56.1</td>\n</tr>\n</tbody>\n</table>\n<p>A note about it says this.</p>\n<blockquote>\n<p>It rose by about 46 over five months. That is about 9 a month. Two more months take it past 70.</p>\n</blockquote>\n<p>Test the first claim. Subtract the first value from the last.</p>\n<div class=\"working\">\n<p>56.1 minus 10 = 46.1</p>\n</div>\n<p>Test the second. Divide that change by the time it took.</p>\n<p>Count the time before you divide. Six readings a month apart span five months, not six. Each month runs from one reading to the next, so the intervals are always one fewer than the readings.</p>\n<div class=\"working\">\n<p>46.1 divided by 5 = 9.22</p>\n</div>\n<p>About 9.22 a month. That number is the average rate of change over the five months, and it is correct.</p>\n<p>Now work out the rate over each single month. Each one is a change divided by one month.</p>\n<div class=\"working\">\n<p>30 minus 10 = 20<br />\n42 minus 30 = 12<br />\n49.2 minus 42 = 7.2<br />\n53.5 minus 49.2 = 4.3<br />\n56.1 minus 53.5 = 2.6</p>\n</div>\n<p>Put them beside the months they belong to.</p>\n<table style=\"width:43%;\">\n\n<thead>\n<tr>\n<th>the month</th>\n<th>the rate over it</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>first</td>\n<td>20 a month</td>\n</tr>\n<tr>\n<td>second</td>\n<td>12 a month</td>\n</tr>\n<tr>\n<td>third</td>\n<td>7.2 a month</td>\n</tr>\n<tr>\n<td>fourth</td>\n<td>4.3 a month</td>\n</tr>\n<tr>\n<td>fifth</td>\n<td>2.6 a month</td>\n</tr>\n</tbody>\n</table>\n<p>No single month ran at 9.22. The average is a true statement about the five months together and a false statement about any one of them.</p>\n<p>That is why the third sentence of the note fails. It takes an average over the past and uses it as the rate now. Use the most recent month’s rate instead, which is 2.6 a month.</p>\n<div class=\"working\">\n<p>2.6 times 2 = 5.2<br />\n56.1 plus 5.2 = 61.3</p>\n</div>\n<p>About 61.3, not past 70. Even 61.3 is too high if the rate keeps falling, as it has every month so far. So treat it as an upper bound, not a forecast. The section before this one puts this column’s ceiling at 60, if the <dfn data-g=\"155\">ratio</dfn> between its steps keeps holding.</p>\n<p>The note is not wrong about its arithmetic. It is wrong about which interval its arithmetic describes.</p>\n<p>Now the easy case, so that you can feel the difference.</p>\n<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains per person per month. A household of four is counted for twenty kilograms a month.</p>\n<div class=\"working\">\n<p>5 times 4 = 20</p>\n</div>\n<p>Say the house starts with 10 kilograms in it and nothing is taken out. Here is the grain in the house, month by month.</p>\n<table style=\"width:62%;\">\n\n<thead>\n<tr>\n<th>months from today</th>\n<th>kilograms in the house</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>10</td>\n</tr>\n<tr>\n<td>1</td>\n<td>30</td>\n</tr>\n<tr>\n<td>2</td>\n<td>50</td>\n</tr>\n<tr>\n<td>3</td>\n<td>70</td>\n</tr>\n<tr>\n<td>4</td>\n<td>90</td>\n</tr>\n</tbody>\n</table>\n<p>Take the average rate over the whole four months.</p>\n<div class=\"working\">\n<p>90 minus 10 = 80<br />\n80 divided by 4 = 20</p>\n</div>\n<p>Twenty kilograms a month. Now take it over the third month alone.</p>\n<div class=\"working\">\n<p>70 minus 50 = 20<br />\n20 divided by 1 = 20</p>\n</div>\n<p>Twenty again. Take any interval you like and you will get twenty, because the points sit on a straight line and a straight line has one steepness. Here the average rate and the rate at any moment are the same number, and there is nothing to argue about.</p>\n<p>So the question to carry away is not “what is the rate”. It is “over what interval”.</p>\n<p>Finish with the unit, because a rate without one is not checkable. Kilograms up the side, months along the bottom.</p>\n<div class=\"working\">\n<p>kilograms divided by months<br />\n= kilograms per month</p>\n</div>",
+   "numberRefs": [
+    6
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The six values in the first table are bare numbers.</p>\n<p>An average rate over an interval is exact for that interval.</p>\n<p>A quantity measured once a month has no rate you can check between the measurements.</p>\n<p>And time is not the only thing a quantity can change against. The grain a household is counted for changes against the number of people in it, at five kilograms a month for each extra person. Put people along the bottom and that is a slope. The chord, the tangent and the unit check carry over. The grain is in kilograms a month, so the slope is in kilograms a month per person: “per person” is added and “per month” stays. A dose along the bottom and a measured effect up the side works the same way.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Ask “over what interval” every time somebody hands you a rate.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An average rate over a stretch of time is not the rate now. It is built from the first value and the last value alone.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Quote a rate with its unit, taken from the quantity divided by the time. Twenty kilograms a month is a claim somebody can check.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Two quantities can share an average rate and have nothing else in common. Ask for the values in between before you accept that two things are behaving alike.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A rate you read off a curve by eye is an estimate and not a measurement. It is only as good as the drawing under your ruler.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Suppose each year’s gain has been smaller than the year before. Then the average over the whole programme is higher than the average over any shorter run of whole years ending today. Quoted as the rate now, it flatters the programme.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When a press line says a quantity is rising at some figure a month, ask which months were used.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Teach a trainee to write the interval down beside every rate they compute, before the number leaves their page.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A figure has months along the bottom and a count up the side. The curve climbs steeply for the first three months, then bends over and runs almost flat for the next nine.</p>\n<p>Say what the average rate over the twelve months describes, and what it does not. Then say which two numbers you would ask for instead, and why those two.</p>",
+   "type": "interpretation",
+   "confidence": true,
+   "answer": "<p>The average rate over the twelve months is the change between month zero and month twelve, divided by twelve. It is the slope of one straight line laid across those two points, and that line is a chord.</p>\n<p>What it describes: the whole year taken as one block. If you want to know how much was added across the year, it is exactly the right number.</p>\n<p>What it does not describe: any moment inside the year. The curve is steep at the start and nearly flat at the end. Its steepness passes through the average somewhere in the middle. At either end it sits nowhere near it.</p>\n<p>The two numbers to ask for: the rate over the first three months, and the rate over the last three months. Each is a change divided by three months.</p>\n<p>Why those two. They are the two ends of the story. Comparing them answers the question the average hides, which is whether the thing is still rising as fast as it was. A single figure for the year cannot answer that, however carefully it is computed.</p>\n<p>One more thing to check before you say any of it. Read what one step on each axis stands for. A curve that bends over on one scale can look straight on another.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A programme note contains this line.</p>\n<blockquote>\n<p>Coverage has grown at an average of 6 points a year for four years. On that trend we reach the target of 40 points above baseline in three more years.</p>\n</blockquote>\n<p>The yearly gains were 12 points, then 6, then 3, then 1.5.</p>\n<p>Say what is wrong with the second sentence, and say what you would put in its place.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The first sentence is arithmetic and it is nearly right. Add the four gains and divide by four.</p>\n<div class=\"working\">\n<p>12 plus 6 = 18<br />\n18 plus 3 = 21<br />\n21 plus 1.5 = 22.5<br />\n22.5 divided by 4 = 5.625</p>\n</div>\n<p>About 5.6 points a year, which the note has rounded to 6.</p>\n<p>What is wrong with the second sentence: it takes an average over four years and uses it as the rate now. The most recent year’s rate is the gain in the fourth year, which is 1.5 points a year.</p>\n<p>Look at what the yearly gains are doing.</p>\n<div class=\"working\">\n<p>6 divided by 12 = 0.5<br />\n3 divided by 6 = 0.5<br />\n1.5 divided by 3 = 0.5</p>\n</div>\n<p>Each year’s gain is half the year before it. The rate is not holding at 6 and it is not holding at anything. It is falling, and it halves every year.</p>\n<p>Now the note’s own target. Coverage stands 22.5 points above baseline and the next year’s gain looks like being about 0.75 points.</p>\n<div class=\"working\">\n<p>1.5 divided by 2 = 0.75</p>\n</div>\n<p>Three more years at gains that keep halving add well under two points. So 40 is not reached in three years. Nothing in these four numbers says it is reached at all.</p>\n<p>What to put in its place. Say that coverage rose 22.5 points over four years. Say that the gain in the most recent year was 1.5 points. Say that the gains have halved each year so far. Then say what would have to change for the trend to be different, and that nothing in these numbers tells you whether it will.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. They keep saying “the rate” about a quantity that is changing, and they mean whichever rate is nearest to hand.</p>\n<p>Teach them the difference between an average rate and a rate at a moment. They should leave asking the right question about the next figure they see.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Ten minutes, a whiteboard, and somebody who expects a mechanism rather than a rule.</p>\n<p>Draw a curve that climbs steeply and then flattens. Mark the start and the end. Do not say anything about rates yet.</p>\n<p>Ask them how fast the quantity grew. They will give you a number. Ask them how they got it, and they will tell you they took the change and divided by the time. Write that down.</p>\n<div class=\"working\">\n<p>the rate of change = the change, divided by the time it took</p>\n</div>\n<p>Now lay a ruler across the two marked points and draw the line. Tell them that is the number they just gave you, drawn: the average rate is the slope of that line. The line is a chord.</p>\n<p>Then lay the ruler flat against the far end of the curve, where it has flattened, and draw that line too. Ask them whether the two lines have the same steepness. They can see that they do not. That is the moment the idea lands, and it lands because they looked rather than listened.</p>\n<p>Name the second one. The steepness at a single point is the rate at that moment, and its line is a tangent.</p>\n<p>Now give them numbers, because a picture alone will not survive the week. Use six values a month apart, work the whole-run average with them on the board, then work the last month on its own. Let them see the two answers differ by a factor of several.</p>\n<p>Close with the question you want them to carry. Not “what is the rate”, but “over what interval”. Tell them to ask it out loud in the next meeting where somebody says a number is rising at so much a month.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A quantity is 14 at the start and 38 at the end. The change took 6 units of time.</p>\n<p>Work out the average rate of change.</p>",
+   "level": 1,
+   "answer": "<p>The change first.</p>\n<div class=\"working\">\n<p>38 minus 14 = 24</p>\n</div>\n<p>Then divide by the time it took.</p>\n<div class=\"working\">\n<p>24 divided by 6 = 4</p>\n</div>\n<p>The average rate of change is 4 for each unit of time. There is no unit on it here, because neither quantity was named.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Work out the average rate of change for each of these.</p>\n<div class=\"working\">\n<p>from 50 to 90, over 8 units of time<br />\nfrom 90 to 50, over 8 units of time<br />\nfrom 7 to 7, over 5 units of time</p>\n</div>",
+   "level": 2,
+   "answer": "<p>The first.</p>\n<div class=\"working\">\n<p>90 minus 50 = 40<br />\n40 divided by 8 = 5</p>\n</div>\n<p>Five for each unit of time.</p>\n<p>The second.</p>\n<div class=\"working\">\n<p>50 minus 90 = -40<br />\n-40 divided by 8 = -5</p>\n</div>\n<p>Minus five. The minus sign says the quantity fell, and the 5 says how fast.</p>\n<p>The third.</p>\n<div class=\"working\">\n<p>7 minus 7 = 0<br />\n0 divided by 5 = 0</p>\n</div>\n<p>Zero. The quantity did not change over the interval. That is a real rate and it is the answer. It does not mean the quantity sat still the whole time, only that it ended where it started.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A quantity is recorded at equal steps: 4, 10, 20, 34, 52.</p>\n<p>Work out the rate over each single step. Then work out the average rate over the whole run.</p>",
+   "level": 2,
+   "answer": "<p>Each step takes one unit of time, so each rate is just the change across that step.</p>\n<div class=\"working\">\n<p>10 minus 4 = 6<br />\n20 minus 10 = 10<br />\n34 minus 20 = 14<br />\n52 minus 34 = 18</p>\n</div>\n<p>So the four step rates are 6, 10, 14 and 18.</p>\n<p>Now the whole run. It covers four steps.</p>\n<div class=\"working\">\n<p>52 minus 4 = 48<br />\n48 divided by 4 = 12</p>\n</div>\n<p>An average rate of 12.</p>\n<p>Look at the four step rates against that 12. The average sits between the second and the third, and it matches neither. Here the rate is rising, so the average understates the end and overstates the start.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A quantity changes at an average rate of 7 for each unit of time.</p>\n<p>Work out the change over 9 units of time. Then work out how long it takes the quantity to change by 91.</p>",
+   "level": 3,
+   "answer": "<p>The rate is the change divided by the time. So the change is the rate multiplied by the time.</p>\n<div class=\"working\">\n<p>7 times 9 = 63</p>\n</div>\n<p>A change of 63 over 9 units of time.</p>\n<p>The second part runs the other way. You have the change and the rate, and you want the time, so divide the change by the rate.</p>\n<div class=\"working\">\n<p>91 divided by 7 = 13</p>\n</div>\n<p>Thirteen units of time.</p>\n<p>Both parts are the same relation read in different directions, which is worth seeing once. A rate ties three quantities together, and knowing any two gives you the third.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Work out the unit of the rate of change in each of these cases.</p>\n<table style=\"width:69%;\">\n\n<tbody>\n<tr>\n<td>the quantity</td>\n<td>the time it is changing over</td>\n</tr>\n<tr>\n<td>kilograms</td>\n<td>months</td>\n</tr>\n<tr>\n<td>kilocalories</td>\n<td>days</td>\n</tr>\n<tr>\n<td>number of people</td>\n<td>years</td>\n</tr>\n<tr>\n<td>rupees</td>\n<td>weeks</td>\n</tr>\n</tbody>\n</table>",
+   "level": 3,
+   "answer": "<p>The unit of a rate of change is always the quantity’s unit divided by the time unit. Take them in order.</p>\n<p>Kilograms divided by months is kilograms per month.</p>\n<p>Kilocalories divided by days is kilocalories per day.</p>\n<p>People divided by years is people per year.</p>\n<p>Rupees divided by weeks is rupees per week.</p>\n<p>None of those came from the numbers, because there were none. They came from reading the two labels, which is the whole of the unit check from the section on dimensional analysis.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains per person per month.</p>\n<p>A household of six collects its full entitlement every month and takes nothing out of the house. The house holds 12 kilograms today.</p>\n<p>Write the grain in the house at months one, two and three. Work out the average rate of change over those three months, with its unit. Then work out the rate over the second month alone and say why the two agree.</p>",
+   "level": 4,
+   "answer": "<p>Work out the monthly entitlement first.</p>\n<div class=\"working\">\n<p>5 times 6 = 30</p>\n</div>\n<p>Thirty kilograms a month. Now the running values, starting from 12.</p>\n<div class=\"working\">\n<p>12 plus 30 = 42<br />\n42 plus 30 = 72<br />\n72 plus 30 = 102</p>\n</div>\n<p>So 42 kilograms at month one, 72 at month two and 102 at month three.</p>\n<p>The average rate over the three months.</p>\n<div class=\"working\">\n<p>102 minus 12 = 90<br />\n90 divided by 3 = 30</p>\n</div>\n<p>Thirty, and the unit comes off the two quantities. Kilograms divided by months is kilograms per month, so it is 30 kilograms a month.</p>\n<p>The second month alone.</p>\n<div class=\"working\">\n<p>72 minus 42 = 30<br />\n30 divided by 1 = 30</p>\n</div>\n<p>Thirty kilograms a month again.</p>\n<p>They agree because the same amount is added every month, so the points sit on a straight line. A straight line has one steepness and it has it everywhere, so every interval gives the same rate.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A quantity is recorded five times, a month apart: 200, 320, 380, 410, 425.</p>\n<p>Work out the average rate of change from the first reading to the last. Then work out the rate over the first month and the rate over the last month. Say which of the three you would quote to somebody who asks how fast it is growing now, and why.</p>",
+   "level": 5,
+   "answer": "<p>Five readings a month apart cover four months, because the intervals are one fewer than the readings.</p>\n<div class=\"working\">\n<p>425 minus 200 = 225<br />\n225 divided by 4 = 56.25</p>\n</div>\n<p>An average of 56.25 a month.</p>\n<p>The first month.</p>\n<div class=\"working\">\n<p>320 minus 200 = 120</p>\n</div>\n<p>A hundred and twenty a month.</p>\n<p>The last month.</p>\n<div class=\"working\">\n<p>425 minus 410 = 15</p>\n</div>\n<p>Fifteen a month.</p>\n<p>Which to quote to somebody asking about now: the 15. The question was about the present, and the last month is the only one of the three that is about the present.</p>\n<p>The 56.25 answers a different question, which is how much was added across the whole run for each month of it. Say that out loud when you give it, or it will be heard as the rate now.</p>\n<p>And say the interval with every one of the three figures. Without it, 120 and 15 are the same kind of claim about the same quantity, and a reader cannot tell them apart.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A quantity falls from 900 to 300 over 12 months.</p>\n<p>Work out the average rate of change, with its sign. Then say what the sign means, and say what this number does not tell you about the twelve months.</p>",
+   "level": 5,
+   "answer": "<p>Subtract the first value from the last, keeping the order.</p>\n<div class=\"working\">\n<p>300 minus 900 = -600</p>\n</div>\n<p>Then divide by the time.</p>\n<div class=\"working\">\n<p>-600 divided by 12 = -50</p>\n</div>\n<p>Minus fifty for each month.</p>\n<p>What the sign means: the quantity fell. A rate of change is negative when the end is below the start, and the size still says how fast.</p>\n<p>What it does not tell you. It does not tell you that the quantity fell every month. It could have dropped 600 in the first month and sat still for eleven. It could have risen and then fallen further. Every one of those gives the same average of minus 50, because the average uses only the two end values.</p>\n<p>To find out which happened, ask for the monthly readings. There is no way to recover them from the average, and no amount of care with the arithmetic will change that.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Two quantities are recorded at the same five monthly times.</p>\n<table style=\"width:47%;\">\n\n<thead>\n<tr>\n<th>month</th>\n<th>quantity P</th>\n<th>quantity Q</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>100</td>\n<td>100</td>\n</tr>\n<tr>\n<td>1</td>\n<td>130</td>\n<td>190</td>\n</tr>\n<tr>\n<td>2</td>\n<td>160</td>\n<td>230</td>\n</tr>\n<tr>\n<td>3</td>\n<td>190</td>\n<td>248</td>\n</tr>\n<tr>\n<td>4</td>\n<td>220</td>\n<td>256</td>\n</tr>\n</tbody>\n</table>\n<p>Work out the average rate of change of each over the four months. Then work out the rate over the last month for each. Say what the pair of comparisons shows.</p>",
+   "level": 6,
+   "answer": "<p>Average rate for P.</p>\n<div class=\"working\">\n<p>220 minus 100 = 120<br />\n120 divided by 4 = 30</p>\n</div>\n<p>Thirty a month.</p>\n<p>Average rate for Q.</p>\n<div class=\"working\">\n<p>256 minus 100 = 156<br />\n156 divided by 4 = 39</p>\n</div>\n<p>Thirty-nine a month.</p>\n<p>On the averages alone, Q is growing faster than P.</p>\n<p>Now the last month. For P.</p>\n<div class=\"working\">\n<p>220 minus 190 = 30</p>\n</div>\n<p>Thirty a month.</p>\n<p>For Q.</p>\n<div class=\"working\">\n<p>256 minus 248 = 8</p>\n</div>\n<p>Eight a month.</p>\n<p>What the pair shows: the two comparisons point opposite ways. Over the whole run Q outgrew P. Over the most recent month P is growing nearly four times as fast as Q.</p>\n<p>Neither comparison is wrong and they answer different questions. P is a straight line, so its average and its monthly rate are the same 30. Q is flattening, so its average is held up by months that are over.</p>\n<p>The lesson is the one to take into a meeting. Ask which interval a comparison used, because with a flattening quantity the choice of interval decides the winner.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a quantity goes from 40 to 100 over 5 months<br />\nthe change is 100 minus 40, which is 60<br />\nthe rate is the time divided by the change<br />\n5 divided by 60 = 0.083<br />\nso the quantity is rising at 0.083 a month</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the third. The change and the time were divided the wrong way round.</p>\n<p>A rate of change is the change divided by the time, not the time divided by the change.</p>\n<div class=\"working\">\n<p>60 divided by 5 = 12</p>\n</div>\n<p>Twelve a month.</p>\n<p>The units catch it as well as the arithmetic does. Divide months by kilograms and you get months per kilogram, which is how long each kilogram takes. That is a real quantity and it is not a rate of change.</p>\n<p>A size check finishes it off. The quantity rose by 60 in five months, so it gained more than 10 in a typical month. An answer under a tenth of one unit a month cannot describe that rise.</p>\n<p>Why it looks reasonable: the subtraction is right, the division is right, and the answer is given to three decimals, which reads as care. The one broken step is the one with no arithmetic in it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the monthly values are 10, 30, 42, 49.2, 53.5, 56.1<br />\nthe total rise is 56.1 minus 10, which is 46.1<br />\nthat took 5 months, so the average rate is 46.1 divided by 5<br />\n46.1 divided by 5 = 9.22<br />\nso the quantity is currently rising at 9.22 a month<br />\nand in five more months it will be about 56.1 plus 46.1</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the fifth. Every line before it is correct, and the word that breaks it is “currently”.</p>\n<p>The 9.22 is the average rate over the five months. It is built from the first value and the last value and uses nothing in between.</p>\n<p>Work out the rate over the most recent month instead.</p>\n<div class=\"working\">\n<p>56.1 minus 53.5 = 2.6</p>\n</div>\n<p>Two point six a month. That is the most recent month’s rate, and it is less than a third of the average.</p>\n<p>Look at all five monthly rates and the reason is plain.</p>\n<div class=\"working\">\n<p>30 minus 10 = 20<br />\n42 minus 30 = 12<br />\n49.2 minus 42 = 7.2<br />\n53.5 minus 49.2 = 4.3<br />\n56.1 minus 53.5 = 2.6</p>\n</div>\n<p>The rate has fallen at every step, so 9.22 describes none of the five months on its own. It describes all five taken together, which is a different claim and not the one the fifth line makes.</p>\n<p>The last line inherits the error. At 2.6 a month, five more months add about 13.</p>\n<div class=\"working\">\n<p>2.6 times 5 = 13<br />\n56.1 plus 13 = 69.1</p>\n</div>\n<p>About 69, against the 102.2 the broken working projects. Even 69 is an upper bound, because the rate has fallen every month and nothing says it has stopped. If the ratio between its steps keeps holding, the section before this one puts the ceiling at 60.</p>\n<p>Why it looks reasonable: four correct lines in a row buy the fifth a great deal of trust, and the fifth changes only one word. An average rate and a rate now are written down identically, so nothing on the page marks the switch.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a curve is drawn with months along the bottom and kilograms up the side<br />\nat month 2 the curve passes through 30 kilograms<br />\nat month 8 the curve passes through 66 kilograms<br />\nthe rate at month 8 is the rise divided by the run<br />\n66 minus 30 = 36<br />\n36 divided by 6 = 6<br />\nso at month 8 the quantity is rising at 6 kilograms a month</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the fourth. A rise divided by a run between two points is the average rate over the interval between them. The answer has labelled it as the rate at one of the ends.</p>\n<p>The line laid across month 2 and month 8 is a chord. Its slope is the average rate across those six months.</p>\n<div class=\"working\">\n<p>36 divided by 6 = 6</p>\n</div>\n<p>Six kilograms a month over the interval from month 2 to month 8. That number is right and its label is wrong.</p>\n<p>The rate at month 8 is a different thing. It is the steepness of the curve at that single point, which is the slope of the tangent there. Getting it needs either the tangent laid on the drawing, or two readings close together around month 8.</p>\n<p>Notice that the answer cannot be rescued by argument. If the curve is flattening, the rate at month 8 is below 6. If it is steepening, the rate at month 8 is above 6. Nothing in the two readings given says which, so the working has no way to reach the number it claims.</p>\n<p>Why it looks reasonable: the arithmetic is right and both readings come off the drawing. The phrase “rise divided by run” is exactly the right phrase. Only the word “at” is wrong, and it is the word that turns a statement about six months into a statement about one moment.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A district note crosses your desk with this line in it.</p>\n<blockquote>\n<p>The waiting list has come down from 900 to 300 over the last twelve months. That is a steady clearance rate, so the list will be empty in six more months.</p>\n</blockquote>\n<p>The office, the list and both figures are made up for this problem. No real service is being described.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the average rate of change over the twelve months, and what that rate would take to clear the remaining 300.</p>\n<p>The change first, keeping the order.</p>\n<div class=\"working\">\n<p>300 minus 900 = -600</p>\n</div>\n<p>Then the average rate.</p>\n<div class=\"working\">\n<p>-600 divided by 12 = -50</p>\n</div>\n<p>Fifty off the list each month, on average across the year.</p>\n<p>Now the note’s own projection, using that rate.</p>\n<div class=\"working\">\n<p>300 divided by 50 = 6</p>\n</div>\n<p>Six months. So the arithmetic in the note is right, and that is the whole trap.</p>\n<p>What this does not establish. It does not establish that the rate is steady. Two readings a year apart are consistent with a list that fell fast and stopped, and with one that is falling faster now than ever. The word “steady” is not in the numbers, and the twelve monthly readings that would settle it have not been given.</p>\n<p>It does not establish that the same rate will continue. A list may clear its easy cases first. That would make the rate fall exactly when a projection assumes it will not. Nothing in two readings says whether it happened here.</p>\n<p>And it does not establish that the list falling is the thing worth tracking. A list can shorten because people were seen, and it can shorten because people stopped joining it. Those are different events with the same arithmetic.</p>\n<p>What to ask for: the twelve monthly figures, and the number joining the list each month alongside the number leaving it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A colleague sends a one-line summary of a programme review.</p>\n<blockquote>\n<p>Gains were 12 points, then 6, then 3, then 1.5, over four years. That averages about 5.6 points a year, so budget for the same again next year.</p>\n</blockquote>\n<p>The programme and all four figures are made up for this problem. No real programme is being described.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the average the note quotes, and the rate in the most recent year. Then what the four yearly rates are doing to each other.</p>\n<p>The average first. Add the gains and divide by four.</p>\n<div class=\"working\">\n<p>12 plus 6 = 18<br />\n18 plus 3 = 21<br />\n21 plus 1.5 = 22.5<br />\n22.5 divided by 4 = 5.625</p>\n</div>\n<p>About 5.6 points a year, so the note’s average is right.</p>\n<p>The rate in the most recent year is the fourth gain, which is 1.5 points a year. That is less than a third of the average.</p>\n<p>Now look at what the yearly rates are doing.</p>\n<div class=\"working\">\n<p>6 divided by 12 = 0.5<br />\n3 divided by 6 = 0.5<br />\n1.5 divided by 3 = 0.5</p>\n</div>\n<p>Each year’s gain is half the year before. On that pattern the next year’s gain is about 0.75 points.</p>\n<div class=\"working\">\n<p>1.5 divided by 2 = 0.75</p>\n</div>\n<p>Compare the 5.625 with the most recent year’s 1.5, and with the 0.75 the pattern points to.</p>\n<div class=\"working\">\n<p>5.625 divided by 1.5 = 3.75<br />\n5.625 divided by 0.75 = 7.5</p>\n</div>\n<p>So budgeting for 5.6 points next year is budgeting for nearly four times what the most recent year delivered. It is seven and a half times what the halving pattern points to.</p>\n<p>What this does not establish. It does not establish that next year’s gain will be 0.75. Four values and an assumed halving are a thin basis, and the pattern is read off the same numbers it is being used to project.</p>\n<p>It does not establish that the programme is failing. Gains that shrink are what running towards a ceiling looks like from inside. A programme close to full coverage has little room left to gain in.</p>\n<p>And it does not settle the budget question, because none of these numbers says what the money would buy anywhere else. What the arithmetic settles is narrower and still worth saying. The average is about the past four years. It is not a forecast of the fifth.</p>"
+  }
+ ]
+}

@@ -1,0 +1,196 @@
+{
+ "format": 1,
+ "id": "b0-r0-c30",
+ "label": "D7",
+ "title": "Random error and systematic error as different things",
+ "part": "D",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A measurement’s error is the value it returns minus the value that is actually true, or, since the true value is usually unknown, minus a trusted reference value it is checked against. The International Vocabulary of Metrology (VIM), 3rd edition, 2012, entry 2.16, gives this in its own words: a measurement error is “measured quantity value minus a reference quantity value”.</p>\n<p>An error can behave in two different ways when the same thing is measured again and again.</p>\n<p>A <dfn data-g=\"185\">systematic error</dfn> is the part of the error that, in the VIM’s own words (entry 2.17), “remains constant or varies in a predictable manner”. It pushes every reading the same way, by close to the same amount, every time.</p>\n<p>A <dfn data-g=\"111\">measurement bias</dfn> is, in the VIM’s own words (entry 2.18), an “estimate of a systematic measurement error”. In plain words, it is an error that points one way and does not shrink when you collect more.</p>\n<p>A <dfn data-g=\"151\">random error</dfn> is the part that, in the VIM’s own words (entry 2.19), “varies in an unpredictable manner” from one reading to the next.</p>\n<p>In plain words, <dfn data-g=\"1\">accuracy</dfn> is how close a measured value comes to the true value.</p>\n<p>In plain words, <dfn data-g=\"189\">trueness</dfn> is how close the average of many repeated readings sits to the true value. That makes trueness about the size of the systematic error alone.</p>\n<p><dfn data-g=\"144\">Precision</dfn>, in the VIM’s sense, is how closely repeated readings agree with each other. That makes it about the size of the random error alone. An instrument can be precise and wrong at the same time.</p>\n<p>Resolution (VIM 4.14) is a different thing again: the “smallest change in a quantity being measured that causes a perceptible change in the corresponding indication”. It says nothing about whether those digits sit close to the truth.</p>",
+   "refs": [
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Take any measurement. Its error is what it says minus what is actually true. If a scale says 61.2 kilograms and the true weight is 60.5, the error is 0.7 kilograms. An error can be positive or negative. Stating it needs you to already know the true value, which in real life usually comes from a trusted reference instrument, not from guessing.</p>\n<p>A systematic error pushes every reading off in the same direction by roughly the same amount. Say a kitchen scale reads 0.5 kilograms with nothing on the pan, instead of nothing. That is a systematic error: everything you weigh on it afterward comes out half a kilogram heavy. Take a hundred readings on this scale and average them. The half-kilogram is still there, because every single reading carried it.</p>\n<p>A random error pushes readings around in a way that is not predictable from one reading to the next. Take a hundred readings from an instrument with only random error, and average them. The average comes out close to the truth.</p>\n<p>Averaging more readings fixes random error. It does nothing at all for systematic error. A very careful, very repeated measurement on an instrument with a systematic error is not a truer measurement. It is a more confident wrong one.</p>\n<p>A scale that reads 61.4, 61.4, 61.4 and 61.4 kilograms on the same object agrees with itself to the last digit it shows. If the true weight is 60.0 kilograms, it is also wrong every time. Trueness is how close the average of many repeated readings sits to the true value. Accuracy needs both: small scatter and no push off target.</p>\n<p>Resolution is the smallest step an instrument’s display can move by. A scale reading to the nearest 100 grams has a resolution of 100 grams. It tells you nothing about whether those digits are close to being true.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "d7-two-scales.png",
+   "alt": "A dot plot with readings in kilograms from 58.5 to 61. The upper row, scale A, is a tall narrow stack at 60.5 with a few dots at 60.4 and 60.6, all to the right of a dashed line at 60.0. The lower row, scale B, is spread from 58.7 to 60.7 on both sides of the dashed line, with its average marked just below 60.0.",
+   "w": 1357,
+   "h": 562,
+   "caption": "Twenty readings from each scale against a weight known to be 60.0 kilograms, the dashed line. Scale A’s readings sit in a tight pile, about half a kilogram too high. Scale B’s scatter widely on both sides of the truth, and their average lands close to it. How closely repeated readings agree with each other and how close they sit to the truth are two different things."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Kiran and colleagues’ methods section states a figure worth testing before it is used.</p>\n<blockquote>\n<p>Weight and height were recorded with accuracy of 100 g and 0.1 cm.</p>\n</blockquote>\n<p>Read that sentence the way the definition above teaches you to. A hundred grams is the step the weights were written down in. No reading can show a change smaller than that. That is a statement about resolution: the “smallest change in a quantity being measured that causes a perceptible change in the corresponding indication” (VIM 4.14). It is not a measured closeness to a true value. That would need the readings checked against a known reference weight, and nothing in the paper’s methods reports such a check for this scale.</p>\n<p>This mix-up is common enough to be worth seeing worked through with numbers on a stated case. No real scale’s repeated calibration readings are held in this book’s sources. Say a <dfn data-g=\"25\">calibration weight</dfn> — a weight already checked and trusted to be correct — is known to be exactly 60.0 kilograms. Each of two stated scales weighs it twenty times.</p>\n<div class=\"working\">\n<p>scale A readings (kg), tight and shifted<br />\n60.5 60.5 60.5 60.5 60.5 60.4 60.5 60.5 60.5 60.5<br />\n60.5 60.6 60.5 60.5 60.5 60.4 60.5 60.6 60.5 60.5</p>\n</div>\n<div class=\"working\">\n<p>scale B readings (kg), centred and wide<br />\n59.7 60.2 60.2 60.4 60.0 59.6 59.4 60.6 58.7 59.7<br />\n59.4 60.0 59.7 59.7 60.4 59.7 59.4 60.5 60.5 60.7</p>\n</div>\n<p>Scale A’s twenty readings barely move: they sit within a tenth of a kilogram of their own average. That is precision: how closely repeated readings agree with each other. Average them.</p>\n<div class=\"working\">\n<p>604.9 plus 605.1 = 1210.0<br />\n1210.0 divided by 20 = 60.5</p>\n</div>\n<p>Against the known 60.0 kilograms, every reading is 0.4 to 0.6 kilograms high, and the average is 0.5 high.</p>\n<div class=\"working\">\n<p>60.5 minus 60.0 = 0.5</p>\n</div>\n<p>No amount of repeating the weighing removes it, because this part of the error does not vary from reading to reading. It is systematic.</p>\n<p>Scale B’s twenty readings scatter far more widely, from 58.7 up to 60.7, including two readings of exactly 60.0. That is wide, so this scale is much less precise than scale A. Average them anyway.</p>\n<div class=\"working\">\n<p>598.5 plus 600.0 = 1198.5<br />\n1198.5 divided by 20 = 59.925<br />\n60.0 minus 59.925 = 0.075</p>\n</div>\n<p>Its average sits 0.075 kilograms below the truth.</p>\n<p>This scale’s error is random: it wobbles both above and below the truth from reading to reading. The wobbles partly cancel when averaged, and a few more readings would tend to bring the average closer still.</p>\n<p>Scale A looks better reading by reading: tighter, more repeatable, a more confident-looking number each time. Yet its average sits further from the truth than scale B’s average does: half a kilogram out against seven and a half hundredths. Precision and trueness are not the same property, and a fine resolution tells you about neither one.</p>",
+   "numberRefs": [
+    18
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>In most real measurement, the true value is exactly what you are trying to find out, so you cannot compute an error this way. Instead, you check an instrument’s trueness once, in advance, against a trusted reference standard, using exactly this arithmetic.</p>\n<p>An instrument that reads true at 60 kilograms can drift at 120.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Averaging more readings on a biased instrument does not get you a truer answer.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Measurement bias is the VIM’s own word (entry 2.18) for the same shape of problem as a biased sample. It is an error that points one way and does not shrink when you collect more.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An instrument’s stated “accuracy” is often a number of grams, millimetres or <dfn data-g=\"45\">decimal</dfn> places. It is not a closeness to a known true value. Check which one a paper means.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Knowing an instrument’s precision (VIM 2.15), how closely repeated readings agree with each other, tells you nothing about whether they agree with the truth.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Part of the difference between observers is each observer’s own systematic habit. Mixed across many observers, those habits scatter like random error. A single observer taking every measurement removes that scatter, but not the one observer’s own habit. That habit then reaches every reading in the study, and no amount of data from that study alone can reveal it.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Once a systematic error’s size is known, subtract it. Finding the size needs an independent check against a known value, not simply more readings from the same instrument.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Teach a trainee to ask two separate questions of any instrument. How closely do repeated readings agree with each other? That is precision. How close does the average of many repeated readings sit to the true value? That is trueness. Accuracy needs both together.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>mmHg means millimetres of mercury. It is the unit blood pressure is read in. A device maker says: “Our new blood-pressure monitor is accurate to within 1 mmHg.” Here is where that number comes from. Used again and again on the same person inside one minute, the monitor gives the same reading each time, to within 1 mmHg.</p>\n<p>Say what word this number really describes. Say what question it leaves unanswered.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The figure describes precision, not accuracy. It is about how closely repeated readings agree with each other, here on the same person, taken close together in time. That is a real property worth stating. A tight one is a genuine strength of the device.</p>\n<p>It leaves unanswered whether those readings sit close to the person’s true blood pressure. A monitor could read within 1 mmHg of itself on every repeat. It could still read 15 mmHg high every single time, if it carries a systematic error. Repeating the same check on the same faulty device will not catch that, no matter how many times it is repeated.</p>\n<p>What would answer it: compare the monitor’s readings against a reference device already shown to be accurate. Use it on a set of people whose true blood pressure by that method is known. Only that comparison speaks to accuracy. The manufacturer’s own figure, however it is worded, speaks only to precision.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A trainee says a colleague’s instrument “must be fine because it gives the same number every time.” You have ten minutes and a whiteboard.</p>\n<p>Teach them why that is not enough.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Ten minutes, for someone who expects a mechanism rather than reassurance.</p>\n<p>Draw a small target on the board. Mark a cluster of shots tightly grouped in the top-right corner, well away from the bullseye. Say that this is what “the same number every time” looks like: tight, repeatable, and a whole target’s-width away from the truth.</p>\n<p>Ask the trainee what would fix this pattern. Let them try “shoot more times and average the positions.”</p>\n<p>Mark the average of the cluster: it lands in almost the same spot, still off the bullseye. Repetition of a systematic error changes nothing about it.</p>\n<p>Now draw a second target with shots scattered loosely all around the bullseye itself. Mark that this one is far less repeatable, shot to shot, and average its positions. The average lands close to the bullseye, because the scatter is random and partly cancels.</p>\n<p>Write the two words on the board next to their targets. The tight, off-target cluster is precise, not true. The loose, centred scatter is true, not precise. Close with the question you want the trainee to ask from now on, about every “fine because it’s consistent” instrument. Is it consistent with itself, or consistent with the truth?</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A device is checked against a known true value of 200. On one occasion it reads 194. Work out the error, and say what its sign tells you.</p>",
+   "level": 1,
+   "answer": "<p>Error is the measured value minus the true value.</p>\n<div class=\"working\">\n<p>194 minus 200 = -6</p>\n</div>\n<p>The error is -6. The negative sign says the reading came out below the true value, by 6.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A device is checked five times against a known true value of 75. It reads 78, 77, 79, 76 and 80. Work out the error for each reading.</p>",
+   "level": 2,
+   "answer": "<p>Subtract 75 from each reading.</p>\n<div class=\"working\">\n<p>78 minus 75 = 3<br />\n77 minus 75 = 2<br />\n79 minus 75 = 4<br />\n76 minus 75 = 1<br />\n80 minus 75 = 5</p>\n</div>\n<p>The five errors are 3, 2, 4, 1 and 5.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Two instruments are each checked five times against a known true value. Their errors are listed below. For each set, work out the average error and the range of the errors. Say which set looks more systematic and which looks more random.</p>\n<div class=\"working\">\n<p>set P: 3, 2, 4, 1, 5<br />\nset Q: -3, 4, -5, 2, -1</p>\n</div>",
+   "level": 4,
+   "answer": "<p>Set P first.</p>\n<div class=\"working\">\n<p>3 plus 2 plus 4 plus 1 plus 5 = 15<br />\n15 divided by 5 = 3<br />\n5 minus 1 = 4</p>\n</div>\n<p>Average error 3, range 4. Every error is positive and none strays far from the average: this looks systematic, pushed one way by about the same amount each time.</p>\n<p>Now set Q.</p>\n<div class=\"working\">\n<p>-3 plus 4 plus -5 plus 2 plus -1 = -3<br />\n-3 divided by 5 = -0.6<br />\n4 minus -5 = 9</p>\n</div>\n<p>Subtracting a <dfn data-g=\"122\">negative number</dfn> adds its size. On a number line, the distance from -5 up to 4 is 5 plus 4, which is 9.</p>\n<p>Average error -0.6, close to zero. The range is 9, far wider than set P’s own range. The errors cross zero and spread out a long way either side. This looks random, with little or no consistent push in one direction.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A scale is checked against a calibration weight of 20.0 kg. It gives five readings: 20.3, 20.2, 20.4, 20.3 and 20.3 kg. Work out the error for each reading and the average error, with its unit.</p>",
+   "level": 4,
+   "answer": "<p>Subtract 20.0 kg from each reading.</p>\n<div class=\"working\">\n<p>20.3 minus 20.0 = 0.3<br />\n20.2 minus 20.0 = 0.2<br />\n20.4 minus 20.0 = 0.4<br />\n20.3 minus 20.0 = 0.3<br />\n20.3 minus 20.0 = 0.3</p>\n</div>\n<p>Errors of 0.3, 0.2, 0.4, 0.3 and 0.3 kg. Average them.</p>\n<div class=\"working\">\n<p>0.3 plus 0.2 plus 0.4 plus 0.3 plus 0.3 = 1.5<br />\n1.5 divided by 5 = 0.3</p>\n</div>\n<p>An average error of 0.3 kg. Every reading is high by close to the same amount, which is the pattern of a systematic error.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A thermometer is checked against a reference temperature of 37.0 °C (degrees Celsius). It gives five readings: 36.4, 37.6, 36.9, 37.3 and 37.0 °C. Work out the error for each reading, the average error, and the range of the errors. Say whether this instrument looks more like the scale in the previous problem or not.</p>",
+   "level": 5,
+   "answer": "<p>Subtract 37.0 °C from each reading.</p>\n<div class=\"working\">\n<p>36.4 minus 37.0 = -0.6<br />\n37.6 minus 37.0 = 0.6<br />\n36.9 minus 37.0 = -0.1<br />\n37.3 minus 37.0 = 0.3<br />\n37.0 minus 37.0 = 0.0</p>\n</div>\n<p>Errors of -0.6, 0.6, -0.1, 0.3 and 0.0 °C.</p>\n<div class=\"working\">\n<p>-0.6 plus 0.6 plus -0.1 plus 0.3 plus 0.0 = 0.2<br />\n0.2 divided by 5 = 0.04<br />\n0.6 minus -0.6 = 1.2</p>\n</div>\n<p>Subtracting a negative number adds its size, as the earlier problem on set Q showed: 0.6 minus -0.6 is 0.6 plus 0.6, which is 1.2.</p>\n<p>An average error of about 0.04 °C, close to zero, and a range of 1.2 °C, wide compared with the average. This is the opposite pattern from the scale. The errors scatter both above and below zero and mostly cancel out, which is the pattern of random error, not systematic error.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Kiran and colleagues’ scale recorded weight in steps of 100 g. Suppose one student’s weight is recorded as 68.3 kg on this scale. A reference scale, checked against a known weight, gives 68.0 kg for the same student. Work out the error. Can knowing how the scale records its weights tell you whether this error is systematic or random?</p>",
+   "level": 6,
+   "answer": "<p>Error is the measured value minus the true value.</p>\n<div class=\"working\">\n<p>68.3 minus 68.0 = 0.3</p>\n</div>\n<p>An error of 0.3 kg, or 300 g.</p>\n<p>Knowing the scale’s recording step, on its own, cannot answer that question. The step tells you the smallest change the display can show. It says nothing about the pattern of the scale’s errors across repeated readings. Answering that needs several readings of the same known weight, not one reading and not the size of the display’s steps.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a thermometer has a zero error: with its probe in melting ice, it reads 0.3 °C instead of 0.0<br />\ntwenty readings of a pan of boiling water are taken and averaged, giving 100.3 °C<br />\naveraging twenty readings reduces error, since averaging is how error is reduced<br />\nso 100.3 °C can be treated as an accurate reading</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The first two lines are fine as stated: a <dfn data-g=\"197\">zero error</dfn> of 0.3 °C, and an average reading of 100.3 °C.</p>\n<p>Line 3 states a rule that is true of random error as if it held for all error. That is the break. Averaging reduces random error, because random error varies from reading to reading and partly cancels. A zero error is a systematic error. If it is the same at every temperature, it adds the same 0.3 °C to every reading of the boiling water too. So it is still fully present in the average.</p>\n<div class=\"working\">\n<p>100.3 minus 0.3 = 100.0</p>\n</div>\n<p>Subtracting the known zero error is a correction (VIM 2.53). Corrected for it, the best estimate is 100.0 °C. Twenty readings, or two thousand, would change nothing about that 0.3 °C error, until it is corrected for.</p>\n<p>Why it looks reasonable: “averaging reduces error” is true of random error. The third line states it as if it were true of all error. The flaw is applying that rule to the wrong case. It only works for random error, and this case is systematic. Nothing in the arithmetic itself flags which kind of error is in play.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a scale is checked twenty times against a known 40.0 kg weight<br />\nthe readings average to 40.05 kg<br />\nthe average is close to the true weight, so the scale is accurate<br />\neach individual reading is therefore also close to the true weight</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The first two lines are fine: an average 0.05 kg from the truth is good trueness (VIM 2.14).</p>\n<div class=\"working\">\n<p>40.05 minus 40.0 = 0.05</p>\n</div>\n<p>Line 3 is where it starts to break: a close average shows trueness, not accuracy. Line 4 then draws the conclusion that the mislabel invites. Trueness describes the average of many readings. It says nothing about how far any one reading might sit from that average. A scale can have this exact same average and still scatter widely, reading by reading. Say five of its readings were 38.0, 42.0, 39.0, 41.0 and 40.25 kg.</p>\n<div class=\"working\">\n<p>38.0 plus 42.0 plus 39.0 plus 41.0 plus 40.25 = 200.25<br />\n200.25 divided by 5 = 40.05</p>\n</div>\n<p>The same average, 40.05 kg, true on average to within 0.05 kg. Yet no single reading sits anywhere near that close: they range from 38.0 to 42.0, four kilograms apart. Good trueness on average and poor precision, reading by reading, sit together without contradiction.</p>\n<p>Why it looks reasonable: “accurate” is being used the way people use it in speech, for the whole instrument. The VIM keeps trueness apart from precision, because one can be good while the other is not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a paper states: neck circumference was measured with 1 mm precision<br />\nprecision means how closely repeated readings agree with each other<br />\nso the paper has shown its neck-circumference readings agree with each other to within 1 mm<br />\nthis supports treating the reported neck-circumference figures as free of measurement error</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The first line quotes the paper correctly. The second line is also right about what precision means in the VIM’s sense (entry 2.15): how closely repeated readings agree with each other.</p>\n<p>The step that broke is the third line. Showing that readings agree needs several readings of the same person, compared against one another. The paper’s methods do not name the instrument used on the neck, and report no repeat measurement. “With 1 mm precision” most likely names the step the readings were recorded in. That is closer to resolution than to precision. Resolution is the “smallest change in a quantity being measured that causes a perceptible change in the corresponding indication” (VIM 4.14).</p>\n<p>The fourth line inherits the error, and adds one of its own. Even a genuinely precise instrument is not automatically free of error. Precision says nothing about trueness, and “free of measurement error” would need both.</p>\n<p>Why it looks reasonable: the paper’s own sentence uses the word “precision”. Taking a source at its own word feels like careful reading, not carelessness. A term of art can be used loosely by the very people who would be expected to use it precisely.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a scale has a known zero error: with nothing on it, it reads 0.4 kg<br />\na reading of 62.1 kg is taken on this scale<br />\nto correct for the zero error, add it back: 62.1 plus 0.4 = 62.5<br />\nso the corrected weight is 62.5 kg</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The first two lines are fine as stated: a zero error of 0.4 kg, and a reading of 62.1 kg.</p>\n<p>The step that broke is the third line. The reading of 62.1 kg already carries the +0.4 kg zero error built into it, since the scale adds that much to everything it weighs. A correction (VIM 2.53) removes a known systematic error. It has to work against the direction the error pushed in: subtract it, not add it.</p>\n<div class=\"working\">\n<p>62.1 minus 0.4 = 61.7</p>\n</div>\n<p>The corrected estimate is 61.7 kg. Adding the zero error instead of subtracting it does not remove the error. It adds a second dose of the same push. The reported 62.5 kg sits 0.8 kg away from the corrected estimate. That is twice the size of the zero error itself, in the same direction the scale was already wrong in.</p>\n<p>Why it looks reasonable: “correcting” sounds like it should add something back, the way you might add a missing item to a total. A correction for a known error runs the other way: it takes the error back out.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A colleague says: “Our new digital scale must be more accurate than the old one — it shows an extra decimal place.”</p>\n<p>Here are five readings from each scale, weighing the same known 50.00 kg calibration weight.</p>\n<table style=\"width:79%;\">\n\n<tbody>\n<tr>\n<td>old scale (kg)</td>\n<td>50.1</td>\n<td>49.9</td>\n<td>50.2</td>\n<td>49.9</td>\n<td>50.0</td>\n</tr>\n<tr>\n<td>new scale (kg)</td>\n<td>50.63</td>\n<td>50.57</td>\n<td>50.71</td>\n<td>50.55</td>\n<td>50.64</td>\n</tr>\n</tbody>\n</table>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the average reading and the average error for each scale.</p>\n<div class=\"working\">\n<p>50.1 plus 49.9 plus 50.2 plus 49.9 plus 50.0 = 250.1<br />\n250.1 divided by 5 = 50.02<br />\n50.02 minus 50.00 = 0.02</p>\n</div>\n<p>The old scale averages 50.02 kg, an error of 0.02 kg.</p>\n<div class=\"working\">\n<p>50.63 plus 50.57 plus 50.71 plus 50.55 plus 50.64 = 253.1<br />\n253.1 divided by 5 = 50.62<br />\n50.62 minus 50.00 = 0.62</p>\n</div>\n<p>The new scale averages 50.62 kg, an error of 0.62 kg, thirty-one times the old scale’s.</p>\n<p>This does not establish that the new scale is more accurate. It points the other way. Every new reading sits at least 0.55 kg from the truth, against at most 0.2 kg for the old scale. Its trueness (VIM 2.14) is far worse too, despite the extra decimal place.</p>\n<p>The extra digit is a statement about resolution. That is the “smallest change in a quantity being measured that causes a perceptible change in the corresponding indication” (VIM 4.14). For a digital display, that is in practice the step of its last digit. It says nothing about how close the average sits to the truth, and here it sits further away. A finer display can dress up a worse instrument exactly as confidently as a better one.</p>\n<p>Nor does this show the new scale is worse in every way. Its readings agree more closely with each other: a range of 0.16 kg against 0.3 kg. And five readings at 50 kg say nothing about either scale at other weights.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A methods section says: “One trained observer took every measurement, so this study has no measurement error to consider.”</p>\n<p>Kiran and colleagues also used one observer. They call it a strength: no two people’s readings can then differ.</p>\n<p>Now say a second person also measures the necks of the same five people. Each writes down the size round the neck in cm.</p>\n<table style=\"width:74%;\">\n\n<tbody>\n<tr>\n<td>observer 1 (cm)</td>\n<td>34.2</td>\n<td>35.6</td>\n<td>33.8</td>\n<td>36.1</td>\n<td>34.9</td>\n</tr>\n<tr>\n<td>observer 2 (cm)</td>\n<td>34.6</td>\n<td>36.0</td>\n<td>34.3</td>\n<td>36.4</td>\n<td>35.2</td>\n</tr>\n</tbody>\n</table>\n<p>Decide what to compute, compute it, and say what the claim does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Compute each person’s difference between the two observers, then the average difference.</p>\n<div class=\"working\">\n<p>34.6 minus 34.2 = 0.4<br />\n36.0 minus 35.6 = 0.4<br />\n34.3 minus 33.8 = 0.5<br />\n36.4 minus 36.1 = 0.3<br />\n35.2 minus 34.9 = 0.3</p>\n</div>\n<div class=\"working\">\n<p>0.4 plus 0.4 plus 0.5 plus 0.3 plus 0.3 = 1.9<br />\n1.9 divided by 5 = 0.38</p>\n</div>\n<p>Observer 2 reads about 0.38 cm higher than observer 1. This is true on every person, not just on average. All five differences come out positive.</p>\n<p>That is the shape of a systematic error: one observer’s own habit. It shows up only once a second observer’s readings exist to check against.</p>\n<p>This does not prove the one-observer study had no measurement error.</p>\n<p>It shows that two observers, measuring the same necks, can disagree by an amount that looks systematic.</p>\n<p>A study using only one of these two observers would carry that same habit through every reading. Nothing in its own data would reveal it.</p>\n<p>Nor does this say which observer is closer to the truth. Comparing two observers to each other is not the same as comparing either one to a known correct value.</p>"
+  }
+ ]
+}

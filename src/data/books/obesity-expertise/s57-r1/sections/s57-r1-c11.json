@@ -1,0 +1,145 @@
+{
+ "format": 1,
+ "id": "s57-r1-c11",
+ "label": "11",
+ "title": "Running one session around retrieval rather than transmission",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"470\">session built around retrieval</dfn> is one in which the learners spend much of the time bringing material back from memory, each alone and in writing, and seeing the correct answer afterwards.</p>\n<p>The <dfn data-g=\"471\">session plan</dfn> is a written table of the session’s parts, in order. A plan for one session built around retrieval has these parts.</p>\n<ol type=\"1\">\n<li>The objective, stated to the learners at the start.</li>\n<li>A <dfn data-g=\"387\">pre-test</dfn> on one of two <dfn data-g=\"359\">parallel forms</dfn>.</li>\n<li>Short teaching parts. Each is followed by one question that every learner answers alone, in writing, without notes, and then by the correct answer.</li>\n<li>One question on material from an earlier session, answered from memory.</li>\n<li>A closing <dfn data-g=\"206\">free recall</dfn>: notes away, each learner writes down all they can about the topic, then checks it against the key points shown on the board.</li>\n<li>A <dfn data-g=\"381\">post-test</dfn> on the other form.</li>\n<li>A delayed test on a third form, or the first form again, booked before the session for a date written into the plan.</li>\n</ol>",
+   "refs": [
+    279,
+    290,
+    291,
+    292,
+    293,
+    294,
+    69,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Most sessions are built around the teacher talking. The learners listen, and at the end someone asks “any questions?”. This section builds a session the other way round.</p>\n<p>The earlier sections gave you the pieces. This section puts them in order on one page, the session plan, with the minutes for each part.</p>\n<p>Then you count. How many of the 60 minutes did every learner spend answering from memory? In a lecture the answer is close to none. In this plan it is 30.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c11-two-plans.png",
+   "alt": "Grouped bars. Explaining: 45 minutes in the colleague's plan, 18 in the rebuilt plan. Every learner answers from memory: 5 and 30. Pre-test: 0 and 10. The rest of the hour: 10 and 2.",
+   "w": 1357,
+   "h": 658,
+   "caption": "The same 60 minutes in two plans. The colleague’s: 45 minutes of slides, 5 of a quiz and 10 of “Any questions?”. The rebuilt plan: 18 minutes of explaining, 30 with every learner answering from memory, 10 of pre-test and 2 on the objective."
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c11-step-minutes.png",
+   "alt": "Eleven bars, one per step of the plan, in minutes: 2, 10, 6, 4, 6, 4, 6, 4, 3, 5, 10.",
+   "w": 1621,
+   "h": 701,
+   "caption": "The rebuilt plan step by step. A 10-minute pre-test (step 2) and post-test (step 11) bracket three teaching parts of 6 minutes, each followed by a 4-minute question and its answer."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a plan that fails. A colleague shares his plan for a one-hour session on <dfn data-g=\"45\">body mass index</dfn> (BMI) for a final-year MBBS batch of 30.</p>\n<ul>\n<li>45 minutes: slides on BMI, with examples.</li>\n<li>10 minutes: “Any questions?”</li>\n<li>5 minutes: a quiz. “Write the formula for BMI.”</li>\n</ul>\n<p>Count the minutes in which every learner pulls something from memory. The slides: none. The questions: a few students ask, the teacher answers, and the rest listen. Nobody is made to recall anything. The quiz: 5 minutes, and it asks for a line from the slides. The last section showed that such an item tests memory of the session, not the objective.</p>\n<p>Now look for what is missing. There is no objective, so nothing to test against. The pre-test gets 0 minutes, so there is no starting point. There is no feedback: the quiz is collected and nobody sees the right answer. There is no delayed test, so the plan cannot show learning. section 1 said learning is what lasts, and it is what this plan never measures.</p>\n<p>This is a transmission session. The slides may be excellent. The design gives the learners almost nothing to do.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The colleague’s plan is made up, though its shape is common. A lecture is not worthless: it can be the fastest way to lay out new material. What fails here is the hour’s balance, 45 minutes of telling and 5 of recall, and the missing checks.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now rebuild it around the objective you wrote two sections back: each student classifies ten new adults’ BMI, given a table, eight of ten right. The plan runs for 60 minutes. The batch is split in half for the two forms, as the last section showed.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>step</th>\n<th>minutes</th>\n<th>the teacher</th>\n<th>every learner</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><ol type=\"1\">\n<li>objective</li>\n</ol></td>\n<td>2</td>\n<td>writes it on the board, reads it out</td>\n<td>reads it</td>\n</tr>\n<tr>\n<td><ol start=\"2\" type=\"1\">\n<li>pre-test, form A or B</li>\n</ol></td>\n<td>10</td>\n<td>hands out the forms, half the batch each</td>\n<td>classifies ten adults, alone, notes away</td>\n</tr>\n<tr>\n<td><ol start=\"3\" type=\"1\">\n<li>teaching part 1: working out BMI from kg and cm</li>\n</ol></td>\n<td>6</td>\n<td>explains, works one example</td>\n<td>watches</td>\n</tr>\n<tr>\n<td><ol start=\"4\" type=\"1\">\n<li>question 1, then its answer</li>\n</ol></td>\n<td>4</td>\n<td>gives one new adult, waits, then shows the worked answer</td>\n<td>writes the BMI, then checks it</td>\n</tr>\n<tr>\n<td><ol start=\"5\" type=\"1\">\n<li>teaching part 2: reading the table</li>\n</ol></td>\n<td>6</td>\n<td>explains, works one example</td>\n<td>watches</td>\n</tr>\n<tr>\n<td><ol start=\"6\" type=\"1\">\n<li>question 2, then its answer</li>\n</ol></td>\n<td>4</td>\n<td>gives one new adult, then the answer</td>\n<td>writes the category, then checks it</td>\n</tr>\n<tr>\n<td><ol start=\"7\" type=\"1\">\n<li>teaching part 3: adults near the edge of a category</li>\n</ol></td>\n<td>6</td>\n<td>explains, works one example</td>\n<td>watches</td>\n</tr>\n<tr>\n<td><ol start=\"8\" type=\"1\">\n<li>question 3, then its answer</li>\n</ol></td>\n<td>4</td>\n<td>gives one new adult near an edge, then the answer</td>\n<td>writes the category, then checks it</td>\n</tr>\n<tr>\n<td><ol start=\"9\" type=\"1\">\n<li>question from last week</li>\n</ol></td>\n<td>3</td>\n<td>asks one question on last week’s topic, then the answer</td>\n<td>writes an answer, then checks it</td>\n</tr>\n<tr>\n<td><ol start=\"10\" type=\"1\">\n<li>free recall</li>\n</ol></td>\n<td>5</td>\n<td>“Notes away. Write all you can about working out and reading BMI.” Then shows the key points</td>\n<td>writes, then checks against the key points on the board</td>\n</tr>\n<tr>\n<td><ol start=\"11\" type=\"1\">\n<li>post-test, the other form</li>\n</ol></td>\n<td>10</td>\n<td>hands each learner the form they did not take first</td>\n<td>classifies ten adults, alone, notes away</td>\n</tr>\n</tbody>\n</table>\n<p>The delayed test is booked now, for the first 10 minutes of next week’s session. Write its date into the plan. Use a third parallel form if you can build one. If not, give each learner the form they took first. A week later they may still remember some of its items, so the delayed score may run slightly high. Say so when you report it.</p>\n<p>Walk through why each part is there.</p>\n<p>The objective goes first so every learner knows what they will be asked to do.</p>\n<p>The pre-test gives each learner a starting score. For students who met BMI in an earlier year, it is also a first attempt at recall. For anyone who never met it, it is only a measurement. Trying to recall something you never learned is unlikely to strengthen memory, especially when no answer follows.</p>\n<p>The teaching parts are short, 6 minutes each. That is this plan’s choice, not a figure from a study. section 8 showed that <dfn data-g=\"553\">working memory</dfn> holds only a few new elements at once. A short part followed by a question stops the new elements piling up, and it gives every learner a turn. Weinstein and colleagues also report that frequent testing can cut mind-wandering.</p>\n<p>Each question gives a new adult, not one from the slides, and asks for what the tests ask for. Every learner writes an answer, alone, before anyone speaks. Then you show the worked answer and each learner checks their own. section 3 showed why all three conditions matter.</p>\n<p>The question from last week puts spacing, from section 4, into the hour. Last week’s material comes back after a gap of a week.</p>\n<p>The free recall is retrieval of the whole topic in the learners’ own order. It is the task Roediger and Karpicke’s students did in section 3: write down as much as you can. Writing it out also shows each learner what they cannot yet explain. section 7 showed that this is where understanding gets tested.</p>\n<p>Now count where the hour goes. The pre-test is counted apart: it measures. The post-test counts as retrieval, because it asks for what was just taught.</p>\n<table style=\"width:64%;\">\n\n<thead>\n<tr>\n<th>what fills the time</th>\n<th>minutes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>explaining</td>\n<td>18</td>\n</tr>\n<tr>\n<td>every learner answers from memory</td>\n<td>30</td>\n</tr>\n<tr>\n<td>measuring (the pre-test)</td>\n<td>10</td>\n</tr>\n<tr>\n<td>the objective</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>6 plus 6 plus 6 = 18<br />\n4 plus 4 plus 4 plus 3 plus 5 plus 10 = 30<br />\n18 plus 30 plus 10 plus 2 = 60</p>\n</div>\n<p>Against the colleague’s plan, explaining falls from 45 minutes to 18. So you cover less. That is the trade: in the classroom studies Agarwal and colleagues reviewed, which you met in section 3, <dfn data-g=\"448\">retrieval practice</dfn> beat the same time spent on other activities, lectures without quizzes among them. One session is a fair place to start. In 10 of their 50 classroom experiments, all the retrieval practice fell within a single session.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The minutes are this plan’s own choices, sized for one objective and a batch of 30 who have calculators. A topic with more new elements needs more or longer teaching parts, and fewer items per test.</p>\n<p>Ten minutes for a ten-item test assumes the learners work fast. Time a colleague on one form before the session. If they need 15 minutes, cut the teaching, not the questions.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Any questions?” and a question to one student are not retrieval practice for the room. Ask a question every learner answers alone, in writing, so that you know every learner did the recalling.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Write the plan as a table before the session: minutes, what you do, what every learner does. Then add up the minutes in which every learner answers from memory.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A pre-test on material the learners never met measures where they start. It is not practice. Do not count it as part of the retrieval in your plan.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>For a hands-on objective, the retrieval is doing it. Each learner performs the step from memory while someone ticks a checklist of its steps. With one trainer, watch a few learners each session and say how many you watched.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Questions spread through a session have not been shown to beat the same questions at its end. Spread them for other reasons: short teaching parts, attention, a turn for every learner. Do not tell colleagues the spreading itself is proven.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Give the in-session questions the same format as the tests. Change the case, not the kind of question.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Book the delayed test before the session and write its date in the plan.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A plan that meets every part here says what the learners did. Present your plan as a design, not as a result.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A senior resident runs a journal club for eight residents. Her plan: she presents the trial for 30 minutes. Then she picks residents one at a time and asks each a question about it. Their answers are marked, and the marks count in their formal assessment. The session ends there.</p>\n<p>Name each place where this plan departs from a session built around retrieval. For each, say what you would change.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>One resident at a time answers. The other seven listen, so for most of the questioning most of the room is not recalling anything. Change: ask every resident the same question, each writing an answer alone before anyone speaks.</p>\n<p>Marks that count can make the questions feel high-stakes. section 3 showed one study where pressure during quizzing cut the later benefit. Change: keep these questions out of formal assessment, so that nobody is afraid to get them wrong.</p>\n<p>Nobody is told the right answer. Change: after the written answers, give the answer, or the key points of a good one, and let each resident check their own.</p>\n<p>Thirty minutes of presenting in one block. Change: break it into short parts, each followed by one written question.</p>\n<p>No objective, no pre-test, no closing free recall and no delayed test. Change: write one objective, such as judging whether the trial’s comparison was fair. Test it before and after on two different abstracts, and book a third abstract for a week later.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>This book’s build: deliver one teaching session built around retrieval, with a written objective. Choose a real group: a batch of MBBS students, residents, or a session for accredited social health activist (ASHA) workers. Before the session, prepare and date these.</p>\n<ol type=\"1\">\n<li>The objective, with all six parts.</li>\n<li>Two parallel forms of the test, and how the group splits between them.</li>\n<li>The session plan as a table: minutes, what you do, what every learner does.</li>\n<li>The questions for each teaching part, each with its answer.</li>\n<li>The date of the delayed test.</li>\n</ol>\n<p>Deliver the session. Afterwards, keep every learner’s pre-test and post-test. Give the delayed test on its date. Write three lines on what departed from the plan.</p>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>Check your pack before the session against this list.</p>\n<ul>\n<li>The objective has who, one action you can watch or mark, the content, the condition, the standard and by when.</li>\n<li>Every test item asks for that action on a case not used in the teaching. The two forms pair item by item. Half the group takes each form first, decided in advance.</li>\n<li>The plan has the seven parts in order. Objective, pre-test, and short teaching parts, each with a written question and its answer. Then a question from earlier material, free recall, the post-test, and a booked delayed test.</li>\n<li>Every in-session question is answered by every learner, alone, in writing, notes away, and then checked against the answer you show.</li>\n<li>No mark from the in-session questions goes into internal or any other formal assessment.</li>\n<li>You have added up the minutes in which every learner answers from memory, and written the total on the plan.</li>\n</ul>\n<p>After the session, the build is met when the session happened as planned and the three sets of scores are kept. Whether the learners gained is a separate question, answered from those scores.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A district health officer asks whether the district’s one-day refresher trainings for ASHA workers should switch from lectures to sessions built around retrieval. One page, answer first, no methods section.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The answer first: try it in a few trainings first, and measure it. Do not switch everything on the evidence we have.</p>\n<p>Why it is worth trying. In the classroom studies Agarwal and colleagues reviewed, having every learner answer questions from memory, then showing the answer, taught more than the same time spent on lectures without quizzes.</p>\n<p>Why not switch everything at once. Those studies were in schools, colleges and medical schools. The review names no training for ASHA workers. The effect may hold for them. The review cannot tell you.</p>\n<p>What to do. Pick a few trainings. Keep the content, and cut the talking into short parts. After each part, ask every ASHA one question she answers on her own. Then give the answer. Test what she can do, not what she can recite, at the end and again a month later. Compare with trainings run the old way.</p>\n<p>What it costs. Trainer time to rewrite the sessions and one short test a month later. No new staff.</p>"
+  }
+ ]
+}
