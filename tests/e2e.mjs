@@ -141,8 +141,14 @@ try {
     await page.goto(BASE + `${T}learn/s3/`);
     await page.click('[data-step="1"]');
     await page.waitForTimeout(1200);
-    const drawn = await page.$eval('.av-wave canvas', (c) => { const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data; let n = 0; for (let i = 3; i < d.length; i += 4) if (d[i]) n++; return n / (d.length / 4); });
-    if (MEDIA) check(drawn > 0.08, `${name} learn page draws the waveform from peaks (${(drawn * 100).toFixed(0)}% of pixels)`);
+    // Columns with ink well away from the midline: the waveform has hundreds; the plain progress bar
+    // (no peaks) has only the playhead and none of the rest.
+    const drawn = await page.$eval('.av-wave canvas', (c) => {
+      const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data, band = c.height * 0.15, cols = new Set();
+      for (let y = 0; y < c.height; y++) if (Math.abs(y - c.height / 2) > band) for (let x = 0; x < c.width; x++) if (d[(y * c.width + x) * 4 + 3] > 64) cols.add(x);
+      return cols.size / c.width;
+    });
+    if (MEDIA) check(drawn > 0.05, `${name} learn page draws the waveform from peaks (${(drawn * 100).toFixed(0)}% of columns)`);
     check(await page.$eval('.av-play', (b) => b.getAttribute('aria-pressed') === 'true'), `${name} learn example plays`);
     // seeking by click: on the whole-clip strip when the close-up is shown, else on the progress bar
     if (MEDIA) check(await page.isVisible('.av-overview'), `${name} learn page shows the close-up and the whole-clip strip`);
