@@ -6,6 +6,7 @@
 //   Without peaks (missing file, or R2 not sending CORS headers) it shows a plain progress bar instead.
 // - Two views of the waveform: a close-up of a few seconds that follows the playhead (tap to seek, drag to
 //   move along the recording), and below it the whole clip as a thin strip (tap or drag to jump).
+// - Drawn as bars, never smoothed: the picture holds only what is in the peaks file.
 // - Heights are compressed (see displayShape) so quiet sounds show next to S1 and S2.
 // - setCues(false) hides the waveform shape and spans, e.g. during a quiz, where the shape of AF or
 //   crackles would give the answer away. Position and seeking still work.
@@ -302,35 +303,33 @@ export class AudioViewer implements MediaViewer<AudioMedia> {
     g.fillRect(Math.min(head, w - 2), 0, 2, h);
   }
 
-  /** Filled outline of the waveform from t0 to t1 (s) across w px. Where several points fall in one pixel
-   *  it keeps their extremes (a 5 ms crackle is never averaged away); where a point spans several pixels
-   *  it interpolates between neighbours, so the outline stays smooth when zoomed in. */
+  /** The waveform from t0 to t1 (s) across w px, as bars. Zoomed out, one bar per pixel holds the extremes
+   *  of the points under it (a 5 ms crackle is never averaged away). Zoomed in, one bar per point, as wide
+   *  as the time it covers: nothing is drawn that is not in the data. */
   private trace(t0: number, t1: number, w: number, h: number, pad: number) {
     const shape = this.shape!, points = shape.length / 2, pps = points / this.peaks!.duration;
-    const mid = h / 2, amp = mid - pad, perPx = ((t1 - t0) / w) * pps;
-    const cols = Math.ceil(w), top = new Float32Array(cols + 1), bot = new Float32Array(cols + 1);
-    const at = (i: number, k: 0 | 1) => (i >= 0 && i < points ? shape[2 * i + k] : 0);
-    for (let px = 0; px <= cols; px++) {
-      const p = (t0 + (px / w) * (t1 - t0)) * pps; // position in points
-      let lo = 0, hi = 0;
-      if (perPx >= 1) {
-        for (let i = Math.floor(p), end = Math.min(Math.ceil(p + perPx), points); i < end; i++) {
+    const mid = h / 2, amp = mid - pad, pxPerSec = w / (t1 - t0), perPx = pps / pxPerSec;
+    const path = new Path2D();
+    const bar = (x: number, bw: number, lo: number, hi: number) => {
+      const top = mid - Math.max(hi * amp, 0.5), bot = mid - Math.min(lo * amp, -0.5);
+      path.rect(x, top, bw, bot - top);
+    };
+    if (perPx >= 1) {
+      for (let px = 0; px < w; px++) {
+        const p = (t0 + px / pxPerSec) * pps;
+        let lo = 0, hi = 0;
+        for (let i = Math.max(Math.floor(p), 0), end = Math.min(Math.ceil(p + perPx), points); i < end; i++) {
           if (shape[2 * i] < lo) lo = shape[2 * i];
           if (shape[2 * i + 1] > hi) hi = shape[2 * i + 1];
         }
-      } else {
-        const f = p - 0.5, i = Math.floor(f), k = f - i; // point i is centred on (i + 0.5) / pps
-        lo = at(i, 0) * (1 - k) + at(i + 1, 0) * k;
-        hi = at(i, 1) * (1 - k) + at(i + 1, 1) * k;
+        bar(px, 1, lo, hi);
       }
-      top[px] = mid - Math.max(hi * amp, 0.5);
-      bot[px] = mid - Math.min(lo * amp, -0.5);
+    } else {
+      const bw = pxPerSec / pps, gap = bw >= 3 ? 1 : 0; // a hairline between wide bars keeps them readable
+      for (let i = Math.max(Math.floor(t0 * pps), 0), end = Math.min(Math.ceil(t1 * pps), points); i < end; i++) {
+        bar((i / pps - t0) * pxPerSec, bw - gap, shape[2 * i], shape[2 * i + 1]);
+      }
     }
-    const path = new Path2D();
-    path.moveTo(0, top[0]);
-    for (let px = 1; px <= cols; px++) path.lineTo(px, top[px]);
-    for (let px = cols; px >= 0; px--) path.lineTo(px, bot[px]);
-    path.closePath();
     return path;
   }
 }
