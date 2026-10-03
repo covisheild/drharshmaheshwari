@@ -58,7 +58,7 @@ export const SHARED_LINKS: Link[] = [
   { href: '/about/', label: 'About' },
   { href: '/account/', label: 'Your account' },
   { href: '/support/', label: 'Support this project' },
-  { href: '/disclaimer/', label: 'Medical disclaimer' },
+  { href: '/disclaimer/', label: 'Disclaimer and credits' },
   { href: '/privacy/', label: 'Privacy' },
   { href: '/rss.xml', label: 'RSS' },
 ];

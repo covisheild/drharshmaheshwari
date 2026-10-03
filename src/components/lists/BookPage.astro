@@ -15,13 +15,6 @@ const pdfUrl = d.pdf.startsWith('http') ? d.pdf : new URL(d.pdf, SITE.url).href;
 // "CC BY-NC-SA 4.0" -> https://creativecommons.org/licenses/by-nc-sa/4.0/
 const cc = d.license.match(/^CC ([A-Z-]+) (\d\.\d)$/);
 const licenseUrl = cc ? `https://creativecommons.org/licenses/${cc[1].toLowerCase()}/${cc[2]}/` : undefined;
-const LICENSE_TERMS: Record<string, string> = {
-  'BY-NC-SA': 'free to copy, share and adapt for non-commercial use, with credit, under the same licence',
-  'BY-NC-ND': 'free to copy and share with credit, not for sale or modification',
-  'BY-NC': 'free to copy, share and adapt for non-commercial use, with credit',
-  'BY': 'free to copy, share and adapt, with credit',
-};
-const licenseTerms = cc ? LICENSE_TERMS[cc[1]] : undefined;
 const jsonld = [{
   '@type': 'Book', '@id': `${url}#book`, name: d.title, alternativeHeadline: d.subtitle, description: d.description, url,
   author: { '@id': `${SITE.url}/#person` }, datePublished: d.published.toISOString().slice(0, 10), inLanguage: 'en-IN',
@@ -40,7 +33,7 @@ const jsonld = [{
           <a class="eyebrow" href={section(d.mode, 'books')} style="text-decoration:none">Free book</a>
           <h1>{d.title}</h1>
           {d.subtitle && <p class="muted" style="font-size:1.15rem">{d.subtitle}</p>}
-          <div class="meta"><span>For: {d.audience}</span>{d.pages && <span>{d.pages} pages</span>}<span>{d.license}</span></div>
+          <div class="meta"><span>For: {d.audience}</span>{d.pages && <span>{d.pages} pages</span>}<span>{licenseUrl ? <a href={licenseUrl}>{d.license}</a> : d.license}</span></div>
           <a class="btn btn-primary book-btn" href={d.pdf} rel="noopener">Download free PDF{d.size && ` (${d.size})`} <span class="arrow">↓</span></a>
         </div>
       </div>
@@ -48,8 +41,6 @@ const jsonld = [{
     <div class="prose-wrap" style="padding-block:2.5rem 4rem">
       <div class="prose"><Content /></div>
       {d.contents.length > 0 && <div class="prose"><h2>Contents</h2><ol>{d.contents.map((c) => <li>{c}</li>)}</ol></div>}
-      <p class="disclaimer">Shared under {licenseUrl ? <a href={licenseUrl}>{d.license}</a> : d.license}{licenseTerms && `: ${licenseTerms}`}. Educational, not personal medical advice.</p>
-      <p class="small muted">This book is free. If it helps you, you can <a href="/support/">support this project</a>.</p>
     </div>
   </article>
 </Base>

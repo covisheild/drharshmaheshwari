@@ -124,7 +124,7 @@ test('the trainer lives at /doctors/trainers/auscultation/ with every section an
   assert.ok(!existsSync(join(DIST, 'tools/trainers')), 'the prototype URL /tools/trainers/ must not be built');
 });
 
-test('every trainer page has the section nav (current section marked) and the CC BY attribution', () => {
+test('every trainer page has the section nav (current section marked) and links to the CC BY credits', () => {
   for (const [url, doc] of html) {
     if (!url.startsWith(TRAINER)) continue;
     const nav = doc.match(/<nav class="t-nav"[\s\S]*?<\/nav>/)?.[0];
@@ -132,8 +132,31 @@ test('every trainer page has the section nav (current section marked) and the CC
     assert.equal([...nav.matchAll(/<a /g)].length, 6, url);
     const section = url === TRAINER ? 'Home' : { 'learn/': 'Learn', 'practice/': 'Practice', 'quiz/': 'Quiz', 'review/': 'Review', 'progress/': 'Progress' }[url.slice(TRAINER.length).split('/')[0] + '/'];
     assert.match(nav, new RegExp(`aria-current="page"[^>]*>[\\s\\S]*?<span>${section}</span>`), `${url} should mark ${section}`);
-    assert.match(doc, /creativecommons\.org\/licenses\/by\/4\.0/, `${url} lacks the CC BY 4.0 link`);
-    assert.match(doc, /10\.1109\/IEEEDATA\.2025\.3566012/, `${url} lacks the dataset citation`);
+    const foot = doc.match(/<footer class="t-foot"[\s\S]*?<\/footer>/)?.[0] ?? '';
+    assert.match(foot, /href="\/disclaimer\/#credits"[^>]*>Recording credits \(CC BY 4\.0\)/, `${url} footer lacks the named link to the recording credits`);
+    assert.match(foot, /Real patients may differ/, `${url} footer lacks the short clinical-judgement line`);
+    assert.match(foot, /href="\/disclaimer\/"/, `${url} footer lacks the Disclaimer link`);
+  }
+});
+
+test('/disclaimer/ carries the full CC BY credit for the recordings, the book licence and the medical disclaimer', () => {
+  const doc = html.get('/disclaimer/');
+  assert.ok(doc, '/disclaimer/ is built');
+  const credits = doc.match(/<h2 id="credits">[\s\S]*?(?=<h2 id="support">)/)?.[0] ?? '';
+  assert.match(credits, /Torabi Y, Shirani S, Reilly JP/, 'authors named');
+  assert.match(credits, /10\.1109\/IEEEDATA\.2025\.3566012/, 'dataset citation');
+  assert.match(credits, /zenodo\.org\/records\/15376628/, 'source link');
+  assert.match(credits, /creativecommons\.org\/licenses\/by\/4\.0/, 'licence link');
+  assert.match(credits, /Changes made here/, 'list of changes (CC BY requires it)');
+  assert.match(doc, /<h2 id="books">[\s\S]*?creativecommons\.org\/licenses\/by-nc-sa\/4\.0/, 'book licence section');
+  assert.match(doc, /<h2 id="medical">/, 'medical disclaimer section');
+  assert.doesNotMatch(doc, /not for diagnosing patients/i, 'wording that would erode trust is not used');
+});
+
+test('pages stay clean: the long licence and disclaimer lines are gone from book, series, article and trainer pages', () => {
+  for (const [url, doc] of html) {
+    if (url === '/disclaimer/') continue;
+    assert.doesNotMatch(doc, /Educational, not personal medical advice\.<\/p>|free to copy, share and adapt for non-commercial use, with credit, under the same licence|If (this|these) (book|books|trainer) helps? you|not for diagnosing patients|Progress is saved in this browser only/, `${url} still carries a long disclaimer line`);
   }
 });
 

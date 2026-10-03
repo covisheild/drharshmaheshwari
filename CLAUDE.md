@@ -135,7 +135,10 @@ local devDependency. Change production settings only on purpose; preview-only se
   loudness, encodes MP3s, writes `<id>.peaks.json` waveforms (audiowaveform JSON v2) next to each MP3, and writes
   `src/data/trainers/auscultation/recordings.json`. Both MP3s and peaks are uploaded to R2 at
   `trainers/auscultation/hls-cmds-v2/`. Peaks are fetched with CORS, so the bucket's CORS policy must allow GET.
-  Keep the attribution and the list of changes on every trainer page (`Credits.astro`; CC BY requires it).
+  CC BY attribution (citation, licence, list of changes) lives at `/disclaimer/#credits`; every trainer page footer links to it by name
+  ("Recording credits (CC BY 4.0)", `Credits.astro`). Keep both, and keep the list of changes in step with `prepare.py`.
+- Long licence and disclaimer text lives only on `/disclaimer/` ("Disclaimer and credits"); other pages carry a short link ("Disclaimer",
+  "Support"). Trainer pages say "Real patients may differ: use clinical judgement", never "not for diagnosing patients".
 - Finding slugs (`config.ts`) are permanent URLs. Teaching notes are clinical content: Harsh reviews changes before `main`.
 
 ## Drafts

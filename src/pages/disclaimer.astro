@@ -1,12 +1,26 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Medical disclaimer" description="The content on this site is educational and does not replace personal medical advice.">
+<Base title="Disclaimer and credits" description="The content on this site is educational and does not replace personal medical advice. Book licences, recording credits and how to support the project.">
   <div class="prose-wrap prose" style="padding-block:3rem 4rem">
-    <h1>Medical disclaimer</h1>
-    <p>Everything on this website — articles, tools, videos and books — is for general education. It is not personal medical advice, diagnosis or treatment, and it does not create a doctor–patient relationship.</p>
+    <h1>Disclaimer and credits</h1>
+    <h2 id="medical">Medical disclaimer</h2>
+    <p>Everything on this website — articles, tools, videos, books and trainers — is for general education. It is not personal medical advice, diagnosis or treatment, and it does not create a doctor–patient relationship.</p>
     <p>Calculators give screening estimates based on published cut-offs. They cannot account for your full history. Discuss any result that worries you with a doctor who can examine you.</p>
     <p>Do not stop or change a prescribed medicine because of something you read here. In an emergency, go to the nearest hospital or call 112.</p>
     <p>I do not offer consultations through this site. Content is reviewed periodically; each article shows when it was last reviewed.</p>
+    <p><b>Articles</b> are for general education and do not replace advice from a doctor who knows your history.</p>
+    <p><b>Clinical trainers</b> are for building skill. Their recordings and cases are clean teaching material, so real patients may differ: use clinical judgement with them.</p>
+
+    <h2 id="books">Book licences</h2>
+    <p>Every book is shared under the licence shown on its page, usually <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>: free to copy, share and adapt for non-commercial use, with credit, under the same licence. Books are educational and are not personal medical advice.</p>
+
+    <h2 id="credits">Credits: heart and lung recordings</h2>
+    <p>The recordings in the Auscultation Trainer come from: Torabi Y, Shirani S, Reilly JP. <a href="https://doi.org/10.1109/IEEEDATA.2025.3566012">Descriptor: Heart and Lung Sounds Dataset Recorded from a Clinical Manikin using Digital Stethoscope (HLS-CMDS). IEEE Data Descriptions, 2025.</a> Data from <a href="https://zenodo.org/records/15376628">Zenodo</a>, licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+    <p><b>Changes made here:</b> exact duplicate files removed, one mislabelled file left out, loudness evened out with one volume change per file, files converted from WAV to MP3, and waveform outlines generated. Labels are the dataset authors'.</p>
+    <p>The recordings come from a clinical teaching manikin, not from patients.</p>
+
+    <h2 id="support">Support</h2>
+    <p>Everything here is free to read and use. If it helps you, you can <a href="/support/">support this project</a>.</p>
   </div>
 </Base>
