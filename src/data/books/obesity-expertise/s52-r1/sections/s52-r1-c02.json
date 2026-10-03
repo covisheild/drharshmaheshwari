@@ -1,0 +1,203 @@
+{
+ "format": 1,
+ "id": "s52-r1-c02",
+ "label": "2",
+ "title": "Installing R and an editor; the console and the script",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>R is a program that reads instructions written in the R language and carries them out. R is installed first, then <dfn data-g=\"418\">RStudio</dfn>.</p>\n<p>The <dfn data-g=\"90\">console</dfn> is the pane in which R shows a prompt, <code>&gt;</code>, and waits for one instruction. If the instruction is incomplete, R shows <code>+</code> instead of <code>&gt;</code> and waits for the rest.</p>\n<p>A <dfn data-g=\"427\">script</dfn> is a plain-text file of R code, saved with a name ending in <code>.R</code>.</p>\n<p>Everything after a <code>#</code> on a line is a <dfn data-g=\"78\">comment</dfn>. R ignores it; people read it.</p>\n<p>An <dfn data-g=\"154\">error message</dfn> is R’s statement that it could not carry out an instruction. It says what it could not do and, for a line it could not read, where on the line it stopped.</p>",
+   "refs": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>RStudio is the window you work in. Install R first: download it from <dfn data-g=\"102\">CRAN</dfn>, the Comprehensive R Archive Network (cloud.r-project.org). Then download RStudio from Posit’s website (posit.co/download/rstudio-desktop).</p>\n<p>Open RStudio and you see several panes. The console is the one showing the prompt <code>&gt;</code>.</p>\n<p><strong>The console</strong> is where R waits for you. Type <code>2 + 3</code> after it and press Enter. R prints <code>[1] 5</code>. The <code>[1]</code> only marks the first value on the line; ignore it for now. The answer is printed once and kept nowhere.</p>\n<p><strong>The script</strong> is a plain text file of instructions, one per line, saved with a name ending in <code>.R</code>. Open one from the File menu: New File, then R script. Put the cursor on a line and press Ctrl and Enter together. RStudio sends that line to the console, and the answer appears there. Select every line with the mouse and press Ctrl and Enter (Cmd and Enter on a Mac), and the whole file runs from the top.</p>\n<p>The console is a place to try things. The script is what you keep.</p>\n<p>Times is <code>*</code>. Divided by is <code>/</code>. The signs × and ÷ that you may have met at school do not work in R. Powers are <code>^</code>, so 1.6 squared is <code>1.6^2</code>. The order of working is the one you already know: brackets, powers, then times and divide, then plus and minus.</p>\n<p>Use comments to say why a line is there.</p>\n<p>When R cannot do what you asked, it prints an error message. Read it word by word.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c02-three-bmi-answers.png",
+   "alt": "A bar chart with three bars. Try 1, 72 / 160^2: 0.0028125, too small to show above the axis. Try 2, 72 / 1.6 * 1.6: 72. Try 3, 72 / 1.6^2: 28.125.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The three answers R printed for the same made-up patient’s body mass index (BMI). Height typed in centimetres, <code>72 / 160^2</code>, gives 0.0028125, a factor of 10,000 too small and too short to see as a bar. The power left out, <code>72 / 1.6 * 1.6</code>, gives back the weight, 72. Only <code>72 / 1.6^2</code> gives 28.125 kg/m<sup>2</sup>, in the tens, as the rounded check expects."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start in the console, and make the mistakes on purpose. A made-up patient in a clinic register weighs 72 kg and is 160 cm tall. Book 0 gave you <dfn data-g=\"44\">body mass index</dfn> (BMI): weight in kilograms divided by height in metres, squared, in kg/m<sup>2</sup>. Type the first thing that comes to mind.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"dv\">72</span> <span class=\"sc\">/</span> <span class=\"dv\">160</span><span class=\"sc\">^</span><span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 0.0028125</code></pre>\n<p>R does exactly what you typed. Now do Book 0’s order-of-magnitude check: round each input to one figure. 70 divided by 2 squared, which is 4, is about 20, so the BMI should be in the tens. This answer is thousands of times too small. The height went in as centimetres. 160 cm is 1.6 m, because a metre is 100 cm.</p>\n<p>Try again, and this time leave the <dfn data-g=\"454\">squaring</dfn> out by accident:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"dv\">72</span> <span class=\"sc\">/</span> <span class=\"fl\">1.6</span> <span class=\"sc\">*</span> <span class=\"fl\">1.6</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 72</code></pre>\n<p>The answer is the weight you started with. R worked left to right: 72 divided by 1.6, then that times 1.6. Multiplying by 1.6 twice was never what you meant. You meant 1.6 squared, and that needs a power or a bracket.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"dv\">72</span> <span class=\"sc\">/</span> <span class=\"fl\">1.6</span><span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span><span class=\"dv\">72</span><span class=\"sc\">/</span>(<span class=\"fl\">1.6</span><span class=\"sc\">*</span><span class=\"fl\">1.6</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 28.125\n[1] 28.125</code></pre>\n<p>Both lines give 28.125, so the patient’s BMI is about 28.1 kg/m<sup>2</sup>. The power is worked out before the division, just as Book 0’s order of operations says. The second line has no spaces, and R gives the same answer. This book puts spaces round the signs so a line is easy to read.</p>\n<p>One more slip. You may have learnt the sign ÷ at school. Type it here:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"dv\">72</span> ÷ <span class=\"fl\">1.6</span><span class=\"sc\">^</span><span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>Error: &lt;text&gt;:1:4: unexpected input\n1: 72 ÷\n       ^</code></pre>\n<p>Read the message literally. “Unexpected input” means R met a character it cannot read. The <code>^</code> under the line points at the ÷ sign, which is not part of the R language. The <code>1:4</code> says where: line 1, fourth character. The fix is <code>/</code>.</p>\n<p>Now scroll up through the console. Five tries sit there, three of them wrong, in the order you typed them. Nothing marks which ones were right. If you came back next week, you would have to work it out again.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>BMI is used here only because Book 0 taught it and the numbers are easy to check. The patient is made up, and 28.1 kg/m<sup>2</sup> says nothing about anyone real.</p>\n<p>The order-of-magnitude check caught the first slip because a factor of 10,000 is huge. It would not catch a weight typed as 27 instead of 72. Only checking the inputs catches that.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now put the right version where it will last. Open a new script from the File menu. Type these lines into it, and save it as <code>bmi_arithmetic.R</code>. A name with no spaces, all in small letters, and saying what the file does, is easy to find and easy to type later.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"co\"># BMI of a made-up clinic patient, from the register&#39;s units</span></span>\n<span><span class=\"co\"># Weight is recorded in kg and height in cm.</span></span>\n<span></span>\n<span><span class=\"co\"># Height in metres: the register gives cm, and BMI needs m</span></span>\n<span><span class=\"dv\">160</span> <span class=\"sc\">/</span> <span class=\"dv\">100</span></span>\n<span></span>\n<span><span class=\"co\"># BMI in kg/m^2: weight divided by height in metres squared</span></span>\n<span><span class=\"dv\">72</span> <span class=\"sc\">/</span> (<span class=\"dv\">160</span> <span class=\"sc\">/</span> <span class=\"dv\">100</span>)<span class=\"sc\">^</span><span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 1.6\n[1] 28.125</code></pre>\n<p>Select all the lines and press Ctrl and Enter. In the console each line appears above its answer; the book prints the answers only. The comments are skipped. The two calculations run, from the top, and their answers appear in the console.</p>\n<p>Read the second calculation as R reads it. The bracket <code>(160 / 100)</code> is worked out first, giving 1.6. Then the power: 1.6 squared. Then 72 is divided by that.</p>\n<p>Notice what the script holds that the console did not. It keeps only the right version. Its comments say why each line is there. The conversion from centimetres to metres is a line you can see, not a step you did in your head. Close RStudio, open the file tomorrow, and run it. You get 28.125 again.</p>\n<p>This is the first file of the habit the book builds. Later sections add a folder, data files and a whole analysis. The habit does not change: what you want to keep goes in the script.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A script that runs is not a script that is right. If the register said 61 kg and you typed 72, the script would repeat the wrong answer every time, perfectly. Running from a file makes a mistake repeatable and visible. It does not remove it.</p>\n<p>These two lines use typed-in numbers. Real work reads the numbers from a data file, and that comes later in this book.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to think the console keeps your work. Put anything you want to keep into the script.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Typing × or ÷ stops R with an error.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p><code>72 / 1.6 * 1.6</code> gives 72, not a BMI. R divides and multiplies from left to right. When you mean “divided by a product”, put the product in brackets or use a power.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write a unit conversion as a line of code, with a comment, rather than doing it in your head and typing the result.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When an answer comes out, check its size against what you expect before you use it. A BMI of 0.003 kg/m<sup>2</sup>, or a BMI equal to the weight you typed, means the code is wrong, however cleanly it ran.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee shows you a number from R, ask to see the script, not the console.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Answer from memory, without R open. What does the console show when it is waiting for an instruction? What does it show when your line is unfinished? Where should a line you want to keep be written, and why?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The console shows <code>&gt;</code> when it is waiting, and <code>+</code> when the line you entered is unfinished, for example a bracket left open.</p>\n<p>A line you want to keep goes in the script, a saved file ending in <code>.R</code>. The console runs a line once and keeps only a history of everything typed. The script keeps the lines you chose, with comments, and runs again from the top to give the same answers.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Start the habit. In RStudio, open a new script. Save it with a name of your choosing that has no spaces and says what the file is for. In it, write lines that work out, for a made-up adult who weighs 58 kg and is 152 cm tall:</p>\n<ol type=\"1\">\n<li>the height in metres;</li>\n<li>the BMI in kg/m<sup>2</sup>.</li>\n</ol>\n<p>Give each line a comment saying why it is there. Run the whole script from the top and write down the two answers.</p>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>One possible script, saved as <code>bmi_practice.R</code>:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"co\"># BMI of a made-up adult, worked from the units the register uses</span></span>\n<span></span>\n<span><span class=\"co\"># Height in metres: recorded in cm, and BMI needs m</span></span>\n<span><span class=\"dv\">152</span> <span class=\"sc\">/</span> <span class=\"dv\">100</span></span>\n<span></span>\n<span><span class=\"co\"># BMI in kg/m^2: weight in kg divided by height in m, squared</span></span>\n<span><span class=\"dv\">58</span> <span class=\"sc\">/</span> (<span class=\"dv\">152</span> <span class=\"sc\">/</span> <span class=\"dv\">100</span>)<span class=\"sc\">^</span><span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 1.52\n[1] 25.10388</code></pre>\n<p>The height is 1.52 m. The BMI is about 25.1 kg/m<sup>2</sup>.</p>\n<p>Check your script against three things. The file name has no spaces. Each calculation has a comment saying why. Running every line from the top gives the same two answers each time.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. They have been doing their thesis calculations in the console “because it is faster”. Teach them the difference between the console and a script, and why it matters for a thesis.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw two boxes. Label one “console” and one “script”.</p>\n<p>In the console box, write three lines as the resident might have typed them: <code>72 / 160^2</code>, <code>72 / 1.6 * 1.6</code> and <code>72 / 1.6^2</code>. Ask which one their thesis used. They cannot tell from the box. Neither could their guide, an examiner, or they themselves in six months.</p>\n<p>In the script box, write the one right line with a comment above it: why 160 was divided by 100.</p>\n<p>Then make the point. The console runs a line once, prints the answer and moves on. Its history holds every attempt in the order typed, wrong ones included. The script holds only the version you chose, with the reasons, and runs again from the top whenever anyone asks.</p>\n<p>Speed is not lost. They can still try ideas in the console. What changes is where the answer they will defend lives.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Write one line of R that works out 45 plus 17 times 2. Before you run it, write down what you expect it to print.</p>",
+   "level": 1,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"dv\">45</span> <span class=\"sc\">+</span> <span class=\"dv\">17</span> <span class=\"sc\">*</span> <span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 79</code></pre>\n<p>The multiplication goes first: 17 times 2 is 34, and 45 plus 34 is 79. If you expected 124, you added first. R follows Book 0’s order of operations.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Write one line of R that divides 150 by the sum of 20 and 30.</p>",
+   "level": 2,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"dv\">150</span> <span class=\"sc\">/</span> (<span class=\"dv\">20</span> <span class=\"sc\">+</span> <span class=\"dv\">30</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3</code></pre>\n<p>The bracket makes R add first, giving 50, and 150 divided by 50 is 3. Without the bracket, <code>150 / 20 + 30</code> would divide first and give 37.5.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Predict what each line prints, then run them to check.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"dv\">2</span><span class=\"sc\">^</span><span class=\"dv\">3</span> <span class=\"sc\">*</span> <span class=\"dv\">2</span></span>\n<span><span class=\"dv\">2</span><span class=\"sc\">^</span>(<span class=\"dv\">3</span> <span class=\"sc\">*</span> <span class=\"dv\">2</span>)</span></code></pre></div>",
+   "level": 3,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"dv\">2</span><span class=\"sc\">^</span><span class=\"dv\">3</span> <span class=\"sc\">*</span> <span class=\"dv\">2</span></span>\n<span><span class=\"dv\">2</span><span class=\"sc\">^</span>(<span class=\"dv\">3</span> <span class=\"sc\">*</span> <span class=\"dv\">2</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 16\n[1] 64</code></pre>\n<p>In the first line the power goes first: 2 to the power 3 is 8, and 8 times 2 is 16. In the second line the bracket goes first: 3 times 2 is 6, and 2 to the power 6 is 64.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>This book uses a file of 344 rows of penguin measurements from near Palmer Station, Antarctica. The first penguin in the file weighed 3750 g. Write one line of R that gives its weight in kilograms, with a comment saying what the line does.</p>",
+   "level": 4,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"co\"># Body mass of the first penguin: the file records grams, 1000 g in a kilogram</span></span>\n<span><span class=\"dv\">3750</span> <span class=\"sc\">/</span> <span class=\"dv\">1000</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 3.75</code></pre>\n<p>The first penguin weighed 3.75 kg. The comment keeps the unit and the reason for dividing by 1000 next to the number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A made-up adult in a clinic register weighs 81 kg and is 172 cm tall. Write a short script, with a comment on each line of code, that works out the height in metres and then the BMI in kg/m<sup>2</sup>. Give the BMI to one <dfn data-g=\"116\">decimal</dfn> place in your answer.</p>",
+   "level": 5,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"co\"># Height in metres: the register gives cm</span></span>\n<span><span class=\"dv\">172</span> <span class=\"sc\">/</span> <span class=\"dv\">100</span></span>\n<span></span>\n<span><span class=\"co\"># BMI in kg/m^2: weight in kg divided by height in m, squared</span></span>\n<span><span class=\"dv\">81</span> <span class=\"sc\">/</span> (<span class=\"dv\">172</span> <span class=\"sc\">/</span> <span class=\"dv\">100</span>)<span class=\"sc\">^</span><span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 1.72\n[1] 27.37966</code></pre>\n<p>The height is 1.72 m and the BMI is 27.37966, about 27.4 kg/m<sup>2</sup>. R prints more digits than the measurements carry. The <dfn data-g=\"416\">rounding</dfn> to one decimal place is for the report; the script keeps the full value.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>The first three penguins in the Palmer file have flipper lengths of 181, 186 and 195 mm. Write a line of R that gives their average flipper length in centimetres, with a comment.</p>",
+   "level": 6,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"co\"># Average flipper length of the first three penguins: mm to cm is divided by 10</span></span>\n<span>(<span class=\"dv\">181</span> <span class=\"sc\">+</span> <span class=\"dv\">186</span> <span class=\"sc\">+</span> <span class=\"dv\">195</span>) <span class=\"sc\">/</span> <span class=\"dv\">3</span> <span class=\"sc\">/</span> <span class=\"dv\">10</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 18.73333</code></pre>\n<p>The bracket adds the three lengths first, 562 mm. Divided by 3 that is 187.3 mm, and divided by 10 it is about 18.7 cm. The order of the two divisions does not matter here. The bracket does.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A made-up patient’s weight was measured twice at one visit, 71.4 kg and 71.8 kg. A resident wants the average of the two and writes:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fl\">71.4</span> <span class=\"sc\">+</span> <span class=\"fl\">71.8</span> <span class=\"sc\">/</span> <span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 107.3</code></pre>\n<p>They record 107.3 kg in the register. Find what broke, and say why the wrong answer can look reasonable.</p>",
+   "level": 7,
+   "answer": "<p>R divided before it added. The line worked out 71.8 divided by 2, which is 35.9, and then added 71.4. The sum was never divided.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>(<span class=\"fl\">71.4</span> <span class=\"sc\">+</span> <span class=\"fl\">71.8</span>) <span class=\"sc\">/</span> <span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 71.6</code></pre>\n<p>The average is 71.6 kg.</p>\n<p>Why the wrong answer looks reasonable: 107.3 kg is a weight a real adult can have, so it passes a glance. The check that catches it is the one Book 0 taught for averages. An average of two numbers lies between them. 107.3 is not between 71.4 and 71.8.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A resident saves this script and runs every line. R stops with an error. Find the cause.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"co\"># Height in metres</span></span>\n<span><span class=\"dv\">165</span> <span class=\"sc\">/</span> <span class=\"dv\">100</span></span>\n<span>BMI of patient <span class=\"dv\">2</span></span>\n<span><span class=\"dv\">68</span> <span class=\"sc\">/</span> (<span class=\"dv\">165</span> <span class=\"sc\">/</span> <span class=\"dv\">100</span>)<span class=\"sc\">^</span><span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>Error: &lt;text&gt;:3:5: unexpected symbol\n2: 165 / 100\n3: BMI of\n       ^</code></pre>",
+   "level": 8,
+   "answer": "<p>The third line is meant to be a comment, but it has no <code>#</code>. R tries to read “BMI of patient 2” as an instruction. It finds the word “of” straight after “BMI” with nothing joining them, and stops. That is what “unexpected symbol” means: a word where R did not expect one. The <code>3:5</code> says where: line 3, fifth character, which is where “of” begins.</p>\n<p>The book’s output runs nothing from a block that R cannot read, so it shows the error alone. In the RStudio console, run line by line, line 2 prints <code>[1] 1.65</code> first, and the message is worded a little differently.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"co\"># Height in metres</span></span>\n<span><span class=\"dv\">165</span> <span class=\"sc\">/</span> <span class=\"dv\">100</span></span>\n<span><span class=\"co\"># BMI of patient 2</span></span>\n<span><span class=\"dv\">68</span> <span class=\"sc\">/</span> (<span class=\"dv\">165</span> <span class=\"sc\">/</span> <span class=\"dv\">100</span>)<span class=\"sc\">^</span><span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 1.65\n[1] 24.97704</code></pre>\n<p>With the <code>#</code> in place, the line is skipped and the BMI is about 25.0 kg/m<sup>2</sup>. The error message showed exactly where to look: it quoted the words “BMI of” and pointed at the second one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A line from a made-up thesis results chapter reads: “The mean weight of the three participants in the pilot was 68.3 kg.” The three weights in the pilot register are 64.2, 71.5 and 69.1 kg. Check the sentence in R. Then say what your check does not establish.</p>",
+   "level": 9,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"co\"># Mean of the three pilot weights, in kg</span></span>\n<span>(<span class=\"fl\">64.2</span> <span class=\"sc\">+</span> <span class=\"fl\">71.5</span> <span class=\"sc\">+</span> <span class=\"fl\">69.1</span>) <span class=\"sc\">/</span> <span class=\"dv\">3</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 68.26667</code></pre>\n<p>The mean is 68.26667 kg, which rounds to 68.3 kg. The sentence matches the register.</p>\n<p>What the check does not establish:</p>\n<ul>\n<li>That the weights in the register were measured or copied correctly. You checked the arithmetic on the numbers you were given, nothing before that.</li>\n<li>That three participants tell you anything about anyone else. A mean of three is a fact about those three.</li>\n<li>That the thesis can be checked by someone else. Your line can, if you keep it in a script. The thesis’s own number came from wherever its author worked it out.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>In a made-up lab meeting, someone says this: “The first three penguins in the Palmer file weighed 3750, 3800 and 3250 g. So the average penguin weighs 3.6 kg.” Turn the claim into R, run it, and say what the result does not establish.</p>",
+   "level": 10,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"co\"># Mean body mass of the first three penguins, converted from g to kg</span></span>\n<span>(<span class=\"dv\">3750</span> <span class=\"sc\">+</span> <span class=\"dv\">3800</span> <span class=\"sc\">+</span> <span class=\"dv\">3250</span>) <span class=\"sc\">/</span> <span class=\"dv\">3</span> <span class=\"sc\">/</span> <span class=\"dv\">1000</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 3.6</code></pre>\n<p>The arithmetic holds: the mean of those three is 3.6 kg.</p>\n<p>What it does not establish:</p>\n<ul>\n<li>Anything about “the average penguin”. These are the first three rows of a file of 344 rows. Rows come in the order they were entered, not chosen to stand for the rest.</li>\n<li>Anything about penguins of other species. The first rows of this file are all one species, and the file holds three.</li>\n<li>The mean of the whole file. That needs every row, read from the file by code, which later sections teach.</li>\n</ul>"
+  }
+ ]
+}

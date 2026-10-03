@@ -1,0 +1,139 @@
+{
+ "format": 1,
+ "id": "s58-r1-c12",
+ "label": "12",
+ "title": "Cutting: deleting the words, sentences and paragraphs that do no work",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"159\">Cutting</dfn> is deleting words, sentences or paragraphs that do no work for the reader, so that what remains says the same thing in fewer words. A unit does no work when deleting it loses nothing the reader needs.</p>\n<p>The test for a word is whether the sentence means the same without it.</p>\n<p>Cutting is not <dfn data-g=\"123\">compressing</dfn>. Compressing keeps everything and packs it into fewer, longer sentences.</p>",
+   "refs": [
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>First ask of each paragraph whether it serves your <dfn data-g=\"456\">one message</dfn>. Then ask it of each sentence.</p>\n<p>Big cuts first, because polishing a sentence you later delete is work thrown away. In a padded draft, most of what you lose goes in whole sentences and paragraphs.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c12-three-passes.png",
+   "alt": "Four bars falling from left to right: 159 words in the first draft, 122 after cutting paragraphs, 68 after cutting sentences, 48 after cutting words.",
+   "w": 1360,
+   "h": 654,
+   "caption": "The draft of illustration 1, below, cut in three passes. It falls from 159 words to 122 when one paragraph goes, to 68 when three sentences go, and to 48 after the word-level cuts. Whole paragraphs and sentences removed 91 of the 111 words; single words removed 20."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is a draft of two paragraphs from a thesis discussion. It is invented, but you will recognise it. The section’s one message, written first as section 3 asks, is this: among women aged 15 to 49 in India, <dfn data-g=\"467\">overweight</dfn> or obesity was commoner in the fifth National Family Health Survey (NFHS-5) than in the fourth (NFHS-4), and commoner in urban than in rural areas.</p>\n<blockquote>\n<ol type=\"1\">\n<li><p>Many definitions of obesity have been used in the literature over the years, and each of them has its own advantages and disadvantages. A detailed discussion of these definitions is beyond the scope of the present chapter.</p></li>\n<li><p>Obesity is a major public health problem all over the world, and India is no exception to this. In the present study, it was observed that the proportion of women aged 15 to 49 years with overweight or obesity increased from 20.6% in NFHS-4 to 24.0% in NFHS-5. Thus, it can be seen that there has been an increase in the proportion of women with overweight or obesity. It is important to note that at this point in time the proportion was higher in urban areas (33.2%) than in rural areas (19.7%). The survey also collected a large amount of data on a number of other important topics. Further studies are needed in order to find out the reasons for this increase.</p></li>\n</ol>\n</blockquote>\n<p>Count the words: 159. Now cut in three passes, biggest first.</p>\n<p><strong>Pass 1, paragraphs.</strong> Write the one point of each paragraph in the margin, the <dfn data-g=\"587\">reverse outline</dfn> of section 10. Paragraph 1: “definitions of obesity vary”. That serves no part of the message. The paragraph even says so: its subject is “beyond the scope”. Delete all 37 words.</p>\n<div class=\"working\">\n<p>159 minus 37 = 122</p>\n</div>\n<p><strong>Pass 2, sentences.</strong> Hold each sentence of paragraph 2 against the message.</p>\n<ul>\n<li>“Obesity is a major public health problem all over the world” is true of every thesis on obesity. It says nothing about these women. Delete: 18 words.</li>\n<li>“Thus, it can be seen that there has been an increase” says the sentence before it again. Delete: 20 words.</li>\n<li>“The survey also collected a large amount of data” serves no <dfn data-g=\"95\">claim</dfn>. Delete: 16 words. It contains “a number of”, a phrase the Federal Plain Language Guidelines tell you to shorten to “several”. Had you shortened it first, the work would now be thrown away.</li>\n</ul>\n<div class=\"working\">\n<p>18 plus 20 plus 16 = 54<br />\n122 minus 54 = 68</p>\n</div>\n<p><strong>Pass 3, words.</strong> Three sentences are left. Go through them word by word.</p>\n<ul>\n<li>“In the present study, it was observed that” delays the subject by 8 words. Delete them.</li>\n<li>“It is important to note that at this point in time” is 11 words before the subject. The guidelines would turn “at this point in time” into “now”. But “now” is wrong: NFHS-5 ended in\n<ol start=\"2021\" type=\"1\">\n<li>The phrase was hiding a missing fact, which survey. Replace the 11 words with “In NFHS-5,” which is 2.</li>\n</ol></li>\n<li>“in order to find out” becomes “to find”: 3 words go.</li>\n</ul>\n<blockquote>\n<p>The proportion of women aged 15 to 49 years with overweight or obesity increased from 20.6% in NFHS-4 to 24.0% in NFHS-5. In NFHS-5, the proportion was higher in urban areas (33.2%) than in rural areas (19.7%). Further studies are needed to find the reasons for this increase.</p>\n</blockquote>\n<div class=\"working\">\n<p>8 plus 11 minus 2 plus 3 = 20<br />\n68 minus 20 = 48<br />\n159 minus 48 = 111</p>\n</div>\n<table style=\"width:96%;\">\n\n<thead>\n<tr>\n<th>stage</th>\n<th>words left</th>\n<th>words removed in this pass</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>first draft</td>\n<td>159</td>\n<td>0</td>\n</tr>\n<tr>\n<td>after cutting paragraphs</td>\n<td>122</td>\n<td>37</td>\n</tr>\n<tr>\n<td>after cutting sentences</td>\n<td>68</td>\n<td>54</td>\n</tr>\n<tr>\n<td>after cutting words</td>\n<td>48</td>\n<td>20</td>\n</tr>\n</tbody>\n</table>\n<p>From 159 words to 48: 111 gone. Whole paragraphs and sentences took 91 of them, and single words only 20. Every fact the message needs is still there, and one fact is there that was missing before.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The split of 91 words to 20 belongs to this draft, which was padded on purpose to show each pass. A tight draft may lose little at the first two passes, and that is a result, not a failure.</p>\n<p>The last sentence, “Further studies are needed”, survived because it states what the data leave open. Some guides would cut it too. Whether a sentence serves the message is a judgement you make against your own message, not a rule this example settles.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>There are two ways to cut that look like the work above and are not.</p>\n<p>The first is compressing. A writer who wants fewer words fuses the three sentences into one.</p>\n<blockquote>\n<p>Overweight or obesity in women aged 15 to 49 rose from 20.6% (NFHS-4) to 24.0% (NFHS-5), higher in urban (33.2%) than rural (19.7%) areas, reasons needing further study.</p>\n</blockquote>\n<p>That is 28 words against 48. It is also one sentence carrying three ideas, and the reader must hold all of them to the full stop. The Federal Plain Language Guidelines name this temptation: “Resist the temptation to put everything in one sentence”. Measure it as in section 11. The <dfn data-g=\"43\">average sentence length</dfn> goes from 48 words over 3 sentences to 28 words in one.</p>\n<div class=\"working\">\n<p>48 divided by 3 = 16<br />\n28 minus 16 = 12<br />\n1.015 times 12 = 12.18</p>\n</div>\n<p>With the same syllables per word, the <dfn data-g=\"257\">Flesch Reading Ease</dfn> score falls by about 12 points. The word count went down and the sentence got harder.</p>\n<p>The second is cutting a word that does work. A writer in a hurry trims the first sentence to “The <dfn data-g=\"525\">proportion</dfn> of women with overweight increased from 20.6% to 24.0%.” Two cuts changed the claim. Without “aged 15 to 49”, the sentence speaks for all women, and the survey measured only women of 15 to 49. Without “or obesity”, it speaks of overweight alone, and the survey’s figure covers overweight and obesity together. Without the survey names, the reader cannot tell which figure came first. Each cut word looked like padding. Each was a limit on the claim.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Not every long sentence is compressed. A sentence with one idea and a long name in it, such as a survey’s full title, is long and still fine. The fault is several ideas in one sentence, not length alone.</p>\n<p>The words that limit a claim differ from paper to paper: an age range, a place, a year, a <dfn data-g=\"178\">denominator</dfn>, “or obesity”. Read each candidate word and ask whether the claim gets wider without it. If it does, keep it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Cut in order: paragraphs first, then sentences, then words.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Test each paragraph against your one message with a reverse outline. Where a margin note serves no part of the message, delete that paragraph.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“Fewer words is better, so <dfn data-g=\"351\">join</dfn> short sentences into one” is the error. Cut whole units instead, and keep one idea a sentence.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Cutting has no test for truth. Before you delete any word, ask whether the claim gets wider without it. If it does, the word stays.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>This book’s advice: before you cut, open a second file and paste every deleted passage into it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Delete the opener that delays the subject: “It was observed that”, “It is important to note that”, “In the present study”.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you correct a trainee’s thesis chapter, mark the paragraphs and sentences to delete before you touch a single word.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Cutting means making every sentence shorter.” In the draft above, deleting one paragraph and three sentences removed 91 words, and word-level cuts removed 20. A writer who only trims words, sentence by sentence, polishes text that should not be there. And fusing sentences to save words makes the page harder, not easier.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: in what order do you cut, and what question does each unit have to fail before you delete it? Then say how cutting differs from compressing.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Paragraphs, then sentences, then words. A paragraph or a sentence goes when it serves no part of the piece’s one message, or says again what is already said. A word goes when the sentence means the same without it.</p>\n<p>Compressing keeps all the content and packs it into fewer, longer sentences. Cutting deletes what does no work and leaves each sentence carrying one idea.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Cut this methods paragraph from a district survey by deleting words only. It is invented. You may delete a whole phrase or <dfn data-g=\"99\">clause</dfn>, and change a capital or a comma; nothing else. Say what you cut and why, and count the words before and after.</p>\n<blockquote>\n<p>The present study was conducted in the Department of Community Medicine of a tertiary care centre in central India. A cross-sectional study design was used for the purpose of this study. The study was carried out over a period of six months, from January to June 2025. The study participants were adults aged 18 years and above who were residing in the field practice area. Each and every participant was weighed with a digital weighing scale, and the weight was recorded to the nearest 0.1 kg.</p>\n</blockquote>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The paragraph has 86 words in five sentences: 19, 12, 16, 18 and 21.</p>\n<ul>\n<li>“for the purpose of this study” adds nothing: the design is this study’s. Delete 6 words.</li>\n<li>“over a period of six months,” repeats the dates that follow. Delete 6 words.</li>\n<li>“who were” can go: “adults … residing in the field practice area” means the same. Delete 2.</li>\n<li>“and every” is a doublet: “each” says it. Delete 2.</li>\n<li>“weighing” before “scale” repeats “weighed”. Delete 1.</li>\n<li>“, and the weight was recorded” says what weighing to the nearest 0.1 kg already says. Delete 5.</li>\n</ul>\n<div class=\"working\">\n<p>6 plus 6 plus 2 plus 2 plus 1 plus 5 = 22<br />\n86 minus 22 = 64</p>\n</div>\n<blockquote>\n<p>The present study was conducted in the Department of Community Medicine of a tertiary care centre in central India. A cross-sectional study design was used. The study was carried out from January to June 2025. The study participants were adults aged 18 years and above residing in the field practice area. Each participant was weighed with a digital scale to the nearest 0.1 kg.</p>\n</blockquote>\n<p>64 words, every fact kept. Two things must stay: “18 years and above” and “to the nearest 0.1 kg” each limit what the reader may conclude. A further rewrite into the <dfn data-g=\"9\">active voice</dfn>, as in section 7, could shorten it more, but that is rewriting, not cutting. section 7 would also have you name who weighed the participants; that too is a rewrite, for after this exercise.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Take the manuscript or thesis section you chose for this book’s build. Write its one message at the top. Make a reverse outline. Then cut it in three passes, paragraphs, sentences, words, pasting every deletion into a second file. Record the word count after each pass.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p><dfn data-g=\"85\">Check</dfn> your work against four things.</p>\n<ul>\n<li>The message is written before any cut, and every paragraph left has a margin note that serves it.</li>\n<li>The counts fall at each pass, and you can say which pass removed most. If the word pass removed most, look again at whole sentences: one that restates its neighbour is easy to miss.</li>\n<li>No sentence left carries more ideas than before. If two sentences became one, undo it.</li>\n<li>Every age range, place, year, denominator and qualifier in your claims is still there.</li>\n</ul>\n<p>A section that loses little has passed, not failed. Keep the second file until the paper is accepted.</p>"
+  }
+ ]
+}

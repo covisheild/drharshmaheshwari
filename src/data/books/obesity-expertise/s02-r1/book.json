@@ -3596,8 +3596,8 @@
    "senses": [
     {
      "term": "vector",
-     "plain": "an ordered list of numbers, called its entries; one row of a data table is a vector",
-     "where": "Book 2, section 10"
+     "plain": "(1) an ordered list of numbers, called its entries; one row of a data table is a vector; (2) in R, an ordered set of values of one type, held as one object under one name and built with c(); each column of a data frame is one",
+     "where": "Book 2, section 10, Book 6, section 4"
     }
    ]
   },

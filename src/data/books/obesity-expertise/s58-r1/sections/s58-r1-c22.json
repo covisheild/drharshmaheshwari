@@ -1,0 +1,157 @@
+{
+ "format": 1,
+ "id": "s58-r1-c22",
+ "label": "22",
+ "title": "Making the plot: from a table of numbers to a finished figure",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Making a figure is a sequence of decisions, taken in a fixed order, which any program can be made to carry out. The first four decide the figure’s content. They are the <dfn data-g=\"95\">claim</dfn>, the mark that suits the shape of the data, the range of the <dfn data-g=\"704\">value axis</dfn> (the side axis that carries the numbers), and the words on it, with each axis titled and given its unit.</p>\n<p>A <dfn data-g=\"174\">default</dfn> is a setting a program uses when you have not chosen one. Defaults are made to suit any plot, so they suit no particular plot well.</p>\n<p>In this book, a <dfn data-g=\"250\">figure sheet</dfn> is the written list of the decisions for one figure, kept beside the data.</p>\n<p>An image is saved either as a <dfn data-g=\"58\">bitmap</dfn>, a grid of coloured dots called pixels, or as a <dfn data-g=\"710\">vector graphic</dfn>, which stores the shapes themselves and is redrawn at any size without losing sharpness. A png or jpeg file is a bitmap; a pdf can hold a vector graphic.</p>",
+   "refs": [
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A program will draw a chart from your numbers in one click. That chart is the program’s guess, made for every chart at once.</p>\n<p>So decide first, then draw. Write your decisions down in order.</p>\n<p>Keep that list. When a number changes, or a reviewer asks for a change, you can draw the figure again in minutes and get the same result.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c22-anaemia-two-rounds.png",
+   "alt": "Five pairs of bars from zero, NFHS-4 on the left of each pair and NFHS-5 on the right, named over the first pair, each bar's value printed on it: children 6-59 months 58.6 and 67.1; women 15-19 54.1 and 59.1; women 15-49 53.1 and 57.0; men 15-19 29.2 and 31.1; men 15-49 22.7 and 25.0. In every pair the NFHS-5 bar is taller.",
+   "w": 1624,
+   "h": 700,
+   "caption": "Between NFHS-4 (2015-16) and NFHS-5 (2019-21), the share with anaemia rose in each of the five groups shown, by 1.9 to 8.5 percentage points. Bars show the per cent anaemic, by each group’s own haemoglobin cut-off; ages in years. Counts are not given in the source. Source: NFHS-5 India Fact Sheet, indicators 92 and 95 to 98."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Here is the trap with the chart a program offers first. It looks finished.</p>\n<p>Open the <em>National Family Health Survey (NFHS-5), 2019-21: India Fact <dfn data-g=\"622\">Sheet</dfn></em> at https://dhsprogram.com/pubs/pdf/OF43/India_National_Fact_Sheet.pdf. Search for <dfn data-g=\"28\">anaemic</dfn>. The fact sheet counts a person as anaemic when their <dfn data-g=\"297\">haemoglobin</dfn>, measured in grams per decilitre (g/dl), is below a cut-off for their group. For women it is 12.0 g/dl, or 11.0 if pregnant (indicators 93 and 94). Five of its rows are these ([22] marks a <dfn data-g=\"267\">footnote</dfn>).</p>\n<blockquote>\n<ol start=\"92\" type=\"1\">\n<li>Children age 6-59 months who are anaemic (&lt;11.0 g/dl)[22] (%) 64.2 68.3 67.1 58.6</li>\n</ol>\n</blockquote>\n<blockquote>\n<ol start=\"95\" type=\"1\">\n<li>All women age 15-49 years who are anaemic[22] (%) 53.8 58.5 57.0 53.1</li>\n</ol>\n</blockquote>\n<blockquote>\n<ol start=\"96\" type=\"1\">\n<li>All women age 15-19 years who are anaemic[22] (%) 56.5 60.2 59.1 54.1</li>\n</ol>\n</blockquote>\n<blockquote>\n<ol start=\"97\" type=\"1\">\n<li>Men age 15-49 years who are anaemic (&lt;13.0 g/dl)[22] (%) 20.4 27.4 25.0 22.7</li>\n</ol>\n</blockquote>\n<blockquote>\n<ol start=\"98\" type=\"1\">\n<li>Men age 15-19 years who are anaemic (&lt;13.0 g/dl)[22] (%) 25.0 33.9 31.1 29.2</li>\n</ol>\n</blockquote>\n<p>The four columns are NFHS-5 (2019-21) urban, rural and total, then NFHS-4 (2015-16) total, as in the <dfn data-g=\"467\">overweight</dfn> rows you have used all through this book. Take the two totals for each group into a table of your own.</p>\n<table style=\"width:93%;\">\n\n<tbody>\n<tr>\n<td>group</td>\n<td>NFHS-4, 2015-16 (%)</td>\n<td>NFHS-5, 2019-21 (%)</td>\n</tr>\n<tr>\n<td>children 6-59 months</td>\n<td>58.6</td>\n<td>67.1</td>\n</tr>\n<tr>\n<td>women 15-19</td>\n<td>54.1</td>\n<td>59.1</td>\n</tr>\n<tr>\n<td>women 15-49</td>\n<td>53.1</td>\n<td>57.0</td>\n</tr>\n<tr>\n<td>men 15-19</td>\n<td>29.2</td>\n<td>31.1</td>\n</tr>\n<tr>\n<td>men 15-49</td>\n<td>22.7</td>\n<td>25.0</td>\n</tr>\n</tbody>\n</table>\n<p>Now suppose you select the table and ask your program for a column chart.</p>\n<p>It has a <dfn data-g=\"684\">title</dfn> across the top, “Chart 1”. A <dfn data-g=\"354\">key</dfn> in a box says “Series1” and “Series2”. The value axis starts at 20. The text is small and grey. The bars are red and green. A dark grid line runs every 5 points. It saves as a jpeg.</p>\n<p>Do not start fixing what you see.</p>\n<p><strong>1. The claim.</strong> Cover the chart and write the one sentence it should make. Here: between NFHS-4 and NFHS-5, the share with anaemia rose in every group.</p>\n<p>Keep every row, even one that would weaken the claim. Here none does: indicators 93 and 94, for non-pregnant and pregnant women, rose too. The fact sheet prints no confidence intervals. So it cannot show whether the smallest rises are more than <dfn data-g=\"598\">sampling variation</dfn>.</p>\n<p><strong>2. The mark.</strong> The shape of the data is amounts for a set of groups, at two times. That takes bars, or dots where the bars would end, on one shared axis (section 15). Put each group’s two bars side by side, because the claim compares the two rounds within a group.</p>\n<p><strong>3. The axis.</strong> Bars start at zero, so the starting point of 20 goes.</p>\n<p><strong>4. The words.</strong> Title the value axis with the quantity and its unit: “anaemic (%)”. Delete “Chart 1”: the finding goes in the <dfn data-g=\"74\">caption</dfn>, not across the drawing.</p>\n<p><strong>5. The defaults.</strong> Go through the rest one at a time and ask of each what it tells the reader (section 18). The dark grid goes, or becomes faint. Make the small grey text larger and darker.</p>\n<p><strong>6. Colour.</strong> Its job here is to separate two rounds. Red against green fails in grey and for a reader with <dfn data-g=\"109\">colour-vision deficiency</dfn> (section 19). Choose two colours that differ clearly in lightness. Where you cannot, keep the order fixed and name each round on the figure.</p>\n<p><strong>7. The caption.</strong> Finding first, then what the bars are, who, when, and the source (section 20).</p>\n<p><strong>8. Saving.</strong> Read the journal’s instructions on file <dfn data-g=\"695\">type</dfn> and size first. Never use a jpeg for a chart: Wilke says to avoid it for “images containing line drawings or text”.</p>\n<p><strong>9. The checks.</strong> Shrink the figure on screen to about 8 to 13 cm wide, the size of one column of a printed page, and read every <dfn data-g=\"363\">label</dfn> (section 20).</p>\n<p>Here is the figure sheet you have written. It records the data as well as the nine decisions.</p>\n<table>\n\n<thead>\n<tr>\n<th>step</th>\n<th>decision for this figure</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>claim</td>\n<td>anaemia rose between NFHS-4 and NFHS-5 in every group the fact sheet reports</td>\n</tr>\n<tr>\n<td>data</td>\n<td>five rows of the NFHS-5 India fact sheet, NFHS-4 and NFHS-5 totals; pregnant and non-pregnant women left out, contained in all women</td>\n</tr>\n<tr>\n<td>mark</td>\n<td>bars, the two rounds side by side within each group</td>\n</tr>\n<tr>\n<td>axis</td>\n<td>value axis from 0 to 80, titled “anaemic (%)”</td>\n</tr>\n<tr>\n<td>words</td>\n<td>groups under the bars with ages in years; no title on the drawing</td>\n</tr>\n<tr>\n<td>defaults changed</td>\n<td>no key; faint grid; larger, darker text</td>\n</tr>\n<tr>\n<td>colour</td>\n<td>this book’s two colours merge in grey, so NFHS-4 always on the left and each round named over the first pair</td>\n</tr>\n<tr>\n<td>caption</td>\n<td>finding first; what the bars show; ages; no counts in the source; source and indicator numbers</td>\n</tr>\n<tr>\n<td>saving</td>\n<td>the journal’s format and size; otherwise pdf, and png where a bitmap is required</td>\n</tr>\n<tr>\n<td>checks</td>\n<td>read at 8 cm wide; in grey; through a simulator</td>\n</tr>\n</tbody>\n</table>\n<p>The figure drawn from this sheet is the one at the start of this section. That is the point: any program that will take these decisions can draw it again.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The sheet makes the figure repeatable only as far as you wrote it down. A change you make by dragging a label with the mouse and forget to record is lost the next time.</p>\n<p>Each group has its own cut-off for haemoglobin, so the bars compare shares, not haemoglobin levels.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Write the figure’s decisions down before you open the program, in order: claim, mark, axis, words, defaults, colour, caption, saving, checks. If you start by fixing what the first chart shows, you fix what you happen to notice.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“The program drew it, so it is a neutral picture of the numbers” is the error. Every setting you did not choose was chosen for any chart at all. <dfn data-g=\"85\">Check</dfn> each one, the <dfn data-g=\"46\">axis start</dfn> first.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A spreadsheet will do only if you change nearly every default. If a spreadsheet is what you have, keep a figure sheet beside the file, and record every change as you make it.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never finish a figure by hand in a drawing program and leave no record. When a reviewer asks for one changed number, every hand edit has to be done again, and some will be forgotten.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Read the journal’s instructions for figures before you save. Where they leave it to you, save a vector graphic such as a pdf for print. Use a png where a bitmap is required, and never a jpeg for a chart.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Check the figure at the size it will be printed, not at the size of your screen. Shrink it to one column’s width, then view it in grey and through a simulator.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee shows you a chart, ask for the figure sheet before you look at the chart.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>The procedure makes sure each decision is taken on purpose. A perfectly made figure of a wrong table is a wrong figure, so check the data against their source before step 1.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Wilke says Excel is not recommended, so a figure made in a spreadsheet is wrong.” A figure is right or wrong by what it shows: its claim, its mark, its axis and its words. Wilke’s objection is that a figure made by hand cannot be made again exactly. In his own words, “The best visualization software is the one that allows you to make the figures you need.” A spreadsheet figure made from a written figure sheet, with every default checked, can be a good figure. It is harder to repeat than one drawn by code. Drawing figures by code is taught in the course’s book on R and reproducibility (S52).</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Figures were drawn in [program and version] from the data in [table or file]. The decisions for each figure, including axis ranges and colours, are listed in [supplementary file].</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: list the nine decisions for making a figure, in order. Which four decide what the figure shows, and which come after?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Claim, mark, axis, words; then defaults, colour, caption, saving, checks.</p>\n<p>The first four decide what the figure shows: the claim, the mark, the axis range, and the axis titles with units. The rest come after. Check the defaults one by one. Give colour a job. Write the caption. Choose the file type and size. Last, check it at printed size, in grey and through a simulator.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague hands you the figure sheet below for a figure in her thesis. It is invented. Say what is wrong with each line you would change, and what you would write instead.</p>\n<table style=\"width:76%;\">\n\n<thead>\n<tr>\n<th>step</th>\n<th>decision</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>claim</td>\n<td>anaemia in NFHS-5</td>\n</tr>\n<tr>\n<td>mark</td>\n<td>3-D columns, the program’s first offer</td>\n</tr>\n<tr>\n<td>axis</td>\n<td>the program’s own range, which starts at 50</td>\n</tr>\n<tr>\n<td>words</td>\n<td>title on top: “Anaemia”; axis untitled</td>\n</tr>\n<tr>\n<td>colour</td>\n<td>red for women, green for men</td>\n</tr>\n<tr>\n<td>saving</td>\n<td>jpeg, so the file is small</td>\n</tr>\n</tbody>\n</table>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Every line needs changing.</p>\n<ul>\n<li>Claim: “anaemia in NFHS-5” is a topic. Write the finding, for example “anaemia was more than twice as common in women as in men aged 15-49 in NFHS-5”. Then decide what to draw.</li>\n<li>Mark: a 3-D effect adds depth that is not in the data (section 18). Use flat bars, or dots.</li>\n<li>Axis: bars start at zero. Men aged 15-49 were at 25.0 per cent in NFHS-5, so an axis from 50 cannot show the men’s bar at all. Take the axis from 0, and title it “anaemic (%)”.</li>\n<li>Words: the title moves into the caption, as a finding. The value axis needs its quantity and unit.</li>\n<li>Colour: red against green fails in grey and for readers with the commonest colour-vision deficiency. Two groups with no order take two colours of clearly different lightness, or direct labels and one colour.</li>\n<li>Saving: jpeg blurs lines and text. Use the journal’s format; otherwise pdf, or png where a bitmap is required.</li>\n</ul>\n<p>Three lines are missing: no step for checking the defaults that are left, none for the caption, and none for the checks at printed size and in grey.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Take the figure you are drawing for your build section. Write its figure sheet, the data and all nine decisions, before you open any program. Then draw it, and note every place where you had to change something the sheet did not mention. Add those to the sheet.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Judge your sheet by whether a colleague could draw the same figure from it and your data without asking you anything. Check four lines in particular.</p>\n<ul>\n<li>The claim is a sentence that would be false if the data had come out otherwise.</li>\n<li>The axis line gives the start and the end. Bars start at zero; any other start for points is stated, with the reason.</li>\n<li>The defaults line names each default you changed, not “tidied up”.</li>\n<li>The checks line records what you did: the width you shrank it to, and that you viewed it in grey and through a simulator.</li>\n</ul>\n<p>Every change you had to add after drawing is a decision you were about to make by accident. The list of them is worth keeping for your next figure.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident says: “I only have a spreadsheet, and my guide says it is fine. Why should I bother with all these steps?” Ten minutes, with a whiteboard.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Agree with the guide first: a spreadsheet can draw a good figure. Wilke’s own test is whether the software lets you make the figure you need.</p>\n<p>Then draw the program’s first chart on the board, from her own data if she has them. Give it a title on top, a key saying “Series1”, an axis starting above zero, and small text. Ask her what each element tells the reader. Most tell nothing, and the axis start misleads. Rougier and colleagues’ point is that defaults suit every chart and so suit none.</p>\n<p>Then the real cost. Ask what happens when her guide finds one wrong value in the data. If she changed fifteen things by hand, she must remember and repeat all fifteen. Show her the figure sheet: the data and nine decisions, written once, kept beside the file. With it, the redraw takes minutes.</p>\n<p>End on what the sheet does not do. It does not make her data right. She checks those first.</p>"
+  }
+ ]
+}

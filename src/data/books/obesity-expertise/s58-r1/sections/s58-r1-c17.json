@@ -1,0 +1,307 @@
+{
+ "format": 1,
+ "id": "s58-r1-c17",
+ "label": "17",
+ "title": "Honest axes: where an axis starts, what range it shows, and measuring the distortion",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The <dfn data-g=\"46\">axis start</dfn>, written s, is the value at which the <dfn data-g=\"704\">value axis</dfn> begins.</p>\n<p>The <dfn data-g=\"514\">principle of proportional ink</dfn>, so named by Bergstrom and West, says that a shaded area must be in <dfn data-g=\"525\">proportion</dfn> to the value it stands for. On an ordinary, linear axis a bar, or an area shaded down to the axis, therefore starts at zero. <dfn data-g=\"330\">Ink</dfn> here means everything drawn on the figure: lines, bars, shading. On a <dfn data-g=\"389\">logarithmic axis</dfn> a bar stands for a <dfn data-g=\"550\">ratio</dfn>, and it starts at 1, because a ratio of 1 means no difference, and the <dfn data-g=\"388\">logarithm</dfn> of 1 is 0 (Book 0, A7). A point or a line carries its value by position alone.</p>\n<p>Take two bars with values a and b, a the smaller, drawn up from an axis start s above zero. Their drawn heights are a − s and b − s, read “a minus s” and “b minus s”. The <dfn data-g=\"200\">drawn ratio</dfn> is (b − s) ÷ (a − s), where ÷ is read “divided by”. The <dfn data-g=\"167\">data ratio</dfn> is b ÷ a.</p>\n<p>Tufte’s <dfn data-g=\"380\">Lie Factor</dfn> (LF) compares a change as the figure draws it with the same change in the data. Each change is a <dfn data-g=\"479\">percentage change</dfn>: the change divided by the value it started from, times 100.</p>\n<div class=\"working\">\n<p>LF = (percentage change drawn in the figure) ÷ (percentage change in the data)</p>\n</div>\n<p>An LF of 1 draws the change at its true size. Tufte counts an LF above 1.05 or below 0.95 as substantial distortion.</p>\n<p>For two bars, measure both changes from the bar the change starts from. The LF then comes to a ÷ (a − s) for a rise from a, and b ÷ (b − s) for a fall from b. Two groups side by side have no start: measure from the group you compare against, and say which.</p>\n<p>Starting a bar chart’s axis above zero is called truncating it. Truncation makes readers judge a difference as more severe.</p>",
+   "refs": [
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    275,
+    275,
+    275,
+    276,
+    277,
+    278
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A bar is a length, and a reader reads a length as a value. A small rise then looks like a leap.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c17-fuel-economy-change.png",
+   "alt": "Two bars from zero. Percentage change in the data: 52.8. Percentage change in the lines as drawn: 783, about 14.8 times as tall.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The newspaper’s fuel-economy chart drew a rise of 52.8 per cent as a rise of 783 per cent. The standard rose from 18.0 to 27.5 miles per gallon; the lines that drew it grew from 0.6 to 5.3 inches on the page, as Tufte measured them. Lie Factor about 14.8."
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c17-lie-factor-by-start.png",
+   "alt": "A rising curve from 1.00 at an axis start of 0 through 1.94 at 10, 3.68 at 15 and 7.92 at 18, to 34.3 at 20. A dashed horizontal line at 1.05 sits just above the first point.",
+   "w": 1360,
+   "h": 657,
+   "caption": "The Lie Factor climbs fastest as the axis start nears the smaller bar. Here it is for a bar slide of women aged 15-49 with overweight or obesity, 20.6% in NFHS-4 and 24.0% in NFHS-5, against where the value axis starts. It is 20.6 ÷ (20.6 − s): 1.00 from zero, 1.94 from 10, 3.68 from 15, 7.92 from 18 and 34.3 from 20. The dashed line is Tufte’s 1.05."
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c17-bars-from-zero.png",
+   "alt": "Paired bars from zero, NFHS-4 on the left of each pair and NFHS-5 on the right, each bar labelled. Women: 20.6 then 24.0. Men: 18.9 then 22.9.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Women and men aged 15-49 with overweight or obesity, India, NFHS-4 (2015-16) and NFHS-5 (2019-21). Bars from zero: women 20.6% and 24.0%, men 18.9% and 22.9%. The rise is drawn at its true size beside the level."
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c17-line-from-18.png",
+   "alt": "Two rising lines on an axis from 18 to 26, each labelled at its right end: women with circles, men with squares. Women: 20.6 in 2016 to 24.0 in 2021. Men: 18.9 to 22.9.",
+   "w": 1356,
+   "h": 656,
+   "caption": "The same four values as points joined by lines, each survey placed at its last year: 2016 for NFHS-4 (2015-16), and 2021 for NFHS-5, whose fieldwork ended on 30 April 2021. The side axis starts at 18%, not zero: a point carries its value by position, so this is honest when the caption says so. Women rose by 3.4 percentage points, men by 4.0."
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c17-change-bars.png",
+   "alt": "Two bars from zero. Women: 3.4 percentage points. Men: 4.0.",
+   "w": 1360,
+   "h": 686,
+   "caption": "The rise itself, drawn as bars from zero: between NFHS-4 (2015-16) and NFHS-5 (2019-21), overweight or obesity among adults aged 15-49 rose by 3.4 percentage points in women and 4.0 in men. Each bar’s length is the change, so the change is drawn at its true size. The two rises come from separate samples. The figure does not show that the rise was larger in men."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a real chart that went wrong. A newspaper drew the fuel-economy standards the United States set for new cars. The standard rose from 18 miles per gallon in 1978 to 27.5 in 1985. Each year’s standard was drawn as a line, longer for a higher standard. Tufte measured the lines in <em>The Visual Display of Quantitative Information</em> (1983), on page 57.</p>\n<blockquote>\n<p>This line, representing 18 miles per gallon in 1978, is 0.6 inches long.</p>\n</blockquote>\n<blockquote>\n<p>This line, representing 27.5 miles per gallon in 1985, is 5.3 inches long.</p>\n</blockquote>\n<p>Work out the change in the data first, as a percentage change.</p>\n<div class=\"working\">\n<p>27.5 minus 18.0 = 9.5<br />\n9.5 divided by 18.0 = 0.528<br />\n0.528 times 100 = 52.8</p>\n</div>\n<p>About 53 per cent, as Tufte gives it. Now the change in the drawing, measured on the page.</p>\n<div class=\"working\">\n<p>5.3 minus 0.6 = 4.7<br />\n4.7 divided by 0.6 = 7.83<br />\n7.83 times 100 = 783</p>\n</div>\n<p>The lines grew by 783 per cent. Divide the drawn change by the change in the data.</p>\n<div class=\"working\">\n<p>783 divided by 53 is about 14.8</p>\n</div>\n<p>The Lie Factor is about 14.8. The chart drew a rise of 53 per cent as a rise of 783 per cent. Nothing on it was a wrong number. The lengths were wrong.</p>",
+   "numberRefs": [
+    275
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Tufte’s Lie Factor needs a length or an area you can measure on the page. It works for bars, lines whose length is the value, shaded areas and pictures. It does not apply to a point on a line chart, which carries its value by position: there is no drawn length to measure.</p>\n<p>The 14.8 is this one chart’s. It says nothing about newspaper charts in general.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now run the same <dfn data-g=\"85\">check</dfn> on the running case of this book. Open the NFHS-5 India fact <dfn data-g=\"622\">sheet</dfn> at https://dhsprogram.com/pubs/pdf/OF43/India_National_Fact_Sheet.pdf and find indicator 88. In NFHS-5 (2019-21), 24.0% of women aged 15 to 49 had <dfn data-g=\"467\">overweight</dfn> or obesity. In NFHS-4 (2015-16) the figure was 20.6%.</p>\n<p>Suppose a district slide, made up for this example, draws the two values as bars on an axis that starts at 20. Each bar runs from 20 up to its value.</p>\n<div class=\"working\">\n<p>20.6 minus 20 = 0.6<br />\n24.0 minus 20 = 4.0<br />\n4.0 divided by 0.6 = 6.67</p>\n</div>\n<p>The NFHS-5 bar is 6.67 times the NFHS-4 bar. The data ratio is much smaller.</p>\n<div class=\"working\">\n<p>24.0 divided by 20.6 = 1.165</p>\n</div>\n<p>Now the Lie Factor. The change in the data is 3.4 <dfn data-g=\"478\">percentage</dfn> points on a start of 20.6. The change in the drawing is 3.4 points of height on a start of 0.6.</p>\n<div class=\"working\">\n<p>3.4 divided by 20.6 = 0.16505<br />\n3.4 divided by 0.6 = 5.6667<br />\n5.6667 divided by 0.16505 = 34.33</p>\n</div>\n<p>A Lie Factor of about 34.3, far past Tufte’s 1.05.</p>\n<p>Look at what happened in those lines. The 3.4 sat on top of both fractions and dropped out. What was left was 20.6 divided by 0.6. That holds for any rise between two bars. Written as fractions, the change drawn is (b − a) ÷ (a − s), and the change in the data is (b − a) ÷ a. Divide the first by the second. Dividing by a <dfn data-g=\"272\">fraction</dfn> is multiplying by it turned upside down. The b − a then cancels, top and bottom.</p>\n<div class=\"working\">\n<p>(b − a) ÷ (a − s) × a ÷ (b − a) = a ÷ (a − s)<br />\nLF = a ÷ (a − s)</p>\n</div>\n<p>So, for a rise from a, the Lie Factor depends only on the starting bar and where the axis starts. Try it on the slide.</p>\n<div class=\"working\">\n<p>20.6 divided by 0.6 = 34.33</p>\n</div>\n<p>The same answer. Now move the axis start and watch the Lie Factor grow.</p>\n<table style=\"width:97%;\">\n\n<tbody>\n<tr>\n<td>axis start (%)</td>\n<td>NFHS-4 bar drawn (points)</td>\n<td>NFHS-5 bar drawn (points)</td>\n<td>drawn ratio</td>\n<td>Lie Factor</td>\n</tr>\n<tr>\n<td>0</td>\n<td>20.6</td>\n<td>24.0</td>\n<td>1.17</td>\n<td>1.00</td>\n</tr>\n<tr>\n<td>10</td>\n<td>10.6</td>\n<td>14.0</td>\n<td>1.32</td>\n<td>1.94</td>\n</tr>\n<tr>\n<td>15</td>\n<td>5.6</td>\n<td>9.0</td>\n<td>1.61</td>\n<td>3.68</td>\n</tr>\n<tr>\n<td>18</td>\n<td>2.6</td>\n<td>6.0</td>\n<td>2.31</td>\n<td>7.92</td>\n</tr>\n<tr>\n<td>20</td>\n<td>0.6</td>\n<td>4.0</td>\n<td>6.67</td>\n<td>34.3</td>\n</tr>\n</tbody>\n</table>\n<p>Starting the axis halfway to the smaller value, at 10, already draws the rise almost twice its size. The last few points before 20.6 do most of the damage.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The shortcut a ÷ (a − s) holds for a rise from a. For a fall from b it is b ÷ (b − s). For two groups, work the two percentage changes out in full from the group you compare against, and say which. With several bars, work it out for each pair you expect the reader to compare.</p>\n<p>The NFHS values are real; the slide is made up. The fact sheet’s figures are for ages 15 to 49, and “overweight or obese” is one combined row.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>You have a slide that exaggerates. Here are four honest ways to redraw the same numbers. Which one you choose depends on the one <dfn data-g=\"95\">claim</dfn> the figure makes (section 14).</p>\n<p>First, bars from zero. The NFHS-4 and NFHS-5 bars stand at 20.6 and 24.0 for women, and at 18.9 and 22.9 for men (indicator 89). The rise now looks modest. It is modest beside the <dfn data-g=\"379\">level</dfn>: about one adult in five had overweight or obesity in NFHS-4, and nearly one in four in NFHS-5. Bars from zero carry the level.</p>\n<p>Second, points joined by a line, on an axis near the data. A point is read by its position, so its axis may start above zero. Bergstrom and West say how to choose the range: “usually by allowing the axis to span the region not much larger than the range of the data values”. The four values run from 18.9 to 24.0. An axis from 18 to 26 holds them with a little room, and it carries the change. Say in the <dfn data-g=\"74\">caption</dfn> that the axis starts at 18. Along the bottom, put each round at its last year: 2016 for NFHS-4, the end of its 2015-16 <dfn data-g=\"363\">label</dfn>, and 2021 for NFHS-5, whose fieldwork ran to 30 April 2021.</p>\n<p>Third, bars of the change itself, from zero. Wilke allows this: bars may show a difference “as long as we make it explicit which differences we are showing”. Women rose by 3.4 percentage points and men by 4.0. Two bars of 3.4 and 4.0, from zero, show the rise at its true size. The two rises come from separate samples. The bars do not show that the rise was larger in men.</p>\n<p>Fourth, for a ratio, a logarithmic axis. Overweight or obesity was found in 33.2% of urban women and 19.7% of rural women in NFHS-5.</p>\n<div class=\"working\">\n<p>33.2 divided by 19.7 = 1.685<br />\n19.7 divided by 33.2 = 0.593</p>\n</div>\n<p>“Urban about 1.69 times rural” and “rural about 0.593 times urban” are the same fact said two ways. On a log axis that starts at 1, the two bars have the same length and point opposite ways: log<sub>10</sub> of 1.685 is 0.227 and log<sub>10</sub> of 0.593 is −0.227. Drawn from 0 on a linear axis, the first bar would be almost three times the second. Wilke: “Bars on a log scale represent ratios and must always start at 1”.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The four redraws are honest about lengths. None of them settles which message is right. Bars from zero say “about one adult in four or five”; a line from 18 says “it rose”. Both are true. Choosing between them is the claim of the figure, and the caption should state the numbers either way.</p>\n<p>The log axis is for ratios. Never draw an amount, such as a percentage, as a bar on a log axis: zero lies infinitely far down it, so any start you pick is arbitrary.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 4",
+   "role": "illustration",
+   "html": "<p>Does any of this change what readers think? Correll, Bertini and Franconeri tested it. Open “Truncating the <dfn data-g=\"729\">Y-Axis</dfn>: Threat or Menace?”, the authors’ <dfn data-g=\"509\">preprint</dfn> of their CHI 2020 paper, at https://arxiv.org/abs/1907.02035. In their first experiment, 40 people rated how big the change in each chart looked, on a scale from 1 to 5. The same data were drawn with the axis starting at 0, 25 or 50%. Search for 0.36.</p>\n<blockquote>\n<p>compared to an increase of 0.36 for starting the y-axis at 25% rather than 0%</p>\n</blockquote>\n<p>Starting the axis a quarter of the way up raised the rating by 0.36 on the 5-point scale. Bar charts and line charts behaved alike.</p>\n<p>Next they tried the usual fix: a break mark on the axis and on the bars. Search for Merely.</p>\n<blockquote>\n<p>Merely indicating that truncation has occurred, even in a prominent and unambiguous way, may not be sufficient to “de-bias” viewers of truncated charts.</p>\n</blockquote>\n<p>The break mark did not stop the exaggeration. In a third experiment, people wrote down the first and last values before rating. Their estimate of the change was no worse on a cut axis. The exaggeration stayed.</p>\n<blockquote>\n<p>This bias is not merely a misreading of values, but seems to be connected to the visual magnification of differences.</p>\n</blockquote>\n<p>So labelling a cut axis does not repair a bar chart. Changing the lengths does.</p>",
+   "numberRefs": [
+    279
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These were paid online participants rating plain charts with no subject matter, 40, 32 and 25 people in the three experiments. The size of the shift will differ for a district officer reading a slide about her own district.</p>\n<p>The authors do not conclude that every axis must start at zero. They write that “There is no a priori, domain-agnostic ground truth” for how severe an effect ought to look. The axis start is a choice, and the person who makes it owns the impression it gives.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Every number on the axis is correct, so the chart cannot mislead” is the error. Readers judge the lengths. In Correll’s experiments the exaggeration stayed even when readers reported the numbers accurately. Fix the drawing, not the labels.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you show or accept a bar chart whose axis starts above zero, work out the LF from the bar the change starts from: a ÷ (a − s) for a rise from a, b ÷ (b − s) for a fall from b. For two groups, take the group you compare against, and say which. If the LF is above 1.05, redraw the chart before anyone discusses the size of the gap.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A break mark on the axis does not make a truncated bar chart honest.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Shading counts as ink. If you fill the area under a line, take the axis down to zero, or leave the line unfilled.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>To show a small change honestly, draw the change itself as bars from zero, or draw points on a stated range near the data.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Draw a ratio on a logarithmic axis, with bars from 1. Then “twice” and “half” have the same length, pointing opposite ways, as the same fact said two ways should.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The range you pick for a line chart still sets how big the change feels. So state the axis start in the caption, and give the change in numbers.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Report the change in percentage points and in per cent, with both values.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The bars start at 20, but the axis says so, so anyone who reads the numbers is fine.” The numbers are right and the picture is still wrong. Readers judge the drawn lengths, and in Correll and colleagues’ experiments the exaggeration stayed even for readers who reported the numbers accurately. The axis label does not change the Lie Factor. Only the lengths do.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>The vertical axis of the figure starts at 18%, not at zero. The share of women aged 15-49 with overweight or obesity rose from 20.6% in NFHS-4 (2015-16) to 24.0% in NFHS-5 (2019-21). That is a rise of 3.4 percentage points.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what does the Lie Factor divide by what? What value means the drawing is honest, and from what value does Tufte call it substantial distortion? What does it come to for two bars drawn from an axis start s?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The percentage change drawn in the figure, divided by the percentage change in the data.</p>\n<p>An LF of 1 draws the change at its true size. Tufte counts above 1.05, or below 0.95, as substantial distortion.</p>\n<p>For two bars a and b, a the smaller, drawn from an axis start s: work out the LF from the bar the change starts from. It is a ÷ (a − s) for a rise from a, b ÷ (b − s) for a fall from b. For two groups, take the group you compare against, and say which. With s at zero it is 1.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Take one result from the manuscript or thesis section you are rewriting for this book. Plan its figure’s value axis.</p>\n<p>Write down four things. The mark you will use, and why. Where the value axis starts, and the range it shows. If you use bars, the Lie Factor of that start. The sentence of the caption that tells the reader where the axis starts and how big the change is in numbers.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A good plan decides the axis from the mark, and the mark from the one claim.</p>\n<p>The mark. Bars if the claim is about the level of something, such as “a quarter of women”. Points, joined by a line where time runs along the bottom, if the claim is about a change. The change itself as bars, if the change is the claim.</p>\n<p>The axis. Bars start at zero, so their Lie Factor is 1. Points may start near the data: a range not much wider than the values, with round tick marks. A ratio goes on a log axis, with bars from 1.</p>\n<p>The caption sentence names the start whenever it is not zero, and gives the values. For example: “The vertical axis starts at 18%. The share of women with overweight or obesity rose from 20.6% to 24.0%, a rise of 3.4 percentage points.”</p>\n<p>If your draft has bars from an axis above zero, work out the LF and write it down: a ÷ (a − s) for a rise from a. A plan that leaves an LF above 1.05 in place has not finished.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Two bars stand for 40 and 50. The value axis starts at 30. Work out the height each bar is drawn above the axis start, the drawn ratio and the data ratio.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>40 minus 30 = 10<br />\n50 minus 30 = 20<br />\n20 divided by 10 = 2<br />\n50 divided by 40 = 1.25</p>\n</div>\n<p>Drawn heights of 10 and 20. The second bar is drawn twice as tall as the first. The data ratio is 1.25.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Two bars stand for 40 and 50, and the value axis starts at 30. Work out the percentage change in the data, the percentage change in the drawing, and the Lie Factor.</p>",
+   "level": 2,
+   "answer": "<p>The data.</p>\n<div class=\"working\">\n<p>50 minus 40 = 10<br />\n10 divided by 40 = 0.25</p>\n</div>\n<p>A rise of 25 per cent. The drawing: the heights are 10 and 20.</p>\n<div class=\"working\">\n<p>20 minus 10 = 10<br />\n10 divided by 10 = 1</p>\n</div>\n<p>A rise of 100 per cent. Divide the drawn change by the change in the data.</p>\n<div class=\"working\">\n<p>100 divided by 25 = 4<br />\n40 divided by 10 = 4</p>\n</div>\n<p>The Lie Factor is 4. The second line checks it with a ÷ (a − s), for a rise from a: 40 divided by 10, where 10 is 40 minus 30.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A value rises from 10 to 20. An <dfn data-g=\"324\">infographic</dfn> shows each value as a picture, and doubles the picture’s height and its width for the second value. Work out how many times larger the second picture’s area is, and the Lie Factor if readers judge by area.</p>",
+   "level": 2,
+   "answer": "<p>The area is height times width, and both doubled.</p>\n<div class=\"working\">\n<p>2 times 2 = 4</p>\n</div>\n<p>The second picture covers 4 times the area. As percentage changes:</p>\n<div class=\"working\">\n<p>4 minus 1 = 3<br />\n3 times 100 = 300<br />\n20 minus 10 = 10<br />\n10 divided by 10 = 1<br />\n1 times 100 = 100<br />\n300 divided by 100 = 3</p>\n</div>\n<p>The area grew by 300 per cent for a rise of 100 per cent. The Lie Factor by area is 3.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Two bars stand for 60 and 66. On the page, the second bar is three times as tall as the first. Where does the value axis start?</p>",
+   "level": 3,
+   "answer": "<p>Call the axis start s. The drawn heights are 60 − s and 66 − s, and the second is three times the first.</p>\n<div class=\"working\">\n<p>66 − s = 3 × (60 − s)<br />\n66 − s = 180 − 3 × s</p>\n</div>\n<p>Add 3 × s to both sides, and take 66 from both sides.</p>\n<div class=\"working\">\n<p>3 × s − s = 2 × s<br />\n180 minus 66 = 114<br />\n114 divided by 2 = 57</p>\n</div>\n<p>The axis starts at 57. Check it.</p>\n<div class=\"working\">\n<p>60 minus 57 = 3<br />\n66 minus 57 = 9<br />\n9 divided by 3 = 3</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Two ratios, 2 and 0.5, are drawn as bars on a logarithmic axis. Work out each bar’s length on the log scale when the bars start at 1: the log<sub>10</sub> of its ratio. Then work them out when the bars start at 0.1.</p>",
+   "level": 3,
+   "answer": "<p>Starting at 1, a bar’s length is the log<sub>10</sub> of the ratio.</p>\n<div class=\"working\">\n<p>log<sub>10</sub> of 2 = 0.301<br />\nlog<sub>10</sub> of 0.5 = −0.301</p>\n</div>\n<p>Equal lengths, pointing opposite ways. That is right: 2 is “twice” and 0.5 is “half”.</p>\n<p>Starting at 0.1, each bar runs from 0.1 to its value, so its length is the log<sub>10</sub> of the value divided by 0.1.</p>\n<div class=\"working\">\n<p>2 divided by 0.1 = 20<br />\n0.5 divided by 0.1 = 5<br />\nlog<sub>10</sub> of 20 = 1.301<br />\nlog<sub>10</sub> of 5 = 0.699<br />\n1.301 divided by 0.699 = 1.86</p>\n</div>\n<p>Both bars now point up, so the half reads as a gain. And the bar for 2 is less than twice the bar for 0.5, though 2 is four times 0.5.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>In NFHS-4 (2015-16), 18.9% of men aged 15-49 in India had overweight or obesity. In NFHS-5 (2019-21) it was 22.9%. A slide draws the two as bars on an axis starting at 18%. Work out the drawn heights, the drawn ratio, the data ratio and the Lie Factor.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>18.9 minus 18 = 0.9<br />\n22.9 minus 18 = 4.9<br />\n4.9 divided by 0.9 = 5.44<br />\n22.9 divided by 18.9 = 1.21</p>\n</div>\n<p>Drawn heights of 0.9 and 4.9 percentage points. The NFHS-5 bar is 5.44 times the NFHS-4 bar, for a data ratio of 1.21. Now the Lie Factor of the rise from 18.9.</p>\n<div class=\"working\">\n<p>18.9 divided by 0.9 = 21.0</p>\n</div>\n<p>A Lie Factor of 21. The rise of 4.0 percentage points, about 21 per cent, is drawn as a rise of about 444 per cent.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Bergstrom and West describe a bar chart of jobs in Tennessee. The value for 2014 is about 1.08 times the value for 2010, but the 2014 bar uses about 2.7 times as much ink. The bars are equally wide. Work out the Lie Factor. Then work out where the axis started, as a fraction of the 2010 value.</p>",
+   "level": 5,
+   "answer": "<p>As percentage changes: the data rose by 8 per cent, the ink by 170 per cent.</p>\n<div class=\"working\">\n<p>1.08 minus 1 = 0.08<br />\n2.7 minus 1 = 1.7<br />\n1.7 divided by 0.08 = 21.25</p>\n</div>\n<p>A Lie Factor of about 21.</p>\n<p>For the axis start, measure everything in units of the 2010 value, so a = 1 and b = 1.08. The drawn heights are 1 − s and 1.08 − s, and the second is 2.7 times the first.</p>\n<div class=\"working\">\n<p>1.08 − s = 2.7 × (1 − s)<br />\n1.08 − s = 2.7 − 2.7 × s</p>\n</div>\n<p>Add 2.7 × s to both sides, and take 1.08 from both sides.</p>\n<div class=\"working\">\n<p>2.7 minus 1 = 1.7<br />\n2.7 minus 1.08 = 1.62<br />\n1.62 divided by 1.7 = 0.953</p>\n</div>\n<p>The axis started at about 0.953 of the 2010 value: about 95 per cent of the way up the first bar. Check with the shortcut for a rise: 1 ÷ (1 − 0.953) is about 21, as before.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>In NFHS-5, 33.2% of urban women aged 15-49 and 19.7% of rural women had overweight or obesity. A slide draws the two as bars on an axis starting at 15%. Work out the Lie Factor of the comparison.</p>",
+   "level": 5,
+   "answer": "<p>Compare urban against rural, so measure both percentage changes from rural, 19.7.</p>\n<div class=\"working\">\n<p>33.2 minus 19.7 = 13.5<br />\n13.5 divided by 19.7 = 0.685<br />\n19.7 minus 15 = 4.7<br />\n33.2 minus 15 = 18.2<br />\n18.2 minus 4.7 = 13.5<br />\n13.5 divided by 4.7 = 2.87<br />\n2.87 divided by 0.685 = 4.19</p>\n</div>\n<p>The urban figure is 68.5 per cent above the rural one. The drawing shows 287 per cent. The Lie Factor of urban against rural is about 4.19, the same as 19.7 ÷ (19.7 − 15).</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>You want one figure for the change in overweight or obesity in adults aged 15-49 between NFHS-4 and NFHS-5. Women went from 20.6% to 24.0%, and men from 18.9% to 22.9%. You choose points joined by lines. Choose the value axis’s range, say why, and say what would happen if a colleague drew bars on the same axis.</p>",
+   "level": 6,
+   "answer": "<p>The four values run from 18.9 to 24.0.</p>\n<div class=\"working\">\n<p>24.0 minus 18.9 = 5.1</p>\n</div>\n<p>A spread of 5.1 percentage points. An axis from 18 to 26, marked every 2 points, holds all four with a little room at each end. It is not much wider than the data, which is what Bergstrom and West advise for a line. Points are read by position, so this is honest, if the caption says the axis starts at 18.</p>\n<p>Bars on that axis would not be honest. Measure each rise from NFHS-4:</p>\n<div class=\"working\">\n<p>20.6 minus 18 = 2.6<br />\n20.6 divided by 2.6 = 7.92<br />\n18.9 minus 18 = 0.9<br />\n18.9 divided by 0.9 = 21.0</p>\n</div>\n<p>Lie Factors of about 7.9 for women and 21 for men. If the message is the level, about one adult in four or five, use bars from zero instead.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>In NFHS-5, 29.8% of urban men aged 15-49 and 19.3% of rural men had overweight or obesity. For women the two figures were 33.2% and 19.7%. Draw the urban-to-rural ratio for women and for men as bars on a logarithmic axis. Work out each ratio, each bar’s length on the log scale (the log<sub>10</sub> of its ratio), and the ratio of the two lengths.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>33.2 divided by 19.7 = 1.685<br />\n29.8 divided by 19.3 = 1.544<br />\nlog<sub>10</sub> of 1.685 = 0.227<br />\nlog<sub>10</sub> of 1.544 = 0.189<br />\n0.227 divided by 0.189 = 1.20</p>\n</div>\n<p>The women’s bar is about 1.2 times the men’s bar, both drawn up from 1. Urban women are about 1.69 times rural women; urban men are about 1.54 times rural men. Had the bars started at 0 on a linear axis, they would stand for amounts, not ratios. A ratio below 1 could not point the other way.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>women overweight or obese: 20.6% in NFHS-4, 24.0% in NFHS-5<br />\nbars drawn from an axis start of 20<br />\ndrawn heights: 0.6 and 4.0<br />\ndrawn ratio: 4.0 divided by 0.6 = 6.67<br />\ndata ratio: 24.0 divided by 20.6 = 1.165<br />\nLie Factor: 6.67 divided by 1.165 = 5.73</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The first five lines are right. The last line broke. The Lie Factor divides percentage changes, not ratios. Take 1 from each ratio to turn it into a change.</p>\n<div class=\"working\">\n<p>4.0 divided by 0.6 = 6.6667<br />\n6.6667 minus 1 = 5.6667<br />\n24.0 divided by 20.6 = 1.16505<br />\n1.16505 minus 1 = 0.16505<br />\n5.6667 divided by 0.16505 = 34.33</p>\n</div>\n<p>The Lie Factor is about 34.3, as a ÷ (a − s) gives for a rise from a: 20.6 divided by 0.6.</p>\n<p>Why it looks reasonable: the ratio of the two ratios is a real comparison of picture against data. Bergstrom and West use ink ratios that way. But it is not Tufte’s Lie Factor, and Tufte’s 1.05 belongs to the Lie Factor. Here the wrong method understates the distortion six times over.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the slide: bars for 20.6% and 24.0% on an axis from 20, Lie Factor 34.3<br />\nthe fix: a zig-zag break mark added to the axis and to both bars<br />\nthe axis numbers are correct, and the break tells the reader the axis was cut<br />\nso readers now read the values, not the lengths: the Lie Factor is 1</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The fourth line broke. The Lie Factor belongs to the drawing. The bars are still 0.6 and 4.0 high, so it is still 20.6 divided by 0.6.</p>\n<div class=\"working\">\n<p>20.6 divided by 0.6 = 34.33</p>\n</div>\n<p>Readers did not switch to the numbers either. In Correll and colleagues’ second experiment a break mark on the axis and the bars did not stop truncation raising how severe the difference looked. In their third, it stayed even when readers reported the numbers accurately.</p>\n<p>An honest fix changes the lengths: bars from zero, points on a stated range, or bars of the 3.4 percentage-point change from zero.</p>\n<p>Why it looks reasonable: the break mark is true, and it is what many style guides advise. It tells the reader a fact; the picture tells them a different one, and the picture wins.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>Correll and colleagues reproduce a bar chart shown on Fox News. Their caption says the second bar is 6 times taller than the first. It goes on: “even though there is only a 4.6% increase in tax rate (ratio of 1.13 to 1)”. A colleague says: “So the chart made a 4.6% rise look like a 500% rise.”</p>\n<p>Decide what to compute, compute it, and say what the chart’s critics cannot claim from it.</p>",
+   "level": 9,
+   "answer": "<p>Compute the Lie Factor from the two ratios, and check what “4.6%” is.</p>\n<div class=\"working\">\n<p>6 minus 1 = 5<br />\n1.13 minus 1 = 0.13<br />\n5 divided by 0.13 = 38.5</p>\n</div>\n<p>The bars changed by 500 per cent for a rise of 13 per cent: a Lie Factor of about 38.</p>\n<p>The colleague’s “4.6%” is a rise of 4.6 percentage points, not a 4.6 per cent rise. A ratio of 1.13 with a gap of 4.6 points puts the first rate near 4.6 divided by 0.13.</p>\n<div class=\"working\">\n<p>4.6 divided by 0.13 = 35.4</p>\n</div>\n<p>About 35%. So the true rise is 13 per cent, and the sentence should say “a 4.6-point rise, about 13 per cent”.</p>\n<p>What it does not establish. The chart’s numbers were right; only its lengths were wrong. The Lie Factor says nothing about whether a 4.6-point rise in a tax rate matters: that is a judgement about tax, not about charts. And it does not show the designer meant to mislead.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A district officer presents NFHS results with a bar slide and says: “Look at this. Overweight and obesity in men almost doubled between the two surveys.”</p>\n<p>Decide what to compute, compute it, and say what the claim and the slide do not establish.</p>",
+   "level": 10,
+   "answer": "<p>Compute the real change both ways, then find the axis start that would make the bars look doubled. The men’s figures are 18.9% in NFHS-4 and 22.9% in NFHS-5.</p>\n<div class=\"working\">\n<p>22.9 minus 18.9 = 4.0<br />\n4.0 divided by 18.9 = 0.212<br />\n22.9 divided by 18.9 = 1.21</p>\n</div>\n<p>A rise of 4.0 percentage points, about 21 per cent. Not a doubling. Now the start that draws a doubling: the NFHS-5 height, 22.9 − s, equals twice the NFHS-4 height, 2 × (18.9 − s).</p>\n<div class=\"working\">\n<p>22.9 − s = 37.8 − 2 × s<br />\n37.8 minus 22.9 = 14.9</p>\n</div>\n<p>Add 2 × s to both sides and take 22.9 from both sides: s = 14.9. Any bar slide whose axis starts near 15% will show the men’s bar about twice as tall. The officer read the lengths.</p>\n<p>What it does not establish. The figures are for men aged 15 to 49 only, with overweight and obesity combined in one row. NFHS-4 and NFHS-5 are two separate samples, so this is a change in the share, not in any group of men followed over time. Nothing in the two numbers says why it rose. And whether a rise of 4 points matters is a question for the programme, not for the chart.</p>"
+  }
+ ]
+}

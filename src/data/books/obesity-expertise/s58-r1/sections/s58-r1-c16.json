@@ -1,0 +1,176 @@
+{
+ "format": 1,
+ "id": "s58-r1-c16",
+ "label": "16",
+ "title": "Show the data: when a bar of means hides what the points would show",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A bar chart of a measured quantity draws each group as one bar, the height of its mean.</p>\n<p>Many different sets of values give the same bar and the same <dfn data-g=\"223\">error bar</dfn>. An error bar is a line above and below the top of the bar, usually one <dfn data-g=\"644\">standard deviation</dfn> or one standard error each way (Book 0, D5 and Book 0, D6). The values may be spread evenly, or bunched with one far from the rest, or split into two clusters. There may be only three of them.</p>\n<p><dfn data-g=\"624\">Showing the data</dfn> means drawing every value. A <dfn data-g=\"653\">strip chart</dfn> puts each value as a dot along the <dfn data-g=\"704\">value axis</dfn>, one column of dots per group; Weissgerber and colleagues call it a univariate scatterplot.</p>",
+   "refs": [
+    255,
+    255,
+    256,
+    257,
+    258,
+    259,
+    259,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    264,
+    265,
+    265,
+    266,
+    267,
+    266,
+    268
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A bar chart of a measured quantity shows one number per group: the average. It hides everything else.</p>\n<p>So when your groups are small, draw every value as a dot. The reader sees how many people there were, how they spread, and whether one person is pulling the average.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c16-equal-bars.png",
+   "alt": "Three bars of equal height, each labelled 30, for ward 1, ward 2 and ward 3.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Three wards look alike as bars of means. Made-up survey of 8 adults in each of three wards; each bar is a ward’s mean minutes of moderate activity a day. All three are 30 minutes, and each ward’s standard deviation is 14.3 minutes, so the bars and any error bars would match."
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c16-every-value.png",
+   "alt": "24 unjoined dots in three labelled blocks of eight, one block per ward, each block rising from its lowest value. Ward 1 rises fairly evenly from 10 to 50. Ward 2 is nearly flat from 22 to 28, then one dot at 65. Ward 3 sits at 15 to 19, then at 41 to 45. A dashed line at 30 crosses all three blocks.",
+   "w": 1359,
+   "h": 656,
+   "caption": "The same three means of 30 minutes hide three different wards. One dot per adult, 24 made-up values, set out ward by ward; within each ward the eight adults go from left to right, lowest value first, so no dot hides another. The dots are not joined, because the adults are not pairs. Ward 1 is spread fairly evenly from 10 to 50 minutes. In ward 2, seven adults report 22 to 28 and one reports 65. Ward 3 falls into two clusters, 15 to 19 and 41 to 45. The dashed line is the mean of every ward, 30 minutes."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a figure that fails. A draft survey report shows three bars of equal height: the mean minutes of moderate activity a day reported by adults in three wards of a town. Under it the draft says, “Activity was similar across the three wards.” The survey is made up, and so are its 24 values, eight adults per ward.</p>\n<table style=\"width:82%;\">\n\n<thead>\n<tr>\n<th>ward</th>\n<th>each adult’s minutes of moderate activity a day</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ward 1</td>\n<td>10, 15, 21, 27, 33, 39, 45, 50</td>\n</tr>\n<tr>\n<td>ward 2</td>\n<td>22, 23, 24, 25, 26, 27, 28, 65</td>\n</tr>\n<tr>\n<td>ward 3</td>\n<td>15, 16, 17, 19, 41, 43, 44, 45</td>\n</tr>\n</tbody>\n</table>\n<p><dfn data-g=\"85\">Check</dfn> the means first. Do ward 2.</p>\n<div class=\"working\">\n<p>22 plus 23 plus 24 plus 25 plus 26 plus 27 plus 28 plus 65 = 240<br />\n240 divided by 8 = 30</p>\n</div>\n<p>Wards 1 and 3 also add to 240, so every mean is 30 minutes. Now the standard deviation, as Book 0 built it (Book 0, D5), again for ward 2. Subtract the mean from each value, square, add, divide by one less than the count.</p>\n<div class=\"working\">\n<p>8 squared plus 7 squared plus 6 squared plus 5 squared plus 4 squared plus 3 squared plus 2 squared plus 35 squared = 1428<br />\n1428 divided by 7 = 204</p>\n</div>\n<p>The <dfn data-g=\"640\">square root</dfn> of 204 is 14.28. Wards 1 and 3 come to 14.29 and 14.25. To one <dfn data-g=\"172\">decimal</dfn>, all three are 14.3 minutes. So the three bars match, and so would their error bars.</p>\n<table style=\"width:97%;\">\n\n<thead>\n<tr>\n<th>ward</th>\n<th>adults</th>\n<th>mean (minutes)</th>\n<th>standard deviation (minutes)</th>\n<th>median (minutes)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ward 1</td>\n<td>8</td>\n<td>30</td>\n<td>14.3</td>\n<td>30</td>\n</tr>\n<tr>\n<td>ward 2</td>\n<td>8</td>\n<td>30</td>\n<td>14.3</td>\n<td>25.5</td>\n</tr>\n<tr>\n<td>ward 3</td>\n<td>8</td>\n<td>30</td>\n<td>14.3</td>\n<td>30</td>\n</tr>\n</tbody>\n</table>\n<p>Now draw every value as a dot and look again. In the second figure, the adults are numbered 1 to 24, ward by ward, lowest value first. They are set out from left to right, so that no dot hides another. Ward 1 is spread fairly evenly from 10 to 50. In ward 2, seven adults report 22 to 28 minutes, and one reports 65. That one value lifts the mean to 30, though seven of the eight report less; the <dfn data-g=\"410\">median</dfn> is 25.5. In ward 3 the adults fall into two clusters, 15 to 19 and 41 to 45. Nobody in ward 3 is closer than 11 minutes to the mean.</p>\n<p>“Activity was similar across the three wards” is true of the means and false of the people. Weissgerber and colleagues make the same point with four example datasets behind one bar chart: “many different data distributions can lead to the same bar or line graph”.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These values were made up to share a mean and a standard deviation exactly. Real groups will not match so neatly. The lesson is that matching bars do not show matching groups, not that real wards look like these.</p>\n<p>The single 65 in ward 2 is not wrong only because it is far from the rest. Check it against the form before you decide anything. If it was recorded correctly, it stays in the figure.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now choose how to show the values. The choice turns on how many values each group has.</p>\n<p>With a handful per group, draw a strip chart: every value as a dot, one column per group. The figure for the three wards does the same job with each ward’s dots spread out in order. Add a short line at each group’s median or mean, and say which in the <dfn data-g=\"74\">caption</dfn>. Weissgerber and colleagues found that in 75% of the papers they reviewed, the smallest group in a figure had between two and six values. For groups that small, they call this chart “the best choice”, because box plots and histograms “would be difficult to interpret”.</p>\n<p>Watch what a <dfn data-g=\"63\">box plot</dfn> does to ward 3. Work its quartiles the way Book 0 did: the median of the lower four values and the median of the upper four.</p>\n<div class=\"working\">\n<p>(16 plus 17) divided by 2 = 16.5<br />\n(43 plus 44) divided by 2 = 43.5</p>\n</div>\n<p>A box plot draws a box from the lower to the upper <dfn data-g=\"536\">quartile</dfn>, a line at the median, and whiskers out towards the far values. Ward 3’s box runs from 16.5 to 43.5 minutes, with its median line at 30. A reader sees a wide, even spread with a middle at 30. No adult in ward 3 reports anything between 19 and 41. Wilke says it plainly: violin plots, a smoothed <dfn data-g=\"464\">outline</dfn> of where the values fall, “will accurately represent <dfn data-g=\"56\">bimodal</dfn> data whereas a boxplot will not”. Bimodal means two clusters.</p>\n<p>With dozens or hundreds of values per group, as in a district survey, dots in one column sit on top of each other. Spread them a little sideways <dfn data-g=\"37\">at random</dfn>, which is <dfn data-g=\"350\">jittering</dfn>. Or draw a box plot, a violin or a histogram. Before you trust a histogram, redraw it with two or three different bin widths, the width of each bar. A pattern that comes and goes with the <dfn data-g=\"57\">bin width</dfn> is not a pattern in the data.</p>\n<p>Last, look at how the data were collected. If the same adults were measured twice, before and after something, the two sets of values are <dfn data-g=\"470\">pairs</dfn>. Two bars, one for before and one for after, hide whether each person went up or down. Draw each person’s two values joined by a line.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The cut between “a handful” and “many” is not a fixed number. Draw the dots. If they still show the shape and the count, keep them. If they pile into a smear, change the chart.</p>\n<p>All of this is for measured quantities. A share of people with or without something, such as the National Family Health Survey rows in section 14 and section 15, is one number per group. A bar or a dot is the right mark for it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The bar chart summarises the group” is the error. Very different sets of values give the same mean and the same error bar: an even spread, one far value, two clusters.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When each group has only a handful of values, draw every value as a dot, with a short line at the median or mean. Say in the caption which the line is, and how many values each group has.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A box plot is a summary too. It can draw two clusters as one wide box with a median where nobody is.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When the same people are measured twice, never draw the two occasions as two bars. <dfn data-g=\"351\">Join</dfn> each person’s two values with a line, so the reader sees who went up, who went down and who stayed the same.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Weissgerber and colleagues’ <dfn data-g=\"668\">systematic review</dfn> (2015) covered 703 papers in leading physiology journals from early 2014. Of these, 85.6% had at least one bar chart, and only 13.4% had a chart showing every value.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you review a colleague’s draft with bars of means for small groups, ask for the values as dots.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Weissgerber and colleagues counted physiology journals only; this book holds no such count for Indian journals. Leaf through a recent issue of the journal you will submit to and count for yourself before you assume its habits.</p>",
+     "tag": "india_deviation",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Showing every value shows the shape and the count. It does not tell you whether a gap between groups is real or large enough to matter. And it is for measured quantities. A share of people with a condition is one number per group, and a bar or dot is right for it.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Show the data” is easily read as “never show a mean”. A strip chart with a short line at each group’s mean shows the summary and what it summarises, side by side. What the rule forbids is the mean on its own, standing in for values the reader never sees.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Each dot is one participant’s value; the short horizontal line marks the median of each group. We show every value because no group had more than ten participants.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name three different ways a group of values can produce the same bar of the mean and the same error bar. Which chart do Weissgerber and colleagues recommend for small groups, and why not a box plot?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Values spread evenly; values bunched together with one far from the rest; values in two separate clusters. A group of very few values is a fourth.</p>\n<p>For small groups, a univariate scatterplot, which this book calls a strip chart: every value as a dot. A box plot or a histogram is hard to read with so few values. A box plot can also draw two clusters as one wide box.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up student survey compares hours of sleep a night in two hostels, six students each. The draft shows two bars of equal height and says, “Sleep did not differ between hostels.”</p>\n<table style=\"width:71%;\">\n\n<thead>\n<tr>\n<th>hostel</th>\n<th>each student’s hours of sleep a night</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>hostel A</td>\n<td>6.5, 7.0, 7.0, 7.5, 7.5, 8.0</td>\n</tr>\n<tr>\n<td>hostel B</td>\n<td>5.0, 5.5, 5.5, 6.0, 6.0, 15.5</td>\n</tr>\n</tbody>\n</table>\n<p>Work out each hostel’s mean and median. Sketch the values as a strip chart. Say what the bars hid and what you would do before writing the sentence again.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The means.</p>\n<div class=\"working\">\n<p>6.5 plus 7.0 plus 7.0 plus 7.5 plus 7.5 plus 8.0 = 43.5<br />\n43.5 divided by 6 = 7.25<br />\n5.0 plus 5.5 plus 5.5 plus 6.0 plus 6.0 plus 15.5 = 43.5<br />\n43.5 divided by 6 = 7.25</p>\n</div>\n<p>The medians: with six values, the mean of the third and fourth.</p>\n<div class=\"working\">\n<p>(7.0 plus 7.5) divided by 2 = 7.25<br />\n(5.5 plus 6.0) divided by 2 = 5.75</p>\n</div>\n<p>The strip chart shows hostel A from 6.5 to 8.0 hours. In hostel B, five students sleep 5.0 to 6.0 hours and one value sits at 15.5. That single value lifts hostel B’s mean to equal A’s.</p>\n<p>First, check 15.5 against the student’s form. A value of 5.5 typed as 15.5 is one possibility; a student who really reported 15.5 is another. Do not delete it because it is inconvenient.</p>\n<p>Then write what the values show. Five of six students in hostel B slept less than everyone in hostel A, and the medians are 5.75 and 7.25 hours. Six students per hostel cannot tell you whether this holds for the hostels as a whole.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Find one figure in your own section, or in a recent paper in your field, that shows a measured quantity as bars of means. Redraw it by hand as a strip chart, or say exactly what you would need from the authors to do so. Write the caption’s sentence that says what the dots and the line mean.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A good redraw keeps the groups on one shared axis and puts every value as a dot. A short line marks the median or mean. The caption says which the line is and how many values each group has.</p>\n<p>If you could not redraw it, you needed the individual values, which a bar chart never shows. That is the point: the bar chart gave you no way to check the <dfn data-g=\"95\">claim</dfn> it was drawn to support. Asking authors for their data, or for the values in a supplement, is a reasonable request for a reviewer to make.</p>\n<p>If the same people were measured twice, your redraw joins each person’s two values with a line.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident has drawn her thesis results as bars of means, eight patients per group, and asks why her guide wants “the dots”. Ten minutes, with a whiteboard.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw three bars of the same height on the board, and write 30 above each. Ask her what she can say about the three groups. She will say they are the same.</p>\n<p>Now draw three columns of dots behind the bars: one spread evenly, one bunched with a single dot far above, one in two clusters. Every column has the same mean. Ask again.</p>\n<p>Make three points. First, with eight values a group, the reader can see every value; a bar shows one number in place of eight. Second, one far value can make a group’s mean match another’s, and only the dots show it. Third, her examiner will want to check her claim, and the dots are what lets them.</p>\n<p>End with what to draw: one dot per patient, a short line at each group’s median, and a caption that says so.</p>"
+  }
+ ]
+}

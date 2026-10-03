@@ -1,0 +1,158 @@
+{
+ "format": 1,
+ "id": "s58-r1-c01",
+ "label": "1",
+ "title": "What a research paper is: its parts and what each part is for",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>An <dfn data-g=\"463\">original research article</dfn> is a journal paper that reports a study for the first time. The International Committee of Medical Journal Editors (ICMJE) is a group of medical journal editors. Its Recommendations, updated January 2026, say the text of such an article is usually divided into Introduction, Methods, Results and Discussion (IMRAD).</p>\n<p>Around the text sit a title page, which carries the title; an <dfn data-g=\"4\">abstract</dfn>; and a numbered list of references.</p>\n<p>IMRAD is a convention that editors adopted, not a fixed law of science. In four leading journals of internal medicine it was absent from original articles in 1935, reached 80 per cent of them in the 1970s, and was the only pattern by the 1980s (Sollaci and Pereira, 2004).</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A research paper reports one study. Most medical journals want it in the same four parts, in the same order.</p>\n<p>The introduction says why the study was needed and what question it asked. The methods say what was done, so that someone else could <dfn data-g=\"85\">check</dfn> it or do it again. The results say what was found. The discussion says what the findings mean, and where they stop.</p>\n<p>Before these four come a title and an abstract, a short summary of the whole paper. After them comes the list of references, the sources the paper leans on.</p>\n<p>The four-part shape has a name, IMRAD, from the first letters of the parts. It is a habit that editors spread in the twentieth century, not a rule of nature. So the journal you send your paper to has the last word on its shape.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c01-imrad-adoption.png",
+   "alt": "Three unjoined points of year against per cent of original articles in the IMRAD structure: 0 in 1935, 20 in 1955 and 100 in 1985.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The four-part IMRAD structure is a recent convention: none of the original articles used it in 1935, 20 per cent did in 1955, and all of them did in 1985. Sollaci and Pereira (2004) counted 1,297 original articles in the British Medical Journal, JAMA, The Lancet and the New England Journal of Medicine, every five years from 1935 to 1985. Only the years their text states are drawn; their over 80 per cent in the 1970s names no single year, so it is not plotted."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is the opening of a draft paper. It is made up for this section, but both of its faults are common. The study measured women aged 15 to 49 who came to one urban health centre. Read each sentence and ask which question it answers for a reader: why the study was done, how it was done, what was found, or what it means.</p>\n<blockquote>\n<p><strong>Introduction.</strong> (1) Overweight and obesity are common among Indian women: in the fifth National Family Health Survey (NFHS-5, 2019-21), 24.0 per cent of women aged 15-49 had overweight or obesity, against 20.6 per cent in the fourth (2015-16). (2) A national figure does not tell a health centre how many of the women it serves are affected. (3) In our survey, 31 per cent of the women had overweight or obesity. (4) We set out to estimate the share of women aged 15-49 attending the centre who have overweight or obesity.</p>\n<p><strong>Methods.</strong> (5) We weighed and measured consecutive women attending the centre. (6) Of the 412 women approached, 380 agreed to be measured.</p>\n</blockquote>\n<p>The numbers in sentences 3 and 6 are made up. The two survey figures in sentence 1 are real.</p>\n<p>Start with sentence 3. It is a finding of this study, sitting in the introduction. ICMJE’s Recommendations say the introduction should not “include data or conclusions from the work being reported”. A reader who meets 31 per cent here has not yet been told how it was measured. So they cannot judge it, and they will meet it again in the results. Move it to the results.</p>\n<p>Now sentence 6. It reads like method, because it is about how the women were found. But you learnt 412 and 380 only by doing the study. The Recommendations put everything obtained during the study in the results; the methods hold only what was known when the protocol, the study’s written plan, was drawn up. So the methods say how women were approached. The count of who agreed goes to the results.</p>\n<p>Then <dfn data-g=\"363\">label</dfn> the four that stay. Sentence 1 is context. Sentence 2 is the gap, what is not yet known. Sentence 4 is the purpose. Sentence 5 is method. Each now answers the question its section exists to answer, and a reader who goes to one section looks in the right place.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Each misplaced sentence here has one plain home. A real draft often runs a known fact and the study’s own number into one sentence. Or it joins a result and what you think it means: the number goes to the results, the reading to the discussion. Split it first, then send each half to its section.</p>\n<p>The pattern is for original research. A <dfn data-g=\"75\">case report</dfn> (the account of one or a few patients), a <dfn data-g=\"431\">narrative review</dfn> (a summary of published work on a topic) or an <dfn data-g=\"203\">editorial</dfn> (a journal’s opinion piece) has its own shape, and in every case the instructions of the journal you have chosen win over this pattern.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>You will hear that papers have always been written in these four parts. Check it.</p>\n<p>Open Sollaci and Pereira’s survey of the structure, free to read at https://pmc.ncbi.nlm.nih.gov/articles/PMC442179/. Read the Methods first. They took one issue in every ten of four leading journals of internal medicine: the British Medical Journal, the Journal of the American Medical Association (JAMA), The Lancet and the New England Journal of Medicine. They looked every five years from 1935 to 1985, and counted 1,297 original articles.</p>\n<p>Now read the first paragraph of the Results and write down each share the text states. In 1935 they found no article in the four-part structure: 0 per cent. By 1955 the share had reached 20 per cent. By the 1970s it was over 80 per cent. Then read the next paragraph: the last two journals fully adopted it in 1985. So by 1985 every original article in the four journals used it: 100 per cent.</p>\n<p>So the claim fails. The structure that looks permanent became the usual one in these journals only in the 1970s. The Discussion says why it may have spread. Editors pushed for it, to help readers and reviewers. And readers do not read a paper from start to finish; they jump to the section where they expect to find what they want.</p>\n<p>That last reason is the one to keep. A reader who wants your sample size goes to the methods. A reader who wants your main number goes to the results. Put each thing where they will look.</p>",
+   "numberRefs": [
+    25
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These are four journals of internal medicine, counted every five years. The authors themselves warn against extending their findings to other journals. The year-by-year shares are in the paper’s own figure, which is a picture and is not used here; only the shares its text states are.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Before you draft, open the instructions for authors of the journal you are aiming at. Note its article types, its abstract format and its word limits.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The two commonest misplacements are your own result in the introduction and a number you obtained during the study in the methods. A reader who meets a result before its method cannot judge it.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“Papers have always been written this way” is wrong. In four leading medical journals the <dfn data-g=\"320\">IMRAD structure</dfn> was absent in 1935. ICMJE calls it a reflection of how discovery works. Neither makes it a rule for every kind of article.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Do not force a case report, a narrative review or an editorial into the four parts. ICMJE says such articles may be less structured or unstructured, and that a <dfn data-g=\"413\">meta-analysis</dfn> (a pooling of the results of several studies) may need a different format.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Readers jump to the section where they expect to find a thing. So put it there.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The four parts tell you where each kind of sentence goes. They do not tell you what the paper claims, or whether the data carry that claim.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you turn a thesis chapter into a paper, read the journal’s instructions afresh.</p>",
+     "tag": "india_deviation",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>It is tempting to read the IMRAD order as the order in which to write: introduction first, then methods, then results, then discussion. It is the order in which a reader looks things up. ICMJE’s Recommendations say which section holds what, and nothing about which to write first. Mensh and Kording, who wrote ten simple rules for structuring papers, suggest starting elsewhere: build the outline around a description of each result. Those descriptions can become the headings of your results section.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, name the four sections of an original research article in the IMRAD structure, and the question each one answers for a reader. Then name the three parts that sit around them.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Introduction: why was the study done, and what did it set out to find? It gives the context and states the purpose or hypothesis.</p>\n<p>Methods: how was it done? Enough detail for others with the data to reproduce the results, and only what was known when the protocol was written.</p>\n<p>Results: what was found? The findings in logical order, the most important first.</p>\n<p>Discussion: what does it mean, and where does it stop? The main findings, set among the other evidence, with the study’s limitations and what follows from it.</p>\n<p>Around them: the title page with the title, the abstract, and the list of references.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague’s draft has these four sentences in its methods section. The numbers are made up.</p>\n<blockquote>\n<p>(a) Adults aged 30 and over who came to the diabetes and blood pressure clinic on Mondays were eligible. (b) Waist was measured with a tape that does not stretch, at the level set in the protocol. (c) Of 260 adults who were eligible, 214 were measured. The rest said no or left first. (d) Waist was above the clinic’s cut-off in 58 per cent of those measured, more than we expected.</p>\n</blockquote>\n<p>Say which sentences belong in the methods, where the others go, and why.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Sentences (a) and (b) belong. Who was eligible and how waist was measured were both fixed when the protocol was written.</p>\n<p>Sentence (c) goes to the results. You learn that 214 of the 260 were measured only by doing the study. The Recommendations put everything obtained during the study in the results. The methods may say how adults were approached; the count of who took part is a result.</p>\n<p>Sentence (d) splits. “Waist was above the clinic’s cut-off in 58 per cent of those measured” is a finding and goes to the results. The words “more than we expected” are interpretation and go to the discussion, where they need a reason: expected from what?</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>For a first-year resident, ten minutes with a whiteboard. She asks why journals insist on four fixed sections when a paper would read better as a story. Answer her, and tell her the kinds of article that need not use the four sections.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with how papers are read. Most readers do not go from start to finish. They read the title and abstract, then jump to the part they want. They go to the methods to judge how it was done, and to the results for the numbers.</p>\n<p>Mensh and Kording note that the title, abstract and figures are seen by far more people than the rest. The methods are read least of all. The four fixed sections let each reader find their part. Editors, by one account, pushed the structure to help readers and reviewers.</p>\n<p>Then the history, so she does not mistake it for a law. In four leading medical journals it was absent in 1935 and became the only pattern by the 1980s. It is a convention, and a useful one.</p>\n<p>Draw the four boxes and write one question in each: why, how, what was found, what it means. Tell her a sentence belongs where its question is.</p>\n<p>Then the exceptions. A case report, a narrative review or an editorial need not follow it. A meta-analysis may need a different format. The journal’s own instructions for her article <dfn data-g=\"695\">type</dfn> decide.</p>"
+  }
+ ]
+}

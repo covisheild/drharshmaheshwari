@@ -1,0 +1,222 @@
+{
+ "format": 1,
+ "id": "s58-r1-c23",
+ "label": "23",
+ "title": "Worked journey: One finding, from the fact sheet to a paragraph a colleague can restate",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In this book, a finding’s <dfn data-g=\"353\">journey</dfn> is the order of work that takes one result from its source to a results paragraph a reader can restate after one reading.</p>\n<ol type=\"1\">\n<li>The question, and the data read from the source with every limit the source states.</li>\n<li>The <dfn data-g=\"456\">one message</dfn>: the <dfn data-g=\"95\">claim</dfn> in one or two sentences, false if the data had come out otherwise.</li>\n<li>The results paragraph, rewritten from an account of what was done into the claim and its evidence.</li>\n<li>The numbers: units, counts where the source gives them, differences in <dfn data-g=\"478\">percentage</dfn> points, and no more digits than the data hold.</li>\n<li>A readability score taken as a trip-wire, and a cut.</li>\n<li>One home for the numbers, chosen by what the reader has to do with them. The paper keeps one of the two, never both.</li>\n<li>A numbered reference to the source, formatted from the rules for that kind of source.</li>\n<li>A <dfn data-g=\"457\">one-pass test</dfn> with a reader who does not know the work, and a revision.</li>\n<li>A statement of what the finding does not mean.</li>\n</ol>",
+   "refs": [
+    381,
+    382,
+    383,
+    384,
+    385,
+    385,
+    386,
+    387,
+    359,
+    388,
+    389,
+    390,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Each earlier section taught one tool. Real work uses them one after another, on one result. The result is the share of Indian women and men aged 15 to 49 with <dfn data-g=\"467\">overweight</dfn> or obesity in two national surveys.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c23-three-drafts.png",
+   "alt": "Three bars: 61.6 for the diary, 79.7 for the claim draft, 86.7 after the cut, with a dashed line at 60 that all three clear.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The worst draft passes: the diary scores 61.6 in Flesch Reading Ease, above Flesch’s minimum of 60 for Plain English (dashed line). The claim draft scores 79.7, and the cut version 86.7. Each figure in a draft is counted as one word of one syllable."
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c23-sentences-and-words.png",
+   "alt": "Three points, one per draft, with average sentence length across and average syllables per word up the side: the diary at 13.8 and 1.5507, the claim draft at 16.25 and 1.3077, after the cut at 17 and 1.2157. Each draft lies further right and lower than the one before.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The cut scored higher than the diary although its sentences were longer: 17 words a sentence against 13.8. Its words were shorter, 1.2157 syllables a word against 1.5507. The long words went, and the score rose. These are points, so neither axis starts at zero."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Suppose you are writing a short paper, a research letter, on one question: did the share of Indian women and men aged 15 to 49 with overweight or obesity change between the fourth and fifth rounds of the National Family Health Survey (NFHS)?</p>\n<p><strong>The data.</strong> Open the <em>National Family Health Survey (NFHS-5), 2019-21: India Fact <dfn data-g=\"622\">Sheet</dfn></em> at https://dhsprogram.com/pubs/pdf/OF43/India_National_Fact_Sheet.pdf. Find the heading “Nutritional Status of Adults (age 15-49 years)”. Two rows under it carry your question.</p>\n<blockquote>\n<p>88. Women who are overweight or obese (BMI ≥25.0 kg/m2)21 (%) 33.2 19.7 24.0 20.6</p>\n</blockquote>\n<blockquote>\n<p>89. Men who are overweight or obese (BMI ≥25.0 kg/m2) (%) 29.8 19.3 22.9 18.9</p>\n</blockquote>\n<p>Read them as section 14 did. The four columns are NFHS-5 (2019-21) urban, rural and total, then NFHS-4 (2015-16) total, in per cent. The rows count a <dfn data-g=\"61\">body mass index</dfn> (BMI) of 25.0 kg/m<sup>2</sup> or more (“kg/m2” on the sheet), overweight and obese together. The “21” after the women’s unit is the fact sheet’s <dfn data-g=\"267\">footnote</dfn> 21. It excludes pregnant women and women with a birth in the preceding 2 months. The fact sheet prints no counts of the people weighed and measured.</p>\n<p>Write those limits down now, before you write anything else. Every later step has to stay inside them.</p>\n<p><strong>The one message.</strong> Keep the message section 3 wrote for these rows.</p>\n<blockquote>\n<p>Between 2015-16 and 2019-21, the share of Indian adults aged 15-49 with overweight or obesity rose in women and in men, to about one woman in four and more than one man in five.</p>\n</blockquote>\n<p>Test it once more. Had either share fallen, the sentence would be false, so it claims something. “About one woman in four” stands for 24.0 per cent, close to 25. “More than one man in five” stands for 22.9 per cent, above 20. Put the sentence at the top of a page and keep it in view. Every step below is checked against it.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This question is answered by reading two columns, so the gap a real paper fills is thin here. The order of work is the same when the data are your own; then the limits come from your methods, not from a footnote.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p><strong>The paragraph.</strong> Here is a first draft of the results, of the kind a thesis is full of. It is invented; its numbers are the fact sheet’s.</p>\n<blockquote>\n<p>Data on the nutritional status of adults were taken from the NFHS-5 India fact sheet. The proportion of overweight and obese individuals was examined in both sexes. The NFHS-4 figures were also noted for the purpose of comparison. It was observed that the proportion was 24.0% in females and 22.9% in males in NFHS-5, as compared to 20.6% and 18.9% respectively in NFHS-4. Thus an increasing trend was seen.</p>\n</blockquote>\n<p>Mark what is wrong before you fix it. The first three sentences are a diary: taken, examined, noted (section 2). The claim arrives in the last five words, and “trend” claims more than two surveys can show. “Females” and “males” drift from the fact sheet’s women and men (section 8). “Respectively” makes the reader pair four numbers by position. The age range and the cut-off are gone.</p>\n<p>Put the claim first, then the evidence it needs. Work out the two differences, as section 9 taught, in percentage points.</p>\n<div class=\"working\">\n<p>24.0 minus 20.6 = 3.4<br />\n22.9 minus 18.9 = 4.0</p>\n</div>\n<p>Here is the claim version, as first drafted. It is invented too.</p>\n<blockquote>\n<p>It can be noted that the share of adults aged 15-49 who were overweight or obese rose between NFHS-4 (2015-16) and NFHS-5 (2019-21), in women and in men. In women it rose from 20.6 to 24.0 per cent, by 3.4 percentage points. In men it rose from 18.9 to 22.9 per cent, by 4.0 percentage points. This clearly shows that obesity is increasing in India.</p>\n</blockquote>\n<p><strong>The numbers.</strong> Three checks. Units: every figure says per cent or percentage points. Counts: the source gives none, so you cannot put a count before each percentage. Say so where the numbers first appear, in the table’s footnote. Never make a count by multiplying the 724,115 women NFHS-5 interviewed by a percentage: they are not the women weighed for this row. Digits: the four totals run from 18.9 to 24.0.</p>\n<div class=\"working\">\n<p>24.0 minus 18.9 = 5.1</p>\n</div>\n<p>Cole’s rule for comparing groups gives one <dfn data-g=\"172\">decimal</dfn> place for a range between 1 and 10. Keep the fact sheet’s one decimal.</p>\n<p><strong>The score.</strong> Now score the two drafts for <dfn data-g=\"257\">Flesch Reading Ease</dfn> (FRE) and Flesch-Kincaid grade <dfn data-g=\"379\">level</dfn> (FKGL), from the <dfn data-g=\"43\">average sentence length</dfn> (ASL) and <dfn data-g=\"44\">average syllables per word</dfn> (ASW), as section 11 did, taking each figure as one word of one <dfn data-g=\"665\">syllable</dfn>. The diary has 69 words in 5 sentences. Its words of more than one syllable add 38 beats: Data 1, nutritional 3, status 1, adults 1, taken 1, India 2, <dfn data-g=\"525\">proportion</dfn> 2 twice, overweight 2, obese 1, individuals 4, examined 2, sexes 1, figures 1, also 1, noted 1, purpose 1, comparison 3, observed 1, females 1, compared 1, respectively 3, increasing 2. The claim draft has 65 words in 4 sentences, with 20 extra beats: noted 1, adults 1, overweight 2, obese 1, between 1, women 1 twice, percentage 2 twice, clearly 1, obesity 3, increasing 2, India 2.</p>\n<div class=\"working\">\n<p>69 plus 38 = 107<br />\n69 divided by 5 = 13.8<br />\n107 divided by 69 = 1.550724638<br />\n206.835 minus 1.015 times 13.8 minus 84.6 times 1.5507 = 61.64<br />\n0.39 times 13.8 plus 11.8 times 1.5507 minus 15.59 = 8.09<br />\n65 plus 20 = 85<br />\n65 divided by 4 = 16.25<br />\n85 divided by 65 = 1.307692308<br />\n206.835 minus 1.015 times 16.25 minus 84.6 times 1.3077 = 79.71<br />\n0.39 times 16.25 plus 11.8 times 1.3077 minus 15.59 = 6.18</p>\n</div>\n<p>Look at the first score. The diary scores 61.6, above Flesch’s minimum of 60 for Plain English. By the number, it passes. By reading, it fails: no claim until the end, and the wrong claim when it comes. The score counts the length of words and sentences. It cannot see where the claim is, so it could not catch this draft.</p>\n<p><strong>The cut.</strong> Cut the claim draft in section 12’s order, largest unit first. The last sentence restates the paragraph, and widens it: “obesity” alone, “India” with no age range, and “increasing” as if the rise went on. Delete it. Then the empty opener, “It can be noted that”. What is left has 51 words in 3 sentences, with 11 extra beats: adults 1, overweight 2, obese 1, between 1, women 1 twice, percentage 2 twice.</p>\n<div class=\"working\">\n<p>51 plus 11 = 62<br />\n51 divided by 3 = 17<br />\n62 divided by 51 = 1.215686275<br />\n206.835 minus 1.015 times 17 minus 84.6 times 1.2157 = 86.73<br />\n0.39 times 17 plus 11.8 times 1.2157 minus 15.59 = 5.39</p>\n</div>\n<table style=\"width:93%;\">\n\n<thead>\n<tr>\n<th>draft</th>\n<th>words</th>\n<th>sentences</th>\n<th>syllables</th>\n<th>ASL</th>\n<th>ASW</th>\n<th>FRE</th>\n<th>FKGL</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>the diary</td>\n<td>69</td>\n<td>5</td>\n<td>107</td>\n<td>13.8</td>\n<td>1.5507</td>\n<td>61.6</td>\n<td>8.1</td>\n</tr>\n<tr>\n<td>the claim draft</td>\n<td>65</td>\n<td>4</td>\n<td>85</td>\n<td>16.25</td>\n<td>1.3077</td>\n<td>79.7</td>\n<td>6.2</td>\n</tr>\n<tr>\n<td>after the cut</td>\n<td>51</td>\n<td>3</td>\n<td>62</td>\n<td>17</td>\n<td>1.2157</td>\n<td>86.7</td>\n<td>5.4</td>\n</tr>\n</tbody>\n</table>\n<p>The cut version’s sentences are longer on average than the diary’s, and it scores higher. The long words went with the diary, and so did its missing claim. Keep the cut version for now.</p>",
+   "numberRefs": [
+    24,
+    204
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Three short drafts are too small a sample for the score to mean much; section 11 asks for passages of about 100 words. The point here is the direction of the error: a bad paragraph can pass, so the score is never the reason to keep one.</p>\n<p>The syllable counts are judgements. If you say “India” in two beats, the diary scores a little higher still; the comparison does not change.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p><strong>The table.</strong> The paper’s readers include programme officers who will set their own state’s figures beside the national ones. They need exact values, including urban and rural. Build the table as section 21 did: <dfn data-g=\"684\">title</dfn> above, short headings with the unit, a footnote for the exclusion and for the missing counts, a source line with its reference number.</p>\n<blockquote>\n<p>Table 1. Women and men aged 15–49 years with overweight or obesity (body mass index 25.0 kg/⁠m<sup>2</sup> or more), India, National Family Health Survey 2019–21 (NFHS-5), by residence, with the 2015–16 (NFHS-4) total</p>\n</blockquote>\n<table style=\"width:97%;\">\n\n<tbody>\n<tr>\n<td>group</td>\n<td>NFHS-5 urban (%)</td>\n<td>NFHS-5 rural (%)</td>\n<td>NFHS-5 total (%)</td>\n<td>NFHS-4 total (%)</td>\n</tr>\n<tr>\n<td>women (a)</td>\n<td>33.2</td>\n<td>19.7</td>\n<td>24.0</td>\n<td>20.6</td>\n</tr>\n<tr>\n<td>men</td>\n<td>29.8</td>\n<td>19.3</td>\n<td>22.9</td>\n<td>18.9</td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>(a) Excludes pregnant women and women who gave birth in the preceding 2 months. Counts of women and men weighed and measured are not given in the source. Source: NFHS-5 India Fact Sheet, indicators 88 and 89 (1).</p>\n</blockquote>\n<p><dfn data-g=\"85\">Check</dfn> the digits again, because the table holds eight numbers, not four. They run from 18.9 to 33.2.</p>\n<div class=\"working\">\n<p>33.2 minus 18.9 = 14.3</p>\n</div>\n<p>A range of 14.3 is 10 or more, so Cole’s range rule alone would print whole numbers. Then the women’s totals read 21 and 24, and the paragraph’s rise of 3.4 points could not be read off the table. Cole says his rules are “recommendations not requirements”. Keep one decimal place in the table and the text alike, so the two never disagree.</p>\n<p><strong>The figure.</strong> Now make a figure of the claim, by the steps of section 22. The claim is a rise in each sex. The shape of the data is amounts for two groups at two times, so the mark is bars, each sex’s two rounds side by side.</p>\n<p>The axis comes next. Suppose your program starts the <dfn data-g=\"704\">value axis</dfn> at 18, just below the smallest value. Work out the <dfn data-g=\"380\">Lie Factor</dfn> (LF) of section 17 for each pair, with the smaller bar, a ÷ (a − s).</p>\n<div class=\"working\">\n<p>20.6 minus 18 = 2.6<br />\n20.6 divided by 2.6 = 7.923076923<br />\n18.9 minus 18 = 0.9<br />\n18.9 divided by 0.9 = 21</p>\n</div>\n<p>The program’s chart drew the women’s rise about 7.9 times its true size and the men’s 21 times. Tufte counts anything above 1.05 as substantial distortion, as section 17 showed. Start the bars at zero, and the Lie Factor is 1 for both.</p>\n<p>Then the words: the value axis titled “overweight or obese (%)”, the groups named under the bars, the rounds named with their years. Colour separates the two rounds, but should not carry the difference alone: keep NFHS-4 on the left in each pair, and print each bar’s value on it. Drawn this way, from zero, it is the figure of these four values that section 17 drew as bars from zero, so it is not drawn again here. Its <dfn data-g=\"74\">caption</dfn>, finding first:</p>\n<blockquote>\n<p>Between NFHS-4 (2015-16) and NFHS-5 (2019-21), the share of adults aged 15-49 in India with overweight or obesity rose in women and in men, by 3.4 and 4.0 percentage points. Bars from zero show the per cent with a body mass index of 25.0 kg/m<sup>2</sup> or more. Counts are not given in the source. Source: NFHS-5 India Fact Sheet, indicators 88 and 89.</p>\n</blockquote>\n<p>Shrink it to one column’s width and read it; view it in grey.</p>\n<p><strong>One home.</strong> You now hold a table and a figure of the same numbers, and the International Committee of Medical Journal Editors (ICMJE) Recommendations say “do not duplicate data in graphs and tables”. Choose by what the reader has to do (section 14). The claim rests on four totals, which the paragraph can carry. The officers need eight exact values, which only the table gives. The figure adds nothing a paper reader needs, so the paper keeps the table. The figure is not <dfn data-g=\"716\">wasted</dfn>: it goes to your talk, made again for a slide, with bigger text and fewer words.</p>\n<p>The table now holds the levels, so the paragraph need not read them out. ICMJE asks the text to “emphasize or summarize only the most important observations”. Keep the claim and the two rises, and cite the table.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The choice of table over figure follows from these readers and these eight numbers. With every state as a row and a pattern to show, such as urban above rural almost everywhere, the figure would win and the table would go to a supplement.</p>\n<p>The Lie Factor checks only bars drawn from an <dfn data-g=\"46\">axis start</dfn>. It says nothing about whether a rise of 3.4 points matters for health.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 4",
+   "role": "illustration",
+   "html": "<p><strong>The reference.</strong> The table’s source line and the paragraph cite the fact sheet as reference (1), the first source the text mentions (section 5). Now write entry 1 in National Library of Medicine (NLM) format.</p>\n<p>The NLM pattern in section 5 is for a journal article. The fact sheet is not one, and Citing Medicine’s chapter on journals says “Journal references omit information on place of publication and publisher, whereas book references carry these details.” A short report read as a PDF on the Internet is cited under chapter 22, “Books and Other Individual Titles on the Internet”, at https://www.ncbi.nlm.nih.gov/books/NBK7269/. The chapter says such a title “may also be smaller works such as a brochure, single-page fact sheet, or brief treatise”.</p>\n<p>NLM prints the chapter’s general format as a picture, and this book does not hold it. Its examples are text. Example 7, a title on the Internet with an organisation as author, is the nearest to the fact sheet:</p>\n<blockquote>\n<p>Kaiser Commission on Medicaid and the Uninsured. The uninsured and their access to health care [Internet]. Washington: Henry J. Kaiser Family Foundation; 2006 Oct [cited 2006 Nov 3]. 2 p. Available from: http://www.kff.org/uninsured/upload/The-Uninsured-and-Their-Access-to-Health-Care-Oct-2004.pdf</p>\n</blockquote>\n<p>Read its parts in order: the organisation as author; the title, with a capital only on its first word and on proper nouns, then “[Internet]”; the place and the publisher; the <dfn data-g=\"170\">date</dfn> of publication; the date the citer saw it, “[cited …]”; the number of pages; “Available from:” and the full address.</p>\n<p>Now collect every element the fact sheet itself prints, as the cover gives it:</p>\n<table>\n\n<tbody>\n<tr>\n<td>element</td>\n<td>as the fact sheet prints it</td>\n</tr>\n<tr>\n<td>issued by</td>\n<td>Ministry of Health and Family Welfare</td>\n</tr>\n<tr>\n<td>prepared by</td>\n<td>International Institute for Population Sciences (Deemed University)</td>\n</tr>\n<tr>\n<td>title</td>\n<td>National Family Health Survey - 5, 2019-21, India Fact Sheet</td>\n</tr>\n<tr>\n<td>where you read it</td>\n<td>https://dhsprogram.com/pubs/pdf/OF43/India_National_Fact_Sheet.pdf</td>\n</tr>\n<tr>\n<td>when you read it</td>\n<td>the date you opened it, from your own notes</td>\n</tr>\n</tbody>\n</table>\n<p>Set them in example 7’s order. The organisation that prepared it is the author. The chapter defines the publisher: “A publisher is defined as the individual or organization issuing the book”. Two elements are not on the cover, the place and the year of publication, so they stay as marked gaps until you find them in the full document. Here is entry 1, modelled on example 7; the date cited is the day this book read the fact sheet, so give your own.</p>\n<blockquote>\n<ol type=\"1\">\n<li>International Institute for Population Sciences. National Family Health Survey - 5, 2019-21: India fact sheet [Internet]. <em>place</em>: Ministry of Health and Family Welfare; <em>year</em> [cited 2026 Sep 24]. Available from: https://dhsprogram.com/pubs/pdf/OF43/India_National_Fact_Sheet.pdf</li>\n</ol>\n</blockquote>\n<p>Replace <em>place</em> and <em>year</em> from the document, and count its pages for the extent if you want it. Until then the entry is unfinished, and should look it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The entry is modelled on an example, not built from NLM’s general format, which this book has not seen. The “(US)” that NLM’s other examples put after a government body’s name, and how an entry is shortened when one body both prepares and issues a report, follow specific rules this book does not hold. Check them in chapter 22, and follow your journal’s instructions where they differ.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 5",
+   "role": "illustration",
+   "html": "<p><strong>The reader.</strong> Write your one message on a separate page and put it away, as section 13 sets out. Give a colleague from another department the cut paragraph, with its last change made, and Table 1. She reads once. She marks one stop, at “NFHS-4”: your draft began at the results, so give the next reader the methods sentence that names the survey. Then she writes what the paper says. Her sentence is invented here, but it is the kind readers write.</p>\n<blockquote>\n<p>Obesity went up in Indian adults between the two surveys, a little more in men.</p>\n</blockquote>\n<p>Compare it with your message part by part.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>part</th>\n<th>your message</th>\n<th>her sentence</th>\n<th>verdict</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>about whom</td>\n<td>adults aged 15-49 in India</td>\n<td>Indian adults</td>\n<td>widened: the age range is lost</td>\n</tr>\n<tr>\n<td>what was found</td>\n<td>the share with overweight or obesity rose, to about one woman in four and more than one man in five</td>\n<td>obesity went up</td>\n<td>changed: overweight dropped, and the levels lost</td>\n</tr>\n<tr>\n<td>compared with what</td>\n<td>NFHS-4 against NFHS-5, in each sex</td>\n<td>the two surveys, and men against women</td>\n<td>added: a comparison of the sexes the paper does not make</td>\n</tr>\n<tr>\n<td>how far it reaches</td>\n<td>a rise between two surveys, not a trend or its cause</td>\n<td>a rise between the two surveys</td>\n<td>kept</td>\n</tr>\n</tbody>\n</table>\n<p>The added comparison is the worst fault, because readers repeat additions. Find the words that invited each fault. The age range sat in the middle of a long noun phrase. The draft’s “overweight or obese” never said where overweight begins, so she heard “obese”. The levels had gone to the table, so the paragraph gave her none to repeat. And the two rises stood side by side, inviting a comparison. Two estimates from two samples, 3.4 and 4.0 points, do not show that men rose faster.</p>\n<p>Revise the paragraph:</p>\n<blockquote>\n<p>Among adults aged 15-49 in India, the share with overweight or obesity rose between NFHS-4 (2015-16) and NFHS-5 (2019-21) (Table 1). It rose by 3.4 percentage points in women and by 4.0 percentage points in men. By 2019-21, about one woman in four and more than one man in five had a body mass index of 25.0 kg/m<sup>2</sup> or more.</p>\n</blockquote>\n<p>Give it, with the methods sentence, to a new reader, who writes:</p>\n<blockquote>\n<p>Among people aged 15 to 49 in India, the share with a BMI of 25 or more went up between the two surveys, to about a quarter of women and over a fifth of men.</p>\n</blockquote>\n<p>Every part is kept at the same strength, and nothing is added. The paragraph passes.</p>\n<p><strong>What the finding does not mean.</strong> Write these into the discussion, in plain words.</p>\n<ul>\n<li>It is about adults aged 15 to 49. It says nothing of older adults, who are not in these rows.</li>\n<li>It counts overweight and obese together, at a BMI of 25.0 kg/m<sup>2</sup> or more. The fact sheet has no row for obesity alone.</li>\n<li>It leaves out pregnant women and women with a birth in the preceding 2 months.</li>\n<li>It shows that the share rose between two surveys of different people. It does not show why, and two surveys are not a trend.</li>\n<li>It does not show that the rise was larger in men than in women.</li>\n<li>It describes 2019-21, with fieldwork ending on 30 April 2021. It is not a figure for now.</li>\n<li>It is a national figure. It is not a figure for any state or district.</li>\n</ul>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Two readers are the smallest test that can work. A pass shows that one new reader could restate this paragraph minutes after reading it. It does not show that the claim is true, or that the survey’s methods were sound.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Work in this order: the message, then the paragraph, then the table or figure, then the reference, then the reader.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Give every number one home. Decide by what the reader has to do with the numbers, then cut the other homes.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A passing score never tells you a paragraph works. Read it for its claim before you look at the number.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Check the axis of every bar chart a program draws for you. Work out a ÷ (a − s) with the smaller bar; if it is above 1.05, start the bars at zero.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Use one number of decimal places for the same figures in the text and the table. Two copies of one number with different digits look like two different numbers.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When the source gives no counts, say so in a footnote. Never make one by multiplying a percentage by the survey’s total sample. NFHS-5’s 724,115 women are those it gathered information from, not the women weighed for this row.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Format each kind of source from its own chapter of Citing Medicine. Where you have only an example to work from, say the entry is modelled on it. Leave a marked gap for any element you have not found.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Watch for a reader’s restatement that changes or adds a part, such as “obesity” for “overweight or obesity”, or a comparison you did not make. Readers will repeat it. Find the words in your paragraph that invited it and change them, then test again with a new reader.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>This finding covers adults aged 15 to 49, counts overweight and obese together, and shows a rise between two surveys, not its cause. It describes 2019-21, not now.</p>",
+     "tag": "boundary",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“A finished result has a paragraph, a table and a figure, because the journey made all three.” The journey made a table and a figure so that you could choose between them, and the paper kept the table. The figure went to the talk. Making both and keeping both is the duplication the ICMJE Recommendations ask you to avoid.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Among adults aged 15-49 in India, the share with overweight or obesity rose between NFHS-4 (2015-16) and NFHS-5 (2019-21) (Table 1). It rose by 3.4 percentage points in women and by 4.0 percentage points in men. By 2019-21, about one woman in four and more than one man in five had a body mass index of 25.0 kg/m<sup>2</sup> or more.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, list the steps of a finding’s journey in order, from the question to what the finding does not mean. For each, name one check you make before moving on.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>In order:</p>\n<ol type=\"1\">\n<li>The question and the data: read the source’s row, columns and footnotes, and write its limits down.</li>\n<li>The one message: would it be false had the data come out otherwise?</li>\n<li>The paragraph: does it open on the claim, with the steps moved to the methods?</li>\n<li>The numbers: units, counts or a note that there are none, points for differences, digits by Cole’s rules.</li>\n<li>Score and cut: the score as a trip-wire only; cut the largest units first.</li>\n<li>One home: table or figure, by what the reader does. For a figure, the steps of making the plot, and the Lie Factor of any bars.</li>\n<li>The reference: numbered by first mention, in the format for that kind of source.</li>\n<li>The reader: one pass, compared part by part with your hidden message.</li>\n<li>What it does not mean: population, measure, time, place and cause.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A newspaper headline reads: “Obesity in Indian women up 17%, says national survey”. Decide what was computed to get 17, compute it, and say what the headline gets wrong.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The 17 is a <dfn data-g=\"565\">relative change</dfn>: the rise in percentage points divided by the NFHS-4 figure.</p>\n<div class=\"working\">\n<p>24.0 minus 20.6 = 3.4<br />\n3.4 divided by 20.6 = 0.165</p>\n</div>\n<p>About 17 per cent of the starting figure, so the arithmetic is right. Three things are wrong.</p>\n<ul>\n<li>“Obesity”: the row counts overweight and obese together, at a BMI of 25.0 kg/m<sup>2</sup> or more. There is no row for obesity alone.</li>\n<li>“Indian women”: the row covers women aged 15 to 49, excluding pregnant women and women with a birth in the preceding 2 months.</li>\n<li>“Up 17%” with no base: a reader may take it as 17 points. Say the absolute change first, 3.4 percentage points, from 20.6 to 24.0 per cent, and <dfn data-g=\"363\">label</dfn> any relative change.</li>\n</ul>\n<p>The headline also says nothing of when: the survey ended in 2021.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist rings: “What does the national survey say about obesity in India?” You have three minutes. Give her one sentence she can quote, and say how sure you are.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Correct the question gently first. The survey whose fact sheet you hold, NFHS-5, ran in 2019-21, and its fact sheet reports overweight and obesity together, for adults aged 15 to 49.</p>\n<p>Then give her the sentence to quote.</p>\n<blockquote>\n<p>In the national survey of 2019-21, about one woman in four and more than one man in five aged 15 to 49 had overweight or obesity.</p>\n</blockquote>\n<p>Add, if she asks about change: “That is more than in the survey of 2015-16.”</p>\n<p>How sure: be exact about what you know. The figures are the survey’s own, read from its fact sheet. The fact sheet gives no counts and no margins of error for these rows, so do not tell her how precise they are. What the survey cannot tell her is why the share rose, or anything about people over 49. If she wants a number for obesity alone, this fact sheet does not have one.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Take one finding from the section you have been building for this book. Run it through the nine steps of the journey, on one sheet of paper.</p>\n<p>Write down the limits of the data and the one message. Show the paragraph before and after, with its numbers checked, its score and its cut. Say which home the numbers get, and why. Write the reference. Compare a reader’s sentence with yours. End with what the finding does not mean.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Judge your sheet by three tests.</p>\n<ul>\n<li>Can you point, for each step, to a change it made? A step that changed nothing was either done earlier or skipped.</li>\n<li>Does every number in the paragraph appear once only, in the paragraph, the table or the figure, with the same digits wherever it is repeated?</li>\n<li>Does your “does not mean” list name the population, the measure, the time, the place and the cause? Most findings need all five.</li>\n</ul>\n<p>Your reference may rest on a kind of source this book did not cover. Then the sheet should say which chapter of Citing Medicine you opened for it.</p>"
+  }
+ ]
+}

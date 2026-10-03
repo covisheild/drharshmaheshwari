@@ -1,0 +1,196 @@
+{
+ "format": 1,
+ "id": "s52-r1-c07",
+ "label": "7",
+ "title": "A project folder, and paths that work on someone else’s computer",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"333\">path</dfn> is the address of a file. An <dfn data-g=\"0\">absolute path</dfn> starts from the top of one computer’s disk, such as <code>C:/Users/priya/Documents/thesis/data-raw/heights.csv</code>, so it names a place that exists on one computer only. A <dfn data-g=\"404\">relative path</dfn> starts from the <dfn data-g=\"508\">working directory</dfn>, the folder R treats as home. <code>data-raw/heights.csv</code> is one.</p>",
+   "refs": [
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Give every analysis its own folder. Inside it, make three folders:</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Folder</td>\n<td>What goes in it</td>\n<td>Who writes to it</td>\n</tr>\n<tr>\n<td>data-raw/</td>\n<td>the data exactly as it arrived, and its documentation</td>\n<td>you, by hand; never the code</td>\n</tr>\n<tr>\n<td>code/</td>\n<td>your scripts</td>\n<td>you</td>\n</tr>\n<tr>\n<td>output/</td>\n<td>tables, figures and cleaned files the scripts make</td>\n<td>only the scripts</td>\n</tr>\n</tbody>\n</table>\n<p>Put a short plain-text file called <code>README.txt</code> at the top. It says what the project is, where the data came from, and how to run it again.</p>\n<p><code>C:/Users/priya/Documents/thesis/data-raw/heights.csv</code> is the full address on Priya’s laptop. On your laptop there is no <code>C:/Users/priya</code> folder, so that address leads nowhere. <code>data-raw/heights.csv</code> says “from where I am now, go into data-raw”.</p>\n<p>So use <code>here()</code>, which finds the top of the project for you: <code>here(\"data-raw\", \"heights.csv\")</code> gives the full address on whichever computer runs it.</p>\n<p>Never write a full address from your own computer into a <dfn data-g=\"427\">script</dfn>. And never start a script with <code>setwd()</code>, the function that moves R’s current home to a named folder.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the failure. A colleague, Priya, emails you the script for her thesis. You copy her <code>data-raw</code> file into your own project and run her first lines. (<code>read_csv()</code>, from the readr <dfn data-g=\"331\">package</dfn>, reads a CSV file (comma-separated values, a plain-text table) into R; the section on reading a <dfn data-g=\"395\">raw file</dfn> explains it.) Here they are, run on your computer:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"st\">&quot;C:/Users/priya/Documents/thesis/data-raw/penguins_raw.csv&quot;</span>)</span></code></pre></div>\n<pre class=\"output\"><code>Error: &#39;C:/Users/priya/Documents/thesis/data-raw/penguins_raw.csv&#39; does not exist.</code></pre>\n<p>Read the error literally. R went looking for a folder called <code>C:/Users/priya</code> and found none. Nothing is wrong with her data or her code. The address is wrong, because it is the address of a place on her laptop. Every line after this one fails too, because <code>penguins_raw</code> was never made.</p>\n<p>Now ask R where it is. The function <code>getwd()</code>, short for “get working directory”, prints the folder R is treating as home:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">getwd</span>()</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;~/project&quot;</code></pre>\n<p>On your computer this prints your own folder. Here it is the <dfn data-g=\"370\">project folder</dfn> (<code>~</code> is short for your home folder). The file sits in <code>data-raw</code> inside it, so give the address from there:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"st\">&quot;data-raw/penguins_raw.csv&quot;</span>, <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">nrow</span>(penguins_raw)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 344</code></pre>\n<p>The file opens and has 344 rows. The argument <code>show_col_types = FALSE</code> stops <code>read_csv()</code> printing a report about the columns; that report matters, but not for this section.</p>\n<p>One more trap hides in addresses copied from Windows. The Windows file window writes paths with backslashes, <code>data-raw\\penguins_raw.csv</code>. A backslash means something special to R, so a path pasted with backslashes usually stops with an error, and can quietly point somewhere else. <dfn data-g=\"490\">Type</dfn> forward slashes, which R reads on every system.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The relative path worked here because R’s working directory was the top of the project. If R is started from another folder, <code>data-raw/penguins_raw.csv</code> fails in the same way the absolute path did. The next illustration shows that happening, and the fix.</p>\n<p>The <dfn data-g=\"154\">error message</dfn> you see may be worded differently on a newer version of readr. What stays the same is the cause: R looked in a folder that does not exist on your computer.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now build the project and make the address safe. <dfn data-g=\"270\">Load</dfn> the here package. It prints the folder it has taken as the <dfn data-g=\"371\">project root</dfn>:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(here)</span></code></pre></div>\n<pre class=\"output\"><code>here() starts at ~/project</code></pre>\n<p>It found the root by climbing upwards from the working directory until it met a marker file. In this book’s project the marker is an empty file called <code>.here</code>. An <dfn data-g=\"418\">RStudio</dfn> project file works the same way; in RStudio, File &gt; New Project makes one. Now build addresses from that root:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">here</span>()</span>\n<span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;~/project&quot;\n[1] &quot;~/project/data-raw/penguins_raw.csv&quot;</code></pre>\n<p>Each argument is one folder or file name, given in order from the top. The function only builds the address. It does not check that the file exists, and it creates nothing.</p>\n<p>Make the two missing folders from code, then list what the project holds:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">dir.create</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;code&quot;</span>))</span>\n<span><span class=\"fu\">dir.create</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;output&quot;</span>))</span>\n<span><span class=\"fu\">list.files</span>(<span class=\"fu\">here</span>())</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;code&quot;     &quot;data-raw&quot; &quot;output&quot;</code></pre>\n<p>Now the test that matters. Save a three-line script in <code>code/</code> that reads the file with a relative path:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"st\">&quot;data-raw/penguins_raw.csv&quot;</span>, <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">nrow</span>(penguins_raw)</span></code></pre></div>\n<p>Run it the way a colleague might, from inside the <code>code</code> folder. These are commands for the computer’s <dfn data-g=\"475\">terminal</dfn>, the window where you type commands to the computer itself rather than to R. <code>cd code</code> moves into the folder, and <code>Rscript</code> runs an R script from start to end. A later section, on running a script top to bottom in a <dfn data-g=\"192\">fresh session</dfn>, explains <code>Rscript</code> fully. Here:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode bash\"><code class=\"sourceCode bash\"><span><span class=\"bu\">cd</span> code</span>\n<span><span class=\"ex\">Rscript</span> count_rows.R</span></code></pre></div>\n<pre class=\"output\"><code>Error: &#39;data-raw/penguins_raw.csv&#39; does not exist in current working directory (&#39;~/project/code&#39;).\nExecution halted</code></pre>\n<p>The relative path failed because R started in <code>code/</code>, and there is no <code>data-raw</code> folder inside <code>code/</code>. Change one line, so that the address is built by <code>here()</code>:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(here)</span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">nrow</span>(penguins_raw)</span></code></pre></div>\n<p>Run it from the same place:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode bash\"><code class=\"sourceCode bash\"><span><span class=\"bu\">cd</span> code</span>\n<span><span class=\"ex\">Rscript</span> count_rows.R</span></code></pre></div>\n<pre class=\"output\"><code>here() starts at ~/project\n[1] 344</code></pre>\n<p>R started in <code>code/</code> again. The here package climbed one folder up, found the marker, and built the full address from there. The script now finds its file from any folder inside the project, on any computer that has the project folder.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p><code>here()</code> finds the root only if the marker is there. Copy the project without its <code>.here</code> file or RStudio project file and <code>here()</code> keeps climbing, so it can settle on a folder higher up that holds a marker. Keep the marker in the project folder, and copy the whole folder when you share it.</p>\n<p>A safe address fixes one cause of failure, the location of files. A script can still fail on another computer because a package is missing or is a different version. Running the whole script in a fresh session on a second computer is a separate check. Keeping every version of the project’s files, with version control, is the next rung’s subject.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>An address that starts with <code>C:/Users/</code> or <code>/home/</code> names a folder on one computer. Before you send a script, search it for such addresses and replace each one with <code>here()</code>.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Build every file address with <code>here()</code>, starting from the project root: <code>here(\"data-raw\", \"file.csv\")</code> to read, <code>here(\"output\", \"table.csv\")</code> to write.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A script that starts with <code>setwd()</code> and a folder name works only on the computer it was written on.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>No code ever writes into <code>data-raw/</code>, and no one edits a raw file there. Put the correction in code, and write the corrected file to <code>output/</code>.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never put anything in <code>output/</code> that the code cannot make again.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A trainee’s script fails on your computer with “does not exist”. Look at the address in the failing line before you look at the data, and check whether it names a folder on their computer.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Name files with no spaces and no brackets. <code>Final data (2).xlsx</code> and <code>final data.xlsx</code> are a quarrel waiting to happen.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A tidy folder and safe addresses fix only where files are. Do not accept “the paths are relative” as proof that someone else can rerun the work.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back, write the line that reads a file called <code>heights.csv</code> from the project’s <code>data-raw</code> folder so that it works on any computer. Say why a line starting with <code>setwd()</code> does not belong above it.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The line is <code>heights &lt;- read_csv(here(\"data-raw\", \"heights.csv\"))</code>. Load readr and here first. <code>here()</code> builds the address from the project root. It finds that root by itself, on whatever computer runs the script.</p>\n<p><code>setwd()</code> with a folder name moves R to a folder that exists only on the computer of the person who wrote the line. On any other computer the script stops there.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>You are starting a thesis analysis of weight and height measured in a school health camp. The camp team will give you one CSV file, a plain-text table, exported from their data-entry form. Lay out the project folder. Give it a name, and list the folders and the files you expect in each. Say which folders your code may write to. Then write the one line that reads the camp file.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>One layout. The names inside are a choice. The separation is not.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Path</th>\n<th>What it holds</th>\n<th>Written by</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>school_camp_2026/</td>\n<td>the project folder, named after the analysis</td>\n<td>you, once</td>\n</tr>\n<tr>\n<td>README.txt</td>\n<td>what the project is, where the file came from, how to rerun it</td>\n<td>you</td>\n</tr>\n<tr>\n<td>data-raw/camp_export.csv</td>\n<td>the file exactly as the camp team sent it</td>\n<td>nobody</td>\n</tr>\n<tr>\n<td>code/analysis.R</td>\n<td>the one script that reads, checks, cleans and summarises</td>\n<td>you</td>\n</tr>\n<tr>\n<td>output/</td>\n<td>cleaned file, summary tables, figures</td>\n<td>the script only</td>\n</tr>\n</tbody>\n</table>\n<p>The code writes only to <code>output/</code>. Nothing, including you, edits <code>data-raw/camp_export.csv</code>. If the camp team sends a corrected file, it goes in <code>data-raw/</code> under a new name with the date it arrived. The <dfn data-g=\"396\">README</dfn> says which file the analysis uses.</p>\n<p>The reading line:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>camp <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;camp_export.csv&quot;</span>))</span></code></pre></div>\n<p>It needs <code>library(readr)</code> and <code>library(here)</code> above it. It has no address from your own computer in it, so it runs on your guide’s laptop as it does on yours.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. Her script ran on her laptop and stopped on yours with “does not exist”. Teach her why, and what to change.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Write her failing line on the board, with its address: <code>read_csv(\"C:/Users/meera/Desktop/data.csv\")</code>. Ask her where <code>C:/Users/meera</code> is. It is a folder on her laptop. On yours it does not exist.</p>\n<p>Draw the project folder as a box with three boxes inside: <code>data-raw</code>, <code>code</code>, <code>output</code>. Put the data file in <code>data-raw</code>. Show that “go into data-raw, take data.csv” is true on any computer that has this box, while “go to Meera’s desktop” is true on one.</p>\n<p>Then write the fix: <code>read_csv(here(\"data-raw\", \"data.csv\"))</code>. Say that <code>here()</code> finds the top of the box by itself, wherever R started.</p>\n<p>End with the rule she can check by eye: no line of the script should contain the name of anyone’s computer, user folder or desktop.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Say whether each address is absolute or relative.</p>\n<ol type=\"a\">\n<li><code>C:/Users/ravi/Documents/thesis/data.csv</code></li>\n<li><code>data-raw/camp_export.csv</code></li>\n<li><code>/home/ravi/thesis/output/table1.csv</code></li>\n<li><code>output/figures/bmi_histogram.png</code></li>\n<li><code>D:/MD thesis/final.xlsx</code></li>\n</ol>",
+   "level": 2,
+   "answer": "<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Address</td>\n<td>Kind</td>\n<td>Why</td>\n</tr>\n<tr>\n<td>a</td>\n<td>absolute</td>\n<td>starts from a drive letter, C:</td>\n</tr>\n<tr>\n<td>b</td>\n<td>relative</td>\n<td>starts from a folder name, read from the working directory</td>\n</tr>\n<tr>\n<td>c</td>\n<td>absolute</td>\n<td>starts from the top of the disk, /</td>\n</tr>\n<tr>\n<td>d</td>\n<td>relative</td>\n<td>starts from a folder name</td>\n</tr>\n<tr>\n<td>e</td>\n<td>absolute</td>\n<td>starts from a drive letter, D:, and has a space in a folder name as well</td>\n</tr>\n</tbody>\n</table>\n<p>The test is the first character or two. A drive letter or a leading slash means absolute.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>The project root is <code>~/project</code>. Predict what this line prints, then run it. Does running it create a folder called <code>figures</code>?</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;output&quot;</span>, <span class=\"st\">&quot;figures&quot;</span>, <span class=\"st\">&quot;bmi_histogram.png&quot;</span>)</span></code></pre></div>",
+   "level": 3,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;output&quot;</span>, <span class=\"st\">&quot;figures&quot;</span>, <span class=\"st\">&quot;bmi_histogram.png&quot;</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;~/project/output/figures/bmi_histogram.png&quot;</code></pre>\n<p>Each argument becomes one level of the address, in order. Nothing is created:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">dir.exists</span>(here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;output&quot;</span>, <span class=\"st\">&quot;figures&quot;</span>))</span></code></pre></div>\n<pre class=\"output\"><code>[1] FALSE</code></pre>\n<p><code>dir.exists()</code> asks whether a folder exists, and answers FALSE. To make the folder you would call <code>dir.create()</code> on that address.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Read <code>penguins_raw.csv</code> from the project’s <code>data-raw</code> folder, building the address with <code>here()</code>. Give its number of rows and columns with <code>dim()</code>.</p>",
+   "level": 4,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(here)</span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">dim</span>(penguins_raw)</span></code></pre></div>\n<pre class=\"output\"><code>here() starts at ~/project\n[1] 344  17</code></pre>\n<p><code>dim()</code> gives rows first, then columns: 344 rows and 17 columns.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Where does each of these files belong in the project folder: <code>data-raw/</code>, <code>code/</code>, <code>output/</code>, or the top?</p>\n<ol type=\"a\">\n<li><code>penguins_raw.csv</code>, exactly as downloaded</li>\n<li><code>analysis.R</code></li>\n<li><code>species_counts.csv</code>, written by your script</li>\n<li><code>mass_histogram.png</code>, saved by your script</li>\n<li><code>README.txt</code></li>\n<li>a copy of <code>penguins_raw.csv</code> in which you corrected one value by hand</li>\n</ol>",
+   "level": 5,
+   "answer": "<table style=\"width:94%;\">\n\n<tbody>\n<tr>\n<td>File</td>\n<td>Where</td>\n</tr>\n<tr>\n<td><ol type=\"a\">\n<li>penguins_raw.csv as downloaded</li>\n</ol></td>\n<td>data-raw/</td>\n</tr>\n<tr>\n<td><ol start=\"2\" type=\"a\">\n<li>analysis.R</li>\n</ol></td>\n<td>code/</td>\n</tr>\n<tr>\n<td><ol start=\"3\" type=\"a\">\n<li>species_counts.csv</li>\n</ol></td>\n<td>output/</td>\n</tr>\n<tr>\n<td><ol start=\"4\" type=\"a\">\n<li>mass_histogram.png</li>\n</ol></td>\n<td>output/</td>\n</tr>\n<tr>\n<td><ol start=\"5\" type=\"a\">\n<li>README.txt</li>\n</ol></td>\n<td>the top of the project folder</td>\n</tr>\n<tr>\n<td><ol start=\"6\" type=\"a\">\n<li>hand-corrected copy</li>\n</ol></td>\n<td>nowhere</td>\n</tr>\n</tbody>\n</table>\n<p>File f has no place. A correction made by hand leaves no record of what changed. Write the correction as a line of code that reads the raw file and writes the corrected version to <code>output/</code>. Then delete the hand-made copy.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>In the project, make the <code>output</code> folder from code, check that it now exists, and list the folders at the top of the project.</p>",
+   "level": 6,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(here)</span>\n<span><span class=\"fu\">dir.create</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;output&quot;</span>))</span>\n<span><span class=\"fu\">dir.exists</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;output&quot;</span>))</span>\n<span><span class=\"fu\">list.files</span>(<span class=\"fu\">here</span>())</span></code></pre></div>\n<pre class=\"output\"><code>here() starts at ~/project\n[1] TRUE\n[1] &quot;data-raw&quot; &quot;output&quot;</code></pre>\n<p>The project now has a <code>data-raw/</code> folder and an <code>output/</code> folder. A script that writes its tables with <code>here(\"output\", ...)</code> has somewhere to put them.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A colleague’s script begins like this. Run it. Find the line that broke, and say why it looked reasonable to the person who wrote it.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">setwd</span>(<span class=\"st\">&quot;C:/Users/priya/Documents/thesis&quot;</span>)</span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"st\">&quot;data-raw/penguins_raw.csv&quot;</span>, <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>Error in setwd(&quot;C:/Users/priya/Documents/thesis&quot;) :\n  cannot change working directory</code></pre>",
+   "level": 7,
+   "answer": "<p>The second line broke. <code>setwd()</code> tried to move R’s working directory to a folder on Priya’s laptop, and that folder does not exist here.</p>\n<p>It looked reasonable because on Priya’s laptop it works. There, the line moves R to her thesis folder, and the relative path on the next line then finds the file. Every time she ran it, it worked, so she had no reason to doubt it.</p>\n<p>The repair removes the line and builds the address from the project root:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(here)</span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">nrow</span>(penguins_raw)</span></code></pre></div>\n<pre class=\"output\"><code>here() starts at ~/project\n[1] 344</code></pre>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A resident wants a quick test run on fewer rows. Her script keeps the first 300 rows and saves them. She runs it twice. (<code>head(x, 300)</code> keeps the first 300 rows; <code>write_csv()</code> writes a table to a file.) Run the two runs below. Find the line that broke, and say why nothing looked wrong on the first run.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(here)</span>\n<span><span class=\"co\"># first run</span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">nrow</span>(penguins_raw)</span>\n<span>penguins_test <span class=\"ot\">&lt;-</span> <span class=\"fu\">head</span>(penguins_raw, <span class=\"dv\">300</span>)</span>\n<span><span class=\"fu\">write_csv</span>(penguins_test, <span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>))</span>\n<span><span class=\"co\"># second run, the same lines again</span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">nrow</span>(penguins_raw)</span></code></pre></div>\n<pre class=\"output\"><code>here() starts at ~/project\n[1] 344\n[1] 300</code></pre>",
+   "level": 8,
+   "answer": "<p>The <code>write_csv()</code> line broke the project. It wrote the 300-row test file over the raw file, in <code>data-raw/</code>. The first run read all 344 rows. The second run read the overwritten file, so it found 300. The other 44 rows are gone from the project, and no line of code can bring them back.</p>\n<p>Nothing looked wrong on the first run because the first run was correct. The damage shows only on the next run, when the number of rows changes with no change to the code.</p>\n<p>The repair writes the test file to <code>output/</code> under its own name, and leaves <code>data-raw/</code> alone. It is shown here without being run, because the raw file in this <dfn data-g=\"434\">session</dfn> is already damaged:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(here)</span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span>penguins_test <span class=\"ot\">&lt;-</span> <span class=\"fu\">head</span>(penguins_raw, <span class=\"dv\">300</span>)</span>\n<span><span class=\"fu\">write_csv</span>(penguins_test, <span class=\"fu\">here</span>(<span class=\"st\">&quot;output&quot;</span>, <span class=\"st\">&quot;penguins_test_300.csv&quot;</span>))</span></code></pre></div>\n<p>With this version the raw file keeps its 344 rows however many times the script runs. The only way back from the broken version is a copy of the raw file kept somewhere else, which is one reason to keep one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Your guide says at a meeting: “Send me the project folder. If it runs on your laptop, it will run on mine.”</p>\n<p>Test the second half of that claim before you send anything. The project holds this script:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">nrow</span>(penguins_raw)</span></code></pre></div>\n<p>Then say what your test does not establish.</p>",
+   "level": 9,
+   "answer": "<p>The nearest test you can run alone is to move the project somewhere else and run it there. Copy the folders the script needs, and the marker, into a new temporary folder, and run the script from inside the copy:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode bash\"><code class=\"sourceCode bash\"><span><span class=\"va\">moved</span><span class=\"op\">=</span><span class=\"va\">$(</span><span class=\"fu\">mktemp</span> <span class=\"at\">-d</span><span class=\"va\">)</span></span>\n<span><span class=\"fu\">cp</span> <span class=\"at\">-r</span> data-raw code .here <span class=\"st\">&quot;</span><span class=\"va\">$moved</span><span class=\"st\">&quot;</span></span>\n<span><span class=\"bu\">cd</span> <span class=\"st\">&quot;</span><span class=\"va\">$moved</span><span class=\"st\">&quot;</span></span>\n<span><span class=\"ex\">Rscript</span> code/count_rows.R</span></code></pre></div>\n<pre class=\"output\"><code>[1] 344</code></pre>\n<p><code>mktemp -d</code> makes a new empty folder with a made-up name. The script found its file from the new place, because <code>here()</code> built the address from wherever the project now sits. An absolute path would have pointed back to the old folder.</p>\n<p>What the test does not establish:</p>\n<ul>\n<li>That it runs on your guide’s laptop. Your copy still has your version of R and your packages. If your guide lacks readr or the here package, the first line stops.</li>\n<li>That the number is right. The script finding 344 rows says the file was read. It says nothing about whether the analysis that follows is correct.</li>\n<li>That the copy was complete. If the script read a file outside the project, the test would still have passed on your computer, where that file exists.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A co-author writes: “Just email me the cleaned file. I don’t need your code. The cleaned file is the result.”</p>\n<p>The project holds this script. It reads the raw penguin file and writes the rows that have a body mass recorded to <code>output/penguins_with_mass.csv</code>:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(here)</span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"co\"># keep the rows whose body mass is not missing</span></span>\n<span>with_mass <span class=\"ot\">&lt;-</span> penguins_raw[<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(penguins_raw<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>), ]</span>\n<span><span class=\"fu\">dir.create</span>(<span class=\"fu\">here</span>(<span class=\"st\">&quot;output&quot;</span>), <span class=\"at\">showWarnings =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">write_csv</span>(with_mass, <span class=\"fu\">here</span>(<span class=\"st\">&quot;output&quot;</span>, <span class=\"st\">&quot;penguins_with_mass.csv&quot;</span>))</span></code></pre></div>\n<p>Run these terminal commands. They run the script, print a <dfn data-g=\"64\">checksum</dfn> of the cleaned file, delete the file (<code>rm</code>), remake it and print its checksum again. <code>tools::md5sum()</code> computes an MD5 checksum, a 32-character code calculated from every byte of a file; section 9 teaches it.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode bash\"><code class=\"sourceCode bash\"><span><span class=\"ex\">Rscript</span> code/clean.R</span>\n<span><span class=\"ex\">Rscript</span> <span class=\"at\">-e</span> <span class=\"st\">&#39;unname(tools::md5sum(&quot;output/penguins_with_mass.csv&quot;))&#39;</span></span>\n<span><span class=\"fu\">rm</span> output/penguins_with_mass.csv</span>\n<span><span class=\"ex\">Rscript</span> code/clean.R</span>\n<span><span class=\"ex\">Rscript</span> <span class=\"at\">-e</span> <span class=\"st\">&#39;unname(tools::md5sum(&quot;output/penguins_with_mass.csv&quot;))&#39;</span></span></code></pre></div>\n<pre class=\"output\"><code>here() starts at ~/project\n[1] &quot;2d547e4c975aa165159abbda25d7fc9e&quot;\nhere() starts at ~/project\n[1] &quot;2d547e4c975aa165159abbda25d7fc9e&quot;</code></pre>\n<p>What does the result tell the co-author, and what does it not establish?</p>",
+   "level": 10,
+   "answer": "<p>The two checksums are the same, so the remade file is, for practical purposes, identical to the one deleted. The cleaned file can be thrown away and made again at any time. So the result is the code and the raw file together, and the cleaned file is one product of them. Send the co-author the folder, not the file.</p>\n<p>What this does not establish:</p>\n<ul>\n<li>That keeping only rows with a body mass was the right cleaning step. The check shows the step is repeatable, not that it is sensible.</li>\n<li>That the co-author could remake it on their computer. That needs their R and packages, which this check did not touch.</li>\n<li>That the raw file itself is the one that was collected. The checksum describes the cleaned file only.</li>\n</ul>"
+  }
+ ]
+}

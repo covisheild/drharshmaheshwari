@@ -1,0 +1,208 @@
+{
+ "format": 1,
+ "id": "s58-r1-c15",
+ "label": "15",
+ "title": "Choosing the mark: what the eye reads accurately, and the shape of the data",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A mark is anything drawn that stands for one number (Book 0, F2). The reader gets the number back by a judgment the eye makes about the mark. Cleveland and McGill (1984) called these judgments elementary perceptual tasks, and named ten. They are position along a <dfn data-g=\"117\">common scale</dfn>, position along scales that are not lined up, length, direction (such as the <dfn data-g=\"631\">slope</dfn> of a line), angle, area, volume, curvature, shading and colour saturation. A common scale is one axis that every mark being compared is read against.</p>\n<p>They proposed an order, from the judgment people make most accurately to the least. First comes position along a common scale, then positions along scales not lined up, such as the same measure in two panels side by side, each with its own axis. Length, direction and angle share third place. Area is fourth. Their rule for design follows: a graph should use judgments as high in this order as it can.</p>\n<p>The order is a <dfn data-g=\"316\">hypothesis</dfn>. Their two experiments tested two parts of it, position against length and position against angle. Position won both times.</p>\n<p>The mark is chosen by the shape of the data as well. Amounts for a set of groups take bars, or dots where the bars would end. Many values from each group take a chart of their distribution. Parts of one whole take side-by-side bars or, for a few parts, a pie. One measured quantity against another takes a scatterplot. Change over time takes a line.</p>",
+   "refs": [
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    224,
+    236,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Your eye reads some marks better than others. So put the numbers a reader must compare on one shared axis, side by side.</p>\n<p>Many values from one group take a chart of how they spread, which the next section is about.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c15-large-errors.png",
+   "alt": "Two pairs of bars from zero, each pair labelled: share of judgments on the left, share of large errors on the right. Position: 60% of judgments, 22% of large errors. Length: 40% of judgments, 78% of large errors.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Cleveland and McGill (1984), first experiment. Position judgments were 60% of all judgments but drew 22% of the large errors; length judgments were 40% of judgments and drew 78%. Per judgment, a large error was 5.3 times as frequent on length as on position."
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c15-pie-errors.png",
+   "alt": "Two bars from zero. Position, read on the bar charts: 12% of the large errors. Angle, read on the pies: 88%.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Cleveland and McGill (1984), second experiment. Each set of numbers was drawn once as bars and once as a pie, so position and angle judgments were equal in number. The pie drew 88% of the large errors and the bars 12%: per judgment, a large error was about seven times as likely on the pie (88 ÷ 12 is about 7.33; the paper prints 7.3)."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a chart that fails. A draft district report puts four numbers from the last section into a pie, from the fifth National Family Health Survey (NFHS-5): urban women, rural women, urban men, rural men. The draft is made up; the numbers are the fact <dfn data-g=\"622\">sheet</dfn>’s.</p>\n<p>Before you look at the angles, add up the slices.</p>\n<div class=\"working\">\n<p>33.2 plus 19.7 plus 29.8 plus 19.3 = 102.0</p>\n</div>\n<p>A pie says its slices are parts of one whole. These four are not. Each is a share of a different group of people: urban women, rural women, and so on. Their sum, 102.0, means nothing. The program drew the pie anyway: it made 102.0 into a full circle, and each slice became a share of that meaningless total.</p>\n<p>Now suppose the numbers were parts of one whole. The pie would still ask the reader to compare angles and areas. Wilke gives the reason this goes badly: “human perception primarily judges distances and not areas”.</p>\n<p>The fix is the figure of the last section (section 14). There the four values stand as bars from one shared start, read against one axis. The reader compares where each bar ends. That is position along a common scale, the judgment people make best.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A pie is not always wrong. When a few parts make one whole, such as how a clinic’s patients split across four <dfn data-g=\"61\">body mass index</dfn> (BMI) categories, a pie shows that the parts add up to the whole. Wilke says that is what pies do well, and that side-by-side bars still compare the parts better.</p>\n<p>The sum of 102.0 is a quick test, not a proof. Four shares of different groups could add to 100 by chance and still not be parts of one whole. Ask what group each number is a share of.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>How much worse are the other judgments? Open Cleveland and McGill, “Graphical perception: theory, experimentation, and application to the development of graphical methods”, <em>Journal of the American Statistical Association</em> 1984, at https://doi.org/10.1080/01621459.1984.10478080.</p>\n<p>In their first experiment, people looked at bar charts with two marks on them. They wrote down what per cent the smaller marked value was of the larger. In some charts the two values could be read against one axis: position. In others they could only be compared as lengths, such as two pieces stacked inside a bar. Search for the summary of the experiments.</p>\n<blockquote>\n<p>In the first experiment, po- sition judgments were more accurate than length judg- ments by factors varying from 1.4 to 2.5. In the second experiment, position judgments were 1.96 times as ac- curate as angle judgments.</p>\n</blockquote>\n<p>The broken words are the scanned page’s line breaks. The second experiment drew the same numbers as a bar chart and as a pie.</p>\n<p>Now look at the worst mistakes, the ones the authors call large errors. Search for Seventy-eight.</p>\n<blockquote>\n<p>Seventy-eight percent of the large errors occurred for the length judgments; since there were three position judgments for each two length judgments, the rate of occurrence of large errors for length judgments is 5.3 times that for position judgments.</p>\n</blockquote>\n<p>Rebuild the 5.3 yourself. It is a <dfn data-g=\"550\">ratio</dfn> of two rates (Book 0, A5). Length judgments made 2 of every 5 judgments, which is 40 per cent, and position judgments 3 of every 5, which is 60 per cent. Share out the large errors, then divide each share by how many judgments of that kind there were. The sign ≈ means “is approximately equal to”.</p>\n<div class=\"working\">\n<p>100 minus 78 = 22<br />\n78 divided by 2 = 39<br />\n22 divided by 3 ≈ 7.33<br />\n39 divided by 7.33 ≈ 5.32</p>\n</div>\n<p>The second experiment drew each set of numbers once as bars and once as a pie. So position and angle judgments were equal in number, and the shares can be compared directly.</p>\n<div class=\"working\">\n<p>100 minus 88 = 12<br />\n88 divided by 12 ≈ 7.33</p>\n</div>\n<p>The paper prints 7.3. Per judgment, a large error was about seven times as likely on the pie as on the bars beside it. In only 3 of 40 comparisons was the pie more accurate on average than the bar chart.</p>\n<p>Heer and Bostock (2010) ran the first experiment again, online, with 50 people per chart. Position again beat length. They also tested angle and area with the same question. Area did worse than angle, and both did worse than position.</p>",
+   "numberRefs": [
+    237,
+    254
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Both experiments asked one question: what per cent is this value of that one? A paper’s reader may instead need to see which group is largest, or that the parts make a whole. The experiments do not measure those.</p>\n<p>The 5.3 and the 7.3 come from two different experiments with different charts. Do not set them side by side to rank angle below length. Heer and Bostock, testing both the same way, found angle no worse than length.</p>\n<p>Cleveland and McGill say so themselves: the order “does not provide a complete prescription for how to make a graph”.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>The order of judgments tells you how to draw. The shape of the data tells you what to draw. Before you choose a chart, say which of five kinds of numbers you have. The table puts chapter 5 of Wilke’s <em>Fundamentals of Data Visualization</em> (https://clauswilke.com/dataviz/) in this book’s words, with examples from your own work.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>what the numbers are</td>\n<td>an example from your work</td>\n<td>marks that suit it</td>\n</tr>\n<tr>\n<td>amounts, one for each group</td>\n<td>per cent with overweight or obesity, urban and rural</td>\n<td>bars from zero, or dots on one axis</td>\n</tr>\n<tr>\n<td>many values in each group</td>\n<td>the BMI of every adult in a district survey</td>\n<td>a chart of the distribution, such as a strip chart or box plot</td>\n</tr>\n<tr>\n<td>parts of one whole</td>\n<td>how a clinic’s patients split across BMI categories</td>\n<td>side-by-side bars; a pie only for a few parts</td>\n</tr>\n<tr>\n<td>one measured quantity against another</td>\n<td>waist circumference against BMI, one point per adult</td>\n<td>a scatterplot</td>\n</tr>\n<tr>\n<td>change over time</td>\n<td>one indicator across survey rounds</td>\n<td>a line through the values</td>\n</tr>\n</tbody>\n</table>\n<p>Try it on the running case. In the two fact-sheet rows of the last section, the last number is NFHS-4 (2015-16) and the third is NFHS-5 (2019-21). So you have the share of women and of men aged 15-49 with <dfn data-g=\"467\">overweight</dfn> or obesity, in two survey rounds. That is change over time, for two groups.</p>\n<p>So draw a line for women and a line for men, each joining its two survey rounds, on one shared axis. Each point is read by its position. The women’s line runs from 20.6 to 24.0 per cent and the men’s from 18.9 to 22.9. The lines climb by 3.4 and 4.0 <dfn data-g=\"478\">percentage</dfn> points.</p>\n<p>The <dfn data-g=\"704\">value axis</dfn> of this chart need not start at zero. It could start at 15 per cent, a little below the lowest point. For points and lines that is allowed, because each value is carried by where the point sits, not by a length from zero (Book 0, F2). Wilke makes the same move for amounts that need a <dfn data-g=\"389\">logarithmic axis</dfn> (Book 0, A7), on which zero lies infinitely far away. He drops the bars and places “a dot at the appropriate location along the scale”.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Two survey rounds give two points, and a straight line between them says nothing about the years in between. The line shows the change from one round to the next, not a steady rise.</p>\n<p>Each NFHS round measures different people. The line joins two population shares, not the same people measured twice.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Put the values a reader must compare on one shared axis, next to each other: bars from one shared start, or dots. Avoid making the reader compare pieces stacked inside bars, or slices of a pie. Those are lengths without a shared start, and angles.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In Cleveland and McGill’s experiments, large errors were 5.3 times as frequent per judgment on length as on position.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“The ranking of marks was proved by experiment” is the error. The full order of ten judgments is Cleveland and McGill’s hypothesis.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you draw a pie, <dfn data-g=\"85\">check</dfn> that its numbers are parts of one whole: shares of the same group of people, adding to 100 per cent. Prevalences in different groups are not. Neither are conditions a person can have together, such as stunting and <dfn data-g=\"699\">underweight</dfn> in the same child.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee shows you a <dfn data-g=\"488\">pie chart</dfn> or a stacked bar chart, ask for the same numbers as dots or grouped bars on one axis.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Name the shape of your numbers before you choose the chart.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When an amount needs a logarithmic axis, draw dots, not bars: zero lies infinitely far down it. A ratio there takes bars from 1 (section 17).</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Use the order as a guide, as its authors did, not as a rule that settles every choice.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Position beats length, so bar charts are second-rate.” A bar chart whose bars stand on one shared start is read by where each bar ends, against the shared axis: that is position. Cleveland and McGill replace the pie with a bar chart for exactly this reason, “thus replacing angle judgments by position judgments”. What does badly is a length with no shared start, such as the upper pieces of a stacked bar.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: list the first four places in Cleveland and McGill’s order of judgments, from most accurate down. Which comparisons did their two experiments actually test, and which judgment won?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Position along a common scale; positions along scales that are not lined up; length, direction and angle, tied; area.</p>\n<p>The experiments tested position against length, and position against angle. Position won both. The rest of the order is the authors’ hypothesis.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A district nutrition report shows one pie chart of children under 5, titled “Child undernutrition and overweight, India, NFHS-5”. Its four slices are <dfn data-g=\"655\">stunted</dfn> (short for age) 35.5%, <dfn data-g=\"716\">wasted</dfn> (thin for height) 19.3%, underweight (light for age) 32.1% and overweight (heavy for height) 3.4%, each judged against the World Health Organization growth standard. The numbers are the NFHS-5 India Fact Sheet’s totals for indicators 81, 82, 84 and 85. Say what is wrong and what you would draw instead.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Add the slices first.</p>\n<div class=\"working\">\n<p>35.5 plus 19.3 plus 32.1 plus 3.4 = 90.3</p>\n</div>\n<p>The total is 90.3, not 100. That alone shows the slices are not parts of one whole, and the pie has stretched 90.3 to fill a circle.</p>\n<p>The deeper problem would remain even if they added to 100. Each number is the share of all children under 5 with one condition, and one child can have more than one. A child can be stunted and underweight at once. So the four groups overlap, and a pie, which shows parts that do not overlap, cannot hold them.</p>\n<p>Draw the four values as dots or bars on one axis from 0 to 100 per cent, one row each. The reader then compares positions on a shared scale. The <dfn data-g=\"74\">caption</dfn> states the finding the report needs, for example that stunting and underweight each affect about a third of children.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Take the results you listed for figures in your own section. For each, name the shape of the numbers from the table in this section, then choose the mark. Say which judgment the reader will make to compare the values you most want compared.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Check each choice in three steps.</p>\n<ul>\n<li>The shape is named: amounts for groups, many values per group, parts of one whole, one quantity against another, or change over time.</li>\n<li>The mark fits the shape. Amounts take bars from zero or dots. Many values per group take a chart of the distribution. Parts of a whole take side-by-side bars. Two measured quantities take a scatterplot. Time takes a line.</li>\n<li>The comparison that carries your <dfn data-g=\"95\">claim</dfn> is made by position on one shared axis. Suppose the reader must compare two pieces stacked in a bar, or two slices. Then redraw it so the two values sit side by side on one axis.</li>\n</ul>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A district health officer wants a pie chart for the monthly review meeting. It is to show the share of adults with overweight or obesity in each of the district’s six blocks. One page for her, answer first.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first: a pie is the wrong chart for these numbers. I will send a chart of six dots on one scale, sorted from highest to lowest block.</p>\n<p>Why. Each block’s figure is a share of that block’s own adults. The six shares are not parts of one whole, so slices of a circle misstate them. Even when a pie is the right kind of chart, people compare its slices less accurately than points on one scale. In one experiment, large errors were about seven times as frequent per judgment on a pie as on bars.</p>\n<p>What the chart will show. Each block as one dot, on one axis marked in per cent, labelled with the block’s name and its value. The meeting can then see at once which blocks sit highest.</p>\n<p>What it will not show. Why the blocks differ, or whether a small difference between two blocks is real. For that we need each block’s sample size beside its share.</p>"
+  }
+ ]
+}

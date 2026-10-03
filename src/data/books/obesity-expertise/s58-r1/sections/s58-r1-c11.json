@@ -1,0 +1,285 @@
+{
+ "format": 1,
+ "id": "s58-r1-c11",
+ "label": "11",
+ "title": "Measuring a draft: words per sentence, a readability score, and what they cannot show",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"553\">readability formula</dfn> estimates how hard a passage is to read from three counts: words, sentences and syllables. A <dfn data-g=\"665\">syllable</dfn> is one beat of a spoken word: “row” has one, “maintain” two, “dictionary” four.</p>\n<p>The counts give two averages. The <dfn data-g=\"43\">average sentence length</dfn> (ASL) is the number of words divided by the number of sentences. The <dfn data-g=\"44\">average syllables per word</dfn> (ASW) is the number of syllables divided by the number of words.</p>\n<p>The <dfn data-g=\"257\">Flesch Reading Ease</dfn> score (FRE), published by Rudolf Flesch in 1948, is 206.835 minus 1.015 times ASL minus 84.6 times ASW. Flesch wrote the second term as 0.846 times the syllables per 100 words, which gives the same score. A higher score means easier text. For almost all ordinary prose the score falls between 0 and 100, but the formula can go below 0 or above 100.</p>\n<p>Every worked score below uses ASL, ASW and FRE, so this section keeps all three. The limit on abbreviations in section 8 counts a paper’s nonstandard ones.</p>\n<p>Kincaid and colleagues (1975) gave a grade-level formula: 0.39 times ASL, plus 11.8 times ASW, minus 15.59. Its result is a United States school grade, not an Indian <dfn data-g=\"96\">class</dfn>. Later writers call the formula the <dfn data-g=\"258\">Flesch–Kincaid grade level</dfn>.</p>\n<p>Both formulas count lengths. Neither reads meaning, order or the logic between sentences.</p>\n<p>Measured this way, scientific abstracts have grown harder to read. Plavén-Sigray and colleagues (2017) scored 709,577 abstracts from 123 journals, published from 1881 to 2015.</p>",
+   "refs": [
+    178,
+    179,
+    180,
+    180,
+    181,
+    180,
+    180,
+    180,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    180,
+    180,
+    180,
+    195,
+    196,
+    180,
+    180,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A readability formula reads your draft with a ruler, not with a mind. Long sentences and long words push the score towards hard.</p>\n<p>Use it as a trip-wire.</p>\n<p>Never use it as a target. A row of four-word fragments scores as very easy, and it can still leave out the one thing the reader needed.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c11-score-lines.png",
+   "alt": "Two nearly parallel falling lines of the FRE score against average sentence length. A point at 52 words and a score of 38.5 on the upper, solid line; a point at 15 words and 64.7 on the lower, dashed line. A dashed horizontal line at 60.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The Flesch Reading Ease score falls by 1.015 points for each extra word in the average sentence. Each line holds one version’s average syllables per word: about 1.37 for the 52-word draft of illustration 2, below, and 1.5 for its Rewrite A. The draft sits at 38.5; Rewrite A at 64.7, above Flesch’s Plain English minimum of 60. The whole gain comes from shorter sentences: Rewrite A’s words are a little longer, so its line sits lower."
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c11-counting-rule.png",
+   "alt": "Two pairs of bars. The draft: 38.5 with each numeral as one syllable, 1.1 with numerals read aloud. Rewrite A: 64.7 and -0.15, just below zero.",
+   "w": 1360,
+   "h": 655,
+   "caption": "The draft and Rewrite A of illustration 2, below, scored under Flesch’s two rules for numerals (illustration 3). Counting each numeral as one syllable, the draft scores 38.5 and Rewrite A 64.7. Reading each aloud, they score 1.1 and -0.15. The rule for numerals moved each score more than the rewrite did."
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c11-three-scores.png",
+   "alt": "Three bars from zero: the draft 38.5, Rewrite A 64.7, Rewrite B 101.1. Dashed lines at 60, Flesch's Plain English minimum, and at 100, the top of his scale.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The three versions of illustration 2, below, scored by the same rule. Rewrite B scores 101.1, above the 100 at the top of Flesch’s scale, and it is the worst of the three: it splits one group in two and drops which survey each number came from. Rewrite A, at 64.7, keeps everything the draft said. The score counts lengths; only reading tells you which to keep."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a sentence short enough to count on your fingers. In <em>How to Write Plain English</em> (1979), Rudolf Flesch scores three ways of saying one thing. A copy of his chapter is at https://pages.stern.nyu.edu/%7Ewstarbuc/Writing/Flesch.htm. Search for profound.</p>\n<blockquote>\n<p>Now let’s say the same thing with a little more sophistication - “John has a profound affection for Mary.” This adds some complexity to the idea. It rates “Plain English”-a score of 67</p>\n</blockquote>\n<p>Score it yourself. First count. The sentence has 7 words. Now count the beats in each word, saying it aloud.</p>\n<table style=\"width:92%;\">\n\n<tbody>\n<tr>\n<td>word</td>\n<td>John</td>\n<td>has</td>\n<td>a</td>\n<td>profound</td>\n<td>affection</td>\n<td>for</td>\n<td>Mary</td>\n</tr>\n<tr>\n<td>syllables</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>2</td>\n<td>3</td>\n<td>1</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>\n<p>Flesch gives a quicker way to count. Every word has at least one syllable, so start from the number of words, 7. Then add the extra beats in the longer words: 1 for profound, 2 for affection, 1 for Mary.</p>\n<div class=\"working\">\n<p>7 plus 1 plus 2 plus 1 = 11</p>\n</div>\n<p>One sentence, 7 words, 11 syllables. Now the two averages. Each is one count divided by another (Book 0, A5), and the average sentence length is a mean (Book 0, D5).</p>\n<div class=\"working\">\n<p>7 divided by 1 = 7<br />\n11 divided by 7 = 1.571428571</p>\n</div>\n<p>So ASL is 7 and ASW, rounded to four <dfn data-g=\"172\">decimal</dfn> places, is 1.5714. Keep four places from here. Now the formula, in Flesch’s own order. Multiply ASL by 1.015. Multiply ASW by 84.6. Add the two. Subtract the sum from 206.835.</p>\n<div class=\"working\">\n<p>1.015 times 7 = 7.105<br />\n84.6 times 1.5714 = 132.94<br />\n7.105 plus 132.94 = 140.045<br />\n206.835 minus 140.045 = 66.79</p>\n</div>\n<p>66.79 rounds to 67, Flesch’s score. Now the grade <dfn data-g=\"379\">level</dfn>, for the same counts. Multiply ASL by 0.39 and ASW by 11.8, add them, and take away 15.59.</p>\n<div class=\"working\">\n<p>0.39 times 7 = 2.73<br />\n11.8 times 1.5714 = 18.54<br />\n2.73 plus 18.54 minus 15.59 = 5.68</p>\n</div>\n<p>A grade level of about 5.7. Now Flesch’s first version, “John loves Mary.”: 3 words, 4 syllables, one sentence.</p>\n<div class=\"working\">\n<p>4 divided by 3 = 1.333333333<br />\n1.015 times 3 = 3.045<br />\n84.6 times 1.3333 = 112.80<br />\n206.835 minus 3.045 minus 112.80 = 90.99</p>\n</div>\n<p>Flesch prints 92 for it. The formula gives 91.0. Printed scores and your own can differ by a point, so say how you counted, and trust the arithmetic you can show.</p>\n<p>The short version scores 24 points easier. It also says something different: loving someone is not the same as having a profound affection for them. The formula cannot see that.</p>",
+   "numberRefs": [
+    204
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>One sentence is far too small a sample. Flesch’s own instructions take samples of 100 words, three to five of them from an article. Score whole paragraphs before you act on a number.</p>\n<p>The syllable count is a judgement, not a measurement. If you say “family” in two beats where someone else says three, your total moves. In a 7-word sentence one syllable moves the score by about 12 points. In a paragraph of 100 words it moves it by less than 1.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a sentence of the kind a thesis is full of. It is invented, but you have read many like it. It reports the National Family Health Survey (NFHS), whose fourth round, NFHS-4, ran in 2015-16 and whose fifth, NFHS-5, in 2019-21.</p>\n<blockquote>\n<p>It was observed in the present study, which was based on an analysis of the data of the National Family Health Survey, that the proportion of women in the age group of 15 to 49 years who were overweight or obese showed an increase from 20.6% in NFHS-4 to 24.0% in NFHS-5.</p>\n</blockquote>\n<p>Count it. Take each numeral, <dfn data-g=\"1\">abbreviation</dfn> or symbol (such as 20.6%, NFHS or NFHS-4) as one word of one syllable. That is Flesch’s own rule from 1979. Where a word can be said two ways, this book counts the fuller one (Flesch in 1979 took the shorter); state your choice. There are 52 words. The words with more than one syllable add 19 extra beats: observed 1, present 1, study 1, analysis 3, data 1, National 2, Family 2, Survey 1, <dfn data-g=\"525\">proportion</dfn> 2, women 1, <dfn data-g=\"467\">overweight</dfn> 2, obese 1, increase 1.</p>\n<div class=\"working\">\n<p>52 plus 19 = 71<br />\n71 divided by 52 = 1.365384615<br />\n1.015 times 52 = 52.78<br />\n84.6 times 1.3654 = 115.51<br />\n206.835 minus 52.78 minus 115.51 = 38.545<br />\n0.39 times 52 = 20.28<br />\n11.8 times 1.3654 = 16.11<br />\n20.28 plus 16.11 minus 15.59 = 20.80</p>\n</div>\n<p>An FRE of 38.5 and a grade of 20.8. Its words are short. The one long sentence does the damage.</p>\n<p>Here are two rewrites. Score both before you read on.</p>\n<blockquote>\n<p>Rewrite A. We analysed data from the National Family Health Survey. Among women aged 15 to 49, the share with overweight or obesity rose from 20.6% in NFHS-4 to 24.0% in NFHS-5.</p>\n</blockquote>\n<blockquote>\n<p>Rewrite B. We used NFHS. Women were measured. They were 15 to 49. Some were overweight. Some were obese. It was 20.6%. It is now 24.0%.</p>\n</blockquote>\n<p>Rewrite A has 30 words in 2 sentences, with 15 extra beats: analysed 2, data 1, National 2, Family 2, Survey 1, Among 1, women 1, overweight 2, obesity 3. Rewrite B has 24 words in 7 sentences, with 5 extra beats: women 1, measured 1, overweight 2, obese 1.</p>\n<div class=\"working\">\n<p>30 plus 15 = 45<br />\n30 divided by 2 = 15<br />\n45 divided by 30 = 1.5<br />\n206.835 minus 1.015 times 15 minus 84.6 times 1.5 = 64.71<br />\n24 plus 5 = 29<br />\n24 divided by 7 = 3.428571429<br />\n29 divided by 24 = 1.208333333<br />\n206.835 minus 1.015 times 3.4286 minus 84.6 times 1.2083 = 101.13</p>\n</div>\n<table style=\"width:93%;\">\n\n<thead>\n<tr>\n<th>version</th>\n<th>words</th>\n<th>sentences</th>\n<th>syllables</th>\n<th>ASL</th>\n<th>ASW</th>\n<th>FRE</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>the draft</td>\n<td>52</td>\n<td>1</td>\n<td>71</td>\n<td>52</td>\n<td>1.3654</td>\n<td>38.5</td>\n</tr>\n<tr>\n<td>Rewrite A</td>\n<td>30</td>\n<td>2</td>\n<td>45</td>\n<td>15</td>\n<td>1.5</td>\n<td>64.7</td>\n</tr>\n<tr>\n<td>Rewrite B</td>\n<td>24</td>\n<td>7</td>\n<td>29</td>\n<td>3.4286</td>\n<td>1.2083</td>\n<td>101.1</td>\n</tr>\n</tbody>\n</table>\n<p>Rewrite B scores best, above even the 100 at the top of Flesch’s scale. It is also the worst of the three. It splits “overweight or obese”, one group, into two, as if each had its own number. It drops which survey each number came from. It says “now” of a survey that ended in 2021. The score rose because the sentences got shorter, and it would rise just as far whatever they said.</p>\n<p>Rewrite A keeps everything the draft said and scores 64.7, above Flesch’s minimum of 60 for Plain English. It is the one to keep, and the score is not what tells you so. Reading it is.</p>",
+   "numberRefs": [
+    24,
+    204
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These are single sentences and two short paragraphs, chosen to show the arithmetic. A score for a whole results section, a few hundred words, is steadier. The ranking of A and B would not change: a formula that counts lengths cannot tell a clear sentence from a short broken one.</p>\n<p>The counts here take each numeral as one syllable. The next illustration counts the same sentences the other way.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Here is the trap with counting numerals. Flesch himself gave two rules. In 1948 he counted a numeral or symbol the way it is read aloud: “two for $ (“dollars”) and four for 1918”. So did Kincaid and colleagues. In 1979 he counted every numeral, symbol and abbreviation as one syllable. Plavén-Sigray and colleagues, scoring 709,577 abstracts by computer, removed the numbers altogether.</p>\n<p>Count the draft and Rewrite A again, reading each numeral and abbreviation aloud. “15” is fifteen, 2 beats. “49” is forty-nine, 3. “20.6%” is twenty point six per cent, 6. “24.0%” is twenty-four point zero per cent, 8. Each “NFHS” with its number is four letters and a numeral, said one by one: 5. Each of these words had 1 beat before.</p>\n<div class=\"working\">\n<p>1 plus 2 plus 5 plus 7 plus 4 plus 4 = 23<br />\n71 plus 23 = 94<br />\n94 divided by 52 = 1.807692308<br />\n206.835 minus 1.015 times 52 minus 84.6 times 1.8077 = 1.12<br />\n45 plus 23 = 68<br />\n68 divided by 30 = 2.266666667<br />\n206.835 minus 1.015 times 15 minus 84.6 times 2.2667 = -0.15</p>\n</div>\n<p>The same draft scores 38.5 or 1.1. The same rewrite scores 64.7 or -0.15. Nothing in either sentence changed. Only the counting rule did.</p>\n<p>So a score means nothing until you know how it was counted. A results paragraph is thick with numerals, and the rule for numerals can move its score more than any rewrite. When you compare two drafts, score both with the same program or the same rule. When you read someone else’s score, look for how they counted numerals before you compare it with yours.</p>",
+   "numberRefs": [
+    205
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The gap is this large because these sentences are thick with numerals: 6 of the draft’s 52 words. In a paragraph of discussion with no numerals, symbols or abbreviations in it, the two rules give the same score. Most word processors can score readability; one 2022 study used Microsoft Word for both scores. Yours may follow yet another rule, and may not say which. So test it: score one sentence with numerals by hand, and see which rule its answer matches.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The score went up, so the text is clearer” is the error. The formula counts lengths and nothing else.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you compare two scores, find out how each counted numerals. Flesch in 1948 read them aloud, Flesch in 1979 counted each as one syllable, and one large study dropped them.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Use the score as a trip-wire on your own draft, never as a target. Where one scores far harder than the rest, read its longest sentences and rewrite them for the reader.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A grade level is carried over from the people the formulas were fitted on: Flesch’s schoolchildren and Kincaid’s 531 Navy personnel. Flesch wrote that his score tracks a school grade only up to about seventh grade.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>These formulas were fitted on schoolchildren’s test passages and Navy training manuals, so they say nothing about a Hindi or Tamil translation. For a health leaflet in any language, give it to a few people from the audience and ask them what it tells them to do.</p>",
+     "tag": "boundary",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Mind the unit of the syllable term. Flesch’s 1948 article multiplies syllables per 100 words by 0.846; his 1979 book multiplies syllables per word by 84.6. Mix the two and the score comes out in the thousands below zero.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Quote the rise in abstracts scoring below 0 on the FRE (14 per cent in 1960, 22 per cent in 2015, in one study of 709,577) as a rise in long words and long sentences. It does not show that specialists understand the newer abstracts less well.</p>",
+     "tag": "number",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“A Flesch–Kincaid grade of 12 means a reader needs twelve years of school to understand this.” That is not what the number is. It is what a formula predicts from two lengths.</p>\n<p>Kincaid’s numbers were fitted to United States Navy personnel reading Navy training manuals, in a 1975 report. Flesch’s own numbers were fitted to schoolchildren answering questions on short reading passages. He wrote that children’s grades were not the best yardstick for how readable a text is in general. Neither formula was tested on your readers. A grade is a guess about difficulty from the outside of the words, not a measured need for schooling.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>“We scored each leaflet with the Flesch Reading Ease score [ref] and the Flesch–Kincaid grade level [ref], using [program and version]. The program counts each numeral as [one syllable / the syllables it has when read aloud]. Both scores estimate difficulty from the length of words and sentences alone. We did not test our readers’ understanding.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back, write down the two averages the Flesch Reading Ease formula uses. Say how you get each from the counts, and which way the score moves when each one grows. Then say what the formula cannot see.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The average sentence length, words divided by sentences, and the average syllables per word, syllables divided by words. As either grows, the score falls, which means harder. The formula cannot see meaning, order, or whether the sentences connect: it counts lengths only.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague’s paper on patient leaflets at a district hospital reports: “Mean Flesch–Kincaid grade 11.2. The leaflets are therefore suitable only for patients who have completed class 11.” Find what is wrong with the conclusion, and say what the paper would need to show it.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Three things are wrong. First, the grade is a school grade predicted by a formula fitted on United States Navy personnel reading Navy manuals. Nothing has shown that it matches a class in an Indian school. Second, the formula counts word and sentence length only. A leaflet can score grade 11 and still be clear, or score grade 6 and leave out what the patient must do. Third, “suitable” is a <dfn data-g=\"95\">claim</dfn> about understanding, and nobody’s understanding was tested.</p>\n<p>The paper would need to give the leaflets to patients from the clinic and test what they understood. For example, ask each one what the leaflet tells them to do. Mark the answers against a <dfn data-g=\"354\">key</dfn> written in advance. It should also say which program computed the grade, and how that program counts numerals and abbreviations.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist rings you: “Is it true scientific papers are getting harder to read?” You have three minutes. Give one quotable sentence, and say how sure the evidence lets you be.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The quotable sentence: “Scientific abstracts have been getting harder to read for decades, by a measure that counts long words and long sentences. Part of the reason is that scientists use more of their own jargon.”</p>\n<p>Then the size, in words a reader can picture. One study scored over seven <dfn data-g=\"365\">lakh</dfn> abstracts from 123 journals. The share scoring below zero on that scale rose from about one in seven in 1960 to more than one in five in 2015.</p>\n<p>Then the limit, plainly. The measure counts lengths, not understanding. It was built on schoolchildren’s reading tests and refitted on Navy personnel, not on scientists reading their own field. So the trend is well measured, but whether experts understand papers less well is not shown. Rewriting abstracts more plainly did help academics understand them, in one study the authors cite.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A paragraph has 120 words, 6 sentences and 180 syllables. Find its average sentence length and its average syllables per word.</p>",
+   "level": 1,
+   "answer": "<p>Divide the words by the sentences, then the syllables by the words.</p>\n<div class=\"working\">\n<p>120 divided by 6 = 20<br />\n180 divided by 120 = 1.5</p>\n</div>\n<p>ASL is 20 words a sentence. ASW is 1.5 syllables a word.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A passage has an average sentence length of 20 words and an average of 1.5 syllables per word. Find its Flesch Reading Ease score and its Flesch–Kincaid grade level, each to one decimal place.</p>",
+   "level": 2,
+   "answer": "<p>The Flesch Reading Ease score first.</p>\n<div class=\"working\">\n<p>1.015 times 20 = 20.3<br />\n84.6 times 1.5 = 126.9<br />\n20.3 plus 126.9 = 147.2<br />\n206.835 minus 147.2 = 59.635</p>\n</div>\n<p>FRE 59.6. Then the grade level.</p>\n<div class=\"working\">\n<p>0.39 times 20 = 7.8<br />\n11.8 times 1.5 = 17.7<br />\n7.8 plus 17.7 = 25.5<br />\n25.5 minus 15.59 = 9.91</p>\n</div>\n<p>Grade level 9.9.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A passage averages 1.6 syllables per word. What average sentence length, to the nearest whole word, gives it a Flesch Reading Ease score of 50?</p>",
+   "level": 3,
+   "answer": "<p>Work out the part of the formula you know, then undo the rest (Book 0, C2).</p>\n<div class=\"working\">\n<p>84.6 times 1.6 = 135.36<br />\n206.835 minus 135.36 = 71.475</p>\n</div>\n<p>So 71.475 minus 1.015 times ASL must equal 50. The part taken away is the difference.</p>\n<div class=\"working\">\n<p>71.475 minus 50 = 21.475<br />\n21.475 divided by 1.015 = 21.16</p>\n</div>\n<p>About 21 words a sentence. Longer sentences than that would push the score below 50.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>In 1948 Flesch scored an issue of the New Yorker magazine from October 1946. His counts were an average sentence length of 20 words and 148 syllables per 100 words. He printed a reading ease of 61. Recompute the score from his counts, to one decimal place. Then find the Flesch–Kincaid grade level for the same counts.</p>",
+   "level": 4,
+   "answer": "<p>Turn syllables per 100 words into syllables per word first.</p>\n<div class=\"working\">\n<p>148 divided by 100 = 1.48<br />\n1.015 times 20 = 20.3<br />\n84.6 times 1.48 = 125.208<br />\n206.835 minus 20.3 minus 125.208 = 61.327</p>\n</div>\n<p>FRE 61.3, which rounds to Flesch’s 61. His 1948 form gives the same: 0.846 times 148 is also 125.208.</p>\n<div class=\"working\">\n<p>0.39 times 20 = 7.8<br />\n11.8 times 1.48 = 17.464<br />\n7.8 plus 17.464 minus 15.59 = 9.674</p>\n</div>\n<p>Grade level 9.7. The grade formula was made 27 years after Flesch’s article, for Navy personnel. It gives a number for a 1946 magazine, but nobody tested that number on the magazine’s readers.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Flesch (1979) gives this sentence a score of 32.</p>\n<blockquote>\n<p>Even though John is not normally given to a display of his deeper emotions, he allegedly has developed a profound affection for Mary, as compared to the more equable feelings he seems to have for Lucy, Fran and, to a lesser extent, Sue.</p>\n</blockquote>\n<p>Count its words and syllables, and compute its Flesch Reading Ease score to one decimal place. Then work out how far one syllable more or less in your count moves the score.</p>",
+   "level": 5,
+   "answer": "<p>Count the words: 43, in one sentence. Then the extra beats in the longer words.</p>\n<table style=\"width:93%;\">\n\n<tbody>\n<tr>\n<td>word</td>\n<td>even</td>\n<td>normally</td>\n<td>given</td>\n<td>display</td>\n<td>deeper</td>\n<td>emotions</td>\n<td>allegedly</td>\n<td>developed</td>\n<td>profound</td>\n</tr>\n<tr>\n<td>extra beats</td>\n<td>1</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>2</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<table style=\"width:93%;\">\n\n<tbody>\n<tr>\n<td>word</td>\n<td>affection</td>\n<td>Mary</td>\n<td>compared</td>\n<td>equable</td>\n<td>feelings</td>\n<td>Lucy</td>\n<td>lesser</td>\n<td>extent</td>\n</tr>\n<tr>\n<td>extra beats</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>1 plus 2 plus 1 plus 1 plus 1 plus 2 plus 3 plus 2 plus 1 plus 2 plus 1 plus 1 plus 2 plus 1 plus 1 plus 1 plus 1 = 24<br />\n43 plus 24 = 67<br />\n67 divided by 43 = 1.558139535<br />\n1.015 times 43 = 43.645<br />\n84.6 times 1.5581 = 131.82<br />\n206.835 minus 43.645 minus 131.82 = 31.37</p>\n</div>\n<p>FRE 31.4, against Flesch’s 32. Now one syllable. It changes ASW by 1 divided by 43.</p>\n<div class=\"working\">\n<p>1 divided by 43 = 0.02325581395<br />\n84.6 times 0.0233 = 1.97</p>\n</div>\n<p>About 2 points. If you say allegedly in three beats, not four, your score is about 33.3. Flesch’s 32 sits between the two counts. Careful counters differ by a syllable or two, so a score is good to a point or two, not to the decimal.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Suppose the 43-word sentence of the last problem could be split into three sentences. No word is added or removed, so it keeps every syllable you counted in the last problem. Compute its new Flesch Reading Ease score, and how much it changed.</p>",
+   "level": 5,
+   "answer": "<p>Only the average sentence length changes.</p>\n<div class=\"working\">\n<p>43 divided by 3 = 14.33333333<br />\n1.015 times 14.33 = 14.545<br />\n206.835 minus 14.545 minus 131.82 = 60.47<br />\n60.47 minus 31.37 = 29.1</p>\n</div>\n<p>FRE 60.5, up 29.1 points, with the same words. Two full stops moved the sentence from Flesch’s “college” band (30 to 50) to just above his Plain English minimum of 60. That is why Flesch’s own advice for a higher score is to “sprinkle periods”. Whether the three sentences are clearer depends on how you split them, and the score cannot tell you.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Score this results sentence twice: once taking each numeral as one syllable, and once counting each numeral as it is read aloud. Give both Flesch Reading Ease scores to one decimal place.</p>\n<blockquote>\n<p>Among men aged 15 to 49, 22.9% had overweight or obesity in NFHS-5, against 18.9% in NFHS-4.</p>\n</blockquote>",
+   "level": 6,
+   "answer": "<p>17 words, one sentence. With numerals as one syllable, the extra beats are: among 1, overweight 2, obesity 3, against 1.</p>\n<div class=\"working\">\n<p>17 plus 7 = 24<br />\n24 divided by 17 = 1.411764706<br />\n1.015 times 17 = 17.255<br />\n84.6 times 1.4118 = 119.44<br />\n206.835 minus 17.255 minus 119.44 = 70.14</p>\n</div>\n<p>FRE 70.1. Now read the numerals aloud. Fifteen adds 1 beat. Forty-nine adds 2. “22.9%”, twenty-two point nine per cent, is 7 beats, so it adds 6. “18.9%”, eighteen point nine per cent, is 6, so it adds 5. Each “NFHS” with its number is 5 beats, adding 4 each.</p>\n<div class=\"working\">\n<p>1 plus 2 plus 6 plus 5 plus 4 plus 4 = 22<br />\n24 plus 22 = 46<br />\n46 divided by 17 = 2.705882353<br />\n84.6 times 2.7059 = 228.92<br />\n206.835 minus 17.255 minus 228.92 = -39.34</p>\n</div>\n<p>FRE -39.3. The same 17 words score 70.1 or -39.3. State your counting rule beside any score you report.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a paragraph: 200 words, 10 sentences, 300 syllables<br />\nASL = 200 divided by 10 = 20<br />\nsyllables per 100 words = 300 divided by 200 times 100 = 150<br />\nFRE = 206.835 minus 1.015 times 20 minus 84.6 times 150 = -12503.465<br />\nso the paragraph is unreadable</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the fourth. The number 84.6 goes with syllables per word. With syllables per 100 words, Flesch’s 1948 number is 0.846. Use either pair, not a mix.</p>\n<div class=\"working\">\n<p>300 divided by 200 = 1.5<br />\n84.6 times 1.5 = 126.9<br />\n206.835 minus 20.3 minus 126.9 = 59.635<br />\n0.846 times 150 = 126.9</p>\n</div>\n<p>FRE 59.6, just under Flesch’s Plain English minimum of 60.</p>\n<p>Why the wrong answer looks reasonable. Both forms of the formula are in print, one per 100 words and one per word. They differ only by where the decimal point sits. A score in the thousands below zero should have stopped the writer: almost all ordinary prose scores between 0 and 100.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a student’s worked score of a two-sentence paragraph. Find the step that broke.</p>\n<div class=\"working\">\n<p>the paragraph has 60 words and 90 syllables<br />\nit has 2 full stops and 3 more clauses joined by “and”, so 5 sentences<br />\nASL = 60 divided by 5 = 12; ASW = 90 divided by 60 = 1.5<br />\nFRE = 206.835 minus 12.18 minus 126.9 = 67.755<br />\na score above 60, so it is Plain English</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the second. Flesch says: “don’t break up sentences that are joined by conjunctions like and or but.” The paragraph has 2 sentences.</p>\n<div class=\"working\">\n<p>60 divided by 2 = 30<br />\n1.015 times 30 = 30.45<br />\n206.835 minus 30.45 minus 126.9 = 49.485</p>\n</div>\n<p>FRE 49.5, in Flesch’s band for college readers (30 to 50), not Plain English.</p>\n<p>Why the wrong answer looks reasonable. The rules do count some marks inside a sentence as ending one. Flesch in 1979 counted a colon, a semicolon or a dash as a sentence end. And a <dfn data-g=\"99\">clause</dfn> joined by “and” looks like a sentence of its own. But a reader still has to carry the whole thing to the full stop.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>In <em>How to Write Plain English</em> (1979), Flesch writes this.</p>\n<blockquote>\n<p>Conversational English for consumers should score at least 80, or about 15 words per sentence and 1 1/2 syllables per word.</p>\n</blockquote>\n<p>A colleague writes a patient leaflet to exactly those two averages and says it is now conversational English. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the score those two averages give, from Flesch’s own formula.</p>\n<div class=\"working\">\n<p>1.015 times 15 = 15.225<br />\n84.6 times 1.5 = 126.9<br />\n206.835 minus 15.225 minus 126.9 = 64.71</p>\n</div>\n<p>64.7, not 80. The two averages do not give the score they are quoted for. Work back to see what would.</p>\n<div class=\"working\">\n<p>206.835 minus 15.225 = 191.61<br />\n191.61 minus 80 = 111.61<br />\n111.61 divided by 84.6 = 1.3193</p>\n</div>\n<p>At 15 words a sentence, a score of 80 needs about 1.32 syllables a word, nearer 1 1/3 (1.33) than 1 1/2. The same page’s other pair works: 20 words and 1 1/2 syllables give 59.6, about the 60 it is quoted for. So one number in the 80 sentence is probably a slip, in Flesch’s book or in the retyped copy online. The arithmetic shows a mismatch; it cannot show which number is wrong.</p>\n<p>What this does not establish. Even a leaflet that does score 80 has not been shown to read as conversation, or to be understood by its readers. The score counts lengths. To know whether the leaflet works, give it to people it was written for and ask them what it tells them to do.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A newspaper column says: “A study of 709,577 scientific abstracts found that more than a fifth of them now score below zero for readability. So a fifth of science cannot be understood by anyone.” Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: what a score below 0 takes, and whether the formula was built for these readers.</p>\n<p>Take an <dfn data-g=\"4\">abstract</dfn> with sentences of 25 words. Find the syllables per word that would bring its score to 0.</p>\n<div class=\"working\">\n<p>1.015 times 25 = 25.375<br />\n206.835 minus 25.375 = 181.46<br />\n181.46 divided by 84.6 = 2.1449</p>\n</div>\n<p>About 2.14 syllables a word, at 25 words a sentence. Many medical words have three or four syllables: proportion, obesity, <dfn data-g=\"510\">prevalence</dfn>. In the study, 14 per cent of abstracts scored below 0 in 1960 and 22 per cent in 2015. So “more than a fifth” is right for 2015.</p>\n<p>What this does not establish. A score below 0 means long words in long sentences. It does not mean nobody can understand the text. Flesch fitted his formula on children’s reading passages and said its link to school grades holds only up to about seventh grade. Neither formula was fitted on specialists reading their own field. The authors themselves say the scores are an estimate, not a measure of how well a text will be understood.</p>\n<p>What the study does support is narrower, and still worth saying. Abstracts have grown harder by this measure, partly from more general scientific jargon. In one study the authors cite, abstracts rewritten to read more easily were better understood by academics.</p>"
+  }
+ ]
+}

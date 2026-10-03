@@ -1,0 +1,169 @@
+{
+ "format": 1,
+ "id": "s58-r1-c04",
+ "label": "4",
+ "title": "The argument across sections: from the gap to the answer and its limits",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In a paper that reports original research, each of the four main sections does one job in the paper’s argument.</p>\n<p>The introduction moves from what is known to what is not yet known, the gap. It ends on the study’s specific purpose: the question it asks, its research objective, or the <dfn data-g=\"316\">hypothesis</dfn> it tests (a statement the study is designed to support or refute).</p>\n<p>The discussion opens by stating the main findings briefly, as the answer to the introduction’s question.</p>",
+   "refs": [
+    54,
+    55,
+    56,
+    57,
+    58,
+    8,
+    59,
+    10,
+    60,
+    23,
+    31,
+    61,
+    62,
+    63,
+    64,
+    12,
+    65,
+    66,
+    67,
+    22,
+    68,
+    28,
+    69,
+    70,
+    52
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The introduction says what is known, then what is not known, and ends on your question. The methods say what you did and why, so that a reader can judge it and could repeat it. The results answer the question in steps, one <dfn data-g=\"95\">claim</dfn> at a time, each with its numbers. The discussion gives the answer in its first lines, then what might explain it, what could make it wrong, and what it means.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a plan that fails. A resident is turning her thesis work into a short paper on the national survey’s figures for adults with <dfn data-g=\"467\">overweight</dfn> or obesity. Her plan is a list of headings. The plan is invented for this lesson.</p>\n<table>\n\n<tbody>\n<tr>\n<td>section</td>\n<td>the resident’s plan</td>\n</tr>\n<tr>\n<td>Introduction</td>\n<td>obesity: definition, history, causes, complications; the burden worldwide and in India</td>\n</tr>\n<tr>\n<td>Methods</td>\n<td>about the survey; sampling; body mass index; the urban figures we noticed later</td>\n</tr>\n<tr>\n<td>Results</td>\n<td>Table 1; Table 2; Figure 1</td>\n</tr>\n<tr>\n<td>Discussion</td>\n<td>obesity is a growing problem; our results agree with other studies</td>\n</tr>\n</tbody>\n</table>\n<p>Read each heading and ask what it claims. None of them claims anything. “Table 1” tells the reader where to look, not what they will find there. The introduction covers everything known about obesity and never reaches a question, so the reader cannot tell what the paper will answer. “The urban figures we noticed later” is something learnt during the work, so it does not belong in the methods.</p>\n<p>Now write the same paper as an <dfn data-g=\"464\">outline</dfn>: one sentence for each planned paragraph, and each sentence a claim. First get the data. Open the India fact <dfn data-g=\"622\">sheet</dfn> of the fifth National Family Health Survey (NFHS-5) at https://dhsprogram.com/pubs/pdf/OF43/India_National_Fact_Sheet.pdf and find indicators 88 and 89, under “Nutritional Status of Adults (age 15-49 years)”. Each row gives four numbers, all in per cent: NFHS-5 (2019-21) urban, rural and total, then the NFHS-4 (2015-16) total. Overweight or obesity means a <dfn data-g=\"61\">body mass index</dfn> of 25.0 kg/m<sup>2</sup> or more, the measure Book 0 built (Book 0, B6).</p>\n<table>\n\n<thead>\n<tr>\n<th>paragraph</th>\n<th>the claim it will make</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Introduction 1</td>\n<td>India’s NFHS reports, in its fourth and fifth rounds, the share of women and of men aged 15-49 with overweight or obesity.</td>\n</tr>\n<tr>\n<td>Introduction 2</td>\n<td>[What the papers you have read say is known, and what they leave open. Each sentence carries its reference. This outline cannot fill it for you.]</td>\n</tr>\n<tr>\n<td>Introduction 3</td>\n<td>We asked how that share changed between NFHS-4 (2015-16) and NFHS-5 (2019-21), and how it differs between urban and rural India in NFHS-5.</td>\n</tr>\n<tr>\n<td>Methods 1</td>\n<td>We used indicators 88 and 89 of the NFHS-5 India fact sheet, and fixed two comparisons before reading the numbers: between the rounds, and between urban and rural areas.</td>\n</tr>\n<tr>\n<td>Results 1</td>\n<td>A larger share of women aged 15-49 had overweight or obesity in NFHS-5 than in NFHS-4: 24.0 against 20.6 per cent.</td>\n</tr>\n<tr>\n<td>Results 2</td>\n<td>The same held for men: 22.9 against 18.9 per cent.</td>\n</tr>\n<tr>\n<td>Results 3</td>\n<td>In NFHS-5, overweight or obesity was commoner in urban than in rural adults: 33.2 against 19.7 per cent of women, and 29.8 against 19.3 per cent of men.</td>\n</tr>\n<tr>\n<td>Discussion 1</td>\n<td>Between the two rounds, the share of adults aged 15-49 with overweight or obesity rose for women and for men, and in NFHS-5 it was higher in urban than in rural India for both.</td>\n</tr>\n<tr>\n<td>Discussion 2</td>\n<td>[Possible explanations, each from a paper you cite, and each called possible. The fact sheet offers none.]</td>\n</tr>\n<tr>\n<td>Discussion 3</td>\n<td>The rows cover only ages 15-49, put overweight and obesity together, leave out pregnant women and women with a birth in the last two months, and come from two separate surveys, so they cannot show what caused the change.</td>\n</tr>\n<tr>\n<td>Discussion 4</td>\n<td>[What the answer means for research or for programmes, claiming no more than the data support.]</td>\n</tr>\n</tbody>\n</table>\n<p>Now read the right-hand column alone, top to bottom. Introduction 3 asks a question with two parts. Results 1 and 2 answer the first part, and Results 3 answers the second. Discussion 1 answers the whole question in one sentence. Discussion 3 says how far that answer reaches. The argument is there before a single paragraph exists.</p>\n<p>Each results sentence would also work as a subheading: it states a finding, where “Table 1” only names a place. And notice what the outline stops you claiming. The fact sheet’s NFHS-4 column gives the total only, so you cannot say whether the urban-rural gap widened. You find that out here, in one line, rather than after writing three paragraphs about it.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This outline fits a short paper with one question and three results. A paper on an experiment, or on people followed over years, has more steps, such as showing that a measure works before using it. Its results section is longer, but each step is still one claim.</p>\n<p>The numbers are shares of adults aged 15-49 in India in two survey rounds, overweight and obesity together. They do not show why the share rose. They say nothing about adults over 49, and nothing about any one state or district.</p>\n<p>The bracketed rows are not decoration. An outline with them left empty is a plan for a paper whose gap and explanations are still unsupported. Fill them from papers you have read and can cite.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>The second move is putting each sentence in the section whose job it does. Here are seven sentences from a draft paper on a district survey of women’s weight. The draft and its sentences are invented. Cover the last two columns, decide where each sentence goes, then <dfn data-g=\"85\">check</dfn>.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>sentence in the draft</td>\n<td>the draft put it in</td>\n<td>it belongs in</td>\n<td>why</td>\n</tr>\n<tr>\n<td>Obesity is a major public health problem all over the world.</td>\n<td>Introduction</td>\n<td>nowhere, as written</td>\n<td>It names no gap and leads to no question. A context sentence has to narrow towards this study’s question.</td>\n</tr>\n<tr>\n<td>We found that one woman in four had overweight or obesity.</td>\n<td>Introduction</td>\n<td>Results</td>\n<td>The introduction carries no data or conclusions from the work being reported.</td>\n</tr>\n<tr>\n<td>Some of the women we approached declined to be weighed.</td>\n<td>Methods</td>\n<td>Results</td>\n<td>It was learnt during the study. The methods hold only what was known when the protocol (the written plan of the study, made before it began) was written.</td>\n</tr>\n<tr>\n<td>We planned to compare women in urban and rural blocks.</td>\n<td>Results</td>\n<td>Methods</td>\n<td>It was decided before the data came in.</td>\n</tr>\n<tr>\n<td>Overweight or obesity was commoner in women in urban blocks than in rural blocks.</td>\n<td>Discussion, paragraph 3</td>\n<td>Results, as a subheading; and again in Discussion, paragraph 1, as part of the answer</td>\n<td>It is a finding. It is also part of the answer, so the discussion opens with it.</td>\n</tr>\n<tr>\n<td>Our survey covered one district, so it cannot speak for the state.</td>\n<td>Results</td>\n<td>Discussion</td>\n<td>It is a limit on how far the answer reaches.</td>\n</tr>\n<tr>\n<td>A district programme for this would pay for itself.</td>\n<td>Discussion</td>\n<td>nowhere, unless the paper has cost data</td>\n<td>A claim about money needs data on money.</td>\n</tr>\n</tbody>\n</table>\n<p>Two of these moves surprise people. The first is the women who declined. It feels like a fact about method, but you learnt it while doing the study. The Recommendations of the International Committee of Medical Journal Editors (ICMJE; section IV.A.3.d, at https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html) put everything obtained during the study in the results. A reader can then see what you planned and, separately, what happened.</p>\n<p>The second is the finding that appears twice. The results state it with its numbers. The discussion’s first paragraph states it again, briefly, as the answer to the question the introduction asked. That is the one repetition the argument needs.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The sorting rule for methods and results follows ICMJE’s general requirement. A journal’s own instructions, or a reporting <dfn data-g=\"296\">guideline</dfn> for one kind of study, may ask for a particular item in a particular section; follow them where they speak. Reporting guidelines are taught in the course’s book on protocols, reporting standards and research ethics.</p>\n<p>Some sentences do two jobs, as the urban-rural finding does. The test is the job the sentence does where it stands, not its topic.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Write the outline before the prose: one sentence for each planned paragraph, each sentence the claim that paragraph makes. Then read the sentences alone. If they do not take a reader from your question to your answer, fix them there.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An introduction that reviews everything known about obesity buries the gap. A reader should be able to underline the sentence that names the gap, and the one that states your question.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Mensh and Kording end the introduction on a summary of the results; ICMJE says the introduction holds no data or conclusions from the work. For a medical journal that follows ICMJE, end on the question or research objective. Then read the journal’s instructions, which decide.</p>",
+     "tag": "dispute",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The methods hold what you knew when you wrote the protocol. How many people declined, who was excluded once the data came in, and anything you changed along the way are results.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Give the results subheadings that state findings, not topics: “Overweight or obesity was commoner in urban than in rural women”, not “Urban-rural comparison”. Without subheadings, the same claim opens the paragraph, as section 2 teaches for every results paragraph. This section’s question-then-answer order governs only the introduction’s end and the discussion’s start.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“The discussion begins with background and other people’s studies” is the error. Begin with your main finding, briefly, as the answer to your question.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Claim no more than your data carry. A new idea the data suggest is written as a hypothesis, and labelled as one: “We suggest, as a hypothesis for a later study, that …”.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“Stating limitations weakens the paper” is the error. A limitation you leave out is still there. Name each limit, say which way it could push the answer, and say what would settle it. For example, if women with higher weight more often declined to be weighed, the share you report is too low.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The structure shows the logic; it cannot add evidence. If an outline sentence has no data behind it, either cut the claim or get the data.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“My paper has an Introduction, Methods, Results and Discussion, so it is structured.” The four headings are containers. A paper can carry all four and still be a diary of what was done. Its introduction never names a gap. Its results list tables. Its discussion opens with other people’s studies. The structure that matters is the chain inside the headings: the gap, the question, the evidence in steps, the answer and its limits.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>This analysis compared the share of adults aged 15-49 in India with overweight or obesity in NFHS-4 (2015-16) and in NFHS-5 (2019-21). It also compared urban and rural areas in NFHS-5.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back: give the one job of each of the four main sections in a sentence each. Then say in which section the number of people who declined to take part belongs, and why.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Introduction: move from what is known to the gap, and end on the study’s question, research objective or hypothesis.</p>\n<p>Methods: say how and why the study was done. Give enough detail to judge it and, with the data, to reproduce it. Include only what was known when the protocol was written.</p>\n<p>Results: the findings as a sequence of claims, each with its data, the main findings first.</p>\n<p>Discussion: open with the main finding, as the answer. Then give possible explanations, the other evidence, the limits, and what it means, claiming no more than the data carry.</p>\n<p>The number who declined goes in the results. It was learnt during the study, and ICMJE puts everything obtained during the study there.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is the first paragraph of the discussion in an invented paper on a survey of overweight or obesity among adults in one rural block. The paper asked how common overweight or obesity was among adults in the block, and whether it differed by age group.</p>\n<blockquote>\n<p>Obesity is a major public health problem in India and the world. Several studies from different states have reported different levels of overweight. Our study was conducted in a rural block of Chhattisgarh. Table 2 shows the distribution of body mass index by age group. Further research is needed.</p>\n</blockquote>\n<p>Say what is wrong with it. Then rewrite it so that it does the first paragraph’s job. Where you need the study’s own results, write a labelled blank rather than a number.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>It never answers the question. The first two sentences are background, which belongs in the introduction, if anywhere. The third repeats the methods. The fourth points to a table instead of saying what the table shows. The last sentence asks for more research without saying what research, or why. A reader finishes the paragraph not knowing what the study found.</p>\n<p>A rewrite opens with the answer and makes one point:</p>\n<ol type=\"1\">\n<li>“In this rural block, [the share of adults with overweight or obesity, with its count and <dfn data-g=\"178\">denominator</dfn>].”</li>\n<li>“[Whether and how it differed by age group, with the numbers].”</li>\n<li>“This is [above, below or close to] the rural figure for the state in NFHS-5 (reference).”</li>\n<li>“It adds [what this answer adds to what was known].”</li>\n</ol>\n<p>Every bracket is filled from the paper’s own results or from a cited source. The explanations, limits and the “further research” go in later paragraphs. Each of those names the specific question that remains open.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Take the manuscript or thesis section you chose to rewrite for this book. Write its outline: one sentence for each planned paragraph, each sentence the claim the paragraph will make. Then read the sentences alone and answer three questions. Where is the gap? Which sentence answers the question? Which claims have no data or reference behind them yet?</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Judge your outline with four checks.</p>\n<ul>\n<li>Every sentence is a claim. A sentence such as “Table 2” or “Sociodemographic profile” is a topic. Rewrite it as what the table shows.</li>\n<li>The introduction’s sentences narrow to one gap, and its last sentence states the question, research objective or hypothesis.</li>\n<li>Each results sentence answers part of that question, in an order where later sentences lean on earlier ones. Nothing learnt during the study sits in the methods.</li>\n<li>The discussion’s first sentence answers the whole question. A later sentence names each limit and which way it could push the answer.</li>\n</ul>\n<p>Mark every claim that has no data or reference behind it yet. Those marks are your work list. Do not write the paragraphs until the list is empty or the claims are cut.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident shows you the introduction to her draft paper. It runs to four pages and reviews obesity from its definition to its complications, worldwide and in India. Ten minutes, with a whiteboard: explain what an introduction is for, and how she should cut hers.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw a funnel on the board. At the top write what is known; below it, what is not known; at the bottom, her question. An introduction is that funnel and nothing else. It earns the reader’s attention by showing a gap that matters, then says what the study asks about it.</p>\n<p>Then work through her four pages with her. For each paragraph, ask one question: does this lead to the gap? The definition of obesity and its complications do not, unless her question is about them. A sentence on worldwide trends usually does not. What leads to the gap is what is known about her exact question, and the specific thing nobody has measured.</p>\n<p>Tell her what ICMJE asks: directly pertinent references only, and no data or conclusions from her own study. Her last paragraph states the research objective. Mensh and Kording’s own example narrows to its gap in three paragraphs: the field, the subfield, then the untested idea. The cut pages are not <dfn data-g=\"716\">wasted</dfn>. Whatever is needed to explain her findings goes to the discussion, and the rest goes into a file of her notes.</p>"
+  }
+ ]
+}

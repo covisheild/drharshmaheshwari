@@ -1,0 +1,161 @@
+{
+ "format": 1,
+ "id": "s58-r1-c14",
+ "label": "14",
+ "title": "A figure makes one claim",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A figure in a paper is drawn to make one <dfn data-g=\"95\">claim</dfn>: one statement about the data that a reader should be able to repeat after looking at it. The claim is written as a sentence before the kind of chart is chosen. One figure carries one claim.</p>\n<p>A result belongs in a sentence when it rests on a few numbers. It belongs in a table when the reader needs exact values, or will look up one row among many. It belongs in a figure when the claim is a pattern among many values, such as a trend, a gap or a ranking, that words would take too long to carry. The same numbers are not shown in both a table and a figure.</p>\n<p>The <dfn data-g=\"74\">caption</dfn> is the text printed with a figure. The International Committee of Medical Journal Editors (ICMJE) calls it the <dfn data-g=\"377\">legend</dfn>. Its first sentence states the finding, not the topic.</p>\n<p>A figure on a printed page can be studied for as long as the reader likes. A figure on a slide is seen for a few seconds, from across a room, while someone talks. The two are made separately. A poster is a third medium, and gets its own figure too.</p>",
+   "refs": [
+    225,
+    226,
+    227,
+    228,
+    229,
+    32,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    224,
+    236
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Before you draw anything, write down the one sentence you want a reader to take away from the figure. If you cannot write it, you do not have a figure yet.</p>\n<p>Then ask whether the claim needs a picture at all. Four numbers read well in a sentence. Forty do not.</p>\n<p>Last, put the sentence where the reader meets it first: the opening line of the caption.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c14-urban-rural.png",
+   "alt": "Two pairs of bars from zero, urban on the left of each pair and rural on the right, each pair labelled. Women: urban 33.2%, rural 19.7%. Men: urban 29.8%, rural 19.3%. In each pair the urban bar is the taller.",
+   "w": 1360,
+   "h": 656,
+   "caption": "In NFHS-5 (2019-21), a larger share of urban than of rural adults aged 15-49 had overweight or obesity, in women (33.2% against 19.7%) and in men (29.8% against 19.3%). Bars show the per cent with a body mass index of 25.0 kg/m<sup>2</sup> or more. Source: NFHS-5 India Fact Sheet, indicators 88 and 89."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a figure that fails. A draft results chapter of a thesis has this caption. The draft is made up; the numbers under it are real.</p>\n<blockquote>\n<p>Figure 3.2. Overweight and obesity in India, NFHS-4 and NFHS-5.</p>\n</blockquote>\n<p>Above it are eight bars in one cluster, with a <dfn data-g=\"354\">key</dfn> in the corner saying which colour is which. Find where the eight numbers came from. Open the <em>National Family Health Survey (NFHS-5), 2019-21: India Fact <dfn data-g=\"622\">Sheet</dfn></em>, at https://dhsprogram.com/pubs/pdf/OF43/India_National_Fact_Sheet.pdf. Search for <dfn data-g=\"467\">overweight</dfn> or obese. Two rows come up.</p>\n<blockquote>\n<ol start=\"88\" type=\"1\">\n<li>Women who are overweight or obese (BMI ≥25.0 kg/m2)21 (%) 33.2 19.7 24.0 20.6</li>\n</ol>\n</blockquote>\n<blockquote>\n<ol start=\"89\" type=\"1\">\n<li>Men who are overweight or obese (BMI ≥25.0 kg/m2) (%) 29.8 19.3 22.9 18.9</li>\n</ol>\n</blockquote>\n<p>The number that opens each row is its indicator number. Read the rows as Book 0 taught you to read a table (Book 0, F1). Each row is adults aged 15-49. BMI is the <dfn data-g=\"61\">body mass index</dfn> (Book 0, B6), and the sign ≥ means “greater than or equal to”: the rows count a BMI of 25.0 kg/m<sup>2</sup> or more. The four columns are NFHS-5 (2019-21) urban, rural and total, then NFHS-4 (2015-16) total, all in per cent. The 21 after the bracket is a footnote mark.</p>\n<p>Now cover the figure and write the one sentence a reader should take away from it. Most people who try write two.</p>\n<blockquote>\n<ol type=\"a\">\n<li>Between NFHS-4 and NFHS-5, the share of adults aged 15-49 with overweight or obesity rose, in women and in men.</li>\n</ol>\n</blockquote>\n<blockquote>\n<ol start=\"2\" type=\"a\">\n<li>In NFHS-5, the share was higher in urban than in rural India, in women and in men.</li>\n</ol>\n</blockquote>\n<p>Each is a claim. The figure tries to carry both, so it carries neither. The reader faces eight bars and no hint of which comparison matters. Choose the claim your chapter argues: the <dfn data-g=\"456\">one message</dfn> you wrote for it (section 3). Say the chapter is about the gap between town and village. Then (b) is this figure’s claim.</p>\n<p>Claim (a) still has a home. Ask whether it needs a figure at all. It rests on four numbers, and a sentence holds four numbers easily.</p>\n<blockquote>\n<p>Between NFHS-4 (2015-16) and NFHS-5 (2019-21), the share of adults aged 15-49 with overweight or obesity rose from 20.6 to 24.0 per cent in women, and from 18.9 to 22.9 per cent in men.</p>\n</blockquote>\n<p>That is a rise of 3.4 <dfn data-g=\"478\">percentage</dfn> points in women and 4.0 in men. No figure is needed, and the ICMJE Recommendations agree: “Restrict tables and figures to those needed to explain the argument of the paper”.</p>\n<p>So where does each kind of result go? Ask how many numbers the result rests on, and what the reader has to do with them.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>the result rests on</td>\n<td>the reader has to</td>\n<td>put it in</td>\n</tr>\n<tr>\n<td>a few numbers</td>\n<td>read them in passing</td>\n<td>a sentence</td>\n</tr>\n<tr>\n<td>many exact values</td>\n<td>look one up, or check it</td>\n<td>a table</td>\n</tr>\n<tr>\n<td>many values</td>\n<td>see a pattern: a trend, a gap, a ranking</td>\n<td>a figure</td>\n</tr>\n</tbody>\n</table>\n<p>Claim (b) also rests on four numbers, and in a paper it could be a sentence too. It becomes a figure’s claim when the values multiply. Suppose your chapter compares urban and rural shares in every state. That is two numbers per state, too many for a sentence. If the reader needs to find their own state’s values, use a table. If they need to see that urban sits above rural almost everywhere, use a figure. Never both: the same Recommendations say “do not duplicate data in graphs and tables”.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Four national numbers are a sentence’s job in a paper. The figure in this section draws claim (b) to show what a one-claim figure looks like, not because four numbers need one.</p>\n<p>The rows cover adults aged 15-49 only, and count overweight and obesity together. Whatever claim you choose has to stay inside those limits. Neither row says why the shares differ.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now give claim (b) its figure and its caption. Start with the caption, because it is where the claim is written down. Here is the draft’s caption again, with the one this section builds beside it. The first is made up; the second uses the fact sheet’s numbers.</p>\n<table>\n\n<tbody>\n<tr>\n<td>before</td>\n<td>after</td>\n</tr>\n<tr>\n<td>Figure 3.2. Overweight and obesity in India, NFHS-4 and NFHS-5.</td>\n<td>Figure 3.2. In NFHS-5 (2019-21), a larger share of urban than of rural adults aged 15-49 had overweight or obesity, in women and in men. Bars show the per cent with a body mass index of 25.0 kg/m<sup>2</sup> or more. Source: NFHS-5 India Fact Sheet, indicators 88 and 89.</td>\n</tr>\n</tbody>\n</table>\n<p>The first names a topic. A reader who looks at it learns what the figure is about, and must work out the point alone. The second states the finding first, then says what the bars are, then where the numbers came from.</p>\n<p>Put the finding in the caption, not across the top of the drawing. The ICMJE Recommendations say: “Titles and detailed explanations belong in the legends—not on the illustrations themselves.” Legend is ICMJE’s word for the caption.</p>\n<p>Next, take off the drawing everything the claim does not use. The claim compares urban with rural, so the two totals go, and so do the two NFHS-4 bars. Four bars remain: urban and rural, for women and for men. Claus Wilke, in his book <em>Fundamentals of Data Visualization</em> (2019), puts the rule plainly: “We don’t need to visualize data dimensions that are tangential to our story”. Tangential means off to one side of it.</p>\n<p>Then ask the harder question. Would anything you removed make a reader doubt the claim? The totals would not: they sit between urban and rural, as they must. Rural NFHS-4 numbers might. If the rural share had been rising faster than the urban one, a reader would want to know. This fact sheet gives NFHS-4 only as a total, so you cannot <dfn data-g=\"85\">check</dfn> it here. Say so in the text, and find the NFHS-4 report if the chapter’s argument depends on it.</p>\n<p>Last, the medium. For your thesis, the figure sits on a page, with its caption, and the examiner can study it. For a talk, make it again. Rougier and colleagues say a slide figure needs thicker lines, bigger text and strong contrast, because the audience sees it from a distance for a short time. They also say to stop “extracting a figure from your article to be put, as is, in your oral presentation”.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Removing the totals is safe here only because each total must lie between its urban and rural values. A dropped group that could fall outside the others, such as another survey round, is a different matter: check it before you cut it.</p>\n<p>The caption’s first sentence is a claim about these two rows. It says nothing about any one state, about people over 49, or about why urban shares are higher.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Write the figure’s claim as one sentence before you open any program that draws charts.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“A result looks more serious as a figure” is the error. A few numbers belong in a sentence, where the reader takes them in without stopping.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never show the same numbers in a table and in a figure.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Make the first sentence of every caption the finding, not the topic. “Overweight and obesity, NFHS-4 and NFHS-5” names a topic. “A larger share of urban than of rural adults had overweight or obesity” is a finding.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Do not lift a figure from your paper onto a slide. Make it again, with fewer elements, thicker lines and bigger text.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>The one-claim rule lets you cut data that are off to the side of the claim. It never lets you cut data that would weaken it.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Wilke recommends three to six figures for a scientific paper, with the rest moved to an appendix or supplement. The journal’s instructions to authors set the actual limit; read them first.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A clear figure persuades whether or not its claim is true.</p>",
+     "tag": "boundary",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“One figure, one claim” is easily read as “one figure, few numbers”. It limits what the figure says, not how much data it shows. A figure claiming that urban shares are above rural ones in every state shows two numbers for each state, and it still makes one claim. A figure with only four bars can make three claims at once and fail.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Figure 1. In NFHS-5 (2019-21), a larger share of urban than of rural adults aged 15-49 had overweight or obesity, in both women and men. The shares were 33.2 against 19.7 per cent in women, and 29.8 against 19.3 per cent in men.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: when does a result belong in a sentence, when in a table, and when in a figure? Where does a figure’s claim go, and what must never be shown twice?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>A sentence, when the result rests on a few numbers. A table, when the reader needs exact values or will look up one row among many. A figure, when the claim is a pattern among many values: a trend, a gap, a ranking.</p>\n<p>The claim goes in the first sentence of the caption, which ICMJE calls the legend, not on the drawing.</p>\n<p>The same numbers are never shown in both a table and a figure.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague’s clinic audit has this caption over a figure of three panels. The audit is made up.</p>\n<blockquote>\n<p>Figure 2. Clinic attendance, BMI categories and waist circumference, by age group and sex, April 2024 to March 2025.</p>\n</blockquote>\n<p>Panel A shows monthly attendance as a line. Panel B shows the share of patients in each BMI category, by age group, as stacked bars. Panel C shows mean waist circumference by sex, as two bars. The text says the audit’s main finding is that the share of patients with a BMI of 25.0 kg/m<sup>2</sup> or more rises with age. Say what is wrong and what you would do.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The caption names three topics and states no finding. So the figure has no claim, or three.</p>\n<p>The audit’s finding is about BMI by age, so panel B is the figure. Its caption opens with the finding: “The share of patients with a BMI of 25.0 kg/m<sup>2</sup> or more rose with age group.” Then it says what the bars show and where the data came from.</p>\n<p>Panel A, monthly attendance, is not part of that claim. It belongs in a sentence in the methods or results, such as how many patients were seen, or nowhere.</p>\n<p>Panel C rests on two numbers. A sentence holds them, with each mean and its count.</p>\n<p>Check one thing before <dfn data-g=\"159\">cutting</dfn>. Would attendance or waist circumference make a reader doubt the BMI finding? If attendance by older patients fell sharply in some months, for example, the reader needs to know who was measured. Say that in the text.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Take the manuscript or thesis section you are rewriting for this book. List every result in it. For each, write the one-sentence claim, then decide: sentence, table or figure. For each figure, write the first sentence of its caption. Check that no numbers appear in both a table and a figure.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Check your list against four tests.</p>\n<ul>\n<li>Every result has a claim written as a sentence with a <dfn data-g=\"711\">verb</dfn>, not a topic. “BMI by age group” fails; “The share with a BMI of 25.0 kg/m<sup>2</sup> or more rose with age” passes.</li>\n<li>Every result resting on a few numbers is in a sentence.</li>\n<li>Every figure’s claim is a pattern among many values, and each figure has one claim. Two claims in one figure means two figures, or one claim moved to the text.</li>\n<li>No numbers appear in both a table and a figure. Where they do, keep the table if readers will look values up, and the figure if they need to see the pattern.</li>\n</ul>\n<p>If you have more than about six figures, ask which ones the argument needs. Move the others to a supplement, or cut them.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident wants to keep all eight NFHS bars in one figure, “so the reader has everything”. Ten minutes, with a whiteboard. Explain why one claim per figure, and what happens to the numbers she takes off.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with the reader. Ask her to look at her eight bars for five seconds, then say what the figure shows. She will name a topic, or two findings. That is the problem: a reader given everything has to choose the finding alone, and may choose the wrong one.</p>\n<p>Write the two candidate claims on the board: the rise between survey rounds, and the gap between urban and rural. Ask which one her chapter argues. That one gets the figure.</p>\n<p>Then show where the other numbers go. The rise rests on four numbers, so it becomes a sentence. The totals sit between urban and rural, so they add nothing to the gap. Nothing is hidden: every number is still in the chapter, in the place that suits it.</p>\n<p>End with the caption. Write the finding as its first sentence, and show her how the figure now reads in two seconds.</p>"
+  }
+ ]
+}

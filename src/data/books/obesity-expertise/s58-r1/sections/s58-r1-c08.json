@@ -1,0 +1,184 @@
+{
+ "format": 1,
+ "id": "s58-r1-c08",
+ "label": "8",
+ "title": "Words: the everyday word, one term for one thing, abbreviations that cost the reader",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Four practices govern the choice of words in a scientific paper.</p>\n<p>The everyday word. Of two words that carry the same meaning, the familiar, short and concrete one is used.</p>\n<p>One term for one thing. Once a concept has a name, the same name is used for it throughout.</p>\n<p>Abbreviations. An <dfn data-g=\"1\">abbreviation</dfn> is a shortened form of a word or phrase. The International Committee of Medical Journal Editors (ICMJE) asks for standard abbreviations only, and none in the title. At first mention it asks for the full term followed by the abbreviation in brackets, except for a standard unit of measurement. The US Federal Plain Language Guidelines, written for government writing, advise no more than three abbreviations in a document, and preferably two. For papers, Barnett and Doubleday (2020) cite a recommendation of at most three acronyms (Talk Medicine BMJ, 2019). In this book, the limit counts a paper’s nonstandard abbreviations. A long document, such as a thesis, may keep more if it spells each out again in every chapter, as this book does in every section.</p>\n<p>Statistical words. “Random”, “normal”, “<dfn data-g=\"627\">significant</dfn>”, “<dfn data-g=\"147\">correlation</dfn>” and “sample” have exact meanings in statistics. ICMJE asks authors not to use them in their everyday senses.</p>\n<p>In this section, an <dfn data-g=\"7\">acronym</dfn> is the kind of abbreviation Barnett and Doubleday counted: a word in which half or more of the characters are capital letters. They counted acronyms in 24,873,372 titles and 18,249,091 abstracts of English-language papers in PubMed, published from 1950 to 2019. Their yearly figures for abstracts start in 1956, when enough abstracts became available.</p>\n<p>The study counted acronyms in titles and abstracts. It did not test whether readers understood less.</p>",
+   "refs": [
+    138,
+    139,
+    140,
+    141,
+    140,
+    142,
+    142,
+    143,
+    144,
+    145,
+    146,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Use the word a reader would say out loud. “Many”, not “a number of”.</p>\n<p>Once you have named a thing, keep the name.</p>\n<p>Spell out an abbreviation the first time you use it. Then ask whether it earns its place.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c08-acronyms-per-100-words.png",
+   "alt": "Grouped bars. Titles: 0.7 acronyms per 100 words in 1950, 2.4 in 2019. Abstracts: 0.4 in 1956, 4.1 in 2019, the tallest bar.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Barnett and Doubleday (2020): acronyms per 100 words in titles and abstracts in PubMed. In titles, 0.7 in 1950 and 2.4 in 2019. In abstracts, 0.4 in 1956 and 4.1 in 2019. A count of use in titles and abstracts, not a measure of how well readers understood them."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a results paragraph that changes its words. It is made up, but its numbers are those of India’s National Family Health Survey (NFHS).</p>\n<blockquote>\n<p>Among women aged 15 to 49, overweight or obesity rose from 20.6 per cent in NFHS-4 to 24.0 per cent in NFHS-5. Obesity was more common in urban areas (33.2 per cent) than in rural areas (19.7 per cent). Excess weight was also found in 22.9 per cent of men. High BMI therefore affects about a quarter of Indian adults.</p>\n</blockquote>\n<p>Count the names for the condition. There are four: <dfn data-g=\"467\">overweight</dfn> or obesity, obesity, excess weight, high BMI (<dfn data-g=\"61\">body mass index</dfn>). A reader meeting “obesity” in the second sentence will take it for a smaller group than “overweight or obesity” in the first. Is it?</p>\n<p>Open the NFHS-5 India fact <dfn data-g=\"622\">sheet</dfn> at https://dhsprogram.com/pubs/pdf/OF43/India_National_Fact_Sheet.pdf and find indicator 88.</p>\n<blockquote>\n<ol start=\"88\" type=\"1\">\n<li>Women who are overweight or obese (BMI ≥25.0 kg/m2)21 (%) 33.2 19.7 24.0 20.6</li>\n</ol>\n</blockquote>\n<p>The urban and rural figures come from that same row. The adult rows of the table give overweight and obesity together, and none gives obesity alone. So the second sentence claims something the fact sheet does not report. The change of word did that, not the numbers.</p>\n<p>Now look at the group. The paragraph ends with “Indian adults”. The table’s adult rows sit under the heading “Nutritional Status of Adults (age 15-49 years)”. The group’s name drifted too, and the last sentence now covers people the survey’s rows do not.</p>\n<p>Pick one term and define it once. Then use it in every sentence, even when it feels repetitive.</p>\n<blockquote>\n<p>Among women aged 15 to 49, the proportion with overweight or obesity (a body mass index of 25.0 kg/m<sup>2</sup> or more) rose from 20.6 per cent in NFHS-4 to 24.0 per cent in NFHS-5. Overweight or obesity was more common among urban women (33.2 per cent) than among rural women (19.7 per cent). Among men aged 15 to 49, the proportion with overweight or obesity was 22.9 per cent.</p>\n</blockquote>\n<p>Mensh and Kording put the rule plainly: “There is nothing wrong with using the same word multiple times in a sentence or paragraph.”</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>One term for one thing holds only while the thing stays the same. When you do mean a different group, such as obesity alone from a source that reports it, a different term is right, and it needs its own definition.</p>\n<p>The fact sheet’s row says “women who are overweight or obese”. This book writes “women with overweight or obesity”, putting the person first. Choose your wording once, quote the source’s <dfn data-g=\"363\">label</dfn> once where you define the term, and keep your own wording from then on.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the abbreviations. Here is a made-up sentence of a kind found in Indian theses. It uses five: accredited social health activist (ASHA), primary health centre (PHC), waist circumference (WC), cardiovascular disease (CVD) and non-communicable disease (NCD).</p>\n<blockquote>\n<p>ASHAs of the PHC were trained on WC measurement for CVD risk screening in the NCD clinic.</p>\n</blockquote>\n<p>That is five abbreviations in 17 words. Put three questions to each one. Is it standard for the reader who will read this paper? Does it save the reader anything, or only ink? Will it appear often enough to be worth learning?</p>\n<p>“PHC” can become “the primary health centre” once and “the centre” after that. The US Federal Plain Language Guidelines call this a <dfn data-g=\"442\">nickname</dfn>, and prefer it to an abbreviation. “WC”, “CVD” and “NCD” each appear once, so spell them out. “ASHA” is the one worth keeping if the chapter is about these workers. An Indian reader knows it. A reviewer abroad may not, so spell it out at first mention.</p>\n<blockquote>\n<p>We trained the accredited social health activists (ASHAs) of one primary health centre to measure waist circumference, as part of the centre’s screening for cardiovascular disease.</p>\n</blockquote>\n<p>Is this a real problem, or a matter of taste? Barnett and Doubleday counted acronyms in titles and abstracts in PubMed, the National Library of Medicine’s index of medical journals, from 1950 to 2019. Search their article (https://doi.org/10.7554/eLife.60080) for “per 100 words”.</p>\n<blockquote>\n<p>We found that the proportion of acronyms in titles increased from 0.7 per 100 words in 1950 to 2.4 per 100 words in 2019</p>\n</blockquote>\n<blockquote>\n<p>the proportion of acronyms in abstracts also increased, from 0.4 per 100 words in 1956 to 4.1 per 100 words in 2019.</p>\n</blockquote>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>where</td>\n<td>acronyms per 100 words, first year counted</td>\n<td>acronyms per 100 words, 2019</td>\n</tr>\n<tr>\n<td>titles (first year 1950)</td>\n<td>0.7</td>\n<td>2.4</td>\n</tr>\n<tr>\n<td>abstracts (first year 1956)</td>\n<td>0.4</td>\n<td>4.1</td>\n</tr>\n</tbody>\n</table>\n<p>Work out how many times as dense the acronyms became, as a <dfn data-g=\"550\">ratio</dfn> (Book 0, A5).</p>\n<div class=\"working\">\n<p>2.4 divided by 0.7 = 3.43<br />\n4.1 divided by 0.4 = 10.25</p>\n</div>\n<p>In abstracts, acronyms became about ten times as dense. Now search for “only once”.</p>\n<blockquote>\n<p>with 30% occurring only once, and 49% occurring between two and ten time times. Only 0.2% of acronyms (just over 2,000) occurred more than 10,000 times.</p>\n</blockquote>\n<p>Most of the 1.1 million different acronyms were rare: 30 per cent appeared once, and another 49 per cent two to ten times. A year after first use, only 11 per cent had been used again in another paper in the same journal.</p>\n<p>Acronyms also collide. The same paper reports, from Lang (2019), that “UA” has 18 different meanings in medicine. The authors’ own example is heart rate (HR), which can also mean hazard ratio, or hour.</p>",
+   "numberRefs": [
+    160
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Barnett and Doubleday counted acronyms. They did not test whether readers understood less. Their own <dfn data-g=\"4\">abstract</dfn> says acronyms “are not the biggest current problem in science communication”. Read the rise as a fact about how papers are written, not as a measure of how much each acronym costs a reader.</p>\n<p>The count covers titles and abstracts in English-language PubMed, not full texts, and not Indian journals on their own. The authors expect it to be an undercount, because their method missed acronyms with symbols and lower-case letters.</p>\n<p>The ratio of about ten compares 1956 with 2019. It says nothing about any one paper, or about your field.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Last, four statistical words used in their everyday sense. Each sentence is made up.</p>\n<blockquote>\n<p>A significant number of women had overweight or obesity.</p>\n</blockquote>\n<p>In a paper, “significant” reads as the verdict of a statistical test: roughly, a difference too large to put down to chance. This book does not teach the test. No test was run here, so write the number: “Nearly a quarter of women aged 15 to 49 (24.0 per cent) had overweight or obesity.”</p>\n<blockquote>\n<p>Households were selected randomly.</p>\n</blockquote>\n<p>Suppose the field team walked down each lane and called at whichever houses were open. That is not random. As Book 0, D6 showed, a <dfn data-g=\"542\">random sample</dfn> needs a real chance process, so that every household has the same chance of being picked. That section also gives “sample” its exact sense: the part of a population that is measured. Write what was done: “The team visited every house that was open on the survey day.”</p>\n<blockquote>\n<p>Most men had a normal BMI.</p>\n</blockquote>\n<p>In statistics, “normal” also names the shape of a distribution, which is beyond this book. As a category of BMI, it means nothing until you give its cut-offs. The fact sheet’s own row 86 shows the habit to copy: it says “below normal” and gives the cut-off beside it, “BMI &lt;18.5 kg/m2”. Name the range your source uses.</p>\n<blockquote>\n<p>Screen time was correlated with BMI.</p>\n</blockquote>\n<p>A correlation is a number worked out from paired measurements, and this book does not teach it. If you did not compute one, describe what you saw: “Children who reported more screen time tended to have a higher BMI.”</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The rule is against the everyday sense, not against the words. If you did run a test, or did use a chance process, or did compute a correlation, the technical word is the right one. Name the test, the process or the number beside it, so the reader can <dfn data-g=\"85\">check</dfn> it.</p>\n<p>“Nearly a quarter” is fair for 24.0 per cent of women aged 15 to 49. It is not a figure for all adults, nor for men, whose own figure is 22.9 per cent.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Using a different word each time makes writing less repetitive, and so better” is the error. A reader who meets a new word assumes a new thing.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Do not write “obesity” for the NFHS-5 row that reports “overweight or obese”. The fact sheet’s adult rows give the two together, at a body mass index of 25.0 kg/m<sup>2</sup> or more, and none gives obesity alone.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Put three questions to every abbreviation in your draft. Is it standard for the reader of this paper? Does it save the reader anything but ink? Will it appear often? In a paper, keep no more than three nonstandard ones, spell each out at first mention, and use none in the title.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>“Significant”, “random”, “normal”, “correlation” and “sample” make a statistical <dfn data-g=\"95\">claim</dfn> when a reviewer reads them. If you ran no test, drew no sample by a chance process, or computed no correlation, use other words, or state the number itself.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In PubMed abstracts, acronyms rose from 0.4 to 4.1 per 100 words between 1956 and 2019, about ten times as dense (Barnett and Doubleday, 2020). The count measured use, not understanding, and only in English-language titles and abstracts. When it matters, as in a report that ASHAs or patients will read, give the text to one such reader and watch where they stop.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An abbreviation every Indian community medicine reader knows, such as ASHA, may be unknown to a journal’s reviewer abroad.</p>",
+     "tag": "india_deviation",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Once an abbreviation is defined at first use, it costs the reader nothing.” It still costs. A reader who meets it three pages later has to stop and look back. The US Federal Plain Language Guidelines and Mensh and Kording both name that cost. Many acronyms are rare, so a reader may well not know the one in front of them: Barnett and Doubleday found 30 per cent used only once, and 49 per cent two to ten times. Defining one is the minimum, not a licence.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>In this chapter, overweight or obesity means a body mass index of 25.0 kg/m<sup>2</sup> or more, the NFHS-5 cut-off for adults aged 15 to 49.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back: what does the International Committee of Medical Journal Editors ask for at an abbreviation’s first mention? Where does it ask you to use none? Name four statistical words that should not be used in their everyday sense.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>At first mention, the term spelled out, followed by the abbreviation in brackets. A standard unit of measurement is the exception. No abbreviations in the title.</p>\n<p>Any four of: random, normal, significant, correlation, sample.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>This results paragraph is made up, but its two numbers are the survey’s own. Find every word problem in it and rewrite it.</p>\n<blockquote>\n<p>Urban men showed significantly higher obesity (29.8%) than rural males (19.3%), and high BMI was correlated with urbanisation.</p>\n</blockquote>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Five problems.</p>\n<ol type=\"1\">\n<li>“Significantly” makes a statistical claim. No test is reported, so it has to go, or the test has to be named.</li>\n<li>“Obesity” is not what the numbers measure. Indicator 89 of the fact sheet is “Men who are overweight or obese (BMI ≥25.0 kg/m2)”. These are the urban and rural figures for overweight or obesity together.</li>\n<li>“Men”, then “males”: two words for one group. Keep one.</li>\n<li>“High BMI” is a third name for the same condition.</li>\n<li>“Correlated with urbanisation” claims a correlation was computed. Two numbers, urban and rural, cannot give one. Describe the difference instead.</li>\n</ol>\n<p>A rewrite:</p>\n<blockquote>\n<p>Among men aged 15 to 49, overweight or obesity was more common in urban areas (29.8 per cent) than in rural areas (19.3 per cent).</p>\n</blockquote>\n<p>The rewrite says less than the original, and all of it is true.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A colleague’s slide reads: “A study of 24 million papers proved that acronyms make science harder to understand.” Say what the study measured, and what the slide claims that it did not.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Barnett and Doubleday counted acronyms in 24,873,372 titles and 18,249,091 abstracts in PubMed from 1950 to 2019. They measured how often acronyms appear (per 100 words), how many different ones there are, and how often each is used again. In abstracts, acronyms rose from 0.4 per 100 words in 1956, the first year with enough abstracts, to 4.1 in 2019.</p>\n<p>They did not test any reader. “Harder to understand” is a reasonable worry, and the authors give examples and a reason, but the study does not measure it. Their own abstract says acronyms are “not the biggest current problem in science communication”.</p>\n<p>Two smaller errors. The 24 million are titles; abstracts were about 18 million. And the count covers titles and abstracts in English, not whole papers.</p>\n<p>A fair slide: “Acronyms in medical abstracts grew about ten times as dense between 1956 and 2019, and most are used only a few times.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Make the word list for the manuscript section you chose for this book’s build. List every abbreviation in it and every term for its main outcome. Decide which abbreviations stay, and which single term you will use for the outcome. Write the sentence that defines that term.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Check your list against four tests.</p>\n<ul>\n<li>No more than three abbreviations stay, each standard for your reader or used often in the section. Each is spelled out at first mention, and none is in the title.</li>\n<li>Every abbreviation that appears only once or twice is spelled out instead, or given a short plain name such as “the centre” or “the survey”.</li>\n<li>The outcome has one term. Every other word you found for it (excess weight, high BMI, obesity when you mean overweight or obesity) is replaced.</li>\n<li>The defining sentence gives the term, its cut-off or rule, and its source. The sentence under “Reporting it” in this section is one model.</li>\n</ul>\n<p>Then search the section for “significant”, “random”, “normal” and “correlat”. Each hit either names its test, process or number, or is rewritten.</p>"
+  }
+ ]
+}

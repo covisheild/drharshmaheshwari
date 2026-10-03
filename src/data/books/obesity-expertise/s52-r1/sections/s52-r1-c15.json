@@ -1,0 +1,234 @@
+{
+ "format": 1,
+ "id": "s52-r1-c15",
+ "label": "15",
+ "title": "Dates",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In R, a <dfn data-g=\"114\">date</dfn> is an <dfn data-g=\"321\">object</dfn> of <dfn data-g=\"68\">class</dfn> <code>Date</code>; <code>class(x)</code> names the kind of object <code>x</code> is. It is stored as a number of days since 1 January 1970 and printed in the <dfn data-g=\"242\">ISO 8601</dfn> form, year-month-day, such as 2021-04-03.</p>\n<p>Text becomes a date by <dfn data-g=\"332\">parsing</dfn>: reading it according to the order of its parts. The lubridate functions are named for that order. <code>ymd()</code> reads year, month, day; <code>dmy()</code> reads day, month, year; <code>mdy()</code> reads month, day, year. Each accepts any separator. Text that does not fit the order becomes <code>NA</code>, with a warning: how many failed, or that all of them did. <code>read_csv()</code> recognises dates already written as year-month-day and leaves other forms as text.</p>\n<p>Subtracting one date from another gives a time difference in days. Adding a number to a date gives the date that many days later.</p>",
+   "refs": [
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    6,
+    267,
+    268
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>To R, a date is a number of days, counted from 1 January 1970, that prints as year-month-day. Because it is a number underneath, you can subtract one date from another and get days.</p>\n<p>A date usually arrives as text, such as “03/04/2021”. Is that 3 April or 4 March? The text cannot tell you.</p>\n<p>Here is the trap. If you pick the wrong order, some dates come out wrong and still look like dates. Others fail and become <code>NA</code>.</p>\n<p>Broman and Woo recommend the ISO 8601 form, year-month-day: 2021-04-03.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c15-days-after-first.png",
+   "alt": "A bar chart of three visits: 2021-04-03 at 0, 2021-04-15 at 12, and 2021-02-28 at -34, below the zero line.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Days from the first camp visit to each visit, from subtracting one Date from another: 0 for the first visit itself, 12 for the visit of 2021-04-15, and -34 for the visit of 2021-02-28, which came before the first."
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c15-age-days-years.png",
+   "alt": "Three points on a straight dashed line: 7346 days at 20.1 years, 11319 days at 31.0 years, 13369 days at 36.6 years.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Age at the visit in days against age in years for the three made-up patients. Every point lies on y = x / 365.25. Patient 1’s 31.0 is printed rounded; the stored value is just under 31, so floor() gives 30 completed years."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a made-up camp register whose visit dates were typed with the day first. Here is its text, read with <code>I()</code> to mark it as data rather than a file name, as an earlier section did.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(dplyr, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">library</span>(lubridate)</span>\n<span></span>\n<span>camp <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">I</span>(<span class=\"st\">&quot;id,visit</span></span>\n<span><span class=\"st\">1,03/04/2021</span></span>\n<span><span class=\"st\">2,15/04/2021</span></span>\n<span><span class=\"st\">3,28/02/2021&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>camp</span></code></pre></div>\n<pre class=\"output\"><code>\nAttaching package: ‘lubridate’\n\nThe following objects are masked from ‘package:base’:\n\n    date, intersect, setdiff, union\n\n# A tibble: 3 × 2\n     id visit\n  &lt;dbl&gt; &lt;chr&gt;\n1     1 03/04/2021\n2     2 15/04/2021\n3     3 28/02/2021</code></pre>\n<p>The <code>visit</code> column is <code>&lt;chr&gt;</code>, text. These dates are not year-month-day, so <code>read_csv()</code> left them as they were. Loading lubridate printed a masking message, like dplyr’s in an earlier section.</p>\n<p>Try the wrong order first. Year first:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">ymd</span>(camp<span class=\"sc\">$</span>visit)</span></code></pre></div>\n<pre class=\"output\"><code>[1] NA NA NA\nWarning message:\nAll formats failed to parse. No formats found.</code></pre>\n<p>Every date is <code>NA</code>, and the warning says no format fitted. That failure is loud, which is good. Now month first:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">mdy</span>(camp<span class=\"sc\">$</span>visit)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;2021-03-04&quot; NA           NA\nWarning message:\n 2 failed to parse.</code></pre>\n<p>This one is worse. Two dates failed: there is no 15th or 28th month. But the first, 03/04/2021, became 4 March 2021, which looks like a perfectly good date. If every date in the column had a day of 12 or less, nothing would fail and every date would be wrong.</p>\n<p>Day first is the order the register used:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>camp <span class=\"ot\">&lt;-</span> camp <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">mutate</span>(<span class=\"at\">visit_date =</span> <span class=\"fu\">dmy</span>(visit))</span>\n<span></span>\n<span>camp</span></code></pre></div>\n<pre class=\"output\"><code># A tibble: 3 × 3\n     id visit      visit_date\n  &lt;dbl&gt; &lt;chr&gt;      &lt;date&gt;\n1     1 03/04/2021 2021-04-03\n2     2 15/04/2021 2021-04-15\n3     3 28/02/2021 2021-02-28</code></pre>\n<p>All three are dates now, printed year-month-day. The new column is <code>&lt;date&gt;</code>, and the text column is still beside it.</p>\n<p>A date is a number underneath, so you can do arithmetic with it. How many days after the first visit was each visit?</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>camp<span class=\"sc\">$</span>visit_date <span class=\"sc\">-</span> camp<span class=\"sc\">$</span>visit_date[<span class=\"dv\">1</span>]</span>\n<span></span>\n<span><span class=\"fu\">as.numeric</span>(<span class=\"fu\">ymd</span>(<span class=\"st\">&quot;2021-04-03&quot;</span>))</span></code></pre></div>\n<pre class=\"output\"><code>Time differences in days\n[1]   0  12 -34\n[1] 18720</code></pre>\n<p>Subtraction gives a time difference in days: 0, 12 and -34. The third visit, in February, came 34 days before the first, so its difference is negative. The last line shows the number behind a date: 3 April 2021 is 18720 days after 1 January 1970. Dates compare like numbers too: <code>visit_date &gt;= ymd(\"2021-04-01\")</code> is <code>TRUE</code> for the two April visits.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The register is made up. A column that mixes orders, some day first and some month first, cannot be fixed by any single function. The 03/04 dates in it are lost unless another record says which was meant.</p>\n<p>One date with a day above 12 settles the order only if the whole column was written one way. Check the <dfn data-g=\"109\">data dictionary</dfn> or the form the data came from.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a date that arrives as a number. A colleague exports a spreadsheet, and the visit date column comes out as 41822. Data Carpentry’s spreadsheet lesson says Excel “counts the days from a <dfn data-g=\"117\">default</dfn> of December 31, 1899, and thus stores July 2, 2014 as the serial number 41822”. Take the first half of that sentence and add the days:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(lubridate)</span>\n<span></span>\n<span><span class=\"fu\">ymd</span>(<span class=\"st\">&quot;1899-12-31&quot;</span>) <span class=\"sc\">+</span> <span class=\"dv\">41822</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;2014-07-03&quot;</code></pre>\n<p>3 July 2014. The lesson’s own example says 2 July. Its two statements, taken literally, are a day apart. You do not need to know why to protect yourself. Find a start that gives the date you know:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">ymd</span>(<span class=\"st\">&quot;1899-12-30&quot;</span>) <span class=\"sc\">+</span> <span class=\"dv\">41822</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;2014-07-02&quot;</code></pre>\n<p>2 July 2014, which matches. So the rule for this kind of file is: start from 30 December 1899. And the habit, which matters more than the rule: when you convert a spreadsheet’s numbers to dates, check one date whose true value you know.</p>\n<p>The lesson warns of a second system too. Excel on a Mac has used a 1904 starting date, so the same number can mean a date about four years away. Broman and Woo say the same: Excel stores dates “internally as a number, with different conventions on Windows and Macs”.</p>\n<p>Spreadsheets also make dates out of things that are not dates. Ziemann and colleagues found the <dfn data-g=\"198\">gene</dfn> symbol SEPT2 turned into “2006/09/02” in one supplementary file, a full date with a year the spreadsheet supplied. They found gene name errors in 19.6% of the papers they screened whose Excel files held gene lists, as the first section of this book showed. R does not do this. Read the same text with <code>read_csv()</code>:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span></span>\n<span>genes <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">I</span>(<span class=\"st\">&quot;gene</span></span>\n<span><span class=\"st\">SEPT2</span></span>\n<span><span class=\"st\">MARCH1&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>genes</span></code></pre></div>\n<pre class=\"output\"><code># A tibble: 2 × 1\n  gene\n  &lt;chr&gt;\n1 SEPT2\n2 MARCH1</code></pre>\n<p>Still text. R parses a date only when you ask it to, with a function whose name says the order.</p>",
+   "numberRefs": [
+    269,
+    39
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>“Start from 30 December 1899” reproduces the lesson’s one example, 41822 as 2 July 2014. This book has not checked it for dates before March 1900 or for files made on a Mac, and the lesson warns that both differ. Check against a known date in your own file.</p>\n<p>That R leaves text alone does not undo a spreadsheet’s change. A gene list saved after the spreadsheet turned SEPT2 into a date holds the date, and R reads the date.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Last, the calculation every clinic register needs: age at a visit. Here is a made-up register of three people, with the date of birth and the visit date both written day first.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(dplyr)</span>\n<span><span class=\"fu\">library</span>(lubridate)</span>\n<span></span>\n<span>patients <span class=\"ot\">&lt;-</span> <span class=\"fu\">tibble</span>(</span>\n<span>  <span class=\"at\">id =</span> <span class=\"fu\">c</span>(<span class=\"dv\">1</span>, <span class=\"dv\">2</span>, <span class=\"dv\">3</span>),</span>\n<span>  <span class=\"at\">dob =</span> <span class=\"fu\">dmy</span>(<span class=\"fu\">c</span>(<span class=\"st\">&quot;14/08/1990&quot;</span>, <span class=\"st\">&quot;02/01/1985&quot;</span>, <span class=\"st\">&quot;30/06/2001&quot;</span>)),</span>\n<span>  <span class=\"at\">visit =</span> <span class=\"fu\">dmy</span>(<span class=\"fu\">c</span>(<span class=\"st\">&quot;10/08/2021&quot;</span>, <span class=\"st\">&quot;10/08/2021&quot;</span>, <span class=\"st\">&quot;10/08/2021&quot;</span>))</span>\n<span>)</span>\n<span></span>\n<span>patients <span class=\"ot\">&lt;-</span> patients <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">mutate</span>(</span>\n<span>    <span class=\"at\">age_days =</span> <span class=\"fu\">as.numeric</span>(visit <span class=\"sc\">-</span> dob),</span>\n<span>    <span class=\"at\">age_years =</span> age_days <span class=\"sc\">/</span> <span class=\"fl\">365.25</span>,</span>\n<span>    <span class=\"at\">age_completed =</span> <span class=\"fu\">floor</span>(age_years)</span>\n<span>  )</span>\n<span></span>\n<span>patients</span></code></pre></div>\n<pre class=\"output\"><code># A tibble: 3 × 6\n     id dob        visit      age_days age_years age_completed\n  &lt;dbl&gt; &lt;date&gt;     &lt;date&gt;        &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1     1 1990-08-14 2021-08-10    11319      31.0            30\n2     2 1985-01-02 2021-08-10    13369      36.6            36\n3     3 2001-06-30 2021-08-10     7346      20.1            20</code></pre>\n<p>Read it one column at a time. <code>visit - dob</code> is the time difference in days, and <code>as.numeric()</code> keeps the number. Dividing by 365.25, the average length of a year counting leap years, gives age in years with a <dfn data-g=\"189\">fraction</dfn>. <code>floor()</code> rounds down to the whole number below, which is age in completed years, the way a register writes it.</p>\n<p>Patient 1 is 30, not 31. The visit was on 10 August and the birthday is on 14 August, so the 31st birthday had not come. The <dfn data-g=\"479\">tibble</dfn> prints <code>age_years</code> as 31.0 because it rounds to fit the column; the stored value is a little under 31, and <code>floor()</code> sees the stored value. Subtracting the years, 2021 minus 1990, would have said 31.</p>\n<p>The same arithmetic works on the penguin file, whose <code>Date Egg</code> column <code>read_csv()</code> read as dates by itself:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span>\n<span></span>\n<span><span class=\"fu\">min</span>(penguins_raw<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Date Egg</span><span class=\"st\">`</span>)</span>\n<span><span class=\"fu\">max</span>(penguins_raw<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Date Egg</span><span class=\"st\">`</span>)</span>\n<span><span class=\"fu\">max</span>(penguins_raw<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Date Egg</span><span class=\"st\">`</span>) <span class=\"sc\">-</span> <span class=\"fu\">min</span>(penguins_raw<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Date Egg</span><span class=\"st\">`</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;2007-11-09&quot;\n[1] &quot;2009-12-01&quot;\nTime difference of 753 days</code></pre>\n<p><code>Date Egg</code>, says the data’s <dfn data-g=\"212\">help page</dfn>, is the date the study nest was observed with one egg. The first is 9 November 2007 and the last 1 December 2009, 753 days later.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Dividing by 365.25 is a rule of thumb. On the day before or after a birthday it can put a person in the wrong whole year. For an exact age in completed years, lubridate has functions that count calendar years, which this book does not cover. Where a cut-point at an exact age matters, check the people near it by hand.</p>\n<p>The three patients are made up. The penguin dates describe when study nests were observed, not anything about penguins in general.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Read day-first text with <code>mdy()</code>, and every date whose day is 12 or less comes out as a real, wrong date. Only the others fail.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before parsing a date column, find out the order of its parts from the data dictionary or the form.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Read every “failed to parse” warning. It says how many dates became <code>NA</code>, or that all of them did.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you design a form or a register, write dates as year-month-day, ISO 8601, as Broman and Woo recommend.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A spreadsheet date may reach you as a day count such as 41822. The starting date differs between systems, and a one-day or four-year slip looks like a real date.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Compute age from the date of birth and the visit date, never by subtracting years.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>If a spreadsheet already turned a gene name or a date into something else, no function in R can tell you what was there before.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>In your penguin <dfn data-g=\"427\">script</dfn>, check that <code>Date Egg</code> came in as a date, and count its missing values.</p>",
+   "type": "calculation",
+   "confidence": false,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span>\n<span></span>\n<span><span class=\"fu\">class</span>(penguins_raw<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Date Egg</span><span class=\"st\">`</span>)</span>\n<span><span class=\"fu\">sum</span>(<span class=\"fu\">is.na</span>(penguins_raw<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Date Egg</span><span class=\"st\">`</span>))</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;Date&quot;\n[1] 0</code></pre>\n<p>The column is already a <code>Date</code>, because the file writes it year-month-day. No date is missing, so <code>min()</code> and <code>max()</code> on it need no <code>na.rm</code>.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Without looking back, say which lubridate function reads “28/02/2021”, and what <code>mdy()</code> would give for “03/04/2021”.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p><code>dmy()</code>, because the day comes first. <code>mdy()</code> would read “03/04/2021” as month 3, day 4: 4 March 2021. That is a real date, and the wrong one if the register meant 3 April.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>You are designing the data-entry <dfn data-g=\"438\">sheet</dfn> for a made-up school survey that records each child’s date of birth and the date they were measured. Write the two lines of the data dictionary for these columns, and say what the analysis script will do with them.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>One possible answer.</p>\n<table style=\"width:97%;\">\n\n<thead>\n<tr>\n<th>Variable</th>\n<th>Label</th>\n<th>Type</th>\n<th>Format</th>\n<th>Missing value code</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>dob</td>\n<td>date of birth</td>\n<td>date</td>\n<td>YYYY-MM-DD, for example 2014-06-21</td>\n<td>empty cell</td>\n</tr>\n<tr>\n<td>measure_date</td>\n<td>date measured</td>\n<td>date</td>\n<td>YYYY-MM-DD</td>\n<td>empty cell</td>\n</tr>\n</tbody>\n</table>\n<p>The script reads the file with <code>read_csv()</code>, which recognises year-month-day dates by itself. It checks that both columns came in as dates, and counts any missing. Then it computes age at measurement from <code>measure_date - dob</code>, in completed years with <code>floor()</code>. Nobody types an age: the age is computed in code, so it can be checked.</p>\n<p>Writing the format in the dictionary, with an example, is the step that stops a data-entry operator from typing 21/06/2014.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Turn the text “2023-11-14” into a date. Say what class the result has.</p>",
+   "level": 1,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>d <span class=\"ot\">&lt;-</span> <span class=\"fu\">ymd</span>(<span class=\"st\">&quot;2023-11-14&quot;</span>)</span>\n<span>d</span>\n<span><span class=\"fu\">class</span>(d)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;2023-11-14&quot;\n[1] &quot;Date&quot;</code></pre>\n<p>The year comes first, so <code>ymd()</code>. The result prints as 2023-11-14 and its class is <code>Date</code>.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Before you run them, say what each line gives.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span><span class=\"fu\">dmy</span>(<span class=\"st\">&quot;05/06/2022&quot;</span>)</span>\n<span><span class=\"fu\">mdy</span>(<span class=\"st\">&quot;05/06/2022&quot;</span>)</span></code></pre></div>",
+   "level": 2,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span><span class=\"fu\">dmy</span>(<span class=\"st\">&quot;05/06/2022&quot;</span>)</span>\n<span><span class=\"fu\">mdy</span>(<span class=\"st\">&quot;05/06/2022&quot;</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;2022-06-05&quot;\n[1] &quot;2022-05-06&quot;</code></pre>\n<p><code>dmy()</code> gives 5 June 2022 and <code>mdy()</code> gives 6 May 2022. The same text, two dates a month apart, and both look right.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Before you run it, say how many days this gives, and why.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span><span class=\"fu\">ymd</span>(<span class=\"st\">&quot;2024-03-01&quot;</span>) <span class=\"sc\">-</span> <span class=\"fu\">ymd</span>(<span class=\"st\">&quot;2024-02-01&quot;</span>)</span></code></pre></div>",
+   "level": 3,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span><span class=\"fu\">ymd</span>(<span class=\"st\">&quot;2024-03-01&quot;</span>) <span class=\"sc\">-</span> <span class=\"fu\">ymd</span>(<span class=\"st\">&quot;2024-02-01&quot;</span>)</span></code></pre></div>\n<pre class=\"output\"><code>Time difference of 29 days</code></pre>\n<p>29 days. 2024 is a leap year, so February 2024 has 29 days. Date arithmetic counts the calendar, not 30 days a month.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Read the penguin file.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span></code></pre></div>\n<p>How many days separate the first nest observed in the file and the first nest of the second season, which starts on 2008-11-02?</p>",
+   "level": 4,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span><span class=\"fu\">ymd</span>(<span class=\"st\">&quot;2008-11-02&quot;</span>) <span class=\"sc\">-</span> <span class=\"fu\">min</span>(penguins_raw<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Date Egg</span><span class=\"st\">`</span>)</span></code></pre></div>\n<pre class=\"output\"><code>Time difference of 359 days</code></pre>\n<p>The first nest in the file was observed on 2007-11-09, so 359 days separate the two. The second season’s date is typed as text and parsed with <code>ymd()</code>; the file’s own date is already a date.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Read the penguin file.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(dplyr, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span></code></pre></div>\n<p>How many rows have a <code>Date Egg</code> in November 2008?</p>",
+   "level": 5,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>penguins_raw <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">filter</span>(</span>\n<span>    <span class=\"st\">`</span><span class=\"at\">Date Egg</span><span class=\"st\">`</span> <span class=\"sc\">&gt;=</span> <span class=\"fu\">ymd</span>(<span class=\"st\">&quot;2008-11-01&quot;</span>),</span>\n<span>    <span class=\"st\">`</span><span class=\"at\">Date Egg</span><span class=\"st\">`</span> <span class=\"sc\">&lt;=</span> <span class=\"fu\">ymd</span>(<span class=\"st\">&quot;2008-11-30&quot;</span>)</span>\n<span>  ) <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">nrow</span>()</span></code></pre></div>\n<pre class=\"output\"><code>[1] 114</code></pre>\n<p>114 rows. “On or after 1 November and on or before 30 November” is two comparisons, as <code>filter()</code> would write for any number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A made-up register records two children measured at a school camp. Work out each child’s age at measurement in completed years.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(dplyr, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>children <span class=\"ot\">&lt;-</span> <span class=\"fu\">tibble</span>(</span>\n<span>  <span class=\"at\">id =</span> <span class=\"fu\">c</span>(<span class=\"st\">&quot;C1&quot;</span>, <span class=\"st\">&quot;C2&quot;</span>),</span>\n<span>  <span class=\"at\">dob =</span> <span class=\"fu\">dmy</span>(<span class=\"fu\">c</span>(<span class=\"st\">&quot;21/06/2014&quot;</span>, <span class=\"st\">&quot;05/12/2013&quot;</span>)),</span>\n<span>  <span class=\"at\">measured =</span> <span class=\"fu\">dmy</span>(<span class=\"fu\">c</span>(<span class=\"st\">&quot;20/06/2024&quot;</span>, <span class=\"st\">&quot;20/06/2024&quot;</span>))</span>\n<span>)</span></code></pre></div>",
+   "level": 6,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>children <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">mutate</span>(</span>\n<span>    <span class=\"at\">age_years =</span> <span class=\"fu\">as.numeric</span>(measured <span class=\"sc\">-</span> dob) <span class=\"sc\">/</span> <span class=\"fl\">365.25</span>,</span>\n<span>    <span class=\"at\">age_completed =</span> <span class=\"fu\">floor</span>(age_years)</span>\n<span>  )</span></code></pre></div>\n<pre class=\"output\"><code># A tibble: 2 × 5\n  id    dob        measured   age_years age_completed\n  &lt;chr&gt; &lt;date&gt;     &lt;date&gt;         &lt;dbl&gt;         &lt;dbl&gt;\n1 C1    2014-06-21 2024-06-20      10.0             9\n2 C2    2013-12-05 2024-06-20      10.5            10</code></pre>\n<p>C1 is 9 in completed years: measured on 20 June, a day before the 10th birthday. The printed 10.0 is rounded to fit; the stored age is a little under 10. C2 is 10. A report that subtracted years, 2024 minus 2014, would have made C1 10.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A colleague reads a made-up register whose dates were typed day first, and reports: “Visit dates were missing for all three patients.”</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>visits <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"st\">&quot;12/01/2022&quot;</span>, <span class=\"st\">&quot;19/01/2022&quot;</span>, <span class=\"st\">&quot;26/01/2022&quot;</span>)</span>\n<span><span class=\"fu\">ymd</span>(visits)</span></code></pre></div>\n<pre class=\"output\"><code>[1] NA NA NA\nWarning message:\nAll formats failed to parse. No formats found.</code></pre>\n<p>Find what broke.</p>",
+   "level": 7,
+   "answer": "<p>The dates are not missing. They were read in the wrong order. <code>ymd()</code> expects the year first, nothing fitted, and every value became <code>NA</code>. The warning says no format was found.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">dmy</span>(visits)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;2022-01-12&quot; &quot;2022-01-19&quot; &quot;2022-01-26&quot;</code></pre>\n<p>12, 19 and 26 January 2022.</p>\n<p>Why the wrong report looks reasonable: R prints <code>NA</code>, which is R’s word for missing. Here it meant “could not be read”. The warning above it said which.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A colleague reads a made-up register whose dates were typed day first. They report: “1 of the 3 screening dates was missing; the first patient was screened on 3 February 2023.”</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>screened <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"st\">&quot;02/03/2023&quot;</span>, <span class=\"st\">&quot;11/03/2023&quot;</span>, <span class=\"st\">&quot;17/03/2023&quot;</span>)</span>\n<span><span class=\"fu\">mdy</span>(screened)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;2023-02-03&quot; &quot;2023-11-03&quot; NA\nWarning message:\n 1 failed to parse.</code></pre>\n<p>Find what broke.</p>",
+   "level": 7,
+   "answer": "<p><code>mdy()</code> read the text month first. “02/03/2023” became 3 February 2023, a real date and the wrong one. “17/03/2023” failed, because there is no 17th month. The middle date, “11/03/2023”, became 3 November 2023, also wrong. Nothing was missing.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">dmy</span>(screened)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;2023-03-02&quot; &quot;2023-03-11&quot; &quot;2023-03-17&quot;</code></pre>\n<p>2, 11 and 17 March 2023.</p>\n<p>Why the wrong report looks reasonable: two of the three dates came out as dates. The one <code>NA</code> looked like a gap in the register. It was the only value whose day was above 12, and so the only one that could have shown the order was wrong.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A made-up spreadsheet export gives two visit dates as day counts, 45292 and 45306. The colleague who exported it remembers that the first visit was on 1 January 2024. A resident converts them:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span><span class=\"fu\">ymd</span>(<span class=\"st\">&quot;1899-12-31&quot;</span>) <span class=\"sc\">+</span> <span class=\"fu\">c</span>(<span class=\"dv\">45292</span>, <span class=\"dv\">45306</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;2024-01-02&quot; &quot;2024-01-16&quot;</code></pre>\n<p>They report: “The first visit was on 2 January 2024.” Find what broke.</p>",
+   "level": 8,
+   "answer": "<p>The start date is a day late for this kind of file. The resident trusted a starting date instead of checking against the one date they knew. Start from 30 December 1899:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">ymd</span>(<span class=\"st\">&quot;1899-12-30&quot;</span>) <span class=\"sc\">+</span> <span class=\"fu\">c</span>(<span class=\"dv\">45292</span>, <span class=\"dv\">45306</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;2024-01-01&quot; &quot;2024-01-15&quot;</code></pre>\n<p>1 January and 15 January 2024. The first matches what the colleague remembers, so the second is right too.</p>\n<p>Why the wrong answer looks reasonable: 2 January 2024 is a real date, near the right one, and nothing failed. Only the known date gave it away. Always keep one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A made-up clinic note says: “The <dfn data-g=\"287\">median</dfn> time from screening to the first clinic visit was 14 days.” Here are the dates for the five patients it describes, typed day first.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(dplyr, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">library</span>(lubridate, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>clinic <span class=\"ot\">&lt;-</span> <span class=\"fu\">tibble</span>(</span>\n<span>  <span class=\"at\">id =</span> <span class=\"fu\">c</span>(<span class=\"dv\">1</span>, <span class=\"dv\">2</span>, <span class=\"dv\">3</span>, <span class=\"dv\">4</span>, <span class=\"dv\">5</span>),</span>\n<span>  <span class=\"at\">screened =</span> <span class=\"fu\">dmy</span>(<span class=\"fu\">c</span>(<span class=\"st\">&quot;02/05/2024&quot;</span>, <span class=\"st\">&quot;02/05/2024&quot;</span>, <span class=\"st\">&quot;09/05/2024&quot;</span>, <span class=\"st\">&quot;09/05/2024&quot;</span>, <span class=\"st\">&quot;16/05/2024&quot;</span>)),</span>\n<span>  <span class=\"at\">visited =</span> <span class=\"fu\">dmy</span>(<span class=\"fu\">c</span>(<span class=\"st\">&quot;13/05/2024&quot;</span>, <span class=\"st\">&quot;20/05/2024&quot;</span>, <span class=\"st\">&quot;23/05/2024&quot;</span>, <span class=\"st\">&quot;06/06/2024&quot;</span>, <span class=\"st\">&quot;30/05/2024&quot;</span>))</span>\n<span>)</span></code></pre></div>\n<p>Check the claim, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>clinic <span class=\"ot\">&lt;-</span> clinic <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">mutate</span>(<span class=\"at\">days =</span> <span class=\"fu\">as.numeric</span>(visited <span class=\"sc\">-</span> screened))</span>\n<span></span>\n<span>clinic<span class=\"sc\">$</span>days</span>\n<span><span class=\"fu\">median</span>(clinic<span class=\"sc\">$</span>days)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 11 18 14 28 14\n[1] 14</code></pre>\n<p>The gaps are 11, 18, 14, 28 and 14 days. In order, 11, 14, 14, 18, 28; the middle value is 14. The claim matches the dates.</p>\n<p>What it does not establish:</p>\n<ul>\n<li>That 14 days is typical for anyone else. Five patients are five patients.</li>\n<li>Anything about patients who were screened and never came. They have no visit date, so they are not in this table, and the median says nothing about them.</li>\n<li>Why the gaps differ. The longest, 28 days, may be a clinic closure or a patient’s own choice; the dates cannot tell you.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A made-up draft report on the penguin file says: “All penguins in the 2008–09 season laid their first egg in November 2008.” The <code>studyName</code> column names the season; PAL0809 is 2008–09. Check the claim in code, and say what the file can and cannot support.</p>",
+   "level": 10,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(dplyr, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span>\n<span></span>\n<span>season <span class=\"ot\">&lt;-</span> penguins_raw <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">filter</span>(studyName <span class=\"sc\">==</span> <span class=\"st\">&quot;PAL0809&quot;</span>)</span>\n<span></span>\n<span><span class=\"fu\">nrow</span>(season)</span>\n<span><span class=\"fu\">min</span>(season<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Date Egg</span><span class=\"st\">`</span>)</span>\n<span><span class=\"fu\">max</span>(season<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Date Egg</span><span class=\"st\">`</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 114\n[1] &quot;2008-11-02&quot;\n[1] &quot;2008-11-25&quot;</code></pre>\n<p>The 114 rows of that season run from 2008-11-02 to 2008-11-25. Every date is in November 2008.</p>\n<p>What the file cannot support:</p>\n<ul>\n<li>That the egg was laid on that date. The help page describes <code>Date Egg</code> as the date the study nest was “observed with 1 egg”. An egg may have been laid before the visit.</li>\n<li>“All penguins”. Each row is one bird at a study nest, not every penguin in the colony.</li>\n<li>A fair rewrite: “In the 2008–09 season, all 114 rows are of study nests first observed with one egg between 2 and 25 November 2008.”</li>\n</ul>"
+  }
+ ]
+}

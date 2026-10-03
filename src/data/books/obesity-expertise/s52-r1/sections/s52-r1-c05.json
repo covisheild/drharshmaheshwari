@@ -1,0 +1,202 @@
+{
+ "format": 1,
+ "id": "s52-r1-c05",
+ "label": "5",
+ "title": "Functions and arguments",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"194\">function call</dfn> is a function’s name followed by round brackets. The values written inside the brackets are its arguments, and the call returns one result, which R prints or which you assign to a name.</p>\n<p>Each argument has a name. An argument may be given by name, as <code>digits = 1</code>, or by position, in the order the function lists its arguments.</p>\n<p>Most arguments have a <dfn data-g=\"117\">default</dfn> value, which is used when the call does not give one. For <code>mean()</code>, <code>median()</code> and <code>sd()</code>, the argument <code>na.rm</code> says whether missing values (<code>NA</code>) are removed before the computation. Its default, <code>FALSE</code>, makes the result <code>NA</code> whenever a value is missing.</p>\n<p>A <dfn data-g=\"212\">help page</dfn>, opened with <code>?name</code> or <code>help(name)</code>, describes one function in fixed sections: Description, Usage, Arguments, Value (what it returns) and Examples.</p>",
+   "refs": [
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>heights_cm <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">152</span>, <span class=\"fl\">160.5</span>, <span class=\"dv\">171</span>)</span>\n<span><span class=\"fu\">mean</span>(heights_cm)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 161.1667</code></pre>\n<p>Whatever goes inside the brackets is an argument. Many functions take more than one. <code>round()</code> takes the number to round, called <code>x</code>, and how many <dfn data-g=\"116\">decimal</dfn> places to keep, called <code>digits</code>:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">round</span>(<span class=\"fl\">161.1667</span>, <span class=\"at\">digits =</span> <span class=\"dv\">1</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 161.2</code></pre>\n<p>Leave out an argument altogether and R uses its default. The default for <code>digits</code> is 0, so <code>round(161.1667)</code> gives a whole number.</p>\n<p>One call can sit inside another, and R works from the inside out:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">round</span>(<span class=\"fu\">mean</span>(heights_cm), <span class=\"at\">digits =</span> <span class=\"dv\">1</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 161.2</code></pre>\n<p>The pipe, written <code>|&gt;</code>, puts the steps in the order they happen. Read it as “then”. <dfn data-g=\"490\">Type</dfn> it as two characters, <code>|</code> then <code>&gt;</code>. A line that ends in <code>|&gt;</code> is unfinished, so R waits for the next line, as with the <code>+</code> prompt in section 2. The indent is only for reading:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>heights_cm <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">mean</span>() <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">round</span>(<span class=\"at\">digits =</span> <span class=\"dv\">1</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 161.2</code></pre>\n<p>The pipe hands the thing on its left to the call on its right, as the first argument. So <code>round(digits = 1)</code> here means <code>round(the mean, digits = 1)</code>.</p>\n<p>To find out what a function’s arguments are called and what they do, open its help page. Type a question mark and the name: <code>?round</code>.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c05-three-averages.png",
+   "alt": "A bar chart with three bars: missing weight typed as 0, mean, 3392.5 g; na.rm = TRUE, mean, 3769.444 g; na.rm = TRUE, median, 3650 g.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The same ten body masses, with penguin 4 missing, summarised three ways. Typing the missing weight as 0 gives a mean of 3392.5 g. Leaving it out with na.rm = TRUE gives a mean of 3769.444 g and a median of 3650 g, both from 9 values."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start where the last section stopped. Here again are the first ten body masses in the practice file, in grams, with the fourth missing. Ask for their mean:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span>\n<span><span class=\"fu\">mean</span>(body_mass_g)</span></code></pre></div>\n<pre class=\"output\"><code>[1] NA</code></pre>\n<p><code>NA</code> again. Open the help page:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>?mean</span></code></pre></div>\n<p>Read the Usage section first. It shows the call with every argument and its default: <code>mean(x, trim = 0, na.rm = FALSE, ...)</code>. Then read Arguments, which says what each one does. <code>na.rm</code> is “a logical evaluating to ‘TRUE’ or ‘FALSE’ indicating whether ‘NA’ values should be stripped before the computation proceeds”. Its default is <code>FALSE</code>: do not remove them. That is why one missing value made the mean <code>NA</code>. You did not ask for anything to be removed.</p>\n<p>Ask for it:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">mean</span>(body_mass_g, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3769.444</code></pre>\n<p>Now look at what that number is. It is not the mean of ten values. Check it with the tools from the last section, adding the known values and dividing by how many there are:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>known_g <span class=\"ot\">&lt;-</span> body_mass_g[<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(body_mass_g)]</span>\n<span><span class=\"fu\">sum</span>(known_g)</span>\n<span><span class=\"fu\">length</span>(known_g)</span>\n<span><span class=\"fu\">sum</span>(known_g) <span class=\"sc\">/</span> <span class=\"fu\">length</span>(known_g)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 33925\n[1] 9\n[1] 3769.444</code></pre>\n<p>The nine known masses add up to 33925 g, and 33925 divided by 9 is the same 3769.444 g. So <code>na.rm = TRUE</code> changed the count behind the mean from ten to nine. That is the honest answer, as long as you report the nine with it. A short way to count the values that are present is to add up a logical <dfn data-g=\"499\">vector</dfn>. In arithmetic R counts each <code>TRUE</code> as 1 and each <code>FALSE</code> as 0:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">sum</span>(<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(body_mass_g))</span></code></pre></div>\n<pre class=\"output\"><code>[1] 9</code></pre>\n<p>Here is the dishonest answer, which is easy to reach by accident. Suppose whoever typed the register wrote 0 where the weight was not taken:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_zero_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"dv\">0</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span>\n<span><span class=\"fu\">mean</span>(body_mass_zero_g)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3392.5</code></pre>\n<p>No warning, no <code>NA</code>, and a number that looks like a body mass. It is the 33925 g divided by 10, not by 9, as though one penguin weighed nothing. And <code>median()</code> has the same argument:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">median</span>(body_mass_g, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3650</code></pre>\n<table style=\"width:68%;\">\n\n<thead>\n<tr>\n<th>how the missing value was handled</th>\n<th>result (g)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>missing weight typed as 0, mean</td>\n<td>3392.5</td>\n</tr>\n<tr>\n<td>na.rm = TRUE, mean</td>\n<td>3769.444</td>\n</tr>\n<tr>\n<td>na.rm = TRUE, median</td>\n<td>3650</td>\n</tr>\n</tbody>\n</table>\n<p>Last, put the steps together for a report in kilograms. Nested, it reads inside out. Piped, it reads in order: take the masses, then convert to kilograms, then take the mean of the known values, then round to two decimal places.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">round</span>(<span class=\"fu\">mean</span>(body_mass_g <span class=\"sc\">/</span> <span class=\"dv\">1000</span>, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>), <span class=\"at\">digits =</span> <span class=\"dv\">2</span>)</span>\n<span></span>\n<span>(body_mass_g <span class=\"sc\">/</span> <span class=\"dv\">1000</span>) <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">mean</span>(<span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>) <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">round</span>(<span class=\"at\">digits =</span> <span class=\"dv\">2</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3.77\n[1] 3.77</code></pre>\n<p>Both give 3.77 kg. The sentence for the report is “mean body mass 3.77 kg (n = 9)”.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The ten masses are real rows of the practice file. The register with a 0 typed in is made up, to show what a zero does to a mean.</p>\n<p><code>na.rm = TRUE</code> gives the mean of the values present. It is the mean of all ten only if the missing one would have sat at that same mean, and nothing here can tell you whether it would. Which values go missing, and why, is a question for a later book in this course.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Error messages are about a call. Read them as sentences. Leave out an argument that has no default:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">mean</span>()</span></code></pre></div>\n<pre class=\"output\"><code>Error in mean.default() : argument &quot;x&quot; is missing, with no default</code></pre>\n<p>The message names the function (<code>mean.default</code> is the version of <code>mean()</code> that handles plain numbers) and says exactly what is wrong: the argument <code>x</code> is missing and has no default.</p>\n<p>Misspell a value:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">mean</span>(body_mass_g, <span class=\"at\">na.rm =</span> true)</span></code></pre></div>\n<pre class=\"output\"><code>Error: object &#39;true&#39; not found</code></pre>\n<p>R knows <code>TRUE</code> in capitals. To it, <code>true</code> is the name of an <dfn data-g=\"321\">object</dfn>, and no object with that name exists. Give a function the wrong kind of value:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">round</span>(<span class=\"st\">&quot;3.77&quot;</span>, <span class=\"at\">digits =</span> <span class=\"dv\">1</span>)</span></code></pre></div>\n<pre class=\"output\"><code>Error in round(&quot;3.77&quot;, digits = 1) :\n  non-numeric argument to mathematical function</code></pre>\n<p><code>round()</code> needs a number and was given text.</p>\n<p>Errors are the friendly failures, because they stop you. The dangerous mistake is the call that runs. Suppose you want the mean of three body masses and forget <code>c()</code>:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">mean</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3750</code></pre>\n<p>No error and no warning, and 3750 g is a believable body mass. It is wrong. Without <code>c()</code>, the three numbers are three separate arguments, matched by position. <code>mean()</code> took 3750 as <code>x</code>, 3800 as its second argument, <code>trim</code>, and 3250 went into the <code>...</code> that collects extra arguments. The help page says <code>trim</code> is “the <dfn data-g=\"189\">fraction</dfn> (0 to 0.5) of observations to be trimmed from each end of ‘x’ before the mean is computed”, and that values outside that range are taken as the nearest end. So <code>trim</code> became 0.5, and the “mean” of the single value 3750 is 3750. The call you meant:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">mean</span>(<span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>))</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3600</code></pre>\n<p>The mean of the three is 3600 g.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Not every wrong call is silent and not every one errors; which happens depends on the function. The trim behaviour is particular to <code>mean()</code>. The general lesson is to put the values you mean to combine inside <code>c()</code> and to name every argument after the first.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to read <code>mean(x, na.rm = TRUE)</code> as the mean of all your values. It is the mean of the values present. Report the count with it, “3.77 kg (n = 9)”, every time.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A missing value typed as 0 gives no <code>NA</code> and no warning, and pulls the mean down.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Name every argument after the first. <code>round(x, digits = 1)</code> says what the 1 is. <code>mean(3750, 3800, 3250)</code> runs, gives 3750 and is wrong, because unnamed values were matched by position to arguments you did not intend.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you use a function for the first time, open its help page and read Usage and Arguments.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Read an <dfn data-g=\"154\">error message</dfn> as a sentence about one call: which function, which argument, what was wrong. Fix that argument and nothing else, then run the line again.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>No argument can tell you why a value is missing.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>If you find yourself copying the same block of calls three times with one thing changed, you need a function of your own. Writing one is taught in a later book in this course.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A first-year resident has ten minutes and R open. They have never read a help page. Teach them to find out, from <code>?round</code> alone, what <code>round(3.14159)</code> will give and why.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Ask them to type <code>?round</code> and look at the page with you. Point to three parts in turn.</p>\n<p>Description says, in one line, that <code>round</code> rounds “to the specified number of decimal places (default 0)”.</p>\n<p>Usage shows the call written out with its defaults: <code>round(x, digits = 0)</code>. Ask them what <code>digits = 0</code> means. It means that if they give no <code>digits</code>, R uses 0.</p>\n<p>Arguments says what <code>x</code> and <code>digits</code> are. Ask them to predict <code>round(3.14159)</code> from that. No <code>digits</code> is given, so the default 0 applies, and the answer is a whole number, 3. Then let them run it:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">round</span>(<span class=\"fl\">3.14159</span>)</span>\n<span><span class=\"fu\">round</span>(<span class=\"fl\">3.14159</span>, <span class=\"at\">digits =</span> <span class=\"dv\">2</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3\n[1] 3.14</code></pre>\n<p>Finish by asking them to run one line from the Examples section at the bottom of the page. The habit to leave them with: Usage for the defaults, Arguments for what each one does, Examples to try it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Without looking back, say what <code>na.rm = TRUE</code> does in <code>mean(x, na.rm = TRUE)</code> and what its default is. Then say what you must report beside a mean computed this way.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>It removes the missing values before the mean is computed. The default is <code>na.rm = FALSE</code>, which gives <code>NA</code> whenever a value is missing. Because the mean is then of the values present, report how many there were, as in “3.77 kg (n = 9)”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A made-up adult’s BMI is 24.83702 kg/m<sup>2</sup>. Write one call that rounds it to one decimal place and one that rounds it to a whole number.</p>",
+   "level": 1,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">round</span>(<span class=\"fl\">24.83702</span>, <span class=\"at\">digits =</span> <span class=\"dv\">1</span>)</span>\n<span><span class=\"fu\">round</span>(<span class=\"fl\">24.83702</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 24.8\n[1] 25</code></pre>\n<p>With no <code>digits</code>, <code>round()</code> uses its default, 0, and gives a whole number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Find the mean of the four numbers 4, 8, a missing value and 6, with the default behaviour. Then find it using only the values that are present.</p>",
+   "level": 2,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">mean</span>(<span class=\"fu\">c</span>(<span class=\"dv\">4</span>, <span class=\"dv\">8</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">6</span>))</span>\n<span><span class=\"fu\">mean</span>(<span class=\"fu\">c</span>(<span class=\"dv\">4</span>, <span class=\"dv\">8</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">6</span>), <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] NA\n[1] 6</code></pre>\n<p>The default gives <code>NA</code>. With <code>na.rm = TRUE</code>, R averages 4, 8 and 6, which sum to 18, and 18 divided by 3 is 6.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Rewrite this nested call with the pipe, one step per line, and check that it gives the same answer.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">round</span>(<span class=\"fu\">mean</span>(<span class=\"fu\">c</span>(<span class=\"fl\">61.2</span>, <span class=\"fl\">58.4</span>, <span class=\"fl\">70.9</span>)), <span class=\"at\">digits =</span> <span class=\"dv\">1</span>)</span></code></pre></div>",
+   "level": 3,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">round</span>(<span class=\"fu\">mean</span>(<span class=\"fu\">c</span>(<span class=\"fl\">61.2</span>, <span class=\"fl\">58.4</span>, <span class=\"fl\">70.9</span>)), <span class=\"at\">digits =</span> <span class=\"dv\">1</span>)</span>\n<span></span>\n<span><span class=\"fu\">c</span>(<span class=\"fl\">61.2</span>, <span class=\"fl\">58.4</span>, <span class=\"fl\">70.9</span>) <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">mean</span>() <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">round</span>(<span class=\"at\">digits =</span> <span class=\"dv\">1</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 63.5\n[1] 63.5</code></pre>\n<p>The innermost call, <code>mean()</code>, comes first in the pipe. Each pipe hands the result on as the first argument of the next call.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>The first ten flipper lengths in <code>penguins_raw.csv</code> are 181, 186, 195, a missing value, 193, 190, 181, 195, 193 and 190 mm. Give their mean and their <dfn data-g=\"287\">median</dfn> in centimetres, each to one decimal place, and say how many values each is based on.</p>",
+   "level": 4,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>flipper_mm <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">181</span>, <span class=\"dv\">186</span>, <span class=\"dv\">195</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">193</span>, <span class=\"dv\">190</span>, <span class=\"dv\">181</span>, <span class=\"dv\">195</span>, <span class=\"dv\">193</span>, <span class=\"dv\">190</span>)</span>\n<span>flipper_cm <span class=\"ot\">&lt;-</span> flipper_mm <span class=\"sc\">/</span> <span class=\"dv\">10</span></span>\n<span><span class=\"fu\">round</span>(<span class=\"fu\">mean</span>(flipper_cm, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>), <span class=\"at\">digits =</span> <span class=\"dv\">1</span>)</span>\n<span><span class=\"fu\">round</span>(<span class=\"fu\">median</span>(flipper_cm, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>), <span class=\"at\">digits =</span> <span class=\"dv\">1</span>)</span>\n<span><span class=\"fu\">sum</span>(<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(flipper_cm))</span></code></pre></div>\n<pre class=\"output\"><code>[1] 18.9\n[1] 19\n[1] 9</code></pre>\n<p>The mean is 18.9 cm and the median is 19 cm, each from the 9 rows whose flipper length is recorded. R prints 19 rather than 19.0: a single value is printed without a trailing zero.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Using only the help page of <code>sd()</code>, find how to make it leave out missing values. The first ten body masses in <code>penguins_raw.csv</code> are 3750, 3800, 3250, a missing value, 3450, 3650, 3625, 4675, 3475 and 4250 g. Give their <dfn data-g=\"456\">standard deviation</dfn>, rounded to the nearest gram.</p>",
+   "level": 5,
+   "answer": "<p>The Usage section of <code>?sd</code> reads <code>sd(x, na.rm = FALSE)</code>, and Arguments says <code>na.rm</code> decides whether missing values are removed. The default is <code>FALSE</code>, so set it to <code>TRUE</code>:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span>\n<span><span class=\"fu\">round</span>(<span class=\"fu\">sd</span>(body_mass_g, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>))</span></code></pre></div>\n<pre class=\"output\"><code>[1] 440</code></pre>\n<p>The standard deviation of the 9 known body masses is 440 g. In Book 0, a standard deviation from a sample divides by one less than the count. The help page says <code>sd()</code> does the same: “Like ‘var’ this uses <dfn data-g=\"120\">denominator</dfn> n - 1.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Without using <code>mean()</code>, write code that gives the same number as <code>mean(body_mass_g, na.rm = TRUE)</code> for the ten body masses in problem 5. Then show that the two agree.</p>",
+   "level": 6,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span>\n<span>known_g <span class=\"ot\">&lt;-</span> body_mass_g[<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(body_mass_g)]</span>\n<span><span class=\"fu\">sum</span>(known_g) <span class=\"sc\">/</span> <span class=\"fu\">length</span>(known_g)</span>\n<span><span class=\"fu\">mean</span>(body_mass_g, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3769.444\n[1] 3769.444</code></pre>\n<p>Both give 3769.444 g. Removing the missing value first and then dividing by the count of what is left is exactly what <code>na.rm = TRUE</code> does.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A colleague wants the mean of three body masses. Their code and output are below, and they report “the mean body mass was 3750 g”. Find what broke, and say why the answer looks reasonable.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">mean</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3750</code></pre>",
+   "level": 7,
+   "answer": "<p>The three numbers are not inside <code>c()</code>, so they are three separate arguments. R matched them by position: 3750 became <code>x</code>, 3800 became <code>trim</code>, and 3250 went into <code>...</code>. A <code>trim</code> above 0.5 is taken as 0.5. <code>x</code> is the single value 3750, and any mean of one value, trimmed or not, is that value.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">mean</span>(<span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>))</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3600</code></pre>\n<p>The mean is 3600 g. The wrong answer looks reasonable because 3750 g is one of the masses. It lies inside the range of the data, and R gave no warning.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A colleague’s <dfn data-g=\"427\">script</dfn> stops at this line. The error is below. Find what broke.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>)</span>\n<span><span class=\"fu\">mean</span>(body_mass_g, <span class=\"at\">na.rm =</span> true)</span></code></pre></div>\n<pre class=\"output\"><code>Error: object &#39;true&#39; not found</code></pre>",
+   "level": 8,
+   "answer": "<p>R’s logical values are written in capitals, <code>TRUE</code> and <code>FALSE</code>. Written in small letters, <code>true</code> is read as the name of an object, and there is no object called <code>true</code>.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">mean</span>(body_mass_g, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3562.5</code></pre>\n<p>The mean of the four known masses is 3562.5 g. The error message gave the answer: it names the word R could not find.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A colleague reports the mean of the first ten body masses (problem 5) in kilograms, to two decimal places, as 3.78 kg. Their code and output are below. Find what broke, and say why the answer looks reasonable.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span>\n<span><span class=\"fu\">round</span>(body_mass_g <span class=\"sc\">/</span> <span class=\"dv\">1000</span>) <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">mean</span>(<span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>) <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">round</span>(<span class=\"at\">digits =</span> <span class=\"dv\">2</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3.78</code></pre>",
+   "level": 8,
+   "answer": "<p>The masses were rounded to whole kilograms before the mean was taken. Each value lost up to half a kilogram first, and only then were the values averaged. Look at what went into the mean:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">round</span>(body_mass_g <span class=\"sc\">/</span> <span class=\"dv\">1000</span>)</span></code></pre></div>\n<pre class=\"output\"><code> [1]  4  4  3 NA  3  4  4  5  3  4</code></pre>\n<p>Round once, at the end:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>(body_mass_g <span class=\"sc\">/</span> <span class=\"dv\">1000</span>) <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">mean</span>(<span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>) <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">round</span>(<span class=\"at\">digits =</span> <span class=\"dv\">2</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3.77</code></pre>\n<p>The mean of the 9 known masses is 3.77 kg. The wrong answer looks reasonable because it has the digits asked for and is only 0.01 kg away. It came from whole numbers, though, so its second decimal place means nothing. This is Book 0’s rule again: keep full <dfn data-g=\"357\">precision</dfn> while you work and round once, at the end.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A made-up draft report says: “The average body mass in the first ten rows was 3392.5 g.” The first ten body masses are as in problem 5. Work out with code how that number could have been produced. Say what the sentence gets wrong, and what a corrected sentence still does not establish.</p>",
+   "level": 9,
+   "answer": "<p>3392.5 is lower than every one of the nine known masses except 3250 g, which is a sign that something pulled it down. Try dividing the total of the known masses by ten instead of nine:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span>\n<span>known_g <span class=\"ot\">&lt;-</span> body_mass_g[<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(body_mass_g)]</span>\n<span><span class=\"fu\">sum</span>(known_g) <span class=\"sc\">/</span> <span class=\"dv\">10</span></span>\n<span><span class=\"fu\">mean</span>(body_mass_g, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3392.5\n[1] 3769.444</code></pre>\n<p>The report’s number is the total of nine masses divided by ten: the missing weight was treated as zero. A corrected sentence: “The mean body mass of the 9 rows with a recorded weight was 3769.4 g.”</p>\n<p>What the corrected sentence does not establish:</p>\n<ul>\n<li>The mean of all ten. Penguin 4’s weight is unknown, and it could lie anywhere.</li>\n<li>Anything about the penguins in the rest of the file, or about penguins in general.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A made-up thesis table reports “median body mass 3650 g (n = 10)” for the first ten rows of the practice file. The values are as in problem 5. Check both numbers with code, and say what the checked result does not establish.</p>",
+   "level": 10,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span>\n<span><span class=\"fu\">median</span>(body_mass_g, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span>\n<span><span class=\"fu\">sum</span>(<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(body_mass_g))</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3650\n[1] 9</code></pre>\n<p>The median, 3650 g, is right. The n is wrong: the median was computed from 9 values, not 10, because <code>na.rm = TRUE</code> removed the missing one. The table should read “3650 g (n = 9)”. The writer probably took n from <code>length(body_mass_g)</code>, which counts the missing value too.</p>\n<p>What the checked result does not establish:</p>\n<ul>\n<li>The median of all ten values. With a tenth value, the median would be the mean of the two middle values, and that depends on the missing weight.</li>\n<li>Anything about penguins beyond these ten rows.</li>\n</ul>"
+  }
+ ]
+}

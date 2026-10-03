@@ -1,0 +1,196 @@
+{
+ "format": 1,
+ "id": "s58-r1-c05",
+ "label": "5",
+ "title": "Citing and referencing: the original source, in the order cited, in one format",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>This section follows two documents. The first is the Recommendations of the International Committee of Medical Journal Editors (ICMJE), updated January 2026, section IV.A.3.g, References. The committee was once known as the Vancouver Group. The second document is the style guide those Recommendations point to for format: Citing Medicine, 2nd edition, from the US National Library of Medicine (NLM).</p>\n<p>What to cite. Cite original research directly where you can, and the published article rather than its <dfn data-g=\"4\">abstract</dfn>. Where you cannot obtain the original, this book’s advice is to cite the source you read and say in your sentence whose figure it is. Do not cite articles in predatory or pseudo-journals.</p>\n<p>Mark a <dfn data-g=\"509\">preprint</dfn> as a preprint.</p>\n<p>The authors must <dfn data-g=\"85\">check</dfn> each reference against a bibliographic database such as PubMed or against the original.</p>\n<p>How to number. References are numbered consecutively in the order in which they are first mentioned in the text. They are identified in the text, tables and figure legends by Arabic numerals (1, 2, 3) in parentheses. A reference cited only in a table or a figure legend takes its number from the point where the text first mentions that table or figure.</p>\n<p>How to format a journal article. Citing Medicine lists the elements in the order they appear. For an ordinary journal article these are the authors, the article title, the abbreviated journal title, the <dfn data-g=\"170\">date</dfn> of publication, the volume, the issue in parentheses, and the pages.</p>\n<p>Authors are entered surname first, with at most two initials. Only the first word of an article title, its proper nouns and adjectives, acronyms and initialisms take capitals. Journal titles are abbreviated as the NLM Catalog lists them. A page range drops the repeated digits: 123-125 becomes 123-5.</p>",
+   "refs": [
+    1,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    19
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Every sentence in your paper that rests on someone else’s work carries a number, such as (3). The number points to one entry in the list at the end of the paper, the <dfn data-g=\"559\">reference list</dfn>. Number your sources in the order the reader first meets them. A source you use again keeps the number it got first.</p>\n<p>Cite what you actually read. If you read a preprint, a paper posted publicly before a journal has checked and accepted it, cite the preprint and say it is one.</p>\n<p>A <dfn data-g=\"560\">reference manager</dfn>, a program that stores your references and types out the list, can do the typing.</p>\n<p>ICMJE asks you not to cite predatory or pseudo-journals, and ICMJE’s references section does not define them. In this book, read the phrase as journals that present themselves as checking what they publish and do not. How to recognise one is taught at the next rung.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a shortcut that fails. You want to cite a paper on figures that this book uses later. Its journal page offers a ready-made line, headed “<dfn data-g=\"91\">Citation</dfn>”. Copy it into your reference list, and the entry reads:</p>\n<blockquote>\n<p>Rougier NP, Droettboom M, Bourne PE (2014) Ten Simple Rules for Better Figures. PLoS Comput Biol 10(9): e1003833. https://doi.org/10.1371/journal.pcbi.1003833</p>\n</blockquote>\n<p>That line is the journal’s own style, not NLM’s. Put it among entries in NLM format and it stands out. The year sits after the authors, every main word of the title has a capital, and the punctuation differs. Rebuild it one element at a time, in the order Citing Medicine lists them. The journal page also says “Published: September 11, 2014”.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>element</td>\n<td>the journal’s line</td>\n<td>the NLM rule</td>\n<td>your entry</td>\n</tr>\n<tr>\n<td>authors</td>\n<td>Rougier NP, Droettboom M, Bourne PE</td>\n<td>surname first, at most two initials; a full stop after the last author</td>\n<td>Rougier NP, Droettboom M, Bourne PE.</td>\n</tr>\n<tr>\n<td>article title</td>\n<td>Ten Simple Rules for Better Figures</td>\n<td>a capital only on the first word and on proper nouns; a full stop</td>\n<td>Ten simple rules for better figures.</td>\n</tr>\n<tr>\n<td>journal title</td>\n<td>PLoS Comput Biol</td>\n<td>the abbreviation in the NLM Catalog; a full stop</td>\n<td>PLoS Comput Biol.</td>\n</tr>\n<tr>\n<td>date</td>\n<td>(2014), after the authors</td>\n<td>year, month, day; the month in its first three letters; a semicolon</td>\n<td>2014 Sep 11;</td>\n</tr>\n<tr>\n<td>volume and issue</td>\n<td>10(9):</td>\n<td>the volume, then the issue in parentheses, then a colon</td>\n<td>10(9):</td>\n</tr>\n<tr>\n<td>pages</td>\n<td>e1003833</td>\n<td>where the pages go; a full stop</td>\n<td>e1003833.</td>\n</tr>\n</tbody>\n</table>\n<p>Put the right-hand column together:</p>\n<blockquote>\n<p>Rougier NP, Droettboom M, Bourne PE. Ten simple rules for better figures. PLoS Comput Biol. 2014 Sep 11;10(9):e1003833.</p>\n</blockquote>\n<p>Two checks remain. First, look the journal up in the NLM Catalog, https://www.ncbi.nlm.nih.gov/nlmcatalog/journals, and confirm that its abbreviation is the one the journal printed. Do not take the journal’s line as proof of that. Second, this journal gives “e1003833” where a page range would go, in its line and so in yours. If your target journal asks for the <dfn data-g=\"193\">DOI</dfn>, the paper’s permanent identifier, add it at the end, as Citing Medicine’s example 71 does: doi:10.1371/journal.pcbi.1003833.</p>\n<p>Citing Medicine is at https://www.ncbi.nlm.nih.gov/books/NBK7256/, and its chapter 1 covers journals. ICMJE’s references section is at https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html.</p>",
+   "numberRefs": [
+    105
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This rebuilds one kind of source: a journal article with three authors and no page range. A book, a report such as the National Family Health Survey (NFHS) fact <dfn data-g=\"622\">sheet</dfn>, a web page or a dataset follows other chapters of Citing Medicine, which this section does not teach. Open the right chapter before you format one.</p>\n<p>A journal may also ask for its own variant: fewer authors before “<dfn data-g=\"225\">et al.</dfn>” (Latin for “and others”), no day of the month, no issue number, or the DOI. Its instructions for authors win over this table.</p>\n<p>This book’s own reference lists are printed in the series’ house style, and are not a model. Your references follow NLM, as this section teaches.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the numbers in the text. Your draft introduction cites four sources, called A, B, C and D here, and has one table. Go through the text from the top. Each source gets the next free number the first time the text mentions it. A source cited only inside the table gets its number where the text first mentions the table.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>where in the text</th>\n<th>what it cites</th>\n<th>number in the text</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>sentence 1</td>\n<td>A</td>\n<td>A is (1)</td>\n</tr>\n<tr>\n<td>sentence 2</td>\n<td>B</td>\n<td>B is (2)</td>\n</tr>\n<tr>\n<td>sentence 3</td>\n<td>A again</td>\n<td>A is (1)</td>\n</tr>\n<tr>\n<td>sentence 4, which first mentions Table 1</td>\n<td>Table 1 cites D</td>\n<td>D is (3)</td>\n</tr>\n<tr>\n<td>sentence 5</td>\n<td>C</td>\n<td>C is (4)</td>\n</tr>\n</tbody>\n</table>\n<p>Two things here catch people. A cited again in sentence 3 is still (1): a source keeps its first number however often you return to it. And D gets 3, before C, although D appears only in the table. The table entered the text at sentence 4, so D’s number comes from there. C, in sentence 5, gets 4. The reference list then runs 1 to 4 in that order: A, B, D, C.</p>\n<p>Now move sentence 5 above sentence 4 in a later draft. C becomes (3) and D becomes (4), in the text, in the table and in the list. Let your reference manager do the renumbering, then read the numbers once more against the list.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This numbering is the system ICMJE describes, with the numbers in parentheses. A journal’s instructions may show the numbers in another form, or may not number references at all; then its instructions tell you how to order the list.</p>\n<p>This book numbers each passage it checked, not each source, and uses square brackets, so that every number names the exact words behind a <dfn data-g=\"95\">claim</dfn>. A journal paper follows ICMJE.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Here is the trap with a number found second-hand. Suppose you read in a review that about a quarter of Indian women have <dfn data-g=\"467\">overweight</dfn> or obesity, citing the national survey. The review is invented for this example. Do not cite the review for the number. Do not cite the survey on the review’s word either.</p>\n<p>Open the NFHS-5 India fact sheet at https://dhsprogram.com/pubs/pdf/OF43/India_National_Fact_Sheet.pdf and find indicator 88, women with overweight or obesity. The row reads 33.2, 19.7, 24.0 and 20.6: NFHS-5 urban, rural and total, then the NFHS-4 total, in per cent of women aged 15-49. “About a quarter” was the total, 24.0 per cent. Write your sentence from the row you read, with the age range the row carries, and cite the fact sheet.</p>\n<p>The same rule covers versions of one paper. NLM’s page of sample references lists a preprint, “Ten simple rules for structuring papers”, posted on bioRxiv, a website for preprints. Its authors are given as “Kording KP, Mensh B”, and it is dated 2016 and marked “[Preprint]”. The paper this book cites under that title is the one published in 2017 in PLoS Computational Biology. Its copyright line reads “Mensh, Kording”: the other name comes first. If you read the preprint, cite the preprint and mark it as one. If you read the journal’s version, cite that. A reader who searches for one with the details of the other may not find it.</p>",
+   "numberRefs": [
+    24,
+    106,
+    107
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Opening the original tells you what it says. It does not tell you that it is right, or that a later paper has not overturned it; Book 0’s section on <dfn data-g=\"86\">checking a reference</dfn> (Book 0, F3) stops at the same place.</p>\n<p>The fact sheet’s figure is a share of women aged 15-49 in 2019-21. It is not a figure for all adult women, and the review’s “about a quarter” hides that.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Open the original before you cite it. If you met a finding in a review, find the paper the review cites and read the passage. Cite that paper only if it says what you claim.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“My reference manager makes my references correct” is the error. It formats what it was given, and what it was given can be wrong. Check every entry against PubMed or the paper itself, and check that the paper supports the sentence it is attached to.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you submit, check that no reference is a retracted paper. Search PubMed for “Retracted publication [pt]”; “pt” stands for publication <dfn data-g=\"695\">type</dfn>. Or look each paper up in PubMed.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Cite something not formally published by what it is. A preprint carries “[Preprint]”. A paper accepted but not yet out is “<dfn data-g=\"269\">forthcoming</dfn>”, NLM’s preferred word, or “in press”.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never cite an artificial intelligence tool as the source of a fact. If a tool gives you a reference, find the paper, open it, and read the passage before you cite it. If you cannot find it, do not cite it.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Do not cite a paper from a <dfn data-g=\"507\">predatory or pseudo-journal</dfn>; ICMJE asks you to avoid them.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>How many authors to list is the journal’s choice. Read the journal’s instructions, set your reference manager to match, and check the first entry with more than six authors by eye.</p>",
+     "tag": "dispute",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A reference in perfect NLM format can still point to a paper that does not say what your sentence says. When you check a student’s thesis, open three of its references <dfn data-g=\"37\">at random</dfn> and read the passages they point to.</p>",
+     "tag": "boundary",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Number the references in order” read as sorting the list, by author or by year. The order is the order in which the text first mentions each source. A source cited again keeps its first number. A source cited only in a table takes its number from where the text first mentions the table. The reference list is then printed in number order.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Among women aged 15-49 in India, 24.0 per cent had overweight or obesity in NFHS-5 (2019-21), against 20.6 per cent in NFHS-4 (2015-16) (1).</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: in what order does ICMJE number references, and how does it show them in the text? Then list, in order, the elements of an NLM reference to an ordinary journal article.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>References are numbered in the order the text first mentions them. A source cited again keeps its first number. A source cited only in a table or a figure legend gets its number where the text first mentions that table or figure. In the text, each number is in parentheses, such as (3).</p>\n<p>The elements, in order: authors; article title; journal title, abbreviated; date; volume; issue, in parentheses; pages.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Your target journal follows ICMJE and NLM, and lists up to six authors before “et al.”. A co-author hands you these two entries. Rewrite each in NLM format. The second paper is in volume 13, issue 4. Its four authors are Tracey L Weissgerber, Natasa M Milic, Stacey J Winham and Vesna D Garovic.</p>\n<ol type=\"1\">\n<li>Cole, T. J. (2015). Too Many Digits: The Presentation of Numerical Data. Archives of Disease in Childhood, 100(7), 608-609.</li>\n<li>Weissgerber TL et al. Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm. PLoS Biol 2015; 13: e1002128</li>\n</ol>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Entry 1:</p>\n<blockquote>\n<p>Cole TJ. Too many digits: the presentation of numerical data. Arch Dis Child. 2015;100(7):608-9.</p>\n</blockquote>\n<p>The initials lose their full stops and come straight after the surname. The year moves to the date position. The title keeps a capital only on its first word. The journal title is abbreviated; confirm “Arch Dis Child” in the NLM Catalog. The page range 608-609 becomes 608-9. No month is given, so the date is the year alone, as in NLM’s sample entry “Brain Res. 2002;935(1-2):40-6.”</p>\n<p>Entry 2:</p>\n<blockquote>\n<p>Weissgerber TL, Milic NM, Winham SJ, Garovic VD. Beyond bar and line graphs: time for a new data presentation paradigm. PLoS Biol. 2015;13(4):e1002128.</p>\n</blockquote>\n<p>Four authors is fewer than six, so all four are listed and “et al.” goes. The title drops its capitals after the first word, keeping the colon. The issue, 4, was missing; it goes in parentheses after the volume. A full stop follows the journal title, and the spaces round the semicolon go. Confirm “PLoS Biol” in the NLM Catalog.</p>\n<p>Last, check both against the papers themselves or PubMed, not against your co-author’s list.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A draft paragraph cites sources P, Q, R and S. Sentence 1 cites P as (1). Sentence 2 cites Q as (2). Sentence 3 first mentions Table 1, which cites R; the draft numbers R as (5), “because it is only in a table”. Sentence 4 cites S as (3). Sentence 5 cites P again, as (4). Which numbers are wrong under ICMJE’s rule, and what should every number be?</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Three numbers are wrong. R is numbered where the text first mentions Table 1, which is sentence 3. R is the third source met, so it is (3), not (5). S, printed (3), is (4): it is first met in sentence 4, after R. And P in sentence 5 is a source already cited, so it keeps its first number, (1), not (4).</p>\n<p>The correct numbers are P (1), Q (2), R (3), S (4), and P again (1). The reference list runs P, Q, R, S.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident asks: “I found the NFHS-5 figure for women in a review article. Why can I not cite the review, when it gives the same number?” Ten minutes, with a whiteboard.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with what a reference promises. It tells the reader where the evidence for this sentence is. If you cite the review, you send them to someone else’s account of the survey. ICMJE warns that reviews do not always report the original accurately.</p>\n<p>Then show the difference on the board. Write “about a quarter of Indian women have overweight or obesity”, the kind of line a review might carry. Under it, write what the fact sheet’s indicator 88 says. It gives 24.0 per cent of women aged 15-49 in 2019-21: 33.2 per cent in urban areas and 19.7 per cent in rural areas. The age range, the dates and the urban-rural split were lost in the second-hand line. Ask her which sentence she would rather defend in her viva.</p>\n<p>Then the rule: open the fact sheet, read the row, write the sentence from it, and cite the fact sheet. Cite the review only for what the review itself adds, such as its own judgement across several studies.</p>"
+  }
+ ]
+}

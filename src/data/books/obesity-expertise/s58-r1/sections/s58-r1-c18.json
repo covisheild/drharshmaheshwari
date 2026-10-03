@@ -1,0 +1,163 @@
+{
+ "format": 1,
+ "id": "s58-r1-c18",
+ "label": "18",
+ "title": "Decoration that does no work",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Tufte divides the <dfn data-g=\"330\">ink</dfn> on a figure into two kinds. <dfn data-g=\"168\">Data-ink</dfn> is the ink that changes when the data change: the bars, the points, the line. Everything else is <dfn data-g=\"443\">non-data ink</dfn>: frames, grid lines, background fills, shadows. The <dfn data-g=\"169\">data-ink ratio</dfn> is the data-ink divided by all the ink used to print the figure.</p>\n<p>Tufte’s rule is to maximise this <dfn data-g=\"550\">ratio</dfn> “within reason”: erase non-data ink, and erase data-ink that repeats what other ink already shows. He gives no one-sentence definition of <dfn data-g=\"84\">chartjunk</dfn>. He introduces it as <dfn data-g=\"173\">decoration</dfn> that “does not tell the viewer anything new”.</p>\n<p>In this book, decoration is any element that tells the reader nothing about the data or about how to read them. A shadow, a coloured background behind a single plot, a frame round the whole figure and a dark grid are decoration. So is a 3-D effect on <dfn data-g=\"256\">flat data</dfn>: numbers that vary in one direction only, such as one value per group. Axis titles, tick labels and a light grid or reference line are <dfn data-g=\"139\">context</dfn>. So is a <dfn data-g=\"186\">direct label</dfn>: a group’s name written beside its data, in place of a <dfn data-g=\"354\">key</dfn> saying which colour is which (drawing programs call it the <dfn data-g=\"377\">legend</dfn>). Context is non-data ink, and it stays (Wilke).</p>",
+   "refs": [
+    275,
+    275,
+    275,
+    275,
+    275,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    275,
+    275,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Every mark on a figure either tells the reader something or gets in the way. The bars and points tell. So do the axis titles and the labels: without them the bars mean nothing.</p>\n<p>So ask one question of each mark: what does this tell the reader? If the answer is “nothing”, delete it.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c18-where-they-looked.png",
+   "alt": "Paired bars from zero for four parts of the screen, Holmes charts on the left of each pair and plain charts on the right, the first pair labelled. Holmes charts: data alone 40, data in a picture 27, picture alone 13, elsewhere 20. Plain charts: data 78, data in a picture 0, picture alone 0, elsewhere 22.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The pictures took looking time. On the Holmes charts, built into cartoon pictures, 40% of on-screen time went on data alone, 27% on data drawn as part of a picture, 13% on picture alone and 20% elsewhere. On the plain charts, 78% went on data and 22% elsewhere; they have no picture, so those two bars are 0. Bateman and colleagues, “Useful junk?”: an eye tracker, 20 students, untimed viewing."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is a figure of the kind spreadsheet defaults and slide templates produce. It is made up for this example, from real numbers. It shows the share of women and men aged 15-49 with <dfn data-g=\"467\">overweight</dfn> or obesity in the National Family Health Survey (NFHS-5), 24.0% and 22.9%. The bars are 3-D columns on a shaded background. A dark grid sits behind them, and a frame runs round the whole. A key box says which colour is which. The value is printed on top of each bar.</p>\n<p>Go through it one element at a time. For each, ask: what does this tell the reader about the data, or about how to read them?</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>element</th>\n<th>what it tells the reader</th>\n<th>what to do</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>3-D columns</td>\n<td>nothing; the third dimension carries no data</td>\n<td>draw flat bars</td>\n</tr>\n<tr>\n<td>shaded background</td>\n<td>nothing</td>\n<td>delete</td>\n</tr>\n<tr>\n<td>dark grid</td>\n<td>where values fall, but it competes with the bars</td>\n<td>keep a few light grey lines, or none</td>\n</tr>\n<tr>\n<td>frame round the figure</td>\n<td>nothing</td>\n<td>delete</td>\n</tr>\n<tr>\n<td>key box</td>\n<td>which bar is which, but the eye must travel to it</td>\n<td>direct labels: “women” and “men” under the bars</td>\n</tr>\n<tr>\n<td>value on each bar</td>\n<td>the exact number, a second time</td>\n<td>keep only if readers need the exact values</td>\n</tr>\n<tr>\n<td>axis title with its unit</td>\n<td>what the bars measure</td>\n<td>keep</td>\n</tr>\n</tbody>\n</table>\n<p>The 3-D columns are not only useless. They bend the data. Open Wilke’s <em>Fundamentals of Data Visualization</em>, chapter 26, at https://clauswilke.com/dataviz/no-3d.html, and search for 322.</p>\n<blockquote>\n<p>there were 322 passengers total traveling in 1st class, yet Figure 26.2 suggests that the number was less than 300.</p>\n</blockquote>\n<p>A 3-D bar’s top floats away from the back wall where the grid lines are drawn. Readers read it against the wrong line.</p>\n<p>The value printed on each bar is a smaller case. Tufte counts six ways a plain labelled bar shows one number: its left edge, its right edge, its shading, its top line, the position of the <dfn data-g=\"363\">label</dfn> and the label itself. Any five can go and the sixth still shows it. Keep the printed value when readers will want the exact number. Otherwise the bar is enough.</p>\n<p>Now stop. Wilke shows the opposite mistake: a figure whose axis labels are so faint, and whose grid is so bare, that the points “seem to float in space”. Tufte’s own rule ends “within reason”. The axis title, the tick labels and the direct labels stay.</p>",
+   "numberRefs": [
+    24,
+    295
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table works for a figure read on a page. A light grid that is clutter in a paper can help on a figure people use to look up values, and Tufte himself says a grid may help “When a graphic serves as a look-up table”. Rougier and colleagues put it generally: “an element that could be considered chartjunk in one figure can be justified in another”. Ask what the reader will do with the figure before you delete anything.</p>\n<p>The made-up slide uses real NFHS numbers. The Titanic figure is Wilke’s, and the 322 is his.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the case for decoration, and it is a real one. Open Bateman and colleagues (2010), “Useful junk? The effects of visual embellishment on comprehension and memorability of charts”, at https://doi.org/10.1145/1753326.1753716. Read the <dfn data-g=\"4\">abstract</dfn>.</p>\n<blockquote>\n<p>We found that people’s accuracy in describing the embellished charts was no worse than for plain charts, and that their recall after a two-to-three-week gap was significantly better.</p>\n</blockquote>\n<p>Before you use this, read how it was done. Twenty students saw 14 charts by the graphic artist Nigel Holmes, whose charts are built into cartoon pictures, and plain versions of the same charts. Each person saw one version of each chart. They described each chart aloud, with as much time as they wanted. Then 10 of them were tested on the charts after five minutes, and 10 after two to three weeks.</p>\n<p>An eye tracker recorded where they looked while the charts were on screen. Search for 67%.</p>\n<blockquote>\n<p>participants spent 67% of their on-screen time looking at data or data and embellishments for Holmes charts as compared to 78% for Plain charts.</p>\n</blockquote>\n<blockquote>\n<p>For Holmes charts, users spent 27% of their on-screen time looking at areas that contained both data and embellishments, and 13% of their time looking at embellishments that did not communicate any data.</p>\n</blockquote>\n<p>Split the Holmes charts’ time four ways.</p>\n<div class=\"working\">\n<p>67 minus 27 = 40<br />\n100 minus 67 minus 13 = 20<br />\n40 plus 27 plus 13 plus 20 = 100<br />\n100 minus 78 = 22</p>\n</div>\n<p>On the Holmes charts, 40% of the time went on data alone, 27% on data drawn as part of a picture, 13% on picture alone and 20% elsewhere on the screen. On the plain charts, 78% went on data and 22% elsewhere. The pictures took looking time, and still the descriptions were no worse.</p>\n<p>Now read what else they found. Search for <dfn data-g=\"705\">value message</dfn>.</p>\n<blockquote>\n<p>with better descriptions of a value message for the Holmes charts than the plain charts</p>\n</blockquote>\n<p>A value message is the opinion a chart carries: “costs are monstrous”. The pictures carried one, and readers picked it up. The authors write that “we do not advocate this strategy as a general principle”.</p>\n<p>So here is what the study allows. A picture tied to the message may help a poster or a public leaflet be remembered. It does not allow a 3-D bar, a shadow or a background in a paper’s figure. Those carry no message and some bend the data. And it does not show that decoration is harmless when a reader studies exact values against a clock.</p>",
+   "numberRefs": [
+    296
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>One study, 20 students at one university, 14 charts by one artist, and 10 people in each memory group. Viewing was untimed and the task was to describe each chart aloud. The paper reports t-tests and p values in its text, not the size of the difference in points. A reader of a methods section, checking a <dfn data-g=\"128\">confidence interval</dfn> against an axis, is doing a different task.</p>\n<p>Plain charts are not neutral either. The authors point out that a minimal chart can still mislead through “the scale of axes” and the choice of data. Removing decoration does not fix an axis; section 17 does.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The cleanest figure is the one with the least ink” is the error. Delete decoration; keep context.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Ask one question of every element of a figure: what does it tell the reader about the data, or about how to read them? Do this before you change anything else.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never draw flat data in 3-D. The third dimension carries no data and it bends the bars: in Wilke’s example, 322 first-class passengers read as fewer than 300.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Use direct labels: write each line’s or group’s name beside its data, and delete the key.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“Useful junk?” found that cartoon charts were described no worse, and were remembered better two to three weeks later. That was 20 students, with no time limit. It does not show that decoration is harmless when a reader needs exact values, and the authors say so. Keep it out of a paper’s figure.</p>",
+     "tag": "dispute",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A picture on a chart carries an opinion. On a public chart, choose a picture only if you are willing to say its message out loud.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Removing decoration cannot fix a dishonest axis. A plain bar chart that starts above zero is still wrong. So fix the axis first, then the decoration.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee brings you a chart straight from a spreadsheet, do not redraw it for them. Have them delete one element at a time, and ask after each whether the reader lost anything.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“A study showed decorated charts are remembered better, so decoration is fine.” The study had 20 students. They had no time limit, and they described each chart aloud. Each picture was tied to its chart’s subject. The study found no loss for that task, and better memory weeks later.</p>\n<p>It also found that the pictures carried the designer’s opinion. It says nothing for 3-D, shadows or coloured backgrounds, which carry no message. And it says nothing for a figure read for exact values.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what is data-ink, what is the data-ink ratio, and what two words does Tufte attach to his rule to maximise it? Name two elements that are not data-ink but should stay.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Data-ink is the ink that changes when the data change: the bars, points and lines. The data-ink ratio is the data-ink divided by all the ink used to print the figure.</p>\n<p>Tufte’s rule is to maximise it “within reason”.</p>\n<p>Any two of: the axis titles with their units, the tick labels, a light grid or reference line, direct labels. They are context. Without them the data cannot be read.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up district report has a figure for six blocks. It shows the share of children under 5 weighed last month at the <dfn data-g=\"29\">anganwadi</dfn>, the village child-care centre. The figure has:</p>\n<ul>\n<li>3-D cylinders in six colours, with a shadow under each;</li>\n<li>a key matching the colours to block names;</li>\n<li>a dark grid every 5%;</li>\n<li>a picture of a weighing scale behind the bars;</li>\n<li>no axis title;</li>\n<li>a <dfn data-g=\"704\">value axis</dfn> running from 60% to 100%.</li>\n</ul>\n<p>List what you would change, in the order you would change it, and say why for each.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Start with the axis, because no amount of tidying fixes it. Bars from 60% exaggerate every gap between blocks (section 17). Start the axis at zero, or draw the six values as dots on a stated range.</p>\n<p>Then the elements, asking of each what it tells the reader.</p>\n<p>The 3-D cylinders and their shadows tell nothing and bend the heights against the grid. Draw flat bars or dots.</p>\n<p>The six colours tell nothing the block names do not. Use one colour, and write each block’s name under its bar. The key then goes.</p>\n<p>The picture of a scale behind the bars is decoration, and it competes with the data. Delete it.</p>\n<p>The dark grid: keep a few light lines, or none.</p>\n<p>Add what is missing. An axis title with its unit: “children under 5 weighed last month (%)”. The month and the source in the <dfn data-g=\"74\">caption</dfn>.</p>\n<p>Last, sort the blocks from highest to lowest if the order of blocks means nothing.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident has read the abstract of “Useful junk?” and says: “So chartjunk is fine now. Decorated charts are remembered better.” You have ten minutes and a whiteboard. Say what you would teach.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with what the study found, fairly. In 20 students, charts built into cartoon pictures were described as accurately as plain charts. Ten of them, tested two to three weeks later, remembered the decorated charts better.</p>\n<p>Then draw the design on the board. Fourteen charts by one illustrator. Untimed viewing. The task was to describe each chart aloud, not to read off exact values. Ten people per memory group. The paper reports t-tests, not how many points better.</p>\n<p>Then the second finding: readers saw the designer’s opinion, the “value message”, more often in the decorated charts. A picture argues.</p>\n<p>Then what it does not cover. The pictures were tied to each chart’s subject. A 3-D effect, a shadow or a background fill carries no message at all, and 3-D bends the bars. Nothing in the study speaks for those.</p>\n<p>End with the rule. In a paper’s figure, delete what tells the reader nothing and keep the labels. On a poster, a picture tied to the <dfn data-g=\"456\">one message</dfn> may help people remember it, if you accept the opinion it adds. The authors themselves do not advocate it “as a general principle”.</p>"
+  }
+ ]
+}

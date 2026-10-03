@@ -1,0 +1,194 @@
+{
+ "format": 1,
+ "id": "s52-r1-c03",
+ "label": "3",
+ "title": "Objects and names",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>An <dfn data-g=\"321\">object</dfn> is a value R holds in memory under a name. The <dfn data-g=\"28\">assignment</dfn> <code>name &lt;- value</code> makes one: R works out the right-hand side completely, then stores the result under the name on the left. An assignment prints nothing. Typing the name alone prints the value.</p>\n<p>Assigning to a name that already exists replaces its value.</p>\n<p>Names are case sensitive: <code>bmi</code> and <code>BMI</code> are different names. A name may contain letters, digits, <code>.</code> and <code>_</code>, and no spaces. It must start with a letter, or with <code>.</code> not followed by a digit.</p>\n<p>The objects that exist at a given moment form the <dfn data-g=\"509\">workspace</dfn>, which <code>ls()</code> lists and <dfn data-g=\"418\">RStudio</dfn> shows in its Environment pane.</p>\n<p>R accepts <code>=</code> in most places; this book uses <code>&lt;-</code>.</p>",
+   "refs": [
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">72</span></span></code></pre></div>\n<p>Read the arrow <code>&lt;-</code> as “gets”: weight_kg gets 72. R prints nothing. Type the name, and R prints the value back.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg</span></code></pre></div>\n<pre class=\"output\"><code>[1] 72</code></pre>\n<p>A name is a label stuck on a value.</p>\n<ul>\n<li><strong>Give the same name a new value, and the old one is gone.</strong></li>\n<li><strong>A name holds a value, not a sum.</strong> It changes only when you run its line again.</li>\n</ul>\n<p>The objects you have made so far sit in a list called the workspace. RStudio shows it in the Environment pane, at the upper right, and <code>ls()</code> prints it. That list is not your <dfn data-g=\"427\">script</dfn>. It holds every object made by whatever you ran today, in whatever order you ran it, including lines you typed only in the <dfn data-g=\"90\">console</dfn>.</p>\n<p>Write names in small letters, with <code>_</code> between words, and put the unit in the name: <code>height_cm</code>, <code>height_m</code>, <code>bmi</code>. The style guide this book follows, written for the <dfn data-g=\"481\">tidyverse</dfn> (a family of packages you meet in section 6), calls this <dfn data-g=\"446\">snake case</dfn>. It also asks for <code>&lt;-</code>, not <code>=</code>, for assignment.</p>\n<p>In Book 0 a variable was a letter standing for a number. In R, people also call a named object a variable. A third meaning, a column in a table of data, comes later in the book.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c03-bmi-stored-value.png",
+   "alt": "Three bars. Print 1: 28.125. Print 2, after the weight was changed to 74: still 28.125. Print 3, after the BMI line was run again: 28.90625, which is 74 divided by 1.6 squared.",
+   "w": 1492,
+   "h": 656,
+   "caption": "The value of bmi each time it was printed. First, with weight_kg 72, it is 28.125. After weight_kg is changed to 74, bmi still prints 28.125, because R stored the answer and not the recipe. Only when the line <code>bmi &lt;- weight_kg / height_m^2</code> is run again does it become 28.90625, which is 74 divided by 1.6 squared."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a correction that does not arrive. Take the made-up patient from the last section, and give each number a name.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">72</span></span>\n<span>height_m <span class=\"ot\">&lt;-</span> <span class=\"fl\">1.6</span></span>\n<span>bmi <span class=\"ot\">&lt;-</span> weight_kg <span class=\"sc\">/</span> height_m<span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>bmi</span></code></pre></div>\n<pre class=\"output\"><code>[1] 28.125</code></pre>\n<p>Now the clinic tells you the weight was copied wrongly into the register. The form says 74 kg. You fix the weight, and print the BMI again.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">74</span></span>\n<span>bmi</span></code></pre></div>\n<pre class=\"output\"><code>[1] 28.125</code></pre>\n<p>The BMI has not moved. When R ran <code>bmi &lt;- weight_kg / height_m^2</code>, it worked out the right-hand side, 72 divided by 1.6 squared, and stored the answer, 28.125. It did not store the recipe. Changing <code>weight_kg</code> afterwards changes <code>weight_kg</code> and nothing else.</p>\n<p>Run the BMI line again, and the new weight is used.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>bmi <span class=\"ot\">&lt;-</span> weight_kg <span class=\"sc\">/</span> height_m<span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>bmi</span></code></pre></div>\n<pre class=\"output\"><code>[1] 28.90625</code></pre>\n<p>Now look at what exists.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">ls</span>()</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;bmi&quot;       &quot;height_m&quot;  &quot;weight_kg&quot;</code></pre>\n<p>Three objects, listed in alphabetical order. The list says nothing about the order the lines ran in, or about the weight that was 72 a minute ago. Suppose you had typed <code>weight_kg &lt;- 74</code> in the console and never put it in the script. The workspace would still say 74, and you would believe it. Tomorrow, running the script from the top, you would get 28.125 again.</p>\n<p>So the fix belongs in the script. Change the first line to 74, with a <dfn data-g=\"78\">comment</dfn> saying why. Then run every line from the top, so that each object is made from the ones above it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Book 0’s algebra letter is the wrong picture here. In Book 0’s I = m divided by h<sup>2</sup>, m stands for whatever number you substitute, and the formula holds for all of them at once. In R, <code>weight_kg</code> holds one value, the last one assigned, and <code>bmi</code> holds one number worked out once.</p>\n<p>The patient and the copying error are made up. The correction itself is real practice: a correction is a line in the script, with a comment, never a value typed over in the console.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now break the naming rules on purpose, and read what R says each time.</p>\n<p>A capital letter where there was none:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">74</span></span>\n<span>Weight_kg</span></code></pre></div>\n<pre class=\"output\"><code>Error: object &#39;Weight_kg&#39; not found</code></pre>\n<p>R looked for an object called <code>Weight_kg</code> and found none. To R, the capital W makes it a different name.</p>\n<p>A name that starts with a digit:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"dv\">2</span>nd_visit_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">73</span></span></code></pre></div>\n<pre class=\"output\"><code>Error: &lt;text&gt;:1:2: unexpected symbol\n1: 2nd_visit_kg\n     ^</code></pre>\n<p>“Unexpected symbol” means R read the first part, <code>2</code>, as one thing, then met a second part it could not join to it.</p>\n<p>Now name it so the rules and the reader are both satisfied:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_visit2_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">73</span></span>\n<span>weight_visit2_kg</span></code></pre></div>\n<pre class=\"output\"><code>[1] 73</code></pre>\n<p>Small letters, words joined by <code>_</code>, the visit and the unit in the name. Anyone reading <code>weight_visit2_kg</code> knows what it holds and in what unit, without a comment.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The rules R enforces and the style this book asks for are different things. R accepts <code>WeightVisit2</code> and <code>w2</code>, and both would run. The style guide’s snake case is a choice the tidyverse made for consistency, and this book follows it so that every name reads the same way.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to think a name holds a formula. After any correction, run the script from the top.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The workspace is not your script. Trust a result only after it has come from running the script from the top.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Give each thing its own name, such as <code>bmi_visit1</code> and <code>bmi_visit2</code>, rather than reusing <code>bmi</code>.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“object ‘x’ not found” usually means a typing slip or a wrong capital letter, or a line that makes <code>x</code> was never run.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A good name makes code readable, not correct. Names help a reviewer follow the steps; only checking the values tells you they are right.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: you run <code>bmi &lt;- weight_kg / height_m^2</code>, then <code>weight_kg &lt;- 74</code>. What does <code>bmi</code> hold now, and what must you do to bring it up to date? Then name two things an R name may not do.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p><code>bmi</code> still holds the number worked out from the old weight. The name stores a value, not the calculation. To bring it up to date, run the BMI line again. Better still, correct the weight in the script, then run the whole script from the top.</p>\n<p>An R name may not start with a digit, and may not contain a space. It may also not start with <code>_</code>.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A classmate’s script reads:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>W <span class=\"ot\">&lt;-</span> <span class=\"dv\">66</span></span>\n<span>H <span class=\"ot\">&lt;-</span> <span class=\"dv\">158</span></span>\n<span>x <span class=\"ot\">&lt;-</span> W <span class=\"sc\">/</span> (H <span class=\"sc\">/</span> <span class=\"dv\">100</span>)<span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>x</span></code></pre></div>\n<pre class=\"output\"><code>[1] 26.43807</code></pre>\n<p>Rewrite it so that every name follows this book’s style and says what it holds, with its unit. Add a comment for the step that would puzzle a reader. Check that your version gives the same answer.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">66</span></span>\n<span>height_cm <span class=\"ot\">&lt;-</span> <span class=\"dv\">158</span></span>\n<span><span class=\"co\"># BMI needs height in metres; the register records centimetres</span></span>\n<span>height_m <span class=\"ot\">&lt;-</span> height_cm <span class=\"sc\">/</span> <span class=\"dv\">100</span></span>\n<span>bmi <span class=\"ot\">&lt;-</span> weight_kg <span class=\"sc\">/</span> height_m<span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>bmi</span></code></pre></div>\n<pre class=\"output\"><code>[1] 26.43807</code></pre>\n<p>The answer is the same as the classmate’s, about 26.4 kg/m<sup>2</sup>. Running their four lines gives 26.43807 too. What changed is that each line can now be read on its own. The conversion from centimetres to metres has a name and a reason. The capital letters are gone, and <code>x</code> no longer hides what it holds.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. They corrected a participant’s height in the console and say their BMI results are now fixed. Teach them why they may not be.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Write three lines on the board, as they would be in a script:</p>\n<p><code>height_m &lt;- 1.52</code>, then <code>bmi &lt;- weight_kg / height_m^2</code>, then <code>bmi</code>.</p>\n<p>Underneath, write the line they typed in the console: <code>height_m &lt;- 1.62</code>.</p>\n<p>Ask: what is <code>bmi</code> now? Most residents say it uses 1.62. It does not. <code>bmi</code> was worked out when its line ran, from the height at that moment, and stored as one number. The console line changed the height and nothing else.</p>\n<p>Then ask: what happens tomorrow, when the script runs from the top? The console line is not in the script. The height goes back to 1.52, and so does every BMI made from it.</p>\n<p>The fix they can use today: put the correction in the script, with a comment saying where the right value came from. Then run the whole script from the top and look at the new result.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>What does the last line print?</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>a <span class=\"ot\">&lt;-</span> <span class=\"dv\">5</span></span>\n<span>a <span class=\"ot\">&lt;-</span> a <span class=\"sc\">+</span> <span class=\"dv\">2</span></span>\n<span>a</span></code></pre></div>",
+   "level": 1,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>a <span class=\"ot\">&lt;-</span> <span class=\"dv\">5</span></span>\n<span>a <span class=\"ot\">&lt;-</span> a <span class=\"sc\">+</span> <span class=\"dv\">2</span></span>\n<span>a</span></code></pre></div>\n<pre class=\"output\"><code>[1] 7</code></pre>\n<p>The second line works out the right-hand side first, 5 plus 2, and then stores 7 under <code>a</code>, replacing the 5.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Which of these names will R accept for an object? Try each one with <code>&lt;- 1</code> to check.</p>\n<p><code>bmi_2024</code>, <code>2024_bmi</code>, <code>bmi.2024</code>, <code>bmi 2024</code>, <code>.bmi</code>, <code>_bmi</code></p>",
+   "level": 2,
+   "answer": "<p>The three that work make an object without a message:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>bmi_2024 <span class=\"ot\">&lt;-</span> <span class=\"dv\">1</span></span>\n<span>bmi<span class=\"fl\">.2024</span> <span class=\"ot\">&lt;-</span> <span class=\"dv\">1</span></span>\n<span>.bmi <span class=\"ot\">&lt;-</span> <span class=\"dv\">1</span></span></code></pre></div>\n<p>The other three stop with an error:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"dv\">2024</span>_bmi <span class=\"ot\">&lt;-</span> <span class=\"dv\">1</span></span></code></pre></div>\n<pre class=\"output\"><code>Error: &lt;text&gt;:1:5: unexpected input\n1: 2024_\n        ^</code></pre>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>bmi <span class=\"dv\">2024</span> <span class=\"ot\">&lt;-</span> <span class=\"dv\">1</span></span></code></pre></div>\n<pre class=\"output\"><code>Error: &lt;text&gt;:1:5: unexpected numeric constant\n1: bmi 2024\n        ^</code></pre>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>_bmi <span class=\"ot\">&lt;-</span> <span class=\"dv\">1</span></span></code></pre></div>\n<pre class=\"output\"><code>Error: &lt;text&gt;:1:2: unexpected symbol\n1: _bmi\n     ^</code></pre>\n<p>A name must start with a letter or a dot, so <code>2024_bmi</code> and <code>_bmi</code> fail. A name cannot hold a space, so <code>bmi 2024</code> fails. Of the three that work, only <code>bmi_2024</code> follows this book’s style.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Predict what the last line prints, then run the lines to check.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>x <span class=\"ot\">&lt;-</span> <span class=\"dv\">10</span></span>\n<span>y <span class=\"ot\">&lt;-</span> x <span class=\"sc\">*</span> <span class=\"dv\">2</span></span>\n<span>x <span class=\"ot\">&lt;-</span> <span class=\"dv\">3</span></span>\n<span>y</span></code></pre></div>",
+   "level": 3,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>x <span class=\"ot\">&lt;-</span> <span class=\"dv\">10</span></span>\n<span>y <span class=\"ot\">&lt;-</span> x <span class=\"sc\">*</span> <span class=\"dv\">2</span></span>\n<span>x <span class=\"ot\">&lt;-</span> <span class=\"dv\">3</span></span>\n<span>y</span></code></pre></div>\n<pre class=\"output\"><code>[1] 20</code></pre>\n<p><code>y</code> was worked out when its line ran, from <code>x</code> at that moment, which was 10. Giving <code>x</code> a new value afterwards does not reach back into <code>y</code>.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>The first penguin in the Palmer file weighed 3750 g. Store that value in an object whose name gives the unit. Then make a second object holding the weight in kilograms, and print it.</p>",
+   "level": 4,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"dv\">3750</span></span>\n<span>body_mass_kg <span class=\"ot\">&lt;-</span> body_mass_g <span class=\"sc\">/</span> <span class=\"dv\">1000</span></span>\n<span>body_mass_kg</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3.75</code></pre>\n<p>The penguin weighed 3.75 kg. Both names say their unit, so the division by 1000 reads as a conversion from grams to kilograms.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A made-up adult weighs 81 kg and is 172 cm tall. Write lines that store the weight and the height as they were recorded, make the height in metres, make the BMI, and print it. Use names that carry units.</p>",
+   "level": 5,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">81</span></span>\n<span>height_cm <span class=\"ot\">&lt;-</span> <span class=\"dv\">172</span></span>\n<span>height_m <span class=\"ot\">&lt;-</span> height_cm <span class=\"sc\">/</span> <span class=\"dv\">100</span></span>\n<span>bmi <span class=\"ot\">&lt;-</span> weight_kg <span class=\"sc\">/</span> height_m<span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>bmi</span></code></pre></div>\n<pre class=\"output\"><code>[1] 27.37966</code></pre>\n<p>The BMI is about 27.4 kg/m<sup>2</sup>. The height is stored once as recorded, in centimetres, and the conversion is a line of its own.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>The second and third penguins in the Palmer file weighed 3800 g and 3250 g. Store each weight in its own object, make an object holding the difference between them in kilograms, and print it.</p>",
+   "level": 6,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_2_g <span class=\"ot\">&lt;-</span> <span class=\"dv\">3800</span></span>\n<span>body_mass_3_g <span class=\"ot\">&lt;-</span> <span class=\"dv\">3250</span></span>\n<span>difference_kg <span class=\"ot\">&lt;-</span> (body_mass_2_g <span class=\"sc\">-</span> body_mass_3_g) <span class=\"sc\">/</span> <span class=\"dv\">1000</span></span>\n<span>difference_kg</span></code></pre></div>\n<pre class=\"output\"><code>[1] 0.55</code></pre>\n<p>The second penguin weighed 0.55 kg more than the third. The bracket makes R subtract before it divides, and each name says which penguin and which unit.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A resident works out BMI for two made-up patients and reports patient A’s value. Here is the script and what it printed.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>bmi <span class=\"ot\">&lt;-</span> <span class=\"dv\">72</span> <span class=\"sc\">/</span> <span class=\"fl\">1.6</span><span class=\"sc\">^</span><span class=\"dv\">2</span>       <span class=\"co\"># patient A</span></span>\n<span>bmi <span class=\"ot\">&lt;-</span> <span class=\"dv\">58</span> <span class=\"sc\">/</span> <span class=\"fl\">1.52</span><span class=\"sc\">^</span><span class=\"dv\">2</span>      <span class=\"co\"># patient B</span></span>\n<span>bmi                     <span class=\"co\"># patient A&#39;s BMI, for the report</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 25.10388</code></pre>\n<p>They write “Patient A: BMI 25.1 kg/m<sup>2</sup>”. Find what broke, and say why the wrong answer looks reasonable.</p>",
+   "level": 7,
+   "answer": "<p>The second line reused the name <code>bmi</code>. Assigning to it replaced patient A’s value with patient B’s, without any warning. The last line printed patient B’s BMI.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>bmi_a <span class=\"ot\">&lt;-</span> <span class=\"dv\">72</span> <span class=\"sc\">/</span> <span class=\"fl\">1.6</span><span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>bmi_b <span class=\"ot\">&lt;-</span> <span class=\"dv\">58</span> <span class=\"sc\">/</span> <span class=\"fl\">1.52</span><span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>bmi_a</span>\n<span>bmi_b</span></code></pre></div>\n<pre class=\"output\"><code>[1] 28.125\n[1] 25.10388</code></pre>\n<p>Patient A’s BMI is about 28.1 kg/m<sup>2</sup>. Patient B’s is about 25.1 kg/m<sup>2</sup>.</p>\n<p>Why the wrong answer looks reasonable: 25.1 kg/m<sup>2</sup> is an ordinary adult BMI, so nothing about it looks off. The comments even say “patient A”. Comments describe what the writer meant, and R does not read them. Separate names would have kept the two values apart.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>This script stops with an error. Find the cause.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">60</span></span>\n<span>height_m <span class=\"ot\">&lt;-</span> <span class=\"fl\">1.62</span></span>\n<span>weight_kg <span class=\"sc\">/</span> Height_m<span class=\"sc\">^</span><span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>Error: object &#39;Height_m&#39; not found</code></pre>",
+   "level": 8,
+   "answer": "<p>The object was made as <code>height_m</code>, with a small h. The third line asks for <code>Height_m</code>, with a capital H. R treats them as two different names, finds no object called <code>Height_m</code>, and stops. The error printed under the prompt’s code says so: object ‘Height_m’ not found.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"sc\">/</span> height_m<span class=\"sc\">^</span><span class=\"dv\">2</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 22.86237</code></pre>\n<p>With the name spelt as it was made, the BMI is about 22.9 kg/m<sup>2</sup>.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A line in a made-up thesis reads as follows. “The weight of participant 12 was corrected from 47 kg to 74 kg, a transposition error. The BMI was recalculated.” The participant’s height is 1.58 m. Write the lines that record this correction and give both BMIs. Then say what your lines do not establish.</p>",
+   "level": 9,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>height_m <span class=\"ot\">&lt;-</span> <span class=\"fl\">1.58</span></span>\n<span><span class=\"co\"># Participant 12: register says 47 kg; the paper form says 74 kg (digits swapped)</span></span>\n<span>weight_recorded_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">47</span></span>\n<span>weight_corrected_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">74</span></span>\n<span>bmi_recorded <span class=\"ot\">&lt;-</span> weight_recorded_kg <span class=\"sc\">/</span> height_m<span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>bmi_corrected <span class=\"ot\">&lt;-</span> weight_corrected_kg <span class=\"sc\">/</span> height_m<span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>bmi_recorded</span>\n<span>bmi_corrected</span></code></pre></div>\n<pre class=\"output\"><code>[1] 18.82711\n[1] 29.64269</code></pre>\n<p>The BMI moves from about 18.8 to about 29.6 kg/m<sup>2</sup>. Both values stay in the script under their own names, with a comment saying where the corrected value came from.</p>\n<p>What these lines do not establish:</p>\n<ul>\n<li>That 74 kg is right. The lines record the correction; they do not check it. Only the paper form, or a second measurement, can.</li>\n<li>That no other participant has the same kind of error. One swapped pair of digits found is a reason to check the rest, not a sign that the rest are clean.</li>\n<li>Anything about the thesis’s own results. If the correction was typed into a console and not into the script, the next run from the top will lose it.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A made-up thesis methods section says: “Height was recorded in centimetres and converted to metres before BMI was calculated.” Participant 2’s register entry reads: weight 64, height 1.63. Write the lines the sentence describes for participant 2, with names that carry units. Run them. Then say what the methods sentence does not establish.</p>",
+   "level": 10,
+   "answer": "<p>The sentence says heights were in centimetres, so the lines divide by 100:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">64</span></span>\n<span>height_cm <span class=\"ot\">&lt;-</span> <span class=\"fl\">1.63</span>    <span class=\"co\"># as written in the register</span></span>\n<span>height_m <span class=\"ot\">&lt;-</span> height_cm <span class=\"sc\">/</span> <span class=\"dv\">100</span></span>\n<span>bmi <span class=\"ot\">&lt;-</span> weight_kg <span class=\"sc\">/</span> height_m<span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>bmi</span></code></pre></div>\n<pre class=\"output\"><code>[1] 240882.2</code></pre>\n<p>The code runs without a complaint and gives a BMI in the hundreds of thousands. Book 0’s order-of-magnitude check says no adult has that. The height of 1.63 was written in metres, not centimetres, and dividing it by 100 made it 1.63 cm.</p>\n<p>The name <code>height_cm</code> did not protect you. A name says what you believe the value is. R does not check it against the value.</p>\n<p>After checking the paper form, record what you found and use it:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"ot\">&lt;-</span> <span class=\"dv\">64</span></span>\n<span><span class=\"co\"># Register shows 1.63; the form confirms metres (163 cm), unlike the other entries</span></span>\n<span>height_cm <span class=\"ot\">&lt;-</span> <span class=\"dv\">163</span></span>\n<span>height_m <span class=\"ot\">&lt;-</span> height_cm <span class=\"sc\">/</span> <span class=\"dv\">100</span></span>\n<span>bmi <span class=\"ot\">&lt;-</span> weight_kg <span class=\"sc\">/</span> height_m<span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>bmi</span></code></pre></div>\n<pre class=\"output\"><code>[1] 24.08822</code></pre>\n<p>The BMI is about 24.1 kg/m<sup>2</sup>.</p>\n<p>What the methods sentence does not establish:</p>\n<ul>\n<li>That every height was recorded in centimetres. It describes the plan, not the register.</li>\n<li>That anyone checked. A conversion applied to every row runs just as smoothly on a value recorded in the wrong unit.</li>\n<li>That the results are right. A check you set yourself, such as flagging any adult height outside 1 m to 2 m, would catch an entry like this one.</li>\n</ul>"
+  }
+ ]
+}
