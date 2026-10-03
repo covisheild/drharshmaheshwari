@@ -214,3 +214,22 @@ test('/account/: sign out, delete account and "what is stored" live there, linke
     assert.doesNotMatch(doc, /Delete account/, `${url} offers Delete account`);
   }
 });
+
+test('series page: "Find a subject" lists All then every subject in planned order; each subject shows all its books, only released ones linked', () => {
+  const doc = html.get('/doctors/books/obesity-expertise/');
+  assert.ok(doc, 'series page is built');
+  const series = JSON.parse(readFileSync(new URL('../src/data/books/obesity-expertise/series.json', import.meta.url), 'utf8'));
+  const subjects = new Map();
+  for (const b of series.books) { const k = b.subject ?? b.id; subjects.set(k, [...(subjects.get(k) ?? []), b]); }
+  const optionKeys = [...doc.matchAll(/<li role="option"[^>]* data-key="([^"]*)"/g)].map((m) => m[1]);
+  assert.deepEqual(optionKeys, ['', ...subjects.keys()], 'All first, then every subject in series.json order');
+  for (const [key, rungs] of subjects) {
+    const panel = doc.match(new RegExp(`<div class="subject-panel" data-key="${key}"[^>]*>([\\s\\S]*?)</div></div></div>`))?.[1];
+    assert.ok(panel, `${key} has a panel`);
+    assert.equal((panel.match(/class="sp-book"/g) ?? []).length, rungs.length, `${key} shows all ${rungs.length} books`);
+    for (const r of rungs) {
+      const out = existsSync(join(DIST, 'doctors/books/obesity-expertise', r.slug, 'index.html'));
+      assert.equal(panel.includes(`href="/doctors/books/obesity-expertise/${r.slug}/"`), out, `${r.id}: ${out ? 'released, linked' : 'unreleased, not linked'}`);
+    }
+  }
+});

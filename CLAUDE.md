@@ -116,6 +116,8 @@ local devDependency. Change production settings only on purpose; preview-only se
 - Signed in, `SyncedBookStore` (`src/reader/sync.ts`) syncs place, bookmarks and sections read (`/api/books/:book`) and
   practice marks (`attempts`, trainer `book-<id>`). Review (`<book>/review/`, `src/reader/review.ts`) is FSRS over those marks
   and the must-know points of sections read. The top bar has no PDF button; the PDF is offered at the start and end of a book.
+- Series page: "The path" has a searchable "Subject" dropdown (`SubjectFinder.astro`, `reader/finder.ts`): All, then every subject in `series.json` order;
+  choosing one shows all its books (released covers link, unreleased are faded). Built from `series.json`, so new books appear by themselves.
 
 ## Accounts (optional Google sign-in) and `/api/`
 

@@ -5,6 +5,8 @@
 // subject; a Part gets its own shelf only once it has three or more released subjects.
 import Base from '../../../../layouts/Base.astro';
 import SubjectCard from '../../../../components/books/SubjectCard.astro';
+import SubjectFinder from '../../../../components/books/SubjectFinder.astro';
+import Cover from '../../../../components/books/Cover.astro';
 import { obesityBooks, series, SERIES_URL } from '../../../../lib/obesity-books';
 import type { SeriesBook } from '../../../../reader/types';
 import { SITE } from '../../../../consts';
@@ -25,6 +27,13 @@ for (const rungs of subjects.values()) rungs.sort((a, b) => a.id.localeCompare(b
 const pathSubjects: string[] = [];
 for (const b of series.books) if (released.has(b.id) && !pathSubjects.includes(subjectKey(b))) pathSubjects.push(subjectKey(b));
 const next = series.books.find((b) => !released.has(b.id));
+
+// The "Find a subject" list: every subject, in the order the series plans them (series.json order).
+const subjectName = (rungs: SeriesBook[]) => rungs[0].title.replace(/\s*·\s*Rung \d$/, '');
+const finderSubjects = [...subjects].map(([key, rungs]) => ({
+  key, name: subjectName(rungs), part: rungs[0].part, total: rungs.length, out: rungs.filter((r) => released.has(r.id)).length,
+}));
+const rungOf = (b: SeriesBook) => b.id.match(/-R(\d)$/)?.[1];
 
 // Parts (Book 0 is not a Part), in the order they first appear in the series.
 const parts: { name: string; hue: number; subjects: string[]; released: number }[] = [];
@@ -62,9 +71,14 @@ const jsonld = [{ '@type': 'BookSeries', name: series.title, description: series
     </section>
 
     <section class="row" aria-labelledby="h-path">
-      <h2 id="h-path">The path</h2>
-      <p class="row-note">The released books, in the order the series builds them.</p>
-      <div class="shelf">
+      <div class="row-head">
+        <div>
+          <h2 id="h-path">The path</h2>
+          <p class="row-note" id="path-note">The released books, in the order the series builds them.</p>
+        </div>
+        <SubjectFinder subjects={finderSubjects} />
+      </div>
+      <div class="shelf" id="path-shelf">
         {pathSubjects.map((s) => <SubjectCard rungs={subjects.get(s)!} released={released} />)}
         {next && (
           <div class="next-card">
@@ -73,6 +87,22 @@ const jsonld = [{ '@type': 'BookSeries', name: series.title, description: series
           </div>
         )}
       </div>
+      {[...subjects].map(([key, rungs]) => (
+        <div class="subject-panel" data-key={key} hidden>
+          <p class="sp-head"><b>{key}</b> · {subjectName(rungs)}{rungs[0].part !== 'Book 0' && <span class="muted"> · {rungs[0].part}</span>}</p>
+          <div class="sp-books">
+            {rungs.map((r) => (
+              <div class="sp-book">
+                {released.has(r.id)
+                  ? <a class="sp-cover" href={`${SERIES_URL}${r.slug}/`} aria-label={`Book ${r.number}: ${r.title}`}><Cover hue={r.hue ?? 200} number={r.number} title={r.title} level={r.level} size="md" /></a>
+                  : <span class="sp-cover"><Cover hue={r.hue ?? 200} number={r.number} title={r.title} level={r.level} size="md" faint /></span>}
+                <p class="sp-label"><b>{rungOf(r) ? `Rung ${rungOf(r)}` : `Book ${r.number}`}</b><span>{r.level}</span></p>
+                <p class="sp-state">{released.has(r.id) ? 'Out' : 'Coming'}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </section>
 
     <section class="row" id="upnext" hidden aria-labelledby="h-upnext">
@@ -124,7 +154,9 @@ const jsonld = [{ '@type': 'BookSeries', name: series.title, description: series
 
 <script>
   import { mountSeries } from '../../../../reader/series';
+  import { mountFinder } from '../../../../reader/finder';
   mountSeries();
+  mountFinder();
 </script>
 
 <style>
@@ -133,7 +165,20 @@ const jsonld = [{ '@type': 'BookSeries', name: series.title, description: series
   .series section.row { margin-top: 2rem; padding-block: 0; }
   .row h2 { font-size: 1.15rem; margin: 0 0 .25rem; }
   .row-note { margin: 0 0 .75rem; font-size: .88rem; color: var(--ink-3); }
+  .row-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: .5rem 1rem; }
+  .row-head .row-note { margin-bottom: 0; }
+  .subject-panel { padding: .75rem 2px 1rem; }
+  .sp-head { margin: 0 0 1rem; font-size: 1rem; }
+  .sp-books { display: flex; flex-wrap: wrap; gap: 1.5rem 1.4rem; }
+  .sp-book { width: 140px; }
+  .sp-cover { display: block; border-radius: 8px; text-decoration: none; }
+  a.sp-cover:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+  .sp-label { margin: .55rem 0 .1rem; font-size: .84rem; color: var(--ink); }
+  .sp-label b, .sp-label span { display: block; }
+  .sp-label span { color: var(--ink-2); }
+  .sp-state { margin: 0; font-size: .78rem; color: var(--ink-3); }
   .shelf { display: flex; gap: 1.1rem; overflow-x: auto; padding: .5rem 2px 1rem; scroll-snap-type: x proximity; overscroll-behavior-x: contain; }
+  .shelf[hidden] { display: none; }
   .next-card { position: relative; }
   .next-label { margin: 0; font-size: .78rem; color: var(--ink-3); }
   .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .5rem; }
