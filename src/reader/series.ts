@@ -1,5 +1,5 @@
 // The series page's two personal rows, filled from this browser's reading progress (BookProgressStore):
-// "Continue reading" and "Up next for you". Without progress both stay hidden. Also the Part chips.
+// "Continue reading" and "Up next for you". Without progress both stay hidden.
 
 import { BookProgressStore, type BookState } from './store';
 
@@ -40,15 +40,4 @@ export function mountSeries() {
     document.getElementById('upnext-shelf')!.innerHTML = upNext.map((b) => card(b, 'Ready to start')).join('');
     document.getElementById('upnext')!.hidden = false;
   }
-
-  // Part chips: one open list at a time; tapping the open one closes it.
-  const chips = [...document.querySelectorAll<HTMLButtonElement>('.pchip')];
-  chips.forEach((c) => c.addEventListener('click', () => {
-    const open = c.getAttribute('aria-selected') !== 'true';
-    chips.forEach((x) => {
-      const on = x === c && open;
-      x.setAttribute('aria-selected', String(on));
-      document.getElementById(x.getAttribute('aria-controls')!)!.hidden = !on;
-    });
-  }));
 }

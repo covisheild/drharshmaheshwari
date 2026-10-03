@@ -223,6 +223,12 @@ test('series page: "Find a subject" lists All then every subject in planned orde
   for (const b of series.books) { const k = b.subject ?? b.id; subjects.set(k, [...(subjects.get(k) ?? []), b]); }
   const optionKeys = [...doc.matchAll(/<li role="option"[^>]* data-key="([^"]*)"/g)].map((m) => m[1]);
   assert.deepEqual(optionKeys, ['', ...subjects.keys()], 'All first, then every subject in series.json order');
+  // Subjects are numbered 0, 1, 2... in that order (no S01 codes), and the number is the Rung 1 cover's "Book N".
+  const shown = [...doc.matchAll(/<span class="o-n"[^>]*>([^<]*)<\/span>/g)].map((m) => m[1]);
+  assert.deepEqual(shown, [...subjects.keys()].map((_, i) => String(i)), 'subjects are numbered serially');
+  [...subjects.values()].forEach((rungs, i) => assert.equal(rungs[0].number, i, `subject ${i} is Book ${i} at Rung 1`));
+  assert.doesNotMatch(doc, /Browse by Part|class="pchip"|part-list/, 'no Part chips on the series page');
+  assert.doesNotMatch(doc.match(/<ul id="finder-list"[\s\S]*?<\/ul>/)[0], />S\d\d</, 'series codes are not shown in the list');
   for (const [key, rungs] of subjects) {
     const panel = doc.match(new RegExp(`<div class="subject-panel" data-key="${key}"[^>]*>([\\s\\S]*?)</div></div></div>`))?.[1];
     assert.ok(panel, `${key} has a panel`);

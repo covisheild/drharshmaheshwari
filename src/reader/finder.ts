@@ -1,5 +1,5 @@
 // The "Find a subject" combobox on the Obesity Expertise page (components/books/SubjectFinder.astro). Typing
-// narrows the list by code, title words or Part; choosing a subject swaps "The path" shelf for that subject's
+// narrows the list by number or title words; choosing a subject swaps "The path" shelf for that subject's
 // books (the .subject-panel blocks rendered in index.astro); choosing All brings the shelf back. Nothing is stored.
 
 export function mountFinder() {
@@ -28,7 +28,9 @@ export function mountFinder() {
 
   const filter = (q: string) => {
     const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
-    for (const o of opts) o.hidden = o.dataset.key === '' ? terms.length > 0 : !terms.every((t) => o.dataset.search!.includes(t));
+    // A number matches a subject's number from its start ("1" finds 1, 10 to 19); words match anywhere in the title.
+    const hit = (o: HTMLElement, t: string) => (/^\d+$/.test(t) ? o.dataset.n!.startsWith(t) : o.dataset.search!.includes(t));
+    for (const o of opts) o.hidden = o.dataset.key === '' ? terms.length > 0 : !terms.every((t) => hit(o, t));
     const n = shown().length;
     empty.hidden = n > 0;
     status.textContent = terms.length ? (n ? `${n} subject${n > 1 ? 's' : ''} match` : 'No subject matches') : '';

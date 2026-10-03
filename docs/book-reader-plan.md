@@ -62,13 +62,13 @@ S55-R1, S57-R1 (v1.0). Re-check `map/BOOKS.yml`; more freeze over time.
 - `/doctors/books/` shows the **Obesity Expertise series as one wide card** ("N of 196 out · Start
   with Book 0") beside the Statistics book. It links to `/doctors/books/obesity-expertise/`.
 - **One cover per subject**, not per rung, with a small "Rung 1 · 2 · 3" switch (195 rungs → 61 covers).
-- **Shelves are earned:** a Part gets its own shelf only once it has 3+ released subjects.
-- The series page has at most four rows:
+- The series page has at most three rows (Parts are not shown on the page: no shelves, no "Browse by Part" chips):
   1. **Continue reading** (only if there is progress, local or account).
   2. **The path** — released books in `map/BOOKS.yml` order, ending in one faint "Next: … · coming" card.
   3. **Up next for you** — books whose `prerequisites` (in `book.yml`) the reader has finished.
-  4. **Browse by Part** — a row of 18 chips in the PDF cover hues with counts ("Causal inference ·
-     0/17"); tapping one lists that Part. Unreleased books never take shelf space.
+  Beside **The path** is a searchable **Subject** dropdown: All, then every subject in series order, numbered
+  0, 1, 2... (the number is the "Book N" on the subject's Rung 1 cover; the series codes S01... are not shown).
+  Choosing one shows all its books: released covers link, unreleased are faded. Unreleased books never take shelf space.
 - Covers are generated from the Part hues in `check/pdf/series.yml` (no hand-made images).
 - **Every completed (frozen) book is published.** The pipeline publishes directly; no Notion row is
   needed to trigger it (see Notion below).

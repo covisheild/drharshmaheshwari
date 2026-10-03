@@ -1,8 +1,9 @@
 ---
-// The Obesity Expertise series: 196 books planned, shown without overwhelming anyone. At most four rows:
-// Continue reading (only with progress), The path (released books in build order, then one faint "Next"),
-// Up next for you (books whose prerequisites you have finished), Browse by Part (18 chips). One cover per
-// subject; a Part gets its own shelf only once it has three or more released subjects.
+// The Obesity Expertise series: 196 books planned, shown without overwhelming anyone. At most three rows:
+// Continue reading (only with progress), The path (released books in build order, then one faint "Next"; a
+// "Subject" dropdown beside it shows any subject's books), Up next for you (books whose prerequisites you have
+// finished). One cover per subject. Subjects are numbered 0, 1, 2... in the order the series builds them; the
+// number is also the "Book N" on the subject's Rung 1 cover.
 import Base from '../../../../layouts/Base.astro';
 import SubjectCard from '../../../../components/books/SubjectCard.astro';
 import SubjectFinder from '../../../../components/books/SubjectFinder.astro';
@@ -30,21 +31,11 @@ const next = series.books.find((b) => !released.has(b.id));
 
 // The "Find a subject" list: every subject, in the order the series plans them (series.json order).
 const subjectName = (rungs: SeriesBook[]) => rungs[0].title.replace(/\s*·\s*Rung \d$/, '');
-const finderSubjects = [...subjects].map(([key, rungs]) => ({
-  key, name: subjectName(rungs), part: rungs[0].part, total: rungs.length, out: rungs.filter((r) => released.has(r.id)).length,
+const finderSubjects = [...subjects].map(([key, rungs], n) => ({
+  key, n, name: subjectName(rungs), total: rungs.length, out: rungs.filter((r) => released.has(r.id)).length,
 }));
+const subjectNo = new Map(finderSubjects.map((f) => [f.key, f.n]));
 const rungOf = (b: SeriesBook) => b.id.match(/-R(\d)$/)?.[1];
-
-// Parts (Book 0 is not a Part), in the order they first appear in the series.
-const parts: { name: string; hue: number; subjects: string[]; released: number }[] = [];
-for (const b of series.books) {
-  if (b.part === 'Book 0') continue;
-  let p = parts.find((x) => x.name === b.part);
-  if (!p) { p = { name: b.part, hue: series.hues[b.part] ?? 200, subjects: [], released: 0 }; parts.push(p); }
-  if (!p.subjects.includes(subjectKey(b))) p.subjects.push(subjectKey(b));
-}
-for (const p of parts) p.released = p.subjects.filter((s) => subjects.get(s)!.some((r) => released.has(r.id))).length;
-const shelves = parts.filter((p) => p.released >= 3);
 
 // What the browser needs for the two rows that depend on this reader's own progress.
 const client = obesityBooks.map((b) => ({
@@ -89,7 +80,7 @@ const jsonld = [{ '@type': 'BookSeries', name: series.title, description: series
       </div>
       {[...subjects].map(([key, rungs]) => (
         <div class="subject-panel" data-key={key} hidden>
-          <p class="sp-head"><b>{key}</b> · {subjectName(rungs)}{rungs[0].part !== 'Book 0' && <span class="muted"> · {rungs[0].part}</span>}</p>
+          <p class="sp-head"><b>{subjectNo.get(key)}</b> · {subjectName(rungs)}</p>
           <div class="sp-books">
             {rungs.map((r) => (
               <div class="sp-book">
@@ -109,42 +100,6 @@ const jsonld = [{ '@type': 'BookSeries', name: series.title, description: series
       <h2 id="h-upnext">Up next for you</h2>
       <p class="row-note">Books whose earlier books you have finished.</p>
       <div class="shelf" id="upnext-shelf"></div>
-    </section>
-
-    {shelves.map((p) => (
-      <section class="row" aria-label={p.name}>
-        <h2>{p.name}</h2>
-        <div class="shelf">{p.subjects.filter((s) => subjects.get(s)!.some((r) => released.has(r.id))).map((s) => <SubjectCard rungs={subjects.get(s)!} released={released} />)}</div>
-      </section>
-    ))}
-
-    <section class="row" aria-labelledby="h-parts">
-      <h2 id="h-parts">Browse by Part</h2>
-      <div class="chips" role="tablist" aria-label="Parts of the series">
-        {parts.map((p, i) => (
-          <button type="button" class="pchip" role="tab" aria-selected="false" aria-controls={`part-${i}`} style={`--h:${p.hue}`}>
-            <span class="dot" aria-hidden="true"></span>{p.name} · {p.released}/{p.subjects.length}
-          </button>
-        ))}
-      </div>
-      {parts.map((p, i) => (
-        <div class="part-list" id={`part-${i}`} role="tabpanel" hidden>
-          <ol>
-            {p.subjects.map((s) => {
-              const rungs = subjects.get(s)!;
-              const out = rungs.filter((r) => released.has(r.id));
-              const name = rungs[0].title.replace(/\s*·\s*Rung \d$/, '');
-              return (
-                <li class:list={{ out: out.length > 0 }}>
-                  <span class="sn">{s}</span>
-                  {out.length ? <a href={`${SERIES_URL}${out[0].slug}/`}>{name}</a> : <span>{name}</span>}
-                  <span class="st">{out.length ? `${out.length} of ${rungs.length} rung${rungs.length > 1 ? 's' : ''} out` : `${rungs.length} rung${rungs.length > 1 ? 's' : ''} · coming`}</span>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-      ))}
     </section>
 
     <p class="muted small" style="margin-top:2.5rem">Every book is shared under CC BY-NC-SA 4.0: free to copy, share and adapt for non-commercial use, with credit, under the same licence. Educational, not personal medical advice. If these books help you, you can <a href="/support/">support this project</a>.</p>
@@ -181,17 +136,4 @@ const jsonld = [{ '@type': 'BookSeries', name: series.title, description: series
   .shelf[hidden] { display: none; }
   .next-card { position: relative; }
   .next-label { margin: 0; font-size: .78rem; color: var(--ink-3); }
-  .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .5rem; }
-  .pchip { display: inline-flex; align-items: center; gap: .45rem; min-height: 36px; padding: .3rem .75rem; border-radius: 999px;
-    border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); font: 600 .82rem var(--font-body); cursor: pointer; text-align: left; }
-  .pchip .dot { width: .7rem; height: .7rem; border-radius: 50%; background: hsl(var(--h) 60% 38%); flex: none; }
-  .pchip[aria-selected='true'] { border-color: hsl(var(--h) 60% 38%); color: var(--ink); background: var(--surface-2); }
-  .part-list { margin-top: 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: .5rem 1rem; }
-  .part-list ol { list-style: none; margin: 0; padding: 0; }
-  .part-list li { display: grid; grid-template-columns: 3.2rem 1fr auto; gap: .75rem; align-items: baseline; padding: .55rem 0; border-bottom: 1px solid var(--line); font-size: .92rem; color: var(--ink-3); }
-  .part-list li:last-child { border-bottom: 0; }
-  .part-list li.out { color: var(--ink); }
-  .part-list .sn { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--ink-3); }
-  .part-list .st { font-size: .8rem; white-space: nowrap; }
-  @media (max-width: 560px) { .part-list li { grid-template-columns: 2.8rem 1fr; } .part-list .st { grid-column: 2; } }
 </style>

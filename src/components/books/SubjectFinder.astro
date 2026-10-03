@@ -3,7 +3,7 @@
 // (the shelf as it is); then every subject in the order the series plans them. Choosing one shows all of that
 // subject's books in its place (the panels in index.astro); src/reader/finder.ts does the filtering and showing.
 // A plain <select> cannot be searched, so this is an accessible combobox: an input and a list of options.
-export interface FinderSubject { key: string; name: string; part: string; total: number; out: number }
+export interface FinderSubject { key: string; n: number; name: string; total: number; out: number }
 interface Props { subjects: FinderSubject[] }
 const { subjects } = Astro.props;
 const state = (s: FinderSubject) => (s.out === 0 ? 'Coming' : `${s.out} of ${s.total} out`);
@@ -18,8 +18,8 @@ const state = (s: FinderSubject) => (s.out === 0 ? 'Coming' : `${s.out} of ${s.t
       <li role="option" id="fo-all" data-key="" aria-selected="true"><span class="o-t">All</span></li>
       {subjects.map((s) => (
         <li role="option" id={`fo-${s.key}`} data-key={s.key} aria-selected="false" data-out={s.out > 0 ? '1' : '0'}
-          data-search={`${s.key} ${s.name} ${s.part}`.toLowerCase()} data-label={`${s.key} · ${s.name}`}>
-          <span class="o-n">{s.key}</span><span class="o-t">{s.name}</span><span class="o-s">{state(s)}</span>
+          data-n={String(s.n)} data-search={s.name.toLowerCase()} data-label={`${s.n} · ${s.name}`}>
+          <span class="o-n">{s.n}</span><span class="o-t">{s.name}</span><span class="o-s">{state(s)}</span>
         </li>
       ))}
       <li class="finder-empty" role="presentation" hidden>No subject matches.</li>
@@ -46,7 +46,7 @@ const state = (s: FinderSubject) => (s.out === 0 ? 'Coming' : `${s.out} of ${s.t
   }
   .finder ul[hidden] { display: none; }
   .finder li[role='option'] {
-    display: grid; grid-template-columns: 2.6rem 1fr auto; gap: .5rem; align-items: baseline; padding: .5rem .55rem; border-radius: 6px;
+    display: grid; grid-template-columns: 1.8rem 1fr auto; gap: .5rem; align-items: baseline; padding: .5rem .55rem; border-radius: 6px;
     font-size: .9rem; color: var(--ink-3); cursor: pointer;
   }
   .finder li[hidden] { display: none; }
