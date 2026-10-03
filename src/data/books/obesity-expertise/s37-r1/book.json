@@ -2248,8 +2248,13 @@
    "senses": [
     {
      "term": "denominator",
-     "plain": "(1) the number below the line, saying how many equal parts the whole was cut into (Book 0, A2); (2) of a percentage, what it is a percentage of (Book 0, F1)",
-     "where": "Book 0, A2, Book 0, F1"
+     "plain": "the number below the line, saying how many equal parts the whole was cut into",
+     "where": "Book 0, A2"
+    },
+    {
+     "term": "denominator",
+     "plain": "of a percentage, what it is a percentage of",
+     "where": "Book 0, F1"
     }
    ]
   },
@@ -4988,8 +4993,13 @@
    "senses": [
     {
      "term": "substitution",
-     "plain": "(1) putting a number in place of a letter, everywhere it appears (Book 0, C1); (2) to solve two equations, rearranging one to give a letter on its own and putting that into the other (Book 0, C3)",
-     "where": "Book 0, C1, Book 0, C3"
+     "plain": "putting a number in place of a letter, everywhere it appears",
+     "where": "Book 0, C1"
+    },
+    {
+     "term": "substitution",
+     "plain": "to solve two equations, rearranging one to give a letter on its own and putting that into the other",
+     "where": "Book 0, C3"
     }
    ]
   },
@@ -5218,8 +5228,8 @@
    "senses": [
     {
      "term": "vector",
-     "plain": "(1) an ordered list of numbers, called its entries; one row of a data table is a vector; (2) in R, an ordered set of values of one type, held as one object under one name and built with c(); each column of a data frame is one",
-     "where": "Book 2, section 10, Book 6, section 4"
+     "plain": "an ordered list of numbers, called its entries; one row of a data table is a vector",
+     "where": "Book 2, section 10"
     }
    ]
   },
