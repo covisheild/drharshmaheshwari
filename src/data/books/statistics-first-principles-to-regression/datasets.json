@@ -1,0 +1,471 @@
+[
+ {
+  "file": "bp_methods.csv",
+  "rows": 30,
+  "columns": [
+   "adult_id",
+   "sbp_mercury",
+   "sbp_digital"
+  ],
+  "sections": [
+   {
+    "id": "c16-s03",
+    "label": "16.3",
+    "title": "Reliability of a Measurement Instrument"
+   }
+  ]
+ },
+ {
+  "file": "cbhi_survey.csv",
+  "rows": 500,
+  "columns": [
+   "hh_id",
+   "village_id",
+   "distance_km",
+   "wealth_index",
+   "maternal_education",
+   "household_size",
+   "cbhi_member",
+   "facility_use_past_month",
+   "child_sick_2wk",
+   "sought_formal_care",
+   "reason_not_joining",
+   "satisfaction_1to5"
+  ],
+  "sections": [
+   {
+    "id": "c07-s02",
+    "label": "7.2",
+    "title": "Confidence Intervals"
+   },
+   {
+    "id": "c08-s05",
+    "label": "8.5",
+    "title": "p-value – Correct Interpretation"
+   },
+   {
+    "id": "c09-s03",
+    "label": "9.3",
+    "title": "Tests of Normality"
+   },
+   {
+    "id": "c10-s02",
+    "label": "10.2",
+    "title": "Mann-Whitney U Test"
+   },
+   {
+    "id": "c10-s04",
+    "label": "10.4",
+    "title": "Kruskal-Wallis Test"
+   },
+   {
+    "id": "c10-s06",
+    "label": "10.6",
+    "title": "Chi-Square Test"
+   },
+   {
+    "id": "c13-s02",
+    "label": "13.2",
+    "title": "Logistic Regression"
+   },
+   {
+    "id": "c13-s03",
+    "label": "13.3",
+    "title": "Analysis Journey – Logistic Regression"
+   },
+   {
+    "id": "c15-s01",
+    "label": "15.1",
+    "title": "Model Selection"
+   },
+   {
+    "id": "c15-s02",
+    "label": "15.2",
+    "title": "Clustered and Hierarchical Data"
+   },
+   {
+    "id": "c15-s03",
+    "label": "15.3",
+    "title": "Confounding Handling Techniques"
+   },
+   {
+    "id": "c15-s04",
+    "label": "15.4",
+    "title": "Missing Data"
+   },
+   {
+    "id": "c15-s05",
+    "label": "15.5",
+    "title": "Diagnostic Test Statistics"
+   }
+  ]
+ },
+ {
+  "file": "clinic_children.csv",
+  "rows": 100,
+  "columns": [
+   "child_id",
+   "seen_today",
+   "arrival_order",
+   "age_months",
+   "sex",
+   "weight_kg",
+   "height_cm",
+   "nutritional_status",
+   "diarrhoea_episodes_month",
+   "wealth_quintile",
+   "maternal_education"
+  ],
+  "sections": [
+   {
+    "id": "c01-s06",
+    "label": "1.6",
+    "title": "Data in Software – Codebooks, Entry, Cleaning and an R Primer"
+   },
+   {
+    "id": "c07-s02",
+    "label": "7.2",
+    "title": "Confidence Intervals"
+   },
+   {
+    "id": "c09-s02",
+    "label": "9.2",
+    "title": "t-test"
+   },
+   {
+    "id": "c09-s03",
+    "label": "9.3",
+    "title": "Tests of Normality"
+   },
+   {
+    "id": "c09-s05",
+    "label": "9.5",
+    "title": "ANOVA"
+   },
+   {
+    "id": "c11-s02",
+    "label": "11.2",
+    "title": "Pearson Correlation Coefficient"
+   },
+   {
+    "id": "c11-s03",
+    "label": "11.3",
+    "title": "Spearman Rank Correlation"
+   },
+   {
+    "id": "c12-s02",
+    "label": "12.2",
+    "title": "Simple Linear Regression"
+   },
+   {
+    "id": "c12-s04",
+    "label": "12.4",
+    "title": "Multiple Linear Regression"
+   },
+   {
+    "id": "c12-s05",
+    "label": "12.5",
+    "title": "Regression Diagnostics"
+   },
+   {
+    "id": "c13-s01",
+    "label": "13.1",
+    "title": "Why We Need a Generalised Framework"
+   }
+  ]
+ },
+ {
+  "file": "cohort_dropout.csv",
+  "rows": 300,
+  "columns": [
+   "hh_id",
+   "intervention",
+   "income_k",
+   "distance_km",
+   "time_months",
+   "dropout",
+   "censor_reason"
+  ],
+  "sections": [
+   {
+    "id": "c14-s04",
+    "label": "14.4",
+    "title": "Kaplan-Meier Survival Curve"
+   },
+   {
+    "id": "c14-s05",
+    "label": "14.5",
+    "title": "Log-Rank Test"
+   },
+   {
+    "id": "c14-s06",
+    "label": "14.6",
+    "title": "Cox Proportional Hazards Regression"
+   },
+   {
+    "id": "c14-s07",
+    "label": "14.7",
+    "title": "Analysis Journey – Cox Regression"
+   },
+   {
+    "id": "c14-s08",
+    "label": "14.8",
+    "title": "Competing Risks"
+   }
+  ]
+ },
+ {
+  "file": "ebf_diarrhoea_cohort.csv",
+  "rows": 200,
+  "columns": [
+   "infant_id",
+   "phc",
+   "not_ebf",
+   "diarrhoea"
+  ],
+  "sections": [
+   {
+    "id": "c08-s07",
+    "label": "8.7",
+    "title": "General Steps in Hypothesis Testing"
+   },
+   {
+    "id": "c09-s01",
+    "label": "9.1",
+    "title": "z-test"
+   },
+   {
+    "id": "c10-s06",
+    "label": "10.6",
+    "title": "Chi-Square Test"
+   },
+   {
+    "id": "c11-s07",
+    "label": "11.7",
+    "title": "Stratified Analysis – Mantel–Haenszel, Effect Modification and Simpson’s Paradox"
+   },
+   {
+    "id": "c17-s03",
+    "label": "17.3",
+    "title": "Confounding"
+   }
+  ]
+ },
+ {
+  "file": "journey_mlr.csv",
+  "rows": 240,
+  "columns": [
+   "child_id",
+   "age_months",
+   "sex",
+   "wealth_index",
+   "weight_kg"
+  ],
+  "sections": [
+   {
+    "id": "c12-s04",
+    "label": "12.4",
+    "title": "Multiple Linear Regression"
+   },
+   {
+    "id": "c12-s06",
+    "label": "12.6",
+    "title": "Analysis Journey – Multiple Linear Regression"
+   }
+  ]
+ },
+ {
+  "file": "kappa_anaemia.csv",
+  "rows": 100,
+  "columns": [
+   "patient_id",
+   "rater_A",
+   "rater_B"
+  ],
+  "sections": [
+   {
+    "id": "c16-s03",
+    "label": "16.3",
+    "title": "Reliability of a Measurement Instrument"
+   }
+  ]
+ },
+ {
+  "file": "km_eight.csv",
+  "rows": 8,
+  "columns": [
+   "member_id",
+   "time_months",
+   "dropout"
+  ],
+  "sections": [
+   {
+    "id": "c14-s04",
+    "label": "14.4",
+    "title": "Kaplan-Meier Survival Curve"
+   }
+  ]
+ },
+ {
+  "file": "lifetable_district.csv",
+  "rows": 7,
+  "columns": [
+   "age_start",
+   "age_end",
+   "midyear_pop",
+   "deaths"
+  ],
+  "sections": [
+   {
+    "id": "c07-s05",
+    "label": "7.5",
+    "title": "The Life Table"
+   }
+  ]
+ },
+ {
+  "file": "malaria_villages.csv",
+  "rows": 10,
+  "columns": [
+   "village",
+   "near_water",
+   "population",
+   "cases"
+  ],
+  "sections": [
+   {
+    "id": "c13-s05",
+    "label": "13.5",
+    "title": "Poisson Regression"
+   }
+  ]
+ },
+ {
+  "file": "matched_casecontrol.csv",
+  "rows": 160,
+  "columns": [
+   "pair_id",
+   "case",
+   "not_ebf"
+  ],
+  "sections": [
+   {
+    "id": "c10-s08",
+    "label": "10.8",
+    "title": "McNemar’s Test"
+   },
+   {
+    "id": "c13-s02",
+    "label": "13.2",
+    "title": "Logistic Regression"
+   }
+  ]
+ },
+ {
+  "file": "meta_three_trials.csv",
+  "rows": 3,
+  "columns": [
+   "study",
+   "events_int",
+   "n_int",
+   "events_ctl",
+   "n_ctl"
+  ],
+  "sections": [
+   {
+    "id": "c15-s07",
+    "label": "15.7",
+    "title": "Meta-Analysis Statistics"
+   }
+  ]
+ },
+ {
+  "file": "nfhs_extract.csv",
+  "rows": 640,
+  "columns": [
+   "woman_id",
+   "stratum",
+   "district",
+   "residence",
+   "psu",
+   "weight",
+   "age",
+   "education",
+   "anaemic"
+  ],
+  "sections": [
+   {
+    "id": "c15-s02",
+    "label": "15.2",
+    "title": "Clustered and Hierarchical Data"
+   }
+  ]
+ },
+ {
+  "file": "paired_hb_ifa.csv",
+  "rows": 10,
+  "columns": [
+   "id",
+   "hb_before",
+   "hb_after"
+  ],
+  "sections": [
+   {
+    "id": "c09-s02",
+    "label": "9.2",
+    "title": "t-test"
+   }
+  ]
+ },
+ {
+  "file": "pps_villages.csv",
+  "rows": 10,
+  "columns": [
+   "village",
+   "population"
+  ],
+  "sections": [],
+  "note": "§6.2.6 PPS worked list"
+ },
+ {
+  "file": "sign_test_hb.csv",
+  "rows": 12,
+  "columns": [
+   "woman_id",
+   "hb_before",
+   "hb_after"
+  ],
+  "sections": [
+   {
+    "id": "c10-s01",
+    "label": "10.1",
+    "title": "When to Use Non-Parametric Tests"
+   },
+   {
+    "id": "c10-s03",
+    "label": "10.3",
+    "title": "Wilcoxon Signed-Rank Test"
+   }
+  ]
+ },
+ {
+  "file": "standardisation_districts.csv",
+  "rows": 6,
+  "columns": [
+   "age_group",
+   "popA",
+   "deathsA",
+   "popB",
+   "deathsB",
+   "std_pop",
+   "std_rate_per1000"
+  ],
+  "sections": [
+   {
+    "id": "c07-s04",
+    "label": "7.4",
+    "title": "Rates, Ratios and Standardisation"
+   }
+  ]
+ }
+]

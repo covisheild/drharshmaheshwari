@@ -93,7 +93,7 @@ function write(k: string, v: unknown) {
   try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* private mode or full: reading still works */ }
 }
 /** `b0-r0-c05-p3` -> `b0-r0-c05`: the section a question or must-know point belongs to. */
-export const sectionOf = (item: string) => item.replace(/-[epk]\d+$/, '');
+export const sectionOf = (item: string) => item.replace(/-[epkq]\d+$/, '');
 
 export const newId = () =>
   typeof crypto !== 'undefined' && 'randomUUID' in crypto ? crypto.randomUUID() : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;

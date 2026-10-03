@@ -7,6 +7,8 @@ published: 2026-09-28
 size: "9.5 MB"
 pdf: "https://files.drharshmaheshwari.com/books/Statistics-From_First_Principles_to_Regression_v3.1.pdf"
 cover: "/books/statistics-first-principles-to-regression.webp"
+read: "/doctors/books/statistics-first-principles-to-regression/read/"
+datasets: "/doctors/books/statistics-first-principles-to-regression/data/"
 theme: { main: "#5b35c8", second: "#b8378f", onDark: "#b9a4ff" }
 license: "CC BY-NC-SA 4.0"
 mode: doctors

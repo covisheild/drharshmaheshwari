@@ -574,6 +574,59 @@ try {
     check(errs.length === 0, `${name}: Copy for AI has no script errors ${errs.join(' | ')}`);
     await ctx.close();
   }
+
+  // ---------- Statistics book in the reader (/doctors/books/statistics-first-principles-to-regression/read/) ----------
+  const SB = '/doctors/books/statistics-first-principles-to-regression/';
+  for (const [name, vp] of [['phone', { width: 390, height: 844 }], ['desktop', { width: 1280, height: 900 }]]) {
+    const ctx = await context(vp);
+    const page = await ctx.newPage();
+    const errs = errorsOf(page);
+    await page.goto(BASE + SB);
+    check(await page.locator(`a.btn[href="${SB}read/"]`).count() === 1, `${name}: the book's page offers "Read online"`);
+    await page.goto(BASE + SB + 'read/#c04-s02');
+    await page.waitForSelector('#c04-s02 .rd-body[data-state="done"]');
+    await page.waitForTimeout(700);
+    check(/^4\.2 /.test(await page.locator('#rd-where').textContent()), `${name}: a section link lands on that section (4.2)`);
+    check(await overflow(page) <= 0, `${name}: Statistics reader has no sideways scroll`);
+    const sec = page.locator('#c04-s02');
+    check(await sec.locator('h4.hd[data-num="4.2.1"]').count() === 1, `${name}: the book's own sub-headings are there (4.2.1)`);
+    check((await sec.locator('.lab span').allTextContents()).includes('Simplified Explanation'), `${name}: the book's own labels are used as written`);
+    check(await sec.locator('figure img').count() >= 3, `${name}: figures are in the page`);
+    check(await sec.locator('figure img').first().getAttribute('alt') !== '', `${name}: a figure has its alt text`);
+    // A checkpoint: try, then reveal the model answer, then mark.
+    const q = sec.locator('.q-checkpoint').first();
+    await q.locator('.q-reveal').click();
+    check(await q.locator('.q-ans').isVisible() && /Hide model answer/.test(await q.locator('.q-reveal').textContent()), `${name}: a checkpoint's model answer opens`);
+    await q.locator('[data-mark="missed"]').click();
+    const marks = await page.evaluate(() => JSON.parse(localStorage.getItem('book:stats:v1')).practice);
+    check(marks['c04-s02-q1']?.mark === 'missed', `${name}: the checkpoint mark is kept`);
+    // A § reference goes to its place and offers the way back.
+    await page.locator('#c04-s02 a.xref', { hasText: '§4.3.1' }).first().click();
+    await page.waitForSelector('#c04-s03 .rd-body[data-state="done"]');
+    await page.waitForTimeout(700);
+    check(/^4\.3 /.test(await page.locator('#rd-where').textContent()), `${name}: a § link goes to that section (4.3)`);
+    check(await page.locator('#rd-toast [data-go]').isVisible(), `${name}: a § jump offers the way back`);
+    await page.locator('#rd-toast [data-go]').click();
+    await page.waitForTimeout(500);
+    check(/^4\.2 /.test(await page.locator('#rd-where').textContent()), `${name}: "Back to where you were" returns to 4.2`);
+    // R code and its output, and the references list.
+    await page.goto(BASE + SB + 'read/#c09-s01');
+    await page.waitForSelector('#c09-s01 .rd-body[data-state="done"]');
+    check(await page.locator('#c09-s01 pre.sourceCode').count() > 0 && await page.locator('#c09-s01 pre.output').count() > 0, `${name}: R code and its output are in code boxes`);
+    await page.goto(BASE + SB + 'read/#refs');
+    await page.waitForSelector('#refs .rd-body[data-state="done"]');
+    check(await page.locator('#refs ol li').count() > 200, `${name}: the references list is there`);
+    check(await page.locator('#refs a.xref').count() === 0, `${name}: NIST § numbers in the references are not turned into links`);
+    check(errs.length === 0, `${name}: Statistics reader has no script errors ${errs.join(' | ')}`);
+    // Review: the missed checkpoint question comes back.
+    await page.goto(BASE + SB + 'read/review/');
+    await page.waitForSelector('.rv-card .q, .rv-done');
+    check(/Checkpoint 4\.1 · question 1 of 3/.test(await page.locator('.rv-card .rv-kind').textContent()), `${name}: Review brings back the missed checkpoint question`);
+    await page.locator('.rv-card .q-reveal').click();
+    check(/Model answer/.test(await page.locator('.rv-card .q-ans-label').textContent()), `${name}: Review shows its model answer`);
+    check(await overflow(page) <= 0, `${name}: Statistics Review has no sideways scroll`);
+    await ctx.close();
+  }
 } finally {
   await browser.close();
   if (started) try { execSync('npx astro preview stop', { stdio: 'ignore' }); } catch {}

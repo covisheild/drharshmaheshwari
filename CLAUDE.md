@@ -112,6 +112,18 @@ local devDependency. Change production settings only on purpose; preview-only se
   these files by hand; re-export. Book URLs use the book id (`b0`, `s01-r1`) and are permanent.
 - Figures and PDFs are on R2 (`books/obesity-expertise/figures/`, `books/obesity-expertise/<ID>-v<version>.pdf`).
   `PUBLIC_BOOK_FIGURES` overrides the figure base for local testing.
+- **Statistics: From First Principles to Regression** (`stats`) is read at `/doctors/books/statistics-first-principles-to-regression/read/`
+  (its PDF page stays at the parent URL, which offers "Read online" through `read:` in `src/content/books/<slug>.md`). Text:
+  `src/data/books/statistics-first-principles-to-regression/`, written by `scripts/books/statistics/export.py` from the
+  unzipped source (`statsbook-v3.1-source.zip`: `src/`, `answers/`, `refs/`, `tools/build.py`); never edit it by hand, re-export.
+  The converter parses the markdown with pandoc, cuts it at the book's own labels, pairs each checkpoint question with its model
+  answer from `answers/` (the reader's "try, then reveal"; Appendix A still prints them), links each § reference, and with
+  `--docx` compares every word with the released Word file. `src/99-appendix.md` in the zip is the retired v2.2 appendix: ignored.
+  Figures (79 PNG) go to R2 at `books/statistics-first-principles-to-regression/figures/`: all of `figs/out/` and 17 `media0/media/imageN.png`
+  (list: `--figures-out`). The In R boxes read `data/<file>.csv`: the export publishes those 17 synthetic datasets, `make_data.R`,
+  a README and a zip under `public/doctors/books/<slug>/data/`, with their page at `/doctors/books/<slug>/data/` (rows, columns and the
+  sections that read each file come from the book itself). The files are small text, so they live in the repo, not R2.
+- `BookReader.astro` / `BookReview.astro` lay out every book's reader and review; the two series' pages only pass their own titles and links.
 - Progress goes only through `BookProgressStore` (`src/reader/store.ts`, `book:<id>:v1`), never localStorage directly.
 - Figures: tap the picture or its enlarge button to open the viewer (`src/reader/zoom.ts`, `#rd-zoom`): pinch, double-tap, wheel,
   `+ - 0`, arrows, Back/Esc to close. The button sits beside `.fig-card`, never inside a `.c` (children of `.c` are the numbered paragraphs).

@@ -1,6 +1,7 @@
 // A book's Review: spaced repetition over what you have met in the book, using the trainers' scheduler
 // (src/trainers/core/schedule.ts, FSRS). Two kinds of item:
-//   - questions you marked in the reader (exercises `-e<n>`, practice `-p<n>`): missed last time = due now;
+//   - questions you marked in the reader (exercises `-e<n>`, practice `-p<n>`, a checkpoint's questions `-q<n>`):
+//     missed last time = due now;
 //     otherwise due when predicted recall falls to 90%;
 //   - must-know points (`-k<n>`) of sections you have read to the end: new ones join at most NEW_PER_DAY a day,
 //     then follow the same schedule. You recall the point, open it, and mark yourself.
@@ -18,6 +19,10 @@ interface Data { outline: OutlinePart[]; sectionsBase: string; figureBase: strin
 export function dueCount(store: { get(): { attempts: readonly import('../trainers/core/progress').Attempt[] } }) {
   return dueItems(store.get().attempts).length;
 }
+
+/** A section's must-know points in reading order. The Statistics book has one list per concept, so one section
+ *  has several; the Obesity Expertise books have one. Points are numbered across them, `-k1`, `-k2`, ... */
+const mustKnow = (sec: Section) => sec.blocks.flatMap((b) => (b.t === 'mustknow' ? b.points : []));
 
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
@@ -51,8 +56,7 @@ export async function mountReview() {
     if (!room) break;
     if (!st.done.includes(s.id)) continue;
     const sec = await load(s.id);
-    const mk = sec.blocks.find((b) => b.t === 'mustknow') as Extract<Block, { t: 'mustknow' }> | undefined;
-    mk?.points.forEach((_, k) => { const id = `${s.id}-k${k + 1}`; if (room && !tried.has(id) && !queue.includes(id)) { queue.push(id); room--; } });
+    mustKnow(sec).forEach((_, k) => { const id = `${s.id}-k${k + 1}`; if (room && !tried.has(id) && !queue.includes(id)) { queue.push(id); room--; } });
   }
 
   let i = 0;
@@ -63,15 +67,23 @@ export async function mountReview() {
     const item = queue[i];
     const sid = sectionOf(item);
     const sec = await load(sid);
-    const kind = item.match(/-([epk])(\d+)$/)!;
+    const kind = item.match(/-([epkq])(\d+)$/)!;
     const n = Number(kind[2]);
     let head = '', front = '', back = '';
     if (kind[1] === 'k') {
-      const mk = sec.blocks.find((b) => b.t === 'mustknow') as Extract<Block, { t: 'mustknow' }>;
-      const p = mk.points[n - 1];
-      head = `Must-know point ${n} of ${mk.points.length}${p.tag ? ` · ${esc(p.tag.replace('_', ' '))}` : ''}`;
+      const points = mustKnow(sec);
+      const p = points[n - 1];
+      if (!p) { i++; return show(); } // a point that a new version of the book no longer has
+      head = `Must-know point ${n} of ${points.length}${p.tag ? ` · ${esc(p.tag.replace('_', ' '))}` : ''}`;
       front = `<p class="rv-ask">What is must-know point ${n} of this section? Say it to yourself, then open it.</p>`;
       back = `<div class="c">${p.html}</div>`;
+    } else if (kind[1] === 'q') {
+      const cp = sec.blocks.find((x) => x.t === 'checkpoint' && x.questions.some((q) => q.n === n)) as Extract<Block, { t: 'checkpoint' }> | undefined;
+      const q = cp?.questions.find((x) => x.n === n);
+      if (!cp || !q) { i++; return show(); }
+      head = `${esc(cp.label)} · question ${cp.questions.indexOf(q) + 1} of ${cp.questions.length}`;
+      front = `<div class="c">${q.prompt}</div>`;
+      back = `<div class="c">${q.answer}</div>`;
     } else {
       const b = sec.blocks.find((x) => x.t === (kind[1] === 'e' ? 'exercise' : 'practice') && x.n === n) as Extract<Block, { t: 'exercise' | 'practice' }> | undefined;
       if (!b) { i++; return show(); } // a question that a new version of the book no longer has
@@ -82,8 +94,8 @@ export async function mountReview() {
     box.innerHTML = lines(`<div class="q">
       <div class="q-head"><span class="q-n">${esc(title.get(sid) ?? '')}</span></div>
       <p class="rv-kind">${head}</p>${front}
-      <button type="button" class="q-reveal" aria-expanded="false">${kind[1] === 'k' ? 'Show the point' : 'Show worked answer'}</button>
-      <div class="q-ans" hidden><div class="q-ans-label">${kind[1] === 'k' ? 'The point' : 'Worked answer'}</div>${back}
+      <button type="button" class="q-reveal" aria-expanded="false">${kind[1] === 'k' ? 'Show the point' : kind[1] === 'q' ? 'Show model answer' : 'Show worked answer'}</button>
+      <div class="q-ans" hidden><div class="q-ans-label">${kind[1] === 'k' ? 'The point' : kind[1] === 'q' ? 'Model answer' : 'Worked answer'}</div>${back}
         <div class="q-self" role="group" aria-label="How did you do?"><span>How did you do?</span>
           <button type="button" data-mark="got">Got it</button><button type="button" data-mark="missed">Missed it</button></div></div>
       <p class="rv-src"><a href="${data.bookUrl}#${sid}">Open this section in the book</a></p>

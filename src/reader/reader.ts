@@ -387,7 +387,8 @@ export function startReader() {
       const ans = document.getElementById(rev.getAttribute('aria-controls')!)!;
       ans.hidden = !ans.hidden;
       rev.setAttribute('aria-expanded', String(!ans.hidden));
-      rev.textContent = ans.hidden ? 'Show worked answer' : 'Hide worked answer';
+      const word = rev.dataset.word ?? 'worked answer'; // a checkpoint's is a "model answer"
+      rev.textContent = `${ans.hidden ? 'Show' : 'Hide'} ${word}`;
       scheduleScrub();
       return;
     }
@@ -446,6 +447,37 @@ export function startReader() {
   // Glossary terms are focusable for keyboard readers.
   new MutationObserver(() => root.querySelectorAll<HTMLElement>('dfn[data-g]:not([tabindex])').forEach((d) => { d.tabIndex = 0; d.setAttribute('role', 'button'); }))
     .observe(root, { childList: true, subtree: true });
+
+  // ---------------------------------------------------------------- § references (Statistics book)
+  // "§4.5.6" in the text links to that place. Jump there, and offer the way back: the reader keeps its own
+  // place, so the browser's Back button would not return you to the paragraph you were reading.
+  root.addEventListener('click', (e) => {
+    const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a.xref');
+    if (!a) return;
+    e.preventDefault();
+    // Back goes to the paragraph that holds the link, which is where the reader's eyes were.
+    const para = a.closest<HTMLElement>('[data-p]');
+    const home = a.closest<HTMLElement>('.rd-sec');
+    const from: Location | undefined = para && home ? { s: home.dataset.sec!, p: Number(para.dataset.p), f: 0 } : current()?.loc;
+    const num = a.dataset.num!;
+    const sid = a.dataset.sec!;
+    void (async () => {
+      await jumpTo({ s: sid, p: 0, f: 0 }, true);
+      const h = byId.get(sid)?.querySelector<HTMLElement>(`[data-num="${CSS.escape(num)}"]`);
+      if (h) {
+        window.scrollTo({ top: window.scrollY + h.getBoundingClientRect().top - topline(), behavior: 'instant' });
+        captureAnchor(h);
+      }
+      if (!from) return;
+      const toast = document.getElementById('rd-toast')!;
+      toast.innerHTML = `<p>Jumped to <b>§${escapeHtml(num)}</b>.</p>
+        <div><button type="button" data-go>Back to where you were</button><button type="button" data-stay>Stay here</button></div>`;
+      toast.hidden = false;
+      const hide = setTimeout(() => { toast.hidden = true; }, 15000);
+      toast.querySelector('[data-go]')!.addEventListener('click', () => { clearTimeout(hide); toast.hidden = true; void jumpTo(from); });
+      toast.querySelector('[data-stay]')!.addEventListener('click', () => { clearTimeout(hide); toast.hidden = true; });
+    })();
+  });
 
   // ---------------------------------------------------------------- your other devices
   // When the account copy arrives (sync.ts), bookmarks and practice marks from other devices appear here.
