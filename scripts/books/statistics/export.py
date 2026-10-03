@@ -79,6 +79,7 @@ LABELS = [
 ]
 
 CARETS = collections.Counter()
+OMITTED = []    # the "(Answers in the Appendix ...)" lines left out of the reader (see Cutter.checkpoint)
 PROBLEMS = []   # stop the export
 NOTES = []      # reported only
 
@@ -447,7 +448,7 @@ class Cutter:
 
     def checkpoint(self, text, blocks, i):
         cid = text.split()[1]
-        questions, note = [], None
+        questions = []
         j = i + 1
         if j < len(blocks) and blocks[j]["t"] == "OrderedList":
             questions = blocks[j]["c"][1]
@@ -455,7 +456,10 @@ class Cutter:
         else:
             PROBLEMS.append(f"{self.sec['id']}: {text} has no list of questions")
         if j < len(blocks) and blocks[j]["t"] == "Para" and plain(blocks[j]["c"]).startswith("(Answers in the Appendix"):
-            note, j = blocks[j]["c"], j + 1
+            # The book prints this line under every checkpoint. The reader shows each model answer under its own
+            # question ("Show model answer"), so the pointer to the appendix would only confuse; it is left out.
+            OMITTED.append(plain(blocks[j]["c"]))
+            j += 1
         ans = self.answers.get(cid)
         if ans is None or len(ans) != len(questions):
             PROBLEMS.append(f"{self.sec['id']}: {text} has {len(questions)} questions and {0 if ans is None else len(ans)} answers")
@@ -464,8 +468,7 @@ class Cutter:
         for q, a in zip(questions, ans):
             self.cp_n += 1
             out.append({"n": self.cp_n, "prompt": frag(q), "answer": frag(a["a"])})
-        self.sec["blocks"].append({"t": "checkpoint", "id": cid, "label": text, "questions": out,
-                                   "note": inline_html(note) if note else ""})
+        self.sec["blocks"].append({"t": "checkpoint", "id": cid, "label": text, "questions": out, "note": ""})
         return j
 
 
@@ -795,6 +798,7 @@ def compare_docx(docx, book, sections):
         walk({k: v for k, v in s.items() if k != "label" and not (k == "title" and re.fullmatch(r"c\d\d", s["id"]))}
              | ({"label": s["label"]} if re.fullmatch(r"[\d.]+", s["label"]) else {}), keys)
         walk([b for b in s["blocks"] if b["t"] in ("prose", "mustknow", "checkpoint")], ("label",))
+    ours.extend(OMITTED)                                            # left out on purpose, so counted as present
     theirs, mine = tok(p.stdout), tok(" ".join(ours))
     tc, mc = collections.Counter(theirs), collections.Counter(mine)
     diff = {k: (tc[k], mc[k]) for k in set(tc) | set(mc) if tc[k] != mc[k]}

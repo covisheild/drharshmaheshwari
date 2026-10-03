@@ -29,7 +29,7 @@
  },
  "blurb": "A derivation-first statistics book for doctors: from describing data through probability, estimation and testing to regression and survival analysis.",
  "requires": [],
- "words": 194510,
+ "words": 193570,
  "outline": [
   {
    "id": "front",
@@ -87,7 +87,7 @@
      "id": "c01-s01",
      "label": "1.1",
      "title": "What Is a Variable",
-     "words": 2701,
+     "words": 2681,
      "practice": 6
     },
     {
@@ -101,28 +101,28 @@
      "id": "c01-s03",
      "label": "1.3",
      "title": "Parameter vs Statistic",
-     "words": 498,
+     "words": 488,
      "practice": 3
     },
     {
      "id": "c01-s04",
      "label": "1.4",
      "title": "Organising Raw Data",
-     "words": 2642,
+     "words": 2622,
      "practice": 6
     },
     {
      "id": "c01-s05",
      "label": "1.5",
      "title": "Study Designs – A First Map",
-     "words": 1123,
+     "words": 1113,
      "practice": 3
     },
     {
      "id": "c01-s06",
      "label": "1.6",
      "title": "Data in Software – Codebooks, Entry, Cleaning and an R Primer",
-     "words": 1430,
+     "words": 1420,
      "practice": 3
     }
    ]
@@ -149,7 +149,7 @@
      "id": "c02-s02",
      "label": "2.2",
      "title": "Mean",
-     "words": 1989,
+     "words": 1979,
      "practice": 3
     },
     {
@@ -170,7 +170,7 @@
      "id": "c02-s05",
      "label": "2.5",
      "title": "Choosing the Right Measure of Central Tendency",
-     "words": 686,
+     "words": 676,
      "practice": 3
     }
    ]
@@ -211,7 +211,7 @@
      "id": "c03-s04",
      "label": "3.4",
      "title": "Interquartile Range",
-     "words": 549,
+     "words": 539,
      "practice": 3
     },
     {
@@ -232,7 +232,7 @@
      "id": "c03-s07",
      "label": "3.7",
      "title": "Standard Deviation",
-     "words": 697,
+     "words": 687,
      "practice": 3
     },
     {
@@ -253,7 +253,7 @@
      "id": "c03-s10",
      "label": "3.10",
      "title": "Kurtosis",
-     "words": 630,
+     "words": 620,
      "practice": 3
     }
    ]
@@ -280,28 +280,28 @@
      "id": "c04-s02",
      "label": "4.2",
      "title": "Diagrams for Qualitative Data",
-     "words": 1287,
+     "words": 1277,
      "practice": 3
     },
     {
      "id": "c04-s03",
      "label": "4.3",
      "title": "Diagrams for Quantitative Data",
-     "words": 2291,
+     "words": 2281,
      "practice": 3
     },
     {
      "id": "c04-s04",
      "label": "4.4",
      "title": "Scatter Diagram",
-     "words": 458,
+     "words": 448,
      "practice": 3
     },
     {
      "id": "c04-s05",
      "label": "4.5",
      "title": "Diagrams for Time, Place and Population",
-     "words": 3219,
+     "words": 3199,
      "practice": 6
     }
    ]
@@ -321,14 +321,14 @@
      "id": "c05-s01",
      "label": "5.1",
      "title": "From Counting to Probability",
-     "words": 1295,
+     "words": 1285,
      "practice": 3
     },
     {
      "id": "c05-s02",
      "label": "5.2",
      "title": "Basic Probability Rules",
-     "words": 1057,
+     "words": 1047,
      "practice": 3
     },
     {
@@ -342,28 +342,28 @@
      "id": "c05-s04",
      "label": "5.4",
      "title": "Independence of Events",
-     "words": 496,
+     "words": 486,
      "practice": 3
     },
     {
      "id": "c05-s05",
      "label": "5.5",
      "title": "Bayes’ Theorem",
-     "words": 2441,
+     "words": 2431,
      "practice": 3
     },
     {
      "id": "c05-s06",
      "label": "5.6",
      "title": "Random Variables",
-     "words": 802,
+     "words": 792,
      "practice": 3
     },
     {
      "id": "c05-s07",
      "label": "5.7",
      "title": "Probability Distributions",
-     "words": 5746,
+     "words": 5706,
      "practice": 12
     }
    ]
@@ -390,7 +390,7 @@
      "id": "c06-s02",
      "label": "6.2",
      "title": "Probability Sampling Methods",
-     "words": 4123,
+     "words": 4103,
      "practice": 6
     },
     {
@@ -404,7 +404,7 @@
      "id": "c06-s04",
      "label": "6.4",
      "title": "Sampling Error vs Bias",
-     "words": 891,
+     "words": 881,
      "practice": 3
     },
     {
@@ -425,7 +425,7 @@
      "id": "c06-s07",
      "label": "6.7",
      "title": "Standard Error",
-     "words": 692,
+     "words": 682,
      "practice": 3
     }
    ]
@@ -445,35 +445,35 @@
      "id": "c07-s01",
      "label": "7.1",
      "title": "Point Estimation",
-     "words": 675,
+     "words": 665,
      "practice": 3
     },
     {
      "id": "c07-s02",
      "label": "7.2",
      "title": "Confidence Intervals",
-     "words": 3072,
+     "words": 3052,
      "practice": 6
     },
     {
      "id": "c07-s03",
      "label": "7.3",
      "title": "Margin of Error and Sample Size Estimation",
-     "words": 1125,
+     "words": 1115,
      "practice": 3
     },
     {
      "id": "c07-s04",
      "label": "7.4",
      "title": "Rates, Ratios and Standardisation",
-     "words": 3177,
+     "words": 3157,
      "practice": 6
     },
     {
      "id": "c07-s05",
      "label": "7.5",
      "title": "The Life Table",
-     "words": 1241,
+     "words": 1231,
      "practice": 3
     }
    ]
@@ -514,7 +514,7 @@
      "id": "c08-s04",
      "label": "8.4",
      "title": "Significance Level and Power",
-     "words": 1293,
+     "words": 1283,
      "practice": 3
     },
     {
@@ -528,7 +528,7 @@
      "id": "c08-s06",
      "label": "8.6",
      "title": "One-Tailed vs Two-Tailed Tests",
-     "words": 623,
+     "words": 613,
      "practice": 3
     },
     {
@@ -542,7 +542,7 @@
      "id": "c08-s08",
      "label": "8.8",
      "title": "Choosing the Right Statistical Test",
-     "words": 1539,
+     "words": 1529,
      "practice": 3
     }
    ]
@@ -562,14 +562,14 @@
      "id": "c09-s01",
      "label": "9.1",
      "title": "z-test",
-     "words": 1669,
+     "words": 1659,
      "practice": 3
     },
     {
      "id": "c09-s02",
      "label": "9.2",
      "title": "t-test",
-     "words": 2586,
+     "words": 2576,
      "practice": 4
     },
     {
@@ -583,14 +583,14 @@
      "id": "c09-s04",
      "label": "9.4",
      "title": "Data Transformation Techniques",
-     "words": 577,
+     "words": 567,
      "practice": 2
     },
     {
      "id": "c09-s05",
      "label": "9.5",
      "title": "ANOVA",
-     "words": 2905,
+     "words": 2885,
      "practice": 6
     }
    ]
@@ -610,7 +610,7 @@
      "id": "c10-s01",
      "label": "10.1",
      "title": "When to Use Non-Parametric Tests",
-     "words": 1102,
+     "words": 1092,
      "practice": 2
     },
     {
@@ -638,14 +638,14 @@
      "id": "c10-s05",
      "label": "10.5",
      "title": "Friedman Test",
-     "words": 578,
+     "words": 568,
      "practice": 3
     },
     {
      "id": "c10-s06",
      "label": "10.6",
      "title": "Chi-Square Test",
-     "words": 4238,
+     "words": 4218,
      "practice": 6
     },
     {
@@ -659,7 +659,7 @@
      "id": "c10-s08",
      "label": "10.8",
      "title": "McNemar’s Test",
-     "words": 1039,
+     "words": 1029,
      "practice": 3
     }
    ]
@@ -700,7 +700,7 @@
      "id": "c11-s04",
      "label": "11.4",
      "title": "Point-Biserial and Phi Coefficient",
-     "words": 515,
+     "words": 505,
      "practice": 3
     },
     {
@@ -714,14 +714,14 @@
      "id": "c11-s06",
      "label": "11.6",
      "title": "Confounding – A Working Introduction",
-     "words": 1812,
+     "words": 1802,
      "practice": 3
     },
     {
      "id": "c11-s07",
      "label": "11.7",
      "title": "Stratified Analysis – Mantel–Haenszel, Effect Modification and Simpson’s Paradox",
-     "words": 2104,
+     "words": 2094,
      "practice": 3
     }
    ]
@@ -748,35 +748,35 @@
      "id": "c12-s02",
      "label": "12.2",
      "title": "Simple Linear Regression",
-     "words": 3651,
+     "words": 3631,
      "practice": 6
     },
     {
      "id": "c12-s03",
      "label": "12.3",
      "title": "Assumptions of Linear Regression",
-     "words": 673,
+     "words": 663,
      "practice": 3
     },
     {
      "id": "c12-s04",
      "label": "12.4",
      "title": "Multiple Linear Regression",
-     "words": 3744,
+     "words": 3724,
      "practice": 5
     },
     {
      "id": "c12-s05",
      "label": "12.5",
      "title": "Regression Diagnostics",
-     "words": 1166,
+     "words": 1156,
      "practice": 3
     },
     {
      "id": "c12-s06",
      "label": "12.6",
      "title": "Analysis Journey – Multiple Linear Regression",
-     "words": 1458,
+     "words": 1448,
      "practice": 2
     }
    ]
@@ -803,7 +803,7 @@
      "id": "c13-s02",
      "label": "13.2",
      "title": "Logistic Regression",
-     "words": 4808,
+     "words": 4778,
      "practice": 9
     },
     {
@@ -831,14 +831,14 @@
      "id": "c13-s06",
      "label": "13.6",
      "title": "Negative Binomial Regression",
-     "words": 1076,
+     "words": 1066,
      "practice": 3
     },
     {
      "id": "c13-s07",
      "label": "13.7",
      "title": "Estimating Prevalence and Risk Ratios Directly",
-     "words": 1447,
+     "words": 1437,
      "practice": 3
     }
    ]
@@ -879,21 +879,21 @@
      "id": "c14-s04",
      "label": "14.4",
      "title": "Kaplan-Meier Survival Curve",
-     "words": 1638,
+     "words": 1628,
      "practice": 3
     },
     {
      "id": "c14-s05",
      "label": "14.5",
      "title": "Log-Rank Test",
-     "words": 969,
+     "words": 959,
      "practice": 3
     },
     {
      "id": "c14-s06",
      "label": "14.6",
      "title": "Cox Proportional Hazards Regression",
-     "words": 2496,
+     "words": 2476,
      "practice": 5
     },
     {
@@ -907,7 +907,7 @@
      "id": "c14-s08",
      "label": "14.8",
      "title": "Competing Risks",
-     "words": 1505,
+     "words": 1495,
      "practice": 2
     }
    ]
@@ -927,63 +927,63 @@
      "id": "c15-s01",
      "label": "15.1",
      "title": "Model Selection",
-     "words": 3285,
+     "words": 3265,
      "practice": 6
     },
     {
      "id": "c15-s02",
      "label": "15.2",
      "title": "Clustered and Hierarchical Data",
-     "words": 5147,
+     "words": 5117,
      "practice": 9
     },
     {
      "id": "c15-s03",
      "label": "15.3",
      "title": "Confounding Handling Techniques",
-     "words": 2926,
+     "words": 2916,
      "practice": 3
     },
     {
      "id": "c15-s04",
      "label": "15.4",
      "title": "Missing Data",
-     "words": 1943,
+     "words": 1933,
      "practice": 3
     },
     {
      "id": "c15-s05",
      "label": "15.5",
      "title": "Diagnostic Test Statistics",
-     "words": 3040,
+     "words": 3020,
      "practice": 6
     },
     {
      "id": "c15-s06",
      "label": "15.6",
      "title": "Sample Size and Power Calculation",
-     "words": 1642,
+     "words": 1632,
      "practice": 3
     },
     {
      "id": "c15-s07",
      "label": "15.7",
      "title": "Meta-Analysis Statistics",
-     "words": 3734,
+     "words": 3714,
      "practice": 6
     },
     {
      "id": "c15-s08",
      "label": "15.8",
      "title": "Introduction to Bayesian Statistics",
-     "words": 1142,
+     "words": 1132,
      "practice": 3
     },
     {
      "id": "c15-s09",
      "label": "15.9",
      "title": "Randomised Trials – Randomisation, ITT, Baseline Adjustment, Cluster and Non-Inferiority Designs",
-     "words": 1957,
+     "words": 1947,
      "practice": 3
     }
    ]
@@ -1010,14 +1010,14 @@
      "id": "c16-s02",
      "label": "16.2",
      "title": "Validity of a Measurement Instrument",
-     "words": 2015,
+     "words": 1995,
      "practice": 5
     },
     {
      "id": "c16-s03",
      "label": "16.3",
      "title": "Reliability of a Measurement Instrument",
-     "words": 4937,
+     "words": 4917,
      "practice": 5
     },
     {
@@ -1045,7 +1045,7 @@
      "id": "c16-s07",
      "label": "16.7",
      "title": "Questionnaire Validation Methodology",
-     "words": 957,
+     "words": 947,
      "practice": 3
     }
    ]
@@ -1065,21 +1065,21 @@
      "id": "c17-s01",
      "label": "17.1",
      "title": "Validity of a Study",
-     "words": 1144,
+     "words": 1134,
      "practice": 3
     },
     {
      "id": "c17-s02",
      "label": "17.2",
      "title": "Bias in Research",
-     "words": 4362,
+     "words": 4342,
      "practice": 6
     },
     {
      "id": "c17-s03",
      "label": "17.3",
      "title": "Confounding",
-     "words": 2180,
+     "words": 2170,
      "practice": 3
     },
     {
@@ -1093,7 +1093,7 @@
      "id": "c17-s05",
      "label": "17.5",
      "title": "Qualitative and Mixed Methods – What a Quantitative Researcher Must Know",
-     "words": 844,
+     "words": 834,
      "practice": 3
     }
    ]
