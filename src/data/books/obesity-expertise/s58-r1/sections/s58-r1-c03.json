@@ -1,0 +1,152 @@
+{
+ "format": 1,
+ "id": "s58-r1-c03",
+ "label": "3",
+ "title": "The one message: your argument in one or two sentences, written first",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A paper’s <dfn data-g=\"456\">one message</dfn> is its central <dfn data-g=\"95\">claim</dfn>, stated in one or two sentences: what the study found, and why that matters.</p>\n<p>The message is written before the draft, and it is a test. It passes only if it is a claim, which would be false had the data come out differently, and if it answers the reader’s “so what?”.</p>\n<p>The title is the message in its shortest form. The <dfn data-g=\"4\">abstract</dfn> is the argument in small: the context, the gap, what was done, the main result, and what it means.</p>",
+   "refs": [
+    37,
+    38,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    46,
+    46,
+    47,
+    48,
+    49,
+    50,
+    31,
+    51,
+    52
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Before you write the paper, write one or two sentences that say what you found and why it matters. That is your one message.</p>\n<p>Test it two ways. First, would the sentence be false if your data had come out differently? If not, it says nothing yet. Second, does it answer “so what?” for someone who reads only that sentence? That is, does it say what the finding changes for someone: a programme, a clinician, the next study?</p>\n<p>The abstract is the message with its reasons: what was known, what was missing, what you did, what you found, and what it means. <dfn data-g=\"85\">Check</dfn> that the title, the abstract and the paper all say the same thing.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Take the running case of this book: the National Family Health Survey’s figures for adults with <dfn data-g=\"467\">overweight</dfn> or obesity, in the fourth round (NFHS-4, 2015-16) and the fifth (NFHS-5, 2019-21). Try to write its one message. Here are three attempts, each made up for this section. Test each one by asking: would this sentence be false if the data had come out the other way?</p>\n<blockquote>\n<p><strong>Attempt 1.</strong> This paper is about overweight and obesity in Indian adults, using NFHS data.</p>\n</blockquote>\n<p>True whatever the data showed. It names a topic and claims nothing. A reader who stops here learns what you looked at, not what you found.</p>\n<blockquote>\n<p><strong>Attempt 2.</strong> We report the share of adults with overweight or obesity by sex, by urban and rural residence, and in two survey rounds.</p>\n</blockquote>\n<p>Still true whatever the data showed. It is a list of contents. Five findings may be hiding in it, and the reader is not told which one the paper is for.</p>\n<blockquote>\n<p><strong>Attempt 3.</strong> Between 2015-16 and 2019-21, the share of Indian adults aged 15-49 with overweight or obesity rose in women and in men, to about one woman in four and more than one man in five.</p>\n</blockquote>\n<p>This one could be false. Had the share fallen, the sentence would be wrong, so it says something. Check its two size phrases against the figures, 24.0 per cent of women and 22.9 per cent of men.</p>\n<div class=\"working\">\n<p>1 divided by 4 = 0.25, which is 25 per cent<br />\n1 divided by 5 = 0.2, which is 20 per cent</p>\n</div>\n<p>24.0 per cent is close to 25, so “about one woman in four” holds. 22.9 per cent is above 20, so “more than one man in five” holds.</p>\n<p>Now the “so what?” test: does the message say what the finding changes for someone? The size phrases say how big the rise is, not what it changes. So add a second sentence.</p>\n<blockquote>\n<p>So a programme that planned its reach on the 2015-16 shares would now plan for too few people.</p>\n</blockquote>\n<p>With it, attempt 3 passes both tests.</p>\n<p>Last, say what the message does not claim. It covers ages 15 to 49 only. Its women’s figures leave out pregnant women and women who gave birth in the previous two months. It counts overweight and obesity together. And it shows that the share rose, not why it rose. Do not let the title or the abstract claim more.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This case has a thin gap: anyone can read the two columns of the fact <dfn data-g=\"622\">sheet</dfn>. A real paper’s message reports something nobody had measured, and its “so what?” usually needs a sentence of its own. The test is the same.</p>\n<p>The figures hold for India as a whole, for adults aged 15-49, in the two rounds named.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now build the title and the abstract from that message, and check them against each other.</p>\n<p>Start with a title that fails: “NFHS-5 and overweight”. It names a topic, not a finding. It also opens on an abbreviation, which the Recommendations of the International Committee of Medical Journal Editors (ICMJE) ask authors to keep out of a title. A searcher who types “National Family Health Survey” may not find it.</p>\n<p>Cut the message down instead, keeping the finding and the words a searcher would use.</p>\n<blockquote>\n<p>Overweight and obesity rose among women and men aged 15-49 in India between 2015-16 and 2019-21: a comparison of two National Family Health Surveys</p>\n</blockquote>\n<p>The part after the colon names the design, which some journals require. Suppose your journal also wants a <dfn data-g=\"623\">short title</dfn> of no more than 40 characters, letters and spaces both counted. Try “Overweight and obesity rose, ages 15-49” and count it; the comma, digits and hyphen count too.</p>\n<div class=\"working\">\n<p>10 plus 3 plus 7 plus 5 plus 4 plus 5 = 34 characters without spaces<br />\n34 plus 5 spaces = 39 characters</p>\n</div>\n<p>It fits, and it still carries the finding and the age range.</p>\n<p>Then the abstract, one sentence for each part of the argument.</p>\n<blockquote>\n<p>The National Family Health Survey reports the share of women and men aged 15-49 with overweight or obesity [context]. The fifth round’s India fact sheet prints the fourth round’s figures beside its own but does not state the change [gap]. We compared the two rounds for each sex [what was done]. The share rose from 20.6 to 24.0 per cent in women and from 18.9 to 22.9 per cent in men, by 3.4 and 4.0 percentage points [result]. So a programme that planned its reach on the 2015-16 shares would now plan for too few people; the surveys show the rise, not its cause [meaning].</p>\n</blockquote>\n<p>The labels in square brackets are there to show the parts; a real abstract leaves them out, or uses the headings its journal asks for.</p>\n<p>Last, the check that catches the commonest fault. Suppose your first draft of the abstract said “by 3.6 <dfn data-g=\"478\">percentage</dfn> points in women”, written before you redid the subtraction. That 3.6 is planted here; the results give 3.4. ICMJE notes that information in abstracts often differs from that in the text. So list every number in the title and abstract, find each one in the results, and make them agree before anyone else reads the draft.</p>",
+   "numberRefs": [
+    53
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A five-sentence abstract fits this small case. A journal may ask for set headings and a word limit, and then its format wins; the parts of the argument stay the same.</p>\n<p>Counting characters by hand works for a short title. For a long one, let the word processor count, and check whether your journal counts spaces.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Write your one message before you draft any section. If you cannot write it, you are not ready to draft.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“This study is about…” is a topic, not a message.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Make the title the message in its shortest form, with no abbreviations, which ICMJE’s Recommendations ask authors to avoid there.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before anyone else reads your draft, list every number in the title and abstract and find each one in the results.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Mensh and Kording apply this rule, one of their first four, to grants and posters too. In this book, carry the same message into the talk and the answer to a journalist as well.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A clear message is not a true one. Writing the message does not test whether the data carry it. Check that separately, and if they carry less, cut the message to fit them.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“One message” can be read as “report one result and drop the rest”. That reading is wrong. ICMJE’s Recommendations ask for data on every main and secondary outcome named in the methods. Mensh and Kording allow one contribution to have several parts. The one message decides what the paper is for. The other results stay in, each placed where it supports the message or marks a limit on it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Between 2015-16 and 2019-21, the share of Indian adults aged 15-49 with overweight or obesity rose in women and in men. By 2019-21 it was about one woman in four and more than one man in five. The two surveys show the rise, not its cause.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what are the two tests a one-message sentence must pass? And what are the parts of an abstract’s argument, in order?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>First, it must be a claim: it would be false had the data come out differently. Second, it must answer “so what?” for a reader told only that sentence.</p>\n<p>The abstract: the context, the gap, what was done, the main result, and what it means.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Three residents offer the one message of their theses. All three are made up. Say which is a message, what is wrong with the other two, and what the message does not show.</p>\n<blockquote>\n<p><strong>(a)</strong> This thesis studies waist and body mass index in adults who come to a rural health centre.</p>\n</blockquote>\n<blockquote>\n<p><strong>(b)</strong> We measured waist, body mass index, blood pressure and fasting blood sugar in 300 adults. We report each by age and sex.</p>\n</blockquote>\n<blockquote>\n<p><strong>(c)</strong> In 300 adults at a rural health centre, waist put more people above its cut-off than body mass index did. So screening by body mass index alone would miss some of the people waist would flag.</p>\n</blockquote>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<ol start=\"3\" type=\"a\">\n<li>is a message. Had <dfn data-g=\"61\">body mass index</dfn> flagged as many people as waist did, or more, its first sentence would be false. So it claims something. Its second sentence answers “so what?”. It follows from the first. If waist flags more people than body mass index does, some of the people waist flags must be missed by body mass index.</li>\n</ol>\n<p>Message (a) is a topic. It is true whatever the thesis found.</p>\n<p>Message (b) is a list of what was measured. It is also true whatever was found, and it does not say which finding the thesis is for.</p>\n<p>What (c) does not show: that the extra people flagged by waist are at higher risk of disease. That needs data on what happens to them, which this design does not collect.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Write the one message of the section you chose for this book’s build, in one or two sentences. Test it both ways. Then write a title from it, and an abstract of five sentences, one for each part of the argument.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Check your work in this order.</p>\n<ul>\n<li>Message: would it be false had your data come out differently? Does it say why it matters? Does it claim no more than the data carry, with no cause where you measured only an association?</li>\n<li>Title: does it state the finding, with no abbreviation, in words a searcher would <dfn data-g=\"695\">type</dfn>? Does it name the design, if your journal asks?</li>\n<li>Abstract: is there one sentence each for the context, the gap, what you did, the main result and the meaning? Does the meaning say what the finding changes for someone, and answer the question the context posed?</li>\n<li>Agreement: is every number in the title and abstract the same as in your results?</li>\n</ul>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A journalist rings and asks: “Is obesity rising in India?” You have three minutes and the NFHS-4 and NFHS-5 figures. Give the one quotable sentence, and say how sure the evidence lets you be.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The quotable sentence: “In the national family health surveys, a larger share of adults aged 15 to 49 had overweight or obesity in 2019-21 than in 2015-16. By 2019-21 the share was about one woman in four, and more than one man in five.”</p>\n<p>Then the confidence, in plain words. These are large national surveys, and the rise appears in both women and men. But the figures count overweight and obesity together. They cover ages 15 to 49 only. They tell us the share rose, not why.</p>\n<p>If asked “why”, say that these surveys cannot answer it, and do not guess.</p>"
+  }
+ ]
+}

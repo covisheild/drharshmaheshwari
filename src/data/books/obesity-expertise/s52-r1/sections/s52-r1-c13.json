@@ -1,0 +1,235 @@
+{
+ "format": 1,
+ "id": "s52-r1-c13",
+ "label": "13",
+ "title": "Missing values: counting them and saying how many",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In R, a missing value is the constant <code>NA</code>, “not available”. R turns a code into <code>NA</code> only when it is told to, at reading or in a later line of code.</p>\n<p><code>is.na(x)</code> returns <code>TRUE</code> for each element of <code>x</code> that is <code>NA</code>. In arithmetic, <code>TRUE</code> counts as 1 and <code>FALSE</code> as 0, so <code>sum(is.na(x))</code> is the number of missing values in <code>x</code>.</p>\n<p><code>mean(x, na.rm = TRUE)</code> and similar summaries leave out the missing values. The number of values behind the result is then <code>sum(!is.na(x))</code>, not <code>length(x)</code>.</p>\n<p><code>drop_na()</code>, from the tidyr <dfn data-g=\"331\">package</dfn>, keeps only the rows with no missing value in the columns it is given, or in every column when it is given none. Analysing only such rows is called <dfn data-g=\"82\">complete-case analysis</dfn>.</p>",
+   "refs": [
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A missing value reaches R in one of two ways. Either it is already <code>NA</code>, or it arrives disguised as a real value: a weight of 999, a height of -99, the words “not recorded”. R cannot tell a disguised code from a measurement.</p>\n<p>Read the <dfn data-g=\"109\">data dictionary</dfn>, then look at the largest and smallest values of each column. Turn every code into <code>NA</code> in your <dfn data-g=\"427\">script</dfn>, never in the file.</p>\n<p>Then count. <code>sum(is.na(x))</code> counts the missing values in one column. <code>colSums(is.na(data))</code> counts them in every column at once.</p>\n<p>Dropping rows with <code>drop_na()</code> is a choice, not a clean-up. It changes which rows your answer is about.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c13-rows-kept.png",
+   "alt": "A bar chart with four bars: all rows 344, body mass present 342, body mass and sex present 333, every column present 34.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Rows of the penguin file kept by four choices: all 344 rows; 342 with a body mass; 333 with a body mass and a recorded sex; 34 with no gap in any column. The last drop is driven by the Comments column, which is empty in 290 rows."
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c13-missing-by-column.png",
+   "alt": "A bar chart of the columns with any missing value: Culmen Length 2, Culmen Depth 2, Flipper Length 2, Body Mass 2, Sex 11, Delta 15 N 14, Delta 13 C 13, Comments 290.",
+   "w": 1668,
+   "h": 700,
+   "caption": "Missing values in each column of the penguin file that has any, as colSums(is.na()) counts them. Comments, a free note, is empty in 290 rows; every measurement column misses 14 or fewer. This is why drop_na() with no columns named keeps only 34 rows."
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c13-code-999.png",
+   "alt": "A bar chart of five weights, 62, 999, 71, 58 and 999, with a dashed line at 437.8 and another at 63.7.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The made-up clinic register’s weights as typed, with 999 where the scale was not available. Left in, the two 999s pull the mean of all 5 values to 437.8 kg; turned into NA, the mean of the 3 real weights is 63.7 kg."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the step that looks tidiest and does the most damage. Read the penguin file and keep only the rows with no missing value, using <code>drop_na()</code> with no columns named.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(tidyr)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span>\n<span></span>\n<span>complete <span class=\"ot\">&lt;-</span> <span class=\"fu\">drop_na</span>(penguins_raw)</span>\n<span></span>\n<span><span class=\"fu\">nrow</span>(penguins_raw)</span>\n<span><span class=\"fu\">nrow</span>(complete)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 344\n[1] 34</code></pre>\n<p>Of 344 rows, 34 survive. Nine rows in ten are gone. Any summary of <code>complete</code> describes 34 rows, and nothing in its output says so.</p>\n<p>Count the missing values in each column to see why. <code>is.na()</code> on the whole <dfn data-g=\"111\">data frame</dfn> gives a grid of <code>TRUE</code> and <code>FALSE</code>. <code>colSums()</code> adds up each column of the grid, counting each <code>TRUE</code> as 1.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">colSums</span>(<span class=\"fu\">is.na</span>(penguins_raw))</span></code></pre></div>\n<pre class=\"output\"><code>          studyName       Sample Number             Species\n                  0                   0                   0\n             Region              Island               Stage\n                  0                   0                   0\n      Individual ID   Clutch Completion            Date Egg\n                  0                   0                   0\n Culmen Length (mm)   Culmen Depth (mm) Flipper Length (mm)\n                  2                   2                   2\n      Body Mass (g)                 Sex   Delta 15 N (o/oo)\n                  2                  11                  14\n  Delta 13 C (o/oo)            Comments\n                 13                 290</code></pre>\n<p>The <code>Comments</code> column is empty in 290 rows. It holds a note only when the field team had something to add, so a gap there is not a missing measurement at all. Yet <code>drop_na()</code> with no columns named treats it as one, and every row without a <dfn data-g=\"78\">comment</dfn> is thrown out.</p>\n<p>Name the columns your question needs. For a question about body mass, that is one column:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">nrow</span>(<span class=\"fu\">drop_na</span>(penguins_raw, <span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>))</span></code></pre></div>\n<pre class=\"output\"><code>[1] 342</code></pre>\n<p>342 rows: only the 2 with no body mass are left out. For a question about body mass and sex, name both:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">nrow</span>(<span class=\"fu\">drop_na</span>(penguins_raw, <span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>, Sex))</span></code></pre></div>\n<pre class=\"output\"><code>[1] 333</code></pre>\n<p>333 rows. Each column you add can take more rows away.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The counts are of rows in this one file, which records nesting observations, not a survey of all penguins. They say how many rows each choice keeps, not whether the rows kept are like the rows left out.</p>\n<p>A gap in <code>Comments</code> is harmless here because the column is a free note. In another file an empty cell can be a real missing measurement. The data dictionary says which.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the disguised code. Here is a made-up register of five adults at a clinic, already read into R. Whoever entered it typed 999 when the scale was not available.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(dplyr)</span>\n<span></span>\n<span>register <span class=\"ot\">&lt;-</span> <span class=\"fu\">tibble</span>(</span>\n<span>  <span class=\"at\">id =</span> <span class=\"fu\">c</span>(<span class=\"dv\">1</span>, <span class=\"dv\">2</span>, <span class=\"dv\">3</span>, <span class=\"dv\">4</span>, <span class=\"dv\">5</span>),</span>\n<span>  <span class=\"at\">weight_kg =</span> <span class=\"fu\">c</span>(<span class=\"dv\">62</span>, <span class=\"dv\">999</span>, <span class=\"dv\">71</span>, <span class=\"dv\">58</span>, <span class=\"dv\">999</span>)</span>\n<span>)</span>\n<span></span>\n<span><span class=\"fu\">mean</span>(register<span class=\"sc\">$</span>weight_kg)</span></code></pre></div>\n<pre class=\"output\"><code>\nAttaching package: ‘dplyr’\n\nThe following objects are masked from ‘package:stats’:\n\n    filter, lag\n\nThe following objects are masked from ‘package:base’:\n\n    intersect, setdiff, setequal, union\n\n[1] 437.8</code></pre>\n<p>A mean weight of 437.8 kg. Nothing warned you, because 999 is a perfectly good number. Book 0’s order-of-magnitude check catches it in one glance: no clinic’s mean adult weight is in the hundreds.</p>\n<p>The best place to fix this is the reading step: in section 9 you declared codes with <code>na =</code> in <code>read_csv()</code>. When the data are already in R, perhaps from a file <dfn data-g=\"490\">type</dfn> that has no such argument, fix them in code. Make a new column with <code>if_else()</code>, keeping the old one beside it:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>register <span class=\"ot\">&lt;-</span> register <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">mutate</span>(<span class=\"at\">weight_kg_clean =</span> <span class=\"fu\">if_else</span>(weight_kg <span class=\"sc\">==</span> <span class=\"dv\">999</span>, <span class=\"cn\">NA</span>, weight_kg))</span>\n<span></span>\n<span>register</span></code></pre></div>\n<pre class=\"output\"><code># A tibble: 5 × 3\n     id weight_kg weight_kg_clean\n  &lt;dbl&gt;     &lt;dbl&gt;           &lt;dbl&gt;\n1     1        62              62\n2     2       999              NA\n3     3        71              71\n4     4        58              58\n5     5       999              NA</code></pre>\n<p>Now count and summarise. <code>summarise()</code> collapses a data frame into one row of summaries; a later section uses it for groups. Here it gives three numbers together: the rows, the missing values, and the mean of the rest. <code>n()</code> counts the rows.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>register <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">summarise</span>(</span>\n<span>    <span class=\"at\">rows =</span> <span class=\"fu\">n</span>(),</span>\n<span>    <span class=\"at\">missing =</span> <span class=\"fu\">sum</span>(<span class=\"fu\">is.na</span>(weight_kg_clean)),</span>\n<span>    <span class=\"at\">mean_weight_kg =</span> <span class=\"fu\">mean</span>(weight_kg_clean, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span>\n<span>  )</span></code></pre></div>\n<pre class=\"output\"><code># A tibble: 1 × 3\n   rows missing mean_weight_kg\n  &lt;int&gt;   &lt;int&gt;          &lt;dbl&gt;\n1     5       2           63.7</code></pre>\n<p>The <dfn data-g=\"479\">tibble</dfn> prints the mean as 63.7 kg, and it is the mean of 3 weights, not 5. Write it that way: “mean weight 63.7 kg (n = 3; 2 of 5 not weighed)”. Book 0’s mean is a sum divided by a count, and the count is part of the answer.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The five adults and their weights are made up. The numbers show the arithmetic, not anything about any clinic.</p>\n<p>Replacing 999 is right only if 999 is never a real value in that column. For weight in kilograms it cannot be. For a column such as a cholesterol reading, 999 could be real, which is why the code list comes from the data dictionary, not from guessing.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Last, watch the count change the answer. Take the mean body mass twice: once from every row with a body mass, and once from only those whose sex is also recorded, as a complete-case analysis on those two columns would.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(dplyr)</span>\n<span><span class=\"fu\">library</span>(tidyr)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span>\n<span></span>\n<span>penguins_raw <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">summarise</span>(</span>\n<span>    <span class=\"at\">n =</span> <span class=\"fu\">sum</span>(<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(<span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>)),</span>\n<span>    <span class=\"at\">mean_mass_g =</span> <span class=\"fu\">mean</span>(<span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span>\n<span>  )</span>\n<span></span>\n<span>penguins_raw <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">drop_na</span>(<span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>, Sex) <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">summarise</span>(</span>\n<span>    <span class=\"at\">n =</span> <span class=\"fu\">n</span>(),</span>\n<span>    <span class=\"at\">mean_mass_g =</span> <span class=\"fu\">mean</span>(<span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>)</span>\n<span>  )</span></code></pre></div>\n<pre class=\"output\"><code># A tibble: 1 × 2\n      n mean_mass_g\n  &lt;int&gt;       &lt;dbl&gt;\n1   342       4202.\n# A tibble: 1 × 2\n      n mean_mass_g\n  &lt;int&gt;       &lt;dbl&gt;\n1   333       4207.</code></pre>\n<p>Two means, 4202 g from 342 rows and 4207 g from 333. The dot after each number means the tibble rounded it to fit the column. The difference is small here. It is still a difference, made by a choice about rows, not by anything measured. The 9 rows left out the second time have a body mass and no recorded sex, and nobody can tell from this file whether they were heavier or lighter than the rest.</p>\n<p>That is why the n goes beside every number. A reader who sees “4207 g (n = 333)” next to “344 rows in the file” can ask where the other 11 went. A reader who sees “4207 g” cannot.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Here the two means are close. That does not mean dropping rows is safe in general: in another file the rows with gaps may be very different from the rest, and the means far apart. Whether that happens depends on why the values are missing, which is the subject of a later book on missing data.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A code such as 999 or -99 is an ordinary number to R until you say otherwise.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Count missing values with <code>sum(is.na(x))</code>, or <code>colSums(is.na(data))</code> for every column.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Beside every mean, <dfn data-g=\"287\">median</dfn> or <dfn data-g=\"334\">percentage</dfn>, write the n it was computed from. With <code>na.rm = TRUE</code> that n is <code>sum(!is.na(x))</code>, not the number of rows.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p><code>drop_na()</code> with no columns named drops a row for a gap in any column, including a free-text note. Always name the columns, and print <code>nrow()</code> before and after.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Turn codes into <code>NA</code> in a new column made by code, never by editing the <dfn data-g=\"395\">raw file</dfn>.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Say in the methods which columns you required, and how many rows that left.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Counting missing values tells you how many are gone, never why. A count cannot show whether the people with gaps differ from the rest.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>In your penguin script, count the missing values of flipper length. Then give the mean flipper length in millimetres, with the number of rows it was computed from, written the way a table would show it.</p>",
+   "type": "calculation",
+   "confidence": false,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(dplyr, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span>\n<span></span>\n<span><span class=\"fu\">sum</span>(<span class=\"fu\">is.na</span>(penguins_raw<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Flipper Length (mm)</span><span class=\"st\">`</span>))</span>\n<span></span>\n<span>penguins_raw <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">summarise</span>(</span>\n<span>    <span class=\"at\">n =</span> <span class=\"fu\">sum</span>(<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(<span class=\"st\">`</span><span class=\"at\">Flipper Length (mm)</span><span class=\"st\">`</span>)),</span>\n<span>    <span class=\"at\">mean_flipper_mm =</span> <span class=\"fu\">mean</span>(<span class=\"st\">`</span><span class=\"at\">Flipper Length (mm)</span><span class=\"st\">`</span>, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span>\n<span>  )</span></code></pre></div>\n<pre class=\"output\"><code>[1] 2\n# A tibble: 1 × 2\n      n mean_flipper_mm\n  &lt;int&gt;           &lt;dbl&gt;\n1   342            201.</code></pre>\n<p>Flipper length is missing in 2 rows, so the mean comes from 342 rows. The tibble prints it rounded to fit, as <code>201.</code>. In a table: “mean flipper length 201 mm (n = 342)”.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up thesis methods section says: “Participants with missing data were excluded. Mean BMI was 26.1 kg/m<sup>2</sup>.” The dataset had 412 participants and 28 columns. Say what is missing from these two sentences, and rewrite them.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Three things are missing.</p>\n<p>Which columns. “Missing data” could mean a gap in any of the 28 columns, or only in height and weight. With <code>drop_na()</code> and no columns named, a gap in a column unrelated to BMI would remove the participant too.</p>\n<p>How many. The reader cannot tell whether 400 participants were left or 40.</p>\n<p>The n behind the mean. “Mean BMI was 26.1 kg/m<sup>2</sup>” needs its count beside it.</p>\n<p>Here is a rewrite. The counts are left blank, because the thesis did not give them: “Participants without a measured height or weight were excluded (n = ___ of 412). Mean BMI was 26.1 kg/m<sup>2</sup> (n = ___).” The script that made the table prints both counts, so they are copied from its output, never typed from memory.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Without looking back, write the line that counts the missing values in one column <code>x</code>. Then write the line that counts them in every column of a data frame <code>d</code>. Last, say what <code>drop_na()</code> does when no column is named.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p><code>sum(is.na(x))</code> for one column, because <code>TRUE</code> counts as 1. <code>colSums(is.na(d))</code> for every column. With no column named, <code>drop_na()</code> keeps only the rows with no missing value in any column.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>How many missing values does this made-up <dfn data-g=\"499\">vector</dfn> hold? Write the line that counts them, and say what it prints before you run it.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>x <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">7</span>, <span class=\"cn\">NA</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">2</span>)</span></code></pre></div>",
+   "level": 1,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>x <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">7</span>, <span class=\"cn\">NA</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">2</span>)</span>\n<span><span class=\"fu\">sum</span>(<span class=\"fu\">is.na</span>(x))</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3</code></pre>\n<p>Three. <code>is.na(x)</code> gives <code>FALSE TRUE FALSE TRUE TRUE FALSE</code>, and <code>sum()</code> counts each <code>TRUE</code> as 1.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Before you run them, say what each line prints, and how many values the second mean is computed from.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weights <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">54</span>, <span class=\"dv\">61</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">70</span>)</span>\n<span><span class=\"fu\">mean</span>(weights)</span>\n<span><span class=\"fu\">mean</span>(weights, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span></code></pre></div>",
+   "level": 2,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weights <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">54</span>, <span class=\"dv\">61</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">70</span>)</span>\n<span><span class=\"fu\">mean</span>(weights)</span>\n<span><span class=\"fu\">mean</span>(weights, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] NA\n[1] 61.66667</code></pre>\n<p>The first is <code>NA</code>: one value is not known, so the sum is not known. The second leaves the missing value out. The sum is 54 plus 61 plus 70, which is 185, and 185 divided by 3 is 61.66667. It is the mean of 3 values, not 4.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A made-up three-row table:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(tidyr)</span>\n<span></span>\n<span>d <span class=\"ot\">&lt;-</span> tibble<span class=\"sc\">::</span><span class=\"fu\">tibble</span>(</span>\n<span>  <span class=\"at\">height_cm =</span> <span class=\"fu\">c</span>(<span class=\"dv\">150</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">162</span>),</span>\n<span>  <span class=\"at\">weight_kg =</span> <span class=\"fu\">c</span>(<span class=\"dv\">48</span>, <span class=\"dv\">55</span>, <span class=\"cn\">NA</span>)</span>\n<span>)</span></code></pre></div>\n<p>How many rows does <code>drop_na(d)</code> keep? How many does <code>drop_na(d, height_cm)</code> keep? Say both before you run them.</p>",
+   "level": 3,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">nrow</span>(<span class=\"fu\">drop_na</span>(d))</span>\n<span><span class=\"fu\">nrow</span>(<span class=\"fu\">drop_na</span>(d, height_cm))</span></code></pre></div>\n<pre class=\"output\"><code>[1] 1\n[1] 2</code></pre>\n<p><code>drop_na(d)</code> keeps 1 row: only the first has both values. <code>drop_na(d, height_cm)</code> looks at height alone and keeps 2 rows, the first and the third.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Read the penguin file.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span></code></pre></div>\n<p>How many rows have no recorded sex? What percentage of the rows is that, to one <dfn data-g=\"116\">decimal</dfn> place?</p>",
+   "level": 4,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">sum</span>(<span class=\"fu\">is.na</span>(penguins_raw<span class=\"sc\">$</span>Sex))</span>\n<span><span class=\"fu\">round</span>(<span class=\"dv\">100</span> <span class=\"sc\">*</span> <span class=\"fu\">sum</span>(<span class=\"fu\">is.na</span>(penguins_raw<span class=\"sc\">$</span>Sex)) <span class=\"sc\">/</span> <span class=\"fu\">nrow</span>(penguins_raw), <span class=\"dv\">1</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 11\n[1] 3.2</code></pre>\n<p>11 of the 344 rows have no recorded sex. 11 divided by 344 is 0.03198, which is 3.2 per cent. The <dfn data-g=\"120\">denominator</dfn> is every row, because the question is about the whole file.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Read the penguin file.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(dplyr, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span></code></pre></div>\n<p>In one <code>summarise()</code>, give the number of rows, the number of missing values of <code>Delta 15 N (o/oo)</code>, and the mean of the values present. Write the result as a table would show it. The data’s <dfn data-g=\"212\">help page</dfn> describes <dfn data-g=\"119\">Delta</dfn> 15 N as a measure of the <dfn data-g=\"394\">ratio</dfn> of two forms of nitrogen, taken from a blood sample. Its unit, o/oo, is in the column name.</p>",
+   "level": 5,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>penguins_raw <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">summarise</span>(</span>\n<span>    <span class=\"at\">rows =</span> <span class=\"fu\">n</span>(),</span>\n<span>    <span class=\"at\">missing =</span> <span class=\"fu\">sum</span>(<span class=\"fu\">is.na</span>(<span class=\"st\">`</span><span class=\"at\">Delta 15 N (o/oo)</span><span class=\"st\">`</span>)),</span>\n<span>    <span class=\"at\">mean_delta_15n =</span> <span class=\"fu\">mean</span>(<span class=\"st\">`</span><span class=\"at\">Delta 15 N (o/oo)</span><span class=\"st\">`</span>, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span>\n<span>  )</span></code></pre></div>\n<pre class=\"output\"><code># A tibble: 1 × 3\n   rows missing mean_delta_15n\n  &lt;int&gt;   &lt;int&gt;          &lt;dbl&gt;\n1   344      14           8.73</code></pre>\n<p>344 rows, 14 missing, so the mean is of 330 values: 8.73 as printed. In a table: “mean delta 15 N 8.73 o/oo (n = 330; 14 of 344 not measured)”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Read the penguin file.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(tidyr)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span></code></pre></div>\n<p>A question needs culmen length, culmen depth and both blood measurements, <code>Delta 15 N (o/oo)</code> and <code>Delta 13 C (o/oo)</code>. How many rows have all four? How many does that leave out?</p>",
+   "level": 6,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>kept <span class=\"ot\">&lt;-</span> <span class=\"fu\">drop_na</span>(</span>\n<span>  penguins_raw,</span>\n<span>  <span class=\"st\">`</span><span class=\"at\">Culmen Length (mm)</span><span class=\"st\">`</span>,</span>\n<span>  <span class=\"st\">`</span><span class=\"at\">Culmen Depth (mm)</span><span class=\"st\">`</span>,</span>\n<span>  <span class=\"st\">`</span><span class=\"at\">Delta 15 N (o/oo)</span><span class=\"st\">`</span>,</span>\n<span>  <span class=\"st\">`</span><span class=\"at\">Delta 13 C (o/oo)</span><span class=\"st\">`</span></span>\n<span>)</span>\n<span></span>\n<span><span class=\"fu\">nrow</span>(kept)</span>\n<span><span class=\"fu\">nrow</span>(penguins_raw) <span class=\"sc\">-</span> <span class=\"fu\">nrow</span>(kept)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 330\n[1] 14</code></pre>\n<p>330 rows have all four, so 14 are left out. The four columns are missing in 2, 2, 14 and 13 rows, which add to 31, yet only 14 rows go. The gaps overlap: the rows missing a culmen measurement or a carbon value are among the 14 missing a nitrogen value. You cannot add up column counts to get the rows lost. Count the rows.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A colleague’s made-up register used -9 for “not weighed”. They report: “Mean weight was 40 kg, after removing missing values.”</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weights <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">58</span>, <span class=\"sc\">-</span><span class=\"dv\">9</span>, <span class=\"dv\">66</span>, <span class=\"dv\">71</span>, <span class=\"sc\">-</span><span class=\"dv\">9</span>, <span class=\"dv\">63</span>)</span>\n<span><span class=\"fu\">mean</span>(weights[<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(weights)])</span></code></pre></div>\n<pre class=\"output\"><code>[1] 40</code></pre>\n<p>Run it. Find what broke, and why the report looks reasonable.</p>",
+   "level": 7,
+   "answer": "<p>The code gives 40, as reported, and 40 is wrong. <code>!is.na()</code> removes nothing, because there is no <code>NA</code> in the vector: the two -9s are ordinary numbers, and they pull the mean down.</p>\n<p>Turn the codes into <code>NA</code> first, then count and average:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weights_clean <span class=\"ot\">&lt;-</span> dplyr<span class=\"sc\">::</span><span class=\"fu\">if_else</span>(weights <span class=\"sc\">==</span> <span class=\"sc\">-</span><span class=\"dv\">9</span>, <span class=\"cn\">NA</span>, weights)</span>\n<span><span class=\"fu\">sum</span>(<span class=\"fu\">is.na</span>(weights_clean))</span>\n<span><span class=\"fu\">mean</span>(weights_clean, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 2\n[1] 64.5</code></pre>\n<p>2 missing, and the mean of the other 4 is 64.5 kg. The report should say “64.5 kg (n = 4)”.</p>\n<p>Why the wrong version looks reasonable: 40 kg is a possible adult weight, “removing missing values” was written, and the line does remove <code>NA</code>s. It had none to remove. <code>dplyr::if_else()</code> calls the function from dplyr without loading the whole package, so it works on a plain vector here.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A made-up camp file has a height column where the field worker wrote “not recorded” for one child. A resident reads it and asks for the mean height:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span></span>\n<span>camp <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">I</span>(<span class=\"st\">&quot;id,height_cm</span></span>\n<span><span class=\"st\">1,131</span></span>\n<span><span class=\"st\">2,not recorded</span></span>\n<span><span class=\"st\">3,128&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span><span class=\"fu\">mean</span>(camp<span class=\"sc\">$</span>height_cm)</span></code></pre></div>\n<pre class=\"output\"><code>[1] NA\nWarning message:\nIn mean.default(camp$height_cm) :\n  argument is not numeric or logical: returning NA</code></pre>\n<p>They report: “height could not be summarised; the data are missing”. Find what broke.</p>",
+   "level": 7,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">class</span>(camp<span class=\"sc\">$</span>height_cm)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;character&quot;</code></pre>\n<p><code>class()</code> says what kind of <dfn data-g=\"321\">object</dfn> R holds, here text. The words “not recorded” are text, so <code>read_csv()</code> read the whole column as text, <code>chr</code>. A mean of text is not defined: R warns and returns <code>NA</code>. Only one height is missing, not all.</p>\n<p>Declare the code when reading, keeping the <dfn data-g=\"117\">default</dfn> missing values beside it:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>camp <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(<span class=\"fu\">I</span>(<span class=\"st\">&quot;id,height_cm</span></span>\n<span><span class=\"st\">1,131</span></span>\n<span><span class=\"st\">2,not recorded</span></span>\n<span><span class=\"st\">3,128&quot;</span>), <span class=\"at\">na =</span> <span class=\"fu\">c</span>(<span class=\"st\">&quot;&quot;</span>, <span class=\"st\">&quot;NA&quot;</span>, <span class=\"st\">&quot;not recorded&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span><span class=\"fu\">sum</span>(<span class=\"fu\">is.na</span>(camp<span class=\"sc\">$</span>height_cm))</span>\n<span><span class=\"fu\">mean</span>(camp<span class=\"sc\">$</span>height_cm, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 1\n[1] 129.5</code></pre>\n<p>One missing value, and the mean of the other two heights is 129.5 cm (n = 2).</p>\n<p>Why the wrong conclusion looks reasonable: R printed <code>NA</code>, which usually means missing. Here it meant “this is not a number”, and the warning above it said so.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A colleague wants the mean body mass of the penguins whose sex is known. They write:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(tidyr)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span>\n<span></span>\n<span>known <span class=\"ot\">&lt;-</span> <span class=\"fu\">drop_na</span>(penguins_raw)</span>\n<span></span>\n<span><span class=\"fu\">nrow</span>(known)</span>\n<span><span class=\"fu\">mean</span>(known<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 34\n[1] 3877.206</code></pre>\n<p>Their table says “mean body mass of penguins of known sex, 3877.206 g”. Find what broke.</p>",
+   "level": 8,
+   "answer": "<p><code>drop_na()</code> with no columns named dropped every row with a gap anywhere, mostly in <code>Comments</code>. The mean is of 34 rows, not of every row of known sex. Name the columns:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>known <span class=\"ot\">&lt;-</span> <span class=\"fu\">drop_na</span>(penguins_raw, Sex, <span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>)</span>\n<span></span>\n<span><span class=\"fu\">nrow</span>(known)</span>\n<span><span class=\"fu\">mean</span>(known<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 333\n[1] 4207.057</code></pre>\n<p>333 rows of known sex have a body mass, and their mean is 4207.057 g. The first answer was 329.851 g too low. The 34 rows with a comment and no other gap are not a fair picture of the rest.</p>\n<p>Why the wrong answer looks reasonable: the code ran, the number is a believable penguin weight, and no <code>NA</code> appeared. Only <code>nrow(known)</code> gives it away.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A made-up draft report says: “Mean body mass was 4202 g in the 344 penguins studied.” Check the sentence against the penguin file, rewrite it, and say what your rewritten sentence does not establish.</p>",
+   "level": 9,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(dplyr, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span>\n<span></span>\n<span>penguins_raw <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">summarise</span>(</span>\n<span>    <span class=\"at\">rows =</span> <span class=\"fu\">n</span>(),</span>\n<span>    <span class=\"at\">n =</span> <span class=\"fu\">sum</span>(<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(<span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>)),</span>\n<span>    <span class=\"at\">mean_mass_g =</span> <span class=\"fu\">mean</span>(<span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>, <span class=\"at\">na.rm =</span> <span class=\"cn\">TRUE</span>)</span>\n<span>  )</span></code></pre></div>\n<pre class=\"output\"><code># A tibble: 1 × 3\n   rows     n mean_mass_g\n  &lt;int&gt; &lt;int&gt;       &lt;dbl&gt;\n1   344   342       4202.</code></pre>\n<p>The mean prints as 4202 g, so the number is right. The count is wrong: the mean is of 342 rows, because 2 have no body mass. Rewrite: “Mean body mass was 4202 g (n = 342; 2 of 344 not weighed).”</p>\n<p>What it does not establish:</p>\n<ul>\n<li>What the birds in the 2 rows weighed, or why they were not weighed.</li>\n<li>Anything about penguins outside these three seasons and three islands.</li>\n<li>That 344 rows are 344 penguins. The file records nesting observations, and an earlier section showed that its IDs repeat.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>In a made-up department meeting, a resident presenting the penguin analysis says: “We did a complete-case analysis, so missing data were not a problem.” The analysis needs body mass, flipper length and sex. Find out what the complete-case analysis did, and say what the resident’s sentence claims that the data cannot show.</p>",
+   "level": 10,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(dplyr, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">library</span>(tidyr)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span>\n<span></span>\n<span>cc <span class=\"ot\">&lt;-</span> <span class=\"fu\">drop_na</span>(penguins_raw, <span class=\"st\">`</span><span class=\"at\">Body Mass (g)</span><span class=\"st\">`</span>, <span class=\"st\">`</span><span class=\"at\">Flipper Length (mm)</span><span class=\"st\">`</span>, Sex)</span>\n<span></span>\n<span><span class=\"fu\">nrow</span>(penguins_raw)</span>\n<span><span class=\"fu\">nrow</span>(cc)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 344\n[1] 333</code></pre>\n<p>The complete-case analysis kept 333 of 344 rows and left out 11. That much the code can show, and the methods should say it.</p>\n<p>What the sentence claims that the data cannot show:</p>\n<ul>\n<li>“Not a problem” means the 11 rows left out are like the 333 kept. A count cannot show that. It needs a reason why the values are missing, which this file does not record.</li>\n<li>The analysis did not deal with the missing data. It chose to leave those rows out, and that choice is part of the result. Better: “Rows missing body mass, flipper length or sex were excluded (11 of 344).”</li>\n<li>How to judge whether leaving rows out could bias a result is taught in a later book on missing data.</li>\n</ul>"
+  }
+ ]
+}

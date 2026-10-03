@@ -1,0 +1,149 @@
+{
+ "format": 1,
+ "id": "s58-r1-c10",
+ "label": "10",
+ "title": "One idea per paragraph: the topic sentence, its support, and the reverse outline",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A paragraph is a group of sentences that makes one point. Its <dfn data-g=\"687\">topic sentence</dfn> states that point, often first. Mensh and Kording use a second shape: context, content, conclusion. The first sentence sets the topic, the body carries the content, and the last sentence gives the conclusion to remember. Illustration 2 shows both shapes.</p>\n<p>A paragraph zig-zags when it leaves a topic and comes back to it later.</p>\n<p>In this book, a <dfn data-g=\"587\">reverse outline</dfn> is the <dfn data-g=\"464\">outline</dfn> of section 4 made after the draft instead of before it. A paragraph whose point cannot be written as one sentence without “and” carries more than one point.</p>",
+   "refs": [
+    174,
+    175,
+    176,
+    177,
+    22
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Write the point of each paragraph in the margin, in one sentence. Then read the margin alone. If a margin note needs an “and”, that paragraph is two.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c10-topics-before.png",
+   "alt": "A step line over sentences 1 to 7, at topics 1, 3, 2, 1, 3, 2, 4: a jump at every sentence.",
+   "w": 1360,
+   "h": 502,
+   "caption": "Before the rewrite: the topic of each of the 7 sentences of the made-up paragraph in illustration 1, below, in reading order. Topic 1 is how common and how it changed, 2 is towns against villages, 3 is what the survey counted, 4 is what to do. The topic changes 6 times, and the reader is taken to topics 1, 2 and 3 twice each."
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c10-topics-after.png",
+   "alt": "A step line over sentences 1 to 7, at topics 3, 3, 1, 1, 1, 2, 2: three flat runs with two steps between them.",
+   "w": 1360,
+   "h": 502,
+   "caption": "After: the rewrite in illustration 1, below, drawn the same way. Topics 3, 1 and 2 are each in one place, and topic 4 is cut. The topic changes 2 times, and each change falls at a paragraph break."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a paragraph that fails. Its wording is made up for this example; its numbers are from the India fact <dfn data-g=\"622\">sheet</dfn> of the fifth National Family Health Survey (NFHS-5). Its sentences are numbered so you can follow them.</p>\n<blockquote>\n<ol type=\"1\">\n<li>Overweight and obesity are becoming commoner among Indian women. (2) NFHS-5 measured women aged 15-49 and counted those with a body mass index (BMI) of 25.0 kg/m<sup>2</sup> or more.</li>\n<li>Urban women were more affected than rural women. (4) The share rose from 20.6 per cent in NFHS-4 to 24.0 per cent in NFHS-5.</li>\n<li>Pregnant women and women who had given birth in the previous two months were left out.</li>\n<li>In urban areas the figure was 33.2 per cent, against 19.7 per cent in rural areas. (7) This shows that action is needed.</li>\n</ol>\n</blockquote>\n<p>Every sentence is clear on its own. The paragraph is still hard to follow. Find out why.</p>\n<p>First, try the reverse outline. Write the paragraph’s one point in a single sentence. You cannot do it without “and”: the share rose, and it is higher in towns, and here is what the survey counted, and action is needed. Four points.</p>\n<p>Next, give each topic a number. Topic 1 is how common it is and how it changed. Topic 2 is towns against villages. Topic 3 is what the survey counted. Topic 4 is what to do. <dfn data-g=\"363\">Label</dfn> each sentence. Then rewrite the paragraph with each topic in one place, and label the new sentences the same way.</p>\n<table style=\"width:58%;\">\n\n<thead>\n<tr>\n<th>sentence</th>\n<th>topic, before</th>\n<th>topic, after</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>1</td>\n<td>3</td>\n</tr>\n<tr>\n<td>2</td>\n<td>3</td>\n<td>3</td>\n</tr>\n<tr>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n</tr>\n<tr>\n<td>4</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>5</td>\n<td>3</td>\n<td>1</td>\n</tr>\n<tr>\n<td>6</td>\n<td>2</td>\n<td>2</td>\n</tr>\n<tr>\n<td>7</td>\n<td>4</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>\n<p>Count the changes of topic down each column. Before, the topic changes 6 times in 7 sentences. The reader is taken to topics 1, 2 and 3 twice each, and to topic 4 once. After, it changes 2 times, and each change falls at a paragraph break. That is Mensh and Kording’s rule: each subject in one place, so the reader changes subject as few times as possible.</p>\n<p>Here is the rewrite, in three paragraphs.</p>\n<blockquote>\n<p>NFHS-5 counted a woman aged 15-49 as having overweight or obesity when her BMI was 25.0 kg/m<sup>2</sup> or more. It left out pregnant women and women who had given birth in the two months before.</p>\n<p>Among women aged 15-49, overweight and obesity became commoner between NFHS-4 and NFHS-5. The share rose from 20.6 per cent in 2015-16 to 24.0 per cent in 2019-21. That is a rise of 3.4 percentage points.</p>\n<p>The share was higher in towns and cities than in villages. It was 33.2 per cent among urban women and 19.7 per cent among rural women.</p>\n</blockquote>\n<p>Sentence 7 of the old paragraph is gone. Its “this” pointed at nothing in particular, and “action is needed” is a <dfn data-g=\"95\">claim</dfn> no sentence in the paragraph supports. The first sentence of each new paragraph states its point, and the rest support it.</p>\n<p>Now write the reverse outline of the rewrite: one sentence per paragraph, in the margin.</p>\n<table>\n\n<thead>\n<tr>\n<th>paragraph</th>\n<th>its one point, written in the margin</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>what NFHS-5 counted as overweight or obesity</td>\n</tr>\n<tr>\n<td>2</td>\n<td>the share of women in that group rose between the two surveys</td>\n</tr>\n<tr>\n<td>3</td>\n<td>the share was higher in towns and cities than in villages</td>\n</tr>\n</tbody>\n</table>\n<p>Read the margin alone. Notes 2 and 3 are findings. Note 1 is not: it says how the measurement was made. In a paper, that paragraph goes to the methods, where section 4 put everything a reader needs to judge how the study was done. The reverse outline found that in one reading of three short lines.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The topic numbers are your own labels. Another reader might draw the line between topics in a different place. So the count of changes is a <dfn data-g=\"85\">check</dfn> on a draft, not a score to compare across writers.</p>\n<p>Two topics side by side are sometimes the point. A discussion paragraph that weighs two reasons for one interpretation holds both. Mensh and Kording ask for similar ideas to come “one immediately after the other”. What fails is leaving a topic and coming back to it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>The book has now shown a one-point paragraph in two shapes. The claim came first in section 2, the shape for a results paragraph and the <dfn data-g=\"4\">abstract</dfn>. Mensh and Kording open a results paragraph with its question and close it with the answer; section 4 keeps that order for the end of the introduction and the start of the discussion. Here is one paragraph of the rewrite in each shape.</p>\n<div class=\"working\">\n<p>33.2 minus 19.7 = 13.5</p>\n</div>\n<p>Point first:</p>\n<blockquote>\n<p>The share with a BMI of 25.0 kg/m<sup>2</sup> or more was higher among urban women than rural women. In NFHS-5 it was 33.2 per cent among urban women aged 15-49 and 19.7 per cent among rural women, a gap of 13.5 percentage points.</p>\n</blockquote>\n<p>Question first, answer last:</p>\n<blockquote>\n<p>Did the share differ between towns and villages? In NFHS-5 it was 33.2 per cent among urban women aged 15-49 and 19.7 per cent among rural women, a gap of 13.5 percentage points. So the share was higher in towns and cities.</p>\n</blockquote>\n<p>Both make one point, and both give the same margin note. The first tells a hurried reader the finding at once. The second leads a careful reader to it. Mensh and Kording say each such paragraph “convinces the reader of the answer given in its last sentence”. That makes a doubtful conclusion easy to find and check.</p>\n<p>Choose one shape for a section and keep it; in this book’s results sections, that is point first. Mensh and Kording ask that “parallel messages should be communicated with parallel form”. A reader who has learnt where the point sits finds it faster in every paragraph after.</p>\n<p>The margin notes also tell you when to split or merge. A note that needs “and” is two paragraphs. Two notes next to each other that say the same thing are one paragraph. A note that serves no claim on the way to your <dfn data-g=\"456\">one message</dfn>, from section 3, belongs elsewhere or nowhere.</p>\n<p>Length follows the support, not a rule. The OpenStax writing guide puts it both ways. “When a paragraph is too short, it often lacks enough evidence and examples to back up your claims. When a paragraph is too long, readers can lose the point you are making.”</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The question-first shape needs a question the reader already wants answered. Opened with a question nobody asked, it delays the point for nothing; then put the point first.</p>\n<p>A margin note can be one tidy sentence and still be wrong. The reverse outline tests where the points are, not whether the evidence below each one supports it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“One idea per paragraph” read as “short paragraphs” is the error.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Split a paragraph whose note needs “and”. Merge two neighbours whose notes say the same thing. Move or cut one whose note serves no claim.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The commonest fault is not a long paragraph but a topic visited twice. Before you edit sentences, label each one with its topic and gather each topic into one place.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The two shapes of a one-point paragraph, point first and answer last, are both sound. Choose one for a section and use it in every paragraph, so the reader knows where to look.</p>",
+     "tag": "dispute",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When each paragraph has one conclusion, the reviewer can find the one paragraph behind a doubtful claim.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The reverse outline checks where each point is. It cannot check that the point is true, or that the sentences under it support it.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you correct a trainee’s thesis chapter, do not rewrite their paragraphs. Ask them to write the margin note for each one.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“One idea per paragraph” is often read as “keep paragraphs short”. A paragraph cut short has its point and too little support for it. One idea means one point with all the support it needs, and no second point. A long paragraph that makes one point passes; a three-sentence paragraph that makes two fails.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what are the three parts of a paragraph in Mensh and Kording’s scheme? What is a reverse outline, and what are the four things it can tell you to do with a paragraph?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Context, content, conclusion: the first sentence sets the topic, the body carries the content, and the last sentence gives the conclusion to remember.</p>\n<p>A reverse outline is one sentence per paragraph, stating its one point, written from the finished draft and read alone. It tells you four things. Split a paragraph whose note needs “and”. Merge two neighbours whose notes say the same thing. Move or cut one whose note serves no claim.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a made-up discussion paragraph from a thesis on a district survey of women aged 15-49. The district’s figures are made up; the national figure is from NFHS-5.</p>\n<blockquote>\n<ol type=\"1\">\n<li>The district’s share of women with a BMI of 25.0 kg/m<sup>2</sup> or more was higher than the national figure. (2) Our sample came from two blocks only. (3) Urban wards had the highest share, as in NFHS-5. (4) Weight and height were measured by trained staff, which is a strength. (5) The national figure in NFHS-5 was 24.0 per cent. (6) Screening in urban wards should come first. (7) Our response rate was 82 per cent.</li>\n</ol>\n</blockquote>\n<p>Label each sentence with its topic, count the changes of topic, write the reverse outline you would want, and rewrite the paragraph.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>There are three topics. A is how the district compares with the nation: sentences 1, 3 and 5. B is what the method can and cannot support: sentences 2, 4 and 7. C is what to do: sentence 6. In order they run A, B, A, B, A, C, B. That is 6 changes of topic in 7 sentences.</p>\n<p>The reverse outline you want, one paragraph per point, in the order a discussion needs:</p>\n<table>\n\n<thead>\n<tr>\n<th>paragraph</th>\n<th>its one point</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>the district’s share was above the nation’s, highest in urban wards</td>\n</tr>\n<tr>\n<td>2</td>\n<td>how far the survey’s methods let us trust that</td>\n</tr>\n<tr>\n<td>3</td>\n<td>what the district should do first</td>\n</tr>\n</tbody>\n</table>\n<p>A rewrite:</p>\n<blockquote>\n<p>In the district, the share of women aged 15-49 with a BMI of 25.0 kg/m<sup>2</sup> or more was higher than the national figure. That figure was 24.0 per cent in NFHS-5. As in NFHS-5, the share was highest in urban wards.</p>\n</blockquote>\n<blockquote>\n<p>Two features of the survey bear on that comparison. Weight and height were measured by trained staff, and 82 per cent of the women approached took part. But the sample came from two blocks only, so the figure may not hold for the whole district.</p>\n</blockquote>\n<blockquote>\n<p>If the pattern holds, screening should start in the urban wards.</p>\n</blockquote>\n<p>The third paragraph now says what it rests on. A real discussion would also give the district’s own figure, with its count.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Take the section of your own manuscript or thesis that you chose for this book’s build. Write its reverse outline: one sentence per paragraph, in the margin or on a separate sheet. Read the sentences alone. Mark every paragraph to split, merge, move or cut, and rewrite the two worst.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Check your work in four ways.</p>\n<ul>\n<li>Every margin note is one sentence, with no “and” joining two separate points.</li>\n<li>Read alone, the notes take a reader from your question to your answer, in the order the argument needs. A note that describes how the work was done belongs in the methods.</li>\n<li>No topic appears in two paragraphs that are not next to each other.</li>\n<li>In each rewritten paragraph the point is stated once, first or last, in the same place as in its neighbours. Every other sentence supports it.</li>\n</ul>\n<p>If you could not write a note for a paragraph at all, the paragraph has no point yet. Decide what it is for before you touch its sentences.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident says: “I read my chapter three times and it reads fine. Why do I need a reverse outline?” You have ten minutes and a whiteboard. Explain.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw a column of boxes, one per paragraph, and a column beside it for the margin notes.</p>\n<p>Reading the chapter again tests sentences. You wrote them, so they all make sense to you, and each one reads fine. The faults that lose a reader are between sentences: a paragraph that makes two points, a topic left and taken up again three paragraphs later. You cannot see those while you read sentence by sentence, because you already know the argument.</p>\n<p>The reverse outline hides the sentences. You write one line per paragraph and read only the lines. Now a topic that turns up twice is two lines with the same words. A paragraph with two points is a line you cannot write without “and”. A methods point among the results is a line that says how, not what.</p>\n<p>Then write two lines on the board: “split, merge, move or cut”. Every fault the margin shows leads to one of those four actions.</p>"
+  }
+ ]
+}

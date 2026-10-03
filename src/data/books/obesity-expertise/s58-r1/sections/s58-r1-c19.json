@@ -1,0 +1,191 @@
+{
+ "format": 1,
+ "id": "s58-r1-c19",
+ "label": "19",
+ "title": "Colour: for meaning only, readable by everyone, and in grey",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In a data figure, colour does one of three jobs. It separates groups that have no order, using a qualitative scale: a small set of colours that look clearly different from each other and equally strong, so that none stands out. Groups that have an order, such as age groups, take steps of one colour from light to dark. Colour also stands for a value, using a sequential scale, which runs from light to dark. Or it picks out one element: one strong accent colour, with the rest in grey. Colour that does none of these jobs is <dfn data-g=\"173\">decoration</dfn> (section 18).</p>\n<p>A colour scale shows values fairly when it is <dfn data-g=\"481\">perceptually uniform</dfn>: the same step in the data looks like the same step in colour anywhere along the scale. Its lightness should also change in one direction only, so that the order of the values survives when the colour is removed. The rainbow scale fails both. Crameri, Shephard and Heron (2020) report that its distortion can exceed seven per cent of the range of the data shown.</p>\n<p><dfn data-g=\"109\">Colour-vision deficiency</dfn> is a reduced ability to tell certain colours apart, most often red from green.</p>",
+   "refs": [
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Colour in a chart should have a job. It can tell groups apart, stand for a number, or point at one thing. If it does none of these, take it out and draw in black or grey.</p>\n<p>Some of your readers cannot tell red from green. Some copies of what you write will be printed or photocopied in black and white. A <dfn data-g=\"293\">grey copy</dfn> keeps only how light or dark each colour is. So two colours of the same lightness turn into the same grey, and the reader loses what they meant.</p>\n<p>So test every colour figure twice before it leaves you. Look at it in grey. Then run it through a program that shows it as a reader with colour-vision deficiency sees it.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c19-cvd-boys.png",
+   "alt": "Three bars: 1.79 per cent for rural schools, 3.17 for urban schools and 2.76 for all boys, all below a dashed line at 8 per cent marking the worldwide estimate for men.",
+   "w": 1360,
+   "h": 656,
+   "caption": "In one district, about one boy in 36 had colour-vision deficiency: 2.76% of 74986 boys aged 11 to 17 screened in schools of Kanchipuram district, Tamil Nadu (Krishnamurthy and colleagues, 2021); 1.79% of 21911 in rural schools and 3.17% of 53075 in urban schools. The dashed line is the general worldwide estimate for men, 8%, which the study did not measure. Girls were not screened."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a chart that fails. You draw the National Family Health Survey (NFHS-5) results for adults aged 15 to 49. In urban India, 33.2 per cent of women had <dfn data-g=\"467\">overweight</dfn> or obesity, and 19.7 per cent in rural India. For men the two numbers were 29.8 and 19.3 per cent. You draw four bars, grouped by sex. You colour urban red and rural green, because those are the first two colours your program offers. A <dfn data-g=\"354\">key</dfn> in the corner says which is which.</p>\n<p>Now test it two ways.</p>\n<p>First, print it on a black-and-white printer, or photocopy it. A grey copy keeps only how light or dark each colour is. A red and a green of about the same lightness print as the same grey. The key now tells the reader nothing.</p>\n<p>Second, think of the reader who cannot tell red from green. Crameri, Shephard and Heron, “The misuse of colour in science communication” (Nature Communications, 2020, https://pmc.ncbi.nlm.nih.gov/articles/PMC7595127/), list four checks any reader can run on a colour figure. One of them:</p>\n<blockquote>\n<p>The colour map should not contain red and green at a similar luminosity</p>\n</blockquote>\n<p><dfn data-g=\"393\">Luminosity</dfn> there means how bright or dark a colour looks. Run your chart through a <dfn data-g=\"110\">colour-vision-deficiency simulator</dfn>. Claus Wilke’s book <em>Fundamentals of Data Visualization</em> (2019, free online at https://clauswilke.com/dataviz/) says several exist, online and as programs for your computer. In the simulated copy, the red and green bars look alike.</p>\n<p>Now fix it, in this order.</p>\n<ol type=\"1\">\n<li>Ask what the colour is for. Here it separates two groups, urban and rural. That is a real job, so the colour may stay.</li>\n<li>Put the words on the chart. Write “urban” and “rural” beside the bars and delete the key. This is the direct labelling of the last section. The chart now reads with no colour at all.</li>\n<li>Make the two colours differ in lightness, not only in <dfn data-g=\"313\">hue</dfn>. Hue is the name of the colour: red, green, blue. A dark blue for urban and a light blue for rural survives a grey copy.</li>\n<li>Or take two colours from a palette built for colour-vision deficiency. Wilke uses the Okabe–Ito palette throughout his book. Its orange is #E69F00 and its blue is #0072B2, codes most programs accept. Keep large bars soft: Wilke warns against “large filled areas of overly saturated colors”.</li>\n<li>Print it in grey again, and run it through the simulator again. In both copies a reader should still be able to say which bar is urban.</li>\n</ol>\n<p>Step 2 did most of the work. Once the words are on the chart, colour only helps; nothing depends on it. Wilke calls this <dfn data-g=\"558\">redundant coding</dfn>: the same information carried two ways.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Labels beside the bars work when there are few groups and room for the words. Wilke’s rule of thumb is that colours for groups work best with three to five groups. At eight to ten or more, matching colours to groups becomes too hard. Then <dfn data-g=\"363\">label</dfn> directly, or label only the groups the text talks about.</p>\n<p>A palette built for colour-vision deficiency is not a pass. Wilke shows that colours are harder to tell apart on thin lines and small points than on large bars, and harder still under colour-vision deficiency. Test the figure itself, at its printed size, not the palette.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now colour does a different job: it stands for a number. Say you want a map of your state’s districts, each shaded by the per cent of women with overweight or obesity. NFHS-5 publishes a fact <dfn data-g=\"622\">sheet</dfn> for every district, so the numbers exist.</p>\n<p>Your program offers a rainbow: blue for low, through green and yellow, to red for high. It looks lively. Turn the map grey and see what happens. Wilke describes the rainbow scale in grey:</p>\n<blockquote>\n<p>The scale goes from medium dark to light to very dark and back to medium dark</p>\n</blockquote>\n<p>So in grey the order is lost. A district at the bottom of the scale and one at the top come out about equally dark. In colour the rainbow fails another way. Its yellow is the brightest colour and pulls the eye, wherever it falls on the scale. Its greens cover a wide band in which real differences are hard to see. Crameri and colleagues put a size on the damage: the colours can misrepresent the data “by more than seven percent of the displayed data variation”.</p>\n<p>Use instead:</p>\n<ul>\n<li>For a value that runs from low to high, a sequential scale. One colour going from light to dark will do. Scales built to be even, such as viridis or cividis, are listed with their sources in Crameri and colleagues’ Box 2.</li>\n<li>For a change that can go either way, such as each district’s rise or fall from NFHS-4 to NFHS-5, a diverging scale. Put its light middle colour at zero, where the change is nothing. Wilke’s warning: “Diverging scales need to be balanced”. The colours should darken at the same rate on both sides, or a rise will look bigger than a fall of the same size.</li>\n<li>Always print the <dfn data-g=\"108\">colour bar</dfn>: the strip, like an axis, that shows which colour stands for which value. Crameri and colleagues say that leaving it out is like leaving the labels and tick marks off an axis.</li>\n</ul>\n<p>Then turn the map grey again. A sequential scale that runs from light to dark keeps its order in grey.</p>",
+   "numberRefs": [
+    322
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>An even colour scale makes equal differences look equal. It does nothing for the numbers themselves. A district’s <dfn data-g=\"478\">percentage</dfn> from a survey carries its own error, and the colour hides it: two neighbouring shades may differ by less than that error. If the reader needs the numbers, give them in a table as well, as Wilke suggests for any figure whose data the reader may want in full.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>How many of your readers is this about? One figure appears almost everywhere. Crameri and colleagues give it as “the general estimate”:</p>\n<blockquote>\n<p>worldwide 0.5% of women and 8% of men are subject to a colour-vision deficiency</p>\n</blockquote>\n<p>It is a general estimate they cite, not something they measured. They add that it is lower in sub-Saharan Africa and probably higher in some European populations.</p>\n<p>Now look for an Indian measurement. Krishnamurthy and colleagues, “<dfn data-g=\"510\">Prevalence</dfn> of color vision deficiency among school-going boys in South India” (Indian Journal of Ophthalmology, 2021, https://pmc.ncbi.nlm.nih.gov/articles/PMC8482944/), screened every boy in classes 6 to 12, aged 11 to 17, in the schools they visited in Kanchipuram district, Tamil Nadu. Boys who failed a first set of colour plates were tested on Ishihara’s plates to confirm. Their Table 1 gives the counts by school location:</p>\n<table style=\"width:97%;\">\n\n<thead>\n<tr>\n<th>school location</th>\n<th>boys screened</th>\n<th>colour-vision deficiency</th>\n<th>per cent</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>rural</td>\n<td>21911</td>\n<td>392</td>\n<td>1.79</td>\n</tr>\n<tr>\n<td>urban</td>\n<td>53075</td>\n<td>1681</td>\n<td>3.17</td>\n</tr>\n<tr>\n<td>all</td>\n<td>74986</td>\n<td>2073</td>\n<td>2.76</td>\n</tr>\n</tbody>\n</table>\n<p><dfn data-g=\"85\">Check</dfn> the total row, and turn it into “one boy in how many”.</p>\n<p>2073 divided by 74986 is 0.0276, to four <dfn data-g=\"172\">decimal</dfn> places.</p>\n<div class=\"working\">\n<p>0.0276 times 100 = 2.76<br />\n100 divided by 2.76 = 36.2<br />\n100 divided by 8 = 12.5</p>\n</div>\n<p>So about one boy in 36 in this district, against one man in 12 or 13 in the general estimate.</p>\n<p>Now say what the 2.76 is. It is boys, at school, in one district, found by colour plates. Girls were not screened. Within the same district, the share differed between blocks, from 1.12 per cent in one to 3.40 per cent in another. So it is not a rate for India. The authors go further than their data in one sentence:</p>\n<blockquote>\n<p>Extrapolating this, there could be 17 million boys affected with CVD in the country.</p>\n</blockquote>\n<p>That sentence assumes one district’s boys stand for every boy in India. Book 0’s section on sampling (Book 0, D6) says why a sample speaks only for the population it was drawn from. This study did not sample India.</p>\n<p>For your figure, none of this changes the rule. Whether it is one man in 12 or one boy in 36, some of the people on your thesis committee, or among a journal’s reviewers, may not tell red from green. Designing for them costs you two tests and a few labels.</p>",
+   "numberRefs": [
+    322,
+    323
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Both numbers are counts of people who failed colour plates. The 8 per cent is a figure the authors cite from others, for the world as a whole; it is not an Indian measurement. The 2.76 per cent is a measurement, but of boys aged 11 to 17 in one district, screened in school corridors in daylight. Neither tells you how many of your own readers, adults of both sexes, have colour-vision deficiency.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“More colours make a figure clearer” is the error. Colour with no job gives the reader a puzzle to solve.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Each job takes its own kind of colour. A rainbow fits none of them.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Red against green is the tempting pair: good and bad, urban and rural, before and after. At similar lightness it fails twice: in a grey copy and for readers with red-green colour-vision deficiency, the commonest kind. Change one of the pair, or make them differ in lightness.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The general estimate cited worldwide is 8 per cent of men and 0.5 per cent of women with colour-vision deficiency.</p>",
+     "tag": "number",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The one Indian measurement here found 2.76 per cent of 74,986 school boys in Kanchipuram district, Tamil Nadu. It is boys in one district, with block figures from 1.12 to 3.40 per cent.</p>",
+     "tag": "india_deviation",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Write “urban” on the urban bar so that nothing depends on colour at all.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A palette sold as colour-blind safe stops being safe on thin lines and small points. Wilke shows colours are harder to tell apart there, and harder still under colour-vision deficiency. So test the finished figure at its printed size, not the palette.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you review a colleague’s map or <dfn data-g=\"301\">heat map</dfn> (a table whose cells are shaded by value), run Crameri and colleagues’ checks aloud. Is there a colour bar? Does the scale get steadily lighter or darker? Are red and green at similar lightness? Is it a rainbow?</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Eight per cent of men are colour-blind, so 8 per cent of Indian men are.” The 8 per cent is a general estimate for the world that Crameri and colleagues cite; they did not measure it. The one Indian measurement in this section found 2.76 per cent, in school boys of one district of Tamil Nadu. Even there, the share varied from block to block. Neither number is a rate for Indian adults. Your figure needs the same two tests whichever number is true.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Colour in Figure 2 only separates urban from rural residence; each bar is also labelled, so the figure reads the same in black and white.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back: name the three jobs colour can do in a data figure, and the kind of colour each job takes. Then name the two tests a colour figure should pass before it leaves you.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>To separate groups with no order, use a few colours that look clearly different and equally strong. That is a qualitative scale. To stand for a value, use colours that run from light to dark: a sequential scale. If the value can go either way from a middle such as zero, <dfn data-g=\"351\">join</dfn> two of them at a light middle colour: a diverging scale. To pick out one thing, use one strong colour and make the rest grey.</p>\n<p>The two tests: look at the figure in grey, and run it through a simulator of colour-vision deficiency. If its meaning survives both, the colour is doing its job.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague’s thesis draft has this figure, described in words. It is made up for this exercise.</p>\n<p>Figure 4 is a map of the districts of a state. Each district is shaded on a rainbow scale, blue through green and yellow to red, by the per cent of women with overweight or obesity. There is no colour bar. The <dfn data-g=\"74\">caption</dfn> ends “Red districts have the highest burden.”</p>\n<p>Figure 5 is a line chart of the same percentage in four age groups over two survey rounds. The four lines are red, green, brown and orange, all thin and of the same thickness. A key in the corner names the age groups in the order youngest to oldest.</p>\n<p>List what is wrong with the colour, and how you would fix each problem.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Figure 4.</p>\n<ul>\n<li>The rainbow scale is not even. Yellow pulls the eye wherever it falls, and the wide green band hides real differences. In grey the order of districts is lost. Use a sequential scale that runs from light to dark.</li>\n<li>There is no colour bar. Without it a reader cannot turn any shade into a number. Print one, with values marked.</li>\n<li>The caption asks the reader to find “red”. A reader with red-green colour-vision deficiency may not be able to. On a light-to-dark scale the caption can say “darker districts”.</li>\n</ul>\n<p>Figure 5.</p>\n<ul>\n<li>Red, green, brown and orange at similar lightness are hard to tell apart for many readers with colour-vision deficiency, and thin lines make it worse.</li>\n<li>The key sends the reader back and forth. Write each age group’s name at the end of its line instead. If a key stays, put its entries in the order the lines appear.</li>\n<li>The age groups have an order, so use four steps of one colour, lightest for the youngest. Then check the figure in grey and in a simulator.</li>\n</ul>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident says: “In that Tamil Nadu study only about 3 boys in 100 were colour-blind. Why should I redraw my red and green slides for so few people?” You have ten minutes and a whiteboard. Answer her.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with what the number is. It is 2.76 per cent of 74,986 boys aged 11 to 17 in one district, about one boy in 36. It is not a rate for Indian adults, and girls were not tested. The general estimate cited worldwide is higher for men, 8 per cent, about one in 12 or 13.</p>\n<p>Then say why the number does not decide the question. Any room of examiners or reviewers may hold one person who cannot tell red from green. And some copies of her slides and thesis will be printed or photocopied in black and white. There, a red and a green of the same lightness become the same grey. That second problem affects every reader of a grey copy.</p>\n<p>Then show the cost of fixing it. Draw a red and green pair on the board, then the same chart with “urban” and “rural” written beside the bars. The labelled version needs no colour at all. Changing one colour and checking in grey takes minutes.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Take the figure you are drawing for your build. For each colour in it, write down the job it does: separating groups, standing for a value, or picking out one thing. Remove every colour that has no job. Then print the figure in grey and run it through a colour-vision-deficiency simulator, and write down what you changed after each test.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A good record of this has three parts. A list of colours, each with its job, or “none, removed”. A grey copy in which every group or value can still be told apart. Usually that is because the groups are labelled directly or the colours differ in lightness. And a note of what the simulator showed, with the change you made.</p>\n<p>If a colour stands for a value, check three more things. The scale runs steadily from light to dark. It is not a rainbow. A colour bar is printed. If you used a palette built for colour-vision deficiency, check thin lines and small points at the printed size; the palette alone does not guarantee them.</p>"
+  }
+ ]
+}

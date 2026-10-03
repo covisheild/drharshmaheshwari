@@ -698,6 +698,16 @@
  ],
  "glossary": [
   {
+   "term": "absolute path",
+   "senses": [
+    {
+     "term": "absolute path",
+     "plain": "a path that starts from the top of one computer&#x27;s disk, so it names a place that exists on one computer only",
+     "where": "Book 6, section 7"
+    }
+   ]
+  },
+  {
    "term": "absorption",
    "senses": [
     {
@@ -799,6 +809,16 @@
      "term": "ADP",
      "plain": "what is left when ATP&#x27;s last phosphate group is knocked off: the same molecule, one phosphate short",
      "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "aesthetic mapping",
+   "senses": [
+    {
+     "term": "aesthetic mapping",
+     "plain": "a statement, made inside aes(), of which column of the data controls which visual property of the marks: position along x or y, colour, and others",
+     "where": "Book 6, section 18"
     }
    ]
   },
@@ -973,6 +993,16 @@
    ]
   },
   {
+   "term": "assignment",
+   "senses": [
+    {
+     "term": "assignment",
+     "plain": "name &lt;- value, read &quot;name gets value&quot;: R works out the right-hand side completely, then stores the result under the name; it prints nothing",
+     "where": "Book 6, section 3"
+    }
+   ]
+  },
+  {
    "term": "at random",
    "senses": [
     {
@@ -1039,6 +1069,16 @@
      "term": "basal metabolic rate (BMR)",
      "plain": "the energy spent lying at rest after a fast",
      "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "base R",
+   "senses": [
+    {
+     "term": "base R",
+     "plain": "the set of standard packages installed with R itself",
+     "where": "Book 6, section 6"
     }
    ]
   },
@@ -1323,12 +1363,32 @@
    ]
   },
   {
+   "term": "check",
+   "senses": [
+    {
+     "term": "check (in code)",
+     "plain": "a line of code that states something you believe about the data and stops the script with an error when it is false",
+     "where": "Book 6, section 19"
+    }
+   ]
+  },
+  {
    "term": "checking a reference",
    "senses": [
     {
      "term": "checking a reference",
      "plain": "four acts, each of which can fail on its own: find the source, confirm it is the source named, find the exact passage pointed to, read it to see whether it supports the claim",
      "where": "Book 0, F3"
+    }
+   ]
+  },
+  {
+   "term": "checksum",
+   "senses": [
+    {
+     "term": "checksum (MD5 checksum)",
+     "plain": "a 32-character code calculated from every byte of a file; change one character in the file and the code changes",
+     "where": "Book 6, section 7, Book 6, section 9"
     }
    ]
   },
@@ -1393,6 +1453,16 @@
    ]
   },
   {
+   "term": "class",
+   "senses": [
+    {
+     "term": "class (of an R object)",
+     "plain": "the kind of object it is, which class(x) names, such as Date",
+     "where": "Book 6, section 15"
+    }
+   ]
+  },
+  {
    "term": "class title",
    "senses": [
     {
@@ -1443,12 +1513,32 @@
    ]
   },
   {
+   "term": "coercion",
+   "senses": [
+    {
+     "term": "coercion",
+     "plain": "R converting combined values of different types to the highest type, in the order logical, numeric, character, without a warning; one text value turns a vector of numbers into text",
+     "where": "Book 6, section 4"
+    }
+   ]
+  },
+  {
    "term": "cohort study",
    "senses": [
     {
      "term": "cohort study",
      "plain": "a study that starts from the exposure: it starts with people who do not yet have the outcome, records who is exposed and who is not, follows both groups over time and counts who develops the outcome",
      "where": "Book 7, section 3"
+    }
+   ]
+  },
+  {
+   "term": "column specification",
+   "senses": [
+    {
+     "term": "column specification",
+     "plain": "the type read_csv() guessed for each column, which it prints; read it every time",
+     "where": "Book 6, section 9"
     }
    ]
   },
@@ -1469,6 +1559,16 @@
      "term": "commencement",
      "plain": "the date a provision of an Act comes into force, often left to a later notification and different for different provisions",
      "where": "Book 5, section 3"
+    }
+   ]
+  },
+  {
+   "term": "comment",
+   "senses": [
+    {
+     "term": "comment (in code)",
+     "plain": "everything after a # on a line; R ignores it, people read it",
+     "where": "Book 6, section 2"
     }
    ]
   },
@@ -1509,6 +1609,16 @@
      "term": "complementary",
      "plain": "each one completes the other; A always faces T and C always faces G",
      "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "complete-case analysis",
+   "senses": [
+    {
+     "term": "complete-case analysis",
+     "plain": "analysing only the rows with no missing value in the columns used",
+     "where": "Book 6, section 13"
     }
    ]
   },
@@ -1589,6 +1699,16 @@
      "term": "conservation of energy",
      "plain": "energy is never made and never destroyed; it changes form and it moves",
      "where": "Book 0, E3"
+    }
+   ]
+  },
+  {
+   "term": "console",
+   "senses": [
+    {
+     "term": "console",
+     "plain": "the pane in which R shows a prompt, &gt;, and waits for one instruction; the place to try things",
+     "where": "Book 6, section 2"
     }
    ]
   },
@@ -1713,6 +1833,16 @@
    ]
   },
   {
+   "term": "CRAN",
+   "senses": [
+    {
+     "term": "CRAN",
+     "plain": "the Comprehensive R Archive Network, the set of websites from which R and most packages are downloaded",
+     "where": "Book 6, section 2, Book 6, section 6"
+    }
+   ]
+  },
+  {
    "term": "critical point",
    "senses": [
     {
@@ -1739,6 +1869,16 @@
      "term": "cross-sectional study",
      "plain": "a study that enrols a sample of a population and measures exposure and outcome at the same time: one visit, one count",
      "where": "Book 7, section 3"
+    }
+   ]
+  },
+  {
+   "term": "CSV file",
+   "senses": [
+    {
+     "term": "CSV file",
+     "plain": "comma-separated values: a plain-text file whose first line holds the column names; nothing in it says what type each column is",
+     "where": "Book 6, section 9"
     }
    ]
   },
@@ -1773,12 +1913,32 @@
    ]
   },
   {
+   "term": "data dictionary",
+   "senses": [
+    {
+     "term": "data dictionary",
+     "plain": "a separate file, laid out as a table, with one row per variable of one data file: its exact name, meaning, unit, type, the values it may take, how a missing value is written, and where each fact came from",
+     "where": "Book 6, section 10"
+    }
+   ]
+  },
+  {
    "term": "Data Fiduciary",
    "senses": [
     {
      "term": "Data Fiduciary",
      "plain": "under the Digital Personal Data Protection Act, 2023, whoever &quot;alone or in conjunction with other persons determines the purpose and means of processing of personal data&quot; (section 2(i))",
      "where": "Book 3, section 7"
+    }
+   ]
+  },
+  {
+   "term": "data frame",
+   "senses": [
+    {
+     "term": "data frame",
+     "plain": "R&#x27;s table: different columns may hold different types, but the values within one column share one type, and every column has the same length",
+     "where": "Book 6, section 8"
     }
    ]
   },
@@ -1803,6 +1963,16 @@
    ]
   },
   {
+   "term": "date",
+   "senses": [
+    {
+     "term": "date (in R)",
+     "plain": "an object of class Date: a number of days since 1 January 1970, printed year-month-day",
+     "where": "Book 6, section 15"
+    }
+   ]
+  },
+  {
    "term": "de novo",
    "senses": [
     {
@@ -1819,6 +1989,16 @@
      "term": "decimal",
      "plain": "place value carried on past the point: tenths, then hundredths, then thousandths",
      "where": "Book 0, A3"
+    }
+   ]
+  },
+  {
+   "term": "default",
+   "senses": [
+    {
+     "term": "default (of an argument)",
+     "plain": "the value an argument takes when the call does not give one",
+     "where": "Book 6, section 5"
     }
    ]
   },
@@ -2083,6 +2263,16 @@
    ]
   },
   {
+   "term": "end-to-end analysis",
+   "senses": [
+    {
+     "term": "end-to-end analysis",
+     "plain": "one question taken from raw data to its final table and figure in a single script that another person can run",
+     "where": "Book 6, section 22"
+    }
+   ]
+  },
+  {
    "term": "endocrine",
    "senses": [
     {
@@ -2189,6 +2379,16 @@
      "term": "equilibrium (steady state)",
      "plain": "a constant value of the state at which the rule gives a rate of zero, written W* and read &quot;W star&quot;",
      "where": "Book 2, section 8"
+    }
+   ]
+  },
+  {
+   "term": "error message",
+   "senses": [
+    {
+     "term": "error message",
+     "plain": "R&#x27;s statement that it could not carry out an instruction: what it could not do and, for a line it could not read, where on the line it stopped",
+     "where": "Book 6, section 2"
     }
    ]
   },
@@ -2309,6 +2509,16 @@
      "term": "extracellular fluid",
      "plain": "the fluid around a gland&#x27;s own cells, into which it lets its hormone out",
      "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "factor",
+   "senses": [
+    {
+     "term": "factor",
+     "plain": "a column that stores each value together with its levels",
+     "where": "Book 6, section 14"
     }
    ]
   },
@@ -2573,12 +2783,32 @@
    ]
   },
   {
+   "term": "fresh session",
+   "senses": [
+    {
+     "term": "fresh session",
+     "plain": "a new R process whose workspace is empty and which has attached no package beyond R&#x27;s defaults",
+     "where": "Book 6, section 21, Book 6, section 6"
+    }
+   ]
+  },
+  {
    "term": "full verbatim",
    "senses": [
     {
      "term": "full verbatim",
      "plain": "a transcript that keeps everything: every filler, every repeated word, every broken-off sentence",
      "where": "Book 3, section 10"
+    }
+   ]
+  },
+  {
+   "term": "function call",
+   "senses": [
+    {
+     "term": "function call",
+     "plain": "a function&#x27;s name followed by round brackets holding its arguments; the call returns one result, which R prints or you assign to a name",
+     "where": "Book 6, section 5"
     }
    ]
   },
@@ -2639,6 +2869,16 @@
      "term": "genotype",
      "plain": "what a person actually carries in their DNA, including the alleles that are not showing",
      "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "geom",
+   "senses": [
+    {
+     "term": "geom",
+     "plain": "the kind of mark that represents each observation or group, such as points, bars or boxes",
+     "where": "Book 6, section 18"
     }
    ]
   },
@@ -2743,6 +2983,16 @@
    ]
   },
   {
+   "term": "help page",
+   "senses": [
+    {
+     "term": "help page",
+     "plain": "the page opened with ?name that describes one function in fixed sections: Description, Usage, Arguments, Value and Examples",
+     "where": "Book 6, section 5"
+    }
+   ]
+  },
+  {
    "term": "hepatic portal circulation",
    "senses": [
     {
@@ -2759,6 +3009,16 @@
      "term": "hepatic portal vein",
      "plain": "the vein along which blood from the gut runs straight to the liver",
      "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "hidden state",
+   "senses": [
+    {
+     "term": "hidden state",
+     "plain": "anything a script uses that the script itself did not make",
+     "where": "Book 6, section 21"
     }
    ]
   },
@@ -2943,6 +3203,16 @@
    ]
   },
   {
+   "term": "install",
+   "senses": [
+    {
+     "term": "install (a package)",
+     "plain": "download it from a repository such as CRAN and store it on the computer, with install.packages(); once per computer",
+     "where": "Book 6, section 6"
+    }
+   ]
+  },
+  {
    "term": "instantaneous rate",
    "senses": [
     {
@@ -3053,6 +3323,16 @@
    ]
   },
   {
+   "term": "ISO 8601",
+   "senses": [
+    {
+     "term": "ISO 8601",
+     "plain": "writing a date year-month-day, such as 2021-04-03",
+     "where": "Book 6, section 15"
+    }
+   ]
+  },
+  {
    "term": "issue advocate",
    "senses": [
     {
@@ -3063,12 +3343,42 @@
    ]
   },
   {
+   "term": "join",
+   "senses": [
+    {
+     "term": "join",
+     "plain": "combining two data frames by matching rows whose keys are equal",
+     "where": "Book 6, section 17"
+    }
+   ]
+  },
+  {
    "term": "joule",
    "senses": [
     {
      "term": "joule",
      "plain": "the SI unit of energy, written J",
      "where": "Book 0, B1"
+    }
+   ]
+  },
+  {
+   "term": "key",
+   "senses": [
+    {
+     "term": "key",
+     "plain": "a column, or set of columns, whose values pick out the row they belong to",
+     "where": "Book 6, section 17, Book 6, section 19"
+    }
+   ]
+  },
+  {
+   "term": "key check",
+   "senses": [
+    {
+     "term": "key check",
+     "plain": "a check that the key has as many different values as the data have rows",
+     "where": "Book 6, section 19"
     }
    ]
   },
@@ -3133,6 +3443,16 @@
    ]
   },
   {
+   "term": "label",
+   "senses": [
+    {
+     "term": "label (of a column)",
+     "plain": "the description stored with a column in an SPSS or SAS file, which haven keeps as a label attribute, extra information stored with the column",
+     "where": "Book 6, section 9"
+    }
+   ]
+  },
+  {
    "term": "lacteals",
    "senses": [
     {
@@ -3183,6 +3503,16 @@
    ]
   },
   {
+   "term": "layer",
+   "senses": [
+    {
+     "term": "layer (of a plot)",
+     "plain": "the marks one geom_ function adds; layers are joined to the plot with +",
+     "where": "Book 6, section 18"
+    }
+   ]
+  },
+  {
    "term": "leading question",
    "senses": [
     {
@@ -3223,6 +3553,16 @@
    ]
   },
   {
+   "term": "level",
+   "senses": [
+    {
+     "term": "level (of a factor)",
+     "plain": "one of the allowed categories, in a set order; a value not among them becomes NA without an error",
+     "where": "Book 6, section 14"
+    }
+   ]
+  },
+  {
    "term": "ligand",
    "senses": [
     {
@@ -3259,6 +3599,16 @@
      "term": "lipolysis",
      "plain": "the breakdown of stored triglycerides into free fatty acids and glycerol",
      "where": "Book 0, E8"
+    }
+   ]
+  },
+  {
+   "term": "load",
+   "senses": [
+    {
+     "term": "load (a package)",
+     "plain": "make its functions available in the current session, with library(); in every session",
+     "where": "Book 6, section 6"
     }
    ]
   },
@@ -3339,6 +3689,16 @@
      "term": "mandi",
      "plain": "a regulated wholesale market for farm produce, run under state law",
      "where": "Book 4, section 2"
+    }
+   ]
+  },
+  {
+   "term": "mapped, set",
+   "senses": [
+    {
+     "term": "mapped, set (of a visual property)",
+     "plain": "mapped: written inside aes(), it varies with a column; set: written outside, as an argument of the geom, one fixed value for every mark",
+     "where": "Book 6, section 18"
     }
    ]
   },
@@ -3489,6 +3849,16 @@
      "term": "minimum support price (MSP)",
      "plain": "the assured price the Central Government announces, at which foodgrains are procured from farmers for the central pool; a price at which the government will buy, not a price every farmer gets",
      "where": "Book 4, section 9"
+    }
+   ]
+  },
+  {
+   "term": "missing-value code",
+   "senses": [
+    {
+     "term": "missing-value code",
+     "plain": "a value such as -99, 999 or &quot;NR&quot; that stands for &quot;not recorded&quot;; R reads it as a real value unless told to turn it into NA",
+     "where": "Book 6, section 13, Book 6, section 9"
     }
    ]
   },
@@ -3753,6 +4123,26 @@
    ]
   },
   {
+   "term": "object",
+   "senses": [
+    {
+     "term": "object (in R)",
+     "plain": "a value R holds in memory under a name",
+     "where": "Book 6, section 3"
+    }
+   ]
+  },
+  {
+   "term": "observation",
+   "senses": [
+    {
+     "term": "observation (in tidy data)",
+     "plain": "what one row holds, such as one child at one visit; a second visit is a second row, not a second column",
+     "where": "Book 6, section 8"
+    }
+   ]
+  },
+  {
    "term": "odds",
    "senses": [
     {
@@ -3839,6 +4229,36 @@
      "term": "overweight (child under five)",
      "plain": "weight-for-height more than two standard deviations above the WHO growth standard (the NFHS-5 cut-off)",
      "where": "Book 4, section 15"
+    }
+   ]
+  },
+  {
+   "term": "package",
+   "senses": [
+    {
+     "term": "package",
+     "plain": "a bundle of R functions, with the help pages that explain them and sometimes data, that extends what base R can do",
+     "where": "Book 6, section 6"
+    }
+   ]
+  },
+  {
+   "term": "parsing",
+   "senses": [
+    {
+     "term": "parsing (a date)",
+     "plain": "turning text into a date by reading it according to the order of its parts, as ymd(), dmy() and mdy() do",
+     "where": "Book 6, section 15"
+    }
+   ]
+  },
+  {
+   "term": "path",
+   "senses": [
+    {
+     "term": "path",
+     "plain": "the address of a file",
+     "where": "Book 6, section 7"
     }
    ]
   },
@@ -4233,6 +4653,26 @@
    ]
   },
   {
+   "term": "project folder",
+   "senses": [
+    {
+     "term": "project folder",
+     "plain": "one folder for each analysis, holding data-raw/ (the data as it arrived, written by hand, never by code), code/ (the scripts) and output/ (what the scripts make), with a README at the top",
+     "where": "Book 6, section 7"
+    }
+   ]
+  },
+  {
+   "term": "project root",
+   "senses": [
+    {
+     "term": "project root",
+     "plain": "the top folder of the project, which here() finds and builds every file address from",
+     "where": "Book 6, section 7"
+    }
+   ]
+  },
+  {
    "term": "proportion",
    "senses": [
     {
@@ -4299,6 +4739,16 @@
      "term": "qualitative research",
      "plain": "research that asks what something is, what it means to the people involved, how it comes about and why, by gathering people&#x27;s own words and actions and analysing them without turning them into counts",
      "where": "Book 3, section 1"
+    }
+   ]
+  },
+  {
+   "term": "quantile",
+   "senses": [
+    {
+     "term": "quantile",
+     "plain": "the value below which a given share of the data lies; R places it between two values by one of nine rules, the seventh unless told otherwise",
+     "where": "Book 6, section 16"
     }
    ]
   },
@@ -4393,6 +4843,16 @@
    ]
   },
   {
+   "term": "range check",
+   "senses": [
+    {
+     "term": "range check",
+     "plain": "a check that every recorded value of a column lies between a lower and an upper limit written in the code, taken from a source or a stated decision, never from the same data",
+     "where": "Book 6, section 19"
+    }
+   ]
+  },
+  {
    "term": "rate constant",
    "senses": [
     {
@@ -4439,6 +4899,26 @@
      "term": "ratio",
      "plain": "two quantities of the same kind set side by side by dividing one by the other",
      "where": "Book 0, A5"
+    }
+   ]
+  },
+  {
+   "term": "raw file",
+   "senses": [
+    {
+     "term": "raw file (raw data)",
+     "plain": "the data as it first reached you; never edited, and never saved over",
+     "where": "Book 6, section 1, Book 6, section 9"
+    }
+   ]
+  },
+  {
+   "term": "README",
+   "senses": [
+    {
+     "term": "README",
+     "plain": "a short plain-text file at the top of the project folder that says what the project is and where the data came from, and gives the one command that reruns the analysis and the folder to run it from",
+     "where": "Book 6, section 10, Book 6, section 7"
     }
    ]
   },
@@ -4519,6 +4999,46 @@
      "term": "relative frequency",
      "plain": "a count divided by the total number counted; the proportion, under a longer name",
      "where": "Book 0, D4"
+    }
+   ]
+  },
+  {
+   "term": "relative path",
+   "senses": [
+    {
+     "term": "relative path",
+     "plain": "a path that starts from the working directory, such as data-raw/heights.csv",
+     "where": "Book 6, section 7"
+    }
+   ]
+  },
+  {
+   "term": "replicated",
+   "senses": [
+    {
+     "term": "replicated (result)",
+     "plain": "independent investigators collected new data on the same question and reached the same answer",
+     "where": "Book 6, section 20"
+    }
+   ]
+  },
+  {
+   "term": "replication package",
+   "senses": [
+    {
+     "term": "replication package",
+     "plain": "the data and code that authors deposit with a published paper",
+     "where": "Book 6, section 20"
+    }
+   ]
+  },
+  {
+   "term": "reproducible",
+   "senses": [
+    {
+     "term": "reproducible (result)",
+     "plain": "the same data, analysed again with the same code, give the same result; this does not show the result is correct",
+     "where": "Book 6, section 20"
     }
    ]
   },
@@ -4643,6 +5163,26 @@
    ]
   },
   {
+   "term": "row-count check",
+   "senses": [
+    {
+     "term": "row-count check",
+     "plain": "storing the number of rows before a step that could change it, such as a join, and comparing it with the number after",
+     "where": "Book 6, section 19"
+    }
+   ]
+  },
+  {
+   "term": "RStudio",
+   "senses": [
+    {
+     "term": "RStudio",
+     "plain": "the window you work in; installed after R",
+     "where": "Book 6, section 2"
+    }
+   ]
+  },
+  {
    "term": "running total",
    "senses": [
     {
@@ -4733,6 +5273,16 @@
    ]
   },
   {
+   "term": "script",
+   "senses": [
+    {
+     "term": "script",
+     "plain": "a plain-text file of R code, saved with a name ending in .R; the console is for trying, the script is what you keep",
+     "where": "Book 6, section 2"
+    }
+   ]
+  },
+  {
    "term": "second derivative",
    "senses": [
     {
@@ -4749,6 +5299,16 @@
      "term": "second derivative test",
      "plain": "where the derivative is zero, a second derivative above zero means a local minimum, below zero a local maximum, and zero decides nothing",
      "where": "Book 2, section 9"
+    }
+   ]
+  },
+  {
+   "term": "seed",
+   "senses": [
+    {
+     "term": "seed (random-number seed)",
+     "plain": "the starting point R&#x27;s random numbers are worked out from; set it with set.seed() before a random step and the same picks come back",
+     "where": "Book 6, section 21"
     }
    ]
   },
@@ -4793,6 +5353,16 @@
    ]
   },
   {
+   "term": "session",
+   "senses": [
+    {
+     "term": "session (R session)",
+     "plain": "R from the moment it starts until it is closed or restarted",
+     "where": "Book 6, section 6"
+    }
+   ]
+  },
+  {
    "term": "set point model",
    "senses": [
     {
@@ -4819,6 +5389,16 @@
      "term": "share of MPCE",
      "plain": "a group&#x27;s MPCE divided by total MPCE, times 100: a share of rupees spent, not of food eaten",
      "where": "Book 4, section 7"
+    }
+   ]
+  },
+  {
+   "term": "sheet",
+   "senses": [
+    {
+     "term": "sheet (of a workbook)",
+     "plain": "one tab of an Excel workbook",
+     "where": "Book 6, section 9"
     }
    ]
   },
@@ -4853,6 +5433,16 @@
    ]
   },
   {
+   "term": "silent change",
+   "senses": [
+    {
+     "term": "silent change",
+     "plain": "a change to data, or a choice about which data to use, that leaves no instruction a second person can read and run again, and that nothing on the screen announces",
+     "where": "Book 6, section 1"
+    }
+   ]
+  },
+  {
    "term": "single-duty change",
    "senses": [
     {
@@ -4879,6 +5469,16 @@
      "term": "small store",
      "plain": "glycogen, kept in the liver and the muscles",
      "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "snake case",
+   "senses": [
+    {
+     "term": "snake case",
+     "plain": "names in small letters with _ between words, such as height_cm",
+     "where": "Book 6, section 3"
     }
    ]
   },
@@ -5173,6 +5773,16 @@
    ]
   },
   {
+   "term": "terminal",
+   "senses": [
+    {
+     "term": "terminal",
+     "plain": "the window where you type commands to the computer itself rather than to R",
+     "where": "Book 6, section 7"
+    }
+   ]
+  },
+  {
    "term": "thematic frame",
    "senses": [
     {
@@ -5199,6 +5809,36 @@
      "term": "thermochemical calorie",
      "plain": "4.184 joules exactly",
      "where": "Book 0, B4"
+    }
+   ]
+  },
+  {
+   "term": "tibble",
+   "senses": [
+    {
+     "term": "tibble",
+     "plain": "the tidyverse&#x27;s kind of data frame; it prints its size and the type of each column",
+     "where": "Book 6, section 8"
+    }
+   ]
+  },
+  {
+   "term": "tidy data",
+   "senses": [
+    {
+     "term": "tidy data",
+     "plain": "data in which each variable forms a column, each observation forms a row, and each type of observational unit forms a table (Wickham 2014)",
+     "where": "Book 6, section 8"
+    }
+   ]
+  },
+  {
+   "term": "tidyverse",
+   "senses": [
+    {
+     "term": "tidyverse",
+     "plain": "a family of packages; loading it loads nine, among them dplyr and readr",
+     "where": "Book 6, section 3, Book 6, section 6"
     }
    ]
   },
@@ -5279,6 +5919,16 @@
      "term": "two-way table",
      "plain": "a table that sorts the same people twice, one way down the columns and the other way across the rows",
      "where": "Book 0, D3"
+    }
+   ]
+  },
+  {
+   "term": "type",
+   "senses": [
+    {
+     "term": "type (of a value in R)",
+     "plain": "the one kind of value a vector holds; the first three met are numeric (numbers), character (text) and logical (TRUE or FALSE)",
+     "where": "Book 6, section 4"
     }
    ]
   },
@@ -5397,8 +6047,18 @@
    "senses": [
     {
      "term": "vector",
-     "plain": "an ordered list of numbers, called its entries; one row of a data table is a vector",
-     "where": "Book 2, section 10"
+     "plain": "(1) an ordered list of numbers, called its entries; one row of a data table is a vector; (2) in R, an ordered set of values of one type, held as one object under one name and built with c(); each column of a data frame is one",
+     "where": "Book 2, section 10, Book 6, section 4"
+    }
+   ]
+  },
+  {
+   "term": "verb",
+   "senses": [
+    {
+     "term": "verb (dplyr)",
+     "plain": "a dplyr function that does one thing to a data frame and hands back a new one, leaving the one it was given unchanged",
+     "where": "Book 6, section 11"
     }
    ]
   },
@@ -5479,6 +6139,26 @@
      "term": "working against the other burden",
      "plain": "this book&#x27;s reading word, not an official one: a change that acts on one burden and, by its design, raises the risk of the other",
      "where": "Book 4, section 15"
+    }
+   ]
+  },
+  {
+   "term": "working directory",
+   "senses": [
+    {
+     "term": "working directory",
+     "plain": "the folder R treats as home; a relative path starts from it",
+     "where": "Book 6, section 7"
+    }
+   ]
+  },
+  {
+   "term": "workspace",
+   "senses": [
+    {
+     "term": "workspace",
+     "plain": "the objects that exist at a given moment, which ls() lists and RStudio&#x27;s Environment pane shows; it is not your script",
+     "where": "Book 6, section 3"
     }
    ]
   },

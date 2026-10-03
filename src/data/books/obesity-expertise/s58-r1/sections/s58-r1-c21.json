@@ -1,0 +1,172 @@
+{
+ "format": 1,
+ "id": "s58-r1-c21",
+ "label": "21",
+ "title": "Making a table that stands alone",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A table stands alone when a reader can understand it without going back to the text. Its <dfn data-g=\"684\">title</dfn> is short but self-explanatory, and sits above the table: what was measured, in whom, where and when.</p>\n<p>Each column has a short heading with the unit. Explanations, exclusions and nonstandard abbreviations (<dfn data-g=\"85\">check</dfn> the target journal’s instructions for authors) go in footnotes below the table, marked with letters or symbols, not in the headings.</p>\n<p>Each heading is aligned like the column under it.</p>",
+   "refs": [
+    347,
+    348,
+    349,
+    350,
+    230,
+    32,
+    32,
+    31,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    358
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A table is for the reader who wants exact numbers, or wants to find one row. It has to make sense on its own, because a reader may look at the tables before reading the text.</p>\n<p>Keep it plain. No grid of lines, no lines between rows. Numbers line up on the right and keep the same number of <dfn data-g=\"172\">decimal</dfn> places.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a published table and test it. Krishnamurthy and colleagues’ paper on <dfn data-g=\"109\">colour-vision deficiency</dfn> in school boys, met in section 19 (Indian Journal of Ophthalmology, 2021, https://pmc.ncbi.nlm.nih.gov/articles/PMC8482944/), prints this as its first table. Its title:</p>\n<blockquote>\n<p>Association between color vision deficiency, age groups, location and type of schools</p>\n</blockquote>\n<p>Here are its first four columns. A fifth, of <dfn data-g=\"453\">odds</dfn> ratios and P values, is left out.</p>\n<table style=\"width:98%;\">\n\n<thead>\n<tr>\n<th>Demographics</th>\n<th>Total (n)</th>\n<th>Color vision deficiency (n)</th>\n<th>Prevalence (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Total</td>\n<td>74986</td>\n<td>2073</td>\n<td>2.76</td>\n</tr>\n<tr>\n<td>Class groups</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Middle</td>\n<td>58907</td>\n<td>1608</td>\n<td>2.73</td>\n</tr>\n<tr>\n<td>Higher secondary</td>\n<td>16079</td>\n<td>465</td>\n<td>2.89</td>\n</tr>\n<tr>\n<td>Type of school</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Private</td>\n<td>21422</td>\n<td>535</td>\n<td>2.50</td>\n</tr>\n<tr>\n<td>Public</td>\n<td>53564</td>\n<td>1538</td>\n<td>2.87</td>\n</tr>\n<tr>\n<td>Location of school</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Rural</td>\n<td>21911</td>\n<td>392</td>\n<td>1.79</td>\n</tr>\n<tr>\n<td>Urban</td>\n<td>53075</td>\n<td>1681</td>\n<td>3.17</td>\n</tr>\n</tbody>\n</table>\n<p>Cover the paper and ask Book 0’s four questions of the table alone (Book 0, F1). What does a row stand for? A group of children, but which children? The title does not say they are boys, aged 11 to 17, in schools of one district of Tamil Nadu. It says “age groups”, while the rows say “<dfn data-g=\"96\">Class</dfn> groups”, and nothing gives the ages. A reader holding only the table cannot say whom it describes. It fails the first test of a table that stands alone.</p>\n<p>Now see what it does well. Every <dfn data-g=\"478\">percentage</dfn> has its two counts beside it. The unit sits in the heading, “(%)”, not in every cell. The per cents all carry two decimal places. By the rule in section 9, one decimal place would be enough for values under 10 per cent. But the column is consistent, and consistency is what lets the eye compare down it.</p>\n<p>Last, hold the table against the paper’s text. The Results say there were:</p>\n<blockquote>\n<p>21422 (28.57%) and 53564 (71.43%) in public and private schools, respectively</p>\n</blockquote>\n<p>The table puts 21422 against Private and 53564 against Public. One of the two is wrong. The text’s own percentages, 2.87 for public schools and 2.50 for private, match the table’s labels. So the slip is probably in the sentence. Either way, a reader holding both cannot be sure. This is one reason not to give the same numbers twice.</p>\n<p>Rewrite the title so the table stands alone:</p>\n<blockquote>\n<p>Table 1. Colour-vision deficiency confirmed in boys aged 11–17 years screened in schools of Kanchipuram district, Tamil Nadu, by school level, type and location</p>\n</blockquote>\n<p>Then add a <dfn data-g=\"267\">footnote</dfn> for what the headings cannot carry: “Middle school: classes 6–10, ages 11–15 years; higher secondary: classes 11–12, ages 16–17 years.”</p>",
+   "numberRefs": [
+    323
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This critique is of the table’s words and layout. It says nothing about whether the counts are right; for that you would need the study’s data. A table can stand alone perfectly and still carry a wrong number.</p>\n<p>The fifth column, of odds ratios and P values, is left out because this book does not teach odds ratios. Its heading, “<dfn data-g=\"454\">Odds ratio</dfn> (95%<dfn data-g=\"128\">Confidence Interval</dfn>) (P)”, packs three things into one heading. That is the explanatory matter the International Committee of Medical Journal Editors (ICMJE) asks you to put in footnotes.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now build one. Say you are writing a report for district programme officers. Each will set their own district’s figures beside the national ones, so they need the exact values. That is a job for a table. For the same rows, section 14 chose a figure when the <dfn data-g=\"95\">claim</dfn> was a pattern, urban above rural. A paper uses one or the other for these numbers, never both.</p>\n<p>Take the National Family Health Survey (NFHS-5) India Fact <dfn data-g=\"622\">Sheet</dfn>, indicators 88 and 89. Build the table in five steps.</p>\n<ol type=\"1\">\n<li>Write the title above the table: what, in whom, where, when. Spell out the survey’s name once.</li>\n<li>Give each column a short heading with its unit, “(%)”. Put the survey round in the heading, not in a sentence above.</li>\n<li>Keep the decimals the same all the way down. The fact sheet prints women’s NFHS-5 total as 24.0. A spreadsheet will try to show it as 24; <dfn data-g=\"695\">type</dfn> the zero back.</li>\n<li>Move everything else into footnotes. The fact sheet’s own footnote to the women’s row says pregnant women and women who gave birth in the preceding 2 months are excluded. That goes in a footnote, marked a. Abbreviations are spelled out there too.</li>\n<li>Add a source line, and say what the source does not give.</li>\n</ol>\n<p>The result:</p>\n<blockquote>\n<p>Table 1. Women and men aged 15–49 years with overweight or obesity (body mass index 25.0 <span style=\"white-space: nowrap\">kg/m<sup>2</sup></span> or more), India, National Family Health Survey 2019–21 (NFHS-5), by residence, with the 2015–16 (NFHS-4) total</p>\n</blockquote>\n<table style=\"width:97%;\">\n\n<tbody>\n<tr>\n<td>group</td>\n<td>NFHS-5 urban (%)</td>\n<td>NFHS-5 rural (%)</td>\n<td>NFHS-5 total (%)</td>\n<td>NFHS-4 total (%)</td>\n</tr>\n<tr>\n<td>women (a)</td>\n<td>33.2</td>\n<td>19.7</td>\n<td>24.0</td>\n<td>20.6</td>\n</tr>\n<tr>\n<td>men</td>\n<td>29.8</td>\n<td>19.3</td>\n<td>22.9</td>\n<td>18.9</td>\n</tr>\n</tbody>\n</table>\n<blockquote>\n<p>(a) Excludes pregnant women and women who gave birth in the preceding 2 months. Counts of women and men weighed and measured are not given in the source; NFHS-5 interviewed 724,115 women and 101,839 men. Source: NFHS-5 India Fact Sheet, indicators 88 and 89 [reference number].</p>\n</blockquote>\n<p>Now the lines and the alignment, which the page here cannot show. In your word processor, draw one line under the headings and one above and below the whole table. Delete every other line. Wilke’s verdict on his word processor’s <dfn data-g=\"174\">default</dfn> table: “if you pick the default, you will end up with a poorly formatted table every time.” Align “women” and “men” left. Align every number column right, so the decimal points line up, and align each heading like its column.</p>\n<p>Last, cite it in the text, and say only the most important thing the table shows: “<dfn data-g=\"467\">Overweight</dfn> or obesity was more common in urban than in rural India, in women and in men (Table 1).” Do not walk the reader through all eight numbers.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Here the source gave no counts, so the table says so instead of inventing them. With your own data you have the counts, and they go beside each percentage, as section 9 showed: “1608 of 58907 (2.7)” or a separate column for n.</p>\n<p>This table has two rows. With every state and union territory as a row, it is still a table if the reader will look up a state. If the point is the pattern across states, ICMJE offers a graph as the alternative to a table with many entries.</p>\n<p>The fact sheet is a public government report. ICMJE asks you to acknowledge such a source fully and to obtain permission for data from another source. Whether a public report needs written permission depends on its terms, which the next rung takes up. Unpublished data, such as a colleague’s clinic register, needs the owner’s permission before you use it at all.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Put the numbers in a table and in a figure, to be safe” is the error. Choose one home for each result. The text then states the most important <dfn data-g=\"452\">observation</dfn> and cites it.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the title above the table, short and self-explanatory: what was measured, in whom, where and when.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Keep headings short, with the unit in brackets.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Give every percentage its count, and name every measure of variation. A column of “mean ± value” (± is read “plus or minus”) is unfinished until its heading or a footnote names the value.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When your source gives no counts, as the NFHS fact sheet does not, say so in a footnote.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Delete the word processor’s default grid. No vertical lines, no lines between rows; a line under the headings and one above and below the table. Align numbers right with the same decimal places, and text left.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“Many rows, so a table” is a half-truth. A table is for exact values and for a reader who looks up rows. For a pattern among many values, ICMJE offers a graph instead. In this book’s advice, two or three numbers belong in a sentence.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Keep the same decimal places down a column of like values, such as the per cents in one table: that is Wilke’s rule. Cole adds a warning. A column of ratios or P values may need more digits in some rows than in others, by the rules of section 9. Give each value the digits it needs, and line the column up on the decimal point. When a column’s decimal places are the same, right alignment lines up the decimal points.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Acknowledge every table’s outside data in a source line, every time. For published data, the source’s licence decides whether you also need permission (next rung). For unpublished data, such as a colleague’s register, always get the owner’s permission.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“A good results section walks the reader through the table.” It does the opposite. ICMJE asks you not to repeat all of a table’s data in the text. State only the most important observations, and cite the table. A paragraph that reads out every cell makes the reader check two copies of each number. And, as Krishnamurthy and colleagues’ paper shows, two copies can disagree.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Overweight or obesity was more common in urban than in rural India, in women and in men (Table 1).</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what must a table’s title do, where do explanations and abbreviations go, and what are the rules for lines and for aligning numbers?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The title goes above the table. It is short and says what was measured, in whom, where and when. A reader should not need the text to understand it. Notes, exclusions and abbreviations go in footnotes under the table, not in the headings.</p>\n<p>Draw no lines down the table and none between rows. One line under the headings, and one above and below the table, are enough. Words line up on the left. Numbers line up on the right, with the same number of decimal places all the way down. Each heading lines up like its column.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A resident’s thesis draft has the table below, made from the real NFHS-5 India Fact Sheet numbers for anaemia; the layout is made up for this exercise. <dfn data-g=\"297\">Haemoglobin</dfn>, written Hb, is the oxygen-carrying <dfn data-g=\"528\">protein</dfn> of the blood, measured in grams per decilitre (g/dl; a decilitre is a tenth of a litre). The table has a border round every cell, and every number is centred.</p>\n<p>The table has no title. Its first column heading reads “<dfn data-g=\"510\">Prevalence</dfn> of anaemia among non pregnant women (Hb&lt;12) and men (Hb&lt;13) as per NFHS 5 survey conducted in 2019-21 in India (capillary blood)”; &lt; is read “below”. Its rows are:</p>\n<table style=\"width:44%;\">\n\n<thead>\n<tr>\n<th></th>\n<th>Urban</th>\n<th>Rural</th>\n<th>Total</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Women</td>\n<td>54.1%</td>\n<td>58.7</td>\n<td>57.2</td>\n</tr>\n<tr>\n<td>Men</td>\n<td>20.4%</td>\n<td>27.4</td>\n<td>25</td>\n</tr>\n</tbody>\n</table>\n<p>Under the table, the draft reads out all six numbers in a sentence: “Anaemia was 54.1% in urban women, 58.7% in rural women …” and so on. A bar chart of the same six numbers follows. List what you would change.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Seven changes:</p>\n<ul>\n<li>Add a title above the table: “Table 2. Non-pregnant women and men aged 15–49 years with anaemia, India, NFHS-5 (2019–21), by residence.”</li>\n<li>Cut the long heading. The column headings become “urban (%)”, “rural (%)”, “total (%)”. The rest goes into footnotes. They give the cut-offs: haemoglobin below 12.0 g/dl for non-pregnant women and below 13.0 g/dl for men. They also expand Hb and the survey’s name.</li>\n<li>The fact sheet’s own footnote warns that NFHS-5 measured anaemia in capillary blood, so its results “need not be compared with other surveys using venous blood”. That caution belongs in a footnote too, because a reader will compare.</li>\n<li>Put “%” in the headings, not in some cells. Write 25 as 25.0, the fact sheet’s figure, so every number has one decimal place.</li>\n<li>Remove the cell borders. Keep one line under the headings and lines above and below the table. Align the numbers right and the words left.</li>\n<li>Add a source line, and say that the fact sheet gives no counts.</li>\n<li>Cut the duplication. Keep the table or the bar chart, not both. Replace the sentence that lists six numbers with the one observation that matters, citing the table. For example: anaemia was more than twice as common in women as in men.</li>\n</ul>\n<p>The two cut-offs and the capillary-blood caution are from the fact sheet’s indicators 93 and 97 and its footnote 22.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Krishnamurthy and colleagues write that the 74,986 boys they screened had a “mean age: 13.75 ± 1.91”, without saying what 1.91 is. Can you tell whether it is a <dfn data-g=\"644\">standard deviation</dfn> or a standard error? Show your reasoning. Then say how the authors should have written it in a table.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Try each reading. If 1.91 years were the standard error, the standard deviation would be the standard error times the <dfn data-g=\"640\">square root</dfn> of n.</p>\n<div class=\"working\">\n<p>square root of 74986 = 273.84<br />\n1.91 times 273.84 = 523.0</p>\n</div>\n<p>A standard deviation of 523 years is impossible for boys aged 11 to 17. So 1.91 must be the standard deviation.</p>\n<p>That you could work it out does not excuse the omission. In a table, the heading should read “age, mean (SD), years”, or a footnote should say that values are mean ± standard deviation. ICMJE asks authors to identify statistical measures of variation.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident brings you a thesis table in her word processor’s default style. It has a grid of lines round every cell, centred numbers, and a heading three lines long. She says the grid “makes it easier to read”. You have ten minutes. Answer her.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Agree with her aim, then show her the cost. The lines are meant to help the eye follow a row. But we do not rule lines between the lines of a paragraph, and we read those easily. Every extra line is something the eye has to look past to reach the numbers.</p>\n<p>Then show her. Delete the vertical lines and the lines between rows. Keep one line under the headings and one above and below the table. Right-align the numbers so the decimal points line up, and the column can be compared at a glance. Put the three-line heading’s explanation in a footnote, so the heading shrinks to a few words and a unit.</p>\n<p>Then the reason that matters most: an examiner or reviewer may look at the table before reading the text. Ask her to cover the text and read the table alone. If she cannot say whom the rows describe, the title needs work before the lines do.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 5,
+   "prompt": "<p>Take one result from your build section that belongs in a table: exact values a reader will look up. Lay it out as a table that stands alone. It needs a title above, short headings with units, counts beside percentages, the measure of variation named, footnotes and a source line. Then write the one sentence in your text that cites it.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Check it against this list. The title says what, in whom, where and when. Each heading is a few words and a unit. Every percentage has its count. Any “±” or bracketed value is named as standard deviation, standard error or confidence interval. Exclusions and abbreviations are in footnotes. A source line names any outside data.</p>\n<p>There are no lines down the table or between rows. Numbers are right-aligned with the same decimals. The table is not repeated in a figure or read out in the text. Your one sentence states the most important observation and ends “(Table 1)”.</p>\n<p>Then cover the text and give the table alone to a colleague. If they cannot say whom it describes, fix the title first.</p>"
+  }
+ ]
+}

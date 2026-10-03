@@ -1,0 +1,158 @@
+{
+ "format": 1,
+ "id": "s58-r1-c02",
+ "label": "2",
+ "title": "A paper is an argument, not a report of activities",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A paper is written as an argument when its text states a <dfn data-g=\"95\">claim</dfn> and gives the evidence and the reasoning that support it, in the order the reasoning needs. In the terms of Book 0, F4 (argument), the claim is the conclusion, the data are the premises, and the reasoning that carries one to the other is the <dfn data-g=\"323\">inference</dfn>.</p>\n<p>A <dfn data-g=\"570\">report of activities</dfn> records what the authors did, in the order they did it.</p>\n<p>The two forms can hold the same facts. They differ in what each sentence is for.</p>",
+   "refs": [
+    26,
+    27,
+    28,
+    29,
+    30,
+    30,
+    30,
+    31,
+    31,
+    32,
+    33,
+    34,
+    35
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>When you write up a study, the easy thing is to tell it the way it happened. That is a diary.</p>\n<p>Your reader does not want the diary. They want two things: what you found, and why they should believe it.</p>\n<p>The steps you took still matter, because a reader has to be able to <dfn data-g=\"85\">check</dfn> them. They go in the methods, once, and not scattered through the results.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c02-unusable-reports.png",
+   "alt": "Two bars from zero: 60 per cent of trial reports as published, 90 per cent of trials after further searching, with a dashed line at 90 above the first bar showing the 30-percentage-point gap.",
+   "w": 1360,
+   "h": 656,
+   "caption": "For about 30 trials in every 100, the authors knew what treatment they had tested and how it was given, but their report did not say it: adequate information was in around 60 per cent of reports as published, and could be found for 90 per cent of the trials by checking references, writing to authors and searching further. The dashed line marks 90 per cent. Figures from one study of trial reports, as reported by Chalmers and Glasziou (2009); this book has not read the original study."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a results paragraph written as a diary. It is made up for this section, but its numbers are real: they are the “<dfn data-g=\"467\">overweight</dfn> or obese” rows of the National Family Health Survey (NFHS) fact <dfn data-g=\"622\">sheet</dfn> for India.</p>\n<blockquote>\n<p>We opened the NFHS-5 India fact sheet and went to the section on the nutritional status of adults. We first read the row for women aged 15-49 and found that 24.0 per cent had overweight or obesity. We then read the row for men and found 22.9 per cent. Next we read the NFHS-4 column, which gave 20.6 per cent for women and 18.9 per cent for men. Finally, we subtracted each NFHS-4 figure from its NFHS-5 figure.</p>\n</blockquote>\n<p>Every sentence is true. Now ask of each one: what claim does this support? You cannot answer, because no sentence states a claim. The paragraph ends at the subtraction and never gives its result. The reader has to do the arithmetic and draw the conclusion, which is the writer’s job.</p>\n<p>So ask the question the diary never answers: what did you find? Write the answer as one sentence. Here it is that the share of adults with overweight or obesity rose between the two surveys, in women and in men.</p>\n<p>Put that sentence first. Then keep only the evidence it needs, in the order it needs it: women with both surveys, then men with both surveys. Do the subtraction yourself and print the answer.</p>\n<div class=\"working\">\n<p>24.0 minus 20.6 = 3.4<br />\n22.9 minus 18.9 = 4.0</p>\n</div>\n<p>The differences are in <dfn data-g=\"478\">percentage</dfn> points, the plain difference between two percentages, as Book 0 taught it. Here is the paragraph rewritten.</p>\n<blockquote>\n<p>The share of adults aged 15-49 with overweight or obesity rose between the two surveys, in women and in men. In women it rose from 20.6 per cent in NFHS-4 (2015-16) to 24.0 per cent in NFHS-5 (2019-21), by 3.4 percentage points. In men it rose from 18.9 to 22.9 per cent, by 4.0 percentage points.</p>\n</blockquote>\n<p>The steps did not vanish. “We took the share with overweight or obesity for each sex from the NFHS-4 and NFHS-5 India fact sheets and subtracted the first from the second” is one sentence, and it goes in the methods.</p>\n<p>Last, say what the claim does not cover. It is about adults aged 15-49 only, and the women’s rows leave out women who were pregnant or had given birth in the last two months. Overweight and obesity are counted together, because the fact sheet gives no separate row for obesity. And two surveys of different people show that the share rose, not why it rose.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This paragraph carries one claim with four numbers, so the claim-first order is easy to see. A paragraph whose claim needs a chain of steps, such as a check that a measurement worked before it is used, keeps those steps in the order the logic needs. That order is still the argument’s, not the diary’s.</p>\n<p>The numbers hold for India as a whole, for the two survey rounds named. They are not a figure for any one state or district.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is what a report written for its writer costs a reader. Chalmers and Glasziou’s 2009 viewpoint on avoidable waste in research is at https://doi.org/10.1016/S0140-6736(09)60329-9. Find the section headed “Biased or unusable reports of research”.</p>\n<p>There they cite a study of reports of clinical trials — studies that give a treatment to people and compare what happens. This book has not read that study; the figures are as Chalmers and Glasziou report them. Adequate information on the treatment tested was in around 60 per cent of the reports. By checking references, writing to authors and searching further, it could be found for 90 per cent of the trials. Work out the gap.</p>\n<div class=\"working\">\n<p>90 minus 60 = 30</p>\n</div>\n<p>For about 30 trials in every 100, the authors knew what they had done. Their reports did not say it, so a clinician could not use the result without detective work. That is a loss made in the writing, not in the research.</p>\n<p>Notice what kind of loss it is. The missing pieces were methods: what the treatment was and how it was given. Writing a paper as an argument does not mean leaving out what you did. It means putting it where the reader needs it, complete enough to judge and repeat.</p>",
+   "numberRefs": [
+    36
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 60 and 90 per cent come from one study of trial reports, which Chalmers and Glasziou cite rather than carried out. They describe treatments in trials, not every kind of paper, and they are not a measurement of Indian journals.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The results should follow the order in which the work was done” is the error. They follow the order the argument needs.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you write a results paragraph, write its claim as one sentence. Keep only the sentences that support that claim, and put the claim first. This rule is for a results paragraph. Mensh and Kording instead open it on its question and end it on the answer. Either way the claim is printed, not left to the reader.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>If a paragraph ends on a step, such as “we then compared the two groups”, the reader has to do your conclusion for you. Finish the step: print the result of the comparison and say what it shows.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the methods so a reader could use your result. In one study that Chalmers and Glasziou cite, only around 60 per cent of trial reports described the treatment adequately. The information existed for 90 per cent. The difference was lost in the writing.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Cut any table or figure that supports no claim.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee’s draft reads “first we…, then we…, next we…”, do not correct the grammar. Ask what they found, have them write that as the first sentence, and move the steps to the methods.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Writing your paper as an argument makes your claim and its support easy to see. It cannot make a weak claim strong.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Argument” can sound like persuasion: state your claim, and leave out whatever does not fit it. That reading is wrong. It leads straight to biased reporting.</p>\n<p>The International Committee of Medical Journal Editors (ICMJE) asks in its Recommendations for data on every main and secondary outcome named in the methods. Chalmers and Glasziou give two examples of biased reporting. Harms of a treatment are left out. The main outcome is changed between the plan and the report. An argument in a paper states its claim. Then it shows all the evidence on it, including the evidence against it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Between NFHS-4 (2015-16) and NFHS-5 (2019-21), the share of adults aged 15-49 in India with overweight or obesity rose in both sexes. It rose from 20.6 to 24.0 per cent in women and from 18.9 to 22.9 per cent in men.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: in the terms of Book 0, F4 (argument), what are a paper’s claim, its data, and the reasoning between them? And what are the two separate ways the argument can fail?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>The claim is the conclusion. The data are the premises. The reasoning that carries the data to the claim is the inference.</p>\n<p>It fails if a premise is false: the data are wrong, for example mismeasured or miscounted. It also fails if the inference does not carry: the data are right but do not support the claim. The two are separate questions, and both must hold.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A resident’s clinic audit has this results paragraph. The numbers are made up.</p>\n<blockquote>\n<p>We reviewed the outpatient registers of the non-communicable disease clinic for January to March. First we counted the adults registered, who numbered 640. We then checked how many had a weight recorded, which was 410. After that we looked for a height, which was recorded for 152. Finally, we checked how many had a body mass index written in the register, and found 96.</p>\n</blockquote>\n<p>Rewrite it as an argument. State the claim first, keep the evidence it needs, and say where the first sentence goes.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>First find the claim. The counts fall at each step, and height is where most are lost. A <dfn data-g=\"61\">body mass index</dfn> needs both weight and height, so it could be worked out for at most 152 of the 640.</p>\n<p>Work out the shares, so the reader does not have to.</p>\n<div class=\"working\">\n<p>410 divided by 640 = 0.641, about 64 per cent<br />\n152 divided by 640 = 0.2375, about 24 per cent<br />\n96 divided by 640 = 0.15, which is 15 per cent</p>\n</div>\n<blockquote>\n<p>Most adults attending the clinic could not have their body mass index worked out from the register, because their height was not recorded. Of 640 adults registered from January to March, 410 (64 per cent) had a weight recorded. Only 152 (24 per cent) had a height. A body mass index was written for 96 (15 per cent).</p>\n</blockquote>\n<p>The first sentence of the old paragraph, which registers were reviewed and for which months, goes to the methods.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Take one results paragraph from the section you chose for this book’s build: one section of your own manuscript or thesis, chosen before you start, as “How to read” asks. Mark each sentence with a letter. Write C if it states a claim, E if it is evidence for a claim, S if it describes a step of the work. A sentence that reports a number from a step is E; the step itself goes to the methods. Then rewrite the paragraph as an argument.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Check your rewrite four ways.</p>\n<ul>\n<li>Its first sentence states what you found. A reader who stops there knows your claim.</li>\n<li>Every other sentence is evidence for that claim, in the order the claim needs. No sentence is left without a job.</li>\n<li>No S sentence remains. Each one is in the methods, once, or deleted because the methods already say it.</li>\n<li>Any comparison you made is finished. The paragraph prints its result and does not leave the reader to subtract.</li>\n</ul>\n<p>If your paragraph had two claims, it is now two paragraphs.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>For a first-year resident, ten minutes with a whiteboard. Her co-resident says the results section should walk through the analysis step by step, “so the examiner can see the work”. Tell her what is right and what is wrong in that.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Right: the examiner must be able to see the work. Wrong: the results are not where it goes.</p>\n<p>Draw two boxes, methods and results. The methods say what was done, in enough detail to judge and repeat it. That is where the examiner checks the work.</p>\n<p>The results say what was found. Walking through the steps in the results makes the examiner read the work twice and still hunt for the findings. Mensh and Kording put it plainly: readers care about the claim and the logic supporting it, not the <dfn data-g=\"475\">path</dfn> you took. In this book, each results paragraph opens on its finding, then gives the numbers that support it.</p>\n<p>Then show her one paragraph both ways: first the diary, then the claim with its evidence.</p>"
+  }
+ ]
+}

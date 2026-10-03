@@ -1,0 +1,189 @@
+{
+ "format": 1,
+ "id": "s58-r1-c20",
+ "label": "20",
+ "title": "Words on a figure: axis titles with units, direct labels, and a caption that stands alone",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The words on a figure let a reader understand it without the text of the paper.</p>\n<p>The <dfn data-g=\"74\">caption</dfn> is the text printed with a figure, and journals call it the figure <dfn data-g=\"377\">legend</dfn>. Its first sentence is the figure’s <dfn data-g=\"684\">title</dfn>, which states the finding. The title is not text drawn across the figure. A table’s title, by contrast, sits above the table. The caption then says what is shown, in whom, where and when; how many independent people or units were measured, written n; what any <dfn data-g=\"223\">error bar</dfn> shows; and where the data came from.</p>\n<p>An error bar is a line drawn through a value, usually a mean, to show a range around it. Descriptive error bars show how the data are spread: the range, from the lowest value to the highest, or the <dfn data-g=\"644\">standard deviation</dfn> (SD). Inferential error bars show how precisely the mean is estimated: the <dfn data-g=\"645\">standard error of the mean</dfn> (SE), which is the SD divided by the <dfn data-g=\"640\">square root</dfn> of n, or a 95% <dfn data-g=\"128\">confidence interval</dfn> (CI). A 95% CI is a range worked out from the sample. If the study were repeated many times, 95 per cent of such ranges would contain the true mean. When n is 10 or more, the 95% CI is approximately the mean plus or minus 2 SE.</p>\n<p>In n, independent means separate people or units.</p>",
+   "refs": [
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A reader may look at your figure before reading a word of your paper. So the figure has to explain itself. Each group has its name written beside it.</p>\n<p>The same line through a mean can show how spread out the people are, or how sure you are of the mean itself. These are different things, and they look the same. So the caption has to say which one it is, every time.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c20-three-error-bars.png",
+   "alt": "Three bars of different heights for the same data: 12.0 for the standard deviation, 6.93 for the standard error, and 27.7 for an approximate 95% confidence interval.",
+   "w": 1360,
+   "h": 656,
+   "caption": "One set of data, three error bars. Cumming, Fidler and Vaux’s three measurements, 28.7, 38.7 and 52.6, have a mean of 40.0. Each bar’s height is the length of one arm; the error bar itself would run that far above and below 40.0: 12.0 for the standard deviation, 6.93 for the standard error, and 27.7 for an approximate 95% confidence interval (4 times the standard error, their rule for three values). A reader cannot tell these apart unless the caption names the bar."
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c20-se-shrinks.png",
+   "alt": "A dashed horizontal line at 12.0 marks the SD. A curve falls from 6.93 at n = 3 to 1.90 at n = 40, the SE, with the two ends marked as points.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The standard error shrinks as n grows; the standard deviation does not. If more values had the same spread as Cumming’s three, an SD of 12.0, the SE would be 12.0 divided by the square root of n: 6.93 at n = 3, and 1.90 at n = 40. A short SE bar says the mean is precise, not that the people are alike."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>The <dfn data-g=\"95\">claim</dfn> for the figure of urban and rural adults in the fifth National Family Health Survey (NFHS-5) came in section 14, as the first sentence of its caption. The rest of the words on that figure are still to do. Start from a draft as a spreadsheet leaves it. The draft below is made up for this example; the numbers on it are the real ones.</p>\n<p>It has four bars. The side axis, which carries the values (the <dfn data-g=\"704\">value axis</dfn>), runs from 0 to 35 with no title. The bottom axis says “Women” and “Men”. A <dfn data-g=\"354\">key</dfn> in the corner says “Series1” and “Series2”. Hold it up and ask what a reader who has only this page can tell. Series1 of what? Per cent of whom, measured how, in which survey?</p>\n<p>Fix each element in turn.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>element</th>\n<th>as the spreadsheet left it (made up)</th>\n<th>finished</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>value axis title</td>\n<td>none</td>\n<td>adults with body mass index (BMI) 25.0 kg/m<sup>2</sup> or more (%)</td>\n</tr>\n<tr>\n<td>bottom axis</td>\n<td>Women, Men</td>\n<td>women, men; no axis title needed</td>\n</tr>\n<tr>\n<td>key</td>\n<td>Series1, Series2</td>\n<td>none; “urban” and “rural” written beside the bars</td>\n</tr>\n<tr>\n<td>values</td>\n<td>none</td>\n<td>each bar’s per cent printed on it</td>\n</tr>\n<tr>\n<td>text size</td>\n<td>readable only with the figure filling the screen</td>\n<td>readable at its printed width</td>\n</tr>\n</tbody>\n</table>\n<p>The value axis title names the quantity and its unit. BMI is in kilograms per square metre (Book 0, B6). “Women” and “men” are categories, so that axis needs no unit and no title. The key goes, because the bars now carry their own names: the direct labelling of section 18. The values go on the bars because the reader will want them. Rougier and colleagues: “If the numeric values are important, they must be provided elsewhere in your article or be written very clearly on the figure.”</p>\n<p>For text size, Wilke’s test is to shrink the figure on screen to three to five inches wide. One inch is 2.54 cm.</p>\n<div class=\"working\">\n<p>3 times 2.54 = 7.62<br />\n5 times 2.54 = 12.7</p>\n</div>\n<p>So look at it about 8 to 13 cm wide, or from across the room. If you cannot read the tick labels there, neither can a reader of the printed page.</p>\n<p>Now finish the caption. Put the claim from section 14 first, then everything a reader needs to read the bars without your paper:</p>\n<blockquote>\n<p>Figure 2. A larger share of urban than of rural adults aged 15–49 had overweight or obesity, in women and in men (NFHS-5, 2019–21). Bars show the per cent of women and of men with a body mass index (BMI) of 25.0 kg/m<sup>2</sup> or more, by place of residence. Women who were pregnant or had given birth in the preceding 2 months are excluded. n: [number of women and of men weighed and measured]. Source: NFHS-5 India Fact Sheet, indicators 88 and 89.</p>\n</blockquote>\n<p>The bracket is deliberate. The fact <dfn data-g=\"622\">sheet</dfn> says the survey gathered information from 724,115 women and 101,839 men. Those are the people interviewed. It does not say how many were weighed and measured, and that is the n for these bars. So the fact sheet alone cannot finish this caption. Find n in a source that gives it, before the figure goes out.</p>\n<p>There are no error bars on this figure, because the fact sheet gives no confidence intervals. Do not draw bars you do not have.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This figure has four bars and two groups, so every <dfn data-g=\"363\">label</dfn> fits. With dozens of points, label only the ones the text talks about, as Wilke does, and keep the full values for a table.</p>\n<p>A caption that names everything makes the figure readable. It does not make the numbers right. If n is wrong, or the exclusion is misstated, the caption carries the error with full confidence.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now an error bar. Cumming, Fidler and Vaux, “Error bars in experimental biology” (Journal of Cell Biology, 2007, https://pmc.ncbi.nlm.nih.gov/articles/PMC2064100/), work one small case: three measurements, 28.7, 38.7 and 52.6. Work its bars yourself.</p>\n<p>The mean and the standard deviation are Book 0’s (Book 0, D5): add the squared deviations, divide by one less than the count, take the square root.</p>\n<div class=\"working\">\n<p>28.7 plus 38.7 plus 52.6 = 120.0<br />\n120.0 divided by 3 = 40.0<br />\n28.7 minus 40.0 = -11.3<br />\n38.7 minus 40.0 = -1.3<br />\n52.6 minus 40.0 = 12.6<br />\n-11.3 times -11.3 = 127.69<br />\n-1.3 times -1.3 = 1.69<br />\n12.6 times 12.6 = 158.76<br />\n127.69 plus 1.69 plus 158.76 = 288.14<br />\n288.14 divided by 2 = 144.07</p>\n</div>\n<p>The square root of 144.07 is 12.0. So the mean is 40.0 and the SD is 12.0, as the paper reports. The standard error is the SD divided by the square root of n, written √n. Here n is 3, and √3 is 1.732.</p>\n<div class=\"working\">\n<p>12.0 divided by 1.732 = 6.93</p>\n</div>\n<p>For a 95% confidence interval, Cumming and colleagues give a rule of thumb: when n is 10 or more, double the SE; when n is 3, multiply it by 4. The exact multiplier comes from a table of the t statistic, which is beyond this book.</p>\n<div class=\"working\">\n<p>4 times 6.93 = 27.7</p>\n</div>\n<p>Now set the three side by side. Each number is the length of one arm of the bar, drawn above and below the mean of 40.0.</p>\n<table style=\"width:65%;\">\n\n<thead>\n<tr>\n<th>what the bar shows</th>\n<th>one arm of the bar</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>standard deviation (SD)</td>\n<td>12.0</td>\n</tr>\n<tr>\n<td>standard error (SE)</td>\n<td>6.93</td>\n</tr>\n<tr>\n<td>approximate 95% CI</td>\n<td>27.7</td>\n</tr>\n</tbody>\n</table>\n<p>The same three numbers can carry a bar four times as long as another. Shown a mean of 40.0 with an arm of 12.0, a reader cannot tell which bar it is. If it is the SD, it describes the people: the authors note that about two thirds of the data lie within one SD of the mean. If it is the SE or the CI, it describes the mean: how far from the true mean this estimate might be.</p>\n<p>So the caption names the bar and gives n, every time. The authors’ first two rules say exactly that:</p>\n<blockquote>\n<p>Rule 1: when showing error bars, always describe in the figure legends what they are.</p>\n</blockquote>\n<blockquote>\n<p>Rule 2: the value of n (i.e., the sample size, or the number of independently performed experiments) must be stated in the figure legend.</p>\n</blockquote>\n<p>Their “figure legends” are what this book calls captions.</p>",
+   "numberRefs": [
+    346
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Three values are a teaching case, not a study. With n as small as 3, Cumming and colleagues advise plotting the individual values instead of any error bar. The doubling rule for a 95% CI holds only when n is 10 or more; at n = 3 the multiplier is about 4, and in between it lies between the two.</p>\n<p>The SD stays about the same as n grows, while the SE and the CI shrink. So a short SE bar from a large sample says the mean is precise. It says nothing about how alike the people are.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“An error bar shows the error” is the error. Write in every caption whether a bar is the SD, the SE or a 95% CI, and give n beside it.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Title every measured axis with the quantity and its unit: “<dfn data-g=\"61\">body mass index</dfn> (kg/m<sup>2</sup>)”, not “BMI”.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the caption in a fixed order. The finding comes first. Then what each mark shows; who, where and when; n; what any error bar is; and the source.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>n counts separate people or units, not measurements. Weigh 40 children three times each and you have 120 readings and an n of 40.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“Legend” means two things. To a journal, the figure legend is the caption: ICMJE asks for “legends for illustrations” on a separate page. On the figure itself, drawing programs call the key to the colours a legend; this book calls it the key. When an author’s instructions ask for legends, send captions.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>To show how spread out people are, draw the SD or, better, the points themselves. To show how precisely a mean or a <dfn data-g=\"510\">prevalence</dfn> is known, draw a 95% CI.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before a figure leaves you, shrink it to 8 to 13 cm wide on screen and read every label.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Bars on the same group measured at different times cannot show whether the group changed (Cumming, Fidler and Vaux). For that, work out each person’s change, then the mean change and its interval.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Short error bars mean the people were much alike.” Only an SD bar describes the people. An SE or CI bar describes how precisely the mean is known. It shrinks as n grows, even when the people differ as much as before. A large survey can show a tiny CI around a mean of people who vary widely. Read the caption for which bar it is before you read its length.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Points show group means and error bars show 95% confidence intervals. Each child counts once in n, however often measured.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: list what a figure caption should say, in order. Then name the two error bars that describe the data and the two that describe how precisely the mean is known.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The caption starts with the finding, as its title. Then it says what each mark shows, and who, where and when. Then n, what any error bar is, and the source of the data.</p>\n<p>Describing the data: the range and the standard deviation. Describing the <dfn data-g=\"506\">precision</dfn> of the mean: the standard error and the 95% confidence interval. All four are drawn the same way.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>The numbers here are made up. A figure shows mean waist circumference in two groups, 92 cm and 88 cm. Each mean has an error bar whose arm is 3 cm long. The caption uses “standard error of the mean (SEM)”, another name for the SE, and the sign ±, read “plus or minus”. It ends: “Values are mean ± SEM; n = 40 per group.”</p>\n<p>What does a 3 cm arm tell you about how much waist circumference varies among the people? What does it tell you about how precisely each mean is known?</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The bar is the SE, so it is about the mean, not the people. To see the people’s spread, undo the SE: the SE is the SD divided by √n, so the SD is the SE times √n.</p>\n<div class=\"working\">\n<p>square root of 40 = 6.32<br />\n3 times 6.32 = 18.96</p>\n</div>\n<p>The SD is about 19 cm. Waist circumference varies a great deal among these people, far more than the 3 cm bar suggests at first glance.</p>\n<p>For the precision of the mean, n is 40, so the 95% CI is roughly the mean plus or minus 2 SE.</p>\n<div class=\"working\">\n<p>2 times 3 = 6<br />\n92 minus 6 = 86<br />\n92 plus 6 = 98<br />\n88 minus 6 = 82<br />\n88 plus 6 = 94</p>\n</div>\n<p>Each mean is known to within about 6 cm either way: roughly 86 to 98 cm and 82 to 94 cm. The caption did its job: because it said SEM and gave n, you could work out both.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A draft thesis figure, made up for this exercise, has a value axis titled “BMI”, no title on the bottom axis, and this caption:</p>\n<blockquote>\n<p>Figure 3. Graph showing BMI of participants in the two groups. Error bars represent variation. *p&lt;0.05.</p>\n</blockquote>\n<p>The asterisk marks a comparison whose <dfn data-g=\"468\">P value</dfn> was below, “&lt;”, 0.05.</p>\n<p>List everything a reader cannot tell from it, and rewrite what you can.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The problems:</p>\n<ul>\n<li>The first sentence names a topic, “graph showing BMI”. It should state the finding, such as which group’s mean BMI was higher and by how much.</li>\n<li>The value axis has no unit. It should read “body mass index (kg/m<sup>2</sup>)”.</li>\n<li>The bottom axis gives no clue what the two groups are, unless their names sit on it. Name them on the axis or beside the bars.</li>\n<li>“Variation” does not say whether the bars are the range, the SD, the SE or a 95% CI.</li>\n<li>n is missing, for each group.</li>\n<li>Who the participants were, where and when are missing.</li>\n<li>The asterisk is explained only as “p&lt;0.05”, with no comparison named. Say which two values were compared, and by what test, or leave it out. P alone does not show how big the difference is.</li>\n</ul>\n<p>A rewrite states the finding, names the bar and gives n. For example: “Mean body mass index was higher in group A than in group B. Points are means, error bars 95% confidence intervals; n = [number] in each group.” The real numbers come from your data.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident shows you two slides made from the same data. On one, the error bars are long; on the other, short. She asks which slide is right. You have ten minutes and a whiteboard.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Both may be right; they may be showing different bars. Ask her what each bar is. She may have drawn the SD on one slide and the SE on the other.</p>\n<p>On the board, take three numbers, 28.7, 38.7 and 52.6. Their mean is 40.0 and their SD 12.0. The SE is the SD divided by √3, about 6.93. An approximate 95% CI for three values is about 4 times the SE, 27.7. Draw the three bars on the same mean.</p>\n<p>Then the rule. The SD tells you how spread out the people are. The SE and the CI tell you how precisely the mean is known. Neither is wrong. What is wrong is a slide that does not say which it shows. Write it in the caption, with n, on both slides.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 5,
+   "prompt": "<p>Take the figure you are drawing for your build. Write its axis titles with units. Replace any key with direct labels where you can. Write its full caption in the order this section gives. Then cover the rest of your text. Ask a colleague to tell you, from the figure and its caption alone, what was measured, in whom, how many, and what the finding is.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p><dfn data-g=\"85\">Check</dfn> your figure against five questions. Does every measured axis carry its unit? Does every group carry its name beside its data, or is there a reason a key must stay? Is the first sentence of the caption the finding? Are who, where, when and n all there? If there are error bars, does the caption say which kind?</p>\n<p>If your colleague hesitated on any of the four things you asked, the words on the figure are not finished. Fix the one they hesitated on, then ask someone else.</p>"
+  }
+ ]
+}

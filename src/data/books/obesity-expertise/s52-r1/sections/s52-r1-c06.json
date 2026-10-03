@@ -1,0 +1,169 @@
+{
+ "format": 1,
+ "id": "s52-r1-c06",
+ "label": "6",
+ "title": "Packages: where they come from and which version you have",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"331\">package</dfn> is a collection of R functions, data and documentation that extends what <dfn data-g=\"36\">base R</dfn>, the set of standard packages installed with R itself, can do.</p>\n<p>Installing a package, with <code>install.packages()</code>, downloads it from a repository such as <dfn data-g=\"102\">CRAN</dfn> (the Comprehensive R Archive Network) and stores it on the computer. It is done once per computer, and again only to change the version. Loading a package, with <code>library()</code>, makes its functions available in the current R <dfn data-g=\"434\">session</dfn> (R from the moment it starts until it is closed or restarted). <code>install.packages()</code> and <code>packageVersion()</code> need the name in <dfn data-g=\"383\">quotation</dfn> marks; <code>library()</code> also accepts it without.</p>\n<p>Every package has a version number, read with <code>packageVersion()</code>. R itself has one, held in <code>R.version.string</code>. A package’s behaviour, and the messages it prints, can change between versions.</p>",
+   "refs": [
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A package is a bundle of functions, with the help pages that explain them and sometimes some data. Most are kept on CRAN, a set of websites from which R downloads them.</p>\n<p>Using a package takes two steps, and they happen at different times.</p>\n<p><strong>First, <dfn data-g=\"231\">install</dfn> it, once per computer.</strong> You <dfn data-g=\"490\">type</dfn> it in the <dfn data-g=\"90\">console</dfn>, not in your <dfn data-g=\"427\">script</dfn>:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">install.packages</span>(<span class=\"st\">&quot;dplyr&quot;</span>)</span></code></pre></div>\n<p><strong>Then <dfn data-g=\"270\">load</dfn> it, in every session.</strong> It goes at the top of your script:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(dplyr)</span></code></pre></div>\n<p>Some packages share a function name with another package. Loading dplyr, for example, hides another <code>filter()</code>, which belongs to stats, a package that comes with R. To be sure which one you get, write the package name and two colons in front: <code>dplyr::filter()</code> or <code>stats::filter()</code>.</p>\n<p>The <dfn data-g=\"481\">tidyverse</dfn> is a family of packages: loading it loads nine, among them dplyr and readr.</p>\n<p>Packages change. Each has a version number, and so does R. Check yours with:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>R.version.string</span>\n<span><span class=\"fu\">packageVersion</span>(<span class=\"st\">&quot;dplyr&quot;</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;R version 4.3.3 (2024-02-29)&quot;\n[1] ‘1.1.4’</code></pre>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start a fresh R session (in <dfn data-g=\"418\">RStudio</dfn>, Session, then Restart R) and try a function from dplyr before loading it. <code>n_distinct()</code> counts how many different values a <dfn data-g=\"499\">vector</dfn> holds. Here it is given the home districts of four made-up clinic patients:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">n_distinct</span>(<span class=\"fu\">c</span>(<span class=\"st\">&quot;Raipur&quot;</span>, <span class=\"st\">&quot;Durg&quot;</span>, <span class=\"st\">&quot;Raipur&quot;</span>, <span class=\"st\">&quot;Bilaspur&quot;</span>))</span></code></pre></div>\n<pre class=\"output\"><code>Error in n_distinct(c(&quot;Raipur&quot;, &quot;Durg&quot;, &quot;Raipur&quot;, &quot;Bilaspur&quot;)) :\n  could not find function &quot;n_distinct&quot;</code></pre>\n<p>R looked through everything loaded and found no function by that name. The package is installed, but the session has not been told to use it. This is a common error in a script that worked yesterday: yesterday’s session had loaded the package, and today’s has not. Load it:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(dplyr)</span></code></pre></div>\n<pre class=\"output\"><code>\nAttaching package: ‘dplyr’\n\nThe following objects are masked from ‘package:stats’:\n\n    filter, lag\n\nThe following objects are masked from ‘package:base’:\n\n    intersect, setdiff, setequal, union</code></pre>\n<p>Read the message. “Masked” means hidden. dplyr has functions called <code>filter()</code> and <code>lag()</code>, and so does stats. It also has four functions whose names are already used in base. From now on in this session, <code>filter</code> means dplyr’s <code>filter()</code>. Now the call works:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">n_distinct</span>(<span class=\"fu\">c</span>(<span class=\"st\">&quot;Raipur&quot;</span>, <span class=\"st\">&quot;Durg&quot;</span>, <span class=\"st\">&quot;Raipur&quot;</span>, <span class=\"st\">&quot;Bilaspur&quot;</span>))</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3</code></pre>\n<p>Three different districts. To see the order R searches in, ask for the search list:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">search</span>()</span></code></pre></div>\n<pre class=\"output\"><code> [1] &quot;.GlobalEnv&quot;        &quot;package:dplyr&quot;     &quot;package:stats&quot;\n [4] &quot;package:graphics&quot;  &quot;package:grDevices&quot; &quot;package:utils&quot;\n [7] &quot;package:datasets&quot;  &quot;package:methods&quot;   &quot;Autoloads&quot;\n[10] &quot;package:base&quot;</code></pre>\n<p><code>.GlobalEnv</code> is the <dfn data-g=\"509\">workspace</dfn>, where the objects you make are kept, and R looks there first. dplyr now comes before stats, which is why its <code>filter()</code> wins.</p>\n<p>The two-colon form needs no <code>library()</code> call at all. It names the package and the function together. Read the practice file and count its rows, using readr without loading it. Two new pieces appear here. <code>here::here()</code> builds the path to the file from the top of your project, which section 7 sets up; if you have none yet, run this after that section. <code>show_col_types = FALSE</code> turns off a report that <code>read_csv()</code> prints, which the section on reading files explains. <code>nrow()</code> counts the rows of a table:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>readr<span class=\"sc\">::</span><span class=\"fu\">read_csv</span>(here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>) <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">nrow</span>()</span></code></pre></div>\n<pre class=\"output\"><code>[1] 344</code></pre>\n<p>The file has 344 rows. One row is one adult penguin’s record on one sampling expedition, a nesting observation; the same bird can appear in more than one row. The two-colon form is useful when you need one function from a package once. When a script uses a package throughout, load it with <code>library()</code> at the top, so a reader sees at once what the script needs.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The district names are made up. The search list printed here is the one from a <dfn data-g=\"192\">fresh session</dfn> in this book’s setup. Yours will list more if you load more packages, and RStudio may show extra entries.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is the failure that versions cause. A script written two years ago uses a function that a newer version of a package has changed. The script stops with an error, or, worse, runs and prints something slightly different. Nothing in the script tells you which version it was written for.</p>\n<p>So record the versions. Ask for the version of R and of each package your script loads:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>R.version.string</span>\n<span><span class=\"fu\">packageVersion</span>(<span class=\"st\">&quot;dplyr&quot;</span>)</span>\n<span><span class=\"fu\">packageVersion</span>(<span class=\"st\">&quot;readr&quot;</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;R version 4.3.3 (2024-02-29)&quot;\n[1] ‘1.1.4’\n[1] ‘2.1.5’</code></pre>\n<p>These are the versions behind every output in this book: R 4.3.3, dplyr 1.1.4 and readr 2.1.5. They are not the newest. When this book was written (checked 2 October 2026), R 4.6.1 (June 2026) and dplyr 1.2.0 (February 2026) had been released. The dplyr 1.2.0 changelog, the list of what changed in that version, adds new functions and, among other changes, now requires R 4.1.0 or later.</p>\n<p>For you this means two things. First, if your output differs from the book’s in a message or a small detail, compare your versions with the book’s before you suspect your code. Second, your own script should say which versions it ran on. <code>packageVersion()</code> returns a version, not plain text, so R compares it with the text part by part, as numbers:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">packageVersion</span>(<span class=\"st\">&quot;dplyr&quot;</span>) <span class=\"sc\">&gt;=</span> <span class=\"st\">&quot;1.1.0&quot;</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] TRUE</code></pre>\n<p>Printing the versions at the end of every script, in one line, is the subject of a later section on running a script from top to bottom.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A version number tells you which release you have, not what changed between releases. For that you read the package’s changelog. Even with the same versions, a different operating system can, rarely, give a different result.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to put <code>install.packages()</code> in your script. Install once, in the console.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“could not find function” means R has no function by that name loaded. Check the spelling, then check that its package is loaded in this session.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Read the message that <code>library()</code> prints. After <code>library(dplyr)</code>, <code>filter()</code> means dplyr’s.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Record the version of R and of every package your analysis loads, in the script’s output.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee’s output differs from the book’s in a message or a detail, have them compare versions with <code>packageVersion()</code> before they rewrite their code.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A version number names a release. It does not pin it: the next person to run <code>install.packages()</code> gets whatever version is current that day.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>You are starting a script, <code>analysis.R</code>, that will read a <dfn data-g=\"395\">raw file</dfn> with readr and reshape it with dplyr. Write its first lines: the packages it needs and a record of the versions it ran on. Say why <code>install.packages()</code> does not appear in it.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>One version:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"co\"># Packages: installed once per computer with install.packages(), loaded here</span></span>\n<span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(dplyr, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)  <span class=\"co\"># hides the masking message shown above</span></span>\n<span></span>\n<span><span class=\"co\"># Versions this script ran on</span></span>\n<span>R.version.string</span>\n<span><span class=\"fu\">packageVersion</span>(<span class=\"st\">&quot;readr&quot;</span>)</span>\n<span><span class=\"fu\">packageVersion</span>(<span class=\"st\">&quot;dplyr&quot;</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;R version 4.3.3 (2024-02-29)&quot;\n[1] ‘2.1.5’\n[1] ‘1.1.4’</code></pre>\n<p><code>install.packages()</code> is not in the script because installing is done once per computer, in the console. In a script it would download the package on every run, need an internet connection, and quietly change the version for anyone who ran it. The <code>library()</code> lines at the top tell a reader at once which packages the script needs. The version lines record what it ran on, so a later difference can be traced to a version and not to the code.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Without looking back, say how often you run <code>install.packages()</code> and how often you run <code>library()</code>, and where each one goes.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p><code>install.packages()</code> once per computer, typed in the console. <code>library()</code> in every session that uses the package, at the top of the script.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Write the line you would type in the console to install the package readr. Then write the line that goes at the top of a script that uses it.</p>",
+   "level": 1,
+   "answer": "<p>In the console, once per computer:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">install.packages</span>(<span class=\"st\">&quot;readr&quot;</span>)</span></code></pre></div>\n<p>At the top of the script:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span></code></pre></div>\n<p>readr prints nothing when it loads. Silence means it worked.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>In a fresh session you load dplyr and then type <code>filter(...)</code>. Which package’s <code>filter()</code> runs? Write the call you would use to run the other one, and the line that shows you what dplyr hides when it loads.</p>",
+   "level": 2,
+   "answer": "<p>dplyr’s <code>filter()</code> runs, because dplyr was attached after stats and masks it. The other is called as <code>stats::filter()</code>. The line that shows the masking is the <code>library()</code> call itself:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(dplyr)</span></code></pre></div>\n<pre class=\"output\"><code>\nAttaching package: ‘dplyr’\n\nThe following objects are masked from ‘package:stats’:\n\n    filter, lag\n\nThe following objects are masked from ‘package:base’:\n\n    intersect, setdiff, setequal, union</code></pre>\n<p>The message lists <code>filter</code> among the objects masked from <code>package:stats</code>.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Write the lines that print the version of R you are running and the version of the package here.</p>",
+   "level": 3,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>R.version.string</span>\n<span><span class=\"fu\">packageVersion</span>(<span class=\"st\">&quot;here&quot;</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;R version 4.3.3 (2024-02-29)&quot;\n[1] ‘1.0.1’</code></pre>\n<p>This book’s outputs were made with these versions. Yours may be newer.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Without loading any package, count the rows of <code>penguins_raw.csv</code> in your project’s <code>data-raw</code> folder, and say what one row stands for. (The project is set up in section 7; if you have none yet, do this after it.)</p>",
+   "level": 5,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>readr<span class=\"sc\">::</span><span class=\"fu\">read_csv</span>(here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>), <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>) <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">nrow</span>()</span></code></pre></div>\n<pre class=\"output\"><code>[1] 344</code></pre>\n<p><code>readr::</code> and <code>here::</code> call each function from its package without <code>library()</code>. The file has 344 rows. One row is one adult penguin’s record on one sampling expedition; the same bird can appear in more than one row.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A colleague’s script begins as below and stops at its second line with the error shown. The script worked for them yesterday. Find what broke.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>raw <span class=\"ot\">&lt;-</span> here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>)</span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(raw, <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>Error in read_csv(raw, show_col_types = FALSE) :\n  could not find function &quot;read_csv&quot;</code></pre>",
+   "level": 7,
+   "answer": "<p><code>read_csv()</code> belongs to readr, and the script never loads readr. Yesterday the colleague had loaded it by hand in the console, so the session knew the function. Today’s fresh session does not. Add the <code>library()</code> line at the top:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span>raw <span class=\"ot\">&lt;-</span> here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>)</span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(raw, <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span>)</span>\n<span><span class=\"fu\">nrow</span>(penguins_raw)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 344</code></pre>\n<p>The script now reads the file’s 344 rows. A script must load everything it uses. Whatever happened in the console earlier does not count.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A colleague wants to report the version of dplyr. Their line and its error are below. Find what broke, and say why the mistake is easy to make.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">packageVersion</span>(dplyr)</span></code></pre></div>\n<pre class=\"output\"><code>Error: object &#39;dplyr&#39; not found</code></pre>",
+   "level": 8,
+   "answer": "<p><code>packageVersion()</code> takes the package’s name as text, in quotation marks. Without them, R looks for an <dfn data-g=\"321\">object</dfn> called <code>dplyr</code>, and there is none.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">packageVersion</span>(<span class=\"st\">&quot;dplyr&quot;</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] ‘1.1.4’</code></pre>\n<p>The mistake is easy to make because <code>library(dplyr)</code> works without quotation marks, so the two calls look as though they should take the same form. They do not: <code>library()</code> is written to accept a bare name, and most functions are not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A made-up thesis methods section says: “All analyses were carried out in R.” Write the lines that would record what this sentence leaves out, for an analysis that uses readr and dplyr. Run them, and say what even your fuller record does not establish.</p>",
+   "level": 9,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>R.version.string</span>\n<span><span class=\"fu\">packageVersion</span>(<span class=\"st\">&quot;readr&quot;</span>)</span>\n<span><span class=\"fu\">packageVersion</span>(<span class=\"st\">&quot;dplyr&quot;</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;R version 4.3.3 (2024-02-29)&quot;\n[1] ‘2.1.5’\n[1] ‘1.1.4’</code></pre>\n<p>A fuller sentence: “All analyses were carried out in R version 4.3.3 with readr 2.1.5 and dplyr 1.1.4.”</p>\n<p>What the fuller record does not establish:</p>\n<ul>\n<li>That the analysis gives the same numbers on newer versions. It records what was used, not what would happen with something else.</li>\n<li>That these are the only packages involved. Packages that load other packages, and the operating system, are not listed. A complete record comes later, in the section on running a script from top to bottom.</li>\n<li>That the code is correct. Recorded versions make a wrong analysis repeatable, not right.</li>\n</ul>"
+  }
+ ]
+}

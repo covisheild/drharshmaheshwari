@@ -1,0 +1,184 @@
+{
+ "format": 1,
+ "id": "s58-r1-c07",
+ "label": "7",
+ "title": "The sentence as the unit of clarity",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A sentence is clear when a reader takes from it, on one reading, the point the writer meant, and gives each part of it the weight the writer meant. Readers look for each kind of information in a fixed place in the sentence. Five principles put it there. They come from Gopen and Swan’s reader-expectation approach (1990) and the US Federal Plain Language Guidelines (2011). Gopen and Swan call theirs principles, not rules.</p>\n<ol type=\"1\">\n<li>One idea per sentence. Each sentence makes a single point.</li>\n<li>The subject close to its <dfn data-g=\"711\">verb</dfn>. Readers expect the verb straight after the subject.</li>\n<li>The action in the verb. A <dfn data-g=\"306\">hidden verb</dfn> is an action turned into a noun, such as “increase”, “assessment” or “measurement”, carried by an empty verb such as “was observed”, “was done” or “make”.</li>\n<li>Old information first, new information last. The start of a sentence, the <dfn data-g=\"686\">topic position</dfn>, holds the information that links back to what the reader already has, and names whose story the sentence tells. The end, the <dfn data-g=\"652\">stress position</dfn>, holds the new information the reader should weigh most.</li>\n<li>The <dfn data-g=\"192\">doer</dfn> as the subject where the doer matters, in the <dfn data-g=\"9\">active voice</dfn>, with “we” for the authors’ own actions. The passive is kept where the doer does not matter, or where the sentence carries on the story of the thing acted on.</li>\n</ol>",
+   "refs": [
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    127,
+    128,
+    120,
+    123,
+    129,
+    118,
+    130,
+    130,
+    131,
+    131,
+    132,
+    132,
+    116,
+    117,
+    133,
+    134,
+    135,
+    136
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A reader reads your sentence once and decides what it said.</p>\n<p>Say one thing in each sentence.</p>\n<p>Put the verb soon after the subject.</p>\n<p>Put the action in the verb. Write “the <dfn data-g=\"525\">proportion</dfn> rose”, not “an increase was observed”.</p>\n<p>Start with what the reader already knows, and end with what is new.</p>\n<p>Name who did it when that matters. If it was you, write “we”.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c07-subject-verb-gap.png",
+   "alt": "Grouped bars for four sentences. Words in the sentence: 42, 62, 45 and 25. Words between subject and verb: 23, 27, 41 and 4. Only the mended sentence has a short gap.",
+   "w": 1624,
+   "h": 700,
+   "caption": "The four sentences of illustration 1 below: how many words each holds, and how many sit between its subject and its verb. Gopen and Swan’s first sentence has 42 words, 23 of them between subject and verb; their third has 62, with 27 between (their counts; the sentences are in their article). The made-up survey sentence has 45 words, 41 between, before mending, and 25 words, 4 between, after."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a sentence that fails. It is made up, but its numbers are from the National Family Health Survey (NFHS), and sentences like it fill Indian thesis chapters. NFHS-4 is the round of the survey before NFHS-5.</p>\n<blockquote>\n<p>An increase in the proportion of women in the age group of 15 to 49 years with overweight or obesity, from 20.6 per cent in NFHS-4 (2015-16) to 24.0 per cent in NFHS-5 (2019-21), as per the India fact sheet of the survey, was observed.</p>\n</blockquote>\n<p>Mend it in five steps.</p>\n<p><strong>1. Find the subject and the verb.</strong> The verb is “was observed”, the last two words. Ask what was observed: an increase. The subject’s main word is “increase”, the second word. Count the words after it and before the verb, taking “was” as part of the verb. A figure or a bracketed year counts as one word. There are 41. The reader carries 41 words, waiting to learn what the increase did. When the verb arrives, it says only that somebody saw it.</p>\n<p><strong>2. Find the action.</strong> What happened? A proportion rose. The action is hidden in the noun “increase”, and an empty verb, “was observed”, carries it. Turn the noun back into a verb: rose.</p>\n<p><strong>3. Find whose story it is.</strong> Nobody in the sentence did anything worth naming. The story is the proportion’s. Make it the subject, and put “rose” straight after it.</p>\n<p><strong>4. Put old information first and new information last.</strong> The reader of your results chapter already knows the study is about women aged 15 to 49. That goes first. The new thing is where the proportion got to, 24.0 per cent. That goes last, where a reader puts the most weight.</p>\n<p><strong>5. Take out what belongs somewhere else.</strong> “As per the India fact <dfn data-g=\"622\">sheet</dfn> of the survey” is a source. It becomes a reference number, as the section on citing set out (section 5).</p>\n<blockquote>\n<p>Among women aged 15 to 49, the proportion with overweight or obesity rose between NFHS-4 (2015-16) and NFHS-5 (2019-21), from 20.6 to 24.0 per cent.</p>\n</blockquote>\n<p>Now count both sentences, and set them beside a published one. Gopen and Swan found the same fault in a paper on genes. Its first sentence was 42 words long. Search their article for “23 words”.</p>\n<blockquote>\n<p>Note that the grammatical subject (“the smallest”) is separated from its verb (“has been identified”) by 23 words, more than half the sentence.</p>\n</blockquote>\n<p>The third sentence of the same passage was 62 words long, with 27 words between its subject, “experiments”, and its verb, “have indicated”.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>sentence (Gopen and Swan’s counts are their own)</th>\n<th>words in the sentence</th>\n<th>words between subject and verb</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Gopen and Swan, first</td>\n<td>42</td>\n<td>23</td>\n</tr>\n<tr>\n<td>Gopen and Swan, third</td>\n<td>62</td>\n<td>27</td>\n</tr>\n<tr>\n<td>survey, before (made up)</td>\n<td>45</td>\n<td>41</td>\n</tr>\n<tr>\n<td>survey, after</td>\n<td>25</td>\n<td>4</td>\n</tr>\n</tbody>\n</table>\n<p>The mended sentence is shorter. That is a side effect, not the aim. The gap between subject and verb fell by 37 words, from 41 to 4, and the number you want remembered now sits at the end.</p>",
+   "numberRefs": [
+    24,
+    137
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The steps worked because this sentence had one point. Gopen and Swan’s own rewrite of their <dfn data-g=\"282\">gene</dfn> passage was not shorter than the original, and they say sheer length was neither the problem nor the solution. If a sentence holds two points that each deserve weight, it needs two sentences, and the paragraph gets longer.</p>\n<p>“Old information first” depends on what the reader already has. The same sentence, opening the first paragraph of a paper, comes before the reader knows the study is about women aged 15 to 49. There it may need a sentence of context before it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the other direction. The active voice is not always the better sentence. Gopen and Swan give a pair: “Bees disperse pollen” and “Pollen is dispersed by bees”. The first is a sentence about bees, the second a sentence about pollen. In a paragraph telling the story of pollen, the passive one is better.</p>\n<p>Try the same test on a methods paragraph. This one is made up.</p>\n<blockquote>\n<p>Each woman was weighed twice. The two readings were averaged.</p>\n</blockquote>\n<p>Ask of each verb: does the reader need to know who did it? For the weighing, yes. A reviewer judging the measurement needs to know whether trained staff weighed the women, or the women read their own scales. So name the doer.</p>\n<blockquote>\n<p>Two trained field staff weighed each woman twice. The two readings were averaged.</p>\n</blockquote>\n<p>For the averaging, no. The average comes out the same whoever works it out, and the sentence carries on the story of the readings. It can stay passive.</p>\n<p>When the doer is you, write “we”. Gopen and Swan rewrote a chemistry passage so that it opened “We have directly measured”, because the authors’ own measurement was the news. In their words, “since the authors performed the first direct measurement, recognizing their agency in the topic position may well be appropriate.”</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Whether “we” is welcome is a matter for the journal or the university. Look at its instructions and at papers it has recently published. The test in this illustration still applies inside the passive: if a reader needs the doer, a passive sentence must name it after “by”.</p>\n<p>“Does the reader need to know who did it?” has no answer fixed for all time. A step that seems to need no doer, such as averaging, needs one the day someone asks whether the averages were checked.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Last, a sentence with too many points. It is made up, of a kind common in methods chapters.</p>\n<blockquote>\n<p>Height and weight were measured by trained field staff using a stadiometer and a digital scale respectively, and body mass index (BMI) was calculated and women were classified as having overweight or obesity using a cut-off of 25.0 kg/m<sup>2</sup>.</p>\n</blockquote>\n<p>Count the points that deserve weight. Who measured, with what, how BMI was worked out, and where the cut-off sits. That is four, and a sentence has one end. Split it, giving each point a sentence of its own.</p>\n<blockquote>\n<p>Trained field staff measured each woman’s height with a stadiometer and her weight with a digital scale. From these we worked out her body mass index (BMI). We counted a BMI of 25.0 kg/m<sup>2</sup> or more as overweight or obesity.</p>\n</blockquote>\n<p>Here is the tempting wrong fix. It compresses instead of splitting.</p>\n<blockquote>\n<p>Trained-staff stadiometer and digital-scale height-weight measurement-based BMI cut-off classification was done.</p>\n</blockquote>\n<p>It is shorter, and it is worse. It turns every action into a noun, stacks the nouns, and ends on an empty verb. The US Federal Plain Language Guidelines warn that “Readability suffers when three words that are ordinarily separate nouns follow in succession.” This one stacks more than three.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Splitting can cut a link the reader needs. An “if” and its “then” belong together. When you split them, carry the link into the second sentence with a word such as “in this case”, as the US Federal Plain Language Guidelines do with “suppose” and “in this case”. Splitting is right when the points can stand apart; when they cannot, keep the link word.</p>\n<p>The cut-off of 25.0 kg/m<sup>2</sup> is the one the NFHS-5 fact sheet uses for adults aged 15 to 49. A thesis that uses another cut-off states its own.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Find the subject and the verb, and count the words between them.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>“Long sentences are the problem, so cut words” is the error. The test is how many points in the sentence deserve weight.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Search your draft for the empty verbs that carry hidden actions: “was done”, “was carried out”, “was observed”, “was performed”.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>End a results sentence on the number or finding you want remembered.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In a methods section, name the doer of every step a reviewer would judge: who measured, who interviewed, who entered the data. Keep the passive only where the result is the same whoever did it.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Split a sentence with several points into several sentences. A chain of three or more nouns makes the reader guess how they relate.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>These are principles, and they stop working when followed blindly. If a rewrite makes a sentence worse for its paragraph, as “Bees disperse pollen” would in a paragraph about pollen, keep the original.</p>",
+     "tag": "boundary",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“One idea per sentence” read as “keep every sentence short”, so that a draft is chopped until it scores well. That is not the principle. The test is the number of points that deserve weight, not the number of words. A 30-word sentence with one point and its subject next to its verb is clear. A 10-word sentence with two points is not. Chopping a draft into fragments also cuts the links that tell the reader how one sentence leads to the next.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Among women aged 15 to 49 in India, the proportion with <dfn data-g=\"467\">overweight</dfn> or obesity rose between 2015-16 (NFHS-4) and 2019-21 (NFHS-5), from 20.6 to 24.0 per cent.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back: where in a sentence does a reader put the most weight? Where does a reader look for the link to what came before? What should you put in each place?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The most weight goes on the end of the sentence, the stress position. Put there the new information you want the reader to weigh most.</p>\n<p>The link to what came before is looked for at the start, the topic position. Put there the old information, which links back to what the reader already has, and the person or thing whose story the sentence tells.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>This sentence is made up, from a clinic audit at a primary health centre.</p>\n<blockquote>\n<p>Assessment of the adherence of the patients attending the hypertension clinic to their prescribed medicines by pill count was done at every visit by the staff nurse.</p>\n</blockquote>\n<p>Find the subject’s main word and the verb, and count the words between them. Name the hidden verb and the doer. Then rewrite the sentence so that the doer is the subject and the action is the verb.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The verb is “was done”. Ask what was done: assessment. The subject’s main word is “Assessment”, the first word. Count the words between “Assessment” and “was done”. There are 17: “of the adherence of the patients attending the hypertension clinic to their prescribed medicines by pill count”.</p>\n<p>The hidden verb is “assess”, turned into the noun “assessment” and carried by the empty verb “was done”. There is a second one: “adherence” hides “adhere”, to take the medicines as prescribed. Both sit between “the” and “of”, where hidden verbs often sit.</p>\n<p>The doer is the staff nurse, waiting at the end after “by”.</p>\n<p>One rewrite:</p>\n<blockquote>\n<p>At every visit, the staff nurse counted each patient’s remaining pills to check whether they were taking their medicines as prescribed.</p>\n</blockquote>\n<p>The subject is now “the staff nurse”, the doer, and the verb “counted” is the action. What the count is for comes last. Other rewrites are as good if they put the doer first and the action in the verb.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident brings you this pair from her thesis methods. She says you told her always to use the active voice, so she changed the first into the second.</p>\n<blockquote>\n<p>Each blood sample was centrifuged within one hour of collection. Each blood sample was labelled with the participant’s code.</p>\n<p>The laboratory technician centrifuged each blood sample within one hour of collection. The laboratory technician labelled each blood sample with the participant’s code.</p>\n</blockquote>\n<p>You have ten minutes and a whiteboard. Explain when the active voice helps here and when it does not.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with the test, not the rule. Ask of each verb: does a reader judging the study need to know who did it?</p>\n<p>For centrifuging within an hour, a reader may want to know who was responsible for the timing, because a delay changes the result. If that matters, the doer belongs in the sentence, and the active voice puts it there.</p>\n<p>For labelling, the doer matters less. Whoever writes the code, the <dfn data-g=\"363\">label</dfn> is the same. The passive keeps the story on the samples, which is what this paragraph is about.</p>\n<p>Then show what her change cost. Both sentences now begin “The laboratory technician”, so the paragraph has become a story about the technician instead of the samples. Gopen and Swan’s pair makes the same point. “Bees disperse pollen” and “Pollen is dispersed by bees” are each right in a paragraph about their own first word.</p>\n<p>One good version: “The laboratory technician centrifuged each blood sample within one hour of collection. Each sample was then labelled with the participant’s code.” The doer is named where it matters, and the second sentence carries on the samples’ story.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Take five sentences from the results part of the manuscript section you chose for this book’s build. For each, write down its subject, its verb, the number of words between them, and the last three words of the sentence. Rewrite any sentence whose gap is long, whose action hides in a noun, or whose last words are not the new information.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p><dfn data-g=\"85\">Check</dfn> your rewrites against four questions.</p>\n<ul>\n<li>Is the subject next to its verb, or close to it, with any list or bracket moved to the end or to its own sentence?</li>\n<li>Is the action a verb (“rose”, “fell”, “differed”) rather than a noun carried by “was observed” or “was found”?</li>\n<li>Does each sentence end on the new information, usually the number or the finding, and not on a source, a table number or “was seen”?</li>\n<li>Does each sentence carry one point? If a rewrite holds two, split it, and carry any “if” or “because” link into the second sentence.</li>\n</ul>\n<p>Read your five rewrites aloud in order. If they now read as a sequence, with each start linking to the end of the sentence before, they pass.</p>"
+  }
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "format": 1,
+ "id": "s52-r1-c10",
+ "label": "10",
+ "title": "The data dictionary and the README",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"109\">data dictionary</dfn> is a separate file, laid out as a table, that explains every variable in one data file. It has one row per variable.</p>\n<p>A <dfn data-g=\"396\">README</dfn> is a short plain-text file at the top of the <dfn data-g=\"370\">project folder</dfn>. It gives the one command that reruns the analysis, and the folder to run it from.</p>",
+   "refs": [
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A data dictionary is itself a small table, one row per column of the data. For each column it says:</p>\n<ul>\n<li>the exact name, letter for letter, as it is in the file;</li>\n<li>what the column means, in plain words;</li>\n<li>its unit;</li>\n<li>its <dfn data-g=\"490\">type</dfn>: number, text or date;</li>\n<li>the values it may take, or the range you expect;</li>\n<li>how a missing value is written;</li>\n<li>where you got each of these facts.</li>\n</ul>\n<p>A README is the note on the front of the project folder. It is a plain-text file that anyone can open. Someone who has never met you should be able to read it and rerun your analysis. That someone is often you, a year later.</p>\n<p>A project put online for others has two more files beside the README. A LICENSE says what others may do with it. A CITATION says how to cite it.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c10-ids-vs-rows.png",
+   "alt": "A bar chart with three bars: rows in the file 344, different Individual ID values 190, different Species and Sample Number pairs 344.",
+   "w": 1345,
+   "h": 656,
+   "caption": "Different values in the penguin file against its 344 rows. Individual ID, which the help page calls unique, has only 190 different values, so it does not pick out one row each. Species with Sample Number has 344 different pairs, one for every row, and that is what the dictionary records as the identifier."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Write a dictionary for the penguin file, and watch the documentation and the file disagree.</p>\n<p>The documentation is the <dfn data-g=\"212\">help page</dfn> of the palmerpenguins <dfn data-g=\"331\">package</dfn>. It describes “a <dfn data-g=\"479\">tibble</dfn> with 344 rows and 17 variables”, one paragraph each. Copy its names into the first column of your dictionary: studyName, Sample Number, Species, and on to Culmen Length, Culmen Depth, Flipper Length, Body Mass, Sex, <dfn data-g=\"119\">Delta</dfn> 15 N, Delta 13 C, Comments.</p>\n<p>Now check them against the file. Read it, then ask <code>spec()</code> for the <dfn data-g=\"75\">column specification</dfn> that <code>read_csv()</code> used. It lists every column’s name exactly as the file has it, with the type it was read as.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">library</span>(readr)</span>\n<span><span class=\"fu\">library</span>(dplyr, <span class=\"at\">warn.conflicts =</span> <span class=\"cn\">FALSE</span>)</span>\n<span></span>\n<span>penguins_raw <span class=\"ot\">&lt;-</span> <span class=\"fu\">read_csv</span>(</span>\n<span>  here<span class=\"sc\">::</span><span class=\"fu\">here</span>(<span class=\"st\">&quot;data-raw&quot;</span>, <span class=\"st\">&quot;penguins_raw.csv&quot;</span>),</span>\n<span>  <span class=\"at\">show_col_types =</span> <span class=\"cn\">FALSE</span></span>\n<span>)</span>\n<span></span>\n<span><span class=\"fu\">spec</span>(penguins_raw)</span>\n<span></span>\n<span><span class=\"fu\">nrow</span>(penguins_raw)</span></code></pre></div>\n<pre class=\"output\"><code>cols(\n  studyName = col_character(),\n  `Sample Number` = col_double(),\n  Species = col_character(),\n  Region = col_character(),\n  Island = col_character(),\n  Stage = col_character(),\n  `Individual ID` = col_character(),\n  `Clutch Completion` = col_character(),\n  `Date Egg` = col_date(format = &quot;&quot;),\n  `Culmen Length (mm)` = col_double(),\n  `Culmen Depth (mm)` = col_double(),\n  `Flipper Length (mm)` = col_double(),\n  `Body Mass (g)` = col_double(),\n  Sex = col_character(),\n  `Delta 15 N (o/oo)` = col_double(),\n  `Delta 13 C (o/oo)` = col_double(),\n  Comments = col_character()\n)\n[1] 344</code></pre>\n<p><code>warn.conflicts = FALSE</code> turns off the masking message that section 6 explained. In the output, <code>col_date(format = \"\")</code> means the date was read in readr’s <dfn data-g=\"117\">default</dfn> form, year-month-day.</p>\n<p>17 columns and 344 rows, as the help page said. But read the names. The file says <code>Culmen Length (mm)</code>, <code>Flipper Length (mm)</code>, <code>Body Mass (g)</code> and <code>Delta 15 N (o/oo)</code>, with a unit in brackets after the name. Six of the names you copied are not the names in the file. Any line of code written from your dictionary would fail on them. The dictionary’s first column must hold the name exactly as the file has it.</p>\n<p>The units are a second difference. The help page gives millimetres and grams in words. It gives no unit for the two isotope columns; the file’s own header writes “o/oo” after them. So the unit column of your dictionary says “o/oo, as written in the column name; the help page gives no unit”. Neither source says what “o/oo” stands for, so the cell copies it and does not translate it. That cell records exactly what you know and where it came from, and no more.</p>\n<p>The third difference is in the identifiers. The help page calls <code>Individual ID</code> “the unique ID for each individual in dataset”. Count how many different values the column holds:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">n_distinct</span>(penguins_raw<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Individual ID</span><span class=\"st\">`</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 190</code></pre>\n<p>190 different IDs in 344 rows. So an ID can appear on more than one row. The help page does not say why, and this book does not guess. What the dictionary records is what you found. Then find something that does pick out one row each. Species with sample number does:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">n_distinct</span>(penguins_raw<span class=\"sc\">$</span>Species, penguins_raw<span class=\"sc\">$</span><span class=\"st\">`</span><span class=\"at\">Sample Number</span><span class=\"st\">`</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 344</code></pre>\n<p>344 combinations for 344 rows: one each.</p>\n<p>Last, the allowed values and the missing code. The help page says only that Sex is “a character string”. <code>count()</code> lists each value with the number of rows that hold it. Inside dplyr functions you name a column without <code>$</code>; the function looks it up in the <dfn data-g=\"111\">data frame</dfn> it was given.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>penguins_raw <span class=\"sc\">|&gt;</span></span>\n<span>  <span class=\"fu\">count</span>(Sex)</span></code></pre></div>\n<pre class=\"output\"><code># A tibble: 3 × 2\n  Sex        n\n  &lt;chr&gt;  &lt;int&gt;\n1 FEMALE   165\n2 MALE     168\n3 &lt;NA&gt;      11</code></pre>\n<p><code>&lt;int&gt;</code> marks whole numbers (integers), and <code>&lt;NA&gt;</code> is how a tibble prints a missing text value. Two values, FEMALE and MALE, in capitals, and 11 rows missing. To see how the file writes a missing value, look at one line of it as plain text. <code>sed -n 5p</code>, a <dfn data-g=\"475\">terminal</dfn> command, prints a file’s fifth line, which is its fourth row after the header. <code>cut -c 64-124</code> keeps characters 64 to 124 of it, from the Stage column to the measurements:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode bash\"><code class=\"sourceCode bash\"><span><span class=\"fu\">sed</span> <span class=\"at\">-n</span> 5p data-raw/penguins_raw.csv <span class=\"kw\">|</span> <span class=\"fu\">cut</span> <span class=\"at\">-c</span> 64-124</span></code></pre></div>\n<pre class=\"output\"><code>&quot;Adult, 1 Egg Stage&quot;,N2A2,Yes,2007-11-16,NA,NA,NA,NA,NA,NA,NA</code></pre>\n<p>The fourth row, N2A2, has <code>NA</code> where its measurements should be. So the file writes a missing value as <code>NA</code>, which <code>read_csv()</code> reads as missing without being told. The quotes round <code>\"Adult, 1 Egg Stage\"</code> mark it as one value, so its comma does not start a new column.</p>\n<p>Here is the dictionary, for the columns this book uses most, printed in two halves to fit the page; in the file it is one table. Each entry says where it came from.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Variable, as in the file</td>\n<td>Meaning</td>\n<td>Unit</td>\n<td>Type</td>\n</tr>\n<tr>\n<td>Species</td>\n<td>penguin species</td>\n<td>none</td>\n<td>text</td>\n</tr>\n<tr>\n<td>Island</td>\n<td>island where the sample was taken</td>\n<td>none</td>\n<td>text</td>\n</tr>\n<tr>\n<td>Individual ID</td>\n<td>identifier of the penguin</td>\n<td>none</td>\n<td>text</td>\n</tr>\n<tr>\n<td>Sample Number</td>\n<td>running number of the sample</td>\n<td>none</td>\n<td>number</td>\n</tr>\n<tr>\n<td>Culmen Length (mm)</td>\n<td>length of the ridge along the top of the bill</td>\n<td>mm</td>\n<td>number</td>\n</tr>\n<tr>\n<td>Body Mass (g)</td>\n<td>body mass</td>\n<td>g</td>\n<td>number</td>\n</tr>\n<tr>\n<td>Sex</td>\n<td>sex of the penguin</td>\n<td>none</td>\n<td>text</td>\n</tr>\n<tr>\n<td>Delta 15 N (o/oo)</td>\n<td>ratio of the nitrogen isotopes 15N to 14N</td>\n<td>o/oo, from the column name</td>\n<td>number</td>\n</tr>\n</tbody>\n</table>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Variable</td>\n<td>Allowed values</td>\n<td>Source</td>\n</tr>\n<tr>\n<td>Species</td>\n<td>three spellings, listed by count(Species)</td>\n<td>help page; values from the file</td>\n</tr>\n<tr>\n<td>Island</td>\n<td>Biscoe, Dream, Torgersen</td>\n<td>help page; values from the file</td>\n</tr>\n<tr>\n<td>Individual ID</td>\n<td>not one per row: 190 values in 344 rows</td>\n<td>help page says unique; the file disagrees</td>\n</tr>\n<tr>\n<td>Sample Number</td>\n<td>with Species, one per row</td>\n<td>help page; checked in the file</td>\n</tr>\n<tr>\n<td>Culmen Length (mm)</td>\n<td>expected range not stated</td>\n<td>help page; name from the file</td>\n</tr>\n<tr>\n<td>Body Mass (g)</td>\n<td>expected range not stated</td>\n<td>help page; name from the file</td>\n</tr>\n<tr>\n<td>Sex</td>\n<td>FEMALE, MALE</td>\n<td>help page; values from the file</td>\n</tr>\n<tr>\n<td>Delta 15 N (o/oo)</td>\n<td>expected range not stated</td>\n<td>help page; unit from the file</td>\n</tr>\n</tbody>\n</table>\n<p>The full dictionary has 17 rows, one for each column, and one more fact for the whole file: missing values are written <code>NA</code>. Save it as a <dfn data-g=\"105\">CSV file</dfn>, <code>penguins_raw_dictionary.csv</code>, beside the <dfn data-g=\"395\">raw file</dfn> in <code>data-raw/</code>. Wilson and colleagues keep raw data and the facts about it (its metadata) in the same folder. You type the dictionary once, by hand, before any cleaning. No code ever writes to that folder.</p>\n<p>Notice the cells that say “expected range not stated”. Broman and Woo suggest giving the expected minimum and maximum of each variable. The help page gives none. Do not fill the cell with the smallest and largest values in this file: those describe the file, not what is possible, so they could not catch an error. Leave it saying what you know, until a source or a decision fills it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The penguin file came with documentation written by the people who made it. Many files do not: a register handed over from a clinic may come with nothing. Then the dictionary is written from asking the people who collected it, and its source column says so, name and date.</p>\n<p>A dictionary says what the values should be. It does not check them. Turning “allowed values” and “expected range” into lines of code that stop the <dfn data-g=\"427\">script</dfn> comes later in this book.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the README. Picture the project folder handed to a colleague who has never seen it. They can see <code>data-raw/</code>, <code>code/</code> and <code>output/</code>. What can they not tell from the folder alone? Where the raw file came from, and whether they may use it. Which file to run, and from where. Which output is the final table. Whom to ask.</p>\n<p>The README answers those, in that order. Type it into a plain-text file called <code>README.txt</code> at the top of the folder:</p>\n<blockquote>\n<p>Penguin body mass by species</p>\n<p>An analysis of adult penguin body mass by species and sex, written while learning R.</p>\n<p>Raw data: <code>data-raw/penguins_raw.csv</code>, copied unchanged from the palmerpenguins R package, version 0.1.1, licence CC0. The data were collected by Palmer Station Antarctica LTER (Long Term Ecological Research) and K. Gorman, and first published by Gorman, Williams and Fraser in PLoS ONE in 2014. MD5 checksum on arrival: 049da101568e078f9845c8b366481810.</p>\n<p>Data dictionary: <code>data-raw/penguins_raw_dictionary.csv</code>.</p>\n<p>To rerun: open a terminal in this folder and type <code>Rscript code/analysis.R</code>. The script reads the raw file, writes everything it makes into <code>output/</code>, and changes nothing in <code>data-raw/</code>.</p>\n<p>Outputs: a table of body mass by species and a figure of it, both in <code>output/</code>.</p>\n<p>Written with R 4.3.3. Contact: your name and email address.</p>\n</blockquote>\n<p>The <dfn data-g=\"64\">checksum</dfn> is the one the section on reading a raw file taught you to take on the day the file arrives. A terminal is explained in section 7; how to open one depends on your computer and is not covered in this book.</p>\n<p>CC0 is the licence the package’s own files state. Wilson and colleagues describe it as the “No Rights Reserved” licence.</p>\n<p>Read it back as the colleague. Each question they had is answered in a line. The line “To rerun” is the one that matters most. If you cannot write it yet, because the analysis needs a click somewhere or a step done by hand, the analysis cannot be rerun, and the README has told you so before anyone else finds out.</p>\n<p>Notice what the README does not do. It does not describe each column; the dictionary does that. It does not explain each step of the analysis; the comments in the script do that. It points to both.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The README’s “To rerun” line is a claim. It is true only if someone has run that command, in a <dfn data-g=\"192\">fresh session</dfn>, and got the outputs it promises. Writing the line does not make it true; running it from a clean start, later in this book, is how you find out.</p>\n<p>The outputs line here is general, because the script is not written yet. A finished README names each output file.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to think the documentation describes the file. Check every entry of your dictionary against the file in code: the names, the values, and whether an ID is really one per row.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the variable name in the dictionary exactly as the file has it, letter for letter, with its spaces and brackets.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the dictionary before you clean. A dictionary written after cleaning describes your cleaned data and hides what the raw file held.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Record how missing values are written in the raw file, for each column if they differ: blank, <code>NA</code>, -99, “not recorded”.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never fill an “expected range” cell with the smallest and largest values in your own file. Write “not stated” in it, and where you looked, until a source or a protocol gives the range.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the README’s rerun line as the exact command.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee hands you a thesis dataset, ask for its dictionary before you look at a single number. If there is none, ask them to write one row: one variable, its unit, its missing code, and where they got each.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A dictionary and a README describe the data and how to rerun the analysis. They do not make either one right.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A made-up thesis dataset, <code>school_heights.csv</code>, has these columns: <code>child_id</code>, <code>school</code>, <code>sex</code> (coded 1 and 2), <code>dob</code>, <code>visit_date</code>, <code>height_cm</code> (to 0.1 cm), <code>weight_kg</code> (to 0.1 kg). The data-entry operator typed -99 wherever a measurement was not taken. The study protocol says <code>sex</code> is 1 for boys and 2 for girls, and gives no expected ranges. Write the data dictionary.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>One dictionary. Yours may word the meanings differently; check that every column is there, that names are exact, and that every entry says where it came from.</p>\n<table style=\"width:97%;\">\n\n<tbody>\n<tr>\n<td>Variable</td>\n<td>Meaning</td>\n<td>Unit</td>\n<td>Type</td>\n<td>Allowed values or range</td>\n<td>Missing written as</td>\n<td>Source</td>\n</tr>\n<tr>\n<td>child_id</td>\n<td>the child’s study number</td>\n<td>none</td>\n<td>text</td>\n<td>one per child</td>\n<td>none expected</td>\n<td>protocol; check one per row in the file</td>\n</tr>\n<tr>\n<td>school</td>\n<td>school the child attends</td>\n<td>none</td>\n<td>text</td>\n<td>the schools listed in the protocol</td>\n<td>none expected</td>\n<td>protocol</td>\n</tr>\n<tr>\n<td>sex</td>\n<td>sex of the child</td>\n<td>none</td>\n<td>number code</td>\n<td>1 = boy, 2 = girl</td>\n<td>none expected</td>\n<td>protocol</td>\n</tr>\n<tr>\n<td>dob</td>\n<td>date of birth</td>\n<td>none</td>\n<td>date</td>\n<td>before visit_date</td>\n<td>none expected</td>\n<td>protocol; check the date format in the file</td>\n</tr>\n<tr>\n<td>visit_date</td>\n<td>date of measurement</td>\n<td>none</td>\n<td>date</td>\n<td>within the study period</td>\n<td>none expected</td>\n<td>protocol</td>\n</tr>\n<tr>\n<td>height_cm</td>\n<td>standing height, to 0.1 cm</td>\n<td>cm</td>\n<td>number</td>\n<td>not stated</td>\n<td>-99</td>\n<td>protocol; missing code from the operator</td>\n</tr>\n<tr>\n<td>weight_kg</td>\n<td>weight, to 0.1 kg</td>\n<td>kg</td>\n<td>number</td>\n<td>not stated</td>\n<td>-99</td>\n<td>protocol; missing code from the operator</td>\n</tr>\n</tbody>\n</table>\n<p>Three things to notice. The codes 1 and 2 are written out, because nobody can recover “1 = boy” from the file. The -99 is recorded, so it can be declared as missing when the file is read, and never averaged. And the expected ranges say “not stated” rather than being filled from the data, because the protocol gives none.</p>\n<p>Before cleaning, you would check each “one per child” and each code against the file, as the illustration did.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague’s project folder has this README, in full: “Analysis code for my thesis. Run the scripts in order. Data from the department.” Name what is missing, and say what each gap would cost the next person.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Almost everything a README is for.</p>\n<ul>\n<li><strong>No title or purpose.</strong> The next person cannot tell which thesis, or what question.</li>\n<li><strong>No source for the raw data.</strong> “The department” names no file, no version, no date and no terms. Nobody can get a fresh copy, or say whether they may use it.</li>\n<li><strong>No rerun command.</strong> “Run the scripts in order” leaves the order to be guessed, and says nothing about where to run them from. If the order matters, it belongs in the code: one script that runs the others, named in one line.</li>\n<li><strong>No outputs.</strong> The next person cannot tell which file is the final table.</li>\n<li><strong>No pointer to a data dictionary</strong>, so the meanings of columns and codes are lost.</li>\n<li><strong>No contact.</strong> When it breaks, there is nobody to ask.</li>\n</ul>\n<p>The cost is the same each time. The next person has to guess what one paragraph could have said. That person may be your colleague, a year later.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Without looking back, list what a data dictionary records for each variable, and what a README says.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>For each variable, the data dictionary records seven things:</p>\n<ul>\n<li>its exact name as in the file;</li>\n<li>what it means;</li>\n<li>its unit;</li>\n<li>its type;</li>\n<li>its allowed values or expected range;</li>\n<li>how a missing value is written;</li>\n<li>where each of these facts came from.</li>\n</ul>\n<p>The README says six things:</p>\n<ul>\n<li>the project’s title and purpose;</li>\n<li>where the raw data came from, which version, on what terms, and its checksum;</li>\n<li>where the data dictionary is;</li>\n<li>the one command that reruns the analysis, and where to run it from;</li>\n<li>what each output is;</li>\n<li>whom to contact.</li>\n</ul>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A health secretary asks, on one page: “Why should a district survey’s data come with a data dictionary? We have the data.”</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Without a dictionary, the data cannot be read safely by anyone except the people who entered it.</p>\n<p>A data file holds names and numbers. It does not say what “sex = 2” means, whether height is in centimetres or metres, or that -99 means “not measured”. Those facts live in the heads of a few staff, or in a protocol nobody attaches. When those staff move on, the facts go with them.</p>\n<p>The cost of not having one is concrete. A -99 read as a real value pulls an average down. A height read in the wrong unit makes every derived index wrong by a large factor. A code read the wrong way round swaps two groups. Each produces a confident, wrong number in a report.</p>\n<p>A dictionary is one table, one row per column, written once when the data are collected. It costs an afternoon. Ask that every dataset the department releases or commissions comes with one, and that the dictionary is checked against the file before any analysis.</p>"
+  }
+ ]
+}

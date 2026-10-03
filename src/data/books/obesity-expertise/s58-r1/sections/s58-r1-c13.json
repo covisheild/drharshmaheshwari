@@ -1,0 +1,111 @@
+{
+ "format": 1,
+ "id": "s58-r1-c13",
+ "label": "13",
+ "title": "Showing a draft to a reader: the one-pass test",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The <dfn data-g=\"457\">one-pass test</dfn> checks whether a draft carries its argument to a reader. It has five steps.</p>\n<ol type=\"1\">\n<li>Before the test, write your argument in one or two sentences, your <dfn data-g=\"456\">one message</dfn> from section 3, and put it away where the reader cannot see it.</li>\n<li>Give the draft to a reader who does not know the work. They read it once, at their normal pace, without going back, and mark each place where they stopped or read a passage again.</li>\n<li>Without looking at the draft, the reader writes in one or two sentences what it argues.</li>\n<li>Compare the reader’s sentences with yours, part by part: whom or what the <dfn data-g=\"95\">claim</dfn> is about, what was found, compared with what, and how far it reaches. How far it reaches means the claim’s limits: the ages, place and years it covers, and what it does not claim, such as a cause.</li>\n<li>Revise the paragraphs that the comparison and the marks point to, and test again with a new reader.</li>\n</ol>\n<p>The draft passes when the reader’s sentences carry every part of your message and add no part of their own. A part is kept when the reader’s words say the same thing at the same strength, no narrower, wider or stronger. The wording need not match.</p>",
+   "refs": [
+    217,
+    218,
+    219,
+    220,
+    221,
+    38,
+    222,
+    223,
+    207,
+    42,
+    224
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>You cannot tell whether your draft is clear by reading it yourself. You know what it means, so you read that meaning into it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>First, write your one message and seal it in an envelope, or in a file the reader will not see.</p>\n<blockquote>\n<p>Among women aged 15 to 49 in India, overweight or obesity was commoner in the fifth National Family Health Survey (NFHS-5) than in the fourth (NFHS-4), and commoner in urban than in rural areas. These survey data cannot say why.</p>\n</blockquote>\n<p>Next, find a reader outside the work: a resident in Physiology, say, who knows what a survey is and nothing about yours. The draft, the readers and their sentences here are made up.</p>\n<p>She hands back one mark, beside paragraph 3, and this sentence.</p>\n<blockquote>\n<p>Obesity is increasing among Indian women because of urbanisation.</p>\n</blockquote>\n<p>Now open the envelope and compare, part by part.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>part</th>\n<th>your message</th>\n<th>her sentence</th>\n<th>verdict</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>about whom</td>\n<td>women aged 15 to 49 in India</td>\n<td>Indian women</td>\n<td>widened: the age range is lost</td>\n</tr>\n<tr>\n<td>what was found</td>\n<td>overweight or obesity, commoner in NFHS-5 than in NFHS-4</td>\n<td>obesity is increasing</td>\n<td>changed: overweight dropped, and two surveys turned into a trend</td>\n</tr>\n<tr>\n<td>compared with what</td>\n<td>urban higher than rural</td>\n<td>because of urbanisation</td>\n<td>added: a difference turned into a cause</td>\n</tr>\n<tr>\n<td>how far it reaches</td>\n<td>the data cannot say why</td>\n<td>nothing</td>\n<td>lost, and contradicted</td>\n</tr>\n</tbody>\n</table>\n<p>The added cause is the worst failure. Find where it came from. Her mark sits beside paragraph 3. You open it: the urban and rural figures come straight after two sentences on diet and work changing in Indian cities. The order invites the reader to <dfn data-g=\"351\">join</dfn> them.</p>\n<p>Revise only what the test pointed to. Move the urban and rural figures into the paragraph that reports the findings.</p>\n<p>Then test again, with a new reader. A resident in Microbiology reads it once, makes no mark, and writes this.</p>\n<blockquote>\n<p>Among women aged 15 to 49 in India, overweight or obesity went up between the two surveys and is higher in towns. The survey can’t tell us why.</p>\n</blockquote>\n<p>Every part is there and nothing is added. The draft passes.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>One reader is one reader.</p>\n<p>The test shows that the argument gets across. It does not show that the argument is right.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Never count your guide’s or co-author’s approval as the test. They know the work, so they read your meaning into the draft, as you do.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write your own one-message sentence and put it away before the reader starts.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“Did you like it?” and “Any comments?” are the wrong questions. Ask for the one sentence and the marks.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Treat a part the reader added as worse than a part the reader lost. A reader repeats an added cause as the paper’s claim; a lost part is only missing. Find the paragraph whose order or wording invited it, and change that paragraph.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Use a new reader for each round.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A pass shows that one reader, minutes after reading, could state your argument.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“My reader got it wrong, so my reader was careless.” The test assumes a reader who reads once and does not know the work, because that is how most of your readers will read. Mensh and Kording note that for most readers the <dfn data-g=\"4\">abstract</dfn> is the only part of a paper they read at all. If one careful reader outside the work misses or changes a part, the draft let them. Revise the draft, not the reader.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, list the five steps of the one-pass test. Then say why the reader must not know your work, and why each round needs a new reader.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Write your one message and put it away. A reader outside the work reads the draft once, without going back, marking where they stop or reread. The reader writes in one or two sentences what it argues. You compare their sentences with yours, part by part. You revise the paragraphs the comparison and the marks point to, and test again with a new reader.</p>\n<p>A reader who knows your work reads your argument into the draft, so the test would pass whatever the draft says. A reader who has done the test once knows your argument, so a second summary tests their memory and not the draft.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>This book’s build: one section of a manuscript or thesis, rewritten so that each paragraph carries one idea, and shown to a reader. Use the section you have been working on since the start of the book.</p>\n<ol type=\"1\">\n<li>Write the section’s one message at the top of a separate page, and put the page away.</li>\n<li>Make a <dfn data-g=\"587\">reverse outline</dfn>. Rewrite until each paragraph has one point, stated in its first sentence.</li>\n<li>Cut it in three passes, paragraphs, sentences, words, keeping the cuts in a second file.</li>\n<li>Score each paragraph for readability with one program, or by hand with the formula of section 11, and say which. Reread the longest sentences of any paragraph that scores far harder than the rest.</li>\n<li>Run the one-pass test with a reader outside the work. Fill in the four-part comparison.</li>\n<li>Revise what the test pointed to, and run it again with a new reader until the draft passes.</li>\n</ol>\n<p>Keep the dated versions, the reverse outlines, the readers’ sentences and their marks.</p>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p><dfn data-g=\"85\">Check</dfn> your pack against this list.</p>\n<ul>\n<li>The one message was written before the rewrite. It names whom the claim is about, what was found, compared with what, and how far it reaches.</li>\n<li>Each paragraph’s first sentence states its point, and the reverse outline of the final draft reads as the argument in order.</li>\n<li>Word counts after each <dfn data-g=\"159\">cutting</dfn> pass are recorded. No two sentences were joined to save words, and no age range, place, year or qualifier was cut.</li>\n<li>The readability scores came from one program or the hand formula, and you say which and how it counts figures. No sentence was chopped only to raise a score.</li>\n<li>Each reader’s sentence is kept beside yours, with the four parts marked kept, lost, changed or added. Each change in the next draft is traced to one of them.</li>\n<li>The last reader’s sentence carries every part of your message and adds none.</li>\n</ul>\n<p>The build is met when the last condition holds. That is this book’s gate too: a colleague reading your draft can state your argument after one pass.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident hands you her thesis introduction and asks, “Can you read it and tell me if it’s OK?” You have ten minutes and a whiteboard. Explain what you will do instead of reading it for her, and why.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with why “is it OK?” fails. If you read it as her senior, you will mark words and say it is fine or not fine. Neither tells her whether a reader gets her argument, and comments that are general usually mean the reader missed the main line.</p>\n<p>Draw the five steps on the board. Ask her first to write, on a separate page, the one sentence her introduction exists to say, and to fold it away. Then you, or better a resident from another department, read it once without going back, marking where you stop. Then write what it argues, before you talk.</p>\n<p>Then compare the two sentences together, part by part. An introduction’s message has its own parts (section 4): whom it is about, what is known, what is missing, and what the study will do. Show her that a part you lost points to a paragraph that hid it. A part you added points to a paragraph that invited it.</p>\n<p>Last, tell her the rule that makes the test work: a new reader each round. And offer to be her reader once, not every time.</p>"
+  }
+ ]
+}

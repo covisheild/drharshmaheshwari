@@ -1,0 +1,260 @@
+{
+ "format": 1,
+ "id": "s58-r1-c09",
+ "label": "9",
+ "title": "Numbers in a sentence: the unit, the count behind the percentage, and no more digits than the data hold",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A number in a sentence is reported in full when the reader can <dfn data-g=\"85\">check</dfn> it. A <dfn data-g=\"478\">percentage</dfn> carries the two counts it was worked out from: the <dfn data-g=\"449\">numerator</dfn>, how many had the thing, and the <dfn data-g=\"178\">denominator</dfn>, how many were counted.</p>\n<p>A difference between two percentages is stated in percentage points. A <dfn data-g=\"565\">relative change</dfn> divides that difference by the starting percentage, and is stated in per cent.</p>\n<p>A number shows <dfn data-g=\"242\">false precision</dfn> when it carries more digits than the data can support.</p>\n<p>Cole (2015), a statistical reviewer for medical journals, gives these rules for how many digits to report, as recommendations, not requirements:</p>\n<table>\n\n<tbody>\n<tr>\n<td>statistic</td>\n<td>how many digits to report</td>\n</tr>\n<tr>\n<td>mean</td>\n<td>enough decimal places to give the standard deviation (SD) two significant figures, or the standard error (SE) one</td>\n</tr>\n<tr>\n<td>percentage</td>\n<td>whole numbers, or one decimal place for values under 10%</td>\n</tr>\n<tr>\n<td>risk ratio, odds ratio, or any ratio of two percentages</td>\n<td>two significant figures if the first digit that is not zero is 4 or more, otherwise three: the rule of four</td>\n</tr>\n<tr>\n<td>P value</td>\n<td>one significant figure, never 0.000</td>\n</tr>\n</tbody>\n</table>\n<p>By the SD rule, the mean stops at the place of the SD’s second <dfn data-g=\"627\">significant</dfn> figure. A <dfn data-g=\"589\">risk ratio</dfn> divides the risk in one group by the risk in another. Illustration 3 explains <dfn data-g=\"453\">odds</dfn> ratios and P values.</p>\n<p>The SAMPL guidelines (Statistical Analyses and Methods in the Published Literature) are by Lang and Altman. They prefer a <dfn data-g=\"128\">confidence interval</dfn> to a <dfn data-g=\"468\">P value</dfn>. If a P value is given, they ask for an equality (P = 0.03, not P &lt; 0.05, read “P below 0.05”), to one or two <dfn data-g=\"172\">decimal</dfn> places. They do not say when to use one and when two. The smallest that need be reported is P &lt; 0.001. They ask for a mean and its SD in the form mean (SD), not mean ± SD (read “plus or minus”).</p>\n<p>When n people are counted, one person moves a percentage by 100 divided by n (written 100 ÷ n) percentage points.</p>",
+   "refs": [
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Ask three questions of every number you write. In what unit? Out of how many? How finely do the data let you say it?</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s58-r1-c09-one-person-step.png",
+   "alt": "Five points on a falling curve, the number of people counted along the bottom and one person's worth in percentage points up the side: 5 at 20 people, 2.5 at 40, 1 at 100, 0.5 at 200 and 0.25 at 400. A dashed line marks one percentage point.",
+   "w": 1360,
+   "h": 656,
+   "caption": "How far one person moves a percentage: 100 divided by the number counted, in percentage points. With 40 women, each is worth 2.5 points; with 400, 0.25. Below 100 people, one person is worth more than one percentage point, and a decimal place describes less than one person."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a sentence from a district survey report. The sentence and its numbers are made up for this example.</p>\n<blockquote>\n<p>The prevalence of overweight was found to be 37.50 per cent.</p>\n</blockquote>\n<p><dfn data-g=\"510\">Prevalence</dfn>, as used in Book 0, D3, is how many people in a group have the condition, here given as a share.</p>\n<p>Now ask the three questions. In what unit? A per cent, but of whom, and by what cut-off? Out of how many? The sentence does not say. How finely? To a hundredth of a <dfn data-g=\"480\">percentage point</dfn>.</p>\n<p>Go back to the survey’s own counts. It weighed and measured 40 women. Fifteen had a <dfn data-g=\"61\">body mass index</dfn> (BMI) of 25.0 kg/m<sup>2</sup> or more, BMI as built in Book 0, B6.</p>\n<div class=\"working\">\n<p>15 divided by 40 = 0.375<br />\n0.375 times 100 = 37.5</p>\n</div>\n<p>Now see how far one woman moves that figure. One woman out of 40 is 100 divided by 40 percentage points.</p>\n<div class=\"working\">\n<p>100 divided by 40 = 2.5<br />\n16 divided by 40 = 0.4<br />\n0.4 times 100 = 40</p>\n</div>\n<p>Each woman is worth 2.5 percentage points. With one more woman the figure jumps from 37.5 per cent to 40 per cent. Nothing in between can happen. So “37.50 per cent” claims a fineness that 40 women cannot give. Cole’s rule for a percentage is a whole number, or one decimal place below 10 per cent. Here 37.5 rounds to 38.</p>\n<p>Rewrite the sentence with its count first and its cut-off named.</p>\n<blockquote>\n<p>Of the 40 women weighed and measured, 15 (38 per cent) had a body mass index of 25.0 kg/m<sup>2</sup> or more.</p>\n</blockquote>\n<p>Journals print the sign, %. This book writes the words. Follow your journal.</p>\n<p>The reader can now check the percentage, and can see how small the group was. The Recommendations of the International Committee of Medical Journal Editors (ICMJE) ask for “the absolute numbers” behind every percentage. The SAMPL guidelines ask for the numerator and denominator.</p>\n<p>Watch the step shrink as the count grows.</p>\n<div class=\"working\">\n<p>100 divided by 20 = 5<br />\n100 divided by 100 = 1<br />\n100 divided by 200 = 0.5<br />\n100 divided by 400 = 0.25</p>\n</div>\n<p>Below 100 people, each person is worth more than a whole percentage point. A decimal place on such a percentage describes less than one person. The count is what carries the information.</p>\n<p>Now a national figure, from the fifth National Family Health Survey (NFHS-5, 2019-21). It reports that 24.0 per cent of women aged 15-49 had <dfn data-g=\"467\">overweight</dfn> or obesity, meaning a BMI of 25.0 kg/m<sup>2</sup> or more. The fact <dfn data-g=\"622\">sheet</dfn> prints no count beside it.</p>\n<p>Its introduction says the survey gathered information from 724,115 women. That is not the denominator. A footnote on the women’s rows leaves out pregnant women and women who gave birth in the two months before. So quote what the fact sheet gives: the percentage, the survey and its years, the age range and the cut-off. Do not make a count by multiplying 724,115 by 0.24.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The step of 100 ÷ n is the smallest move the count allows. It is not how uncertain the percentage is. A second <dfn data-g=\"542\">random sample</dfn> of 40 women would give a different count, and that <dfn data-g=\"598\">sampling variation</dfn> (Book 0, D6) is a separate matter. So your last digit should be no finer than the step; meeting that is necessary, not sufficient.</p>\n<p>The rule of the count binds your own data. For a figure you quote, you can only give what the source gives.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>NFHS-4 (2015-16) put the same row for women at 20.6 per cent. NFHS-5 (2019-21) put it at 24.0 per cent. Work out the change both ways, as in Book 0, A4.</p>\n<div class=\"working\">\n<p>24.0 minus 20.6 = 3.4<br />\n3.4 divided by 20.6 = 0.165</p>\n</div>\n<p>A rise of 3.4 percentage points. That is a rise of about 17 per cent on the NFHS-4 figure. Both are true, and they are different quantities. A reader who meets “a 17 per cent rise” alone may take it for 17 points.</p>\n<p>So write the absolute change first. If you add the relative one, <dfn data-g=\"363\">label</dfn> it.</p>\n<blockquote>\n<p>Among women aged 15-49, the share with a BMI of 25.0 kg/m<sup>2</sup> or more rose from 20.6 per cent in NFHS-4 (2015-16) to 24.0 per cent in NFHS-5 (2019-21). That is a rise of 3.4 percentage points.</p>\n</blockquote>\n<p>Do the same for men.</p>\n<div class=\"working\">\n<p>22.9 minus 18.9 = 4.0<br />\n4.0 divided by 18.9 = 0.212</p>\n</div>\n<p>Men rose by 4.0 points, about 21 per cent on their NFHS-4 figure.</p>\n<p>Now the digits. On its own, Cole’s rule would print 24.0 per cent as 24 per cent. But you are comparing groups, and <dfn data-g=\"592\">rounding</dfn> must not blur the gaps between them. For that case Cole suggests a rule built on the range, the gap from the lowest value to the highest. In his words: “if the range is 10% or more use whole numbers, if less than 1% use two decimal places, and otherwise one”. Your four figures run from 18.9 to 24.0.</p>\n<div class=\"working\">\n<p>24.0 minus 18.9 = 5.1</p>\n</div>\n<p>The range is 5.1, between 1 and 10, so keep one decimal place, as the fact sheet does. Round the women’s two figures to whole numbers and they become 21 and 24. Their gap would read as 3, not the 3.4 the survey gives.</p>\n<p>Absolute and relative changes in risk get their full treatment in the second rung of this subject. Here the habit is enough: points first, per cent labelled.</p>",
+   "numberRefs": [
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The two surveys measured different women, each a sample of its own time. The change is a difference between two estimates, and each has its own sampling variation. A rise of 3.4 points describes the two surveys. It does not say why the share rose.</p>\n<p>The row covers ages 15-49 only, and counts overweight and obese together. It is not a figure for all Indian women, nor for obesity alone.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Statistical software prints every digit it has. Here is made-up output from a survey of 400 women: mean BMI 24.6318 kg/m<sup>2</sup>, SD 4.1237 kg/m<sup>2</sup>. The SD is the <dfn data-g=\"644\">standard deviation</dfn>, the spread built in Book 0, D5.</p>\n<p>Cole’s rule for a mean says: round the SD to two <dfn data-g=\"628\">significant figures</dfn>, then give the mean the same number of decimal places.</p>\n<div class=\"working\">\n<p>4.1237 rounds to 4.1<br />\n24.6318 rounds to 24.6</p>\n</div>\n<p>Write it in the SAMPL form: mean BMI 24.6 kg/m<sup>2</sup> (SD 4.1). Cole’s other rule uses the standard error (SE): the SD divided by the <dfn data-g=\"640\">square root</dfn> of the count, as built in Book 0, D6.</p>\n<div class=\"working\">\n<p>square root of 400 = 20<br />\n4.1237 divided by 20 = 0.206</p>\n</div>\n<p>The SE to one significant figure is 0.2. That is one decimal place again, so 24.6. Now suppose the survey had 40,000 women and the same SD.</p>\n<div class=\"working\">\n<p>square root of 40,000 = 200<br />\n4.1237 divided by 200 = 0.0206</p>\n</div>\n<p>The SE is now 0.02, so the SE rule allows two decimal places: 24.63. The SD rule still gives 24.6. The two rules answer different questions. The SD describes how the women differ. The SE describes how well the mean is known, and it shrinks as the count grows. Say which rule you used.</p>\n<p>Next, a <dfn data-g=\"550\">ratio</dfn>. Cole’s own example is an <dfn data-g=\"454\">odds ratio</dfn> of 22.68. An odds ratio divides the odds of an outcome in one group by the odds in another, with odds as built in Book 0, D1. The paper gave it with a 95 per cent confidence interval (CI) of 7.51 to 73.67. A CI is a range, worked out from the data, that shows how precisely the ratio is known. How it is worked out is beyond this book.</p>\n<p>Apply the <dfn data-g=\"595\">rule of four</dfn>. The first digit of 22.68 is 2, below 4, so keep three significant figures: 22.7. The first digits of 7.51 and 73.67 are both 7, so keep two: 7.5 and 74. The result is 22.7 (95 per cent CI 7.5 to 74). Cole also accepts one figure fewer throughout, which gives 23 (8 to 70).</p>\n<p>Last, the P value, the number a statistical test prints beside a comparison. What it means is beyond this book; how many digits to give it is not. Here the two guides differ, so look at both. The four values are made up.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>software prints</th>\n<th>Cole: one significant figure</th>\n<th>SAMPL: one or two decimal places</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0.38</td>\n<td>0.4</td>\n<td>0.38 or 0.4</td>\n</tr>\n<tr>\n<td>0.047</td>\n<td>0.05</td>\n<td>0.05</td>\n</tr>\n<tr>\n<td>0.0026</td>\n<td>0.003</td>\n<td>no equality fits: 0.00 would be false</td>\n</tr>\n<tr>\n<td>0.000</td>\n<td>&lt; 0.001</td>\n<td>&lt; 0.001</td>\n</tr>\n</tbody>\n</table>\n<p>The two rules differ only for 0.0026, a value below 0.01. Two decimal places turn 0.0026 into 0.00, which says the P value is zero. Cole’s point is that any rule counting decimal places fails there. Both forbid 0.000. Your journal’s instructions for authors may name a rule. Follow them, and use one rule through the whole paper.</p>",
+   "numberRefs": [
+    173
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Cole writes “round up” for P values. For each value in the table, rounding up and rounding to the nearest give the same figure. For a value such as 0.032 they do not: up gives 0.04, and nearest gives 0.03. Say which you did.</p>\n<p>These rules decide how many digits to print. They do not make the mean, the ratio or the P value right. A mean printed to the right digits can still come from 400 women who do not stand for the district.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>More decimal places look more careful, and that is the error. Round once, when you write the sentence, to the digits Cole’s rules give.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Put the count before the percentage: “15 of 40 (38 per cent)”.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A change between two percentages has two sizes. For women in NFHS it is 3.4 percentage points, or about 17 per cent of the starting figure. Say the points first.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>When fewer than 100 people are counted, one person is worth more than a percentage point. In a small study the count is the result.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Cole and SAMPL give different rules for P values. Neither allows 0.000.</p>",
+     "tag": "dispute",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Rounding rules are for the page, not for the working. A figure rounded early and then used in a later sum carries its rounding into the answer.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>These rules decide how many digits you print. They cannot tell you whether the number is right.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The NFHS fact sheet prints percentages with no counts. Never make a count by multiplying the survey’s 724,115 women by the percentage.</p>",
+     "tag": "india_deviation",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“24.0 per cent of Indian women are obese.” The fact sheet’s row is narrower on three counts. It covers women aged 15-49 only. It counts overweight and obese together, at a BMI of 25.0 kg/m<sup>2</sup> or more, and it has no row for obesity alone. And it leaves out pregnant women and women who gave birth in the two months before. Read the row’s own words and its footnote before you write the sentence.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>In NFHS-5 (2019-21), 24.0 per cent of women aged 15-49 had a body mass index of 25.0 kg/m<sup>2</sup> or more. In NFHS-4 (2015-16) the figure was 20.6 per cent, so the share rose by 3.4 percentage points.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the three things a reader needs with every number in a results sentence. Then state Cole’s rule for the digits of a mean and of a percentage. Last, name the one value a P value may never be printed as.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Its unit; for a percentage, the counts it came from (numerator and denominator); and no more digits than the data support.</p>\n<p>A mean gets enough decimal places to give the SD two significant figures, or the SE one. A percentage is a whole number, or has one decimal place below 10 per cent. A P value is never printed as 0.000.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a made-up results paragraph from a thesis on a school survey. Find every number that is incomplete or carries false precision. Then rewrite the paragraph so that it makes one point.</p>\n<blockquote>\n<p>A total of 87 students participated. Overweight was seen in 19.54 per cent of students. Mean age was 13.4782 years ± 1.2066. Girls had 9.2 per cent more overweight than boys (p = 0.000).</p>\n</blockquote>\n<p>The ± figure is the SD. The counts behind the percentages are 17 of 87 in all, 11 of 42 girls and 6 of 45 boys. The cut-off was the one in the survey’s protocol, which the methods section names.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Work out what the counts give.</p>\n<div class=\"working\">\n<p>17 divided by 87 is about 0.1954<br />\n11 divided by 42 is about 0.2619<br />\n6 divided by 45 is about 0.1333<br />\n26.19 minus 13.33 = 12.86</p>\n</div>\n<p>Four faults. First, “19.54 per cent” has no count, and two decimal places from 87 students. Each student is worth more than one point, so write “17 of 87 (20 per cent)”. Second, the mean age has four decimal places and the “±” form. The SD 1.2066 to two significant figures is 1.2, so write “13.5 years (SD 1.2)”.</p>\n<p>Third, “9.2 per cent more” matches neither the points nor the per cent the counts give. The counts give 26 per cent of girls and 13 per cent of boys, about 13 percentage points apart. Fourth, “p = 0.000” is never printed. If the test gave less than 0.001, write P &lt; 0.001.</p>\n<p>A rewrite with one point:</p>\n<blockquote>\n<p>Of the 87 students, 17 (20 per cent) were at or above the protocol’s cut-off for overweight. They were 11 of 42 girls (26 per cent) and 6 of 45 boys (13 per cent). Their mean age was 13.5 years (SD 1.2).</p>\n</blockquote>\n<p>The comparison of girls and boys belongs with its test, reported to one rule, in a sentence of its own.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist rings you: “So obesity among Indian women is up 17 per cent in five years?” You have three minutes and no jargon. Give the answer you would say, ending in one sentence she can quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Not quite, and the difference matters. The survey measured women aged 15 to 49, and it counts overweight and obesity together; it has no figure for obesity alone. In the 2015-16 survey, 20.6 in every hundred women of that age were in that group. In the 2019-21 survey it was 24.0 in every hundred. So about 3 or 4 more women in every hundred. Your 17 per cent is that rise measured against the starting figure. It is true, but it sounds far bigger than it is.</p>\n<p>The sentence to quote: “In the 2019-21 survey, about one woman in four aged 15 to 49 had overweight or obesity. In 2015-16 it was about one in five.”</p>\n<p>Calibrated: both figures come from national surveys. They tell you how the share changed, not why.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Write each number with two significant figures: 0.04372, 3465.31, 22.68, 0.5049.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>0.04372 rounds to 0.044<br />\n3465.31 rounds to 3500<br />\n22.68 rounds to 23<br />\n0.5049 rounds to 0.50</p>\n</div>\n<p>The leading zeros of 0.04372 do not count. Its first two significant figures are 4 and 3, and the 7 after them rounds the 3 up to 4. In 0.50 the final zero is significant, so it is kept.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>37 of 412. Work out the percentage, then write it as Cole’s rule for percentages asks, with its count.</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>37 divided by 412 is about 0.0898<br />\n0.0898 times 100 = 8.98</p>\n</div>\n<p>8.98 per cent is under 10 per cent, so it keeps one decimal place: 9.0 per cent. Write “37 of 412 (9.0 per cent)”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A percentage goes from 12.5 per cent to 15.0 per cent. Give the change in percentage points and in per cent.</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>15.0 minus 12.5 = 2.5<br />\n2.5 divided by 12.5 = 0.2<br />\n0.2 times 100 = 20</p>\n</div>\n<p>A rise of 2.5 percentage points, which is a rise of 20 per cent on the starting figure.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Round each mean by Cole’s rule, using the SD beside it.</p>\n<table style=\"width:25%;\">\n\n<thead>\n<tr>\n<th>mean</th>\n<th>SD</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>52.381</td>\n<td>11.46</td>\n</tr>\n<tr>\n<td>3.0538</td>\n<td>0.5712</td>\n</tr>\n<tr>\n<td>0.8147</td>\n<td>0.0236</td>\n</tr>\n</tbody>\n</table>",
+   "level": 3,
+   "answer": "<p>Round each SD to two significant figures, then give the mean the same decimal places.</p>\n<div class=\"working\">\n<p>11.46 rounds to 11, no decimal places, so 52.381 rounds to 52<br />\n0.5712 rounds to 0.57, two decimal places, so 3.0538 rounds to 3.05<br />\n0.0236 rounds to 0.024, three decimal places, so 0.8147 rounds to 0.815</p>\n</div>\n<p>52 (SD 11), 3.05 (SD 0.57) and 0.815 (SD 0.024).</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Round each ratio by the rule of four: 0.3172, 1.0462, 4.183, 11.27, 0.0482.</p>",
+   "level": 3,
+   "answer": "<p>Look at the first digit that is not zero. If it is 4 or more, keep two significant figures; otherwise keep three.</p>\n<div class=\"working\">\n<p>0.3172: first digit 3, keep three, 0.317<br />\n1.0462: first digit 1, keep three, 1.05<br />\n4.183: first digit 4, keep two, 4.2<br />\n11.27: first digit 1, keep three, 11.3<br />\n0.0482: first digit 4, keep two, 0.048</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>NFHS-5 (2019-21) gives the share of women aged 15-49 with a BMI of 25.0 kg/m<sup>2</sup> or more. It is 33.2 per cent in urban India and 19.7 per cent in rural India. Give the gap in percentage points and the urban figure as a ratio of the rural one, by the rule of four. Then use Cole’s suggestion for comparing groups to decide how many decimal places the two percentages need. Write the sentence.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>33.2 minus 19.7 = 13.5<br />\n33.2 divided by 19.7 = 1.685</p>\n</div>\n<p>The ratio’s first digit is 1, so keep three significant figures: 1.69. The range across the two groups is 13.5, which is 10 or more. So Cole’s suggestion gives whole numbers: 33 per cent and 20 per cent.</p>\n<blockquote>\n<p>In NFHS-5 (2019-21), 33 per cent of urban women aged 15-49 had a BMI of 25.0 kg/m<sup>2</sup> or more. Among rural women it was 20 per cent. The gap was about 13 percentage points.</p>\n</blockquote>\n<p>Whole numbers blur the gap a little: 33 minus 20 is 13, against 13.5 from the printed figures. If the gap is your point, keep the fact sheet’s one decimal place and write 13.5 points. Either way, write the gap in points before any ratio.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Cole quotes a paper: “The mean birth weight of babies was 3.05±0.57 (95% CI 2.95 to 3.15) kg”. The 0.57 is the SD. Rewrite the mean and SD in grams, in the SAMPL form, to the digits Cole’s rule for a mean gives.</p>",
+   "level": 5,
+   "answer": "<p>One kilogram is 1000 grams.</p>\n<div class=\"working\">\n<p>3.05 times 1000 = 3050<br />\n0.57 times 1000 = 570</p>\n</div>\n<p>The SD of 570 g has two significant figures, the 5 and the 7, and its last significant digit is in the tens. So the mean goes to the nearest 10 g: 3050 g. Write “3050 g (SD 570 g)”. Cole reaches the same place: birth weight in grams “ought to be rounded to the nearest 10 g”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Made-up output: mean age 34.2871 years, SD 9.8364 years. Give the mean by Cole’s SD rule. Then give it by his SE rule for a sample of 100 and for a sample of 10,000. Say which you would print for 100 people.</p>",
+   "level": 6,
+   "answer": "<p>The SD rule: 9.8364 to two significant figures is 9.8, one decimal place, so 34.3 years.</p>\n<p>The SE rule, with the SE as the SD divided by the square root of the count.</p>\n<div class=\"working\">\n<p>square root of 100 = 10<br />\n9.8364 divided by 10 = 0.98364<br />\nsquare root of 10,000 = 100<br />\n9.8364 divided by 100 = 0.098364</p>\n</div>\n<p>For 100 people the SE is 0.98, which is 1 to one significant figure. That allows no decimal places: 34 years. For 10,000 people the SE is 0.1 to one significant figure: 34.3 years.</p>\n<p>For 100 people, print 34.3 years (SD 9.8) if you describe the people, or 34 years if you follow the SE rule. SAMPL notes that mean age “can often be rounded to the nearest year”, which gives 34. Say which rule you used.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Made-up software output gives four P values: 0.67, 0.0086, 0.096 and 0.00004. Write each by Cole’s rule and by SAMPL’s.</p>",
+   "level": 6,
+   "answer": "<p>Each value by each rule:</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>software prints</th>\n<th>Cole: one significant figure</th>\n<th>SAMPL: one or two decimal places</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0.67</td>\n<td>0.7</td>\n<td>0.67 or 0.7</td>\n</tr>\n<tr>\n<td>0.0086</td>\n<td>0.009</td>\n<td>0.01</td>\n</tr>\n<tr>\n<td>0.096</td>\n<td>0.1</td>\n<td>0.10 or 0.1</td>\n</tr>\n<tr>\n<td>0.00004</td>\n<td>&lt; 0.001</td>\n<td>&lt; 0.001</td>\n</tr>\n</tbody>\n</table>\n<p>The two rules differ only for 0.0086. Cole’s one significant figure keeps it below 0.01; SAMPL’s two decimal places round it up to 0.01. For 0.00004, Cole allows a lower limit than 0.001 but his examples stop there, and SAMPL’s smallest is P &lt; 0.001.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. The counts are made up. Find the step that broke.</p>\n<div class=\"working\">\n<p>village A: 15 of 40 women with a BMI of 25.0 kg/m<sup>2</sup> or more = 37.50%<br />\nvillage B: 18 of 40 women = 45.00%<br />\n45.00 minus 37.50 = 7.50<br />\nso village B has 7.50% more women in this group than village A</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The first three lines are right, apart from their digits.</p>\n<div class=\"working\">\n<p>15 divided by 40 = 0.375<br />\n18 divided by 40 = 0.45<br />\n45 minus 37.5 = 7.5</p>\n</div>\n<p>The last line broke. The difference of 7.5 is in percentage points. As a per cent of village A’s figure it is larger.</p>\n<div class=\"working\">\n<p>7.5 divided by 37.5 = 0.2</p>\n</div>\n<p>Village B’s share is 7.5 percentage points higher, or 20 per cent higher than village A’s. The digits are false too. With 40 women each is worth 2.5 points, so write 15 of 40 (38 per cent) and 18 of 40 (45 per cent). And the whole difference is three women.</p>\n<p>Why it looks reasonable: both numbers are percentages, so “per cent” feels like the unit of their difference.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Cole cites a review that gives a <dfn data-g=\"299\">hazard ratio</dfn> of 0.03, rounded to two decimal places. A hazard ratio compares how fast an event happens in two groups; here the event was updating a reference work’s citations. Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>hazard ratio = 0.03<br />\nturned the other way round: 1 divided by 0.03 = 33.33<br />\nso the other reference work updates its citations 33.33 times as fast</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The arithmetic is right. The step that broke is treating 0.03 as exact. Rounded to two decimal places, 0.03 stands for any value from 0.025 up to, but not including, 0.035.</p>\n<div class=\"working\">\n<p>1 divided by 0.035 = 28.6<br />\n1 divided by 0.025 = 40</p>\n</div>\n<p>Turned round, the ratio could be anywhere from about 29 to 40. Cole makes the same point about this example. Four significant figures, 33.33, cannot come from a one-figure input. Write “about 30 times, somewhere between 29 and 40”, or go back to the unrounded ratio.</p>\n<p>Why it looks reasonable: the calculator prints 33.33 and nothing on the screen says the input was rounded.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A news report says: “One in four Indian women is now obese. That is about 1.7 <dfn data-g=\"365\">lakh</dfn> of the 7.2 lakh women surveyed, up 16.5 per cent since the last survey.” A lakh is 100,000. Decide what to compute, compute it, and say what the <dfn data-g=\"95\">claim</dfn> does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Find where each figure came from.</p>\n<div class=\"working\">\n<p>724,115 times 0.24 is about 173,788<br />\n3.4 divided by 20.6 = 0.165</p>\n</div>\n<p>The 1.7 lakh is the 724,115 women multiplied by 24.0 per cent. The 16.5 per cent is the relative change. The arithmetic holds, and almost every word around it is wrong.</p>\n<p>What it does not establish. The row is for women aged 15-49, not Indian women. It counts overweight and obese together, and there is no figure for obesity alone.</p>\n<p>The 724,115 women are everyone the survey gathered information from. The row leaves out pregnant women and women who gave birth in the two months before. So 1.7 lakh is not a count the survey gives. The rise is 3.4 percentage points, and “up 16.5 per cent” said alone sounds far larger. Last, two surveys say nothing about why the share rose.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A made-up project report says: “We visited 3 schools (n = 87). After the new menu, fewer students bought a sugar-sweetened drink at the canteen: 49 per cent, down from 62 per cent (p = 0.000). That is a 21 per cent reduction.” Decide what to compute, compute it, and say what the claim does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Compute the change both ways, and what one student is worth.</p>\n<div class=\"working\">\n<p>62 minus 49 = 13<br />\n13 divided by 62 is about 0.21<br />\n100 divided by 87 is about 1.15</p>\n</div>\n<p>The share fell 13 percentage points. The 21 per cent is the relative change. Each student is worth more than one point, so the report should give counts. If the same 87 students were counted both times, 54 of 87 and 43 of 87 would fit. The report does not say they were. And “p = 0.000” is never printed: at most, P &lt; 0.001.</p>\n<p>What it does not establish. A before-and-after count in three schools has no <dfn data-g=\"118\">comparison group</dfn>, so it cannot show the menu caused the fall. The schools were the ones visited, not a sample of a district. And a fall in buying at the canteen says nothing about what the students drank elsewhere.</p>"
+  }
+ ]
+}

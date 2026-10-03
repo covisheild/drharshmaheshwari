@@ -1,0 +1,205 @@
+{
+ "format": 1,
+ "id": "s52-r1-c04",
+ "label": "4",
+ "title": "Vectors, types and NA",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"499\">vector</dfn> is an ordered set of values that R holds as one <dfn data-g=\"321\">object</dfn> under one name. The function <code>c()</code> combines values into a vector, in the order given.</p>\n<p>Every element of a vector has the same <dfn data-g=\"490\">type</dfn>. Numeric values are numbers (R keeps two kinds, integer and double, and treats both as numbers).</p>\n<p>When values of different types are combined, R converts all of them to the highest type in the order logical, then numeric, then character. This conversion is called <dfn data-g=\"74\">coercion</dfn>. A single text value therefore turns a vector of numbers into a vector of text, and functions that compute on numbers, such as <code>mean()</code>, return no number for it. Logical values turned into numbers become 1 for <code>TRUE</code> and 0 for <code>FALSE</code>.</p>\n<p><code>NA</code>, for “not available”, marks a value that is missing. Almost any arithmetic or comparison that involves <code>NA</code> returns <code>NA</code>, because the result cannot be known. The function <code>is.na()</code> returns <code>TRUE</code> for each element that is <code>NA</code>. The comparison <code>x == NA</code> returns <code>NA</code> for every element and finds nothing.</p>",
+   "refs": [
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>In R, a set of values in a row, kept in order under one name, is a vector. You build one with <code>c()</code>, which stands for combine:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>height_cm <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">152</span>, <span class=\"fl\">160.5</span>, <span class=\"dv\">171</span>)</span>\n<span>height_cm</span></code></pre></div>\n<pre class=\"output\"><code>[1] 152.0 160.5 171.0</code></pre>\n<p>R prints every number in a vector with the same number of <dfn data-g=\"116\">decimal</dfn> places, so 152 shows as 152.0.</p>\n<p>A vector holds one type of value. The three you need now are numbers (numeric), text (character) and <code>TRUE</code> or <code>FALSE</code> (logical).</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>sex <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"st\">&quot;female&quot;</span>, <span class=\"st\">&quot;male&quot;</span>, <span class=\"st\">&quot;female&quot;</span>)</span>\n<span>sex</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;female&quot; &quot;male&quot;   &quot;female&quot;</code></pre>\n<p>Arithmetic works on the whole vector at once, element by element. Divide the heights by 100 and every height turns into metres:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>height_cm <span class=\"sc\">/</span> <span class=\"dv\">100</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 1.520 1.605 1.710</code></pre>\n<p>R repeats a single number as often as the longer vector needs.</p>\n<p>A comparison asks the same question of every element and answers <code>TRUE</code> or <code>FALSE</code> for each:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>height_cm <span class=\"sc\">&gt;</span> <span class=\"dv\">155</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] FALSE  TRUE  TRUE</code></pre>\n<p><code>&gt;</code> means greater than. The others are <code>&lt;</code>, <code>&gt;=</code> (greater than or equal to), <code>&lt;=</code>, <code>==</code> (equal to) and <code>!=</code> (not equal to).</p>\n<p>Square brackets pick elements out. A number inside them is a position. A logical vector inside them keeps the elements where it says <code>TRUE</code>. <code>1:2</code> means positions 1 and 2:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>height_cm[<span class=\"dv\">2</span>]</span>\n<span>height_cm[<span class=\"dv\">1</span><span class=\"sc\">:</span><span class=\"dv\">2</span>]</span>\n<span>height_cm[height_cm <span class=\"sc\">&gt;</span> <span class=\"dv\">155</span>]</span></code></pre></div>\n<pre class=\"output\"><code>[1] 160.5\n[1] 152.0 160.5\n[1] 160.5 171.0</code></pre>"
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c04-body-mass-na.png",
+   "alt": "A bar chart of body mass in kilograms for penguins 1 to 10. Nine bars lie between 3.250 and 4.675 kg. There is a gap with no bar at penguin 4, labelled NA.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The first ten body masses in the practice file, in kg, as R holds them after dividing by 1000. Penguin 4 has no bar: its value is NA, which is not zero and not small but unknown. Penguins 8 and 10 are the two above 4 kg."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a failure. A made-up clinic register lists four adults’ weights. One entry was written as “71 kg”, unit and all. You type the four entries as written:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"fl\">62.5</span>, <span class=\"fl\">70.1</span>, <span class=\"st\">&quot;71 kg&quot;</span>, <span class=\"dv\">58</span>)</span>\n<span>weight_kg</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;62.5&quot;  &quot;70.1&quot;  &quot;71 kg&quot; &quot;58&quot;</code></pre>\n<p>Look at the printout before anything else. Every value now sits in <dfn data-g=\"383\">quotation</dfn> marks, even the three that were plain numbers. One text value made R convert the whole vector to text. That conversion is called coercion. R did it without a warning, because combining a number with text is allowed.</p>\n<p>Ask R which type it holds:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">typeof</span>(weight_kg)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;character&quot;</code></pre>\n<p>Now ask for the average weight:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">mean</span>(weight_kg)</span></code></pre></div>\n<pre class=\"output\"><code>[1] NA\nWarning message:\nIn mean.default(weight_kg) :\n  argument is not numeric or logical: returning NA</code></pre>\n<p>You get <code>NA</code> and a warning, not a number. A warning means R carried on and gave a result you should distrust. <code>mean.default</code> is the version of <code>mean()</code> that handles plain numbers. Try arithmetic instead, such as converting to grams:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"sc\">*</span> <span class=\"dv\">1000</span></span></code></pre></div>\n<pre class=\"output\"><code>Error in weight_kg * 1000 : non-numeric argument to binary operator</code></pre>\n<p>That one stops with an error: R gave no result at all. Read it literally: “non-numeric argument” means one of the things being multiplied is not a number. It is the vector of text.</p>\n<p>You can ask R to turn the text back into numbers with <code>as.numeric()</code>. Watch what it does with the entry it cannot read:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">as.numeric</span>(weight_kg)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 62.5 70.1   NA 58.0\nWarning message:\nNAs introduced by coercion</code></pre>\n<p>Three numbers come back, and “71 kg” becomes <code>NA</code>, with a warning that says so. The weight of 71 kg is now lost from the vector. R did not guess what “71 kg” meant, and it should not. The person who knows it means 71 has to say so in code, where the decision can be seen:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>weight_kg <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"fl\">62.5</span>, <span class=\"fl\">70.1</span>, <span class=\"dv\">71</span>, <span class=\"dv\">58</span>)</span>\n<span><span class=\"fu\">typeof</span>(weight_kg)</span>\n<span><span class=\"fu\">mean</span>(weight_kg)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;double&quot;\n[1] 65.4</code></pre>\n<p>The four weights now average 65.4 kg.</p>\n<p>Here the fix was easy, because you typed the values yourself. When the data arrive in a file, a column in which one cell says “71 kg” or “not weighed” arrives as text in exactly the same way. The section on reading a <dfn data-g=\"395\">raw file</dfn> shows how to catch that when you read it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The register and its four weights are made up. Real registers carry many kinds of stray text, and each needs its own decision.</p>\n<p>Typing a corrected value is right here only because nothing was read from a file. When the values come from a raw file, the correction belongs in a line of code that reads the file and changes the value, so the file stays as it was. Later sections build that habit.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now use real values. The book’s practice file, <code>penguins_raw.csv</code>, has 344 rows of penguin measurements. Its column “Body Mass (g)” gives each bird’s weight in grams. Here are its first ten values, typed in order. The fourth bird has no weight in the file, which R reads as <code>NA</code>:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span></code></pre></div>\n<p>Reading the file itself comes in a later section. The same ten numbers come out.</p>\n<p>Convert to kilograms by dividing by 1000. Each value is divided, and the missing one stays missing:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_kg <span class=\"ot\">&lt;-</span> body_mass_g <span class=\"sc\">/</span> <span class=\"dv\">1000</span></span>\n<span>body_mass_kg</span></code></pre></div>\n<pre class=\"output\"><code> [1] 3.750 3.800 3.250    NA 3.450 3.650 3.625 4.675 3.475 4.250</code></pre>\n<p>The fourth value is still <code>NA</code>, because R has no weight for that bird.</p>\n<p>Ask which birds weigh more than 4000 g:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"sc\">&gt;</span> <span class=\"dv\">4000</span></span></code></pre></div>\n<pre class=\"output\"><code> [1] FALSE FALSE FALSE    NA FALSE FALSE FALSE  TRUE FALSE  TRUE</code></pre>\n<p>Penguins 8 and 10 do. Penguin 4 gets <code>NA</code>, not <code>FALSE</code>. R does not know its weight, so it does not know the answer. An <code>NA</code> in the brackets gives an <code>NA</code> in the result:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g[body_mass_g <span class=\"sc\">&gt;</span> <span class=\"dv\">4000</span>]</span></code></pre></div>\n<pre class=\"output\"><code>[1]   NA 4675 4250</code></pre>\n<p>Add the ten weights and the same thing happens to the total:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">sum</span>(body_mass_g)</span></code></pre></div>\n<pre class=\"output\"><code>[1] NA</code></pre>\n<p>One missing value made the whole sum unknown. That is the rule working as it should. A sum that quietly left penguin 4 out would look like the total of ten birds and be the total of nine.</p>\n<p>Now the trap. To find the missing value, the natural thing to type is “equals NA”:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"sc\">==</span> <span class=\"cn\">NA</span></span></code></pre></div>\n<pre class=\"output\"><code> [1] NA NA NA NA NA NA NA NA NA NA</code></pre>\n<p>Every answer is <code>NA</code>, so this finds nothing. Asking whether a value equals an unknown value can only give “unknown”. The question R can answer is “is this value missing?”, and <code>is.na()</code> asks it:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">is.na</span>(body_mass_g)</span></code></pre></div>\n<pre class=\"output\"><code> [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>\n<p>Only the fourth is <code>TRUE</code>. Put an exclamation mark, <code>!</code>, in front to turn each <code>TRUE</code> into <code>FALSE</code> and each <code>FALSE</code> into <code>TRUE</code>. Inside square brackets, that keeps the values that are not missing:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>known_g <span class=\"ot\">&lt;-</span> body_mass_g[<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(body_mass_g)]</span>\n<span>known_g</span>\n<span><span class=\"fu\">length</span>(known_g)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3750 3800 3250 3450 3650 3625 4675 3475 4250\n[1] 9</code></pre>\n<p>Nine weights are known. <code>length()</code> counts the elements of a vector.</p>\n<p>Last, a warning about what you see. R prints a number rounded for display. It stores more digits than it prints. <dfn data-g=\"44\">Body mass index</dfn> (BMI) is weight in kg divided by the square of height in metres, in kg/m<sup>2</sup>. Work out one, for a made-up adult of 70.1 kg and 1.68 m:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>bmi <span class=\"ot\">&lt;-</span> <span class=\"fl\">70.1</span> <span class=\"sc\">/</span> <span class=\"fl\">1.68</span><span class=\"sc\">^</span><span class=\"dv\">2</span></span>\n<span>bmi</span>\n<span>bmi <span class=\"sc\">*</span> <span class=\"dv\">1000</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 24.83702\n[1] 24837.02</code></pre>\n<p>The first print shows 24.83702. Multiplying by 1000 shows digits that were there all along and were not printed. Your Book 0 rule still holds: the digits on the display are not the <dfn data-g=\"357\">precision</dfn> of the measurement. A weight to one decimal place does not give a BMI to five.</p>\n<p>The stored value is not exact either. R keeps most decimal fractions as a close approximation in binary, so a test of exact equality between two decimals can fail:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fl\">0.1</span> <span class=\"sc\">+</span> <span class=\"fl\">0.2</span> <span class=\"sc\">==</span> <span class=\"fl\">0.3</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] FALSE</code></pre>\n<p>The two sides differ by a tiny amount, far smaller than anything you measure. So never test decimals for exact equality. Round them to the precision you care about first, which the next section shows how to do.</p>",
+   "numberRefs": [
+    90
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The ten weights are real values from the practice file, but they are the first ten rows only. Nothing here describes the other 334 rows, or penguins in general.</p>\n<p>The BMI example uses one made-up adult. The digits it shows describe how R stores and prints a number, not how precise a weighing scale is.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to believe a column that looks like numbers holds numbers. Before you compute anything, print the vector and look for quotation marks, or ask <code>typeof()</code>.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p><code>x == NA</code> never finds a missing value. Use <code>is.na(x)</code>, and refuse any count of missing values that was made with <code>==</code>.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Do not make the <code>NA</code> go away by writing a 0 in its place. Find out how many values are missing first.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“NA” typed inside quotation marks is the two letters N and A, not a missing value.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never test two decimals with <code>==</code>. Report a number to the precision of the measurement behind it, whatever R prints.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p><code>is.na()</code> finds only R’s own <code>NA</code>. Suppose a raw file writes a missing weight as -99 or 999. To R, that is a weight of -99 or 999, and it goes into every mean until you tell R what the code means.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee says R gave a wrong mean, ask them to print the vector and point to the quotation marks or the <code>NA</code>. The habit of looking is the thing worth teaching.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A made-up thesis appendix shows this code and says “the mean haemoglobin of the five women could not be calculated because R gave an error”.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>hb_g_dl <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"fl\">11.2</span>, <span class=\"fl\">12.5</span>, <span class=\"st\">&quot;9.8*&quot;</span>, <span class=\"fl\">13.1</span>, <span class=\"fl\">10.4</span>)</span>\n<span><span class=\"fu\">mean</span>(hb_g_dl)</span></code></pre></div>\n<pre class=\"output\"><code>[1] NA\nWarning message:\nIn mean.default(hb_g_dl) : argument is not numeric or logical: returning NA</code></pre>\n<p>Haemoglobin is measured in grams per decilitre (g/dL). Say what actually happened, what the asterisk probably was, and how the analysis should go on without editing anything by hand.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>R did not give an error. It gave <code>NA</code> and a warning. The appendix misreports what happened, so start by printing the vector:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>hb_g_dl</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;11.2&quot; &quot;12.5&quot; &quot;9.8*&quot; &quot;13.1&quot; &quot;10.4&quot;</code></pre>\n<p>Every value is in quotation marks. The entry “9.8*” is text, so the whole vector became text, and <code>mean()</code> cannot average text.</p>\n<p>The asterisk was probably a mark copied from the record, such as a note that the value was rechecked. Only the person with the record can say. The analysis should go on by writing the decision as code, with a <dfn data-g=\"78\">comment</dfn> giving the reason, so a reader can see it. For example, if the record shows 9.8 g/dL is the value:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"co\"># 9.8* in the register: asterisk marks a recheck; the value is 9.8 g/dL</span></span>\n<span>hb_g_dl <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"fl\">11.2</span>, <span class=\"fl\">12.5</span>, <span class=\"fl\">9.8</span>, <span class=\"fl\">13.1</span>, <span class=\"fl\">10.4</span>)</span>\n<span><span class=\"fu\">mean</span>(hb_g_dl)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 11.4</code></pre>\n<p>The mean of the five values is 11.4 g/dL. Suppose instead the asterisk meant the value was rejected. Then the line would put <code>NA</code> there, and the report would give the mean of four women.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Without looking back, name the three types of vector this section uses. Say which one wins when they are mixed in <code>c()</code>. Then give the line that finds the missing values in a vector <code>x</code>.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Numeric (numbers), character (text) and logical (<code>TRUE</code> or <code>FALSE</code>). When they are mixed, everything becomes the highest type in the order logical, numeric, character, so one piece of text makes the whole vector text. The missing values are found with <code>is.na(x)</code>, never with <code>x == NA</code>.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Make a vector called <code>height_cm</code> holding the heights 98, 102.5 and 110 cm. Then print the same heights in metres.</p>",
+   "level": 1,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>height_cm <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">98</span>, <span class=\"fl\">102.5</span>, <span class=\"dv\">110</span>)</span>\n<span>height_cm <span class=\"sc\">/</span> <span class=\"dv\">100</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] 0.980 1.025 1.100</code></pre>\n<p>Each height is divided by 100, one at a time.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Before running them, say what type of vector each line makes and what it prints. Then run them and check.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">c</span>(<span class=\"dv\">1</span>, <span class=\"cn\">TRUE</span>, <span class=\"st\">&quot;no&quot;</span>)</span>\n<span><span class=\"fu\">c</span>(<span class=\"dv\">0</span>, <span class=\"cn\">TRUE</span>, <span class=\"cn\">FALSE</span>)</span></code></pre></div>",
+   "level": 2,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">c</span>(<span class=\"dv\">1</span>, <span class=\"cn\">TRUE</span>, <span class=\"st\">&quot;no&quot;</span>)</span>\n<span><span class=\"fu\">c</span>(<span class=\"dv\">0</span>, <span class=\"cn\">TRUE</span>, <span class=\"cn\">FALSE</span>)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;1&quot;    &quot;TRUE&quot; &quot;no&quot;\n[1] 0 1 0</code></pre>\n<p>The first holds text, so everything becomes text: the number 1 becomes “1” and <code>TRUE</code> becomes “TRUE”. The second holds a number and two logical values. Numeric is higher than logical, so <code>TRUE</code> becomes 1 and <code>FALSE</code> becomes 0.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">typeof</span>(<span class=\"fu\">c</span>(<span class=\"dv\">1</span>, <span class=\"cn\">TRUE</span>, <span class=\"st\">&quot;no&quot;</span>))</span>\n<span><span class=\"fu\">typeof</span>(<span class=\"fu\">c</span>(<span class=\"dv\">0</span>, <span class=\"cn\">TRUE</span>, <span class=\"cn\">FALSE</span>))</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;character&quot;\n[1] &quot;double&quot;</code></pre>\n<p>“double” is R’s name for its usual kind of number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Before running them, say what each line prints.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">c</span>(<span class=\"dv\">2</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">5</span>) <span class=\"sc\">+</span> <span class=\"dv\">1</span></span>\n<span><span class=\"fu\">c</span>(<span class=\"dv\">2</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">5</span>) <span class=\"sc\">&gt;</span> <span class=\"dv\">3</span></span></code></pre></div>",
+   "level": 3,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">c</span>(<span class=\"dv\">2</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">5</span>) <span class=\"sc\">+</span> <span class=\"dv\">1</span></span>\n<span><span class=\"fu\">c</span>(<span class=\"dv\">2</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">5</span>) <span class=\"sc\">&gt;</span> <span class=\"dv\">3</span></span></code></pre></div>\n<pre class=\"output\"><code>[1]  3 NA  6\n[1] FALSE    NA  TRUE</code></pre>\n<p>Adding 1 works on each element. The missing value stays missing, because 1 more than an unknown number is still unknown. The comparison gives <code>FALSE</code>, <code>NA</code>, <code>TRUE</code>: R cannot say whether an unknown number is more than 3.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>The column “Flipper Length (mm)” in <code>penguins_raw.csv</code> gives flipper lengths in millimetres. Its first ten values are 181, 186, 195, a missing value, 193, 190, 181, 195, 193 and 190. Make a vector of them with a name that carries the unit. Print them in centimetres, and say which penguins have a flipper longer than 190 mm.</p>",
+   "level": 4,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>flipper_mm <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">181</span>, <span class=\"dv\">186</span>, <span class=\"dv\">195</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">193</span>, <span class=\"dv\">190</span>, <span class=\"dv\">181</span>, <span class=\"dv\">195</span>, <span class=\"dv\">193</span>, <span class=\"dv\">190</span>)</span>\n<span>flipper_mm <span class=\"sc\">/</span> <span class=\"dv\">10</span></span>\n<span>flipper_mm <span class=\"sc\">&gt;</span> <span class=\"dv\">190</span></span></code></pre></div>\n<pre class=\"output\"><code> [1] 18.1 18.6 19.5   NA 19.3 19.0 18.1 19.5 19.3 19.0\n [1] FALSE FALSE  TRUE    NA  TRUE FALSE FALSE  TRUE  TRUE FALSE</code></pre>\n<p>There are 10 mm in a centimetre, so dividing by 10 gives centimetres: penguin 1’s flipper is 18.1 cm. Penguins 3, 5, 8 and 9 have flippers longer than 190 mm. Penguins 6 and 10 measure exactly 190 mm, which is not longer, so they get <code>FALSE</code>. Penguin 4 gets <code>NA</code>: its length is not in the file.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>The first ten body masses in <code>penguins_raw.csv</code> are 3750, 3800, 3250, a missing value, 3450, 3650, 3625, 4675, 3475 and 4250 g. Print the eighth penguin’s body mass in kilograms. Then print the body masses of the first three penguins in grams.</p>",
+   "level": 5,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span>\n<span>body_mass_g[<span class=\"dv\">8</span>] <span class=\"sc\">/</span> <span class=\"dv\">1000</span></span>\n<span>body_mass_g[<span class=\"dv\">1</span><span class=\"sc\">:</span><span class=\"dv\">3</span>]</span></code></pre></div>\n<pre class=\"output\"><code>[1] 4.675\n[1] 3750 3800 3250</code></pre>\n<p>The eighth penguin weighs 4.675 kg. Inside square brackets, <code>1:3</code> means positions 1, 2 and 3, so the second line gives the first three body masses, in grams.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Using the same ten body masses, make a vector of only the known body masses, in kilograms, and count how many there are.</p>",
+   "level": 6,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span>\n<span>known_kg <span class=\"ot\">&lt;-</span> body_mass_g[<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(body_mass_g)] <span class=\"sc\">/</span> <span class=\"dv\">1000</span></span>\n<span>known_kg</span>\n<span><span class=\"fu\">length</span>(known_kg)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 3.750 3.800 3.250 3.450 3.650 3.625 4.675 3.475 4.250\n[1] 9</code></pre>\n<p><code>is.na()</code> marks the missing value, <code>!</code> turns that round to mark the known ones, and the square brackets keep them. Nine of the ten body masses are known.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A colleague wants the tallest child’s height from a made-up school register. Their code and its output are below; <code>max()</code> gives the largest value. They report “the tallest child is 98 cm”. Find what broke, and say why the answer looks reasonable.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>height_cm <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"st\">&quot;98&quot;</span>, <span class=\"st\">&quot;102&quot;</span>, <span class=\"st\">&quot;110&quot;</span>)</span>\n<span><span class=\"fu\">max</span>(height_cm)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;98&quot;</code></pre>",
+   "level": 7,
+   "answer": "<p>The heights were typed in quotation marks, so they are text, not numbers. Text is compared character by character, so “98” comes after “102” and “110”.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">typeof</span>(height_cm)</span>\n<span>height_cm <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">98</span>, <span class=\"dv\">102</span>, <span class=\"dv\">110</span>)</span>\n<span><span class=\"fu\">max</span>(height_cm)</span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;character&quot;\n[1] 110</code></pre>\n<p>The tallest child is 110 cm. The wrong answer looks reasonable because 98 cm is a perfectly possible height, and nothing in the output says an error happened. The quotation marks around “98” in the output are the only clue.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A colleague checks a made-up list of six BMI values, in kg/m<sup>2</sup>, for missing entries. Their code and output are below. They write “no BMI values are missing”. Find what broke.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>bmi <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"fl\">22.4</span>, <span class=\"fl\">31.0</span>, <span class=\"cn\">NA</span>, <span class=\"fl\">27.9</span>, <span class=\"cn\">NA</span>, <span class=\"fl\">19.6</span>)</span>\n<span>bmi <span class=\"sc\">==</span> <span class=\"cn\">NA</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] NA NA NA NA NA NA</code></pre>",
+   "level": 7,
+   "answer": "<p><code>bmi == NA</code> asks whether each value equals an unknown value. The answer is always unknown, so every element is <code>NA</code>. The colleague read “no <code>TRUE</code>” as “nothing missing”. The test that can answer is <code>is.na()</code>:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">is.na</span>(bmi)</span>\n<span>bmi[<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(bmi)]</span></code></pre></div>\n<pre class=\"output\"><code>[1] FALSE FALSE  TRUE FALSE  TRUE FALSE\n[1] 22.4 31.0 27.9 19.6</code></pre>\n<p>The third and fifth values are missing, so four of the six BMI values are known. The wrong check looks reasonable because it runs without an error and prints something for every value.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A colleague marks which of five made-up adults have a BMI of 25 kg/m<sup>2</sup> or more. One BMI was not recorded. Their code and output are below, and they report “four of the five adults have a BMI of 25 or more”. Find what broke, and say why it looks reasonable.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>bmi <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"fl\">22.1</span>, <span class=\"fl\">27.4</span>, <span class=\"st\">&quot;NA&quot;</span>, <span class=\"fl\">30.2</span>, <span class=\"fl\">25.8</span>)</span>\n<span>bmi <span class=\"sc\">&gt;=</span> <span class=\"dv\">25</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] FALSE  TRUE  TRUE  TRUE  TRUE</code></pre>",
+   "level": 8,
+   "answer": "<p>The missing BMI was typed as “NA” inside quotation marks. That is the text N, A, not R’s missing value. One text value made the whole vector text, so <code>&gt;=</code> turned 25 into the text “25” and compared character by character. In this book’s setup that puts “NA” above “25”.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">typeof</span>(bmi)</span>\n<span>bmi <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"fl\">22.1</span>, <span class=\"fl\">27.4</span>, <span class=\"cn\">NA</span>, <span class=\"fl\">30.2</span>, <span class=\"fl\">25.8</span>)</span>\n<span>bmi <span class=\"sc\">&gt;=</span> <span class=\"dv\">25</span></span></code></pre></div>\n<pre class=\"output\"><code>[1] &quot;character&quot;\n[1] FALSE  TRUE    NA  TRUE  TRUE</code></pre>\n<p>Now the third adult gets <code>NA</code>. Three of the four adults with a recorded BMI have a BMI of 25 or more, and one adult is unknown. The wrong answer looks reasonable because three of its five answers are right, and the wrong one says <code>TRUE</code> with no warning.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A made-up draft report says: “Body mass was recorded for all of the first ten rows of the practice file.” The first ten values of “Body Mass (g)” are as in problem 5. Check the sentence with code. Then say what your check does not tell you.</p>",
+   "level": 9,
+   "answer": "<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span>\n<span><span class=\"fu\">is.na</span>(body_mass_g)</span>\n<span><span class=\"fu\">length</span>(body_mass_g[<span class=\"fu\">is.na</span>(body_mass_g)])</span></code></pre></div>\n<pre class=\"output\"><code> [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE\n[1] 1</code></pre>\n<p>One of the ten is missing, the fourth, so the sentence is wrong. A corrected sentence: “Body mass was recorded for 9 of the first 10 rows.”</p>\n<p>What the check does not tell you:</p>\n<ul>\n<li>Why the fourth body mass is missing. The file records only that it is not there.</li>\n<li>Anything about the other 334 rows. Across the whole column, the file has 2 missing body masses.</li>\n<li>Whether the nine recorded values are correct. A value can be present and wrong.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>In a made-up meeting, someone says: “In the first ten rows of the file, two body masses are above 4000 g.” The first ten body masses are as in problem 5. Check the claim with code, and then say what the result does not establish.</p>",
+   "level": 10,
+   "answer": "<p>A first try picks the body masses above 4000 g:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>body_mass_g <span class=\"ot\">&lt;-</span> <span class=\"fu\">c</span>(<span class=\"dv\">3750</span>, <span class=\"dv\">3800</span>, <span class=\"dv\">3250</span>, <span class=\"cn\">NA</span>, <span class=\"dv\">3450</span>, <span class=\"dv\">3650</span>, <span class=\"dv\">3625</span>, <span class=\"dv\">4675</span>, <span class=\"dv\">3475</span>, <span class=\"dv\">4250</span>)</span>\n<span>body_mass_g[body_mass_g <span class=\"sc\">&gt;</span> <span class=\"dv\">4000</span>]</span></code></pre></div>\n<pre class=\"output\"><code>[1]   NA 4675 4250</code></pre>\n<p>Three values come back, and one is <code>NA</code>, the comparison’s answer for penguin 4. So count only the known values that pass the test. The symbol <code>&amp;</code> means “and”: both conditions must be <code>TRUE</code>.</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span>heavy_g <span class=\"ot\">&lt;-</span> body_mass_g[<span class=\"sc\">!</span><span class=\"fu\">is.na</span>(body_mass_g) <span class=\"sc\">&amp;</span> body_mass_g <span class=\"sc\">&gt;</span> <span class=\"dv\">4000</span>]</span>\n<span>heavy_g</span>\n<span><span class=\"fu\">length</span>(heavy_g)</span></code></pre></div>\n<pre class=\"output\"><code>[1] 4675 4250\n[1] 2</code></pre>\n<p>Rows 8 and 10 have body masses above 4000 g. The claim holds for the nine rows whose body mass is known.</p>\n<p>What it does not establish:</p>\n<ul>\n<li>That exactly two of the ten body masses are above 4000 g. Penguin 4’s body mass is unknown, so the true count is two or three. “Two of the ten” hides that. “Two of the nine with a recorded body mass” does not.</li>\n<li>Anything about penguins in the rest of the file, or penguins in general.</li>\n</ul>"
+  }
+ ]
+}

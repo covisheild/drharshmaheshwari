@@ -1,0 +1,194 @@
+{
+ "format": 1,
+ "id": "s52-r1-c01",
+ "label": "1",
+ "title": "When data change silently: three documented failures",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"442\">silent change</dfn> is a change to data, or a choice about which data to use, that leaves no instruction a second person can read and run again, and that nothing on the screen announces.</p>\n<p><dfn data-g=\"198\">Gene</dfn> symbols turned into dates. Ziemann, Eren and El-Osta reported in 2016 that Microsoft Excel, used with its default settings, converted some gene symbols to dates: SEPT2 became “2-Sep” and MARCH1 became “1-Mar”.</p>\n<p>A spreadsheet formula and undeclared choices. One formula in Reinhart and Rogoff’s working spreadsheet averaged rows 30 to 44 instead of rows 30 to 49, which left out five countries entirely.</p>\n<p>Their papers’ highest category was public debt above 90% of gross domestic product (GDP), a measure of the size of an economy.</p>\n<p>Rows lost in transfer. Public Health England (PHE) stated on 4 October 2020 that 15,841 positive test results for coronavirus disease 2019 (COVID-19), from 25 September to 2 October, had been left out of the reported daily figures. It gave the cause as files that “exceeded the maximum file size” of the process that loads them into central systems. It does not name the software.</p>\n<p>The three cases differ in cause. What they share is that the change was silent: nothing announced it, and it came to light only later.</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Here is the trap with data. A number can change, or a row can go missing, and nothing on the screen tells you. The table looks right, so you trust it.</p>\n<ul>\n<li><strong>A program changed values as the file was opened.</strong> About one in five papers with Excel gene lists, in the 18 genomics journals the authors screened, carried such errors.</li>\n<li><strong>A formula covered the wrong rows, and choices went unsaid.</strong> Other data had been left out on purpose, and the paper never said so.</li>\n<li><strong>A transfer lost rows.</strong> Some files were too big for the system that loaded them.</li>\n</ul>\n<p>So this book follows one rule. You never edit the raw data file. Every change you make to the data is a line of code, kept in a file, that anyone can read and run again. And you count your rows before and after each step. You see what a line of code and a comment look like in section 2.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c01-phe-missing-results.png",
+   "alt": "A bar chart of the days from 25 September to 2 October 2020. Results not included: 957, 744, 757, 0, 1415, 3049, 4133 and 4786. The bars rise over the last four days.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Positive COVID-19 test results left out of England’s daily figures, by the day each should have been reported, as Public Health England’s statement of 4 October 2020 gives them: 957, 744, 757, 0, 1415, 3049, 4133 and 4786, a total of 15,841. The last three days hold 11,968 of them."
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c01-growth-three-ways.png",
+   "alt": "A bar chart with three bars: all the data, 2.2; spreadsheet error alone, 1.9; all problems together, as published, -0.1, a short bar below the zero line.",
+   "w": 1341,
+   "h": 657,
+   "caption": "Average growth in the high-debt category, in % a year, three ways. With all the data it was 2.2%. The spreadsheet error alone moved it only to 1.9%, 0.3 of a percentage point. All the problems together, the exclusions, the weighting, the spreadsheet error and a copying slip, gave the published -0.1%."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the gene names, because the failure is easy to picture.</p>\n<p>A gene symbol is a short code for one gene: SEPT2, MARCH1. Ziemann, Eren and El-Osta report that Excel, with its default settings, turns these into dates. SEPT2 becomes “2-Sep”. MARCH1 becomes “1-Mar”. Nobody typed a date. The program decided the text looked like one.</p>\n<p>The authors then went looking for how often this reached published papers. They wrote programs to screen 35,175 supplementary Excel files from 18 journals, published from 2005 to 2015. Supplementary files are the extra files published alongside a paper. They found gene lists attached to 3597 papers. They confirmed errors in 704 of those papers. Those 704 papers held 987 files with errors.</p>\n<p>Now check their headline figure yourself, as Book 0’s section on percentages taught you. Ask first: per cent of what? Of the papers that had gene lists in Excel files. Not of all papers in those journals.</p>\n<div class=\"working\">\n<p>704 divided by 3597 = 0.1957…<br />\n0.1957 times 100 = 19.57</p>\n</div>\n<p>That rounds to 19.6%, the figure they state. It is about one paper in five.</p>\n<p>Here is what made the error so hard to undo. A date carries no trace of the name it replaced. Of the 987 files with errors, 166 held nothing else, such as a gene’s position, from which the original names could be worked out. Those names are lost from the file.</p>\n<p>The world adjusted around the problem. In 2020 the committee that names human genes reported that it had renamed every symbol Excel turned into a date. SEPT1 is now SEPTIN1, and MARCH1 is now MARCHF1.</p>",
+   "numberRefs": [
+    39
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 19.6% describes papers with Excel gene lists in 18 journals from 2005 to 2015. It is not a rate for all papers, all journals or later years, and the authors could not screen supplementary files behind a paywall.</p>\n<p>The finding is about Excel’s behaviour in 2016, as the authors report it. Spreadsheet programs change between versions, and this course has not tested a current one. What carries over is the pattern: a program can change a value as it reads a file, and say nothing.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a case where the error sat inside a formula, and the larger problems were choices nobody wrote down.</p>\n<p>In 2010 Reinhart and Rogoff published figures on public debt and economic growth in 20 rich countries. Herndon, Ash and Pollin tried to rebuild them. From the data the authors had posted, they could not. The posted spreadsheets did not record which data series, years and methods the papers had used. Only when Reinhart and Rogoff sent their working spreadsheet could the replication begin.</p>\n<p>Follow what the working spreadsheet held. Count the years in which a country carried public debt above 90% of its GDP, the highest category the papers used.</p>\n<table style=\"width:93%;\">\n\n<thead>\n<tr>\n<th>Step</th>\n<th>Years counted</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>All the data</td>\n<td>110</td>\n</tr>\n<tr>\n<td>After the exclusions Reinhart and Rogoff chose</td>\n<td>96</td>\n</tr>\n<tr>\n<td>After those exclusions and the spreadsheet error</td>\n<td>71</td>\n</tr>\n</tbody>\n</table>\n<p>The spreadsheet error was one formula. It averaged rows 30 to 44 when the data ran to row 49. Five countries, Australia, Austria, Belgium, Canada and Denmark, fell out of every average. The authors note that the countries left out run in alphabetical order, a block of rows.</p>\n<p>The exclusions were choices. Some early post-war years for Australia, Canada and New Zealand were left out, and the papers never said so.</p>\n<p>The weighting was a third choice. Each country’s average counted once, whether it rested on one year or nineteen.</p>\n<p>Then read what each problem did to the answer. With all the data, average growth in the high-debt category was 2.2% a year. The published figure was −0.1%. Herndon and colleagues also put back each problem on its own. The spreadsheet error by itself moved the figure only from 2.2% to 1.9%. So did the exclusions alone, and so did the weighting alone. The three together, which the authors say interact strongly, brought it to 0.0%. A fourth slip, a figure copied wrongly, took it to the published −0.1%.</p>\n<p>Reinhart and Rogoff acknowledged the spreadsheet errors. In their 2013 working paper, Herndon and colleagues drew a lesson for people who analyse economic data: the advantages of reproducible code over working spreadsheets.</p>",
+   "numberRefs": [
+    40
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>It is tempting to tell this as “a spreadsheet slip changed world policy”. The replication does not say that. The slip alone moved the figure by 0.3 of a <dfn data-g=\"336\">percentage point</dfn>. The undeclared exclusions and the way countries were weighted mattered as much, and the authors stress that the problems work together.</p>\n<p>Code would not have stopped anyone choosing to leave data out. What a script does is show the choice, as a line someone can read and question.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>The third case is a transfer that dropped rows, and the numbers let you check the statement against itself.</p>\n<p>On 4 October 2020, PHE said that 15,841 positive COVID-19 test results had not reached the daily figures. The problem had been found overnight on Friday 2 October. The cause it gave: some files of results were bigger than the maximum file size the loading process could take. It put in a fix that splits large files.</p>\n<p>The statement gives the missing results day by day. Each was recorded on one day and should have appeared in the next day’s published figure.</p>\n<table style=\"width:81%;\">\n\n<thead>\n<tr>\n<th>Day it should have been reported</th>\n<th>Results not included</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>25 Sep</td>\n<td>957</td>\n</tr>\n<tr>\n<td>26 Sep</td>\n<td>744</td>\n</tr>\n<tr>\n<td>27 Sep</td>\n<td>757</td>\n</tr>\n<tr>\n<td>28 Sep</td>\n<td>0</td>\n</tr>\n<tr>\n<td>29 Sep</td>\n<td>1415</td>\n</tr>\n<tr>\n<td>30 Sep</td>\n<td>3049</td>\n</tr>\n<tr>\n<td>1 Oct</td>\n<td>4133</td>\n</tr>\n<tr>\n<td>2 Oct</td>\n<td>4786</td>\n</tr>\n</tbody>\n</table>\n<p>Add the column. Then add the last three days alone.</p>\n<div class=\"working\">\n<p>957 + 744 + 757 + 0 + 1415 + 3049 + 4133 + 4786 = 15841<br />\n3049 + 4133 + 4786 = 11968<br />\n11968 divided by 15841 = 0.7555…</p>\n</div>\n<p>The total matches the 15,841 in the statement. The last three days hold 11,968 results, and 11,968 out of 15,841 is about 75.6%. The statement says “over 75% (11,968)”. It checks.</p>\n<p>Now look at the shape of the column. The missing results were fewer than a thousand a day at first, then rose over the last four days to 4786. A loss that grows while the daily table still looks complete is one nobody sees until they compare one count with another.</p>\n<p>Here is what the statement does not say. It does not name the software, a file format or a row limit. You may read elsewhere that this was a spreadsheet problem. This statement does not say so, and neither does this book.</p>",
+   "numberRefs": [
+    41
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>PHE says the problem did not change anyone’s test result: everyone who tested positive got their result as normal and was advised to self-isolate. What was delayed was the count in the daily figures. The outstanding cases, the statement says, were passed to contact tracing by 1am on 3 October.</p>\n<p>The table gives the day each result should have been reported. The statement also describes the same results by the day they were recorded, one day earlier: 24 September to 1 October. Say which you mean when you quote the dates.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to believe a table because it looks complete. Before you trust a table, compare its row count, or a total, with the count you expected.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never edit the raw data file, and never save over it. Make every change in code that reads the <dfn data-g=\"395\">raw file</dfn> and writes a new one.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A choice about which data to leave out is part of the analysis. Write it as a line of code with a comment saying why.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Do not repeat “a spreadsheet slip changed government policy” or “Excel lost the COVID cases”. The replication found the slip alone moved the result from 2.2% to 1.9% a year. The PHE statement names no software. Quote what each source says, and no more.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>When you open someone else’s data file, look for values that have changed type, such as text turned into dates.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee says their numbers are right because they checked them on screen, ask how a second person would check them. If the answer is “by redoing it by hand”, the work has no record.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Writing every step in code does not make the steps right. What it changes is that the step is written down, so a reviewer can find the error and you can fix it once and rerun.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, name the three documented failures in this section. For each, say in one sentence what changed or went missing, and how it came to light.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Gene names turned into dates. Excel, with its default settings, turned names such as SEPT2 into dates. Ziemann and colleagues found this by checking published files with their own programs. They found errors in 704 of 3597 papers with Excel gene lists.</p>\n<p>The Reinhart and Rogoff spreadsheet. A formula averaged rows 30 to 44, not 30 to 49. Some data were also left out without saying so. Herndon and colleagues found both when they rebuilt the results from the authors’ own spreadsheet.</p>\n<p>The missing COVID-19 results. In England, 15,841 positive test results did not reach the daily figures. Some files were too big for the system that loaded them. PHE found the problem on 2 October 2020 and said so two days later.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>In a made-up department meeting, a senior colleague says: “Our thesis data are in one Excel file. Residents correct mistakes directly in the cells, so the file is always the cleanest version. That is good practice.”</p>\n<p>Using the three cases in this section, say what is lost when corrections are made directly in the file, and what you would propose instead.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Three things are lost.</p>\n<p>The original values. Once a cell is overwritten, the value that was first recorded is gone. If a correction was itself wrong, there is nothing to go back to. Ziemann and colleagues found 166 files in which gene names, once turned into dates, could not be recovered from the file at all.</p>\n<p>The record of what changed. Nobody can later see which cells were corrected, by whom, or why. In the Reinhart and Rogoff case, the replication could not start from the posted files. They did not record which data and methods had been used.</p>\n<p>The chance to check. A reviewer cannot rerun a correction typed into a cell. They can only trust it.</p>\n<p>The <dfn data-g=\"373\">proposal</dfn>: keep the file as it arrived from the data collection, and never save over it. Make every correction as a line of code. The code reads the raw file and fixes the value. A comment says why. The code then writes a new, cleaned file.</p>\n<p>Count the rows before and after. The colleague’s goal, a clean dataset, is still met. It is now made from the raw file every time the code runs.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A classmate’s draft introduction says: “Excel deleted 15,841 COVID-19 cases in England in 2020 because of its row limit.” Check this sentence against what PHE’s statement says, and rewrite it so that every part of it is supported.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Check the reference as Book 0 taught: find the source, confirm it, find the passage, read it.</p>\n<p>The number holds: PHE says 15,841 cases from 25 September to 2 October were not included in the reported daily figures.</p>\n<p>“Deleted” does not hold. The cases were delayed, not deleted. PHE says everyone who tested positive got their result as normal, and the outstanding cases were passed to contact tracing.</p>\n<p>“Excel” and “row limit” do not hold. The statement says some files “exceeded the maximum file size” of the process that loads them into central systems. It names no software and no row limit.</p>\n<p>A supported version, in two sentences: “In England, 15,841 positive COVID-19 test results from 25 September to 2 October 2020 were left out of the reported daily figures. Public Health England gave the cause as files that exceeded the maximum size the loading system could take.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. They say: “My data are small, a few hundred rows. I can see every cell. Why should I bother with code?” Teach them, using one of the three cases.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw a column of gene names on the board: SEPT2, MARCH1, and a few others. Next to it, draw the same column as Excel showed it: 2-Sep, 1-Mar.</p>\n<p>Ask: if you had typed the first column and later opened the file, would you notice? Most people say yes, for two rows. Then point out that the errors Ziemann and colleagues found sat in published papers, checked by authors, reviewers and editors. Being able to see every cell is not the same as looking at every cell.</p>\n<p>Then make the real point. Size is not the issue. The issue is whether a second person can see what was done. If every change is a line of code, the change is there to read. If it was typed into a cell, it is invisible.</p>\n<p>End with the rule they can use tomorrow: keep the raw file as it came, never save over it, and put every change in code.</p>"
+  }
+ ]
+}

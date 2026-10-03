@@ -1,0 +1,168 @@
+{
+ "format": 1,
+ "id": "s52-r1-c20",
+ "label": "20",
+ "title": "Does shared code rerun? What studies found",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A result is <dfn data-g=\"407\">reproducible</dfn> when the same data, analysed again with the same code, give the same result. A result is <dfn data-g=\"405\">replicated</dfn> when independent investigators collect new data on the same question and reach the same answer. Reproducing a result does not show that it is correct. Peng (2011) calls replication the ultimate standard for judging scientific claims. Between full replication and none he places a spectrum: a study is more or less reproducible depending on what data and code are made available.</p>\n<p>Trisovic, Lau, Pasquier and Crosas (2022) measured re-execution at scale. They took 2109 replication packages, the data and code that authors deposit with a published paper, from the Harvard Dataverse, a website where researchers deposit such files. The packages were published from 2010 to July 2020 and held 9078 R files.</p>\n<p>Each was run once as deposited and once after an automatic code cleaning. Files that ran out of time were excluded from the success rate.</p>\n<p>Their abstract reports that 74% of the R files failed to complete without error on first execution, and 56% after code cleaning. Their results table gives success rates of 25% without cleaning, 40% with cleaning and 56% for the better of the two runs. Errors that remained included packages missing or of an incompatible version, wrong paths and output folders, and objects that did not exist. Journals with the strictest data-sharing policies had the highest re-execution rates. Most packages came from the social sciences, and all from one website.</p>",
+   "refs": [
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p><strong>Reproduce</strong> means: take the same data, run the same code, get the same numbers.</p>\n<p><strong>Replicate</strong> means: collect new data on the same question and see whether the answer holds.</p>\n<p>Reproducing is the smaller test. It cannot tell you whether the analysis was right, only whether it was done as described.</p>\n<p>The first step of reproducing is that the code runs at all. One large study tested that. It took thousands of R files that researchers had shared with their published papers, and tried to run each on a clean computer. Most did not run.</p>\n<p>A <dfn data-g=\"427\">script</dfn> that runs is still not a result reproduced. It may run and print different numbers.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c20-reexecution-results.png",
+   "alt": "A bar chart with three groups: without code cleaning, with code cleaning, and best of both. Each has three bars: success 952, 1472 and 1581; error 2878, 2223 and 1238; time limit exceeded 3829, 3719 and 5790.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Trisovic and colleagues’ results table for R files shared on Harvard Dataverse, 2010 to July 2020: files that ran without error, stopped with an error, or exceeded the time limit. Without code cleaning: 952, 2878 and 3829 of 7659 files. With cleaning: 1472, 2223 and 3719 of 7414. Best of both runs: 1581, 1238 and 5790 of 8609. The table’s success rates, 25%, 40% and 56%, leave out the files that ran out of time."
+  },
+  {
+   "t": "figure",
+   "src": "s52-r1-c20-success-share-two-bases.png",
+   "alt": "A grouped bar chart of three runs, each with two bars. Share of files that finished: 0.2486, 0.3984, 0.5608. Share of all files with a result: 0.1243, 0.1985, 0.1836.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The same success counts from Trisovic and colleagues’ table as shares on two bases. Over successes and errors only, the table’s basis, they are 0.2486, 0.3984 and 0.5608: the table’s 25%, 40% and 56%. Over every file with a result, time-outs included, they are 952 ÷ 7659 = 0.1243, 1472 ÷ 7414 = 0.1985 and 1581 ÷ 8609 = 0.1836. On that basis the best of both runs is no better than the run with cleaning, because 5790 of its files ran out of time. Per cent of what decides the number."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a script that worked, on the computer it was written on. Here are its first lines, made up but typical, and shown, not run:</p>\n<div class=\"sourceCode\"><pre class=\"sourceCode r\"><code class=\"sourceCode r\"><span><span class=\"fu\">setwd</span>(<span class=\"st\">&quot;C:/Users/resident/Desktop/thesis final&quot;</span>)</span>\n<span><span class=\"fu\">library</span>(janitor)</span>\n<span></span>\n<span>survey <span class=\"ot\">&lt;-</span> <span class=\"fu\">read.csv</span>(<span class=\"st\">&quot;data_clean_v3.csv&quot;</span>)</span></code></pre></div>\n<p>Now move it to a colleague’s computer and run it. The first line asks for a folder that exists only on the author’s computer, and R stops. Suppose the colleague deletes it. The second line asks for a <dfn data-g=\"331\">package</dfn> their computer does not have, and R stops again. Suppose they <dfn data-g=\"231\">install</dfn> it. The third line asks for a file the author made by hand somewhere along the way and never shared, and R stops a third time. Nothing in the script was wrong on the day it was written. It depended on things that were not in the <dfn data-g=\"370\">project folder</dfn>.</p>\n<p>Trisovic and colleagues, whose study the definition describes, measured how often this happens. The team tried to run each file on a clean computer under three versions of R. They gave each file up to one hour, and each package up to five. Not every file got a result: when earlier files used up a package’s five hours, the rest never ran. Then they tried again after an automatic cleaning step. It removed absolute paths, the <code>C:/Users/...</code> kind, fixed how the text of each file was stored, and added lines that install any package the code loads, if it is missing.</p>\n<p>Here is their results table, as they give it. A file counts as a success if any of the three versions of R ran it to the end without an error. “Time limit exceeded” means the file was still running when its hour ran out. The paper does not spell out the “best of both” row. Its counts fit the paper’s rule applied to both runs together, so a file that errored in one run and ran out of time in the other is left out.</p>\n<table style=\"width:89%;\">\n\n<thead>\n<tr>\n<th>Run</th>\n<th>Success</th>\n<th>Error</th>\n<th>Time limit exceeded</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>without code cleaning</td>\n<td>952</td>\n<td>2878</td>\n<td>3829</td>\n</tr>\n<tr>\n<td>with code cleaning</td>\n<td>1472</td>\n<td>2223</td>\n<td>3719</td>\n</tr>\n<tr>\n<td>best of both</td>\n<td>1581</td>\n<td>1238</td>\n<td>5790</td>\n</tr>\n</tbody>\n</table>\n<p>The table gives success rates of 25% without cleaning, 40% with cleaning and 56% for the best of both. Now ask Book 0’s question: per cent of what? Add each row. Without cleaning, 952 + 2878 + 3829 = 7659 files had a result. With cleaning, 1472 + 2223 + 3719 = 7414. For the best of both, 1581 + 1238 + 5790 = 8609. The table gives the same totals.</p>\n<p>Now divide each success count by successes and errors only, leaving out the files that ran out of time:</p>\n<div class=\"working\">\n<p>952 ÷ (952 + 2878) = 0.2486<br />\n1472 ÷ (1472 + 2223) = 0.3984<br />\n1581 ÷ (1581 + 1238) = 0.5608</p>\n</div>\n<p>Those round to the table’s 25%, 40% and 56%. So the success rate is a share of the files that finished, one way or the other. The files that ran out of time are left out, as the paper says, because they might have run with more time. They are not a small group: 3829 of the 7659 files in the first run.</p>\n<p>The abstract gives its figures the other way round: 74% of R files “failed to complete without error” on first execution, and 56% after cleaning. Those two are the authors’ summary. The table’s rates are on a different basis, and its 56% is a success rate where the abstract’s 56% is a failure rate. The paper does not show how the abstract’s two figures were worked out. So quote the abstract’s sentence as the abstract’s, and the table’s rates with the table’s labels, and never mix the two.</p>\n<p>Last, the reasons. The cleaning fixed every error caused by <code>setwd()</code>, the line that set the <dfn data-g=\"508\">working directory</dfn> to a folder on the author’s computer. It also fixed many errors about packages, by installing them. What was left included packages that were missing or of a version that no longer worked, paths to folders that did not exist, output files that were never saved, and objects the code used before anything had made them.</p>",
+   "numberRefs": [
+    353
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The three-line script is made up. Its three failures are the kinds the study reports, not a finding about any one script.</p>\n<p>The study is of one website, the Harvard Dataverse, and most of its packages came from the social sciences. Its success rate counts only whether a file ran to the end without an error. It does not say whether the file printed the paper’s numbers.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the second half of the claim: a file that runs is not a result reproduced. Trisovic and colleagues tested that too, on a small scale. They found 127 replication packages in which every R file ran without an error. They picked three <dfn data-g=\"29\">at random</dfn> and compared what the code printed with what the papers reported.</p>\n<p>In the first, two of the three logs came out almost identical to the authors’ own. The third nearly matched, but some <dfn data-g=\"116\">decimal</dfn> digits differed. A package that the code used was not available for the version of R it ran under, which may explain the difference. In the second, the script printed its two correlation <dfn data-g=\"73\">coefficients</dfn> but could not save the plot it was meant to make. In the third, the numbers printed, and the plots, which were meant to pop up on a screen, did not appear.</p>\n<p>Three packages are too few to give a rate. What they show is the gap between the two words. “Ran without an error” is a fact about the code. “Reproduced” is a fact about the result, and it needs someone to compare the output with the paper.</p>\n<p>Now place your own thesis on Peng’s spectrum. Where it sits depends, in his words, on “what data and code are made available”. At the far end, someone collects new data in another district and asks the same question: that is replication, and no amount of tidy code gives it to you.</p>\n<p>A project folder that reruns from raw data with one command makes both your data and your code available. That is the build this book asks for.</p>",
+   "numberRefs": [
+    353
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The three packages were picked at random from 127, and three is a handful. The study reports what it found in them; it does not give a share of shared code that reproduces its paper.</p>\n<p>The spectrum is Peng’s description, not a scale with measured steps. Where a given study sits on it is a judgement about what was shared, not a number.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>One study took 9078 R files shared with published papers on the Harvard Dataverse, deposited from 2010 to July 2020. Its authors report that 74% failed to run without an error on first execution. Quote it with that source, sample and <dfn data-g=\"114\">date</dfn>, never as “most research code is broken”.</p>",
+     "tag": "number",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The error is to think that sharing your code makes your work reproducible. Code that sets the working directory to your own folder stops on its first line on another computer.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you quote a <dfn data-g=\"334\">percentage</dfn> from a study, find what it is a share of. The study’s 25% success rate leaves out the files that ran out of time; its abstract’s 74% “failed” is on another basis.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Run your script on a clean computer, or in a fresh R <dfn data-g=\"434\">session</dfn>, before you share it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Code that runs is not a result reproduced.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A reproducible analysis can still be wrong. Do not offer reproducibility as evidence that a finding is true.</p>",
+     "tag": "boundary",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Journals with the strictest data-sharing policies had the highest re-execution rates in this study. That is a correlation across a few journals, not a measured effect of the policy.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The finding is that most R files shared on Harvard Dataverse from 2010 to July 2020 did not rerun as deposited. Studies of other websites, fields and years that find most files running would overturn it.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A classmate’s thesis says, in its methods: “All code is available on request, so the analysis is fully reproducible.” Say what is wrong with the sentence, using this section’s evidence, and write a sentence that would be true.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The sentence makes two claims, and neither follows.</p>\n<p>“Available on request” is not shared. On Peng’s spectrum, a study is more or less reproducible depending on what data and code are made available. Code kept on the author’s own computer has not been made available. A request may never be answered, and the computer may not last.</p>\n<p>“So the analysis is fully reproducible” claims that the code would run on someone else’s computer and print the same numbers. Nobody has tested that. One large study took 9078 R files deposited with published papers. Its authors report that 74% failed to run without an error the first time. Among the common causes were a working directory on the author’s computer and packages that were missing.</p>\n<p>And “reproducible” would not mean “right”. Peng: being reproducible “does not guarantee the quality, correctness, or validity of the published results.”</p>\n<p>A true sentence describes what was done. For example: “The raw data and one script that produces every table and figure from them are deposited at [website and identifier]. The script was run from a fresh R session on a second computer, and gave the reported results.” Write the second sentence only if someone actually did it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A blog post says: “A Harvard study found only 25% of research code works.” Using the results table in this section, say what the 25% is a share of, what it leaves out, and what the sentence gets wrong.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The 25% is the table’s success rate for the run without code cleaning. Dividing 952 successes by 952 successes plus 2878 errors gives 0.2486, which rounds to 25%. So it is a share of the files that finished, with or without an error.</p>\n<p>It leaves out the 3829 files that ran out of their hour. Some of those might have run with more time, which is why the authors left them out.</p>\n<p>What the sentence gets wrong:</p>\n<ul>\n<li>“Research code” is too wide. The study is of R files on one website, the Harvard Dataverse, deposited from 2010 to July 2020, most from the social sciences.</li>\n<li>“Works” is too wide. A success means the file ran to the end without an error on a clean computer, under one of three versions of R. It does not mean the file printed the paper’s numbers.</li>\n<li>“Harvard” names the website and the institute that built it. It says nothing about how far the finding reaches.</li>\n<li>It leaves out the second run. After an automatic cleaning step, the table’s success rate rose to 40%.</li>\n</ul>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Without looking back, say what “reproduce” and “replicate” each mean. Then name three reasons the study in this section found for shared R code failing to run.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Reproduce: run the same code on the same data and get the same result. Replicate: collect new data on the same question, usually by other investigators, and see whether the answer holds.</p>\n<p>Any three of these reasons:</p>\n<ul>\n<li>A line that sets the working directory to a folder on the author’s computer, with <code>setwd()</code>.</li>\n<li>A package that is not installed.</li>\n<li>A package of a version that no longer works with the code.</li>\n<li>A <dfn data-g=\"333\">path</dfn> to a folder or file that does not exist on the new computer, or an output file never saved.</li>\n<li>An <dfn data-g=\"321\">object</dfn> the code uses before anything has made it.</li>\n</ul>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A journalist has three minutes and asks you: “Is it true that most scientists’ code doesn’t even run?” Answer without jargon, say how sure you are, and give them one sentence they could quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>For one large body of code, yes, as deposited. A team took over nine thousand files of code in the R language, shared by researchers alongside published papers on one big website. They tried to run each on a clean computer. In their own summary, about three in four did not run to the end without an error the first time. After a simple automatic fix-up they report a little over half still failing.</p>\n<p>How sure? Fairly, for that website. It was one website, mostly social science, code shared from 2010 to 2020. It does not tell you about every field, or about code that was never shared.</p>\n<p>Two things matter more than the figure. Many failures were boring: the code pointed at a folder on the author’s own computer, or needed a piece of software that was not there. And running is not the same as being right. Code can run perfectly and still give a wrong answer.</p>\n<p>A quotable sentence: “One large study looked at R code shared on one research website. About three in four files did not run to the end without an error. Many of the reasons are simple to prevent.”</p>"
+  }
+ ]
+}
