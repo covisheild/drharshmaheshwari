@@ -17,7 +17,7 @@ health professionals; nothing goes under For Everyone).
   body text is off-white (~`#d6d6d6`), not `#fff`. Follow the site's existing theme toggle
   (`ThemeToggle.astro`, `data-theme`); the reader overrides `--bg` to `#000` in dark.
   Figures with white backgrounds sit on a slightly dimmed card in black mode.
-- **No highlighting** for now. Positions are stored per paragraph, so it can be added later.
+- ~~No highlighting for now~~ (3 Oct 2026: added, see the last section).
 - **Interactive** (Harsh wants this): the reader presents existing fields interactively; it never
   adds or rewrites content.
 
@@ -177,5 +177,5 @@ separate commit so it can be reviewed on a Preview before `main`:
    tab hide, the place alone once a minute. Tests: `tests/booksync.test.mjs`, `tests/api.test.mjs` (including a rows-read check).
    The trainers still download everything on each page load (`/api/progress/<trainer>` without `since`); they can use the same cursor later.
 2. Image zoom (done): `src/reader/zoom.ts`; tests in `tests/e2e.mjs` ("Figure viewer").
-3. Highlights and notes. 4. "Copy for AI" (no server, no cost; the reader's own ChatGPT/Claude/Gemini).
+3. Highlights and notes (done): see "Highlights and notes" in `CLAUDE.md`. Choices Harsh asked for: nothing opens unless wanted. Under **Aa**: when selecting text show a bar / highlight at once / do nothing; colour; Note button on or off; show or hide highlights. 4. "Copy for AI" (no server, no cost; the reader's own ChatGPT/Claude/Gemini).
    Hosting an AI ourselves is parked: it needs sign-in, a daily cap per person, a monthly budget switch and a passage-only prompt first.

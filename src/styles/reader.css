@@ -68,6 +68,7 @@ html.reading { overflow-anchor: none; scroll-behavior: auto; } /* load() keeps y
   position: fixed; z-index: 60; top: calc(var(--barh) + 8px); right: 12px; width: min(320px, calc(100vw - 24px)); padding: .9rem 1rem;
   background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 12px 32px rgb(0 0 0 / .18);
   font-family: var(--font-body); font-size: .9rem;
+  max-height: calc(100dvh - var(--barh) - 20px); overflow-y: auto; overscroll-behavior: contain;
 }
 .rd-aa-row { display: grid; gap: .4rem; margin-bottom: .8rem; }
 .rd-aa-row:last-child { margin-bottom: 0; }
@@ -86,8 +87,8 @@ html.reading { overflow-anchor: none; scroll-behavior: auto; } /* load() keeps y
 .rd-side-tabs { display: flex; gap: .25rem; padding: .6rem .75rem .4rem; border-bottom: 1px solid var(--line); }
 .rd-side-tabs button { flex: 1; min-height: 36px; border: 0; border-radius: 6px; background: none; color: var(--ink-2); font: 600 .85rem var(--font-body); cursor: pointer; }
 .rd-side-tabs [aria-selected='true'] { background: var(--surface-2); color: var(--ink); }
-.rd-toc, .rd-marks { overflow-y: auto; overscroll-behavior: contain; padding: .5rem .5rem 2rem; flex: 1; }
-.rd-toc ol, .rd-marks ol { list-style: none; margin: 0; padding: 0; }
+.rd-toc, .rd-marks, .rd-notes { overflow-y: auto; overscroll-behavior: contain; padding: .5rem .5rem 2rem; flex: 1; }
+.rd-toc ol, .rd-marks ol, .rd-notes ol { list-style: none; margin: 0; padding: 0; }
 .rd-toc-ph { margin: .9rem .5rem .3rem; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
 .rd-toc a, .rd-marks a, .rd-toc-top {
   display: flex; gap: .55rem; padding: .42rem .5rem; border-radius: 6px; color: var(--ink-2); text-decoration: none; line-height: 1.3;
@@ -351,3 +352,84 @@ html.reading { overflow-anchor: none; scroll-behavior: auto; } /* load() keeps y
 .rd-zoom-sheet { padding: 6px; border-radius: 6px; background: #fff; transform-origin: center; will-change: transform; }
 .rd-zoom-sheet img { display: block; max-width: none; user-select: none; -webkit-user-drag: none; }
 :root[data-theme='dark'] .rd-zoom-sheet { filter: brightness(.9); }
+
+/* ---------- highlights and notes (highlights.ts, notes.ts) ----------
+   --hl-*: the tint behind highlighted words; --sw-*: the swatch on the buttons. Both are chosen so that the book's text
+   keeps 4.5:1 contrast on the tint in the white and the pure black theme (checked in tests/e2e.mjs). */
+:root {
+  --hl-0: #ffe27a; --hl-1: #b9eaa9; --hl-2: #b5daff; --hl-3: #ffc4da; --hl-flash: #ffd0a0;
+  --sw-0: #f5c400; --sw-1: #4cb944; --sw-2: #3d8bfd; --sw-3: #f06292;
+}
+:root[data-theme='dark'] {
+  --hl-0: #5b4b00; --hl-1: #1f4d23; --hl-2: #14406f; --hl-3: #6c2243; --hl-flash: #6b3d10;
+  --sw-0: #e0b400; --sw-1: #3fa636; --sw-2: #4a94ff; --sw-3: #e2527f;
+}
+::highlight(hl-0), ::highlight(hl-0n) { background-color: var(--hl-0); }
+::highlight(hl-1), ::highlight(hl-1n) { background-color: var(--hl-1); }
+::highlight(hl-2), ::highlight(hl-2n) { background-color: var(--hl-2); }
+::highlight(hl-3), ::highlight(hl-3n) { background-color: var(--hl-3); }
+/* A highlight that has a note is underlined as well, so notes can be found by eye. */
+::highlight(hl-0n), ::highlight(hl-1n), ::highlight(hl-2n), ::highlight(hl-3n) { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+::highlight(hl-flash) { background-color: var(--hl-flash); }
+
+.rd-dots { display: flex; gap: .15rem; }
+.dot { width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; display: grid; place-items: center; }
+.dot::before { content: ''; width: 26px; height: 26px; border-radius: 50%; background: var(--sw); box-shadow: inset 0 0 0 1.5px rgb(0 0 0 / .3); }
+.dot[aria-current='true']::before, .dot[aria-checked='true']::before { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--ink); }
+.dot:focus-visible { outline: 2px solid var(--b-mark); outline-offset: 0; }
+
+.rd-sel {
+  position: fixed; z-index: 70; display: flex; align-items: center; gap: .2rem; padding: .25rem; border-radius: 12px;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 10px 28px rgb(0 0 0 / .24);
+  font-family: var(--font-body); user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+}
+.rd-sel[hidden], .rd-hl[hidden] { display: none; }
+:root[data-theme='dark'] .rd-sel, :root[data-theme='dark'] .rd-hl { background: #111; border-color: #333; }
+.rd-sel-note { min-height: 40px; padding: 0 .85rem; border: 0; border-radius: 8px; background: var(--surface-2); color: var(--ink); font: 600 .9rem var(--font-body); cursor: pointer; }
+.rd-sel-note:hover { background: var(--line); }
+.rd-sel-note:focus-visible { outline: 2px solid var(--b-mark); }
+
+.rd-hl {
+  position: fixed; z-index: 72; width: min(340px, calc(100vw - 16px)); padding: .6rem .7rem .7rem; border-radius: 12px; outline: none;
+  background: var(--surface); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 16px 40px rgb(0 0 0 / .28); font: .9rem/1.45 var(--font-body);
+}
+.rd-hl-top { display: flex; align-items: center; justify-content: space-between; }
+.rd-hl-x { width: 40px; height: 40px; border: 0; background: none; color: var(--ink-3); font-size: 1.4rem; cursor: pointer; border-radius: 8px; }
+.rd-hl-quote { margin: .25rem 0 .5rem; padding-left: .55rem; border-left: 3px solid var(--line); color: var(--ink-2); font-size: .82rem; line-height: 1.4; }
+.rd-hl-note { display: block; width: 100%; min-height: 4.6em; padding: .5rem .6rem; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font: inherit; resize: vertical; }
+.rd-hl-note:focus-visible { outline: 2px solid var(--b-mark); outline-offset: 1px; }
+.rd-hl-actions { display: flex; align-items: center; justify-content: space-between; gap: .6rem; margin-top: .45rem; min-height: 36px; }
+.rd-hl-actions button { min-height: 36px; padding: 0 .2rem; border: 0; background: none; color: var(--ink-2); font: 600 .85rem var(--font-body); text-decoration: underline; cursor: pointer; }
+.rd-hl-saved { color: var(--ink-3); font-size: .8rem; }
+@media (max-width: 700px) {
+  /* On a phone the card is a sheet at the bottom, lifted above the keyboard (highlights.ts sets --kb). */
+  .rd-hl { left: 8px; right: 8px; width: auto; top: auto !important; bottom: calc(8px + var(--kb, 0px)); }
+}
+
+/* Aa panel: what selecting text does */
+.rd-aa-help { margin: 0; color: var(--ink-3); font-size: .8rem; line-height: 1.4; }
+.rd-aa-opts { gap: .1rem; }
+.rd-sw { display: flex; align-items: center; justify-content: space-between; gap: .6rem; min-height: 40px; padding: 0; border: 0; background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.rd-sw::after {
+  content: ''; flex: none; width: 40px; height: 24px; border-radius: 12px;
+  background: radial-gradient(circle at 12px 50%, #fff 9px, transparent 10px), var(--ink-3);
+}
+.rd-sw[aria-checked='true']::after { background: radial-gradient(circle at calc(100% - 12px) 50%, #fff 9px, transparent 10px), var(--b-ink); }
+.rd-sw:focus-visible { outline: 2px solid var(--b-mark); outline-offset: 2px; }
+.rd-aa-row .rd-dots { justify-content: space-between; max-width: 220px; }
+
+/* Notes tab */
+.rd-notes-tools { display: flex; flex-wrap: wrap; gap: .4rem; padding: .2rem .3rem .5rem; }
+.rd-notes-tools[hidden] { display: none; }
+.rd-notes-tools button { min-height: 36px; padding: 0 .75rem; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font: 600 .82rem var(--font-body); cursor: pointer; }
+.rd-notes-tools button:hover { background: var(--surface-2); }
+.rd-notes-status { margin: 0; padding: 0 .55rem; min-height: 1.2em; color: var(--ink-3); font-size: .8rem; }
+.rd-nt { display: flex; flex-direction: column; gap: .2rem; width: 100%; padding: .5rem .55rem; border: 0; border-radius: 6px; background: none; color: var(--ink-2); font: inherit; text-align: left; line-height: 1.35; cursor: pointer; }
+.rd-nt:hover { background: var(--surface-2); color: var(--ink); }
+.rd-nt:focus-visible { outline: 2px solid var(--b-mark); outline-offset: -2px; }
+.rd-nt-top { display: flex; align-items: center; gap: .45rem; }
+.rd-nt .sw { flex: none; width: 12px; height: 12px; border-radius: 50%; background: var(--dot); box-shadow: inset 0 0 0 1px rgb(0 0 0 / .3); }
+.rd-nt .n { font-weight: 700; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.rd-nt .flag { margin-left: auto; font-size: .72rem; font-weight: 600; color: var(--warn-c, var(--ink-3)); }
+.rd-nt-text { font-size: .82rem; overflow-wrap: anywhere; }
+.rd-nt-body { padding-left: .55rem; border-left: 3px solid var(--line); color: var(--ink); font-size: .82rem; overflow-wrap: anywhere; }

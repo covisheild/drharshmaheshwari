@@ -8,15 +8,22 @@
 // through BookProgressStore; signing in is never needed.
 
 import { numberParagraphs, renderSection } from './render';
-import { BookProgressStore, type ReaderPrefs } from './store';
+import { BookProgressStore, type ReaderPrefs, type SelectMode } from './store';
 import { SyncedBookStore } from './sync';
 import { mountReaderAccount, mountReaderMe } from './account';
 import { dueCount } from './review';
 import { mountZoom } from './zoom';
+import { mountHighlights, type HighlightApi } from './highlights';
+import { mountNotes } from './notes';
 import type { GlossaryEntry, Location, OutlinePart, Reference, Section } from './types';
 
 interface PageData { outline: OutlinePart[]; references: { part: string; items: Reference[]; note: string | null }[]; glossary: GlossaryEntry[]; sizes: number[] }
 
+const SELECT_HELP: Record<SelectMode, string> = {
+  bar: 'A small bar with your colours appears under the text you select.',
+  quick: 'Text you select is highlighted at once in your colour. Nothing else opens.',
+  off: 'Selecting text works as on any web page. Highlights you made stay.',
+};
 const WIDTHS = [30, 36, 44]; // line width, in em of the body text
 const SAVE_AFTER = 2500;     // ms after scrolling stops
 
@@ -49,11 +56,17 @@ export function startReader() {
     root.style.setProperty('--rd-measure', `${(WIDTHS[prefs.width] ?? WIDTHS[1]) * px}px`);
     root.querySelectorAll<HTMLButtonElement>('[data-size]').forEach((b) => b.setAttribute('aria-checked', String(Number(b.dataset.size) === prefs.size)));
     root.querySelectorAll<HTMLButtonElement>('[data-width]').forEach((b) => b.setAttribute('aria-checked', String(Number(b.dataset.width) === prefs.width)));
+    root.querySelectorAll<HTMLButtonElement>('[data-select]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.select === prefs.select)));
+    root.querySelectorAll<HTMLButtonElement>('#rd-aa-panel [data-colour]').forEach((b) => b.setAttribute('aria-checked', String(Number(b.dataset.colour) === prefs.colour)));
+    root.querySelectorAll<HTMLButtonElement>('[data-opt]').forEach((b) => b.setAttribute('aria-checked', String(!!prefs[b.dataset.opt as 'note' | 'show'])));
+    const help = document.getElementById('rd-aa-help');
+    if (help) help.textContent = `${SELECT_HELP[prefs.select]} Keyboard: select text, then press H.`;
     sizePlaceholders();
   };
 
   // ---------------------------------------------------------------- lazy sections
   const loading = new Map<string, Promise<void>>();
+  let marks: HighlightApi | null = null; // highlights and notes, mounted below
 
   function sizePlaceholders() {
     const sample = root.querySelector<HTMLElement>('.rd-main')!;
@@ -82,6 +95,7 @@ export function startReader() {
         body.style.height = '';
         body.dataset.state = 'done';
         numberParagraphs(body);
+        marks?.sectionLoaded(id, body);
         restorePractice(body);
         // Correct now, in the same task as the change: a scroll event handled before the ResizeObserver
         // runs would otherwise take the shifted position as the new anchor.
@@ -283,11 +297,17 @@ export function startReader() {
     const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button');
     if (!b) return;
     const keep = current()?.loc;
-    if (b.dataset.size) prefs = { ...prefs, size: Number(b.dataset.size) };
-    if (b.dataset.width) prefs = { ...prefs, width: Number(b.dataset.width) };
+    let reflow = false;
+    if (b.dataset.size) { prefs = { ...prefs, size: Number(b.dataset.size) }; reflow = true; }
+    if (b.dataset.width) { prefs = { ...prefs, width: Number(b.dataset.width) }; reflow = true; }
+    if (b.dataset.select) prefs = { ...prefs, select: b.dataset.select as SelectMode };
+    if (b.dataset.colour) prefs = { ...prefs, colour: Number(b.dataset.colour) };
+    if (b.dataset.opt === 'note') prefs = { ...prefs, note: !prefs.note };
+    if (b.dataset.opt === 'show') prefs = { ...prefs, show: !prefs.show };
     BookProgressStore.setPrefs(prefs);
     applyPrefs();
-    if (keep) void jumpTo(keep);
+    marks?.prefsChanged();
+    if (reflow && keep) void jumpTo(keep);
   });
   document.addEventListener('click', () => { if (!panel.hidden) { panel.hidden = true; aa.setAttribute('aria-expanded', 'false'); } });
 
@@ -422,6 +442,7 @@ export function startReader() {
   // ---------------------------------------------------------------- your other devices
   // When the account copy arrives (sync.ts), bookmarks and practice marks from other devices appear here.
   store.subscribe(() => {
+    marks?.refresh();
     drawMarks();
     updateMarkButton(current()?.loc);
     root.querySelectorAll<HTMLElement>('.rd-body[data-state="done"]').forEach(restorePractice);
@@ -453,6 +474,24 @@ export function startReader() {
   drawDue();
 
   mountZoom(root);
+
+  // ---------------------------------------------------------------- highlights and notes
+  const notes = mountNotes({
+    panel: side.querySelector<HTMLElement>('.rd-notes')!,
+    highlights: () => store.highlights(),
+    api: () => marks!,
+    secs: byId,
+    book: { id: bookId, title: root.dataset.title!, version: root.dataset.version!, url: root.dataset.url!, licence: root.dataset.licence!, author: root.dataset.author! },
+    leave: () => { if (drawer()) setSide(false); },
+  });
+  marks = mountHighlights({
+    root, store, secs: byId, topline,
+    getPrefs: () => prefs,
+    setPrefs: (patch) => { prefs = { ...prefs, ...patch }; BookProgressStore.setPrefs(prefs); applyPrefs(); },
+    jumpTo,
+    onChange: () => notes.draw(),
+  });
+  marks.refresh(); // the Notes tab lists highlights in sections that have not been loaded yet
 
   // ---------------------------------------------------------------- start
   applyPrefs();

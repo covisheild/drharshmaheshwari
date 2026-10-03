@@ -139,7 +139,7 @@ test('books: reading place (newest wins), bookmarks (deletions stick), practice 
     return body;
   };
   const loc = (s, p = 0, f = 0) => ({ s, p, f });
-  assert.deepEqual(await get(), { progress: null, bookmarks: [] });
+  assert.deepEqual(await get(), { progress: null, bookmarks: [], highlights: [] });
 
   assert.equal((await post('/api/books/b0', sid, { progress: { version: '1.2', loc: loc('b0-r0-c05', 3, 0.5), percent: 0.1, updated: 2000 } })).status, 200);
   assert.equal((await post('/api/books/b0', sid, { progress: { version: '1.2', loc: loc('b0-r0-c02'), percent: 0.02, updated: 1000 } })).status, 200, 'an older place');
@@ -157,7 +157,7 @@ test('books: reading place (newest wins), bookmarks (deletions stick), practice 
   await post('/api/books/b0', sid, { bookmarks: [mark] });
   assert.equal((await get()).bookmarks[0].deleted, 5000, 'a deletion is not undone by a device that still had the bookmark');
 
-  assert.deepEqual(await get(other), { progress: null, bookmarks: [] }, 'another person sees nothing');
+  assert.deepEqual(await get(other), { progress: null, bookmarks: [], highlights: [] }, 'another person sees nothing');
   assert.equal((await post('/api/books/b0', sid, { progress: { version: '1.2', loc: { s: 'X Y', p: 0, f: 0 }, percent: 0, updated: 1 } })).status, 400);
   assert.equal((await post('/api/books/b0', sid, { bookmarks: [{ ...mark, id: 'm2', snippet: 'x'.repeat(201) }] })).status, 400);
   assert.equal((await post('/api/books/B0!', sid, {})).status, 404);
@@ -168,7 +168,7 @@ test('books: reading place (newest wins), bookmarks (deletions stick), practice 
 
   const del = await handleApi(req('/api/books/b0', { method: 'DELETE', headers: { cookie: sid, origin: ORIGIN } }), env);
   assert.equal(del.status, 200);
-  assert.deepEqual(await get(), { progress: null, bookmarks: [] });
+  assert.deepEqual(await get(), { progress: null, bookmarks: [], highlights: [] });
   assert.deepEqual((await (await handleApi(req('/api/progress/book-b0', { headers: { cookie: sid } }), env)).json()).attempts, []);
 
   await post('/api/books/s01-r1', sid, { progress: { version: '1.2', loc: loc('s01-r1-c01'), percent: 0, updated: 1 }, bookmarks: [{ ...mark, id: 'm9' }] });
@@ -224,5 +224,67 @@ test('a delta download reads only the new rows (D1 bills rows read)', async () =
   const full = await rowsRead('SELECT data FROM attempts WHERE user_id = ? AND trainer = ? ORDER BY t DESC LIMIT 5000');
   const delta = await rowsRead('SELECT data FROM attempts WHERE user_id = ? AND trainer = ? AND received_at > ? ORDER BY received_at LIMIT 5000', 40_000);
   assert.ok(full >= 300, `a full download reads every row (${full})`);
+  assert.ok(delta <= 5, `a delta with nothing new reads next to nothing (${delta})`);
+});
+
+test('highlights and notes: newest edit wins, a deletion sticks, only the new ones come in a delta, and limits hold', async () => {
+  const { sid } = await signIn({ sub: 'google-hl', email: 'hl@example.org' });
+  const { sid: other } = await signIn({ sub: 'google-hl2', email: 'hl2@example.org' });
+  const at = (t) => ({ fetch, now: () => t });
+  const send = (t, highlights, s = sid, origin = ORIGIN) => handleApi(req('/api/books/b0', { method: 'POST', headers: { cookie: s, origin, 'content-type': 'application/json' }, body: JSON.stringify({ highlights }) }), env, at(t));
+  const ask = async (query = '', t = 90_000, s = sid) => (await handleApi(req(`/api/books/b0${query}`, { headers: { cookie: s } }), env, at(t))).json();
+  const hl = (id, extra = {}) => ({ id, sec: 'b0-r0-c05', start: 10, end: 30, para: 2, quote: 'a ratio compares two', before: 'Remember: ', after: ' quantities', text: 'a ratio compares two', colour: 0, note: '', version: '1.2', created: 100, updated: 100, ...extra });
+
+  assert.equal((await send(1000, [hl('h1'), hl('h2', { start: 40, end: 60 })])).status, 200);
+  assert.equal((await send(1000, [hl('h1'), hl('h2', { start: 40, end: 60 })])).status, 200, 'the same highlights again');
+  const all = (await ask()).highlights;
+  assert.deepEqual(all.map((h) => h.id), ['h1', 'h2']);
+  assert.deepEqual(all[0], { ...hl('h1'), deleted: null }, 'what went in comes back (anchor included)');
+
+  // Edits follow the newest `updated`, whichever device's request arrives last.
+  await send(2000, [hl('h1', { colour: 2, note: 'second thought', updated: 300 })]);
+  await send(3000, [hl('h1', { colour: 1, note: 'older edit', updated: 200 })]);
+  const h1 = (await ask()).highlights.find((h) => h.id === 'h1');
+  assert.deepEqual([h1.colour, h1.note, h1.updated], [2, 'second thought', 300], 'an older edit arriving later does not win');
+  assert.equal(h1.quote, 'a ratio compares two', 'the anchor is never changed by an edit');
+
+  // Delta: only what arrived after the cursor; stored rows are not re-sent.
+  await send(5000, [hl('h3', { start: 70, end: 90, created: 400, updated: 400 })]);
+  assert.deepEqual((await ask('?since=4000')).highlights.map((h) => h.id), ['h3']);
+  assert.deepEqual((await ask('?since=5000')).highlights, []);
+  assert.deepEqual((await ask('')).highlights.map((h) => h.id).sort(), ['h1', 'h2', 'h3'], 'no cursor: all');
+
+  // A deletion is kept and never undone, even by a device that still has the highlight.
+  await send(6000, [hl('h2', { deleted: 500, updated: 500 })]);
+  await send(7000, [hl('h2', { colour: 3, updated: 900 })]);
+  const h2 = (await ask()).highlights.find((h) => h.id === 'h2');
+  assert.equal(h2.deleted, 500, 'still deleted');
+  assert.ok((await ask('?since=5500')).highlights.some((h) => h.id === 'h2' && h.deleted), 'and the deletion reaches other devices as a delta');
+
+  // Other people see nothing; other sites and bad input are refused.
+  assert.deepEqual((await ask('', 90_000, other)).highlights, []);
+  assert.equal((await send(8000, [hl('x1')], sid, 'https://evil.example')).status, 403);
+  for (const bad of [hl('b1', { colour: 4 }), hl('b1', { end: 10 }), hl('b1', { quote: '' }), hl('b1', { quote: 'x'.repeat(2001) }), hl('b1', { note: 'n'.repeat(2001) }), hl('b1', { sec: 'No Way' }), hl('', {}), hl('b1', { start: -1 })]) {
+    assert.equal((await send(8000, [bad])).status, 400, JSON.stringify(bad).slice(0, 60));
+  }
+  assert.equal((await send(8000, Array.from({ length: 201 }, (_, i) => hl(`many${i}`)))).status, 413, 'too many in one request');
+
+  // Deleting the book's data, and the account, removes them.
+  const del = await handleApi(req('/api/books/b0', { method: 'DELETE', headers: { cookie: sid, origin: ORIGIN } }), env);
+  assert.equal(del.status, 200);
+  assert.deepEqual((await ask()).highlights, []);
+  await send(9000, [hl('gone', { sec: 'b0-r0-c09' })]);
+  await handleApi(req('/api/account', { method: 'DELETE', headers: { cookie: sid, origin: ORIGIN } }), env);
+  assert.equal((await env.DB.prepare(`SELECT COUNT(*) AS n FROM highlights WHERE id = 'gone'`).first()).n, 0, 'deleted with the account');
+});
+
+test('a delta download of highlights reads only the new rows', async () => {
+  const { sid } = await signIn({ sub: 'google-hlrows', email: 'hlrows@example.org' });
+  const batch = Array.from({ length: 150 }, (_, i) => ({ id: `r${i}`, sec: 'b0-r0-c05', start: i * 30, end: i * 30 + 20, para: 1, quote: 'q'.repeat(10), before: '', after: '', text: 'q', colour: 0, note: '', version: '1.2', created: i + 1, updated: i + 1 }));
+  await handleApi(req('/api/books/b0', { method: 'POST', headers: { cookie: sid, origin: ORIGIN, 'content-type': 'application/json' }, body: JSON.stringify({ highlights: batch }) }), { ...env }, { fetch, now: () => 1000 });
+  const row = await env.DB.prepare('SELECT id FROM users WHERE google_sub = ?').bind('google-hlrows').first();
+  const rows = async (q, ...x) => (await env.DB.prepare(q).bind(row.id, 'b0', ...x).all()).meta.rows_read;
+  assert.ok(await rows('SELECT id FROM highlights WHERE user_id = ? AND book_id = ?') >= 150, 'a full download reads every highlight');
+  const delta = await rows('SELECT id FROM highlights WHERE user_id = ? AND book_id = ? AND received_at > ?', 40_000);
   assert.ok(delta <= 5, `a delta with nothing new reads next to nothing (${delta})`);
 });

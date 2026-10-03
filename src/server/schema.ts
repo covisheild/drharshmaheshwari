@@ -78,6 +78,29 @@ export const MIGRATIONS: string[][] = [
     `ALTER TABLE attempts ADD COLUMN received_at INTEGER`,
     `CREATE INDEX IF NOT EXISTS attempts_user_trainer_recv ON attempts(user_id, trainer, received_at)`,
   ],
+  // 4: highlights and notes in the book reader (Harsh, 3 Oct 2026). `anchor` is JSON: {a, b, p, q, pre, suf, t} (character
+  // range in the section's text, paragraph, the quoted text and a few words either side, and the text as it reads); it never
+  // changes after the highlight is made. Colour, note and deletion follow the newest `updated_at`, and a deleted row is kept so the
+  // deletion reaches every device. `received_at` is the server's clock on arrival: a device asks "what is new since"
+  // through highlights_sync and so reads only new rows. Each highlight written costs three D1 row writes (row, key, index).
+  [
+    `CREATE TABLE IF NOT EXISTS highlights (
+      user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      book_id TEXT NOT NULL,
+      id TEXT NOT NULL,
+      section TEXT NOT NULL,
+      anchor TEXT NOT NULL,
+      colour INTEGER NOT NULL,
+      note TEXT NOT NULL DEFAULT '',
+      book_version TEXT NOT NULL,
+      created_at INTEGER NOT NULL,
+      updated_at INTEGER NOT NULL,
+      deleted_at INTEGER,
+      received_at INTEGER NOT NULL,
+      PRIMARY KEY (user_id, id)
+    )`,
+    `CREATE INDEX IF NOT EXISTS highlights_sync ON highlights(user_id, book_id, received_at)`,
+  ],
 ];
 
 let applied: Promise<void> | null = null;

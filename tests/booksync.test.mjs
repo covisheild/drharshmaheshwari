@@ -30,9 +30,19 @@ globalThis.fetch = async (url, init = {}) => {
   const log = (extra = {}) => server.requests.push({ method, path, since: u.searchParams.get('since'), keepalive: !!init.keepalive, ...extra });
   if (method === 'POST' && server.fail > 0) { server.fail--; log({ failed: true }); return reply({ error: 'down' }, 500); }
   if (path.startsWith('/api/books/')) {
-    if (method === 'GET') { log(); return reply({ now: now(), progress: server.progress, bookmarks: server.bookmarks }); }
+    if (method === 'GET') {
+      const since = Number(u.searchParams.get('since')) || 0;
+      const hl = since ? server.highlights.filter((h) => (h.received ?? 0) > since) : server.highlights;
+      log({ highlightsReturned: hl.length });
+      return reply({ now: now(), progress: server.progress, bookmarks: server.bookmarks, highlights: hl });
+    }
     const b = JSON.parse(init.body);
-    log({ bookmarks: b.bookmarks?.length ?? 0, progress: !!b.progress });
+    log({ bookmarks: b.bookmarks?.length ?? 0, progress: !!b.progress, highlights: b.highlights?.length ?? 0 });
+    for (const h of b.highlights ?? []) {
+      const i = server.highlights.findIndex((x) => x.id === h.id);
+      if (i < 0) server.highlights.push({ ...h, received: now() });
+      else { const o = server.highlights[i]; server.highlights[i] = { ...o, colour: h.updated > o.updated ? h.colour : o.colour, note: h.updated > o.updated ? h.note : o.note, updated: Math.max(h.updated, o.updated), deleted: o.deleted ?? h.deleted ?? null, received: now() }; }
+    }
     if (b.progress && (!server.progress || b.progress.updated > server.progress.updated)) server.progress = b.progress;
     for (const m of b.bookmarks ?? []) { const i = server.bookmarks.findIndex((x) => x.id === m.id); if (i < 0) server.bookmarks.push(m); else server.bookmarks[i] = { ...server.bookmarks[i], deleted: server.bookmarks[i].deleted ?? m.deleted }; }
     return reply({ ok: true });
@@ -66,7 +76,7 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 beforeEach(() => {
   clear();
   SyncedBookStore.timing = { quiet: 20, max: 60, place: 80, resync: 0 };
-  server = { user: signedOut ? null : { name: 'Dr A', email: 'a@example.org', picture: null }, progress: null, bookmarks: [], attempts: [], requests: [], fail: 0, clock: undefined };
+  server = { user: signedOut ? null : { name: 'Dr A', email: 'a@example.org', picture: null }, progress: null, bookmarks: [], highlights: [], attempts: [], requests: [], fail: 0, clock: undefined };
 });
 
 test('marks saved before marks had a history become attempts once', () => {
@@ -251,4 +261,80 @@ test('closing the tab sends a small first part, the rest follows on the next vis
 
 test('timing defaults are 10 s quiet, 30 s at most, a place at most once a minute', () => {
   assert.deepEqual({ quiet: REAL.quiet, max: REAL.max, place: REAL.place }, { quiet: 10_000, max: 30_000, place: 60_000 });
+});
+
+// ---------------------------------------------------------------- highlights and notes
+
+const hl = (extra = {}) => ({ sec: 'b0-r0-c05', start: 10, end: 30, para: 2, quote: 'a ratio compares two', before: 'Remember: ', after: ' quantities', text: 'a ratio compares two', colour: 0, ...extra });
+
+test('a deleted highlight is kept as deleted and only live ones are listed; an edit moves its time on', () => {
+  const s = new BookProgressStore('B0', '1.2');
+  const h = s.addHighlight(hl());
+  assert.equal(h.note, '');
+  const t0 = h.updated;
+  const e = s.updateHighlight(h.id, { colour: 2, note: 'check this' });
+  assert.deepEqual([e.colour, e.note], [2, 'check this']);
+  assert.ok(e.updated > t0, 'every edit has a later time, even within the same millisecond');
+  s.removeHighlight(h.id);
+  assert.equal(s.highlights().length, 0);
+  assert.ok(s.get().highlights[0].deleted > 0);
+  assert.equal(s.updateHighlight(h.id, { note: 'too late' }), null, 'a deleted highlight is not edited');
+});
+
+test('highlights from another device merge: newest edit wins, a deletion is never undone, the anchor stays', { skip: signedOut }, async () => {
+  const mine = new BookProgressStore('B0', '1.2');
+  const a = mine.addHighlight(hl({ colour: 0 }));
+  const b = mine.addHighlight(hl({ start: 40, end: 60, quote: 'other words here ok' }));
+  server.highlights = [
+    { ...a, colour: 3, note: 'from the phone', updated: a.updated + 5000, deleted: null, received: 1 },
+    { ...b, deleted: Date.now(), updated: b.updated + 10, received: 1 },
+    { id: 'theirs', sec: 'b0-r0-c06', start: 0, end: 5, para: 0, quote: 'Their', before: '', after: ' text', text: 'Their', colour: 1, note: '', version: '1.2', created: 5, updated: 5, deleted: null, received: 1 },
+  ];
+  const s = new SyncedBookStore('B0', '1.2');
+  await s.ready();
+  const by = Object.fromEntries(s.get().highlights.map((h) => [h.id, h]));
+  assert.deepEqual([by[a.id].colour, by[a.id].note], [3, 'from the phone'], 'the newer edit from the other device wins');
+  assert.equal(by[a.id].quote, 'a ratio compares two', 'the anchor is untouched');
+  assert.ok(by[b.id].deleted, 'deleted elsewhere stays deleted here');
+  assert.ok(by.theirs, 'their highlight arrives');
+  assert.deepEqual(s.highlights().map((h) => h.id).sort(), [a.id, 'theirs'].sort());
+});
+
+test('highlights are uploaded in the batch, edits and deletions too, and the second visit downloads only new ones', { skip: signedOut }, async () => {
+  const base = 1_800_000_000_000;
+  server.clock = base;
+  const first = new SyncedBookStore('B0', '1.2');
+  await first.ready();
+  server.requests.length = 0;
+  const x = first.addHighlight(hl());
+  first.addHighlight(hl({ start: 50, end: 70, quote: 'second highlight text' }));
+  first.updateHighlight(x.id, { note: 'typed slowly' });
+  first.updateHighlight(x.id, { note: 'typed slowly, then more' });
+  await wait(70);
+  assert.deepEqual(uploads().map((r) => [r.path, r.highlights]), [['/api/books/b0', 2]], 'one request holds both (the edits are one entry)');
+  assert.equal(server.highlights.find((h) => h.id === x.id).note, 'typed slowly, then more');
+  first.removeHighlight(x.id);
+  await first.flush();
+  assert.ok(server.highlights.find((h) => h.id === x.id).deleted, 'the deletion reached the account');
+
+  server.clock = base + 300_000;
+  await first.sync(); // a later visit: the cursor moves on, past everything uploaded so far
+  server.clock = base + 600_000;
+  server.highlights.push({ id: 'phone1', sec: 'b0-r0-c06', start: 0, end: 5, para: 0, quote: 'Their', before: '', after: '', text: 'Their', colour: 1, note: 'n', version: '1.2', created: 5, updated: 5, deleted: null, received: server.clock });
+  server.requests.length = 0;
+  const second = new SyncedBookStore('B0', '1.2');
+  await second.ready();
+  const get = server.requests.find((r) => r.method === 'GET' && r.path === '/api/books/b0');
+  assert.ok(Number(get.since) > 0);
+  assert.equal(get.highlightsReturned, 1, 'only the one new highlight is downloaded');
+  assert.ok(second.highlights().some((h) => h.id === 'phone1'));
+});
+
+test('highlights made while the account was not known are found by the first full comparison', { skip: signedOut }, async () => {
+  const s0 = new SyncedBookStore('B0', '1.2');
+  await s0.ready();
+  const s = new SyncedBookStore('B0', '1.2');
+  s.addHighlight(hl({ quote: 'made too early to notice' })); // before /api/me answered
+  await s.ready();
+  assert.ok(server.highlights.some((h) => h.quote === 'made too early to notice'));
 });

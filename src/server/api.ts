@@ -2,7 +2,7 @@
 //
 // The site stays static; only /api/ runs code. Accounts are optional and exist only to keep trainer and
 // book-reader progress across devices. Stored per person: Google's account id, email and name, their
-// trainer answers, and in each book their reading place, bookmarks and practice marks. No Google access token is kept. If the database or the Google credentials are not configured,
+// trainer answers, and in each book their reading place, bookmarks, highlights with their notes, and practice marks. No Google access token is kept. If the database or the Google credentials are not configured,
 // /api/me says accounts are off and the trainers quietly keep progress in the browser, as before.
 
 import './d1';
@@ -22,7 +22,7 @@ const GOOGLE_AUTH = 'https://accounts.google.com/o/oauth2/v2/auth';
 const GOOGLE_TOKEN = 'https://oauth2.googleapis.com/token';
 const SESSION_DAYS = 180;
 const DAY = 86_400_000;
-export const LIMITS = { batch: 1000, perTrainer: 20_000, download: 5000, attemptBytes: 4096, prefsBytes: 2048, bookmarksPerBook: 1000, locationBytes: 200 };
+export const LIMITS = { batch: 1000, perTrainer: 20_000, download: 5000, attemptBytes: 4096, prefsBytes: 2048, bookmarksPerBook: 1000, locationBytes: 200, highlightsPerBook: 3000, highlightBatch: 200, quoteChars: 2000, noteChars: 2000 };
 const TRAINER_ID = /^[a-z0-9-]{1,40}$/;
 const BOOK_ID = /^[a-z0-9-]{1,24}$/;
 
@@ -182,7 +182,7 @@ async function putProgress(req: Request, env: Required<Env>, user: User, trainer
   return json({ ok: true, stored: attempts.length });
 }
 
-// ---------- books (reading place and bookmarks; practice marks go through /api/progress/book-<id>) ----------
+// ---------- books (reading place, bookmarks, highlights; practice marks go through /api/progress/book-<id>) ----------
 interface Loc { s: string; p: number; f: number }
 const validLoc = (l: unknown): l is Loc => {
   if (!l || typeof l !== 'object') return false;
@@ -194,21 +194,51 @@ interface ProgressIn { version: string; loc: Loc; percent: number; updated: numb
 interface BookmarkIn { id: string; loc: Loc; label: string; snippet: string; created: number; deleted?: number | null }
 const short = (v: unknown, n: number) => typeof v === 'string' && v.length <= n;
 
-async function getBook(env: Required<Env>, user: User, book: string, deps: Deps) {
+interface HighlightIn {
+  id: string; sec: string; start: number; end: number; para: number; quote: string; before: string; after: string; text: string;
+  colour: number; note: string; version: string; created: number; updated: number; deleted?: number | null;
+}
+const validHighlight = (h: unknown): h is HighlightIn => {
+  if (!h || typeof h !== 'object') return false;
+  const x = h as HighlightIn;
+  return short(x.id, 64) && !!x.id && typeof x.sec === 'string' && /^[a-z0-9-]{1,40}$/.test(x.sec)
+    && Number.isInteger(x.start) && Number.isInteger(x.end) && x.start >= 0 && x.end > x.start && x.end <= 5_000_000
+    && Number.isInteger(x.para) && x.para >= 0 && x.para < 100_000
+    && typeof x.quote === 'string' && x.quote.length > 0 && x.quote.length <= LIMITS.quoteChars
+    && short(x.before, 64) && short(x.after, 64) && short(x.text, LIMITS.quoteChars + 200)
+    && Number.isInteger(x.colour) && x.colour >= 0 && x.colour <= 3
+    && short(x.note ?? '', LIMITS.noteChars) && short(x.version, 20)
+    && Number.isFinite(x.created) && Number.isFinite(x.updated) && (x.deleted == null || Number.isFinite(x.deleted));
+};
+interface HighlightRow { id: string; section: string; anchor: string; colour: number; note: string; book_version: string; created_at: number; updated_at: number; deleted_at: number | null }
+const highlightOut = (r: HighlightRow) => {
+  const a = JSON.parse(r.anchor) as { a: number; b: number; p: number; q: string; pre: string; suf: string; t: string };
+  return { id: r.id, sec: r.section, start: a.a, end: a.b, para: a.p, quote: a.q, before: a.pre, after: a.suf, text: a.t, colour: r.colour, note: r.note,
+    version: r.book_version, created: r.created_at, updated: r.updated_at, deleted: r.deleted_at };
+};
+
+async function getBook(env: Required<Env>, user: User, book: string, since: number, deps: Deps) {
   const p = await env.DB.prepare('SELECT book_version, location, percent, done, updated_at FROM reading_progress WHERE user_id = ? AND book_id = ?')
     .bind(user.id, book).first<{ book_version: string; location: string; percent: number; done: string; updated_at: number }>();
   // Bookmarks are few (tens), so they always come whole; the long lists (answers, and later highlights) are the ones sent as a delta.
   const b = await env.DB.prepare('SELECT id, location, label, snippet, created_at, deleted_at FROM bookmarks WHERE user_id = ? AND book_id = ? ORDER BY created_at')
     .bind(user.id, book).all<{ id: string; location: string; label: string; snippet: string; created_at: number; deleted_at: number | null }>();
+  // Highlights: all of them the first time, then only those that arrived after `since` (highlights_sync reads just those).
+  const hl = since
+    ? await env.DB.prepare('SELECT id, section, anchor, colour, note, book_version, created_at, updated_at, deleted_at FROM highlights WHERE user_id = ? AND book_id = ? AND received_at > ?')
+      .bind(user.id, book, since).all<HighlightRow>()
+    : await env.DB.prepare('SELECT id, section, anchor, colour, note, book_version, created_at, updated_at, deleted_at FROM highlights WHERE user_id = ? AND book_id = ? ORDER BY created_at LIMIT ?')
+      .bind(user.id, book, LIMITS.highlightsPerBook * 2).all<HighlightRow>();
   return json({
     now: deps.now(),
+    highlights: hl.results.map(highlightOut),
     progress: p ? { version: p.book_version, loc: JSON.parse(p.location), percent: p.percent, updated: p.updated_at, done: JSON.parse(p.done) } : null,
     bookmarks: b.results.map((r) => ({ id: r.id, loc: JSON.parse(r.location), label: r.label, snippet: r.snippet, created: r.created_at, deleted: r.deleted_at })),
   });
 }
 
-async function putBook(req: Request, env: Required<Env>, user: User, book: string) {
-  let body: { progress?: ProgressIn; bookmarks?: BookmarkIn[] };
+async function putBook(req: Request, env: Required<Env>, user: User, book: string, deps: Deps) {
+  let body: { progress?: ProgressIn; bookmarks?: BookmarkIn[]; highlights?: HighlightIn[] };
   try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
   const stmts: D1PreparedStatement[] = [];
   const p = body.progress;
@@ -243,6 +273,26 @@ async function putBook(req: Request, env: Required<Env>, user: User, book: strin
     stmts.push(env.DB.prepare(`INSERT INTO bookmarks (user_id, book_id, id, location, label, snippet, created_at, deleted_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
       ON CONFLICT (user_id, id) DO UPDATE SET deleted_at = COALESCE(bookmarks.deleted_at, excluded.deleted_at)`)
       .bind(user.id, book, m.id, JSON.stringify(m.loc), m.label, m.snippet, Math.round(m.created), m.deleted == null ? null : Math.round(m.deleted)));
+  }
+  const highlights = Array.isArray(body.highlights) ? body.highlights : [];
+  if (highlights.length > LIMITS.highlightBatch) return json({ error: 'too many highlights in one request' }, 413);
+  if (!highlights.every(validHighlight)) return json({ error: 'invalid highlight' }, 400);
+  if (highlights.length) {
+    const n = await env.DB.prepare('SELECT COUNT(*) AS n FROM highlights WHERE user_id = ? AND book_id = ?').bind(user.id, book).first<{ n: number }>();
+    if ((n?.n ?? 0) + highlights.length > LIMITS.highlightsPerBook * 2) return json({ error: 'storage limit reached' }, 413);
+  }
+  const received = deps.now();
+  for (const h of highlights) {
+    const anchor = JSON.stringify({ a: h.start, b: h.end, p: h.para, q: h.quote, pre: h.before, suf: h.after, t: h.text });
+    // The anchor and creation never change. Colour and note follow the newest edit; a deletion is never undone.
+    stmts.push(env.DB.prepare(`INSERT INTO highlights (user_id, book_id, id, section, anchor, colour, note, book_version, created_at, updated_at, deleted_at, received_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      ON CONFLICT (user_id, id) DO UPDATE SET
+        colour = CASE WHEN excluded.updated_at > highlights.updated_at THEN excluded.colour ELSE highlights.colour END,
+        note = CASE WHEN excluded.updated_at > highlights.updated_at THEN excluded.note ELSE highlights.note END,
+        updated_at = MAX(excluded.updated_at, highlights.updated_at),
+        deleted_at = COALESCE(highlights.deleted_at, excluded.deleted_at),
+        received_at = excluded.received_at`)
+      .bind(user.id, book, h.id, h.sec, anchor, h.colour, h.note ?? '', h.version, Math.round(h.created), Math.round(h.updated), h.deleted == null ? null : Math.round(h.deleted), received));
   }
   if (stmts.length) await env.DB.batch(stmts);
   return json({ ok: true });
@@ -293,12 +343,13 @@ export async function handleApi(req: Request, env: Env, deps: Deps = DEFAULT_DEP
     if (bm) {
       const book = bm[1];
       if (!BOOK_ID.test(book)) return json({ error: 'unknown book' }, 404);
-      if (req.method === 'GET') return getBook(env, user, book, deps);
-      if (req.method === 'POST') return putBook(req, env, user, book);
+      if (req.method === 'GET') return getBook(env, user, book, sinceOf(url), deps);
+      if (req.method === 'POST') return putBook(req, env, user, book, deps);
       if (req.method === 'DELETE') {
         await env.DB.batch([
           env.DB.prepare('DELETE FROM reading_progress WHERE user_id = ? AND book_id = ?').bind(user.id, book),
           env.DB.prepare('DELETE FROM bookmarks WHERE user_id = ? AND book_id = ?').bind(user.id, book),
+          env.DB.prepare('DELETE FROM highlights WHERE user_id = ? AND book_id = ?').bind(user.id, book),
           env.DB.prepare('DELETE FROM attempts WHERE user_id = ? AND trainer = ?').bind(user.id, `book-${book}`),
         ]);
         return json({ ok: true });
