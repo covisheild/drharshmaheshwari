@@ -165,3 +165,16 @@ passes `npm run build && npm test` and the 390 px / desktop screenshots in `CLAU
   The picture is an address at `*.googleusercontent.com`, loaded from Google, never copied.
 - Tests: `tests/api.test.mjs` (books API), `tests/booksync.test.mjs` (merge and sync against a pretend
   server), `tests/e2e.mjs` (Review, top bar).
+
+## Progress (3 Oct 2026, later): delta sync, then reader tools
+
+Harsh asked for Kindle-like tools: highlights with notes, image zoom, and "discuss with AI". Agreed order, each a
+separate commit so it can be reviewed on a Preview before `main`:
+
+1. **Delta sync and batched upload** (done). `GET /api/books/:book` and `GET /api/progress/:trainer` take `?since=<ms of server time>`
+   and return `now` (and `next`, for a full page); migration 3 adds `attempts.received_at` and its index. The client keeps a cursor and an
+   outbox in the browser copy (`BookState.since`, `BookState.out`). Timing: upload 10 s after the last change (30 s at most), at once on
+   tab hide, the place alone once a minute. Tests: `tests/booksync.test.mjs`, `tests/api.test.mjs` (including a rows-read check).
+   The trainers still download everything on each page load (`/api/progress/<trainer>` without `since`); they can use the same cursor later.
+2. Image zoom. 3. Highlights and notes. 4. "Copy for AI" (no server, no cost; the reader's own ChatGPT/Claude/Gemini).
+   Hosting an AI ourselves is parked: it needs sign-in, a daily cap per person, a monthly budget switch and a passage-only prompt first.

@@ -140,11 +140,25 @@ const validAttempt = (a: unknown, trainer: string): a is AttemptIn => {
     && typeof x.item === 'string' && x.item.length <= 128 && Number.isFinite(x.t) && JSON.stringify(x).length <= LIMITS.attemptBytes;
 };
 
-async function getProgress(env: Required<Env>, user: User, trainer: string) {
+/** `?since=<ms>`: only what arrived after that server time (the reader's delta sync). Absent: everything, as the trainers ask. */
+const sinceOf = (url: URL) => {
+  const n = Number(url.searchParams.get('since'));
+  return Number.isFinite(n) && n > 0 ? Math.floor(n) : 0;
+};
+
+async function getProgress(env: Required<Env>, user: User, trainer: string, since: number, deps: Deps) {
+  const now = deps.now();
+  if (since) {
+    const rows = await env.DB.prepare('SELECT data, received_at FROM attempts WHERE user_id = ? AND trainer = ? AND received_at > ? ORDER BY received_at LIMIT ?')
+      .bind(user.id, trainer, since, LIMITS.download).all<{ data: string; received_at: number }>();
+    // A full page means there may be more: the next ask continues from the last row instead of skipping ahead.
+    const next = rows.results.length >= LIMITS.download ? rows.results[rows.results.length - 1].received_at : now;
+    return json({ attempts: rows.results.map((r) => JSON.parse(r.data)), prefs: null, now, next });
+  }
   const rows = await env.DB.prepare('SELECT data FROM attempts WHERE user_id = ? AND trainer = ? ORDER BY t DESC LIMIT ?')
     .bind(user.id, trainer, LIMITS.download).all<{ data: string }>();
   const prefs = await env.DB.prepare('SELECT data FROM prefs WHERE user_id = ? AND trainer = ?').bind(user.id, trainer).first<{ data: string }>();
-  return json({ attempts: rows.results.map((r) => JSON.parse(r.data)).reverse(), prefs: prefs ? JSON.parse(prefs.data) : null });
+  return json({ attempts: rows.results.map((r) => JSON.parse(r.data)).reverse(), prefs: prefs ? JSON.parse(prefs.data) : null, now, next: now });
 }
 
 async function putProgress(req: Request, env: Required<Env>, user: User, trainer: string, deps: Deps) {
@@ -155,8 +169,9 @@ async function putProgress(req: Request, env: Required<Env>, user: User, trainer
   if (!attempts.every((a) => validAttempt(a, trainer))) return json({ error: 'invalid attempt' }, 400);
   const count = await env.DB.prepare('SELECT COUNT(*) AS n FROM attempts WHERE user_id = ? AND trainer = ?').bind(user.id, trainer).first<{ n: number }>();
   if ((count?.n ?? 0) + attempts.length > LIMITS.perTrainer) return json({ error: 'storage limit reached' }, 413);
+  const received = deps.now();
   const stmts = (attempts as AttemptIn[]).map((a) =>
-    env.DB.prepare('INSERT OR IGNORE INTO attempts (user_id, trainer, id, t, data) VALUES (?, ?, ?, ?, ?)').bind(user.id, trainer, a.id, a.t, JSON.stringify(a)));
+    env.DB.prepare('INSERT OR IGNORE INTO attempts (user_id, trainer, id, t, data, received_at) VALUES (?, ?, ?, ?, ?, ?)').bind(user.id, trainer, a.id, a.t, JSON.stringify(a), received));
   if (body.prefs !== undefined) {
     const p = JSON.stringify(body.prefs);
     if (!body.prefs || typeof body.prefs !== 'object' || p.length > LIMITS.prefsBytes) return json({ error: 'invalid prefs' }, 400);
@@ -179,12 +194,14 @@ interface ProgressIn { version: string; loc: Loc; percent: number; updated: numb
 interface BookmarkIn { id: string; loc: Loc; label: string; snippet: string; created: number; deleted?: number | null }
 const short = (v: unknown, n: number) => typeof v === 'string' && v.length <= n;
 
-async function getBook(env: Required<Env>, user: User, book: string) {
+async function getBook(env: Required<Env>, user: User, book: string, deps: Deps) {
   const p = await env.DB.prepare('SELECT book_version, location, percent, done, updated_at FROM reading_progress WHERE user_id = ? AND book_id = ?')
     .bind(user.id, book).first<{ book_version: string; location: string; percent: number; done: string; updated_at: number }>();
+  // Bookmarks are few (tens), so they always come whole; the long lists (answers, and later highlights) are the ones sent as a delta.
   const b = await env.DB.prepare('SELECT id, location, label, snippet, created_at, deleted_at FROM bookmarks WHERE user_id = ? AND book_id = ? ORDER BY created_at')
     .bind(user.id, book).all<{ id: string; location: string; label: string; snippet: string; created_at: number; deleted_at: number | null }>();
   return json({
+    now: deps.now(),
     progress: p ? { version: p.book_version, loc: JSON.parse(p.location), percent: p.percent, updated: p.updated_at, done: JSON.parse(p.done) } : null,
     bookmarks: b.results.map((r) => ({ id: r.id, loc: JSON.parse(r.location), label: r.label, snippet: r.snippet, created: r.created_at, deleted: r.deleted_at })),
   });
@@ -262,7 +279,7 @@ export async function handleApi(req: Request, env: Env, deps: Deps = DEFAULT_DEP
     if (m) {
       const trainer = m[1];
       if (!TRAINER_ID.test(trainer)) return json({ error: 'unknown trainer' }, 404);
-      if (req.method === 'GET') return getProgress(env, user, trainer);
+      if (req.method === 'GET') return getProgress(env, user, trainer, sinceOf(url), deps);
       if (req.method === 'POST') return putProgress(req, env, user, trainer, deps);
       if (req.method === 'DELETE') {
         await env.DB.batch([
@@ -276,7 +293,7 @@ export async function handleApi(req: Request, env: Env, deps: Deps = DEFAULT_DEP
     if (bm) {
       const book = bm[1];
       if (!BOOK_ID.test(book)) return json({ error: 'unknown book' }, 404);
-      if (req.method === 'GET') return getBook(env, user, book);
+      if (req.method === 'GET') return getBook(env, user, book, deps);
       if (req.method === 'POST') return putBook(req, env, user, book);
       if (req.method === 'DELETE') {
         await env.DB.batch([

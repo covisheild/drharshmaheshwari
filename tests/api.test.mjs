@@ -132,7 +132,12 @@ test('sign out ends the session; deleting the account removes the person and all
 test('books: reading place (newest wins), bookmarks (deletions stick), practice marks, and deleting it all', async () => {
   const { sid } = await signIn({ sub: 'google-b', email: 'b@example.org' });
   const { sid: other } = await signIn({ sub: 'google-c', email: 'c@example.org' });
-  const get = async (s = sid, book = 'b0') => (await handleApi(req(`/api/books/${book}`, { headers: { cookie: s } }), env)).json();
+  const get = async (s = sid, book = 'b0') => {
+    const body = await (await handleApi(req(`/api/books/${book}`, { headers: { cookie: s } }), env)).json();
+    assert.equal(typeof body.now, 'number', 'the server clock comes with every download (the delta cursor)');
+    delete body.now;
+    return body;
+  };
   const loc = (s, p = 0, f = 0) => ({ s, p, f });
   assert.deepEqual(await get(), { progress: null, bookmarks: [] });
 
@@ -180,4 +185,44 @@ test('the Google profile picture address is kept only when Google hosts it', asy
   assert.equal((await me(sid)).picture, pic);
   const { sid: bad } = await signIn({ sub: 'google-pic2', email: 'pic2@example.org', tamper: (c) => ({ ...c, picture: 'https://evil.example/x.png' }) });
   assert.equal((await me(bad)).picture, null);
+});
+
+test('progress delta: ?since returns only answers that arrived after that server time, from a full page onward', async () => {
+  const { sid } = await signIn({ sub: 'google-delta', email: 'delta@example.org' });
+  const at = (t) => ({ fetch, now: () => t });
+  const send = (t, attempts) => handleApi(req('/api/progress/book-b0', { method: 'POST', headers: { cookie: sid, origin: ORIGIN, 'content-type': 'application/json' }, body: JSON.stringify({ attempts }) }), env, at(t));
+  const ask = async (query, t = 99_000) => (await handleApi(req(`/api/progress/book-b0${query}`, { headers: { cookie: sid } }), env, at(t))).json();
+  const mk = (id, t) => ({ id, trainer: 'book-b0', version: '1.2', item: 'b0-r0-c05-p1', set: 'b0-r0-c05', activity: 'practice', parts: [], correct: true, t });
+
+  // The answer's own time (t) can be old: a phone that was offline sends yesterday's answers today. What counts is when the server got them.
+  await send(1000, [mk('a1', 10), mk('a2', 20)]);
+  await send(5000, [mk('a3', 5)]);
+
+  const full = await ask('');
+  assert.deepEqual(full.attempts.map((a) => a.id).sort(), ['a1', 'a2', 'a3'], 'no cursor: everything, as the trainers ask');
+  assert.equal(full.now, 99_000);
+  const delta = await ask('?since=3000');
+  assert.deepEqual(delta.attempts.map((a) => a.id), ['a3'], 'only what arrived after 3000, though its own time is the oldest');
+  assert.equal(delta.next, 99_000);
+  assert.equal(delta.prefs, null);
+  assert.deepEqual((await ask('?since=5000')).attempts, [], 'nothing new');
+  assert.equal((await ask('?since=junk')).attempts.length, 3, 'a bad cursor is a full download, not an error');
+
+  await send(6000, [mk('a1', 10), mk('a4', 30)]); // a1 again: already stored, so it is not "new"
+  assert.deepEqual((await ask('?since=5500')).attempts.map((a) => a.id), ['a4']);
+});
+
+test('a delta download reads only the new rows (D1 bills rows read)', async () => {
+  const { sid } = await signIn({ sub: 'google-rows', email: 'rows@example.org' });
+  const batch = Array.from({ length: 300 }, (_, i) => ({ id: `r${i}`, trainer: 'book-b1', version: '1.2', item: `b1-c01-p${i}`, set: 'b1-c01', activity: 'practice', parts: [], correct: true, t: i }));
+  await handleApi(req('/api/progress/book-b1', { method: 'POST', headers: { cookie: sid, origin: ORIGIN, 'content-type': 'application/json' }, body: JSON.stringify({ attempts: batch }) }), env, { fetch, now: () => 1000 });
+  const rowsRead = async (query, ...extra) => {
+    const row = await env.DB.prepare('SELECT id FROM users WHERE google_sub = ?').bind('google-rows').first();
+    const res = await env.DB.prepare(query).bind(row.id, 'book-b1', ...extra).all();
+    return res.meta.rows_read;
+  };
+  const full = await rowsRead('SELECT data FROM attempts WHERE user_id = ? AND trainer = ? ORDER BY t DESC LIMIT 5000');
+  const delta = await rowsRead('SELECT data FROM attempts WHERE user_id = ? AND trainer = ? AND received_at > ? ORDER BY received_at LIMIT 5000', 40_000);
+  assert.ok(full >= 300, `a full download reads every row (${full})`);
+  assert.ok(delta <= 5, `a delta with nothing new reads next to nothing (${delta})`);
 });

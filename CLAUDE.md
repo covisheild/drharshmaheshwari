@@ -116,6 +116,13 @@ local devDependency. Change production settings only on purpose; preview-only se
 - Signed in, `SyncedBookStore` (`src/reader/sync.ts`) syncs place, bookmarks and sections read (`/api/books/:book`) and
   practice marks (`attempts`, trainer `book-<id>`). Review (`<book>/review/`, `src/reader/review.ts`) is FSRS over those marks
   and the must-know points of sections read. The top bar has no PDF button; the PDF is offered at the start and end of a book.
+- **Sync is built for the Cloudflare free plan** (Worker requests 100,000/day, D1 5M rows read and 100,000 rows written/day;
+  since 1 Sep 2026 D1 *fails* queries past the cap until midnight UTC, which would also break sign-in). Static pages cost nothing; only
+  `/api/*` counts. So: downloads are **deltas** (`?since=<server ms>`; the cursor `since` lives in the browser copy, two minutes
+  behind the server clock; `attempts.received_at` + index make the query read only new rows; a first/full download compares
+  everything), and uploads are **batched** from an outbox (`out`): 10 s after the last change, at most 30 s after the first, at once
+  when the tab is hidden or closed, and the reading place alone at most once a minute. A change made while signed out drops the cursor
+  (next sign-in compares everything). Never add a per-keystroke or per-scroll request; D1 bills rows *scanned*, so new queries need an index.
 
 ## Accounts (optional Google sign-in) and `/api/`
 

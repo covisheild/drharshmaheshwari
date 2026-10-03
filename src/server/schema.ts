@@ -70,6 +70,14 @@ export const MIGRATIONS: string[][] = [
     // 3 Oct 2026). Only a link Google gives at sign-in; the picture itself is never copied here.
     `ALTER TABLE users ADD COLUMN picture TEXT`,
   ],
+  // 3: delta sync (Harsh, 3 Oct 2026). `received_at` is the server's clock when an answer arrived, so a device can
+  // ask "what is new since I last looked" instead of downloading every answer on every page load. The index makes
+  // that question read only the new rows (D1 bills rows read, and the free plan stops at 5 million a day). Rows
+  // from before this migration have no value and are only sent on a first, full download.
+  [
+    `ALTER TABLE attempts ADD COLUMN received_at INTEGER`,
+    `CREATE INDEX IF NOT EXISTS attempts_user_trainer_recv ON attempts(user_id, trainer, received_at)`,
+  ],
 ];
 
 let applied: Promise<void> | null = null;

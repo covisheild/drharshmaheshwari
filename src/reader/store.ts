@@ -14,6 +14,8 @@ import type { Location } from './types';
 
 export interface Bookmark { id: string; loc: Location; snippet: string; label: string; created: number; deleted?: number | null }
 export interface PracticeMark { mark: 'got' | 'missed'; confidence?: number; t: number }
+/** What this browser has changed that the account has not been told yet (sync.ts uploads it in batches). */
+export interface Outbox { progress: boolean; bookmarks: string[]; attempts: string[] }
 export interface BookState {
   version: string;
   loc: Location | null;
@@ -27,6 +29,9 @@ export interface BookState {
   practice: Record<string, PracticeMark>;
   /** Every mark, oldest first: the Review schedule is rebuilt from these. */
   attempts: Attempt[];
+  /** Server time (ms) up to which this browser has everything the account holds; absent until a first full download. */
+  since?: number;
+  out: Outbox;
 }
 
 export interface ReaderPrefs { size: number; width: number }
@@ -48,8 +53,14 @@ export const sectionOf = (item: string) => item.replace(/-[epk]\d+$/, '');
 export const newId = () =>
   typeof crypto !== 'undefined' && 'randomUUID' in crypto ? crypto.randomUUID() : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
 
+export const emptyOutbox = (): Outbox => ({ progress: false, bookmarks: [], attempts: [] });
 const empty = (version: string): BookState =>
-  ({ version, loc: null, percent: 0, updated: 0, done: [], bookmarks: [], practice: {}, attempts: [] });
+  ({ version, loc: null, percent: 0, updated: 0, done: [], bookmarks: [], practice: {}, attempts: [], out: emptyOutbox() });
+/** A saved copy from an older version of the reader gets every field the newer one expects. */
+const restore = (version: string, saved: Partial<BookState> | null): BookState => {
+  const s = { ...empty(version), ...(saved ?? {}) };
+  return { ...s, out: { ...emptyOutbox(), ...(saved?.out ?? {}) } };
+};
 
 /** The last mark for each question, from the attempts. */
 export function lastMarks(attempts: readonly Attempt[], known: Record<string, PracticeMark> = {}): Record<string, PracticeMark> {
@@ -73,8 +84,7 @@ export class BookProgressStore {
   constructor(book: string, version: string) {
     this.book = book;
     this.version = version;
-    const saved = read<Partial<BookState>>(key(book));
-    this.state = { ...empty(version), ...(saved ?? {}) };
+    this.state = restore(version, read<Partial<BookState>>(key(book)));
     this.trainer = `book-${book.toLowerCase()}`;
     this.adoptOldMarks();
   }
@@ -94,8 +104,17 @@ export class BookProgressStore {
 
   /** Re-reads the browser copy (after it was cleared because it belonged to someone else). */
   protected reload() {
-    this.state = { ...empty(this.version), ...(read<Partial<BookState>>(key(this.book)) ?? {}) };
+    this.state = restore(this.version, read<Partial<BookState>>(key(this.book)));
     this.adoptOldMarks();
+  }
+  /** Notes what the account has not been told yet, or forgets the cursor if nothing is going to tell it (see sync.ts). */
+  protected setOut(fn: (o: Outbox) => Outbox) {
+    this.state = { ...this.state, out: fn(this.state.out) };
+    write(key(this.book), this.state); // bookkeeping only: nothing on screen changes, so no one is told
+  }
+  protected setSince(since: number | undefined) {
+    this.state = { ...this.state, since };
+    write(key(this.book), this.state);
   }
   /** Bookmarks that have not been deleted, oldest first. */
   bookmarks(): Bookmark[] { return this.state.bookmarks.filter((b) => !b.deleted); }
@@ -169,7 +188,7 @@ export class BookProgressStore {
     try {
       for (let i = 0; i < localStorage.length; i++) {
         const m = localStorage.key(i)?.match(/^book:(.+):v1$/);
-        if (m) { const s = read<BookState>(m[0]); if (s) out[m[1]] = { ...empty(s.version), ...s }; }
+        if (m) { const s = read<BookState>(m[0]); if (s) out[m[1]] = restore(s.version, s); }
       }
     } catch { /* storage blocked: no row */ }
     return out;
