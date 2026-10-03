@@ -198,3 +198,19 @@ test('/support/: one-time UPI only, closed until a UPI ID is configured, linked 
     else if (/<footer class="site-footer"/.test(page)) assert.match(page.match(/<footer class="site-footer"[\s\S]*?<\/footer>/)[0], /href="\/support\/"/, `${url} footer lacks /support/`);
   }
 });
+
+test('/account/: sign out, delete account and "what is stored" live there, linked from every footer; the reader has no account box', () => {
+  const page = html.get('/account/');
+  assert.ok(page, '/account/ is built');
+  assert.match(page, /<meta name="robots" content="noindex"/, 'the account page stays out of search');
+  assert.match(page, /\/privacy\/#accounts/, 'links to what is stored');
+  for (const [url, doc] of html) {
+    const foot = doc.match(/<footer class="site-footer"[\s\S]*?<\/footer>/)?.[0];
+    if (foot) assert.match(foot, /href="\/account\/"/, `${url} footer lacks /account/`);
+  }
+  const reader = [...html].filter(([url]) => /^\/doctors\/books\/obesity-expertise\/[^/]+\/$/.test(url) && html.get(url).includes('id="rd-me"'));
+  for (const [url, doc] of reader) {
+    assert.doesNotMatch(doc, /id="rd-acct"/, `${url} still has the account box in the contents panel`);
+    assert.doesNotMatch(doc, /Delete account/, `${url} offers Delete account`);
+  }
+});

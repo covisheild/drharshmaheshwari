@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Your account" description="Sign in, sign out, or delete your account. Accounts are optional and only keep your trainer progress and book reading across devices." noindex>
+  <div class="prose-wrap prose" style="padding-block:3rem 4rem">
+    <h1>Your account</h1>
+    <div id="account-page" aria-live="polite"><p class="muted">Loading…</p></div>
+    <noscript><p>This page needs JavaScript.</p></noscript>
+    <p class="muted small" style="margin-top:2rem">Accounts are optional. Without one, your progress and reading stay in this browser only. <a href="/privacy/#accounts">What is stored</a></p>
+  </div>
+</Base>
+
+<style is:global>
+  .acct-row { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 1rem; }
+  .acct-danger { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+  .acct-danger button { border: 0; background: none; padding: 0; font: inherit; color: var(--risk); text-decoration: underline; cursor: pointer; }
+</style>
+
+<script>
+  import { account, deleteAccount, signInHref, signInResult, signOut } from '../trainers/core/account';
+
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  const el = document.getElementById('account-page')!;
+  const result = signInResult();
+
+  const a = await account();
+  if (!a.enabled) {
+    el.innerHTML = '<p>Accounts are not switched on for this site right now. Your progress and reading are kept in this browser only; nothing is sent anywhere.</p>';
+  } else if (!a.user) {
+    el.innerHTML = `${result === 'error' ? '<p role="alert"><b>Sign-in did not complete. Please try again.</b></p>' : ''}
+      <p>You are not signed in. Your progress and reading are saved in this browser only. Sign in with Google to keep them on every device. Your answers and places so far come with you.</p>
+      <div class="acct-row"><a class="btn btn-primary" href="${esc(signInHref())}">Sign in with Google</a></div>`;
+  } else {
+    el.innerHTML = `<p>Signed in as <b>${esc(a.user.name || a.user.email)}</b>${a.user.name ? ` (${esc(a.user.email)})` : ''}.</p>
+      <div class="acct-row"><button type="button" class="btn btn-ghost" data-out>Sign out</button></div>
+      <p class="muted small" style="margin-top:.75rem">Signing out also clears the progress and reading kept in this browser. They stay in your account.</p>
+      <div class="acct-danger">
+        <h2>Delete account</h2>
+        <p>This permanently deletes your name, email, all your trainer progress, and your book reading places, bookmarks and marks from this site, on every device. It cannot be undone.</p>
+        <button type="button" data-del>Delete my account and all its data</button>
+      </div>`;
+    el.querySelector('[data-out]')!.addEventListener('click', async () => {
+      try { await signOut(); location.reload(); } catch { alert('Could not sign out. Please try again.'); }
+    });
+    el.querySelector('[data-del]')!.addEventListener('click', async () => {
+      if (!confirm('Delete your account? This permanently deletes your name, email, all your trainer progress and your book reading places, bookmarks and marks from this site, on every device. It cannot be undone.')) return;
+      try { await deleteAccount(); alert('Your account and all its data have been deleted.'); location.reload(); } catch { alert('Could not delete the account. Please try again.'); }
+    });
+  }
+</script>

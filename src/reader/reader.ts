@@ -10,7 +10,7 @@
 import { numberParagraphs, renderSection } from './render';
 import { BookProgressStore, type ReaderPrefs } from './store';
 import { SyncedBookStore } from './sync';
-import { mountReaderAccount, mountReaderMe } from './account';
+import { mountReaderMe } from './account';
 import { dueCount } from './review';
 import type { GlossaryEntry, Location, OutlinePart, Reference, Section } from './types';
 
@@ -436,15 +436,8 @@ export function startReader() {
     toast.querySelector('[data-go]')!.addEventListener('click', () => { toast.hidden = true; void jumpTo(loc); });
     toast.querySelector('[data-stay]')!.addEventListener('click', () => { toast.hidden = true; save(); });
   });
-  const acct = document.getElementById('rd-acct');
-  if (acct) void mountReaderAccount(acct, store);
   const me = document.getElementById('rd-me');
-  if (me) void mountReaderMe(me, () => {
-    if (drawer()) setSide(true);
-    else if (root.classList.contains('side-closed')) { root.classList.remove('side-closed'); menu.setAttribute('aria-expanded', 'true'); }
-    acct?.scrollIntoView({ block: 'end' });
-    acct?.querySelector<HTMLElement>('a, button')?.focus({ preventScroll: true });
-  });
+  if (me) void mountReaderMe(me, store);
   // How many Review items are due, beside the Review link in the contents.
   const due = document.getElementById('rd-due');
   const drawDue = () => { if (due) { const n = dueCount(store); due.textContent = n ? `${n} due` : ''; } };

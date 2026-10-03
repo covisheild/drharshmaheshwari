@@ -126,7 +126,8 @@ local devDependency. Change production settings only on purpose; preview-only se
   `GOOGLE_CLIENT_ID` (var) and `GOOGLE_CLIENT_SECRET` (secret). If any is missing, `/api/me` says accounts are off and
   the trainers keep progress in the browser only, with no sign-in shown.
 - Previews must use their own D1 database (`previews.d1_databases`), never production's.
-- People can delete their account and all data themselves (Progress page); sign-out clears the browser copy.
+- People can delete their account and all data themselves (`/account/`, linked from every footer, and the trainer Progress page); sign-out clears the browser copy.
+  The book reader has no account box: signed in, the top-right picture opens a small menu (who, saved status, "Your account", "Sign out"); signed out it is a "Sign in" link.
   Keep `/privacy/#accounts` in step with what is stored.
 - Auscultation audio: HLS-CMDS v2 (CC BY 4.0, Zenodo 15376628). `scripts/trainers/auscultation/prepare.py` dedupes, levels
   loudness, encodes MP3s, writes `<id>.peaks.json` waveforms (audiowaveform JSON v2) next to each MP3, and writes
