@@ -113,6 +113,8 @@ local devDependency. Change production settings only on purpose; preview-only se
 - Figures and PDFs are on R2 (`books/obesity-expertise/figures/`, `books/obesity-expertise/<ID>-v<version>.pdf`).
   `PUBLIC_BOOK_FIGURES` overrides the figure base for local testing.
 - Progress goes only through `BookProgressStore` (`src/reader/store.ts`, `book:<id>:v1`), never localStorage directly.
+- Figures: tap the picture or its enlarge button to open the viewer (`src/reader/zoom.ts`, `#rd-zoom`): pinch, double-tap, wheel,
+  `+ - 0`, arrows, Back/Esc to close. The button sits beside `.fig-card`, never inside a `.c` (children of `.c` are the numbered paragraphs).
 - Signed in, `SyncedBookStore` (`src/reader/sync.ts`) syncs place, bookmarks and sections read (`/api/books/:book`) and
   practice marks (`attempts`, trainer `book-<id>`). Review (`<book>/review/`, `src/reader/review.ts`) is FSRS over those marks
   and the must-know points of sections read. The top bar has no PDF button; the PDF is offered at the start and end of a book.

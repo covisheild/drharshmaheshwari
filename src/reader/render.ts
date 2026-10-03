@@ -58,7 +58,8 @@ export function renderSection(sec: Section, figureBase: string): string {
         break;
       }
       case 'figure':
-        out.push(`<figure class="blk fig"><div class="fig-card c"><img src="${esc(figureBase + b.src)}" alt="${esc(b.alt)}" width="${b.w}" height="${b.h}" loading="lazy" decoding="async"></div><figcaption>${b.caption}</figcaption></figure>`);
+        // The enlarge button sits beside `.fig-card`, not inside it: children of a `.c` are the paragraphs reading positions count.
+        out.push(`<figure class="blk fig"><div class="fig-card c"><img src="${esc(figureBase + b.src)}" alt="${esc(b.alt)}" width="${b.w}" height="${b.h}" loading="lazy" decoding="async"></div><button type="button" class="fig-zoom" aria-label="Enlarge this figure"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button><figcaption>${b.caption}</figcaption></figure>`);
         break;
       case 'mustknow':
         out.push(`<div class="blk mustknow"><p class="lab"><span>Must know points for you</span></p><ul class="c">${b.points.map((p) =>

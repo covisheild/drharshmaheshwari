@@ -176,5 +176,6 @@ separate commit so it can be reviewed on a Preview before `main`:
    outbox in the browser copy (`BookState.since`, `BookState.out`). Timing: upload 10 s after the last change (30 s at most), at once on
    tab hide, the place alone once a minute. Tests: `tests/booksync.test.mjs`, `tests/api.test.mjs` (including a rows-read check).
    The trainers still download everything on each page load (`/api/progress/<trainer>` without `since`); they can use the same cursor later.
-2. Image zoom. 3. Highlights and notes. 4. "Copy for AI" (no server, no cost; the reader's own ChatGPT/Claude/Gemini).
+2. Image zoom (done): `src/reader/zoom.ts`; tests in `tests/e2e.mjs` ("Figure viewer").
+3. Highlights and notes. 4. "Copy for AI" (no server, no cost; the reader's own ChatGPT/Claude/Gemini).
    Hosting an AI ourselves is parked: it needs sign-in, a daily cap per person, a monthly budget switch and a passage-only prompt first.

@@ -328,3 +328,26 @@ html.reading { overflow-anchor: none; scroll-behavior: auto; } /* load() keeps y
   background: var(--b-ink); color: var(--brand-ink); font: 700 .8rem var(--font-body); cursor: pointer; display: grid; place-items: center; }
 .rd-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .rd-avatar:focus-visible { outline: 2px solid var(--b-mark); outline-offset: 2px; }
+
+/* ---------- figures: enlarge button and the viewer (zoom.ts) ---------- */
+.fig { position: relative; }
+.fig img { cursor: zoom-in; }
+.fig-zoom {
+  position: absolute; top: 10px; right: 10px; width: 38px; height: 38px; display: grid; place-items: center; padding: 0;
+  border: 1px solid rgb(255 255 255 / .35); border-radius: 50%; background: rgb(0 0 0 / .62); color: #fff; cursor: pointer; opacity: .88;
+}
+.fig-zoom:hover, .fig-zoom:focus-visible { opacity: 1; background: rgb(0 0 0 / .85); }
+.fig-zoom:focus-visible { outline: 2px solid var(--b-mark); outline-offset: 2px; }
+.rd-zoom { position: fixed; inset: 0; z-index: 90; display: flex; flex-direction: column; background: #000; color: #fff; font-family: var(--font-body); }
+.rd-zoom[hidden] { display: none; }
+.rd-zoom-bar { flex: none; display: flex; align-items: flex-start; gap: .75rem; padding: .6rem .75rem; }
+.rd-zoom-cap { flex: 1; min-width: 0; margin: 0; max-height: 5.6em; overflow-y: auto; font-size: .85rem; line-height: 1.4; color: #e8e8e8; }
+.rd-zoom-tools { flex: none; display: flex; gap: .35rem; }
+.rd-zoom-tools button { min-width: 44px; min-height: 44px; padding: 0 .6rem; border: 1px solid #4a4a4a; border-radius: 8px; background: #171717; color: #fff; font: 600 1.1rem var(--font-body); cursor: pointer; }
+.rd-zoom-tools button:hover { background: #262626; }
+.rd-zoom-tools button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.rd-zoom-stage { position: relative; flex: 1; min-height: 0; overflow: hidden; display: grid; place-items: center; touch-action: none; overscroll-behavior: contain; cursor: grab; }
+.rd-zoom-stage:active { cursor: grabbing; }
+.rd-zoom-sheet { padding: 6px; border-radius: 6px; background: #fff; transform-origin: center; will-change: transform; }
+.rd-zoom-sheet img { display: block; max-width: none; user-select: none; -webkit-user-drag: none; }
+:root[data-theme='dark'] .rd-zoom-sheet { filter: brightness(.9); }

@@ -12,6 +12,7 @@ import { BookProgressStore, type ReaderPrefs } from './store';
 import { SyncedBookStore } from './sync';
 import { mountReaderAccount, mountReaderMe } from './account';
 import { dueCount } from './review';
+import { mountZoom } from './zoom';
 import type { GlossaryEntry, Location, OutlinePart, Reference, Section } from './types';
 
 interface PageData { outline: OutlinePart[]; references: { part: string; items: Reference[]; note: string | null }[]; glossary: GlossaryEntry[]; sizes: number[] }
@@ -450,6 +451,8 @@ export function startReader() {
   const drawDue = () => { if (due) { const n = dueCount(store); due.textContent = n ? `${n} due` : ''; } };
   store.subscribe(drawDue);
   drawDue();
+
+  mountZoom(root);
 
   // ---------------------------------------------------------------- start
   applyPrefs();

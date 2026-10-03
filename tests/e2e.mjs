@@ -311,6 +311,72 @@ try {
     check(await overflow(page) <= 0, `${name}: series page has no sideways scroll`);
     await ctx.close();
   }
+
+  // ---------- Figure viewer (tap a figure; pinch, double-tap, wheel, keys; Back closes it) ----------
+  // The figures live on R2, which tests cannot reach: a stand-in picture of the same size is served instead.
+  const FIG = `<svg xmlns="http://www.w3.org/2000/svg" width="1745" height="546"><rect width="100%" height="100%" fill="#cfe8ff"/><text x="60" y="290" font-size="90">Figure</text></svg>`;
+  for (const [name, vp, touch] of [['phone', { width: 390, height: 844 }, true], ['desktop', { width: 1280, height: 900 }, false]]) {
+    const ctx = await browser.newContext({ viewport: vp, hasTouch: touch, isMobile: touch });
+    await ctx.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
+    await ctx.route('https://files.drharshmaheshwari.com/books/**', (r) => r.fulfill({ contentType: 'image/svg+xml', body: FIG, headers: { 'access-control-allow-origin': '*' } }));
+    const page = await ctx.newPage();
+    const errs = errorsOf(page);
+    await page.goto(BASE + R + '#b0-r0-c02');
+    await page.waitForSelector('#b0-r0-c02 .fig img');
+    await page.waitForFunction(() => document.querySelector('#b0-r0-c02 .fig img').complete);
+    const paras = await page.evaluate(() => document.querySelectorAll('#b0-r0-c02 [data-p]').length);
+    const url = page.url();
+    await page.locator('#b0-r0-c02 .fig-zoom').first().click();
+    check(await page.locator('#rd-zoom').isVisible(), `${name}: tapping the enlarge button opens the figure viewer`);
+    const scale = () => page.evaluate(() => Number(/scale\(([\d.]+)\)/.exec(document.querySelector('.rd-zoom-sheet').style.transform)?.[1] ?? 0));
+    const fitted = await page.evaluate(() => [document.querySelector('.rd-zoom-sheet img').getBoundingClientRect().width, document.querySelector('.rd-zoom-stage').clientWidth]);
+    check(fitted[0] > 300 && fitted[0] <= fitted[1], `${name}: the picture fits the screen (${Math.round(fitted[0])} of ${fitted[1]} px)`);
+    check(await page.evaluate(() => document.activeElement?.dataset.z === 'close'), `${name}: focus moves into the viewer`);
+    await page.keyboard.press('+');
+    check(Math.abs(await scale() - 1.5) < .01, `${name}: + zooms in`);
+    await page.keyboard.press('0');
+    check(await scale() === 1, `${name}: 0 fits again`);
+    await page.locator('[data-z="in"]').click(); await page.locator('[data-z="in"]').click();
+    check(Math.abs(await scale() - 2.25) < .01, `${name}: the + button zooms`);
+    const box = await page.locator('.rd-zoom-stage').boundingBox();
+    const before = await page.evaluate(() => document.querySelector('.rd-zoom-sheet').style.transform);
+    if (touch) {
+      const c = await ctx.newCDPSession(page);
+      const t = (type, pts) => c.send('Input.dispatchTouchEvent', { type, touchPoints: pts });
+      await t('touchStart', [{ x: box.x + 250, y: box.y + 200, id: 1 }]); await t('touchMove', [{ x: box.x + 150, y: box.y + 200, id: 1 }]); await t('touchEnd', []);
+      check(before !== await page.evaluate(() => document.querySelector('.rd-zoom-sheet').style.transform), `${name}: dragging moves a zoomed picture`);
+      await page.keyboard.press('0');
+      const cx = box.x + box.width / 2, cy = box.y + box.height / 2;
+      await t('touchStart', [{ x: cx - 40, y: cy, id: 1 }, { x: cx + 40, y: cy, id: 2 }]);
+      await t('touchMove', [{ x: cx - 120, y: cy, id: 1 }, { x: cx + 120, y: cy, id: 2 }]); await t('touchEnd', []);
+      check(await scale() > 2.4, `${name}: pinching zooms`);
+      await page.keyboard.press('0');
+      const tap = async () => { await t('touchStart', [{ x: cx, y: cy, id: 1 }]); await t('touchEnd', []); };
+      await tap(); await page.waitForTimeout(80); await tap();
+      check(await scale() > 2, `${name}: double-tap zooms in`);
+      await tap(); await page.waitForTimeout(80); await tap();
+      check(await scale() === 1, `${name}: double-tap again fits`);
+    } else {
+      await page.mouse.move(box.x + 300, box.y + 200); await page.mouse.down(); await page.mouse.move(box.x + 200, box.y + 200, { steps: 4 }); await page.mouse.up();
+      check(before !== await page.evaluate(() => document.querySelector('.rd-zoom-sheet').style.transform), `${name}: dragging moves a zoomed picture`);
+      await page.keyboard.press('0');
+      await page.mouse.move(box.x + 400, box.y + 200); await page.mouse.wheel(0, -400);
+      check(await scale() > 1.2, `${name}: the wheel zooms`);
+      const y = await page.evaluate(() => scrollY); await page.mouse.wheel(0, 300);
+      check(await page.evaluate(() => scrollY) === y, `${name}: the page behind does not scroll`);
+    }
+    await page.goBack();
+    await page.waitForTimeout(200);
+    check(!await page.locator('#rd-zoom').isVisible() && page.url() === url, `${name}: Back closes the viewer and stays in the book`);
+    await page.locator('#b0-r0-c02 .fig img').first().click();
+    check(await page.locator('#rd-zoom').isVisible(), `${name}: clicking the picture opens the viewer`);
+    await page.keyboard.press('Escape');
+    check(!await page.locator('#rd-zoom').isVisible() && await page.evaluate(() => document.activeElement?.classList.contains('fig-zoom')), `${name}: Escape closes it and focus returns to the figure's button`);
+    check(await page.evaluate(() => document.querySelectorAll('#b0-r0-c02 [data-p]').length) === paras, `${name}: the enlarge button does not change paragraph numbers (saved places stay valid)`);
+    check(await overflow(page) <= 0, `${name}: no sideways scroll with the viewer`);
+    check(errs.length === 0, `${name}: figure viewer has no script errors ${errs.join(' | ')}`);
+    await ctx.close();
+  }
 } finally {
   await browser.close();
   if (started) try { execSync('npx astro preview stop', { stdio: 'ignore' }); } catch {}
