@@ -51,10 +51,7 @@ const sizes = [15, 16.5, 18, 19.5, 21.5];
       </button>
       <button type="button" class="rd-ico rd-aa" id="rd-aa" aria-controls="rd-aa-panel" aria-expanded="false" aria-label="Text size and line width">Aa</button>
       <ThemeToggle />
-      <a class="rd-dl" href={book.pdf} download rel="noopener" aria-label={`Download the PDF of ${label}`}>
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-        <span>PDF</span>
-      </a>
+      <span class="rd-me" id="rd-me"></span>
     </header>
 
     <div class="rd-aa-panel" id="rd-aa-panel" hidden>
@@ -75,6 +72,7 @@ const sizes = [15, 16.5, 18, 19.5, 21.5];
       </div>
       <nav class="rd-toc" data-panel="toc">
         <a class="rd-toc-top" href="#top">About this book</a>
+        <a class="rd-toc-top rd-review-link" href={`${book.url}review/`}>Review <span class="rd-due" id="rd-due"></span></a>
         {book.outline.map((p) => (
           <div class="rd-toc-part">
             {book.outline.length > 1 && <p class="rd-toc-ph">{p.title}</p>}
@@ -85,6 +83,7 @@ const sizes = [15, 16.5, 18, 19.5, 21.5];
         ))}
       </nav>
       <div class="rd-marks" data-panel="marks" hidden><p class="rd-empty">No bookmarks yet. Tap the bookmark at the top to keep your place.</p><ol></ol></div>
+      <div class="rd-acct" id="rd-acct"></div>
     </aside>
     <div class="rd-scrim" hidden></div>
 
@@ -141,6 +140,7 @@ const sizes = [15, 16.5, 18, 19.5, 21.5];
       <div class="rd-thumb"></div>
       <div class="rd-scrub-label" hidden></div>
     </div>
+    <div class="rd-toast" id="rd-toast" role="status" hidden></div>
     <div class="rd-pop" id="rd-pop" role="dialog" aria-modal="false" hidden><button type="button" class="rd-pop-x" aria-label="Close">×</button><div class="rd-pop-body"></div></div>
   </div>
   <script id="rd-data" type="application/json" set:html={JSON.stringify({ outline: book.outline, references: book.references, glossary: book.glossary, sizes })} />

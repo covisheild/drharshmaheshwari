@@ -43,7 +43,7 @@ export async function mountAccountCard(el: HTMLElement, store: ProgressStore) {
           try { await signOut(); location.reload(); } catch { alert('Could not sign out. Please try again.'); }
         } }, 'Sign out'),
         h('button', { class: 'btn-link', type: 'button', onclick: async () => {
-          if (!confirm('Delete your account? This permanently deletes your name, email and all your trainer progress from this site, on every device. It cannot be undone.')) return;
+          if (!confirm('Delete your account? This permanently deletes your name, email, all your trainer progress and your book reading places, bookmarks and marks from this site, on every device. It cannot be undone.')) return;
           try { await deleteAccount(); alert('Your account and all its data have been deleted.'); location.reload(); } catch { alert('Could not delete the account. Please try again.'); }
         } }, 'Delete account'),
         privacy)));

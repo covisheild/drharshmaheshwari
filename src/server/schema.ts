@@ -39,6 +39,37 @@ export const MIGRATIONS: string[][] = [
     )`,
     `CREATE TABLE IF NOT EXISTS schema_version (version INTEGER NOT NULL)`,
   ],
+  // 2: the book reader (docs/book-reader-plan.md). Where you are in each book, and your bookmarks. Practice
+  // marks reuse `attempts` with trainer = 'book-<id>'. A location is JSON {s, p, f}: section id, paragraph,
+  // fraction, so it survives a new version of the book. `done` is the JSON list of sections read to the end. A deleted bookmark keeps its row with deleted_at set,
+  // so the deletion reaches your other devices instead of the bookmark coming back from one of them.
+  [
+    `CREATE TABLE IF NOT EXISTS reading_progress (
+      user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      book_id TEXT NOT NULL,
+      book_version TEXT NOT NULL,
+      location TEXT NOT NULL,
+      percent REAL NOT NULL,
+      done TEXT NOT NULL DEFAULT '[]',
+      updated_at INTEGER NOT NULL,
+      PRIMARY KEY (user_id, book_id)
+    )`,
+    `CREATE TABLE IF NOT EXISTS bookmarks (
+      user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      book_id TEXT NOT NULL,
+      id TEXT NOT NULL,
+      location TEXT NOT NULL,
+      label TEXT NOT NULL,
+      snippet TEXT NOT NULL,
+      created_at INTEGER NOT NULL,
+      deleted_at INTEGER,
+      PRIMARY KEY (user_id, id)
+    )`,
+    `CREATE INDEX IF NOT EXISTS bookmarks_user_book ON bookmarks(user_id, book_id)`,
+    // The address of the person's Google profile picture, shown small in the reader's top bar (Harsh,
+    // 3 Oct 2026). Only a link Google gives at sign-in; the picture itself is never copied here.
+    `ALTER TABLE users ADD COLUMN picture TEXT`,
+  ],
 ];
 
 let applied: Promise<void> | null = null;
