@@ -1,0 +1,199 @@
+{
+ "format": 1,
+ "id": "s55-r1-c06",
+ "label": "6",
+ "title": "What happens to studies once published: citation, uncitedness and use",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"66\">citation</dfn> is an entry in the reference list of a later published work that points to an earlier one. A <dfn data-g=\"67\">citation database</dfn> records the reference lists of the journals it indexes. For each paper it holds, it counts how many of those later works cite it. Web of Science, owned by Clarivate, is the database behind most of the figures below; Scopus is another. A paper is <dfn data-g=\"459\">uncited</dfn>, in a given database, when that count is zero.</p>\n<p>Every count of uncited papers rests on three choices. The first is the database, and which kinds of document in it are counted. The second is the set of papers, usually all those published in one year. The third is the <dfn data-g=\"68\">citation window</dfn>: how long after publication the counting runs.</p>\n<p>The measurements depend on those choices. A 1990 report in the journal Science, as a 2017 news feature in the journal Nature describes it, found 55% of items published from 1981 to 1985 uncited 5 years later. It counted letters, corrections, meeting abstracts and other editorial material, which are rarely cited. The feature does not say which database it used. Nicolaisen and Frandsen give a different figure for the same Science reports: 47.4% for the sciences.</p>\n<p>Counting research articles and reviews in Web of Science, Larivière and Sugimoto found 4% of biomedical papers published in 2006 uncited by December 2017. These figures come from an analysis done for the news feature, not a <dfn data-g=\"315\">peer-reviewed</dfn> paper (one checked by other researchers before the journal accepts it). The data behind its charts were later withdrawn from public view. A <dfn data-g=\"405\">self-citation</dfn> is a paper citing its own authors’ earlier work. The feature’s figures include self-citations; removing them raises the shares uncited.</p>\n<p>Nicolaisen and Frandsen counted in Scopus. They took seven document types published from 1996 to 2015, among them articles, reviews, letters and notes, and counted citations up to 6 December 2018. They give each result as an <dfn data-g=\"460\">uncitedness ratio</dfn>, a share written as a <dfn data-g=\"184\">fraction</dfn> of 1, so 0.23 means 23 in every 100. For medical articles alone it was 0.18, and for medical notes 0.64.</p>\n<p>A database misses citations: a paper it records as uncited may have been cited in a journal or book it does not index, or missed through an error. So the true share uncited is probably lower than the database shows.</p>\n<p>A citation records that one work referred to another. It does not record whether the earlier work was used, and many citations are superficial. An uncited paper may still be read and used.</p>\n<p>One study we found sorts papers by design.</p>\n<p>Patsopoulos, Analatos and Ioannidis took 2646 articles published in 1991 and 2001 from the Science Citation Index in Web of Science. They sorted them into seven designs by the design named in the title; the second example below shows five of them. They counted each article’s citations to the end of the second year after publication and gave the <dfn data-g=\"271\">median</dfn> for each design, not a share uncited. Meta-analyses, which combine earlier studies, had the highest medians. Case reports, on one patient or a few, received negligible citations. The study has no cross-sectional category. So no study we found measures how often descriptive cross-sectional studies are cited, or go uncited.</p>",
+   "refs": [
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Here is the trap with citation figures. The same word, “uncited”, gives numbers from under 1% to over 50%. It is because each one counted something different. Every figure rests on three choices.</p>\n<ul>\n<li><strong>The database, and what it counts.</strong> A database such as Web of Science holds the reference lists of the journals it covers, about 12,000 of them in 2017. Some counts include letters and corrections, which are rarely cited.</li>\n<li><strong>Which papers.</strong> Usually all the papers of one field published in one year.</li>\n<li><strong>How long you wait.</strong> Counting stops at some date. The longer you wait, the fewer papers stay uncited.</li>\n</ul>\n<p>So before you use any figure for uncited papers, ask three questions. Which database, counting what? Papers from which year? Counted until when?</p>\n<p>Three more facts change how you read a citation count.</p>\n<p>The database misses citations. In one check, a biologist named Heneberg looked at the Web of Science records of 13 Nobel prizewinners. At first glance about 1.6% of their papers looked uncited. After about 20 hours of checking by hand, he got it down to 0.3%. The rest had been cited, and the database had missed it.</p>\n<p>Being cited is not being used. A reference can be one line in a long list.</p>\n<p>Being uncited is not being useless.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s55-r1-c06-medians-by-design.png",
+   "alt": "A bar chart with two bars for each of five study designs. Median citations in 2 years for articles of 1991 and of 2001: meta-analysis 5 and 9, randomised controlled trial 4 and 6, cohort 3 and 5, case-control 3 and 4, case report 0 and 1.",
+   "w": 1357,
+   "h": 654,
+   "caption": "Median citations by the end of the second year after publication, for articles whose title named their design, Web of Science (Patsopoulos and colleagues). Articles of 1991: meta-analysis 5, randomised controlled trial 4, cohort 3, case-control 3, case report 0. Articles of 2001: 9, 6, 5, 4 and 1. There is no cross-sectional category."
+  },
+  {
+   "t": "figure",
+   "src": "s55-r1-c06-uncited-shares.png",
+   "alt": "A bar chart of six shares uncited, with a dashed line at half. All items published 1981 to 1985, counted for 5 years: 55%. Biomedical articles and reviews of 2006, Web of Science: 4%. All fields 1900 to 2015, Web of Science: 21%. Medical science papers of 1990, after 27 years: 12%. Medicine in Scopus, seven document types, 1996 to 2015: 23%. Medical articles only, same Scopus count: 18%.",
+   "w": 1533,
+   "h": 744,
+   "caption": "The six shares uncited in the first example’s table, each a count of something different. The 55% counted all items, letters and meeting abstracts included, over 5 years; the 4% counted biomedical research articles and reviews of 2006 until December 2017. The two Scopus rows differ only in what was counted: 23 in every 100 with all seven document types, letters and notes among them, 18 with articles alone. None counts descriptive cross-sectional studies. Line them up to see how much the choices matter, never to rank them."
+  },
+  {
+   "t": "figure",
+   "src": "s55-r1-c06-heneberg-check.png",
+   "alt": "A bar chart with two bars: share of papers that looked uncited, about 1.6% at first glance in Web of Science and 0.3% after about 20 hours of checking by hand.",
+   "w": 1005,
+   "h": 610,
+   "caption": "Heneberg’s check of the Web of Science records of 13 Nobel prizewinners. At first glance about 1.6% of their papers looked uncited; after about 20 hours of checking by hand, 0.3%. The rest had been cited, and the database had missed it."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a sentence you may already have heard: “more than half of all research papers are never cited.” Take it apart before you use it.</p>\n<p>Its source is a 1990 report in the journal Science. Van Noorden, a features editor at Nature, traced it in a 2017 news feature. The report found 55% of items published from 1981 to 1985 uncited 5 years after publication.</p>\n<p>Now ask Book 0’s question: per cent of what? The items counted included letters, corrections, meeting abstracts and other editorial material. Those are rarely cited by anyone. And 5 years is a short wait. So the 55% was a true count of the wrong thing, over a short time.</p>\n<p>Now fill in the three labels for every figure you meet. Here are the figures this section uses. Read each row and say, in one sentence, what it is a share of.</p>\n<table style=\"width:98%;\">\n\n<thead>\n<tr>\n<th>Share uncited</th>\n<th>What was counted</th>\n<th>Database</th>\n<th>Papers published in</th>\n<th>Counted until</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>55%, as reported by Van Noorden</td>\n<td>all items, including letters, corrections and meeting abstracts</td>\n<td>not named in the feature</td>\n<td>1981 to 1985</td>\n<td>5 years after publication</td>\n</tr>\n<tr>\n<td>4%</td>\n<td>biomedical research articles and reviews</td>\n<td>Web of Science</td>\n<td>2006</td>\n<td>December 2017</td>\n</tr>\n<tr>\n<td>21%</td>\n<td>research papers from all fields, 39 million of them</td>\n<td>Web of Science</td>\n<td>1900 to 2015</td>\n<td>December 2017</td>\n</tr>\n<tr>\n<td>12%</td>\n<td>medical-science papers (document types not stated)</td>\n<td>not named in the paper that reports it</td>\n<td>1990</td>\n<td>27 years after publication</td>\n</tr>\n<tr>\n<td>0.23 as a ratio (23%)</td>\n<td>medicine, seven document types including letters and notes</td>\n<td>Scopus</td>\n<td>1996 to 2015</td>\n<td>6 December 2018</td>\n</tr>\n<tr>\n<td>0.18 as a ratio (18%)</td>\n<td>medical articles only</td>\n<td>Scopus</td>\n<td>1996 to 2015</td>\n<td>6 December 2018</td>\n</tr>\n</tbody>\n</table>\n<p>Look at where the numbers come from, too. The 4% and 21% were worked out by Larivière, an information scientist, and Sugimoto, at Indiana University, for Van Noorden’s feature. A feature is journalism, not a peer-reviewed paper, and the data behind its charts were later withdrawn from public view. The 12% reaches us through a 2021 paper by Golosovsky and Larivière, who report it from a 2018 book by Sugimoto and Larivière. This course has not been able to check that book. The 0.23 and 0.18 come from a peer-reviewed study by Nicolaisen and Frandsen, which names its database, its document types and its dates. Their two rows differ only in what was counted: take out letters, notes and the other document types, and the share uncited falls from 23 to 18 in every 100.</p>\n<p>Now test the sentence from the course outline: “most descriptive cross-sectional studies are never cited”. Which row measures descriptive cross-sectional studies? None of them. Every row counts papers by field, document type or year, never by study design. The rows for medicine give 12% after 27 years and 18% of articles in Scopus, and neither is anywhere near “most”. The sentence has no row to stand on.</p>",
+   "numberRefs": [
+    127,
+    128,
+    129
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table holds only what the sources we found give. The counts come from two databases, Web of Science and Scopus, and several were reported rather than published with their data. The two Scopus rows run over an <dfn data-g=\"308\">open window</dfn>: a paper of 2015 had about 3 years to be cited, a paper of 1996 about 22, and the <dfn data-g=\"373\">ratio</dfn> lumps them together. A count by study design could show that some designs are cited much less than the field as a whole; the next example shows the one such count we found, and what it leaves out.</p>\n<p>The rows are also not comparable with one another. Each answers its own question. Line them up to see how much the choices matter, never to rank the fields.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now look at the one count we found that sorts papers by design. Patsopoulos, Analatos and Ioannidis searched the Science Citation Index in Web of Science for articles published in 1991 and in 2001 whose titles named their design. For each design they gave the median number of citations an article received by the end of the second year after publication. The median is the middle value once the counts are put in order, as Book 0’s section on average and spread showed.</p>\n<p>A <dfn data-g=\"273\">meta-analysis</dfn> combines the results of earlier studies of the same question into one answer. A <dfn data-g=\"53\">case report</dfn> describes one patient, or a few. <dfn data-g=\"368\">Randomised controlled trial</dfn> is shortened here to randomised trial. Five of the study’s seven designs are given; the other two, nonsystematic reviews and decision or cost-effectiveness analyses, are left out to keep it short. Each figure is a median number of citations in the first two years. For articles of 1991: meta-analysis 5, randomised trial 4, cohort 3, case-control 3, case report 0. For articles of 2001, in the same order: 9, 6, 5, 4 and 1.</p>\n<p>Read the labels first. The database is Web of Science. The papers are articles of 1991 and of 2001 whose design is in the title. The window is two years after the year of publication. And the figure is a median count of citations, not a share uncited.</p>\n<p>A median can still tell you something about uncited papers. The median for case reports of 1991 is 0. The middle of the ordered counts is 0, so at least half of those case reports had no citation in their first two years. That is a floor, not the share itself: it could be more than half.</p>\n<p>Now the question this section keeps asking. Which design is the descriptive <dfn data-g=\"103\">cross-sectional study</dfn>? None. The study has no cross-sectional category. Cohort and case-control studies relate an <dfn data-g=\"159\">exposure</dfn> to an outcome, and their medians sit between the meta-analyses and the case reports. Nothing in these figures tells you where a cross-sectional study would sit.</p>",
+   "numberRefs": [
+    130
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A study was counted only if its design was named in its title, and most studies probably do not name their design there. The authors did not remove self-citations. The two-year window is short, and the counts come from one database. The authors add that citation impact does not necessarily translate into clinical or scientific impact. So these medians rank designs by early citations in one database, and nothing more.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Never quote a share of uncited papers without its three labels. Name the database and what it counted. Name the year the papers were published. Name how long the count ran.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The belief that more than half of all papers are never cited is misleading. It goes back to two reports in Science, of 1990 and 1991. The 1990 one counted letters, corrections and meeting abstracts, over only 5 years. Refuse the “half” figure when you hear it.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Read “uncited” as “no citation found in this database by this date”, not as a fact about the paper. Before you call a paper uncited, search for it in a second database and on the open web.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Web of Science shows papers by Indian authors as more likely to go uncited than papers from the United States and Europe (the feature gives no figure). But it leaves out many regional-language journals, and counting them would narrow the gap. Before concluding that a department’s work goes uncited, find out whether the database covers the journals it was published in.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not use citation as your test of whether a study was worth doing. Test a question by who needs its answer and what they would do with it, as the last section began to do.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When someone says a kind of study, such as a descriptive cross-sectional study, is “never cited”, ask for the study that counted it. The one count by design we found, of Web of Science articles of 1991 and 2001, has no cross-sectional category.</p>",
+     "tag": "dispute",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A paper’s title is not its finding. Golosovsky and Larivière’s paper is called “Uncited papers are not useless”. It shows that, in the fields it studied, uncited papers follow the same statistical pattern as cited ones. Most of them, it finds, have some chance of being cited given enough time. It does not measure whether anyone used them.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>What would overturn the conclusion that few research articles go uncited is a peer-reviewed count, with articles and reviews only and a long window, that found a large share uncited. Until then, quote each figure with its three labels.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>In a made-up department meeting at your college, a senior colleague says: “Half of all research is never cited. A thesis that only counts how common something is will never be cited. So it is a waste of two years.”</p>\n<p>Lay the argument out as premises and a conclusion. Say which premises the measurements in this section support, which they do not, and whether the conclusion would follow even if every premise were true.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Premise 1: half of all research is never cited. Premise 2: a thesis that only counts how common something is will never be cited. Conclusion: such a thesis is a waste of two years.</p>\n<p>Premise 1 does not survive its labels. The “half” goes back to a 1990 report. It counted letters, corrections and meeting abstracts, over 5 years. Counting research articles and reviews in Web of Science, 4% of biomedical papers published in 2006 were uncited by December 2017. For medical sciences, a count reported by Golosovsky and Larivière gives 12% of papers from 1990 uncited after 27 years.</p>\n<p>Premise 2 has no measurement behind it. The one count in this section that sorts papers by design, Patsopoulos and colleagues’ count in Web of Science, has no cross-sectional category. The lowest design in it is the case report. So nobody can tell you from these figures how often a descriptive study goes uncited.</p>\n<p>Now grant both premises, as Book 0’s section on argument taught you to. The conclusion still does not follow. Being uncited does not mean being useless. A public-health paper in Van Noorden’s feature was never cited and was viewed more than 1,500 times.</p>\n<p>Whether a thesis is worth two years depends on the tests from the last section. Is the answer in doubt? Is it already known? Would it change what someone does? A descriptive question can pass all three.</p>\n<p>What survives of the colleague’s worry is fair: a study that nobody needs is a waste, cited or not. That is a reason to test the question before starting, not a reason to avoid descriptive work.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A classmate’s draft protocol says: “Uncited papers are not useless (Golosovsky and Larivière, 2021). So our small study will be useful even if nobody cites it.”</p>\n<p>Say what the cited paper measured, whether it supports the sentence, and what you would write instead.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Check the reference as Book 0 taught: find the source, confirm it, find the passage, read it.</p>\n<p>The paper’s title is “Uncited papers are not useless”. Its body fits a statistical model of how papers gather citations. It finds that the model accounts for the share of uncited papers fairly well. It concludes that uncited papers follow the same process as cited ones, and that most have some chance of being cited given enough time.</p>\n<p>It does not measure whether anyone read or used an uncited paper. So it does not support “our study will be useful”. The draft cites a title for a claim the body does not make.</p>\n<p>Better: drop the citation from that sentence. Say who will use the study’s answer and what they will do with it. Do you want a source for the point that uncited work can still be used? Van Noorden’s 2017 feature gives examples. It quotes a Clarivate analyst: “Lack of citation cannot be interpreted as meaning articles are useless or valueless.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has three minutes and asks you: “Is it true that most medical research is never cited?” Answer without jargon, say how sure you are and why, and give one sentence they could quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>No, not as usually stated. The “most” or “half” figure comes from an old count that included letters and corrections, which almost nobody cites, and it waited only five years.</p>\n<p>Counts of real research papers give much smaller shares. In one large database, Web of Science, about 4% of biomedical papers published in 2006 had no citation by the end of 2017. In another, Scopus, about 18 in every 100 medical research articles published from 1996 to 2015 had none by December 2018.</p>\n<p>Say how sure you are. Each is a count in one database, and every database misses some citations. So the true shares are probably lower. Several of the figures come from a magazine feature, not a peer-reviewed study.</p>\n<p>Then the part that matters more. Being cited does not mean a study was useful, and being uncited does not mean it was useless. One paper written to improve public-health practice was never cited, and it was viewed more than 1,500 times.</p>\n<p>A quotable sentence: “Very little medical research goes completely uncited; the harder question is how much of it anyone actually needed.”</p>"
+  }
+ ]
+}

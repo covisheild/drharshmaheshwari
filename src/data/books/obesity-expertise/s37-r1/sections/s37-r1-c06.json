@@ -1,0 +1,261 @@
+{
+ "format": 1,
+ "id": "s37-r1-c06",
+ "label": "6",
+ "title": "Where a country’s food comes from: production, imports, stocks",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Take one food and one stated period. A country’s supply of that food for use within the country is its production, plus its imports, minus its exports, minus the rise in its stocks over the period (or plus the fall).</p>\n<p>India’s official series of per capita <dfn data-g=\"242\">net availability</dfn> of foodgrains, published in the Economic Survey’s Statistical Appendix Table 1.19, applies the same identity with two further subtractions. Net availability is gross production, less seed, feed and wastage, less exports, plus imports, less the change in stocks. Net availability divided by the population gives per capita net availability in kilograms a year. Divided again by 365 it gives grams a day. The table states that these figures are not strictly representative of actual consumption.</p>\n<p>The Food and Agriculture Organization of the United Nations (FAO) defines an <dfn data-g=\"173\">import dependency ratio</dfn> (IDR): imports divided by production plus imports minus exports, times 100. Its <dfn data-g=\"331\">self-sufficiency ratio</dfn> (SSR) is gross production divided by the same total, times 100. Neither <dfn data-g=\"307\">ratio</dfn> uses the change in stocks. The two add to 100 only when exports are zero. A <dfn data-g=\"245\">net imports</dfn> figure, imports minus exports, is enough for the SSR and not enough for the IDR.</p>",
+   "refs": [
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Where does the food a country eats in a year come from? Three places. What it grew, what it bought from abroad, and what it had put away in store.</p>\n<p>So start with what was grown. Add what came in from abroad. Take off what went out.</p>\n<p>Two percentages tell you how much a country leans on the rest of the world. If the country exports nothing, the two add to 100. If it exports, they do not.</p>\n<p>None of this says what anyone ate. It says what was there to be eaten.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c06-pulses-identity.png",
+   "alt": "Four bars: net production 22801, net imports 1733, rise in stocks taken off -615 drawn below zero, net availability 23919.",
+   "w": 1357,
+   "h": 658,
+   "caption": "India’s pulses, 2022-23, thousand tonnes (Economic Survey 2025-26, Table 1.19). Net production plus net imports, minus the rise in stocks, gives net availability: 22801 plus 1733 minus 615 is 23919. The table prints the stock change as 615, a rise; it is drawn as -615 because a rise is taken off."
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c06-self-sufficiency.png",
+   "alt": "Two bars against a line at 100: cereals 2022-23 at 111.1 per cent, above the line; edible oil 2023-24 at 43.75 per cent, well below it.",
+   "w": 1358,
+   "h": 657,
+   "caption": "Self-sufficiency, per cent: production divided by production plus imports minus exports, times 100. Cereals in 2022-23 at 111.1 (Economic Survey, Table 1.19); edible oil in 2023-24 at 43.75, worked from the PIB’s production and import figures with exports unknown and taken as zero (the release prints 43.74). The line at 100 is where a country grows exactly what it keeps."
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c06-rice-row-gap.png",
+   "alt": "Two bars: availability worked out by the identity, 110553 thousand tonnes, and availability as printed, 115120, taller by 4567.",
+   "w": 1357,
+   "h": 658,
+   "caption": "India’s rice, 2022-23, thousand tonnes (Economic Survey 2025-26, Table 1.19). Net production 125438, less net exports of 22347, plus the fall in stocks of 7462, gives 110553. The table prints 115120: the row misses its own identity by 4567."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the shortcut, because it is the one people take. India grew 26,058 thousand tonnes of pulses in 2022-23. Divide by the population and call it what Indians had.</p>\n<p>Open the Economic Survey 2025-26 Statistical Appendix, Table 1.19, “Per Capita Net Availability of Foodgrains”, at https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab1.19.pdf. Find the block headed PULSES and the row for 2022-23. The population column is in thousand persons: 13,92,329 thousand, which is 139.2 <dfn data-g=\"78\">crore</dfn>, that is about 1.39 billion people. Dividing thousand tonnes by thousand persons gives tonnes a person.</p>\n<div class=\"working\">\n<p>26,058 divided by 13,92,329 = 0.018715 tonnes<br />\n0.018715 times 1,000 = 18.715<br />\n18.715 times 1,000 divided by 365 = 51.27</p>\n</div>\n<p>About 51 grams of pulses a person a day. The table says 47.1. The shortcut is 4 grams too high, and the table shows why. Now build the supply properly, from the same row.</p>\n<table style=\"width:64%;\">\n\n<tbody>\n<tr>\n<td>Pulses, 2022-23</td>\n<td>Thousand tonnes</td>\n</tr>\n<tr>\n<td>Net production</td>\n<td>22801</td>\n</tr>\n<tr>\n<td>Net imports</td>\n<td>1733</td>\n</tr>\n<tr>\n<td>Rise in stocks, taken off</td>\n<td>-615</td>\n</tr>\n<tr>\n<td>Net availability</td>\n<td>23919</td>\n</tr>\n</tbody>\n</table>\n<p>Table 1.19 prints the stock change as 615, a rise. It is written -615 here because a rise is taken off.</p>\n<p><dfn data-g=\"247\">Net production</dfn> is the harvest less what was kept for seed, fed to animals or wasted before sale. Net imports are imports minus exports. The stocks rose by 615 thousand tonnes, so that much was stored rather than used, and it comes off. Say the identity in words: production plus imports minus exports minus the rise in stocks is what was available.</p>\n<div class=\"working\">\n<p>22,801 plus 1,733 minus 615 = 23,919</p>\n</div>\n<p>It closes exactly. Now share it out.</p>\n<div class=\"working\">\n<p>23,919 divided by 13,92,329 = 0.01718 tonnes<br />\n0.01718 times 1,000 = 17.18<br />\n17.18 times 1,000 divided by 365 = 47.07</p>\n</div>\n<p>About 17.2 kilograms a person a year and 47.1 grams a day, as the table prints. The shortcut counted seed, feed and waste as food, counted grain that went into store, and left out imports. In this year those errors did not cancel.</p>\n<p>Now read the note under the table before you quote the 47.1 anywhere. The figures “are not strictly representative of actual level of consumption”. This is what was there to be eaten in the country as a whole. It is not what any household or person ate.</p>",
+   "numberRefs": [
+    75
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The identity always holds, because it is only bookkeeping. The figures in it do not always hold. The table’s stock column does not count stocks held by traders, producers and consumers, by its own note. And a national average in grams a day says nothing about any state, household or person.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now run the identity on a row that does not close. It is a real one.</p>\n<p>In the same table, find the block headed RICE and the row for 2022-23. Net production is 125438 thousand tonnes. Net imports are -22347: a minus sign in this column means India exported more rice than it imported, by 22,347 thousand tonnes. Change in stocks is -7462: the stocks fell. Printed net availability is 115120.</p>\n<p>Take the rise in stocks off, as before. A fall is a negative rise, and taking off a <dfn data-g=\"240\">negative number</dfn> adds it.</p>\n<div class=\"working\">\n<p>1,25,438 minus 22,347 plus 7,462 = 1,10,553<br />\n1,15,120 minus 1,10,553 = 4,567</p>\n</div>\n<p>The row is 4,567 thousand tonnes short of its own printed total. Do the same with the rice rows for 2020-21 and 2021-22, and they close exactly. Do it with wheat for 2022-23 and it is out by 2, which is <dfn data-g=\"321\">rounding</dfn>. Of all the rows for single foods, one other fails: pulses in 2021-22, by 102. Only rice in 2022-23 is out by thousands.</p>\n<p>The gap carries through. The CEREALS and FOODGRAINS totals for 2022-23 include rice, and each misses its own identity by 4,572. Turn that into grams a day, the same way as before.</p>\n<div class=\"working\">\n<p>4,572 divided by 13,92,329 times 1,000 times 1,000 divided by 365 = 9.00 grams</p>\n</div>\n<p>About 9 grams a person a day of the headline foodgrain figure for 2022-23, 568.8 grams, that the table’s own columns do not account for.</p>\n<p>The table does not say why. The stock figure may have been revised, a column may carry a different definition that year, or there may be a slip. You cannot tell which from here, and you should not guess. What you can do is say it plainly: “Table 1.19’s 2022-23 rice row does not satisfy its own identity by 4,567 thousand tonnes, so I have not used the change between 2021-22 and 2022-23 without checking the Division’s source.” That sentence is what running the identity buys you.</p>",
+   "numberRefs": [
+    75
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The identity finds a row whose parts do not add up. It cannot find a row whose parts add up and are all wrong together. A matched pair of errors passes it, as Book 0, C9 warned about stocks.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>The identity also tells you how much of a food came from abroad. Edible oil and cereals give opposite answers.</p>\n<p>Open the Press Information Bureau (PIB) backgrounder <em>National Mission on Edible Oils</em> (8 December 2025) at https://www.pib.gov.in/PressReleasePage.aspx?PRID=2200287. Search for “12.18” and then for “15.66”. India produced 12.18 million tonnes of edible oil in 2023-24 and imported 15.66 million tonnes. The release gives no edible-oil export figure, so leave exports out and say you did. The FAO’s import dependency ratio is imports divided by production plus imports minus exports, times 100.</p>\n<div class=\"working\">\n<p>12.18 plus 15.66 = 27.84<br />\n15.66 divided by 27.84 times 100 = 56.25<br />\n12.18 divided by 27.84 times 100 = 43.75</p>\n</div>\n<p>Import dependence 56.25 per cent, the release’s own figure, and self-sufficiency 43.75 per cent (the release prints 43.74). With exports taken as zero, the two add to 100.</p>\n<p>Now cereals, from Table 1.19 for 2022-23. Gross production was 3,03,628 thousand tonnes and net imports -30,352: net exports. The table gives only imports minus exports, so the IDR cannot be worked out: it needs imports alone. The SSR can, because its <dfn data-g=\"88\">denominator</dfn>, production plus imports minus exports, is production plus net imports.</p>\n<div class=\"working\">\n<p>3,03,628 minus 30,352 = 2,73,276<br />\n3,03,628 divided by 2,73,276 times 100 = 111.1 per cent</p>\n</div>\n<p>Self-sufficiency of about 111 per cent. India grew more cereal than it kept. For edible oil, less than half of what it kept was home-grown.</p>\n<p>One date to watch. The oil releases also give import duty rates, and those are out of date. On 24 September 2026 the PIB announced that the basic customs duty on crude sunflower oil had been cut to nil, and on crude soybean and crude palm oil to 5 per cent. Import figures and duty rates move on different clocks. Quote each with its own date.</p>",
+   "numberRefs": [
+    76,
+    75,
+    77
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The two ratios compare a country’s own production with what it kept. They say nothing about whether what it kept was enough, or too much, for the people eating it. And an SSR above 100 for all cereals together can sit beside heavy dependence on imports of another food, as the oil figures show. The FAO adds that the ratios hold only if imports are mainly used at home and not re-exported.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Production is not supply. Write the identity out before you argue about any one term in it.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A rise in stocks is subtracted and a fall is added. The FAO’s handbook says so in as many words, and India’s table follows it. Getting the sign wrong moves the answer by twice the stock change.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>India’s official per capita net availability of foodgrains for 2022-23 is 568.8 grams a person a day (Economic Survey 2025-26, Table 1.19). It is what was there to be eaten, not what was eaten.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>India’s edible oil imports were 56.25 per cent of its production plus imports in 2023-24, by the government’s own figures: 15.66 million tonnes imported against 12.18 produced. When someone says India is self-sufficient in food, ask which food.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Import dependence and self-sufficiency are not two halves of 100 unless the country exports nothing. Work each out from its own formula.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Run the identity on every row of a supply table before you use the row. If a row misses by more than a few units of its last digit, say so and do not build a trend on it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Availability stops at the household door. Do not use availability as intake, and do not use a national average for a state or a family.</p>",
+     "tag": "boundary",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Import figures and import duties change on different dates. Put the date beside every trade figure you quote.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here is the WHEAT row of Table 1.19 for 2022-23, in thousand tonnes.</p>\n<table style=\"width:51%;\">\n\n<thead>\n<tr>\n<th>Column</th>\n<th>Thousand tonnes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Gross production</td>\n<td>110554</td>\n</tr>\n<tr>\n<td>Net production</td>\n<td>97177</td>\n</tr>\n<tr>\n<td>Net imports</td>\n<td>-4682</td>\n</tr>\n<tr>\n<td>Change in stocks</td>\n<td>-10645</td>\n</tr>\n<tr>\n<td>Net availability</td>\n<td>103142</td>\n</tr>\n</tbody>\n</table>\n<p>Population is 1392329 thousand.</p>\n<p>Say what each of the two negative numbers means in words. Check that the row closes. Say whether wheat availability in 2022-23 was helped or reduced by stocks, and by how much.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Net imports of -4682 mean India exported 4,682 thousand tonnes more wheat than it imported. Change in stocks of -10645 means the stocks the table counts fell by 10,645 thousand tonnes.</p>\n<p>The identity: net production, plus net imports, minus the change in stocks.</p>\n<div class=\"working\">\n<p>97,177 minus 4,682 plus 10,645 = 1,03,140</p>\n</div>\n<p>Against 1,03,142 printed: out by 2, which is rounding. The row closes.</p>\n<p>Stocks helped. They fell, so 10,645 thousand tonnes came out of store and were available. That is about a tenth of the year’s net availability.</p>\n<div class=\"working\">\n<p>10,645 divided by 1,03,142 times 100 = 10.3 per cent</p>\n</div>\n<p>Say it with its limit. This is the stock the table counts. Its note says stocks held by traders, producers and consumers are not taken into account.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist has three minutes and asks: “Is India self-sufficient in food?” Answer without jargon, give one quotable sentence, and say how sure you are.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first.</p>\n<blockquote>\n<p>In cereals, yes: India grows more rice and wheat than it keeps. In pulses and cooking oil, no: more than half the oil India used in 2023-24 was imported.</p>\n</blockquote>\n<p>Then the numbers, one each. For cereals in 2022-23, production was about 111 per cent of what the country kept. For edible oil in 2023-24, the government’s own figure for import dependence is 56.25 per cent.</p>\n<p>Then the limit, plainly. “Self-sufficient” here means the country grew enough of that food to cover what was available. It does not mean every family had enough, and it does not say whether people ate too little or too much. Availability is not what people ate.</p>\n<p>Confidence. The direction for each food is solid, from official tables. The exact percentages depend on the year and the definition. One row of the cereal table for 2022-23 does not add up, so I would not quote the cereal figure to the <dfn data-g=\"85\">decimal</dfn>.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A country produces 800 units of a food in a year, imports 50 and exports 30. Its stocks rise by 20 over the year. What was the supply for use at home? Then give the answer if the stocks had fallen by 20 instead.</p>",
+   "level": 1,
+   "answer": "<p>Production plus imports minus exports, minus the rise in stocks.</p>\n<div class=\"working\">\n<p>800 plus 50 minus 30 minus 20 = 800</p>\n</div>\n<p>Supply of 800. If the stocks had fallen by 20, that grain came out of store and is added.</p>\n<div class=\"working\">\n<p>800 plus 50 minus 30 plus 20 = 840</p>\n</div>\n<p>Supply of 840. The same harvest gives two supplies 40 apart, twice the stock change.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A supply of 73,000 tonnes of a food in a year is shared among 20,00,000 people. Give the supply in kilograms a person a year and in grams a person a day.</p>",
+   "level": 2,
+   "answer": "<p>Turn the tonnes into kilograms, then share them out.</p>\n<div class=\"working\">\n<p>73,000 times 1,000 = 7,30,00,000<br />\n7,30,00,000 divided by 20,00,000 = 36.5</p>\n</div>\n<p>36.5 kilograms a person a year. Now into grams, then days.</p>\n<div class=\"working\">\n<p>36.5 times 1,000 = 36,500<br />\n36,500 divided by 365 = 100</p>\n</div>\n<p>100 grams a person a day.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A country produces 30 units of a food, imports 70 and exports nothing. Give its import dependency ratio and its self-sufficiency ratio, and add them.</p>",
+   "level": 2,
+   "answer": "<p>The denominator for both is production plus imports minus exports.</p>\n<div class=\"working\">\n<p>30 plus 70 minus 0 = 100<br />\n70 divided by 100 times 100 = 70<br />\n30 divided by 100 times 100 = 30<br />\n70 plus 30 = 100</p>\n</div>\n<p>Import dependence 70 per cent, self-sufficiency 30 per cent. With no exports they add to 100.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A country produces 90 units, imports 30 and exports 20. Give both ratios and their sum, and say why the sum is not 100.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>90 plus 30 minus 20 = 100<br />\n30 divided by 100 times 100 = 30<br />\n90 divided by 100 times 100 = 90<br />\n30 plus 90 = 120</p>\n</div>\n<p>Import dependence 30 per cent, self-sufficiency 90 per cent, sum 120.</p>\n<p>The two tops, imports and production, add to 120. The shared bottom has had the 20 of exports taken off, so it is 100. Some of what was produced left the country, yet it still counts on top of the self-sufficiency ratio. That is why the FAO says one is not the complement of the other.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>The supply for use at home was 500. Production was 520, imports 10 and exports 40. What happened to stocks over the year, and by how much?</p>",
+   "level": 3,
+   "answer": "<p>Before stocks, the flows give this.</p>\n<div class=\"working\">\n<p>520 plus 10 minus 40 = 490</p>\n</div>\n<p>Supply was 500, which is 10 more than the flows alone give. The extra 10 must have come out of store.</p>\n<div class=\"working\">\n<p>500 minus 490 = 10</p>\n</div>\n<p>Stocks fell by 10. Check it forwards: 520 plus 10 minus 40 plus 10 = 500.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Table 1.19 of the Economic Survey 2025-26 gives, for foodgrains in 2022-23, net availability of 289063 thousand tonnes and a population of 1392329 thousand. Work out the per capita net availability in kilograms a year and grams a day, and keep the units.</p>",
+   "level": 4,
+   "answer": "<p>Thousand tonnes divided by thousand persons gives tonnes a person.</p>\n<div class=\"working\">\n<p>2,89,063 divided by 13,92,329 = 0.20761 tonnes<br />\n0.20761 times 1,000 = 207.61<br />\n207.61 times 1,000 divided by 365 = 568.8</p>\n</div>\n<p>207.6 kilograms a person a year and 568.8 grams a person a day of foodgrains available in 2022-23, as the table prints.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Go the other way. The same table gives 568.8 grams a person a day of foodgrains for 2022-23, for 1392329 thousand people. What total net availability, in thousand tonnes, does that imply? Compare it with the printed 289063 and say why the two differ slightly.</p>",
+   "level": 5,
+   "answer": "<p>Grams a day to kilograms a year.</p>\n<div class=\"working\">\n<p>568.8 times 365 = 2,07,612<br />\n2,07,612 divided by 1,000 = 207.612</p>\n</div>\n<p>207.612 kilograms, which is 0.207612 tonnes a person a year. Times the population in thousands gives thousand tonnes.</p>\n<div class=\"working\">\n<p>0.207612 times 13,92,329 = 2,89,064.2</p>\n</div>\n<p>About 2,89,064 thousand tonnes, against 2,89,063 printed. The difference of about 1 comes from 568.8 having been rounded to one decimal. Going back from a rounded figure never lands exactly.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>The PIB backgrounder of December 2025 gives India’s edible oil production for 2023-24 as 12.18 million tonnes and imports as 15.66 million tonnes. Work out import dependence and self-sufficiency. Say which term of the FAO’s formula you had to leave out. Then compare your answers with the release’s own figures of 56.25 and 43.74 per cent.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>12.18 plus 15.66 = 27.84<br />\n15.66 divided by 27.84 times 100 = 56.25<br />\n12.18 divided by 27.84 times 100 = 43.75</p>\n</div>\n<p>Import dependence 56.25 per cent, self-sufficiency 43.75 per cent. Exports were left out, because the release gives no edible-oil export figure. The import figure matches the release. The release prints 43.74 for self-sufficiency, one hundredth lower than the two figures it gives. Report 43.75 with the working, or 43.74 as the release’s figure, and say which.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>The same backgrounder gives India’s per capita domestic consumption of edible oils in 2022-23. It was 10.58 kilograms a year in rural areas and 11.78 in urban areas. In 2004-05 the two figures were 5.76 and 7.92. Give each 2022-23 figure in grams a day, and the rural rise as a <dfn data-g=\"262\">percentage</dfn> of the 2004-05 figure.</p>",
+   "level": 6,
+   "answer": "<p>Kilograms a year into grams a day.</p>\n<div class=\"working\">\n<p>10.58 times 1,000 divided by 365 = 28.99<br />\n11.78 times 1,000 divided by 365 = 32.27</p>\n</div>\n<p>About 29 grams a day rural and 32 grams a day urban.</p>\n<p>The rural rise, against the starting value.</p>\n<div class=\"working\">\n<p>10.58 minus 5.76 = 4.82<br />\n4.82 divided by 5.76 times 100 = 83.68</p>\n</div>\n<p>A rise of 83.68 per cent, the release’s own figure. These are consumption figures, not the supply worked out in this section. The release does not say which survey they come from.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>pulses 2022-23: net production 22,801, net imports 1,733<br />\nchange in stocks 615<br />\nsupply = 22,801 plus 1,733 plus 615 = 25,149</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The third line added the change in stocks. The 615 is a rise: grain went into store, so it was not available and comes off.</p>\n<div class=\"working\">\n<p>22,801 plus 1,733 minus 615 = 23,919</p>\n</div>\n<p>23,919 thousand tonnes, which is the table’s printed figure.</p>\n<p>Why the wrong answer looks reasonable. The column is headed “Change in Stocks” with no sign word. Every other term in the line is added. The error is twice the stock change, 1,230 thousand tonnes here, and it would have gone unnoticed without the printed total to check against. Say “a rise comes off” before you write the sign.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>cereals 2022-23: gross production 3,03,628, net imports -30,352<br />\nimport dependence = -30,352 divided by 2,73,276 times 100 = -11.1 per cent<br />\nso India’s cereal import dependence is negative</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line put net imports where imports belong. The import dependency ratio needs imports alone. Net imports are imports minus exports, and a negative figure only says exports were larger. A country can import a great deal of one cereal and export more of another; the net figure hides both.</p>\n<p>From this table the ratio cannot be worked out at all. What can be worked out is the self-sufficiency ratio, whose denominator needs only production plus net imports.</p>\n<div class=\"working\">\n<p>3,03,628 divided by 2,73,276 times 100 = 111.1 per cent</p>\n</div>\n<p>Why the wrong answer looks reasonable: the denominator is right, and a negative number feels like it means “not dependent”. But no share of a supply can be below zero. A negative percentage of a whole is a sign that a wrong quantity went on top.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>foodgrains 2022-23: net availability 2,89,063, population 13,92,329<br />\n2,89,063 divided by 13,92,329 = 0.2076<br />\nso each person had 0.2 kilograms of foodgrain a year</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line gave the wrong unit. Net availability is in thousand tonnes and population in thousand persons. The thousands cancel, so 0.2076 is in tonnes a person.</p>\n<div class=\"working\">\n<p>0.2076 times 1,000 = 207.6</p>\n</div>\n<p>207.6 kilograms a person a year, a thousand times more than the working said.</p>\n<p>Why the wrong answer looks reasonable: the division is right, and 0.2 looks like a sensible small number. Two hundred grams of grain a year would be a few days of meals, which a size check catches at once. Write the unit on every line.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A speaker says:</p>\n<blockquote>\n<p>The edible oil mission will make India 72 per cent self-sufficient by 2030-31. Problem solved.</p>\n</blockquote>\n<p>The PIB backgrounder of December 2025 gives the mission’s target. Domestic edible oil production is to reach 25.45 million tonnes by 2030-31, “meeting around 72% of our projected domestic requirement”. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the requirement the target assumes, and how it compares with the supply in 2023-24.</p>\n<div class=\"working\">\n<p>25.45 divided by 0.72 = 35.35</p>\n</div>\n<p>About 35.35 million tonnes of projected requirement. In 2023-24, production plus imports was 27.84 million tonnes, with exports left out because the release gives none.</p>\n<div class=\"working\">\n<p>35.35 minus 27.84 = 7.51<br />\n7.51 divided by 27.84 times 100 = 26.98</p>\n</div>\n<p>The target assumes the requirement grows by about 27 per cent over 2023-24.</p>\n<p>What this does not establish. That 72 per cent will be reached: it is a target. That the remaining 28 per cent will stop being imported: by the target’s own arithmetic it will not.</p>\n<div class=\"working\">\n<p>35.35 minus 25.45 = 9.9</p>\n</div>\n<p>About 9.9 million tonnes a year would still have to come from abroad. And self-sufficiency is a trade measure. It says nothing about whether a rise in the oil people use is good for their health. That is a separate question, and this calculation cannot answer it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A report says:</p>\n<blockquote>\n<p>Per capita foodgrain availability rose from 514.6 grams a day in 2021-22 to 568.8 in 2022-23. Indians ate 54 grams more grain a day.</p>\n</blockquote>\n<p>Using Table 1.19, decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the rise, then what drove it, using the identity on the two FOODGRAINS rows.</p>\n<div class=\"working\">\n<p>568.8 minus 514.6 = 54.2</p>\n</div>\n<p>A rise of 54.2 grams a day, as the report says. Now the stocks. Change in stocks was -6,090 thousand tonnes in 2021-22 and -17,540 in 2022-23: grain came out of store both years, far more in the second. Turn each into grams a person a day.</p>\n<div class=\"working\">\n<p>6,090 divided by 13,79,750 times 1,000 times 1,000 divided by 365 = 12.09 grams<br />\n17,540 divided by 13,92,329 times 1,000 times 1,000 divided by 365 = 34.51 grams</p>\n</div>\n<p>Drawing down stocks gave about 12 grams a day in 2021-22 and about 35 in 2022-23.</p>\n<div class=\"working\">\n<p>34.51 minus 12.09 = 22.42</p>\n</div>\n<p>About 22 grams of the 54-gram rise came from grain leaving store, not from a bigger harvest.</p>\n<p>Then run the identity. The 2022-23 row misses its own total by 4,572 thousand tonnes, about 9 grams a day, and the table does not say why. The 2021-22 row misses by 101 the other way, which is less than a quarter of a gram a day.</p>\n<p>What the answer does not establish. That anyone ate more: the table says the figures are not strictly representative of consumption, and this is availability before waste at home. That the rise will last: a stock drawdown cannot repeat forever. And about 9 grams of it rests on a row that does not add up. The honest sentence is this. “Availability rose by about 54 grams a day on the official figures. About 22 grams of that is grain drawn from stocks, and the 2022-23 figure needs checking.”</p>"
+  }
+ ]
+}

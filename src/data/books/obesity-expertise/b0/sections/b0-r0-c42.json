@@ -1,0 +1,87 @@
+{
+ "format": 1,
+ "id": "b0-r0-c42",
+ "label": "F4",
+ "title": "Argument: premise, inference, conclusion",
+ "part": "F",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>An argument is a set of statements offered as reasons, called premises, together with a further statement they are meant to establish, called the conclusion. The move from the first to the second is the <dfn data-g=\"86\">inference</dfn>.</p>\n<p>An argument can fail in exactly two independent ways. A premise can be false. Or the inference can fail to carry, even when every premise is true.</p>",
+   "refs": [
+    15
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Someone hands you a claim and asks you to accept it. Along with the claim, they give you reasons — these are the premises. The claim itself is the conclusion.</p>\n<p>Ask the two questions in order. First: if every premise were true, would the conclusion follow? Then, only then: are the premises actually true?</p>\n<p>To show an inference fails, describe a case where every premise is true and the conclusion is false. If you can, the inference does not carry.</p>\n<p>Two things that move together may both be moved by a third. And a pattern across countries need not hold for the people in them.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Here is a claim you will meet often once you work in obesity policy. Take it apart, on paper, in three lines.</p>\n<ul>\n<li><em>Premise one:</em> obesity happens when a person takes in more energy than they use.</li>\n<li><em>Premise two:</em> how much a person eats is something they choose.</li>\n<li><em>Conclusion:</em> obesity is a matter of personal choice.</li>\n</ul>\n<p>Test the inference first. Grant both premises. Now ask: does the conclusion follow?</p>\n<p>It does not. Premise two says intake is chosen. The conclusion needs something far stronger — that intake is freely chosen. It would have to be untouched by price, by what sits on the shelf nearby, by advertising, by sleep, by the biology that drives appetite.</p>\n<p>Somewhere between the premise and the conclusion, “is a choice” has quietly turned into “is only a choice”. That swap is the fault. It sits in the inference, and it stands whether or not the premises themselves are true.</p>\n<p>Picture a person who eats more than they use, and who chooses what to eat. But they choose from what is cheap and on the nearest shelf. Both premises hold, and “a matter of personal choice” does not.</p>\n<p>You reached “this argument does not work” without settling either premise. Run the inference test first, always.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Most arguments you meet in a hostile room are not laid out at all.</p>\n<p>The premise doing the real work is usually the one left unspoken, left out because saying it aloud would expose it. Nobody in the claim above says out loud that eating sits untouched by price, or by what is on the shelf nearby. That premise stays hidden, and the argument leans on it anyway.</p>\n<p>So when you cannot find the fault in an argument, the likely reason is simple. You have not yet written down the premise the speaker left out. Look there first.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>True premises do not make a conclusion true. Whether the premises are true and whether the inference carries are separate questions, and you need both to hold before the argument does any work.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Test the two failure modes in order: ask first whether the conclusion follows, then ask whether the premises are true.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In Indian food policy debate, look for an unspoken premise that people already know what is in their food. Check for it in any argument that leaves the choice to the buyer.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Grant every premise aloud, then show the conclusion still does not follow.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Watch yourself when you are handed an argument you already agree with.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>This gives you the shape of an argument and the point where it breaks. It does not tell you whether a premise is true — that needs evidence — or whether a conclusion matters, which needs judgement.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Take this claim: “Countries that eat more packaged food have more obesity, so packaged food causes obesity.” Lay it out as premises and a conclusion. Then say whether the inference holds.</p>",
+   "type": "critique",
+   "confidence": true,
+   "answer": "<p>The premise: countries where people eat more packaged food show more obesity. The conclusion: packaged food causes obesity.</p>\n<p>The inference does not hold. A pattern across countries can come from something that moves both, such as income, or more people living in cities. And a pattern in country averages need not hold for people.</p>\n<p>To repair it you would need two more premises. One ruling out a common cause. One connecting the country pattern to people. The conclusion may still be true; what has failed is this route to it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Explain to a first-year resident, in ten minutes with a whiteboard, why “the inference is broken” is a stronger objection than “your facts are wrong”. Use a food policy example of your own.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The spine of the explanation. A wrong fact can be replaced, and the argument survives, so attacking facts invites an endless supply of new ones. A broken inference means no fact of that kind could establish the conclusion. That ends the line rather than extending it.</p>\n<p>Demonstrate it. Take a claim, grant every premise aloud, and show that the conclusion still does not follow. The granting is what makes it land.</p>"
+  }
+ ]
+}

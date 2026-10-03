@@ -1,0 +1,190 @@
+{
+ "format": 1,
+ "id": "s47-r1-c18",
+ "label": "18",
+ "title": "Worked journey: A one-page note on one Indian proposal",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The build target of this book is a written one-page note on one Indian policy <dfn data-g=\"329\">proposal</dfn> that names the body that would have to act. A note meets the target when it answers nine questions, in this order.</p>\n<p>Every factual line rests on a source that has been opened, with the passage found and read against the line.</p>",
+   "refs": [
+    422,
+    53,
+    251,
+    253,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451,
+    452,
+    436,
+    453,
+    454,
+    455,
+    456
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The note answers nine questions, always in this order.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Line</th>\n<th>Question</th>\n<th>The tool, from</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>What is the proposal, in one sentence?</td>\n<td>a proposal is not a policy</td>\n</tr>\n<tr>\n<td>2</td>\n<td>What instrument would it need?</td>\n<td>the tracing method, step 1</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Whose subject is it?</td>\n<td>Union, State or local; the tracing method, step 2</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Which body decides, under which provision?</td>\n<td>where power comes from; the tracing method, step 3</td>\n</tr>\n<tr>\n<td>5</td>\n<td>What process must it pass, and how far has it got?</td>\n<td>how Acts and rules are made; the tracing method, step 4</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Who else must agree?</td>\n<td>when no single body decides; the tracing method, step 5</td>\n</tr>\n<tr>\n<td>7</td>\n<td>What frame is it argued in, and what is the counter-frame?</td>\n<td>reading the frame</td>\n</tr>\n<tr>\n<td>8</td>\n<td>What can the evidence settle, and what can it not?</td>\n<td>what evidence can settle</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Which job does this note do?</td>\n<td>informing and campaigning</td>\n</tr>\n</tbody>\n</table>\n<p>Lines 2 to 6 end in the one sentence the tracing method taught: X decides, under Y, by process Z, with W’s agreement.</p>\n<p>Two rules hold for every line.</p>\n<p>First, check each factual line against the passage it rests on. Find the source. Confirm it is the one named. Find the passage. Read it.</p>\n<p>Second, write down what you did not check. If you did not read the newest <dfn data-g=\"16\">amendment</dfn>, say so in the note.</p>\n<p>Put a date on the note. A reader needs to know when your note was true.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s47-r1-c18-drink-rates.png",
+   "alt": "A bar chart with six drinks, each with two bars. Sugar or flavour added: 28 before, 40 after. Other non-alcoholic drinks: 18 and 40. Carbonated fruit drinks: 28 and 40. Fruit pulp or juice based drinks: 12 and 5. Soya milk drinks: 12 and 5. Plant-based milk drinks: 18 and 5.",
+   "w": 1357,
+   "h": 654,
+   "caption": "The goods and services tax (GST) rates the 56th GST Council meeting recommended for drinks under heading 2202, before and after, as the release of 3 September 2025 lists them. Drinks with added sugar or flavour, other non-alcoholic drinks and carbonated fruit drinks went to 40%; drinks based on fruit pulp or juice, soya milk or plant milk went to 5%. The before rates are GST alone: for sugar-sweetened drinks, a 2026 study by Summan and colleagues reports that the old 28% came with a 12% cess, so their combined rate was already 40."
+  },
+  {
+   "t": "figure",
+   "src": "s47-r1-c18-cess-folded.png",
+   "alt": "Two groups of three bars. Before: GST 28, cess 12, combined 40. After: GST 40, cess 0, combined 40. The two combined bars are the same height.",
+   "w": 1226,
+   "h": 655,
+   "caption": "Drinks with added sugar or flavour, before and after the 2025 GST reform. Before it, a 2026 study by Summan and colleagues reports, they paid 28% GST and a 12% cess, a combined 40. After it, one rate of 40% and no cess. The GST rose by 12 points; the combined rate did not rise."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the failure, because it is the commonest one. Suppose this is the first draft of your note’s middle, made up for the example. Every line in it sounds right.</p>\n<blockquote>\n<ol type=\"1\">\n<li>Proposal: tax sugary drinks more heavily, to reduce obesity among the district’s school children.</li>\n<li>The Union government taxes sugary drinks at 40%.</li>\n<li>The GST Council decided this rate at its 56th meeting.</li>\n<li>The 2025 reform raised the tax on sugary drinks by 12 percentage points, from 28% to 40%.</li>\n<li>The Ministry of Health and Family Welfare should ask the GST Council to raise it further.</li>\n</ol>\n</blockquote>\n<p>A <dfn data-g=\"294\">percentage point</dfn> is the gap between two percentages: from 28% to 40% is 12 points. Now check each line against the passage it should rest on.</p>\n<table style=\"width:100%;\">\n\n<thead>\n<tr>\n<th>Line</th>\n<th>What the source says</th>\n<th>Verdict</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>not a fact; it is the proposal</td>\n<td>keep, but “to reduce obesity” is the proposer’s aim, not a finding</td>\n</tr>\n<tr>\n<td>2</td>\n<td>central goods and services tax (CGST) Act s.9(1): the central tax is “not exceeding twenty per cent.”; Notification 9/2025 puts these drinks in its 20 per cent schedule</td>\n<td>wrong: the Union’s tax is 20 per cent; 40% is the combined rate the release gives</td>\n</tr>\n<tr>\n<td>3</td>\n<td>the release itself: its recommendations take effect through notifications, “which alone shall have the force of law”</td>\n<td>wrong body for the decision: the Council recommends; the Central Government notifies the central tax</td>\n</tr>\n<tr>\n<td>4</td>\n<td>the release’s table: 28% to 40%; a 2026 study by Summan and colleagues, which combined interviews with a review of published work: the reform folded the earlier 28% rate and a 12% cess into one rate</td>\n<td>misleading: 28 plus 12 is 40, so the combined rate on these drinks did not rise</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Article 279A(2): the members are finance or taxation ministers, or a minister each State names</td>\n<td>wrong address: the Ministry of Health is not a member, and the Council moves first; “should” is campaigning in a note meant to inform</td>\n</tr>\n</tbody>\n</table>\n<p>Check the arithmetic in line 4.</p>\n<div class=\"working\">\n<p>40 minus 28 = 12<br />\n28 plus 12 = 40</p>\n</div>\n<p>The first line is the gap the draft reports. The second is why the gap means nothing here: the old 28% came with a 12% <dfn data-g=\"56\">cess</dfn> on top, so the total was already 40. A cess is an extra tax charged alongside the main one. The study calls it a compensation cess; the law that levied it is not among the sources read.</p>\n<p>Four of the five lines fail. Not one of the four failures is a typing slip. Each is a claim that sounds like the sources and is not what they say.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The draft is made up, and its errors are gathered on purpose. A real first draft usually has one or two, which is harder: one wrong line among right ones is easier to miss.</p>\n<p>The cess point holds for the drinks the 2026 study describes, which paid the 28% rate and the 12% cess. The release also moved “other non-alcoholic beverages” from 18% to 40%, and the sources held do not say what cess, if any, those paid. For them, do not repeat the “did not rise” line.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now build the note properly, one line at a time. The date you check everything is 2 October 2026.</p>\n<p><strong>Line 1. The proposal.</strong> “Raise the GST on the drinks in the release’s ‘added sugar or other sweetening matter or flavoured’ entry above its present rate.” One sentence, no claim about effects.</p>\n<p><strong>Lines 2 to 4. Instrument, subject, body.</strong> The section on finding who decides traced this proposal. The instrument is a rate <dfn data-g=\"279\">notification</dfn>. The subject is both governments’ under Article 246A(1). The GST Council recommends rates to the Union and the States (Article 279A(4)(e)). The Central Government notifies the central tax under section 9(1) of the CGST <dfn data-g=\"3\">Act</dfn>, up to 20 per cent. The GST Council moves first, so the note is addressed to it.</p>\n<p><strong>Line 5. The process, and where it stands.</strong> Look at what the 56th meeting recommended for drinks. Here are the rows for drinks under heading 2202 in the release’s table. The names are short forms of the release’s own descriptions: “sugar or flavour” stands for drinks “containing added sugar or other sweetening matter or flavoured”, and “other drinks” for “other non-alcoholic beverages”.</p>\n<table style=\"width:61%;\">\n\n<thead>\n<tr>\n<th>Drink</th>\n<th>Before (%)</th>\n<th>After (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>sugar or flavour</td>\n<td>28</td>\n<td>40</td>\n</tr>\n<tr>\n<td>other drinks</td>\n<td>18</td>\n<td>40</td>\n</tr>\n<tr>\n<td>carbonated fruit</td>\n<td>28</td>\n<td>40</td>\n</tr>\n<tr>\n<td>fruit or juice</td>\n<td>12</td>\n<td>5</td>\n</tr>\n<tr>\n<td>soya milk</td>\n<td>12</td>\n<td>5</td>\n</tr>\n<tr>\n<td>plant-based milk</td>\n<td>18</td>\n<td>5</td>\n</tr>\n</tbody>\n</table>\n<p>The recommendation went in both directions: up for drinks in the added-sugar or flavoured entry, other non-alcoholic drinks and carbonated fruit drinks; down for drinks based on fruit, soya or plant milk, sweetened or not. Then the instrument. Notification No. 9/2025-Central Tax (Rate) put “All goods (including aerated waters), containing added sugar or other sweetening matter or flavoured” in its Schedule III, at 20 per cent central tax, from 22 September 2025. Notification No. 01/2026-Central Tax (Rate), in force 1 May 2026, re-wrote two other entries of Schedule III and left that one alone.</p>\n<p>Two things you did not check go in the note. 01/2026 names an earlier amendment, 19/2025 of 31 December 2025, which you have not read. And no source you hold says how the rest of the 40% is set.</p>\n<p><strong>Line 6. Who else must agree.</strong> Article 279A(9) says a Council decision needs three-fourths of the <dfn data-g=\"439\">weighted votes</dfn> cast. The Union’s vote counts for one-third. The States’ votes, all together, count for two-thirds. The section on when no single body decides turned these into percentages.</p>\n<div class=\"working\">\n<p>3 divided by 4 = 0.75, so three-fourths is 75 per cent<br />\nUnion alone: 33.3 per cent, short of 75<br />\nStates alone: 66.7 per cent, short of 75<br />\nwith the Union’s yes: 75 minus 33.3 = 41.7 per cent still needed from the States</p>\n</div>\n<p>So neither side can change the rate alone. The article does not say how the States’ two-thirds is shared among them, so do not work out how many States a change needs. Chhattisgarh’s voice in the vote is the minister its State Government names to the Council (Article 279A(2)(c)).</p>\n<p><strong>Line 7. The frame.</strong> The section on reading the frame ran its five lines on this release. Here is the sentence that created the rate, read the same way.</p>\n<table>\n\n<thead>\n<tr>\n<th>Line</th>\n<th>The release’s words</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Problem</td>\n<td>“the current 4-tiered tax rate structure”</td>\n</tr>\n<tr>\n<td>Cause</td>\n<td>not stated</td>\n</tr>\n<tr>\n<td>Judgement</td>\n<td>“citizen-friendly”, “Simple Tax”, “de-merit”</td>\n</tr>\n<tr>\n<td>Remedy</td>\n<td>“a 2 rate structure … a special de-merit rate of 40% for a select few goods and services”</td>\n</tr>\n<tr>\n<td>Left out</td>\n<td>why these goods are de-merit; any health reason; who pays</td>\n</tr>\n</tbody>\n</table>\n<p>The release frames the rate as part of a simpler tax, with a class of goods to be taxed hardest. It gives no health reason in that sentence. The health frame is argued by others. The 2026 study reads the de-merit class as “signalling a shift towards public health considerations”; that is the study’s reading, not the release’s words. The same study proposes, as a role advocacy groups could take on, to “Advocate for higher taxes on unhealthy foods”. Against the proposal stand three counter-frames, all reported in the same study. A health finance official it interviewed said “the tax policy is supposed to raise revenue and that’s it”. Taxes on junk foods are “perceived as regressive”, which means they take a larger share of a poorer buyer’s income. And the drinks industry argues for lower rates and against the de-merit class.</p>\n<p><strong>Line 8. The evidence.</strong> What can it settle, and what not?</p>\n<table style=\"width:100%;\">\n\n<thead>\n<tr>\n<th>Question</th>\n<th>What the sources held say</th>\n<th>What that does not mean</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>How big is the problem?</td>\n<td>in 2018, Indian adults reported about 0.2 servings of sugar-sweetened drinks a week, against 0.7 for South Asia</td>\n<td>nothing about children, or about this district; self-reported intake</td>\n</tr>\n<tr>\n<td>What would a higher tax do?</td>\n<td>one modelling study, reported in the 2026 study: an extra tax of 10% to 30% could cut demand by 7% to 30%</td>\n<td>a model’s estimate, not a change measured in India; demand, not weight</td>\n</tr>\n<tr>\n<td>What did the 2025 change do?</td>\n<td>the 28% rate and 12% cess became one 40% rate</td>\n<td>not a rise in the combined rate on these drinks</td>\n</tr>\n<tr>\n<td>Should the rate rise further?</td>\n<td>no evidence can say</td>\n<td>a choice between health, revenue and the cost to poorer buyers</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Line 9. The job.</strong> The department asked for the options, so the note informs. It says so in its first line.</p>\n<p>Here is the note, addressed to the body that moves first.</p>\n<blockquote>\n<p><strong>A higher tax on sugar-sweetened drinks: who decides.</strong> For the GST Council, which moves first; the Central Government notifies after it. Checked on 2 October 2026.</p>\n<p>This note informs. It sets out who decides and what the evidence says. It does not recommend.</p>\n<p><em>Proposal.</em> Raise the GST on the drinks in the “added sugar or other sweetening matter or flavoured” entry above its present rate.</p>\n<p><em>Who decides.</em> The GST Council recommends GST rates to the Union and the States (Constitution, Article 279A). The Central Government then notifies the central tax under section 9(1) of the CGST Act, up to 20 per cent.</p>\n<p><em>Where it stands.</em> After its 56th meeting, on 3 September 2025, the Council recommended a special de-merit rate of 40% that covers these drinks. The Central Government’s Notification 9/2025-Central Tax (Rate) put them in its 20 per cent schedule from 22 September 2025. A 2026 amendment, in force 1 May 2026, left that entry unchanged. We have not checked the December 2025 amendment it names. No source we hold says how the rest of the 40% is set.</p>\n<p><em>Who else must agree.</em> A Council decision needs three-fourths of the weighted votes cast. The Union’s vote counts for one-third and the States’ together for two-thirds, so neither can change the rate alone. Chhattisgarh’s voice is the minister the State Government names to the Council.</p>\n<p><em>How it is argued.</em> The release that set the rate presents it as part of a simpler tax, with a de-merit class for a few goods, and gives no health reason. A 2026 study by Summan and colleagues reads the de-merit class as a shift towards health, and proposes that advocacy groups argue for higher taxes on unhealthy foods. Against: the view that tax policy exists to raise revenue; the view that such taxes fall hardest on poorer buyers; and an industry that argues for lower rates.</p>\n<p><em>What the evidence says.</em> One modelling study, reported in the 2026 study, estimated that an extra tax of 10% to 30% could cut demand for these drinks by 7% to 30%. That is a model, not a change measured in India, and we have not read the model itself. The same study says the 2025 change folded an earlier 28% rate and a 12% cess into one rate, so the combined rate on these drinks did not rise. None of the sources behind this note measured the tax’s effect on children’s weight.</p>\n<p><em>What it cannot settle.</em> Whether to raise the rate weighs health against revenue and the cost to poorer buyers. That judgement belongs to the people who decide.</p>\n</blockquote>\n<p>Last, check it line by line, as you checked the failed draft.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Note line</th>\n<th>Source opened</th>\n<th>Passage found and read</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Council recommends rates</td>\n<td>Constitution, Article 279A(4)</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>central tax up to 20 per cent</td>\n<td>CGST Act, section 9(1)</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>rest of the 40%</td>\n<td>none held</td>\n<td>not read, and the note says so</td>\n</tr>\n<tr>\n<td>40% recommended, 3 September 2025</td>\n<td>the release of that date</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>20 per cent schedule from 22 September 2025</td>\n<td>Notification 9/2025</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>2026 amendment left the entry alone</td>\n<td>Notification 01/2026</td>\n<td>yes; the December 2025 amendment not read, and the note says so</td>\n</tr>\n<tr>\n<td>three-fourths, one-third, two-thirds</td>\n<td>Constitution, Article 279A(9)</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>Chhattisgarh’s minister</td>\n<td>Constitution, Article 279A(2)(c)</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>the frames and counter-frames</td>\n<td>the release; the 2026 study</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>the modelled 7% to 30%</td>\n<td>the 2026 study</td>\n<td>yes in the study; the model itself not read, and the note says so</td>\n</tr>\n<tr>\n<td>28% and 12% cess became 40%</td>\n<td>the 2026 study</td>\n<td>yes</td>\n</tr>\n</tbody>\n</table>\n<p>Every line is either checked, or named as not checked.</p>",
+   "numberRefs": [
+    208,
+    207,
+    238
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The note is true as of the date on it. The next GST Council meeting or the next rate notification can change line 5 without anything else changing. Before you reuse it, open the newest amendment again.</p>\n<p>The note says who decides and how the argument runs. It does not say whether the Council will act, and it does not say whether a higher rate would change what children in the district drink or weigh. A complete note can describe a proposal that goes nowhere.</p>\n<p>The three counter-frames come from 18 interviews, mostly with people based in Delhi, and from the published work the study reviewed. They show that the arguments exist. They do not show how widely each is held.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Write the trace sentence before anything else: X decides, under Y, by process Z, with W’s agreement.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The error is to write “the GST Council sets the rate”. It recommends. Write “recommends”, and name the notification.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Refuse “the Union taxes sugary drinks at 40%”. Section 9(1) of the CGST Act caps the central tax at 20 per cent, and the central notification puts these drinks at that rate. The 40% is the combined rate the release gives.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Do not read “28% to 40%” as a rise of 12 points in the tax on sugary drinks. A 2026 study by Summan and colleagues reports that the old 28% came with a 12% cess, and the 2025 change folded both into one rate.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Address the note to the body that holds the decision job for the instrument. Where several bodies must act, name them all and say which moves first. For a GST rate, the GST Council recommends first and the Central Government then notifies the central rate.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Date the note, name the newest amendment you opened, and name what you did not open.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Put the frame in the note, including the one the deciding body itself uses.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The note tells its reader who can act, through which instrument, and how the argument runs. It does not tell them whether that body will act, or whether the instrument would change anyone’s health.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>The tempting reading is that a finished note is a case for the proposal. It is not. A note can name the body, the provision, the process and every vote that would be needed. It can still describe a proposal that is weak, or that will never be taken up. The note is an address and a map. Whether to go there is the decision it leaves to the reader.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>“The GST Council recommends the rate (<dfn data-g=\"81\">Constitution</dfn>, Article 279A). The Central Government notifies the central tax under section 9(1) of the CGST Act, up to 20 per cent. Checked on 2 October 2026.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: list the nine lines of the note in order, and the two rules every line must pass.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The nine lines:</p>\n<ol type=\"1\">\n<li>The proposal, in one sentence.</li>\n<li>The instrument it needs.</li>\n<li>Whose subject it is.</li>\n<li>The deciding body and its provision.</li>\n<li>The process and how far it has got, with a date.</li>\n<li>Who else must agree.</li>\n<li>The frame and the <dfn data-g=\"88\">counter-frame</dfn>.</li>\n<li>What evidence can and cannot settle.</li>\n<li>Which job the note does.</li>\n</ol>\n<p>The two rules: check every factual line against the passage it rests on. Name in the note whatever you did not check.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Write your own one-page note on one Indian policy proposal on obesity, naming the deciding body. Choose a proposal other than the tax on sugar-sweetened drinks. Two from this book are open to you. One is a rule on what school canteens may sell. The other is a warning label on packaged foods high in sugar, salt or fat. Or choose one from your own setting.</p>\n<p>Produce:</p>\n<ul>\n<li>the note, on one page, in the nine lines, with the date you checked it;</li>\n<li>beneath it, a table with one row for each factual line: the source you opened, and whether you found and read the passage;</li>\n<li>one sentence saying which job the note does.</li>\n</ul>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>There is no single right note. Check yours against this list.</p>\n<ol type=\"1\">\n<li>Line 1 is one sentence that says what someone wants, with no claim about its effects.</li>\n<li>Line 2 names a kind of instrument: an Act, a rule or regulation, a rate or order notified under an Act, or a scheme.</li>\n<li>Lines 3 and 4 name a body, not “the government”, and a numbered provision. If you could not find one, the note says where the trace stopped and which document would settle it. For the canteen rule, this book’s sources do not settle whose subject it is. A note that says so, and names the candidates, passes. A note that guesses fails.</li>\n<li>Line 5 names the instrument now in force, if there is one, with its number and date, and the newest amendment you opened.</li>\n<li>Line 6 names every other body whose agreement the process needs.</li>\n<li>Line 7 quotes the words that carry the frame, from a real text, and gives a counter-frame.</li>\n<li>Line 8 separates what evidence can say from the judgement it cannot make. Every figure has its population, year and source, and a modelled figure is called a model.</li>\n<li>Line 9 says which job the note does, and nothing in it does the other job.</li>\n<li>Every row of your table says “yes”, or the note names that line as unchecked.</li>\n</ol>\n<p>Did you mean to inform, and does a line still say “should”? Then move it into a sentence that says it is a judgement.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A colleague hands you this made-up one-page note on the second running proposal of this book.</p>\n<blockquote>\n<p><em>A rule on school canteens.</em> The government should ban sugary drinks in school canteens. The Ministry of Education will make this rule. Studies prove that banning sugary drinks in schools reduces obesity. This is the only responsible choice for our children.</p>\n</blockquote>\n<p>List what is wrong with it, against the nine lines and the two rules.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Line by line:</p>\n<ul>\n<li>Line 1: “The government should ban” is a demand, not a proposal sentence. Write what is wanted: “A rule that school canteens may not sell sugary drinks.”</li>\n<li>Line 2: no instrument or scheme is named. An Act, a rule under an existing Act, an order, or a scheme condition? Each goes to a different body.</li>\n<li>Lines 3 and 4: “the Ministry of Education will make this rule” names a ministry with no provision, and “will” claims it is decided. Whose subject a canteen rule is has not been traced. This book’s sources do not settle it, so the note should say where the trace stops.</li>\n<li>Lines 5 and 6: no process, no date, no one else who must agree.</li>\n<li>Line 7: no frame is named. The note’s own frame (children’s protection, “the only responsible choice”) is not marked as a frame, and no counter-frame is given.</li>\n<li>Line 8: “studies prove” names no study, no population and no year. A study can show what happened to what children bought or weighed. It cannot prove a policy is right.</li>\n<li>Line 9: the note campaigns (“should”, “the only responsible choice”) without saying it does.</li>\n<li>Rule 1: not one line can be checked, because no source is named.</li>\n<li>Rule 2: nothing is marked as unchecked, so the reader cannot tell which claims rest on anything.</li>\n</ul>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Your own note has a frame too. Take the finished note in this section’s second illustration. Run the five lines from the section on reading the frame on it. Then say what the note leaves out, and whether that is a fault.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The five lines:</p>\n<table>\n\n<tbody>\n<tr>\n<td>Line</td>\n<td>The note’s words</td>\n</tr>\n<tr>\n<td>Problem</td>\n<td>not stated as a problem; the note is about who decides on “a higher tax on sugar-sweetened drinks”</td>\n</tr>\n<tr>\n<td>Cause</td>\n<td>not stated</td>\n</tr>\n<tr>\n<td>Judgement</td>\n<td>avoided on purpose: “It does not recommend”</td>\n</tr>\n<tr>\n<td>Remedy</td>\n<td>the proposal itself: “Raise the GST on the drinks in the ‘added sugar or other sweetening matter or flavoured’ entry”</td>\n</tr>\n<tr>\n<td>Left out</td>\n<td>every other measure, such as a school-canteen rule or a label; other foods and drinks; what the State Government itself wants</td>\n</tr>\n</tbody>\n</table>\n<p>The note never names a cause. But it takes a tax as its proposal, so it already sits inside one frame. In that frame the problem is what is sold and at what price, not only what each person chooses. A reader who thinks in the personal-choice frame would ask why a note on obesity begins with a tax at all.</p>\n<p>That is not a fault, because every account leaves something out. It becomes one only if the note hides it. A line such as “this note covers one measure; others, such as a canteen rule or a label, are not discussed” tells the committee what the note chose.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 5,
+   "prompt": "<p>Audience: a health secretary, one page, answer first. The question: “If we wanted the tax on sugary drinks raised further, who would have to act, and what would it take?”</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p><strong>Answer.</strong> The GST Council would have to recommend it first, and then the Central Government would notify the central rate. Your route in is the State’s minister on the Council.</p>\n<ul>\n<li>The Council recommends GST rates to the Union and the States (Constitution, Article 279A).</li>\n<li>The central tax on these drinks is now 20 per cent, the most section 9(1) of the CGST Act allows. A higher central rate would need section 9(1) of the CGST Act to be amended. How the rest of the 40% is set was not checked.</li>\n<li>A Council decision needs three-fourths of the weighted votes. The Union’s vote counts for one-third and the States’ together for two-thirds. So no decision passes without the Union’s yes, and none passes on the Union’s yes alone.</li>\n<li>The Ministry of Health is not a member (Article 279A(2)). Summan and colleagues describe health ministries as playing “a largely advisory role”.</li>\n</ul>\n<p>What it would not tell you: whether the change would reduce obesity among children. The only estimate this note holds is a model of demand, not a measure of weight.</p>\n<p>Checked on 2 October 2026 against Notification 9/2025 as amended by 01/2026; the December 2025 amendment was not read.</p>"
+  }
+ ]
+}

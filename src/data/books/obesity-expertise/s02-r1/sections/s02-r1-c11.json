@@ -1,0 +1,213 @@
+{
+ "format": 1,
+ "id": "s02-r1-c11",
+ "label": "11",
+ "title": "A matrix, and what multiplying by one does",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"159\">matrix</dfn> does for many rows at once what the <dfn data-g=\"74\">dot product</dfn> of the last section did for one. A matrix is a rectangular table of numbers, named by a capital letter. Its size is written rows by columns. A matrix with 3 rows and 2 columns is a 3 × 2 matrix, said “3 by 2”. An entry is found by its row first and its column second.</p>\n<p>A matrix A times a <dfn data-g=\"279\">vector</dfn> x, written Ax, is defined when A has as many columns as x has entries. The result is a vector with one entry for each row of A. Its entry for a given row is that row of A dotted with x. The same result is a <dfn data-g=\"281\">weighted sum</dfn> of the columns of A, with the entries of x as the weights.</p>\n<p>A matrix A times a matrix B, written AB, is defined when A has as many columns as B has rows. If A is m × r and B is r × n, then AB is m × n. The entry of AB in row i and column j is row i of A dotted with column j of B.</p>\n<p>A matrix times a <dfn data-g=\"236\">scalar</dfn> c, written cA, has every entry multiplied by c.</p>\n<p>The fixed numbers that a formula multiplies by are its <dfn data-g=\"41\">coefficients</dfn>. A model written y = Xb says: each case’s predicted value, an entry of y, is that case’s row of the <dfn data-g=\"61\">data matrix</dfn> X dotted with one shared vector of coefficients b.</p>",
+   "refs": [
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A matrix is a table of numbers with the labels taken off. In a data matrix, each row is one case and each column is one kind of measurement, always in the same place.</p>\n<p>Multiplying a matrix by a vector does one dot product for each row.</p>\n<p>Multiplying a matrix by a matrix does the same thing for several vectors at once.</p>\n<p>The sizes have to fit. Each row of the first matrix is dotted with each column of the second. If they do not match, the product does not exist.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c11-schofield-columns.png",
+   "alt": "Two rising straight lines of three points each. The 18-30 equation runs from 1475.2 kcal/day at 52 kg to 1896.8 at 80 kg. The 30-60 equation runs from 1469.6 to 1790.9, and is flatter.",
+   "w": 1357,
+   "h": 655,
+   "caption": "The two FAO/WHO/UNU equations for men, run on three men of 52, 65 and 80 kg (the product XC of the illustration below). The side axis does not start at zero, so the gap between the lines looks larger than it is."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c11-column-view.png",
+   "alt": "Grouped bars for the 18-30 and 30-60 equations. 65 times the slope: 978.705 and 745.68. The intercept: 692.2 and 873.1. Their sums: 1670.905 and 1618.78 kcal/day.",
+   "w": 1356,
+   "h": 655,
+   "caption": "Both equations run on a 65 kg man, read column by column (the product Bx of the illustration below): 65 lots of each equation’s slope plus 1 lot of its intercept. The 18-30 equation gets more from body weight (978.705 against 745.68) and less from its intercept (692.2 against 873.1), and its total is higher, 1670.905 against 1618.78 kcal/day."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Book 1 met the <dfn data-g=\"23\">basal metabolic rate</dfn> (BMR): the energy spent lying at rest after a fast. Three United Nations bodies wrote a joint report on human energy requirements in 2004. The report predicts BMR from body weight with one straight line for each sex and age band. Here are the two rows for adult men, in kcal/day, as the report prints them.</p>\n<table style=\"width:94%;\">\n\n<thead>\n<tr>\n<th>men, age (years)</th>\n<th>slope (kcal/day per kg)</th>\n<th>intercept (kcal/day)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>18-30</td>\n<td>15.057</td>\n<td>692.2</td>\n</tr>\n<tr>\n<td>30-60</td>\n<td>11.472</td>\n<td>873.1</td>\n</tr>\n</tbody>\n</table>\n<p>Each row says the same thing with its own numbers: BMR is the <dfn data-g=\"247\">slope</dfn> times body weight, plus the <dfn data-g=\"132\">intercept</dfn>. Take the labels off and keep the four numbers. That is a 2 × 2 matrix. Call it B.</p>\n<p>Now you can run both equations on a man of 65 kg. That is the body weight the 2020 requirements of the Indian Council of Medical Research and National Institute of Nutrition (ICMR-NIN) use for an adult man. Write his vector as x = (65, 1). The 1 lines up with the intercept column, so the intercept is added once.</p>\n<p>Row by row, each row of B dotted with x:</p>\n<div class=\"working\">\n<p>15.057 times 65 plus 692.2 times 1 = 1670.905<br />\n11.472 times 65 plus 873.1 times 1 = 1618.78</p>\n</div>\n<p>So Bx = (1670.905, 1618.78).</p>\n<p>Column by column, 65 lots of the slope column plus 1 lot of the intercept column:</p>\n<div class=\"working\">\n<p>65 times 15.057 = 978.705<br />\n65 times 11.472 = 745.68<br />\n978.705 plus 692.2 = 1670.905<br />\n745.68 plus 873.1 = 1618.78</p>\n</div>\n<p>The same vector comes out.</p>\n<p>Now three men, of 52, 65 and 80 kg; the 52 and 80 are made up. Put each man in a row, with his body weight and a 1: (52, 1), (65, 1) and (80, 1). That is a 3 × 2 data matrix. Call it X. Its rows are people.</p>\n<p>To run both equations on all three men at once, put each equation in a column instead. This is the same four numbers as B, with its rows turned into columns. Call it C.</p>\n<table style=\"width:86%;\">\n\n<tbody>\n<tr>\n<td></td>\n<td>18-30 equation</td>\n<td>30-60 equation</td>\n</tr>\n<tr>\n<td>multiplies body weight</td>\n<td>15.057</td>\n<td>11.472</td>\n</tr>\n<tr>\n<td>multiplies the constant 1</td>\n<td>692.2</td>\n<td>873.1</td>\n</tr>\n</tbody>\n</table>\n<p>X is 3 × 2 and C is 2 × 2. X has 2 columns and C has 2 rows, so the product XC is defined, and it is 3 × 2. Each entry is one man’s row dotted with one equation’s column.</p>\n<p>Rounded to one <dfn data-g=\"62\">decimal</dfn> place, XC is this table.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>body weight (kg)</td>\n<td>18-30 equation (kcal/day)</td>\n<td>30-60 equation (kcal/day)</td>\n</tr>\n<tr>\n<td>52</td>\n<td>1475.2</td>\n<td>1469.6</td>\n</tr>\n<tr>\n<td>65</td>\n<td>1670.9</td>\n<td>1618.8</td>\n</tr>\n<tr>\n<td>80</td>\n<td>1896.8</td>\n<td>1790.9</td>\n</tr>\n</tbody>\n</table>\n<p>Its rows are people and its columns are equations. Each column on its own is y = Xb: the data matrix X times one equation’s coefficient vector b.</p>\n<p>Now try the product the other way round, CX. C is 2 × 2 and X is 3 × 2. C has 2 columns but X has 3 rows, so CX does not exist.</p>\n<p>Last, a scalar multiple. ICMR-NIN’s 2020 brief note says the FAO/WHO/UNU equations run high for Indian adults. Its earlier committee had cut the BMR from those equations by 5%. The 2020 committee “further reduced the BMR by another 5 %”. A cut of a fixed <dfn data-g=\"191\">percentage</dfn> multiplies every predicted BMR by one number. So it multiplies the whole matrix XC by one scalar.</p>\n<p>The note does not say whether the second 5% comes off the original figure or off the figure already cut. The two readings give two scalars.</p>\n<div class=\"working\">\n<p>1 minus 0.05 minus 0.05 = 0.90<br />\n0.95 times 0.95 = 0.9025</p>\n</div>\n<p>Multiplying XC by 0.90 or by 0.9025 gives the two sets of reduced predictions.</p>",
+   "numberRefs": [
+    16,
+    98
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The <dfn data-g=\"160\">matrix product</dfn> is exact arithmetic on the numbers it is given. It does not make the equations right for any one person. They were fitted to a large international set of measurements, and ICMR-NIN’s note says that for Indians they can overestimate BMR by 10 to 12%.</p>\n<p>For a real man, only the column for his own age band applies.</p>\n<p>Every product comes out in kcal/day only because each slope meets a body weight in kg and each intercept meets the 1.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Check the sizes before you multiply. The first matrix needs as many columns as the second has rows, and the answer has the first one’s rows and the second one’s columns.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Order matters. AB and BA are usually different, and one may not exist.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The column of 1s is what carries the intercept. Leave it out of a data matrix, and the sizes no longer fit. Shorten the coefficients to make them fit, and every prediction silently loses the intercept.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>The note does not say whether the scalar is 0.90 or 0.9025. When you apply the cut, say which, and when you read a paper that applies it, look for which.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Exact arithmetic is not an exact prediction. Quote a computed BMR as an estimate for a group, not as a patient’s measured rate.</p>",
+     "tag": "boundary",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Read y = Xb in a methods section as “each person’s prediction is their row dotted with one set of coefficients”. The multiplication tells you nothing about whether they were chosen well.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A methods section says: “Predicted BMR was computed as y = Xb. Here X is an n × 2 matrix whose rows are (body weight in kg, 1), and b = (15.057, 692.2).”</p>\n<p>Say what each symbol stands for, with its unit and size. Then say in one sentence what the equation claims.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>n is the number of people. X is the data matrix, n × 2. Each row is one person. The first column is body weight in kg, and the second column is the pure number 1.</p>\n<p>b is the vector of coefficients, length 2. Its first entry, 15.057, is a slope in kcal/day per kg. Its second, 692.2, is an intercept in kcal/day. They are the FAO/WHO/UNU Table 5.2 equation for men aged 18 to 30.</p>\n<p>y is a vector of length n, in kcal/day, with one predicted BMR for each person.</p>\n<p>The claim, in words: each person’s predicted BMR is 15.057 times their body weight in kg, plus 692.2 kcal/day. The same two coefficients are used for everyone.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A is the matrix below.</p>\n<table style=\"width:57%;\">\n\n<tbody>\n<tr>\n<td></td>\n<td>column 1</td>\n<td>column 2</td>\n<td>column 3</td>\n</tr>\n<tr>\n<td>row 1</td>\n<td>2</td>\n<td>0</td>\n<td>1</td>\n</tr>\n<tr>\n<td>row 2</td>\n<td>3</td>\n<td>4</td>\n<td>-1</td>\n</tr>\n</tbody>\n</table>\n<p>What is the size of A? What is the entry in row 2, column 3? What is the entry in row 1, column 2?</p>",
+   "level": 1,
+   "answer": "<p>A has 2 rows and 3 columns, so it is 2 × 3.</p>\n<p>The entry in row 2, column 3 is −1. The entry in row 1, column 2 is 0.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>With A as in the last problem, work out Ax for x = (1, 2, 3), row by row.</p>",
+   "level": 2,
+   "answer": "<p>A has 3 columns and x has 3 entries, so Ax is defined. It has one entry for each of A’s 2 rows. Dot each row with x.</p>\n<div class=\"working\">\n<p>2 times 1 plus 0 times 2 plus 1 times 3 = 5<br />\n3 times 1 plus 4 times 2 plus -1 times 3 = 8</p>\n</div>\n<p>Ax = (5, 8).</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Work out the same Ax again, this time as a weighted sum of the columns of A.</p>",
+   "level": 2,
+   "answer": "<p>The columns of A are (2, 3), (0, 4) and (1, −1). The weights are the entries of x: 1, 2 and 3.</p>\n<div class=\"working\">\n<p>1 times 2 plus 2 times 0 plus 3 times 1 = 5<br />\n1 times 3 plus 2 times 4 plus 3 times -1 = 8</p>\n</div>\n<p>The weighted sum 1(2, 3) + 2(0, 4) + 3(1, −1) is (5, 8), the same as before.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Work out 3A, with A as in the first problem.</p>",
+   "level": 2,
+   "answer": "<p>Multiply every entry by 3.</p>\n<div class=\"working\">\n<p>3 times 2 = 6<br />\n3 times 0 = 0<br />\n3 times 1 = 3<br />\n3 times 3 = 9<br />\n3 times 4 = 12<br />\n3 times -1 = -3</p>\n</div>\n<p>3A has first row (6, 0, 3) and second row (9, 12, −3).</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>P has rows (1, 2) and (3, 4). Q has rows (0, 1) and (1, 0). Work out PQ and QP.</p>",
+   "level": 3,
+   "answer": "<p>Both are 2 × 2 times 2 × 2, so both are defined and 2 × 2. The columns of Q are (0, 1) and (1, 0). Dot each row of P with each column of Q.</p>\n<div class=\"working\">\n<p>1 times 0 plus 2 times 1 = 2<br />\n1 times 1 plus 2 times 0 = 1<br />\n3 times 0 plus 4 times 1 = 4<br />\n3 times 1 plus 4 times 0 = 3</p>\n</div>\n<p>PQ has rows (2, 1) and (4, 3). Now QP. The columns of P are (1, 3) and (2, 4).</p>\n<div class=\"working\">\n<p>0 times 1 plus 1 times 3 = 3<br />\n0 times 2 plus 1 times 4 = 4<br />\n1 times 1 plus 0 times 3 = 1<br />\n1 times 2 plus 0 times 4 = 2</p>\n</div>\n<p>QP has rows (3, 4) and (1, 2). The two products differ. PQ swapped P’s columns, and QP swapped its rows.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>For each pair of sizes, say whether the product exists, and if it does, give its size.</p>\n<ol type=\"1\">\n<li>a 3 × 2 matrix times a 2 × 4 matrix</li>\n<li>a 2 × 4 matrix times a 3 × 2 matrix</li>\n<li>a 2 × 2 matrix times a 2 × 1 matrix</li>\n<li>a 1 × 3 matrix times a 3 × 1 matrix</li>\n</ol>",
+   "level": 3,
+   "answer": "<ol type=\"1\">\n<li>The first has 2 columns and the second 2 rows, so it exists, and it is 3 × 4.</li>\n<li>The first has 4 columns and the second 3 rows, so it does not exist.</li>\n<li>It exists, and it is 2 × 1: a vector of length 2.</li>\n<li>It exists, and it is 1 × 1: a single number. One row dotted with one column is the dot product of section 10.</li>\n</ol>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>FAO/WHO/UNU Table 5.2 gives these BMR equations for women, in kcal/day. For ages 18 to 30, the slope is 14.818 and the intercept 486.6. For ages 30 to 60, the slope is 8.126 and the intercept 845.6. ICMR-NIN’s 2020 requirements use a body weight of 55.0 kg for an adult woman.</p>\n<p>Write the equations as a 2 × 2 matrix, one equation in each row, and multiply it by the vector for a 55 kg woman. Say what each entry of the answer is.</p>",
+   "level": 4,
+   "answer": "<p>The matrix has rows (14.818, 486.6) and (8.126, 845.6). Her vector is (55, 1), with the 1 lined up with the intercepts.</p>\n<div class=\"working\">\n<p>14.818 times 55 plus 486.6 times 1 = 1301.59<br />\n8.126 times 55 plus 845.6 times 1 = 1292.53</p>\n</div>\n<p>The answer is (1301.59, 1292.53) kcal/day. The first entry is the predicted BMR of a 55 kg woman by the equation for ages 18 to 30. The second is by the equation for ages 30 to 60.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Three women weigh 45, 55 and 70 kg; the 45 and 70 are made up. Write their data matrix X with rows (body weight, 1). Use the FAO/WHO/UNU equation for women aged 18 to 30, b = (14.818, 486.6) (Table 5.2), to work out y = Xb.</p>",
+   "level": 5,
+   "answer": "<p>X is 3 × 2, with rows (45, 1), (55, 1) and (70, 1). b has 2 entries, so Xb is defined. It has 3 entries, one for each woman.</p>\n<div class=\"working\">\n<p>14.818 times 45 plus 486.6 times 1 = 1153.41<br />\n14.818 times 55 plus 486.6 times 1 = 1301.59<br />\n14.818 times 70 plus 486.6 times 1 = 1523.86</p>\n</div>\n<p>y = (1153.41, 1301.59, 1523.86), in kcal/day.</p>\n<p>Table 5.2 does not give the range of body weights its equations were fitted on. If 45 kg lies outside it, the first entry stretches the line past the data: a model assumption, not arithmetic.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>FAO/WHO/UNU say that multiplying a group’s <dfn data-g=\"197\">physical activity level</dfn> (PAL) by its BMR gives its energy requirement. They treat a PAL of 1.75 or more as desirable. Take the vector of the two men’s-equation BMRs for a 65 kg man from this section, (1670.905, 1618.78) kcal/day. Multiply it by the scalar 1.75.</p>",
+   "level": 5,
+   "answer": "<p>A scalar multiplies every entry.</p>\n<div class=\"working\">\n<p>1.75 times 1670.905 = 2924.08375<br />\n1.75 times 1618.78 = 2832.865</p>\n</div>\n<p>The result is about (2924.1, 2832.9) kcal/day. It is the energy requirement at a PAL of 1.75 that each equation’s BMR implies for a 65 kg man.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Put the two FAO/WHO/UNU women’s equations in the columns of a matrix D. The first column is (14.818, 486.6), for ages 18 to 30. The second is (8.126, 845.6), for ages 30 to 60. With X as in the problem before last, rows (45, 1), (55, 1) and (70, 1), work out XD. At which of the three body weights does the equation for ages 30 to 60 predict the higher BMR?</p>",
+   "level": 6,
+   "answer": "<p>X is 3 × 2 and D is 2 × 2, so XD exists and is 3 × 2. Its first column is Xb from the problem before last: 1153.41, 1301.59 and 1523.86. The second column is X times (8.126, 845.6).</p>\n<div class=\"working\">\n<p>8.126 times 45 plus 845.6 times 1 = 1211.27<br />\n8.126 times 55 plus 845.6 times 1 = 1292.53<br />\n8.126 times 70 plus 845.6 times 1 = 1414.42</p>\n</div>\n<p>XD has rows (1153.41, 1211.27), (1301.59, 1292.53) and (1523.86, 1414.42), in kcal/day.</p>\n<p>At 45 kg the equation for ages 30 to 60 predicts more, 1211.27 against 1153.41. At 55 kg and at 70 kg it predicts less. Its line is flatter, with a smaller slope, and it starts higher, with a larger intercept. So the two lines cross somewhere between 45 and 55 kg. The 45 kg comparison carries the caution of the problem before last.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer for a 65 kg man’s BMR. It uses the FAO/WHO/UNU equation for men aged 18 to 30, with b = (15.057, 692.2). Find the step that broke.</p>\n<div class=\"working\">\n<p>his vector: (1, 65)<br />\nBMR = 15.057 times 1 plus 692.2 times 65<br />\nBMR = 45,008 kcal/day</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The first step broke. The entries of his vector are in the wrong order. The slope, 15.057, has to meet his body weight, and the intercept, 692.2, has to meet the 1. So his vector must be (65, 1), in the order of b.</p>\n<div class=\"working\">\n<p>15.057 times 65 plus 692.2 times 1 = 1670.905</p>\n</div>\n<p>His predicted BMR is about 1,671 kcal/day.</p>\n<p>Why the wrong answer looks reasonable: a dot product of two vectors of length two is correct arithmetic whatever the order. The error shows only when you read the answer back as a quantity. 45,008 kcal/day is more than twelve times the 3,470 kcal/day ICMR-NIN gives for a man doing heavy work. Read every answer back before you use it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer for PQ, with P rows (1, 2) and (3, 4), and Q rows (5, 6) and (7, 8). Find the step that broke.</p>\n<div class=\"working\">\n<p>PQ is 2 × 2<br />\nmultiply matching entries: 1 times 5, 2 times 6, 3 times 7, 4 times 8<br />\nPQ has rows (5, 12) and (21, 32)</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second step broke. It multiplied entries in matching places, which is not a matrix product. Each entry of PQ is a row of P dotted with a column of Q. The columns of Q are (5, 7) and (6, 8).</p>\n<div class=\"working\">\n<p>1 times 5 plus 2 times 7 = 19<br />\n1 times 6 plus 2 times 8 = 22<br />\n3 times 5 plus 4 times 7 = 43<br />\n3 times 6 plus 4 times 8 = 50</p>\n</div>\n<p>PQ has rows (19, 22) and (43, 50).</p>\n<p>Why the wrong answer looks reasonable: adding two matrices does work entry by entry, and so does multiplying a matrix by a scalar. It feels natural for multiplying two matrices to work the same way. It does not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>Someone wants to apply a 10% cut to the FAO/WHO/UNU BMR equation for men aged 18 to 30. Here is their worked answer for a 65 kg man. Find the step that broke.</p>\n<div class=\"working\">\n<p>cut the equation by 10%: 0.9 times 15.057 = 13.5513<br />\nnew equation: 13.5513 times body weight plus 692.2<br />\nBMR = 13.5513 times 65 plus 692.2 = 1573.0345 kcal/day</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The first step broke. A 10% cut in the BMR multiplies the whole prediction by 0.9. The prediction is the slope times body weight plus the intercept, so both parts must be scaled. The working scaled the slope and left the intercept alone.</p>\n<p>Scale the whole row of coefficients, or scale the answer. The two give the same result.</p>\n<div class=\"working\">\n<p>0.9 times 692.2 = 622.98<br />\n13.5513 times 65 plus 622.98 = 1503.8145<br />\n0.9 times 1670.905 = 1503.8145</p>\n</div>\n<p>The cut BMR is about 1,504 kcal/day, not 1,573. The working took off only about 98 kcal/day of the 167 kcal/day it meant to.</p>\n<p>Why it looks reasonable: the slope is the part that “depends on weight”, so it can feel like the part to adjust. But a scalar multiple of a matrix multiplies every entry. Scaling part of a row is a different model, not a percentage cut.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A colleague says: “ICMR-NIN says the FAO/WHO/UNU equations overestimate BMR in Indians by 10 to 12%. So multiply them by 0.88 to 0.90 to get the true figure.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: what “overestimate by 10%” means as a scalar. Take the 65 kg man’s prediction from the equation for men aged 18 to 30, 1670.905 kcal/day.</p>\n<p>If the prediction is 10% above the actual figure, the prediction is 1.10 times the actual. Then the actual is the prediction divided by 1.10.</p>\n<div class=\"working\">\n<p>1670.905 divided by 1.1 = 1519.005<br />\n1670.905 divided by 1.12 = 1491.879</p>\n</div>\n<p>If instead the excess is 10% of the prediction, the actual is 0.90 times the prediction.</p>\n<div class=\"working\">\n<p>0.9 times 1670.905 = 1503.8145<br />\n0.88 times 1670.905 = 1470.3964</p>\n</div>\n<p>Dividing by 1.10 is the same as multiplying by about 0.909, not 0.90. The two readings differ by about 15 to 21 kcal/day here. The colleague’s rule takes the second reading without saying so.</p>\n<p>What this does not establish. It does not say which reading ICMR-NIN meant. Its note gives “10 -12%” and does not define it. The note’s own adjustment is a different thing: two 5% cuts. It does not give any one person’s true BMR. A range of 10 to 12% for a group says nothing about where one person sits, and the equations were never fitted to that person.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 15,
+   "prompt": "<p>A clinic manager says: “Our spreadsheet computes every patient’s BMR with a single matrix multiplication, so the figures are exact.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: how much the answer can move for reasons the arithmetic cannot see. Take two men who both weigh 65 kg, one aged 29 and one aged 31. The spreadsheet uses the FAO/WHO/UNU equation for each man’s age band.</p>\n<div class=\"working\">\n<p>15.057 times 65 plus 692.2 times 1 = 1670.905<br />\n11.472 times 65 plus 873.1 times 1 = 1618.78<br />\n1670.905 minus 1618.78 = 52.125</p>\n</div>\n<p>Two years of age, across the line between bands, move the prediction by about 52 kcal/day at the same body weight. Now the size of the bias ICMR-NIN describes, 10 to 12% of the prediction, for the younger man.</p>\n<div class=\"working\">\n<p>0.10 times 1670.905 = 167.0905<br />\n0.12 times 1670.905 = 200.5086</p>\n</div>\n<p>That is roughly 167 to 201 kcal/day.</p>\n<p>The multiplication is exact: the spreadsheet does the arithmetic of the equations without error. The figures it produces are only as good as the equations.</p>\n<p>What this does not establish. It does not show that the equations are wrong for any one patient. The bias is ICMR-NIN’s statement about Indians as a group. It does not measure any patient’s BMR. That needs a measurement under the conditions that define BMR, not a formula. And the 52 kcal/day step between age bands is a feature of the table, not of a body two years older.</p>"
+  }
+ ]
+}

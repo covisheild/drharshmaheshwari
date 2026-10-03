@@ -1,0 +1,177 @@
+{
+ "format": 1,
+ "id": "b0-r0-c08",
+ "label": "A8",
+ "title": "Orders of magnitude and the back-of-envelope sanity check",
+ "part": "A",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The <dfn data-g=\"131\">order of magnitude</dfn> of a quantity is the power of ten nearest to it. Two quantities are of the same order of magnitude when their <dfn data-g=\"155\">ratio</dfn> is smaller than about ten.</p>\n<p>An <dfn data-g=\"132\">order-of-magnitude estimate</dfn> rounds every input to one significant figure, carries out the arithmetic on the powers of ten, and claims the answer only to the nearest power of ten.</p>\n<p>Its purpose is to test a figure, not to produce one.</p>",
+   "refs": [
+    12
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Round every number in sight to one digit and a power of ten. Do the arithmetic on the powers of ten, which is adding and subtracting small numbers. Then compare the answer against something whose size you already know.</p>\n<p>What you get back is not an answer. It is a verdict on somebody else’s answer.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Somebody asks you, in a meeting, roughly how much food energy a district’s school meal programme puts out in a year. You do not have the figures. Do it anyway, on paper, in front of them.</p>\n<p>The second schedule of the National Food Security Act, 2013 sets a lower primary hot cooked meal at 450 calories. Round it to one digit.</p>\n<div class=\"working\">\n<p>450 calories, to one digit: 5 times 10<sup>2</sup></p>\n</div>\n<p>Now the two numbers you do not have. Write each one down and mark it.</p>\n<div class=\"working\">\n<p>children in the district    1,00,000 = 10<sup>5</sup>    &lt;- a guess<br />\nschool days in a year    200    = 2 times 10<sup>2</sup>    &lt;- a guess</p>\n</div>\n<p>Multiply, working on the powers of ten.</p>\n<div class=\"working\">\n<p>5 times 10<sup>2</sup>, times 10<sup>5</sup>, times 2 times 10<sup>2</sup><br />\n= (5 times 2) times 10<sup>(2 plus 5 plus 2)</sup><br />\n= 10 times 10<sup>9</sup><br />\n= 10<sup>10</sup> calories in a year</p>\n</div>\n<p>An estimate is only worth anything once you compare it against something.</p>\n<p>So compare. About how much does one person eat in a year? Take two thousand calories a day and mark it a guess as well.</p>\n<div class=\"working\">\n<p>2,000 a day = 2 times 10<sup>3</sup>    &lt;- a guess<br />\n365 days    = 4 times 10<sup>2</sup>    (rounded to one digit)<br />\n2 times 10<sup>3</sup>, times 4 times 10<sup>2</sup> = 8 times 10<sup>5</sup>, call it 10<sup>6</sup> calories a year</p>\n</div>\n<p>Now divide the programme by the person.</p>\n<div class=\"working\">\n<p>10<sup>10</sup> divided by 10<sup>6</sup> = 10<sup>(10 minus 6)</sup> = 10<sup>4</sup></p>\n</div>\n<p>The programme delivers about as much food energy in a year as ten thousand people eat in a year. Does that sound right for a <dfn data-g=\"102\">lakh</dfn> of children getting one meal on some of the days?</p>\n<p>Check it roughly. One meal of 450 against a day of 2,000 is about a fifth. Two hundred school days out of 365 is about half. A fifth of a half is a tenth, and a tenth of a lakh of children is ten thousand. It agrees, so nothing has fallen over.</p>\n<p>Now the failure, which is why anyone bothers with the second half. Suppose that while typing you had put the district’s children at ten lakh instead of one lakh.</p>\n<div class=\"working\">\n<p>10<sup>6</sup> children instead of 10<sup>5</sup><br />\nanswer becomes 10<sup>11</sup> calories<br />\n10<sup>11</sup> divided by 10<sup>6</sup> = 10<sup>5</sup></p>\n</div>\n<p>A hundred thousand people’s worth of annual eating, from school meals, in one district. Hold that against a district population of a few lakh and it cannot be right. The school meals would be feeding a large part of everybody, all year, on one meal a day for part of the week.</p>\n<p>Notice what caught it. Not the arithmetic, which was faultless both times. The comparison against something whose size you already knew. That is the whole method, and the first half of it is useless without the second.</p>\n<p>Last, what you say out loud when you have done this. Not “it is ten to the ten”. Say something like this.</p>\n<blockquote>\n<p>On a rough calculation this comes out around the amount ten thousand people eat in a year. I assumed a lakh of children and two hundred school days. If it is wrong by a factor of ten, one of those assumptions is wrong and I want the real figures.</p>\n</blockquote>",
+   "numberRefs": [
+    6
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This method is built to catch a factor of ten and it is blind to a factor of two. It answers one question: is this number possible.</p>\n<p>The method only works if the thing you compare against is one you actually know. Compare against another estimate and you have two guesses agreeing with each other, which feels like confirmation and is not.</p>\n<p>And <dfn data-g=\"160\">rounding</dfn> to one digit cuts both ways. Round three numbers down and your answer is low by a factor of two or three before you start.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>An order-of-magnitude estimate is not a rough version of the right answer. It is a different tool with a different job: deciding whether a number somebody else has given you is possible.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Then compare the answer against a quantity whose size you already know. The comparison is not the last step. It is the step that does the work.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write down every number you supplied yourself and label it a guess, in the working, where somebody can argue with it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>This catches an error of a factor of ten and never one of a factor of two. So it cannot be used to argue that an effect is big enough to matter.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a journalist reads you a figure on the phone, you can usually say within thirty seconds whether it is possible. Say exactly that and no more: whether it is possible, and what you assumed.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Indian figures cross between lakh, <dfn data-g=\"43\">crore</dfn> and million inside one discussion, and this is where a power of ten goes missing.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>In a committee, an estimate offered with its assumptions written on the page is very hard to dismiss and very easy to improve. Someone will correct one of your guesses, which is the point.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Asked to check a calculation under time pressure, do not redo it. Estimate it independently and see whether the two land on the same power of ten.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A note claims that a state’s school meal programme served 2 crore meals last year. Take the 450 calorie lower primary standard from the second schedule of the National Food Security Act, 2013. Estimate the total food energy. Then estimate how many people’s annual eating that represents. Write down every assumption you make and mark it. Then say whether the claim of 2 crore meals is possible for a state, and what you assumed to decide that.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>Energy first, in powers of ten.</p>\n<div class=\"working\">\n<p>450 calories, to one digit: 5 times 10<sup>2</sup><br />\n2 crore meals = 2 times 10<sup>7</sup></p>\n</div>\n<div class=\"working\">\n<p>5 times 10<sup>2</sup>, times 2 times 10<sup>7</sup><br />\n= 10 times 10<sup>9</sup><br />\n= 10<sup>10</sup> calories</p>\n</div>\n<p>Now the comparison, and both numbers in it are guesses.</p>\n<div class=\"working\">\n<p>one person eats about 2,000 calories a day    = 2 times 10<sup>3</sup>    &lt;- a guess<br />\ndays in a year, to one digit    = 4 times 10<sup>2</sup><br />\nso about 8 times 10<sup>5</sup>, call it 10<sup>6</sup> calories a year</p>\n</div>\n<div class=\"working\">\n<p>10<sup>10</sup> divided by 10<sup>6</sup> = 10<sup>4</sup></p>\n</div>\n<p>About ten thousand people’s worth of annual eating.</p>\n<p>Is 2 crore meals possible for a state? Work backwards to what it implies.</p>\n<div class=\"working\">\n<p>2 times 10<sup>7</sup> meals, over about 200 school days    &lt;- a guess<br />\n= 2 times 10<sup>7</sup> divided by 2 times 10<sup>2</sup><br />\n= 10<sup>5</sup> children fed each day</p>\n</div>\n<p>A lakh of children a day. For a large state that is low rather than impossible, and for a small one it is high. So the verdict is: possible. The figure to ask for next is the number of children enrolled, because that is the assumption doing all the work.</p>\n<p>The assumptions, gathered.</p>\n<ul>\n<li>Two hundred school days.</li>\n<li>Two thousand calories a day for one person.</li>\n<li>That every meal was a lower primary meal, when the schedule sets a larger one for upper primary.</li>\n</ul>\n<p>The third is the one that would move the energy figure most.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A press note says a proposed scheme will “reach 12 crore children at a cost of 40 crore rupees a year”. Do an order-of-magnitude check on the cost per child and say what you conclude. Then say what your check can and cannot establish.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Cost per child, in powers of ten.</p>\n<div class=\"working\">\n<p>40 crore rupees = 4 times 10<sup>8</sup><br />\n12 crore children, to one digit = 1 times 10<sup>8</sup></p>\n</div>\n<div class=\"working\">\n<p>4 times 10<sup>8</sup> divided by 1 times 10<sup>8</sup> = 4 rupees per child per year</p>\n</div>\n<p>Four rupees a child for a year. Compare that against something you know: the price of one small item of food. Four rupees is around the cost of a single item, once.</p>\n<p>So the conclusion is that one of the two figures is wrong, or the scheme does something much smaller than “reach” suggests. The likeliest reading is that 40 crore is an administrative line and not the cost of whatever the children receive.</p>\n<p>What the check establishes: that the two numbers, taken together, cannot mean what the sentence implies. That is a strong finding and it took one division.</p>\n<p>What it cannot establish: which of the two numbers is wrong, or what the right figure is. It also cannot establish that the scheme is bad. A four rupee scheme that hands out one piece of information might be exactly right. The check tells you to ask, not what the answer is.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Round each of these to one digit and a power of ten.</p>\n<div class=\"working\">\n<p>4,820    61    938,000    0.0037</p>\n</div>",
+   "level": 1,
+   "answer": "<p>Keep the first digit, look at the next one to decide whether it goes up, and count the places.</p>\n<table style=\"width:42%;\">\n\n<tbody>\n<tr>\n<td>4,820</td>\n<td>-&gt; 5 times 10<sup>3</sup></td>\n</tr>\n<tr>\n<td>61</td>\n<td>-&gt; 6 times 10<sup>1</sup></td>\n</tr>\n<tr>\n<td>938,000</td>\n<td>-&gt; 9 times 10<sup>5</sup></td>\n</tr>\n<tr>\n<td>0.0037</td>\n<td>-&gt; 4 times 10<sup>-3</sup></td>\n</tr>\n</tbody>\n</table>\n<p>The first one rounded up from 4.8 to 5. At this level of roughness that is the point: you are not trying to keep the 8.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Estimate each of these by rounding both numbers to one digit first. Then say, for the first one, whether your estimate is above or below the true answer.</p>\n<div class=\"working\">\n<p>412 times 7,900    61,000 divided by 290</p>\n</div>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>412 times 7,900<br />\n-&gt; 4 times 10<sup>2</sup>, times 8 times 10<sup>3</sup><br />\n= 32 times 10<sup>5</sup><br />\n= 3.2 times 10<sup>6</sup>, call it 3 times 10<sup>6</sup></p>\n</div>\n<div class=\"working\">\n<p>61,000 divided by 290<br />\n-&gt; 6 times 10<sup>4</sup>, divided by 3 times 10<sup>2</sup><br />\n= 2 times 10<sup>2</sup></p>\n</div>\n<p>Above or below, for the first. The 412 was rounded down to 400 and the 7,900 up to 8,000. One each way, so the two pull in opposite directions and the estimate should be close. The true answer is 3,254,800, and the estimate of 3 million is a little under.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Two quantities are 4 times 10<sup>6</sup> and 9 times 10<sup>7</sup>. Are they of the same order of magnitude? Show the working that decides it.</p>",
+   "level": 3,
+   "answer": "<p>Divide one by the other and see whether the answer is under about ten.</p>\n<div class=\"working\">\n<p>9 times 10<sup>7</sup>, divided by 4 times 10<sup>6</sup><br />\n= (9 divided by 4) times 10<sup>(7 minus 6)</sup><br />\n= 2.25 times 10<sup>1</sup><br />\n= about 22</p>\n</div>\n<p>Twenty-two is more than ten, so no: they are not of the same order of magnitude. One is about an order of magnitude and a bit above the other.</p>\n<p>Notice that the exponents alone, 6 against 7, would have told you they were one step apart. The digits in front moved that to a bit more than one step. So divide, rather than reading the exponents off.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Estimate the number of school meals served in one Indian district in a school year. Mark every input you supply yourself, and give your answer to the nearest power of ten.</p>",
+   "level": 5,
+   "answer": "<p>Two inputs are needed and neither was given, so both are guesses and both get marked.</p>\n<div class=\"working\">\n<p>children fed in a district    1,00,000 = 10<sup>5</sup>    &lt;- a guess<br />\nschool days in a year    200 = 2 times 10<sup>2</sup> &lt;- a guess</p>\n</div>\n<p>Multiply.</p>\n<div class=\"working\">\n<p>10<sup>5</sup> times 2 times 10<sup>2</sup><br />\n= 2 times 10<sup>7</sup> meals</p>\n</div>\n<p>Two crore meals, so 10<sup>7</sup> to the nearest power of ten.</p>\n<p>Both guesses are the answer’s real content. Suppose a district turns out to feed three lakh children. The answer moves to 6 times 10<sup>7</sup>, which is still 10<sup>7</sup> to the nearest power of ten. That stability is what the method buys: the answer survived a guess being wrong threefold.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Section 3(1) of the National Food Security Act, 2013 gives 5 kilograms per person per month. Estimate the tonnes a district needs in a year. Mark every input you supply, and say which one your answer depends on most.</p>",
+   "level": 6,
+   "answer": "<p>One input is given, one is a guess.</p>\n<div class=\"working\">\n<p>5 kilograms per person per month<br />\npeople covered in a district    5,00,000 = 5 times 10<sup>5</sup>    &lt;- a guess</p>\n</div>\n<p>Work it through.</p>\n<div class=\"working\">\n<p>5 kilograms times 5 times 10<sup>5</sup> people = 25 times 10<sup>5</sup> kilograms a month<br />\n= 2.5 times 10<sup>6</sup> kilograms a month<br />\ntimes 12 months = 30 times 10<sup>6</sup><br />\n= 3 times 10<sup>7</sup> kilograms a year</p>\n</div>\n<p>Now the unit. A tonne is a thousand kilograms.</p>\n<div class=\"working\">\n<p>3 times 10<sup>7</sup> divided by 10<sup>3</sup> = 3 times 10<sup>4</sup> tonnes a year</p>\n</div>\n<p>About thirty thousand tonnes.</p>\n<p>Which input it depends on most: the population guess, because it is the only one that can be wrong. The 5 kilograms and the 12 months are both exact.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a worked estimate. Find the step that broke.</p>\n<div class=\"working\">\n<p>3 times 10<sup>4</sup> households<br />\neach getting 20 kilograms a month<br />\n3 times 20 = 60<br />\nso 60 times 10<sup>4</sup> = 6 times 10<sup>4</sup> kilograms a month</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The digits were multiplied correctly and then the power of ten was mishandled in the last step.</p>\n<div class=\"working\">\n<p>60 times 10<sup>4</sup> = 6 times 10<sup>5</sup></p>\n</div>\n<p>Sixty is 6 times 10<sup>1</sup>, and that extra ten has to go into the <dfn data-g=\"63\">exponent</dfn>, not disappear.</p>\n<div class=\"working\">\n<p>3 times 10<sup>4</sup>, times 2 times 10<sup>1</sup><br />\n= 6 times 10<sup>5</sup> kilograms a month</p>\n</div>\n<p>Six lakh kilograms, or 600 tonnes, and the worked answer said sixty thousand.</p>\n<p>Why it looks reasonable: the digit 6 and the exponent 4 both sit in the line above. So the last line looks like a tidy-up rather than a step. It is a step. Putting one digit in front changes the exponent every time the digits reach ten.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked estimate. Find the step that broke.</p>\n<div class=\"working\">\n<p>a scheme covers 30 lakh people<br />\neach is to get 2 kilograms of grain a month<br />\n30 lakh = 3 million = 3 times 10<sup>5</sup><br />\n3 times 10<sup>5</sup>, times 2 = 6 times 10<sup>5</sup> kilograms a month<br />\n= 600 tonnes a month</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The third line crosses from the Indian ladder to the international one and drops a power of ten on the way. A lakh is 10<sup>5</sup>, so thirty lakh is thirty of them.</p>\n<div class=\"working\">\n<p>30 lakh = 30,00,000 = 3 times 10<sup>6</sup></p>\n</div>\n<p>Three million is right. Three times 10<sup>5</sup> is not. That is three lakh, ten times too small.</p>\n<p>Carry the corrected figure through.</p>\n<div class=\"working\">\n<p>3 times 10<sup>6</sup>, times 2 = 6 times 10<sup>6</sup> kilograms a month<br />\n6 times 10<sup>6</sup> divided by 10<sup>3</sup> = 6 times 10<sup>3</sup> tonnes a month</p>\n</div>\n<p>Six thousand tonnes, and the worked estimate said six hundred.</p>\n<p>The comparison would have caught it without any of this. Six hundred tonnes shared among thirty lakh people is 0.2 kilograms each, and the line above says two. An estimate that contradicts its own input is finished before you look at the exponents at all.</p>\n<p>Why it looks reasonable: the line holds a true statement. Thirty lakh really is three million. The 3 was then taken from “million”. The 10<sup>5</sup> was left behind from “lakh”. Two halves of a correct sentence got fitted to the wrong number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked estimate. Find what is wrong with it, and it is not the arithmetic.</p>\n<div class=\"working\">\n<p>a district has about 10 lakh people    &lt;- a guess<br />\nabout 2 per cent need the service    &lt;- a guess<br />\neach needs about 3 visits a year    &lt;- a guess<br />\n10<sup>6</sup> times 0.02 times 3 = 6 times 10<sup>4</sup> visits a year</p>\n</div>",
+   "level": 8,
+   "answer": "<p>Check the arithmetic first, since it is offered.</p>\n<div class=\"working\">\n<p>10<sup>6</sup> times 0.02 = 2 times 10<sup>4</sup><br />\n2 times 10<sup>4</sup> times 3 = 6 times 10<sup>4</sup></p>\n</div>\n<p>That is right. Sixty thousand visits.</p>\n<p>What is wrong is that every input is a guess and nothing was compared against anything. The method has two halves and only the first was done. An estimate that is never checked against a quantity you actually know is three guesses multiplied together and presented as a finding.</p>\n<p>What the second half would look like. Sixty thousand visits a year is about 160 a day across the district. How many facilities and how many staff does that imply, and is that possible? That comparison is where an impossible answer shows itself.</p>\n<p>Why it looks reasonable: the guesses are all marked, which is the honest part, and it makes the working look complete. Marking a guess does not test it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked estimate and the conclusion drawn from it. The arithmetic is right. Say what is wrong with the conclusion.</p>\n<div class=\"working\">\n<p>district A    4 lakh households    &lt;- a guess<br />\n3 visits each a year    &lt;- a guess<br />\n4 times 10<sup>5</sup>, times 3 = 1.2 times 10<sup>6</sup> visits<br />\ndistrict B    6 lakh households    &lt;- a guess<br />\n3 visits each a year    &lt;- a guess<br />\n6 times 10<sup>5</sup>, times 3 = 1.8 times 10<sup>6</sup> visits<br />\nso district B needs half as many staff again as district A</p>\n</div>",
+   "level": 8,
+   "answer": "<p>Work out the factor the conclusion rests on.</p>\n<div class=\"working\">\n<p>1.8 times 10<sup>6</sup>, divided by 1.2 times 10<sup>6</sup> = 1.5</p>\n</div>\n<p>One and a half. That sits well inside a factor of two, and this method is blind to a factor of two. Every input was rounded to one digit, and the answer is claimed only to the nearest power of ten.</p>\n<div class=\"working\">\n<p>1.2 times 10<sup>6</sup>, to the nearest power of ten = 10<sup>6</sup><br />\n1.8 times 10<sup>6</sup>, to the nearest power of ten = 10<sup>6</sup></p>\n</div>\n<p>Both districts come out at 10<sup>6</sup> visits. The estimate says the two are the same size and says nothing else. A staffing sentence needs a real count of households in each district.</p>\n<p>What the method could have supported. Had district B come out at 10<sup>7</sup>, a tenfold gap would have survived the rounding and the conclusion would have stood.</p>\n<p>Why it looks reasonable: the arithmetic is faultless, both guesses are marked, and the 1.5 came out of a division rather than being asserted. A number carries the precision of what went into it, and one-digit inputs cannot carry one and a half.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a claim from a press note.</p>\n<blockquote>\n<p>The programme will provide 50 lakh children with a daily glass of milk for 200 days at a cost of 100 crore rupees.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the cost of one glass, since that is the only quantity you have any feel for.</p>\n<div class=\"working\">\n<p>50 lakh children = 5 times 10<sup>6</sup><br />\n200 days = 2 times 10<sup>2</sup><br />\nglasses = 5 times 10<sup>6</sup>, times 2 times 10<sup>2</sup> = 10<sup>9</sup> glasses<br />\n100 crore rupees = 100 times 10<sup>7</sup> = 10<sup>9</sup> rupees<br />\n10<sup>9</sup> rupees divided by 10<sup>9</sup> glasses = 1 rupee a glass</p>\n</div>\n<p>One rupee a glass of milk. Compare that against a price you know: a glass of milk costs several times that at any shop in India.</p>\n<p>So something in the sentence is not as stated. Perhaps one of the three figures is wrong. Perhaps the milk is not bought at retail. Perhaps “provide” is doing work the note never explains.</p>\n<p>What this does not establish. It does not say which figure is wrong, and it does not say the programme is a bad one. It establishes that the three numbers cannot all be right as stated, which is enough to ask before repeating any of them.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A journalist reads you a figure over the phone and wants a comment in the next ten minutes.</p>\n<blockquote>\n<p>A new tax on sugary drinks will raise 40,000 crore rupees a year.</p>\n</blockquote>\n<p>Decide what to compute, compute it, say what you would tell the journalist, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Work backwards to something you can judge. Per person is usually the way.</p>\n<div class=\"working\">\n<p>40,000 crore = 4 times 10<sup>4</sup> times 10<sup>7</sup> = 4 times 10<sup>11</sup> rupees<br />\npopulation of India, roughly 1.4 times 10<sup>9</sup>    &lt;- a guess<br />\n4 times 10<sup>11</sup> divided by 1.4 times 10<sup>9</sup><br />\n= about 2.9 times 10<sup>2</sup><br />\n= roughly 300 rupees per person per year</p>\n</div>\n<p>Three hundred rupees a person a year, from every person in the country, on sugary drinks tax alone. Now compare against something you know. That is a meaningful share of what many households spend on all drinks in a year, and it assumes nobody avoids the tax.</p>\n<p>What to tell the journalist, in one sentence.</p>\n<blockquote>\n<p>That works out at about 300 rupees a year from every person in India. That is high enough that I would want the assumed consumption and tax rate before repeating it.</p>\n</blockquote>\n<p>What this does not establish. It does not show the figure is wrong. A narrow tax at a high rate on heavy consumers could reach it. It establishes which two numbers to ask for, and it took one division and one comparison.</p>"
+  }
+ ]
+}

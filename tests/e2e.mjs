@@ -231,6 +231,70 @@ try {
     check(v2?.attempts.length === 1 && v2.attempts[0].correct === false && v2.prefs.unlockAll === true, 'v1 progress migrated to v2');
     await ctx.close();
   }
+
+  // ---------- Book reader (/doctors/books/obesity-expertise/) ----------
+  const R = '/doctors/books/obesity-expertise/b0/';
+  for (const theme of ['light', 'dark']) {
+    const ctx = await context({ width: 1280, height: 900 }, { theme });
+    const page = await ctx.newPage();
+    await page.goto(BASE + R);
+    const res = await page.evaluate(() => {
+      const rd = document.getElementById('rd'); const probe = document.createElement('span'); rd.append(probe);
+      const rgb = (v) => { probe.style.color = `var(${v})`; return getComputedStyle(probe).color.match(/[\d.]+/g).map(Number).slice(0, 3); };
+      const lum = (c) => { const [r, g, b] = c.map((x) => { x /= 255; return x <= .03928 ? x / 12.92 : ((x + .055) / 1.055) ** 2.4; }); return .2126 * r + .7152 * g + .0722 * b; };
+      const ratio = (a, b) => { const [x, y] = [lum(rgb(a)), lum(rgb(b))].sort((p, q) => q - p); return (x + .05) / (y + .05); };
+      const pairs = [['--ink', '--bg'], ['--ink-2', '--bg'], ['--ink-3', '--bg'], ['--ink-3', '--surface-2'], ['--b-ink', '--bg'], ['--b-ink', '--b-tint'],
+        ['--mk', '--mk-tint'], ['--q', '--surface'], ['--warn-c', '--bg'], ['--brand-ink', '--b-ink']];
+      return { bg: getComputedStyle(rd).backgroundColor, pairs: pairs.map(([a, b]) => [a, b, ratio(a, b)]) };
+    });
+    for (const [a, b, r] of res.pairs) check(r >= 4.5, `reader contrast ${theme}: ${a} on ${b} = ${r.toFixed(2)}`);
+    check(res.bg === (theme === 'dark' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'), `reader background is ${theme === 'dark' ? 'pure black' : 'white'} (${res.bg})`);
+    await ctx.close();
+  }
+  for (const [name, vp] of [['phone', { width: 390, height: 844 }], ['desktop', { width: 1280, height: 900 }]]) {
+    const ctx = await context(vp);
+    const page = await ctx.newPage();
+    const errs = errorsOf(page);
+    await page.goto(BASE + R + '#b0-r0-c06');
+    await page.waitForSelector('#b0-r0-c06 .rd-body[data-state="done"]');
+    await page.waitForTimeout(800);
+    check(/^A6 /.test(await page.locator('#rd-where').textContent()), `${name}: a section link lands on that section (A6)`);
+    check(await overflow(page) <= 0, `${name}: reader has no sideways scroll`);
+    const sup = await page.locator('.rd-body sup').count();
+    check(sup > 0, `${name}: superscripts render as <sup>`);
+    const raw = await page.evaluate(() => [...document.querySelectorAll('.rd-body')].map((b) => b.textContent).join('').match(/\^/g)?.length ?? 0);
+    check(raw === 0, `${name}: no raw caret reaches the page`);
+    // Practice: try, then reveal, then mark.
+    const q = page.locator('#b0-r0-c06 .q-practice').first();
+    await q.locator('.q-reveal').click();
+    check(await q.locator('.q-ans').isVisible(), `${name}: practice answer opens`);
+    await q.locator('[data-mark="got"]').click();
+    const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('book:B0:v1')).practice);
+    check(Object.values(saved).some((m) => m.mark === 'got'), `${name}: practice mark is kept`);
+    // Glossary tap.
+    await page.locator('#b0-r0-c06 dfn').first().click();
+    check(await page.locator('#rd-pop').isVisible() && /First taught/.test(await page.locator('#rd-pop').textContent()), `${name}: tapping a term shows its plain-words definition`);
+    await page.keyboard.press('Escape');
+    // Bookmark, then text size keeps the place.
+    await page.locator('#rd-mark').click();
+    check((await page.evaluate(() => JSON.parse(localStorage.getItem('book:B0:v1')).bookmarks.length)) === 1, `${name}: bookmark is saved`);
+    const before = await page.locator('#rd-where').textContent();
+    await page.locator('#rd-aa').click();
+    await page.locator('[data-size="4"]').click();
+    await page.waitForTimeout(600);
+    check(await page.locator('#rd-where').textContent() === before, `${name}: a new text size keeps the place (${before})`);
+    // Reload: resumes where you were.
+    await page.evaluate(() => window.dispatchEvent(new Event('pagehide')));
+    await page.goto(BASE + R);
+    await page.waitForTimeout(1200);
+    const back = await page.locator('#rd-where').textContent();
+    check(back === before, `${name}: reopening the book returns to your place (${back})`);
+    check(errs.length === 0, `${name}: reader has no script errors ${errs.join(' | ')}`);
+    await page.goto(BASE + '/doctors/books/obesity-expertise/');
+    check(await page.locator('#continue').isVisible(), `${name}: series page shows Continue reading after reading`);
+    check(await overflow(page) <= 0, `${name}: series page has no sideways scroll`);
+    await ctx.close();
+  }
 } finally {
   await browser.close();
   if (started) try { execSync('npx astro preview stop', { stdio: 'ignore' }); } catch {}

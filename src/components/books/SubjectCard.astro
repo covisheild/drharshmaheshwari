@@ -1,0 +1,38 @@
+---
+// One cover per subject, not per rung: the cover opens the first released rung, and a small switch
+// underneath reaches the others. Unreleased rungs are shown as plain numbers, never as links.
+import Cover from './Cover.astro';
+import type { SeriesBook } from '../../reader/types';
+
+interface Props { rungs: SeriesBook[]; released: Set<string>; faint?: boolean; size?: 'sm' | 'md' }
+const { rungs, released, faint = false, size = 'md' } = Astro.props;
+const first = rungs.find((r) => released.has(r.id)) ?? rungs[0];
+const base = '/doctors/books/obesity-expertise/';
+const name = first.title.replace(/\s*·\s*Rung \d$/, '');
+const rungOf = (b: SeriesBook) => Number(b.id.match(/-R(\d)$/)?.[1] ?? 0);
+---
+<div class:list={['subj', { faint }]} data-subject={first.subject ?? first.id}>
+  {released.has(first.id)
+    ? <a class="subj-cover" href={`${base}${first.slug}/`} aria-label={`Book ${first.number}: ${first.title}`}><Cover hue={first.hue ?? 200} number={first.number} title={first.title} level={first.level} size={size} /></a>
+    : <span class="subj-cover"><Cover hue={first.hue ?? 200} number={first.number} title={first.title} level={first.level} size={size} faint /></span>}
+  <p class="subj-name">{name}</p>
+  {rungs.length > 1 && (
+    <p class="subj-rungs" aria-label="Rungs">Rung
+      {rungs.map((r) => released.has(r.id)
+        ? <a href={`${base}${r.slug}/`} aria-label={`Rung ${rungOf(r)}: Book ${r.number}`}>{rungOf(r)}</a>
+        : <span title="Not out yet">{rungOf(r)}</span>)}
+    </p>
+  )}
+</div>
+
+<style>
+  .subj { width: 140px; flex: none; scroll-snap-align: start; }
+  .subj-cover { display: block; text-decoration: none; border-radius: 8px; }
+  .subj-cover:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+  .subj-name { margin: .5rem 0 .2rem; font-size: .84rem; font-weight: 600; line-height: 1.3; color: var(--ink); }
+  .subj-rungs { margin: 0; font-size: .78rem; color: var(--ink-3); display: flex; gap: .15rem; align-items: center; }
+  .subj-rungs a, .subj-rungs span { display: inline-grid; place-items: center; min-width: 26px; height: 26px; border-radius: 6px; }
+  .subj-rungs a { color: var(--brand); font-weight: 700; background: var(--brand-soft); text-decoration: none; }
+  .subj-rungs span { color: var(--ink-3); }
+  .faint .subj-name { color: var(--ink-3); }
+</style>

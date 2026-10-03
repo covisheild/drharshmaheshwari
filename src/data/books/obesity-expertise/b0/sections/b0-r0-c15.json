@@ -1,0 +1,139 @@
+{
+ "format": 1,
+ "id": "b0-r0-c15",
+ "label": "C1",
+ "title": "Variables and algebra: what a letter stands for",
+ "part": "C",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A variable is a letter written in place of a number. It stands either for a number that is not yet known, or for a number that may take any of several values.</p>\n<p>Two things written side by side are multiplied. So 2x means 2 times x, and xy means x times y. A letter multiplied by itself is written as a power: x<sup>2</sup> means x times x.</p>\n<p>Brackets group a part of an expression so that it is treated as one quantity. A number multiplying a bracket multiplies every term inside it, so a(b + c) = ab + ac.</p>\n<p>Substituting a number for a letter replaces that letter, everywhere it appears, with the number. The expression then becomes arithmetic.</p>",
+   "refs": [
+    1
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A letter in a sum is a number wearing a name.</p>\n<div class=\"working\">\n<p>2x</p>\n</div>\n<p>That is not a two sitting beside an x. It is 2 times x. In algebra, writing two things side by side means multiply them.</p>\n<p>A letter obeys every rule a number obeys. It has to, because it is a number.</p>\n<p>So you add letters the way you add numbers.</p>\n<div class=\"working\">\n<p>x plus x = 2x</p>\n</div>\n<p>Brackets do one job. They say treat what is inside as one quantity.</p>\n<div class=\"working\">\n<p>2(x + 5)</p>\n</div>\n<p>That is 2 times the whole of x + 5. It is not 2 times x with a 5 added on afterwards.</p>\n<p>Without the brackets, 2x + 5 means multiply first and add second. That is the order the section on counting set out: multiplying comes before adding. Brackets are how you say otherwise.</p>\n<p>When you do find out what the number is, you put it in. Putting a number in place of a letter is called substituting.</p>\n<p>Say x turns out to be 7.</p>\n<div class=\"working\">\n<p>2x<br />\n2 times 7 = 14</p>\n</div>\n<p>Fourteen. The letter went away and arithmetic was left.</p>\n<p>Now back to the brackets, because you will often want them gone. To take a bracket away, multiply every term inside it by what stands outside. This is called expanding the bracket. In words: 2 times the whole of x plus 5 is 2 times x, plus 2 times 5.</p>\n<div class=\"working\">\n<p>2(x + 5) = 2x + 10</p>\n</div>\n<p>Check it with x as 7, working each side on its own.</p>\n<div class=\"working\">\n<p>7 plus 5 = 12<br />\n2 times 12 = 24<br />\n2 times 7 = 14<br />\n14 plus 10 = 24</p>\n</div>\n<p>Both sides give 24. The same holds when the inside is a subtraction. Here 3 times the whole of 10 minus y becomes 3 times 10, minus 3 times y.</p>\n<div class=\"working\">\n<p>3(10 minus y) = 30 minus 3y</p>\n</div>\n<p>With a positive number outside, the subtraction stays a subtraction. Only the multiplying reaches inside.</p>\n<p>If the number outside is negative, every sign inside flips. The same happens when the whole bracket is taken away. This is the rule for negatives from the section on counting: a negative times a negative is positive.</p>\n<div class=\"working\">\n<p>-3(10 minus y) = -30 plus 3y<br />\n(3x + 2y) minus (x minus y) = 3x + 2y minus x plus y = 2x + 3y</p>\n</div>\n<p>An expression is a piece of algebra that stands for a number, like 2x + 5. An equation is a statement that two expressions are the same number, like 2x + 5 = 19.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>An Indian food label gets its energy figure by arithmetic, not by burning the food. The Food Safety and Standards (Labelling and Display) Regulations, 2020 fix the numbers to multiply by. Four kilocalories for every gram of carbohydrate. Four for every gram of protein. Nine for every gram of fat.</p>\n<p>Take a packet whose panel says this for every 100 grams. Carbohydrate 60 grams, protein 12 grams, fat 20 grams. Those three gram figures are made up for this problem. The three factors are not.</p>\n<p>Here is the working that comes back first. It is wrong.</p>\n<div class=\"working\">\n<p>60 plus 12 plus 20 = 92<br />\n92 times 4 = 368</p>\n</div>\n<p>The arithmetic is fine. What is wrong is using one factor for all three quantities.</p>\n<p>Write the rule with letters instead. Let c stand for the number of grams of carbohydrate. Let p stand for the number of grams of protein. Let f stand for the number of grams of fat. And let E stand for the energy in kilocalories.</p>\n<div class=\"working\">\n<p>E = 4c + 4p + 9f</p>\n</div>\n<p>Read 9f as nine times f. And the f is not the symbol for gram.</p>\n<p>Now substitute. Do the three multiplications first and the adding last. That is the order from the section on counting.</p>\n<div class=\"working\">\n<p>4 times 60 = 240<br />\n4 times 12 = 48<br />\n9 times 20 = 180<br />\n240 plus 48 plus 180 = 468</p>\n</div>\n<p>468 kilocalories.</p>\n<p>A second packet comes along with 70 grams of carbohydrate, 5 grams of protein and 15 grams of fat. These are made up too.</p>\n<div class=\"working\">\n<p>4 times 70 = 280<br />\n4 times 5 = 20<br />\n9 times 15 = 135<br />\n280 plus 20 plus 135 = 435</p>\n</div>\n<p>435 kilocalories.</p>\n<p>You wrote the same rule and put different numbers into it. That is what varies in a variable.</p>",
+   "numberRefs": [
+    2
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The letters stand for numbers of grams. They do not stand for grams.</p>\n<p>And the three factors here cover carbohydrate, protein and fat only.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Two things written side by side are multiplied. So 2x is two times x. Reading it as a two next to an x is the error that makes every later line unreadable. Say the multiplication out loud the first few times.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A letter in a formula is a number, not a unit. In a line that ends 9f, the f is a count of grams and not the symbol for gram.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Substitute, and the algebra turns into arithmetic you can check.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>One line with letters in it covers every case at once. So you check a whole column of a spreadsheet by checking the rule once and then testing two rows, rather than by reading the column.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A letter standing for a number says nothing about which numbers are allowed. Read every answer back as a quantity before you use it.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Name every letter in words when you put a formula on a board, in the same breath as you write it.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A rule is written like this.</p>\n<div class=\"working\">\n<p>T = 5a + 2b</p>\n</div>\n<p>Say the rule out loud in words. Then work T out for a equal to 6 and b equal to 4, showing every line.</p>\n<p>Then work it out again for a equal to 6 and b equal to 9. Say in one sentence which part of your working you had to repeat, and which part you did not.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>In words: T is five times a, plus two times b.</p>\n<p>First case, with a as 6 and b as 4.</p>\n<div class=\"working\">\n<p>5 times 6 = 30<br />\n2 times 4 = 8<br />\n30 plus 8 = 38</p>\n</div>\n<p>T is 38.</p>\n<p>Second case, with a as 6 and b as 9.</p>\n<div class=\"working\">\n<p>5 times 6 = 30<br />\n2 times 9 = 18<br />\n30 plus 18 = 48</p>\n</div>\n<p>T is 48.</p>\n<p>What you repeated was the arithmetic. What you did not repeat was the rule. You wrote it once, and it held for both cases, which is the whole reason for putting letters in it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident reads 2x as a two and an x written together. They have ten minutes and a whiteboard, and they expect a mechanism rather than a rule to memorise.</p>\n<p>Teach them why the two symbols side by side mean a multiplication, so that they can read the next formula they meet.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Ten minutes, and do not start with the notation.</p>\n<p>Start with a number they already read that way. Write a price on the board and ask for the cost of three of them. They multiply without being asked. Then write the same thing with the price replaced by a letter.</p>\n<div class=\"working\">\n<p>3x</p>\n</div>\n<p>Ask what they would do if you told them x was 40. They will say 120. Let them say it before you name the rule.</p>\n<div class=\"working\">\n<p>3 times 40 = 120</p>\n</div>\n<p>Now name it. Two things side by side are multiplied. That is a convention, and it was chosen for a reason. A multiplication sign between every pair of symbols makes a long line unreadable.</p>\n<p>Then show them what the convention costs, because this is the part they will meet in the wild. Write a formula with three letters in it and ask them to read it aloud.</p>\n<div class=\"working\">\n<p>E = 4c + 4p + 9f</p>\n</div>\n<p>Make them say “four times c” rather than “four c”. The moment they say times, the line stops being a string of symbols and starts being an instruction.</p>\n<p>Close with the error to watch for. A letter is a number, not a unit. Tell them that f in that line is a count of grams. It is not the symbol for gram. Read it as a unit and the multiplication gets dropped, which is how a wrong formula reaches a spreadsheet.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Work each of these out for x equal to 4.</p>\n<div class=\"working\">\n<p>3x<br />\nx + 9<br />\n2x + 5<br />\nx<sup>2</sup></p>\n</div>",
+   "level": 1,
+   "answer": "<p>Put 4 in place of x every time.</p>\n<div class=\"working\">\n<p>3 times 4 = 12</p>\n</div>\n<div class=\"working\">\n<p>4 plus 9 = 13</p>\n</div>\n<div class=\"working\">\n<p>2 times 4 = 8<br />\n8 plus 5 = 13</p>\n</div>\n<div class=\"working\">\n<p>4 times 4 = 16</p>\n</div>\n<p>So the four answers are 12, 13, 13 and 16.</p>\n<p>The second and third came out the same, which is worth a second look. Two different expressions can agree at one value of x and part company at every other one. Try x as 5 and they do.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Write each of these as a line of algebra. Use n for the number.</p>\n<ul>\n<li>five times the number</li>\n<li>the number plus seven</li>\n<li>twice the number, less three</li>\n<li>the number multiplied by itself</li>\n<li>three times the whole of the number plus one</li>\n</ul>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>5n<br />\nn + 7<br />\n2n minus 3<br />\nn<sup>2</sup><br />\n3(n + 1)</p>\n</div>\n<p>The first one is where the convention does its work. You write 5n and you read it as five times n.</p>\n<p>The last one needs the brackets. Without them, 3n + 1 means three times the number, and then one added. With them, the whole of n + 1 is tripled. Try n as 4 and the two differ.</p>\n<div class=\"working\">\n<p>3 times 4 = 12<br />\n12 plus 1 = 13</p>\n</div>\n<div class=\"working\">\n<p>4 plus 1 = 5<br />\n3 times 5 = 15</p>\n</div>\n<p>Thirteen against fifteen, from the same words said in a different order.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Expand each bracket. Then check each answer by putting 3 in place of the letter, on both sides.</p>\n<div class=\"working\">\n<p>4(x + 2)<br />\n5(10 minus y)<br />\n2(3n + 1)</p>\n</div>",
+   "level": 2,
+   "answer": "<p>Multiply every term inside by the number outside.</p>\n<div class=\"working\">\n<p>4(x + 2) = 4x + 8<br />\n5(10 minus y) = 50 minus 5y<br />\n2(3n + 1) = 6n + 2</p>\n</div>\n<p>Now check each with the letter as 3. Work the bracketed side first, then the expanded side.</p>\n<div class=\"working\">\n<p>3 plus 2 = 5<br />\n4 times 5 = 20<br />\n4 times 3 = 12<br />\n12 plus 8 = 20</p>\n</div>\n<div class=\"working\">\n<p>10 minus 3 = 7<br />\n5 times 7 = 35<br />\n5 times 3 = 15<br />\n50 minus 15 = 35</p>\n</div>\n<div class=\"working\">\n<p>3 times 3 = 9<br />\n9 plus 1 = 10<br />\n2 times 10 = 20<br />\n6 times 3 = 18<br />\n18 plus 2 = 20</p>\n</div>\n<p>All three agree. The one to watch is the third. The 2 multiplies the 3n and the 1, and people who expand in a hurry write 6n + 1.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Work each of these out for a equal to 5 and b equal to 2.</p>\n<div class=\"working\">\n<p>ab<br />\n3a + 2b<br />\na<sup>2</sup> minus b<br />\n4(a + b)</p>\n</div>",
+   "level": 3,
+   "answer": "<p>Put 5 in place of a and 2 in place of b.</p>\n<div class=\"working\">\n<p>5 times 2 = 10</p>\n</div>\n<div class=\"working\">\n<p>3 times 5 = 15<br />\n2 times 2 = 4<br />\n15 plus 4 = 19</p>\n</div>\n<div class=\"working\">\n<p>5 times 5 = 25<br />\n25 minus 2 = 23</p>\n</div>\n<div class=\"working\">\n<p>5 plus 2 = 7<br />\n4 times 7 = 28</p>\n</div>\n<p>So the four answers are 10, 19, 23 and 28.</p>\n<p>The first one is the one to watch. Reading ab as a multiplication is the whole move. Nothing on the page says to multiply except that the two letters are touching.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A panel declares this for every 100 grams of a food. Carbohydrate 50 grams, protein 15 grams, fat 10 grams. The three gram figures are made up for this problem.</p>\n<p>Using the factors the Food Safety and Standards (Labelling and Display) Regulations, 2020 set for calculating declared energy, work out the energy in kilocalories. Show every line and give the answer with its unit.</p>\n<p>Then say in one sentence what your answer does not tell you.</p>",
+   "level": 5,
+   "answer": "<p>The rule is four kilocalories for every gram of carbohydrate. Four for every gram of protein. Nine for every gram of fat.</p>\n<div class=\"working\">\n<p>E = 4c + 4p + 9f</p>\n</div>\n<p>Substitute the three figures.</p>\n<div class=\"working\">\n<p>4 times 50 = 200<br />\n4 times 15 = 60<br />\n9 times 10 = 90<br />\n200 plus 60 plus 90 = 350</p>\n</div>\n<p>350 kilocalories per 100 grams.</p>\n<p>What it does not tell you: anything about what the food does in a person. The number is what the rule says a label must declare. It is worked out from grams, by multiplying. It is not a measurement of the food. And it says nothing about anybody’s health.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a rule says E = 4c + 4p + 9f<br />\na panel gives c as 55, p as 9 and f as 18<br />\nsubstitute the three numbers into the rule<br />\n4c becomes 455<br />\n4p becomes 49<br />\n9f becomes 918<br />\n455 plus 49 plus 918 = 1,422<br />\nso the energy is 1,422 kilocalories</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the <dfn data-g=\"183\">substitution</dfn>, and it broke in the same way three times.</p>\n<p>4c means 4 times c. Putting 55 in place of c gives 4 times 55. It does not give a 4 with 55 written after it.</p>\n<p>Do it properly.</p>\n<div class=\"working\">\n<p>4 times 55 = 220<br />\n4 times 9 = 36<br />\n9 times 18 = 162<br />\n220 plus 36 plus 162 = 418</p>\n</div>\n<p>418 kilocalories, not 1,422.</p>\n<p>Why it looks reasonable: every digit of every number given is there in the answer. The addition at the end is correct. And 1,422 is a number a label could carry. Nothing about the working looks careless. Only one thing was missed: the convention that two symbols side by side are multiplied. It is invisible on the page, because it is written with nothing at all.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>In a meeting somebody says this about a packet.</p>\n<blockquote>\n<p>The panel says 40 grams of carbohydrate, 5 grams of protein and 30 grams of fat in every 100 grams. It is mostly carbohydrate, so most of its energy comes from the carbohydrate.</p>\n</blockquote>\n<p>The three gram figures are made up for this problem. The factors for calculating declared energy are the ones the Food Safety and Standards (Labelling and Display) Regulations, 2020 set.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the energy each of the three contributes, rather than the grams of each. That is what the claim is actually about.</p>\n<div class=\"working\">\n<p>4 times 40 = 160<br />\n4 times 5 = 20<br />\n9 times 30 = 270<br />\n160 plus 20 plus 270 = 450</p>\n</div>\n<p>450 kilocalories in total, of which 270 come from the fat.</p>\n<div class=\"working\">\n<p>270 divided by 450 = 0.6<br />\n0.6 times 100 = 60</p>\n</div>\n<p>Sixty per cent of the energy comes from the fat, which has fewer grams than the carbohydrate. So the claim does not follow. The letters in the rule each carry their own multiplier, and the multiplier on fat is more than twice the one on carbohydrate. More grams does not mean more energy.</p>\n<p>What this does not establish. It says nothing about what the food does in a person, which is not a question arithmetic on a panel can reach. It says nothing about any other packet, since a different set of grams can go the other way. And both the grams and the energy came from the same panel. So what you checked is whether the panel agrees with itself, not whether it is right.</p>"
+  }
+ ]
+}

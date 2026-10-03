@@ -1,0 +1,207 @@
+{
+ "format": 1,
+ "id": "s02-r1-c13",
+ "label": "13",
+ "title": "A random variable and its distribution",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"219\">random variable</dfn> is a rule that gives a number to each outcome of a chance process. A random variable is written as a capital letter, such as X. P(X = x) is the <dfn data-g=\"209\">probability</dfn> that X takes the value x.</p>\n<p>A random variable is <dfn data-g=\"71\">discrete</dfn> when the values it can take can be listed, one by one. Its <dfn data-g=\"211\">probability distribution</dfn> is the list of every value it can take, each paired with its probability. The values, or bands of values, listed must not overlap. Each probability is between 0 and 1, inclusive, and the probabilities add to 1.</p>\n<p>A random variable is <dfn data-g=\"51\">continuous</dfn> when it can take any value in an interval, like a weight measured with perfect <dfn data-g=\"206\">precision</dfn>, and its probabilities are areas under a curve. The probability of any one exact value is then 0. Its probability distribution is given by a <dfn data-g=\"210\">probability density</dfn>: a curve that never goes below zero and has a total area of 1 beneath it. The probability that X lands between a and b is the area under the probability density from a to b. The height of a probability density is a probability per unit of X, not a probability, and it can be larger than 1.</p>\n<p>A probability distribution is a model of the chance process; a survey gives data. When the whole population is listed, as in the made-up village below, the model is known exactly. A <dfn data-g=\"104\">frequency table</dfn> of data, as in Book 0, D4, gives relative frequencies from the cases actually counted. Those estimate the probabilities, and differ from them from one sample to the next.</p>",
+   "refs": [
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Toss two coins and count the heads. The count is 0, 1 or 2. That count is a random variable: a rule that turns each way the tosses can land into a number.</p>\n<p>Its probability distribution lists each number beside its chance. Here that is 0.25 for no heads, 0.5 for one and 0.25 for two.</p>\n<p>A list of chances is a model. A count of what happened in a survey is data.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c13-village-distribution.png",
+   "alt": "Paired bars at household sizes 2, 3, 4, 5, 6, 7 and 9. Probabilities are 0.1 for sizes 2, 3, 6, 7 and 9, 0.2 for size 4 and 0.3 for size 5. The survey bars are 0.25 at size 4, 0.5 at size 5, 0.25 at size 9 and zero elsewhere.",
+   "w": 1357,
+   "h": 654,
+   "caption": "The made-up village’s household sizes. For each size, the first bar is the probability for one household picked at random and the second is the relative frequency in the survey of four. The survey puts 0.5 on 5 people where the probability is 0.3, and sees no household of 2, 3, 6 or 7 people, though each has probability 0.1."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c13-rounding-density.png",
+   "alt": "A rectangle of height 10 from -0.05 to 0.05 on an axis running from -0.1 to 0.1, shaded lightly, with a darker strip from 0 to 0.02 and a dashed vertical line at 0.02.",
+   "w": 1358,
+   "h": 655,
+   "caption": "The flat probability density for a scale’s rounding error: 10 per kilogram from -0.05 to 0.05 kg, and zero outside. The whole rectangle has area 0.1 times 10, which is 1. The probability of an error between 0 and 0.02 kg is the strip over that range, 0.02 times 10, which is 0.2. The dashed line at exactly 0.02 has no width, so its probability is 0."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>A made-up village has ten households. A survey visits four of them, picked <dfn data-g=\"17\">at random</dfn>, and finds households of 5, 9, 4 and 5 people. The note reads: “The probability that a household here has 5 people is 0.5.” Two of the four had 5 people, and 2 divided by 4 is 0.5.</p>\n<p>Here is the whole village. Its ten households hold 2, 3, 4, 4, 5, 5, 5, 6, 7 and 9 people.</p>\n<p>The chance process is “pick one household at random”, with each household equally likely, as in Book 0, D6. The random variable X is the rule “give the number of people in it”.</p>\n<p>Each household has a chance of 1 in 10.</p>\n<div class=\"working\">\n<p>1 divided by 10 = 0.1</p>\n</div>\n<p>Three households hold 5 people, so P(X = 5) is 3 times 0.1.</p>\n<div class=\"working\">\n<p>3 times 0.1 = 0.3</p>\n</div>\n<p>Here is the probability distribution of X, and beside it the relative frequencies from the survey’s four households.</p>\n<div class=\"working\">\n<p>household size (x) households P(X = x) relative frequency in the survey<br />\n2    1    0.1    0<br />\n3    1    0.1    0<br />\n4    2    0.2    0.25<br />\n5    3    0.3    0.5<br />\n6    1    0.1    0<br />\n7    1    0.1    0<br />\n9    1    0.1    0.25</p>\n</div>\n<p>Check the two rules. Every probability is between 0 and 1. Then add them.</p>\n<div class=\"working\">\n<p>0.1 plus 0.1 plus 0.2 plus 0.3 plus 0.1 plus 0.1 plus 0.1 = 1.0</p>\n</div>\n<p>They add to 1.</p>\n<p>The probability of a household of 6 or more is the sum over 6, 7 and 9.</p>\n<div class=\"working\">\n<p>0.1 plus 0.1 plus 0.1 = 0.3</p>\n</div>\n<p>Before you write the survey’s 0.5 into a report, set it beside P(X = 5), which is 0.3. The survey’s 0.5 is a <dfn data-g=\"228\">relative frequency</dfn> from four households. It estimates 0.3, and misses it.</p>\n<p>A clinic scale shows weight to 0.1 kg. A person whose true weight is anywhere from 69.95 kg to 70.05 kg sees 70.0 on it. Let X be the displayed weight minus the true weight, in kilograms. That is the error the <dfn data-g=\"231\">rounding</dfn> makes. X can be any number from −0.05 to 0.05, so it is continuous.</p>\n<p>Say nothing makes one part of that range more likely than another. Then the probability density is flat across a width of 0.1 kg, and zero outside it. Its total area must be 1, so its height is 1 divided by the width.</p>\n<div class=\"working\">\n<p>1 divided by 0.1 = 10</p>\n</div>\n<p>The height is 10 per kilogram.</p>\n<p>The probability that the error lies between 0 and 0.02 kg is the area of a rectangle, 0.02 kg wide and 10 per kilogram high.</p>\n<div class=\"working\">\n<p>0.02 times 10 = 0.2</p>\n</div>\n<p>Now ask for the probability that the error is exactly 0.02. That rectangle has no width, so its area is 0.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The village is made up, and the distribution is exact only because the whole village was listed.</p>\n<p>The flat density is a model chosen for want of anything better.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A relative frequency from data is not the probability. It is an estimate of it.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you use a table that a paper calls a distribution, check it. Every probability is between 0 and 1, and they add to 1. No two rows overlap: bands of “under 60 kg” and “50 to 70 kg” count the same people twice.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>For a continuous measurement, the chance of any single exact value is zero. Ask for the chance of a range, such as 69.95 to 70.05 kg, never of “exactly 70 kg”.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Every probability you work out from a distribution is only as good as the distribution. Say so in the same sentence, or get data that shows the shape.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A zero in a small sample does not make a value impossible. Say “not seen in this sample”, never “probability zero”, unless you hold the whole list.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you give a journalist a chance, say whether it is a probability from a model or a relative frequency from a sample, and how big the sample was.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A journalist has three minutes. They have read “the probability that a household has five members is 0.5” in a survey report of four households, and want to print it.</p>\n<p>Explain the difference between a probability and a relative frequency from a survey. Give them one sentence they can quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Open with what they saw. The survey counted four households, and two had five members. Two out of four is a half. That is a fact about those four households.</p>\n<p>Then the difference. The probability is a fact about the whole village: the share of all its households that have five members. The survey’s half is an estimate of that share, and four households is a very small sample. Another four could easily give a quarter, or none.</p>\n<p>Calibrate them. With only four households, the report cannot say whether the true share is nearer a quarter or a half. It can say five-member households were seen.</p>\n<p>The sentence to quote: “Two of the four households surveyed had five members. A sample that small tells us little about how common that is in the village.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>X takes the values 0, 1, 2 and 3, with probabilities 0.1, 0.3, 0.4 and 0.2.</p>\n<p>Is this a probability distribution?</p>",
+   "level": 1,
+   "answer": "<p>Check both rules. Each probability is between 0 and 1. Now add them.</p>\n<div class=\"working\">\n<p>0.1 plus 0.3 plus 0.4 plus 0.2 = 1.0</p>\n</div>\n<p>They add to 1, and the four values do not overlap. Yes, it is a probability distribution.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>X takes the values 1, 2, 3 and 4. P(X = 1) is 0.25, P(X = 2) is 0.35 and P(X = 4) is 0.15.</p>\n<p>Work out P(X = 3).</p>",
+   "level": 1,
+   "answer": "<p>The four probabilities must add to 1. Add the three you have, and take the total from 1.</p>\n<div class=\"working\">\n<p>0.25 plus 0.35 plus 0.15 = 0.75<br />\n1 minus 0.75 = 0.25</p>\n</div>\n<p>P(X = 3) is 0.25.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Toss two fair coins. Let X be the number of heads.</p>\n<p>List the outcomes, and write out the probability distribution of X.</p>",
+   "level": 2,
+   "answer": "<p>Each coin lands heads (H) or tails (T), so there are four outcomes, each equally likely.</p>\n<div class=\"working\">\n<p>HH    HT    TH    TT</p>\n</div>\n<p>Each outcome has probability 1 in 4.</p>\n<div class=\"working\">\n<p>1 divided by 4 = 0.25</p>\n</div>\n<p>Now apply the rule “count the heads” to each outcome. HH gives 2. HT and TH both give 1. TT gives 0.</p>\n<div class=\"working\">\n<p>x P(X = x)<br />\n0 0.25<br />\n1 0.5<br />\n2 0.25</p>\n</div>\n<p>P(X = 1) is 0.5 because two outcomes give 1.</p>\n<div class=\"working\">\n<p>0.25 plus 0.25 = 0.5<br />\n0.25 plus 0.5 plus 0.25 = 1</p>\n</div>\n<p>The probabilities add to 1.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>X takes the values 0, 1, 2, 3 and 4, with probabilities 0.1, 0.2, 0.4, 0.2 and 0.1.</p>\n<p>Work out P(X ≥ 3), the probability that X is 3 or more. Then work out P(1 ≤ X ≤ 3), the probability that X is from 1 to 3. Then work out P(X = 0) by the complement.</p>",
+   "level": 2,
+   "answer": "<p>Add the probabilities of the values in each range.</p>\n<div class=\"working\">\n<p>0.2 plus 0.1 = 0.3<br />\n0.2 plus 0.4 plus 0.2 = 0.8</p>\n</div>\n<p>P(X ≥ 3) is 0.3, and P(1 ≤ X ≤ 3) is 0.8.</p>\n<p>The complement of “X is 0” is “X is 1 or more”. Its probability is the sum over 1, 2, 3 and 4. Take that from 1.</p>\n<div class=\"working\">\n<p>0.2 plus 0.4 plus 0.2 plus 0.1 = 0.9<br />\n1 minus 0.9 = 0.1</p>\n</div>\n<p>P(X = 0) is 0.1, which matches the table.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Three tables are offered as probability distributions for a variable taking the values 1, 2 and 3.</p>\n<div class=\"working\">\n<p>table P(X = 1) P(X = 2) P(X = 3)<br />\na    0.3    0.3    0.3<br />\nb    0.5    -0.1    0.6<br />\nc    0.2    0.5    0.3</p>\n</div>\n<p>Which are probability distributions? For each that is not, name the rule it breaks.</p>",
+   "level": 3,
+   "answer": "<p>Add each row.</p>\n<div class=\"working\">\n<p>0.3 plus 0.3 plus 0.3 = 0.9<br />\n0.5 plus -0.1 plus 0.6 = 1.0<br />\n0.2 plus 0.5 plus 0.3 = 1.0</p>\n</div>\n<p>Table a adds to 0.9, not 1. It breaks the rule that the probabilities add to 1.</p>\n<p>Table b adds to 1, but P(X = 2) is minus 0.1. It breaks the rule that each probability is between 0 and 1. Adding to 1 does not rescue it.</p>\n<p>Table c passes both rules. It is the only probability distribution of the three.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A continuous random variable X has a flat probability density from 0 to 4, and zero density outside that range.</p>\n<p>Work out the height of the density. Then work out P(1 ≤ X ≤ 2.5) and P(X = 3).</p>",
+   "level": 3,
+   "answer": "<p>The area under the density must be 1. The rectangle is 4 wide, so its height is 1 divided by 4.</p>\n<div class=\"working\">\n<p>1 divided by 4 = 0.25</p>\n</div>\n<p>The probability of a range is the area over it: a rectangle 1.5 wide and 0.25 high.</p>\n<div class=\"working\">\n<p>2.5 minus 1 = 1.5<br />\n1.5 times 0.25 = 0.375</p>\n</div>\n<p>P(1 ≤ X ≤ 2.5) is 0.375. P(X = 3) is 0, because a single value has no width and so no area.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A continuous random variable X has a probability density that is zero outside the range from 0 to 2. Inside it, the density rises in a straight line, from 0 at x = 0 to 1 at x = 2.</p>\n<p>Check that the total area is 1. Then work out P(X ≤ 1).</p>",
+   "level": 3,
+   "answer": "<p>The density makes a triangle with base 2 and height 1. A triangle’s area is half the base times the height, as in section 5.</p>\n<div class=\"working\">\n<p>0.5 times 2 times 1 = 1</p>\n</div>\n<p>The total area is 1.</p>\n<p>At x = 1, halfway along, the straight line has risen halfway, to 0.5. So the area up to x = 1 is a smaller triangle with base 1 and height 0.5.</p>\n<div class=\"working\">\n<p>0.5 times 1 times 0.5 = 0.25</p>\n</div>\n<p>P(X ≤ 1) is 0.25. Half the range holds only a quarter of the probability, because the density is low on that side.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A made-up ward has 20 patients. Eight stayed 2 days, six stayed 3 days, four stayed 4 days and two stayed 7 days. Pick one patient at random. Let X be their length of stay, in days.</p>\n<p>Write out the probability distribution of X. Then work out the probability of a stay of 4 days or more.</p>",
+   "level": 4,
+   "answer": "<p>Each patient has a chance of 1 in 20. The probability of each value is the number of patients with it, divided by 20.</p>\n<div class=\"working\">\n<p>8 divided by 20 = 0.4<br />\n6 divided by 20 = 0.3<br />\n4 divided by 20 = 0.2<br />\n2 divided by 20 = 0.1</p>\n</div>\n<div class=\"working\">\n<p>x (days) P(X = x)<br />\n2    0.4<br />\n3    0.3<br />\n4    0.2<br />\n7    0.1</p>\n</div>\n<p>Check the total.</p>\n<div class=\"working\">\n<p>0.4 plus 0.3 plus 0.2 plus 0.1 = 1.0</p>\n</div>\n<p>A stay of 4 days or more is X = 4 or X = 7.</p>\n<div class=\"working\">\n<p>0.2 plus 0.1 = 0.3</p>\n</div>\n<p>The probability is 0.3. The values of X are in days; the probabilities have no unit.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A scale shows weight to the nearest 0.2 kg. Let X be the displayed weight minus the true weight, in kilograms. Model X as spread evenly, with a flat probability density, across its whole interval.</p>\n<p>Work out the interval of values X can take and the height of the density, with its unit. Then work out the probability that the error is more than 0.05 kg away from zero, in either direction.</p>",
+   "level": 5,
+   "answer": "<p>Rounding to the nearest 0.2 kg can be out by at most half of 0.2 either way.</p>\n<div class=\"working\">\n<p>0.2 divided by 2 = 0.1</p>\n</div>\n<p>X runs from −0.1 kg to 0.1 kg, a width of 0.2 kg. The height makes the area 1.</p>\n<div class=\"working\">\n<p>1 divided by 0.2 = 5</p>\n</div>\n<p>The height is 5 per kilogram.</p>\n<p>“More than 0.05 away from zero” is two strips: from 0.05 to 0.1, and from −0.1 to −0.05. Each strip is 0.05 kg wide.</p>\n<div class=\"working\">\n<p>0.1 minus 0.05 = 0.05<br />\n0.05 times 5 = 0.25<br />\n0.25 plus 0.25 = 0.5</p>\n</div>\n<p>The probability is 0.5, under the flat model. Half the time, the rounding alone moves the reading by more than 50 grams.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Go back to the made-up ward of 20 patients: eight stayed 2 days, six 3 days, four 4 days and two 7 days. A student picks five patients at random and finds stays of 2, 2, 7, 3 and 2 days.</p>\n<p>Work out the relative frequency of a 2-day stay in the student’s five. Set it beside P(X = 2) for the ward, and say which is the model and which is the estimate.</p>",
+   "level": 6,
+   "answer": "<p>Three of the five stayed 2 days.</p>\n<div class=\"working\">\n<p>3 divided by 5 = 0.6</p>\n</div>\n<p>The relative frequency is 0.6. For the whole ward, P(X = 2) is 8 divided by 20.</p>\n<div class=\"working\">\n<p>8 divided by 20 = 0.4</p>\n</div>\n<p>The ward’s 0.4 is the probability, fixed by the whole list of 20. The student’s 0.6 is a relative frequency from five patients, an estimate of 0.4. It misses by 0.2, and another five would give a different figure. None of the student’s five stayed 4 days, yet P(X = 4) is 0.2 in the ward.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a scale rounds to the nearest 0.1 kg; the error X is modelled as flat from −0.05 to 0.05 kg<br />\nheight of the density = 1 divided by 0.1 = 10<br />\nso P(X = 0.02) = 10<br />\nthat is, an error of exactly 0.02 kg is very likely</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The third line broke. The height of a probability density is not a probability. It is probability per kilogram, and the first sign of trouble is that 10 is bigger than 1, which no probability can be.</p>\n<p>For a continuous variable, the probability of one exact value is the area over a strip of no width, which is 0.</p>\n<div class=\"working\">\n<p>0 times 10 = 0</p>\n</div>\n<p>P(X = 0.02) is 0. Ask about a range instead. For example, the chance of an error between 0.015 and 0.025 kg is a strip 0.01 kg wide.</p>\n<div class=\"working\">\n<p>0.025 minus 0.015 = 0.01<br />\n0.01 times 10 = 0.1</p>\n</div>\n<p>Why the wrong answer looks reasonable: the height is the only number the density gives at a point. So it is tempting to read it as “the chance at that point”. It is how thickly the probability is packed there.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the made-up ward: 8 patients stayed 2 days, 6 stayed 3 days, 4 stayed 4 days, 2 stayed 7 days<br />\na student samples five patients at random: stays 2, 2, 7, 3, 2<br />\nno patient in the sample stayed 4 days<br />\nso P(X = 4) = 0 for this ward: a 4-day stay does not happen here</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The fourth line broke. It treats a relative frequency from five patients as the probability for the ward. The ward’s list says four patients stayed 4 days.</p>\n<div class=\"working\">\n<p>4 divided by 20 = 0.2</p>\n</div>\n<p>P(X = 4) is 0.2. Missing a value in a sample of five is not surprising. The chance that one random pick is not a 4-day patient is 0.8. If the five picks were independent, the chance of seeing no 4-day stay would be about a third.</p>\n<div class=\"working\">\n<p>0.8 times 0.8 times 0.8 times 0.8 times 0.8 = 0.32768</p>\n</div>\n<p>(The student picked five different patients, so the picks are not quite independent. The figure is a rough guide, not the exact chance.)</p>\n<p>Why the wrong answer looks reasonable: “not seen” and “cannot happen” sound alike, and the sample was random. A <dfn data-g=\"218\">random sample</dfn> is fair. It is not complete.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a report gives weights in three bands: under 60 kg, 0.3; 50 to 70 kg, 0.5; over 70 kg, 0.3<br />\nP(under 70 kg) = P(under 60 kg) plus P(50 to 70 kg)<br />\n0.3 plus 0.5 = 0.8<br />\nso the probability of weighing under 70 kg is 0.8</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line broke, and the table was broken before it. The bands “under 60 kg” and “50 to 70 kg” overlap: anyone from 50 to 60 kg is in both. The values of a probability distribution must not overlap.</p>\n<p>You can see it in the total.</p>\n<div class=\"working\">\n<p>0.3 plus 0.5 plus 0.3 = 1.1</p>\n</div>\n<p>The three add to 1.1, not 1, because the people from 50 to 60 kg are counted twice. Adding the first two bands counts them twice again. The table cannot give P(under 70 kg) at all without the share from 50 to 60 kg, which it does not print.</p>\n<p>Why the wrong answer looks reasonable: adding probabilities over a range is the right move for bands that do not overlap. It was applied to bands that do.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A clinic note says this. The counts are made up.</p>\n<blockquote>\n<p>In our survey, 12 of 40 patients weighed between 80 and 90 kg. So the probability that the next patient weighs between 80 and 90 kg is 0.3.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the relative frequency the note is quoting.</p>\n<div class=\"working\">\n<p>12 divided by 40 = 0.3</p>\n</div>\n<p>The arithmetic is right: 0.3 of the patients surveyed weighed 80 to 90 kg.</p>\n<p>What this does not establish. It is not the probability. It is an estimate of it, from 40 patients, and another 40 would give a different figure.</p>\n<p>It is not even an estimate for “the next patient” unless the next patient comes from the same population, picked the same way. The survey may have been of one clinic, one season or one referral route. A sample says nothing about a population it was not drawn from, as Book 0, D6 warns.</p>\n<p>And “between 80 and 90 kg” needs its ends settled. Does 90.0 on the scale count? With a scale that rounds, a displayed 90.0 covers true weights on both sides of 90.</p>\n<p>What to write instead: “Of 40 patients surveyed, 12 (0.3) weighed 80 to 90 kg.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 15,
+   "prompt": "<p>PAL is the <dfn data-g=\"197\">physical activity level</dfn>: <dfn data-g=\"271\">total energy expenditure</dfn> divided by <dfn data-g=\"23\">basal metabolic rate</dfn>. The FAO/WHO/UNU report on energy needs says this about it.</p>\n<blockquote>\n<p>The PAL values that can be sustained for a long period of time by free-living adult populations range from about 1.40 to 2.40.</p>\n</blockquote>\n<p>A slide then says:</p>\n<blockquote>\n<p>So a randomly chosen adult has a 50 per cent chance of a PAL above 1.90.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the slide’s figure only follows if PAL is spread evenly, with a flat density, from 1.40 to 2.40. Under that model, the density’s height is 1 divided by the width.</p>\n<div class=\"working\">\n<p>2.40 minus 1.40 = 1.00<br />\n1 divided by 1.00 = 1</p>\n</div>\n<p>The height is 1 per unit of PAL. The area above 1.90 is a rectangle 0.50 wide.</p>\n<div class=\"working\">\n<p>2.40 minus 1.90 = 0.50<br />\n0.50 times 1 = 0.5</p>\n</div>\n<p>Under a flat model, the chance is 0.5. So the slide’s arithmetic is right for the model it silently chose.</p>\n<p>What this does not establish. The report gives a range, not a distribution. Nothing in the sentence says PAL values are spread evenly across it. The flat shape is the slide’s assumption.</p>\n<p>Worse, the sentence is about populations, not people. It says what “free-living adult populations” can sustain over a long time. A random adult’s PAL is a different random variable from a population’s PAL. Whether single adults sit inside or outside the range, the sentence does not say, and it gives no distribution for them at all.</p>\n<p>And “about” means the ends themselves are rounded. What to say instead: “The report gives a range of about 1.40 to 2.40 for the PAL that adult populations can sustain. It gives no chance for any one adult.”</p>"
+  }
+ ]
+}

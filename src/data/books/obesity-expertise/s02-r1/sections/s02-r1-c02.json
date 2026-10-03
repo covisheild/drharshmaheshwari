@@ -1,0 +1,195 @@
+{
+ "format": 1,
+ "id": "s02-r1-c02",
+ "label": "2",
+ "title": "The derivative: the rate at an instant, computed",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The <dfn data-g=\"21\">average rate of change</dfn> of f over the interval from a to a + h is f(a + h) minus f(a), divided by h, for h not zero.</p>\n<p>The <dfn data-g=\"67\">derivative</dfn> of f at a is the single number these averages settle on as h is taken closer and closer to zero, from above and from below. Where the two sides do not settle on one number, f has no derivative at a.</p>\n<p>The derivative at a is written f′(a), said “f prime of a”.</p>\n<p>The derivative carries the unit of f divided by the unit of the input.</p>\n<p>The derivative belongs to a smooth curve, one with no jumps or corners, so that the averages settle. Repeated measurements are separate points with error in them.</p>",
+   "refs": [
+    11,
+    12,
+    13,
+    14
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Book 0 showed you the rate at an instant as the <dfn data-g=\"247\">slope</dfn> of a <dfn data-g=\"267\">tangent</dfn>, laid on a curve with a ruler. It named that rate the derivative (Book 0, C7). This section works the number out with arithmetic, no ruler needed.</p>\n<p>A shorter interval gives a closer answer. So take the average rate over shorter and shorter intervals, all starting at the moment you care about. They settle on one number. That number is the rate at that instant.</p>\n<p>Here is the procedure for a function f at an input a.</p>\n<ol type=\"1\">\n<li>Pick a small step, h. Work out f(a + h) minus f(a), and divide by h.</li>\n<li>Make h closer to zero: 1, then 0.1, then 0.01, then 0.001.</li>\n<li>Do the same with h below zero: minus 1, minus 0.1, and so on. Those intervals end at a instead of starting there. (A negative divided by a negative is positive, Book 0, A1.)</li>\n<li>If both lists close in on the same number, that number is very likely the derivative at a. The algebra, as below, settles it.</li>\n</ol>\n<p>You never set h to zero. The number they close in on is called the limit.</p>\n<p>The derivative has three names you will meet. f′(a), said “f prime of a”. dS/dt, said “dee S by dee t”. And in words, the <dfn data-g=\"222\">rate of change</dfn> of S with respect to t.</p>\n<p>A weight in kilograms against time in days gives kilograms per day.</p>\n<p>Its sign tells you the direction. Positive means rising at that instant. Negative means falling. Zero means neither, at that instant.</p>\n<p>Read Hall and colleagues’ equation from the last section again in these terms. dES/dt is the rate of change of stored energy, in kilocalories a day. It is not the stored energy itself.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c02-settling.png",
+   "alt": "Six points on a rising straight line, with the step h along the bottom from -1 to 1 and the average rate up the side from 15 to 25. Points at h = -1, -0.5 and -0.1 sit at 15, 17.5 and 19.5; points at 0.1, 0.5 and 1 sit at 20.5, 22.5 and 25. A dashed upright line marks h = 0, where the straight line passes 20 and there is no point.",
+   "w": 1357,
+   "h": 654,
+   "caption": "The average rate of S(t) = 5 t<sup>2</sup> from t = 2 over a step h, for six steps from -1 to 1. Every average lies on the line 20 + 5h. As the step shrinks towards zero from either side, the averages close in on 20, the derivative at t = 2. The dashed line marks h = 0, which is never computed. The closer steps, down to 0.001, are in the table."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c02-chord-tangent.png",
+   "alt": "A rising, steepening curve from 5 at t = 1 to 45 at t = 3, with points at 20 when t = 2 and 45 when t = 3. A steeper straight line joins the two points; a shallower straight line touches the curve at t = 2.",
+   "w": 1357,
+   "h": 654,
+   "caption": "S(t) = 5 t<sup>2</sup> near t = 2. The note’s 25 is the slope of the chord from t = 2 to t = 3, an average over a whole unit of time. The tangent at t = 2 has slope 20, the rate at that instant, and the curve bends away above it."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c02-weighings.png",
+   "alt": "Fifteen points from day 0 to day 14, zigzagging between 79.0 and 80.3 kilograms and drifting slowly downwards. A short steep line rises from 79.0 at day 12 to 79.6 at day 13. A long gentle line falls from 80.0 at day 2 to 79.5 at day 12.",
+   "w": 1358,
+   "h": 654,
+   "caption": "Fifteen made-up morning weighings. The one-day rate from day 12 to day 13 is 0.6 kg a day upwards, and day to day the weight jumps by as much as 0.7 kg. The line from the average of days 0 to 4, 80.0 kg at day 2, to the average of days 10 to 14, 79.5 kg at day 12, falls at 0.05 kg a day. The side axis does not start at zero, so the swings look larger than they are."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>A quantity follows the rule S(t) = 5 t<sup>2</sup>, which is 5 times t times t. A note says this.</p>\n<blockquote>\n<p>S went from 20 at t = 2 to 45 at t = 3. So at t = 2 it is rising at 25 a unit of time.</p>\n</blockquote>\n<p>The 25 is the average over a whole unit of time, from t = 2 to t = 3. Test that by shrinking the interval.</p>\n<p>Each row takes a step h from t = 2. Work out S(2 + h), subtract S(2), and divide by h.</p>\n<table style=\"width:81%;\">\n\n<tbody>\n<tr>\n<td>step h</td>\n<td>S(2 + h)</td>\n<td>S(2 + h) minus S(2)</td>\n<td>average rate</td>\n</tr>\n<tr>\n<td>1</td>\n<td>45</td>\n<td>25</td>\n<td>25</td>\n</tr>\n<tr>\n<td>0.1</td>\n<td>22.05</td>\n<td>2.05</td>\n<td>20.5</td>\n</tr>\n<tr>\n<td>0.01</td>\n<td>20.2005</td>\n<td>0.2005</td>\n<td>20.05</td>\n</tr>\n<tr>\n<td>0.001</td>\n<td>20.020005</td>\n<td>0.020005</td>\n<td>20.005</td>\n</tr>\n<tr>\n<td>-0.001</td>\n<td>19.980005</td>\n<td>-0.019995</td>\n<td>19.995</td>\n</tr>\n<tr>\n<td>-0.01</td>\n<td>19.8005</td>\n<td>-0.1995</td>\n<td>19.95</td>\n</tr>\n<tr>\n<td>-0.1</td>\n<td>18.05</td>\n<td>-1.95</td>\n<td>19.5</td>\n</tr>\n<tr>\n<td>-1</td>\n<td>5</td>\n<td>-15</td>\n<td>15</td>\n</tr>\n</tbody>\n</table>\n<p>Read down the last column. Both lists close in on 20. So the rate at t = 2 is 20 a unit of time, not 25.</p>\n<p>Now see why it is exactly 20, with algebra. Each term of the first bracket multiplies the whole second bracket. That is the rule from Book 0, C1, used twice. The first working line shows it.</p>\n<div class=\"working\">\n<p>(2 + h) times (2 + h) = 2 times (2 + h) + h times (2 + h)<br />\n= 4 + 2h + 2h + h<sup>2</sup><br />\n= 4 + 4h + h<sup>2</sup><br />\nS(2 + h) = 5 times (4 + 4h + h<sup>2</sup>) = 20 + 20h + 5 h<sup>2</sup></p>\n</div>\n<p>Subtract S(2), which is 20. Then divide by h.</p>\n<div class=\"working\">\n<p>S(2 + h) minus S(2) = 20h + 5 h<sup>2</sup><br />\n(20h + 5 h<sup>2</sup>) divided by h = 20 + 5h</p>\n</div>\n<p>The average rate over a step h is 20 + 5h, for any h. As h shrinks, 5h shrinks with it, and what is left is 20.</p>\n<p>Now the same move on real measurements, where it breaks. A made-up person weighs themselves each morning for fifteen days.</p>\n<table style=\"width:28%;\">\n\n<thead>\n<tr>\n<th>day</th>\n<th>weight (kg)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>80.3</td>\n</tr>\n<tr>\n<td>1</td>\n<td>79.8</td>\n</tr>\n<tr>\n<td>2</td>\n<td>80.1</td>\n</tr>\n<tr>\n<td>3</td>\n<td>79.6</td>\n</tr>\n<tr>\n<td>4</td>\n<td>80.2</td>\n</tr>\n<tr>\n<td>5</td>\n<td>79.5</td>\n</tr>\n<tr>\n<td>6</td>\n<td>79.9</td>\n</tr>\n<tr>\n<td>7</td>\n<td>79.4</td>\n</tr>\n<tr>\n<td>8</td>\n<td>79.9</td>\n</tr>\n<tr>\n<td>9</td>\n<td>79.2</td>\n</tr>\n<tr>\n<td>10</td>\n<td>79.6</td>\n</tr>\n<tr>\n<td>11</td>\n<td>79.5</td>\n</tr>\n<tr>\n<td>12</td>\n<td>79.0</td>\n</tr>\n<tr>\n<td>13</td>\n<td>79.6</td>\n</tr>\n<tr>\n<td>14</td>\n<td>79.8</td>\n</tr>\n</tbody>\n</table>\n<p>Shrink the interval to one day, as you did for S. Take the last two days, then the pair one day earlier.</p>\n<div class=\"working\">\n<p>79.8 minus 79.6 = 0.2, over 1 day: 0.2 kg a day<br />\n79.6 minus 79.0 = 0.6, over 1 day: 0.6 kg a day</p>\n</div>\n<p>Rising at 0.6 kg a day. Test that against the body. Hall (2008) gives body fat 39.5 megajoules (MJ) a kilogram. A joint report of the Food and Agriculture Organization, the World Health Organization and the United Nations University (FAO/WHO/UNU) has a worked example. It puts the daily expenditure of an average lightly active woman of 30 to 50 at 8.26 MJ.</p>\n<div class=\"working\">\n<p>0.6 times 39.5 = 23.7<br />\n23.7 divided by 8.26 = 2.87</p>\n</div>\n<p>Adding 0.6 kg of fat in a day would take 23.7 MJ more than was spent. That is nearly three whole days of that expenditure. The one-day rate is measuring swings, not stores.</p>\n<p>So with weighings, widen the interval instead. Average the first five days and the last five. Each average is placed at its middle day, the centre of the five days it covers. An average of neighbouring weighings, worked out again at each step along the series, is called a moving average.</p>\n<div class=\"working\">\n<p>80.3 plus 79.8 plus 80.1 plus 79.6 plus 80.2 = 400.0<br />\n400.0 divided by 5 = 80.0, the average weight at day 2<br />\n79.6 plus 79.5 plus 79.0 plus 79.6 plus 79.8 = 397.5<br />\n397.5 divided by 5 = 79.5, the average weight at day 12<br />\n79.5 minus 80.0 = -0.5<br />\n-0.5 divided by 10 = -0.05</p>\n</div>\n<p>Falling at about 0.05 kg a day over those ten days. Even this is still an average over an interval.</p>\n<p>This section has now used three kinds of rate.</p>\n<table style=\"width:100%;\">\n\n<thead>\n<tr>\n<th>name</th>\n<th>what it is</th>\n<th>where it appears here</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>derivative</td>\n<td>the number the averages close in on as h shrinks towards zero</td>\n<td>S(t) = 5 t<sup>2</sup> at t = 2: 20</td>\n</tr>\n<tr>\n<td>finite difference</td>\n<td>the change over a set interval, divided by its length</td>\n<td>the note’s 25; the one-day 0.6 kg a day</td>\n</tr>\n<tr>\n<td>slope from noisy measurements</td>\n<td>the change between averages of several readings, divided by the time between them</td>\n<td>the five-day averages: -0.05 kg a day; Polidori’s moving averages, in the exercise</td>\n</tr>\n</tbody>\n</table>",
+   "numberRefs": [
+    15,
+    16,
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Below the interval over which water swings, a shorter interval gives a worse rate, not a better one. No source in this book gives that interval. Look for it in the Methods of the paper in front of you.</p>\n<p>The fifteen weights are made up.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Before you call a rate “the rate now”, ask how long the interval was.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A rate of weight change taken from two weighings a day apart can be mostly water, not stored energy. This book’s rule of thumb: take a rate from averages over weeks, not from neighbouring readings.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A shorter interval is better only for a smooth curve.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never set h to zero to get the derivative. Let h shrink and watch where the answers go.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Read dW/dt as a rate with a unit, kilograms per day, and read its sign first. It says nothing about how much has been lost so far.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>When a trial reports a rate of weight change, look in the Methods for the interval and the averaging used.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Polidori and colleagues (2016) describe how they got one of their inputs. Here is their sentence.</p>\n<blockquote>\n<p>the moving average of the measured body weight time course was used to calculate the rate of change of body weight over each interval</p>\n</blockquote>\n<p>They call that rate dBWi/dt.</p>\n<p>Their weighings were 52 days apart.</p>\n<p>Say what dBWi/dt denotes and what unit it carries. Then say why a rate taken over 52 days is safer than one taken from two weighings a day apart would be, and what it gives up.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>dBWi/dt, said “dee B W sub i by dee t”, is the rate of change of body weight over interval i. Weight is in kilograms and time in days, so it is in kilograms a day. A negative value means weight was falling over that interval.</p>\n<p>Why not a day apart. Weight moves from day to day with body water, which Hall and colleagues (2012) call “variable”, and, most likely, with food in the gut. In this section’s made-up weighings, one day’s swing was larger than the whole trend. A rate from two weighings a day apart could mostly measure the swings. Over 52 days the trend adds up and a day’s swing does not, so the swing is small beside the trend.</p>\n<p>What it gives up. The rate is an average over each interval. It cannot show a change that happens inside the interval, such as weight falling fast for two weeks and then stopping. In this book’s terms it is the slope of a <dfn data-g=\"39\">chord</dfn> across the interval, not a tangent at a point.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A function has f(4) = 30 and f(4.5) = 33.5.</p>\n<p>Work out the average rate of change of f from 4 to 4.5.</p>",
+   "level": 1,
+   "answer": "<p>The change in f, divided by the change in the input.</p>\n<div class=\"working\">\n<p>33.5 minus 30 = 3.5<br />\n4.5 minus 4 = 0.5<br />\n3.5 divided by 0.5 = 7</p>\n</div>\n<p>The average rate is 7.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Take f(t) = t<sup>2</sup>, which is t times t, and the input t = 3.</p>\n<p>Work out the average rate from t = 3 to t = 3 + h for h = 1, 0.1 and 0.01. Do the same for h = -0.1 and h = -0.01. Then give the derivative at t = 3.</p>",
+   "level": 2,
+   "answer": "<p>f(3) = 9. For each h, work out f(3 + h), subtract 9, and divide by h.</p>\n<div class=\"working\">\n<p>h = 1: 4 times 4 = 16, 16 minus 9 = 7, 7 divided by 1 = 7<br />\nh = 0.1: 3.1 times 3.1 = 9.61, 9.61 minus 9 = 0.61, 0.61 divided by 0.1 = 6.1<br />\nh = 0.01: 3.01 times 3.01 = 9.0601, 9.0601 minus 9 = 0.0601, 0.0601 divided by 0.01 = 6.01<br />\nh = -0.1: 2.9 times 2.9 = 8.41, 8.41 minus 9 = -0.59, -0.59 divided by -0.1 = 5.9<br />\nh = -0.01: 2.99 times 2.99 = 8.9401, 8.9401 minus 9 = -0.0599, -0.0599 divided by -0.01 = 5.99</p>\n</div>\n<p>From above: 7, 6.1, 6.01. From below: 5.9, 5.99. Both close in on 6.</p>\n<p>The derivative at t = 3 is very likely 6. The algebra in problem 9 gives exactly 6: f′(3) = 6.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Say each of these aloud in words, and give its unit.</p>\n<div class=\"working\">\n<p>dW/dt, where W is body weight in kg and t is time in days<br />\nf′(10) = -3, where f is in kcal a day and its input is body weight in kg</p>\n</div>",
+   "level": 2,
+   "answer": "<p>The first is “dee W by dee t”: the rate of change of W with respect to t. Kilograms divided by days, so kilograms per day.</p>\n<p>The second is “f prime of 10 equals minus 3”. The rate of change of f with respect to body weight, at a weight of 10 kg, is minus 3. Its unit is kcal a day divided by kg: kcal a day per kg. The minus sign says f falls as weight rises, at that weight.</p>\n<p>The second rate is not against time. A derivative can be taken with respect to any input, and its unit is always the output’s unit divided by the input’s.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Take f(t) = 3 t<sup>2</sup> and the input t = 1.</p>\n<p>Write out f(1 + h) minus f(1), divided by h, using algebra. Then find the derivative at t = 1.</p>",
+   "level": 3,
+   "answer": "<p>Multiply out the bracket first.</p>\n<div class=\"working\">\n<p>(1 + h) times (1 + h) = 1 times (1 + h) + h times (1 + h)<br />\n= 1 + h + h + h<sup>2</sup><br />\n= 1 + 2h + h<sup>2</sup></p>\n</div>\n<p>Then multiply by 3, and subtract f(1), which is 3.</p>\n<div class=\"working\">\n<p>f(1 + h) = 3 + 6h + 3 h<sup>2</sup><br />\nf(1 + h) minus f(1) = 6h + 3 h<sup>2</sup><br />\n(6h + 3 h<sup>2</sup>) divided by h = 6 + 3h</p>\n</div>\n<p>As h shrinks, 3h shrinks to nothing and 6 is left. The derivative at t = 1 is 6.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Here are four values of a derivative. For each, say whether the function is rising, falling or neither at that input.</p>\n<div class=\"working\">\n<p>f′(0) = 4<br />\nf′(2) = 0<br />\nf′(5) = -0.3<br />\nf′(7) = -12</p>\n</div>",
+   "level": 3,
+   "answer": "<p>Read the sign.</p>\n<p>At 0, positive, so rising. At 2, zero, so neither rising nor falling at that instant. At 5, negative, so falling. At 7, negative, so falling, and faster than at 5, because 12 is larger than 0.3.</p>\n<p>The sign gives the direction and the size gives the speed. Neither says where the function is, only which way it is heading.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>In the trial reported by Polidori and colleagues (2016), weighings were 52 days apart. Take a made-up participant who weighs 94.6 kg at one weighing and 92.0 kg at the next.</p>\n<p>Work out the average rate of weight change over the interval, with its unit. Then give it in kilograms a week.</p>",
+   "level": 4,
+   "answer": "<p>Change divided by time, keeping the order.</p>\n<div class=\"working\">\n<p>92.0 minus 94.6 = -2.6<br />\n-2.6 divided by 52 = -0.05</p>\n</div>\n<p>Minus 0.05 kg a day. Weight fell.</p>\n<p>A week is 7 days.</p>\n<div class=\"working\">\n<p>-0.05 times 7 = -0.35</p>\n</div>\n<p>Minus 0.35 kg a week. Both are averages over the 52 days, not the rate on any one day.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>The FAO/WHO/UNU report (2004) puts the daily expenditure of an average lightly active woman of 30 to 50 at 8.26 MJ. Take a made-up woman with that expenditure, on a day when her metabolizable intake is 7.80 MJ.</p>\n<p>Work out dES/dt, the rate of change of her energy stores, in MJ a day and then in kcal a day. Use 1 kcal = 4.184 kJ. Say what the sign means.</p>",
+   "level": 5,
+   "answer": "<p>The rate of change of stores is intake minus expenditure.</p>\n<div class=\"working\">\n<p>7.80 minus 8.26 = -0.46</p>\n</div>\n<p>Minus 0.46 MJ a day. Now kilocalories. A <dfn data-g=\"163\">megajoule</dfn> is 1,000 kilojoules.</p>\n<div class=\"working\">\n<p>0.46 times 1,000 = 460<br />\n460 divided by 4.184 = 109.94</p>\n</div>\n<p>About minus 110 kcal a day. The minus sign says her stores were falling that day.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A patient weighs 92.0 kg today. Their weight is falling at 0.05 kg a day. Both figures are made up.</p>\n<p>Estimate their weight 10 days from now, using the rate. Then do the same for 300 days from now, and say which of the two estimates you would trust less, and why.</p>",
+   "level": 6,
+   "answer": "<p>New value is old value plus rate times time, the move from Book 0, C8. The rate is negative.</p>\n<div class=\"working\">\n<p>-0.05 times 10 = -0.5<br />\n92.0 plus -0.5 = 91.5</p>\n</div>\n<p>About 91.5 kg in 10 days.</p>\n<div class=\"working\">\n<p>-0.05 times 300 = -15<br />\n92.0 plus -15 = 77</p>\n</div>\n<p>About 77 kg in 300 days.</p>\n<p>Trust the 300-day figure much less. The estimate holds the rate fixed. Over 10 days that is close to true. Over 300 days it is not, because the rate itself changes.</p>\n<p>Hall and colleagues (2012) state that “weight change will slow over time due to passive compensatory changes in <dfn data-g=\"84\">energy expenditure</dfn>”. As weight falls, expenditure falls with it. A slower rate means less than 15 kg lost. The rate at an instant is a good guide only for a short step ahead.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>f(t) = t<sup>2</sup>, find the derivative at t = 3<br />\nf(3 + h) = (3 + h) times (3 + h) = 9 + h<sup>2</sup><br />\nf(3 + h) minus f(3) = h<sup>2</sup><br />\nh<sup>2</sup> divided by h = h<br />\nas h shrinks, h shrinks to 0<br />\nso the derivative at t = 3 is 0, and f is not changing there</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second step broke. (3 + h) times (3 + h) is not 9 + h<sup>2</sup>. Each term in the first bracket multiplies each term in the second.</p>\n<div class=\"working\">\n<p>(3 + h) times (3 + h) = 3 times (3 + h) + h times (3 + h)<br />\n= 9 + 3h + 3h + h<sup>2</sup><br />\n= 9 + 6h + h<sup>2</sup></p>\n</div>\n<p>Then the rest follows.</p>\n<div class=\"working\">\n<p>f(3 + h) minus f(3) = 6h + h<sup>2</sup><br />\n(6h + h<sup>2</sup>) divided by h = 6 + h</p>\n</div>\n<p>As h shrinks, 6 is left. The derivative at t = 3 is 6, not 0.</p>\n<p>A quick check would have caught it. Take h = 0.1 in the table way: 3.1 times 3.1 is 9.61, so the average is 6.1, nowhere near 0.1.</p>\n<p>Why the wrong answer looks reasonable. <dfn data-g=\"255\">Squaring</dfn> each part of a sum looks natural, and every line after the second is correct algebra. The last line even sounds like a real finding.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a patient weighed 79.0 kg on Monday morning and 79.6 kg on Tuesday morning<br />\nthe rate of weight change is 79.6 minus 79.0, over 1 day, = 0.6 kg a day<br />\na shorter interval gives a closer rate, so this is close to the rate at an instant<br />\nso the patient is gaining 0.6 kg of body fat a day</p>\n</div>",
+   "level": 8,
+   "answer": "<p>Two steps broke, the third and the fourth.</p>\n<p>The third takes a rule that holds for a smooth curve and applies it to two weighings. Weight on a scale swings from day to day with water and, most likely, gut contents. A one-day interval sits inside those swings, so the rate it gives can be mostly swing.</p>\n<p>The fourth turns a change in weight into a change in fat. Hall and colleagues (2012) warn that “weight change may not directly represent energy imbalances, particularly over the short term”. Check the size.</p>\n<div class=\"working\">\n<p>0.6 times 39.5 = 23.7</p>\n</div>\n<p>Adding 0.6 kg of fat would take 23.7 MJ of stored energy in one day. That is nearly three days of the 8.26 MJ a day the FAO/WHO/UNU report gives for an average lightly active woman of 30 to 50.</p>\n<p>What to do instead: take the rate from averages of several weighings, over weeks.</p>\n<p>Why the wrong answer looks reasonable. The subtraction and the unit are right, and “a shorter interval is closer” is a rule this section taught. It was used where it does not hold.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A newspaper report says this about a new diet.</p>\n<blockquote>\n<p>In the first week, people on the diet lost 2 kg. Kept up, that is over 100 kg in a year.</p>\n</blockquote>\n<p>The report and its 2 kg are made up for this problem. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the average rate over the first week, and the year’s total at that rate.</p>\n<div class=\"working\">\n<p>2 divided by 7 is about 0.2857<br />\n0.2857 times 365 = 104.3</p>\n</div>\n<p>About 0.29 kg a day, and about 104 kg a year at that rate. The report’s arithmetic is right.</p>\n<p>What it does not establish. The 2 kg is an average over one week, and it says nothing about the rate now. It is also the wrong week to project from. Hall (2008) notes that <dfn data-g=\"114\">glycogen</dfn>’s “effects on weight loss typically occur within the first week”. Glycogen is held in the body with water. So part of the first week’s loss is glycogen and its water, which will not keep coming off week after week.</p>\n<p>Hall and colleagues (2012) add that “weight change will slow over time”. So the first-week rate overstates every later week. The year’s total cannot be found by multiplying one week’s average. It needs the rate at each point along the way.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A clinic note reads as follows.</p>\n<blockquote>\n<p>Weighed 76.2 kg yesterday and 76.2 kg today. dW/dt = 0. Her weight has stopped changing, so her intake now matches her expenditure.</p>\n</blockquote>\n<p>The weights are made up for this problem. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the average rate over the one day between the two weighings.</p>\n<div class=\"working\">\n<p>76.2 minus 76.2 = 0<br />\n0 divided by 1 = 0</p>\n</div>\n<p>Zero kg a day, over that one day. The arithmetic is right.</p>\n<p>What it does not establish. First, it is not dW/dt. It is an average over one day, and one day sits inside the normal swings of body water. Two equal readings can come from a falling trend with a small swing up on the second day.</p>\n<p>Second, even a true zero for weight would not mean zero for stores. Hall and colleagues (2012) point out that weight change “may not directly represent energy imbalances, particularly over the short term”. A zero dW/dt and a zero dES/dt are different claims.</p>\n<p>Third, a zero rate at one instant is not a steady weight. The rate may be passing through zero on its way from falling to rising.</p>\n<p>What to write instead. Record both weights. Ask for weighings over several weeks, and take the rate from averages over that time.</p>"
+  }
+ ]
+}

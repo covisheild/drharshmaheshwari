@@ -1,0 +1,138 @@
+{
+ "format": 1,
+ "id": "s55-r1-c03",
+ "label": "3",
+ "title": "Three kinds of question, and the study each needs",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"385\">research question</dfn> is one of three kinds, and its kind decides which study can answer it.</p>\n<p>A <dfn data-g=\"118\">describe question</dfn> asks how common an outcome is, or how much of it there is, in a stated population at a stated place and time, and in which people it is commoner. It is what the last section called a <dfn data-g=\"210\">how-common question</dfn>. It names no <dfn data-g=\"159\">exposure</dfn>. Counting the outcome by age, sex or place is still describing. A trait becomes an exposure when the question sets two groups side by side to ask whether the trait goes with the outcome.</p>\n<p>A <dfn data-g=\"380\">relate question</dfn> asks whether an exposure is associated with an outcome.</p>\n<p>A <dfn data-g=\"56\">cause question</dfn> asks whether changing the exposure would change the outcome. An association is needed for this and is not enough.</p>\n<p>A <dfn data-g=\"103\">cross-sectional study</dfn> enrols a sample of a population and measures exposure and outcome at the same time. It answers a describe question. For a relate question it can show an association, but it usually cannot show which of the two came first.</p>\n<p>Studies built to answer relate questions have a <dfn data-g=\"79\">comparison group</dfn>.</p>\n<p>In a <dfn data-g=\"368\">randomised controlled trial</dfn> the investigator sets the exposure, and chance decides who receives it. This is the design that answers a cause question directly, wherever the exposure can be assigned.</p>",
+   "refs": [
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>There are three kinds.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>The question asks</td>\n<td>Kind</td>\n<td>The study that answers it</td>\n</tr>\n<tr>\n<td>How common is it, and in whom?</td>\n<td>describe</td>\n<td>a cross-sectional study: one visit, one count</td>\n</tr>\n<tr>\n<td>Do people with the exposure have the outcome more often?</td>\n<td>relate</td>\n<td>a cohort study or a case-control study</td>\n</tr>\n<tr>\n<td>If we change the exposure, does the outcome change?</td>\n<td>cause</td>\n<td>a randomised controlled trial</td>\n</tr>\n</tbody>\n</table>\n<p>A describe question has no exposure. You answer it with a cross-sectional study. You take a sample, visit once, and count. The answer is a share: of the people in the group, how many have the condition at that time. That share is the <dfn data-g=\"342\">prevalence</dfn>.</p>\n<p>A relate question asks whether an exposure and an outcome go together. To see that, you need a comparison group: people without the exposure, or without the outcome.</p>\n<ul>\n<li>A <dfn data-g=\"74\">cohort study</dfn> starts from the exposure. You start with people who do not yet have the outcome. You record who is exposed and who is not. You follow both groups over time and count who develops the outcome.</li>\n<li>A <dfn data-g=\"54\">case-control study</dfn> starts from the outcome. You enrol people who have it (cases) and people who do not (controls). Then you compare what each group was exposed to in the past.</li>\n</ul>\n<p>In both, you watch the exposure happen. You do not decide it.</p>\n<p>A cause question asks for more than going together. Two more things must hold. The exposure must come first. And no third thing may be moving both.</p>\n<p>A randomised controlled trial is a way to test a treatment in which chance decides who gets it, and then the groups are compared. Chance does the deciding, not anything about the people. So no third thing can decide who is exposed.</p>\n<p>Now the weak spot of the one-visit study. It measures the exposure and the outcome on the same day. So it can find that they go together. It usually cannot tell you which came first. The exception is an exposure fixed long before, such as sex.</p>\n<p>Surveying more people does not repair this. Ten times the sample, measured on one day, is still silent about which came first.</p>\n<p>A <dfn data-g=\"443\">systematic review</dfn> is a study of studies. It collects and combines the results of the studies already done on one question, in a planned and careful way. Because it pools studies, it answers the same kind of question as the studies it pools.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s55-r1-c03-salsa-cases-controls.png",
+   "alt": "A bar chart with two bars. People who fell ill, the cases: 94% ate salsa. People who did not fall ill, the controls: 39% ate salsa.",
+   "w": 1079,
+   "h": 654,
+   "caption": "The hepatitis A outbreak in Pennsylvania, 2003, from the textbook of the Centers for Disease Control and Prevention (CDC): the share who ate salsa among people who fell ill (cases) and among people who ate at the same restaurant and did not fall ill (controls). The cases’ 94% alone could mean only that salsa was popular; the controls’ 39% is what shows that salsa went with falling ill."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Suppose your first idea, made up for this section, is about college students’ meal timing. You plan a survey of first-year students at your own medical college. On one day you weigh and measure each student, and you ask what time they usually eat dinner. You hope to learn whether late dinners go with obesity.</p>\n<p>Now suppose the made-up result comes back the other way round. Students with obesity more often say they eat dinner early.</p>\n<p>Stop before you write “early dinner leads to obesity”. Ask which came first. You measured the dinner time and the weight on the same day. A student told by a doctor last year that her weight was high may have moved her dinner earlier since. Then the weight came first, and it changed the dinner time. Your survey cannot tell.</p>\n<p>Next ask whether a third thing sits behind both. Students in the hostel eat when the mess serves. Students living at home eat when the family eats. Where a student lives could shape both dinner time and weight. Then the two would go together without either one moving the other.</p>\n<p>Neither story is a fact about your college. Both are possible, and a one-day survey rules out neither.</p>\n<p>Now the fix. Decide which question you meant, write it as one sentence, and let it choose the design. Here are three made-up versions.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Question</th>\n<th>Kind</th>\n<th>Study that answers it</th>\n<th>What it still cannot tell you</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>What share of first-year students at this college eat dinner after 10 pm, in the first term of 2027?</td>\n<td>describe</td>\n<td>a cross-sectional study of a random sample of first-year students, on one visit</td>\n<td>whether eating late matters for weight</td>\n</tr>\n<tr>\n<td>Do first-year students who eat dinner after 10 pm gain more weight over their first year than those who eat before 8 pm?</td>\n<td>relate</td>\n<td>a cohort study: record dinner time and weight at the start of the year, and weigh the same students at the end</td>\n<td>whether a third thing, such as where they live, explains the difference</td>\n</tr>\n<tr>\n<td>Among first-year students, does eating dinner before 8 pm, compared with after 10 pm, change weight gain over one year?</td>\n<td>cause</td>\n<td>a randomised controlled trial: chance decides which students are asked to eat early</td>\n<td>whether students outside a trial would keep to the change</td>\n</tr>\n</tbody>\n</table>\n<p>Look at the first row. For a describe question, the one-day survey is exactly the right tool. Its weakness was never a weakness for this question.</p>\n<p>Look at the second row. The cohort study records dinner time before it measures weight gain. So it settles which came first. It does not settle the third thing.</p>\n<p>Look at the third row. Chance decides who is asked to eat early. So where a student lives cannot decide it. That is what the trial gives you and the cohort cannot.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The survey result is made up, and so is each story about it. They show what a one-day survey cannot rule out, not what is true at any college.</p>\n<p>Chance removes the third thing only on average. In a small trial, bad luck can still put more hostel students in one group. This is the <dfn data-g=\"396\">sampling variation</dfn> of Book 0, and it shrinks as the groups grow.</p>\n<p>Real questions often mix the kinds. “Which students eat late, and does it matter?” is a describe question and a relate question in one sentence. Split it, and give each half its own design.</p>\n<p>A trial also needs the exposure to be something you can assign. You can ask a student to eat dinner early. You cannot assign a family’s income or a child’s age. For those, the cause question has to be argued from relate studies, with time order and third things dealt with in the argument.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is a real case-control study, told in the CDC’s textbook Principles of Epidemiology in Public Health Practice. In 2003 there was a large outbreak of hepatitis A, an infection, in Pennsylvania. Almost all the people who fell ill had eaten at one restaurant. So the question was a relate question: which food on the menu goes with falling ill?</p>\n<p>Start with what the investigators tried first. They asked the people who fell ill what they had eaten. The textbook says this showed only which foods were popular. The ill and the well both eat the popular dishes.</p>\n<p>So they added a comparison group. They also interviewed people who ate at the same restaurant in the same weeks and did not fall ill. Those are the controls. Now compare past exposures between the two groups.</p>\n<table style=\"width:88%;\">\n\n<thead>\n<tr>\n<th>Group</th>\n<th>Share who ate salsa</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>people who fell ill (cases)</td>\n<td>94%</td>\n</tr>\n<tr>\n<td>people who did not fall ill (controls)</td>\n<td>39%</td>\n</tr>\n</tbody>\n</table>\n<p>Of 133 items on the menu, this was the most striking difference. Further work on the salsa’s ingredients pointed to green onions.</p>\n<p>Notice the direction. A case-control study starts from the outcome and looks back at exposures. The people who fell ill already existed. Nobody had to wait for anyone to fall ill.</p>",
+   "numberRefs": [
+    41
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 94% and 39% belong to this one outbreak, and to one meal eaten a few weeks earlier. They say nothing about salsa anywhere else.</p>\n<p>Obesity questions look back much further. People asked what they ate over many years may remember differently depending on whether they have the outcome. The shorter and sharper the exposure, the better looking back works.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to call a cross-sectional survey a weak study. It is weak for relate and cause questions. Judge a design against the question it was asked to answer.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the question before you choose the design, then read its verb. If the question and the design you planned do not match, change one of them, and say which.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a one-visit survey is reported with the words “leads to”, “causes” or “effect of”, do not repeat them. Ask which came first.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>If the question needs time order, change the design, not the sample size.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Matching the design to the question tells you what a study could answer. It does not tell you whether this study was done well.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In a committee, say which kind of evidence you have before anyone decides.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When a trainee proposes a trial for a describe question, ask them what chance would decide. If nothing is being assigned, there is nothing for chance to do, and the question needs a count.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here are five made-up questions from the running setting. For each, say whether it is a describe, relate or cause question, and name the study that answers it.</p>\n<ol type=\"1\">\n<li>What share of adults aged 30 and over screened at the district screening camp in 2027 had obesity, as the camp protocol defines it?</li>\n<li>In two government schools in Raipur city, are children aged 10 to 14 who play a sport after school less likely to develop obesity over two years?</li>\n<li>Does a weekly class on cooking with less oil, given to one adult in each household, change the weight of the adults in urban slum households over one year?</li>\n<li>Were adults aged 30 to 60 at the non-communicable disease (NCD) clinic in 2027 with obesity, as the clinic protocol defines it, more likely than those without it to have worked night shifts in the past ten years?</li>\n<li>In which age groups of women aged 18 and over attending the NCD clinic in 2027 is obesity, as the clinic protocol defines it, commonest?</li>\n</ol>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>Describe. It asks how common, and names no exposure. A cross-sectional study: count from the camp’s records, or from a sample of them.</li>\n<li>Relate. It asks whether an exposure (after-school sport) goes with an outcome (developing obesity), with time in it: “over two years”. A cohort study. Record who plays sport now, weigh the children at the start, leave out children who already have obesity at the start, and weigh the rest again in two years.</li>\n<li>Cause. It asks whether changing something changes the outcome, and the class is something you can assign. A randomised controlled trial: chance decides which households get the class.</li>\n<li>Relate. It starts from the outcome (obesity or not) and looks back at a past exposure (night shifts). A case-control study: adults with obesity as cases, adults without it as controls, and compare their past work.</li>\n<li>Describe. “In which age groups” asks in whom the outcome is commoner. There is still no exposure you are testing. A cross-sectional study of the clinic’s women patients, counted by age group.</li>\n</ol>\n<p>Question 4 is the one to notice. It reads like a cause question about night shifts. As written it only asks whether the two go together, and a case-control study is the right answer to that.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up poster at a college research day reads:</p>\n<p>“We surveyed 400 first-year students on one day. Students who slept less than six hours had obesity more often. Conclusion: short sleep causes obesity in medical students, and hostels should enforce a lights-out time.”</p>\n<p>Lay out what the study could and could not show. Then rewrite the conclusion so that it claims only what the study showed.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>What it could show: in these 400 students, on that day, short sleep and obesity went together. That is an association, and a one-day survey can show it.</p>\n<p>What it could not show, twice over.</p>\n<p>First, which came first. Sleep and weight were measured on the same day. So the survey cannot tell short sleep leading to weight gain apart from the weight coming first and changing the sleep. Both orders leave the same pattern on the day of the survey.</p>\n<p>Second, a third thing. Long study hours, or a noisy shared room, could cut sleep and shape eating and movement too. The survey cannot rule that out.</p>\n<p>So “causes” is not supported. The hostel rule goes further still: it is a decision about what ought to be done, built on a cause the study did not show.</p>\n<p>A conclusion the study supports: “In a one-day survey of 400 first-year students at our college, students who reported sleeping less than six hours more often had obesity. The survey cannot say which came first, or whether a third factor explains both. A cohort study would be the next step.”</p>\n<p>Note that 400 is the poster’s own made-up number. Surveying 4,000 students on one day would not change any of this.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has three minutes. Their press release, made up for this exercise, says “Survey finds late dinners linked to obesity in college students”. They ask whether they can write “late dinners cause obesity”. Answer without jargon, and give one sentence they could quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with what “linked” means. The survey found that students who eat late and students with obesity overlap more than you would expect. That is worth knowing.</p>\n<p>Then say what a one-day survey cannot do. It asked about dinner and weighed people on the same day. So it cannot say which came first. Some students may have changed their dinner time because of their weight, not the other way round. And something else, like long study hours, could shape both.</p>\n<p>Give them a calibrated line, not a dismissal. The finding is a reason to study the question properly, not a reason to tell anyone to change their dinner time.</p>\n<p>A quotable sentence: “The survey shows late dinners and obesity turn up together; it cannot show that one causes the other.”</p>"
+  }
+ ]
+}

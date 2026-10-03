@@ -1,0 +1,108 @@
+{
+ "format": 1,
+ "id": "s37-r1-c18",
+ "label": "18",
+ "title": "Sketching the supply chain of a packaged product",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"364\">supply-chain sketch</dfn> of a packaged food is a written map of one product. It lists the main ingredients in the order the label gives them. It traces each ingredient to the crop or animal it comes from, and to the policy tools that act on that crop (section 16). It names the firm the label names, and the channel through which the product reached the buyer. And it marks every link with one of three marks: checked in a named source, seen on the pack or in the shop, or unknown.</p>\n<p>Under the Food Safety and Standards (Labelling and Display) Regulations, 2020, the ingredients are listed in descending order of their weight or volume at the time of manufacture. The class “edible vegetable oil” must be named as the specific oil. The label names the <dfn data-g=\"37\">brand owner</dfn>, who may or may not be the maker. It declares a country of origin for a food imported into India. It does not say where the ingredients of an Indian-made food were grown, who supplied them, or what any of them cost.</p>",
+   "refs": [
+    277,
+    289,
+    274,
+    290,
+    291,
+    292,
+    293,
+    249,
+    294
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>This is the book’s build. You take one packaged food you eat often. You write down where it came from, as far as you can find out, and where you cannot.</p>\n<p>Start with the label. Its ingredient list is in order of weight, heaviest first (section 3). So the first few names are the heaviest in the packet. Those are the ones to trace.</p>\n<p>For each one, ask what it is made from. Maida is wheat. Sugar is sugarcane. Palm oil is oil palm. Then ask which of the state’s tools act on that crop.</p>\n<p>Mark every link. Checked, if you found it in a source you can name. Seen, if it is on the pack or in the shop. Unknown, if neither. Leave the unknowns in.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Here is the trap, and a first sketch falls into it. The label lists palm oil, so you write “palm oil, imported from abroad”. It looks like knowledge. It is a guess.</p>\n<p>Open the Food Safety and Standards (Labelling and Display) Regulations, 2020 (https://www.fssai.gov.in/upload/uploadfiles/files/Comp_Labelling%20Display_Version%20VIII_09_09_2025.pdf). Search for “Country of Origin”. The clause is headed “Country of Origin for Imported Foods”.</p>\n<blockquote>\n<p>The country of origin of the food shall be declared on the label of food imported into India.</p>\n</blockquote>\n<p>If your biscuits were made in India, the label owes you no origin for the oil inside them.</p>\n<p>Now build the sketch properly. Take a packet of plain biscuits from a <dfn data-g=\"195\">kirana</dfn>, a small neighbourhood shop. Suppose its list begins as below. This list is made up for the exercise, so read your own packet beside it.</p>\n<blockquote>\n<p>Refined wheat flour (maida), sugar, palm oil, dextrose, milk solids, iodised salt, raising agents.</p>\n</blockquote>\n<p>Take the first four ingredients, and milk solids and salt as well. For each, find its crop and the tools that act on it. A <dfn data-g=\"297\">quintal</dfn> is 100 kg.</p>\n<table style=\"width:100%;\">\n\n<tbody>\n<tr>\n<td>Ingredient</td>\n<td>From</td>\n<td>Tools acting on it, as of September 2026</td>\n<td>Mark</td>\n</tr>\n<tr>\n<td>Refined wheat flour</td>\n<td>wheat</td>\n<td>Support price for wheat, Rs 2,585 per quintal, rabi marketing season 2026-27 (PIB backgrounder, 10 October 2025); bought into the central pool by the Food Corporation of India (FCI)</td>\n<td>tools on wheat checked; whether they touched this flour’s wheat, and how, unknown</td>\n</tr>\n<tr>\n<td>Sugar</td>\n<td>sugarcane</td>\n<td>Fair and remunerative price of sugarcane, Rs 365 per quintal at a “basic recovery rate of 10.25%” (the release does not define recovery), sugar season 2026-27 (October to September), approved by the Cabinet Committee on Economic Affairs</td>\n<td>tool checked; the mill unknown</td>\n</tr>\n<tr>\n<td>Palm oil</td>\n<td>oil palm</td>\n<td>Basic customs duty on crude palm oil 5%, from the release of 24 Sep 2026; oil palm mission</td>\n<td>crude palm oil duty checked; the refined-oil rate is not in the release; whether either applies to this oil unknown</td>\n</tr>\n<tr>\n<td>Dextrose</td>\n<td colspan=\"3\">glucose, from a crop the label does not name (section 3) | none traced | crop unknown |</td>\n</tr>\n<tr>\n<td>Milk solids</td>\n<td>milk</td>\n<td>none on this book’s map</td>\n<td>unknown</td>\n</tr>\n<tr>\n<td>Iodised salt</td>\n<td>salt</td>\n<td>none on this book’s map</td>\n<td>unknown</td>\n</tr>\n<tr>\n<td>The packet itself</td>\n<td>the factory</td>\n<td>Labelling regulations, 2020; goods and services tax (GST), rate not held</td>\n<td>labelling seen on the pack; GST unknown</td>\n</tr>\n</tbody>\n</table>\n<p>Now the firm and the channel. Find the line on the pack beginning “Manufactured by” or “Marketed by”. The regulation requires the brand owner’s name and address, “whether or not, he himself is the manufacturer”. So “Marketed by” tells you who owns the brand. Mark the brand owner as seen. If the maker differs, the pack must also carry the maker’s FSSAI licence number (regulation 5(7)(b)); mark it seen. This book does not look the number up.</p>\n<p>The channel you know: you bought it at a kirana. Mark that seen. Who brought it to the kirana, and from which depot, the pack does not say. Mark it unknown.</p>\n<p>Count your marks. In this sketch the tools on wheat, sugarcane and oil palm are checked. The brand and the shop are seen. Almost everything between the farm and the factory is unknown. That is the right result.</p>",
+   "numberRefs": [
+    295,
+    296,
+    77
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The figures in the table are the ones in force or announced on 24 September 2026. The ingredient list is invented, so its order holds only for this made-up packet.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The label tells you where the food came from” is wrong for an Indian-made product. Where an Indian-made packet’s wheat, sugar or oil was grown is not on it.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Mark every link of a sketch as checked, seen or unknown, and name the source for every “checked”. Leave the unknowns visible.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Do not apply a national figure to one product. The 56.25% import dependence is for all edible oils in India in 2023-24.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The name on the pack is the brand owner, who may not be the maker. Do not name that company as the factory unless the pack says “Manufactured by”.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>One packet of biscuits holds the decisions of several bodies. When someone proposes changing that product, your sketch shows which body owns each lever.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A sketch with no prices cannot say who earns what along the chain.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Write a supply-chain sketch of one packaged food you or your patients eat often. Buy it, or take it from a shelf at home. On no more than two pages:</p>\n<ol type=\"1\">\n<li><p>Copy the name of the food and its ingredient list exactly as printed.</p></li>\n<li><p>Take the first four ingredients. For each, name the crop or animal it comes from. Then name every policy tool from this book that acts on that crop, with its current figure and date.</p></li>\n<li><p>Name the brand owner and, if the pack says so, the maker, with the exact words the pack uses.</p></li>\n<li><p>Name the shop or platform you bought it from. Say what you know of how it got there.</p></li>\n<li><p>Mark every link checked (name the source), seen, or unknown.</p></li>\n<li><p>Write one line on what you would need to know to estimate the farmer’s share of its price.</p></li>\n</ol>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>There is no single right sketch. Judge yours against six things.</p>\n<p>The ingredient list is copied exactly, in its printed order, not tidied or reordered.</p>\n<p>Each of the four ingredients is traced to a crop or animal. A class name such as “milk solids” or “sugar” is traced as far as the label allows, and no further.</p>\n<p>Each policy tool carries its figure and the date of the text that states it. A support price without its season, or a duty without its release date, has failed this test.</p>\n<p>The brand owner is named from the “Marketed by” or “Manufactured by” line, and is not called the maker unless the pack says so.</p>\n<p>Every link is marked, and every “checked” names its source. A sketch with no “unknown” marks is almost certainly wrong: the label does not tell you where an Indian-made product’s ingredients were grown.</p>\n<p>The last line names prices you do not have. What did the maker pay for each ingredient? What did the distributor and the shop pay for the packet? Those are what rung 2 estimates.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A trainee’s sketch of an Indian-made namkeen reads: “Palm oil: imported, from the label. Wheat: grown in Punjab, bought by FCI. Brand: made by the company named after ‘Marketed by’.” Find each error.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>“Palm oil: imported, from the label.” The label of an Indian-made food does not declare where its oil came from; the country-of-origin clause covers foods imported into India. The claim did not come from the label. Mark it unknown.</p>\n<p>“Wheat: grown in Punjab, bought by FCI.” Neither fact is on the pack. That the Food Corporation of India buys wheat at the support price is a fact about the tool, and can be checked. That this packet’s wheat went through it is not known. Mark the tool checked and the route unknown.</p>\n<p>“Made by the company named after ‘Marketed by’.” The regulation requires the brand owner’s name whether or not that owner is the maker. “Marketed by” names the brand owner. The maker is unknown unless the pack says “Manufactured by”.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A label reads, in part: “Ingredients: Refined wheat flour (maida), sugar, edible vegetable oil, milk solids.” Which part of this list does the labelling regulation not allow as written, and what would a correct label say instead?</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>“Edible vegetable oil”. The regulation has a table of class titles. For this class it says the label must “Give name of the specific edible oil”, such as mustard oil or groundnut oil. So the label should name the oil, for example “palm oil”.</p>\n<p>“Sugar” is allowed: the table lets sucrose be listed as “Sugar”. “Milk solids” is allowed: all milk products may be listed under that title, with the source optional. Both names are classes, so your sketch can trace them only as far as sugarcane and milk.</p>"
+  }
+ ]
+}

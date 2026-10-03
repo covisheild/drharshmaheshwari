@@ -1,0 +1,265 @@
+{
+ "format": 1,
+ "id": "s02-r1-c15",
+ "label": "15",
+ "title": "Variance, and why independent errors add as squares",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In section 14 you saw where a <dfn data-g=\"219\">random variable</dfn> sits on average. The <dfn data-g=\"278\">variance</dfn> says how far it strays.</p>\n<p>The variance of X, written Var(X) and said “the variance of X”, is the expected value of the squared deviation of X from E[X]. In symbols:</p>\n<div class=\"working\">\n<p>Var(X) = E[(X − E[X])²]</p>\n</div>\n<p>For a random variable with a list of values, that is the sum, over every value x, of (x − E[X])² times the <dfn data-g=\"209\">probability</dfn> of x. The <dfn data-g=\"257\">standard deviation</dfn> of X, written with the Greek letter <dfn data-g=\"244\">sigma</dfn>, σ, is the <dfn data-g=\"253\">square root</dfn> of Var(X). It carries the unit of X. The variance carries that unit squared. Book 0, D5 found a sample’s standard deviation by dividing by n − 1. That is a statistic. It estimates σ, as a sample mean estimates E[X].</p>\n<p>For fixed numbers a and b, the variance of aX + b is a² times the variance of X. The standard deviation of aX + b is σ times the size of a, whatever the sign of a.</p>\n<div class=\"working\">\n<p>Var(aX + b) = a² Var(X)</p>\n</div>\n<p>Two random variables are independent when every event about one is independent, in the sense of Book 0, D2, of every event about the other. For independent X and Y, the variance of their sum is the sum of their variances, and so is the variance of their difference.</p>\n<div class=\"working\">\n<p>Var(X + Y) = Var(X) + Var(Y)<br />\nVar(X − Y) = Var(X) + Var(Y)<br />\nVar(aX + bY) = a² Var(X) + b² Var(Y)</p>\n</div>\n<p>This book checks the rule on the dal example below and does not prove it. The proof needs one more fact, that E[XY] = E[X] times E[Y] when X and Y are independent.</p>\n<p>Standard deviations do not add.</p>\n<p>For n independent random variables, each with variance σ², the sum has variance nσ² and standard deviation σ times the square root of n. Their mean has standard deviation σ divided by the square root of n, which is the <dfn data-g=\"254\">square-root law</dfn> of Book 0, D6.</p>\n<p>Without independence the adding rule need not hold. A correction term, the covariance, enters, and a later book, on probability and statistical <dfn data-g=\"124\">inference</dfn>, teaches it.</p>",
+   "refs": [
+    119,
+    120,
+    121,
+    122,
+    38,
+    123,
+    124,
+    125
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The expected value says where a chancy quantity sits on average. The variance says how far it strays from there.</p>\n<p>Take each value’s distance from the expected value and square it. Weight each square by that value’s probability, and add them up.</p>\n<p>The answer is in squared units: square grams, if the quantity was in grams. Take its square root and you are back in grams.</p>\n<p>Now add two uncertain amounts whose errors have nothing to do with each other. The spread of the total grows, but by less than the two spreads added.</p>\n<p>Subtract them instead, and the spread grows by exactly the same amount. Subtracting does not cancel uncertainty.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c15-difference.png",
+   "alt": "Paired bars at errors of minus 20, minus 10, 0, 10 and 20 grams. One reading has bars 0.25, 0.5 and 0.25 at the middle three errors. The difference has 0.0625, 0.25, 0.375, 0.25 and 0.0625, lower in the middle and reaching both ends.",
+   "w": 1357,
+   "h": 655,
+   "caption": "The error of one made-up reading (minus 10, 0 or 10 grams) and of the dal weighed by difference. The difference spreads from minus 20 to 20 grams: its variance is 100, the sum of the two readings’ 50 and 50."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c15-variance-parts.png",
+   "alt": "Paired bars at errors of minus 20, minus 10, 0, 10 and 20 grams. One reading has bars of 25 at minus 10 and 10 and nothing elsewhere. The dal has bars of 25 at minus 20, minus 10, 10 and 20, and nothing at 0.",
+   "w": 1358,
+   "h": 655,
+   "caption": "Each bar is one error’s square times its probability: its share of the variance. One reading’s two shares add to 50 square grams. The dal’s four add to 100. Its errors of 10 grams either way carry the same 25 each as one reading’s, and the new tails at minus 20 and 20 carry another 25 each, so subtracting doubles the variance."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c15-days.png",
+   "alt": "Points at 1, 4, 9 and 16 days on two curves. The independent-error points, 300, 600, 900 and 1200, sit on a curve that bends over. The repeated under-count points, 300, 1200, 2700 and 4800, sit on a straight line pulling far above it.",
+   "w": 1353,
+   "h": 654,
+   "caption": "The error in a total of n days, from made-up daily errors of 300 kcal. Independent errors grow as 300 times the square root of n, reaching 1200 at 16 days. The same under-count every day grows as 300 times n, reaching 4800."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c15-average-day.png",
+   "alt": "Points at 1, 4, 9 and 16 days. The independent-error points fall 300, 150, 100, 75 along a curve that flattens. The repeated under-count points stay at 300 on a flat line.",
+   "w": 1357,
+   "h": 654,
+   "caption": "Divide each total by the days to get the error in the average day. Independent errors shrink as 300 divided by the square root of n, to 75 kcal a day at 16 days: the square-root law. The same under-count every day stays at 300 kcal a day however long you record."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>You weigh dal on a cheap kitchen scale, by difference. Weigh the empty katori. Put the dal in and weigh again. The dal’s weight is the second reading minus the first.</p>\n<p>Suppose each reading is off by minus 10, 0 or plus 10 grams, with probabilities 0.25, 0.5 and 0.25. Suppose too that the error of one reading tells you nothing about the error of the other, so the two are independent. Call the error of one reading X.</p>\n<p>Find its expected value first: each value times its probability, added up.</p>\n<div class=\"working\">\n<p>-10 times 0.25 plus 0 times 0.5 plus 10 times 0.25 = 0</p>\n</div>\n<p>Now the variance. Each value’s deviation from 0 is the value itself. Square it, weight it by its probability, and add.</p>\n<div class=\"working\">\n<p>100 times 0.25 plus 0 times 0.5 plus 100 times 0.25 = 50</p>\n</div>\n<p>Var(X) is 50 square grams. The standard deviation is the square root of 50, about 7.07 grams.</p>\n<p>The dal’s error is the second reading’s error minus the first’s. Work out its distribution by listing the pairs. Because the readings are independent, multiply to get each pair’s probability, the rule from Book 0, D2. An error of minus 20 grams happens only when the second reading is 10 low and the first is 10 high.</p>\n<div class=\"working\">\n<p>0.25 times 0.25 = 0.0625</p>\n</div>\n<p>An error of minus 10 happens two ways: second 10 low and first right, or second right and first 10 high. Add the two ways.</p>\n<div class=\"working\">\n<p>0.25 times 0.5 plus 0.5 times 0.25 = 0.25</p>\n</div>\n<p>An error of 0 happens three ways: both low, both right, or both high.</p>\n<div class=\"working\">\n<p>0.25 times 0.25 plus 0.5 times 0.5 plus 0.25 times 0.25 = 0.375</p>\n</div>\n<p>The positive errors mirror the negative ones. Set the two distributions side by side.</p>\n<table style=\"width:71%;\">\n\n<thead>\n<tr>\n<th>error (g)</th>\n<th>one reading</th>\n<th>the dal, by difference</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>-20</td>\n<td>0</td>\n<td>0.0625</td>\n</tr>\n<tr>\n<td>-10</td>\n<td>0.25</td>\n<td>0.25</td>\n</tr>\n<tr>\n<td>0</td>\n<td>0.5</td>\n<td>0.375</td>\n</tr>\n<tr>\n<td>10</td>\n<td>0.25</td>\n<td>0.25</td>\n</tr>\n<tr>\n<td>20</td>\n<td>0</td>\n<td>0.0625</td>\n</tr>\n</tbody>\n</table>\n<p>The dal’s expected error is 0, by the same symmetry. Its variance, from the squared errors:</p>\n<div class=\"working\">\n<p>400 times 0.0625 plus 100 times 0.25 plus 0 times 0.375 plus 100 times 0.25 plus 400 times 0.0625 = 100</p>\n</div>\n<p>Now check the rule. The variance of a difference of independent errors is the sum of their variances.</p>\n<div class=\"working\">\n<p>50 plus 50 = 100</p>\n</div>\n<p>It agrees. The dal’s standard deviation is the square root of 100, which is 10 grams. Each reading alone had about 7.07. You subtracted, and the error grew.</p>\n<p>Adding the two standard deviations gives about 14.14 grams, and that is wrong. Variances add; standard deviations do not.</p>\n<p>Now carry the rule from grams to energy. Hall and colleagues wrote a consensus statement on <dfn data-g=\"81\">energy balance</dfn>. It puts the uncertainty of expenditure measured by <dfn data-g=\"75\">doubly labelled water</dfn> at more than 100 kilocalories (kcal) a day. It gives the same figure as 420 kilojoules (kJ) a day.</p>\n<p>Converting kcal to kJ multiplies every value by 4.184, the factor in Book 0, B4. So a spread in kJ is a spread in kcal times 4.184. Take 100 kcal a day as the floor of the standard deviation.</p>\n<div class=\"working\">\n<p>100 times 4.184 = 418.4</p>\n</div>\n<p>The paper rounds this to 420. Why does the standard deviation scale by 4.184 and the variance by 4.184 times 4.184? Derive it, naming each move. Call the error in kcal X, and the same error in kJ aX + b, with a = 4.184 and b = 0. Keep b in, because the same steps show what an added constant does.</p>\n<p>First, the expected value of aX + b is a times E[X] plus b. The last section showed that.</p>\n<p>Second, subtract it from aX + b. Substitute, then collect terms.</p>\n<div class=\"working\">\n<p>(aX + b) − (aE[X] + b) = aX − aE[X] = a(X − E[X])</p>\n</div>\n<p>The b has gone. Adding a constant moves every value and its expected value together.</p>\n<p>Third, square both sides.</p>\n<div class=\"working\">\n<p>((aX + b) − E[aX + b])² = a² (X − E[X])²</p>\n</div>\n<p>Fourth, take the expected value of both sides. The a² is a fixed number, so it comes outside, by the rule for E[aX] from the last section. The left side is now the variance of aX + b. The right is a² times the variance of X.</p>\n<div class=\"working\">\n<p>Var(aX + b) = a² Var(X)</p>\n</div>\n<p>With a = 4.184, the variance in kJ is 4.184 times 4.184, about 17.5, times the variance in kcal. The standard deviation, its square root, is 4.184 times the standard deviation in kcal.</p>\n<p>The energy imbalance of a day is <dfn data-g=\"85\">energy intake</dfn> (EI) minus <dfn data-g=\"84\">energy expenditure</dfn> (EE).</p>\n<p>Take the expenditure error’s standard deviation as 100 kcal a day, the floor from above. So suppose, as a made-up figure, that the intake error has a standard deviation of 300 kcal a day. Suppose too that the two errors are independent. The variance of the imbalance is the sum of the two variances.</p>\n<div class=\"working\">\n<p>100 times 100 plus 300 times 300 = 100000</p>\n</div>\n<p>The standard deviation of the imbalance is the square root of 100,000, about 316.2 kcal a day. It is at least that, because 100 was a floor.</p>\n<p>Now add up days. Take two made-up cases, each with an intake error of 300 kcal on a single day. In the first, each day’s error is independent of every other day’s. In the second, the record under-counts by the same 300 kcal every day.</p>\n<p>In the first case the variance of an n-day total is n times the variance of one day. So its standard deviation is 300 times the square root of n. Over 9 days the square root of 9 is 3.</p>\n<div class=\"working\">\n<p>300 times 3 = 900</p>\n</div>\n<p>In the second case nothing varies. The total error is 300 times n.</p>\n<div class=\"working\">\n<p>300 times 9 = 2700</p>\n</div>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>days</th>\n<th>independent errors: standard deviation of the total (kcal)</th>\n<th>same under-count every day (kcal)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>300</td>\n<td>300</td>\n</tr>\n<tr>\n<td>4</td>\n<td>600</td>\n<td>1200</td>\n</tr>\n<tr>\n<td>9</td>\n<td>900</td>\n<td>2700</td>\n</tr>\n<tr>\n<td>16</td>\n<td>1200</td>\n<td>4800</td>\n</tr>\n</tbody>\n</table>\n<p>Divide by the days to get the error in the average day. In the first case it shrinks: 1,200 divided by 16 is 75 kcal a day, which is 300 divided by the square root of 16. That is the square-root law of Book 0, D6. In the second case it stays at 300 kcal a day however long you record.</p>",
+   "numberRefs": [
+    9
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A real scale also has <dfn data-g=\"266\">systematic error</dfn>, the kind Book 0, D7 separates from <dfn data-g=\"217\">random error</dfn>. If the scale reads 5 grams heavy every time, that 5 grams sits in both readings and cancels in the difference. Weighing by difference removes an error shared by both readings and adds up the variances of the parts that are not shared.</p>\n<p>The 300 kcal a day is made up, and so is the choice between the two cases.</p>\n<p>The adding rule also needs the intake and expenditure errors to be independent. That is an argument you make, not a fact the numbers give you.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Subtracting one measured amount from another does not cancel their errors. Treat a small difference between two large measured amounts as the least trustworthy number on the page.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Hall and colleagues say expenditure measured by doubly labelled water can be off by more than 100 kcal a day. Take measured intake minus that expenditure. If the two errors are independent, the gap you get is at least as uncertain. So do not accept one person’s measured imbalance quoted as if it were known to within 50 kcal a day.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Standard deviations do not add. Square each one, add the squares, and take the square root of the total.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The adding rule, and the square-root growth over days, hold only for independent errors. An under-count repeated every day grows in step with the days, and averaging does not shrink it. Before you use the rule, make the independence argument Book 0, D2 asks for.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Two measurements of the same person are rarely independent. A before-and-after change, or a predicted-minus-actual difference, can then spread much less, or more, than the adding rule says. A difference spreads less when its two parts rise and fall together, and more when one rises as the other falls. Do not call a reported spread wrong only because it fails the rule on paired figures.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a paper subtracts a baseline, ask whether the baseline was a fixed number or a measurement. Taking away a measured baseline adds the variance of the baseline’s measurement error to the change, when that error is independent of the later reading’s.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Suppose a patient’s food diary shows a <dfn data-g=\"63\">deficit</dfn> of a few hundred kcal a day and their weight has not moved. Do not treat the diary as the fixed truth and their body as the puzzle.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Teach a trainee to convert a variance to a standard deviation before setting it beside a mean. A variance is in squared units, such as square grams.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here is a line from a methods section about the error in an energy imbalance. X is the error in measured intake, and Y the error in measured expenditure, both in kcal a day.</p>\n<div class=\"working\">\n<p>Var(X − Y) = Var(X) + Var(Y)</p>\n</div>\n<p>Say what each symbol denotes, and what unit each term carries. Say what condition the line needs, and why the minus sign on the left becomes a plus on the right.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>X is the error in measured intake and Y the error in measured expenditure, each in kcal a day. X − Y is the error in the measured imbalance, intake minus expenditure, also in kcal a day.</p>\n<p>Var( ) is the variance: the expected squared deviation from the expected value. So each of the three terms is in square kcal a day. That is kcal a day multiplied by itself. So no term can be set beside a daily intake until you take its square root.</p>\n<p>The line needs X and Y to be independent: knowing one error tells you nothing about the other. If they are not, a correction term, the covariance, is missing.</p>\n<p>The minus sign becomes a plus because X − Y is 1 times X plus minus 1 times Y. The rule squares each constant, and minus 1 times minus 1 is 1. A spread is never reduced by subtracting.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist asks why a study cannot simply measure whether a new snack changes a person’s energy balance by 50 kcal a day. You have three minutes and no jargon. Give one quotable sentence.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Energy balance is intake minus expenditure, and each is measured with error. The best method for expenditure, doubly labelled water, is uncertain by more than 100 kcal a day, Hall and colleagues report. Intake from what people report is worse.</p>\n<p>When you subtract one uncertain number from another, the uncertainties do not cancel. They combine, and the result is rougher than either. So a 50 kcal change in one person sits well inside the noise.</p>\n<p>Quotable sentence: “Take one rough measurement away from another and the answer gets rougher, not sharper.” A 50-calorie change in one person is lost in that roughness.</p>\n<p><dfn data-g=\"32\">Calibration</dfn>: the arithmetic is settled. What a study can do instead, averaging over many people, is a separate question, and that is where the design has to earn its answer.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A random variable takes the values 2, 4 and 6 with probabilities 0.25, 0.5 and 0.25.</p>\n<p>Work out its expected value, its variance and its standard deviation.</p>",
+   "level": 1,
+   "answer": "<p>Expected value: each value times its probability, added up.</p>\n<div class=\"working\">\n<p>2 times 0.25 plus 4 times 0.5 plus 6 times 0.25 = 4</p>\n</div>\n<p>Deviations from 4 are minus 2, 0 and 2. Their squares are 4, 0 and 4. Weight them and add.</p>\n<div class=\"working\">\n<p>4 times 0.25 plus 0 times 0.5 plus 4 times 0.25 = 2</p>\n</div>\n<p>The variance is 2. The standard deviation is the square root of 2, about 1.414.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A random variable takes the value 0 with probability 0.8 and the value 10 with probability 0.2.</p>\n<p>Work out its expected value, its variance and its standard deviation.</p>",
+   "level": 1,
+   "answer": "<p>Expected value:</p>\n<div class=\"working\">\n<p>0 times 0.8 plus 10 times 0.2 = 2</p>\n</div>\n<p>Deviations from 2 are minus 2 and 8. Their squares are 4 and 64.</p>\n<div class=\"working\">\n<p>4 times 0.8 plus 64 times 0.2 = 16</p>\n</div>\n<p>The variance is 16. The standard deviation is the square root of 16, which is 4.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<ol type=\"1\">\n<li>A variance is 9. What is the standard deviation?</li>\n<li>A standard deviation is 0.5. What is the variance?</li>\n<li>A variance is 0.49. What is the standard deviation?</li>\n</ol>",
+   "level": 2,
+   "answer": "<p>The standard deviation is the square root of the variance, so the variance is the standard deviation times itself.</p>\n<ol type=\"1\">\n<li>The square root of 9 is 3.</li>\n<li>The variance is 0.5 times itself.</li>\n</ol>\n<div class=\"working\">\n<p>0.5 times 0.5 = 0.25</p>\n</div>\n<ol start=\"3\" type=\"1\">\n<li>The square root of 0.49 is 0.7, because:</li>\n</ol>\n<div class=\"working\">\n<p>0.7 times 0.7 = 0.49</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Var(X) = 4. Work out the variance and the standard deviation of 3X + 7, and of −2X + 5.</p>",
+   "level": 2,
+   "answer": "<p>Use Var(aX + b) = a² Var(X). The added number moves nothing in the spread.</p>\n<p>For 3X + 7, a is 3.</p>\n<div class=\"working\">\n<p>3 times 3 times 4 = 36</p>\n</div>\n<p>The variance is 36 and the standard deviation is 6. That is 3 times the standard deviation of X, which is 2.</p>\n<p>For −2X + 5, a is minus 2, and minus 2 times minus 2 is 4.</p>\n<div class=\"working\">\n<p>4 times 4 = 16</p>\n</div>\n<p>The variance is 16 and the standard deviation is 4, which is 2 times 2. The minus sign turns the values round but does not shrink their spread.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>X and Y are independent. Var(X) = 9 and Var(Y) = 16.</p>\n<p>Work out the variance and standard deviation of X + Y, and of X − Y. Then add the two standard deviations of X and Y, and compare.</p>",
+   "level": 2,
+   "answer": "<p>The variances add, for a sum and for a difference alike.</p>\n<div class=\"working\">\n<p>9 plus 16 = 25</p>\n</div>\n<p>Var(X + Y) and Var(X − Y) are both 25. Both standard deviations are the square root of 25, which is 5.</p>\n<p>The standard deviations of X and Y are 3 and 4.</p>\n<div class=\"working\">\n<p>3 plus 4 = 7</p>\n</div>\n<p>Seven is not 5. Adding standard deviations overstates the spread of the sum.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Nine independent random variables each have standard deviation 2.</p>\n<p>Work out the standard deviation of their sum, and the standard deviation of their mean.</p>",
+   "level": 3,
+   "answer": "<p>Each variance is 2 times 2, which is 4. The variances of independent parts add.</p>\n<div class=\"working\">\n<p>9 times 4 = 36</p>\n</div>\n<p>The sum’s standard deviation is the square root of 36, which is 6. That is 2 times the square root of 9.</p>\n<p>The mean is the sum times one ninth. Its standard deviation is one ninth of the sum’s: 6 divided by 9, about 0.667. That is 2 divided by the square root of 9, the square-root law.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A day’s error has standard deviation 10. The errors on different days are independent. Over how many days does the standard deviation of the total reach 30?</p>",
+   "level": 3,
+   "answer": "<p>The total’s standard deviation is 10 times the square root of the number of days. Set it equal to 30 and rearrange.</p>\n<div class=\"working\">\n<p>30 divided by 10 = 3</p>\n</div>\n<p>The square root of the number of days is 3, so the number of days is 3 times 3, which is 9.</p>\n<p>Check it forwards: 9 days of variance 100 give a variance of 900, and the square root of 900 is 30.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Hall and colleagues give doubly labelled water “a <dfn data-g=\"206\">precision</dfn> of” about 5% (Hall 2012). They say this “translates to an uncertainty of energy expenditure of” more than 100 kcal a day, or 420 kJ a day.</p>\n<ol type=\"1\">\n<li>At what daily expenditure is 5% exactly 100 kcal a day?</li>\n<li>Take 100 kcal a day as a standard deviation. Convert it to kJ a day, using 4.184 kJ in a kcal, and compare with the paper’s 420.</li>\n<li>By what number is the variance multiplied in that conversion?</li>\n</ol>",
+   "level": 4,
+   "answer": "<ol type=\"1\">\n<li>5% is 0.05. Divide the uncertainty by 0.05.</li>\n</ol>\n<div class=\"working\">\n<p>100 divided by 0.05 = 2000</p>\n</div>\n<p>An expenditure of 2,000 kcal a day. At any higher expenditure, 5% is more than 100 kcal a day, which fits the paper’s “more than 100”.</p>\n<ol start=\"2\" type=\"1\">\n<li>Multiplying every value by 4.184 multiplies the standard deviation by 4.184.</li>\n</ol>\n<div class=\"working\">\n<p>100 times 4.184 = 418.4</p>\n</div>\n<p>418.4 kJ a day, which the paper rounds to 420.</p>\n<ol start=\"3\" type=\"1\">\n<li>The variance is multiplied by 4.184 squared.</li>\n</ol>\n<div class=\"working\">\n<p>4.184 times 4.184 = 17.505856</p>\n</div>\n<p>About 17.5. The variance in square kJ a day is about 17.5 times the variance in square kcal a day.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>The error in a person’s expenditure, measured by doubly labelled water, has a standard deviation of at least 100 kcal a day (Hall 2012). Suppose the error in their reported intake has a standard deviation of 250 kcal a day. That figure is made up. The two errors are independent.</p>\n<p>Work out the standard deviation of the error in their energy imbalance, and say whether your answer is a ceiling or a floor.</p>",
+   "level": 5,
+   "answer": "<p>The imbalance is intake minus expenditure. Independent variances add.</p>\n<div class=\"working\">\n<p>100 times 100 plus 250 times 250 = 72500</p>\n</div>\n<p>The standard deviation is the square root of 72,500, about 269.3 kcal a day.</p>\n<p>It is a floor. The 100 was a floor, and a larger expenditure error would make the total larger. Label it “at least 269 kcal a day”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Keep the imbalance error from the last problem, a standard deviation of about 269.3 kcal a day. Suppose the errors on different days are independent.</p>\n<p>Work out the standard deviation of the error in the total imbalance over 7 days, and in the average daily imbalance over those 7 days.</p>",
+   "level": 5,
+   "answer": "<p>One day’s variance is 72,500, from the last problem. Seven independent days:</p>\n<div class=\"working\">\n<p>7 times 72500 = 507500</p>\n</div>\n<p>The square root of 507,500 is about 712.4 kcal over the week. That is 269.3 times the square root of 7, which is about 2.646.</p>\n<p>The average is the total divided by 7.</p>\n<div class=\"working\">\n<p>712.4 divided by 7 = 101.8</p>\n</div>\n<p>About 101.8 kcal a day, which is 269.3 divided by the square root of 7. Both are floors, because 269.3 was.</p>\n<p>Both figures rest on the days being independent. A reporting habit that repeats every day breaks that, and its part of the error would not shrink.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Hall and colleagues write that “the combined error of assessing energy imbalance can easily reach 1000 kcal/d” (Hall 2012). They put the expenditure error at more than 100 kcal a day.</p>\n<p>Read the 1,000 as a standard deviation, and the expenditure part as exactly 100. Suppose the intake and expenditure errors are independent. What standard deviation of the intake error would give the 1,000?</p>",
+   "level": 6,
+   "answer": "<p>The variances add, so the intake variance is the total variance minus the expenditure variance.</p>\n<div class=\"working\">\n<p>1000 times 1000 minus 100 times 100 = 990000</p>\n</div>\n<p>The square root of 990,000 is about 995 kcal a day. The paper’s expenditure error is more than 100, so 995 is the most the intake part could be.</p>\n<p>So almost all of the combined error would come from intake. Take the expenditure error away entirely and the total would fall only from 1,000 to about 995.</p>\n<p>Two things here are readings, not facts from the paper. The paper does not say that its 1,000 is a standard deviation, or how it combined the two errors.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>intake error: standard deviation 300 kcal a day<br />\nexpenditure error: standard deviation 100 kcal a day, independent of the intake error<br />\nthe imbalance is intake minus expenditure, so its error is 300 minus 100<br />\nstandard deviation of the imbalance error = 200 kcal a day</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The third step broke, twice over. Standard deviations are not combined by subtracting, and they are not combined by adding either. Variances add, for a difference as for a sum.</p>\n<div class=\"working\">\n<p>300 times 300 plus 100 times 100 = 100000</p>\n</div>\n<p>The square root of 100,000 is about 316.2 kcal a day, not 200.</p>\n<p>Why the wrong answer looks reasonable: the working follows the shape of the quantity. The imbalance is a subtraction, so subtracting the errors feels faithful to it. But a minus sign in the quantity does not reach its spread. The rule squares the minus 1 away.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>Var(X) = 4<br />\nVar(3X) = 3 times Var(X) = 12<br />\nstandard deviation of 3X = the square root of 12, about 3.46</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. Multiplying X by 3 multiplies its variance by 3 times 3, not by 3.</p>\n<div class=\"working\">\n<p>3 times 3 times 4 = 36</p>\n</div>\n<p>Var(3X) is 36 and its standard deviation is 6, three times X’s standard deviation of 2.</p>\n<p>Why the wrong answer looks reasonable: multiplying by 3 does multiply the expected value by 3, and the error borrows that rule. A quick check catches it. Tripling every value must triple every distance from the middle, so the standard deviation, a distance, triples.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>in a made-up group, reported intake under-counts by 300 kcal on every day<br />\nover 30 days, the errors add up as the square root of the days<br />\nerror in the 30-day total = 300 times the square root of 30, about 1643 kcal</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line broke. The square-root growth holds for independent errors, and this error is the same every day. It is systematic, not random. It adds in full each day.</p>\n<div class=\"working\">\n<p>300 times 30 = 9000</p>\n</div>\n<p>The error in the 30-day total is 9,000 kcal, not about 1,643. In the average day it is still 300 kcal, however many days you record.</p>\n<p>Why the wrong answer looks reasonable: the square-root law has just been taught. It is the right tool for how a total’s spread grows. The question the line skipped is whether the days are independent. A repeated under-count makes every day’s error the same, which is as far from independent as errors can be.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 15,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the error of one reading on a scale has standard deviation 7 grams<br />\na portion is weighed by difference: full bowl minus empty bowl<br />\nthe bowl’s weight is subtracted, so its error is removed<br />\nerror of the portion = 7 grams</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line broke. Subtracting the empty bowl’s reading removes the bowl’s true weight, but it does not remove that reading’s random error. The two readings’ random errors are independent, so their variances add.</p>\n<div class=\"working\">\n<p>7 times 7 plus 7 times 7 = 98</p>\n</div>\n<p>The portion’s standard deviation is the square root of 98, about 9.9 grams, not 7.</p>\n<p>Why the wrong answer looks reasonable: weighing by difference really does remove one kind of error. It removes a bias the two readings share, such as a scale that always reads 5 grams heavy. The working took that true fact and applied it to the random part, which is not shared.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 16,
+   "prompt": "<p>Thomas and colleagues pooled seven weight-loss studies. They report that participants “lost 20.1±11.3 lbs, 7.4±12.6 lb less than the 27.6±16.0 lbs predicted by the 3500 kcal rule” (Thomas 2013), the <dfn data-g=\"260\">static rule</dfn> of Book 1, section 7. Their methods paragraph writes figures in the form mean ± standard deviation.</p>\n<p>A reader says: “The difference is predicted minus actual, so its standard deviation should be the square root of 11.3 squared plus 16.0 squared. That is about 19.6, not 12.6, so the 12.6 is a typo.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: what the adding rule would give, and whether the rule applies here.</p>\n<div class=\"working\">\n<p>11.3 times 11.3 plus 16.0 times 16.0 = 383.69</p>\n</div>\n<p>The square root of 383.69 is about 19.6 pounds. The reader’s arithmetic is right. The means also agree, to <dfn data-g=\"231\">rounding</dfn>.</p>\n<div class=\"working\">\n<p>27.6 minus 20.1 = 7.5</p>\n</div>\n<p>The paper prints 7.4. The gap of 0.1 is rounding: each mean was rounded before you subtracted them.</p>\n<p>The rule does not apply, because the two figures are not independent. Each person’s predicted loss and actual loss come from the same person and the same deficit, so they tend to rise and fall together. When two quantities rise and fall together, their difference spreads less than the adding rule says. A reported 12.6 against the rule’s 19.6 is what such paired figures can look like.</p>\n<p>What this does not establish. It does not show that 12.6 is correct. It shows only that 19.6 is not the figure to check it against. It does not say how strongly the two were related; that needs the covariance, which a later book, on probability and statistical inference, teaches. And it says nothing about whether the 3500 kcal rule is right, which is a different question.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 17,
+   "prompt": "<p>A calorie-counting app’s advert says this.</p>\n<blockquote>\n<p>Our entries are accurate to within 50 kcal per item. So your daily log of 12 items is accurate to within 50 kcal.</p>\n</blockquote>\n<p>The figures are the advert’s own and are made up for this problem. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: how the error of a total of 12 items grows under the two kinds of error.</p>\n<p>Read “within 50 kcal” as a standard deviation of 50 kcal per item. If the items’ errors are independent, the variances add.</p>\n<div class=\"working\">\n<p>12 times 50 times 50 = 30000</p>\n</div>\n<p>The square root of 30,000 is about 173.2 kcal for the day. That is 50 times the square root of 12, more than three times the advert’s figure.</p>\n<p>If every entry is off the same way, say each under-counts by 50 kcal, the errors add in full.</p>\n<div class=\"working\">\n<p>12 times 50 = 600</p>\n</div>\n<p>That would be 600 kcal for the day.</p>\n<p>So the day’s log is not accurate to within 50 kcal under either reading. The per-item figure does not carry over to the total.</p>\n<p>What this does not establish. The advert does not say what “within 50 kcal” means: a standard deviation, a largest error, or something else. The 173 and the 600 are the two ends of a range, not a measurement. And none of it touches a larger gap. Was the portion entered the portion eaten? Is the energy on the label what this person absorbs?</p>"
+  },
+  {
+   "t": "practice",
+   "n": 18,
+   "prompt": "<p>Thomas and colleagues report three figures for the same 103 adults (Thomas 2013). Baseline energy intake was 2876±484 kcal a day. The prescribed target intake was 1409±569 kcal a day. And they report “an average deficit of 1439±784 kcal/d”. The figures after ± are standard deviations.</p>\n<p>A reviewer writes: “The deficit is baseline intake minus target intake. If those are independent, its standard deviation must be the square root of 484 squared plus 569 squared. That is about 747, so the reported 784 is too large.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: first whether the deficit column is baseline minus target at all, and only then the spread.</p>\n<p>Check the means. If every person’s deficit were their baseline minus their target, the mean deficit would be the mean baseline minus the mean target.</p>\n<div class=\"working\">\n<p>2876 minus 1409 = 1467</p>\n</div>\n<p>The paper reports 1,439, not 1,467. So the deficit column was not made by that subtraction for every person. It may come from a different definition, or from a different set of people, and the sentence does not say which.</p>\n<p>The reviewer’s spread, taken on its own terms:</p>\n<div class=\"working\">\n<p>484 times 484 plus 569 times 569 = 558017</p>\n</div>\n<p>The square root of 558,017 is about 747 kcal a day.</p>\n<p>What this does not establish. The 747 is not a figure the 784 must match. The means already show the subtraction was not the one used. Even if it were, the rule needs baseline and target to be independent. If each target was set from the person’s own baseline, the two are not independent. That kind of link would pull the spread below 747, not push it above. So dependence of that kind cannot explain the 784 either; the means have already shown the column was made some other way. What the check does show is how to read such a table: test the means before you test the spreads.</p>"
+  }
+ ]
+}

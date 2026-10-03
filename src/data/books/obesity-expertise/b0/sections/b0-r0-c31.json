@@ -1,0 +1,113 @@
+{
+ "format": 1,
+ "id": "b0-r0-c31",
+ "label": "E1",
+ "title": "Atoms, molecules and bonds — enough to see where energy is stored",
+ "part": "E",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The electrons occupy almost all of an <dfn data-g=\"13\">atom</dfn>’s volume.</p>\n<p>A chemical bond is an attraction between atoms or ions that holds them together in a <dfn data-g=\"119\">molecule</dfn> or a crystal.</p>\n<p>A <dfn data-g=\"42\">covalent bond</dfn> results from the mutual attraction of two atoms for a shared pair of electrons.</p>\n<p>Energy is the capacity to supply heat or do work. Work, in this sense, is a force moving something through a distance; lifting a weight is work. <dfn data-g=\"143\">Potential energy</dfn> is the energy an object has because of its relative position, composition or condition. <dfn data-g=\"100\">Kinetic energy</dfn> is the energy an object possesses because of its motion. The energy held in a food is potential energy of composition. It is held in which atoms are bonded to which, and not in the atoms themselves.</p>\n<p>Separating any pair of bonded atoms requires energy. The stronger a bond, the greater the energy required to break it. Forming a bond releases energy.</p>\n<p>Breaking every bond in the starting materials takes energy in. Forming every bond in the products gives energy out. The net energy change of the reaction is approximately the difference between those two totals.</p>\n<p>Where the bonds in the products are stronger than the bonds in the starting materials, the reaction releases heat and is called <dfn data-g=\"61\">exothermic</dfn>. Where the bonds in the products are weaker, the reaction absorbs heat and is called <dfn data-g=\"56\">endothermic</dfn>.</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Everything you eat is made of atoms.</p>\n<p>An atom has a tiny heavy centre, and a cloud of much lighter particles around it, called electrons.</p>\n<p>An atom is mostly space.</p>\n<p>A bond is an attraction between two atoms that holds them together.</p>\n<p>A group of atoms held together by bonds is a molecule. Sugar is a molecule.</p>\n<p>In an <dfn data-g=\"95\">ionic bond</dfn>, one atom hands an <dfn data-g=\"53\">electron</dfn> over to the other. One is left positive, the other negative, and opposite charges pull. An atom left carrying a charge this way is called an <dfn data-g=\"94\">ion</dfn>.</p>\n<p>In a covalent bond, the two atoms share a pair of electrons instead of handing them over.</p>\n<p>The energy in a food is held in the arrangement of its atoms. It is in which atom is bonded to which, and not in the atoms themselves.</p>\n<p>Pulling a bond apart costs energy. Making a bond gives energy back.</p>\n<p>Most people have that the wrong way round, so say it out loud. Breaking costs. Making pays.</p>\n<p>Strong means it takes a lot of energy to break, and it means nothing else.</p>\n<p>When a food burns, old bonds break and new bonds form. The reaction hands you the difference between the two.</p>\n<p>If the new bonds are stronger than the old ones, more comes out than went in. That is heat you can measure, and it is what anyone means by the energy in a food.</p>\n<p>A reaction that gives heat out is exothermic. A reaction that takes heat in is endothermic.</p>\n<p>So the energy in a food is not a stuff sitting in it, waiting to be poured out. It is a difference between two sums. It shows up only when the arrangement changes.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Open OpenStax Chemistry 2e, section 2.3, Atomic Structure and Symbolism, at https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism. Open your browser’s find box. Type the words An atom is and press enter.</p>\n<p>Nothing.</p>\n<p>Open section 2.4, Chemical Formulas, at https://openstax.org/books/chemistry-2e/pages/2-4-chemical-formulas, and search inside it for A molecule is.</p>\n<p>Nothing again.</p>\n<p>So search that page for the word bond instead.</p>\n<blockquote>\n<p>(A chemical bond is an attraction between atoms or ions that holds them together in a molecule or a crystal.)</p>\n</blockquote>\n<p>Search for the claim, not for the heading.</p>\n<p>Open section 7.5, Strengths of Ionic and Covalent Bonds, at https://openstax.org/books/chemistry-2e/pages/7-5-strengths-of-ionic-and-covalent-bonds. Search inside it for the word Separating.</p>\n<blockquote>\n<p>Separating any pair of bonded atoms requires energy.</p>\n</blockquote>\n<p>Pulling a bond apart costs you energy.</p>\n<p>Search for the word released.</p>\n<blockquote>\n<p>…the energy released when all bonds are formed in the products.</p>\n</blockquote>\n<p>Two energies, opposite in direction, inside one reaction. Whether the reaction gives you anything depends on which of the two is bigger.</p>\n<p>Hydrogen gas is molecules of two hydrogen atoms, joined by one bond each. Chlorine gas is molecules of two chlorine atoms, joined by one bond each. Put them together and they make hydrogen chloride, in which each hydrogen atom is joined to one chlorine atom.</p>\n<p>Count the bonds with a pencil. Take one hydrogen molecule and one chlorine molecule. Two bonds break: the hydrogen-to-hydrogen bond, and the chlorine-to-chlorine bond. Two bonds are then made, each one hydrogen to chlorine.</p>\n<p>The page gives you all three numbers, in kilojoules per <dfn data-g=\"118\">mole</dfn> of bonds. A mole is the fixed count of things from the section on <dfn data-g=\"35\">concentration</dfn> units (B5).</p>\n<table style=\"width:90%;\">\n\n<thead>\n<tr>\n<th>bond</th>\n<th>energy in kilojoules, per mole of bonds</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>hydrogen to hydrogen</td>\n<td>436</td>\n</tr>\n<tr>\n<td>chlorine to chlorine</td>\n<td>243</td>\n</tr>\n<tr>\n<td>hydrogen to chlorine</td>\n<td>432</td>\n</tr>\n</tbody>\n</table>\n<p>None of them is the energy of a single pair of atoms.</p>\n<p>Energy in, to break the two bonds.</p>\n<div class=\"working\">\n<p>436 plus 243 = 679</p>\n</div>\n<p>Energy out, from making the two new bonds.</p>\n<div class=\"working\">\n<p>432 times 2 = 864</p>\n</div>\n<p>In, minus out.</p>\n<div class=\"working\">\n<p>679 minus 864 = -185</p>\n</div>\n<p>Read the sign before you read the digits. The answer is negative, which means more came out than went in. One hundred and eighty-five kilojoules left the reaction as heat.</p>\n<p>A food is molecules. Burning it breaks the bonds inside those molecules, and makes new bonds with oxygen from the air. The new bonds are stronger than the old ones. So the sum runs the way it just ran for hydrogen and chlorine, and the difference comes out as heat.</p>\n<p>That difference is what anybody means when they say a food contains energy.</p>\n<p>There is no energy sitting in the food the way tea sits in a cup.</p>\n<p>Change the arrangement and you collect the difference. Leave it alone and there is nothing there to collect.</p>\n<p>When somebody tells you that a substance releases energy, ask two questions. What gets broken, and what gets made. If the answer names only one of the two, you have been handed half a sum.</p>",
+   "numberRefs": [
+    17
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The three bond energies are quoted for a mole of each, not for one pair of atoms. So 185 kilojoules is not what one molecule gives up. No figure here is the energy of a single bond you could point at.</p>\n<p>The sum is approximate and the book says so. It gives the difference as approximately the net change, not as the net change. Two bonds with the same name in two different molecules are not quite the same bond, and the tables carry averages.</p>\n<p>Hydrogen and chlorine is not a food. Nothing about the shape of the sum changes.</p>\n<p>The sum gives you the size of an energy change and tells you nothing about whether the change happens, or how fast. Sugar can sit in a jar, in air, for years, unchanged, though burning it releases a great deal. Something, such as a flame, has to start it.</p>\n<p>And it tells you nothing about where the energy goes after it leaves.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Energy is not a substance sitting inside a food. So refuse any claim that something can release a food’s energy without changing what its molecules are.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A strong bond is one that takes a lot of energy to break, and that is all the word means. It does not mean the bond is holding more energy for you.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When someone gives you a figure for what a reaction releases, ask what was broken and what was made. A figure that names only one side of that is half a sum.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Bond energies give you the size of an energy change and nothing else. They cannot tell you whether the reaction happens, or how fast, or what starts it.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Teach the two-sided sum before you teach a single step of metabolism. Break, then make, then subtract.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A substance that goes into a person and comes out unchanged has supplied nothing, whatever the bonds inside it are worth.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back, write down what happens to the energy when a bond breaks, and what happens when a bond forms.</p>\n<p>Then write the rule for working out whether a reaction gives heat out or takes heat in.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Breaking a bond takes energy in. You have to supply it. Pulling two bonded atoms apart always costs energy, and a stronger bond costs more.</p>\n<p>Forming a bond gives energy out. The energy is released as the bond is made.</p>\n<p>The rule for the whole reaction. Add up the energy needed to break every bond in the starting materials. Add up the energy released by making every bond in the products. Take the second away from the first.</p>\n<p>If more comes out than went in, the reaction releases heat. That is the exothermic case, and it is what burning a food is.</p>\n<p>If more went in than came out, the reaction takes heat in. That is the endothermic case.</p>\n<p>One thing to check in your own answer. Did you write both halves, or only the breaking half? Half a sum is the commonest way this gets remembered. That half is what makes a food look like a container with energy in it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A wellness brochure says this. The brochure is made up for this exercise.</p>\n<blockquote>\n<p>Our drink is built from molecules with unusually strong chemical bonds. More energy is locked inside each bond, so more energy is released into your body when you drink it.</p>\n</blockquote>\n<p>Say what is wrong, and say what you would ask for.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Take the two sentences apart, because they fail in different ways.</p>\n<p>The first sentence uses strong to mean full. A strong bond is one that takes a lot of energy to break. The word describes what it costs to pull the bond apart, and nothing at all about what the bond will pay out.</p>\n<p>The second sentence then runs the sum backwards. Energy comes out of a reaction when the new bonds formed are stronger than the old bonds broken. Starting with unusually strong bonds makes the breaking half of the sum bigger, which makes the release smaller, not larger.</p>\n<p>So the brochure has described a drink that would give you less, and sold it as giving you more.</p>\n<p>There is a third problem underneath both. The claim talks about energy locked inside a bond, as though a bond were a small container. It is not. There is no energy in a bond to be let out. There is only a difference between two arrangements, and the difference only exists once you say what the second arrangement is.</p>\n<p>What to ask for. First, what the molecules turn into, because a release is a difference between a before and an after and they have named only the before. Second, the two totals separately: energy to break, energy released on forming. Third, whether the reaction they describe happens in a person at all. The size of a possible release says nothing about whether anything occurs.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. They can say that food gives you energy and they cannot say where the energy is.</p>\n<p>Teach them where it sits, so that they leave able to check a claim about any substance they have not met.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Ten minutes, a whiteboard, and somebody who has been told the answer without being told the reason.</p>\n<p>Draw two dots on the board and a line between them. Say the line is a bond, and that a bond is just two atoms attracting each other.</p>\n<p>Now ask them what it would take to pull the two dots apart. They will say effort. Write energy in beside it. Then rub the line out, draw it again, and ask what happens on the way back. Write energy out.</p>\n<p>Stop there and let that sit, because it is the whole section. Breaking costs. Making pays.</p>\n<p>Now draw four dots: two of one kind, two of another, in two joined pairs. Rub out both lines and draw two new lines across the pairs, so each atom is now joined to the other kind. Say out loud what you did. Two bonds broken. Two bonds made.</p>\n<p>Write the sum on the board in words. Energy in to break, minus energy out to make. Ask them what has to be true for the answer to be a release. They will get it: the new bonds have to be stronger than the old ones.</p>\n<p>That is the moment to say the sentence you want them keeping. The energy is in the arrangement, not in the atoms.</p>\n<p>Close with the test they can use on Monday. Any time somebody says a substance releases energy, ask what it turns into. If they cannot say, they have described a before with no after and there is no sum to do.</p>"
+  }
+ ]
+}

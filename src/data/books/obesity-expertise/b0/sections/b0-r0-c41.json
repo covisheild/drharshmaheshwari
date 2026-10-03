@@ -1,0 +1,93 @@
+{
+ "format": 1,
+ "id": "b0-r0-c41",
+ "label": "F3",
+ "title": "Checking a reference",
+ "part": "F",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A reference is a pointer from a claim to the place that is supposed to support it.</p>\n<p><dfn data-g=\"30\">Checking a reference</dfn> means four things, and each one can fail on its own. Finding the source. Confirming it is the source named. Finding the exact passage pointed to. Reading that passage to see whether it supports the claim.</p>\n<p>Finding a source is not the same as checking it.</p>",
+   "refs": [
+    11,
+    12,
+    13,
+    14
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Checking a reference means you go and look, not just glance at the name on it.</p>\n<p>Four separate acts sit inside that looking, and each one can fail on its own. First, find the source. Second, check it is the source named, not something close to it. Third, find the exact page or section pointed to. Fourth, read that passage and ask whether it actually says what you were told.</p>\n<p>Most people stop at the first act and call the job done. That is where the danger sits. A real source, spelled correctly and sitting on the right shelf, can still be attached to a claim it never makes. Nothing about the name looks wrong. The book is real, the page number is real, and the sentence you were promised is simply not on that page. You find this out one way only: by opening the source yourself and reading the words on it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Here is the claim.</p>\n<blockquote>\n<p>The GST Council is set up by Article 279A of the Constitution.</p>\n</blockquote>\n<p>The Council is the body that recommends goods and services tax rates to the Union and the States (Constitution of India, Article 279A(4)). That fact is not what you are testing. The claim is.</p>\n<p>First, find it. Open India Code, the government’s own website for Indian law. Search for “Constitution of India”. Open it.</p>\n<p>Second, check it is the right thing. The title reads The Constitution of India. It sits on a government site. Nothing looks wrong yet.</p>\n<p>Third, find the exact place. The claim names Article 279A, so search inside the document for “279A”. Nothing comes up.</p>\n<p>Why not? Look at the list of amendments this copy names — later changes stitched into the law. The newest one is from 2006. Article 279A was written into the Constitution in 2016, ten years after that. This copy is old, and nothing on the page warns you. The second act should have caught it, by checking the newest <dfn data-g=\"8\">amendment</dfn> the copy names.</p>\n<p>A second copy sits on the same website, marked as up to date, and that one does hold Article 279A. It also says when the Article came in, in the footnote under it: “Ins. by the Constitution (One Hundred and First Amendment) Act, 2016”. “Ins.” means inserted.</p>\n<p>Fourth, read it. Clause (1) of Article 279A says the President “shall … by order, constitute a Council”. The same clause names it the Goods and Services Tax Council. So the claim holds, with one correction that only reading could give you. The Article does not set up the Council itself. It requires the President to, by order.</p>",
+   "numberRefs": [
+    11
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A source can say something smaller than the claim built on it. A paper finds that two things move together; someone later cites it as proof that one causes the other.</p>\n<p>For a law, the second act asks one more question: is this copy up to date? It is not a fifth act. The source named is the law as it now stands, and an outdated copy is not that source.</p>\n<p>Above, the second act checked only the title and the site, so the old copy got through. The gap showed at the third act, because the Article did not yet exist in that copy. Skip the question when the article was there but has since been amended, and the old copy gets further. It passes locating, and you read wording that is no longer the law.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>If a citation opens, that does not mean it is checked. Opening is only the first act, and the easiest one.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Treat every reference as four separate acts: find it, confirm it, locate the passage, read it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you trust a copy, check the newest amendment it names. That check takes seconds.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Expect the people reading your work to test your citations against you, not for you.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A citation can be perfectly formatted and still say nothing like what you claimed.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>This check tells you only whether a source supports a claim. It does not tell you whether the source is good, or whether better evidence exists.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A draft states: “Article 279A of the Constitution establishes the GST Council [Constitution of India, India Code].” The reference resolves and the document is genuine. Explain precisely what is still missing, and what you would do to settle it.</p>",
+   "type": "critique",
+   "confidence": true,
+   "answer": "<p>Three things are missing. There is no locator, so nothing tells a reader where to look in a document of several hundred articles. There is no evidence that anyone opened it. And there is no indication of which consolidated edition was consulted.</p>\n<p>The edition matters here specifically. Article 279A was inserted in 2016, so any text predating that will not contain it.</p>\n<p>To settle it: get a consolidated copy, check the latest amendment it cites, and search it for Article 279A. Then read clause (1), and check that it says what the draft claims. Record both the locator and which copy you used.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Take any three references from a paper, report or guideline you have to hand and run all four acts on each. Record, for each, which act it failed at, or that it passed.</p>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>There is no single correct answer, since it depends on the document you chose; the output is the record. Expect at least one to fail at act three or four.</p>\n<p>Three patterns are common. A page number that does not contain the claim. A review cited for a finding that belongs to a single study. A source that supports a weaker statement than the one it is attached to.</p>"
+  }
+ ]
+}

@@ -1,0 +1,233 @@
+{
+ "format": 1,
+ "id": "s47-r1-c17",
+ "label": "17",
+ "title": "Informing policy and campaigning for it",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The same evidence can be put to two different jobs. <dfn data-g=\"201\">Informing</dfn> policy sets out the options open to the body that decides, what the evidence says about the effects of each, and how uncertain that evidence is, without choosing among the options. The OpenStax textbook <em>American Government</em> calls the people who do this policy analysts. <dfn data-g=\"50\">Campaigning</dfn> for policy, also called advocacy, starts from a position about what ought to be done and argues for one option; the same textbook calls these people policy advocates.</p>\n<p>Both jobs are legitimate. The defect is a document that does one job while presenting itself as doing the other, most often a campaign presented as a neutral account of the evidence.</p>",
+   "refs": [
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>You can do two different jobs with the same evidence.</p>\n<p>The first job is informing. You set out the options open to the body that decides. For each option you say what the evidence shows, and how sure anyone can be. You do not pick one.</p>\n<p>The second job is campaigning, also called advocacy. You start from what you think ought to happen, and you argue for one option.</p>\n<p>Both jobs are honest work. The trouble starts when a document does one job and looks like the other. The usual case is a campaign dressed as a neutral summary of the evidence.</p>\n<p>Here are four marks to look for.</p>\n<table>\n\n<thead>\n<tr>\n<th>Mark</th>\n<th>What it looks like</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mark 1: Selective evidence</td>\n<td>only the studies that support one option are cited, and the reader is not told how they were chosen</td>\n</tr>\n<tr>\n<td>Mark 2: Uncertainty changed</td>\n<td>ranges, model assumptions and limits are dropped; or, the other way, doubt is made up about evidence the writer dislikes</td>\n</tr>\n<tr>\n<td>Mark 3: A value written as a finding</td>\n<td>“the evidence shows we must…” — a judgement about what ought to be done, written as if a study had found it</td>\n</tr>\n<tr>\n<td>Mark 4: An interest not declared</td>\n<td>the writer, the department or the funder stands to gain or lose from the decision, and the document does not say so</td>\n</tr>\n</tbody>\n</table>\n<p>Mark 3 is the commonest in health writing. A conclusion about what ought to be done needs a <dfn data-g=\"432\">value premise</dfn>: a premise that says what matters, or what ought to be done. No study supplies one.</p>\n<p>Mark 2 cuts both ways. A campaign for an option drops the doubt. A campaign against it often adds doubt that the evidence does not carry.</p>\n<p>Decide which job a document does before you write its first line. Then say so, in the document. “This note sets out the options and does not recommend one.” Or: “This letter argues for a higher tax.”</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s47-r1-c17-draft-and-rewrite.png",
+   "alt": "A bar chart with two jobs, each with two bars. Informing: 1 in the first draft, 6 in the rewrite. Campaigning: 4 in the first draft, 0 in the rewrite.",
+   "w": 1357,
+   "h": 654,
+   "caption": "A made-up paragraph of a department’s note on a sugary-drinks tax, sentence by sentence, in a first draft and a rewrite. The first draft has 1 informing sentence and 4 campaigning ones. The rewrite keeps every fact, moves each value into a sentence that says it is a value, and adds a declaration of the department’s position: 6 informing sentences and none campaigning."
+  },
+  {
+   "t": "figure",
+   "src": "s47-r1-c17-range-to-top.png",
+   "alt": "Three bars: the model's low end 7, the model's high end 30, and the draft's figure 30, as tall as the high end.",
+   "w": 1094,
+   "h": 655,
+   "caption": "Mark 2, uncertainty changed, in a made-up draft note. The modelling study that Summan and colleagues report, in a 2026 study of food taxes in India, estimated that an extra health tax of 10% to 30% could cut demand for sugary drinks by 7% to 30%. The draft wrote a flat 30%: it kept the top end of the range and dropped the word model."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Back to the running setting of this book. You are the postgraduate in community medicine in Chhattisgarh. Your department has asked for a note on the first running <dfn data-g=\"329\">proposal</dfn>, a higher tax on sugar-sweetened drinks, for a district committee. The note is meant to inform. Suppose this is the first draft of its main paragraph. The draft, and the facts about the department in it, are made up for the example.</p>\n<blockquote>\n<p>A tax on sugary drinks works: it cuts demand by 30%. Every expert we spoke to agreed that the rate should go higher. The drinks industry opposes the tax only to protect its profits. The evidence shows that the rate must rise at the GST Council’s next meeting. The GST Council’s 56th meeting recommended a rate of 40% on sugar-added and flavoured drinks.</p>\n</blockquote>\n<p>Suppose two more facts. The three experts you spoke to all work in health. And your head of department has already said in a newspaper that the rate should rise. The draft says neither.</p>\n<p>Take the draft one sentence at a time. For each, ask which job it does, and which mark, if any, it carries.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Sentence</th>\n<th>Job</th>\n<th>Mark</th>\n<th>Why</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>A tax works: it cuts demand by 30%</td>\n<td>campaigning</td>\n<td>2</td>\n<td>the only figure behind it is a modelled range, 7% to 30%, for an extra tax of 10% to 30%; the draft keeps the top end and drops the word model</td>\n</tr>\n<tr>\n<td>Every expert we spoke to agreed</td>\n<td>campaigning</td>\n<td>1</td>\n<td>all three work in health; nobody from the tax side or the industry was asked, and the reader is not told</td>\n</tr>\n<tr>\n<td>The industry opposes it only for profit</td>\n<td>campaigning</td>\n<td>3</td>\n<td>a judgement about motives, written as a fact; what can be checked is that Summan and colleagues report the industry arguing for lower rates</td>\n</tr>\n<tr>\n<td>The evidence shows the rate must rise</td>\n<td>campaigning</td>\n<td>3</td>\n<td>“must” is a value; no evidence contains it</td>\n</tr>\n<tr>\n<td>The 56th meeting recommended 40%</td>\n<td>informing</td>\n<td>none</td>\n<td>a fact, from a source you can open</td>\n</tr>\n</tbody>\n</table>\n<p>The draft as a whole carries mark 4 as well. The department has a public position at stake, and the note does not say so.</p>\n<p>Now rewrite it. Keep every fact. Move each value into a sentence that says it is a value.</p>\n<blockquote>\n<p>The GST Council’s 56th meeting, on 3 September 2025, recommended a special de-merit rate of 40% that covers sugar-added and flavoured drinks. One modelling study, reported by Summan and colleagues in a 2026 study of food taxes in India, estimated that an extra health tax of 10% to 30% could cut demand for sugary drinks by 7% to 30%; that is a model’s estimate, not a change measured in India. Summan and colleagues report that the drinks industry argues for lower rates and against the de-merit class. We spoke to three people, all working in health, and to nobody from the tax side or the industry. Whether the rate should rise further is a choice between health, government revenue and the cost to poorer buyers, and this note does not make it. Our department has said in public that the rate should rise.</p>\n</blockquote>\n<table>\n\n<thead>\n<tr>\n<th>Sentence</th>\n<th>Job</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>The 56th meeting recommended 40%</td>\n<td>informing</td>\n</tr>\n<tr>\n<td>One modelling study estimated 7% to 30%, a model</td>\n<td>informing</td>\n</tr>\n<tr>\n<td>Summan and colleagues report the industry arguing for lower rates</td>\n<td>informing</td>\n</tr>\n<tr>\n<td>We spoke to three people, all in health</td>\n<td>informing</td>\n</tr>\n<tr>\n<td>Whether to raise it is a choice; this note does not make it</td>\n<td>informing</td>\n</tr>\n<tr>\n<td>Our department has said in public that the rate should rise</td>\n<td>informing</td>\n</tr>\n</tbody>\n</table>\n<p>The fifth sentence names a value choice and does not make it. That is informing. The last sentence is a declaration: it tells the reader where the department stands, so they can weigh the rest.</p>\n<p>Count the two drafts.</p>\n<table style=\"width:53%;\">\n\n<thead>\n<tr>\n<th>Job</th>\n<th>First draft</th>\n<th>Rewrite</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>informing</td>\n<td>1</td>\n<td>6</td>\n</tr>\n<tr>\n<td>campaigning</td>\n<td>4</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>first draft: 1 plus 4 = 5 sentences<br />\nrewrite: 6 plus 0 = 6 sentences</p>\n</div>\n<p>The rewrite is one sentence longer, because the declaration is new.</p>",
+   "numberRefs": [
+    207,
+    238
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The labels are judgements, and a careful reader can argue about one or two. “The industry argues for lower rates” informs only if it is true and sourced; written without a source, it is an accusation.</p>\n<p>A count of campaigning sentences is a check on your own draft, not a grade. A note with no campaigning sentence can still mislead, by what it leaves out. Mark 1 lives in the studies that are missing, not in any sentence that is there.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now suppose your department decides it does want to campaign. That is its right. Then it writes a different document, and says what it is. Here is a made-up letter that campaigns openly, using the same facts.</p>\n<blockquote>\n<p>This letter asks the State Government, whose minister sits on the GST Council, to press there for a higher rate on sugar-added drinks. We argue for it because we judge that children’s health should count for more than the revenue and price concerns on the other side. That is our judgement, not a finding of any study. The evidence we rely on is one modelling study, reported by Summan and colleagues in a 2026 study of food taxes in India, which estimated that an extra tax of 10% to 30% could cut demand by 7% to 30%; it is a model, not a change measured in India. The case against is real: the tax falls hardest on poorer buyers, and the industry argues for lower rates. Our department receives no money from any drinks company.</p>\n</blockquote>\n<p>Put the letter through the four marks.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Mark</th>\n<th>First draft of the note</th>\n<th>The letter</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mark 1: Selective evidence</td>\n<td>fails: only one side was asked, and the reader is not told</td>\n<td>passes: it names the case against</td>\n</tr>\n<tr>\n<td>Mark 2: Uncertainty changed</td>\n<td>fails: a modelled range became a flat 30%</td>\n<td>passes: it keeps the range and the word model</td>\n</tr>\n<tr>\n<td>Mark 3: A value written as a finding</td>\n<td>fails: “the evidence shows the rate must rise”</td>\n<td>passes: “that is our judgement, not a finding”</td>\n</tr>\n<tr>\n<td>Mark 4: An interest not declared</td>\n<td>fails: the department’s public position is hidden</td>\n<td>passes: it says what it wants, and declares that no drinks company pays the department</td>\n</tr>\n</tbody>\n</table>\n<p>The letter campaigns from its first line, and it passes all four marks. The marks do not catch campaigning. They catch campaigning that pretends to be something else.</p>\n<p>So, before you write, choose. If the committee asked for the options, write the note, and keep your view out of it or label it. If your department wants a higher rate, write the letter, and say so in its first sentence. Oliver and Cairney put this choice as being an “<dfn data-g=\"215\">issue advocate</dfn>” or an “<dfn data-g=\"190\">honest broker</dfn>”. The honest broker passes on research “honestly, clearly, and in a timely fashion” and seeks to stay “neutral”; the other option is to “recommend specific policy options”. They warn that the line between the two is “very difficult to negotiate or identify in practice”, because people who decide often value candid judgements from people they trust more than new research. When that happens, give the opinion in a sentence that says it is yours.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The letter is made up and tidy. A real campaign letter is judged by people who know the other side’s best case. Naming “the case against” in one line does not answer it.</p>\n<p>Passing the four marks makes a document honest about its job. It does not make it right. An openly labelled campaign can rest on weak evidence, and an honest note can still miss the study that matters.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to treat a sentence with a number or a citation in it as informing. Ask what was left out before you ask whether what is there is right.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Decide which job a document does before you write its first line.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Give a value its own sentence in a note meant to inform. Make that sentence say it is a choice.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Refuse “the evidence shows we must” in any document you sign, including a trainee’s draft you are correcting. Split it in two: what the evidence shows, in one sentence; what you think should be done, in another, marked as yours.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Watch for doubt as well as for confidence. If the studies agree and the summary says “the evidence is unclear”, that is mark 2 run backwards.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Declare your department’s own position and money, even when nobody asks.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Oliver and Cairney find the line between the two jobs “very difficult to negotiate or identify in practice”. They add that the policy studies they reviewed may suggest engaging so far that the division “become blurry”. When you cannot hold the line, label each sentence that gives your view.</p>",
+     "tag": "dispute",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The four marks tell you whether a document is honest about its job, not whether its evidence is good or its option right. An openly labelled campaign can rest on weak evidence.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>The tempting reading is that informing means having no view. It does not. The analyst may hold a strong view, and may state it. What makes a document informing is that its account of the evidence is not bent towards that view. Any view in it is labelled as a view. A note with a clearly marked last sentence, “our own judgement is that the rate should rise”, still informs.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>“This note sets out the options open to the decision maker. For each, it says what the evidence shows and how certain it is. It does not recommend one. Our department’s own position is stated in the last paragraph.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the two jobs a document can do with evidence, and the four marks of a document that says it informs but campaigns.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The two jobs:</p>\n<ul>\n<li>Informing: setting out the options, what the evidence says about each, and how sure it is, without choosing.</li>\n<li>Campaigning, or advocacy: arguing for one option, from a view of what ought to be done.</li>\n</ul>\n<p>The four marks:</p>\n<ol type=\"1\">\n<li>Evidence used selectively.</li>\n<li>Uncertainty dropped, or doubt made up.</li>\n<li>A value written as if it were a finding.</li>\n<li>An interest not declared.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up “evidence summary” reaches the district committee from a drinks makers’ association. It reads, in part:</p>\n<blockquote>\n<p>The evidence on sugary-drink taxes is mixed and uncertain. Taxes in some countries have not reduced obesity. A tax would hurt small shopkeepers and poorer families. The committee should therefore wait for better evidence before supporting any change.</p>\n</blockquote>\n<p>Say which job the document does, which marks it carries, and what you would ask its authors for.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>It campaigns. Its last sentence argues for one option, waiting, and the document calls itself an evidence summary.</p>\n<ul>\n<li>Mark 4: an association of drinks makers stands to lose from a higher tax, and the summary does not say so in these lines. Its standing to comment is real. Its interest has to be on the page.</li>\n<li>Mark 2, run backwards: “mixed and uncertain” is a claim about the evidence. Ask for the studies, how they were found, and where they disagree.</li>\n<li>Mark 1: “taxes in some countries have not reduced obesity” names the countries where the result went one way. Ask which countries, and what was found in the others.</li>\n<li>Mark 3: “should therefore wait” is a judgement about what to do under uncertainty. Waiting is an option with its own costs, and choosing it is a value, not a finding.</li>\n</ul>\n<p>Ask for: the list of studies and how they were chosen, the effect sizes with their ranges, and a statement of who funded the summary.</p>\n<p>One fair point to keep. The burden on poorer families is a real argument. A 2026 study of food taxes in India by Summan and colleagues reports that taxes on junk foods are “perceived as regressive”. That means they take a larger share of a poorer buyer’s income. It belongs in the committee’s options, labelled as an argument about who pays.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Audience: a journalist, three minutes. They ask: “Your department wrote a note on the sugary-drinks tax. Are you for it or against it?” Your note was written to inform. Your head of department has said in public that the rate should rise. Give your answer, with one sentence the journalist can quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Say which hat you are wearing, then answer the question you were asked.</p>\n<p>“Our note doesn’t take a side. It sets out what the GST Council recommended, what one modelling study estimated about demand, and who gains and loses. Our head of department has said publicly that the rate should rise, and the note says so too, so readers can weigh it.”</p>\n<p>If pressed for your own view, give it as yours: “My own view is that it should rise. That’s a judgement about whose interests count most. The evidence doesn’t settle it.”</p>\n<p>Quotable sentence: “The evidence can tell you what a tax might do; whether to raise it is a choice, and we’ve said where we stand.”</p>\n<p>What not to do: say “the evidence shows the tax must rise”. That is mark 3, said to a journalist, and it will be printed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Say whether each sentence informs or campaigns.</p>\n<ol type=\"a\">\n<li>Option A costs more than option B and reaches fewer people.</li>\n<li>Option B is the only responsible choice.</li>\n<li>We recommend option A.</li>\n<li>The study did not measure what happened after the first year.</li>\n<li>Nobody who cares about children could oppose option A.</li>\n</ol>",
+   "level": 1,
+   "answer": "<p>Sentence by sentence:</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Sentence</td>\n<td>Job</td>\n<td>Because</td>\n</tr>\n<tr>\n<td>a</td>\n<td>informing</td>\n<td>it compares the options on cost and reach and picks neither</td>\n</tr>\n<tr>\n<td>b</td>\n<td>campaigning</td>\n<td>“the only responsible choice” is a judgement that argues for B</td>\n</tr>\n<tr>\n<td>c</td>\n<td>campaigning</td>\n<td>it argues for A, openly; that is honest campaigning, not a fault</td>\n</tr>\n<tr>\n<td>d</td>\n<td>informing</td>\n<td>it states a limit of the evidence</td>\n</tr>\n<tr>\n<td>e</td>\n<td>campaigning</td>\n<td>it argues for A by questioning the motives of anyone who disagrees</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Each sentence comes from a document that calls itself a neutral summary. Name the mark (1 to 4) each one carries.</p>\n<ol type=\"a\">\n<li><p>“Three studies found the option worked.” The writer found five studies and left out the two that did not find it worked.</p></li>\n<li><p>“The option will cut cases by a fifth.” The study it cites gave a range from a twentieth to a fifth.</p></li>\n<li><p>“The evidence shows we have a duty to act.”</p></li>\n<li><p>The summary was written by a company that sells the product the option would favour, and it does not say so.</p></li>\n<li><p>“The evidence on this option is too uncertain to act on.” The writer dislikes the option, and the studies agree closely with each other.</p></li>\n</ol>",
+   "level": 2,
+   "answer": "<p>Sentence by sentence:</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Sentence</th>\n<th>Mark</th>\n<th>Because</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>a</td>\n<td>1</td>\n<td>two studies that went the other way were left out, and the reader is not told</td>\n</tr>\n<tr>\n<td>b</td>\n<td>2</td>\n<td>a range became its top end</td>\n</tr>\n<tr>\n<td>c</td>\n<td>3</td>\n<td>“a duty to act” is a value; no study contains a duty</td>\n</tr>\n<tr>\n<td>d</td>\n<td>4</td>\n<td>the writer gains from one outcome and does not declare it</td>\n</tr>\n<tr>\n<td>e</td>\n<td>2</td>\n<td>doubt is added that the evidence does not carry: mark 2 run backwards</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Rewrite this sentence so that it informs. Keep whatever in it could be a finding.</p>\n<p>“The evidence proves that every school canteen must stop selling sugary drinks.”</p>",
+   "level": 3,
+   "answer": "<p>The sentence holds two claims. One is about what evidence shows. The other is a value: “must stop”. Split them.</p>\n<ul>\n<li>The finding, written so it can be checked: “A study of [whom, where, when] found that [what was measured], with [how sure].” If no such study is named, there is no finding to keep, and the sentence should say “we found no study that measured this”.</li>\n<li>The value, marked as a choice: “Whether canteens should stop selling sugary drinks is a judgement. It weighs that evidence against other things, such as what children would buy instead and what the canteens earn. The evidence does not make the choice.”</li>\n</ul>\n<p>A third question hides in “every school canteen”: who could make such a rule at all. That is the second running proposal of this book. Run the trace from the section on finding who decides before you write any sentence about it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Here are three sentences from the Press Information Bureau release of 3 September 2025 on the 56th meeting of the GST Council.</p>\n<ol type=\"1\">\n<li>“Next-generation GST reforms, as announced by Prime Minister Shri Narendra Modi from the ramparts of Red Fort on 15th August 2025, represent a strategic, principled, and citizen-centric evolution of a landmark tax framework, which will enhance the quality of life of every last citizen”</li>\n<li>“The 56th meeting of the GST Council was held in New Delhi under the chairpersonship of the Union Finance &amp; Corporate Affairs Minister Smt. Nirmala Sitharaman.”</li>\n<li>“The same would be given effect through the relevant circulars/ notifications/ law amendments which alone shall have the force of law.”</li>\n</ol>\n<p>Say whether each informs or campaigns. Then say which you would carry into your department’s note, and why.</p>",
+   "level": 4,
+   "answer": "<p>Sentence by sentence:</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Sentence</th>\n<th>Job</th>\n<th>Because</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>campaigning</td>\n<td>“strategic, principled, and citizen-centric” are judgements, and “will enhance the quality of life of every last citizen” is a forecast with no measure behind it</td>\n</tr>\n<tr>\n<td>2</td>\n<td>informing</td>\n<td>who met, where, and who chaired: facts you can check</td>\n</tr>\n<tr>\n<td>3</td>\n<td>informing</td>\n<td>it states what the release itself is not: the recommendations have force only when notified</td>\n</tr>\n</tbody>\n</table>\n<p>A government release reports decisions and also presents them well. Neither is a fault in a press release, which no reader takes for a neutral review. Your job is to separate the two when you use it.</p>\n<p>Carry sentences 2 and 3 into the note. Sentence 3 matters most: it tells you to go on to the <dfn data-g=\"279\">notification</dfn> before you write that any rate is in force. Leave sentence 1 out, or quote it only as how the government described its reform.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Here are three sentences from Summan and colleagues’ 2026 study of food taxes and subsidies in India. The study drew on a review of published work and on interviews with people who work on these taxes.</p>\n<ol type=\"1\">\n<li>“Fiscal policy ownership is concentrated within the Ministry of Finance and the GST Council, which determine tax design and rates, while health-oriented ministries play a largely advisory role.”</li>\n<li>“By contrast, earmarking tax revenue for health initiatives, such as small-scale farming or public awareness campaigns, may garner greater public acceptance.”</li>\n<li>“This, however, would be challenging as India does not allow for the earmarking of tax revenues, and would require additional legislation.”</li>\n</ol>\n<p>“Earmarking” means setting a tax’s money aside for one named use. Say what job each sentence does. Then say whether the paper marks its suggestion as a suggestion.</p>",
+   "level": 5,
+   "answer": "<p>Sentence by sentence:</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Sentence</th>\n<th>Job</th>\n<th>Because</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>informing</td>\n<td>a finding of the study, about who holds the decision, drawn from its review and interviews</td>\n</tr>\n<tr>\n<td>2</td>\n<td>leans to campaigning</td>\n<td>it puts forward one option, earmarking, and says what it might achieve</td>\n</tr>\n<tr>\n<td>3</td>\n<td>informing</td>\n<td>it states the main obstacle to the paper’s own suggestion</td>\n</tr>\n</tbody>\n</table>\n<p>Yes, the paper marks it. Sentence 2 says “may”, not “will”. It sits in the discussion, where a reader expects the authors’ judgement. And sentence 3 gives the case against at once. That is what an honest suggestion looks like inside a research paper: the option, how sure, and its main obstacle, side by side.</p>\n<p>What would have made it mark 3: “The evidence shows that India must earmark the revenue.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>The Prime Minister spoke in the 119th episode of the radio address Mann Ki Baat, on 23 February 2025. The Press Information Bureau released an English rendering. In it he said:</p>\n<p>“Decide that you will use 10% less oil every month.”</p>\n<p>And later:</p>\n<p>“Friends, using less oil in food and dealing with obesity is not just a personal choice but also our responsibility towards the family.”</p>\n<p>Say what job each sentence does. Is either a fault under this section’s rule? If you quote them in your department’s note, how do you quote them?</p>",
+   "level": 6,
+   "answer": "<p>Both campaign. The first asks each listener to act. The second argues that the matter is a duty to the family, not only a personal choice. That is a value.</p>\n<p>Neither is a fault under this section’s rule. It is a public appeal by a political leader, made openly as an appeal. No listener takes a radio address for a neutral summary of evidence. The rule is about documents that say they inform and then campaign.</p>\n<p>In your note, quote them as what was said, by whom, where and when. For example: “In Mann Ki Baat on 23 February 2025, the Prime Minister asked listeners to use 10% less oil every month.” That sentence informs: it reports an appeal. It is not evidence that using 10% less oil changes anyone’s weight, and your note should not use it as such.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A colleague sorts a sentence from a made-up draft note. Here is their worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>sentence: “Our survey of students at one college, described in section 2 of this note, proves that the district needs a tax on sugary drinks.”<br />\nit names a survey, so it rests on evidence<br />\nit points to section 2 of the note for the methods, so it can be checked<br />\njob: informing</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The last line broke. The first two lines are true, and they are about the first half of the sentence. The second half, “proves that the district needs a tax”, is a value written as a finding: mark 3. A survey can say what students at one college drink. It cannot say what the district ought to do, and it cannot prove a need for one measure rather than another.</p>\n<p>The fix keeps the survey and moves the value out. “Section 2 of this note reports what our survey of students at one college found about sugary drinks. Whether the district should seek a tax is a separate judgement; the survey does not make it.”</p>\n<p>Why the wrong answer looks reasonable: the sentence carries the signs of evidence, a survey and a pointer to its methods. Those signs belong to the first half. The job of a sentence is decided by what it concludes.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a made-up “background” paragraph for the district committee, with a worked answer. Find the steps that broke.</p>\n<blockquote>\n<p>Taxes on sugary drinks have been studied in many countries. The studies we reviewed all found that demand fell after a tax. Industry claims that the tax hurts poorer families are not supported by the evidence. The committee can therefore be confident that a higher rate will reduce obesity in the district.</p>\n</blockquote>\n<div class=\"working\">\n<p>the paragraph uses no “should” and no “must”<br />\nit recommends no option in so many words<br />\nit reports what studies found<br />\njob: informing, no marks</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The last line broke, because the first three lines look only at the words, not at what was chosen or concluded.</p>\n<ul>\n<li>Mark 1: “the studies we reviewed all found” says nothing about how the studies were chosen. A review that only kept studies with one result would read exactly like this.</li>\n<li>Mark 3 (and mark 1 again): “not supported by the evidence” dismisses the other side’s argument in one line, with no evidence shown. Who pays a tax is partly a question of values, and no review settles it.</li>\n<li>Mark 2: “can be confident that a higher rate will reduce obesity in the district” makes a jump. It goes from demand falling in other countries to weight falling here. The limits are dropped: other countries, a different outcome, a different rate.</li>\n<li>The last sentence is a recommendation in disguise. “Can be confident” does the work of “should”.</li>\n</ul>\n<p>So the paragraph campaigns, and it says it is background.</p>\n<p>Why the wrong answer looks reasonable: people check for campaigning by looking for “should” and “must”. A paragraph can campaign without either, through what it leaves out and how far it stretches its evidence.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>In the same address, the English rendering has the Prime Minister say this. “According to a study, one in every eight people today is troubled by the problem of obesity.”</p>\n<p>A colleague wants to open your department’s informing note with this sentence, as the size of the problem. What do you do? Then say what the sentence, as it stands, does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Decide what the sentence would be doing in your note. In the address, it supports an appeal. In an informing note, it would be a figure about the world. A figure about the world needs its source opened, as Book 0’s section on <dfn data-g=\"58\">checking a reference</dfn> taught. Find it, confirm it, locate the passage, read it.</p>\n<p>The sentence names no study. So before it goes in as a fact, find four things. Which study. Which population: all ages or adults only, and which country. Which year. And how obesity was defined and measured.</p>\n<p>Until you have found it, you can still use the sentence, but only as a report of what was said. For example: “In Mann Ki Baat on 23 February 2025, the Prime Minister cited a study finding that one in eight people is troubled by obesity.” That informs about the speech. It does not inform about how common obesity is.</p>\n<p>What the sentence does not establish:</p>\n<ul>\n<li>How common obesity is in Chhattisgarh, in the district, or among school children, which is what your proposal is about.</li>\n<li>What “troubled by the problem” means as a measure. It is not a term a survey would use.</li>\n<li>That the figure is up to date or measured rather than self-reported.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a made-up line from the conclusion of a draft district report. “Our findings show that the GST Council should raise the rate on sugary drinks to protect children.”</p>\n<p>Classify the line, rewrite it so the report informs, and say what your rewrite does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Classify: campaigning, in a report that presents findings. It carries mark 3: “should raise” is a value, and “our findings show” claims the findings contain it.</p>\n<p>Rewrite in two sentences, with the value moved out:</p>\n<p>“Our findings show [what was measured, in whom, with how much certainty]. Whether the rate should rise further is a judgement. It also weighs government revenue and the cost to poorer buyers. Our findings do not settle it.”</p>\n<p>If the department wants a higher rate, it can say so in a separate letter that opens by saying it argues for one.</p>\n<p>What the rewrite does not establish:</p>\n<ul>\n<li>That the findings are right. The rewrite fixes the job the sentence does, not the evidence under it.</li>\n<li>That a higher rate would protect children. Findings about what children drink are not findings about their weight or health. And an effect of a tax measured elsewhere is not an effect measured here.</li>\n<li>Who would act on it. The Council recommends; a rate has force only when it is notified. The report’s readers still need the trace from the section on finding who decides.</li>\n</ul>"
+  }
+ ]
+}

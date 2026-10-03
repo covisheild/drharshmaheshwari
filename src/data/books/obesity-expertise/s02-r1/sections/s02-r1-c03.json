@@ -1,0 +1,218 @@
+{
+ "format": 1,
+ "id": "s02-r1-c03",
+ "label": "3",
+ "title": "The few rules that do the differentiating",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Four rules give the <dfn data-g=\"67\">derivative</dfn> of any sum of constant multiples of whole-number powers of the input, without the shrinking-interval calculation.</p>\n<p>The <dfn data-g=\"48\">constant rule</dfn>: the derivative of a constant is zero.</p>\n<p>The <dfn data-g=\"205\">power rule</dfn>: for a positive whole number n, the derivative of x<sup>n</sup> is n times x<sup>(n minus 1)</sup>.</p>\n<p>The <dfn data-g=\"47\">constant multiple rule</dfn>: the derivative of k times a function is k times the derivative of the function.</p>\n<p>The <dfn data-g=\"264\">sum and difference rules</dfn>: the derivative of a sum or difference of two functions is the sum or difference of their derivatives.</p>\n<p>The derivative of a straight line is its <dfn data-g=\"247\">slope</dfn>.</p>\n<p>The derivative of a product of two functions is not the product of their derivatives. The power rule does not apply to a constant raised to a power that varies, such as 2<sup>t</sup>.</p>",
+   "refs": [
+    17,
+    18,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The last section found a derivative by shrinking the interval. Four rules do the same job in a line, for any rule made of whole-number powers of the input, each times a number, added up.</p>\n<p>First, a symbol. <dfn data-g=\"60\">d/dx</dfn>, said “dee by dee x”, means “the derivative with respect to x of what follows”. The input can have any letter: d/dt for time, d/dW for weight.</p>\n<p><strong>The constant rule.</strong> A constant has derivative zero.</p>\n<div class=\"working\">\n<p>d/dx (7) = 0</p>\n</div>\n<p><strong>The power rule.</strong> For x raised to a whole number n, bring the n down in front and take one off the power.</p>\n<div class=\"working\">\n<p>d/dx (x<sup>n</sup>) = n times x<sup>(n minus 1)</sup><br />\nd/dx (x<sup>3</sup>) = 3 x<sup>2</sup><br />\nd/dx (x<sup>2</sup>) = 2x<br />\nd/dx (x) = 1 times x<sup>0</sup> = 1</p>\n</div>\n<p>So x on its own has derivative 1.</p>\n<p><strong>The constant multiple rule.</strong> A number multiplying a function stays where it is. Take the derivative of the function, then multiply.</p>\n<div class=\"working\">\n<p>d/dx (5 x<sup>2</sup>) = 5 times 2x = 10x</p>\n</div>\n<p><strong>The sum and difference rules.</strong> Take each term’s derivative on its own, then add or subtract.</p>\n<div class=\"working\">\n<p>d/dx (x<sup>3</sup> + 5 x<sup>2</sup> minus 4) = 3 x<sup>2</sup> + 10x minus 0 = 3 x<sup>2</sup> + 10x</p>\n</div>\n<p>Put the rules together on a straight line, y = a + bx. The constant a goes to zero. So the derivative is b, the slope, at every x.</p>\n<p><strong>The <dfn data-g=\"239\">second derivative</dfn>.</strong> A derivative is itself a function, so you can take its derivative too. The result is the second derivative, the <dfn data-g=\"222\">rate of change</dfn> of the rate. It is written f″(x), said “f double prime of x”, or d<sup>2</sup>y/dx<sup>2</sup>, said “dee two y by dee x squared”.</p>\n<p>Its sign says whether the rate is rising or falling. When a quantity is falling, its rate is below zero. A positive second derivative then means the rate is rising towards zero. The quantity is still falling, only more slowly.</p>\n<p>For values at equal steps, take the differences (Book 0, C6), then the differences of those. Their sign plays the part of the second derivative’s.</p>\n<p>Two rules are not in this book. The derivative of a product is not the product of the derivatives: it needs the product rule. A rule applied to the output of another rule needs the chain rule. Both come in the rung-2 book of this subject. Until then, multiply a product out before you differentiate.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c03-weight-curve.png",
+   "alt": "Six points from day 0 to day 100 on a falling curve that flattens: 90, 86.4, 83.6, 81.6, 80.4 and 80 kilograms. A steep straight line touches the curve at day 0 and a shallower one touches it at day 60.",
+   "w": 1358,
+   "h": 654,
+   "caption": "The made-up curve W(t) = 90 minus 0.2t + 0.001 t<sup>2</sup> over 100 days. Weight falls from 90 kg to 80 kg, and the fall slows as it goes: the tangent at day 0 has slope -0.2 kg a day and the tangent at day 60 only -0.08. The curve flattens because its second derivative, 0.002, is positive."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c03-rate-line.png",
+   "alt": "A rising straight line of six points from minus 0.2 kilograms a day at day 0 to 0 at day 100, passing minus 0.16, minus 0.12, minus 0.08 and minus 0.04, below a dashed line at zero.",
+   "w": 1358,
+   "h": 655,
+   "caption": "The same curve’s first derivative, W′(t) = -0.2 + 0.002t. It is below zero on every day before day 100, so weight is falling throughout. It climbs towards zero at 0.002 kg a day per day, the second derivative, so the fall is slowing."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Take S(t) = 5 t<sup>2</sup> from the last section, where shrinking the interval gave 20 at t = 2.</p>\n<div class=\"working\">\n<p>S′(t) = 5 times 2t = 10t<br />\nS′(2) = 10 times 2 = 20<br />\nS′(3) = 10 times 3 = 30</p>\n</div>\n<p>The same 20, in two lines.</p>\n<p>Hall and Guo (2017) describe expenditure rising with body weight “with a slope of about 20–30 kcal/d per kg”. Take the low end and write it as a rule. W is body weight in kilograms, and EE is <dfn data-g=\"84\">energy expenditure</dfn> in kilocalories a day.</p>\n<div class=\"working\">\n<p>EE(W) = a + 20W</p>\n</div>\n<p>Here a is where the line meets the side axis. The quoted sentence does not give it. Differentiate term by term with respect to W.</p>\n<div class=\"working\">\n<p>d/dW (a) = 0, by the constant rule<br />\nd/dW (20W) = 20 times 1 = 20, by the constant multiple and power rules<br />\ndEE/dW = 0 + 20 = 20</p>\n</div>\n<p>Expenditure changes by 20 kcal a day for each kilogram of weight, at the low end of their range. You found the rate without knowing a, because a constant contributes nothing to a rate.</p>\n<p>Kilocalories a day divided by kilograms is kcal a day per kg. This rate is not against time.</p>\n<p>Hall and colleagues (2012) write that “weight change will slow over time due to passive compensatory changes in energy expenditure”. Passive means it happens with no change in what the person does. A smaller body spends less, so the same intake leaves a smaller gap.</p>\n<p>Here is a made-up curve with that shape, for 100 days of weight loss.</p>\n<div class=\"working\">\n<p>W(t) = 90 minus 0.2t + 0.001 t<sup>2</sup></p>\n</div>\n<p>W is in kilograms and t is in days. A note on this curve, for a made-up patient, says this.</p>\n<blockquote>\n<p>The second derivative is positive, so her weight is going back up.</p>\n</blockquote>\n<p>Differentiate once, term by term.</p>\n<div class=\"working\">\n<p>W′(t) = 0 minus 0.2 + 0.001 times 2t<br />\nW′(t) = -0.2 + 0.002t</p>\n</div>\n<p>Differentiate again.</p>\n<div class=\"working\">\n<p>W″(t) = 0 + 0.002 = 0.002</p>\n</div>\n<table style=\"width:54%;\">\n\n<thead>\n<tr>\n<th>day t</th>\n<th>W(t) (kg)</th>\n<th>W′(t) (kg a day)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>90</td>\n<td>-0.2</td>\n</tr>\n<tr>\n<td>20</td>\n<td>86.4</td>\n<td>-0.16</td>\n</tr>\n<tr>\n<td>40</td>\n<td>83.6</td>\n<td>-0.12</td>\n</tr>\n<tr>\n<td>60</td>\n<td>81.6</td>\n<td>-0.08</td>\n</tr>\n<tr>\n<td>80</td>\n<td>80.4</td>\n<td>-0.04</td>\n</tr>\n<tr>\n<td>100</td>\n<td>80</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>\n<p>The first derivative is below zero on every row until day 100. Weight is falling the whole time. The second derivative is positive, 0.002 kg a day per day. That says the rate is rising: from minus 0.2 towards zero. The fall is slowing.</p>",
+   "numberRefs": [
+    25
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The straight line EE = a + 20W holds only over the range of weights the slope was measured on.</p>\n<p>The curve W(t) is made up to fall and slow for 100 days, and holds nowhere else. Run it past day 100 and it turns.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>When a paper gives expenditure as a straight line in weight, the change for a given weight change is the slope times that change. You need no <dfn data-g=\"132\">intercept</dfn> to work it out.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A positive second derivative does not mean the quantity is rising. When weight is falling, a positive second derivative means the fall is slowing.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Slowing weight loss is what the body’s own responses predict: expenditure falls and appetite rises, even with no change in the treatment.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The derivative of a product is not the product of the derivatives.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>These rules differentiate a formula exactly. They say nothing about whether the formula fits the body.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Check a derivative you worked out by rule with the shrinking-interval method at one point.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A journalist has three minutes. A press release says weight loss on a drug “slowed after six months, showing its effect wears off”. The press release is made up for this exercise.</p>\n<p>Explain, without any symbols, what slowing weight loss does and does not tell you. Give them one sentence they could quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Three minutes, no jargon, one quotable sentence.</p>\n<p>Start with what slowing means. Weight is still going down. It is going down more slowly than before.</p>\n<p>Then say why that is expected. A smaller body burns less energy a day. Appetite also rises as weight falls. So the same drug that caused a loss at the start causes a smaller loss later. Hall and colleagues (2012) put it this way: weight change “will slow over time” because expenditure falls as weight falls. That happens even if the drug keeps working exactly as it did on day one.</p>\n<p>Then say what would tell you the effect wears off. You would need a comparison: people on the drug against people on a dummy pill, over the same months.</p>\n<p>The sentence to quote: “Weight loss slows on any treatment that keeps working, because a smaller body burns less and appetite rises as weight falls. A slowing curve does not show the drug has stopped working.”</p>\n<p>Calibrate it. The slowing is well established. Whether this drug’s effect fades is a separate question the curve cannot answer.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Find each derivative.</p>\n<div class=\"working\">\n<p>d/dx (9)<br />\nd/dx (x<sup>6</sup>)<br />\nd/dx (x)</p>\n</div>",
+   "level": 1,
+   "answer": "<p>The constant rule for the first. The power rule for the other two.</p>\n<div class=\"working\">\n<p>d/dx (9) = 0<br />\nd/dx (x<sup>6</sup>) = 6 x<sup>5</sup><br />\nd/dx (x) = 1 times x<sup>0</sup> = 1</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Find each derivative.</p>\n<div class=\"working\">\n<p>d/dx (4 x<sup>3</sup>)<br />\nd/dt (-2 t<sup>5</sup>)</p>\n</div>",
+   "level": 1,
+   "answer": "<p>Keep the number in front, and take the derivative of the power.</p>\n<div class=\"working\">\n<p>d/dx (4 x<sup>3</sup>) = 4 times 3 x<sup>2</sup> = 12 x<sup>2</sup><br />\nd/dt (-2 t<sup>5</sup>) = -2 times 5 t<sup>4</sup> = -10 t<sup>4</sup></p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Find the derivative of f(x) = 3 x<sup>4</sup> minus 2x + 6.</p>",
+   "level": 2,
+   "answer": "<p>Take each term on its own, then combine.</p>\n<div class=\"working\">\n<p>d/dx (3 x<sup>4</sup>) = 3 times 4 x<sup>3</sup> = 12 x<sup>3</sup><br />\nd/dx (2x) = 2 times 1 = 2<br />\nd/dx (6) = 0<br />\nf′(x) = 12 x<sup>3</sup> minus 2 + 0 = 12 x<sup>3</sup> minus 2</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Take f(t) = 2 t<sup>3</sup> minus t. Find f′(t), then its value at t = 2.</p>",
+   "level": 2,
+   "answer": "<p>Differentiate term by term.</p>\n<div class=\"working\">\n<p>f′(t) = 2 times 3 t<sup>2</sup> minus 1 = 6 t<sup>2</sup> minus 1</p>\n</div>\n<p>Put in t = 2.</p>\n<div class=\"working\">\n<p>6 times 2 times 2 minus 1 = 23</p>\n</div>\n<p>f′(2) = 23.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Take f(t) = t<sup>3</sup> minus 6 t<sup>2</sup> + 4.</p>\n<p>Find f′(t) and f″(t). Then work out both at t = 1 and at t = 3, and say in words what f is doing at each.</p>",
+   "level": 3,
+   "answer": "<p>Differentiate twice.</p>\n<div class=\"working\">\n<p>f′(t) = 3 t<sup>2</sup> minus 12t<br />\nf″(t) = 6t minus 12</p>\n</div>\n<p>At t = 1.</p>\n<div class=\"working\">\n<p>3 times 1 minus 12 times 1 = -9<br />\n6 times 1 minus 12 = -6</p>\n</div>\n<p>At t = 3.</p>\n<div class=\"working\">\n<p>3 times 9 minus 12 times 3 = -9<br />\n6 times 3 minus 12 = 6</p>\n</div>\n<p>The rate is minus 9 at both times, so f is falling at the same speed at both. At t = 1 the second derivative is negative: the rate is getting more negative, so the fall is speeding up. At t = 3 it is positive: the rate is rising towards zero, so the fall is slowing.</p>\n<p>Same rate, opposite futures. The first derivative alone could not tell them apart.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Take the straight line y = 7 minus 0.4x. Find its first and second derivatives.</p>",
+   "level": 3,
+   "answer": "<p>The constant goes to zero. The term in x keeps its number.</p>\n<div class=\"working\">\n<p>dy/dx = 0 minus 0.4 times 1 = -0.4<br />\nd<sup>2</sup>y/dx<sup>2</sup> = 0</p>\n</div>\n<p>The first derivative is the slope, minus 0.4, at every x. The second derivative is zero, because a straight line’s rate never changes.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Hall and Guo (2017) give expenditure rising with body weight at “a slope of about 20–30 kcal/d per kg”. Treat expenditure as a straight line in weight with that slope.</p>\n<p>A person loses 8 kg. Work out how much their expenditure changes along the line, at each end of the range. Give the unit.</p>",
+   "level": 4,
+   "answer": "<p>The derivative of a straight line is its slope, the same at every weight. So the change in expenditure is the slope times the change in weight. The weight change is minus 8 kg.</p>\n<div class=\"working\">\n<p>20 times -8 = -160<br />\n30 times -8 = -240</p>\n</div>\n<p>Expenditure falls by 160 to 240 kcal a day along the line.</p>\n<p>For a straight line this is exact. For a curve it would hold only for a small change.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Table 5.2 of the FAO/WHO/UNU report (2004) estimates <dfn data-g=\"23\">basal metabolic rate</dfn> from body weight. For men aged 18 to 30 it is 15.057 times weight in kg, plus 692.2, in kcal a day.</p>\n<p>Find dBMR/dW with its unit. Then work out BMR at 60 kg and at 70 kg, and check the difference against the derivative.</p>",
+   "level": 5,
+   "answer": "<p>Write the rule, then differentiate term by term.</p>\n<div class=\"working\">\n<p>BMR(W) = 15.057W + 692.2<br />\ndBMR/dW = 15.057 times 1 + 0 = 15.057</p>\n</div>\n<p>15.057 kcal a day per kg.</p>\n<p>Now the two weights.</p>\n<div class=\"working\">\n<p>15.057 times 60 = 903.42<br />\n903.42 plus 692.2 = 1,595.62<br />\n15.057 times 70 = 1,053.99<br />\n1,053.99 plus 692.2 = 1,746.19<br />\n1,746.19 minus 1,595.62 = 150.57<br />\n15.057 times 10 = 150.57</p>\n</div>\n<p>The two agree exactly, because the rule is a straight line. The 692.2 cancels in the subtraction, as the constant rule says it must.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>The same FAO/WHO/UNU report multiplies BMR by the <dfn data-g=\"197\">physical activity level</dfn>, PAL, to get <dfn data-g=\"271\">total energy expenditure</dfn>, TEE. Its worked example uses a PAL of 1.75.</p>\n<p>Using the Table 5.2 line for men aged 18 to 30, BMR = 15.057W + 692.2, find dTEE/dW at a PAL of 1.75. Compare it with Hall and Guo’s slope of “about 20–30 kcal/d per kg” for expenditure. Say what the comparison does and does not show.</p>",
+   "level": 6,
+   "answer": "<p>Write TEE as a rule in W.</p>\n<div class=\"working\">\n<p>TEE(W) = 1.75 times (15.057W + 692.2)</p>\n</div>\n<p>The constant multiple rule keeps the 1.75 outside. The derivative of the bracket is 15.057, from the last problem.</p>\n<div class=\"working\">\n<p>dTEE/dW = 1.75 times 15.057 = 26.35</p>\n</div>\n<p>About 26.35 kcal a day per kg. That sits inside Hall and Guo’s range of 20 to 30.</p>\n<p>What it shows: the two figures are the same kind of quantity, in the same unit, and of the same size.</p>\n<p>What it does not show. It does not confirm either figure. The 1.75 is a PAL chosen for an example, and here it is held fixed as weight changes. The Table 5.2 line is for one age band of men. The Indian Council of Medical Research’s National Institute of Nutrition (ICMR-NIN) says in 2020 that these equations can overestimate BMR by 10 to 12% for Indians. Scaling BMR by 0.9 scales the slope by 0.9, to about 23.7, by the constant multiple rule. Hall and Guo’s slope comes from other people and other methods. Agreement in size is a reason to take both seriously, not proof that either is right for a given patient.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A made-up weight curve is W(t) = 84 minus 0.15t + 0.0005 t<sup>2</sup>, with W in kg and t in days.</p>\n<p>Find W′(60) and W″(t), with units. Say what W is doing at day 60. Then find the day on which W′ reaches zero.</p>",
+   "level": 6,
+   "answer": "<p>Differentiate twice.</p>\n<div class=\"working\">\n<p>W′(t) = -0.15 + 0.0005 times 2t = -0.15 + 0.001t<br />\nW″(t) = 0.001</p>\n</div>\n<p>At day 60.</p>\n<div class=\"working\">\n<p>-0.15 + 0.001 times 60 = -0.09</p>\n</div>\n<p>W′(60) = minus 0.09 kg a day. W″ = 0.001 kg a day per day. At day 60 weight is falling by 0.09 kg a day, and the fall is slowing.</p>\n<p>W′ reaches zero where minus 0.15 plus 0.001t is zero. Add 0.15 to both sides, then divide by 0.001 (Book 0, C2).</p>\n<div class=\"working\">\n<p>0.001t = 0.15<br />\n0.15 divided by 0.001 = 150</p>\n</div>\n<p>Day 150. That is where this made-up curve stops falling. It says nothing about when a real person’s weight would level off.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>f(x) = 3 x<sup>2</sup> + 5<br />\nd/dx (3 x<sup>2</sup>) = 6x<br />\nd/dx (5) = 5<br />\nf′(x) = 6x + 5<br />\nso f′(0) = 5</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The third step broke. The derivative of a constant is zero, not the constant.</p>\n<div class=\"working\">\n<p>d/dx (5) = 0<br />\nf′(x) = 6x + 0 = 6x<br />\nf′(0) = 6 times 0 = 0</p>\n</div>\n<p>f′(0) is 0, not 5.</p>\n<p>Check at one point with the shrinking-interval method. f(0) = 5 and f(0.01) = 5.0003. So the average over that step is 0.0003 divided by 0.01, which is 0.03. That is near 0, not near 5.</p>\n<p>Why the wrong answer looks reasonable. The power rule was used correctly on the first term. The constant was then treated as if it too were being differentiated into itself. A 5 that sits still has no rate.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>g(t) = 2<sup>t</sup><br />\nby the power rule, g′(t) = t times 2<sup>(t minus 1)</sup><br />\nso g′(1) = 1 times 2<sup>0</sup> = 1</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second step broke. The power rule is for the input raised to a fixed number, like t<sup>2</sup>. In 2<sup>t</sup> the fixed number is at the bottom and the input is up in the power. The rule does not apply.</p>\n<p>Check at t = 1 by shrinking the interval, as in the last section. Take h = 0.001.</p>\n<div class=\"working\">\n<p>g(1) = 2<br />\ng(1.001) = 2.0013868<br />\n2.0013868 minus 2 = 0.0013868<br />\n0.0013868 divided by 0.001 = 1.3868</p>\n</div>\n<p>The average rate near t = 1 is about 1.39, not 1. The rule gave a wrong answer.</p>\n<p>Why the wrong answer looks reasonable. It has the exact form of the power rule, with the power brought down and one taken off. The two symbols swapped roles.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>h(t) = t<sup>2</sup> times t<sup>3</sup><br />\nd/dt (t<sup>2</sup>) = 2t and d/dt (t<sup>3</sup>) = 3 t<sup>2</sup><br />\nthe derivative of a product is the product of the derivatives<br />\nh′(t) = 2t times 3 t<sup>2</sup> = 6 t<sup>3</sup><br />\nso h′(1) = 6</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third step broke. The derivative of a product is not the product of the derivatives.</p>\n<p>Multiply the product out first. By Book 0, A6, multiplying powers of the same base adds the exponents.</p>\n<div class=\"working\">\n<p>h(t) = t<sup>(2 + 3)</sup> = t<sup>5</sup><br />\nh′(t) = 5 t<sup>4</sup><br />\nh′(1) = 5 times 1 = 5</p>\n</div>\n<p>h′(1) is 5, not 6.</p>\n<p>The rule that handles products without multiplying out is the product rule. It comes in the rung-2 book of this subject.</p>\n<p>Why the wrong answer looks reasonable. The sum rule works term by term, so it feels natural that a product would work factor by factor. Both factor derivatives are right. Only the way they were combined is wrong.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a patient’s weight follows W(t) = 95 minus 0.3t + 0.002 t<sup>2</sup> over 60 days<br />\nW″(t) = 0.004, which is positive<br />\na positive derivative means rising<br />\nso from day 1 the patient’s weight has been going up</p>\n</div>\n<p>The curve is made up for this problem.</p>",
+   "level": 8,
+   "answer": "<p>The third step broke. It reads the sign of the second derivative as the direction of the weight. The direction is the sign of the first derivative.</p>\n<div class=\"working\">\n<p>W′(t) = -0.3 + 0.004t<br />\nW′(1) = -0.3 + 0.004 = -0.296<br />\nW′(60) = -0.3 + 0.004 times 60 = -0.06</p>\n</div>\n<p>The first derivative is negative from day 1 to day 60. Weight falls all the way. The positive second derivative says the fall is slowing: minus 0.296 kg a day at day 1, minus 0.06 at day 60.</p>\n<p>Why the wrong answer looks reasonable. “Positive derivative means rising” is true. It is true of W″ too: what is rising is the rate, not the weight.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 15,
+   "prompt": "<p>A colleague says this at a case meeting.</p>\n<blockquote>\n<p>Each kilo she loses cuts her expenditure by 20 to 30 kcal a day. She has lost 10 kg. So she only needs to eat 200 to 300 kcal less than when she started to keep losing at the same speed.</p>\n</blockquote>\n<p>The patient is made up. The slope is Hall and Guo’s (2017). Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: how far expenditure has fallen along a straight line with that slope. Then what that means for the gap between intake and expenditure.</p>\n<div class=\"working\">\n<p>20 times -10 = -200<br />\n30 times -10 = -300</p>\n</div>\n<p>Expenditure has fallen by 200 to 300 kcal a day along the line.</p>\n<p>Now the reasoning. To keep losing at the same speed she needs the same gap between intake and expenditure as at the start. Expenditure has fallen by 200 to 300. So intake must fall by a further 200 to 300 kcal a day beyond her first cut. The colleague’s sentence measures from the wrong starting point: it forgets the first cut.</p>\n<p>What this does not establish. The slope of 20 to 30 is Hall and Guo’s approximate figure. One person’s slope may differ. A straight line also leaves out the extra fall in expenditure after weight loss that Book 1 described (Book 1, section 9).</p>\n<p>And it leaves out appetite. Polidori and colleagues (2016) found eating rose by about 100 kcal a day per kg of weight lost. That pushes intake up by far more than the expenditure line moves. Holding intake down is the harder part, and this sum says nothing about it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 16,
+   "prompt": "<p>A news report on a weight-loss medicine says this.</p>\n<blockquote>\n<p>Patients lost weight quickly at first, but loss slowed after month 6, which suggests the medicine stopped working.</p>\n</blockquote>\n<p>The report is made up, and so are these monthly average weights for the group.</p>\n<table style=\"width:31%;\">\n\n<thead>\n<tr>\n<th>month</th>\n<th>weight (kg)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>100</td>\n</tr>\n<tr>\n<td>1</td>\n<td>97</td>\n</tr>\n<tr>\n<td>2</td>\n<td>94.5</td>\n</tr>\n<tr>\n<td>3</td>\n<td>92.5</td>\n</tr>\n<tr>\n<td>4</td>\n<td>91</td>\n</tr>\n<tr>\n<td>5</td>\n<td>90</td>\n</tr>\n<tr>\n<td>6</td>\n<td>89.3</td>\n</tr>\n<tr>\n<td>7</td>\n<td>88.8</td>\n</tr>\n<tr>\n<td>8</td>\n<td>88.5</td>\n</tr>\n</tbody>\n</table>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the change each month, which is the rate over each month. Then the change in that change, which is the discrete version of the second derivative, as in the plain-terms text.</p>\n<div class=\"working\">\n<p>97 minus 100 = -3<br />\n94.5 minus 97 = -2.5<br />\n92.5 minus 94.5 = -2<br />\n91 minus 92.5 = -1.5<br />\n90 minus 91 = -1<br />\n89.3 minus 90 = -0.7<br />\n88.8 minus 89.3 = -0.5<br />\n88.5 minus 88.8 = -0.3</p>\n</div>\n<p>Weight fell every month. Now the change in the monthly change.</p>\n<div class=\"working\">\n<p>-2.5 minus -3 = 0.5<br />\n-2 minus -2.5 = 0.5<br />\n-1.5 minus -2 = 0.5<br />\n-1 minus -1.5 = 0.5<br />\n-0.7 minus -1 = 0.3<br />\n-0.5 minus -0.7 = 0.2<br />\n-0.3 minus -0.5 = 0.2</p>\n</div>\n<p>Every one is positive. The loss was slowing from month 1, not from month 6. Nothing changes at month 6.</p>\n<p>What this does not establish. A slowing loss is what happens anyway. Hall and colleagues (2012) write that weight change “will slow over time due to passive compensatory changes in energy expenditure”. So the curve is what a medicine that keeps working would also produce.</p>\n<p>It does not show the medicine stopped working, and it does not show it kept working. That needs a comparison group on a dummy pill over the same months. It also needs to know whether people kept taking the medicine.</p>"
+  }
+ ]
+}

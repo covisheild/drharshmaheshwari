@@ -1,0 +1,158 @@
+{
+ "format": 1,
+ "id": "b0-r0-c24",
+ "label": "D1",
+ "title": "What a probability is",
+ "part": "D",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"146\">probability</dfn> is a number from 0 to 1 that states how often an outcome would turn up if the same chance process were repeated a great many times. The complete list of everything that could happen is the <dfn data-g=\"162\">sample space</dfn>. One member of that list is an outcome, and any collection of outcomes from it is an event.</p>\n<p>The complement of an event is every outcome in the sample space that is not in it. An event’s probability and its complement’s probability always add to 1.</p>\n<p>Call the probability of an event p, the letter p standing for probability. The <dfn data-g=\"130\">odds</dfn> are how many times more likely the event is than its opposite: p divided by (1 minus p).</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    9,
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A probability is a <dfn data-g=\"147\">proportion</dfn>.</p>\n<p>It always sits between 0, which means never, and 1, which means every time.</p>\n<p>When every outcome is exactly as likely as every other, working out a probability is counting. Count the outcomes that make your event true. Count every outcome there is. Divide the first by the second.</p>\n<p>The complement of an event is everything that is not it.</p>\n<p>Odds are how many times more likely the event is than its opposite, not how likely it is. To get them, divide the probability by 1 minus the probability — that is, by the complement.</p>\n<p>A probability of 0.5 gives odds of 1, usually said as “evens” or “one to one”. A probability of 0.75 gives odds of 3, said “three to one”. Learn to move between the two now.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Go back to section 3(1) of the National Food Security Act, 2013. It set five kilograms of foodgrains per person per month for a priority household. Read on to section 3(2), which sets a ceiling on how many people that entitlement can reach. It shall extend up to seventy-five per cent of the rural population, and up to fifty per cent of the urban population. Section 3(2) does not say it bounds any one State or district. Section 9 leaves “the <dfn data-g=\"133\">percentage</dfn> coverage … for each State” to the Central Government.</p>\n<p>Pick one rural person, anywhere the Act covers, entirely <dfn data-g=\"12\">at random</dfn>. At random means every rural person has exactly the same chance of being the one you pick. So the whole rural population is your sample space, and the person you land on is your outcome.</p>\n<p>Let A be the event that the person you pick is covered by the entitlement. Ask for P(A), said “P of A”, meaning the probability of A.</p>\n<p>You are not told how many people are actually covered, only the largest share the Act allows. So work with 0.75 as a ceiling on P(A), not a measured figure, and carry that qualification into every answer below.</p>\n<div class=\"working\">\n<p>P(A) is at most 0.75</p>\n</div>\n<p>Now the complement. Not being covered is everything else in the sample space.</p>\n<div class=\"working\">\n<p>1 minus 0.75 = 0.25</p>\n</div>\n<p>At least one rural person in four, on this reading of the Act, is not covered.</p>\n<p>Now the trap. Turn 0.75 into odds: the probability divided by its complement.</p>\n<div class=\"working\">\n<p>0.75 divided by 0.25 = 3</p>\n</div>\n<p>The odds a random rural person is covered are, at most, three to one. Here that happens to read the same as “three in four”. That is exactly what makes the trap dangerous. It works once and then stops working.</p>\n<p>Watch it stop. The urban ceiling is fifty per cent.</p>\n<div class=\"working\">\n<p>0.5 divided by 0.5 = 1</p>\n</div>\n<p>Odds of one to one, usually said “evens”. Odds of one mean half the time.</p>\n<p>Suppose you read that the odds are two to one against — two to one that the event does not happen. Odds “against” are the odds of the complement, so first flip them round: odds of two to one against is odds of one-half in favour.</p>\n<div class=\"working\">\n<p>odds in favour = 1 divided by 2 = 0.5</p>\n</div>\n<p>Turn odds back into a probability by counting parts. Odds of 0.5 mean 0.5 parts for the event to 1 part against it. Add those parts and there is one and a half parts in all.</p>\n<div class=\"working\">\n<p>0.5 divided by 1.5 = 0.3333…</p>\n</div>\n<p>About a third.</p>",
+   "numberRefs": [
+    11
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Every probability above is a bound, not a measurement. The Act bounds how far the entitlement can extend; it does not say how many people are actually receiving it in any one district. Treat 0.75 as the largest the chance of being covered could be, and 0.25 as the smallest the chance of not being covered could be. Say so whenever you quote a figure built from them.</p>\n<p>Odds and probability are almost the same number near 0: 0.01 gives odds of 0.0101. Near 1 they pull apart: 0.99 gives 99, and 0.999 gives 999.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Odds of a figure are not the same as a probability of that figure. Odds of 0.25 convert to a probability of 0.25 divided by 1.25, which is 0.2 — a one-in-five chance. Convert before you speak.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Near 0, odds and probability are almost the same number. Above one half they pull apart, and near 1 they pull apart fast: 0.99 to 0.999 multiplies the odds by ten.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A probability describes a group, or a process repeated many times. It does not describe the one person in front of you. Knowing that 0.75 of a population is covered by an entitlement tells you nothing about whether this particular person is one of them. Use the figure to plan for a group. Then go and check the individual case on its own.</p>",
+     "tag": "boundary",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A probability or odds computed from a ceiling is itself a ceiling. Its complement is a floor: at most 0.75 covered means at least 0.25 not covered. Say which in the same sentence you quote the number, or the reader will treat it as a count.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“Odds of three to one” means three chances in four. Say “three in four” and the journalist hears it right.</p>",
+     "tag": "move",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A journalist calls about the National Food Security Act’s rural ceiling. She says, “so the odds of being covered are seventy-five per cent.” You have three minutes and no jargon.</p>\n<p>Correct the sentence, explain the difference between the two figures, and give the journalist one sentence they can print.</p>",
+   "type": "teaching",
+   "confidence": true,
+   "answer": "<p>Start with what is right in the sentence. Seventy-five per cent is a real figure from the Act, and it is a probability, at most, not odds.</p>\n<p>Explain odds in one move. Odds are how many times more likely the event is than its opposite. A probability of seventy-five per cent gives odds of three to one, because three-quarters divided by one-quarter is three.</p>\n<div class=\"working\">\n<p>0.75 divided by 0.25 = 3</p>\n</div>\n<p>Say plainly that “odds of seventy-five per cent” is not a sentence anyone can act on. Odds are not written as a percentage. When somebody does that, they are quoting the probability and calling it odds by mistake. The two are close only for rare events. At one half they are already a factor of two apart.</p>\n<p>What to hand them: “Under the law, up to three in four of the rural population can be covered. That is a ceiling set by the Act, not a count of how many actually are.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A briefing paper contains this line: “The odds of coverage in this block are 60%.”</p>\n<p>Say what is wrong with the sentence, and rewrite it so the figure means something.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Odds are not expressed as a percentage. A percentage is a probability’s natural home, because a probability is bounded between 0 and 1 and a percentage is just that scaled by 100. Odds have no upper bound — odds of 99 are a real number, for a probability of 0.99. Writing them as a percentage silently assumes they behave like a probability. That assumption is the whole of the mistake.</p>\n<p>Two honest rewrites, depending on which figure was actually meant.</p>\n<p>If 60% is the probability of coverage, say so, and give the odds only if the audience needs them.</p>\n<div class=\"working\">\n<p>0.6 divided by 0.4 = 1.5</p>\n</div>\n<p>“Sixty per cent of the block is covered. That is odds of three to two in favour, for anyone who needs the odds form.”</p>\n<p>If 60% was meant as the odds themselves — an odds of 0.6, or three to five — convert it back to the probability. Do this before printing anything.</p>\n<div class=\"working\">\n<p>0.6 divided by 1.6 = 0.375</p>\n</div>\n<p>“Odds of three to five in favour of coverage is a probability of 37.5 per cent, not sixty.”</p>\n<p>Either way, the fix is the same: name which figure you have, in words, before the number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A bag holds 5 red balls and 3 blue balls, and nothing else. One ball is drawn at random.</p>\n<p>Work out the probability of drawing red, and the probability of drawing blue. Check that they add to 1.</p>",
+   "level": 1,
+   "answer": "<p>Count the outcomes in the event, then the outcomes in the whole sample space.</p>\n<div class=\"working\">\n<p>5 divided by 8 = 0.625</p>\n</div>\n<p>Red: 0.625.</p>\n<div class=\"working\">\n<p>3 divided by 8 = 0.375</p>\n</div>\n<p>Blue: 0.375.</p>\n<div class=\"working\">\n<p>0.625 plus 0.375 = 1</p>\n</div>\n<p>They add to 1, as they must: red and blue between them are every outcome there is.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>An event has a probability of 0.2. Work out its odds.</p>\n<p>Separately, an event has odds of three to two — that is, 1.5. Work out its probability.</p>",
+   "level": 2,
+   "answer": "<p>Odds are the probability divided by its complement.</p>\n<div class=\"working\">\n<p>1 minus 0.2 = 0.8</p>\n</div>\n<div class=\"working\">\n<p>0.2 divided by 0.8 = 0.25</p>\n</div>\n<p>Odds of 0.25, which is one to four.</p>\n<p>Going the other way, probability equals odds divided by 1 plus odds.</p>\n<div class=\"working\">\n<p>1 plus 1.5 = 2.5</p>\n</div>\n<div class=\"working\">\n<p>1.5 divided by 2.5 = 0.6</p>\n</div>\n<p>A probability of 0.6.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>An event has a probability of 0.4. Work out its complement, and then work out the odds.</p>",
+   "level": 3,
+   "answer": "<p>The complement first, since the odds are built from it.</p>\n<div class=\"working\">\n<p>1 minus 0.4 = 0.6</p>\n</div>\n<p>Now divide the probability by the complement.</p>\n<div class=\"working\">\n<p>0.4 divided by 0.6 = 0.6666…</p>\n</div>\n<p>Odds of about 0.667, which is two to three. Notice that the probability, 0.4, is smaller than the complement, 0.6. The odds come out smaller than 1 to match. Odds below 1 always mean the event is less likely than its opposite.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Section 3(2) of the National Food Security Act, 2013 sets the entitlement’s reach at up to 75 per cent of the rural population. Pick one rural person at random.</p>\n<p>Work out the largest that the probability they are covered can be, and the smallest that the probability they are not covered can be.</p>",
+   "level": 4,
+   "answer": "<p>The Act’s own figure is the probability of coverage, read as a ceiling.</p>\n<div class=\"working\">\n<p>P(covered) is at most 0.75</p>\n</div>\n<p>The complement is the probability of not being covered.</p>\n<div class=\"working\">\n<p>1 minus 0.75 = 0.25</p>\n</div>\n<p>At most 0.75 covered, at least 0.25 not covered. Both figures are ceilings and floors taken from the Act’s own “up to” wording, not counts of anyone actually reached.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Use the rural ceiling of 0.75 from section 3(2) of the National Food Security Act, 2013. Work out the odds, at most, that a randomly picked rural person is covered.</p>",
+   "level": 5,
+   "answer": "<p>Divide the probability by its complement.</p>\n<div class=\"working\">\n<p>1 minus 0.75 = 0.25</p>\n</div>\n<div class=\"working\">\n<p>0.75 divided by 0.25 = 3</p>\n</div>\n<p>Odds of three to one, at most. Here the odds figure and “three in four” happen to describe the same fact in a way that is easy to eyeball. That will not hold at the urban ceiling, which is the next problem.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Section 3(2) of the National Food Security Act, 2013 sets the urban ceiling at up to 50 per cent. Work out the odds, at most, of coverage in the urban population, and compare them with the rural odds of three to one. Say what the comparison shows about how odds behave.</p>",
+   "level": 6,
+   "answer": "<p>The urban complement first.</p>\n<div class=\"working\">\n<p>1 minus 0.5 = 0.5</p>\n</div>\n<div class=\"working\">\n<p>0.5 divided by 0.5 = 1</p>\n</div>\n<p>Odds of one to one — “evens” — for the urban ceiling, against three to one for the rural ceiling.</p>\n<p>The rural probability is only 1.5 times the urban one.</p>\n<div class=\"working\">\n<p>0.75 divided by 0.5 = 1.5</p>\n</div>\n<p>But the odds are three times as large, not 1.5 times.</p>\n<div class=\"working\">\n<p>3 divided by 1 = 3</p>\n</div>\n<p>The comparison shows that odds do not scale the way probability does. The stretching grows as the probabilities approach 1. Near 0 it almost vanishes.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a report gives the odds of household coverage as 0.25<br />\nodds of 0.25 mean a probability of 0.25<br />\nso a quarter of households are covered</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the second line, where odds are read straight across as a probability.</p>\n<p>Odds and probability are different numbers built from the same fact. Odds and probability are equal only at zero. At every other value the odds are the larger number.</p>\n<div class=\"working\">\n<p>0.25 divided by 1.25 = 0.2</p>\n</div>\n<p>A probability of 0.2, not 0.25. One household in five is covered, not one in four.</p>\n<p>Why it looks reasonable: both odds and probability are written as plain decimals between roughly zero and one. This happens whenever the event is more likely to fail than succeed. A reader has nothing on the page to tell the two apart. The only fix is to ask, every time, whether the number was labelled odds or probability. The label is the only thing that survives being printed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a probability of coverage is 0.6<br />\nodds equal probability divided by 1 plus probability<br />\n0.6 divided by 1.6 = 0.375<br />\nso the odds of coverage are 0.375</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The formula on the second line is wrong. Odds are the probability divided by its complement — one minus the probability — not by one plus the probability.</p>\n<div class=\"working\">\n<p>1 minus 0.6 = 0.4</p>\n</div>\n<div class=\"working\">\n<p>0.6 divided by 0.4 = 1.5</p>\n</div>\n<p>Odds of 1.5, not 0.375.</p>\n<p>The two formulas look alike. That is exactly why this slip is common: “1 minus p” and “1 plus p” share three of their four characters. A quick check catches it without redoing the division. A probability above 0.5 means the event is more likely than not, so its odds must be above 1. And 0.375 is below 1. That already says the working is wrong, before you even find the broken line.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A briefing note says: “Under the food security law, three in four rural people here are covered.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: whether “three in four” matches the Act’s own figure, and what kind of figure it is.</p>\n<p>Section 3(2) sets the rural ceiling at up to 75 per cent, which is the same <dfn data-g=\"66\">fraction</dfn> as three in four.</p>\n<div class=\"working\">\n<p>3 divided by 4 = 0.75</p>\n</div>\n<p>So the note’s figure matches the Act’s ceiling exactly.</p>\n<p>What this does not establish. The Act’s word is “up to”. A ceiling states the most that can be covered, and the note has silently turned it into a statement of fact about this place. It does not tell you how many people are actually covered here.</p>\n<p>And section 3(2) names no State or district. The Act leaves each State’s share to the Central Government under section 9, so it says nothing about this place in particular. Nor does it tell you whether the people entitled under the ceiling have actually been identified and issued a ration card. That is a separate administrative step, and the Act does not guarantee it happens up to the limit it sets.</p>"
+  }
+ ]
+}

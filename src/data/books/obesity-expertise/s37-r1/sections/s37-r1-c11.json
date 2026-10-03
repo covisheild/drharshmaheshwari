@@ -1,0 +1,155 @@
+{
+ "format": 1,
+ "id": "s37-r1-c11",
+ "label": "11",
+ "title": "The National Food Security Act and the public distribution system",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-24.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The National Food Security <dfn data-g=\"3\">Act</dfn>, 2013 (Act 20 of 2013) makes a quantity of grain a legal <dfn data-g=\"116\">entitlement</dfn>. Under section 3(1), every person in a <dfn data-g=\"285\">priority household</dfn> is entitled to five kilograms of foodgrains per person per month, at the prices in Schedule I. Households under the Antyodaya Anna Yojana, as many in each State as the Central Government specifies, are entitled instead to thirty-five kilograms per household per month.</p>\n<p>Section 2(5) defines foodgrains as rice, wheat or coarse grains, or any mix of them.</p>\n<p>Section 3(2) extends the entitlement to up to seventy-five per cent of the rural population and up to fifty per cent of the urban population. Under section 9 the Central Government fixes how many people each State covers. Under section 10 the State Government picks the Antyodaya and priority households within that number.</p>\n<p>Since 1 January 2023 the grain has been issued free, by decision of the Union government under the Pradhan Mantri Garib Kalyan Anna Yojana. That decision was extended on 29 November 2023 for five years from 1 January 2024.</p>",
+   "refs": [
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Since 2013, a set quantity of grain each month has been a legal right for up to three-quarters of rural and half of urban Indians. The law is the National Food Security Act (NFSA).</p>\n<p>There are two kinds of eligible household. The poorest are Antyodaya households. They get 35 kg of grain a month for the whole household. The rest are priority households. They get 5 kg a month for each person in the household.</p>\n<p>The grain comes from a <dfn data-g=\"128\">fair price shop</dfn>, a licensed ration shop.</p>\n<p>The Act set a price of at most Rs 3 a kg for rice. Since January 2023 the grain has been free. That came from a Union government decision, not from a change in the Act.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c11-household-entitlement.png",
+   "alt": "A rising straight line for priority households, from 5 kg at 1 person to 50 kg at 10, and a flat line at 35 kg for Antyodaya households. They cross at 7 people.",
+   "w": 1357,
+   "h": 654,
+   "caption": "Grain a month under section 3(1) of the National Food Security Act, 2013. A priority household gets 5 kg for each person; an Antyodaya household gets 35 kg whatever its size. The two are equal at 7 people, and above that the priority household gets more."
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c11-grain-per-person.png",
+   "alt": "A flat line at 5 kg a person for priority households, and a falling curve for Antyodaya households, 35 divided by household size, from 35 kg at 1 person to 3.5 kg at 10. They meet at 7 people.",
+   "w": 1357,
+   "h": 655,
+   "caption": "The same rule per person. Every member of a priority household gets 5 kg a month, whatever its size. An Antyodaya household’s 35 kg is shared, so each member’s grain is 35 divided by the number of people. It falls to 5 kg at 7 people and to 3.5 kg each at 10."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the figure everyone quotes, 5 kg a person, because it is half the rule.</p>\n<p>Search for the National Food Security Act, 2013 on the India Code website and open it. Read section 3(1). A person in a priority household gets “five kilograms of foodgrains per person per month”. Keep reading into the proviso. An <dfn data-g=\"20\">Antyodaya household</dfn> gets “thirty-five kilograms of foodgrains per household per month”. One is per person, the other per household. Book 0, A5, warned that Indian entitlements change their <dfn data-g=\"88\">denominator</dfn> without warning. Here is one.</p>\n<p>Work out both for households of different sizes, in kilograms a month.</p>\n<table style=\"width:96%;\">\n\n<thead>\n<tr>\n<th>people in the household</th>\n<th>priority household</th>\n<th>Antyodaya household</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>5</td>\n<td>35</td>\n</tr>\n<tr>\n<td>2</td>\n<td>10</td>\n<td>35</td>\n</tr>\n<tr>\n<td>4</td>\n<td>20</td>\n<td>35</td>\n</tr>\n<tr>\n<td>6</td>\n<td>30</td>\n<td>35</td>\n</tr>\n<tr>\n<td>7</td>\n<td>35</td>\n<td>35</td>\n</tr>\n<tr>\n<td>8</td>\n<td>40</td>\n<td>35</td>\n</tr>\n<tr>\n<td>10</td>\n<td>50</td>\n<td>35</td>\n</tr>\n</tbody>\n</table>\n<p>The two are equal where 5 kg times the number of people reaches 35 kg.</p>\n<div class=\"working\">\n<p>35 divided by 5 = 7</p>\n</div>\n<p>At seven people the two rules give the same grain. Above seven, a priority household gets more than an Antyodaya one, though Antyodaya households are the poorest. Per person, a ten-person Antyodaya household gets:</p>\n<div class=\"working\">\n<p>35 divided by 10 = 3.5</p>\n</div>\n<p>That is 3.5 kg each, against 5 kg each in a priority household of any size. Never quote “5 kg a person” for the Act as a whole. Say which kind of household you mean.</p>",
+   "numberRefs": [
+    153
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table shows what the Act entitles, not what arrives. A State may issue rice, wheat or coarse grains in any mix. A shop may run short, and section 8 then entitles the household to a food security allowance instead. And a household’s size on its ration card may differ from the number of people who eat there.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the price. Here the trap is the word “free”.</p>\n<p>In the same Act, open Schedule I. It sets the price “not exceeding rupees 3 per kg for rice, rupees 2 per kg for wheat and rupee 1 per kg for coarse grains”. That held for three years from the Act’s start. After that, the Schedule lets the Central Government fix any price up to the <dfn data-g=\"229\">minimum support price</dfn> (MSP), or for rice the derived MSP. The Act allows zero, but does not require it.</p>\n<p>Next, search the Press Information Bureau website for release 1980689 of 29 November 2023, “Free Foodgrains for 81.35 <dfn data-g=\"78\">crore</dfn> beneficiaries for five years: Cabinet Decision”. The Cabinet decided to give free grain to about 81.35 crore people, that is 813.5 million, for five years from 1 January 2024. The Food Ministry’s year-end review of 2025 adds that free grain began a year earlier, on 1 January 2023, under the Pradhan Mantri Garib Kalyan Anna Yojana.</p>\n<p>Now put the two instruments side by side, as Book 0, F5, taught.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>what</th>\n<th>rests on</th>\n<th>who can change it</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>5 kg a person, 35 kg an Antyodaya household</td>\n<td>the Act, section 3</td>\n<td>Parliament</td>\n</tr>\n<tr>\n<td>a price of at most Rs 3, 2 and 1 a kg, then at most the MSP (derived MSP for rice)</td>\n<td>the Act, Schedule I</td>\n<td>the Central Government, within the Schedule, or by amending it under section 37</td>\n</tr>\n<tr>\n<td>a price of zero, for five years from 1 January 2024</td>\n<td>a Cabinet decision</td>\n<td>the Cabinet</td>\n</tr>\n</tbody>\n</table>\n<p>Five years from 1 January 2024 runs to the end of 2028. The quantity is a right in law. The zero price is a decision with an end date. Before that date, look for the decision that replaces it.</p>",
+   "numberRefs": [
+    154,
+    127,
+    153
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table says who can change each line, not who will. A zero price that has run for years is hard to withdraw, whatever its legal footing. What the table does fix is where to look when it changes: a Cabinet decision, not an <dfn data-g=\"14\">amendment</dfn> in the <dfn data-g=\"153\">Gazette</dfn>.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Five kilograms a person” is the priority-household rule only. Say which household you mean whenever you quote the entitlement.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>About 81.35 crore people, that is 813.5 million, are to get free grain for five years from 1 January 2024. That was the Cabinet decision of 29 November 2023.</p>",
+     "tag": "number",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The quantity is a legal right. The zero price is not. The Act caps the price; the Cabinet made it zero, to the end of 2028.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The Act’s grain is cereal only: rice, wheat or coarse grains. Pulses, oil and vegetables are not in section 3 at all.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The Food Ministry itself calls the public distribution system “supplemental”. Never work out a household’s diet from its ration alone.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Seventy-five per cent rural and fifty per cent urban are national ceilings, “up to”. They are not the share covered in any one State.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>If the grain does not come, section 8 entitles the household to a food security allowance from the State.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back, write down five things.</p>\n<ol type=\"1\">\n<li>The Act and the section that make grain a right.</li>\n<li>The two kinds of eligible household, and what each gets.</li>\n<li>What counts as grain.</li>\n<li>Who picks the households.</li>\n<li>What makes the grain free today.</li>\n</ol>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>The National Food Security Act, 2013, section 3(1).</p>\n<p>A priority household gets 5 kg of grain a month for each person. An Antyodaya household gets 35 kg a month for the household.</p>\n<p>Grain means rice, wheat or coarse grains, or a mix of them (section 2(5)).</p>\n<p>The Central Government fixes how many people each State covers (section 9). The State picks the households (section 10).</p>\n<p>The price of zero rests on the Union government’s decision under the Pradhan Mantri Garib Kalyan Anna Yojana. Free grain began on 1 January 2023. The Cabinet extended it on 29 November 2023 for five years from 1 January 2024. The Act itself only caps the price.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A State announces: “From next month, every ration card will also get 1 kg of pulses free.” A colleague writes that the National Food Security Act has been widened to cover pulses. List what you would check before agreeing, and say what you expect to find.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>First, the Act’s words. Section 3 entitles households to foodgrains. Section 2(5) defines foodgrains as rice, wheat or coarse grains. Pulses are not among them. A State cannot widen a Central Act by announcing it.</p>\n<p>Second, the instrument behind the pulses. Look for the State’s own scheme or order, and the budget line that pays for it. That is almost certainly where it sits.</p>\n<p>Third, whether Parliament has amended the Act. That is the only way to widen it, and it would leave a trace in the Gazette and on India Code.</p>\n<p>What you expect: a State scheme using the ration shop as its counter. That is worth knowing, because a scheme can stop when its budget line stops. The Act’s grain cannot, without Parliament.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has three minutes. The question: “Is free ration grain now a legal right in India?” Answer without jargon. Give one quotable sentence, and say how sure you are.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The quotable sentence:</p>\n<blockquote>\n<p>The grain is a legal right. The fact that it is free is a Cabinet decision, which runs to the end of 2028.</p>\n</blockquote>\n<p>Then the detail, if they want it. The 2013 food security law gives 5 kg a person a month to priority households, or 35 kg to the poorest households. It lets the government charge up to Rs 3 a kg for rice. Since January 2023 the government has charged nothing, and in November 2023 it extended that for five years.</p>\n<p>How sure: certain on what the law says and on what the decision says, because both are published. Not sure at all on what happens after 2028. That needs a new decision nobody has yet made.</p>"
+  }
+ ]
+}

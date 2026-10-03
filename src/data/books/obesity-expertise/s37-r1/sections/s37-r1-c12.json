@@ -1,0 +1,155 @@
+{
+ "format": 1,
+ "id": "s37-r1-c12",
+ "label": "12",
+ "title": "School meals and anganwadi food",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-24.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The National Food Security <dfn data-g=\"3\">Act</dfn>, 2013 gives meals as well as grain, each free of charge and each “so as to meet the nutritional standards specified in Schedule II”.</p>\n<p>Section 4(a) entitles every pregnant woman and lactating mother to a meal during pregnancy and for six months after the birth, through the local <dfn data-g=\"18\">anganwadi</dfn>. Section 5(1)(a) entitles every child from six months to six years to an age-appropriate meal through the anganwadi. Section 5(1)(b) entitles every child up to class VIII, or aged six to fourteen, to one mid-day meal on every school day, in schools run by local bodies or the government, or aided by it. Section 6 adds meals for children who suffer from malnutrition.</p>\n<p>Section 7 has the States run these schemes under Central guidelines, “including cost sharing”.</p>\n<p>Schedule II sets the standard for each group as energy in kilocalories and <dfn data-g=\"292\">protein</dfn> in grams.</p>\n<table style=\"width:98%;\">\n\n<thead>\n<tr>\n<th>group</th>\n<th>type of meal</th>\n<th>energy (kcal)</th>\n<th>protein (g)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>children, 6 months to 3 years</td>\n<td>take-home ration</td>\n<td>500</td>\n<td>12-15</td>\n</tr>\n<tr>\n<td>children, 3 to 6 years</td>\n<td>morning snack and hot cooked meal</td>\n<td>500</td>\n<td>12-15</td>\n</tr>\n<tr>\n<td>children, 6 months to 6 years, who are malnourished</td>\n<td>take-home ration</td>\n<td>800</td>\n<td>20-25</td>\n</tr>\n<tr>\n<td>lower primary classes</td>\n<td>hot cooked meal</td>\n<td>450</td>\n<td>12</td>\n</tr>\n<tr>\n<td>upper primary classes</td>\n<td>hot cooked meal</td>\n<td>700</td>\n<td>20</td>\n</tr>\n<tr>\n<td>pregnant women and lactating mothers</td>\n<td>take-home ration</td>\n<td>600</td>\n<td>18-20</td>\n</tr>\n</tbody>\n</table>\n<p>Two Union schemes deliver meals of these kinds. Pradhan Mantri Poshan Shakti Nirman (PM POSHAN), earlier the Mid-Day Meal Scheme, is run by the Ministry of Education.</p>\n<p>Saksham Anganwadi and Poshan 2.0 is run by the Ministry of Women and Child Development. Its guidelines of 2022 issue under sections 4(a), 5(1)(a), 6 and 7 of the Act.</p>",
+   "refs": [
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    144,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    173,
+    173,
+    174,
+    175
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A pregnant woman gets a meal through her local anganwadi. So does a mother for six months after the birth. An anganwadi is a government child care centre. Every child from six months to six years gets a meal there too.</p>\n<p>PM POSHAN runs the school meal. Saksham Anganwadi and Poshan 2.0 runs the anganwadi food. Some groups get a <dfn data-g=\"169\">hot cooked meal</dfn> (HCM) at the centre. Others get a <dfn data-g=\"367\">take-home ration</dfn> (THR): a prepared food handed out to be eaten at home.</p>\n<p>The Act sets each meal’s size in two numbers only: energy, in kilocalories, and protein, in grams. Each is an amount the meal must reach. Nothing in the Act sets an upper limit on energy, sugar, fat or salt.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c12-pm-poshan-food-norms.png",
+   "alt": "Paired bars for four foods, primary then upper primary: food grains 100 and 150 g, pulses 20 and 30 g, vegetables 50 and 75 g, oil and fat 5 and 7.5 g. Upper primary is 1.5 times primary on every row.",
+   "w": 1357,
+   "h": 658,
+   "caption": "PM POSHAN’s food norms per child per day, in grams, as PIB 1812421 states them. Grain is the heaviest item for both classes, 100 g in primary and 150 g in upper primary. Every bar is an amount to provide. Salt has no number, only as per need, no row sets a ceiling, and sugar is not on the list at all."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a dead end this book met while it was being written.</p>\n<p>Search for the Saksham Anganwadi and Poshan 2.0 Scheme Guidelines of 2022 on the website of the Ministry of Women and Child Development, and open them. Go to 3.2.1, Nutritional Norms. Children from 6 to 72 months get 500 kilocalories and 12 to 15 g of protein a day. That matches Schedule II of the Act. Now read the line under the table: “The Nutritional Norms are under revision and will be notified shortly.”</p>\n<p>So search the Press Information Bureau website for its backgrounder of 14 April 2026, “Mission Poshan 2.0: Strengthening India’s Nutrition Ecosystem”. It says the supplementary-nutrition norms of Schedule II, for anganwadi beneficiaries, “have been revised in January 2023”. It says the old ones were “largely calorie-specific”. It does not give the new numbers. Neither does anything else this book could obtain.</p>\n<p>Here is what you can say, and it is enough. Schedule II, as printed, sets 500 kilocalories for a young child at the anganwadi. The government says those norms were revised in January 2023, and the revised figures are not in the documents at hand. Quote the old figure with that sentence attached, or not at all.</p>\n<p>Now read the one table you do hold, Schedule II, for a different thing: the type of meal. Book 0, F2, drew its energy column. Read the column beside it.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>who</th>\n<th>what they get</th>\n<th>where they eat it</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>children, 6 months to 3 years</td>\n<td>take-home ration</td>\n<td>at home</td>\n</tr>\n<tr>\n<td>children, 3 to 6 years</td>\n<td>morning snack and hot cooked meal</td>\n<td>at the anganwadi</td>\n</tr>\n<tr>\n<td>children, 6 months to 6 years, malnourished</td>\n<td>take-home ration</td>\n<td>at home</td>\n</tr>\n<tr>\n<td>pregnant women and lactating mothers</td>\n<td>take-home ration</td>\n<td>at home</td>\n</tr>\n<tr>\n<td>lower and upper primary classes</td>\n<td>hot cooked meal</td>\n<td>at school</td>\n</tr>\n</tbody>\n</table>\n<p>The 2022 guidelines add that a take-home ration “shall not be given in the form of raw ration (Wheat, Rice, Dal etc.)”. So a take-home ration is a prepared food, a product the State makes or buys. The hot cooked meal is cooked on the day. Those are two different food chains, run by the same scheme.</p>",
+   "numberRefs": [
+    153,
+    176,
+    177
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table is the rule as the Act and the 2022 guidelines set it. States may give a hot cooked meal in place of a take-home ration, which the guidelines allow, so a given State may differ. And a take-home ration is eaten at home. Who in the household eats it is not something any of these documents can tell you.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the school meal. Search the Press Information Bureau website for release 1812421 of 1 April 2022, titled “PM POSHAN”. It is a minister’s written reply in the Lok Sabha. It carries the scheme’s norms per child per day.</p>\n<table style=\"width:72%;\">\n\n<thead>\n<tr>\n<th>item</th>\n<th>primary</th>\n<th>upper primary</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>energy (kcal)</td>\n<td>450</td>\n<td>700</td>\n</tr>\n<tr>\n<td>protein (g)</td>\n<td>12</td>\n<td>20</td>\n</tr>\n<tr>\n<td>food grains (g)</td>\n<td>100</td>\n<td>150</td>\n</tr>\n<tr>\n<td>pulses (g)</td>\n<td>20</td>\n<td>30</td>\n</tr>\n<tr>\n<td>vegetables (g)</td>\n<td>50</td>\n<td>75</td>\n</tr>\n<tr>\n<td>oil and fat (g)</td>\n<td>5</td>\n<td>7.5</td>\n</tr>\n<tr>\n<td>salt and condiments</td>\n<td>as per need</td>\n<td>as per need</td>\n</tr>\n</tbody>\n</table>\n<p>The first two rows match Schedule II exactly. The rest is new. They are the food, by weight, that a school is to buy and cook to reach those two numbers.</p>\n<p>Read the table for what kind of rule each row is. Every number is an amount to provide. Grain is the heaviest item on the list. Salt has no number at all, only “as per need”. No row sets a ceiling. Nothing caps the energy or limits the fat, and nothing mentions sugar.</p>\n<p>Compare the anganwadi guidelines of 2022. They say “Only jaggery should be used for sweetening; white sugar should not be used.” So one scheme names a sweetener rule and the other names none.</p>",
+   "numberRefs": [
+    178
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This is the table as a 2022 reply in Parliament states it. The Ministry of Education’s own guidelines of 2023 could not be obtained for this book, and they may add detail, such as menu rules, that this table leaves out. The scheme was approved for 2021-22 to 2025-26. Whether and on what terms it runs beyond that is not in the documents held.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Anganwadi children get 500 kilocalories” is the old norm. A government backgrounder of April 2026 says Schedule II’s supplementary-nutrition norms “have been revised in January 2023”. They cover children from 6 months to 6 years, pregnant women, lactating mothers and adolescent girls. The backgrounder gives no new figures. It says nothing of the school-meal rows. The Act lets the Central Government amend a Schedule by <dfn data-g=\"250\">notification</dfn> (section 37). No such notification is held.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Every number in Schedule II and in the PM POSHAN norms table is an amount to reach. None is a ceiling. The only rule on sugar in the documents held is the anganwadi guidelines’ ban on white sugar. It limits the kind of sweetener, not the amount.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The anganwadi guidelines say their own programme was “driven by <dfn data-g=\"42\">calorie</dfn> intake rather than on balanced diets”.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A take-home ration is a prepared food, not grain. The 2022 guidelines forbid raw rice, wheat or dal as a take-home ration. Grain still goes in, as an ingredient of the prepared food (3.4).</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Under the 2022 guidelines, pregnant women and lactating mothers, children from 6 to 36 months, children with severe acute malnutrition, and adolescent girls aged 14 to 18 where covered get a take-home ration. Schedule II’s row says only “malnourished”. Children from three to six get a morning snack and a hot cooked meal at the centre.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Centre and States share the anganwadi food bill. The 2022 guidelines set the Centre’s share of supplementary nutrition at 50 per cent in States with a <dfn data-g=\"204\">legislature</dfn>. It is 90 per cent in the north-eastern and Himalayan States, and all of it in Union territories without a legislature. No document held gives PM POSHAN’s split. Do not guess it.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Both schemes were approved for 2021-22 to 2025-26. Before you describe either scheme as it is today, find the current approval.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Take each person below. Name the section of the National Food Security Act that entitles them. Name the scheme that delivers it. Say whether they get a take-home ration or a hot cooked meal.</p>\n<ol type=\"1\">\n<li>A child of two.</li>\n<li>A child of four.</li>\n<li>A child in upper primary at a government school.</li>\n<li>A woman five months pregnant.</li>\n</ol>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<ol type=\"1\">\n<li>Section 5(1)(a). Saksham Anganwadi and Poshan 2.0, through the anganwadi. A take-home ration.</li>\n<li>Section 5(1)(a). The same scheme. A morning snack and a hot cooked meal at the anganwadi.</li>\n<li>Section 5(1)(b). PM POSHAN. A hot cooked meal at school, on the upper primary norm.</li>\n<li>Section 4(a). Saksham Anganwadi and Poshan 2.0. A take-home ration.</li>\n</ol>\n<p>If the two-year-old is malnourished, section 6 applies as well, and the Schedule II row is the 800-kilocalorie take-home ration.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A district officer says this in a review meeting.</p>\n<blockquote>\n<p>Our school meals are legally required to supply 450 kilocalories. Several schools serve more, so they are in breach of the Act.</p>\n</blockquote>\n<p>Say what is wrong, and what the officer would need before any school could be in breach.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The Act does not work that way. Section 5(1)(b) gives the meal “so as to meet the nutritional standards specified in Schedule II”. Schedule II gives 450 kilocalories for lower primary. That is a standard the meal must reach. It is not a limit it must stay under. A school serving more has met the standard, not broken it.</p>\n<p>For upper primary, Schedule II gives 700, not 450.</p>\n<p>A school could breach a rule by serving too much only if some instrument set a ceiling. That could be an amended Schedule, a guideline or a State order. Ask to see it. If none exists, the officer’s concern may be sound, but its remedy is a new norm. Nobody can enforce an old one.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Explain to a first-year resident, in ten minutes with a whiteboard, where the food a four-year-old eats at an anganwadi comes from in law. Draw the chain from Parliament to the plate.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw four boxes, top to bottom.</p>\n<p>Box 1, Parliament: the National Food Security Act, 2013. Section 5(1)(a) gives every child from six months to six years a free meal at the anganwadi. Schedule II sets its size. A child of three to six gets a morning snack and a hot cooked meal worth 500 kilocalories and 12 to 15 g of protein. Mark that figure “old norm, revised January 2023, new figures not held”.</p>\n<p>Box 2, the Union ministry: the Saksham Anganwadi and Poshan 2.0 guidelines of 2022, issued under sections 4, 5, 6 and 7. They say who gets a take-home ration and who a hot cooked meal. They also set at least 300 days a year of food.</p>\n<p>Box 3, the State: it runs the scheme and pays its share of the food. That share is half in a State with a legislature, outside the north-eastern and Himalayan States. The guidelines leave the food items to the State, so the State sets the menu.</p>\n<p>Box 4, the anganwadi centre: it cooks and serves.</p>\n<p>The mechanism the resident should take away: the law fixes a floor of energy and protein. The ministry fixes who gets which kind of food. The State fixes what is actually on the plate. To change the plate, go to Box 3 or Box 2, not Box 4.</p>"
+  }
+ ]
+}

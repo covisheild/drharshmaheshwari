@@ -1,0 +1,169 @@
+{
+ "format": 1,
+ "id": "s57-r1-c03",
+ "label": "3",
+ "title": "Retrieval practice: pulling it out beats putting it in again",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"448\">Retrieval practice</dfn> is an attempt by a learner, during learning, to bring material they have already met back to mind from memory: to recall it or to recognise it, without looking at it. <dfn data-g=\"445\">Restudy</dfn> is the alternative it is compared with: reading or hearing the same material again, for the same time.</p>\n<p>The <dfn data-g=\"518\">testing effect</dfn> is the finding that a retrieval attempt improves memory on a later test more than restudy does. It holds on a delayed test. On a test a few minutes later, restudy can come out ahead.</p>\n<p>Roediger and Karpicke’s (2006) first experiment shows both halves. Each student reread one passage and tried to recall the other, with no feedback.</p>\n<p>In classrooms, Agarwal, Nunes and Blunt (2021) screened nearly 2,000 abstracts and kept 50 experiments in which each student retrieved alone, closed-book, during class time. From those 50 they computed 49 effect sizes.</p>\n<p>Feedback is showing the learner the correct answer after the attempt. Dunlosky and colleagues (2013) call retrieval practice “practice testing”. In their review, practice testing with feedback beats restudy more reliably than practice testing without it. A <dfn data-g=\"297\">low-stakes test</dfn> is one whose score counts for little or nothing.</p>\n<p>What would overturn this for your setting: well-run comparisons in Indian classrooms, with a delayed test on new questions, that find no gain.</p>",
+   "refs": [
+    53,
+    54,
+    55,
+    56,
+    57,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Most of us were taught that a test measures learning. It also causes it. Pulling something out of memory makes it easier to pull out again later. Reading it again does much less, even though it feels like more.</p>\n<p>The catch is timing. Straight after a session, what was reread looks better.</p>\n<p>In class, use three conditions. Every learner answers alone, without notes; that is how the classroom studies below were run. The score counts for little or nothing, so the test is practice and not judgement. After they have tried, they see the right answer. Of the three, feedback has the clearest evidence behind it.</p>\n<p>The classroom evidence is large and mostly from the United States and Europe. Ten of the experiments were in medical schools. None was in India.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c03-d-by-delay.png",
+   "alt": "Three bars from a baseline: one pointing down, -0.52 for 5 minutes, then two pointing up, 0.95 for 2 days and 0.83 for 1 week.",
+   "w": 1357,
+   "h": 653,
+   "caption": "Roediger and Karpicke (2006), first experiment: the difference between the passage students tried to recall and the one they read again, in standard deviations (d), with the sign of the direction. At 5 minutes it is -0.52, rereading ahead. At 2 days it is 0.95 and at 1 week 0.83, recall ahead."
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c03-classroom-effect-sizes.png",
+   "alt": "Four bars counting effect sizes: 3 that favoured the comparison, 18 below 0.50, 12 between 0.50 and 0.80, and 16 above 0.80.",
+   "w": 1357,
+   "h": 656,
+   "caption": "Agarwal, Nunes and Blunt (2021): the 49 effect sizes from classroom experiments on retrieval practice, counted by size. 3 favoured the comparison, 18 were small benefits, below 0.50, 12 were between 0.50 and 0.80, and 16 were above 0.80. The comparison was re-reading in 19 experiments, lessons without quizzes in 14, questions that were never quizzed in 12, and fewer quizzes in 5. The bars are counts, not one pooled result."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>In section 1, Roediger and Karpicke’s second experiment showed that a check in the last five minutes can pick the wrong method. Their first experiment answers a different question: how big is the benefit of trying to recall, in the unit section 2 gave you for comparing results?</p>\n<p>Open Roediger and Karpicke, “Test-enhanced learning: taking memory tests improves long-term retention”, <em>Psychological Science</em> 2006, at https://doi.org/10.1111/j.1467-9280.2006.01693.x. Each student read two short passages. One they read again. For the other, they wrote down all they could remember, and nobody told them what they got wrong. Search the text for 81%.</p>\n<blockquote>\n<p>restudying produced better recall than testing (81% vs. 75%)</p>\n</blockquote>\n<p>Beside it the paper prints d = 0.52. Read on to the 2-day and 1-week results.</p>\n<blockquote>\n<p>the initially tested group recalled more than the additional-study group (68% vs. 54%)</p>\n</blockquote>\n<blockquote>\n<p>The tested group recalled 56% of the material, whereas the restudy group recalled only 42%</p>\n</blockquote>\n<p>Beside these it prints d = 0.95 and d = 0.83. The d is a <dfn data-g=\"494\">standardised mean difference</dfn>: the gap between the two means, in standard deviations. The paper gives each d as a size, with no sign. Give it the sign of the direction, tried to recall minus read again, as section 2 taught you to do for a <dfn data-g=\"308\">mean difference</dfn>. The gap in <dfn data-g=\"362\">percentage</dfn> points (Book 0, A4) goes beside it.</p>\n<div class=\"working\">\n<p>75 minus 81 = -6<br />\n68 minus 54 = 14<br />\n56 minus 42 = 14</p>\n</div>\n<table style=\"width:97%;\">\n\n<thead>\n<tr>\n<th>test taken after</th>\n<th>read it again (%)</th>\n<th>tried to recall it (%)</th>\n<th>gap (points)</th>\n<th>d, recall minus reread</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>5 minutes</td>\n<td>81</td>\n<td>75</td>\n<td>-6</td>\n<td>-0.52</td>\n</tr>\n<tr>\n<td>2 days</td>\n<td>54</td>\n<td>68</td>\n<td>14</td>\n<td>0.95</td>\n</tr>\n<tr>\n<td>1 week</td>\n<td>42</td>\n<td>56</td>\n<td>14</td>\n<td>0.83</td>\n</tr>\n</tbody>\n</table>\n<p>Two things to see. First, the benefit of trying to recall is not small once there is a delay: close to one <dfn data-g=\"492\">standard deviation</dfn> at 2 days. Second, the same 14-point gap gives two different d values. A d divides the gap by a spread. The paper does not report that spread, but it must have differed between the two delays. That is why you quote the gap in points beside the d.</p>",
+   "numberRefs": [
+    14
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These were undergraduates at one university reading two short passages, one on the Sun and one on sea otters, tested by writing out what they recalled. Each student had one passage each way. The numbers give the direction and a rough size in that setting, not what your batch will score.</p>\n<p>The d values come from one small laboratory experiment. The classroom evidence, next, is the better guide to size.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>A laboratory is not a lecture hall. So look at the classroom evidence, and at where it was gathered.</p>\n<p>Open Agarwal, Nunes and Blunt, “Retrieval practice consistently benefits student learning”, <em>Educational Psychology Review</em> 2021, at https://pdf.poojaagarwal.com/Agarwal_etal_2021_EDPR.pdf. The authors kept only experiments where every student retrieved alone, without notes, in class time. Search for 5374.</p>\n<blockquote>\n<p>Our review yielded 49 effect sizes and a total n = 5374, the majority of which (57%) revealed medium or large benefits from retrieval practice.</p>\n</blockquote>\n<p>Each <dfn data-g=\"149\">effect size</dfn> is a Cohen’s d, the same kind of number as the d values above. Search for 0.80 and read the next two sentences.</p>\n<blockquote>\n<p>Overall, 16 effect sizes indicated large benefits from retrieval practice (d &gt; 0.80), 12 indicated medium benefits (0.50 &lt; d &lt; 0.80), and 18 were small or very small (d &lt; 0.50). Only three out of 49 effect sizes revealed a negative effect</p>\n</blockquote>\n<p>Check that the four groups account for every effect size, then turn the paper’s 57% back into a <dfn data-g=\"204\">fraction</dfn>.</p>\n<div class=\"working\">\n<p>16 plus 12 plus 18 plus 3 = 49<br />\n16 plus 12 plus 18 = 46<br />\n16 plus 12 = 28<br />\n28 divided by 49 = 0.571428571</p>\n</div>\n<p>So 46 of the 49 favour retrieval practice, as the paper says elsewhere. The 18 small ones are small benefits, not losses.</p>\n<p>Now search for Pakistan. It is in Table 2, under Location.</p>\n<table style=\"width:83%;\">\n\n<thead>\n<tr>\n<th>where the experiments were run</th>\n<th>experiments</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>United States, Denmark, Netherlands, Sweden</td>\n<td>47</td>\n</tr>\n<tr>\n<td>Pakistan, Taiwan, Turkey</td>\n<td>3</td>\n</tr>\n</tbody>\n</table>\n<p>The paper calls the first four countries western, educated, industrialized, rich and democratic (<dfn data-g=\"548\">WEIRD</dfn>). Those seven countries are every country in the review. India is not one of them. Search once more, for medical schools.</p>\n<blockquote>\n<p>and 10 experiments were conducted in medical schools</p>\n</blockquote>\n<p>Ten of 50 experiments were run on students like yours, and none of the 50 in your country. That is where your own measurement comes in (section 2).</p>\n<p>Last, search for without feedback.</p>\n<blockquote>\n<p>Studies without feedback resulted in mostly small or very small effects on learning.</p>\n</blockquote>",
+   "numberRefs": [
+    79
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 49 effect sizes are not one experiment repeated 49 times. The designs, subjects and delays differ, and the authors chose not to average them. Read “28 of 49 above 0.50” as a count, not as the size of the effect you should expect.</p>\n<p>The classroom effects were smaller when the final test came at the end of a semester than when it came one to three days after the last quiz. A quiz this week does not by itself carry to an examination months away. The next section is about that.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Now build the last ten minutes of your own session with the three conditions in it. Say the session taught a batch how to read the nutrition panel on a packet of biscuits.</p>\n<p>Ask them to put their notes and phones away. Each student, alone, writes down every step of reading the panel they can remember. No talking to a neighbour. Weinstein and colleagues describe exactly this move: “asking students to put their class materials away and try to write out everything they know about a topic”.</p>\n<p>Tell them nobody will collect the sheets. Then show the steps on the board and let each student mark their own sheet.</p>\n<p>Each choice has a reason. Alone: this is what the classroom evidence covers. Agarwal’s review left out pair work, because in a pair one student may do the remembering while the other watches. The one pair study it describes did better than students working alone. So “alone” is the safe choice, not a proven one. Low-stakes: Weinstein reports a study where students quizzed under high pressure did worse on a later test than students quizzed under low pressure. The answer at the end: practice testing with feedback beats restudy more reliably than testing alone.</p>\n<p>Next week, open the class with three short questions on this week’s panel before you teach anything new. Then you have a second retrieval, on a delay.</p>\n<p>The same design works outside a lecture hall. At a monthly meeting of accredited social health activist (ASHA) workers, each person answers aloud in turn, before the answer is given.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>If almost nobody can answer, the attempt teaches little on its own. Weinstein’s review says retrieval that is “extremely low” in success is unlikely to help, “particularly in the absence of feedback”. Give the answer every time, and teach again what most of the room missed.</p>\n<p>Answering aloud in turn is not the same as each person writing alone. Later speakers hear the earlier answers. The classroom evidence above is for individual retrieval.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“A test is for finding out what they know; the teaching happens before it” is the error. The attempt to recall is itself a learning event.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Run retrieval so that every learner answers alone and without notes, the score counts for little or nothing, and the correct answer follows the attempt.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Keep quizzes that are for learning low-stakes.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>In classrooms, 28 of 49 effect sizes were above 0.50 and 46 of 49 favoured retrieval practice (Agarwal and colleagues, 2021). The comparison was re-reading in 19 experiments, lessons without quizzes in 14, questions that were never quizzed in 12, and fewer quizzes in 5.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>None of the 50 classroom experiments in that review (which searched up to January 2018) was run in India. Measure it in your own batch, with a delayed test.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Retrieval with no feedback and little success is where the method stops paying. Classroom studies without feedback showed mostly small or very small effects. When almost nobody can answer, give the answer and reteach; do not count the silence as practice.</p>",
+     "tag": "boundary",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>If your final test repeats the quiz questions word for word, a gain may be memory of those questions. To find out whether they learned the idea, test it with new questions.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Take one hour you will teach in the next month: a batch of MBBS students, a group of residents, or a meeting of ASHA workers. Plan its last ten minutes.</p>\n<p>Write down four things. What will each learner try to recall? How will you make sure each one answers alone? How will you keep the stakes low? When will they see the right answer? Then write down when they will recall it a second time, and on what day you will test whether it lasted.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A good plan names four things, and each can be checked against the evidence in this section.</p>\n<p>What they retrieve: something specific from the hour, such as “the four steps of reading the panel”, not “anything you remember”.</p>\n<p>Alone: each learner writes, or answers in private. A chorus answer, or a pair answering together, lets some learners watch rather than retrieve. Agarwal’s review kept only experiments where each student retrieved individually.</p>\n<p>Low stakes: the score is not recorded, or counts for almost nothing, and you say so before they start.</p>\n<p>Feedback: the correct answer comes after every attempt. Without it, the classroom effects were mostly small.</p>\n<p>The second retrieval sits on a later day, not straight after the first. The test of whether it lasted comes days after the session, not in its last five minutes. At five minutes, rereading can look better than recall.</p>\n<p>A plan that tests understanding uses at least some questions that are worded differently from the quiz.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist rings you for three minutes. She has read that “tests help students learn” and wants to know whether that is true, and whether it has been shown in India. Say what you would tell her, including one quotable sentence.</p>",
+   "type": "teaching",
+   "confidence": true,
+   "answer": "<p>Answer first. Yes: trying to remember something helps you keep it better than reading it again, and this has been tested many times.</p>\n<p>Give one concrete result. In one experiment, students who tried to recall a passage remembered 56% of it a week later; students who reread it remembered 42%.</p>\n<p>Give the classroom evidence with its limit. In a review of 50 classroom experiments, almost all of the 49 results favoured the recall practice. None was done in India.</p>\n<p>A quotable sentence: “A quiz does not only measure learning. Given without pressure, with the answers afterwards, it is one of the best-tested ways of causing it.”</p>\n<p>Calibrate. The evidence is strong that it works; how big the gain is in an Indian classroom has not been measured in this body of work. Do not say “tests raise marks by” any figure.</p>"
+  }
+ ]
+}

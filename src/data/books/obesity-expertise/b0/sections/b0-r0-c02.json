@@ -1,0 +1,163 @@
+{
+ "format": 1,
+ "id": "b0-r0-c02",
+ "label": "A2",
+ "title": "Fractions",
+ "part": "A",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"66\">fraction</dfn> is a division that has not yet been carried out. The number below the line, the <dfn data-g=\"47\">denominator</dfn>, states how many equal parts the whole was cut into. The number above the line, the <dfn data-g=\"129\">numerator</dfn>, states how many of those parts are being counted.</p>\n<p>Multiplying the numerator and the denominator by the same amount, or dividing both by the same amount, leaves the value of the fraction unchanged.</p>",
+   "refs": [
+    5
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A fraction is a sum you have not done yet.</p>\n<p>Cut a roti into fourteen equal pieces and take nine of them. Now cut the same roti into seventy pieces and take forty-five. You are holding exactly the same amount of roti. Both numbers in the second fraction are five times the numbers in the first, so the two fractions are one number written twice.</p>\n<p>Multiply the top and the bottom by the same thing, or divide both by the same thing, and the value stays put. Change one of them on its own and you have a different number.</p>\n<p>To add two fractions, first make the bottoms match.</p>\n<p>Take two fifths and one third. Fifths and thirds are different sizes of piece, so there is nothing yet to add. Find a size that both can be cut into. Fifteen works, because five goes into fifteen and so does three.</p>\n<p>Now rewrite each one at that size. Two fifths: multiply top and bottom by three, giving six fifteenths. One third: multiply top and bottom by five, giving five fifteenths. Neither number changed. You cut the same amount into smaller pieces.</p>\n<p>Six fifteenths and five fifteenths are the same size of piece, so count them. Eleven fifteenths.</p>\n<p>Add the tops and the bottoms instead and you get three eighths. That is less than the two fifths you started with, and adding something to a number cannot make it smaller. That is your check.</p>\n<p>A fraction is always a fraction of something. So before you compare two fractions, or add them, check that they were cut from the same whole. If they were not, the arithmetic still works and the answer still means nothing.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "a2-common-denominator.png",
+   "alt": "Four bars. The first is divided into five parts with two shaded; the second into three parts with one shaded. Below, the same two bars are divided into fifteen parts, with six and five shaded, and the shaded lengths match the bars above.",
+   "w": 1745,
+   "h": 546,
+   "caption": "Two fifths and one third, then the same two amounts cut into fifteenths. The shaded length does not change when the pieces are re-cut, which is the whole of why a common denominator is allowed."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Open the National Food Security Act, 2013, which you can open at <a href=\"https://indiacode.gov.in/handle/123456789/496105\" class=\"uri\">https://indiacode.gov.in/handle/123456789/496105</a>. Search inside it for the words NUTRITIONAL STANDARDS. It is the second schedule, and it sets what a meal under these schemes has to deliver.</p>\n<p>The standard for a lower primary hot cooked meal is 450 calories and 12 grams of protein. The standard for an upper primary one is 700 calories and 20 grams. The Act sets what a meal has to deliver. It does not say what any child receives.</p>\n<p>Calories count food energy and grams count weight. A number with its label stripped off is not a number any more.</p>\n<p>What fraction of the upper primary energy standard is the lower primary one?</p>\n<p>Write it as a fraction, energy over energy, and work it down.</p>\n<div class=\"working\">\n<p>450 over 700<br />\n= 45 over 70    (both ended in a zero, so divide both by ten)<br />\n= 9 over 14    (both are in the five times table, so divide both by five)</p>\n</div>\n<p>Somebody hears that and says: a lower primary child gets nine fourteenths of what a child needs.</p>\n<p>They have swapped the whole. Nine fourteenths is the lower primary standard as a fraction of the upper primary standard. Neither is what a child needs in a day, and those two rows of the Act say nothing whatever about a day’s requirement. The fraction is right. The sentence built on it is not.</p>\n<p>Do the protein column yourself now, the same way. Twelve over twenty. Divide both by four and you have three fifths.</p>\n<p>Nine fourteenths is a little under two thirds. Three fifths is a little over half.</p>",
+   "numberRefs": [
+    6
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Fractions only behave if the parts are equal.</p>\n<p>This section tells you how to handle a fraction once you have one. It cannot tell you what the whole was. It comes from the document, the table heading or the person who handed you the number. If none of them says, you do not have a fraction yet.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A fraction on its own is not a finding. Nine fourteenths is only a fact once you can say what the fourteen was.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>To simplify a fraction, divide the top and the bottom by the same number. To compare or add two, put them over the same denominator first.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Name which standard, and name the group it was written for.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Asked in public what fraction of a child’s need a meal covers, do not answer with the fraction you happen to have.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Ask for the denominator every time, of your own numbers first.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>The second schedule of the National Food Security Act, 2013 gives a take-home ration for children aged six months to three years of 500 calories. For a malnourished child aged six months to six years it gives 800 calories. Write the first as a fraction of the second and reduce it as far as it will go. Then say, in one sentence, what that fraction is and is not a fraction of.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>Start with 500 over 800.</p>\n<div class=\"working\">\n<p>500 over 800<br />\n= 50 over 80    (both ended in a zero, so divide both by ten)<br />\n= 5 over 8    (both are in the ten times table, so divide both by ten again)</p>\n</div>\n<p>Five eighths. Check it backwards: five times a hundred is five hundred, eight times a hundred is eight hundred.</p>\n<p>What it is: the ordinary take-home ration standard for a child of six months to three years. It is expressed as a fraction of the standard set for a malnourished child of six months to six years. The two rows cover different age bands, so even this is a comparison across two groups.</p>\n<p>What it is not: a fraction of what either child needs, or of what either child eats. Both figures are standards for a ration. The Act sets them; it does not measure anybody.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a line from a draft note.</p>\n<blockquote>\n<p>Lower primary children get 12 grams of protein and upper primary children get 20 grams. So lower primary children are getting three fifths of their protein.</p>\n</blockquote>\n<p>The arithmetic is right. Say what is wrong with the sentence, and rewrite it so it is defensible.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Twelve over twenty does reduce to three fifths, so nothing has gone wrong in the sum.</p>\n<p>The whole has been swapped. Three fifths is the lower primary standard as a fraction of the upper primary standard. The sentence turns it into a fraction of “their protein”, which would have to mean a daily requirement for a child of that age. No such figure appears in those rows. One fraction has been quietly moved from one denominator to a different one.</p>\n<p>A defensible rewrite. “The protein standard for a lower primary meal is 12 grams. That is three fifths of the 20 grams set for an upper primary meal.”</p>\n<p>Notice what the rewrite costs. It is longer, it names both wholes, and it makes no claim about what a child needs. That is the trade every time.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Reduce each of these as far as it will go. Show the number you divided by at each step.</p>\n<div class=\"working\">\n<p>6 over 8    20 over 50    36 over 48</p>\n</div>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>6 over 8    = 3 over 4    (divide both by 2)<br />\n20 over 50 = 2 over 5    (divide both by 10)<br />\n36 over 48 = 18 over 24    (divide both by 2)<br />\n= 9 over 12    (divide both by 2)<br />\n= 3 over 4    (divide both by 3)</p>\n</div>\n<p>Check the last one backwards: three times twelve is thirty-six, four times twelve is forty-eight.</p>\n<p>Notice that the first and the last came out the same. Two fractions that look nothing alike can be one number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Which is larger, three fifths or five eighths? Put them over the same denominator first.</p>",
+   "level": 2,
+   "answer": "<p>Forty is the smallest number that both five and eight divide into, so use forty.</p>\n<div class=\"working\">\n<p>3 over 5 = 24 over 40    (multiply top and bottom by 8)<br />\n5 over 8 = 25 over 40    (multiply top and bottom by 5)</p>\n</div>\n<p>Same denominator now, so the tops can be compared directly. Twenty-five is more than twenty-four, so five eighths is larger.</p>\n<p>The gap is one fortieth, which is small. Guessing by eye would have been a coin toss.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Add two fifths and one third. Then say why you could not simply add the tops and the bottoms.</p>",
+   "level": 3,
+   "answer": "<p>Fifteen is the smallest number both five and three divide into.</p>\n<div class=\"working\">\n<p>2 over 5 = 6 over 15    (multiply top and bottom by 3)<br />\n1 over 3 = 5 over 15    (multiply top and bottom by 5)<br />\n6 over 15 + 5 over 15 = 11 over 15</p>\n</div>\n<p>Eleven fifteenths.</p>\n<p>Why not add tops and bottoms: that would give 3 over 8, which is less than a half. Two fifths on its own is nearly a half, so adding something to it cannot leave you below a half. The method has to be wrong, and you can see it is wrong without knowing the right answer.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>The same schedule sets protein at 12 grams for a lower primary meal and 20 for an upper primary meal. It sets calories at 450 for the lower primary meal and 500 for a take-home ration for a child of six months to three years. Reduce each of those two pairs to a fraction.</p>",
+   "level": 5,
+   "answer": "<p>Protein first.</p>\n<div class=\"working\">\n<p>12 over 20<br />\n= 3 over 5    (divide both by 4)</p>\n</div>\n<p>Then calories.</p>\n<div class=\"working\">\n<p>450 over 500<br />\n= 45 over 50    (divide both by 10)<br />\n= 9 over 10    (divide both by 5)</p>\n</div>\n<p>Three fifths and nine tenths.</p>\n<p>Two different columns, and two different pairs of things. The protein fraction compares two meals. The calorie fraction compares a meal with a ration. Neither can be quoted without naming the two things it sets against each other.</p>\n<p>One thing to notice about the schedule itself. Four of its six rows give protein as a range — 12 to 15, 20 to 25, 18 to 20. Only the lower and upper primary rows give one figure. So those are the only two protein numbers you can divide without first picking an end of a range. Picking an end is a choice, and a choice has to be declared.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A block has 400 households. Two hundred and forty of them lift their full grain entitlement in a month. Write the share that did as a fraction reduced as far as it will go, and say what the whole was.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>240 over 400<br />\n= 24 over 40    (divide both by 10)<br />\n= 3 over 5    (divide both by 8)</p>\n</div>\n<p>Three fifths.</p>\n<p>What the whole was: the 400 households in the block, not the people in them, and not the households in any other block. Say that out loud when you report the fraction. Three fifths of households and three fifths of people are different claims, and this table supports only one of them.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A block has 320 households. Three eighths of them lifted grain in the first fortnight of the month and a quarter of them lifted it in the second. No household is in both counts. What fraction of the block’s households lifted grain in the month, and how many households is that?</p>",
+   "level": 6,
+   "answer": "<p>Check first that the two fractions can be added at all. Both are fractions of the same whole, the 320 households of this block, and no household is counted twice. Both of those have to hold before any arithmetic is allowed.</p>\n<p>Eight is the smallest number that both eight and four divide into, so work in eighths.</p>\n<div class=\"working\">\n<p>3 over 8 = 3 over 8    (already there)<br />\n1 over 4 = 2 over 8    (multiply top and bottom by 2)<br />\n3 over 8 + 2 over 8 = 5 over 8</p>\n</div>\n<p>Five eighths. Now turn that back into households.</p>\n<div class=\"working\">\n<p>5 over 8 of 320<br />\n= 320 divided by 8, times 5<br />\n= 40 times 5<br />\n= 200 households</p>\n</div>\n<p>Check it the other way round: three eighths of 320 is 120, a quarter of 320 is 80, and 120 plus 80 is 200.</p>\n<p>Keep the whole attached when you report it. Five eighths of the households in this block, in this month. Not of the people in them, and not of any other block.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>1 over 4 + 1 over 4 = 2 over 8 = 1 over 4</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the first one. The tops and the bottoms were both added.</p>\n<div class=\"working\">\n<p>1 over 4 + 1 over 4 = 2 over 4 = 1 over 2</p>\n</div>\n<p>Adding fractions adds the tops only. The denominator says what size the parts are, and that does not change when you take more of them. Two quarters is a half.</p>\n<p>Why it looks reasonable: the answer came back as one quarter, which is a tidy fraction and one of the two you started with. A wrong method that returns a plausible-looking fraction is the hard case, because nothing about the shape of the answer warns you.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a line from a note.</p>\n<blockquote>\n<p>The lower primary meal is 450 calories and the upper primary meal is 700. So the lower primary meal is about two thirds of a child’s daily energy.</p>\n</blockquote>\n<p>The arithmetic behind “two thirds” is right. Find what broke.</p>",
+   "level": 8,
+   "answer": "<p>The arithmetic first, to confirm it.</p>\n<div class=\"working\">\n<p>450 over 700<br />\n= 45 over 70<br />\n= 9 over 14</p>\n</div>\n<p>Nine fourteenths is a little under two thirds, so that much holds.</p>\n<p>What broke is the whole. Nine fourteenths is the lower primary meal as a fraction of the <strong>upper primary meal</strong>. The sentence turns it into a fraction of a child’s daily energy, which is a different quantity and appears nowhere in the schedule.</p>\n<p>Why it looks reasonable: both numbers came off the same table, so the fraction feels as though it belongs to that table. It does. The sentence built on it does not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a line from a district note.</p>\n<blockquote>\n<p>Two fifths of our anganwadi centres and half of our schools reported a shortage, so nine tenths of our facilities had one.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: whether two fifths and a half can be added at all.</p>\n<p>They cannot, as they stand. They are fractions of two different wholes — centres in one case, schools in the other. Adding them adds parts cut from different things.</p>\n<p>Watch what adding them properly would give, even if the wholes did match.</p>\n<div class=\"working\">\n<p>2 over 5 = 4 over 10<br />\n1 over 2 = 5 over 10<br />\n4 over 10 + 5 over 10 = 9 over 10</p>\n</div>\n<p>So nine tenths is where the number came from. But a fraction of all facilities needs counts, not fractions. With 50 centres and 200 schools it would be 120 out of 250, which is under a half.</p>\n<p>What this does not establish. It does not tell you the real figure, because the note gives no counts. It does not tell you whether “a stock shortage” means the same thing in both places. Ask for the two counts, and ask for the definition.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Somebody hands you a one-line finding.</p>\n<blockquote>\n<p>Protein provision improved: the meal now meets three fifths of the standard, up from a half.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the size of the change, and whether the two fractions share a whole.</p>\n<div class=\"working\">\n<p>3 over 5 = 6 over 10<br />\n1 over 2 = 5 over 10<br />\n6 over 10 - 5 over 10 = 1 over 10</p>\n</div>\n<p>A tenth of the standard. That is the change, and it is worth stating that way rather than as “three fifths, up from a half”, which sounds larger.</p>\n<p>Now the whole. Both are fractions of “the standard”, so they can be compared — but only if it is the same standard on both dates. The schedule sets different standards for lower primary, upper primary and take-home rations, so this needs saying.</p>\n<p>What this does not establish. It says nothing about how many children that tenth reaches, or whether the standard itself changed between the two dates. A rising fraction of a falling standard is not an improvement, and this sentence cannot tell the two apart.</p>"
+  }
+ ]
+}

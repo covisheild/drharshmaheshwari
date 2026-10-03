@@ -1,0 +1,165 @@
+{
+ "format": 1,
+ "id": "s47-r1-c08",
+ "label": "8",
+ "title": "Schemes and budgets: policy without a statute",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A scheme is a programme the executive runs, with a name, a period, an amount of money and guidelines saying how it works. Some Union schemes, such as the National Mission on Edible Oils – Oilseeds (NMEO-Oilseeds), rest on no <dfn data-g=\"3\">Act</dfn> of their own.</p>\n<p>Two articles of the <dfn data-g=\"81\">Constitution</dfn> carry the money. Under Article 112(1) the President lays before both Houses of Parliament, every financial year, a statement of the estimated receipts and expenditure of the Government of India, the <dfn data-g=\"21\">annual financial statement</dfn>. Under Article 282 the Union or a State may make grants for any public purpose, even where the purpose is not one on which that <dfn data-g=\"231\">legislature</dfn> may make laws.</p>\n<p>The Union’s <dfn data-g=\"138\">executive power</dfn> extends to the matters on which Parliament may make laws (Article 73(1)(a)). Neither the oilseeds release nor the Poshan 2.0 guidelines names the article it relies on; the guidelines name an Act instead.</p>\n<p>A <dfn data-g=\"55\">centrally sponsored scheme</dfn> such as Mission Saksham <dfn data-g=\"20\">Anganwadi</dfn> and Poshan 2.0 is carried out through the State Governments and Union Territory administrations. The cost is shared between the Central Government and the State by a stated <dfn data-g=\"348\">ratio</dfn>, which differs by component and by kind of State. An anganwadi is “a child care and development center” set up under the Integrated Child Development Services Scheme (National Food Security Act, section 2(1)).</p>\n<p>A scheme can also be the way a right in an Act is delivered.</p>\n<p>A national policy statement is a third kind of document. The National Health Policy 2017 was approved by the Union <dfn data-g=\"45\">Cabinet</dfn> on 15 March 2017. It was not passed by Parliament, so it is not a <dfn data-g=\"401\">statute</dfn>.</p>",
+   "refs": [
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Governments in India do not act on nutrition and health only through Acts. They also run schemes. A scheme is approved for a few years and given money. The States may carry it out and pay part of the cost.</p>\n<p>A scheme is changed the way it was made: by the next approval, or by the next budget. You do not need Parliament to start one, and nothing in law stops it from ending, unless, like Poshan 2.0, it is how an Act’s right is delivered.</p>\n<p>Some schemes are the way a right written in an Act reaches people. Then the scheme can change while the right in the Act stays where it is.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s47-r1-c08-poshan-split.png",
+   "alt": "Grouped bars for three components. General components: Centre 60, State 40. Salary: Centre 25, State 75. Supplementary nutrition: Centre 50, State 50.",
+   "w": 1358,
+   "h": 658,
+   "caption": "Poshan 2.0 in a State with a legislature, under the 2022 guidelines: of every Rs 100, the Centre (the Central Government) pays 60 and the State 40 for general components, 25 and 75 for salary, 50 and 50 for supplementary nutrition. Each pair makes 100, so every component touches both budgets."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a sentence a colleague might put in your department’s draft. It is made up.</p>\n<blockquote>\n<p>Under the National Health Policy 2017, the government is committed to taxing unhealthy foods.</p>\n</blockquote>\n<p>Open the National Health Policy 2017 (https://nhsrcindia.org/sites/default/files/2021-07/National%20Health%20Policy%202017%20%28English%29%20.pdf). Search for “taxes on specific commodities”. Section 3.1 says: “The Government could consider imposing taxes on specific commodities-such as the taxes on tobacco, alcohol and foods having negative impact on health”. “Could consider” is not “is committed to”. The sentence allows nothing and requires nothing. A tax on a food still needs the body that sets tax rates and the instrument that sets them, which the next section traces.</p>\n<p>Now find who approved the policy. Search its text. The parts of it read for this book do not say. The Ministry of Health and Family Welfare’s Year Ender of 18 December 2017 (https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1513000) does: “The Cabinet in its meeting held on 15th March, 2017 approved the National Health Policy (NHP) 2017.” That is a Cabinet decision, not an Act of Parliament.</p>\n<p>Last, read what the policy says about law. Section 27 asks “whether to pass a health rights bill making health a fundamental right”. It does not pass one. It “advocates a progressively incremental assurance based approach”. The policy itself treats a legal right as something for the future.</p>\n<p>So rewrite the sentence.</p>\n<blockquote>\n<p>The National Health Policy 2017, approved by the Union Cabinet on 15 March 2017, says the government could consider taxes on foods having a negative impact on health. It does not impose one.</p>\n</blockquote>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This reads what one policy says, not what came after it. Whether later decisions cite the policy, or acted on its sentence about food taxes, is not in these texts. Nothing here links any later tax to this policy. And the held copy is an excerpt: sections 3.3 to 25 were not read, so this does not say what the rest of the policy contains.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is how to read any scheme. Ask four questions. Who approved it? For what period? With how much money, from whose budget? Is there an Act under it?</p>\n<p>Take two schemes. First, NMEO-Oilseeds. Open the Cabinet’s release of 3 October 2024 (https://www.pib.gov.in/PressReleasePage.aspx?PRID=2061646). The first paragraph answers three questions: the Union Cabinet approved it, for 2024-25 to 2030-31, with an outlay of Rs 10,103 <dfn data-g=\"91\">crore</dfn>. A crore is 1,00,00,000, or ten million. Search the release for “Act”. No Act is named.</p>\n<p>Now search for “dietary”. The mission “will promote awareness of recommended dietary guidelines for edible oils through an Information, Education, and Communication (IEC) campaign”. So a campaign on cooking oil, of the kind your department might propose for the district, already sits inside a mission that rests on a Cabinet approval and a budget.</p>\n<p>Before you quote the outlay, see what it is not.</p>\n<div class=\"working\">\n<p>10,103 divided by 7 is about 1,443.3</p>\n</div>\n<p>About Rs 1,443 crore a year on average. The release gives no year-by-year split, so no single year’s spending can be read from it.</p>\n<p>Second, Saksham Anganwadi and Poshan 2.0. Open its 2022 guidelines (https://wcd.gov.in/documents/uploaded/Mission%20Saksham%20Anganwadi%20and%20Poshan%202.0%20scheme%20guidelines.pdf). Section 2.7 calls it “an ongoing Centrally-sponsored programme being implemented through the State Governments/ UT administrations based on a cost sharing ratio”. UT stands for Union Territory. Section 2.8 gives the ratios. A ratio such as 60:40, read “sixty to forty”, means that of every Rs 100 the Centre (short for the Central Government) pays Rs 60 and the State Rs 40. The held excerpt of the guidelines does not list what its “general components” include. Here is the Centre’s share from each row.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Category</th>\n<th>General components (Centre’s %)</th>\n<th>Salary (Centre’s %)</th>\n<th>Supplementary nutrition (Centre’s %)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>States and UTs with a legislature</td>\n<td>60</td>\n<td>25</td>\n<td>50</td>\n</tr>\n<tr>\n<td>North-eastern and Himalayan States</td>\n<td>90</td>\n<td>90</td>\n<td>90</td>\n</tr>\n<tr>\n<td>UTs without a legislature</td>\n<td>100</td>\n<td>100</td>\n<td>100</td>\n</tr>\n</tbody>\n</table>\n<p>The State pays the rest. For a State in the first row:</p>\n<div class=\"working\">\n<p>100 minus 60 = 40, the State’s share of general components<br />\n100 minus 25 = 75, the State’s share of salary<br />\n100 minus 50 = 50, the State’s share of supplementary nutrition</p>\n</div>\n<p>So a change to the food served under Poshan 2.0 in such a State touches two budgets, the Union’s and the State’s. Salary here is allowed only for selected staff, as the table’s footnote says.</p>\n<p>Now the fourth question, and the turn. Section 1.3 says the guidelines “are being issued under the provisions of Sections 4(a), 5(1) (a), 6 &amp; 7 of National Food Security Act, 2013”. The meal is a right in an Act. The scheme is how it is delivered. Section 3.1 gives the scheme’s period: 2021-22 to 2025-26. The scheme’s period, money and guidelines can end or change. The sections of the Act do not end with them.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Question</td>\n<td>NMEO-Oilseeds</td>\n<td>Poshan 2.0</td>\n</tr>\n<tr>\n<td>Who approved it?</td>\n<td>the Union Cabinet (release of 3 October 2024)</td>\n<td>not named in the guidelines</td>\n</tr>\n<tr>\n<td>For what period?</td>\n<td>2024-25 to 2030-31</td>\n<td>2021-22 to 2025-26</td>\n</tr>\n<tr>\n<td>What money?</td>\n<td>Rs 10,103 crore over the period</td>\n<td>Centre and State, by a ratio</td>\n</tr>\n<tr>\n<td>An Act under it?</td>\n<td>none named</td>\n<td>National Food Security Act, sections 4(a), 5(1)(a), 6 and 7</td>\n</tr>\n</tbody>\n</table>",
+   "numberRefs": [
+    180,
+    181
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The ratios are those printed in the 2022 guidelines. They are shares of spending, not amounts spent, and they say nothing about what any State paid or what reached anyone. Poshan 2.0’s approved period ended in March 2026, and no text held for this book says whether or how it was continued. The yearly average for the oilseeds mission is arithmetic on the total, not a figure the release gives.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A national policy is not a law. The Union Cabinet approved the National Health Policy 2017; Parliament did not pass it. It says only that the government “could consider” taxes on foods having a negative impact on health. Quote it as an intention, never as a commitment or a rule.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>For any programme, write down four things before you argue about it. Who approved it? For what period? With what money, from whose budget? Is there an Act under it?</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“Public health is a State subject, so the Union cannot pay for it” is wrong. Article 282 lets the Union make grants for any public purpose, even outside the subjects Parliament may make laws on.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Before you propose a change to the food served under Poshan 2.0, cost both halves: in a State with a legislature the Centre and the State each pay 50 per cent of supplementary nutrition (2022 guidelines).</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not write “it is only a scheme” without checking. Poshan 2.0 delivers meals that the National Food Security Act makes a right: a free meal through the local anganwadi for pregnant women and lactating mothers (section 4(a)) and for children of six months to six years (section 5(1)(a)), and free meals for children who suffer from malnutrition (section 6). Changing the <dfn data-g=\"131\">entitlement</dfn> itself needs Parliament to amend the Act. The nutritional standards in Schedule II can be changed by Central Government <dfn data-g=\"279\">notification</dfn> (section 37).</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A scheme’s approval has an end date: 2030-31 for the oilseeds mission, 2025-26 for Poshan 2.0 as approved. Before you call a scheme current, find the decision that continued it.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>An approval and an outlay tell you what was decided and budgeted. Ask for spending and results separately.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>A district nutrition-awareness campaign would run as part of a scheme, not under an Act. It rests on the scheme’s approval for a stated period and on money in the budget, and the same kind of decision can change it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what does Article 282 of the Constitution allow, and what does Article 112 require each year? Then give the four questions to ask of any scheme.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Article 282 lets the Union or a State give money for any public purpose. That holds even where the purpose is outside what that government may make laws on.</p>\n<p>Article 112 has the President put a statement before both Houses every year. It sets out what the Government of India expects to receive and to spend that year.</p>\n<p>The four questions: Who approved it? For what period? With what money, from whose budget? Is there an Act under it?</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is part of the first paragraph of the Cabinet’s release of 3 October 2024.</p>\n<blockquote>\n<p>The Union Cabinet, chaired by the Prime Minister Shri Narendra Modi, has approved the National Mission on Edible Oils – Oilseeds (NMEO-Oilseeds) … The Mission will be implemented over a seven-year period, from 2024-25 to 2030-31, with a financial outlay of Rs 10,103 crore.</p>\n</blockquote>\n<p>Say what this decides, and three things a reader might take from it that it does not say.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>It decides that the mission exists, who approved it (the Union Cabinet), its period (2024-25 to 2030-31) and its total outlay (Rs 10,103 crore).</p>\n<p>It does not say how much will be spent in any one year. Dividing by seven gives an average, not a budget line. It does not name an Act behind the mission; the release names none. It does not say which department runs it day to day, or what share, if any, the States pay. Nor does it say what the money will achieve.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Here is a made-up line from a draft note.</p>\n<blockquote>\n<p>Public health is on the State List, so the Union Government has no way to fund an obesity programme in our district. Only the State can act.</p>\n</blockquote>\n<p>Find what is wrong, and say what the note should check instead.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Public health is on the <dfn data-g=\"399\">State List</dfn> (Seventh Schedule, List II, entry 6). But Article 282 lets the Union make grants for any public purpose, even outside the subjects Parliament may make laws on. And a centrally sponsored scheme, such as Poshan 2.0, is carried out through the States, with the cost shared by a stated ratio.</p>\n<p>So “no way to fund” is wrong. Whether a Union scheme for this purpose exists today is a separate question. The note should search for one and, if it finds one, give its approval, period, money and guidelines.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A health secretary asks, on one page: “For a school nutrition-awareness campaign in our district, should we ask for a law or for a scheme?” Write the answer, answer first.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer: a scheme, unless you need something that only a law can do, such as a duty on others.</p>\n<p>A campaign tells people things. It needs approval and money, not powers. A scheme is approved by a government and run through a budget, sometimes two. One example already exists: the oilseeds mission, approved by the Union Cabinet, includes a campaign on dietary guidelines for edible oils. The Union can also pay into such work through a grant, under Article 282, even though public health is a State subject.</p>\n<p>The cost of that speed: a scheme lasts as long as its approval and its budget line. Plan for the renewal date from the start.</p>\n<p>What this does not tell you: whether the campaign would change what anyone eats. That needs evidence, which a later section takes up.</p>"
+  }
+ ]
+}

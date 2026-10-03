@@ -1,0 +1,208 @@
+{
+ "format": 1,
+ "id": "b0-r0-c19",
+ "label": "C5",
+ "title": "Graphs: axes, scale, slope and intercept",
+ "part": "C",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A graph is a drawing of a relationship between two quantities, made of points in a plane.</p>\n<p>Two lines of reference cross at a point called the origin. The horizontal one is the <dfn data-g=\"195\">x-axis</dfn> and the upright one is the <dfn data-g=\"196\">y-axis</dfn>. Each axis carries one quantity, the unit that quantity is measured in, and a scale.</p>\n<p>The scale is the rule that turns a distance along an axis into an amount of the quantity. Whoever draws the figure chooses it.</p>\n<p>A point is fixed by two numbers, written (x, y), which are its position along the x-axis and its position along the y-axis.</p>\n<p>The <dfn data-g=\"170\">slope</dfn> of a straight line is the change in the y quantity divided by the change in the x quantity, measured between any two points on it.</p>\n<p>The <dfn data-g=\"91\">intercept</dfn> on the y-axis is the value the y quantity takes where the x quantity is zero. It is a property of the line as drawn. It states something about the world only where zero is a value the x quantity can take.</p>",
+   "refs": [
+    7
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Four things decide what the picture tells you. Read them in this order, every time. The first two come before you look at the line at all.</p>\n<p><strong>What is on each axis.</strong> Look at the flat line along the bottom. That is the x-axis. Look at the upright line up the side. That is the y-axis. Each should carry the name of a quantity and a unit. An axis with no unit on it is a picture you cannot read.</p>\n<p><strong>What the scale is.</strong> The scale is how much of the quantity one step along the axis stands for. Somebody chose it. They could have chosen another one. The same numbers on a taller axis look calm, and on a shorter axis look steep, and neither drawing is a lie. So read the numbers printed on the axis before you trust the shape.</p>\n<p><strong>How steep the line is.</strong> Steepness is called the slope. Pick two points on the line. Work out how far up it went between them, and how far across.</p>\n<div class=\"working\">\n<p>the slope = the change up, divided by the change across</p>\n</div>\n<p>The change up is called the rise. The change across is called the run.</p>\n<p>A slope is a rate, and it carries a unit like every rate you have met. The unit is the y unit divided by the x unit.</p>\n<p>A slope can be negative. A line that falls as you go right has a rise below zero, so the slope comes out with a minus sign in front. The section on counting covers numbers like that. A slope of minus 3 means the y quantity drops by 3 for every one step across.</p>\n<p><strong>Where the line crosses.</strong> Follow the line to the place where the x quantity is zero. The height there is called the intercept. It answers one question: what was the y quantity when the x quantity was nothing at all?</p>\n<p>Sometimes zero is outside anything anybody measured, and then the intercept is a number the drawing made.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "c5-two-scales.png",
+   "alt": "Two line charts side by side with identical data points rising from left to right. The left chart's side axis stops just above the highest point; the right chart's runs to five times that, so the same line appears almost flat.",
+   "w": 1397,
+   "h": 538,
+   "caption": "The same eight entitlements drawn twice. Nothing about the numbers changed between the two panels; only the top of the side axis did. The left panel makes the rise look steep and the right makes it look flat, and neither is dishonest."
+  },
+  {
+   "t": "figure",
+   "src": "c5-slope-intercept.png",
+   "alt": "A rising straight line through seven points. A horizontal segment marks a run of three months and a vertical segment marks a rise of sixty kilograms, giving a slope of twenty kilograms a month. A filled dot on the side axis marks the intercept at ten.",
+   "w": 1318,
+   "h": 628,
+   "caption": "Slope read as a rise over a run, and the intercept read where the line meets the side axis. The rise and the run are marked between the months the text works through."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Take one rule and draw it twice.</p>\n<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains per person per month.</p>\n<p>Work out eight points, one for each household size from one person to eight.</p>\n<table style=\"width:64%;\">\n\n<thead>\n<tr>\n<th>people in the household</th>\n<th>kilograms a month</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>5</td>\n</tr>\n<tr>\n<td>2</td>\n<td>10</td>\n</tr>\n<tr>\n<td>3</td>\n<td>15</td>\n</tr>\n<tr>\n<td>4</td>\n<td>20</td>\n</tr>\n<tr>\n<td>5</td>\n<td>25</td>\n</tr>\n<tr>\n<td>6</td>\n<td>30</td>\n</tr>\n<tr>\n<td>7</td>\n<td>35</td>\n</tr>\n<tr>\n<td>8</td>\n<td>40</td>\n</tr>\n</tbody>\n</table>\n<p>Now draw them. People go along the bottom. Kilograms a month go up the side.</p>\n<p>Place one point by hand first. Take the household of three and its 15 kilograms. As a pair it is written (3, 15). The number along the bottom comes first and the number up the side second.</p>\n<p>Start at the origin, where both axes read zero. Go along the bottom until you reach 3. From there go straight up until you are level with 15 on the side axis. Put the mark there. Every other row goes on the same way.</p>\n<p>The brackets in (3, 15) are not the brackets in f(x) from the section on functions. There they held a rule’s input. Here they hold a pair of numbers, and the comma between them is the sign.</p>\n<p>Draw it once with the side axis running from 0 to a little above 40 kilograms. The line fills the picture and the rise is the first thing you see.</p>\n<p>Draw it again with the side axis running from 0 to 200 kilograms. Every point is the same point as before. The line now sits in the bottom fifth of the picture and looks nearly flat.</p>\n<p>Ask what changed between the two. Only the numbers printed up the side.</p>\n<p>What differs is the impression, and the impression was set by a choice.</p>\n<p>So here is the habit. Read the numbers on both axes first. Then decide whether a rise you can see is a rise that matters. Never take the steepness of a line as a measurement, because it is not one.</p>\n<p>Now read a slope and an intercept off a line, which is the other thing a graph is for.</p>\n<p>A household of four has 10 kilograms of grain in the house today. Every month it is counted for another 20 kilograms, because five kilograms a person times four people is twenty. The 10 kilograms is made up for this example.</p>\n<div class=\"working\">\n<p>5 times 4 = 20</p>\n</div>\n<p>Put months along the bottom, starting at today. Put kilograms in the house up the side.</p>\n<table style=\"width:62%;\">\n\n<thead>\n<tr>\n<th>months from today</th>\n<th>kilograms in the house</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>10</td>\n</tr>\n<tr>\n<td>1</td>\n<td>30</td>\n</tr>\n<tr>\n<td>2</td>\n<td>50</td>\n</tr>\n<tr>\n<td>3</td>\n<td>70</td>\n</tr>\n<tr>\n<td>4</td>\n<td>90</td>\n</tr>\n<tr>\n<td>5</td>\n<td>110</td>\n</tr>\n<tr>\n<td>6</td>\n<td>130</td>\n</tr>\n</tbody>\n</table>\n<p>The points sit on a straight line. Take two of them and read the slope off the picture. Use the point at one month and the point at four months.</p>\n<p>Work out the rise, which is the change up the side.</p>\n<div class=\"working\">\n<p>90 minus 30 = 60</p>\n</div>\n<p>Work out the run, which is the change along the bottom.</p>\n<div class=\"working\">\n<p>4 minus 1 = 3</p>\n</div>\n<p>Divide the rise by the run.</p>\n<div class=\"working\">\n<p>60 divided by 3 = 20</p>\n</div>\n<p>Twenty. Now put a unit on it, and take the unit off the axes rather than out of your memory. The side axis is in kilograms and the bottom axis is in months.</p>\n<div class=\"working\">\n<p>kilograms divided by months<br />\n= kilograms per month</p>\n</div>\n<p>Twenty kilograms a month.</p>\n<p>Pick a different pair of points and the slope comes out the same, because the line is straight.</p>\n<p>Now the intercept. Follow the line back to month zero, where the bottom quantity is nothing at all. The line meets the side axis at 10 kilograms.</p>\n<p>That number means something here. It is the grain that was in the house before any of these months began. Somebody can go and look in the house and check it.</p>\n<p>Often nobody wrote down a reading at zero. Find the intercept anyway by stepping back from the nearest reading, using the slope. Suppose the table had started at two months, with 50 kilograms. Each month back takes off one slope’s worth of grain.</p>\n<div class=\"working\">\n<p>20 times 2 = 40<br />\n50 minus 40 = 10</p>\n</div>\n<p>Ten kilograms, the same as the line gave.</p>\n<p>The slope and the intercept together fix the whole line. In words, the output is the intercept, plus the slope times the input. Here that is 10 kilograms, plus 20 kilograms a month times the number of months. Write y for the side quantity and x for the bottom one. Write m for the slope and k for the intercept. Then the line is this.</p>\n<div class=\"working\">\n<p>y = m x + k</p>\n</div>\n<p>You met that line in the section on rearranging, as letters with no meaning attached. This is its meaning. For the grain in the house, m is 20 and k is 10. Try it at four months.</p>\n<div class=\"working\">\n<p>20 times 4 = 80<br />\n80 plus 10 = 90</p>\n</div>\n<p>Ninety kilograms, which is the row for four months in the table.</p>\n<p>Now watch an intercept stop meaning anything. Go back to the first drawing, where the bottom axis was the number of people. Its intercept is the grain for a household of nobody. No such household exists, so that number is something the drawing produced and nothing anybody can check.</p>",
+   "numberRefs": [
+    6
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Reading one slope off a line works while the line is straight.</p>\n<p>An upright line has no slope, because the division has nothing to divide by.</p>\n<p>The intercept means something only where zero is a value the bottom quantity can really take.</p>\n<p>Two drawings of the same points are both honest, however different they look.</p>\n<p>And a straight line through some points does not make the rule behind them true.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Read both axes, with their units, before you look at the shape of anything.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A steep line is not a large effect.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A side axis that does not start at zero makes every small wiggle on it look like a cliff.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A slope carries the y unit divided by the x unit.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An intercept is a fact about the world only where zero is a value the bottom quantity can actually take.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When a figure alarms you, redraw it with the side axis starting at zero before you repeat it to a journalist.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Teach a trainee to read a figure in one fixed order. What each axis measures and its unit come first, then the numbers on the scale. Only then the slope, and last the intercept.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Before you read a value off any printed chart in clinic, find what one small division on each axis stands for.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Two figures are printed side by side. Both plot the same seven monthly values of one quantity. The left figure has a side axis running from 0 to 100. The right figure has a side axis running from 58 to 66. The values run from 60 up to 64.</p>\n<p>Say what each figure shows and what neither of them shows. Then say which you would print, and why.</p>",
+   "type": "interpretation",
+   "confidence": true,
+   "answer": "<p>Both figures show the same seven numbers. Neither is false.</p>\n<p>The left figure shows a quantity that barely moves against the full height of the axis. A change of 4 sits in a height of 100.</p>\n<div class=\"working\">\n<p>64 minus 60 = 4<br />\n4 divided by 100 = 0.04</p>\n</div>\n<p>So the line uses four per cent of the height, and the picture reads as flat.</p>\n<p>The right figure shows the same change of 4 in a height of 8.</p>\n<div class=\"working\">\n<p>66 minus 58 = 8<br />\n4 divided by 8 = 0.5</p>\n</div>\n<p>Half the height. The same rise now crosses the middle of the picture and reads as a climb.</p>\n<p>What neither shows: whether a change of 4 matters. That question is settled by what the quantity is, how precisely it was measured, and what counts as a difference worth acting on. None of those three is in either drawing.</p>\n<p>Which to print: the one whose axis you are willing to defend out loud. Printing the full-height version and saying the change is small is honest. Printing the short-axis version is also honest, as long as the caption says the axis starts at 58. The defect is not a short axis. It is a short axis that the caption does not mention.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A slide in a meeting shows a straight line rising across the whole picture. The speaker says:</p>\n<blockquote>\n<p>You can see the effect is dramatic. Look at the slope.</p>\n</blockquote>\n<p>The side axis is labelled in kilograms and runs from 19.8 to 20.4. The bottom axis is labelled in months and runs from 0 to 12.</p>\n<p>Say what is wrong with what the speaker said, and say what you would ask for.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>What is wrong: the speaker has read the steepness as though it measured the size of the change. It does not. The steepness was set when somebody chose the side axis.</p>\n<p>Work out what the axis actually holds.</p>\n<div class=\"working\">\n<p>20.4 minus 19.8 = 0.6</p>\n</div>\n<p>Six tenths of a kilogram, across the whole height of the slide. So a line that climbs from the bottom of the picture to the top is a change of at most 0.6 kg over twelve months.</p>\n<p>Now the slope, with its unit taken off the axes.</p>\n<div class=\"working\">\n<p>0.6 divided by 12 = 0.05</p>\n</div>\n<p>Five hundredths of a kilogram a month. Say it with the unit, because the unit is the part that makes it checkable.</p>\n<p>What to ask for. First, the same figure with the side axis starting at zero, which takes one minute and settles the argument. Second, what change would have been large enough to act on, decided before the figure was drawn. Third, the spread of the underlying values, since a line drawn through scattered points hides how scattered they were.</p>\n<p>What not to say: that the speaker is wrong about the numbers. They are not. They are wrong about what a picture can measure.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A health secretary has one page and three minutes. They have been shown two figures of the same data by two different groups, and the figures look nothing alike. They want to know which one to believe.</p>\n<p>Write what you would put on that page.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first, because that is what the page is for.</p>\n<p>Both figures are correct. They plot the same numbers. They look different because the two groups chose different heights for the side axis, and nothing stops either of them doing that.</p>\n<p>Then the one thing to do about it. Ask for both figures redrawn with the side axis starting at zero and ending at the same value. Any two figures of one set of numbers then look identical, and the argument moves to where it belongs.</p>\n<p>Then the question that actually decides the matter. How big a change is worth acting on here, and who decided that? Until somebody answers it, no figure of any shape settles anything, because the picture cannot tell you what counts as big.</p>\n<p>Then one sentence on what to watch for in future submissions. A side axis that does not start at zero is not a fault, and a caption that does not say so is.</p>\n<p>No methods section. The secretary does not need to know how a slope is computed. They need to know that steepness is a choice and that the size of the change is not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A straight line passes through the points (2, 7) and (6, 19).</p>\n<p>Work out its rise, its run and its slope.</p>",
+   "level": 1,
+   "answer": "<p>The rise is the change in the second number of each pair.</p>\n<div class=\"working\">\n<p>19 minus 7 = 12</p>\n</div>\n<p>The run is the change in the first number of each pair.</p>\n<div class=\"working\">\n<p>6 minus 2 = 4</p>\n</div>\n<p>The slope is the rise divided by the run.</p>\n<div class=\"working\">\n<p>12 divided by 4 = 3</p>\n</div>\n<p>The slope is 3. There are no units here, because the two quantities were not named.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Work out the slope of the line through each of these pairs of points.</p>\n<div class=\"working\">\n<p>(0, 5) and (4, 13)<br />\n(1, 10) and (6, 10)<br />\n(2, 20) and (7, 5)</p>\n</div>",
+   "level": 2,
+   "answer": "<p>Take each one as rise divided by run.</p>\n<p>The first.</p>\n<div class=\"working\">\n<p>13 minus 5 = 8<br />\n4 minus 0 = 4<br />\n8 divided by 4 = 2</p>\n</div>\n<p>The second.</p>\n<div class=\"working\">\n<p>10 minus 10 = 0<br />\n6 minus 1 = 5<br />\n0 divided by 5 = 0</p>\n</div>\n<p>A slope of zero. The line is flat, which is what a slope of zero means: the y quantity does not change as the x quantity does.</p>\n<p>The third.</p>\n<div class=\"working\">\n<p>5 minus 20 = -15<br />\n7 minus 2 = 5<br />\n-15 divided by 5 = -3</p>\n</div>\n<p>A slope of minus 3. The minus sign says the line falls as you go right, and the 3 says how fast.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A straight line goes through (0, 12) and (5, 27).</p>\n<p>Work out the slope, and write down the intercept on the y-axis. Then say what the intercept is the value of.</p>",
+   "level": 2,
+   "answer": "<p>The slope first.</p>\n<div class=\"working\">\n<p>27 minus 12 = 15<br />\n5 minus 0 = 5<br />\n15 divided by 5 = 3</p>\n</div>\n<p>The slope is 3.</p>\n<p>The intercept is the value of y where x is zero, and one of the two points given has x equal to zero. So the intercept is 12, read straight off that point.</p>\n<p>The intercept is the value the y quantity takes when the x quantity is nothing at all. It is not where the line starts, and it is not the smallest value on the line. Lines run in both directions.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A straight line has a slope of 4 and an intercept of 6 on the y-axis.</p>\n<p>Work out y at x equal to 0, 1, 3 and 10. Then work out the x at which y reaches 46.</p>",
+   "level": 3,
+   "answer": "<p>The slope of 4 means y goes up by 4 for every 1 across. The intercept of 6 is the value at x equal to zero, so start there and add 4 each step.</p>\n<div class=\"working\">\n<p>y at 0 = 6<br />\n6 plus 4 = 10</p>\n</div>\n<p>So y is 10 at x equal to 1.</p>\n<div class=\"working\">\n<p>4 times 3 = 12<br />\n12 plus 6 = 18</p>\n</div>\n<p>So y is 18 at x equal to 3.</p>\n<div class=\"working\">\n<p>4 times 10 = 40<br />\n40 plus 6 = 46</p>\n</div>\n<p>So y is 46 at x equal to 10.</p>\n<p>The last part is already answered by the line above, and it is worth seeing why. You were asked where y reaches 46, and the working ran the other way: take the intercept off first, then undo the multiplying.</p>\n<div class=\"working\">\n<p>46 minus 6 = 40<br />\n40 divided by 4 = 10</p>\n</div>\n<p>At x equal to 10.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A line is drawn with kilograms of grain in a house up the side and months along the bottom. It passes through the point at one month and 30 kilograms, and the point at five months and 110 kilograms.</p>\n<p>Work out the slope, give it with its unit, and say where the line meets the side axis.</p>",
+   "level": 4,
+   "answer": "<p>Rise first, from the side axis.</p>\n<div class=\"working\">\n<p>110 minus 30 = 80</p>\n</div>\n<p>Then the run, from the bottom axis.</p>\n<div class=\"working\">\n<p>5 minus 1 = 4</p>\n</div>\n<p>Then the slope.</p>\n<div class=\"working\">\n<p>80 divided by 4 = 20</p>\n</div>\n<p>Now the unit, taken off the axes. Kilograms up the side and months along the bottom give kilograms divided by months, which is kilograms per month. So the slope is 20 kilograms a month.</p>\n<p>For the intercept, walk back from the point at one month by one month’s worth of grain.</p>\n<div class=\"working\">\n<p>30 minus 20 = 10</p>\n</div>\n<p>The line meets the side axis at 10 kilograms. That is the grain in the house at month zero.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains per person per month.</p>\n<p>A figure plots kilograms a month up the side against the number of people along the bottom, for households of one to eight people. Work out the slope from the points for three people and seven people. Give it with its unit. Then say what the intercept is and whether it means anything.</p>",
+   "level": 5,
+   "answer": "<p>Work out the two points from the rule first.</p>\n<div class=\"working\">\n<p>5 times 3 = 15<br />\n5 times 7 = 35</p>\n</div>\n<p>So the figure has a point at three people and 15 kilograms, and one at seven people and 35 kilograms.</p>\n<p>Rise.</p>\n<div class=\"working\">\n<p>35 minus 15 = 20</p>\n</div>\n<p>Run.</p>\n<div class=\"working\">\n<p>7 minus 3 = 4</p>\n</div>\n<p>Slope.</p>\n<div class=\"working\">\n<p>20 divided by 4 = 5</p>\n</div>\n<p>The unit comes off the axes. Kilograms a month up the side, people along the bottom, so the slope is 5 kilograms per person per month. That is the figure section 3(1) states, recovered from the drawing.</p>\n<p>The intercept is at zero people and zero kilograms. As arithmetic it is correct. As a statement about the world it means the grain for a household with nobody in it, and there is no such household. So the intercept here is a property of the line and not a fact you can check.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A quantity is measured once a month for a year. The smallest value is 60 and the largest is 64.</p>\n<p>One figure draws it with the side axis running from 0 to 100. Another draws it with the side axis running from 59 to 67.</p>\n<p>Work out what <dfn data-g=\"66\">fraction</dfn> of the height of each figure the change takes up. Then say what that means for somebody looking at the two figures side by side.</p>",
+   "level": 5,
+   "answer": "<p>The change is the same in both figures.</p>\n<div class=\"working\">\n<p>64 minus 60 = 4</p>\n</div>\n<p>Four. Now the height each axis offers.</p>\n<div class=\"working\">\n<p>100 minus 0 = 100<br />\n4 divided by 100 = 0.04</p>\n</div>\n<p>Four hundredths of the height in the first figure.</p>\n<div class=\"working\">\n<p>67 minus 59 = 8<br />\n4 divided by 8 = 0.5</p>\n</div>\n<p>Half the height in the second.</p>\n<p>What it means: the same change occupies four per cent of one picture and half of the other. A reader who looks at the shape sees a flat line and a steep climb. A reader who reads the axis numbers sees a change of 4 in both, because there is a change of 4 in both.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Work out the unit of the slope of a line drawn on each of these pairs of axes.</p>\n<table style=\"width:54%;\">\n\n<tbody>\n<tr>\n<td>up the side</td>\n<td>along the bottom</td>\n</tr>\n<tr>\n<td>kilograms</td>\n<td>months</td>\n</tr>\n<tr>\n<td>kilocalories</td>\n<td>grams</td>\n</tr>\n<tr>\n<td>rupees</td>\n<td>kilograms</td>\n</tr>\n<tr>\n<td>number of people</td>\n<td>square kilometres</td>\n</tr>\n</tbody>\n</table>",
+   "level": 6,
+   "answer": "<p>The unit of a slope is always the side unit divided by the bottom unit. Take them in order.</p>\n<p>Kilograms divided by months is kilograms per month.</p>\n<p>Kilocalories divided by grams is kilocalories per gram, which is an energy in every gram of something.</p>\n<p>Rupees divided by kilograms is rupees per kilogram, which is a price.</p>\n<p>People divided by square kilometres is people per square kilometre, which is a density of people.</p>\n<p>None of those four came from looking at the line. They came from reading the two axis labels, which is why a figure with an unlabelled axis has a slope you cannot state.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a line passes through (2, 30) and (8, 90)<br />\nthe run is 8 minus 2, which is 6<br />\nthe rise is 90 minus 30, which is 60<br />\nthe slope is the run divided by the rise<br />\n6 divided by 60 = 0.1<br />\nso the slope is 0.1</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the fourth. The rise and the run were worked out correctly and then divided the wrong way round.</p>\n<p>A slope is the rise divided by the run, not the run divided by the rise.</p>\n<div class=\"working\">\n<p>60 divided by 6 = 10</p>\n</div>\n<p>The slope is 10.</p>\n<p>Check it against the picture. Between the two points the line goes up 60 while it goes across 6, so it climbs steeply. A slope of 0.1 describes a line that is nearly flat, which is the opposite of the line described.</p>\n<p>The units catch it too, when the axes are labelled. Put kilograms up the side and months along the bottom: the broken answer is in months per kilogram, and nobody asked for that.</p>\n<p>Why it looks reasonable: both subtractions are right, the division is right, and the answer is a tidy number. The one wrong step is the one with no arithmetic in it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>figure A rises across the whole picture, from the bottom left to the top right<br />\nfigure B rises only a little, staying near the bottom<br />\nfigure A is steeper than figure B<br />\nso the quantity in figure A changed more than the quantity in figure B<br />\nfigure A’s side axis runs from 19.8 to 20.4<br />\nfigure B’s side axis runs from 0 to 200</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the fourth. Steepness was read as though it measured the change, and the last two lines are the evidence that it does not.</p>\n<p>Work out what each axis can hold.</p>\n<div class=\"working\">\n<p>20.4 minus 19.8 = 0.6</p>\n</div>\n<p>Figure A’s whole height is six tenths of a unit. A line crossing all of it has changed by at most 0.6.</p>\n<div class=\"working\">\n<p>200 minus 0 = 200</p>\n</div>\n<p>Figure B’s whole height is 200 units. A line staying near the bottom, say a fifth of the way up, has changed by 40.</p>\n<div class=\"working\">\n<p>200 divided by 5 = 40</p>\n</div>\n<p>So the figure that looks flat carries the larger change, by a wide margin.</p>\n<p>The order to work in is the one this section fixed. First what each axis measures and its unit, then the numbers on the scale, and only then the line. The broken answer read the line first and never revisited it.</p>\n<p>Why it looks reasonable: lines three and four sound like the same statement said twice, and the step between them is the whole error. The numbers on both axes are even printed in the working, so the answer had what it needed and did not use it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A press line crosses your desk.</p>\n<blockquote>\n<p>The chart is almost vertical. The average bag of grain leaving the depot has shot up over the last six months.</p>\n</blockquote>\n<p>You open the chart. The side axis runs from 4.90 to 5.10 kilograms. The line goes from 4.95 at the start to 5.02 at the end. All four figures are made up for this problem.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the size of the change in the unit of the axis, and the slope with its unit. The steepness is not computable as anything, because it is a choice.</p>\n<p>The change first.</p>\n<div class=\"working\">\n<p>5.02 minus 4.95 = 0.07</p>\n</div>\n<p>Seven hundredths of a kilogram, across six months.</p>\n<p>Now the slope.</p>\n<div class=\"working\">\n<p>0.07 divided by 6 = 0.0117</p>\n</div>\n<p>About 0.012 kilograms a month. Say the unit, because the number on its own is what let the press line happen.</p>\n<p>And the reason the line looks vertical.</p>\n<div class=\"working\">\n<p>5.10 minus 4.90 = 0.2<br />\n0.07 divided by 0.2 = 0.35</p>\n</div>\n<p>The change uses about a third of the height of a picture whose whole height is two tenths of a unit.</p>\n<p>What this does not establish. It does not establish that a change of 0.07 is small. Small and large are decided by what the quantity is, and by who set a threshold. Arithmetic does not decide it. It does not establish that the change is real either, since two readings six months apart carry whatever the weighing itself varies by. And it does not establish that anything shot up, because a drawing cannot carry that claim. What you have shown is that the word “vertical” describes the axis and not the data.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A note from a district office says this.</p>\n<blockquote>\n<p>We plotted grain against household size for our blocks and fitted a straight line. The line crosses the side axis at 12 kilograms. So even a household with nobody in it is being counted for 12 kilograms a month, which is leakage we should recover.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: what the entitlement rule says the intercept should be, and what an intercept of 12 would have to mean.</p>\n<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains per person per month. So the rule gives zero for zero people.</p>\n<div class=\"working\">\n<p>5 times 0 = 0</p>\n</div>\n<p>The rule’s own intercept is zero.</p>\n<p>Now take the note’s line seriously for one step. At one person it would give 12 plus 5.</p>\n<div class=\"working\">\n<p>12 plus 5 = 17</p>\n</div>\n<p>Seventeen kilograms for one person, against the five the Act states. At four people it gives 32 against 20.</p>\n<div class=\"working\">\n<p>5 times 4 = 20<br />\n20 plus 12 = 32</p>\n</div>\n<p>So if the fitted line were true of the blocks, every household would be over-counted, not just the empty ones. The 12 is not a finding about households with nobody in them. It is a statement about the whole line.</p>\n<p>What this does not establish. It does not establish that any grain went missing. An intercept at a household size nobody has is a number the fitting produced. Zero people is outside every household size that was fitted.</p>\n<p>It does not tell you why the line sits high. That could be a handful of wrong rows, a second entitlement under another provision, or an error in the household-size column. And it does not establish that a straight line was the right thing to fit at all.</p>\n<p>Before recovering anything from anybody, go and read the rows at the small household sizes. That is where the claim is supposed to live, and there may be no rows there at all.</p>"
+  }
+ ]
+}

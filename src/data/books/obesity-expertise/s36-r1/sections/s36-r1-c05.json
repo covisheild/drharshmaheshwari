@@ -1,0 +1,178 @@
+{
+ "format": 1,
+ "id": "s36-r1-c05",
+ "label": "5",
+ "title": "Open, closed and leading questions",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"43\">closed question</dfn> fixes the possible answers before the <dfn data-g=\"262\">respondent</dfn> speaks. The answer is yes or no, a number, or one of a set of options the question supplies.</p>\n<p>An <dfn data-g=\"209\">open question</dfn> leaves the form of the answer to the respondent.</p>\n<p>Open and closed describe the form of the answer. Whether a question is leading is a separate property. A <dfn data-g=\"163\">leading question</dfn> shows the answer the asker expects, or takes for granted part of what it is asking about. “Don’t you find the diet hard?” is closed and leading. “How hard is the diet for you?” is open in form and leading, because it takes for granted that the diet is hard.</p>\n<p>A <dfn data-g=\"84\">double question</dfn> asks two things in one sentence.</p>\n<p>The standard for the questions of a <dfn data-g=\"276\">semi-structured interview</dfn>, in DeJonckheere and Vaughn’s words: “All questions should be open ended, neutral, clear and avoid leading language.” This book applies it to the questions that carry the study. A plain fact, such as age, may be asked closed.</p>",
+   "refs": [
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Every question you write can be put through three checks.</p>\n<p><strong>Check 1: the form of the answer.</strong> Could the person answer with yes, no, a number, or one of the options you gave them? Then it is a closed question. If they have to answer in their own words, it is an open question. “How many”, “how often” and “how long” want a number, so they are closed. “How much” and “how hard” are open in form, but ask only for an amount.</p>\n<p><strong>Check 2: what the question takes for granted.</strong> In Book 0, F4, a premise is a statement an argument rests on. Some questions carry a premise the respondent never offered. “How hard is the diet for you?” rests on “the diet is hard”.</p>\n<p>Other questions show which answer you would like: “Don’t you think the tablets help?” Both kinds are leading questions. A leading question can be open or closed.</p>\n<p><strong>Check 3: how many questions are in it.</strong> “Did the doctor explain the diet, and did you follow it?” is two questions. That is a double question. Split it.</p>\n<p>One more trap, about the word “why”. “Why did you stop coming?” is open. It also asks the person to give reasons for what they did, as if they owed you an explanation.</p>\n<p>It carries the premise that they decided to stop. Ask what happened instead: “Tell me about the last time you came here.”</p>\n<p>Closed questions are not wrong. “How old are you?” should be closed.</p>\n<p>Last, a clash of words to know about. DeJonckheere and Vaughn’s guide to interviewing lists probes: short follow-ups that ask for more. One of them is called “leading”. There it means asking someone to explain their reasoning, as in “Tell me how you came to that decision”. It is not a leading question.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s36-r1-c05-draft-labels.png",
+   "alt": "A bar chart with four results, each with two bars. Open: 3 in the first draft, 7 after rewriting. Closed: 5 and 1. Leading: 5 and 0. Double: 2 and 0.",
+   "w": 1357,
+   "h": 654,
+   "caption": "The eight questions of the made-up first draft and of the rewrite in the second illustration below, counted by result. Open questions go from 3 to 7 and closed from 5 to 1; leading questions go from 5 to 0 and double questions from 2 to 0. Open and closed always add to eight, because every question is one or the other."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>You are studying why adult patients with obesity at a district hospital non-communicable disease (NCD) clinic in Chhattisgarh stop coming back for follow-up. Here is the first question you wrote, tried on a made-up respondent. The exchange is invented to show the method, and translated from Hindi.</p>\n<table style=\"width:85%;\">\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Don’t you find it hard to come back every month?</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>Yes, it is hard.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Why?</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>It is just hard.</td>\n</tr>\n</tbody>\n</table>\n<p>Put the first question through the three checks. It can be answered yes or no, so it is closed. “Don’t you” shows the answer you expect, and “hard” is your word, so it is leading. It asks one thing. You learned that R1 agreed with you. You did not learn what coming back is like for her.</p>\n<p>Your “Why?” then asked her to defend a feeling you had handed her. She had nothing to add.</p>\n<p>Try the first rewrite most people reach for: “How hard is it to come back every month?” It is open in form. But it still rests on “it is hard”. R1 can now only tell you how much.</p>\n<p>Now ask about an event instead of a judgement.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Tell me about the last time you came to the clinic.</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>My son brought me on his motorcycle. He works at the rice mill, so it has to be his day off. We waited from nine. The sister weighed me and wrote on the paper. The doctor said the sugar is high. Then we went home.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>You said the sister wrote on the paper.</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>Yes. I did not understand what she wrote. I did not want to ask in front of everyone.</td>\n</tr>\n</tbody>\n</table>\n<p>The question is open, takes nothing about her experience for granted, and asks one thing. R1 now tells you things you had no word for in your draft. Her visit depends on her son’s day off. She waited. She did not understand the paper, and did not ask in front of others. Whether any of this is why she stopped coming is still open. But it is her account, not yours.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The exchange is made up and tidy. A real respondent may answer a leading question with a long account anyway, or answer an open one with “fine”. One exchange shows what a question allows. It does not show what a question will always produce.</p>\n<p>“Takes nothing for granted” is never literally true. “The last time you came to the clinic” takes for granted that she came at least once, which the clinic’s register already shows. The check is for premises about what you are trying to find out: her experience, her reasons, her feelings.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now run the three checks on a whole first draft. Here are eight made-up questions for the same study, with each one’s result.</p>\n<table style=\"width:97%;\">\n\n<thead>\n<tr>\n<th>No.</th>\n<th>Question</th>\n<th>Open or closed</th>\n<th>Leading</th>\n<th>Double</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>How old are you?</td>\n<td>closed</td>\n<td>no</td>\n<td>no</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Don’t you find it hard to come back every month?</td>\n<td>closed</td>\n<td>yes</td>\n<td>no</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Did you stop coming because of the distance or the cost?</td>\n<td>closed</td>\n<td>yes</td>\n<td>no</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Why did you stop taking the tablets?</td>\n<td>open</td>\n<td>yes</td>\n<td>no</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Was the doctor rude to you, and did the nurse explain things?</td>\n<td>closed</td>\n<td>yes</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Do you eat rice at night?</td>\n<td>closed</td>\n<td>no</td>\n<td>no</td>\n</tr>\n<tr>\n<td>7</td>\n<td>What do you think about the diet the nurse gave you?</td>\n<td>open</td>\n<td>no</td>\n<td>no</td>\n</tr>\n<tr>\n<td>8</td>\n<td>How does your family help with the diet and the walking?</td>\n<td>open</td>\n<td>yes</td>\n<td>yes</td>\n</tr>\n</tbody>\n</table>\n<p>Question 3 offers two reasons and no others, so the respondent’s own reason has no room. Question 4 takes for granted that she stopped the tablets. Question 5 puts “rude” in her mouth and asks two things. Question 8 takes for granted that the family helps, and asks about two things.</p>\n<p>Here is the draft after rewriting.</p>\n<table style=\"width:97%;\">\n\n<thead>\n<tr>\n<th>No.</th>\n<th>Question</th>\n<th>Open or closed</th>\n<th>Leading</th>\n<th>Double</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>How old are you?</td>\n<td>closed</td>\n<td>no</td>\n<td>no</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Tell me about the last time you came to the clinic.</td>\n<td>open</td>\n<td>no</td>\n<td>no</td>\n</tr>\n<tr>\n<td>3</td>\n<td>What happened after that visit?</td>\n<td>open</td>\n<td>no</td>\n<td>no</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Tell me about any medicines you have been given here.</td>\n<td>open</td>\n<td>no</td>\n<td>no</td>\n</tr>\n<tr>\n<td>5</td>\n<td>What was it like talking to the doctor?</td>\n<td>open</td>\n<td>no</td>\n<td>no</td>\n</tr>\n<tr>\n<td>6</td>\n<td>What does a usual evening meal at home look like?</td>\n<td>open</td>\n<td>no</td>\n<td>no</td>\n</tr>\n<tr>\n<td>7</td>\n<td>What do you think about the diet the nurse gave you?</td>\n<td>open</td>\n<td>no</td>\n<td>no</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Who at home, if anyone, knows about the diet?</td>\n<td>open</td>\n<td>no</td>\n<td>no</td>\n</tr>\n</tbody>\n</table>\n<p>Question 1 stays closed, because age is a plain fact. The nurse half of question 5 and the walking half of question 8 are not lost. They wait as follow-ups, to ask if the respondent raises them.</p>\n<p>Count each result in the two drafts. Each draft has eight questions.</p>\n<table style=\"width:58%;\">\n\n<thead>\n<tr>\n<th>result</th>\n<th>first draft</th>\n<th>after rewriting</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>open</td>\n<td>3</td>\n<td>7</td>\n</tr>\n<tr>\n<td>closed</td>\n<td>5</td>\n<td>1</td>\n</tr>\n<tr>\n<td>leading</td>\n<td>5</td>\n<td>0</td>\n</tr>\n<tr>\n<td>double</td>\n<td>2</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>\n<p>Check the counts. Every question is either open or closed, so those two rows must add to eight.</p>\n<div class=\"working\">\n<p>3 plus 5 = 8<br />\n7 plus 1 = 8</p>\n</div>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A table of results is a check on your own draft, not a score for it. A guide with no leading questions can still be a poor guide. Its questions may be in the clinic’s words rather than the respondent’s, or may miss what matters. And the results are judgements: two careful readers can disagree about a borderline question, such as whether “if anyone” fully removes the premise in question 8.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>An open question can still lead. Run the premise check on every question, including the ones that start with “how” or “what”.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Refuse the quick fix of deleting “don’t you”. A rewrite that removes the signal words and keeps the premise is still leading.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Ask “what happened” before “why”. “Why did you stop coming?” asks a patient to defend a decision you have assumed she made.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A yes to a leading question tells you the respondent did not contradict you. If the question carried the premise, the answer cannot be evidence for it.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The three checks tell you whether a question gives the respondent room. They do not tell you whether it asks about the right thing, or in words the respondent uses.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee’s list of questions is all closed, do not tell them “use open questions”. Take one of their questions, ask them what answer they expect, and show them that the question already contains it.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A colleague’s made-up draft for the clinic study opens with these three questions.</p>\n<ol type=\"1\">\n<li>Did you know that coming every month keeps your sugar under control?</li>\n<li>Why haven’t you been coming?</li>\n<li>Is it the cost, the distance or your family?</li>\n</ol>\n<p>Say what is wrong with each. Then write one opening question that fixes all three problems.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>It is closed (yes or no). It is also not really a question. It is advice, with a premise the respondent is being asked to agree with. It turns the interview into a consultation.</li>\n<li>It is open in form. It takes for granted that the person decided to stop. It asks them to justify that, as if they owed the clinic an explanation.</li>\n<li>It is closed: it offers three answers and leaves no room for a fourth. It is leading, because it supplies the reasons.</li>\n</ol>\n<p>One opening question that avoids all three: “Tell me about the last time you came to the clinic.” It is open, it asks about an event rather than a judgement, it gives no advice, and it asks one thing.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Put this question through the three checks: open or closed, leading or not, double or not.</p>\n<p>Do you travel to the clinic by bus?</p>",
+   "level": 1,
+   "answer": "<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Check</td>\n<td>Result</td>\n<td>Because</td>\n</tr>\n<tr>\n<td>form of the answer</td>\n<td>closed</td>\n<td>it can be answered yes or no</td>\n</tr>\n<tr>\n<td>leading</td>\n<td>no</td>\n<td>it takes nothing about the person’s experience for granted, and shows no preferred answer</td>\n</tr>\n<tr>\n<td>double</td>\n<td>no</td>\n<td>it asks one thing</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Put each question through the three checks.</p>\n<ol type=\"a\">\n<li>Tell me about your last visit to the clinic.</li>\n<li>How many kilometres is it from your home to the clinic?</li>\n<li>Don’t you think the tablets help?</li>\n<li>How hard is the walking the doctor asked for?</li>\n</ol>",
+   "level": 2,
+   "answer": "<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Question</td>\n<td>Form</td>\n<td>Leading</td>\n<td>Double</td>\n<td>Because</td>\n</tr>\n<tr>\n<td>a</td>\n<td>open</td>\n<td>no</td>\n<td>no</td>\n<td>it needs the person’s own words and takes nothing about the visit for granted</td>\n</tr>\n<tr>\n<td>b</td>\n<td>closed</td>\n<td>no</td>\n<td>no</td>\n<td>the answer is a number</td>\n</tr>\n<tr>\n<td>c</td>\n<td>closed</td>\n<td>yes</td>\n<td>no</td>\n<td>yes or no, and “don’t you” shows the answer expected</td>\n</tr>\n<tr>\n<td>d</td>\n<td>open</td>\n<td>yes</td>\n<td>no</td>\n<td>open in form, but it takes for granted that the walking is hard</td>\n</tr>\n</tbody>\n</table>\n<p>Question d is the one to notice. It passes check 1 and fails check 2.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Put this question through the three checks. Then split it into separate open questions.</p>\n<p>Did the doctor explain the diet, and did you follow it?</p>",
+   "level": 3,
+   "answer": "<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Check</td>\n<td>Result</td>\n<td>Because</td>\n</tr>\n<tr>\n<td>form of the answer</td>\n<td>closed</td>\n<td>each half can be answered yes or no</td>\n</tr>\n<tr>\n<td>leading</td>\n<td>no</td>\n<td>neither half shows a preferred answer</td>\n</tr>\n<tr>\n<td>double</td>\n<td>yes</td>\n<td>it asks whether the doctor explained, and whether the person followed</td>\n</tr>\n</tbody>\n</table>\n<p>A “no” could mean the doctor did not explain, or the person did not follow, or both. Split it, and ask each half as an event.</p>\n<ul>\n<li>What did the doctor tell you about the diet?</li>\n<li>What happened with the diet after that?</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>This line is from a made-up first list of interview questions for the clinic study.</p>\n<p>Did you stop coming because the clinic is too far?</p>\n<p>Put it through the three checks. Then write a neutral open question to replace it.</p>",
+   "level": 4,
+   "answer": "<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Check</td>\n<td>Result</td>\n<td>Because</td>\n</tr>\n<tr>\n<td>form of the answer</td>\n<td>closed</td>\n<td>it can be answered yes or no</td>\n</tr>\n<tr>\n<td>leading</td>\n<td>yes</td>\n<td>it supplies the reason, “too far”, and takes for granted that the person decided to stop</td>\n</tr>\n<tr>\n<td>double</td>\n<td>no</td>\n<td>it asks one thing</td>\n</tr>\n</tbody>\n</table>\n<p>Replace it with a question about an event: “Tell me about the last time you came to the clinic.” If distance matters to this person, it will come up in their account, in their words. If it does not come up, you can ask a plain factual follow-up later: “How do you get here?”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Here are two lines from a made-up interview transcript at the clinic, translated from Chhattisgarhi.</p>\n<table style=\"width:97%;\">\n\n<thead>\n<tr>\n<th>Speaker</th>\n<th>Words</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>R2</td>\n<td>I have the tablets at home. A whole strip is still there.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Why did you stop taking the tablets?</td>\n</tr>\n</tbody>\n</table>\n<p>Put the interviewer’s question through the three checks. Say how R2 might hear it. Then write a better next line for the interviewer.</p>",
+   "level": 5,
+   "answer": "<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Check</th>\n<th>Result</th>\n<th>Because</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>form of the answer</td>\n<td>open</td>\n<td>R2 has to answer in her own words</td>\n</tr>\n<tr>\n<td>leading</td>\n<td>yes</td>\n<td>it takes for granted that she stopped, which she did not say, and asks her to justify it</td>\n</tr>\n<tr>\n<td>double</td>\n<td>no</td>\n<td>it asks one thing</td>\n</tr>\n</tbody>\n</table>\n<p>R2 said a strip is still at home. She did not say she stopped. The question turns her words into an admission, and “why did you” asks her to defend it. She may hear the question a staff member asks before a telling-off, and give the answer that ends it fastest.</p>\n<p>A better next line uses her own words and asks for more: “A whole strip is still there. Tell me about that.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A colleague’s made-up draft guide on family meals has six questions.</p>\n<ol type=\"1\">\n<li>How old are you?</li>\n<li>What does a usual evening meal at home look like?</li>\n<li>Is rice served every night?</li>\n<li>Don’t you think a late dinner is bad for your weight?</li>\n<li>How does your family support your diet and your walking?</li>\n<li>Why do you eat after the others have finished?</li>\n</ol>\n<p>Put each through the three checks. Count how many are open, closed, leading and double. Say which questions to rewrite first.</p>",
+   "level": 6,
+   "answer": "<table style=\"width:98%;\">\n\n<thead>\n<tr>\n<th>No.</th>\n<th>Form</th>\n<th>Leading</th>\n<th>Double</th>\n<th>Because</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>closed</td>\n<td>no</td>\n<td>no</td>\n<td>a plain fact</td>\n</tr>\n<tr>\n<td>2</td>\n<td>open</td>\n<td>no</td>\n<td>no</td>\n<td>asks for an account and takes nothing about the meal for granted</td>\n</tr>\n<tr>\n<td>3</td>\n<td>closed</td>\n<td>no</td>\n<td>no</td>\n<td>yes or no, with no preferred answer shown</td>\n</tr>\n<tr>\n<td>4</td>\n<td>closed</td>\n<td>yes</td>\n<td>no</td>\n<td>“don’t you” shows the answer wanted, and it carries the premise that a late dinner is bad for weight</td>\n</tr>\n<tr>\n<td>5</td>\n<td>open</td>\n<td>yes</td>\n<td>yes</td>\n<td>takes for granted that the family supports her, and asks about the diet and the walking together</td>\n</tr>\n<tr>\n<td>6</td>\n<td>open</td>\n<td>yes</td>\n<td>no</td>\n<td>takes for granted that she eats after the others, and asks her to justify it</td>\n</tr>\n</tbody>\n</table>\n<p>Count each result.</p>\n<div class=\"working\">\n<p>open: questions 2, 5 and 6, so 3<br />\nclosed: questions 1, 3 and 4, so 3<br />\n3 plus 3 = 6<br />\nleading: questions 4, 5 and 6, so 3<br />\ndouble: question 5, so 1</p>\n</div>\n<p>Rewrite the three leading questions first, 4, 5 and 6, because each one plants an answer. Question 5 is also double, so split it as you rewrite it. Only question 2 is both open and neutral as it stands.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>question: “Tell me, do you eat rice at night?”<br />\ncheck 1: it begins “Tell me”, so it invites the respondent’s own account: open<br />\ncheck 2: it takes nothing about her experience for granted: not leading<br />\ncheck 3: it asks one thing: not double</p>\n</div>",
+   "level": 7,
+   "answer": "<p>Check 1 broke. Check 1 asks about the form of the answer, not the first words of the question. The answer to “do you eat rice at night?” is yes or no, so the question is closed. “Tell me” in front of it changes nothing about what the person can answer.</p>\n<p>Checks 2 and 3 are right: it shows no preferred answer, and it asks one thing.</p>\n<p>An open question on the same topic asks for an account: “What does a usual evening meal at home look like?”</p>\n<p>Why the wrong answer looks reasonable: “Tell me about…” is a common way to open a question. So the words have come to feel like a mark of an open question. The words are a habit, not the test.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>original: “Don’t you find the diet hard?”<br />\ncheck 1: yes or no, so closed<br />\ncheck 2: “don’t you” shows the answer wanted, so leading<br />\nrewrite: “How hard do you find the diet?”<br />\nthe rewrite needs the respondent’s own words, so it is open<br />\n“don’t you” is gone, so the rewrite is not leading</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The last line broke. The rewrite removed the words that signalled the wanted answer. It kept the premise, “the diet is hard”. “How hard” can only be answered with an amount of hardness. A respondent for whom the diet is easy, or who stopped following it for some other reason, has no room to say so.</p>\n<p>The first four lines are right. The rewrite is open, as line 5 says.</p>\n<p>A rewrite that removes the premise too asks about the event: “Tell me about the diet since you were given it.” Or: “What has the diet been like for you?”</p>\n<p>Why the wrong answer looks reasonable: the signal words are the most visible sign of a leading question, and removing them feels like fixing it. The premise is less visible, because it sits in a word that looks like a description.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A made-up draft protocol for the clinic study says:</p>\n<p>“We will ask patients whether they find the diet hard.”</p>\n<p>Turn this into a question to ask. Then say what the answers to it still cannot show.</p>",
+   "level": 9,
+   "answer": "<p>Taken word for word, the line becomes “Do you find the diet hard?” That is closed, and it hands the respondent your word, “hard”. So do not ask it as written.</p>\n<p>Ask about the diet as an event, and write follow-ups under it.</p>\n<ul>\n<li>Question: “Tell me about the diet the clinic gave you.”</li>\n<li>Follow-ups, if the respondent raises them: “What happened in the first week?” and “Who else at home eats the same food?”</li>\n</ul>\n<p>If the diet is hard for this person, that will come out in their account, with the reasons.</p>\n<p>What the answers still cannot show:</p>\n<ul>\n<li>How many of the clinic’s patients find the diet hard. The people you interview were chosen, not drawn <dfn data-g=\"17\">at random</dfn>, so a count of them is not a rate for the clinic.</li>\n<li>That the diet is why people stop coming. A respondent can find the diet hard and stop coming for a different reason. Your guide needs to ask about stopping separately, as an event.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A colleague says: “None of my questions lead. They are all open. Every one starts with ‘how’.”</p>\n<p>Here are the four interviewer lines from one of their made-up transcripts.</p>\n<table style=\"width:72%;\">\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>How much does your weight worry you?</td>\n</tr>\n<tr>\n<td>I</td>\n<td>How did the nurse’s advice help you?</td>\n</tr>\n<tr>\n<td>I</td>\n<td>How often do you miss the evening walk?</td>\n</tr>\n<tr>\n<td>I</td>\n<td>How do you get to the clinic?</td>\n</tr>\n</tbody>\n</table>\n<p>Test the claim. Then say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Put each line through checks 1 and 2.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Line</th>\n<th>Form</th>\n<th>Leading</th>\n<th>Because</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>open</td>\n<td>yes</td>\n<td>takes for granted that weight worries the person; “how much” asks only for an amount</td>\n</tr>\n<tr>\n<td>2</td>\n<td>open</td>\n<td>yes</td>\n<td>takes for granted that the advice helped</td>\n</tr>\n<tr>\n<td>3</td>\n<td>closed</td>\n<td>yes</td>\n<td>“how often” wants a number; it takes for granted that there is a regular evening walk, and that it gets missed</td>\n</tr>\n<tr>\n<td>4</td>\n<td>open</td>\n<td>no</td>\n<td>asks for an account of an event; that the person comes to the clinic is already known</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>open: lines 1, 2 and 4, so 3<br />\nclosed: line 3, so 1<br />\n3 plus 1 = 4<br />\nleading: lines 1, 2 and 3, so 3</p>\n</div>\n<p>Neither half of the claim holds. Line 3 is closed, and 3 of the 4 lead. Starting with “how” settles neither check.</p>\n<p>What this does not establish:</p>\n<ul>\n<li>That the respondents’ answers were distorted. For that you read the answers. A respondent may have said “it does not worry me” despite the question.</li>\n<li>That line 4 will get a truthful or full answer. A neutral question gives room. It does not guarantee what fills it.</li>\n<li>Anything about the colleague’s other transcripts. Four lines from one interview are a sample of their questions, not all of them.</li>\n</ul>"
+  }
+ ]
+}

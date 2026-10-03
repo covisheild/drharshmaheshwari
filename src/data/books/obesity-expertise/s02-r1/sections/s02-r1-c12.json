@@ -1,0 +1,210 @@
+{
+ "format": 1,
+ "id": "s02-r1-c12",
+ "label": "12",
+ "title": "A column that is a weighted sum of other columns",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Take a table whose rows are cases and whose columns are variables, as section 11 sets one up. Read each column as a <dfn data-g=\"279\">vector</dfn>, with one entry for each row.</p>\n<p>A column y is a <dfn data-g=\"281\">weighted sum</dfn> of the columns a1, a2, …, ak when there are fixed numbers w1, w2, …, wk, called the weights, that make the following true on every row. The entry of y equals w1 times the entry of a1, plus w2 times the entry of a2, and so on up to wk times the entry of ak. The same weights must hold on every row.</p>\n<p>A column of 1s counts as a column. So a column y that equals 2 times a, plus 5, on every row is a weighted sum of a and the column of 1s, with weights 2 and 5.</p>\n<p>A column that is a weighted sum of others is <dfn data-g=\"226\">redundant</dfn>: once the other columns are known, it says nothing about any row that they did not already say.</p>\n<p>The test for it treats the weights as unknowns. Each row gives one equation in them. Find the weights from as many rows as there are weights. With two weights, that is two equations in two unknowns, solved as in Book 0, C3.</p>\n<p>With more, look for a row in which only one weight is still unknown. A row where every column but one is zero gives that weight at once. A row with the other weights already found gives the last one. This book solves more than two weights only this way.</p>\n<p>Then put the weights into every other row. If every row holds, y is a weighted sum of those columns. If the equations have no solution, or a single leftover row fails, it is not. If the rows you picked repeat each other, so that their equations have infinitely many solutions, pick another row.</p>\n<p>When a table holds a column beside the columns it is a weighted sum of, the table no longer fixes the weights on a weighted sum of all of them together. Weight can be moved from that column onto its parts, in <dfn data-g=\"212\">proportion</dfn>, in infinitely many ways, and every row’s total stays the same.</p>\n<p>A study that predicts an outcome from several columns (its predictors) chooses one weight for each from the rows. The weight on one column is an association, not a cause. It is the change in the prediction for one more unit of that column, with every other column held fixed, as in section 10.</p>\n<p>A column that is nearly, but not exactly, a weighted sum of others is a harder problem. The next rung takes it up.</p>",
+   "refs": [
+    99,
+    92,
+    100,
+    85,
+    101,
+    102,
+    37
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Picture an order sheet at a tiffin stall. Each row is one order. One column counts the idlis, one counts the dosas, and the last column is the amount paid.</p>\n<p>Suppose an idli costs 20 rupees and a dosa costs 50. Then on every row the amount paid is 20 times the idlis plus 50 times the dosas. The prices are the weights. The amount column adds nothing: cover it with your hand and you can still write it back in.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c12-energy-weighted-sum.png",
+   "alt": "Four points at 345, 400, 460 and 900 kilocalories, each on the dashed line where the energy column equals the weighted sum of the grams.",
+   "w": 1358,
+   "h": 655,
+   "caption": "The four made-up items’ energy against 4 times protein plus 9 times fat plus 4 times carbohydrate, both in kilocalories. Every point sits on the line where the two are equal, so the energy column says nothing the three gram columns do not."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c12-tee-not-weighted-sum.png",
+   "alt": "Paired bars for adults 1, 2 and 3: TEE 9.0, 12.0 and 12.0 against the weighted sum 9.0, 12.0 and 9.0. Only adult 3's pair differs.",
+   "w": 1357,
+   "h": 657,
+   "caption": "The three made-up adults’ TEE against the weights found from adults 1 and 2, 0 times BMR plus 6 times PAL, in megajoules a day. The weights fit the two adults they were found from and miss adult 3, whose TEE is 12.0, by 3."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c12-three-weightings.png",
+   "alt": "Grouped bars for items 1 to 4, three bars each, all the same height within an item: 900 for item 1, 400 for item 2, 460 for item 3 and 345 for item 4.",
+   "w": 1357,
+   "h": 657,
+   "caption": "Three made-up scores built from the four columns: 1 times energy; 4, 9 and 4 on the grams with none on energy; and 2, 4.5 and 2 on the grams with 0.5 on energy. They give the same total on every item, so the table cannot say which one a score comes from."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Here is a question that sounds reasonable and has no answer. “Among foods with the same <dfn data-g=\"213\">protein</dfn>, fat and carbohydrate, what goes with an extra 100 kilocalories?” Try to answer it from this table of four made-up items.</p>\n<table style=\"width:92%;\">\n\n<thead>\n<tr>\n<th>item</th>\n<th>protein (g)</th>\n<th>fat (g)</th>\n<th>carbohydrate (g)</th>\n<th>energy (kcal)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>0</td>\n<td>100</td>\n<td>0</td>\n<td>900</td>\n</tr>\n<tr>\n<td>2</td>\n<td>0</td>\n<td>0</td>\n<td>100</td>\n<td>400</td>\n</tr>\n<tr>\n<td>3</td>\n<td>10</td>\n<td>20</td>\n<td>60</td>\n<td>460</td>\n</tr>\n<tr>\n<td>4</td>\n<td>25</td>\n<td>5</td>\n<td>50</td>\n<td>345</td>\n</tr>\n</tbody>\n</table>\n<p>Look for two items that match in protein, fat and carbohydrate and differ in energy. There are none. The test shows why.</p>\n<p>Write the energy column as unknown weights times the other three. Call the weight on protein p, on fat f and on carbohydrate c. On every row, energy must equal p times protein, plus f times fat, plus c times carbohydrate.</p>\n<p>Row 1 has no protein and no carbohydrate, so it holds f alone: 100 times f is 900.</p>\n<div class=\"working\">\n<p>900 divided by 100 = 9</p>\n</div>\n<p>So f is 9. Row 2 holds c alone: 100 times c is 400.</p>\n<div class=\"working\">\n<p>400 divided by 100 = 4</p>\n</div>\n<p>So c is 4. Row 3 now has one unknown left, p. Put in the two weights you have.</p>\n<div class=\"working\">\n<p>20 times 9 plus 60 times 4 = 420<br />\n460 minus 420 = 40<br />\n40 divided by 10 = 4</p>\n</div>\n<p>So p is 4. Three rows went into finding three weights. Row 4 is the check.</p>\n<div class=\"working\">\n<p>4 times 25 plus 9 times 5 plus 4 times 50 = 345</p>\n</div>\n<p>The table says 345. The weights (4, 9, 4) hold on every row, so the energy column is a weighted sum of the other three.</p>\n<p>Now go back to the question. Energy is 4 times protein plus 9 times fat plus 4 times carbohydrate. For it to rise while the grams stay fixed, one of those three parts would have to move. None can. The question asks about a row this table cannot contain.</p>\n<p>Here is what that does to any sum built from all four columns. Take a made-up score for each item that equals its energy: 1 times energy, and no weight on the grams. Row 3 gives this.</p>\n<div class=\"working\">\n<p>1 times 460 = 460</p>\n</div>\n<p>Now put all the weight on the grams instead, and none on energy.</p>\n<div class=\"working\">\n<p>4 times 10 plus 9 times 20 plus 4 times 60 = 460</p>\n</div>\n<p>Now split it half and half: 2, 4.5 and 2 on the grams, and 0.5 on energy.</p>\n<div class=\"working\">\n<p>2 times 10 plus 4.5 times 20 plus 2 times 60 plus 0.5 times 460 = 460</p>\n</div>\n<p>All three give 460 on row 3, and they agree on every other row too. Handed only the table and the scores, nobody can say whether the score “comes from” energy or from the grams.</p>\n<p>Now the other way round: a column that is fixed by two others and still fails the test.</p>\n<p>Three United Nations bodies wrote the report <em>Human energy requirements</em> together in 2004. The report defines the <dfn data-g=\"197\">physical activity level</dfn>, PAL, as a person’s <dfn data-g=\"271\">total energy expenditure</dfn> for the day, TEE, divided by their <dfn data-g=\"23\">basal metabolic rate</dfn>, BMR. So, in the report’s words, “BMR times PAL is equal to TEE”.</p>\n<p>Take three made-up adults.</p>\n<table style=\"width:61%;\">\n\n<thead>\n<tr>\n<th>adult</th>\n<th>BMR (MJ/day)</th>\n<th>PAL</th>\n<th>TEE (MJ/day)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>6.0</td>\n<td>1.5</td>\n<td>9.0</td>\n</tr>\n<tr>\n<td>2</td>\n<td>6.0</td>\n<td>2.0</td>\n<td>12.0</td>\n</tr>\n<tr>\n<td>3</td>\n<td>8.0</td>\n<td>1.5</td>\n<td>12.0</td>\n</tr>\n</tbody>\n</table>\n<p>Test whether TEE is a weighted sum of BMR and PAL. Call the weights u and v. Rows 1 and 2 give two equations.</p>\n<div class=\"working\">\n<p>row 1: 6.0 times u plus 1.5 times v = 9.0<br />\nrow 2: 6.0 times u plus 2.0 times v = 12.0</p>\n</div>\n<p>Subtract row 1 from row 2, the <dfn data-g=\"78\">elimination</dfn> move of Book 0, C3. The u terms cancel.</p>\n<div class=\"working\">\n<p>2.0 minus 1.5 = 0.5<br />\n12.0 minus 9.0 = 3.0<br />\n3.0 divided by 0.5 = 6</p>\n</div>\n<p>So 0.5 times v is 3.0, and v is 6. Put v back into row 1.</p>\n<div class=\"working\">\n<p>1.5 times 6 = 9<br />\n9.0 minus 9 = 0</p>\n</div>\n<p>So 6.0 times u is 0, and u is 0. Now check row 3, the row you did not use.</p>\n<div class=\"working\">\n<p>0 times 8.0 plus 6 times 1.5 = 9</p>\n</div>\n<p>The table says 12.0, not 9. Row 3 fails, so TEE is not a weighted sum of BMR and PAL.</p>\n<p>Yet every TEE in the table is fixed by the other two columns.</p>\n<div class=\"working\">\n<p>6.0 times 1.5 = 9<br />\n6.0 times 2.0 = 12<br />\n8.0 times 1.5 = 12</p>\n</div>\n<p>The test finds weighted sums and only weighted sums. A column made by multiplying two others passes straight through it, and “not a weighted sum” must never be read as “carries something new”.</p>",
+   "numberRefs": [
+    86
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A real label also rounds its figures. The check then holds only to within the <dfn data-g=\"231\">rounding</dfn>. A row that misses by a <dfn data-g=\"102\">fraction</dfn> of a <dfn data-g=\"139\">kilocalorie</dfn> is not a sign of a separate column.</p>\n<p>Add a column of 1s to the adults’ test, and there are three weights for its three rows. The weights would then fit all three rows and leave nothing to check.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Find the weights from some rows, then check every other row. One row that fails settles it: the column is not a weighted sum.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A table that carries energy beside protein, fat and carbohydrate, with energy worked out from the Atwater factors, carries one column too many. Refuse the question, or drop one column and say which one you dropped.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The misconception is that a redundant column must look like one of the others. A column that looks like no other can still be a weighted sum of several. Comparing columns two at a time will not find it.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The check needs rows to spare. With as many rows as weights, almost any column fits exactly.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a column is nearly but not exactly a weighted sum, this test cannot say whether that matters. Say so, and leave it to the next rung.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you hear that a model “found no effect of fat once calories were accounted for”, ask how the calories were worked out. If they came from the grams, the model had no way to fix a weight for fat.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A methods section says this.</p>\n<blockquote>\n<p>Energy intake (kcal/day) was calculated from protein (P), fat (F) and carbohydrate (C) intakes as E = 4P + 9F + 4C. All four were entered together as predictors of weight change.</p>\n</blockquote>\n<p>Say what each symbol denotes, with its unit. Then say what the second sentence cannot deliver, and what the authors could have done instead.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>E is <dfn data-g=\"85\">energy intake</dfn>, in kilocalories a day. P, F and C are protein, fat and carbohydrate intake, in grams a day. A <dfn data-g=\"207\">predictor</dfn> is a column that a model uses to predict an outcome, here weight change, with one weight for each predictor. The 4, 9 and 4 are the <dfn data-g=\"20\">Atwater general factors</dfn>, in kilocalories a gram. 4P means 4 times P.</p>\n<p>The first sentence says that on every row, E is a weighted sum of P, F and C, with weights 4, 9 and 4. So E is redundant beside them.</p>\n<p>The second sentence asks for four separate weights, one for each predictor. The table cannot fix them. Take any set of weights. Move some weight off E and onto P, F and C in the proportions 4, 9 and 4. Every predicted value stays the same. “The weight on fat” has infinitely many values that fit equally well.</p>\n<p>What they could have done: enter three of the four, and say which three. With E, P and C, the weight on E answers “energy, with protein and carbohydrate held fixed”, which can only move by moving fat. That is a real question, and it is a different question from the one asked with P, F and C.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Take the columns a = (1, 2, 3) and b = (4, 0, 1).</p>\n<p>Work out the column 3a + 2b, that is, 3 times a plus 2 times b, row by row.</p>",
+   "level": 1,
+   "answer": "<p>Row by row, 3 times the entry of a plus 2 times the entry of b.</p>\n<div class=\"working\">\n<p>3 times 1 plus 2 times 4 = 11<br />\n3 times 2 plus 2 times 0 = 6<br />\n3 times 3 plus 2 times 1 = 11</p>\n</div>\n<p>The column is (11, 6, 11).</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Take a = (1, 2, 3), b = (1, 0, 2) and y = (5, 6, 13).</p>\n<p>Find weights u and v with y equal to u times a plus v times b on every row, or show that there are none.</p>",
+   "level": 2,
+   "answer": "<p>Each row gives one equation.</p>\n<div class=\"working\">\n<p>row 1: 1 times u plus 1 times v = 5<br />\nrow 2: 2 times u plus 0 times v = 6<br />\nrow 3: 3 times u plus 2 times v = 13</p>\n</div>\n<p>Row 2 holds u alone.</p>\n<div class=\"working\">\n<p>6 divided by 2 = 3</p>\n</div>\n<p>So u is 3. Put it into row 1.</p>\n<div class=\"working\">\n<p>5 minus 3 = 2</p>\n</div>\n<p>So v is 2. Row 3 is the check.</p>\n<div class=\"working\">\n<p>3 times 3 plus 2 times 2 = 13</p>\n</div>\n<p>It holds. So y is 3 times a plus 2 times b, a weighted sum with weights 3 and 2.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Take a = (2, 1, 4) and b = (1, 3, 0), and y = (7, 8, 8).</p>\n<p>Is y equal to 2 times a plus 3 times b?</p>",
+   "level": 2,
+   "answer": "<p>Check every row with the weights given.</p>\n<div class=\"working\">\n<p>2 times 2 plus 3 times 1 = 7<br />\n2 times 1 plus 3 times 3 = 11<br />\n2 times 4 plus 3 times 0 = 8</p>\n</div>\n<p>Rows 1 and 3 hold. Row 2 gives 11, and y has 8 there. One failing row is enough: y is not 2a + 3b.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Take a = (2, 3, 1, 4), b = (1, 2, 5, 3) and y = (4, 7, 11, 9).</p>\n<p>Test whether y is a weighted sum of a and b.</p>",
+   "level": 3,
+   "answer": "<p>Two weights, so use two rows to find them. Call them u and v.</p>\n<div class=\"working\">\n<p>row 1: 2 times u plus 1 times v = 4<br />\nrow 2: 3 times u plus 2 times v = 7</p>\n</div>\n<p>Double row 1, so that v carries the same number in both.</p>\n<div class=\"working\">\n<p>2 times 2 = 4<br />\n2 times 4 = 8</p>\n</div>\n<p>That gives 4 times u plus 2 times v = 8. Subtract row 2 from it.</p>\n<div class=\"working\">\n<p>4 minus 3 = 1<br />\n8 minus 7 = 1</p>\n</div>\n<p>So u is 1. Put it into row 1.</p>\n<div class=\"working\">\n<p>4 minus 2 times 1 = 2</p>\n</div>\n<p>So v is 2. Now check the two rows you did not use.</p>\n<div class=\"working\">\n<p>row 3: 1 times 1 plus 2 times 5 = 11<br />\nrow 4: 1 times 4 plus 2 times 3 = 10</p>\n</div>\n<p>Row 3 holds. Row 4 gives 10, and y has 9 there. So y is not a weighted sum of a and b. If you had stopped after row 3, you would have said it was.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Take a = (1, 2, 4) and y = (8, 11, 17).</p>\n<p>Test whether y is a weighted sum of a and the column of 1s.</p>",
+   "level": 3,
+   "answer": "<p>Call the weight on a u, and the weight on the column of 1s w. Every entry of the column of 1s is 1, so w is simply added on each row.</p>\n<div class=\"working\">\n<p>row 1: 1 times u plus w = 8<br />\nrow 2: 2 times u plus w = 11</p>\n</div>\n<p>Subtract row 1 from row 2. The w cancels.</p>\n<div class=\"working\">\n<p>2 minus 1 = 1<br />\n11 minus 8 = 3</p>\n</div>\n<p>So u is 3. Put it into row 1.</p>\n<div class=\"working\">\n<p>8 minus 3 = 5</p>\n</div>\n<p>So w is 5. Check row 3.</p>\n<div class=\"working\">\n<p>3 times 4 plus 5 = 17</p>\n</div>\n<p>It holds. So y is 3 times a, plus 5, on every row.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A made-up packet label gives these figures for each 100 grams: protein 8 g, fat 12 g, carbohydrate 60 g, and energy 380 kcal.</p>\n<p>Check whether the energy is the weighted sum of the grams with the Atwater general factors as weights.</p>",
+   "level": 4,
+   "answer": "<p>The Atwater general factors are 4 kcal a gram for protein, 9 for fat and 4 for carbohydrate (FAO 2003). Multiply each by its grams and add.</p>\n<div class=\"working\">\n<p>4 times 8 plus 9 times 12 plus 4 times 60 = 380</p>\n</div>\n<p>380 kcal, which is the label’s figure. The energy on this label is exactly the Atwater weighted sum of its grams, so it tells you nothing the grams do not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A made-up table lists three items. None has any protein. For each 100 grams it gives the fat and the carbohydrate in grams. It gives the energy in kcal.</p>\n<table style=\"width:72%;\">\n\n<thead>\n<tr>\n<th>item</th>\n<th>fat (g)</th>\n<th>carbohydrate (g)</th>\n<th>energy (kcal)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>A</td>\n<td>10</td>\n<td>50</td>\n<td>290</td>\n</tr>\n<tr>\n<td>B</td>\n<td>20</td>\n<td>30</td>\n<td>300</td>\n</tr>\n<tr>\n<td>C</td>\n<td>5</td>\n<td>70</td>\n<td>325</td>\n</tr>\n</tbody>\n</table>\n<p>Find the weights that make energy a weighted sum of fat and carbohydrate. Check them. Give their unit. Then compare them with the Atwater factors.</p>",
+   "level": 5,
+   "answer": "<p>Call the weight on fat f and on carbohydrate c. Items A and B give two equations.</p>\n<div class=\"working\">\n<p>A: 10 times f plus 50 times c = 290<br />\nB: 20 times f plus 30 times c = 300</p>\n</div>\n<p>Double A, so that f carries 20 in both.</p>\n<div class=\"working\">\n<p>2 times 50 = 100<br />\n2 times 290 = 580</p>\n</div>\n<p>That gives 20 times f plus 100 times c = 580. Subtract B from it.</p>\n<div class=\"working\">\n<p>100 minus 30 = 70<br />\n580 minus 300 = 280<br />\n280 divided by 70 = 4</p>\n</div>\n<p>So c is 4. Put it into A.</p>\n<div class=\"working\">\n<p>290 minus 50 times 4 = 90<br />\n90 divided by 10 = 9</p>\n</div>\n<p>So f is 9. Check item C, which you did not use.</p>\n<div class=\"working\">\n<p>9 times 5 plus 4 times 70 = 325</p>\n</div>\n<p>It holds. The weights are 9 and 4 kilocalories a gram: kilocalories on the energy side, divided by grams on the other. They are the Atwater general factors for fat and carbohydrate (FAO 2003), which is what this made-up table was built from.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Hall and colleagues (2012) write the <dfn data-g=\"81\">energy balance</dfn> equation as ES = EI − EO. Each term is an amount of energy per unit of time. ES is how fast the body’s energy stores change. EI is the energy taken in. EO is the energy spent, which this book writes EE. Hall’s ES is the rate that this book writes dES/dt.</p>\n<p>Here are three made-up days, in kcal a day.</p>\n<table style=\"width:81%;\">\n\n<thead>\n<tr>\n<th>day</th>\n<th>EI (kcal/day)</th>\n<th>EE (kcal/day)</th>\n<th>dES/dt (kcal/day)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>2500</td>\n<td>2400</td>\n<td>100</td>\n</tr>\n<tr>\n<td>2</td>\n<td>2000</td>\n<td>2200</td>\n<td>-200</td>\n</tr>\n<tr>\n<td>3</td>\n<td>2300</td>\n<td>2300</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>\n<p>Without using the equation, find weights that make the dES/dt column a weighted sum of the EI and EE columns, and check them.</p>",
+   "level": 5,
+   "answer": "<p>Call the weights u on EI and v on EE. Days 1 and 2 give two equations.</p>\n<div class=\"working\">\n<p>day 1: 2500 times u plus 2400 times v = 100<br />\nday 2: 2000 times u plus 2200 times v = -200</p>\n</div>\n<p>Make u carry the same number in both: multiply day 1 by 4 and day 2 by 5.</p>\n<div class=\"working\">\n<p>4 times 2500 = 10000<br />\n4 times 2400 = 9600<br />\n4 times 100 = 400<br />\n5 times 2000 = 10000<br />\n5 times 2200 = 11000<br />\n5 times -200 = -1000</p>\n</div>\n<p>Subtract the first new equation from the second. The u terms cancel.</p>\n<div class=\"working\">\n<p>11000 minus 9600 = 1400<br />\n-1000 minus 400 = -1400<br />\n-1400 divided by 1400 = -1</p>\n</div>\n<p>So v is minus 1. Put it into day 1.</p>\n<div class=\"working\">\n<p>100 plus 2400 = 2500<br />\n2500 divided by 2500 = 1</p>\n</div>\n<p>So u is 1. Check day 3.</p>\n<div class=\"working\">\n<p>1 times 2300 plus -1 times 2300 = 0</p>\n</div>\n<p>It holds. The weights are 1 and minus 1, both without a unit, since all three columns are in kilocalories a day. That is Hall’s equation: dES/dt is EI minus EE, a weighted sum.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A table lists foods. It gives protein, fat and carbohydrate in grams, and energy in kilocalories. The energy was worked out with the Atwater general factors. An analyst finds that a score equals 0.01 times energy on every row.</p>\n<p>Give two other sets of weights on the four columns (protein, fat, carbohydrate, energy) that give the same score on every row. Check both on the row with protein 10 g, fat 20 g, carbohydrate 60 g and energy 460 kcal.</p>",
+   "level": 6,
+   "answer": "<p>Energy is 4 times protein plus 9 times fat plus 4 times carbohydrate on every row (FAO 2003). So 0.01 times energy is the same as 0.04 times protein, plus 0.09 times fat, plus 0.04 times carbohydrate.</p>\n<div class=\"working\">\n<p>0.01 times 4 = 0.04<br />\n0.01 times 9 = 0.09</p>\n</div>\n<p>One set is (0.04, 0.09, 0.04, 0): all the weight on the grams. A second puts half on each: half of each gram weight, and half of 0.01 on energy.</p>\n<div class=\"working\">\n<p>0.04 divided by 2 = 0.02<br />\n0.09 divided by 2 = 0.045<br />\n0.01 divided by 2 = 0.005</p>\n</div>\n<p>The second set is (0.02, 0.045, 0.02, 0.005). Check all three on the row given.</p>\n<div class=\"working\">\n<p>0.01 times 460 = 4.6<br />\n0.04 times 10 plus 0.09 times 20 plus 0.04 times 60 = 4.6<br />\n0.02 times 10 plus 0.045 times 20 plus 0.02 times 60 plus 0.005 times 460 = 4.6</p>\n</div>\n<p>All three give 4.6. Any other split works too, so the table cannot choose between them.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a = (1, 2, 3, 5), b = (2, 1, 1, 1), y = (5, 4, 5, 9)<br />\nrow 1: 1 times u plus 2 times v = 5<br />\nrow 2: 2 times u plus 1 times v = 4<br />\nfrom row 2, v = 4 minus 2 times u; into row 1: u plus 8 minus 4 times u = 5, so u = 1<br />\nthen v = 4 minus 2 = 2<br />\nthe weights 1 and 2 fit, so y is a weighted sum of a and b, y = a + 2b</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The last line broke. The weights were found from rows 1 and 2, and those two rows were then taken as proof. Rows used to find the weights will always fit them; that is how they were found. The check is the rows that were left over, and nobody looked at them.</p>\n<div class=\"working\">\n<p>row 3: 1 times 3 plus 2 times 1 = 5<br />\nrow 4: 1 times 5 plus 2 times 1 = 7</p>\n</div>\n<p>Row 3 holds. Row 4 gives 7, and y has 9 there. So y is not a weighted sum of a and b.</p>\n<p>Why the wrong answer looks reasonable: the algebra is correct, and “the weights fit” sounds like a test that was passed. It was a test that could not fail.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>three made-up adults: (BMR 6.0, PAL 1.5, TEE 9.0), (6.0, 2.0, 12.0), (8.0, 1.5, 12.0), in MJ/day except PAL<br />\ntest TEE as u times BMR plus v times PAL plus w times the column of 1s<br />\nsolving the three rows gives u = 1.5, v = 6, w = -9<br />\ncheck: 1.5 times 6.0 plus 6 times 1.5 minus 9 = 9.0, and the other two rows also hold<br />\nso TEE is a weighted sum of BMR, PAL and the column of 1s</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The conclusion broke. Three weights were found from three rows, which left no row to check. The three rows will fit by construction, so the “check” repeats the rows used to solve.</p>\n<p>Add a fourth made-up adult with BMR 8.0 MJ/day and PAL 2.0. The report’s relation, “BMR times PAL is equal to TEE” (FAO/WHO/UNU 2004), gives that adult’s TEE.</p>\n<div class=\"working\">\n<p>8.0 times 2.0 = 16<br />\n1.5 times 8.0 plus 6 times 2.0 minus 9 = 15</p>\n</div>\n<p>The weights give 15, and the adult’s TEE is 16. They fail at the first row beyond the ones used to find them. TEE is BMR times PAL, a product, which is not a weighted sum of BMR, PAL and 1s.</p>\n<p>Why the wrong answer looks reasonable: the solving is correct and every row “holds”. With as many rows as weights, almost any column would have held.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a made-up label, per 100 g, printing energy as a whole number: protein 7.3 g, fat 11.6 g, carbohydrate 58.4 g, energy 367 kcal<br />\nAtwater weighted sum: 4 times 7.3 plus 9 times 11.6 plus 4 times 58.4 = 367.2<br />\n367.2 is not 367<br />\nso energy is not a weighted sum of the grams, and it carries information of its own<br />\nkeep all four columns as separate predictors</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The fourth line broke. The label prints energy as a whole number, so 367.2 is printed as 367. A gap of 0.2 kcal is the rounding, not a column with information of its own.</p>\n<div class=\"working\">\n<p>4 times 7.3 plus 9 times 11.6 plus 4 times 58.4 = 367.2<br />\n367.2 minus 367 = 0.2</p>\n</div>\n<p>The gap is below the half a kilocalorie that rounding to a whole number can move a figure by. The energy is the Atwater sum of the grams (FAO 2003), rounded. It is redundant beside them, and the last line would put the same fact into a model twice.</p>\n<p>Why the wrong answer looks reasonable: the test was applied correctly, and a strict reading of it says one mismatch settles it. A mismatch smaller than the printing can show is not a mismatch.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A study reports this, and says its energy intake was worked out from the grams with the Atwater factors.</p>\n<blockquote>\n<p>With energy intake, protein and carbohydrate in the model, fat intake had no effect on weight gain.</p>\n</blockquote>\n<p>The study’s “effect” means the fitted weight on fat, not a cause.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: whether fat is a weighted sum of energy, protein and carbohydrate in this table. Energy is 4 times protein plus 9 times fat plus 4 times carbohydrate (FAO 2003). Take 4 times protein and 4 times carbohydrate away from energy, and divide by 9. So fat is the weighted sum of energy, protein and carbohydrate with weights 1/9, −4/9 and −4/9.</p>\n<p>Check it on a made-up day: energy 2000 kcal, protein 60 g, carbohydrate 260 g.</p>\n<div class=\"working\">\n<p>2000 minus 4 times 60 minus 4 times 260 = 720<br />\n720 divided by 9 = 80<br />\n4 times 60 plus 9 times 80 plus 4 times 260 = 2000</p>\n</div>\n<p>Fat is 80 g, and the Atwater sum gives back the 2000 kcal. On every row, fat is fixed once the other three are known.</p>\n<p>So “fat, with energy, protein and carbohydrate held fixed” describes rows the table cannot contain. Whatever number the model printed for fat is one of infinitely many that fit the table equally well.</p>\n<p>What this does not establish. It does not show that fat is tied to weight gain, and it does not show that it is not. The study’s sentence says nothing about fat either way. To ask about fat, drop energy and keep protein, fat and carbohydrate. Then the weight on fat answers “fat, with protein and carbohydrate held fixed”, which lets energy move with fat. Say that out loud, because it is a different question.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A food composition table lists what is in each 100 grams of a food. Its notes say its carbohydrate is found “by difference”. That is 100 minus water, protein, fat and ash (another column such tables report), all in grams. A colleague says:</p>\n<blockquote>\n<p>Then the carbohydrate column is redundant. Drop it; we lose nothing.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: whether carbohydrate is a weighted sum of the columns the table holds. By the table’s own rule it is 100 times the column of 1s, plus −1 times each of water, protein, fat and ash. Check it on one made-up row: water 12 g, protein 10 g, fat 2 g, ash 1 g.</p>\n<div class=\"working\">\n<p>100 minus 12 minus 10 minus 2 minus 1 = 75</p>\n</div>\n<p>75 g of carbohydrate. On every row where all four other columns are present, carbohydrate is fixed by them, with weights 100, −1, −1, −1 and −1. The colleague is right about the numbers: dropping it loses no value that cannot be written back in.</p>\n<p>But only if every subtracted column is in the table. Take a copy without ash, or without water. Its carbohydrate column is then, in general, not a weighted sum of what is left. Run the test before you drop it.</p>\n<p>What this does not establish. It does not show that the carbohydrate figure is right. Every error in the water, protein, fat and ash columns lands in it, because it is what is left over. It does not show what the carbohydrate is made of. FAO’s report says Atwater’s carbohydrate “is determined by difference, and thus includes fibre”, so a by-difference figure is not sugar and <dfn data-g=\"259\">starch</dfn> alone. And “we lose nothing” is true only for a reader who knows the rule. Write the rule down beside the table if you drop the column.</p>"
+  }
+ ]
+}

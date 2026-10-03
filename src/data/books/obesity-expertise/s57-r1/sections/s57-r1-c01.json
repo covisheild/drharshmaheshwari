@@ -1,0 +1,107 @@
+{
+ "format": 1,
+ "id": "s57-r1-c01",
+ "label": "1",
+ "title": "Learning is what lasts, and how a session feels is not evidence of it",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In this book, learning means a lasting change in what a person can do. It is measured by a test taken after a delay. The time between study and that test is the <dfn data-g=\"447\">retention interval</dfn>.</p>\n<p>Performance is what a learner can do during a session or within minutes of it. <dfn data-g=\"186\">Feeling of learning</dfn> is the learner’s own judgement of how much they learned, usually given as a rating.</p>\n<p>Transmission is teaching by telling: the teacher explains and the learners listen, take notes, and ask the odd question.</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A session can go well and teach much less than it seemed to.</p>\n<p>Reading something twice makes it feel familiar, and the familiar feels learned. A smooth lecture feels clear, and the clear feels learned. Work that makes learners struggle feels worse, even when it teaches more.</p>\n<p>So a quiz at the end of your session measures performance. A feedback form measures feeling. Neither measures learning. You find out about learning by testing again after a delay, a week or more, with new questions on the same objective.</p>\n<p>“They enjoyed it and they answered well at the end, so they learned it.” Both premises can be true. The <dfn data-g=\"242\">inference</dfn> still does not carry, because the conclusion is about a later day that neither premise measured.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c01-reversal.png",
+   "alt": "Grouped bars for three groups, SSSS, SSST and STTT. After 5 minutes: 83, 78 and 71 per cent. After 1 week: 40, 56 and 61 per cent.",
+   "w": 1358,
+   "h": 657,
+   "caption": "Percentage of the passage recalled on the final test in Roediger and Karpicke’s second experiment. After 5 minutes, the group that read the passage four times (SSSS) recalled most. After 1 week, the group that read it once and was tested three times (STTT) recalled most. The order of the three groups turns round."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>You have just taught a batch of third-year MBBS students (the Bachelor of Medicine and Bachelor of Surgery course) how to classify body-mass index. At the end, you hand out a feedback form and a short quiz. The forms say the session was clear. Most students get the quiz right. You are about to write “objective achieved” in your teaching log.</p>\n<p>Before you write it, open Roediger and Karpicke, “Test-enhanced learning”, <em>Psychological Science</em> 2006, at https://doi.org/10.1111/j.1467-9280.2006.01693.x. Go to Experiment 2.</p>\n<p>Students learned one short prose passage. Each student had four periods in a row, used in one of three ways. S stands for a study period: 5 minutes of reading. T stands for a test period: 10 minutes of writing down everything they could remember, with no feedback.</p>\n<ul>\n<li>SSSS: read it in all four periods, no test.</li>\n<li>SSST: read it three times, then one test.</li>\n<li>STTT: read it once, then three tests.</li>\n</ul>\n<p>Then everyone took one final recall test. Half took it 5 minutes later. The other half took it 1 week later. Here are the percentages of the passage recalled on that final test.</p>\n<table style=\"width:68%;\">\n\n<tbody>\n<tr>\n<td>group</td>\n<td>after 5 minutes (%)</td>\n<td>after 1 week (%)</td>\n</tr>\n<tr>\n<td>SSSS</td>\n<td>83</td>\n<td>40</td>\n</tr>\n<tr>\n<td>SSST</td>\n<td>78</td>\n<td>56</td>\n</tr>\n<tr>\n<td>STTT</td>\n<td>71</td>\n<td>61</td>\n</tr>\n</tbody>\n</table>\n<p>Read the first column. Reading four times wins.</p>\n<p>Now read the second column. The order has turned round.</p>\n<div class=\"working\">\n<p>61 minus 40 = 21</p>\n</div>\n<p>The group that was ahead by 12 <dfn data-g=\"362\">percentage</dfn> points at 5 minutes is behind by 21 a week later.</p>\n<p>Now find Table 2. At the end of the first session, before any final test, each student filled in a short rating form. One question asked how well they would remember the passage in 1 week, on a 7-point scale. The SSSS group gave 4.8. The STTT group gave 4.0. The group most sure it would remember was the group that remembered least a week later.</p>\n<p>Your quiz is the first column: performance, minutes after the teaching. Your feedback form is the rating in Table 2: a feeling. Neither is the second column. To fill in the second column for your own batch, set a short test on the same objective a week or more later.</p>",
+   "numberRefs": [
+    14
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The numbers come from undergraduates at one university. The numbers do not tell you what happens after a month. A test taken minutes after teaching, or a learner’s own rating, can point the opposite way from a later test.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A high score on a quiz at the end of your session is not evidence that the batch learned. It measures performance minutes after the teaching.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Do not read a learner’s rating of how much they learned as a measure of learning. In Deslauriers’s experiment, every student had one class taught actively and one taught by lecture, in an order decided by chance. In their active class they scored almost half a <dfn data-g=\"492\">standard deviation</dfn> (the spread of scores, Book 0, D5) higher on the end-of-class test. They rated their learning more than half a standard deviation lower.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Before you call a session a success, book a second short test on the same objective, a week or more later.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When you ask learners to work problems instead of watching you solve them, expect some to say they are learning less. Tell them at the start that effort is part of how it works. One course that did this saw most students say their view of the method improved, though nothing was compared.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When a committee judges teachers by students’ feedback ratings, say that the ratings measure feeling of learning.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Test at the interval you actually care about, and do not treat a one-week result as proof of a six-month one.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A learner’s own rating is weakest where you most need it, in a beginner. Deslauriers found that ratings tracked test scores more closely in students who already knew more physics. With a new batch, give a test before you trust a show of hands.</p>",
+     "tag": "boundary",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Your teaching log for one session reads: “End-of-session quiz, mean 8 out of 10. Feedback form, mean 4.5 out of 5 for ‘I understood the topic’. Objective achieved.” Say what each number measures. Say what you would add before writing “objective achieved”.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The quiz mean measures performance: what the batch could do minutes after the teaching. The feedback mean measures feeling of learning: how much they think they learned. Neither measures learning.</p>\n<p>Both can point the wrong way. In Roediger and Karpicke’s second experiment, the group that did best at 5 minutes, and was surest it would remember, recalled least a week later.</p>\n<p>Add a short test on the same objective, with new questions, a week or more later. Only its result can support “objective achieved”.</p>"
+  }
+ ]
+}

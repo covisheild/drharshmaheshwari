@@ -1,0 +1,182 @@
+{
+ "format": 1,
+ "id": "s36-r1-c07",
+ "label": "7",
+ "title": "Consent, recording and privacy before you switch on the recorder",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In India the rules a researcher follows with people who take part in health research are set out in the National Ethical Guidelines for Biomedical and Health Research Involving Human Participants. The Indian Council of Medical Research (ICMR) published them in October 2017.</p>\n<p><dfn data-g=\"142\">Informed consent</dfn>, in the guidelines’ words, is a process with “three components – providing relevant information to potential participants, ensuring the information is comprehended by them and assuring voluntariness of participation” (section 2.2). The researcher “must obtain voluntary written informed consent from the prospective participant” (section 5.0). Spoken consent, without a signature or thumb impression, is allowed only in exceptional cases, with the approval of an <dfn data-g=\"98\">ethics committee</dfn>, or EC (section 5.3.8).</p>\n<p>The information given must say that this is research, its purpose and methods in simple words, how long taking part lasts, any foreseeable risks, and who the research team is, with contact details (Box 5.1). It must include the person’s “Freedom of the individual to participate and/or withdraw from research at any time without penalty or loss of benefits” (Box 5.1). It must include how far <dfn data-g=\"51\">confidentiality</dfn> can be kept, and its limits (section 2.3.2). With the ethics committee’s permission, what a person said may be disclosed on a court’s order, when someone’s life is threatened, or for a public-health risk (section 2.3.6).</p>\n<p>A person who cannot read gives consent in front of an impartial literate witness (section 5.4.3). A person who cannot sign gives a thumb impression (section 5.4.4).</p>\n<p><dfn data-g=\"235\">Privacy</dfn> is the person’s right to control what is collected about them and who sees it. Confidentiality is the researcher’s duty to protect what was entrusted, including “from unauthorized access, use, disclosure, modification, loss or theft” (section 2.3). Raw data, audio-visual material included, should be shared only after processing “to mask identifiers” (section 9.2.12).</p>\n<p>Every proposal goes to an ethics committee. The committee, not the researcher, decides the kind of review: exemption, a quick review by a few members, or review by the full committee (section 4.8.3, Table 4.2).</p>",
+   "refs": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Before you ask anyone a research question, three things have to be settled. Does the person agree, knowing what they are agreeing to? Do they agree to be recorded? And what will happen to their words afterwards?</p>\n<p>In India the rulebook for this is the ICMR’s National Ethical Guidelines of 2017. No <dfn data-g=\"166\">legislature</dfn> passed it, so it is not a <dfn data-g=\"298\">statute</dfn>. A statute on <dfn data-g=\"216\">personal data</dfn> also covers recordings, but most of it is not yet in force.</p>\n<p>An ethics committee is a group of people at a hospital, college or research body. It reads a researcher’s plan before any research starts, and it can say yes, no, or change this first.</p>\n<p>Consent, in the guidelines’ own words, has three parts. You give the person the information. You make sure they understood it. And you make sure they are free to say no.</p>\n<p>Ask about the recorder on its own, and take no for an answer.</p>\n<p>Privacy is the person’s right to decide who hears about them. Confidentiality is your duty to keep safe what they told you. An interview recording carries a voice, a name, a village, a family story.</p>\n<p>Last, the question every learner asks: does my practice interview need an ethics committee? You send the committee its forms, and the committee decides.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Suppose you are about to interview a woman who comes to the district hospital’s NCD clinic in Chhattisgarh — the clinic for non-communicable diseases such as diabetes. She has obesity, and she stopped coming back for follow-up. You want to know why. Here is a made-up exchange, translated from Chhattisgarhi, showing how the first minute can go wrong. You are wearing the clinic’s white coat. The recorder is already running on the table.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Namaste. This is for a study. Just sign here, it is nothing.</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>What study? Will the doctor see this?</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Don’t worry. So, Sunita-ji, tell me why you stopped coming.</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>Theek hai. The tablets are good.</td>\n</tr>\n</tbody>\n</table>\n<p>Now read it the way the ICMR guidelines would have you read it. Count what went wrong.</p>\n<p>The recorder was on before she agreed to anything. She was never asked about it separately.</p>\n<p>“It is nothing” is not information. She was not told what the study is, how long it takes, or that she can stop at any time. Box 5.1 of the guidelines lists those among the things she must be told.</p>\n<p>She asked the most important question herself: will the doctor see this? It went unanswered. Section 5.3.10 says you must tell her that saying no will not affect “the patient–clinician relationship”. In a white coat, in her own clinic, she has every reason to think it will.</p>\n<p>You said her name aloud on the tape. Now her name and her reasons for leaving the clinic sit in one file.</p>\n<p>And her answer is two words, then praise for the tablets. The guidelines warn that in India people often cannot say no out loud. They name “silence, monosyllabic replies, or restlessness” as signs of refusal (Box 9.4). “Theek hai” here may mean “let me go”.</p>\n<p>Now do it again, in order. Recorder off. Say who you are and who you are not: “I work on this study. I am not your doctor, and I will not tell the doctor who said what.” Explain the study in Chhattisgarhi, in words she uses. Say what stays private, and its limits. Say she can stop at any time, and her treatment stays the same whether she takes part or not. Ask whether she has questions, and wait. If she agrees, take her signature, or her thumb impression if she cannot sign. If she cannot read the form, an impartial literate witness hears it read to her. Then ask, as a separate question: “May I record our talk? Only the study team will hear it, except in the rare cases I told you about.” Switch on only after she says yes. Open the recording by speaking her <dfn data-g=\"286\">speaker label</dfn>, R1, and never her name.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The steps here follow ICMR 2017 as issued. They do not tell you what your own institution adds on top. An ethics committee can ask for more, such as a particular form, a translated sheet checked back into English, or a named place to store the files. Its instructions come first.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the question that stops most learners. You plan five practice interviews. Do they need an ethics committee? Do not answer from memory, yours or anyone’s. Look it up.</p>\n<p>Open the National Ethical Guidelines for Biomedical and Health Research Involving Human Participants on the ICMR website. Search inside the document for “routine questioning”. It sits in Table 2.1, on minimal risk. Minimal risk means harm no greater than “that ordinarily encountered in routine daily life activities”. That looks like good news for an interview.</p>\n<p>Now search for “linked identifiers”. It sits in Table 4.2. Exemption from review is for proposals “with less than minimal risk where there are no linked identifiers”. Your recording has a voice on it, and her consent form has a name. Is that a linked identifier? You may think not. The guidelines do not let you think it for the committee.</p>\n<p>Search for “cannot decide”. Section 4.8.3 reads: “A researcher cannot decide that her/his proposal falls in the exempted, expedited or full review category. All research proposals must be submitted to the EC.”</p>\n<p>Last, search for “Preliminary activity”. Section 9.2.12 says notes from observing, made before the research itself begins, “need not be submitted for EC’s review”. Is a practice interview that kind of note-making? The same passage goes on: any ethical issue in that early phase “should be included in the research proposal for review by the EC”. So even this passage sends you back to the committee.</p>\n<p>The answer to your question is therefore not yes and not no. It is: fill in the committee’s forms (Box 4.4). They include a protocol, the consent sheet in English and the local language, and the questionnaire, here your <dfn data-g=\"310\">topic guide</dfn>. Send them to your institution’s ethics committee, and ask it which kind of review applies. You may ask it, with reasons, to consider exemption (section 4.8.3). If you have no institution, this book’s suggestion is to ask the ethics committee of the hospital or college where you would do the interviews.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This reading covers the sections of the guidelines named here. Other sections, and later ICMR notices, can change the answer. The guidelines themselves urge you to check the latest government rules. Whatever you find, the committee’s written reply to your plan is what you act on, not your own reading.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>None of the review categories in the guidelines (Tables 2.1 and 4.2, section 4.8.3) makes an exception for a practice interview. Send your plan to an ethics committee and let it decide, before you record anyone.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An interview can feel harmless and still carry risk. The guidelines warn that risks in social and behavioural research can be “misconstrued as no/minimum risk research” (Box 9.1). One of the main risks is information getting out. So before you ask for consent, decide where the recordings live: one locked device or folder that only the study team can open. The guidelines ask that access to stored records “should be limited” (section 2.3.5). Do not delete them the day you finish either. Records, data and notes “should be retained for the required period” (section 1.1.10). Your ethics committee tells you how long.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Ask about the recorder as its own question, after consent to the interview. Someone may agree to talk and refuse to be recorded. Then take written notes instead, or do not go ahead, but never record anyway.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In a clinic, tell the person in plain words that saying no will not change their treatment.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>In India a person may not say no out loud. The guidelines tell researchers to read silence, very short replies or restlessness as possible refusal, and not to carry on (Box 9.4).</p>",
+     "tag": "india_deviation",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Keep names out of everything but the consent form. Give each person a speaker label such as R1 and use it on the recording, the file name and the transcript. Keep the signed forms, and the list that joins labels to names, apart from the recordings.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Tell people the limits of confidentiality, not a promise of perfect secrecy. The guidelines require you to say that it “may not be possible” to protect privacy in every circumstance (section 2.3.2). Name the limits: a court’s order, a threat to someone’s life, a public-health risk (section 2.3.6).</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>The law on recordings is the Digital Personal Data Protection <dfn data-g=\"3\">Act</dfn>, 2023 (Act No. 22 of 2023). It is a statute, passed by Parliament (Book 0, F5). ICMR’s guidelines are not. The Act’s definitions and its Data Protection Board are in force from 13 November 2025. Personal data is “any data about an individual who is identifiable by or in relation to such data” (section 2(t)). By that definition, a recording or transcript that can identify someone is personal data. That person is the <dfn data-g=\"69\">Data Principal</dfn>. The <dfn data-g=\"67\">Data Fiduciary</dfn> is whoever “determines the purpose and means of processing” (section 2(i)). Recording and storage are processing (section 2(x)). The rest of the Act starts later: notice, consent, withdrawal, the duties and the exemptions. They start “eighteen months from the date of publication” of notice G.S.R. 843(E). 13 November 2025 + 18 months = 13 May 2027. Until then they are law on paper, not yet in force. From then, section 17(2)(b) exempts processing “necessary for research”. The data must not be used to decide something about the person. And the work must meet the standards in the 2025 Rules (Second Schedule). It must be lawful and for that purpose only. It uses only the data needed, kept accurate, kept safe, and kept only while needed. One person is accountable. The Act does not define “research”. It does not say whether a practice interview counts. It does not mention ethics committees. So your ethics committee and institution still decide. Plan as if the duties applied, because ICMR 2017 already asks for most of them. A legal question goes to a lawyer.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A patient of the NCD clinic stopped coming for follow-up, and you are about to interview her. Write what you will say before the first question, in the order you will say it. Write it as spoken sentences, not headings. Then write one line saying when the recorder goes on.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A good script covers, in this order:</p>\n<ol type=\"1\">\n<li>Who you are, and who you are not. “I work on this study. I am not your doctor. I will not tell the clinic who said what.”</li>\n<li>What the study is, in the person’s own language. “We want to understand why some people stop coming back to this clinic. I will ask you about your visits and your life around them. Some questions may feel personal.” Then say how long it will take.</li>\n<li>That taking part is free and can stop. “You can say no. You can stop at any time, or skip any question. Your treatment here stays exactly the same either way.”</li>\n<li>What happens to their words, and its limits. “Only the study team will hear what you say. I will not use your name. There are rare exceptions. If a court orders it, or someone’s life or the public’s health is in danger, the ethics committee can allow it to be shared.”</li>\n<li>Questions. “What would you like to ask me? If you have a question later, call [name] on [number].” Then wait.</li>\n<li>Consent: a signature, or a thumb impression. If the person cannot read the form, an impartial literate witness who is not a relative is present.</li>\n<li>The recorder, separately. “May I record our talk, so I do not miss anything? You can say no, and we will still talk.”</li>\n</ol>\n<p>The recorder goes on only after step 7 gets a yes, and the first thing said on it is the label (R1), never the name.</p>\n<p>Check your script against sections 5.3.10, 2.3.2 and 2.3.6 and Box 5.1 of the ICMR guidelines. Then check it against whatever your ethics committee asks for. Its form overrides this list.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague writes: “It’s only a practice interview with a clinic patient, so it’s minimal risk under ICMR. That means no ethics committee. I’ll record in the waiting area so she is comfortable.” Find each claim that the guidelines do not support.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>First, “minimal risk under ICMR”. Table 2.1 does give “routine questioning or history taking” as an example of minimal risk. But the colleague has placed the study in a category by themselves. Section 4.8.3 says a researcher cannot decide which review category their proposal falls in. The ethics committee decides. Table 2.1 also says identifiable personal data carry indirect risks, which can put the study in the next category up.</p>\n<p>Second, “that means no ethics committee”. Even minimal risk is not the category Table 4.2 exempts from review. Exemption is for “less than minimal risk where there are no linked identifiers”. A recording of a named patient’s voice may well carry linked identifiers. And every proposal goes to the committee in any case (section 4.8.3).</p>\n<p>Third, “I’ll record”. For interviews in social and behavioural research, the guidelines ask for prior permission from the ethics committee to record at all (Box 9.3).</p>\n<p>Fourth, “the waiting area”. Other patients and staff can overhear. One of the main risks in this kind of research is information getting out (section 9.2.3). A private room protects her. Her comfort is better served by saying her treatment will not change.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident wants to “just chat” with five patients from the NCD clinic about why they stop coming. They plan to record on a phone and use the recordings in a presentation. You have ten minutes and a whiteboard. Teach them what has to happen first.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw three boxes: agree, record, afterwards.</p>\n<p>Agree. Treat it as research and let the committee decide (section 4.8.3). The ICMR guidelines ask for informed consent. That has three parts: information, understanding, and freedom to say no. Write “your care will not change” in the box, because in a clinic that is the sentence patients need most.</p>\n<p>Record. It is a separate yes, asked after the first. The guidelines also need the ethics committee’s permission to record interviews.</p>\n<p>Afterwards. Where does the phone go? Who can open it? Write “labels, not names”. Treat a talk like a publication: no identifiable clip without fresh consent. Section 2.3.3 says publication must not reveal who a person is, and needs “re-consent” if that was not obtained before.</p>\n<p>Then draw an arrow above all three boxes to “ethics committee”. Section 4.8.3 says the researcher cannot decide the review category. The resident sends the committee its forms (Box 4.4), and does not start until the committee replies.</p>"
+  }
+ ]
+}

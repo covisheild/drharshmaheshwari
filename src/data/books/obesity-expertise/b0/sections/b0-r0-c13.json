@@ -1,0 +1,188 @@
+{
+ "format": 1,
+ "id": "b0-r0-c13",
+ "label": "B5",
+ "title": "Concentration units: mg/dL, mmol/L, and converting between them",
+ "part": "B",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"35\">concentration</dfn> is an amount of something held in a volume of something else.</p>\n<p>A <dfn data-g=\"110\">mass concentration</dfn> is a mass in a volume. Milligrams per decilitre, written mg/dL, is a mass concentration.</p>\n<p>An <dfn data-g=\"10\">amount-of-substance concentration</dfn> is an amount of substance in a volume. Millimoles per litre, written mmol/L, is an amount-of-substance concentration. A <dfn data-g=\"115\">millimole</dfn> is one thousandth of a <dfn data-g=\"118\">mole</dfn>.</p>\n<p>The <dfn data-g=\"117\">molar mass</dfn> of a substance is the mass of one mole of it. Molar mass is a property of the substance and differs from one substance to another.</p>\n<p>Converting a mass concentration into an amount-of-substance concentration therefore requires the identity of the substance.</p>\n<p>A molar mass is measured and computed, not decided, so it can be revised.</p>",
+   "refs": [
+    24,
+    25,
+    26
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Milligrams per decilitre, written mg/dL, is a weight of something in a volume of blood. What mg/dL counts is weight.</p>\n<p>Millimoles per litre, written mmol/L, counts something else. A mole is a fixed count of things, molecules here. What mmol/L counts is how many of those things there are.</p>\n<p>Those are two different kinds of quantity. One says how heavy. The other says how many.</p>\n<p>To get from how heavy to how many, you have to know how heavy one mole is. That weight is called the molar mass, and it is written in grams per mole, g/mol.</p>\n<p>The molar mass belongs to the substance. Glucose has one. Cholesterol has a different one. So there is no single <dfn data-g=\"41\">conversion factor</dfn> between mg/dL and mmol/L, and there never can be.</p>\n<p>So the job has four steps.</p>\n<ol type=\"1\">\n<li>Find out what the substance is. Read the row label, not the number.</li>\n<li>Get its molar mass in grams per mole. Look it up. Do not guess it.</li>\n<li>Multiply the mg/dL figure by ten, because a litre holds ten decilitres. That gives milligrams per litre.</li>\n<li>Divide by the molar mass. That gives millimoles per litre.</li>\n</ol>\n<p>To go the other way, run the same steps backwards. Multiply by the molar mass, then divide by ten.</p>\n<p>A conversion renames an amount. It does not make the amount better known.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Start with the sum you cannot do, because that is the one this section is really about.</p>\n<p>Do the glucose one first.</p>\n<p>The record is compound 5793. The page gives the molecular formula as C6H12O6 and the molecular weight as 180.16 g/mol.</p>\n<p>Take a glucose value of 100 mg/dL and work it a line at a time.</p>\n<div class=\"working\">\n<p>100 mg in every decilitre<br />\na litre holds ten decilitres<br />\n100 times 10 = 1,000<br />\nso 1,000 mg in every litre<br />\none mole weighs 180.16 grams, so one millimole weighs 180.16 milligrams<br />\n1,000 divided by 180.16 = 5.5506<br />\nso 5.5506 mmol in every litre</p>\n</div>\n<p>Write 5.55 mmol/L. The calculator’s 5.550621670 is a claim about the laboratory’s work, not about yours.</p>\n<p>Now the cholesterol, and watch it stop.</p>\n<p>Go back to PubChem and search for cholesterol. The record is compound 5997. The page gives the molecular formula as C27H46O.</p>\n<p>And you still cannot do the sum.</p>\n<p>You cannot turn a mass into an amount of substance without the molar mass of the substance in front of you. Glucose’s 180.16 is glucose’s, and it says nothing about cholesterol.</p>\n<p>You know the method. You know the substance. None of that is enough. The one number the method needs is a measured property of cholesterol, and nothing you know produces it.</p>\n<p>Do not reuse glucose’s divisor because both numbers came off the same report.</p>\n<p>Write down that the conversion is pending. Name what you need, which is cholesterol’s molar mass in grams per mole. Go and read it off PubChem compound 5997. Looking it up is not a detour around the method. It is part of the method.</p>",
+   "numberRefs": [
+    27
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 180.16 g/mol belongs to D-glucose and to nothing else. The working carries over to another substance only once that substance’s own molar mass is in your hand.</p>\n<p>And the conversion renames an amount. It cannot improve it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>There is no single number that turns mg/dL into mmol/L. The factor belongs to the substance, not to the pair of units. Dividing by 18 is a glucose move and it is wrong on everything else.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>One mole of D-glucose weighs 180.16 grams, as PubChem’s record for compound 5793 gives it. That one figure moves a glucose value between mg/dL and mmol/L in either direction.</p>",
+     "tag": "number",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Convert in four steps and say them out loud. Name the substance. Get its molar mass in grams per mole. Multiply the mg/dL figure by ten, because a litre holds ten decilitres. Divide by the molar mass, and the answer is in mmol/L.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Two laboratory numbers in the same unit are not two numbers about the same thing. Read the row label before you convert, and carry the substance with every converted value you hand on.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>This conversion needs one substance with one molar mass. A figure that is a mixture reported as a single total has no molar mass, so it cannot be put into mmol/L at all.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A conversion never adds a digit. A value the laboratory gave you as 100 mg/dL comes out as 5.55 mmol/L, not as 5.550621670 mmol/L.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>When you do not hold the molar mass, say so and stop. Quoting a converted value you cannot source costs you everything you say after it.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here is a line from a draft laboratory protocol.</p>\n<blockquote>\n<p>To convert any laboratory value from mg/dL to mmol/L, divide by 18.</p>\n</blockquote>\n<p>Say what is wrong with it, and write the sentence you would put in its place.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The word that fails is “any”. The 18 is not a property of the two units. It is glucose’s own molar mass divided by ten.</p>\n<div class=\"working\">\n<p>180.16 divided by 10 = 18.016</p>\n</div>\n<p>So the rule as written is a glucose rule wearing a general coat. Apply it to a different substance and you get a number with the right unit on it and the wrong value inside it.</p>\n<p>You can tell from the shape of the claim. Grams and kilograms measure the same kind of quantity, so one fixed factor crosses between them. mg/dL and mmol/L do not. One is a mass and the other is a count. Crossing between those has to involve the substance. So any rule that never mentions a substance has lost something on the way.</p>\n<p>The replacement sentence names the substance and names the step that fetches the number.</p>\n<blockquote>\n<p>To convert a value from mg/dL to mmol/L, multiply by 10. Then divide by the molar mass of that substance in grams per mole. For D-glucose the molar mass is 180.16 g/mol, so the divisor is 18.016. For any other substance, look its molar mass up first.</p>\n</blockquote>\n<p>One thing follows from that. A protocol that lists conversions must list them substance by substance. A single line covering all of them is not a shortcut, it is a defect.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist has three minutes. They have two papers open. One reports a blood sugar figure as 92 and the other reports it as 5.1, and they want to know which paper is right.</p>\n<p>Explain it without jargon. Give one quotable sentence, and say how confident you are.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first, in their words.</p>\n<blockquote>\n<p>Both papers are right. They are describing the same blood in two different ways, the way the same distance can be a mile or a kilometre.</p>\n</blockquote>\n<p>Then the mechanism, briefly. One paper is weighing the sugar in a fixed amount of blood. The other is counting the sugar molecules in a fixed amount of blood. Weighing and counting give different numbers for the same blood. The sum that links them needs the weight of one molecule of that particular sugar.</p>\n<p>Show them the sum if they want it.</p>\n<div class=\"working\">\n<p>92 times 10 = 920<br />\n920 divided by 180.16 = 5.1066</p>\n</div>\n<p>Round it to the digits the first paper gave you, and 92 becomes 5.1. That is the second paper’s number.</p>\n<p>Say the confidence out loud. This part is arithmetic and it is not in doubt at all. What is worth doubting is the blood sugar figure itself, and that is a different question from the unit.</p>\n<p>What not to say: that one unit is the correct one. Neither is. What matters is that a paper says which unit it used, and which substance it measured.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A litre holds ten decilitres. Rewrite each of these.</p>\n<div class=\"working\">\n<p>5 per decilitre, as a figure per litre<br />\n0.7 per decilitre, as a figure per litre<br />\n120 per litre, as a figure per decilitre<br />\n96 per litre, as a figure per decilitre</p>\n</div>",
+   "level": 1,
+   "answer": "<p>Going from a decilitre to a litre multiplies by ten, because a litre holds ten of them. Going the other way divides by ten.</p>\n<div class=\"working\">\n<p>5 times 10 = 50<br />\n0.7 times 10 = 7<br />\n120 divided by 10 = 12<br />\n96 divided by 10 = 9.6</p>\n</div>\n<p>Nothing about the amount changed on any line. Only the size of the container the figure is quoted against changed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Work each of these out and write the answer to four digits.</p>\n<div class=\"working\">\n<p>1,000 divided by 180.16<br />\n920 divided by 180.16<br />\n2,500 divided by 180.16</p>\n</div>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>1,000 divided by 180.16 = 5.551<br />\n920 divided by 180.16 = 5.107<br />\n2,500 divided by 180.16 = 13.88</p>\n</div>\n<p>Every answer is much smaller than the number you started with, because you divided by a number near two hundred. If an answer came out bigger, you multiplied where you should have divided.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Take each number below, multiply it by ten, then divide the result by 180.16. Write each answer to four digits.</p>\n<div class=\"working\">\n<p>72    110    45</p>\n</div>",
+   "level": 3,
+   "answer": "<p>Two steps each, in that order.</p>\n<div class=\"working\">\n<p>72 times 10 = 720<br />\n720 divided by 180.16 = 3.996<br />\n110 times 10 = 1,100<br />\n1,100 divided by 180.16 = 6.106<br />\n45 times 10 = 450<br />\n450 divided by 180.16 = 2.498</p>\n</div>\n<p>Notice that multiplying by ten and then dividing by about a hundred and eighty leaves you with roughly a twentieth of what you started with. That rough check is worth keeping in your head for later.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Now reverse the order. Take each number below, multiply it by 180.16, then divide the result by ten.</p>\n<div class=\"working\">\n<p>4    6.5    9</p>\n</div>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>4 times 180.16 = 720.64<br />\n720.64 divided by 10 = 72.064<br />\n6.5 times 180.16 = 1,171.04<br />\n1,171.04 divided by 10 = 117.104<br />\n9 times 180.16 = 1,621.44<br />\n1,621.44 divided by 10 = 162.144</p>\n</div>\n<p>This is the previous problem run backwards. Multiplying undoes dividing and dividing undoes multiplying, so nothing is lost either way.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A laboratory reports a glucose value of 92 mg/dL. PubChem gives the molecular weight of D-glucose as 180.16 g/mol.</p>\n<p>Give that value in mmol/L, keep the unit on the answer, and say how many digits you would write down.</p>",
+   "level": 4,
+   "answer": "<p>Milligrams per decilitre into milligrams per litre first.</p>\n<div class=\"working\">\n<p>92 times 10 = 920</p>\n</div>\n<p>So 920 mg/L. Now divide by the molar mass, because one millimole of glucose weighs 180.16 milligrams.</p>\n<div class=\"working\">\n<p>920 divided by 180.16 = 5.1066</p>\n</div>\n<p>Now the digits, and the reasoning is the one the illustration used. The laboratory gave 92 to the nearest whole milligram, so every digit it printed is one you can stand behind, and it printed two. Writing 5.1066 claims five. Write 5.1 mmol/L.</p>\n<p>Keep the substance with it. That is 5.1 millimoles of glucose per litre, not 5.1 millimoles of anything else.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A paper gives a glucose value as 7.2 mmol/L and your form needs it in mg/dL. PubChem gives the molecular weight of D-glucose as 180.16 g/mol.</p>\n<p>Convert it, keep the unit on the answer, and say how many digits you would write down.</p>",
+   "level": 5,
+   "answer": "<p>You are going the other way now, so the two steps reverse. Multiply by the molar mass first, which turns millimoles per litre into milligrams per litre.</p>\n<div class=\"working\">\n<p>7.2 times 180.16 = 1,297.152</p>\n</div>\n<p>Then divide by ten, which turns milligrams per litre into milligrams per decilitre.</p>\n<div class=\"working\">\n<p>1,297.152 divided by 10 = 129.7152</p>\n</div>\n<p>Now the digits. The paper gave 7.2, which carries two. Write 130 mg/dL.</p>\n<p>Check the direction before you move on. A mg/dL figure for glucose is always much bigger than the same value in mmol/L. Yours went from 7.2 to 130, which is the right way.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>People often say that a glucose value in mg/dL becomes mmol/L if you divide it by 18. PubChem gives the molecular weight of D-glucose as 180.16 g/mol.</p>\n<p>Work out the exact divisor. Then convert a glucose value of 180 mg/dL twice, once with the exact divisor and once with 18. Say how far apart the two answers are, as a share of the answer.</p>",
+   "level": 5,
+   "answer": "<p>The two steps can be done as one. Multiplying by ten and then dividing by the molar mass is the same as dividing by the molar mass over ten.</p>\n<div class=\"working\">\n<p>180.16 divided by 10 = 18.016</p>\n</div>\n<p>Now the same value both ways.</p>\n<div class=\"working\">\n<p>180 divided by 18.016 = 9.9911<br />\n180 divided by 18 = 10</p>\n</div>\n<p>The gap between them.</p>\n<div class=\"working\">\n<p>10 minus 9.9911 = 0.0089</p>\n</div>\n<p>As a share of the answer, divide the gap by the exact figure.</p>\n<div class=\"working\">\n<p>0.0089 divided by 9.9911 = 0.00089</p>\n</div>\n<p>About nine parts in ten thousand, which is under a tenth of one per cent. At the two digits a laboratory glucose value deserves, the shortcut and the exact divisor give the same answer.</p>\n<p>So the shortcut is fine, and it is fine for one reason only: it is built out of glucose’s molar mass. It carries no information about any other substance.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A report gives a glucose value of 110 mg/dL and a total cholesterol value of 200 mg/dL. Somebody asks you for both in mmol/L. PubChem gives the molecular weight of D-glucose as 180.16 g/mol, and its record for cholesterol gives the molecular formula as C27H46O.</p>\n<p>Do what can be done. Then say plainly what cannot be done, and what you would do about it.</p>",
+   "level": 6,
+   "answer": "<p>The glucose first, because that one has everything it needs.</p>\n<div class=\"working\">\n<p>110 times 10 = 1,100<br />\n1,100 divided by 180.16 = 6.1057</p>\n</div>\n<p>Three digits are what 110 deserves, so write 6.11 mmol/L of glucose.</p>\n<p>Now the cholesterol, and this is the part of the answer that matters.</p>\n<p>You know the substance. You know its formula, atom by atom. You know the method, and you have just used it. You still cannot do this sum, because the method needs cholesterol’s molar mass in grams per mole and you do not have it.</p>\n<p>So the answer is not a number. It is this: the cholesterol conversion is pending, and what is needed is cholesterol’s molar mass, which is on PubChem compound 5997. Read it off the page, then run the same two lines you ran for the glucose.</p>\n<p>What you must not do is divide 200 by 18.016. That divisor is glucose’s molar mass divided by ten. It would give you a number, and the number would carry the unit mmol/L. Nobody reading your form could tell that it is wrong.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>total cholesterol is 200 mg/dL<br />\nto turn a mg/dL figure into mmol/L you divide by 18<br />\n200 divided by 18 = 11.1<br />\nso the cholesterol is 11.1 mmol/L</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke, and everything after it inherits the break.</p>\n<p>The 18 is not a property of the units. It is glucose’s molar mass divided by ten.</p>\n<div class=\"working\">\n<p>180.16 divided by 10 = 18.016</p>\n</div>\n<p>Cholesterol is a different substance, so its molar mass is a different number, so its divisor is a different number. Nothing in the working says which substance the 18 came from. That is how it travelled from a glucose sum to a cholesterol one unnoticed.</p>\n<p>What is the right answer? There isn’t one here, and saying so is the point. The sum needs cholesterol’s molar mass. Go to PubChem compound 5997, read the molecular weight off the page, and then finish.</p>\n<p>Why it looks reasonable: both figures are in mg/dL, both answers are asked for in mmol/L, and the arithmetic on line three is correct. The working has the shape of a finished conversion. Only the provenance of the 18 is wrong, and provenance is the one thing a number cannot carry on its face.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a glucose value is 90 mg/dL<br />\nthe molecular weight of D-glucose is 180.16 g/mol<br />\n90 divided by 180.16 = 0.4996<br />\nso the glucose is 0.4996 mmol/L</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The third line broke. It divided a per-decilitre figure and reported a per-litre answer.</p>\n<p>The 90 is milligrams in a decilitre. The answer is wanted in millimoles in a litre. A litre holds ten decilitres, so the decilitre figure has to be taken up to a litre before anything else happens.</p>\n<div class=\"working\">\n<p>90 times 10 = 900<br />\n900 divided by 180.16 = 4.9956</p>\n</div>\n<p>At the two digits 90 deserves, that is 5.0 mmol/L, not 0.50.</p>\n<p>Why it looks reasonable: the molar mass named on line two is the right one, and the division on line three is arithmetically correct. The answer even carries the right unit. The missing step is a factor of ten hidden inside a prefix. Ten is a small enough factor that the answer still looks like a laboratory number.</p>\n<p>The habit that prevents it: write the unit on every line, not just the first and the last. The line that reads “900 mg per litre” cannot be confused with the line that reads “90 mg per decilitre”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Every line of arithmetic in it is correct. Find the step that broke anyway.</p>\n<div class=\"working\">\n<p>a glucose value is 100 mg/dL<br />\nthe molecular weight of D-glucose is 180.16 g/mol<br />\n100 times 10 = 1,000<br />\n1,000 divided by 180.16 = 5.550621670<br />\nso the glucose is 5.550621670 mmol/L</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The last line broke, and it broke on digits rather than on arithmetic.</p>\n<p>The laboratory reported 100 milligrams per decilitre, to the nearest whole milligram. Three digits are real. The conversion factor renames the amount and cannot make it better known, so the answer has three real digits too.</p>\n<div class=\"working\">\n<p>1,000 divided by 180.16 = 5.5506</p>\n</div>\n<p>Write 5.55 mmol/L.</p>\n<p>Why it looks reasonable: nothing in the working is wrong. Each line follows from the one before it. The molar mass is the right one. The step from decilitres to litres is there. A calculator produced every digit of the final figure. This is the failure the earlier section on <dfn data-g=\"169\">significant figures</dfn> exists for. It survives a unit check, a direction check and a size check.</p>\n<p>What the long figure actually says, to a reader who takes it at face value, is that somebody measured that blood to ten digits. Nobody did.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A colleague sends you this line about a planned pooled analysis.</p>\n<blockquote>\n<p>Their glucose figures are all in mmol/L and ours are all in mg/dL. The two sets cannot be pooled, so we would have to sample our participants again.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: whether the unit is the obstacle. Take a figure, move it into the other unit, then move it back, and see whether it comes home unchanged. PubChem gives the molecular weight of D-glucose as 180.16 g/mol.</p>\n<p>Out first.</p>\n<div class=\"working\">\n<p>5 times 180.16 = 900.8<br />\n900.8 divided by 10 = 90.08</p>\n</div>\n<p>And back.</p>\n<div class=\"working\">\n<p>90.08 times 10 = 900.8<br />\n900.8 divided by 180.16 = 5</p>\n</div>\n<p>The figure came home unchanged. The molar mass is one fixed number, so moving a glucose value between mg/dL and mmol/L loses nothing. Nobody needs sampling again for this reason, and the proposal in the message would spend money on a rename.</p>\n<p>What this does not establish. It does not show the two sets can be pooled. Two sets of glucose figures can differ because different assays were used. They can differ because one set was taken fasting and the other was not. They can differ because the two groups of people are not alike. No conversion touches any of those.</p>\n<p>And it worked only because both columns hold glucose. Put a different substance in one of them and the same two lines give a wrong answer with a right-looking unit on it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>In a meeting somebody says this.</p>\n<blockquote>\n<p>The trial reports mean total cholesterol as 4.5 mmol/L. Our audit reports it as 210 mg/dL. Those are the same figure, near enough, so the two groups are comparable on this.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: put the two figures in one unit, which means turning 4.5 mmol/L into mg/dL. Write the move out with the molar mass left standing as the letter M. M is the number you are about to discover you do not have.</p>\n<div class=\"working\">\n<p>4.5 mmol in a litre, times M grams in a mole<br />\ngives 4.5 times M milligrams in a litre<br />\nthen divided by ten<br />\ngives 0.45 times M milligrams in a decilitre</p>\n</div>\n<p>Now try to put a number on M. You hold the molar mass of D-glucose and you do not hold cholesterol’s. So the computation stops here, and stopping is the answer.</p>\n<p>Notice what stopping costs you here, because it is more than it cost in the earlier problems. You cannot even eyeball this one. Without M you have no idea whether 0.45 times M lands near 210 or nowhere near it. Near enough is not a claim you can agree with or dispute. Anyone in the room who says the two figures match is telling you they hold a molar mass they have not named.</p>\n<p>What you say in the room is short. You cannot check that claim yet. You need cholesterol’s molar mass in grams per mole, it is on PubChem compound 5997, and you will have the comparison in five minutes.</p>\n<p>What you must not do is reach for 18.016. That divisor is glucose’s molar mass divided by ten. Using it here would give you a number that agrees or disagrees with the claim for no reason at all.</p>\n<p>What your answer does not establish, even once you have the molar mass. Two figures matching after a conversion is arithmetic, not evidence. It would not tell you the two groups are alike in anything else. It would not tell you the trial and the audit measured cholesterol the same way. It would not tell you they sampled people of the same ages. The unit was never the only question, and it is the easiest one in the room to answer.</p>"
+  }
+ ]
+}

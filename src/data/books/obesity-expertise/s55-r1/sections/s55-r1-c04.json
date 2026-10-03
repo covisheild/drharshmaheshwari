@@ -1,0 +1,127 @@
+{
+ "format": 1,
+ "id": "s55-r1-c04",
+ "label": "4",
+ "title": "A question you can answer",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"385\">research question</dfn> is <dfn data-g=\"22\">answerable</dfn> when it passes two tests.</p>\n<p>The first test is that it is an <dfn data-g=\"137\">empirical question</dfn>: one that can be answered by observing the world. A <dfn data-g=\"467\">value question</dfn> asks what ought to be done, and people answer it from their values.</p>\n<p>The second test is that the question is feasible: the person asking can actually get the answer with what they have.</p>\n<p><dfn data-g=\"169\">FINER</dfn> is one published checklist for a research question: feasible, interesting, novel, ethical and relevant. Aslam and Emmanuel (2010) credit it to Hulley and colleagues. Whether an answer would change anything is taken up in section 5; who is waiting for it, in section 7.</p>",
+   "refs": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Before you keep a question, put it through two tests.</p>\n<p><strong>Test 1: can the world answer it?</strong> An empirical question is one that observing the world can answer. How many children buy snacks at the school gate is empirical. Whether snacks should be banned at the school gate is not. That second one is a value question — a question about what ought to be done, which people answer from their values. Blackstone’s textbook calls it an ethical question.</p>\n<p>It usually has empirical questions inside it. The decision itself still belongs to whoever has to make it.</p>\n<p><strong>Test 2: can you get the answer?</strong> A feasible question is one that you, with what you have, can actually answer. Go down this list and, for each line, write what you actually have.</p>\n<ul>\n<li>People you can reach, in enough number. How many is enough is a question of sample size. Book 0, D6 showed why more people give a narrower answer.</li>\n<li>A way to measure the <dfn data-g=\"159\">exposure</dfn>, if the question has one.</li>\n<li>A way to measure the outcome.</li>\n<li>Time.</li>\n<li>Money.</li>\n<li>Equipment, and the skill to use it.</li>\n<li>Approval from an <dfn data-g=\"149\">ethics committee</dfn>. That is a group of people at a hospital, college or research body. It reads a researcher’s plan before any research starts, and can say yes, no, or change this first.</li>\n</ul>\n<p>A line with nothing written beside it is a fail.</p>\n<p><strong>Then check the size.</strong> A question can pass both tests and still be too broad. “What causes obesity in children in Chhattisgarh?” is empirical. Nobody could answer it in one study. So you narrow it. You give the population a boundary you can reach, pick one exposure, and name one outcome.</p>\n<p>Watch what narrowing does to the kind of question. Cutting “what causes” down to “is this one thing associated with” turns a <dfn data-g=\"56\">cause question</dfn> into a <dfn data-g=\"380\">relate question</dfn>. That can be the right move. But the study now answers the relate question, and your report must not claim more than that.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Suppose, in a made-up department meeting, the district non-communicable disease (NCD) programme officer says: “Someone should find out whether we ought to ban packaged snacks outside government schools.” You write down your first candidate.</p>\n<p>Should packaged snacks be sold outside government schools in Raipur district?</p>\n<p>Put it through test 1. Ask what measurement could answer it. Weigh every child, count every packet, and you still have not answered “should”. The answer depends on what people value: children’s health, the vendors’ earnings, the families’ choice. It is a value question.</p>\n<p>Do not throw it away. Ask what the officer would need to know before deciding. Here are three made-up empirical questions that sit inside it, with the kind of each.</p>\n<table>\n\n<thead>\n<tr>\n<th>Empirical question</th>\n<th>Kind</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>What share of children in classes 6 to 8 in government schools in Raipur district buy packaged snacks outside school on most school days?</td>\n<td>describe</td>\n</tr>\n<tr>\n<td>Among those children, is buying packaged snacks on most school days associated with having obesity?</td>\n<td>relate</td>\n</tr>\n<tr>\n<td>What share of their parents would support stopping snack sales outside the school?</td>\n<td>describe</td>\n</tr>\n</tbody>\n</table>\n<p>Each of these can be answered by observing. None of them decides the ban. The decision stays with the officer, and with the people whose values it touches.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Some questions look empirical and hide a value inside. “Is the ban working?” sounds like a question about the world. But “working” has to be given an outcome first: fewer packets sold, lower weight gain, or no fall in vendors’ earnings. Choosing that outcome is itself a value choice. Write the outcome into the question, and the hidden value becomes visible.</p>\n<p>The three rewrites are illustrations, not a plan. Whether any of them is worth asking is a separate matter from whether it can be answered.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a question that passes test 1 and is far too big. Suppose your guide’s first suggestion, made up for this section, is this.</p>\n<p>What causes obesity in school children in Chhattisgarh?</p>\n<p>It is empirical. Nobody could answer it in one study. Narrow it one step at a time, and note what each step changed.</p>\n<table style=\"width:100%;\">\n\n<thead>\n<tr>\n<th>Step</th>\n<th>The question</th>\n<th>What changed</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>What causes obesity in school children in Chhattisgarh?</td>\n<td>nothing yet</td>\n</tr>\n<tr>\n<td>1</td>\n<td>What causes obesity in children in classes 6 to 8 in government schools in Raipur district?</td>\n<td>the population has a boundary of place and age</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Is buying packaged snacks outside school associated with obesity in children in classes 6 to 8 in government schools in Raipur district?</td>\n<td>one exposure; the kind changed from cause to relate</td>\n</tr>\n<tr>\n<td>3</td>\n<td>In 2027, among children in classes 6 to 8 in the four government schools of one Raipur ward, is buying packaged snacks outside school on most school days associated with obesity?</td>\n<td>a population you can reach, a time, and an exposure stated precisely enough to measure</td>\n</tr>\n</tbody>\n</table>\n<p>Step 2 is the one to watch. The question stopped asking what causes obesity. It now asks whether one thing goes with it. Your report will have to say so.</p>\n<p>Now run test 2 on step 3. For each line, write what you have. What follows is made up.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Line</td>\n<td>What you have</td>\n</tr>\n<tr>\n<td>People you can reach</td>\n<td>the four schools of the ward your department already visits for field training; the head teachers have not yet been asked</td>\n</tr>\n<tr>\n<td>A way to measure the outcome</td>\n<td>weight and height, and a stated rule for deciding which children have obesity</td>\n</tr>\n<tr>\n<td>A way to measure the exposure</td>\n<td>nothing yet: no tested set of questions about snack buying for children of this age</td>\n</tr>\n<tr>\n<td>Time</td>\n<td>the months your guide has set aside for fieldwork</td>\n</tr>\n<tr>\n<td>Money</td>\n<td>travel within one ward, which the department can cover</td>\n</tr>\n<tr>\n<td>Equipment, and the skill to use it</td>\n<td>a weighing scale and a height rod in the department; you have not yet weighed and measured children, so you need one training session with the department’s staff</td>\n</tr>\n<tr>\n<td>Ethics committee approval</td>\n<td>not yet applied for; Blackstone’s textbook notes that minors need a guardian’s consent to take part, so the plan must say how parents will be asked</td>\n</tr>\n</tbody>\n</table>\n<p>Two lines are not yet passes. The exposure has no way to be measured, and the head teachers have not agreed. Neither kills the question. Each is a task you can now name: write and try out a few questions on snack buying, and ask the head teachers.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The schools, the ward and the department’s equipment are made up. The steps show how to narrow, not which narrowing is right for your college.</p>\n<p>Narrowing buys an answer at the price of reach. An answer from four schools in one ward speaks for those four schools. Book 0’s section on sampling showed why: it cannot stand for the district unless the schools were picked to stand for it.</p>\n<p>A list written at a desk can still fail in the field. Ratan and colleagues warn that a question can look feasible and prove otherwise once fieldwork starts. Aslam and Emmanuel suggest a pilot: a small try-out of the hardest line before the main study. It is how you find out first.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to keep a “should” question because it feels important. Find the empirical questions inside it, and leave the decision with the person who has to make it.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Run the <dfn data-g=\"167\">feasibility</dfn> list in writing. A line you can only fill with “should be possible” is a fail until you have asked.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you shrink what you can reach, shrink the population in the question too.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When narrowing turns a cause question into a relate question, say so in the protocol.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before the main study, run a pilot: a small try-out of the hardest line, usually the measurement.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Passing both tests shows only that you can get an answer. It says nothing about whether anyone needs that answer.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee cites FINER as if it settles a question, correct two things. It is a published guide, not a rule. And its E means a study a committee would approve, not a question about values.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here are four made-up candidate questions from the running setting. For each, say whether it is empirical or a value question. Rewrite each value question as one empirical question.</p>\n<ol type=\"1\">\n<li>Ought the NCD clinic to weigh every patient at every visit?</li>\n<li>What share of households in one urban slum of Raipur city cook with more than one litre of oil a week per person?</li>\n<li>Is it right for colleges to set dinner times in hostel messes?</li>\n<li>Do adults screened at the district screening camp who are told they have obesity return for a follow-up visit more often than adults who are not told?</li>\n</ol>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>Value. “Ought” asks what should be done, and the answer depends on what people value: time, the patient’s comfort, the use of the number. An empirical rewrite: “Among adults attending the NCD clinic in 2027, what share say they would prefer not to be weighed at every visit?”</li>\n<li>Empirical. It asks for a share of households in a stated place. Oil used can be measured.</li>\n<li>Value. “Is it right” asks for a moral judgement. An empirical rewrite: “Among first-year students living in the hostels of one college, what share eat the mess dinner on most days?” Another would ask what students think of a fixed time.</li>\n<li>Empirical. It is a relate question: an exposure (being told) and an outcome (returning). It can be answered if the camp’s records show who was told and who came back, which you would check first.</li>\n</ol>\n<p>Note what the rewrites do not do. None of them settles the value question. They give the person deciding something to decide with.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Your guide proposes this made-up question: “What is the relationship between diet, physical activity, sleep, screen time and obesity among college students in Chhattisgarh?”</p>\n<p>Say what makes it too broad. Then narrow it to one question, in one sentence, that you could answer at your own college. Name one line of the feasibility list you would still have to check.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Too broad in three ways.</p>\n<ul>\n<li>Four exposures: diet, physical activity, sleep and screen time. Each needs its own measurement, and each could need its own study.</li>\n<li>A population nobody can reach in one study: every college student in the state.</li>\n<li>“Relationship” names no direction and no time. It does not say whether you are counting, comparing or testing a change.</li>\n</ul>\n<p>One narrowed version, as a relate question: “Among first-year students at our medical college in 2027, is sleeping less than six hours on most nights associated with having obesity?”</p>\n<p>It has one population you can reach, one exposure and one outcome. It is now a relate question, and a one-visit survey could not say which came first. The conclusion must stay within that.</p>\n<p>A line still to check: a way to measure the exposure. Asking students how long they sleep gives their report of it, not a measurement. You would need to choose and try out the questions before the study.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>The state health secretary writes to you: “Can your study tell us whether to stop snack sales outside government schools?” Reply in one page, answer first, no methods section.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first: no study can tell you whether to stop the sales. That is a decision about what ought to be done. It weighs children’s health, vendors’ earnings and families’ choice against each other, and no measurement does that weighing.</p>\n<p>What a study can do is give you facts to decide with. Three are within reach:</p>\n<ul>\n<li>what share of children in classes 6 to 8 buy packaged snacks outside school on most days;</li>\n<li>whether those children have obesity more often than children who do not buy them;</li>\n<li>what parents think about stopping the sales.</li>\n</ul>\n<p>Be clear about the second. A one-time survey can show that snack buying and obesity go together. It cannot show that stopping the sales would change children’s weight.</p>\n<p>If you want a study, tell me which of the three facts you would use first. That is the one to design.</p>"
+  }
+ ]
+}

@@ -1,0 +1,139 @@
+{
+ "format": 1,
+ "id": "s47-r1-c12",
+ "label": "12",
+ "title": "What a frame is",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>To frame an issue is to choose which of its aspects an account makes prominent and which it leaves out. In Entman’s (1993) account, as reported by Koon, Hawkins and Mayhew in a 2016 review of framing research on health policy, the choice serves four functions. The account defines a problem, diagnoses its cause, passes a moral judgement and suggests a remedy.</p>\n<p>A frame need not show all four. Selection alone is enough to frame.</p>\n<p>An <dfn data-g=\"133\">episodic frame</dfn> tells an issue through one case or event, with its details. A <dfn data-g=\"415\">thematic frame</dfn> takes the broad view: the trend over time and what led to it.</p>\n<p><dfn data-g=\"10\">Agenda setting</dfn>, the first stage of the policy process in the model of section 1, starts with the choice of which issues get attention at all.</p>",
+   "refs": [
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Any account of a problem leaves things out. It has to: no report, speech or note can say everything. What it keeps in, and what it drops, is its frame.</p>\n<p>A frame usually does <dfn data-g=\"167\">four jobs</dfn>.</p>\n<ol type=\"1\">\n<li><strong>Problem.</strong> What does it say is wrong?</li>\n<li><strong>Cause.</strong> Whom or what does it say is to blame?</li>\n<li><strong>Judgement.</strong> What verdict does it pass: who is at fault, what is fair?</li>\n<li><strong>Remedy.</strong> What does it say should be done?</li>\n</ol>\n<p>These four come from a writer named Entman, as a 2016 review by Koon and colleagues reports them. Not every account carries all four. But every account leaves something out, so every account has a frame. Your own notes do too.</p>\n<p>An <strong>episodic</strong> frame tells the issue through one case: one child, one shop, one day. A <strong>thematic</strong> frame tells the trend: what changed over years and why. <strong>Agenda setting</strong> starts with choosing which issues get talked about at all, a choice made before any frame is chosen. <strong><dfn data-g=\"320\">Priming</dfn></strong> is when what you read first tilts how you judge what comes next.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with your department’s second <dfn data-g=\"329\">proposal</dfn>, a rule on what school canteens may sell. Suppose two made-up letters about it reach the district newspaper on the same day. Neither carries a number, and neither is from a real person.</p>\n<blockquote>\n<p>Letter A. Children fill up on fried snacks because parents no longer pack lunch. Schools should hold talks for parents on packing a healthy tiffin.</p>\n</blockquote>\n<blockquote>\n<p>Letter B. Children eat what the canteen sells, and the canteen sells what earns most. The rule on what canteens may sell should change.</p>\n</blockquote>\n<p>Take a pen and fill in the four labels for each letter. Do it before you read on.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Function</td>\n<td>Letter A</td>\n<td>Letter B</td>\n</tr>\n<tr>\n<td>Problem</td>\n<td>children fill up on fried snacks</td>\n<td>children fill up on fried snacks</td>\n</tr>\n<tr>\n<td>Cause</td>\n<td>parents no longer pack lunch</td>\n<td>the canteen sells what earns most</td>\n</tr>\n<tr>\n<td>Judgement</td>\n<td>parents have fallen short</td>\n<td>the arrangement is at fault, not the child</td>\n</tr>\n<tr>\n<td>Remedy</td>\n<td>talks for parents</td>\n<td>a rule on what canteens may sell</td>\n</tr>\n</tbody>\n</table>\n<p>Look at the first row. The two letters name the same problem. Every row after it differs. Letter A never mentions the canteen, and Letter B never mentions the home. Neither of these is a false statement. Each is a choice of what to leave out, and that choice is its frame.</p>\n<p>Now look at the last row. Letter A’s remedy is something a school can do on its own. Letter B’s remedy needs whoever holds the power to set rules for canteens. So the frame has already decided where the proposal would be sent, before anyone has traced who decides.</p>\n<p>Your own department’s note will face the same choice. Suppose its draft opens like this, again made up: “<dfn data-g=\"291\">Overweight</dfn> among the district’s schoolchildren is driven by packaged snacks sold near schools.” Fill in the labels. Cause: packaged snacks near schools. Left out: play space, sleep, family income, what is cooked at home. The note is not wrong to choose. It is wrong only if it pretends it did not.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The two letters were written to differ in frame and in nothing else. Real texts mix frames, leave some of the four labels blank, and hide the judgement in a single word. Labelling a real paragraph is slower and less certain than this, and two careful readers can label the same paragraph differently.</p>\n<p>The labels say what a text chose. They do not say whether its cause is the true one. That needs evidence, not labelling.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now try a real text, where a speaker names the frame he is rejecting. Open the Press Information Bureau’s English rendering of the Prime Minister’s 119th Mann Ki Baat broadcast, 23 February 2025, at https://www.pib.gov.in/PressReleasePage.aspx?PRID=2105618. Search for “cosmetic”. The words belong to Dr Devi Shetty, a guest on the broadcast, whom the Prime Minister introduces as “a very distinguished doctor”.</p>\n<blockquote>\n<p>Obesity today is not a cosmetic problem; it is a very serious medical problem.</p>\n</blockquote>\n<p>The sentence does the first job, the problem, out loud. It swaps one frame for another: not a matter of appearance, a matter of medicine. Read on to the next sentence but one for the cause.</p>\n<blockquote>\n<p>The main cause of obesity today is poor quality of food intake especially excess intake of carbohydrates that is rice, chapatti and sugar and of course large consumption of oil.</p>\n</blockquote>\n<p>The cause sits in what a person eats. Now search for “my advice” to find the remedy.</p>\n<blockquote>\n<p>So my advice to all the youngsters… start exercising control your diet and be very very active and watch your weight.</p>\n</blockquote>\n<p>Fill in the four labels. Problem: a serious medical problem. Cause: what people eat. Judgement: the problem is to be taken seriously, not dismissed as looks. Remedy: each young person exercises and controls their diet. Notice the mix. The problem is put in medical words, but the remedy is put on the individual. Nothing in the message asks what is sold, advertised or taxed. That is what this frame leaves out.</p>\n<p>The same broadcast also shows agenda setting. Search for “new discussion”. The Prime Minister says of his earlier speech: “I raised a very important topic, which has started a new discussion in the country - this topic is ‘obesity’.” Choosing the topic comes before any frame. The textbook definition speaks of the media choosing which issues get attention. A head of government with a national broadcast is doing the same kind of choosing, and that reading is this book’s, not the textbook’s.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A broadcast is a short spoken text with guests chosen to support one message. A long report or a court judgment carries several frames at once, and one sentence will not show you its frame. Read the whole text before you label it.</p>\n<p>The quoted words are an English rendering of a Hindi broadcast, as the Press Information Bureau titles it. A frame can turn on one word, so check the original language before you build an argument on a single word of a translation.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>The last move is the difference between an episodic and a thematic frame. Suppose, again as a made-up case, that two reporters cover the canteen proposal.</p>\n<p>The first reporter visits one school. She writes about one Class 6 boy, what he bought at the canteen on Monday, and what his mother says. That is an episodic frame: one case, its details.</p>\n<p>The second reporter writes about how what is sold near schools has changed over years, and why. She quotes no single child. That is a thematic frame: the broad view, the trend and its causes.</p>\n<p>The United States textbook this section draws on says episodic frames “may create more sympathy”, while a thematic frame may leave a reader “less sympathetic”. Notice the word “may”. It is offered as a tendency, from American news, not as a law. Use it as a question to ask of a story, not as a fact about Indian readers.</p>\n<p>Ask what each story makes easy to think. The boy’s story makes his choices visible, and his mother’s. The trend story makes the canteen’s stock visible, and whoever decides it. Each story can lead a reader to a different remedy.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Most real stories mix the two: a thematic report opens with one family, then widens. Labelling a whole story as one or the other is a simplification. Label each part instead.</p>\n<p>The claim about sympathy is the textbook’s, stated as “may”, from United States coverage. This book holds no study of Indian readers that tests it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>When someone claims to be neutral, ask which frame they are using and what it leaves out.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you agree or disagree with a paragraph, write its four labels: problem, cause, judgement, remedy. Then write one line on what it leaves out.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When you cite the four functions, cite them as Entman’s, as reported by Koon and colleagues (2016).</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When a paper says “frame”, check which it means: a value, a problem, a metaphor or an argument. Koon and colleagues found the word used for all four.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Keep the three ideas apart in a meeting. Agenda setting decides whether obesity is discussed at all. Framing decides how it is described once it is. Priming is what a first story does to the next judgement. Calling all three “framing” loses the one you need.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Labelling a frame tells you what a text chose to show. Never answer an argument only by naming its frame.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The frame of a proposal decides where it gets sent. Choose the frame of your own note on purpose, and say it in the first lines.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the four functions a frame serves, as Koon and colleagues report Entman. Then say in one line each what an episodic frame, a thematic frame, agenda setting and priming are.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The four functions: it defines a problem, diagnoses a cause, passes a moral judgement and suggests a remedy.</p>\n<p>An episodic frame tells an issue through one case or event and its details. A thematic frame takes the broad view: the trend over time and what led to it. Agenda setting starts with choosing which issues get attention at all. Priming is predisposing a reader to think a particular way, so that what they meet first colours a later judgement.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a made-up opening paragraph of a district health report. Write its four labels and one line on what it leaves out. Say whether it is episodic or thematic.</p>\n<blockquote>\n<p>Over the past decade, the snacks sold within sight of our schools have shifted towards packaged foods. Families report less time to cook. The district has a duty to act before a generation grows up on this food.</p>\n</blockquote>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Problem: what children eat has shifted towards packaged snacks near schools. Cause: two are named, the shops’ stock and families’ lack of time to cook. Judgement: the district has a duty, so the fault lies with public inaction rather than with children. Remedy: not stated. “<dfn data-g=\"3\">Act</dfn>” is a call without a measure, so this label is blank.</p>\n<p>Left out: activity, sleep, prices and income, who supplies the shops, and any number. It is thematic: it describes a change over a decade and its causes, with no single child or shop.</p>\n<p>One more thing to notice: “grows up on this food” passes a judgement on the food in a phrase. Judgements often sit in a single phrase like this rather than in a sentence of their own.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident says: “Framing is spin. Researchers should not frame; they should report the data.” Explain, in ten minutes with a whiteboard, why that cannot be done, and what a researcher should do instead.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw a box for the whole issue and a smaller box inside it for what one report can hold. Any report selects, because it is finite. Selection is the first move of a frame: some aspects made prominent, others left out. So a report without a frame is not available to anyone.</p>\n<p>Then separate framing from spin. Spin hides the choice and presents a frame as the only way to see the issue. A researcher can do the opposite. Name the frame you chose and say what it leaves out. Where it matters, say how the same data would read in another frame.</p>\n<p>Use the review by Koon and colleagues as an example. The three authors write that they “make no claims to objectivity” and that their training shaped their reading. They still aimed for “a fair and balanced account”. That is the standard: not frameless, but open about the frame.</p>"
+  }
+ ]
+}

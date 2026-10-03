@@ -1,0 +1,136 @@
+{
+ "format": 1,
+ "id": "s47-r1-c04",
+ "label": "4",
+ "title": "Union, State or local: whose subject is it",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Article 246 of the <dfn data-g=\"81\">Constitution</dfn> divides the power to make law by subject.</p>\n<p><dfn data-g=\"399\">State List</dfn> entry 6 is public health and sanitation, hospitals and dispensaries. <dfn data-g=\"75\">Concurrent List</dfn> entry 18 is adulteration of foodstuffs and other goods. Concurrent List entry 25 is education, subject to entries 63 to 66 of the <dfn data-g=\"428\">Union List</dfn>. Concurrent List entry 33(b) is trade and commerce in, and the production, supply and distribution of, foodstuffs.</p>\n<p>Union List entry 52 covers industries whose control by the Union Parliament has declared by law to be expedient in the public interest. Section 2 of the Food Safety and Standards <dfn data-g=\"3\">Act</dfn>, 2006 makes a declaration in those words for the food industry. Because of that declaration, trade in the food industry’s products also falls under Concurrent List entry 33(a), the products of a declared industry. So the State is not shut out of that trade.</p>\n<p>Below the State sit the panchayats and the municipalities. Articles 243G and 243W let the <dfn data-g=\"231\">Legislature</dfn> of a State, by law, endow them with powers and responsibilities, including for the matters listed in the Eleventh Schedule (panchayats) and the Twelfth Schedule (municipalities).</p>\n<p>These entries are read from the text of the Constitution as on 1 May 2026 (checked on 2 October 2026).</p>",
+   "refs": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Each list is a numbered set of entries, and each entry is a subject in a few words. A subject on the Union List belongs to Parliament. A subject on the State List belongs to each State’s Legislature. A subject on the Concurrent List belongs to both.</p>\n<p>Below the State there is a third tier: the panchayats in villages and the municipalities in towns.</p>\n<p>So one <dfn data-g=\"329\">proposal</dfn> can land on three governments at once. Your job is to find every entry it touches, not the first one that fits.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is the trap with “whose subject is it”. You find one entry that fits, and you stop.</p>\n<p>Suppose your department’s first draft, a made-up one, says this about the canteen proposal:</p>\n<blockquote>\n<p>Public health is a State subject, so the Government of Chhattisgarh can make the rule.</p>\n</blockquote>\n<p>Check it. Search for the Constitution of India on the India Code website (https://indiacode.gov.in/handle/123456789/618394) and open it. Go to the Seventh Schedule. Find List II, the State List. Entry 6 reads “Public health and sanitation; hospitals and dispensaries.” The draft is right so far.</p>\n<p>Now do not stop. A canteen rule is about food sold to children inside a school. So search the same Schedule for “food” and for “education”, and read every entry that comes up.</p>\n<p>In List III, the Concurrent List, entry 18 reads “Adulteration of foodstuffs and other goods.” Entry 33(b) covers trade in, and the production, supply and distribution of, “foodstuffs”. Entry 25 is “Education”, with some higher education kept for the Union.</p>\n<p>Last, open the Food Safety and Standards Act, 2006 on India Code (https://indiacode.gov.in/handle/123456789/586348). Read section 2. Parliament declares it “expedient in the public interest that the Union should take under its control the food industry.” Go back to List I, the Union List. Entry 52 covers “Industries, the control of which by the Union is declared by Parliament by law to be expedient in the public interest.” The Act does not name entry 52, but its words match the entry’s. That match is your reading, so say so in a note.</p>\n<p>Lay out what you found.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>entry</th>\n<th>list</th>\n<th>what it names</th>\n<th>who may make law on it</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>6</td>\n<td>State</td>\n<td>public health and sanitation</td>\n<td>the State Legislature</td>\n</tr>\n<tr>\n<td>18</td>\n<td>Concurrent</td>\n<td>adulteration of foodstuffs</td>\n<td>Parliament and the State Legislature</td>\n</tr>\n<tr>\n<td>25</td>\n<td>Concurrent</td>\n<td>education</td>\n<td>Parliament and the State Legislature</td>\n</tr>\n<tr>\n<td>33(b)</td>\n<td>Concurrent</td>\n<td>trade in, supply and distribution of foodstuffs</td>\n<td>Parliament and the State Legislature</td>\n</tr>\n<tr>\n<td>52</td>\n<td>Union</td>\n<td>industries the Union has declared it will control; the food industry, by the Act’s section 2</td>\n<td>Parliament</td>\n</tr>\n</tbody>\n</table>\n<p>The draft named one row. The proposal touches five. Three are Concurrent. On a Concurrent subject, Article 254(1) says that where a State law is <dfn data-g=\"356\">repugnant</dfn> to — that is, clashes with — a law Parliament made, Parliament’s law prevails. Parliament has made a food law. So before the State writes a canteen rule about what food may be sold, someone has to check it against the Union’s Act and whatever has been made under it.</p>\n<p>The fix to the draft names every entry. It does not yet say which instrument would carry the rule, or which body would write it. The lists cannot tell you that. A later section gives the method that does.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table says which legislature may make law on each subject. It does not say that any law on school canteens exists, or which body acts under it. Whether a given canteen rule falls under entry 6, 18, 25 or 33(b), or several at once, is a question of reading. Where it is disputed, courts settle it, and this book does not. Name every entry that could apply, and say you have not settled which governs.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the third tier. Here the trap is a made-up sentence of a kind you may hear in a meeting:</p>\n<blockquote>\n<p>Health is a panchayat subject. It is in the Eleventh Schedule.</p>\n</blockquote>\n<p>Open the Constitution again and find the Eleventh Schedule. Entry 23 is “Health and sanitation, including hospitals, primary health centres and dispensaries.” Entry 17 is “Education, including primary and secondary schools.” So the words are there.</p>\n<p>Now read Article 243G, the article the Eleventh Schedule hangs from. It begins: “the Legislature of a State may, by law, endow the Panchayats with such powers and authority as may be necessary”. Read the verb again. May. By law. The Schedule is a list of subjects a State is allowed to hand to its panchayats. It hands nothing over by itself.</p>\n<p>Article 243W does the same for municipalities, with the Twelfth Schedule. Its entry 6 is “Public health, sanitation conservancy and solid waste management.”</p>\n<p>So the sentence is half a fact. The subject is one a State may give. Whether Chhattisgarh has given it, and on what terms, is written in the State’s own panchayat and municipal Acts. Those Acts are not read in this book. Before you say a panchayat or a municipal body in the district can act on canteens, open the State Act and find the section that gives it the power.</p>\n<p>Put the three proposals side by side and see where each lands.</p>\n<table>\n\n<thead>\n<tr>\n<th>proposal</th>\n<th>where the Constitution puts it</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>a higher tax on sugar-sweetened drinks</td>\n<td>goods and services tax, Article 246A: Parliament and every State Legislature; Parliament alone where the supply crosses a State border</td>\n</tr>\n<tr>\n<td>a warning label on packaged foods</td>\n<td>Concurrent List entry 18, with the Union’s declared control of the food industry (Union List entry 52, the Food Safety and Standards Act, section 2)</td>\n</tr>\n<tr>\n<td>a rule on what school canteens may sell</td>\n<td>State List entry 6 and Concurrent List entries 18, 25 and 33(b); a State may also hand school and health functions to panchayats and municipalities</td>\n</tr>\n</tbody>\n</table>\n<p>The canteen rule could involve the Union, the State and a local body at once. That is the point of this section. One proposal can land on three governments.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The Eleventh and Twelfth Schedules show what a State may hand down, not what Chhattisgarh has handed down. The State Acts that do the handing are not held for this book. So nothing here tells you which panchayat or municipal body in the district holds any power over schools or food.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Do not answer “Health is a State subject, so the State decides.” Food is Concurrent (entries 18 and 33(b)), and the Food Safety and Standards Act puts the food industry under Union control.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>On a Concurrent subject, Parliament’s Act wins a clash. The State law is void where the two clash (Article 254(1)). The one way round this is a State law reserved for the President and given his assent (Article 254(2)). So before you propose a State rule on food, open the Union’s food Act and read what it already covers.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The Eleventh and Twelfth Schedules list what a State may give its local bodies. To say one can act, cite the section of a State Act (for Chhattisgarh, its panchayat or municipal law, not read in this book) that gives it the power.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Goods and services tax sits outside the three Lists. Article 246A gives Parliament and every State Legislature power over it. Parliament alone has it where the supply crosses a State border (Article 246A(2)).</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Write “whose subject” as an entry: “Concurrent List, entry 18”, not “a Central subject”. An entry number can be checked by anyone in a minute. “A Central subject” cannot be checked at all.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The lists say which legislature may make law on a subject. When two entries could both cover your proposal, say so in your note.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back, write down:</p>\n<ol type=\"1\">\n<li>The Article that divides law-making by subject, and the three Lists it names.</li>\n<li>The list and entry for public health, and for adulteration of foodstuffs.</li>\n<li>What happens when a State law on a Concurrent subject clashes with an Act of Parliament.</li>\n<li>What Article 243G lets a State do, and which Schedule goes with it.</li>\n</ol>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Item by item:</p>\n<ol type=\"1\">\n<li><p>Article 246. List I, the Union List (Parliament alone). List II, the State List (the State Legislature alone, for its State). List III, the Concurrent List (both).</p></li>\n<li><p>Public health is State List entry 6. Adulteration of foodstuffs is Concurrent List entry 18.</p></li>\n<li><p>Under Article 254(1), Parliament’s law prevails, and the State law is void to the extent of the clash. Under Article 254(2), a State law reserved for the President and given his assent prevails in that State, until Parliament legislates again.</p></li>\n<li><p>It lets the State Legislature, by law, give powers and responsibilities to panchayats, including for the matters in the Eleventh Schedule. The Schedule gives nothing by itself.</p></li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague proposes that the district stop the sale of sugar-sweetened drinks within school premises. Using only the Seventh, Eleventh and Twelfth Schedules and section 2 of the Food Safety and Standards Act, list every entry the proposal touches. Then say what the entries cannot tell you, and what you would open next.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The entries:</p>\n<ul>\n<li>State List entry 6, public health and sanitation.</li>\n<li>Concurrent List entry 18, adulteration of foodstuffs, if the rule is framed as a food standard.</li>\n<li>Concurrent List entry 33(b), trade in and supply of foodstuffs, because the rule stops a sale.</li>\n<li>Concurrent List entry 25, education, because the place is a school.</li>\n<li>Union List entry 52, with section 2 of the Food Safety and Standards Act, because the Union has taken the food industry under its control.</li>\n<li>Eleventh Schedule entry 17 (schools) and entry 23 (health), and Twelfth Schedule entry 6 (public health), as subjects Chhattisgarh may hand to panchayats and municipalities.</li>\n</ul>\n<p>What the entries cannot tell you: whether a law on this already exists. Which body would make the rule. Which entry governs if they overlap.</p>\n<p>What to open next: the Food Safety and Standards Act and the regulations made under it, to see what the Union has already covered. Then Chhattisgarh’s panchayat and municipal Acts, to see what has been handed down.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A made-up draft note says: “Food safety is on the Union List, so a State cannot make any law about food sold in schools.” Find the errors and rewrite the sentence.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Two errors.</p>\n<p>First, food is not named on the Union List. Adulteration of foodstuffs is Concurrent List entry 18. Trade in and supply of foodstuffs is Concurrent List entry 33(b). The Union’s hold over the food industry comes from section 2 of the Food Safety and Standards Act, 2006. There Parliament declared Union control of the food industry. That brings in Union List entry 52.</p>\n<p>Second, a State can legislate on a Concurrent subject. But a State provision that clashes with Parliament’s Act is void (Article 254(1)). The exception is a State law reserved for the President and given his assent (Article 254(2)).</p>\n<p>A fixed version, in three sentences: “Food standards are a Concurrent subject (List III, entries 18 and 33(b)). Parliament has taken the food industry under Union control (Food Safety and Standards Act, section 2). A State law on food in schools must not clash with that Act.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident in your department has ten minutes and a whiteboard. She asks: “Is the State health department the only place to send our canteen proposal?” Explain.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw three columns on the board: Union, State, local.</p>\n<p>Under State, write “public health, List II entry 6”. That is why the health department is one place to send it.</p>\n<p>Under both Union and State, write “Concurrent: food adulteration 18, foodstuffs 33(b), education 25”. Explain that on these subjects both Parliament and the State may make law, and that if they clash Parliament’s Act wins.</p>\n<p>Under Union, write “food industry under Union control, Food Safety and Standards Act section 2”.</p>\n<p>Under local, write “only what the State hands down by law (Articles 243G and 243W)”.</p>\n<p>The mechanism: a canteen rule touches entries in all three columns. Sending it to one department sends it to one of several governments that may have a say. Before choosing a recipient, find every entry, then read the Union’s food law to see what it already covers. The next sections go inside each government to find which office holds the subject.</p>"
+  }
+ ]
+}

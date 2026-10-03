@@ -1,0 +1,184 @@
+{
+ "format": 1,
+ "id": "b0-r0-c16",
+ "label": "C2",
+ "title": "Rearranging an equation",
+ "part": "C",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>An equation is a statement that the expression on the left of the equals sign and the expression on the right stand for the same number. It is not an instruction to work the left side out.</p>\n<p>If two expressions stand for the same number, then applying the same operation to both of them gives two expressions that still stand for the same number. Four operations therefore leave the solutions of an equation unchanged.</p>\n<ul>\n<li>adding the same quantity to both sides</li>\n<li>subtracting the same quantity from both sides</li>\n<li>multiplying both sides by the same quantity that is not zero</li>\n<li>dividing both sides by the same quantity that is not zero</li>\n</ul>\n<p>To solve an equation for a letter is to reach an equation with that letter alone on one side, and no occurrence of it on the other.</p>\n<p>An operation applied to a side that is a sum applies to the whole of that sum, not to one term of it.</p>",
+   "refs": [
+    3
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Start with what the equals sign is saying. It says the thing on its left and the thing on its right are the same number.</p>\n<p>Picture a pair of scales with a pan on each side, sitting level. Take three kilograms off one pan and the scales tip. Take three off both and they stay level.</p>\n<p>That is the whole rule.</p>\n<blockquote>\n<p>Whatever you do to one side, do to the other.</p>\n</blockquote>\n<p>Now use it.</p>\n<div class=\"working\">\n<p>x + 7 = 12</p>\n</div>\n<p>The 7 is in the way. It got there by being added, so take 7 off both sides.</p>\n<div class=\"working\">\n<p>x + 7 minus 7 = 12 minus 7<br />\nx = 5</p>\n</div>\n<p>Check it by putting the 5 back where x was.</p>\n<div class=\"working\">\n<p>5 plus 7 = 12</p>\n</div>\n<p>That check costs you one line and catches almost everything.</p>\n<p>Multiplying works the same way. Suppose you are told this.</p>\n<div class=\"working\">\n<p>3x = 21</p>\n</div>\n<p>The 3 got there by multiplying, so divide both sides by 3.</p>\n<div class=\"working\">\n<p>3x divided by 3 = 21 divided by 3<br />\nx = 7</p>\n</div>\n<p>Two things to hold on to from here on.</p>\n<p>The first is order. When more than one thing is in the way, undo them in the reverse of the order they were done.</p>\n<div class=\"working\">\n<p>2x + 3 = 11</p>\n</div>\n<p>The x was multiplied by 2 first and had 3 added second. So undo the adding first and the multiplying second.</p>\n<div class=\"working\">\n<p>2x + 3 minus 3 = 11 minus 3<br />\n2x = 8<br />\n2x divided by 2 = 8 divided by 2<br />\nx = 4</p>\n</div>\n<p>The second is that a side which is a sum has to be treated whole.</p>\n<p>There is one more use for the rule, and it is the one you will use most. Sometimes nothing is unknown. A formula ties several quantities together, and you want a different one of them on its own. Getting one letter on its own like that is also called making it the subject.</p>\n<p>Take the rule that ties a distance, a speed and a time. The distance is the speed times the time.</p>\n<div class=\"working\">\n<p>d = s t</p>\n</div>\n<p>To get t by itself, divide both sides by s.</p>\n<div class=\"working\">\n<p>d divided by s = s t divided by s<br />\nd divided by s = t</p>\n</div>\n<p>The time is the distance divided by the speed. You did not measure anything new. You moved the same statement into the shape that answers your question.</p>\n<p>One warning goes with that. Never divide both sides by a letter unless you know it is not zero, and the same goes for multiplying by one. Dividing by zero is not a move, and a letter can hide one.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>You met the rule an Indian food label uses for its energy figure in the section before this one. Four kilocalories for every gram of carbohydrate, four for every gram of protein, nine for every gram of fat.</p>\n<div class=\"working\">\n<p>E = 4c + 4p + 9f</p>\n</div>\n<p>A packet reaches you with its fat line torn off. The panel still shows the energy as 468 kilocalories in every 100 grams, the carbohydrate as 60 grams and the protein as 12 grams. Those three figures are made up for this problem; the factors are not. Somebody wants the fat.</p>\n<p>Here is the working that comes back first. It is wrong.</p>\n<div class=\"working\">\n<p>E = 4c + 4p + 9f<br />\ndivide both sides by 9<br />\nf = E divided by 9, minus 4c, minus 4p<br />\n468 divided by 9 = 52<br />\n52 minus 240 minus 48 = -236<br />\nso the fat is -236 grams</p>\n</div>\n<p>Minus two hundred and thirty-six grams of fat. No packet holds that, and no packet holds a negative anything.</p>\n<p>The division by 9 was applied to one term on the right and to nothing else. The right side is a sum of three terms, and dividing that side means dividing all of it.</p>\n<p>Get the 9f on its own first, by taking the other two terms off both sides.</p>\n<div class=\"working\">\n<p>E minus 4c minus 4p = 9f</p>\n</div>\n<p>Dividing by 9 is safe, because there is nothing else on that side for the 9 to miss.</p>\n<div class=\"working\">\n<p>the whole of E minus 4c minus 4p, divided by 9 = f</p>\n</div>\n<p>The words “the whole of” do the job brackets do, which you met in the section before this one. In symbols the same line is this.</p>\n<div class=\"working\">\n<p>(E minus 4c minus 4p) divided by 9 = f</p>\n</div>\n<p>The brackets say that all three terms are divided by 9, not the last one alone. On other pages you will see it as a <dfn data-g=\"66\">fraction</dfn> instead. E minus 4c minus 4p sits above a line and 9 sits below it. The line does the same grouping the brackets do.</p>\n<p>Put the numbers in, one line at a time.</p>\n<div class=\"working\">\n<p>4 times 60 = 240<br />\n4 times 12 = 48<br />\n240 plus 48 = 288<br />\n468 minus 288 = 180<br />\n180 divided by 9 = 20</p>\n</div>\n<p>Twenty grams of fat.</p>\n<p>Now check it, the way you check every rearrangement.</p>\n<div class=\"working\">\n<p>4 times 60 = 240<br />\n4 times 12 = 48<br />\n9 times 20 = 180<br />\n240 plus 48 plus 180 = 468</p>\n</div>\n<p>The rearrangement held.</p>",
+   "numberRefs": [
+    2
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Rearranging moves a quantity from one side to the other. It does not improve it.</p>\n<p>The working here also assumes the packet holds nothing but carbohydrate, protein and fat that carries energy.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>An equals sign states that two things are the same number.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Do the same thing to both sides, and write both sides of that step on the same line.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A side that is a sum is divided or multiplied as a whole.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Check every rearrangement by putting your answer back into the equation you started from. One line, every time, before the number leaves your desk.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Any one quantity in a formula can be recovered from the others, as long as every one of the others is known. Two more conditions apply. The rearranging must never divide by something that could be zero. And only one value may fit: where two values of the missing quantity give the same result, the formula cannot choose between them. So a register with one missing column is not always a register with missing information. Two gaps in the same row are a different matter, and one formula cannot fill both.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Never divide both sides by a letter unless you know that letter is not zero.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A recovered number carries the <dfn data-g=\"160\">rounding</dfn> of everything you put in. Multiplying or dividing by a rounded figure can make that rounding larger, and a squared figure brings its rounding in twice.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Teach the order before the moves. Undo what was done last, first.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A formula says that a total cost T is a fixed charge F plus a rate r for each of n items.</p>\n<div class=\"working\">\n<p>T = F + rn</p>\n</div>\n<p>Rearrange it to give n on its own, showing every step and saying at each step what you did to both sides.</p>\n<p>Then work n out for a total of 950, a fixed charge of 200 and a rate of 25.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>Start from the formula and get the term holding n by itself.</p>\n<p>Take F off both sides.</p>\n<div class=\"working\">\n<p>T minus F = F + rn minus F<br />\nT minus F = rn</p>\n</div>\n<p>Now the side holding n is a single term, so divide both sides by r.</p>\n<div class=\"working\">\n<p>the whole of T minus F, divided by r = n</p>\n</div>\n<p>That is n on its own, which is what was asked for.</p>\n<p>Now the numbers. Subtract first.</p>\n<div class=\"working\">\n<p>950 minus 200 = 750</p>\n</div>\n<p>Then divide.</p>\n<div class=\"working\">\n<p>750 divided by 25 = 30</p>\n</div>\n<p>Thirty items.</p>\n<p>Check it by putting 30 back into the formula you started from.</p>\n<div class=\"working\">\n<p>25 times 30 = 750<br />\n200 plus 750 = 950</p>\n</div>\n<p>950, which is the total you were given.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague sends you this line and asks you to look at it before it goes into a note.</p>\n<blockquote>\n<p>The formula is T = F + rn, and we know T, F and r. So n is T divided by r, minus F.</p>\n</blockquote>\n<p>Say what has gone wrong and give the right rearrangement. Then say what you would have them change in how they work, rather than in this one line.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The division by r was applied to T only. The right side of the formula is a sum of two terms, F and rn, so dividing that side by r divides both of them.</p>\n<p>What they have written gives F its full size where it should have been shrunk by r. The larger r is, the further out the answer goes.</p>\n<p>Do it in the other order and the problem disappears.</p>\n<div class=\"working\">\n<p>T minus F = rn<br />\nthe whole of T minus F, divided by r = n</p>\n</div>\n<p>Take the F off first, while the side is still a sum. Then divide, when the side is a single term and there is nothing for the division to miss.</p>\n<p>Try it on numbers to make the size of the error visible. Take T as 950, F as 200 and r as 25. Their line gives this.</p>\n<div class=\"working\">\n<p>950 divided by 25 = 38<br />\n38 minus 200 = -162</p>\n</div>\n<p>Minus 162 items. The correct rearrangement gives 30.</p>\n<p>What to change in how they work. Two habits, and the second is the one that matters. Move the added terms before the multiplied ones, so that every division happens to a single term. And put the answer back into the original formula before sending it. A negative count of items would have stopped this line at their own desk.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Solve each of these for x. Show the step you did to both sides.</p>\n<div class=\"working\">\n<p>x + 7 = 12<br />\nx minus 4 = 9<br />\n3x = 21</p>\n</div>",
+   "level": 1,
+   "answer": "<p>Take 7 off both sides.</p>\n<div class=\"working\">\n<p>x + 7 minus 7 = 12 minus 7<br />\nx = 5</p>\n</div>\n<p>Add 4 to both sides.</p>\n<div class=\"working\">\n<p>x minus 4 + 4 = 9 + 4<br />\nx = 13</p>\n</div>\n<p>Divide both sides by 3.</p>\n<div class=\"working\">\n<p>3x divided by 3 = 21 divided by 3<br />\nx = 7</p>\n</div>\n<p>Check all three by putting the answers back.</p>\n<div class=\"working\">\n<p>5 plus 7 = 12<br />\n13 minus 4 = 9<br />\n3 times 7 = 21</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Solve each of these for x. Two steps each, and say which step you did first and why.</p>\n<div class=\"working\">\n<p>2x + 3 = 11<br />\n5x minus 4 = 26</p>\n</div>",
+   "level": 2,
+   "answer": "<p>Undo what was done last, first. In both lines the multiplication was done first and the adding or subtracting second, so the adding or subtracting comes off first.</p>\n<div class=\"working\">\n<p>2x + 3 minus 3 = 11 minus 3<br />\n2x = 8<br />\n2x divided by 2 = 8 divided by 2<br />\nx = 4</p>\n</div>\n<div class=\"working\">\n<p>5x minus 4 + 4 = 26 + 4<br />\n5x = 30<br />\n5x divided by 5 = 30 divided by 5<br />\nx = 6</p>\n</div>\n<p>Check both.</p>\n<div class=\"working\">\n<p>2 times 4 = 8<br />\n8 plus 3 = 11</p>\n</div>\n<div class=\"working\">\n<p>5 times 6 = 30<br />\n30 minus 4 = 26</p>\n</div>\n<p>Doing it the other way round is not wrong, but it is harder. Divide first and you have to divide the 3 by 2 as well. The side is a sum, and a division applies to all of it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Solve each of these for x.</p>\n<div class=\"working\">\n<p>5x minus 2 = 3x + 8<br />\nx divided by 4 = 6</p>\n</div>",
+   "level": 3,
+   "answer": "<p>The first one has x on both sides. Gather the x terms on one side by taking 3x off both.</p>\n<div class=\"working\">\n<p>5x minus 2 minus 3x = 3x + 8 minus 3x<br />\n2x minus 2 = 8</p>\n</div>\n<p>Now it is the shape you have already done. Add 2 to both sides, then divide by 2.</p>\n<div class=\"working\">\n<p>2x = 10<br />\nx = 5</p>\n</div>\n<p>Check by working out each side of the original with 5 in place of x.</p>\n<div class=\"working\">\n<p>5 times 5 = 25<br />\n25 minus 2 = 23</p>\n</div>\n<div class=\"working\">\n<p>3 times 5 = 15<br />\n15 plus 8 = 23</p>\n</div>\n<p>Both sides come to 23, so the two sides really are the same number when x is 5. That is what solving an equation means.</p>\n<p>The second one is one step. The x was divided by 4, so multiply both sides by 4.</p>\n<div class=\"working\">\n<p>x = 24</p>\n</div>\n<div class=\"working\">\n<p>24 divided by 4 = 6</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Rearrange each of these to give the named letter on its own. There are no numbers to work out.</p>\n<ul>\n<li>A = L W, make W the subject</li>\n<li>y = m x + k, make x the subject</li>\n<li>v = u + a t, make t the subject</li>\n</ul>",
+   "level": 3,
+   "answer": "<p>In the first, W is multiplied by L, so divide both sides by L.</p>\n<div class=\"working\">\n<p>A divided by L = W</p>\n</div>\n<p>In the second, x was multiplied by m and then k was added. Undo the adding first.</p>\n<div class=\"working\">\n<p>y minus k = m x</p>\n</div>\n<p>Now the side holding x is a single term, so divide both sides by m.</p>\n<div class=\"working\">\n<p>the whole of y minus k, divided by m = x</p>\n</div>\n<p>The third works the same way. Take u off both sides, then divide by a.</p>\n<div class=\"working\">\n<p>v minus u = a t<br />\nthe whole of v minus u, divided by a = t</p>\n</div>\n<p>In all three, the subtraction came before the division. That order is what keeps the division working on a single term instead of on a sum.</p>\n<p>And in all three you should ask whether the letter you divided by could be zero. A width of zero, a slope of zero or an acceleration of zero each make the division meaningless, and the page does not warn you.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A clinic register records a person’s <dfn data-g=\"22\">body mass index</dfn> as 27.0 kg/m<sup>2</sup> and their height as 1.60 m. The mass column has been left empty.</p>\n<p>The index is the mass in kilograms divided by the square of the height in metres. Rearrange that to give the mass, then work the mass out and give it with its unit. Show every line.</p>\n<p>Then say in one sentence what your answer does not tell you.</p>",
+   "level": 4,
+   "answer": "<p>Write the rule down first. Let the letters stand for the three quantities: I for the index, m for the mass in kilograms, h for the height in metres.</p>\n<div class=\"working\">\n<p>I = m divided by h<sup>2</sup></p>\n</div>\n<p>The mass was divided by the square of the height, so multiply both sides by the square of the height.</p>\n<div class=\"working\">\n<p>I times h<sup>2</sup> = m</p>\n</div>\n<p>The mass is the index times the square of the height. Now the numbers, one line at a time.</p>\n<p>Square the height first.</p>\n<div class=\"working\">\n<p>1.60 times 1.60 = 2.56</p>\n</div>\n<p>Then multiply.</p>\n<div class=\"working\">\n<p>27.0 times 2.56 = 69.12</p>\n</div>\n<p>69.1 kilograms.</p>\n<p>Check it by going forwards again.</p>\n<div class=\"working\">\n<p>69.12 divided by 2.56 = 27.0</p>\n</div>\n<p>What it does not tell you: anything about this person’s health. The index is a mass divided by a squared length. What any value of it means is a separate decision. Some body took that decision, on some date, for some population. This arithmetic does not reach it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A panel gives the energy as 396 kilocalories in every 100 grams, the carbohydrate as 45 grams and the protein as 9 grams. The fat line is missing. These three figures are made up for this problem.</p>\n<p>Using the factors the Food Safety and Standards (Labelling and Display) Regulations, 2020 set for calculating declared energy, work the fat out. Show every line and check your answer.</p>",
+   "level": 4,
+   "answer": "<p>The rule is four kilocalories for every gram of carbohydrate, four for every gram of protein and nine for every gram of fat.</p>\n<div class=\"working\">\n<p>E = 4c + 4p + 9f</p>\n</div>\n<p>Get the fat term on its own by taking the other two terms off both sides.</p>\n<div class=\"working\">\n<p>E minus 4c minus 4p = 9f</p>\n</div>\n<p>Now divide both sides by 9.</p>\n<div class=\"working\">\n<p>the whole of E minus 4c minus 4p, divided by 9 = f</p>\n</div>\n<p>Put the numbers in.</p>\n<div class=\"working\">\n<p>4 times 45 = 180<br />\n4 times 9 = 36<br />\n180 plus 36 = 216<br />\n396 minus 216 = 180<br />\n180 divided by 9 = 20</p>\n</div>\n<p>Twenty grams of fat.</p>\n<p>Check by going forwards.</p>\n<div class=\"working\">\n<p>9 times 20 = 180<br />\n180 plus 216 = 396</p>\n</div>\n<p>396 kilocalories, which is the figure on the panel.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Schedule II of the National Food Security Act, 2013 sets a nutritional standard for the hot cooked meal in lower primary classes. It is 450 kilocalories and 12 grams of protein.</p>\n<p>A kitchen plans a meal that meets that standard exactly, and its recipe supplies 78 grams of carbohydrate. The 78 grams is made up for this problem.</p>\n<p>The Food Safety and Standards (Labelling and Display) Regulations, 2020 set the factors for calculating declared energy. Use them to work out how many grams of fat the meal must carry. Show every line. Then say in one line what your answer does not establish about the meal.</p>",
+   "level": 5,
+   "answer": "<p>Write the rule and put in what you know.</p>\n<div class=\"working\">\n<p>E = 4c + 4p + 9f</p>\n</div>\n<p>The energy is 450 kilocalories, the protein is 12 grams and the carbohydrate is 78 grams.</p>\n<p>Get the fat term on its own.</p>\n<div class=\"working\">\n<p>E minus 4c minus 4p = 9f</p>\n</div>\n<p>Now the numbers.</p>\n<div class=\"working\">\n<p>4 times 78 = 312<br />\n4 times 12 = 48<br />\n312 plus 48 = 360<br />\n450 minus 360 = 90<br />\n90 divided by 9 = 10</p>\n</div>\n<p>Ten grams of fat.</p>\n<p>Check by going forwards.</p>\n<div class=\"working\">\n<p>9 times 10 = 90<br />\n360 plus 90 = 450</p>\n</div>\n<p>What this does not establish. The Act sets an energy figure and a protein figure. It sets no figure for fat and none for carbohydrate. So the 10 grams follows from the recipe somebody chose. It is not a standard anybody laid down. Quote it as your own arithmetic on a made-up recipe, and quote the 450 and the 12 as the Act’s.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A store’s register gives the energy in each gram of a packed food as 4.5 kilocalories. It gives the energy in one whole packet as 900 kilocalories. The weight column is empty. Both figures are made up for this problem.</p>\n<p>The energy in each gram is the energy of the whole packet divided by the weight of the packet in grams. Rearrange that to give the weight, then work the weight out and give it with its unit. Show every line.</p>\n<p>Then say what this needed that the same work does not need when the letter you want is already above the division line. Say why the direction of a rearrangement changes what you have to do.</p>",
+   "level": 6,
+   "answer": "<p>Name the three quantities. Let d stand for the energy in each gram and E for the energy of the whole packet. Let w stand for the weight of the packet in grams.</p>\n<div class=\"working\">\n<p>d = E divided by w</p>\n</div>\n<p>This time the letter you want is underneath. Multiply both sides by the weight to bring it up. A packet does not weigh nothing, so you know that multiplication is by something other than zero.</p>\n<div class=\"working\">\n<p>d times w = E</p>\n</div>\n<p>Now the side holding the weight is a single term, and the weight is multiplied by d. So divide both sides by d. The register gives d as 4.5, which is not zero, so that division is a move you are allowed.</p>\n<div class=\"working\">\n<p>w = E divided by d</p>\n</div>\n<p>The weight is the energy of the packet divided by the energy in each gram. Now the numbers.</p>\n<div class=\"working\">\n<p>900 divided by 4.5 = 200</p>\n</div>\n<p>Two hundred grams.</p>\n<p>Check by going forwards.</p>\n<div class=\"working\">\n<p>900 divided by 200 = 4.5</p>\n</div>\n<p>What this needed that the other direction does not: a second step. A letter that already sits above the division line comes free in one multiplication. This one started underneath, so you had to lift it out from under the division first, and only then divide it loose.</p>\n<p>Why the direction changes what you have to do: the rule was written to give the energy in each gram. So the energy stands on top and the weight underneath. Recovering the energy runs the rule the way it was written. Recovering the weight runs it backwards, and every letter you have to cross on the way costs a step.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a rule says the index is the mass in kilograms divided by the square of the height in metres<br />\na register gives the index as 25.0 and the height as 1.80 m<br />\nthe mass is wanted, so multiply the index by the height<br />\n25.0 times 1.80 = 45<br />\nso the mass is 45 kg</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the third one, and the fourth line carries it out faithfully.</p>\n<p>The height enters the rule squared. So undoing the division puts back the square of the height, not the height.</p>\n<p>Square the height first.</p>\n<div class=\"working\">\n<p>1.80 times 1.80 = 3.24</p>\n</div>\n<p>Then multiply.</p>\n<div class=\"working\">\n<p>25.0 times 3.24 = 81</p>\n</div>\n<p>Eighty-one kilograms, not 45.</p>\n<p>The unit check catches it too. The index is in kilograms per metre squared. Multiply that by metres and you are left with kilograms per metre, which is not a mass.</p>\n<p>Why it looks reasonable: 45 is the right <dfn data-g=\"131\">order of magnitude</dfn> for the quantity asked for, so nothing about the answer looks alarming. The arithmetic in the line is correct. And multiplying to undo a dividing is the right idea, applied to the wrong quantity. Every part of the move is right except what it was applied to, which is the shape this error nearly always has.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a rule says E = 4c + 4p + 9f<br />\na panel gives the energy as 500 kilocalories and the fat as 20 grams<br />\nthe carbohydrate is wanted<br />\n9 times 20 = 180<br />\n500 minus 180 = 320<br />\nso 4c + 4p = 320<br />\ndivide both sides by 4<br />\nc + p = 80<br />\nthe panel also says the protein is 15 grams<br />\nso the carbohydrate is 80 grams and the panel holds together</p>\n</div>",
+   "level": 8,
+   "answer": "<p>Every line of the rearranging is right. The step that broke is the last one, and it is a reading error rather than an arithmetic one.</p>\n<p>The line before it says that the carbohydrate and the protein together come to 80 grams. It does not say the carbohydrate comes to 80 grams. Two letters are still on that side.</p>\n<p>Take the protein off.</p>\n<div class=\"working\">\n<p>80 minus 15 = 65</p>\n</div>\n<p>Sixty-five grams of carbohydrate.</p>\n<p>Check it by going forwards through the whole rule.</p>\n<div class=\"working\">\n<p>4 times 65 = 260<br />\n4 times 15 = 60<br />\n9 times 20 = 180<br />\n260 plus 60 plus 180 = 500</p>\n</div>\n<p>500 kilocalories, which is the figure the panel gives.</p>\n<p>Why it looks reasonable: the rearranging was done correctly and shown line by line, so the working reads as careful. The 80 arrived from a division that was genuinely valid. And the figure that came out is the same size as the other figures on the panel, so nothing about it looks out of place. The error is in what the final line was taken to be about, and a rearranged equation always needs reading before it is used.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A colleague writes this in a note about a clinic register.</p>\n<blockquote>\n<p>The height column is in metres and the index column is filled in. We do not need to keep the mass column, because we can always work the mass back out.</p>\n</blockquote>\n<p>Take one row, with the height recorded as 1.65 m and the index recorded as 22.0 kg/m<sup>2</sup>.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the mass the row gives back. Then how much that mass moves, given that both figures in the row were rounded before they were written down.</p>\n<p>The mass is the index times the square of the height.</p>\n<div class=\"working\">\n<p>1.65 times 1.65 = 2.7225<br />\n22.0 times 2.7225 = 59.895</p>\n</div>\n<p>About 59.9 kilograms. So the colleague is right that the mass can be recovered.</p>\n<p>Now the part the note does not mention. Both figures in that row were rounded before anybody wrote them down, and both roundings move the answer.</p>\n<p>Start with the index. An index written as 22.0 was rounded to one <dfn data-g=\"45\">decimal</dfn> place, so the real value lies somewhere between 21.95 and 22.05. Work the mass out at each end, with the height left where it is.</p>\n<div class=\"working\">\n<p>21.95 times 2.7225 = 59.76<br />\n22.05 times 2.7225 = 60.03</p>\n</div>\n<p>A quarter of a kilogram, and that is not the whole of it. A height written as 1.65 was rounded in the same way, to two decimal places. So the real height lies somewhere between 1.645 and 1.655. The height enters the rule squared, so square both of those ends.</p>\n<div class=\"working\">\n<p>1.645 times 1.645 = 2.706025<br />\n1.655 times 1.655 = 2.739025</p>\n</div>\n<p>Now put the two roundings together. The smallest mass the row can stand for is the smallest index times the smallest square. The largest is the largest index times the largest square.</p>\n<div class=\"working\">\n<p>21.95 times 2.706025 = 59.40<br />\n22.05 times 2.739025 = 60.40</p>\n</div>\n<p>The recovered mass is somewhere between about 59.4 and 60.4 kilograms.</p>\n<div class=\"working\">\n<p>60.40 minus 59.40 = 1.00</p>\n</div>\n<p>About a kilogram of uncertainty, not a quarter, and most of it came from the height rather than from the index. Leave either rounding out of the arithmetic and you will quote a tighter answer than you have.</p>\n<p>What this does not establish. It does not establish that the recovery is good enough. Whether a kilogram matters depends on what the register is for, and nothing in the arithmetic decides that.</p>\n<p>It says nothing about whether the height or the index was measured well in the first place.</p>\n<p>And it says nothing about the rows where the index was worked out from a height in centimetres. No amount of rearranging will find those. A wrong index rearranges into a wrong mass just as smoothly as a right one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>In a meeting about a school kitchen somebody says this.</p>\n<blockquote>\n<p>The label rule counts nine kilocalories for every gram of fat. So if we take five grams of fat out of the recipe, the meal loses five kilocalories.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: what a change in one letter does to the total. That is a question about the rule, not about any one meal.</p>\n<div class=\"working\">\n<p>E = 4c + 4p + 9f</p>\n</div>\n<p>The fat sits in the line multiplied by 9. So a change in the fat of five grams changes the energy by nine times five.</p>\n<div class=\"working\">\n<p>9 times 5 = 45</p>\n</div>\n<p>Forty-five kilocalories, not five. The speaker has read the change in grams straight across as a change in kilocalories, which is the multiplication being dropped again.</p>\n<p>Now the part that matters more. Taking five grams out of a recipe usually puts something else in, and whatever goes in carries its own factor. If five grams of carbohydrate replace the five grams of fat, work both terms.</p>\n<div class=\"working\">\n<p>4 times 5 = 20<br />\n45 minus 20 = 25</p>\n</div>\n<p>The meal loses twenty-five kilocalories, not forty-five and not five. Which answer is right depends on a fact about the recipe that nobody in the meeting has stated.</p>\n<p>What this does not establish. It says nothing about whether the meal still meets any standard set for it, which is a separate question with its own figures. It says nothing about what anybody eats, since a meal served is not a meal eaten. And it says nothing about what the change does to a child, which is not a question the label rule was built to answer.</p>"
+  }
+ ]
+}

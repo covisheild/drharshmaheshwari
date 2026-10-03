@@ -1,0 +1,127 @@
+{
+ "format": 1,
+ "id": "s37-r1-c17",
+ "label": "17",
+ "title": "Locating an intervention in the food system",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>To locate an intervention is to state, for any proposal to change what people eat, three things. The stage of the <dfn data-g=\"144\">food system</dfn> at which it acts (section 1). The <dfn data-g=\"4\">actor</dfn> whose decision it changes. And the element of the <dfn data-g=\"140\">food environment</dfn> it moves: availability, price, “promotion, advertising and information”, or quality, the four elements named by the High Level Panel of Experts on Food Security and Nutrition (HLPE) (section 5).</p>\n<p>A proposal acts <dfn data-g=\"382\">upstream</dfn> when the decision it changes is taken before the person chooses: a farmer’s crop, a processor’s recipe or pack, a retailer’s shelf, a price, a ration basket, a scheme’s menu. A proposal acts <dfn data-g=\"256\">on the person</dfn> when the only decision it changes is the eater’s own, made from an offer left as it was: advice, counselling, an awareness campaign. It changes nothing on offer: the food, its price and where it is sold stay as they were; at most it adds information. One proposal can act at more than one stage, and each is located separately.</p>",
+   "refs": [
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    273,
+    283,
+    284,
+    285,
+    286,
+    287,
+    255
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Most proposals about food and weight that you will hear speak to the person holding the plate. Eat less oil. Cut sugar. Choose millets. But what is on the plate was decided earlier, by people who grew, processed, priced, stocked and served it. The person chooses from what is already there.</p>\n<p>So for any proposal, ask three questions. Where in the chain does it act? Whose decision does it change? And what does it change about the food on offer?</p>\n<p>The second question does most of the work. If the only decision the proposal changes is the eater’s, it acts on the person. The food on offer stays as it was. If it changes a decision taken before the eater chooses, such as a recipe, a price or a ration, it acts upstream.</p>\n<p>Neither kind is good or bad by being where it is.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a real case where the obvious answer is right and still useless.</p>\n<p>Open the Press Information Bureau’s backgrounder “Mission Poshan 2.0 Strengthening India’s Nutrition Ecosystem”, 14 April 2026 (https://www.pib.gov.in/PressReleasePage.aspx?PRID=2251769&amp;reg=3&amp;lang=1). Search for Poshan Maah. The 2025 campaign’s themes include “reduction in sugar and oil consumption to address obesity”.</p>\n<p>Ask the first question: which stage? Consumption. That is true, and you could stop there. But it hides the thing that matters. Ask the second question: whose decision does it change? Only the eater’s, or a parent’s choosing for a child. Ask the third: what does it change about the food on offer? Nothing. The shop, the price and the recipe stay as they were. So the campaign acts on the person.</p>\n<p>Now open the scheme guidelines of the same programme, <em>Mission Saksham <dfn data-g=\"18\">Anganwadi</dfn> and Poshan 2.0: Scheme Guidelines</em> (2022) (https://wcd.gov.in/documents/uploaded/Mission%20Saksham%20Anganwadi%20and%20Poshan%202.0%20scheme%20guidelines.pdf). Search for jaggery. Section 3.4 says:</p>\n<blockquote>\n<p>Only jaggery should be used for sweetening; white sugar should not be used.</p>\n</blockquote>\n<p>Ask the same three questions. The stage is preparation: the recipe of the <dfn data-g=\"367\">take-home ration</dfn> and the <dfn data-g=\"169\">hot cooked meal</dfn>. The decision it changes is the one taken by whoever makes that food under the scheme. What it changes about the offer is its quality, in the sense of what the food contains. The child receives whatever the recipe holds. This rule acts upstream.</p>\n<table style=\"width:98%;\">\n\n<thead>\n<tr>\n<th>Proposal</th>\n<th>Stage</th>\n<th>Whose decision</th>\n<th>What it moves</th>\n<th>Where it acts</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Poshan Maah 2025 theme, less sugar and oil</td>\n<td>consumption</td>\n<td>the eater’s</td>\n<td>information only, nothing on offer</td>\n<td>on the person</td>\n</tr>\n<tr>\n<td>Poshan 2.0 guidelines, jaggery not white sugar</td>\n<td>preparation</td>\n<td>the scheme’s cook or ration maker</td>\n<td>quality</td>\n<td>upstream</td>\n</tr>\n</tbody>\n</table>\n<p>Same ministry, same topic, opposite places. Locate the mechanism, not the topic.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The method places a proposal; it does not grade it. Jaggery is still a sweetener, and this section says nothing about whether swapping it for white sugar changes what a child takes in. The guideline line is from the 2022 guidelines as held; the scheme’s later revisions are not among this book’s sources.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now work five more real proposals, each from a text this book holds. For each, write the three answers before you read the row.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Proposal, in its text’s words</th>\n<th>Stage</th>\n<th>Whose decision</th>\n<th>What it moves</th>\n<th>Where it acts</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Edible oil duty cut, 24 Sep 2026: “moderating domestic edible oil prices”</td>\n<td>distribution (the importer’s landed cost), then retail (the maximum retail price)</td>\n<td>importers’ landed cost; then, by advisory, industry’s maximum retail price</td>\n<td>price</td>\n<td>upstream, at two stages</td>\n</tr>\n<tr>\n<td>School meals (Pradhan Mantri Poshan Shakti Nirman, PM POSHAN): States to “procure locally grown food items like millets, vegetables”</td>\n<td>distribution (the State’s purchase), then preparation</td>\n<td>the State or school as buyer and cook</td>\n<td>availability on the plate</td>\n<td>upstream</td>\n</tr>\n<tr>\n<td>Millet incentive: products “must contain at least 15% millet by weight or volume”</td>\n<td>processing</td>\n<td>the processor’s recipe and range</td>\n<td>availability and quality</td>\n<td>upstream</td>\n</tr>\n<tr>\n<td>Oilseeds mission: “public awareness of recommended dietary guidelines for edible oils”</td>\n<td>consumption</td>\n<td>the eater’s</td>\n<td>information only, nothing on offer</td>\n<td>on the person</td>\n</tr>\n<tr>\n<td>World Cancer Research Fund’s NOURISHING list, area N: “Nutrition advice and counselling in healthcare settings”</td>\n<td>consumption</td>\n<td>the patient’s</td>\n<td>information only, nothing on offer</td>\n<td>on the person</td>\n</tr>\n</tbody>\n</table>\n<p>Three things show up.</p>\n<p>The duty cut acts twice. It lowers the importer’s landed cost at the border. Then the release asks industry to revise its prices to distributors and its maximum <dfn data-g=\"318\">retail price</dfn>. Locate each step.</p>\n<p>The oilseeds campaign sits inside a production mission, yet it acts on the person. Where a component is housed is not where it acts.</p>\n<p>The millet incentive acts upstream, on what a factory makes. Its eligibility rule names a millet share, and nothing about sugar, fat or salt. Locating it tells you it changes what is on the shelf. It does not tell you whether that shelf is healthier.</p>\n<p>Keep the counselling row in mind. It is the one tool you hold in a clinic. On this map it is also the last point in the chain.</p>",
+   "numberRefs": [
+    288
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Each row places a proposal by what its own text says it does. A text can describe a measure that is not carried out as written. And a price moved upstream reaches the plate only if the change is passed along the chain; the duty release asks industry to pass it on, which shows it is not automatic.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Much of what reaches a plate was decided upstream, by a recipe, a price, a shelf or a ration. A campaign changes nothing on offer.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>For any proposal, write three answers: the stage, whose decision it changes, and what it changes about the food on offer.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“It acts at consumption” is true of every campaign and says nothing. Always name the actor.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Where a component is housed is not where it acts. The oilseeds mission is a production programme, and its campaign on “recommended dietary guidelines for edible oils” still acts on the person. Locate each component, not the programme’s name.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>One topic can sit in two places. Poshan 2.0’s 2025 campaign on less sugar acts on the person. The same scheme’s guideline that “white sugar should not be used” acts on the recipe.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>In clinic, counselling is the tool you hold, and it acts on the person. Ask what the child is served before you advise the parent on what to cut.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Locating a proposal tells you where it acts and through whom. It does not tell you whether it works, or in which direction.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Locate each proposal. Give the stage and whose decision it changes. Say what it changes about the food on offer, and whether it acts upstream or on the person.</p>\n<ol type=\"a\">\n<li><p>A rule that school canteens may not sell sugared drinks.</p></li>\n<li><p>A warning printed on the front of food packs that are high in salt.</p></li>\n<li><p>A television campaign telling parents to give children fewer fried snacks.</p></li>\n<li><p>A tax on sugared drinks.</p></li>\n</ol>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<ol type=\"a\">\n<li><p>Stage: retail, in a school canteen. Decision changed: the canteen operator’s, about what to stock. Moves: availability. Upstream. NOURISHING files this under area O, standards in public institutions.</p></li>\n<li><p>Stage: processing, where the pack is made. Decision changed: the manufacturer’s, about what the pack must show, and so possibly about the recipe too. Moves: promotion, advertising and information, at the point of sale. Upstream. The label is on the offer itself, so it changes what every buyer sees, not what one person has been told. NOURISHING files it under its first area N, “Nutrition label standards and regulations on the use of claims and implied claims on food”.</p></li>\n<li><p>Stage: consumption. Decision changed: the parent’s. Moves: information only, nothing on offer. On the person. Area I, “Inform people about food and nutrition through public awareness”.</p></li>\n<li><p>Stage: retail, where the price is paid. Decision changed: the seller’s price, and so the buyer’s cost. Moves: price. Upstream. Area U, “Use economic tools”. Who ends up paying it, seller or buyer, is rung 2’s question.</p></li>\n</ol>\n<p>None of these answers says any of the four works. They say only where each one acts.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A district plan reads: “Our obesity work has three parts: a Poshan Maah rally, the anganwadi rule on jaggery, and school nutrition gardens (PM POSHAN promotes school nutrition gardens). All three act on consumers.” Find the flaw.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The last sentence is wrong for two of the three.</p>\n<p>The rally acts on the person. It changes what people know, and nothing on offer.</p>\n<p>The jaggery rule changes the recipe of the anganwadi food. That decision is taken before the child eats, by whoever makes the food under the scheme. It acts upstream, on quality.</p>\n<p>The school nutrition gardens grow food at the school. What they change depends on whether the produce goes into the meal. If it does, they act on availability on the plate, upstream. If they are only a teaching garden, they act on the person.</p>\n<p>The plan has treated three different mechanisms as one. Split them before costing or judging them.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has three minutes and asks: “Isn’t obesity about personal choice?” Answer using the idea of locating an intervention, in plain words, with one quotable sentence.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>People choose, but they choose from what is already there. Before anyone reaches for a packet, somebody decided what to grow and what to put in the recipe. Somebody decided what it would cost and what to put on the shelf. In India the state itself decides what goes into school meals and anganwadi food.</p>\n<p>Quotable: “A person chooses the last step of a long chain, and most of the chain was chosen for them.”</p>\n<p>Calibrate it: this is a claim about where decisions are taken. It is not proof that changing them upstream will change weight. That needs evidence, which this section does not review.</p>"
+  }
+ ]
+}

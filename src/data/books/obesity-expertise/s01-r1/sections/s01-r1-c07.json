@@ -1,0 +1,168 @@
+{
+ "format": 1,
+ "id": "s01-r1-c07",
+ "label": "7",
+ "title": "Sizing an imbalance, and the static rule",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A kilogram of body fat is proposed to hold a fixed number of kilocalories. A surplus or a <dfn data-g=\"54\">deficit</dfn> of <dfn data-g=\"71\">energy intake</dfn>, summed over time, then converts into a change in <dfn data-g=\"79\">fat mass</dfn> at that fixed rate. Every other quantity is held constant for the interval this is applied to: the day’s intake, the day’s expenditure, and the energy content of a kilogram of fat itself. This is the <dfn data-g=\"208\">static rule</dfn>.</p>\n<p>Its common English form is 3,500 kilocalories removed or added for each <dfn data-g=\"167\">pound</dfn> of body weight changed. The rule is stated for body weight, and it assumes every kilogram of that weight is fat tissue. The sources this book cites trace it to Wishnofsky (1958), cited by Thomas (2013) and Hall (2008). Hall and colleagues (2011) say it was “derived by estimation of the energy content of weight lost”. Wishnofsky’s estimate is the calculation section 2 describes: tissue taken to be 87% fat, times fat’s energy per gram.</p>\n<div class=\"working\">\n<p>3500 divided by 0.45359237 = 7716.18</p>\n</div>\n<p>About 7,716 kilocalories per kilogram.</p>\n<p>Given a daily surplus or deficit of D kilocalories, held at the same size for n days, the static rule predicts a change in fat mass of D times n, divided by 7,716, in kilograms. Because D is held fixed, the predicted change is a straight line against time: the same daily D always predicts the same <dfn data-g=\"178\">rate of change</dfn>, on day one and on day one thousand.</p>\n<p>The rule fails for two separate reasons, and this section covers the second. First, real tissue lost is not all fat tissue, so no single kilocalories-per-kilogram figure holds for every kilogram lost; section 2 covers that. Second, and the reason a straight line is the wrong shape, intake and expenditure are not constant through a period of weight loss: both respond to the loss itself.</p>",
+   "refs": [
+    58,
+    59,
+    60,
+    12,
+    61
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Say a kilogram of fat is worth a fixed number of kilocalories. Eat that many fewer than you burn, and a kilogram should come off. That is the whole idea, and the number everybody has heard is 3,500 kilocalories for a pound.</p>\n<p>A pound is not the unit this course uses, so turn it into kilograms first. One pound is exactly 0.453 592 37 kilogram. Divide the 3,500 by that.</p>\n<div class=\"working\">\n<p>3500 divided by 0.45359237 = 7716.18</p>\n</div>\n<p>About 7,716 kilocalories for a kilogram. It is a calculation, not something anybody measured.</p>\n<p>Pick a daily surplus or deficit, and hold it the same size every day. Multiply it by the number of days, and divide by 7,716.</p>\n<p>Plot that against time and you get a straight line, because the daily amount never changes in the sum. Nobody’s daily intake and daily expenditure sit still while they lose weight. A smaller body spends less.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s01-r1-c07-static-vs-dynamic.png",
+   "alt": "Body weight against years. A dashed straight line falls from 100 kg through 77.39 at year 1 to 32.17 at year 3. A second line falls from 100 to 87.5 at year 1 and 76.25 at year 3, slowing as it goes.",
+   "w": 1358,
+   "h": 654,
+   "caption": "Hall’s 100 kg man cutting 2 MJ a day: the static rule’s straight line loses about 22.61 kg every year. The dynamic model loses half of its 25 kg in year 1 and is 95% of the way to about 75 kg by year 3."
+  },
+  {
+   "t": "figure",
+   "src": "s01-r1-c07-thomas-shortfall.png",
+   "alt": "Pounds lost against days on the diet. A dashed line rises from 0 to 26.64 lb at day 64.8. A single measured point at day 64.8 sits at 20.1 lb, below the line.",
+   "w": 1358,
+   "h": 655,
+   "caption": "Thomas’s cohort: 1,439 kcal a day for 64.8 days gives 26.64 lb on the static rule. Measured loss was 20.1 lb, 7.4 lb less than the paper’s own 27.6 lb prediction."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Take the scenario Hall and colleagues (2011) use in the <em>Lancet</em> to make this point. A sedentary man weighing 100 kilograms cuts his energy intake by 2 megajoules a day and keeps it cut. One <dfn data-g=\"114\">kilocalorie</dfn> is 0.004184 megajoules, so divide by that.</p>\n<div class=\"working\">\n<p>2 divided by 0.004184 = 478.01</p>\n</div>\n<p>About 478 kilocalories a day. Run the static rule forward for one year.</p>\n<div class=\"working\">\n<p>478.01 times 365 = 174473.65<br />\n174473.65 divided by 7716.18 = 22.61</p>\n</div>\n<p>About 22.6 kilograms in the first year.</p>\n<p>Now the failure. The paper’s own <dfn data-g=\"63\">dynamic model</dfn> is built on <dfn data-g=\"68\">energy balance</dfn>, with expenditure allowed to change. For the same man on the same cut, it predicts weight levelling off towards about 75 kilograms. The model takes “roughly 1 year to reach half of the maximum weight loss”. It is 95% of the way there after about three years.</p>\n<table>\n\n<thead>\n<tr>\n<th>model</th>\n<th>weight change after one year</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>the static rule</td>\n<td>about 22.6 kg</td>\n</tr>\n<tr>\n<td>the dynamic model</td>\n<td>roughly 11 to 12.5 kg (the paper: the static rule’s 22 kg is about double)</td>\n</tr>\n</tbody>\n</table>\n<p>The static rule is not merely optimistic here. It has the wrong shape. It says every year should look like the first, for as long as the deficit is kept up. The dynamic model says the loss slows and levels off. The man’s expenditure falls as his body gets smaller. That shrinks the real deficit, even though his intake has not changed again.</p>\n<p>Thomas and colleagues (2013) pooled 103 adults whose diets were supervised or whose intake was measured. Their prescribed deficit averaged 1,439 kcal a day. Work out what the static rule predicts they should lose over their average 64.8 days on the diet.</p>\n<div class=\"working\">\n<p>1439 times 64.8 = 93247.2<br />\n93247.2 divided by 3500 = 26.64</p>\n</div>\n<p>About 26.6 pounds. The paper’s own figure is 27.6 pounds. The paper worked the rule out person by person and averaged. Multiplying two averages gives a slightly different number.</p>\n<p>What they actually lost was 20.1 pounds: “Subjects lost 20.1±11.3 lbs, 7.4±12.6 lb less than the 27.6±16.0 lbs predicted by the 3500 kcal rule.” The number after ± shows how widely people varied around the average. (27.6 minus 7.4 is 20.2. The 0.1 is <dfn data-g=\"186\">rounding</dfn> in the paper’s figures.)</p>",
+   "numberRefs": [
+    62,
+    63,
+    64
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The straight line holds only until intake and expenditure respond to the loss. No source here gives an interval over which it is safe. The Hall model puts half the eventual loss in the first year. Thomas’s dieters already fell about a quarter short of the rule within about nine weeks.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Convert the unit before you argue about the number.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A rule that holds a daily amount fixed and multiplies it by time always draws a straight line, whatever the real quantity does.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The static rule’s assumption that expenditure stays put is closest to true in the first days. Its assumption that the loss is fat is furthest from true then. Trust it for neither the first week nor the long run.</p>",
+     "tag": "boundary",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>When you tell a patient a target using this rule, say that it over-predicts from the first weeks.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>At the rule’s 7,716 kcal, a kilogram of fat is two to four whole days of a person’s total expenditure. That uses section 3’s 8 to 16 megajoules a day.</p>",
+     "tag": "number",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A figure like 3,500 kcal per pound being widely printed, including in textbooks, does not make it a measured property of fat.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A person keeps to a deficit of 600 kcal a day for 40 days. Using the static rule, work out the predicted loss in kilograms.</p>",
+   "type": "calculation",
+   "confidence": false,
+   "answer": "<p>Total the deficit, then divide by the per-kilogram rate.</p>\n<div class=\"working\">\n<p>600 times 40 = 24000<br />\n24000 divided by 7716.18 = 3.11</p>\n</div>\n<p>About 3.1 kilograms predicted, on the static rule’s own terms.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A health secretary has one page and wants an answer first. They have asked: “Is the 3,500-calorie rule good enough to put in a public information leaflet?”</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first: not as a bare rule. If it goes in at all, it needs a warning that it promises too much.</p>\n<p>Why. The rule is simple arithmetic, and it is printed widely, including in nutrition textbooks. Even over the first two months it over-predicts: dieters whose intake was checked lost about three-quarters of what it promised. Past the first year it is further off. The rule assumes intake and expenditure never change. A published model built on energy balance predicts a loss that slows and levels off. In that model’s worked example, the rule’s first-year number is about double the model’s.</p>\n<p>What to print instead of the bare rule. Real loss falls short of the rule from the start. It slows over time. A smaller body needs less to maintain itself. Quote no week-fifty-two number from this rule at all.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A rule says 3,500 kcal removes one pound. One pound is 0.45359237 kilogram. How many kcal per kilogram is that?</p>",
+   "level": 1,
+   "answer": "<p>Divide the kilocalories by the kilograms.</p>\n<div class=\"working\">\n<p>3500 divided by 0.45359237 = 7716.18</p>\n</div>\n<p>7,716.18 kcal per kilogram, to two <dfn data-g=\"53\">decimal</dfn> places.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Using a rate of 3,500 for one unit, work out the total for 5 units, and separately for 12 units.</p>",
+   "level": 2,
+   "answer": "<p>Multiply the rate by the count each time.</p>\n<div class=\"working\">\n<p>3500 times 5 = 17500<br />\n3500 times 12 = 42000</p>\n</div>\n<p>17,500 and 42,000.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Thomas and colleagues’ pooled dieters were prescribed an average deficit of 1,439 kcal a day. They were on the diet for an average of 64.8 days. Use the static rule’s 3,500 kcal a pound to work out the predicted loss in pounds. Then convert it to kilograms. One pound is exactly 0.45359237 kg.</p>",
+   "level": 4,
+   "answer": "<p>Total the deficit over the days, then divide by 3,500.</p>\n<div class=\"working\">\n<p>1439 times 64.8 = 93247.2<br />\n93247.2 divided by 3500 = 26.64</p>\n</div>\n<p>26.64 pounds predicted. Convert to kilograms by multiplying by the exact factor.</p>\n<div class=\"working\">\n<p>26.64 times 0.45359237 = 12.08</p>\n</div>\n<p>About 12.08 kilograms.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Hall and colleagues model a 100 kg sedentary man. He cuts his intake by 2 megajoules a day and holds that cut for a year. One kilocalorie is 0.004184 megajoules. Use that to turn the daily cut into kilocalories. Then run the static rule forward for 365 days at 7,716.18 kcal per kilogram. Compare your figure with the paper’s static-rule prediction of “22 kg lost in the first year”.</p>",
+   "level": 5,
+   "answer": "<p>Divide the megajoules by the size of one kilocalorie in megajoules.</p>\n<div class=\"working\">\n<p>2 divided by 0.004184 = 478.01</p>\n</div>\n<p>About 478.01 kcal a day. Total it over the year and divide by the per-kilogram rate.</p>\n<div class=\"working\">\n<p>478.01 times 365 = 174473.65<br />\n174473.65 divided by 7716.18 = 22.61</p>\n</div>\n<p>About 22.6 kilograms, against the paper’s 22 kilograms. The two are close. The small gap is rounding, in the conversion and in the paper’s own figures. So this arithmetic reproduces the paper’s static-rule prediction. It is not the figure the paper’s dynamic model gives.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A textbook states: “The accumulation of an extra 3500 calories adds one pound of weight. If an excess of 200 calories per day is ingested, one extra pound of body weight will be gained every 18 days. At that rate, an extra 20 pounds can be gained over the course of a year.” A student extends the reasoning. “So anyone eating 200 calories over their needs, every day, for the rest of their life, will gain 20 pounds a year, every year, forever.” Find the step that broke.</p>",
+   "level": 7,
+   "answer": "<p>The textbook’s own arithmetic is not the broken step; check it first.</p>\n<div class=\"working\">\n<p>3500 divided by 200 = 17.5<br />\n365 divided by 17.5 = 20.86</p>\n</div>\n<p>About 21 pounds a year on 200 extra kilocalories a day, matching the textbook’s rounded “20 pounds” closely enough. The arithmetic holds.</p>\n<p>The first break is the textbook’s own step to a whole year. The body starts to respond well inside a year. “Forever” repeats the same mistake. The rule was run forward on a fixed daily surplus. It never asked whether a heavier body needs more each day. A heavier body spends more at rest and more to move itself. So the same 200-calorie habit gives a shrinking surplus as the weight comes on.</p>\n<p>Why the wrong answer looks reasonable. The arithmetic for one year is correct, and repeating a correct calculation feels safe. What breaks is an assumption carried silently past the point where it stops holding.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a clinic wants a target for 8 kilograms of fat loss<br />\nthe static rule gives 3,500 for a unit of weight change<br />\n8 times 3500 = 28,000<br />\nso the patient needs a total deficit of 28,000 kcal</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the second-to-last one. It is a unit swap, not a wrong multiplication. The static rule’s 3,500 is a rate for one pound, not one kilogram. Multiplying kilograms by the pound rate treats a kilogram as a pound. That understates the deficit by a factor of about 2.2, since one kilogram is about 2.2 pounds.</p>\n<p>The correct version uses the rate per kilogram.</p>\n<div class=\"working\">\n<p>8 times 7716.18 = 61729.44</p>\n</div>\n<p>About 61,730 kcal, not 28,000: more than double the wrong figure.</p>\n<p>Why the wrong answer looks reasonable. 8 times 3,500 is correct multiplication, and 28,000 looks like a plausible target. Nothing in the arithmetic signals an error. The mistake is which rate got attached to which unit. Problem 1 trains exactly that check.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A slimming programme’s leaflet says: “Cut 500 calories a day and you will lose about a pound a week — in six months, that is 26 pounds off.” Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: whether the leaflet’s numbers fit the static rule it quietly uses. Then, over what interval that rule is being trusted.</p>\n<p>Check the weekly figure first.</p>\n<div class=\"working\">\n<p>500 times 7 = 3500<br />\n3500 divided by 3500 = 1</p>\n</div>\n<p>One pound a week is exactly what 500 kcal a day gives under the static rule; that part is arithmetically sound. Now the six-month figure.</p>\n<div class=\"working\">\n<p>1 times 26 = 26</p>\n</div>\n<p>Six months is about 26 weeks, so 26 pounds is what a straight line through the weekly figure gives. The leaflet’s arithmetic is internally consistent.</p>\n<p>What this does not establish. It does not show that a person on the diet for six months actually loses 26 pounds. The static rule assumes the same 500-kcal deficit keeps giving the same weekly loss. The data in this section’s illustration show that failing within about nine weeks.</p>\n<p>It does not show that 500 kcal a day can be kept up for 26 weeks. That is a question about behaviour, which this arithmetic cannot touch. And it says nothing about whether the pounds lost are fat. The rule fixes a rate per pound without asking what the pound is made of.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A dietitian tells a patient: “Keep to 500 kcal under your target and you’ll reliably lose a pound a week — do the maths yourself if you don’t believe me.” Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: how the promised rate compares with a real cohort on a bigger deficit. That is the closest real check among the sources this book cites.</p>\n<p>The patient’s promised deficit, in the same terms Thomas and colleagues report.</p>\n<div class=\"working\">\n<p>500 times 7 = 3500</p>\n</div>\n<p>3,500 kcal a week, or exactly one pound a week by the static rule, before the body responds. Thomas and colleagues’ dieters were prescribed a bigger deficit: 1,439 kcal a day. In a week, that is:</p>\n<div class=\"working\">\n<p>1439 times 7 = 10073</p>\n</div>\n<p>Their intake was supervised or measured. Their loss still fell short of the rule’s prediction for their own deficit. On average they lost 7.4 pounds less than the predicted 27.6.</p>\n<p>What this does not establish. It does not show that this patient will do better, relative to prediction, than that cohort. The patient has a smaller deficit and less control over intake. Nor does it give a number for how far this patient will fall short. It shows only that “reliably” is not a word the static rule has earned.</p>"
+  }
+ ]
+}

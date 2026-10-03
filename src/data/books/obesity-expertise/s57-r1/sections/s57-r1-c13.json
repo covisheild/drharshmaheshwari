@@ -1,0 +1,143 @@
+{
+ "format": 1,
+ "id": "s57-r1-c13",
+ "label": "13",
+ "title": "Liking a session is not learning from it",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>To evaluate teaching is to measure some outcome of it. Kirkpatrick’s four-level model sorts those outcomes by what is measured. So each level names a different <dfn data-g=\"443\">response variable</dfn>: the thing the teaching is meant to change. As Frich and colleagues (2015) set it out, the four levels are reaction (Level 1), knowledge (Level 2), behavioural change (Level 3) and system results (Level 4).</p>\n<p>Frich and colleagues split Levels 2, 3 and 4 by how the outcome is measured. <dfn data-g=\"502\">Subjective</dfn> means stated by the learner or someone near them, as an opinion or a rating (2A, 3A, 4A). Objective means measured by a test, an observation or a record (2B, 3B, 4B).</p>\n<p>A feedback form given at the end of a session measures Level 1. An item on it such as “I learned a great deal” measures Level 2A. A test that asks for the objective’s action, scored against a key, measures Level 2B.</p>",
+   "refs": [
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    311,
+    313,
+    314,
+    315,
+    316,
+    2
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>At the end of a session you hand out a feedback form.</p>\n<p>Ask what the form measured. It measured whether the learners liked the session. There are three more. Did they learn what you set out to teach? Do they now do their work differently? Did anything change for the people they serve?</p>\n<p>These four questions are called Kirkpatrick’s levels. Each needs its own measure. A form answers the first. A test answers the second. Watching people at work answers the third. Records of the service answer the fourth.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c13-levels-measured.png",
+   "alt": "Seven bars. Level 1, reaction: 25. Level 2A, knowledge self-assessed: 36. Level 2B, knowledge tested: 7. Level 3A, behaviour self-assessed: 10. Level 3B, behaviour measured objectively: 2. Level 4A, system results as perceived: 1. Level 4B, system results measured objectively: 5.",
+   "w": 1358,
+   "h": 654,
+   "caption": "Frich and colleagues’ review of 45 studies of leadership programmes for physicians: how many studies reported an outcome at each level. One study can report several levels. 36 studies reported self-assessed knowledge; 7 tested it. 2 measured behaviour at work objectively. 6 reported system results: 1 as perceived, 5 measured objectively."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is the trap. You teach a two-hour session to a batch of accredited social health activist (ASHA) workers. The objective: each worker weighs a child and plots the weight on the child’s growth chart correctly. At the end you hand out the usual feedback form. Nearly every form ticks “agree” or “strongly agree”. Your report says the session was a success.</p>\n<p>Now sort the form. Take each item and ask what it measures.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>item on the form</th>\n<th>what it measures</th>\n<th>level</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>The session was useful.</td>\n<td>liking the session</td>\n<td>1</td>\n</tr>\n<tr>\n<td>The trainer was clear and well prepared.</td>\n<td>liking the trainer</td>\n<td>1</td>\n</tr>\n<tr>\n<td>I learned a great deal from this session.</td>\n<td>own view of learning</td>\n<td>2A</td>\n</tr>\n<tr>\n<td>I feel confident plotting a child’s weight.</td>\n<td>own view of learning</td>\n<td>2A</td>\n</tr>\n<tr>\n<td>I will use this in my work.</td>\n<td>an intention</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<p>Nothing on the form reaches Level 2B. The last item is not Level 3 either. Frich’s levels do not name intentions. This book files it with reaction: it is a promise made in the room, before the worker is back at work.</p>\n<p>The third item is worth a second look. It is close to the question Deslauriers and colleagues used to measure students’ <dfn data-g=\"186\">feeling of learning</dfn>: “I feel like I learned a great deal from this class.” The first section showed that feeling moving the wrong way.</p>\n<p>Now add what each higher level would need.</p>\n<ul>\n<li>Level 2B: at the end of the session, and again a week later, give each worker three children’s weights to plot. Mark each plot right or wrong against a key. That is the kind of test, given more than once, that the section on measuring change scored.</li>\n<li>Level 3B: a month later, a supervisor watches each worker weigh and plot one child at work, with a short checklist.</li>\n<li>Level 4B: over months, the service’s own records show whether children whose weight stops rising are found sooner. A single session is unlikely to move this alone, and you would need a comparison area to tell.</li>\n</ul>\n<p>The form was not wrong. It answered the question it asked. Your report asked a different one.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The form and the batch are made up for this example. The form’s items are typical of end-of- session forms, not copied from any one.</p>\n<p>Sorting an item by level says what it measures, not whether it measures it well. A Level 2B test with items that do not match the objective is still a poor test.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now read a real literature the same way. Frich and colleagues (2015) reviewed 45 published studies of leadership programmes for physicians. Their abstract says positive outcomes “were reported in all studies”. Before you repeat that, ask what the positive outcomes were measured at.</p>\n<p>Their Results count how many studies reported an outcome at each level. One study can report several levels, so the counts add to more than 45.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>level</td>\n<td>what was measured</td>\n<td>studies reporting it (of 45)</td>\n</tr>\n<tr>\n<td>1</td>\n<td>reaction</td>\n<td>25</td>\n</tr>\n<tr>\n<td>2A</td>\n<td>knowledge, self-assessed</td>\n<td>36</td>\n</tr>\n<tr>\n<td>2B</td>\n<td>knowledge, tested</td>\n<td>7</td>\n</tr>\n<tr>\n<td>3A</td>\n<td>behaviour at work, self-assessed</td>\n<td>10</td>\n</tr>\n<tr>\n<td>3B</td>\n<td>behaviour at work, measured objectively</td>\n<td>2</td>\n</tr>\n<tr>\n<td>4A</td>\n<td>system results, as perceived</td>\n<td>1</td>\n</tr>\n<tr>\n<td>4B</td>\n<td>system results, measured objectively</td>\n<td>5</td>\n</tr>\n</tbody>\n</table>\n<p>Turn two of those counts into proportions of the 45 studies.</p>\n<div class=\"working\">\n<p>36 divided by 45 = 0.8<br />\n7 divided by 45 is about 0.156</p>\n</div>\n<p>Eight in ten studies reported what physicians said they had learned. About one in six tested it. Two measured behaviour at work objectively, for example with a checklist scoring a team’s performance.</p>\n<p>Now read the abstract’s sentence to the end: “although the majority of studies relied on learner satisfaction scores and self-assessed knowledge or behavioral change.” The positive outcomes rest mostly on Levels 1 and 2A. The authors say so themselves. Only six studies reached system results.</p>\n<p>One more thing to check before you quote it. The same review says most assessments “occurred immediately after the program”. A test given the moment a course ends measures performance, not what lasted.</p>",
+   "numberRefs": [
+    317
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Frich’s counts describe published studies of leadership programmes for physicians, found in one database up to November 2013. They say what that literature measured. They are not a count of how teaching in India, or any teaching session, is evaluated.</p>\n<p>The counts also say nothing about how good each study was at its level. A Level 4 result from one programme with no <dfn data-g=\"86\">comparison group</dfn> is still only a change, not an effect.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A warm set of feedback forms tells you the learners liked the session. It does not tell you they can do anything new.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>An item that asks “Did you learn a lot?” or “Do you feel confident?” is still the learner’s opinion, Level 2A. When you read “participants’ knowledge improved”, find out which of the two it was.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>This book asks you to show that your learners can do something they could not do before, and that you measured it. Any test you score against a key is Level 2B, even one at the end of the session. This book asks for more: give it a week or more after the session, because section 1 counts only what lasts. Plan it before you teach.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Ratings and a test score at the end of class can point opposite ways. So never switch methods, or judge a colleague’s teaching, on ratings alone.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“Every study reported positive outcomes” means little until you know the level. Ask any programme report which level its good news came from.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The levels say what an evaluation measured, not what caused the result. Before you credit the course, ask for the design as well as the level.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Level 1 is not worthless. It tells you whether learners could hear, kept up, and would come back, and a session nobody attends teaches nothing. Use the form for those questions and a test for learning. Do not rewrite a session on the form alone.</p>",
+     "tag": "boundary",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A department’s report on its teaching sessions for second-year MBBS students reads: “Feedback was collected from all students. The mean rating for ‘I have learned a great deal’ was high, showing the sessions achieved their learning objectives.”</p>\n<p>Sort what was measured by level. Say what the conclusion needs that the report does not have, and what you would add next year.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The item “I have learned a great deal” is the student’s own view of their learning. That is Level 2A, self-assessed knowledge. The rest of the form, if it asks about the session and the teacher, is Level 1.</p>\n<p>The conclusion is about the learning objectives: that students can now do what each objective says. That is Level 2B, and it needs a test that asks for each objective’s action, scored against a key. Nothing in the report is that.</p>\n<p>The step that fails is the <dfn data-g=\"242\">inference</dfn>, not the premise. The ratings may be accurately high. They are still about how students felt. The first section of this book showed a rating and a test result pointing opposite ways.</p>\n<p>Next year, give each session a short test on its objective. Give it at the start, at the end and a week or more later, as the section on measuring change set out. Report the share reaching each objective’s standard. Keep the form for what it measures.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Frich and colleagues’ abstract says “four studies used a comparison group”. Their Results section says “Only five studies” did, and their Table 2 gives “Comparison group” as 4, or 9%. You want to quote the review in your own write-up. What do you write, and why?</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Two of the three places say four: the abstract and Table 2. The Results sentence says five, but it cites only four study numbers after the word “studies” (34, 42, 45 and 57). The most likely reading is four, and “five” a slip.</p>\n<p>Check the arithmetic of the table too.</p>\n<div class=\"working\">\n<p>4 divided by 45 is about 0.089</p>\n</div>\n<p>About 9%, which matches the table’s “(9)”. Five would have been about 11%.</p>\n<div class=\"working\">\n<p>5 divided by 45 is about 0.111</p>\n</div>\n<p>Write “four of 45 studies (Frich and colleagues’ abstract and Table 2)”. If the exact number matters to your argument, add that the Results text says five. Do not silently pick one. Whichever it is, fewer than one study in ten had anything to compare against.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Take the session you are planning for this book’s build. Write one line for each of the four levels: what you would measure, how, and when. Mark which lines you will actually carry out and which you cannot, and say why.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A worked plan, for a session teaching MBBS students in community medicine to work out a family’s daily <dfn data-g=\"161\">energy intake</dfn> from a diet record:</p>\n<ul>\n<li>Level 1: a short form at the end. Could they hear, was the pace right, what was least clear. Carried out.</li>\n<li>Level 2B: the ten-item test on the objective, scored against a key. Given at the start, at the end, and a week later on a parallel form. Carried out. This is the one this book asks for.</li>\n<li>Level 3: whether students use the method on their family-study visits. A tutor checks one diet calculation in each student’s family-study record a month later against the same key. Carried out if the tutor agrees; otherwise listed as not done.</li>\n<li>Level 4: whether the families’ diets change. Not carried out. One session is unlikely to move it alone, the time is too long, and there is no comparison group.</li>\n</ul>\n<p>A good answer says in writing which levels it will not reach, so nobody later reads the Level 1 form as if it covered them.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>For a health secretary. A state programme reports that its refresher training for ASHA workers on child nutrition “was rated excellent by participants”. The secretary asks whether the training worked and whether to fund it again. One page, answer first.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The answer first: the report does not say whether the training worked. It says the workers liked it. Fund it again only with a plan to measure what they can do.</p>\n<p>Why. Training can be judged at four levels. Did people like it? Did they learn? Do they work differently? Did anything change for the children?</p>\n<p>A rating answers only the first. People can rate one kind of teaching above another and score lower on a test at the end of the class. A randomised study of university physics students found exactly that.</p>\n<p>What to ask for, in order of cost.</p>\n<ul>\n<li>A short practical test for each worker, at the start, the end and a month later, on the task the training teaches. Cheap, and it answers the second question.</li>\n<li>A supervisor’s checklist at a sample of routine visits. It answers the third.</li>\n<li>The programme’s own records on whether children’s growth problems are found sooner, in districts that had the training against districts not yet reached. Slow, but it is the only answer to the fourth.</li>\n</ul>\n<p>Tie the next round of funding to the first of these at least.</p>"
+  }
+ ]
+}

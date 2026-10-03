@@ -1,0 +1,102 @@
+{
+ "format": 1,
+ "id": "s55-r1-c01",
+ "label": "1",
+ "title": "A research question is a choice",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"386\">research topic</dfn> names an area of interest, such as obesity in adolescents. A <dfn data-g=\"385\">research question</dfn> is a sentence that asks one thing a study will find out about a topic. A study is built to answer one <dfn data-g=\"261\">main question</dfn>.</p>\n<p>A research question is chosen when it is one of several candidates, set side by side, and the others are turned down.</p>\n<p>The question is the first decision in a study. The methods that follow answer the question that was asked. None of them can turn it into a better question.</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A topic is an area, like “obesity in school children”. A question asks one thing you will find out, like “What is the average measured waist of children aged 10 to 14 in one district’s government schools?” You cannot plan a study from a topic. You can plan one from a question, because the question tells you whom to find and what to measure.</p>\n<p>The trouble starts when the first question to arrive is the one you keep, without setting it beside any other.</p>\n<p>Choosing means this. You write down several candidates, put them side by side, and turn most of them down.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Here is the setting this book uses from start to finish. It is made up. You are a postgraduate student in community medicine at a medical college in Chhattisgarh. You must propose a first research question on obesity.</p>\n<p>Suppose your guide says, in your first week, “Do something on obesity in school children.” You write that at the top of a page as your question.</p>\n<p>Ask the page three things. Which children: what ages, which schools, where? What will you measure: weight, meals, games periods, screen time, or all of them? The page cannot answer any of them. “Obesity in school children” is a topic.</p>\n<p>Now suppose, in the same made-up week, three more candidates reach you. Here are all four, each written as a question, with the route by which it arrived.</p>\n<table>\n\n<thead>\n<tr>\n<th>How it reached you</th>\n<th>The candidate, written as a question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Your guide named a topic</td>\n<td>What is the average measured waist of children aged 10 to 14 in government schools in Raipur district?</td>\n</tr>\n<tr>\n<td>The department already holds weight and height records from last year’s district screening camp</td>\n<td>Among adults aged 30 and over screened at that camp, did those from the town have a higher average body mass index than those from villages?</td>\n</tr>\n<tr>\n<td>The last paper you read ended with a line on future research into meal timing</td>\n<td>Among students aged 18 to 25 at your college, do those who usually eat dinner late gain more weight over one year than those who eat early?</td>\n</tr>\n<tr>\n<td>A senior told you to pick something you could finish quickly</td>\n<td>What share of patients aged 30 and over at the district hospital’s non-communicable disease (NCD) clinic know their own weight?</td>\n</tr>\n</tbody>\n</table>\n<p>You chose none of the four. Each one arrived.</p>\n<p>The fault would be to keep the first question that arrives, because it arrived first.</p>\n<p>Put the four side by side. You do not yet have the tests that decide between them; the rest of this book builds them. Decide now that most of these will be turned down, and that you will write down the reason for each one.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table sorts candidates by how they arrived. It says nothing about which one is best.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to write a topic where the question should be. Refuse to plan a single step until you have a sentence that asks one thing.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A question with no rivals has not been chosen.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The future-research line at the end of a paper is a good place to find a candidate. It was written for the authors’ own field and data, not for your district. Take it as one candidate among several, never as the choice already made.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A careful sample and a correct analysis answer the question that was asked. If that question was the wrong one, the study is well done and still no use to anyone.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee says “my guide gave me the topic”, do not argue about the guide. Ask them to write three questions inside that topic and say which two they would drop, and why.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Knowing how a question arrived tells you only whether it was compared with others. It does not tell you whether the question is good. An assigned or borrowed question can win a fair comparison. Judge it by the tests, not by where it came from.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>In a made-up department meeting, a senior colleague says: “Take the screening camp question. The data are already in the department, so it is a good question.”</p>\n<p>Lay the argument out as a premise and a conclusion. Then say where it fails, and what part of it survives.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Premise: the data for the screening camp question are already in the department. Conclusion: it is a good question.</p>\n<p>Test the <dfn data-g=\"216\">inference</dfn> first, as Book 0’s section on argument taught. Grant the premise: the records exist. What follows from that? That the question can be answered quickly and cheaply. It does not follow that anyone needs the answer, or that the answer is not already known. “Good” has quietly come to mean “quick”.</p>\n<p>Then look at what the argument skips. The records were collected for a camp, not for this question. So the data decided the question, rather than the question deciding what data to collect. That is one of the routes by which a question arrives without being chosen.</p>\n<p>What survives: data already in hand are a real advantage when you come to ask whether a question can be answered at all. That makes the camp question a strong candidate for the list. It does not make it the choice before it has been compared with others.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Take the made-up topic “meal timing in college students”, from the setting of this section. Write three different questions inside it, each asking one thing. For each, say which route might have brought it to you if you had not written it yourself.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>One possible set. Yours will differ; check that each of yours asks one thing.</p>\n<ol type=\"1\">\n<li>Among students aged 18 to 25 at your college, do those who usually eat dinner late gain more weight over one year than those who eat early? This could arrive from a paper’s line on future research.</li>\n<li>What share of students aged 18 to 25 living in your college hostel usually eat their last meal after 10 at night? This could arrive from what is at hand: you live among them.</li>\n<li>Among hostel students aged 18 to 25, do those who skip breakfast on class days eat more at night than those who do not? This could be named by a guide who has noticed empty breakfast tables.</li>\n</ol>\n<p>Each is a single question. None has been chosen yet. Writing three is what makes choosing possible.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. They ask: “Why does it matter how I got my question, if I do the study properly?” Answer them.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw two columns on the board. Head the left one “the question” and the right one “the methods”. Under the methods write sample, measurement, analysis.</p>\n<p>Then say what each method does. A good sample means the answer is true of the group the question names. A good measurement means you measured what the question asks about. A good analysis means you read the numbers correctly. Every one of them serves the question in the left column. None of them can reach back and change it.</p>\n<p>So a study can be done properly and still answer a question nobody needed. How you got the question matters for one reason. A question that arrived and was kept has never been set against a better one.</p>\n<p>End with the move. Write the question you have, then write two others on the same topic. If yours still looks best beside them, you have chosen it. If not, you have found out in ten minutes rather than two years.</p>"
+  }
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "format": 1,
+ "id": "s37-r1-c02",
+ "label": "2",
+ "title": "One fresh food from field to plate in India",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Fresh produce in India commonly passes through several hands between the farm and the household. The Reserve Bank of India (RBI) working paper on tomato, onion and potato (Working Paper 08 of 2024) describes the onion route to Delhi, with costs gathered in the Nashik region in January 2023. Farmers mostly sell in a <dfn data-g=\"215\">mandi</dfn> run by an Agricultural Produce Marketing Committee (<dfn data-g=\"21\">APMC</dfn>), where the price is set by open auction. A trader buys with the help of commission agents. Mandi fees and commission charges are paid there.</p>\n<p>The trader then deals with traders or wholesalers at a secondary mandi, such as Azadpur in Delhi. There, “Mandi fees and commission charges are also paid by the seller.” Retailers buy at the secondary mandi and sell in neighbourhood markets.</p>\n<p>Food leaves the chain in two ways that are measured separately. The United Nations Environment Programme (UNEP) defines <dfn data-g=\"141\">food loss</dfn> as food that exits the supply chain “up to, and excluding, the retail level”. It defines <dfn data-g=\"145\">food waste</dfn> as food and its inedible parts removed at retail, food service and household level. UNEP estimates India’s household food waste in 2022 at 55 kg per person per year, with “Medium confidence”, from seven local studies, urban and rural.</p>",
+   "refs": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>An onion bought in Delhi has usually passed through several pairs of hands.</p>\n<p>The farmer grows it and takes it to a mandi — a regulated wholesale market run under state law. There it is auctioned. A trader buys it, helped by a <dfn data-g=\"58\">commission agent</dfn> — a middleman paid a <dfn data-g=\"262\">percentage</dfn> for arranging the sale. At this sale a Reserve Bank paper records a mandi fee of 1 per cent and a commission of 4 per cent. It does not say what they are percentages of. Then the onions travel by truck to a big city mandi, and change hands again. A shopkeeper or vendor buys them there and sells them in your neighbourhood. Potatoes often sit for months in a cold store on the way.</p>\n<p>Some food never reaches you. Food loss is what goes before the shop: spoiled in the field, dropped in sorting, rotted in a store. Food waste is what goes at the shop, in a restaurant or at home, and it counts peels and bones too.</p>\n<p>India has numbers for both, and neither is exact. A United Nations agency estimates that in 2022 each Indian household member threw away about 55 kg of food.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c02-post-harvest-loss.png",
+   "alt": "Grouped bars for five crops. Farm operations: paddy 4.16, wheat 3.61, tomato 8.37, onion 5.31, potato 5.1 per cent. Market level: paddy 0.61, wheat 0.56, tomato 3.25, onion 1.96, potato 0.86 per cent.",
+   "w": 1357,
+   "h": 655,
+   "caption": "Per cent lost after harvest, in farm operations and at market level, in a study by NABARD Consultancy Services (NABCONS) for reference years 2020-22, as the Ministry of Food Processing Industries reported it, which does not say per cent of what. Of these five, tomato loses most on the farm, 8.37 per cent; wheat least at market, 0.56 per cent. The release gives no total per crop."
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c02-household-waste-range.png",
+   "alt": "Three bars: the lowest of the 7 Indian local studies at 20 kg, UNEP's India estimate at 55 kg, the highest local study at 88 kg per person a year.",
+   "w": 1356,
+   "h": 655,
+   "caption": "Household food waste, kg per person a year (UNEP Food Waste Index Report 2024). India’s figure of 55 sits inside the spread of the 7 local studies it was scaled up from, 20 to 88. It is a modelled estimate, rated medium confidence, not a national count."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Follow one onion to Delhi. Open the Reserve Bank of India’s working paper on tomato, onion and potato at https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=22723 and search inside it for “In the case of onion”.</p>\n<blockquote>\n<p>In the case of onion, farmers mostly sell their produce in the APMC where prices are determined in an open auction system. […] Once the auction is successful, it is bought by a trader with the help of commission agents, who pay the mandi fees (1 per cent), commission charges (4 per cent) and loading/unloading charges (₹ 9.02 per quintal).</p>\n</blockquote>\n<p>A <dfn data-g=\"297\">quintal</dfn> is 100 kg. Now read on to the end of the paragraph, and write down each hand the onion passes through. Your list should look like this.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Step</td>\n<td>Who acts</td>\n<td>What the paper says happens there</td>\n</tr>\n<tr>\n<td>Farm</td>\n<td>farmer</td>\n<td>grows the onion; pays labour and transport to the mandi</td>\n</tr>\n<tr>\n<td>Primary mandi</td>\n<td>trader, commission agent, mandi</td>\n<td>open auction; mandi fee 1 per cent, commission 4 per cent, loading Rs 9.02 per quintal</td>\n</tr>\n<tr>\n<td>On the way</td>\n<td>trader</td>\n<td>packaging; weight lost, around 10 or 5 per cent depending on the season the onion was grown in</td>\n</tr>\n<tr>\n<td>Transport</td>\n<td>primary trader or city wholesaler</td>\n<td>about Rs 240 per quintal to a secondary mandi such as Azadpur in Delhi</td>\n</tr>\n<tr>\n<td>Secondary mandi</td>\n<td>wholesaler</td>\n<td>mandi fees and commission also paid, by the seller</td>\n</tr>\n<tr>\n<td>Retail</td>\n<td>retailer</td>\n<td>sells in neighbourhood markets in the city</td>\n</tr>\n<tr>\n<td>Kitchen</td>\n<td>your household</td>\n<td>buys, peels, cooks and eats; the peel goes to the bin</td>\n</tr>\n</tbody>\n</table>\n<p>In the stages of section 1, this onion passes production, distribution, retail, preparation, consumption and waste. The paper describes no processing or storage on this route.</p>\n<p>Look at the third row. The onion loses weight on the way before anyone has sold it to you. Some of that may be food loss. The paper counts it only as a cost the trader carries.</p>\n<p>Now search the same paper for “Cold storages are the most important selling point”. Potato takes a different route. Farmers in western Uttar Pradesh store it between March and November, at an average cost of Rs 250 to 260 per quintal. An open auction is held at the cold store, with the storage owner as go-between for farmer and trader. Some farmers skip the mandi altogether: those with contracts sell straight to processing companies. One crop can reach you by more than one route.</p>",
+   "numberRefs": [
+    31
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This is one crop, on one route, to one city. The onion costs come from field visits in the Nashik region in January 2023, and the paper chose Delhi as the consuming city. Mandi fees and commission rates are set state by state, so another state’s mandi charges other rates. The paper also names farmers selling tomato to organised retailers and potato under contract to processors, routes with fewer hands. Do not read the onion route as the route of every fresh food in India.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is the trap with loss figures: read the unit before the number.</p>\n<p>Open the Press Information Bureau release of 1 August 2025 on a study by NABARD Consultancy Services (NABCONS) for the Ministry of Food Processing Industries at https://www.pib.gov.in/PressReleasePage.aspx?PRID=2151371&amp;reg=3&amp;lang=2 and scroll to Annexure-II, Table-1. Its column is headed “Quantity lost (Million MT)”, that is, million tonnes. Read down it. Cereals, 12.49. Vegetables, 11.97. Then the last row: Eggs, 7363.00.</p>\n<p>Stop there. Scroll up to Annexure-I in the same release. The country’s whole production of fruits, vegetables, plantation crops and spices in 2022-23 was 337033 thousand tonnes, about 337 million tonnes. A loss of 7,363 million tonnes of eggs would be more than twenty times that. The row cannot be in tonnes. The release does not say what unit it is in, so do not use it at all.</p>\n<p>Now go to Table-2. It gives two numbers for each crop, headed “Total loss in farm operations” and “Total loss in market level”, both as per cent. Copy five rows.</p>\n<table style=\"width:89%;\">\n\n<thead>\n<tr>\n<th>Crop</th>\n<th>Farm operations (per cent)</th>\n<th>Market level (per cent)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Paddy</td>\n<td>4.16</td>\n<td>0.61</td>\n</tr>\n<tr>\n<td>Wheat</td>\n<td>3.61</td>\n<td>0.56</td>\n</tr>\n<tr>\n<td>Tomato</td>\n<td>8.37</td>\n<td>3.25</td>\n</tr>\n<tr>\n<td>Onion</td>\n<td>5.31</td>\n<td>1.96</td>\n</tr>\n<tr>\n<td>Potato</td>\n<td>5.1</td>\n<td>0.86</td>\n</tr>\n</tbody>\n</table>\n<p>Two things stand out. In every row you copied, the farm figure is bigger than the market figure. And the soft vegetables, tomato and onion, lose more at both stages than the grains. Notice what the table does not give you: a total for each crop. It also never says per cent of what. So when you quote tomato, quote both numbers.</p>\n<p>The farm-operations column is food loss in UNEP’s sense. The market-level column is not cleanly either. The release’s list of stages puts wholesalers, retailers, processing units and transport at market level, and retail is where UNEP’s waste begins. Household food waste is counted elsewhere. Open UNEP’s Food Waste Index Report 2024 at https://wedocs.unep.org/handle/20.500.11822/45230 and find India in Annex 3. The row reads 55 kg per person per year of household food waste, 78,192,338 tonnes a year, “Medium confidence”. Now find Table 13. India has “7 medium confidence datapoints” for households and “No identified data” for food service or retail. Those seven are local studies, urban and rural, from 20 to 88 kg per person a year. UNEP scaled them up to the whole country’s population.</p>",
+   "numberRefs": [
+    32,
+    33
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The loss percentages are the ministry’s summary of one study, for 2020-22, of 54 crops and commodities. The release does not say whether the farm and market percentages share a base, so adding them gives no total you can quote. The waste figure is modelled from seven local studies. UNEP’s own definition of “medium confidence” says such an estimate “may be applicable only to a subnational population, such as a particular city”. It also counts inedible parts such as peels and bones, which most people would not call wasted food.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Loss and waste are not two words for one thing. When someone gives you one number for “food lost and wasted in India”, ask which of the two it is.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Tomato loses 8.37 per cent in farm operations and 3.25 per cent at market level. That is the NABCONS study for 2020-22, as the ministry reported it in 2025. The release gives no total. Quote both figures, with the study and its years. Never add them: the release does not say whether they are per cent of the same quantity.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>India’s household food waste in 2022, 55 kg per person a year, is UNEP’s “medium confidence” estimate. It is built from seven local studies scaled to the national population. When a journalist quotes it as a national measurement, correct them. Say it is modelled, and that it counts peels and bones.</p>",
+     "tag": "number",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Read a table’s unit before any number in it. The eggs row of the ministry’s loss table sits under “million tonnes” and cannot be tonnes. If a figure is absurd under its column heading, drop it and say why. Do not guess the unit the table left out.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In the Reserve Bank paper’s potato chain, mandi fees and commission are paid again at the secondary mandi. So a chain through two mandis pays those charges twice.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>To say where a fresh food came from, list the actors in order and the place each hands it on. Mark each one as checked in a source or guessed.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A traced chain holds for the crop, route, city and years it was traced. Before you apply it to another vegetable, another state or another season, find a source for that one.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Here are two rows of the ministry’s summary of the NABCONS loss study, reference years 2020-22. Paddy loses 4.16 per cent in farm operations and 0.61 per cent at market level. Tomato loses 8.37 and 3.25. Say two things the rows show and two things they do not.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>They show that tomato lost more than paddy at both stages. It lost about twice as much on the farm and about five times as much at market. They also show that for both crops more was lost in farm operations than at market level.</p>\n<p>They do not show a total loss for either crop. The release gives none, and it does not say whether the two percentages share a base. They do not show why tomato loses more. A reader may guess at softness and spoiling, but the table does not say so. And they say nothing about household waste, which this table does not measure at all.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist rings you. Their draft line reads: “Indian households throw away 78 million tonnes of food every year.” You have three minutes. What do you tell them?</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The figure is real. It is UNEP’s Food Waste Index Report 2024: 78,192,338 tonnes a year, or 55 kg per person, for household food waste in India.</p>\n<p>But it is an estimate, not a count. UNEP built it from seven local studies and scaled them to the whole population, and UNEP itself rates it “medium confidence”. It also includes inedible parts such as peels and bones.</p>\n<p>Offer them a line they can quote. “A UN estimate from a few local studies puts it at 55 kg per person a year, peelings included.” That keeps the number and tells the reader how firm it is.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Pick one fresh food you or your household bought this week. Write down every hand it passed through from the farm to your kitchen. Mark each one “checked” or “guessed”. For each guessed step, name the kind of source that could check it.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A sketch for tomatoes bought from a cart might read:</p>\n<p>Farmer, guessed; the district could be checked from state production data. A mandi, guessed; the vendor may name the mandi if asked. A commission agent and a trader, guessed; a study of the route, such as the Reserve Bank’s paper, describes them for some cities. The cart vendor, checked, because you saw them. Your kitchen, checked.</p>\n<p>Most lines will be guessed. The skill is not to know the chain. It is to say which parts you know, which you assume, and where you would look.</p>"
+  }
+ ]
+}

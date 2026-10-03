@@ -1,0 +1,151 @@
+{
+ "format": 1,
+ "id": "s47-r1-c05",
+ "label": "5",
+ "title": "Inside the Union government: Cabinet, ministries, departments",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Article 77(3) has the President make rules for the transaction of the Government’s business and for its <dfn data-g=\"13\">allocation</dfn> among Ministers. The President made two sets of these rules on 14 January 1961, each issued as an order. They sit directly under the <dfn data-g=\"81\">Constitution</dfn>, with no <dfn data-g=\"3\">Act</dfn> between.</p>\n<p>The Government of India (Allocation of Business) Rules, 1961 say who owns what. Rule 2 lists the Ministries, Departments, Secretariats and Offices in the First Schedule, and calls them all “departments”. Rule 3 distributes the subjects among them in the Second Schedule. The rules stand as amended up to <dfn data-g=\"16\">Amendment</dfn> Series no. 386 of 22 July 2026.</p>\n<p>The Food Safety and Standards Act, 2006 is with the Department of Health and Family Welfare (item 3(a)). The Goods and Services Tax Council and the Central Goods and Services Tax Act are with the Department of Revenue (items 18A and 21(a)).</p>\n<p>Aerated water and soft drinks, and industries such as biscuits, confectionery and ready-to-eat foods, are with the Ministry of Food Processing Industries (items 6 and 2). Regulation of packaged commodities is with the Department of Consumer Affairs (item 6). The rules list subjects, not where one subject ends and another begins. Whether a food label touches “packaged commodities” is not settled by the list.</p>\n<p>The Government of India (Transaction of Business) Rules, 1961 say how business is decided.</p>\n<p>Under rule 7, the cases in the Second Schedule go before the <dfn data-g=\"45\">Cabinet</dfn>. They include cases involving legislation, differences of opinion between Ministers, and proposals to vary or reverse a Cabinet decision. Standing Committees of the Cabinet may decide matters referred to them (rule 6(3)), and the Cabinet may review their decisions (rule 6(6)).</p>",
+   "refs": [
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>At the top sits the Council of Ministers, led by the Prime Minister. The senior ministers in it form the Cabinet. Below them, the work is split among ministries, and most ministries are split again into departments.</p>\n<p>The <dfn data-g=\"14\">Allocation of Business Rules</dfn> say which department owns which subject. The <dfn data-g=\"421\">Transaction of Business Rules</dfn> say who decides a case, and which cases must go to the Cabinet.</p>\n<p>So “the government should act” names nobody. Your note has to name the department, and the entry in the rules that gives it the subject.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the guess almost everyone makes. A <dfn data-g=\"329\">proposal</dfn> about food should go to the food ministry.</p>\n<p>Open the Allocation of Business Rules on the Cabinet Secretariat’s website (https://cabsec.gov.in/allocationofbusinessrules/completeaobrules/). Check the title page first: “As amended upto Amendment Series no. 386 dated 22nd July, 2026”. These rules change often, so the date matters.</p>\n<p>Go to the First Schedule. It lists every ministry and department. You will find the Ministry of Consumer Affairs, Food and Public Distribution, with its Department of Food and Public Distribution.</p>\n<p>Now go to the Second Schedule. This is where each department’s subjects are listed. Read the Department of Food and Public Distribution’s entry. Its items include “Public Distribution System”, trade and supply of “sugar and foodstuffs other than foodgrains”, and “Price control of sugar, foodgrains and foodstuffs”. Search the entry for “safety”. It is not there. Search for “tax”. Not there either. The food department runs the grain and sugar side of food. It does not own food safety.</p>\n<p>So search the Second Schedule for “Food Safety and Standards Act”. It turns up under the Department of Health and Family Welfare, item 3(a). So that is where the Central Government’s part in a food regulation is handled.</p>\n<p>Now take your department’s first proposal, a higher tax on sugar-sweetened drinks, and look up each thing it touches.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>the proposal touches</th>\n<th>search the Second Schedule for</th>\n<th>department</th>\n<th>item</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>the tax</td>\n<td>“Goods and Services Tax Council”</td>\n<td>Department of Revenue (Ministry of Finance)</td>\n<td>18A; the Central Goods and Services Tax Act is item 21(a)</td>\n</tr>\n<tr>\n<td>the industry that makes the drinks</td>\n<td>“Aerated water”</td>\n<td>Ministry of Food Processing Industries</td>\n<td>6, “Aerated water and soft drinks”</td>\n</tr>\n<tr>\n<td>the safety and standards of the drink</td>\n<td>“Food Safety and Standards Act”</td>\n<td>Department of Health and Family Welfare</td>\n<td>3(a)</td>\n</tr>\n<tr>\n<td>the packet it is sold in</td>\n<td>“Packaged Commodities”</td>\n<td>Department of Consumer Affairs</td>\n<td>6, “Regulation of Packaged Commodities”</td>\n</tr>\n</tbody>\n</table>\n<p>Four departments in four ministries. The one that develops the drinks industry is not the one that owns the tax, and neither owns the safety standard. “The government” is four offices with four different jobs.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table shows who owns each subject on paper, as of Amendment Series no. 386. It does not show that the tax is decided by the Department of Revenue. A later section shows that the rate is recommended by a council where the Union and the States both sit. And a subject listed under a department does not mean that department has any power to act on it. The power comes from an Act or the Constitution, as the last two sections showed.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the second rulebook. It tells you what happens when a proposal crosses departments.</p>\n<p>Open the Transaction of Business Rules on the same website (https://cabsec.gov.in/transactionofbusiness/transactionofbusinessrules/). Check its title page: “As amended upto Amendment Series no. 75, dated 13th January, 2025”. Read rule 3. Business allotted to a department is “disposed of by, or under the general or special directions of, the Minister-in-charge”. So a case that sits wholly in one department is that minister’s to decide.</p>\n<p>Read rule 4(1). When a case concerns more than one department, “no decision be taken or order issued until all such departments have concurred”. If they do not agree, the Cabinet decides. The Explanation under it is wide. A case counts if a decision in one department “is likely to affect” the business of another.</p>\n<p>Try it on the canteen proposal. Suppose, as a made-up case, the Union wanted a new Act on food sold in schools. Look up the subjects.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>the proposal touches</th>\n<th>department</th>\n<th>Second Schedule item</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>food sold in the canteen</td>\n<td>Department of Health and Family Welfare</td>\n<td>3(a), the Food Safety and Standards Act</td>\n</tr>\n<tr>\n<td>the school</td>\n<td>Department of School Education and Literacy</td>\n<td>1, “Elementary Education”; 12, “Secondary Education and Vocational Guidance”</td>\n</tr>\n<tr>\n<td>children’s nutrition</td>\n<td>Ministry of Women and Child Development</td>\n<td>5, “National Nutrition Policy, National Plan of Action for Nutrition and National Nutrition Mission”</td>\n</tr>\n</tbody>\n</table>\n<p>Three departments, so rule 4(1) applies. And it is a new Act. Turn to the Second Schedule of the Transaction rules, “Cases which shall be brought before the Cabinet”. Entry (a) is “Cases involving legislation including the issue of Ordinances.” Its Note adds that a Committee of the Cabinet may not dispose of a case of legislation. The Ministry of Law must also be consulted on every proposal for legislation (rule 4(3)(a)). So this proposal needs three departments to agree, the Law Ministry to be consulted, and the whole Cabinet to decide, before Parliament ever sees it.</p>\n<p>Last, remember your setting. Your department is in Chhattisgarh. Much of a canteen rule could be the State’s, and the State has its own rulebook. The <dfn data-g=\"138\">executive power</dfn> of a State is vested in its Governor (Article 154(1)). Article 166(3) has the Governor make rules for the business of the State Government. Chhattisgarh’s rules are not read in this book. Before you name a State department, open them.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The rules say whose agreement a decision needs. They say nothing about how long that takes, or whether any department will start the case at all. And the Union table does not tell you which State department in Chhattisgarh holds schools, health or nutrition. Only the State’s own business rules can.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The food ministry does not own food safety. Its Department of Food and Public Distribution has the public distribution system, grain, sugar and food prices. The Food Safety and Standards Act sits with the Department of Health and Family Welfare (Allocation of Business Rules, Second Schedule, item 3(a)). Send a food-standards proposal there, not to the food department.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“The government” is never an answer. Name the department and the item in the Second Schedule of the Allocation of Business Rules that gives it the subject. Add the amendment series you read.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The department that develops an industry is not the one that taxes it or sets its safety standards. Aerated water and soft drinks sit with the Ministry of Food Processing Industries. The tax sits with the Department of Revenue in the Ministry of Finance, and food standards with Health.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A decision in one department may affect another’s business. Then nothing is decided until all of them agree, or the Cabinet decides (Transaction of Business Rules, rule 4(1)).</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The Ministry of Law must be consulted on every proposal for legislation (rule 4(3)(a)). The case must also go to the whole Cabinet (Second Schedule, entry (a)).</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>These rules show who owns a subject and whose agreement a decision needs. They give no department the power to make a rule or a regulation; that comes from an Act. For Chhattisgarh, open the State’s own business rules (Article 166(3)) before naming a State department.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back, write down:</p>\n<ol type=\"1\">\n<li>The Article under which the President makes the rules for the Government’s business.</li>\n<li>The two sets of rules made under it, and what each tells you.</li>\n<li>Which Schedule of the Allocation of Business Rules lists departments, and which lists their subjects.</li>\n<li>What rule 4(1) of the Transaction of Business Rules says about a case that concerns more than one department.</li>\n</ol>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Item by item:</p>\n<ol type=\"1\">\n<li><p>Article 77(3) of the Constitution.</p></li>\n<li><p>The Allocation of Business Rules, 1961 say which department owns which subject. The Transaction of Business Rules, 1961 say who decides a case. They also say which cases must go to the Cabinet.</p></li>\n<li><p>The First Schedule lists the ministries and departments. The Second Schedule lists the subjects each one owns.</p></li>\n<li><p>No decision is taken or order issued until all the departments concerned agree. If they do not, the Cabinet decides. A case counts if a decision in one department is likely to affect the business of another.</p></li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Your department’s third proposal is a warning label on packaged foods high in sugar, salt or fat. Use the Second Schedule of the Allocation of Business Rules. Name the Union department that leads on it, and any others that rule 4(1) might bring in. Say what the lookup does not tell you.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The lead is the Department of Health and Family Welfare. Item 3(a) gives it the Food Safety and Standards Act, the Act under which a food label is regulated.</p>\n<p>Others the Explanation to rule 4(1) might bring in, because the decision could affect their business:</p>\n<ul>\n<li>the Department of Consumer Affairs, item 6, “Regulation of Packaged Commodities”;</li>\n<li>the Ministry of Food Processing Industries, whose items cover the industries that make biscuits, confectionery, ready-to-eat foods and soft drinks.</li>\n</ul>\n<p>Whether either must in fact concur depends on how the case is framed. The lookup cannot settle that.</p>\n<p>What the lookup does not tell you: which body makes the label rule, and under what section. The rules give a department a subject, not a power. The power to make the regulation comes from the Act.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A made-up draft letter from your department is addressed to the Ministry of Food Processing Industries. It asks the Ministry “to notify a higher tax on aerated drinks and stricter safety limits for them”. Find what is wrong with the addressee.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The Ministry of Food Processing Industries owns “Aerated water and soft drinks” (item 6) as an industry to develop. It owns neither of the two things the letter asks for.</p>\n<p>The tax: the Goods and Services Tax Council is with the Department of Revenue (item 18A). So is the Central Goods and Services Tax Act (item 21(a)).</p>\n<p>The safety limits: the Food Safety and Standards Act is with the Department of Health and Family Welfare (item 3(a)).</p>\n<p>Split the letter in two, addressed to the departments that own each subject. Or address one note to both and say that rule 4(1) needs them to agree. Either way, cite the items.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A journalist has three minutes. The question: “Which ministry is responsible for sugary drinks in India?” Answer without jargon. Give one quotable sentence, and say how sure you are.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Quotable: “No single ministry owns a sugary drink. The tax, the factory and the safety standard each belong to a different office.”</p>\n<p>Then the detail. The Union government’s own rulebook gives the drinks industry to the Ministry of Food Processing Industries. It gives tax to the Finance Ministry’s Department of Revenue. It gives food safety law to the Health Ministry. The packet falls under Consumer Affairs.</p>\n<p>How sure: certain about the rulebook as amended up to 22 July 2026, because it is published. Less sure about what any of them will do. The rulebook says who owns a subject, not who acts.</p>"
+  }
+ ]
+}

@@ -1,0 +1,151 @@
+{
+ "format": 1,
+ "id": "b0-r0-c18",
+ "label": "C4",
+ "title": "Functions: input, rule, output",
+ "part": "C",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A function is a rule that attaches to every input it accepts exactly one output.</p>\n<p>The collection of inputs the rule accepts is its domain. The collection of outputs it can return is its range.</p>\n<p>Two different inputs may share one output, and the rule is still a function. The requirement runs in one direction only.</p>\n<p>A function is written as a name with its input in brackets, so f(x) means the output that the rule named f gives for the input x. The brackets do not mean multiplication.</p>",
+   "refs": [
+    5
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A function is a machine with one slot in and one slot out.</p>\n<p>You drop a number in. One number comes out. Drop the same number in tomorrow and the same number comes out, because the rule has not changed.</p>\n<p>One input may give one output and no more. If the same input gives you 20 today and 35 tomorrow, you are not holding a rule at all. You are holding something else, and you cannot use it to answer a question.</p>\n<p>There is a short way to write a rule down. Give it a name, say f. Write f(4), said out loud as “f of 4”, for the output the rule gives when you put 4 in. The brackets here do not mean times.</p>\n<p>A rule can also be run backwards, from an output to the input that gave it. You undo what the rule did, the way the section on rearranging undid each step. That gives a single answer only where no two inputs share an output. Where two inputs do share one, going backwards from that output leads to both. Nothing in the output tells you which.</p>\n<p>Two names, so you recognise them on somebody else’s page. The inputs a rule will accept are called its domain. The outputs it can give back are called its range. Ask a rule what it accepts and what it does not. That is often the quickest way to catch somebody running it outside what it was built for. A rule that counts people takes whole numbers from one upwards. Half a person is not an input it has an answer for.</p>\n<p>Be careful with the second of those two words. In statistics, range means something else entirely, which is the largest value in a set of measurements minus the smallest. The two meanings have nothing to do with each other and you will meet both. Which one is meant depends on whether the thing being described is a rule or a set of measurements.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>A block register lands on your desk. It lists four households, how many people are in each, and the foodgrains each is counted for in a month. The register is made up for this section.</p>\n<table style=\"width:57%;\">\n\n<thead>\n<tr>\n<th>household</th>\n<th>people</th>\n<th>kilograms a month</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>A</td>\n<td>4</td>\n<td>20</td>\n</tr>\n<tr>\n<td>B</td>\n<td>6</td>\n<td>30</td>\n</tr>\n<tr>\n<td>C</td>\n<td>4</td>\n<td>35</td>\n</tr>\n<tr>\n<td>D</td>\n<td>5</td>\n<td>25</td>\n</tr>\n</tbody>\n</table>\n<p>How many kilograms does it give for a household of four?</p>\n<p>You cannot answer. Household A says 20 and household C says 35. One input has two outputs, so this table is not a function of the number of people.</p>\n<p>That is a finding rather than a dead end. Something other than the number of people differs between A and C, and the register does not say what. Until somebody tells you what, you cannot work out a single row from the number of people alone.</p>\n<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains per person per month.</p>\n<p>That sentence is a function. The input is the number of people. The rule is “multiply by five kilograms a month”. The output is kilograms of foodgrains a month.</p>\n<p>Put four in.</p>\n<div class=\"working\">\n<p>5 times 4 = 20</p>\n</div>\n<p>Twenty kilograms a month.</p>\n<p>Write the rule short. Call it g. Let n stand for the number of people, in the way a letter stood for a number in the section on variables.</p>\n<div class=\"working\">\n<p>g(n) = 5 times n</p>\n</div>\n<p>Households A, B and D match it. Household C does not.</p>\n<div class=\"working\">\n<p>5 times 4 = 20</p>\n</div>\n<p>One input, one output, and anything that does not match is a question for whoever wrote the register.</p>\n<p>Now run the rule backwards once. A priority household is counted for 30 kilograms a month. How many people are in it? The rule multiplied by five, so undo it by dividing by five.</p>\n<div class=\"working\">\n<p>30 divided by 5 = 6</p>\n</div>\n<p>Six people. Check it forwards.</p>\n<div class=\"working\">\n<p>5 times 6 = 30</p>\n</div>\n<p>That backwards step is safe here. Each extra person adds five kilograms, so no two household sizes share an output, and 30 points to one size only.</p>\n<p>The section on ratios gives the likely reason for household C. A proviso just below section 3(1) covers households under the Antyodaya Anna Yojana. It entitles them to 35 kilograms a month. It does so “to such extent as may be specified by the Central Government for each State in the said scheme”. So the Central Government sets how far the scheme reaches in each State. The 35 is per household, whatever its size.</p>\n<p>If C is an Antyodaya household, the register holds two rules, and the row is right. The register does not say which scheme C is under. So treat this as the likely explanation and ask.</p>\n<p>That rule also shows why going backwards can fail. Under it, a household of two and a household of nine both get 35 kilograms. Given 35, the rule cannot tell you the size.</p>",
+   "numberRefs": [
+    6
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The one-slot machine holds while the rule takes one input. Many real rules take two.</p>\n<p>The index you met in the section on body-size units needs a mass and a height together. That is still a function.</p>\n<p>The machine says nothing about whether a rule is true of the world either. A rule can give exactly one output and still be the wrong rule.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>When a table lands in front of you, look for one input appearing twice with two different outputs before you compute anything from it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Two inputs sharing one output is fine. One input with two outputs is not.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Outputs that climb for a while and then fall again break nothing. So for this test, look for the repeated input, not for the shape of the outputs.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When the same inputs give a different answer on a second run, something you did not notice changed. Find what changed before you trust either answer.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Name the input, the output and the unit of each before you write anybody’s rule on a whiteboard.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A function says the output goes with the input. It never says the input produced it.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Run a rule backwards only where no two inputs share an output. Where two do, an output points back to more than one input, and a single answer from it is a guess.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A colleague sends you a two-column table of three hundred rows and calls it “the rule we use”. You find that one value in the first column appears twice, with two different values beside it.</p>\n<p>Say what that means for the table, and say what you would ask for next.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>It means the table is not a function of its first column. One input has two outputs, so the table cannot answer the question “what does this give for that input?”.</p>\n<p>Say it plainly. The table is a record of what happened, not a rule for working something out. Both rows may be perfectly correct as records.</p>\n<p>What to ask for next: the thing that differs between those two rows. Something not in the first column moved between them. Either it belongs in the table as a second input column, or one of the two rows is an error.</p>\n<p>Then ask how many other repeats there are. One repeat in three hundred rows is a question about one row. Forty repeats is a question about the whole table, and it usually means the first column was never the input the rule was built on.</p>\n<p>What you cannot do is average the two outputs and carry on. That produces a number that appears in neither row and matches nothing anybody recorded.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident says they can never keep formulas straight. You have ten minutes and a whiteboard.</p>\n<p>Teach them what a function is, so that they leave able to check whether something handed to them is one.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Ten minutes, for somebody who expects a mechanism rather than a rule.</p>\n<p>Draw a box on the board with an arrow going in and an arrow coming out. Say that the box is the rule, the arrow in is the input, and the arrow out is the output. Ask them to name a rule they use, and write its input and output on the two arrows with their units.</p>\n<p>Now break it in front of them. Write a short table with four rows, and make two rows share an input and carry different outputs.</p>\n<table style=\"width:29%;\">\n\n<thead>\n<tr>\n<th>people</th>\n<th>kilograms</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>4</td>\n<td>20</td>\n</tr>\n<tr>\n<td>6</td>\n<td>30</td>\n</tr>\n<tr>\n<td>4</td>\n<td>35</td>\n</tr>\n<tr>\n<td>5</td>\n<td>25</td>\n</tr>\n</tbody>\n</table>\n<p>Ask what the rule gives for four people. Let them sit with it until somebody says the table gives two answers. That is the moment, and it lands because they found it.</p>\n<p>Then give them the test in one sentence: the same input must give the same output every time. Have them apply it to the rule they named at the start.</p>\n<p>Close with the direction it runs in. Two inputs may share an output, and that breaks nothing. A resident who learns the test backwards starts rejecting good rules. That habit is harder to undo than never having had the test.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A rule multiplies the input by 3 and then adds 2.</p>\n<p>Work out the output for the inputs 0, 1, 5 and 10.</p>",
+   "level": 1,
+   "answer": "<p>Multiply first, then add. Take them one at a time.</p>\n<div class=\"working\">\n<p>3 times 0 = 0<br />\n0 plus 2 = 2</p>\n</div>\n<div class=\"working\">\n<p>3 times 1 = 3<br />\n3 plus 2 = 5</p>\n</div>\n<div class=\"working\">\n<p>3 times 5 = 15<br />\n15 plus 2 = 17</p>\n</div>\n<div class=\"working\">\n<p>3 times 10 = 30<br />\n30 plus 2 = 32</p>\n</div>\n<p>So the outputs are 2, 5, 17 and 32.</p>\n<p>Notice that the input 0 gave the output 2. An input of nothing does not mean an output of nothing, because the rule adds after it multiplies.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Three tables are below. For each one, say whether it is a function of its first column, and say what told you.</p>\n<table style=\"width:24%;\">\n\n<thead>\n<tr>\n<th>first</th>\n<th>second</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>4</td>\n</tr>\n<tr>\n<td>2</td>\n<td>8</td>\n</tr>\n<tr>\n<td>3</td>\n<td>12</td>\n</tr>\n</tbody>\n</table>\n<table style=\"width:24%;\">\n\n<thead>\n<tr>\n<th>first</th>\n<th>second</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>4</td>\n</tr>\n<tr>\n<td>2</td>\n<td>8</td>\n</tr>\n<tr>\n<td>1</td>\n<td>9</td>\n</tr>\n</tbody>\n</table>\n<table style=\"width:24%;\">\n\n<thead>\n<tr>\n<th>first</th>\n<th>second</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>4</td>\n</tr>\n<tr>\n<td>2</td>\n<td>4</td>\n</tr>\n<tr>\n<td>3</td>\n<td>4</td>\n</tr>\n</tbody>\n</table>",
+   "level": 2,
+   "answer": "<p>The first is a function. Each value in the first column appears once, so no input has two outputs.</p>\n<p>The second is not. The input 1 appears twice, once with 4 and once with 9. Ask it for the output at 1 and it gives you two answers.</p>\n<p>The third is a function. Three different inputs all give 4, and that breaks nothing. The rule only forbids one input having two outputs. It says nothing about outputs being shared.</p>\n<p>The third table is the one people get wrong. A column of identical outputs looks broken and is not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A rule adds 7 to its input.</p>\n<p>The outputs are 12, 19 and 40. Work out the input that produced each one.</p>",
+   "level": 3,
+   "answer": "<p>The rule adds 7, so going backwards means taking 7 away.</p>\n<div class=\"working\">\n<p>12 minus 7 = 5<br />\n19 minus 7 = 12<br />\n40 minus 7 = 33</p>\n</div>\n<p>The inputs were 5, 12 and 33.</p>\n<p>Check one of them forwards, which is how you find a slip.</p>\n<div class=\"working\">\n<p>33 plus 7 = 40</p>\n</div>\n<p>It comes back to 40, so the third one holds.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A district office runs this rule to plan its grain lifting. Let n stand for the number of people in a household. The rule gives the kilograms of foodgrains a month that household is counted for.</p>\n<div class=\"working\">\n<p>g(n) = 5 times n</p>\n</div>\n<p>Say what the domain of that rule is, in words, and say what its range is. Then say what the office has done wrong if a row of its planning sheet reads n = 4.5.</p>",
+   "level": 4,
+   "answer": "<p>The domain is what the rule will accept. The input counts people in a household, so the inputs it has an answer for are the whole numbers from 1 upwards. There is no household of nought people and no household of four and a half.</p>\n<p>The range is what the rule can give back. Multiply each of those inputs by five kilograms a month and you get 5, 10, 15, 20 and so on, upwards in steps of five.</p>\n<div class=\"working\">\n<p>5 times 1 = 5<br />\n5 times 2 = 10<br />\n5 times 3 = 15</p>\n</div>\n<p>So the range is the whole numbers of kilograms a month that are multiples of five, from five upwards.</p>\n<p>What the office has done wrong with n = 4.5: it has put an input into the rule that the rule does not take. The arithmetic will still produce a number.</p>\n<div class=\"working\">\n<p>5 times 4.5 = 22.5</p>\n</div>\n<p>Twenty-two and a half kilograms a month, and nothing about that figure looks wrong on a page. That is the whole difficulty. A rule run outside its domain does not stop and does not warn you. It answers, and the answer is about no household that exists.</p>\n<p>Where a 4.5 comes from is usually an average household size that somebody has fed into a rule built for one household at a time. The fix is to multiply after the rule rather than inside it: count the people in the district, then apply the rule to that count.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Under section 3(1) of the National Food Security Act, 2013, a person in a priority household is entitled to five kilograms of foodgrains a month.</p>\n<p>Work out the grain for a household of three, and for a household of seven. Give each answer with its unit. Then work out how many people are in a household counted for 45 kilograms a month. Say which way round you ran the rule each time.</p>",
+   "level": 5,
+   "answer": "<p>The rule takes a number of people in and gives kilograms a month out. Run it forwards twice.</p>\n<div class=\"working\">\n<p>5 times 3 = 15</p>\n</div>\n<p>Fifteen kilograms of foodgrains a month.</p>\n<div class=\"working\">\n<p>5 times 7 = 35</p>\n</div>\n<p>Thirty-five kilograms of foodgrains a month.</p>\n<p>The third part runs the rule backwards. You are given the output and asked for the input, so undo the multiplying by dividing.</p>\n<div class=\"working\">\n<p>45 divided by 5 = 9</p>\n</div>\n<p>Nine people.</p>\n<p>Check it forwards before you write it down.</p>\n<div class=\"working\">\n<p>5 times 9 = 45</p>\n</div>\n<p>So the first two parts put an input in and read an output. The third put an output in and worked back to the input, which only works because each output here comes from one input.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Section 3(1) of the National Food Security Act, 2013 entitles a person in a priority household to five kilograms of foodgrains a month. So a household of five is counted for 25 kilograms of foodgrains a month.</p>\n<p>Treat the number of months as the input and the total kilograms as the output. Write the rule, work out the total for four months, and work out how many months it takes to reach 150 kilograms. Give every answer with its unit.</p>",
+   "level": 6,
+   "answer": "<p>First the rule. Call the number of months m and the total t.</p>\n<div class=\"working\">\n<p>t = 25 times m</p>\n</div>\n<p>The input is months, the output is kilograms, so the 25 carries kilograms per month.</p>\n<p>Four months, running it forwards.</p>\n<div class=\"working\">\n<p>25 times 4 = 100</p>\n</div>\n<p>A hundred kilograms of foodgrains.</p>\n<p>Now backwards, from an output of 150 kilograms to the input that gives it.</p>\n<div class=\"working\">\n<p>150 divided by 25 = 6</p>\n</div>\n<p>Six months.</p>\n<p>Read the unit of the answer off the division to be sure of it. Kilograms divided by kilograms per month leaves months standing, which is the check you met in the section on dimensions.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a register lists a household of four counted for 20 kilograms<br />\nit lists another household of four counted for 35 kilograms<br />\nthe rule for four people is the average of the two<br />\n20 plus 35 = 55<br />\n55 divided by 2 = 27.5<br />\nso four people gives 27.5 kilograms a month</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the third one. Everything after it is arithmetic on a decision that should never have been taken.</p>\n<p>Two rows with the same input and different outputs mean the register is not a function of household size. That is the finding. Averaging does not repair it, because the average is an output that neither row records and that no rule produced.</p>\n<p>Look at what the answer now claims. It says a household of four is counted for 27.5 kilograms a month, and no household in the register is counted for that.</p>\n<p>What to do instead: find out what differs between the two rows. Either a second input is missing from the table, or one of the rows is wrong.</p>\n<p>Why it looks reasonable: averaging two numbers that disagree is a move that is right in other places. The arithmetic in lines four and five is correct as well. A correct calculation sitting under a wrong decision reads as a finished piece of work.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A colleague sends you this line about a block register.</p>\n<blockquote>\n<p>Our register lists grain per household each month. Divide any row by five and you get the number of people. So we can drop the people column and save the data entry.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: whether the rule runs backwards, and then whether the register was actually built from it.</p>\n<p>Take the rule first. Five kilograms a person a month means the output is the input times five.</p>\n<div class=\"working\">\n<p>5 times 4 = 20<br />\n20 divided by 5 = 4</p>\n</div>\n<p>So one output comes from one input, and dividing by five does recover the household size. The arithmetic in the proposal is sound.</p>\n<p>Now test it on the register itself. The four-person household counted for 35 kilograms is the row that settles it.</p>\n<div class=\"working\">\n<p>35 divided by 5 = 7</p>\n</div>\n<p>Seven people, for a household the register elsewhere records as four. So the proposal turns that row into an invented household of seven, and nothing downstream will show that it happened.</p>\n<p>What this does not establish. It does not tell you whether the 35 is the error, or the 4 is, or neither. If the household is under the Antyodaya Anna Yojana, both figures are right. The register then holds two rules, and dividing by five is the wrong rule for that row. The arithmetic cannot say which of the three is true.</p>\n<p>It does not tell you how many other rows disagree, because you have looked at one. And it says nothing about whether any of these households were counted correctly to begin with. Recovering an input from an output tells you what the rule would have needed, never what happened.</p>"
+  }
+ ]
+}

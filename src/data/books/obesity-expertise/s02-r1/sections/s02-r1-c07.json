@@ -1,0 +1,247 @@
+{
+ "format": 1,
+ "id": "s02-r1-c07",
+ "label": "7",
+ "title": "A differential equation: a rule that gives the rate from the state",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"69\">differential equation</dfn> is an equation involving an unknown function and one or more of its derivatives. The ones in this book are <dfn data-g=\"99\">first-order</dfn>: each gives the <dfn data-g=\"222\">rate of change</dfn> of a quantity at a moment as a rule in its state, in the time, or in both. For body weight W in kilograms and time t in days, the form is dW/dt = f(W, t).</p>\n<p>Such an equation has many solutions. An <dfn data-g=\"126\">initial value</dfn>, the state at one stated time, picks out one of them. The equation and the initial value together are an <dfn data-g=\"127\">initial-value problem</dfn>, and a function solves it only if it satisfies both.</p>\n<p>With expenditure a straight line in weight, rising by epsilon, written ε, kilocalories a day for each kilogram, and a step change ΔEI in intake from a steady starting weight W0, the equation is:</p>\n<div class=\"working\">\n<p>ρ × dW/dt = ΔEI − ε × (W − W0),    with W = W0 at t = 0</p>\n</div>\n<p>This is Equation 1 of Polidori and colleagues (2016) with its physical activity and urinary <dfn data-g=\"113\">glucose</dfn> terms set to zero, rearranged.</p>\n<p>A <dfn data-g=\"101\">forward step</dfn>, which is Euler’s method taken one step at a time, approximates a solution. From the state at time t, compute the rate from the equation. Then take the state at t + h to be about W(t) + h × (the rate at t). Each step holds the rate fixed across one interval of length h, as one rectangle does in a <dfn data-g=\"232\">running total</dfn>.</p>",
+   "refs": [
+    44,
+    45,
+    46,
+    47,
+    37,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Over a day, the change in the body’s stored energy is what came in minus what went out.</p>\n<div class=\"working\">\n<p>dES/dt = EI − EE</p>\n</div>\n<p>ES is the energy stored in the body, in kilocalories. EI is <dfn data-g=\"85\">energy intake</dfn> and EE is <dfn data-g=\"84\">energy expenditure</dfn>, both in kilocalories a day.</p>\n<p>Say each kilogram of weight gained or lost carries a fixed amount of energy. Call it rho, written ρ, in kilocalories per kilogram.</p>\n<div class=\"working\">\n<p>ρ × dW/dt = EI − EE</p>\n</div>\n<p>That line is true whenever ρ is fixed. The line above it is always true. Neither predicts anything. A smaller body spends less, so EE depends on the weight itself.</p>\n<p>So write EE as a rule in W. It says each kilogram of weight adds a fixed number of kilocalories a day to expenditure. Call that number epsilon, written ε.</p>\n<div class=\"working\">\n<p>EE = EE0 + ε × (W − W0)<br />\nEI = EI0 + ΔEI<br />\nEI0 = EE0, because the weight was steady at the start<br />\nso ρ × dW/dt = EI − EE = ΔEI − ε × (W − W0)</p>\n</div>\n<p>EE0 and EI0 are expenditure and intake at the start, when the weight was W0. ΔEI is the change in intake.</p>\n<p>That is what a differential equation is: a rule that gives the rate from the state.</p>\n<ul>\n<li>An answer to it is not a number. It is a whole curve of weight against time. You check a curve by putting it into the equation. The two sides have to agree at every moment, not only at the start.</li>\n<li>Many curves obey the same rule. The starting weight picks out the one that is yours.</li>\n</ul>\n<p>You can also walk the curve without a formula. Work out today’s rate from today’s weight. Move one day at that rate. Work out the new rate from the new weight. Move again.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c07-three-rules.png",
+   "alt": "Body weight against days, 0 to 1095. A straight line falls from 100 through 77.29 at day 365 to 31.88 at day 1095. Two curves fall from 100 and flatten: one through 85.32 and 79.62 to 77.40, the other through 87.87 and 84.94 to 84.23.",
+   "w": 1358,
+   "h": 654,
+   "caption": "Hall’s 100 kg man cutting 480 kcal a day, from one equation with ρ = 7,716.18: the static rule (ε = 0) falls in a straight line to 31.88 kg by day 1095. With ε = 20 or 30 the loss slows, to 77.40 and 84.23 kg."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c07-forward-steps.png",
+   "alt": "y against t from 0 to 3. A jointed line of forward steps rises from 4 through 8 and 10 to 11. Below it a smooth curve rises from 4 towards 12. A second smooth curve falls from 20 towards 12. A dashed line marks y = 12.",
+   "w": 1357,
+   "h": 654,
+   "caption": "dy/dt = 6 − 0.5 × y. Forward steps of size 1 from y = 4 reach 8, 10 and 11, running ahead of the exact solution 12 − 8 × e<sup>(-0.5t)</sup>, which is 9.06 at t = 2. Started at 20, the exact solution falls instead. Both close on 12, where the rate is zero."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c07-thirty-day-steps.png",
+   "alt": "Body weight falling from 100 kg at day 0. A jointed line of steps through 98.13379 at day 30 and 96.41269 at day 60 to 94.82542 at day 90. A smooth curve ends at 95.01, and a straight line ends at 94.40.",
+   "w": 1353,
+   "h": 654,
+   "caption": "The first 90 days of the 480 kcal a day cut, with ε = 20. Thirty-day forward steps reach 94.83 kg at day 90, a little below the curve formula’s 95.01. The static rule’s straight line is lower again, at 94.40."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Go back to Hall and colleagues’ man from Book 1. He weighs 100 kilograms and cuts his energy intake by 2 megajoules a day. The paper converts that for you: “2 MJ per day (480 kcal per day)”. So ΔEI, the change in intake, is minus 480 kilocalories a day.</p>\n<p>Use 7,716.18 kilocalories per kilogram, the <dfn data-g=\"260\">static rule</dfn>’s own figure from Book 1.</p>\n<p>For ε, Hall and Guo (2017) give expenditure rising with weight “with a <dfn data-g=\"247\">slope</dfn> of about 20–30 kcal/d per kg”. Take the lower end, 20 kilocalories a day for each kilogram. The man’s equation is then:</p>\n<div class=\"working\">\n<p>7716.18 × dW/dt = −480 − 20 × (W − 100),    with W = 100 at t = 0</p>\n</div>\n<p>On the right, the cut in intake, plus the fall in expenditure since the start. When W is below 100, W − 100 is negative. So minus 20 times it is positive, and it eats into the <dfn data-g=\"63\">deficit</dfn>.</p>\n<p>Start with the curve that fails. The static rule says his weight falls in a straight line.</p>\n<div class=\"working\">\n<p>480 divided by 7716.18 = 0.06221<br />\nW(t) = 100 − 0.06221 × t</p>\n</div>\n<p>Put that line into the equation a year in, at t = 365. The line’s slope is −0.06221 kilograms a day on every day, so the left side is this.</p>\n<div class=\"working\">\n<p>7716.18 times 0.06221 = 480.02</p>\n</div>\n<p>About minus 480. Now the right side needs the weight at day 365.</p>\n<div class=\"working\">\n<p>0.06221 times 365 = 22.71<br />\n100 minus 22.71 = 77.29</p>\n</div>\n<p>His weight on the line is 77.29 kilograms, 22.71 below the start.</p>\n<div class=\"working\">\n<p>20 times 22.71 = 454.2<br />\n480 minus 454.2 = 25.8</p>\n</div>\n<p>The right side is about minus 25.8. The left side is minus 480. The two sides disagree by more than 450 kilocalories a day. The straight line starts at the right weight and is not a solution. It solves the equation only when ε is 0, that is, when expenditure ignores weight.</p>\n<p>Now the curve that works.</p>\n<div class=\"working\">\n<p>W(t) = 100 − 24 × (1 − e<sup>(-t/385.809)</sup>)</p>\n</div>\n<p>Each is a <dfn data-g=\"223\">ratio</dfn> of the equation’s own numbers.</p>\n<div class=\"working\">\n<p>480 divided by 20 = 24<br />\n7716.18 divided by 20 = 385.809</p>\n</div>\n<p>This is section 4’s W = L plus (W0 minus L) e<sup>(-kt)</sup>, with L = 76, W0 − L = 24 and k = 1 divided by 385.809.</p>\n<p>Check it the way any candidate is checked: the start, then both sides. At t = 0, e<sup>(0)</sup> is 1. So 1 − 1 is 0, and W is 100. The initial value holds.</p>\n<p>For the rate, use section 4’s rule: the <dfn data-g=\"67\">derivative</dfn> of e<sup>(-kt)</sup> is −k × e<sup>(-kt)</sup>. The derivative of W is then this.</p>\n<div class=\"working\">\n<p>dW/dt = −24 × (1 divided by 385.809) × e<sup>(-t/385.809)</sup><br />\n24 divided by 385.809 = 0.06221</p>\n</div>\n<p>In symbols the check is two lines. The left side uses the rule for e<sup>(-kt)</sup>; the right side is algebra.</p>\n<div class=\"working\">\n<p>left: 7716.18 × dW/dt = −480 × e<sup>(-t/385.809)</sup><br />\nright: −480 − 20 × (−24) × (1 − e<sup>(-t/385.809)</sup>) = −480 + 480 − 480 × e<sup>(-t/385.809)</sup></p>\n</div>\n<p>Both come to minus 480 times e<sup>(-t/385.809)</sup>. The deficit starts at 480 kilocalories a day and shrinks towards nothing as the weight falls.</p>\n<p>Now walk it without the formula, one day at a time. On day 0 the weight is 100, so the bracket is 0 and the rate is the static rule’s.</p>\n<div class=\"working\">\n<p>480 divided by 7716.18 = 0.062207<br />\n100 minus 0.062207 = 99.937793</p>\n</div>\n<p>On day 1 the weight is 99.937793, which is 0.062207 below the start.</p>\n<div class=\"working\">\n<p>20 times 0.062207 = 1.24414<br />\n480 minus 1.24414 = 478.75586<br />\n478.75586 divided by 7716.18 = 0.062046<br />\n99.937793 minus 0.062046 = 99.875747</p>\n</div>\n<p>About 99.8757 on day 2. The formula gives 99.8759. The steps drift a little from the curve, because each one holds the rate fixed for a whole day while the true rate keeps falling. A smaller step drifts less.</p>\n<p>So a different step gives a different answer. By day 90, one-day steps give 95.00 and thirty-day steps 94.83; the formula gives 95.01. A model run is also a choice of step. The next rung shows when too large a step makes the answer run away.</p>\n<p>Run the formula for three years and put the static line beside it. A second curve uses the top of Hall and Guo’s range, ε = 30.</p>\n<div class=\"working\">\n<p>day    static rule, ε = 0 ε = 20 kcal/day per kg ε = 30 kcal/day per kg<br />\n0    100    100    100<br />\n90    94.40    95.01    95.28<br />\n180    88.80    91.05    91.95<br />\n365    77.29    85.32    87.87<br />\n545    66.10    81.84    85.92<br />\n730    54.59    79.62    84.94<br />\n1095 31.88    77.40    84.23</p>\n</div>\n<p>All three columns come from one equation. Only ε differs. With ε at 0, the loss never slows. With any ε above 0, the loss slows and flattens.</p>\n<p>The same equation can also be run backwards. Polidori and colleagues (2016) had weights and no reliable intake. They put the weight and its rate into their Equation 1 and read off ΔEI. The intake change they report is an output of the equation, not a measurement.</p>",
+   "numberRefs": [
+    32,
+    25,
+    57,
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The value of ρ here is the static rule’s 7,716.18 kilocalories per kilogram, borrowed as a stand-in. For a real body, ρ “need not be a constant”, as Chow and Hall (2008) put it. It changes with what the weight lost is made of. So the curves in the table have the right shape and not Hall’s timing.</p>\n<p>The straight line for expenditure is an approximation. It is safest for changes small enough that one slope describes them.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The <dfn data-g=\"81\">energy balance</dfn> identity predicts nothing on its own. A prediction appears only when someone writes expenditure, and perhaps intake, as a rule in weight. When you read a projection built “on energy balance”, find that rule.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A curve that starts at the right weight is not thereby a solution. Check a claimed solution at the start and at a later time, on both sides of the equation.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“Cut 480 kilocalories and you run a 480 deficit every day” is the static rule. Correct a trainee who carries the day-one deficit forward: the cut stays the same; the deficit does not.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When you step an equation forward, work the rate out again from the new state at every step.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Keep the units in step: ρ in kilocalories per kilogram and intake in kilocalories a day give kilograms a day.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Use it for the shape of a response and for modest changes. For one person’s timetable over years, use a validated model, and say in writing which one you used.</p>",
+     "tag": "boundary",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>When a paper reports intake “calculated” from repeated weighings, read it as the output of an equation. It moves with the ρ and the ε put in.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Polidori and colleagues (2016) calculate a change in energy intake from repeated weighings with their Equation 1. The paper writes BW for body weight. A letter or digit after a symbol is a label: i marks the interval, and 0 the start.</p>\n<div class=\"working\">\n<p>ΔEIi = ρ × (dBWi/dt) + ε × (BWi − BW0) + (Δδ divided by (1 − β)) × BW0 + UGE</p>\n</div>\n<p>For each symbol, say what it stands for and its unit, as far as the paper tells you. Then say which two terms this section set to zero, and what setting each to zero assumes.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Take the symbols from left to right.</p>\n<ul>\n<li>ΔEIi: the change in energy intake from the start, in the interval i. Kilocalories a day.</li>\n<li>ρ: rho, “the effective <dfn data-g=\"82\">energy density</dfn> associated with the body weight change”. Kilocalories per kilogram.</li>\n<li>dBWi/dt: the rate of change of body weight over the interval, worked out from the moving average of the weighings. Kilograms a day.</li>\n<li>ε: epsilon, which “defined how energy expenditure depends on body weight”. Kilocalories a day for each kilogram.</li>\n<li>BWi − BW0: the weight in the interval minus the weight at the start. Kilograms.</li>\n<li>Δδ: the change in physical activity. The paper says it is “often assumed to be zero” when there are no measurements of activity.</li>\n<li>β: beta, which “accounts for the adaptation of energy expenditure during a diet perturbation”. Table 1 gives it as 0.24, with no unit.</li>\n<li>UGE: urinary glucose excretion, “the energy losses as a result of increased urinary excretion of glucose with canagliflozin treatment”. Table 1 gives it in kcal/d, so kilocalories a day.</li>\n</ul>\n<p>Check the units of the first two terms on the right. Kilocalories per kilogram times kilograms a day is kilocalories a day. Kilocalories a day per kilogram times kilograms is kilocalories a day. Both match the left side.</p>\n<p>This section set the activity term and the glucose term to zero. Setting Δδ to zero assumes physical activity did not change. Setting UGE to zero assumes no extra glucose is lost in the urine, as for a person not taking a drug that raises it. What remains, rearranged, is ρ × dW/dt = ΔEI − ε × (W − W0).</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. They ask: “If energy in minus energy out is always true, why does the same diet give smaller losses each month?” Explain, with the equation, and expect them to want the mechanism.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start from what they already accept. Write the identity in rate form.</p>\n<div class=\"working\">\n<p>ρ × dW/dt = EI − EE</p>\n</div>\n<p>It is true whenever ρ is fixed, and it cannot predict tomorrow. Tomorrow’s EE is not known today.</p>\n<p>Then add the one piece of physiology. A smaller body spends less. Draw expenditure as a straight line rising with weight, slope ε. Rewrite the right side as the cut in intake minus ε times the change in weight.</p>\n<div class=\"working\">\n<p>ρ × dW/dt = ΔEI − ε × (W − W0)</p>\n</div>\n<p>Now point at the second term. On day one it is zero, so the whole cut is the deficit. As W falls below W0, the term takes a bite out of the deficit. The same cut buys a smaller deficit, so a slower loss.</p>\n<p>Put numbers in if they want them. Hall’s 100 kg man cuts 480 kilocalories a day. With ε at 20, once he is 10 kilograms down the fall in expenditure is 200 kilocalories a day. His deficit is then 280, not 480.</p>\n<p>Close with what the equation does not say. It does not say ε is 20 for this patient. It does not include appetite rising as weight falls. And it is a straight-line simplification.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A rule gives the rate of change of y as dy/dt = 6 − 0.5 × y. Work out the rate when y is 4, when y is 12, and when y is 20.</p>",
+   "level": 1,
+   "answer": "<p>Put each value of y into the right side.</p>\n<div class=\"working\">\n<p>0.5 times 4 = 2<br />\n6 minus 2 = 4<br />\n0.5 times 12 = 6<br />\n6 minus 6 = 0<br />\n0.5 times 20 = 10<br />\n6 minus 10 = -4</p>\n</div>\n<p>The rates are 4, 0 and minus 4. The rate depends on where y is. Below 12, y rises. Above 12, y falls.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Say which of these are differential equations. For each one that is, say whether the rate depends on the state y, or on the time t alone.</p>\n<div class=\"working\">\n<ol type=\"a\">\n<li>y = 3t + 2<br />\n</li>\n<li>dy/dt = 3t + 2<br />\n</li>\n<li>dy/dt = −0.2 × y<br />\n</li>\n<li>E = 4P + 9F + 4C</li>\n</ol>\n</div>",
+   "level": 2,
+   "answer": "<p>A differential equation holds an unknown function and its derivative.</p>\n<ol type=\"a\">\n<li><p>is not one. It gives y directly and holds no derivative.</p></li>\n<li><p>is one. Its rate depends on t alone. An <dfn data-g=\"16\">antiderivative</dfn> of the right side solves it, which is the earlier section’s move.</p></li>\n<li><p>is one. Its rate depends on the state y. You cannot integrate the right side without already knowing y at every time, which is what you are looking for.</p></li>\n<li><p>is not one. It is a weighted sum of three quantities, with no rate in it.</p></li>\n</ol>\n<p>Equations like (c) are the ones this section is about.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Take dy/dt = 6 − 0.5 × y with y = 4 at t = 0. Take three forward steps of size 1. Give y at t = 1, 2 and 3.</p>",
+   "level": 2,
+   "answer": "<p>Each step: rate from the current y, then new y = old y + 1 × rate.</p>\n<div class=\"working\">\n<p>6 minus 0.5 times 4 = 4<br />\n4 plus 4 = 8<br />\n6 minus 0.5 times 8 = 2<br />\n8 plus 2 = 10<br />\n6 minus 0.5 times 10 = 1<br />\n10 plus 1 = 11</p>\n</div>\n<p>About 8 at t = 1, 10 at t = 2 and 11 at t = 3. Each step is smaller than the one before, because the rate falls as y rises.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Take the initial-value problem dy/dt = 6 − 0.5 × y, with y = 4 at t = 0. Check whether y = 12 − 8 × e<sup>(-0.5t)</sup> solves it. Then compare its value at t = 2 with the forward steps you would get from step size 1.</p>",
+   "level": 3,
+   "answer": "<p>The start first. At t = 0, e<sup>(0)</sup> is 1.</p>\n<div class=\"working\">\n<p>12 minus 8 = 4</p>\n</div>\n<p>The initial value holds.</p>\n<p>The left side. With k = 0.5, the derivative of e<sup>(-kt)</sup> is −k × e<sup>(-kt)</sup>.</p>\n<div class=\"working\">\n<p>dy/dt = −8 × (−0.5) × e<sup>(-0.5t)</sup> = 4 × e<sup>(-0.5t)</sup></p>\n</div>\n<p>The right side.</p>\n<div class=\"working\">\n<p>6 − 0.5 × (12 − 8 × e<sup>(-0.5t)</sup>) = 6 − 6 + 4 × e<sup>(-0.5t)</sup> = 4 × e<sup>(-0.5t)</sup></p>\n</div>\n<p>The two sides match at every t, so the function solves the problem.</p>\n<p>At t = 2 the <dfn data-g=\"92\">exponent</dfn> is minus 1, and e<sup>(-1)</sup> is 0.3679.</p>\n<div class=\"working\">\n<p>8 times 0.3679 = 2.9432<br />\n12 minus 2.9432 = 9.0568</p>\n</div>\n<p>About 9.06. Forward steps of size 1 give 10 at t = 2. The steps overshoot, because each holds the first rate of its step for the whole step while the true rate is falling.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Three people offer a solution to dy/dt = 6 − 0.5 × y with y = 20 at t = 0.</p>\n<div class=\"working\">\n<ol type=\"a\">\n<li>y = 12 + 8 × e<sup>(-0.5t)</sup><br />\n</li>\n<li>y = 20 − 4t<br />\n</li>\n<li>y = 12 + 4 × e<sup>(-0.5t)</sup></li>\n</ol>\n</div>\n<p>Which one solves the initial-value problem? Say what is wrong with each of the other two.</p>",
+   "level": 3,
+   "answer": "<p>Check each at t = 0, then on both sides.</p>\n<ol type=\"a\">\n<li><p>At t = 0, 12 + 8 = 20. The start holds. The left side is −4 × e<sup>(-0.5t)</sup>. The right side is 6 − 6 − 4 × e<sup>(-0.5t)</sup>, the same. (a) solves it.</p></li>\n<li><p>At t = 0, y = 20. The start holds. The left side is minus 4 at every t. The right side is 6 − 0.5 × (20 − 4t), which is −4 + 2t. The two agree only at t = 0. At t = 1:</p></li>\n</ol>\n<div class=\"working\">\n<p>20 minus 4 = 16<br />\n0.5 times 16 = 8<br />\n6 minus 8 = -2</p>\n</div>\n<p>Minus 2 on the right against minus 4 on the left. (b) is not a solution.</p>\n<ol start=\"3\" type=\"a\">\n<li>The left side is −2 × e<sup>(-0.5t)</sup>. The right side is 6 − 6 − 2 × e<sup>(-0.5t)</sup>, the same, so it obeys the rule. But at t = 0 it gives 12 + 4 = 16, not 20. It is a solution of the equation and the wrong member of the family.</li>\n</ol>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Hall and Guo (2017) use a cut of 300 kilocalories a day from the diet. On the first day of the cut, the weight has not yet moved, so the whole cut is the deficit. With ρ = 7,716.18 kilocalories per kilogram, the static rule’s figure, work out dW/dt in kilograms a day and in kilograms a week.</p>",
+   "level": 4,
+   "answer": "<p>On day one, W equals W0, so the ε term is zero. The equation is 7,716.18 × dW/dt = −300.</p>\n<div class=\"working\">\n<p>300 divided by 7716.18 = 0.03888<br />\n0.03888 times 7 = 0.27216</p>\n</div>\n<p>dW/dt is about minus 0.0389 kilograms a day, or minus 0.272 kilograms a week.</p>\n<p>Check the unit. Kilocalories a day divided by kilocalories per kilogram leaves kilograms a day.</p>\n<p>This rate holds on day one only. Every later day, the weight is lower and the rate is smaller.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Same cut of 300 kilocalories a day, same ρ = 7,716.18 kilocalories per kilogram. Hall and Guo put the slope of expenditure against weight at 20 to 30 kilocalories a day per kilogram. A person, made up for this problem, is now 4 kilograms below their starting weight. Work out dW/dt at each end of that range.</p>",
+   "level": 5,
+   "answer": "<p>The equation is 7,716.18 × dW/dt = −300 − ε × (W − W0), with W − W0 = −4.</p>\n<p>With ε = 20:</p>\n<div class=\"working\">\n<p>20 times 4 = 80<br />\n300 minus 80 = 220<br />\n220 divided by 7716.18 = 0.02851</p>\n</div>\n<p>With ε = 30:</p>\n<div class=\"working\">\n<p>30 times 4 = 120<br />\n300 minus 120 = 180<br />\n180 divided by 7716.18 = 0.02333</p>\n</div>\n<p>About minus 0.0285 and minus 0.0233 kilograms a day. On day one it was minus 0.0389. Four kilograms in, the loss has slowed by a quarter to two-fifths, depending on ε. The range of ε is carried into the answer. It is not a <dfn data-g=\"231\">rounding</dfn> error to be smoothed away.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Polidori and colleagues computed dW/dt from weighings 52 days apart. A person, made up for this problem, weighed 98.0 kilograms at the start. They weighed 96.4 kilograms at one weighing and 95.8 kilograms at the next, 52 days later.</p>\n<p>Use ρ = 7,716.18 kilocalories per kilogram and ε = 30 kilocalories a day per kilogram, Polidori’s round figure for the change in expenditure. Take W − W0 at the later weighing. Work out ΔEI with ρ × dW/dt = ΔEI − ε × (W − W0).</p>",
+   "level": 5,
+   "answer": "<p>The rate first, from the two weighings.</p>\n<div class=\"working\">\n<p>95.8 minus 96.4 = -0.6<br />\n0.6 divided by 52 = 0.011538</p>\n</div>\n<p>dW/dt is about minus 0.011538 kilograms a day. Now the change since the start.</p>\n<div class=\"working\">\n<p>98.0 minus 95.8 = 2.2</p>\n</div>\n<p>W − W0 is minus 2.2 kilograms. Rearrange the equation for ΔEI by adding ε × (W − W0) to both sides.</p>\n<div class=\"working\">\n<p>ΔEI = ρ × dW/dt + ε × (W − W0)<br />\n7716.18 times 0.011538 = 89.03<br />\n30 times 2.2 = 66<br />\n89.03 plus 66 = 155.03</p>\n</div>\n<p>ΔEI is about minus 155 kilocalories a day. Both terms are negative here. The weight is still falling, and it is below the start.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Polidori and colleagues describe a commercial weight-loss programme. “After 1 year, the average energy intake was practically at baseline levels while body weight was still reduced by ~5 kg.”</p>\n<p>Take ΔEI = 0 and W − W0 = −5 kilograms (the ~ means about). Use ρ = 7,716.18 kilocalories per kilogram and ε at each end of Hall and Guo’s 20 to 30 kilocalories a day per kilogram. Work out dW/dt, and the change over the next 30 days if it held. Say which way the weight is heading.</p>",
+   "level": 6,
+   "answer": "<p>The right side is 0 − ε × (−5), which is plus 5 × ε.</p>\n<p>With ε = 20:</p>\n<div class=\"working\">\n<p>20 times 5 = 100<br />\n100 divided by 7716.18 = 0.012960<br />\n0.012960 times 30 = 0.3888</p>\n</div>\n<p>With ε = 30:</p>\n<div class=\"working\">\n<p>30 times 5 = 150<br />\n150 divided by 7716.18 = 0.019440<br />\n0.019440 times 30 = 0.5832</p>\n</div>\n<p>dW/dt is plus 0.013 to plus 0.019 kilograms a day. Over 30 days that is about 0.39 to 0.58 kilograms, if the rate held. It will not quite hold: as the weight rises the bracket shrinks and the rate falls. The weight is heading back up.</p>\n<p>The paper describes this course as a plateau “followed by slow weight regain”. The equation gives the same direction, from intake alone and the lower expenditure of a smaller body. Nobody’s effort appears anywhere in it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Hall and colleagues’ 100 kg man cuts intake by 480 kilocalories a day. Use ρ = 7,716.18 kilocalories per kilogram and ε = 20 kilocalories a day per kilogram. Take three forward steps of 30 days each, and give his weight at day 90. Then give the static rule’s weight at day 90, which is 100 − 480 × 90 / 7,716.18.</p>",
+   "level": 6,
+   "answer": "<p>Step 1, from day 0. The bracket is zero.</p>\n<div class=\"working\">\n<p>480 divided by 7716.18 = 0.062207<br />\n0.062207 times 30 = 1.86621<br />\n100 minus 1.86621 = 98.13379</p>\n</div>\n<p>Step 2, from 98.13379. The weight is 1.86621 below the start.</p>\n<div class=\"working\">\n<p>20 times 1.86621 = 37.3242<br />\n480 minus 37.3242 = 442.6758<br />\n442.6758 divided by 7716.18 = 0.057370<br />\n0.057370 times 30 = 1.7211<br />\n98.13379 minus 1.7211 = 96.41269</p>\n</div>\n<p>Step 3, from 96.41269. The weight is 3.58731 below the start.</p>\n<div class=\"working\">\n<p>20 times 3.58731 = 71.7462<br />\n480 minus 71.7462 = 408.2538<br />\n408.2538 divided by 7716.18 = 0.052909<br />\n0.052909 times 30 = 1.58727<br />\n96.41269 minus 1.58727 = 94.82542</p>\n</div>\n<p>About 94.83 kilograms at day 90. The static rule:</p>\n<div class=\"working\">\n<p>480 times 90 = 43200<br />\n43200 divided by 7716.18 = 5.5986<br />\n100 minus 5.5986 = 94.4014</p>\n</div>\n<p>About 94.40 kilograms. The two differ by about 0.4 kilograms at 90 days, and the gap widens every month after. The curve formula from the illustration gives 95.01 at day 90. Thirty-day steps overshoot the loss a little, 94.83 against 95.01, because each holds its first rate for 30 days.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the man’s equation is 7716.18 × dW/dt = −480 − 20 × (W − 100), starting at 100 kg<br />\non day 0, W − 100 is 0, so dW/dt = −480 / 7716.18 = −0.062207 kg a day<br />\nover 90 days: 0.062207 × 90 = 5.5986 kg<br />\nso the equation predicts 100 − 5.5986 = 94.40 kg at day 90</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the third. It takes the rate from day 0 and uses it for all 90 days. The equation gives a new rate every day from that day’s weight. By day 30 the weight is lower, so the ε term is no longer zero, and the rate is smaller.</p>\n<p>Stepping properly, as in the problem above with 30-day steps, gives about 94.83 kilograms. The curve formula gives 95.01.</p>\n<p>Why the wrong answer looks reasonable. Lines one and two are correct. The day-0 rate is right. The error is to treat a rate at an instant as a rate for the whole stretch. That turns the model back into the static rule, which is exactly what 94.40 is.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a person cuts intake by 300 kcal a day; ρ = 7716.18 kcal/kg; ε = 20<br />\nmodel: ρ × dW/dt = ΔEI + ε × (W − W0)<br />\n4 kg below the start: −300 + 20 × (−4) = −380<br />\ndW/dt = −380 / 7716.18 = −0.04925 kg a day<br />\nso at 4 kg down the loss has sped up from 0.0389 to 0.0492 kg a day</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the second: the sign in front of ε. The model should read ρ × dW/dt = ΔEI − ε × (W − W0).</p>\n<p>Test it with the physiology. When W is below W0, the body is smaller, so expenditure is lower. Lower expenditure means less going out, so the deficit should shrink, not grow. With the minus sign:</p>\n<div class=\"working\">\n<p>20 times 4 = 80<br />\n300 minus 80 = 220<br />\n220 divided by 7716.18 = 0.02851</p>\n</div>\n<p>The rate is minus 0.0285 kilograms a day, slower than the day-one 0.0389, as it should be.</p>\n<p>Why the wrong answer looks reasonable. Every line after the second is correct arithmetic. A plus and a minus look alike in a methods section. The quick check is the direction: a model in which losing weight makes you lose faster runs away, and nobody’s weight does that.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>Hall’s man cuts intake by 2 MJ a day<br />\nρ = 7716.18 kcal per kg<br />\nday one: dW/dt = −2 / 7716.18 = −0.000259 kg a day<br />\nover a year: 0.000259 × 365 = 0.0946 kg<br />\nso the cut barely moves his weight</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the third. It divides megajoules by kilocalories per kilogram. The units do not cancel to kilograms.</p>\n<p>Convert the cut first. The paper gives it as 480 kilocalories a day.</p>\n<div class=\"working\">\n<p>480 divided by 7716.18 = 0.062207</p>\n</div>\n<p>Minus 0.0622 kilograms a day on day one, about 240 times the wrong figure.</p>\n<p>Why the wrong answer looks reasonable. Every line is correct arithmetic, and a small number after a division feels plausible. A unit check on line three catches it: megajoules a day divided by kilocalories per kilogram is not kilograms a day. So does a size check. A cut of 480 kilocalories a day moving weight by 95 grams in a year should stop anyone.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>Here is a worked answer to problem 8. The person weighed 98.0 kilograms at the start, then 96.4 and 95.8 kilograms at weighings 52 days apart. Take ρ = 7,716.18 and ε = 30. Find the step that broke.</p>\n<div class=\"working\">\n<p>dW/dt = (95.8 − 96.4) / 52 = −0.011538 kg a day<br />\nW − W0 = 95.8 − 96.4 = −0.6 kg<br />\nΔEI = 7716.18 × (−0.011538) + 30 × (−0.6) = −89.03 − 18 = −107.03 kcal a day</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the second. W0 is the weight at the start of the study, 98.0 kilograms, not the weight at the previous weighing. The ε term is about how far expenditure has fallen since the start. That depends on the whole loss so far, not on the last 52 days.</p>\n<div class=\"working\">\n<p>98.0 minus 95.8 = 2.2<br />\n30 times 2.2 = 66<br />\n89.03 plus 66 = 155.03</p>\n</div>\n<p>ΔEI is about minus 155 kilocalories a day, not minus 107.</p>\n<p>Why the wrong answer looks reasonable. The first line correctly uses the two latest weighings for the rate. Using the same two weighings for the change looks consistent. It mixes up two quantities: the rate is recent, and the change is since the start.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 15,
+   "prompt": "<p>A commentator writes: “Energy balance is only an <dfn data-g=\"1\">accounting identity</dfn>. Any weight prediction built on it is circular, because it just restates that calories in minus calories out equals the change in stores.” The commentator is made up for this problem.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: whether the prediction comes from the identity or from something added to it. Take Hall’s man, cutting 480 kilocalories a day, with ρ = 7,716.18. Work out his rate when he is 4 kilograms down, under three rules for expenditure.</p>\n<p>ε = 0, expenditure ignores weight:</p>\n<div class=\"working\">\n<p>480 divided by 7716.18 = 0.06221</p>\n</div>\n<p>ε = 20:</p>\n<div class=\"working\">\n<p>20 times 4 = 80<br />\n480 minus 80 = 400<br />\n400 divided by 7716.18 = 0.05184</p>\n</div>\n<p>ε = 30:</p>\n<div class=\"working\">\n<p>30 times 4 = 120<br />\n480 minus 120 = 360<br />\n360 divided by 7716.18 = 0.04666</p>\n</div>\n<p>Three different rates, all obeying the same identity. So the commentator is half right. The identity alone predicts nothing. The prediction comes from the rule for expenditure that was added, and that rule is a claim about bodies, open to test. Nothing about it is circular.</p>\n<p>What this does not establish. It does not show which ε is right, or that one straight line fits expenditure across a large loss. It does not show that ρ is constant; Chow and Hall say it need not be. And it says nothing about why intake or expenditure changed. Hall and Guo make that point about the identity itself.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 16,
+   "prompt": "<p>A review sentence reads: “Polidori and colleagues measured how much people’s eating changed, using weights taken 52 days apart.” The review is made up for this problem; the paper is real.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: whether the number depends on anything besides the weighings. Use the made-up person from problem 8: dW/dt = −0.011538 kilograms a day and W − W0 = −2.2 kilograms. Compute ΔEI = ρ × dW/dt + ε × (W − W0) three ways.</p>\n<p>ρ = 7,716.18 and ε = 30, as before:</p>\n<div class=\"working\">\n<p>7716.18 times 0.011538 = 89.03<br />\n30 times 2.2 = 66<br />\n89.03 plus 66 = 155.03</p>\n</div>\n<p>ρ = 7,716.18 and ε = 20:</p>\n<div class=\"working\">\n<p>20 times 2.2 = 44<br />\n89.03 plus 44 = 133.03</p>\n</div>\n<p>ρ taken as the energy of body fat, 39.5 megajoules a kilogram (Book 1), which is 9,440.73 kilocalories, with ε = 30:</p>\n<div class=\"working\">\n<p>39500 divided by 4.184 = 9440.73<br />\n9440.73 times 0.011538 = 108.93<br />\n108.93 plus 66 = 174.93</p>\n</div>\n<p>The same two weighings give minus 133, minus 155 or minus 175 kilocalories a day. So the intake figure is calculated through a model, and it moves with the model’s constants. The paper’s own word is “calculated”.</p>\n<p>What this does not establish. It does not show that Polidori’s figures are wrong. Their ρ and ε come from a model built on controlled feeding studies, not from these stand-ins. It does not tell you any one person’s intake; the paper “restricted our analysis to the group mean”. And it assumes activity did not change. The paper puts the bias from that at “&lt;40 kcal/day when studying &gt;100 individuals”. Say “calculated”, and name the model.</p>"
+  }
+ ]
+}

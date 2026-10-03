@@ -1,0 +1,167 @@
+{
+ "format": 1,
+ "id": "b0-r0-c04",
+ "label": "A4",
+ "title": "Percentages, and the percentage of a percentage",
+ "part": "A",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"133\">percentage</dfn> is a <dfn data-g=\"66\">fraction</dfn> whose <dfn data-g=\"47\">denominator</dfn> is one hundred. Per cent means per hundred, so 24 per cent is 24/100, which is 0.24.</p>\n<p>A <dfn data-g=\"134\">percentage change</dfn> is the change divided by the value it started from, multiplied by one hundred.</p>\n<p>A <dfn data-g=\"135\">percentage point</dfn> is the arithmetic difference between two percentages. A per cent change is that difference divided by the first percentage.</p>\n<p>A percentage of a percentage is the product of the two fractions: 40 per cent of 30 per cent is 0.40 times 0.30, which is 0.12, or 12 per cent of the original whole.</p>",
+   "refs": [
+    8
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Per cent means per hundred. Twenty-four per cent is twenty-four out of a hundred, which is 0.24.</p>\n<p>The hard half is what the hundred was.</p>\n<p>A percentage change is worked out against the number you started from. Because the starting number sits underneath, going up and coming back down are not the same percentage.</p>\n<p>If something goes from 2 per cent to 3 per cent, it has gone up by one percentage point. It has also gone up by 50 per cent, because one is half of two.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Go back to the two rows you read in the National Food Security Act, 2013. A lower primary meal is set at 450 calories. An upper primary meal is set at 700.</p>\n<p>How much more is the upper primary standard?</p>\n<p>Work out both.</p>\n<p>The plain difference first.</p>\n<div class=\"working\">\n<p>700 minus 450 = 250 calories more</p>\n</div>\n<p>Now as a percentage. The rule is: the change, divided by what you started from, times a hundred.</p>\n<div class=\"working\">\n<p>250 divided by 450 = 0.5555…<br />\n0.5555… times 100 = 55.6 per cent    (rounded to one place, as the last section had it)</p>\n</div>\n<p>Now turn it round, because this is where people slip. Start at 700 and come down to 450.</p>\n<div class=\"working\">\n<p>250 divided by 700 = 0.3571…<br />\n0.3571… times 100 = 35.7 per cent</p>\n</div>\n<p>The lower primary meal is about 36 per cent less. Not 56. The number sitting underneath changed, so the percentage changed with it.</p>\n<p>Ask which end it was measured from, every single time.</p>\n<p>Here is a sentence of the kind that reaches a front page.</p>\n<blockquote>\n<p>The share of children affected rose by fifty per cent in a decade.</p>\n</blockquote>\n<p>Suppose the real figures behind it are two in a hundred rising to three in a hundred.</p>\n<div class=\"working\">\n<p>3 minus 2 = 1 percentage point<br />\n1 divided by 2 = 0.5, so 50 per cent</p>\n</div>\n<p>Both are true of the same change. The writer picked the fifty.</p>\n<p>Percentage points subtract. Per cent divides.</p>\n<p>Ask for the count as well as the percentage, always.</p>\n<p>Suppose 30 per cent of schoolchildren in a district eat a packaged snack on a school day. Of those who do, suppose 40 per cent buy it within a hundred metres of the school gate. Multiply the fractions.</p>\n<div class=\"working\">\n<p>0.40 times 0.30 = 0.12, so 12 per cent of all schoolchildren</p>\n</div>\n<p>Those two percentages are made up, to show the move. A percentage of a percentage is smaller than either.</p>",
+   "numberRefs": [
+    6
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Percentages hide the size of the thing they are a percentage of, and they hide it by design.</p>\n<p>A percentage change and a percentage point look alike on the page and are different quantities. When a source says “per cent” you often cannot tell which it meant, and you cannot repair it by reading harder. Go back to the two original numbers, or say in your own writing that you could not.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A percentage point and a per cent are different quantities. Whichever is quoted at you, ask for the other.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>For any percentage in front of you, ask two questions before you use it: per cent of what, and how many people is that.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A rise and the fall that undoes it are different percentages, because the starting value sits underneath. Say which end you measured from whenever you quote a change.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A percentage of a percentage multiplies, so it is always smaller than either.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>In a committee a relative change will be offered when it is the larger number and an absolute one when it is the smaller. Bring both to the meeting yourself.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When a journalist gives you a percentage on the phone, do not react to it. Ask what it is a percentage of and what the two underlying counts were.</p>",
+     "tag": "move",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>The second schedule of the National Food Security Act, 2013 sets 12 grams of protein for a lower primary meal. It sets 20 grams for an upper primary meal. Express the step from 12 to 20 as a percentage, and the step from 20 back to 12 as a percentage. Then say which of the two you would put in a note, and why.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>Going up, from 12.</p>\n<div class=\"working\">\n<p>20 minus 12 = 8<br />\n8 divided by 12 = 0.6666…<br />\ntimes 100 = 66.7 per cent more</p>\n</div>\n<p>Coming down, from 20.</p>\n<div class=\"working\">\n<p>8 divided by 20 = 0.4<br />\ntimes 100 = 40 per cent less</p>\n</div>\n<p>Same 8 grams either way. The denominator changed, so the percentage changed.</p>\n<p>Which to put in a note: neither on its own. Write the absolute figures and one percentage with its direction named. “20 grams against 12 grams, about 67 per cent more.” That sentence cannot be read the wrong way round. A bare “67 per cent” in a note will be quoted back at you as “40 per cent”. The person quoting it read from the other end, and you cannot prove which of you meant what.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Explain to a journalist, in three minutes and without jargon. The claim is that obesity in this group rose by fifty per cent. Say why that may be a smaller story than it sounds, and why it may also be a larger one. Give them one sentence they can print.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The spine of it. Fifty per cent is a comparison with the starting point, and the starting point is not in the sentence. Two in a hundred becoming three in a hundred is a rise of fifty per cent. So is twenty in a hundred becoming thirty, and those are not the same story at all.</p>\n<p>Then give them the second half, because it is the half that makes you useful rather than merely cautious. One extra person in a hundred, across a population of several <dfn data-g=\"43\">crore</dfn>, is a large number of people. So the percentage alone can understate it as easily as overstate it.</p>\n<p>What to hand them: “The share went from two in a hundred to three in a hundred. That is one more person in every hundred, which across this population is roughly this many people.”</p>\n<p>Then give them the count, or say plainly that you cannot until you have the denominator. Say it in those words. A journalist can print a number with a caveat and cannot print a refusal.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Write each of these as a <dfn data-g=\"45\">decimal</dfn>, and then as a fraction over one hundred.</p>\n<div class=\"working\">\n<p>7 per cent    40 per cent    125 per cent    0.5 per cent</p>\n</div>",
+   "level": 1,
+   "answer": "<p>Per cent means per hundred, so divide by a hundred each time.</p>\n<table style=\"width:53%;\">\n\n<tbody>\n<tr>\n<td>7 per cent</td>\n<td>0.07</td>\n<td>7 over 100</td>\n</tr>\n<tr>\n<td>40 per cent</td>\n<td>0.40</td>\n<td>40 over 100</td>\n</tr>\n<tr>\n<td>125 per cent</td>\n<td>1.25</td>\n<td>125 over 100</td>\n</tr>\n<tr>\n<td>0.5 per cent</td>\n<td>0.005</td>\n<td>0.5 over 100</td>\n</tr>\n</tbody>\n</table>\n<p>The third one matters. A percentage can be more than a hundred: that just means more than the whole you started from. A proportion cannot, and the two are often confused.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Work out 35 per cent of 840. Then work out 840 as a percentage of 1,200.</p>",
+   "level": 2,
+   "answer": "<p>Thirty-five per cent of 840. Turn the percentage into a decimal, then multiply.</p>\n<div class=\"working\">\n<p>35 per cent = 0.35<br />\n0.35 times 840 = 294</p>\n</div>\n<p>Now the other direction. Divide, then multiply by a hundred.</p>\n<div class=\"working\">\n<p>840 divided by 1,200 = 0.7<br />\n0.7 times 100 = 70 per cent</p>\n</div>\n<p>Two different questions. The first asks for a part; the second asks what share a part is. Read which one you have been given before you touch the calculator.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A figure goes from 80 to 92. Express the change as a percentage. Then express the step from 92 back to 80 as a percentage.</p>",
+   "level": 3,
+   "answer": "<p>Going up, starting from 80.</p>\n<div class=\"working\">\n<p>92 minus 80 = 12<br />\n12 divided by 80 = 0.15<br />\ntimes 100 = 15 per cent more</p>\n</div>\n<p>Coming down, starting from 92.</p>\n<div class=\"working\">\n<p>12 divided by 92 = 0.13043…<br />\ntimes 100 = 13.0 per cent less</p>\n</div>\n<p>Same 12 either way. The number underneath changed, so the percentage changed with it. Fifteen up, thirteen down, and neither is wrong.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Work out 40 per cent of 30 per cent. Then work out 5 per cent of 60 per cent. Give each answer as a percentage of the whole you started with.</p>",
+   "level": 3,
+   "answer": "<p>A percentage of a percentage multiplies. Turn both into decimals, then multiply.</p>\n<div class=\"working\">\n<p>0.40 times 0.30 = 0.12, so 12 per cent of the whole<br />\n0.05 times 0.60 = 0.03, so 3 per cent of the whole</p>\n</div>\n<p>Both answers are smaller than either percentage that went into them.</p>\n<p>They have to be. You are taking a part of a part, and multiplying by anything under one makes a number smaller. Twelve is below thirty and below forty. Three is below five and below sixty.</p>\n<p>So there is a check you can run before the arithmetic. The answer can never be larger than the smaller of the two percentages you started with.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Section 3(2) of the National Food Security Act, 2013 says entitlements shall extend up to 75 per cent of the rural population. For the urban population the figure is up to 50 per cent. A district has 18 <dfn data-g=\"102\">lakh</dfn> rural and 6 lakh urban residents. Work out the ceiling on the number covered in each.</p>",
+   "level": 4,
+   "answer": "<p>Rural first.</p>\n<div class=\"working\">\n<p>75 per cent = 0.75<br />\n0.75 times 18,00,000 = 13,50,000</p>\n</div>\n<p>Then urban.</p>\n<div class=\"working\">\n<p>50 per cent = 0.50<br />\n0.50 times 6,00,000 = 3,00,000</p>\n</div>\n<p>Thirteen lakh fifty thousand and three lakh. Sixteen lakh fifty thousand between them.</p>\n<p>Now read the words again. The Act says “up to”. These are ceilings, not counts and not targets. A figure worked out from a ceiling is the most that may be covered, and says nothing about how many are.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>In a survey, 45 per cent of respondents buy a packaged snack in a week. Of those who do, 20 per cent buy it at a shop next to a school. What share of all respondents is that? Then say how many people that is, out of 2,400 respondents.</p>",
+   "level": 6,
+   "answer": "<p>A percentage of a percentage multiplies.</p>\n<div class=\"working\">\n<p>0.20 times 0.45 = 0.09<br />\n= 9 per cent of all respondents</p>\n</div>\n<p>Now the count.</p>\n<div class=\"working\">\n<p>0.09 times 2,400 = 216 people</p>\n</div>\n<p>Nine per cent, which is 216 of the 2,400.</p>\n<p>The count is the part to carry into a meeting. Nine per cent sounds like a <dfn data-g=\"160\">rounding</dfn> error and 216 people sounds like 216 people, and they are the same finding.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a figure rises from 4 per cent to 6 per cent<br />\n6 minus 4 = 2<br />\nso the rise is 2 per cent</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The subtraction is right. The step that broke is the last line, where a difference in percentage points is called a per cent.</p>\n<p>Both statements exist and they are different quantities.</p>\n<div class=\"working\">\n<p>6 minus 4 = 2 percentage points<br />\n2 divided by 4 = 0.5, so a rise of 50 per cent</p>\n</div>\n<p>So the rise is two percentage points, or fifty per cent, and the worked answer has used the first number with the second name.</p>\n<p>Why it looks reasonable: the words “per cent” sit in the original figures, so carrying them into the difference feels automatic. Percentage points subtract. Per cent divides.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>in a survey, 30 per cent of respondents buy a packaged snack on a school day<br />\nof those who do, 40 per cent buy it at a shop by the school gate<br />\n30 plus 40 = 70<br />\nso 70 per cent of all respondents buy a snack at a shop by the school gate</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the addition on the third line.</p>\n<p>Two percentages can be added only when they are parts of the same whole. These are not. The 40 per cent is a percentage of the 30 per cent, not a percentage of everybody.</p>\n<p>A percentage of a percentage multiplies.</p>\n<div class=\"working\">\n<p>0.40 times 0.30 = 0.12<br />\n= 12 per cent of all respondents</p>\n</div>\n<p>Twelve per cent, not seventy. The broken answer is nearly six times the right one.</p>\n<p>There is a second way to see that 70 cannot be right, and it needs no arithmetic at all. The group being described sits inside the 30 per cent who buy a snack at all. So the answer cannot be bigger than 30, whatever the second percentage is.</p>\n<p>Why it looks reasonable: both numbers are percentages, and both are quoted in one breath about one survey. Adding percentages is a thing you are sometimes allowed to do. Here the second percentage is a part of the first, so it is not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a budget of 100 is cut by 20 per cent<br />\nthe following year it is raised by 20 per cent<br />\n20 minus 20 = 0, so the budget is back to 100</p>\n</div>",
+   "level": 8,
+   "answer": "<p>Do the two steps on the actual number instead of on the percentages.</p>\n<div class=\"working\">\n<p>100 minus 20 per cent of 100<br />\n= 100 minus 20<br />\n= 80<br />\n80 plus 20 per cent of 80<br />\n= 80 plus 16<br />\n= 96</p>\n</div>\n<p>Ninety-six, not a hundred. The budget is four per cent below where it started.</p>\n<p>The step that broke is treating the two percentages as though they could be added and subtracted. They cannot, because they are taken from different numbers: the first twenty per cent is of 100 and the second is of 80.</p>\n<p>Why it looks reasonable: the two percentages are equal and opposite, which is exactly the shape of something that cancels. Percentages of different bases never cancel.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a line you are asked to comment on.</p>\n<blockquote>\n<p>Overweight among women in this district rose by sixty per cent in a decade.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>You cannot compute anything yet, and saying so precisely is the answer.</p>\n<p>A sixty per cent rise is a rise measured against a starting value, and the line does not give it. Two readings fit the same sentence.</p>\n<table style=\"width:85%;\">\n\n<tbody>\n<tr>\n<td>from 5 in 100 to 8 in 100</td>\n<td>rise of 3 percentage points</td>\n</tr>\n<tr>\n<td>from 20 in 100 to 32 in 100</td>\n<td>rise of 12 percentage points</td>\n</tr>\n</tbody>\n</table>\n<p>Both are a sixty per cent rise. The second is four times the first in people.</p>\n<p>So what to ask for: the two underlying figures, and the two counts they came from.</p>\n<p>What this does not establish, once you have them. It will not tell you whether the change is real or the two surveys simply differ. It will not tell you whether they measured the same thing both times, or what caused any of it. It will tell you how many more women, which is the number anybody acting on this needs.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A colleague brings you two sentences about the same programme and asks which to put in the brief.</p>\n<blockquote>\n<p>Coverage rose by 50 per cent.</p>\n</blockquote>\n<blockquote>\n<p>Coverage rose by 4 percentage points, from 8 per cent to 12 per cent.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Check that the two sentences describe one change.</p>\n<div class=\"working\">\n<p>12 minus 8 = 4 percentage points<br />\n4 divided by 8 = 0.5, so 50 per cent</p>\n</div>\n<p>They do. Both are true, and one sounds several times larger than the other.</p>\n<p>Which to put in the brief: both, in one sentence, with the counts. Something of the shape “coverage rose from 8 to 12 per cent, a rise of half, which is this many more households”.</p>\n<p>Why not choose. A brief carrying only the fifty per cent will be read as a transformation. A brief carrying only the four points will be read as nothing happening. Bringing both is what makes the sentence hard to quote against you in either direction.</p>\n<p>What this does not establish. Neither figure says how many households the four points are, and neither says whether coverage is the right measure of whether the programme works.</p>"
+  }
+ ]
+}

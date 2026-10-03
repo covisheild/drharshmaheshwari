@@ -1,0 +1,121 @@
+{
+ "format": 1,
+ "id": "s37-r1-c01",
+ "label": "1",
+ "title": "What a food system is",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The High Level Panel of Experts on Food Security and Nutrition (HLPE) of the Committee on World Food Security adopted a definition of a <dfn data-g=\"144\">food system</dfn> in 2014. A food system “gathers all the elements (environment, people, inputs, processes, infrastructures, institutions, etc.) and activities that relate to the production, processing, distribution, preparation and consumption of food, and the output of these activities, including socio-economic and environmental outcomes”.</p>\n<p>Inside the system, HLPE names the <dfn data-g=\"143\">food supply chain</dfn>: the activities and actors that take food from production to consumption and to the disposal of its waste. It lists the chain’s steps as production; storage and distribution; processing and packaging; and retail and markets.</p>\n<p>This book reads the system as eight stages: production, storage, processing, distribution, retail, preparation, consumption and waste. The list is this book’s reading of HLPE’s sentences, not a list HLPE prints. Each stage is an activity carried out by actors.</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A food system is everything that happens to food, and everyone who does it, from the field to the bin.</p>\n<p>Start with the plate in front of you and walk backwards. Someone cooked it. Before that, someone bought the food from a shop or a cart. Before that, it was moved by truck. Perhaps it was stored in a warehouse, or milled and packed in a factory. Before all of that, a farmer grew it. And after the meal, what is left over goes somewhere too.</p>\n<p>A diet is what happens at the plate. Most of what reached the plate was decided at earlier stages, by other people.</p>\n<p>Each step is done by somebody, such as a farmer, a trader, a mill owner, a shopkeeper or the person who cooks. Public bodies count too: HLPE says the actors at each step are “both public and private”. Call each of them an <dfn data-g=\"4\">actor</dfn> — anyone whose decision moves the food on. Each step takes things in, such as seed, fuel or grain. Each sends things out, such as grain, flour or a cooked meal.</p>\n<p>As with any system (Book 0, E3), you choose where to draw the line round it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is the trap with the phrase “food supply chain”. It sounds like the whole story. It is not.</p>\n<p>Open HLPE’s 2017 report Nutrition and food systems at https://www.fao.org/fileadmin/user_upload/hlpe/hlpe_documents/HLPE_Reports/HLPE-Report-12_EN.pdf and search inside it for “The food supply chain consists of”. You land in section 1.2.1.</p>\n<blockquote>\n<p>The food supply chain consists of the activities and actors that take food from production to consumption and to the disposal of its waste</p>\n</blockquote>\n<p>Read the next sentence, which lists the chain’s steps: production; storage and distribution; processing and packaging; retail and markets. Count them. There are four, and the last one is the shop. Nothing in that list cooks the food, eats it or throws it away. A reader who stops here thinks the food system ends at the shop counter.</p>\n<p>Now search for “A food system gathers”. This is the definition, in the report’s summary.</p>\n<blockquote>\n<p>A food system gathers all the elements (environment, people, inputs, processes, infrastructures, institutions, etc.) and activities that relate to the production, processing, distribution, preparation and consumption of food, and the outputs of these activities</p>\n</blockquote>\n<p>Preparation and consumption are inside the system. The chain’s own sentence has already put the disposal of waste inside it too. So the supply chain is one part of the food system, and the system is bigger.</p>\n<p>Put the two sentences together and you get this book’s eight stages. The chain gives production, storage, processing, distribution and retail. The definition adds preparation and consumption. The chain’s first sentence adds waste.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The eight stages are this book’s reading of two HLPE sentences, not a list HLPE prints. HLPE’s own summary lists the chain’s activities differently again: production, storage, distribution, processing, packaging, retailing and marketing. Quote HLPE’s words when you quote HLPE, and call the eight stages this book’s.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now draw a food system yourself. Take one roti made at home from packaged atta, and write the eight stages down the page. At each stage, write who acts, what goes in and what comes out.</p>\n<p>The table below is a sketch of one likely route. Nothing in it has been checked against a source. Every line is a question you would need to answer before you could say it is true of your atta. A line is checked when a source says it: a trade or route study, the label, a government table.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Stage</td>\n<td>What happens</td>\n<td>Actor</td>\n<td>Goes in</td>\n<td>Comes out</td>\n</tr>\n<tr>\n<td>Production</td>\n<td>wheat is grown and harvested</td>\n<td>farmer</td>\n<td>seed, water, fertiliser, labour</td>\n<td>grain</td>\n</tr>\n<tr>\n<td>Storage</td>\n<td>grain is held until it is sold or milled</td>\n<td>farmer, trader or warehouse</td>\n<td>grain</td>\n<td>grain, some of it spoiled</td>\n</tr>\n<tr>\n<td>Processing</td>\n<td>grain is milled and packed</td>\n<td>flour mill</td>\n<td>grain, power, packets</td>\n<td>packets of atta</td>\n</tr>\n<tr>\n<td>Distribution</td>\n<td>packets are moved to shops</td>\n<td>distributor, transporter</td>\n<td>packets, fuel</td>\n<td>packets at the shop</td>\n</tr>\n<tr>\n<td>Retail</td>\n<td>a packet is sold</td>\n<td>shopkeeper</td>\n<td>packets, money</td>\n<td>a packet in your kitchen</td>\n</tr>\n<tr>\n<td>Preparation</td>\n<td>dough is kneaded and cooked</td>\n<td>whoever cooks</td>\n<td>atta, water, fuel</td>\n<td>rotis</td>\n</tr>\n<tr>\n<td>Consumption</td>\n<td>the rotis are eaten</td>\n<td>the household</td>\n<td>rotis</td>\n<td>a meal eaten</td>\n</tr>\n<tr>\n<td>Waste</td>\n<td>what is left is thrown out</td>\n<td>the household</td>\n<td>scraps</td>\n<td>scraps in the bin</td>\n</tr>\n</tbody>\n</table>\n<p>Now draw a boundary round your kitchen. Only three stages sit inside it: preparation, consumption and waste. Atta crosses the line inward, and so does fuel. Scraps cross it outward. Everything else happened outside.</p>\n<p>Draw a second boundary round the whole of India. All eight stages are now inside. What crosses the line is different: food bought from other countries comes in, and food sold to them goes out. Imports and exports are flows across that line, not a ninth stage. A tool that acts on them acts where the food enters or leaves. The two drawings are both correct. They answer different questions, exactly as Book 0, E3 said two boundaries round one situation would.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Real routes do not always run in this order or pass every stage. A farming family that eats its own wheat skips retail. A street vendor who cooks and sells does preparation and retail at once. Some grain is stored after milling as well as before. The eight stages are names for kinds of activity, not a fixed sequence every food must follow.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Food system” is often heard as “farming”. It is not. Farming is one stage of eight. When someone says a problem “comes from the food system”, ask which stage they mean.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not use “supply chain” and “food system” as if they were one thing. HLPE’s list of supply-chain steps stops at retail and markets. Cooking and eating sit in the food system as consumer behaviour. A claim about the supply chain’s steps says nothing about the kitchen.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>For any food, write the eight stages down the page. At each, name the actor, what goes in and what comes out. A stage you cannot fill is a question to check, not a blank to skip.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Before you accept a figure about “the food system”, ask what line was drawn round it. A kitchen, a state or the country? Household waste in or out? Food bought from abroad in or out? Two honest figures can differ only because their boundaries differ.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“Food system” is a definition an expert panel adopted in 2014, not a fact of nature. Quote it as HLPE’s definition, with the year, and expect other bodies to draw the system differently.</p>",
+     "tag": "dispute",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The stage list tells you where things happen and who does them. It does not tell you how much food passes each stage, how much is lost there, or which actor has the most power. For any of those you need a number from a source, stage by stage.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Take a packet of milk that you or your family buy. Write the eight stages for it. For each stage, name one actor, one thing that goes in and one thing that comes out. Then mark each line “checked” or “guessed”.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>One possible sketch, every line of it guessed until checked:</p>\n<p>Production: a dairy farmer; feed, water and labour go in; raw milk comes out. Storage: someone who chills and holds the milk; raw milk goes in; chilled milk comes out. Processing: a dairy plant; chilled milk goes in; treated milk in packets comes out.</p>\n<p>Distribution: a transporter; packets go in; packets at a shop or a doorstep come out. Retail: a shop or a delivery person; packets and your money go in; a packet in your home comes out. Preparation: whoever boils it or makes tea; milk and fuel go in; tea or boiled milk comes out. Consumption: the household drinks it.</p>\n<p>Waste: the empty packet and any spilt or spoiled milk go to the bin or the drain.</p>\n<p>The honest result is that almost every line is marked “guessed”. That is the point of the exercise. You can name the stages from memory. Naming the real actors takes a source, and most of us have never checked one for the milk we drink every day.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A speaker at a meeting says: “Obesity is a food system problem, so the answer is to help farmers grow healthier food.” What has the speaker done with the phrase “food system”?</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The speaker has shrunk the food system to one stage, production. By HLPE’s definition the system also holds storage, processing, distribution, retail, preparation, consumption and waste, and the actors at each.</p>\n<p>So “a food system problem” does not point to farmers any more than to mills, shops or kitchens. The fair question back is: at which stage, and whose decision, do you think the problem arises? The claim may still be right about farming. It has not been argued yet.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident asks why this book says “food system” rather than “diet”. You have ten minutes and a whiteboard. What do you draw, and what do you say?</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw a line of eight boxes: production, storage, processing, distribution, retail, preparation, consumption, waste. Put a small figure beside each box for the actor: farmer, trader, mill, transporter, shopkeeper, cook, eater, bin.</p>\n<p>Then say it. A diet is what happens in the seventh box. Most of what reached it was decided in the first five, by other people, before the patient chose anything. The word “system” is there because the boxes feed each other. The mill’s output is the shop’s input. The shop’s shelf is the cook’s starting point.</p>\n<p>Finish with the boundary. Draw a circle round the last three boxes and call it the kitchen. Draw a bigger one round all eight and call it India. Ask the resident which circle a clinic advice leaflet works inside. It works inside the small one.</p>"
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "format": 1,
+ "id": "s37-r1-c09",
+ "label": "9",
+ "title": "Minimum support price and procurement",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-24.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Section 2(10) of the National Food Security <dfn data-g=\"3\">Act</dfn>, 2013 defines the <dfn data-g=\"229\">minimum support price</dfn> (MSP). It is the assured price announced by the Central Government at which foodgrains are procured from farmers, for the <dfn data-g=\"47\">central pool</dfn>. Section 2(2) defines the central pool as the stock of foodgrains procured through minimum support price operations.</p>\n<p>The Act’s definition is for foodgrains bought into the central pool. It does not set any price. Each season’s MSP for the kharif and rabi crops rests on a Cabinet decision.</p>\n<p>The <dfn data-g=\"59\">Commission for Agricultural Costs and Prices</dfn> (CACP) recommends the MSP, and the Cabinet Committee on Economic Affairs (CCEA) decides it. Since 2018-19, following the Union Budget 2018-19 announcement, MSP has been set at not less than 1.5 times the all-India weighted average cost of production.</p>\n<p>Sugarcane has no MSP. The Union Government fixes a <dfn data-g=\"127\">fair and remunerative price</dfn> (FRP), also on CACP’s recommendation, which sugar mills pay for the cane they buy.</p>\n<p><dfn data-g=\"290\">Procurement</dfn> differs by crop. Wheat and paddy that meet the prescribed specifications are bought at MSP by the Food Corporation of India (FCI) and State agencies. A farmer may sell to them or in the open market. Pulses, oilseeds and copra are procured under the Price Support Scheme of PM-AASHA (Pradhan Mantri Annadata Aay Sanrakshan Abhiyan) when their market price falls below MSP. The scheme was approved up to 2025-26; check for its renewal before describing it as running. Cotton and jute are procured through the Cotton Corporation of India and the Jute Corporation of India.</p>\n<p>As of 24 September 2026: MSP for common paddy in kharif marketing season 2026-27 is Rs 2,441 per <dfn data-g=\"297\">quintal</dfn>, a quintal being 100 kilograms (CCEA, 13 May 2026). MSP for wheat in rabi marketing season 2026-27 is Rs 2,585 per quintal (CCEA, 1 October 2025).</p>",
+   "refs": [
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Before each season the Union Government announces a minimum support price, or MSP, for 22 crops. Most are announced in two rounds, one for the kharif crops and one for the rabi crops. Those are the names the releases use for India’s two main crop seasons. Paddy is on the kharif list and wheat on the rabi list. Jute and copra are listed apart, as commercial crops.</p>\n<p>A body of experts, the Commission for Agricultural Costs and Prices (CACP), recommends the price. A committee of the Cabinet fixes it.</p>\n<p>Here is the trap. An MSP is a price at which the government will buy. It is not a price every farmer gets.</p>\n<p>The grain that is bought goes into the central pool, the government’s own stock. So what the state buys decides what it can hand out.</p>\n<p>Sugarcane is different. It has a fair and remunerative price (FRP), fixed the same way, which sugar mills must pay for the cane they buy.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c09-kharif-procurement.png",
+   "alt": "Bar chart. Paddy reaches 8418 lakh tonnes. The other 13 kharif crops together reach 328 lakh tonnes, a sliver beside it.",
+   "w": 1357,
+   "h": 655,
+   "caption": "Kharif crops bought at MSP, 2014-15 to 2025-26, lakh tonnes (CCEA release, 13 May 2026); a lakh is 100,000. Paddy 8418; the other 13 crops together 328. Total 8746."
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c09-msp-floor.png",
+   "alt": "Grouped bars for paddy and wheat. Paddy's floor 2440.5 and MSP 2441 are level. Wheat's floor 1858.5 is well below its MSP of 2585.",
+   "w": 1358,
+   "h": 657,
+   "caption": "MSP against the 1.5 times floor, Rs per quintal, 2026-27 seasons. Paddy (common): floor 2440.5, MSP 2441. Wheat: floor 1858.5, MSP 2585, 726.5 above."
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c09-msp-cost-line.png",
+   "alt": "Points for paddy, wheat, gram and safflower, on or above a rising straight line, MSP equals 1.5 times cost. Paddy at cost 1627, MSP 2441 and safflower at 4360, 6540 lie on the line. Gram at 3699, 5875 lies a little above it. Wheat at 1239, 2585 lies well above it.",
+   "w": 1357,
+   "h": 787,
+   "caption": "MSP against the CACP’s cost, Rs per quintal, 2026-27 seasons: paddy (common, kharif), and wheat, gram and safflower (rabi). The line is the 1.5 times floor. Paddy and safflower sit on it; gram sits above it and wheat far above."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a sentence that sounds right and is not.</p>\n<blockquote>\n<p>The MSP for moong is Rs 8,780 a quintal, so moong farmers get Rs 8,780.</p>\n</blockquote>\n<p>A quintal is 100 kilograms. Open the Press Information Bureau release of 13 May 2026, “Cabinet approves Minimum Support Prices (MSP) for Kharif Crops for Marketing Season 2026-27”, at https://www.pib.gov.in/PressReleasePage.aspx?PRID=2260617. Find the moong row. The MSP is there: Rs 8,780 per quintal for kharif marketing season 2026-27. The table does not say who will pay it.</p>\n<p>Now open the Press Information Bureau backgrounder of 10 October 2025, “Minimum Support Prices: From Safety Net to Self-Sufficiency”, at https://www.pib.gov.in/PressNoteDetails.aspx?ModuleId=3&amp;NoteId=155448&amp;reg=48&amp;lang=2. Search for “Procurement is triggered”. Pulses are bought under the Price Support Scheme “when the market price of these crops falls below MSP”. The same paragraph names the buyers. They are the National Agricultural Cooperative Marketing Federation of India (NAFED) and the National Co-operative Consumers’ Federation of India (NCCF).</p>\n<p>So a moong farmer gets the MSP only by selling to one of those agencies, at a time when they are buying. The market price may sit below the MSP, above it, or near it. The announced price is a promise with conditions, not a price paid on every sack.</p>\n<p>Now the clean case. Search the Department of Food and Public Distribution’s Year End Review 2025 (https://www.pib.gov.in/PressReleasePage.aspx?PRID=2210211) for “specified centres”. Wheat and paddy that meet the specifications and are offered at specified centres “are bought by the public procurement agencies” at MSP. That is an open door at a fixed price. The review gives the size: 832.17 <dfn data-g=\"197\">lakh</dfn> tonnes of paddy in kharif marketing season 2024-25. A lakh is 100,000, so that is about 83.2 million tonnes. Wheat was 300.35 lakh tonnes in rabi marketing season 2025-26, about 30 million tonnes.</p>\n<p>Last, see where the buying lands. The kharif release of 13 May 2026 gives procurement from 2014-15 to 2025-26: 8,418 lakh tonnes of paddy, and 8,746 lakh tonnes for all 14 kharif crops together. Work out paddy’s share.</p>\n<div class=\"working\">\n<p>8,418 divided by 8,746 is about 0.962<br />\n8,746 minus 8,418 = 328</p>\n</div>\n<p>Paddy was about 96 per cent of all kharif crops bought in those years, by weight. The other 13 crops together came to 328 lakh tonnes. MSP is announced for 14 kharif crops. The buying is overwhelmingly one.</p>",
+   "numberRefs": [
+    126,
+    127
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The share is by weight, over twelve marketing seasons together, for the kharif crops only. The figures are for paddy, not milled rice, and cotton is in the total. So the share is not a share of food. The releases held give no conversion from paddy to rice. It does not say which states the grain came from or how many farmers sold at MSP. The releases held here do not give those.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>The 1.5 times rule is a floor, and crops sit at very different heights above it. Check two.</p>\n<p>The kharif release gives common paddy for 2026-27 a cost of Rs 1,627 per quintal and an MSP of Rs 2,441. The rabi release of 1 October 2025 gives wheat for 2026-27 a cost of Rs 1,239 and an MSP of Rs 2,585. Multiply each cost by 1.5 to find the lowest MSP the rule allows.</p>\n<div class=\"working\">\n<p>1,627 times 1.5 = 2,440.5<br />\n1,239 times 1.5 = 1,858.5</p>\n</div>\n<p>Paddy’s MSP of Rs 2,441 sits on the floor, rounded to the rupee. Wheat’s Rs 2,585 sits well above it.</p>\n<div class=\"working\">\n<p>2,585 minus 1,858.5 = 726.5</p>\n</div>\n<p>Rs 726.50 a quintal above the floor. So “MSP follows the 1.5 times rule” is true of both, and tells you almost nothing about either. Ask for the crop and the season.</p>\n<p>One more check before you use these costs. The release defines cost as paid-out costs plus the imputed value of family labour. That is the CACP’s all-India average. It is not the cost on any one farm.</p>",
+   "numberRefs": [
+    126,
+    128
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The costs and prices are for the named seasons only: kharif 2026-27 and rabi 2026-27. The next CCEA decision replaces them. The rule compares MSP with an all-India average cost, so a farm with higher costs can be below 1.5 times its own cost at the same MSP.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>An MSP is the price at which government agencies will buy, not the price every grower is paid. When someone quotes an MSP as a farmer’s income, ask how much of the crop was bought at it.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>From 2014-15 to 2025-26, 8,746 lakh tonnes (about 875 million tonnes) were bought across the 14 kharif crops. Paddy was 8,418 of them, about 96 per cent by weight (CCEA release, 13 May 2026). Among the kharif crops, procurement is concentrated in one.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Say who fixed a price and for which season. A figure without its season is out of date the day the next decision comes.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>What the state buys at MSP is what it can put in a ration. A proposal to change the ration basket is also a proposal about procurement.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Sugarcane has no MSP. Its price is the fair and remunerative price, and sugar mills pay it. Do not put sugarcane in a list of crops the government buys.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“At least 1.5 times cost” is a floor. Paddy sits on it and wheat sits well above it.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The cost in the MSP releases is an all-India average, weighted in a way the releases do not state. It counts paid-out costs and puts a value on the family’s own unpaid work (‘imputed family labour’). Do not call the margin over it a farmer’s profit. It says nothing about one farm, one state, or what the crop fetched.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The releases give national totals only. They cannot tell you which states the grain came from, how many growers sold at MSP, or what the rest were paid. Do not infer them from the MSP.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Name the body that recommends MSPs, the body that fixes them, and the <dfn data-g=\"356\">statute</dfn> that defines MSP and the central pool. Give the section numbers.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>The Commission for Agricultural Costs and Prices (CACP) recommends. The Cabinet Committee on Economic Affairs (CCEA) approves. The National Food Security Act, 2013 defines MSP in section 2(10) and the central pool in section 2(2).</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is part of the rabi table from the Press Information Bureau release of 1 October 2025, Rs per quintal, rabi marketing season 2026-27.</p>\n<table style=\"width:88%;\">\n\n<thead>\n<tr>\n<th>crop</th>\n<th>MSP</th>\n<th>cost of production</th>\n<th>margin over cost (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Wheat</td>\n<td>2585</td>\n<td>1239</td>\n<td>109</td>\n</tr>\n<tr>\n<td>Gram</td>\n<td>5875</td>\n<td>3699</td>\n<td>59</td>\n</tr>\n<tr>\n<td>Safflower</td>\n<td>6540</td>\n<td>4360</td>\n<td>50</td>\n</tr>\n</tbody>\n</table>\n<p>‘<dfn data-g=\"216\">Margin over cost</dfn>’ is the release’s term: MSP minus cost, as a share of cost. It is not the trader’s margin of section 4.</p>\n<p>Say what the table shows and what it does not.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>It shows the price at which government agencies stand ready to buy each crop this season. It shows the CACP’s all-India average cost of growing it. It shows how far above that cost the price was set. All three meet the 1.5 times floor. Safflower sits right on it and wheat sits far above it.</p>\n<p>It does not show how much of each crop will be bought at that price. Wheat is bought at specified centres. Gram, a pulse, is bought only when its market price falls below MSP. It does not show what farmers actually received, or the cost on any one farm.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has three minutes and asks: “The government raised MSP for 14 crops. Does that mean farmers of all 14 get more?” Answer in plain words, with one quotable sentence.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Quotable: “An MSP is the price at which the government promises to buy. For most crops it buys little, so the promise reaches few farmers.”</p>\n<p>Then the detail. For wheat and paddy, agencies buy at MSP at buying centres, and they buy a great deal. Paddy was about 96 per cent of everything bought across the kharif crops from 2014-15 to 2025-26. For pulses and oilseeds, the government steps in only when the market price falls below MSP.</p>\n<p>Calibrate. Whether a higher MSP lifts what traders pay for crops the government hardly buys is a separate question. The releases do not answer it, so do not claim it either way.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A policy note says: “Since sugarcane is covered by MSP, the government buys sugarcane from farmers at a guaranteed price.” Find the errors.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Sugarcane has no MSP. It has a fair and remunerative price, Rs 365 a quintal for sugar season 2026-27 at a basic recovery rate of 10.25 per cent.</p>\n<p>The government does not buy the cane. Sugar mills do, and the FRP is what they must pay.</p>\n<p>So the note has the wrong instrument and the wrong buyer. The fix names both: “The Union Government fixes a fair and remunerative price for sugarcane, on CACP’s recommendation, which sugar mills pay.”</p>"
+  }
+ ]
+}

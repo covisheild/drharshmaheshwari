@@ -1,0 +1,127 @@
+{
+ "format": 1,
+ "id": "s36-r1-c03",
+ "label": "3",
+ "title": "The interview: structured, semi-structured, in-depth",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"261\">research interview</dfn> is a conversation in which a researcher asks a <dfn data-g=\"262\">respondent</dfn> about a topic in order to gather the respondent’s account of it. Interviews are sorted into three kinds by how much is fixed before the interview begins.</p>\n<p>A <dfn data-g=\"299\">structured interview</dfn> administers a questionnaire. A questionnaire read aloud is a structured interview, and its answers are counted.</p>\n<p>A <dfn data-g=\"276\">semi-structured interview</dfn> follows a short guide of open-ended questions that define the area to be explored.</p>\n<p>An <dfn data-g=\"139\">in-depth interview</dfn> fixes less still. No interview is wholly without structure, so “unstructured interview” is a misleading name.</p>\n<p>A research interview is not a clinical consultation. The interviewer therefore does not diagnose, advise or correct.</p>",
+   "refs": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Interviews come in three kinds. What separates them is how much is decided before you sit down.</p>\n<p>In a structured interview, everything is decided. You read out a questionnaire. Most answers are picked from a list.</p>\n<p>In a semi-structured interview, the topics are decided and the path is not. You carry a short guide of open questions: questions the person answers in their own words, not by picking from a list. You change the order and the wording to suit the person. When they say something you did not expect, you follow it, then come back to the guide.</p>\n<p>In an in-depth interview, almost nothing is decided. You open with one broad question about one or two issues. Everything after that comes from what the person has said: “What happened then?” “What do you mean by that?”</p>\n<p>The semi-structured kind is the most common, usually with one person, face to face, and recorded with their agreement.</p>\n<p>A research interview is not taking a history. In a history, you steer the patient’s story toward a diagnosis and a plan. You do not diagnose, you do not advise, and you do not correct.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Take the question from the last two sections: why do adults with obesity stop coming back to the clinic? Here is the same topic set up three ways. Every question here is made up for this book.</p>\n<p><strong>Structured.</strong> You read from a printed form and tick boxes.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Question</td>\n<td>Answers allowed</td>\n</tr>\n<tr>\n<td>In the last three months, how many clinic dates did you miss?</td>\n<td>none; one or two; three or more</td>\n</tr>\n<tr>\n<td>What was the main reason?</td>\n<td>distance; cost; felt better; other</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Semi-structured.</strong> You carry a guide of a few open questions, and use it as a map, not a script.</p>\n<ul>\n<li>“Tell me about the first time you came to this clinic.”</li>\n<li>“What has made it easier or harder to come back?”</li>\n<li>“Tell me about the last date you did not come for.”</li>\n</ul>\n<p><strong>In-depth.</strong> You open once, then follow.</p>\n<ul>\n<li>“I am trying to understand what coming to this clinic is like for people. Can you tell me about it, from the beginning?”</li>\n</ul>\n<p>Now decide what each one can give you, before you read on.</p>\n<p>The structured form gives a tick in a box. You can count the ticks across a hundred people, and a count is what it is for. It cannot give a reason nobody put on the form. That is the tick-list from the first section again.</p>\n<p>The semi-structured guide makes sure the same few areas come up with everyone. It still leaves room for the answer you did not expect.</p>\n<p>The in-depth opening goes deepest into one person’s story. It covers only what that person chooses to bring up.</p>\n<p>For a why question, the structured form is the wrong tool. Choose between the other two by how much you already know about what matters. Knowing the areas but not the answers points to the semi-structured guide.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The three kinds are points on a line, not boxes with walls. A structured form may end with one <dfn data-g=\"209\">open question</dfn>, and a semi-structured interview can turn into an in-depth one halfway through.</p>\n<p>Papers also use the names loosely. DeJonckheere and Vaughn call the interviews they describe both semi-structured and in-depth. When you read a study, look at what the interviewer fixed in advance, not at the name it uses.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a made-up exchange, translated from Chhattisgarhi. You are the interviewer, I. The respondent, R1, is a woman in her fifties who stopped coming to the clinic. Each made-up interview in this book is separate, and the labels R1, R2 and so on start again in each one. You are also a doctor, and the habit of taking a history is strong. Here is what the habit does.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Why did you stop coming?</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>After the second time, my knees were very bad.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Which knee? Is the pain worse in the morning?</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>Both. Mornings, yes.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Are you taking the tablet the doctor gave you? You should take it every day.</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>Yes, yes, I take it.</td>\n</tr>\n</tbody>\n</table>\n<p>Look at what happened. She mentioned her knees, and you turned them into a diagnosis. You asked closed questions to fit them into a medical category. Then you gave advice. She gave the answer that ends the topic. You now know about her knees. You still do not know why she stopped coming.</p>\n<p>Now run the same opening as a research interview.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Tell me about the last time you came to the clinic.</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>After the second time, my knees were very bad.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Your knees. Tell me more about that.</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>The clinic is upstairs, and there is no lift. I climb, then I wait standing, because the benches are full. By the time my name is called, I cannot think.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>And after that visit?</td>\n</tr>\n<tr>\n<td>R1</td>\n<td>My son said, why go and suffer. So I stopped.</td>\n</tr>\n</tbody>\n</table>\n<p>This time the knees led somewhere. The stairs, the full benches and a son’s advice are reasons a clinic can act on. You got them by asking her to say more, and then by waiting. You did not diagnose, advise or correct.</p>\n<p>Her knees still matter. If she asks for help with them, Britten’s way out is to say you will come back to it at the end of the interview, and then do.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This exchange is built to make the contrast plain. Real respondents do not always open up when asked to say more. Some keep to short answers whatever you do.</p>\n<p>A respondent who knows you are a doctor may also answer as a patient does, with what she thinks a doctor wants to hear. Britten warns of exactly this. The second exchange removes the history-taking, not the white coat.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A research interview is not a history with a recorder running. In a research interview, steering the account into your own categories is the error, because it swaps the respondent’s account for yours.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Choose the kind of interview from the question. A how-many question with known answer options takes a structured form whose answers you count. A why or how question takes a semi-structured guide. One story told in full, such as one family’s experience of a diagnosis, can take an in-depth interview.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a respondent mentions a symptom, you will feel pulled back into doctor mode. Do not ask the diagnostic question and do not advise. Ask her to say more, and offer to come back to her health question when the interview ends.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A questionnaire read aloud is still a questionnaire.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The labels are used loosely in papers, so the name of the interview tells you little. Look in the methods for what the interviewer fixed in advance and what they followed.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you teach a resident to interview, have them play back their own recording. They mark every place they diagnosed, advised or corrected.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Three made-up descriptions of how interviews were run. Name the kind of interview in each, and say what in the description told you.</p>\n<ol type=\"1\">\n<li>“Field workers read 24 questions from a printed form. Each answer was marked on a four-point scale.”</li>\n<li>“The interviewer opened with: ‘Tell me about your life since the diagnosis.’ She then asked only about what the respondent raised.”</li>\n<li>“Interviews followed a guide of six open questions on meals at home. Interviewers were free to change the order and to follow up on what respondents said.”</li>\n</ol>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>Structured. The questions were fixed, read from a form, and the answers were chosen from a fixed scale. These answers are for counting.</li>\n<li>In-depth. There was one broad opening question, and everything after it came from what the respondent said.</li>\n<li>Semi-structured. A short guide of open questions fixed the areas. The order and the follow-up questions were left to the interviewer.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a made-up exchange from a practice interview on why patients stop coming to the clinic, translated from Hindi. R2 is a woman in her forties.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>So you stopped coming after March?</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>Yes. My sugar was fine by then.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Fine? What was your last reading? You know, sugar can be high without any symptoms.</td>\n</tr>\n<tr>\n<td>R2</td>\n<td>I don’t remember the reading.</td>\n</tr>\n</tbody>\n</table>\n<p>Say where the interviewer left the research interview. Then rewrite the interviewer’s second line so the interview stays one.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The interviewer left the research interview at the second line. The respondent gave her own reason for stopping: she believed her sugar was fine. The interviewer treated that as a clinical error. The line asks for a reading, which is diagnosing, and warns about hidden high sugar, which is correcting. The respondent then has nothing to say but that she does not remember.</p>\n<p>What got lost is the respondent’s own way of seeing it. How she decided her sugar was fine is exactly the kind of reason the study is looking for.</p>\n<p>A rewrite of the second line: “Your sugar was fine. How did you know it was fine?” Or: “Tell me more about that.” Either asks her to go on in her own words. If her belief worries you clinically, say so after the interview, not during it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident asks: “I take histories every day. Why would a research interview need any new skill?” You have ten minutes and a whiteboard.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw two columns on the board: “history” and “research interview”. In each, write what the talk is for.</p>\n<p>Under history: fit the problem into a medical category, then choose a treatment. The doctor steers, because time is short and a diagnosis is the goal.</p>\n<p>Under research interview: find how the person sees the matter, in their own words. The interviewer avoids steering the account into the interviewer’s categories, because that replaces the person’s account with the interviewer’s.</p>\n<p>Then act out the first exchange of this section’s second illustration with the resident as R1. Ask “Which knee? Is it worse in the morning?” and let them feel the conversation close. Run it again with “Tell me more about that” and wait.</p>\n<p>Finish with the three things a history does that an interview must not: diagnose, advise, correct. Many history skills carry over: listening, and noticing what is left out. The habit of steering is what has to be unlearned.</p>"
+  }
+ ]
+}

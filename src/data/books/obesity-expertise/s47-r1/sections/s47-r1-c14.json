@@ -1,0 +1,187 @@
+{
+ "format": 1,
+ "id": "s47-r1-c14",
+ "label": "14",
+ "title": "The frame sets the menu",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-02.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A frame’s diagnosis of cause carries an implied remedy, so each frame makes some measures sayable and leaves others outside the discussion. Koon and colleagues’ review reports this as a premise of framing research.</p>\n<p>The held measurement is the United States survey by Barry and colleagues (2009): 1,009 adults, late 2006 to early 2007. It asked about sixteen measures against obesity, besides the seven accounts of cause. Which accounts a <dfn data-g=\"358\">respondent</dfn> endorsed predicted which measures they supported, beyond what their background, health and politics predicted.</p>\n<p>The sinful-behaviour account went with less support for many of them. It went with support for one: letting health insurers charge higher premiums to policyholders who are <dfn data-g=\"291\">overweight</dfn> or do not exercise. Support for a tax on junk food went with the environment and industry accounts, not with the sinful-behaviour account. The food addiction account went with support for warning labels saying such foods may be addictive.</p>\n<p>These are associations measured once, in one country.</p>",
+   "refs": [
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    344
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A frame names a cause. A cause points to a remedy. So once a frame is in place, some measures sound sensible and others sound beside the point.</p>\n<ul>\n<li>If obesity is about each person’s choices, the sensible measures are advice, campaigns and asking people to change.</li>\n<li>If obesity is about the food around us, the sensible measures are about that food: what schools sell, what labels say, what costs more.</li>\n<li>If obesity is a disability or a disease, the sensible measures are treatment and protection from unfair treatment.</li>\n</ul>\n<p>One survey in the United States found a link of this kind (it tested a disability account, not a disease frame). What people believed caused obesity went with which measures they supported.</p>\n<p>So before you argue for a measure, ask which frame makes it sayable. Then ask which frame the person deciding is using. If the two do not match, your evidence may never be heard.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s47-r1-c14-model-share.png",
+   "alt": "Three bars rising from 0.08 (background and health) to 0.11 (plus politics) to 0.18 (plus beliefs about cause), on a scale where 0 is none and 1 is all.",
+   "w": 1137,
+   "h": 656,
+   "caption": "Barry and colleagues’ United States survey (2006-07; models run on 952 to 973 of the respondents, unweighted), measures aimed at helping or protecting people. The share of differences in support between respondents that the model accounted for: 0.08 with background and health alone, 0.11 with political attitudes added, 0.18 with the seven accounts of cause added. Most differences, 0.82 of them, stay unexplained."
+  },
+  {
+   "t": "figure",
+   "src": "s47-r1-c14-four-measures.png",
+   "alt": "Four bars falling from 68.3 (school-lunch fruit and vegetables) to 63.0 (warning labels), 28.4 (junk-food tax) and 24.6 (higher insurance premiums).",
+   "w": 1314,
+   "h": 656,
+   "caption": "Four of the sixteen measures in Barry and colleagues’ United States survey (2006-07, 1,009 adults), weighted share supporting strongly or somewhat. Free fruit, vegetables and low-fat milk at school lunches, even at 50 dollars a year more in tax: 68.3 per cent. Addictive-food warning labels: 63.0. A junk-food tax: 28.4, a measure that went with the environment and industry accounts. Higher insurance premiums for policyholders who are overweight or do not exercise: 24.6, the one measure the sinful-behaviour account went with."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with three Indian public texts, all from official sources. For each, find the frame and then the menu: the measures it makes easy to say.</p>\n<p>First, the Prime Minister’s Mann Ki Baat broadcast of 23 February 2025. Open https://www.pib.gov.in/PressReleasePage.aspx?PRID=2105618 and search for “10% less”. The call is “Decide that you will use 10% less oil every month.” Then search for “personal choice”:</p>\n<blockquote>\n<p>Friends, using less oil in food and dealing with obesity is not just a personal choice but also our responsibility towards the family.</p>\n</blockquote>\n<p>The frame widens personal choice to the family, but it stays with people’s own decisions. The menu follows: each household uses less oil, and each person challenges others. In the broadcast he says he “will request and challenge 10 people if they can reduce oil in their food by 10%”. Nothing in the passage asks what oil costs, how it is sold or what goes into packaged food.</p>\n<p>Second, FSSAI’s Eat Right India page. Open https://fssai.gov.in/eat-right-india. FSSAI describes “a large-scale effort to transform the country’s <dfn data-g=\"164\">food system</dfn>”. It lists “regulatory, capacity building, collaborative and empowerment approaches”. This is a food-system frame. The cause sits in the system that supplies food, so the menu includes regulation, the rules a regulator writes, alongside education.</p>\n<p>Third, the Press Information Bureau release of 3 September 2025 on the 56th GST Council meeting, at https://www.pib.gov.in/PressReleasePage.aspx?PRID=2163555. Search for “de-merit”. The Council proposed “a special de-merit rate of 40% for a select few goods and services”. Sugar-added drinks are among those goods. “De-merit” is a judgement in one word: the product is the problem, and a higher price is the remedy. The release’s opening line also lists “Health” among the rate change’s aims.</p>\n<p>Now hold the three side by side.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Text</th>\n<th>Where it puts the cause</th>\n<th>What its menu holds</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mann Ki Baat, 23 Feb 2025</td>\n<td>each person and family</td>\n<td>using less oil at home; challenging others</td>\n</tr>\n<tr>\n<td>Eat Right India page</td>\n<td>the food system</td>\n<td>regulation, capacity building, collaboration and “empowerment”</td>\n</tr>\n<tr>\n<td>GST release, 3 Sep 2025</td>\n<td>the product</td>\n<td>a higher tax on named goods</td>\n</tr>\n</tbody>\n</table>\n<p>Here is the trap. A colleague may quote the Prime Minister’s call in a note asking for a tax on sugary drinks. The call does not support that. Its frame is personal and family responsibility, and its menu is household action. It is evidence that obesity is on the national agenda, not that a tax is.</p>",
+   "numberRefs": [
+    379,
+    207
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Each text was read for its frame, not checked for its effect. A text’s menu is what it makes easy to say. That does not mean its author opposes everything else, and one government can speak in several frames in the same year.</p>\n<p>The table is this book’s reading of three short passages. A longer document from any of these bodies could carry other frames.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the evidence that a frame and a menu travel together in people’s heads. Open Barry and colleagues’ survey at https://pmc.ncbi.nlm.nih.gov/articles/PMC2879183/. It is the same United States survey as in the last section: 1,009 adults, late 2006 to early 2007.</p>\n<p>Respondents rated sixteen measures. Four of the support figures show the range. The weighted share supporting (strongly or somewhat):</p>\n<ul>\n<li>free fruit, vegetables and low-fat milk at school lunches, even at 50 dollars a year more in tax: 68.3 per cent;</li>\n<li>warning labels on foods high in sugar or fat, saying such foods may be addictive: 63.0 per cent;</li>\n<li>a tax on junk food like the taxes on cigarettes and alcohol: 28.4 per cent;</li>\n<li>higher health insurance premiums for policyholders who are overweight or do not exercise: 24.6 per cent.</li>\n</ul>\n<p>Now the link to frames. The authors asked which of the seven accounts predicted support for each measure. Read their results as a menu.</p>\n<ul>\n<li>Those who leaned on the food-environment account were more likely to support measures across the board. The industry account went with support for the helping-or-protecting measures and for the junk-food tax.</li>\n<li>Those who leaned on the sinful-behaviour account were less likely to support most measures. The exception was the higher insurance premiums, which they were more likely to support.</li>\n<li>The food-addiction account went with support for the addictive-food warning label.</li>\n<li>The disability account went with support for anti-discrimination protection and funding for treatment, and with opposition to the higher premiums.</li>\n</ul>\n<p>Look again at the junk-food tax. You might expect people who blame individuals to want to tax them. The survey found the opposite pattern. Support for the tax went with blaming the environment and industry. The authors suggest people saw the tax as hitting the industry, not the buyer. That is their reading, marked “suggesting” in the paper.</p>\n<p>How big is the link? Take the group of measures aimed at helping or protecting people: sidewalks required by zoning, addictive-food warning labels, free air time for health messages, a ban on high-fat, high-sugar advertising on children’s media, healthier cooking in restaurants, and anti-discrimination protection. For this group the authors built a statistical model of support. Building such a model is beyond this book; read its result as a share. With background and health alone, the model accounted for 0.08 of the differences in support from one respondent to the next, on a scale where 0 is none and 1 is all. Adding political attitudes took it to 0.11. Adding the seven accounts took it to 0.18. So, for these measures and in this sample, beliefs about cause added more than politics did. This was the group where beliefs mattered most.</p>\n<p>Now say what this does not show. It is one survey, at one time, in one country. It found that beliefs and support go together. It did not show that changing someone’s frame changes their support. The authors say an experiment is needed for that, and none is held here.</p>",
+   "numberRefs": [
+    352
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>An association measured once cannot tell you which came first. A person may support a tax and then find the environment account convincing, as easily as the other way round.</p>\n<p>Most of the differences in support remained unexplained even by the fullest model: 0.18 leaves 0.82. Beliefs about cause are one influence among many.</p>\n<p>The measures and the accounts were worded for Americans in 2006 and 2007. The models ran on 952 to 973 of the 1,009 respondents, and their results were not weighted to the national population. An Indian sample, other wording or another decade could give a different pattern.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Now use the rule on your own department’s three proposals, and on the people who would decide them.</p>\n<p>A higher tax on sugar-sweetened drinks is sayable in a food-environment or a commercial frame: the product is the problem. In a personal-choice frame it sounds like punishing the buyer. Now add the person who decides. Suppose your note reaches someone who holds the revenue frame from the last section. Summan and colleagues report a health finance official saying that tax policy “is supposed to raise revenue and that’s it”. In that frame a health aim does not belong in a tax at all. Your evidence on health will not be heard until the frame is met.</p>\n<p>A rule on what school canteens may sell is sayable only if the cause sits in what is sold. In a frame where the cause is what parents pack, the sensible remedy is advice to parents.</p>\n<p>A warning label on packaged foods high in sugar, salt or fat is sayable in several frames. In Barry’s survey, the addictive-food label went with the food-addiction account. On FSSAI’s page, regulation sits inside a food-system frame. The same measure can be argued from more than one frame, and you should choose the one your decider already holds.</p>\n<p>Notice the order of work this gives you. First the frame, then the measure, then the evidence. A later book in this series takes this further under the name of the Overton window. It is named here and taught there.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Matching a frame to a decider is a reading of words, not a forecast. A decider who holds the revenue frame may still accept a health tax for other reasons, such as revenue itself.</p>\n<p>The frame decides what can be said, not what is true or what works. A measure that fits the decider’s frame can still fail, and one that does not fit can still be right.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Before you argue for a measure, name the frame that makes it sayable. Then name the frame the decider holds.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“People who blame individuals will back a tax on junk food” is the wrong way round, on the one survey held. Support for a junk-food tax went with the environment and industry accounts, not with the sinful-behaviour account.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>In that survey, for measures aimed at helping or protecting people, adding beliefs about cause raised the share explained from 0.11 to 0.18. That was the largest gain of the three groups of measures. It is not evidence that changing the frame changes support.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never write “framing obesity as environmental raises support by X”. Say what was found: beliefs and support went together.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The Prime Minister’s 2025 call to use 10% less oil is framed as personal and family responsibility, and its menu is household action. Do not cite it as support for a tax or a regulation.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When you quote the GST release’s “special de-merit rate”, you take on its frame: the product is the problem. If you are writing to inform rather than to argue, call it by its number and its legal basis and let the reader judge.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>In Barry’s survey, the disability account went with support for anti-discrimination protection and treatment funding, and with opposition to higher insurance premiums. For other single measures it predicted nothing either way. The survey did not test a disease frame.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The menu rule tells you which measures a frame makes sayable. It does not tell you which measure works, or whether the body that must act will act.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>In one United States survey (2006-07, 1,009 adults), beliefs about what causes obesity went with which measures people supported. Support for a tax on junk food went with blaming the <dfn data-g=\"160\">food environment</dfn> and industry, not individuals. No experiment showing that a change of frame changes support is known to us.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, answer for Barry and colleagues’ survey. Which account of cause went with support for each of these?</p>\n<ol type=\"a\">\n<li>A junk-food tax.</li>\n<li>Higher insurance premiums for policyholders who are overweight or do not exercise.</li>\n<li>Warning labels saying foods may be addictive.</li>\n</ol>\n<p>Then give the survey’s country, years and sample size.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<ol type=\"a\">\n<li>The toxic food environment and industry manipulation accounts; not the sinful-behaviour account. (b) The sinful-behaviour account (and the disability account went with opposing it).</li>\n<li>The food-addiction account.</li>\n</ol>\n<p>United States; late 2006 to early 2007; 1,009 adults.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is the opening of a made-up memo from your department to the State health secretary, asking for a higher tax on sugar-sweetened drinks.</p>\n<blockquote>\n<p>Young people today lack the discipline to refuse sugary drinks. Parents have stopped supervising what their children consume. We therefore request a higher tax on these drinks.</p>\n</blockquote>\n<p>Name the frame of the first two sentences. Say why the request in the third sentence sits badly with it, and rewrite the opening so that frame and request match. Say what your rewrite still does not establish.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The first two sentences use a personal-choice frame. Cause: young people’s discipline and parents’ supervision. Judgement: young people and parents have fallen short. That frame’s menu is advice, campaigns and family effort.</p>\n<p>The request is a tax on a product. A tax makes sense in a frame where the product or its supply is part of the cause. Inside the memo’s own frame, the tax reads as punishing young people for a failing. In the one survey held, support for a junk-food tax went with the environment and industry accounts, not with personal blame. So the memo argues against its own request.</p>\n<p>A rewrite that matches: “Sugar-sweetened drinks are cheap, sold widely near schools and heavily advertised. Their price can be changed through the tax on them. We therefore ask the Department to support a higher tax on these drinks.” The facts in the first sentence would each need a source before the memo goes out.</p>\n<p>The rewrite still does not establish two things. It does not show that the tax would reduce what young people drink. It does not show that the person deciding will accept a health frame for a tax. The first needs evidence on effects. The second needs you to find out which frame the decider holds; a revenue frame would need a different opening again.</p>\n<p>The first two sentences also put the cause in young people’s character. This book does not write notes that turn on anyone’s willpower, whatever the request.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A health secretary asks for one page: “Why does it matter how we describe obesity, if the data are the same?” Answer first, no methods section.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer: the way obesity is described decides which measures look sensible, before any data are weighed.</p>\n<p>Three descriptions, three lists. If obesity is each person’s choice, the list is advice and campaigns, and taxes look like punishing the buyer. If it is the food around us, the list includes school food rules, labels and taxes on products. If it is a disability or a disease, the list is treatment and protection from discrimination; the survey below tested the disability account only.</p>\n<p>The evidence that this matters to people: one large United States survey, 2006-07, 1,009 adults. What people believed caused obesity went with which measures they backed. Support for a junk-food tax went with blaming the food environment and industry, not with blaming individuals. It is one survey, and it shows a link, not that changing the description changes minds.</p>\n<p>What it means for us. When the department brings you a measure, ask which description it rests on. Then ask whether the people who must agree, in Finance for instance, see the problem the same way.</p>"
+  }
+ ]
+}

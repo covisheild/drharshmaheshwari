@@ -1,0 +1,175 @@
+{
+ "format": 1,
+ "id": "b0-r0-c20",
+ "label": "C6",
+ "title": "Recognising shapes: linear, exponential, saturating",
+ "part": "C",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A relationship is linear when equal steps in the input add the same amount to the output every time.</p>\n<p>A relationship is <dfn data-g=\"64\">exponential</dfn> when equal steps in the input multiply the output by the same factor every time.</p>\n<p>A relationship is <dfn data-g=\"164\">saturating</dfn> when the output rises while the differences between successive outputs shrink towards zero, approaching a value it does not pass. That value is the ceiling, and the output may approach it without ever reaching it.</p>\n<p>The tests are arithmetic, carried out on values taken at equal steps. Constant differences between successive outputs mean linear. Constant ratios mean exponential.</p>\n<p>Differences that shrink while the output climbs do not on their own mean saturating, because an output can climb for ever by ever smaller amounts and approach no value at all. What settles it is a <dfn data-g=\"155\">ratio</dfn> taken on the differences themselves rather than on the outputs. Divide each difference by the difference before it. Three cases follow.</p>\n<p>Where that ratio holds constant below one, each difference is a fixed share of the one before. The ceiling can then be computed. The gap still left above any value is the next difference divided by one minus the ratio.</p>\n<p>Where the ratios vary but stay at or below some number under one, a ceiling exists. The differences still sum to a finite amount. The same division, using that number, gives the most the gap can be. It does not say exactly where the ceiling is.</p>\n<p>Where the ratios creep up towards one, the test shows no ceiling. The differences may add up without limit, as a <dfn data-g=\"107\">logarithm</dfn>’s steps do, and the shape has not been named.</p>\n<p>Each case reads the steps observed. It holds beyond them only if the ratios keep behaving the same way.</p>",
+   "refs": [
+    8
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Three shapes turn up over and over.</p>\n<p><strong>Linear. Equal steps add.</strong> Take one step along the bottom and the value goes up by the same amount. Take another step and it goes up by that same amount again. Drawn out, it is a straight line.</p>\n<p><strong>Exponential. Equal steps multiply.</strong> Take one step along the bottom and the value is multiplied by the same number. Take another step and it is multiplied by that number again. Drawn out, it starts off looking lazy and then, if it is rising, leaves everything else behind.</p>\n<p><strong>Saturating. It rises, then flattens.</strong> It climbs quickly at first, then less, then hardly at all. It is heading for a level and it flattens against it. That level is called the ceiling.</p>\n<p>Subtract each value from the next one. Are the differences all the same? Then it is linear.</p>\n<p>Divide each value by the one before it. Are the ratios all the same? Then it is exponential.</p>\n<p>A ratio below one is still exponential, and the values then fall towards zero. The test for saturating, which comes next, applies only to values that rise.</p>\n<p>Do the differences keep shrinking while the values keep climbing? That is not yet enough to say saturating. A quantity can climb for ever by ever smaller amounts and head for no level at all.</p>\n<p>A logarithm does exactly that. Take the multiplying ruler from the section on logarithms. Each number sits a little further along it than the one before, and each of those steps is shorter than the step before it. The ruler goes on for ever. Nothing on it is a level to flatten against.</p>\n<p>So run one more division, and this time divide the differences rather than the values. Take each difference and divide it by the difference before it. Then look at what those ratios do.</p>\n<p>Do they hold at the same number, below one? Then each difference is a fixed share of the one before it. The differences add up to a finite amount, and you can work out where the ceiling is. That is saturating.</p>\n<p>Do they wobble, but never go above some number below one, such as 0.5? Then the differences still add up to a finite amount, and there is a ceiling. You can say the most it can lie above where you stand. You cannot say exactly where it is.</p>\n<p>Do they creep up towards one, say 0.5, then 0.75, then 0.83? Then the test has found you no ceiling. The steps may be shrinking the way a logarithm’s do, heading nowhere. Do not go looking for a ceiling on the strength of the shrinking alone.</p>\n<p>One more thing, and it is the one people get caught by. Look at the side axis before you name anything. Some side axes multiply by ten at every step, which is the ruler you met in the section on logarithms. On one of those, an exponential comes out as a straight line. So a straight line on that kind of axis means multiplying, not adding.</p>\n<p>And a warning about how much you need to see. Three points do not have a shape. Any three rising points can be drawn as any of the three shapes here. You need enough values to see what the steps are doing.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "c6-three-shapes.png",
+   "alt": "Three curves from a common starting point. One rises as a straight line, one curves upward ever more steeply, and one rises quickly then flattens toward a ceiling.",
+   "w": 1353,
+   "h": 650,
+   "caption": "The three shapes on one pair of axes, which is the only way the difference between them can be practised. All three start at the same place; by the last of the six readings they are nowhere near each other."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Start with three numbers and a wrong answer, because naming a shape too early is the mistake this section exists to stop.</p>\n<p>Somebody shows you three values, taken one step apart: 10, 30, 42. They call the rise exponential and say it is roughly doubling.</p>\n<p>Divide each value by the one before it.</p>\n<div class=\"working\">\n<p>30 divided by 10 = 3<br />\n42 divided by 30 = 1.4</p>\n</div>\n<p>The ratios are not the same, so nothing here is multiplying by a fixed factor. Exponential is the wrong word.</p>\n<p>Now carry on to six values, and put two other shapes beside them for comparison.</p>\n<table style=\"width:60%;\">\n\n<thead>\n<tr>\n<th>step</th>\n<th>linear</th>\n<th>exponential</th>\n<th>saturating</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>10</td>\n<td>10</td>\n<td>10</td>\n</tr>\n<tr>\n<td>1</td>\n<td>20</td>\n<td>15</td>\n<td>30</td>\n</tr>\n<tr>\n<td>2</td>\n<td>30</td>\n<td>22.5</td>\n<td>42</td>\n</tr>\n<tr>\n<td>3</td>\n<td>40</td>\n<td>33.8</td>\n<td>49.2</td>\n</tr>\n<tr>\n<td>4</td>\n<td>50</td>\n<td>50.6</td>\n<td>53.5</td>\n</tr>\n<tr>\n<td>5</td>\n<td>60</td>\n<td>75.9</td>\n<td>56.1</td>\n</tr>\n</tbody>\n</table>\n<p>Work down each column with the two tests.</p>\n<p>Take the first column by subtraction.</p>\n<div class=\"working\">\n<p>20 minus 10 = 10<br />\n30 minus 20 = 10<br />\n60 minus 50 = 10</p>\n</div>\n<p>The same amount is added at every step, so the first column is linear.</p>\n<p>Take the second column by division.</p>\n<div class=\"working\">\n<p>15 divided by 10 = 1.5<br />\n22.5 divided by 15 = 1.5<br />\n75.9 divided by 50.6 = 1.5</p>\n</div>\n<p>The same factor multiplies at every step, so the second column is exponential.</p>\n<p>Take the third column by subtraction, and watch what the differences do.</p>\n<div class=\"working\">\n<p>30 minus 10 = 20<br />\n42 minus 30 = 12<br />\n49.2 minus 42 = 7.2<br />\n53.5 minus 49.2 = 4.3<br />\n56.1 minus 53.5 = 2.6</p>\n</div>\n<p>The steps shrink while the values keep climbing. Now divide each of those differences by the one before it, which is the test that says whether the shrinking is heading anywhere.</p>\n<div class=\"working\">\n<p>12 divided by 20 = 0.6<br />\n7.2 divided by 12 = 0.6</p>\n</div>\n<p>The ratio holds at about 0.6 all the way down the column, and 0.6 is below one. So if the ratio keeps holding, the shrinking differences add up to something finite, and a ceiling exists. Now find where it is.</p>\n<p>Call the distance still left between a value and the ceiling the gap. Before the first step, the gap is the whole of what the differences will ever add up to.</p>\n<p>Now look at the differences after the first one: 12, then 7.2, and so on. Each is 0.6 of the one before it in the full list. So together they add up to 0.6 of the full list’s total. That means the first step leaves 0.6 of the gap still to go. It has closed the other 0.4.</p>\n<p>The first step closed 20. So 20 is 0.4 of the gap, and the gap is 20 divided by 0.4. Add the gap to the starting value of 10.</p>\n<div class=\"working\">\n<p>1 minus 0.6 = 0.4<br />\n20 divided by 0.4 = 50<br />\n10 plus 50 = 60</p>\n</div>\n<p>If the ratio keeps holding, the ceiling is 60. Check it from a later value. At 42 the next difference is 7.2.</p>\n<div class=\"working\">\n<p>7.2 divided by 0.4 = 18<br />\n42 plus 18 = 60</p>\n</div>\n<p>The same ceiling. So the rule, in words: divide the next difference by one minus the ratio, and add the answer to the value you are standing on.</p>\n<p>Now look at step one and step five, because that is where the trap is. At step one the exponential column is the lowest of the three. At step five it is the highest, and it has passed the ceiling the saturating column will never reach.</p>\n<p>That is why you get more values before you name anything.</p>\n<p>A rising exponential eventually passes any linear.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These three shapes are a starting kit and not a list of everything.</p>\n<p>The two tests need equal steps along the bottom. Values taken at uneven intervals give differences and ratios that mean nothing. A table that does not say its step size cannot be tested at all.</p>\n<p><dfn data-g=\"160\">Rounding</dfn> hides small changes. A ratio that reads 1.5 three times running may be drifting in the digits you were not shown.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Run two tests on any set of values taken at equal steps. Subtract each from the next for a constant difference, and divide each by the one before for a constant ratio.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Shrinking differences do not on their own mean a ceiling. A quantity can climb for ever by ever smaller amounts, as a logarithm does. So run one more test before you say saturating. Divide each difference by the difference before it. A ratio that holds below one lets you work out the ceiling. Ratios that vary but stay at or below some number under one show that a ceiling exists, and not exactly where. Ratios creeping up towards one show you no ceiling, so say you have none to quote rather than estimate one.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Exponential does not mean fast. It means each equal step multiplies by the same factor.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Three points have no shape. Ask for more values before you name anything.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Read the side axis before you call a line linear. On an axis where each step multiplies by ten, a straight line is an exponential.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Where a curve has flattened, a further equal step in the input buys much less than the step before it did.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Naming a shape names a pattern and never a mechanism.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a journalist uses the word exponential, ask what the values were at equal times and whether the ratio held.</p>",
+     "tag": "move",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A figure shows one curve, with time along the bottom and a count up the side. The curve rises steeply for the first part, then bends over and runs nearly flat for the rest.</p>\n<p>Say which of the three shapes it is. Say what the flat part means in the arithmetic. Then say what the figure does not tell you.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>It looks saturating. The steps up are getting smaller while the count is still climbing. The bend alone does not settle it, because a curve that climbs for ever by ever smaller steps bends the same way. Read values off the curve at equal steps along the bottom, and subtract each from the next. Then divide each difference by the one before it. Ratios that hold at, or stay under, some number below one make it saturating. Ratios creeping up towards one leave the shape unnamed.</p>\n<p>What the flat part means in the arithmetic: each equal step along the bottom is adding less than the step before it added. The differences are shrinking towards zero. The count is not falling, and saying that it is falling is the commonest misreading of this shape.</p>\n<p>What the figure does not tell you. It does not tell you the ceiling, unless the curve has been carried on far enough for the flattening to settle. It does not tell you why anything flattened, because a shape carries no mechanism. And it does not tell you that the early part was exponential, which is a claim you would have to test by dividing successive values.</p>\n<p>One thing to check before saying any of this out loud: whether the side axis is an ordinary one or one where each step multiplies. The answer above assumes an ordinary axis, and the figure has to say which it is.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist has three minutes and no jargon. They have a chart and a press line saying the numbers are rising exponentially. They ask you whether that is right.</p>\n<p>Say what you would tell them, and give them one quotable sentence.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Three minutes, no jargon, and they need something they can print.</p>\n<p>Start with what the word means, in one sentence they can use. Exponential means every equal step multiplies by the same amount. It is a claim about the ratio between one month and the next. It is not a claim about the rise looking dramatic.</p>\n<p>Then show them the test with their own numbers. Take the values a month apart, and divide each by the one before. If those ratios are about the same, the word holds. If they are falling, the rise is slowing, and there is a different and equally printable story in that.</p>\n<p>Then give them the careful statement. Say that the numbers rose, and say by how much. Then say whether the word exponential fits, and give the ratios as the reason. If you only have three points, say that three points cannot settle it, because they cannot.</p>\n<p>The quotable sentence: “It is rising, and the rise is slowing down. Each month adds less than the month before, which is the opposite of exponential.”</p>\n<p>What not to do: agree that it is exponential because the line looks steep. Steepness is a choice made by whoever drew the axis, and you told them that last time.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Each of these is a set of values taken one step apart. Name the shape of each where the tests allow one, and say which test told you.</p>\n<table style=\"width:44%;\">\n\n<tbody>\n<tr>\n<td>A</td>\n<td>4</td>\n<td>8</td>\n<td>12</td>\n<td>16</td>\n<td>20</td>\n</tr>\n<tr>\n<td>B</td>\n<td>4</td>\n<td>8</td>\n<td>16</td>\n<td>32</td>\n<td>64</td>\n</tr>\n<tr>\n<td>C</td>\n<td>4</td>\n<td>12</td>\n<td>16</td>\n<td>19</td>\n<td>21.5</td>\n</tr>\n</tbody>\n</table>",
+   "level": 1,
+   "answer": "<p>A is linear. Subtract each from the next and the difference is the same every time.</p>\n<div class=\"working\">\n<p>8 minus 4 = 4<br />\n12 minus 8 = 4<br />\n20 minus 16 = 4</p>\n</div>\n<p>B is exponential. The differences are not equal, so divide instead.</p>\n<div class=\"working\">\n<p>8 divided by 4 = 2<br />\n16 divided by 8 = 2<br />\n64 divided by 32 = 2</p>\n</div>\n<p>The same factor every step.</p>\n<p>C is the one to stop at. Subtract, and the differences are not the same, so it is not linear.</p>\n<div class=\"working\">\n<p>12 minus 4 = 8<br />\n16 minus 12 = 4<br />\n19 minus 16 = 3<br />\n21.5 minus 19 = 2.5</p>\n</div>\n<p>Divide, and the ratios are not the same either, so it is not exponential.</p>\n<div class=\"working\">\n<p>12 divided by 4 = 3<br />\n21.5 divided by 19 = 1.13</p>\n</div>\n<p>The differences shrink while the values climb. So divide each difference by the one before it.</p>\n<div class=\"working\">\n<p>4 divided by 8 = 0.5<br />\n3 divided by 4 = 0.75<br />\n2.5 divided by 3 = 0.83</p>\n</div>\n<p>Those ratios are creeping up towards one. So the test shows no ceiling, and there is no ceiling to quote. The tests name no shape for C. It may be flattening. These five values do not show that it is, and saying so is the answer.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Each of these is a set of values taken one step apart. Name the shape of each.</p>\n<table style=\"width:51%;\">\n\n<tbody>\n<tr>\n<td>D</td>\n<td>100</td>\n<td>50</td>\n<td>25</td>\n<td>12.5</td>\n<td>6.25</td>\n</tr>\n<tr>\n<td>E</td>\n<td>100</td>\n<td>130</td>\n<td>160</td>\n<td>190</td>\n<td>220</td>\n</tr>\n<tr>\n<td>F</td>\n<td>2</td>\n<td>6</td>\n<td>18</td>\n<td>54</td>\n<td>162</td>\n</tr>\n</tbody>\n</table>",
+   "level": 2,
+   "answer": "<p>D is exponential. Divide each value by the one before it.</p>\n<div class=\"working\">\n<p>50 divided by 100 = 0.5<br />\n25 divided by 50 = 0.5<br />\n6.25 divided by 12.5 = 0.5</p>\n</div>\n<p>The same factor every step, and the factor is less than one, so the values fall. Exponential describes the multiplying, not the direction.</p>\n<p>E is linear. Subtract.</p>\n<div class=\"working\">\n<p>130 minus 100 = 30<br />\n160 minus 130 = 30<br />\n220 minus 190 = 30</p>\n</div>\n<p>F is exponential. Divide.</p>\n<div class=\"working\">\n<p>6 divided by 2 = 3<br />\n18 divided by 6 = 3<br />\n162 divided by 54 = 3</p>\n</div>\n<p>D and F are the pair to look at twice. One falls and one climbs steeply, and both are the same shape, because in both cases each step multiplies by a fixed number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Start at 8 and write five values for each of these rules, taking one step at a time.</p>\n<div class=\"working\">\n<p>add 6 at every step<br />\nmultiply by 3 at every step</p>\n</div>\n<p>Then say which of the two is which shape.</p>",
+   "level": 3,
+   "answer": "<p>The first rule, adding 6.</p>\n<div class=\"working\">\n<p>8 plus 6 = 14<br />\n14 plus 6 = 20<br />\n20 plus 6 = 26<br />\n26 plus 6 = 32</p>\n</div>\n<p>So 8, 14, 20, 26, 32. Equal steps add the same amount, so this is linear.</p>\n<p>The second rule, multiplying by 3.</p>\n<div class=\"working\">\n<p>8 times 3 = 24<br />\n24 times 3 = 72<br />\n72 times 3 = 216<br />\n216 times 3 = 648</p>\n</div>\n<p>So 8, 24, 72, 216, 648. Equal steps multiply by the same factor, so this is exponential.</p>\n<p>Look at the two end values. The adding rule reached 32 and the multiplying rule reached 648, from the same start and in the same four steps.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Under section 3(1) of the National Food Security Act, 2013, a person in a priority household is entitled to five kilograms of foodgrains a month.</p>\n<p>Write the total grain a household of four is counted for after one, two, three and four months. Name the shape. Give the <dfn data-g=\"170\">slope</dfn> of the line with its unit. Then say what would have to be true for this quantity to be exponential.</p>",
+   "level": 4,
+   "answer": "<p>Work out one month first.</p>\n<div class=\"working\">\n<p>5 times 4 = 20</p>\n</div>\n<p>Twenty kilograms a month. Now the running totals.</p>\n<div class=\"working\">\n<p>20 times 1 = 20<br />\n20 times 2 = 40<br />\n20 times 3 = 60<br />\n20 times 4 = 80</p>\n</div>\n<p>So 20, 40, 60 and 80 kilograms.</p>\n<p>Name the shape by subtracting.</p>\n<div class=\"working\">\n<p>40 minus 20 = 20<br />\n60 minus 40 = 20<br />\n80 minus 60 = 20</p>\n</div>\n<p>Equal steps add the same amount, so it is linear. Drawn with months along the bottom and kilograms up the side, the slope is 20 kilograms per month.</p>\n<p>What would make it exponential: the monthly amount would have to multiply rather than repeat. The second month would have to bring more grain than the first, in <dfn data-g=\"147\">proportion</dfn> to the total already received. Nothing in section 3(1) does that, because the entitlement is a fixed amount for each person for each month.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A quantity is measured at equal steps and comes out as 20, 44, 56.0, 62.0, 65.0, 66.5.</p>\n<p>Name the shape, show the working that names it, and estimate the ceiling it is heading for.</p>",
+   "level": 5,
+   "answer": "<p>Subtract each value from the next.</p>\n<div class=\"working\">\n<p>44 minus 20 = 24<br />\n56.0 minus 44 = 12<br />\n62.0 minus 56.0 = 6<br />\n65.0 minus 62.0 = 3<br />\n66.5 minus 65.0 = 1.5</p>\n</div>\n<p>The values climb and the steps shrink. That is not yet enough, so divide each difference by the one before it.</p>\n<div class=\"working\">\n<p>12 divided by 24 = 0.5<br />\n6 divided by 12 = 0.5<br />\n3 divided by 6 = 0.5<br />\n1.5 divided by 3 = 0.5</p>\n</div>\n<p>The ratio holds at 0.5, which is below one, so it is saturating.</p>\n<p>Now the ceiling. Divide the first difference by one minus the ratio, and add the answer to the starting value.</p>\n<div class=\"working\">\n<p>1 minus 0.5 = 0.5<br />\n24 divided by 0.5 = 48<br />\n20 plus 48 = 68</p>\n</div>\n<p>Check it from a later value. At 65.0 the next difference is 1.5.</p>\n<div class=\"working\">\n<p>1.5 divided by 0.5 = 3<br />\n65.0 plus 3 = 68</p>\n</div>\n<p>So the ceiling is about 68. Say “about”, because you have worked it out from the pattern of six values and not from anything that told you what the ceiling was.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Two quantities are recorded at equal steps.</p>\n<table style=\"width:43%;\">\n\n<tbody>\n<tr>\n<td>G</td>\n<td>5</td>\n<td>35</td>\n<td>65</td>\n<td>95</td>\n<td>125</td>\n</tr>\n<tr>\n<td>H</td>\n<td>5</td>\n<td>10</td>\n<td>20</td>\n<td>40</td>\n<td>80</td>\n</tr>\n</tbody>\n</table>\n<p>Say which of the two will be the larger at step 12, and show the working that decides it.</p>",
+   "level": 6,
+   "answer": "<p>Name the shapes first, because the shapes decide the answer.</p>\n<p>G rises by the same amount each step.</p>\n<div class=\"working\">\n<p>35 minus 5 = 30<br />\n65 minus 35 = 30</p>\n</div>\n<p>So G is linear, adding 30 a step.</p>\n<p>H multiplies by the same factor each step.</p>\n<div class=\"working\">\n<p>10 divided by 5 = 2<br />\n20 divided by 10 = 2</p>\n</div>\n<p>So H is exponential, doubling each step.</p>\n<p>Now run both to step 12. G has taken 12 steps of 30 from a start of 5.</p>\n<div class=\"working\">\n<p>30 times 12 = 360<br />\n360 plus 5 = 365</p>\n</div>\n<p>H has doubled 12 times from a start of 5. Doubling twelve times multiplies by 2<sup>12</sup>.</p>\n<div class=\"working\">\n<p>2<sup>12</sup> = 4096<br />\n5 times 4096 = 20480</p>\n</div>\n<p>Twenty thousand four hundred and eighty, against 365. H is far larger.</p>\n<p>Notice that H was the smaller of the two at steps two, three and four. A rising exponential can start behind a linear and still pass it. Where it passes tells you nothing about how far ahead it ends up.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the values at equal steps are 10, 30, 42, 49.2, 53.5, 56.1<br />\nthe first step rose by 20, which is a big jump<br />\nthe curve is clearly rising fast<br />\na curve that rises fast is exponential<br />\nso the quantity is growing exponentially and will keep doing so</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the fourth. Rising fast is not what exponential means, and the test that settles it was never run.</p>\n<p>Divide each value by the one before it.</p>\n<div class=\"working\">\n<p>30 divided by 10 = 3<br />\n42 divided by 30 = 1.4<br />\n49.2 divided by 42 = 1.17</p>\n</div>\n<p>The ratios are falling, not holding. So nothing here is multiplying by a fixed factor.</p>\n<p>Now subtract instead.</p>\n<div class=\"working\">\n<p>30 minus 10 = 20<br />\n42 minus 30 = 12<br />\n49.2 minus 42 = 7.2</p>\n</div>\n<p>The steps are shrinking while the values climb. That is not yet enough, so divide each difference by the one before it.</p>\n<div class=\"working\">\n<p>12 divided by 20 = 0.6<br />\n7.2 divided by 12 = 0.6</p>\n</div>\n<p>The ratio holds at 0.6, below one. If it keeps holding, this is saturating, which is the opposite of the shape claimed. The last line is the damaging part. This curve is flattening rather than about to take off.</p>\n<p>Why it looks reasonable: the first difference really is 20, and the first ratio really is 3. Read only the start of a saturating curve and it looks like something taking off. The answer stopped at the first step, and the first step is the one place where the two shapes look alike.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the figure has a side axis marked 10, 100, 1,000, 10,000<br />\nthe points lie on a straight line across the figure<br />\na straight line is the picture of a linear relationship<br />\nso the quantity is rising by a fixed amount each month<br />\nthe rise from the first month to the last is steady and needs no further comment</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step that broke is the third. The line is straight, and the axis is not an ordinary one.</p>\n<p>Read the side axis again. Each label is ten times the one before it, so this is the multiplying ruler from the section on logarithms.</p>\n<div class=\"working\">\n<p>100 divided by 10 = 10<br />\n1,000 divided by 100 = 10</p>\n</div>\n<p>On an axis like that, equal distances up the page mean equal multiplications rather than equal additions. A straight line therefore means a constant ratio, which is exponential.</p>\n<p>Read the values off the axis instead of the line, and the difference is plain. If the line crosses 10 at the first month and 10,000 at the fourth, the quantity has multiplied by ten a month.</p>\n<div class=\"working\">\n<p>10 times 10 times 10 times 10 = 10000</p>\n</div>\n<p>A thousandfold rise over three months is the opposite of needing no further comment.</p>\n<p>Why it looks reasonable: on an ordinary axis, a straight line really is a linear relationship. That is the first thing anybody learns about graphs. The axis labels are printed right there, and reading the line is quicker than reading them.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A line in a meeting note says this.</p>\n<blockquote>\n<p>Registrations are growing exponentially. We had 200 in the first month, 400 in the second and 600 in the third.</p>\n</blockquote>\n<p>The programme and all three figures are made up for this problem. No real programme is being described.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the differences and the ratios between the three values, because those are what the word exponential is a claim about.</p>\n<p>Differences first.</p>\n<div class=\"working\">\n<p>400 minus 200 = 200<br />\n600 minus 400 = 200</p>\n</div>\n<p>The same amount is added each month.</p>\n<p>Now ratios.</p>\n<div class=\"working\">\n<p>400 divided by 200 = 2<br />\n600 divided by 400 = 1.5</p>\n</div>\n<p>Two, then 1.5. The ratio is falling, so this is not multiplying by a fixed factor. On these three values it is linear and not exponential, and the right sentence is that registrations rose by 200 a month.</p>\n<p>What this does not establish. Three values cannot settle a shape, so this does not establish that the fourth month will add 200 either. It does not establish that the note is wrong about anything except the word, since 200 a month may be exactly what was expected. And it says nothing about whether registrations measure anything worth measuring. Naming a shape is not the same as knowing what is being counted.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A district officer writes this in a review note.</p>\n<blockquote>\n<p>The programme is running out of steam. Coverage went up 12 points in the first year, then 6, then 3, then 1.5. The gains are collapsing and we should move the money elsewhere.</p>\n</blockquote>\n<p>The programme and all four figures are made up for this problem. No real programme is being described.</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the running total of coverage, and what the shrinking steps are heading towards.</p>\n<p>Add the gains up as they come.</p>\n<div class=\"working\">\n<p>12 plus 6 = 18<br />\n18 plus 3 = 21<br />\n21 plus 1.5 = 22.5</p>\n</div>\n<p>Coverage has risen by 22.5 points in four years, and it is still rising.</p>\n<p>Now look at the steps themselves.</p>\n<div class=\"working\">\n<p>6 divided by 12 = 0.5<br />\n3 divided by 6 = 0.5<br />\n1.5 divided by 3 = 0.5</p>\n</div>\n<p>Each year’s gain is half the year before. That is the signature of a saturating curve, not of a programme failing. The steps shrink because there is less room left to cover, which is what running towards a ceiling looks like from inside.</p>\n<p>Work out roughly where it is heading. Divide the first gain by one minus the ratio.</p>\n<div class=\"working\">\n<p>1 minus 0.5 = 0.5<br />\n12 divided by 0.5 = 24</p>\n</div>\n<p>About 24 points above where it started, which is only 1.5 above where it stands now.</p>\n<p>What this does not establish. It does not establish that the programme is working, because coverage could have risen for reasons that have nothing to do with it. It does not establish that 24 points is the true ceiling, since four values and an assumed halving are a thin basis for that. And it does not settle the money question at all. A saturating curve tells you that the next rupee buys less than the last one did. Whether that rupee is better spent elsewhere depends on what it would buy there. That is nowhere in these numbers.</p>"
+  }
+ ]
+}

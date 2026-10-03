@@ -1,0 +1,203 @@
+{
+ "format": 1,
+ "id": "s02-r1-c10",
+ "label": "10",
+ "title": "Vectors as data rows, and the weighted sum",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"279\">vector</dfn> is an ordered list of numbers, called its entries. Its length is the number of entries it has. The order is part of the vector: (2, 5, 1) and (5, 2, 1) are different vectors.</p>\n<p>One row of a data table is a vector, with one entry for each column, in the order of the columns.</p>\n<p>Two vectors of the same length are added entry by entry. A vector is multiplied by a single number by multiplying every entry by that number. A single number used this way is called a <dfn data-g=\"236\">scalar</dfn>. Vectors of different lengths cannot be added.</p>\n<p>A <dfn data-g=\"281\">weighted sum</dfn> of vectors v and w, with numbers c and d, is the vector cv + dw. The numbers c and d are its weights.</p>\n<p>The <dfn data-g=\"74\">dot product</dfn> of two vectors of the same length, written a · b and said “a dot b”, is a single number. Multiply the entries in matching positions, then add the products. Two vectors of different lengths have no dot product. The dot product is a weighted sum of the entries of one vector, with the entries of the other as the weights.</p>",
+   "refs": [
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Write down a food’s grams of <dfn data-g=\"213\">protein</dfn>, fat and carbohydrate, always in that order. That list is a vector. The list (10, 30, 50) means 10 g of protein, 30 g of fat and 50 g of carbohydrate.</p>\n<p>A gram of protein gives about 4 kcal. A gram of fat gives about 9, and a gram of carbohydrate about 4. So multiply each count of grams by its factor, and add.</p>\n<div class=\"working\">\n<p>4 times 10 plus 9 times 30 plus 4 times 50 = 510</p>\n</div>\n<p>That multiply-and-add is called the dot product of the factor list (4, 9, 4) with the gram list (10, 30, 50). The answer is 510 kcal.</p>\n<p>Each factor is a weight. “Weight” here means a multiplier, not body weight.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c10-energy-parts.png",
+   "alt": "Three bars starting at zero: protein 12 kcal, fat 81 kcal, carbohydrate 60 kcal. The fat bar is the tallest.",
+   "w": 1357,
+   "h": 653,
+   "caption": "Where the 153 kcal in a 30 g serving of the made-up snack come from. Each bar is one term of the dot product (4, 9, 4) · (3, 9, 15): 12 kcal from protein, 81 from fat and 60 from carbohydrate."
+  },
+  {
+   "t": "figure",
+   "src": "s02-r1-c10-meal-sum.png",
+   "alt": "Grouped bars for protein, fat and carbohydrate. Snack serving 12, 81 and 60 kcal. Biscuit 8, 45 and 80 kcal. Meal 20, 126 and 140 kcal, each the sum of the two bars beside it.",
+   "w": 1357,
+   "h": 653,
+   "caption": "The meal’s energy, nutrient by nutrient. Each bar for the meal (5, 14, 35) is the snack serving’s plus the biscuit’s: 20 = 12 + 8, 126 = 81 + 45 and 140 = 60 + 80. So the meal’s 286 kcal is 153 plus 133, whichever way it is worked out."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>A clinic records four things about each patient, always in the same order. They are age in years, body weight in kg, height in cm and waist in cm. One patient’s row, made up for this example, is a vector.</p>\n<div class=\"working\">\n<p>x = (40, 68, 162, 88)</p>\n</div>\n<p>Add a second patient’s row to this one, and you get a list of four numbers that describes nobody. Multiply this row by 2 and you get a person of 80 years and 136 kg, which is not a doubled version of anyone.</p>\n<p>One operation on these rows does mean something. Take the same patient a year later, with the new row y = (41, 65, 162, 84), also made up. Subtract entry by entry.</p>\n<div class=\"working\">\n<p>41 minus 40 = 1<br />\n65 minus 68 = -3<br />\n162 minus 162 = 0<br />\n84 minus 88 = -4</p>\n</div>\n<p>The change vector y − x is (1, −3, 0, −4).</p>\n<p>A packaged snack’s label gives its grams per 100 g. Take one made up for this example.</p>\n<div class=\"working\">\n<p>g = (10, 30, 50)</p>\n</div>\n<p>The entries are grams of protein, fat and carbohydrate in 100 g of the snack. A serving is 30 g, which is 0.3 of 100 g. Scale the vector by 0.3.</p>\n<div class=\"working\">\n<p>0.3 times 10 = 3<br />\n0.3 times 30 = 9<br />\n0.3 times 50 = 15</p>\n</div>\n<p>A serving holds (3, 9, 15): 3 g of protein, 9 g of fat and 15 g of carbohydrate.</p>\n<p>Now the energy. The Food and Agriculture Organization (FAO) of the United Nations gives the <dfn data-g=\"20\">Atwater general factors</dfn>. They are 4.0 kcal/g for protein, 9.0 for fat and 4.0 for carbohydrate. Write them as a vector in the same order as the grams.</p>\n<div class=\"working\">\n<p>a = (4, 9, 4)</p>\n</div>\n<p>The energy in a serving is a · (3, 9, 15). Multiply matching entries and add.</p>\n<div class=\"working\">\n<p>4 times 3 = 12<br />\n9 times 9 = 81<br />\n4 times 15 = 60<br />\n12 plus 81 plus 60 = 153</p>\n</div>\n<p>A serving gives 153 kcal. The energy in the whole 100 g is a · g.</p>\n<div class=\"working\">\n<p>4 times 10 plus 9 times 30 plus 4 times 50 = 510<br />\n0.3 times 510 = 153</p>\n</div>\n<p>Scaling the grams by 0.3 scaled the energy by 0.3. Every product in the dot product was scaled by 0.3, so their sum was too.</p>\n<p>Adding works the same way. A second item eaten with the snack, a biscuit, gives (2, 5, 20) per serving, also made up. The meal is the sum of the two vectors.</p>\n<div class=\"working\">\n<p>3 plus 2 = 5<br />\n9 plus 5 = 14<br />\n15 plus 20 = 35</p>\n</div>\n<p>The meal holds (5, 14, 35). Its energy can be found two ways, and they must agree.</p>\n<div class=\"working\">\n<p>4 times 5 plus 9 times 14 plus 4 times 35 = 286<br />\n4 times 2 plus 9 times 5 plus 4 times 20 = 133<br />\n153 plus 133 = 286</p>\n</div>\n<p>Dot the meal’s vector once, or dot each item and add the energies. Both give 286 kcal.</p>\n<p>Now read the weights. Add 1 g of fat to the serving and hold the other two entries fixed. Watch what the total does.</p>\n<div class=\"working\">\n<p>4 times 3 plus 9 times 10 plus 4 times 15 = 162<br />\n162 minus 153 = 9</p>\n</div>\n<p>You see the total rise by 9 kcal, the weight on fat. Each weight in a is the change in the total for one more unit of its own entry, with the others held fixed.</p>\n<p>In India this is not only a textbook exercise. The Food Safety and Standards (Labelling and Display) Regulations, 2020, regulation 5(3)(e)(i), say a packaged food’s label energy is calculated with fixed conversion factors. Among them are 4 kcal/g for carbohydrates and protein, and 9 kcal/g for fat. It lists others too, such as 2 kcal/g for dietary fibre. So the energy printed on a packet is a dot product of its declared grams with those factors.</p>",
+   "numberRefs": [
+    86,
+    87
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The factors are general factors: one value for each nutrient, whatever the food. So a · g gives the energy a label would declare for a food whose only energy-giving parts are protein, fat and carbohydrate. It is not the energy a particular person absorbs from that food (Book 0, E2).</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Before you take a dot product, line up the two vectors’ orders.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The misconception is that a weight tells you what happens when you change one thing in a real food. It tells you the change with every other entry held fixed. Swapping fat for sugar changes two entries at once. Write the whole change vector and dot that.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Many different gram vectors give the same total energy. Never infer a food’s make-up from its energy figure.</p>",
+     "tag": "boundary",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Add or scale rows only when the sum, entry by entry, is itself an amount of something, such as the grams in a meal. Food grams add. Two patients’ rows do not: their total age describes nobody. The difference between one patient’s rows a year apart is a change, and that does mean something.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Check a meal’s energy in an app or a diet chart two ways. The two answers must agree. If they disagree by more than <dfn data-g=\"231\">rounding</dfn>, one item’s grams or energy was entered wrong. Find it before you use the total.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>When you teach this, say “weights” for the multipliers and “body weight” for the person, every time.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>The FAO report gives the Atwater general factors in kilojoules as 17 kJ/g for protein, 37 kJ/g for fat and 17 kJ/g for carbohydrate. Write the energy E of a food, in kJ, as an equation in its grams of protein p, fat f and carbohydrate c. Say what each symbol stands for, with its unit. Then write the same equation as a dot product of two named vectors, and say which vector holds the weights.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>In words first. The energy is 17 times the grams of protein, plus 37 times the grams of fat, plus 17 times the grams of carbohydrate.</p>\n<div class=\"working\">\n<p>E = 17p + 37f + 17c</p>\n</div>\n<p>E is the food’s energy in kJ. The letters p, f and c are the grams of protein, fat and carbohydrate, each in g. The numbers 17, 37 and 17 are in kJ/g, so each product is in kJ, and the three can be added.</p>\n<p>As a dot product, name the factors k = (17, 37, 17) and the grams g = (p, f, c), in the same order.</p>\n<div class=\"working\">\n<p>E = k · g</p>\n</div>\n<p>The vector k holds the weights. Each entry of k is the change in E, in kJ, for one more gram of its nutrient with the other two held fixed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>u = (2, 5, 1) and v = (3, −1, 4). Work out u + v and 3u.</p>",
+   "level": 1,
+   "answer": "<p>Add entry by entry.</p>\n<div class=\"working\">\n<p>2 plus 3 = 5<br />\n5 plus -1 = 4<br />\n1 plus 4 = 5</p>\n</div>\n<p>u + v = (5, 4, 5). Now multiply every entry of u by 3.</p>\n<div class=\"working\">\n<p>3 times 2 = 6<br />\n3 times 5 = 15<br />\n3 times 1 = 3</p>\n</div>\n<p>3u = (6, 15, 3).</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>With the same u = (2, 5, 1) and v = (3, −1, 4), work out the weighted sum 2u − 3v.</p>",
+   "level": 2,
+   "answer": "<p>Scale each vector first.</p>\n<div class=\"working\">\n<p>2u = (4, 10, 2)<br />\n3v = (9, -3, 12)</p>\n</div>\n<p>Then subtract entry by entry.</p>\n<div class=\"working\">\n<p>4 minus 9 = -5<br />\n10 minus -3 = 13<br />\n2 minus 12 = -10</p>\n</div>\n<p>2u − 3v = (−5, 13, −10).</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Work out u · v for u = (2, 5, 1) and v = (3, −1, 4). Then work out (4, 9, 4) · (0, 1, 0) and (4, 9, 4) · (1, 1, 1).</p>",
+   "level": 2,
+   "answer": "<p>Multiply matching entries and add.</p>\n<div class=\"working\">\n<p>2 times 3 plus 5 times -1 plus 1 times 4 = 5</p>\n</div>\n<p>u · v = 5.</p>\n<div class=\"working\">\n<p>4 times 0 plus 9 times 1 plus 4 times 0 = 9<br />\n4 times 1 plus 9 times 1 plus 4 times 1 = 17</p>\n</div>\n<p>Dotting with (0, 1, 0) picks out the middle weight, 9. Dotting with (1, 1, 1) adds all the weights, 17.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>For each, say whether it can be worked out. Where it can, work it out.</p>\n<ol type=\"1\">\n<li>(1, 2, 3) · (4, 5)</li>\n<li>(1, 2) + (3, 4, 5)</li>\n<li>2.5 times (4, 0, −2)</li>\n<li>(1, 2, 3) · (4, 5, 6)</li>\n</ol>",
+   "level": 3,
+   "answer": "<ol type=\"1\">\n<li>Cannot. A dot product needs two vectors of the same length, and these have three entries and two.</li>\n<li>Cannot. Vectors of different lengths cannot be added.</li>\n<li>Can. Any vector can be multiplied by a scalar.</li>\n</ol>\n<div class=\"working\">\n<p>2.5 times 4 = 10<br />\n2.5 times 0 = 0<br />\n2.5 times -2 = -5</p>\n</div>\n<p>The result is (10, 0, −5).</p>\n<ol start=\"4\" type=\"1\">\n<li>Can. Both have length three.</li>\n</ol>\n<div class=\"working\">\n<p>1 times 4 plus 2 times 5 plus 3 times 6 = 32</p>\n</div>\n<p>The dot product is 32.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A packaged food’s label, made up for this problem, gives per 100 g: protein 7 g, fat 18 g, carbohydrate 66 g. Use the Atwater general factors of 4.0, 9.0 and 4.0 kcal/g (FAO 2003) to work out the energy in 100 g, in kcal.</p>",
+   "level": 4,
+   "answer": "<p>Write the grams as g = (7, 18, 66) and the factors as a = (4, 9, 4), in the same order. The energy is a · g.</p>\n<div class=\"working\">\n<p>4 times 7 = 28<br />\n9 times 18 = 162<br />\n4 times 66 = 264<br />\n28 plus 162 plus 264 = 454</p>\n</div>\n<p>100 g gives 454 kcal.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Take the same food, (7, 18, 66) grams per 100 g. Work out its energy in kJ with the FAO factors of 17, 37 and 17 kJ/g. Then divide the kJ figure by the kcal figure from the last problem.</p>",
+   "level": 4,
+   "answer": "<p>Dot the grams with (17, 37, 17).</p>\n<div class=\"working\">\n<p>17 times 7 = 119<br />\n37 times 18 = 666<br />\n17 times 66 = 1122<br />\n119 plus 666 plus 1122 = 1907</p>\n</div>\n<p>100 g gives 1,907 kJ.</p>\n<div class=\"working\">\n<p>1907 divided by 454 = 4.200…</p>\n</div>\n<p>The <dfn data-g=\"223\">ratio</dfn> is about 4.2. A <dfn data-g=\"139\">kilocalorie</dfn> is about 4.18 kJ (Book 0, B4), and the rounded factors (17 for 4.0, 37 for 9.0) move the ratio a little off that.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>The food in the last two problems, (7, 18, 66) grams per 100 g, is eaten in a 25 g serving. Work out the grams in the serving, then the energy in the serving in kcal. Check the answer against the 454 kcal per 100 g.</p>",
+   "level": 5,
+   "answer": "<p>A 25 g serving is 0.25 of 100 g. Scale the gram vector.</p>\n<div class=\"working\">\n<p>0.25 times 7 = 1.75<br />\n0.25 times 18 = 4.5<br />\n0.25 times 66 = 16.5</p>\n</div>\n<p>The serving holds (1.75, 4.5, 16.5) g. Dot with (4, 9, 4).</p>\n<div class=\"working\">\n<p>4 times 1.75 plus 9 times 4.5 plus 4 times 16.5 = 113.5<br />\n0.25 times 454 = 113.5</p>\n</div>\n<p>The serving gives 113.5 kcal. Scaling the grams by 0.25 scaled the energy by 0.25.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>FAO’s Atwater system also gives alcohol a rounded factor of 7.0 kcal/g. A drink, made up for this problem, holds no protein, no fat, 10 g of carbohydrate and 14 g of alcohol. Write the grams and the factors as two vectors of length four, and work out the drink’s energy in kcal.</p>",
+   "level": 5,
+   "answer": "<p>Choose an order and keep it for both vectors: protein, fat, carbohydrate, alcohol.</p>\n<div class=\"working\">\n<p>g = (0, 0, 10, 14)<br />\na = (4, 9, 4, 7)<br />\n4 times 0 plus 9 times 0 plus 4 times 10 plus 7 times 14 = 138</p>\n</div>\n<p>The drink gives 138 kcal, and 98 of them come from the alcohol.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A label, made up for this problem, gives 480 kcal per 100 g, 8 g of protein and 24 g of fat. The carbohydrate figure is smudged. Taking the energy as the dot product with (4, 9, 4), find the grams of carbohydrate.</p>",
+   "level": 6,
+   "answer": "<p>The energy is 4 times protein plus 9 times fat plus 4 times carbohydrate. Two of the three products are known.</p>\n<div class=\"working\">\n<p>4 times 8 = 32<br />\n9 times 24 = 216<br />\n480 minus 32 minus 216 = 232</p>\n</div>\n<p>So 4 times the carbohydrate is 232 kcal.</p>\n<div class=\"working\">\n<p>232 divided by 4 = 58</p>\n</div>\n<p>The label should read 58 g of carbohydrate. Check it.</p>\n<div class=\"working\">\n<p>4 times 8 plus 9 times 24 plus 4 times 58 = 480</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A meal is one serving of each of three made-up foods. In grams of protein, fat and carbohydrate they are (4, 2, 30), (9, 6, 12) and (1, 8, 22). Work out the meal’s energy in kcal in two ways, with the factors (4, 9, 4), and show that they agree.</p>",
+   "level": 6,
+   "answer": "<p>First way: add the three vectors, then dot once.</p>\n<div class=\"working\">\n<p>4 plus 9 plus 1 = 14<br />\n2 plus 6 plus 8 = 16<br />\n30 plus 12 plus 22 = 64<br />\n4 times 14 plus 9 times 16 plus 4 times 64 = 456</p>\n</div>\n<p>Second way: dot each food, then add the energies.</p>\n<div class=\"working\">\n<p>4 times 4 plus 9 times 2 plus 4 times 30 = 154<br />\n4 times 9 plus 9 times 6 plus 4 times 12 = 138<br />\n4 times 1 plus 9 times 8 plus 4 times 22 = 164<br />\n154 plus 138 plus 164 = 456</p>\n</div>\n<p>Both give 456 kcal.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a made-up label lists, per 100 g: fat 30 g, protein 10 g, carbohydrate 50 g<br />\ngrams, as read off the label: (30, 10, 50)<br />\nfactors for protein, fat, carbohydrate: (4, 9, 4)<br />\nenergy = 4 times 30 plus 9 times 10 plus 4 times 50 = 410 kcal</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second step broke. The grams were copied in the label’s order, fat first. The factors are in the order protein, fat, carbohydrate. So the 30 g of fat was multiplied by the protein factor, 4, and the 10 g of protein by the fat factor, 9.</p>\n<p>Put the grams in the factors’ order: (10, 30, 50).</p>\n<div class=\"working\">\n<p>4 times 10 plus 9 times 30 plus 4 times 50 = 510</p>\n</div>\n<p>The food gives 510 kcal per 100 g, not 410.</p>\n<p>Why the wrong answer looks reasonable: every multiplication and the addition are correct. And 410 kcal per 100 g is a believable figure for a snack. The error is in which number sat in which place, and a dot product has no way to notice.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer for the energy in a 30 g serving of this section’s made-up snack. Its grams per 100 g are (10, 30, 50). Find the step that broke.</p>\n<div class=\"working\">\n<p>the serving is 0.3 of 100 g<br />\ngrams in the serving: 0.3 times (10, 30, 50) = (3, 9, 15)<br />\nfactors for a serving: 0.3 times (4, 9, 4) = (1.2, 2.7, 1.2)<br />\nenergy = 1.2 times 3 plus 2.7 times 9 plus 1.2 times 15 = 45.9 kcal</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third step broke. The grams had already been scaled to the serving. Scaling the factors as well applied the 0.3 twice. The factors are kcal per gram, and a gram gives the same energy whatever the size of the serving.</p>\n<p>Dot the serving’s grams with the unscaled factors.</p>\n<div class=\"working\">\n<p>4 times 3 plus 9 times 9 plus 4 times 15 = 153</p>\n</div>\n<p>The serving gives 153 kcal. The wrong answer is 0.3 times 0.3 times 510, which is 45.9.</p>\n<p>Why it looks reasonable: scaling one vector by 0.3 is right. It is easy to feel that “for a serving” should apply to everything on the line. Scale either the grams or the factors, never both.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A food blog says: “Replace 10 g of fat in your recipe with 10 g of sugar. You cut 90 kcal, because fat carries 9 kcal a gram.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the change in energy from the whole swap. The swap removes 10 g of fat and adds 10 g of sugar, which counts as carbohydrate. In the order protein, fat, carbohydrate, the change vector is (0, −10, 10). Dot it with (4, 9, 4).</p>\n<div class=\"working\">\n<p>4 times 0 plus 9 times -10 plus 4 times 10 = -50</p>\n</div>\n<p>The energy falls by 50 kcal, not 90. The blog used the weight on fat, which gives the change with everything else held fixed. The swap did not hold carbohydrate fixed. It added 10 g of it, worth 40 kcal.</p>\n<p>What this does not establish. It gives the change in the recipe’s calculated energy. It does not say how much a person eating it absorbs, since the factors are general ones. It says nothing about how full the food leaves someone, or what they eat later. It does not say that the swap is a good idea at all.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A colleague says: “These two snacks both give 510 kcal per 100 g, so nutritionally they are the same food.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: whether one energy total can come from different gram vectors. Try three made-up snacks, in the order protein, fat, carbohydrate, and dot each with (4, 9, 4).</p>\n<div class=\"working\">\n<p>4 times 10 plus 9 times 30 plus 4 times 50 = 510<br />\n4 times 5 plus 9 times 30 plus 4 times 55 = 510<br />\n4 times 10 plus 9 times 20 plus 4 times 72.5 = 510</p>\n</div>\n<p>All three give 510 kcal per 100 g. The first and third differ by 10 g of fat and 22.5 g of carbohydrate. The weighted sum gathered three numbers into one and threw the rest away. So the energy figure alone cannot tell you what is in the food.</p>\n<p>What this does not establish. It does not say either snack is better. It does not say the two real snacks differ: they may, or may not. To know, you need the grams on each label, not the total. And “nutritionally the same” would need far more than three macronutrients: fibre, salt, vitamins and more.</p>"
+  }
+ ]
+}

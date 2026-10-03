@@ -1,0 +1,144 @@
+{
+ "format": 1,
+ "id": "s57-r1-c10",
+ "label": "10",
+ "title": "A test that matches the objective",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>An item is one question or task on a test, marked on its own. A test matches a <dfn data-g=\"282\">learning objective</dfn> when every item asks the learner to carry out the objective’s action, on its content, under its condition. Each item is marked right or wrong against a key written in advance, and the objective’s standard is applied to the learner’s total.</p>\n<p>A test that counts towards a mark or a decision about the learner is <dfn data-g=\"507\">summative</dfn>. In this book, a test used only to show the learner and you where they stand is <dfn data-g=\"201\">formative</dfn>.</p>\n<p>An item is at the objective’s level when it cannot be answered by repeating something said or shown in the session. For an objective above remember, that means the item hands the learner a case they have not met before.</p>\n<p>Two forms of a test are parallel when each item on one form has a partner on the other. Only the case or the numbers differ.</p>\n<p>The <dfn data-g=\"387\">pre-test</dfn> is taken before the teaching and the <dfn data-g=\"381\">post-test</dfn> at its end.</p>",
+   "refs": [
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A test can be well made and still test the wrong thing. Suppose your objective says students will classify a new adult’s BMI. A test that asks them to write the BMI formula checks something else: whether they remember a line from your session.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c10-swapped-forms.png",
+   "alt": "Three bars: 40 points for A before and B after, 20 points for B before and A after, 30 points for the whole group, which is the session's own effect.",
+   "w": 1358,
+   "h": 657,
+   "caption": "Made-up numbers. A session raises every score by 30 points, and form B is 10 points easier than form A. Half the group taking A then B gains 40; half taking B then A gains 20. The whole group’s mean gain is 30, the session’s own effect."
+  },
+  {
+   "t": "figure",
+   "src": "s57-r1-c10-partner-items.png",
+   "alt": "Two points, weight against height: 58 kg at 152 cm and 61 kg at 156 cm, both on a rising curve of constant BMI 25.10, just above a second curve, the category edge at BMI 25.",
+   "w": 1358,
+   "h": 655,
+   "caption": "Item 1 on each form: 58 kg at 152 cm on form A, 61 kg at 156 cm on form B. Both sit on the curve of weights that give a BMI of 25.10 kg/m<sup>2</sup>, to the nearest kilogram, just above the edge of a category at 25 kg/m<sup>2</sup>. The numbers differ; the item is as hard to place."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a test that fails. You wrote this objective for a final-year batch in the last section.</p>\n<blockquote>\n<p>At the end of this session, each student in this final-year batch, given the weight in kilograms and the height in centimetres of ten adults and a printed table of BMI categories, will classify each adult’s BMI into the table’s category, without notes, correct for at least eight of the ten, on the day and again on a test one week later.</p>\n</blockquote>\n<p>A colleague offers you his end-of-session test.</p>\n<ol type=\"1\">\n<li>Write the formula for BMI.</li>\n<li>What is the unit of BMI?</li>\n<li>Name the categories in the table we used today.</li>\n<li>True or false: BMI uses height in metres.</li>\n<li>List two limits of BMI.</li>\n</ol>\n<p>Hold each item against the objective. Item 1 asks for a line from the session. So do items 2, 3 and 4. A student can score full marks and still be unable to classify one new adult. Item 5 asks for something the objective never promised. None of the five asks for the action, classify. None gives a case the student has not seen. None hands over the table, which the condition promised.</p>\n<p>Now turn the objective into items. Its action and condition give you the item’s shape: one adult, weight and height given, table given, notes put away.</p>\n<blockquote>\n<p>Item 1. An adult weighs 58 kg and is 152 cm tall. Using the table, write this adult’s BMI category.</p>\n</blockquote>\n<p>Its standard, eight of ten, tells you there are ten such items, one adult each. It also tells you how to mark: each item right or wrong, and eight right meets the objective.</p>\n<p>Last, check the level. Would a student who had only memorised your slides get item 1 right? Only by working out the BMI and reading the table. That is carrying out a procedure on a new case, which is apply. The test now asks for what the objective promised, at the level it promised.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This objective has one action and a clear right answer, so its items are easy to write. An objective at evaluate, such as judging whether a trial’s comparison was fair, needs a new case and a marking key written in advance. Otherwise two markers will disagree about the same answer.</p>\n<p>The five weak items are not useless. Items 1 to 4 test remember, and a quick check of them during the session can tell you who is lost. They are simply not a test of this objective.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now build the second form. The post-test cannot repeat the pre-test. A student who met “58 kg, 152 cm” at the start may remember working it out, and a rise in score could then be memory of the item. section 3 found the same danger with repeated quiz questions.</p>\n<p>So give each item a partner. The partner changes the numbers and keeps what makes the item hard. Here that is where the BMI falls: an adult close to the edge of a category is harder to place than one far from it. So choose a partner whose weight and height differ but whose BMI is almost the same. BMI is the weight in kilograms divided by the height in metres times itself, as Book 0 built it (Book 0, B6).</p>\n<div class=\"working\">\n<p>1.52 times 1.52 = 2.3104<br />\n58 divided by 2.3104 = 25.10<br />\n1.56 times 1.56 = 2.4336<br />\n61 divided by 2.4336 = 25.07</p>\n</div>\n<p>Form A, item 1: 58 kg, 152 cm. Form B, item 1: 61 kg, 156 cm. The two BMIs differ by less than 0.1 kg/m<sup>2</sup>. Suppose the table’s category changes at 25 kg/m<sup>2</sup>. Both adults sit just above that edge, so the two are equally hard to place. Unless the table puts an edge between 25.07 and 25.10, the two adults land in the same category. Do the same for all ten pairs.</p>\n<p>However carefully you pair them, one form may still turn out easier. That is a <dfn data-g=\"511\">systematic error</dfn>, the kind Book 0 described (Book 0, D7): it pushes every score on that form the same way. Here is how it spoils a gain, and how to cancel it. The numbers are made up to show the arithmetic.</p>\n<p>Suppose your session raises every student’s score by 30 <dfn data-g=\"362\">percentage</dfn> points. Suppose form B is 10 points easier than form A. You have 30 students. Fifteen take form A before and form B after. The other fifteen take form B before and form A after.</p>\n<div class=\"working\">\n<p>A before, B after: 30 plus 10 = 40<br />\nB before, A after: 30 minus 10 = 20<br />\nmean gain of the whole group: (40 plus 20) divided by 2 = 30</p>\n</div>\n<table style=\"width:82%;\">\n\n<thead>\n<tr>\n<th>order of the forms</th>\n<th>students</th>\n<th>gain (percentage points)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>A before, B after</td>\n<td>15</td>\n<td>40</td>\n</tr>\n<tr>\n<td>B before, A after</td>\n<td>15</td>\n<td>20</td>\n</tr>\n<tr>\n<td>whole group</td>\n<td>30</td>\n<td>30</td>\n</tr>\n</tbody>\n</table>\n<p>Had all 30 taken A before and B after, every gain would read 40. You would report 40 points for a session that gave 30. Swapping the order for half the group makes the easier form help one half and hurt the other by the same 10 points. In the mean of the whole group, the two cancel.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The cancelling works for the mean of the whole group, and exactly only when the two halves are the same size. It does nothing for any one student: in this example, every student’s own gain is still 10 points wrong. Do not judge one student’s progress from one pair of forms.</p>\n<p>Matching partners on BMI makes them equally hard for a table of BMI categories. For another objective, find what makes its items hard, and match on that.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A test of recall cannot show that learners reached an objective above remember. Before you use a test, ask of each item whether a learner could answer it by repeating something from your session. If yes, it is testing memory of the session.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Write the test straight after the objective, before you plan the teaching. That order is this book’s advice. Biggs’s point is that the objective, the activities and the test are designed as one. Then choose activities that make learners do what the test will ask.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>“Use the same test before and after, so the comparison is fair” is the error. A repeated item can be answered from memory of the first attempt. Use two <dfn data-g=\"359\">parallel forms</dfn>: partner items that ask for the same action on different cases.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Give half the group each order of the two forms, with the halves the same size. A difference in difficulty then cancels in the group’s mean gain. With an odd number of learners, one half has one more. The cancellation is then close, not exact. Say so when you report the mean gain. It does not cancel for one learner, so never judge one learner from one pair of forms.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A short test moves in big steps. On five items, each item is 20 percentage points. One lucky guess or one slip moves a learner a whole step.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>India’s undergraduate medical course follows the Competency Based Medical Education (CBME) Curriculum 2024, from the National Medical Commission. Its tables give each competency a level. At knows (K), the learner enumerates or describes; at knows how (KH), discusses or analyses; at shows how (SH), demonstrates. Performs (P) is certified after a set number of supervised performances. Each row also names a suggested assessment method. Read both before you write the test. A competency at SH or P has to be watched.</p>",
+     "tag": "india_deviation",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>The CBME Curriculum 2024 builds <dfn data-g=\"257\">internal assessment</dfn> from day-to-day tests, and quizzes can count. A student needs at least 50% of those marks, and 40% in theory and in practical separately, to sit the university exam in that subject. So a quiz whose marks count there is not low-stakes. Keep your practice questions out of it.</p>",
+     "tag": "india_deviation",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A matched test shows what learners can do when they take it. It does not show that your teaching caused it. For that you need the comparison of section 2. Do not report a well-matched post-test as proof that the method works.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A trainer writes this objective for a half-day session with accredited social health activists (ASHAs), village health workers:</p>\n<blockquote>\n<p>At the end of this session, each ASHA, given a child and the scale used at her centre, will weigh the child, completing every step on the programme’s weighing checklist. Writing the weight in the register is its last step. The trainer observes, at the end of the session and again at a supervision visit a month later.</p>\n</blockquote>\n<p>Her test is a written quiz of ten multiple-choice questions on the steps of weighing a child. Say whether the test matches the objective. If not, describe a test that does, and say how you would make a second form of it for the end of the session.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>It does not match. The objective’s action is to weigh a child. The quiz asks the ASHAs to recognise the steps on paper. An ASHA could pick every right answer and still miss a step with a real child and a real scale. This is Chatterjee and Corral’s intubation example in another setting: a written exam for a hands-on objective.</p>\n<p>A matched test: each ASHA weighs a child, with her own centre’s scale, while the trainer watches. The trainer ticks each step of the programme’s checklist and checks the register entry. The standard is every step done.</p>\n<p>In the terms of the Indian curriculum, this is a skill to be shown, not a thing to know. It needs watching, as a competency at SH would.</p>\n<p>A second form: a different child. Or change the scale set-up, for example a scale that must first be set to zero. Keep the same checklist. What must stay the same is the action and the steps marked.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Take the objective you wrote for your build session. Write a pre-test of at least five items and a parallel post-test, each item with its partner. For each pair, say what makes the item hard and how the partner keeps it. Then write down how you will split your learners between the two orders of the forms.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Judge your pair of forms with four checks.</p>\n<ul>\n<li>Every item asks for the objective’s action, under its condition. None can be answered by repeating a sentence from the session.</li>\n<li>Each partner changes the case or the numbers and keeps whatever makes the item hard. For BMI that was where the adult sits in the table. For reading an abstract it might be the length of the abstract and where the key sentence sits.</li>\n<li>The marking follows the standard: right or wrong per item, or a key written in advance.</li>\n<li>Half the learners take form A first and half take form B first, the two halves the same size, chosen before the session. An alphabetical split is fine if you fix it in advance.</li>\n</ul>\n<p>If you have fewer than five items, each one is worth more than 20 points. Say in your notes that one item decides a lot.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Most ASHAs scored well on the written quiz at the end of last year’s training. A state health secretary asks why that is not evidence that they now weigh children correctly. One page, answer first, no methods section.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The answer first: the quiz tested whether ASHAs can recognise the steps on paper. The training was meant to make them weigh children correctly. Those are different things, and the quiz measured only the first.</p>\n<p>A written quiz can be passed by memory of the training. Weighing a child needs hands, a scale and a real child. The only test of it is to watch an ASHA do it and check each step.</p>\n<p>What this costs. A trainer or supervisor watches each ASHA weigh one child, with a checklist, during a routine visit. That is minutes per ASHA, not a new programme.</p>\n<p>What to ask for next time. Each training plan should name what the trainee will be able to do, and should test exactly that, at the end and again weeks later.</p>"
+  }
+ ]
+}

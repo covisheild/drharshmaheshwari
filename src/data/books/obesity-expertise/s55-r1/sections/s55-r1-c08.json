@@ -1,0 +1,177 @@
+{
+ "format": 1,
+ "id": "s55-r1-c08",
+ "label": "8",
+ "title": "Ten candidates, one score each, nine rejections",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>This book ends with one task: a list of ten candidate research questions. Each is written as one sentence that names a population with its boundary, an <dfn data-g=\"159\">exposure</dfn> where there is one, and an outcome. Each is scored on a five-item sheet, with 0, 1 or 2 points for each item.</p>\n<p>The total, out of 10, puts the candidates in order. One rule overrides the total. A zero on item 4 or item 5, either half of the <dfn data-g=\"476\">who-is-waiting test</dfn>, rejects the question whatever its total. Among the survivors, the highest total is kept; a tie goes to the higher score on items 4 and 5 together.</p>\n<p>The sheet is this course’s working tool. Its totals put judgements in order. They do not measure anything.</p>",
+   "refs": [
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The earlier sections of this book each gave you one check on a question. This section puts them on one sheet, so you can compare ten candidates and turn nine of them down on purpose.</p>\n<p>Start with ten candidates. Then score each candidate on five items. Each item gets 0, 1 or 2.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Item</td>\n<td>0</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td><ol type=\"1\">\n<li>One sentence</li>\n</ol></td>\n<td>a topic, not a question</td>\n<td>a question, but a part is missing, doubled or has no boundary</td>\n<td>population with its boundary of place, age and time; exposure and comparison where there are any; one outcome</td>\n</tr>\n<tr>\n<td><ol start=\"2\" type=\"1\">\n<li>Answerable</li>\n</ol></td>\n<td>a value question, about what ought to be, or you cannot get the answer</td>\n<td>answerable only after a change: narrower, or access still to arrange</td>\n<td>about the world, and you can reach the people, measure the exposure and the outcome, pay for it, finish in time and get ethics approval</td>\n</tr>\n<tr>\n<td><ol start=\"3\" type=\"1\">\n<li>Not already answered</li>\n</ol></td>\n<td>your look found a good answer for this population</td>\n<td>your look found answers elsewhere, or weak ones</td>\n<td>your look found no good answer for this population, and you can write two different answers you might get</td>\n</tr>\n<tr>\n<td><ol start=\"4\" type=\"1\">\n<li>Who is waiting</li>\n</ol></td>\n<td>nobody; “the literature”, “future researchers”, “my thesis” or “policy makers”; or a body you cannot name and reach</td>\n<td>a named role you can reach, whose decision you have heard of but not yet checked with them</td>\n<td>a named role you can reach, who told you the decision they face</td>\n</tr>\n<tr>\n<td><ol start=\"5\" type=\"1\">\n<li>What they would do differently</li>\n</ol></td>\n<td>the same action for every answer, or actions you guessed</td>\n<td>different actions, heard second-hand, not yet checked with them</td>\n<td>different actions for different answers, in their own words</td>\n</tr>\n</tbody>\n</table>\n<p>Score item 3 only after you have looked for an existing answer, as the section on questions <dfn data-g=\"478\">worth answering</dfn> taught. A good answer comes from the same population, place and time, by a design that fits the question (section 3).</p>\n<p>Item 5 is never higher than item 4. If item 4 is 0, item 5 is 0 too, because there is nobody to do anything differently.</p>\n<p>A 1 on item 4 or item 5 means you have not yet checked with the person. Ask them before you write up.</p>\n<p>Add the five scores. The total is out of 10.</p>\n<p>A total can hide a zero.</p>\n<p>So one rule comes before the total. <strong>A zero on item 4 or item 5 rejects the question, whatever its total.</strong></p>\n<p>Then rank the questions that are left, highest total first. If two totals tie, the one with more points on items 4 and 5 together goes first. If that ties too, read the items and decide, and write down why. Keep the top one.</p>\n<p>Reject the other nine. For each, write one line that names the item that decided it. For a rank rejection, the line names the items where it lost points.</p>\n<p>File the nine, with the date and the line.</p>\n<p>Next: match the question to a design (section 3), pilot the hardest line (section 4), note any narrowing in the protocol, and ask the waiting party again before you write up (section 7).</p>\n<p>The question you keep is the seed of the one question you will own. The next book in this subject builds on it: a body of work, the data, a unit that houses them, and a three-year plan.</p>\n<p>Nobody has tested whether two people give the same list the same scores. Use the total to put questions in order, not as a measurement.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s55-r1-c08-totals-and-item-5.png",
+   "alt": "A bar chart with two bars for each of ten candidates. Totals: A 8, B 9, C 3, D 0, E 8, F 5, G 1, H 4, I 8, J 2. Item 5 scores: A 0, B 2, C 0, D 0, E 2, F 0, G 0, H 0, I 1, J 0.",
+   "w": 1357,
+   "h": 655,
+   "caption": "The ten made-up candidates, A to J, with each one’s total out of 10 and its score on item 5. A, C, D, F, G, H and J score 0 on item 5 and are rejected whatever their totals, including A’s 8. A zero on item 4 always means a zero on item 5, so the item 5 bars show every rejection by the rule. B is kept at 9; E and I tie at 8."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Back to the setting of this book, which is made up. You are the community medicine postgraduate in Chhattisgarh, and your guide wants one question by the end of the month. Suppose this is your list of ten candidates. Every question and every note is invented for the example.</p>\n<table>\n\n<thead>\n<tr>\n<th>Candidate</th>\n<th>Question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>A</td>\n<td>What share of children aged 11 to 14 at government schools in Raipur city in the 2027 school year have obesity as the school health protocol defines it, from weight and height the study measures?</td>\n</tr>\n<tr>\n<td>B</td>\n<td>Among adults aged 30 and over at the district non-communicable disease (NCD) screening camp in 2027 whom the camp’s body mass index check does not flag, what share have central obesity as the officer’s protocol defines it, from a waist the study team measures?</td>\n</tr>\n<tr>\n<td>C</td>\n<td>Should the district spend more of its NCD budget on schools than on adults?</td>\n</tr>\n<tr>\n<td>D</td>\n<td>Obesity in urban slum households in Bilaspur.</td>\n</tr>\n<tr>\n<td>E</td>\n<td>Among adults aged 30 and over whom the district hospital NCD clinic records as having obesity in 2027, do those who get a phone call the day before their follow-up visit come back more often within three months than those who do not?</td>\n</tr>\n<tr>\n<td>F</td>\n<td>Among first-year students aged 17 to 20 at the medical college in 2027, is eating the evening meal after 10 pm associated with a larger measured waist than eating it before 8 pm?</td>\n</tr>\n<tr>\n<td>G</td>\n<td>How common is obesity in India?</td>\n</tr>\n<tr>\n<td>H</td>\n<td>Among women aged 30 to 50 in urban slum households in Bilaspur in 2027, is owning a refrigerator associated with measured body mass index?</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Among adults aged 30 and over whom the district hospital NCD clinic records as having obesity in 2027, what share had their blood pressure recorded at their last visit, according to the clinic register?</td>\n</tr>\n<tr>\n<td>J</td>\n<td>Does a school yoga programme reduce obesity among adolescents in Chhattisgarh?</td>\n</tr>\n</tbody>\n</table>\n<p>You score each one, with notes. Some notes, all made up. For A, the district NCD programme officer told you her school plan stays the same whatever the share. For B, she told you she adds tape measures if more than about one in ten are missed, and not if fewer are. For C, she told you she faces that budget choice. For E, the clinic’s nurse in charge told you she phones every patient if calls bring more back, and nobody if they do not. For F, the only answer you had to “who is waiting?” was “future researchers”. For G, suppose your look found a recent national survey report that already gives a figure. For H, the only waiting party you found was “the municipal corporation”, and what it would do is your guess. For I, a colleague told you the clinic’s medical officer would add a blood pressure line to the visit form if many are missing; you have not asked her. For J, the only answer was “policy makers”.</p>\n<p>D is a topic, and C is a <dfn data-g=\"467\">value question</dfn> that no study can answer. Their items that cannot be scored count as 0.</p>\n<table style=\"width:94%;\">\n\n<tbody>\n<tr>\n<td>Candidate</td>\n<td>Item 1</td>\n<td>Item 2</td>\n<td>Item 3</td>\n<td>Item 4</td>\n<td>Item 5</td>\n<td>Total</td>\n<td>Verdict</td>\n</tr>\n<tr>\n<td>A</td>\n<td>2</td>\n<td>2</td>\n<td>2</td>\n<td>2</td>\n<td>0</td>\n<td>8</td>\n<td>rejected by the rule</td>\n</tr>\n<tr>\n<td>B</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>2</td>\n<td>2</td>\n<td>9</td>\n<td>kept</td>\n</tr>\n<tr>\n<td>C</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n<td>2</td>\n<td>0</td>\n<td>3</td>\n<td>rejected by the rule</td>\n</tr>\n<tr>\n<td>D</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n<td>rejected by the rule</td>\n</tr>\n<tr>\n<td>E</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>2</td>\n<td>2</td>\n<td>8</td>\n<td>rejected on rank</td>\n</tr>\n<tr>\n<td>F</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n<td>5</td>\n<td>rejected by the rule</td>\n</tr>\n<tr>\n<td>G</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n<td>0</td>\n<td>1</td>\n<td>rejected by the rule</td>\n</tr>\n<tr>\n<td>H</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n<td>4</td>\n<td>rejected by the rule</td>\n</tr>\n<tr>\n<td>I</td>\n<td>2</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>8</td>\n<td>rejected on rank</td>\n</tr>\n<tr>\n<td>J</td>\n<td>1</td>\n<td>0</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n<td>2</td>\n<td>rejected by the rule</td>\n</tr>\n</tbody>\n</table>\n<p>Check two totals by hand.</p>\n<div class=\"working\">\n<p>A: 2 plus 2 plus 2 plus 2 plus 0 = 8<br />\nB: 2 plus 2 plus 1 plus 2 plus 2 = 9</p>\n</div>\n<p>First, the mistake to avoid. Sort by total alone and you get B at 9, then A, E and I at 8. If you took the top four to your guide, A would be one of them. A is the school survey the officer already told you changes nothing. Its 8 hides a zero on item 5.</p>\n<p>Now apply the rule first. A, C, D, F, G, H and J each have a zero on item 4 or item 5. That is 7 of the 10, whatever their totals. As a <dfn data-g=\"316\">percentage</dfn>:</p>\n<div class=\"working\">\n<p>7 divided by 10 = 0.7<br />\n0.7 times 100 = 70</p>\n</div>\n<p>So the rule alone rejects 70 per cent of the list.</p>\n<p>Rank the three that are left: B 9, E 8, I 8. Keep B. E and I tie. Break the tie on items 4 and 5 together.</p>\n<div class=\"working\">\n<p>E: 2 plus 2 = 4<br />\nI: 1 plus 1 = 2</p>\n</div>\n<p>E goes second, I third.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The scores in this list are one person’s judgements on made-up notes. Another scorer could give E a 2 on item 3. E would then tie B at 9, and on items 4 and 5 as well, so you would read the items and decide. When two totals are one point apart, read the items before you trust the order.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now write the nine lines. Each one names the item that decided it, in words your guide can check.</p>\n<table>\n\n<thead>\n<tr>\n<th>Candidate</th>\n<th>One line</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>A</td>\n<td>Item 5: the programme officer’s school plan is the same whatever the share.</td>\n</tr>\n<tr>\n<td>C</td>\n<td>Items 2 and 5: a value question; what the district ought to do is not something a study can settle.</td>\n</tr>\n<tr>\n<td>D</td>\n<td>Item 1: a topic, not a question, so nothing else on the sheet can be scored.</td>\n</tr>\n<tr>\n<td>F</td>\n<td>Items 4 and 5: nobody is waiting; “future researchers” was the only answer.</td>\n</tr>\n<tr>\n<td>G</td>\n<td>Items 2 to 5: too large for one postgraduate, a national figure exists, and nobody is named to act on a new one.</td>\n</tr>\n<tr>\n<td>H</td>\n<td>Items 4 and 5: “the municipal corporation” is a body I cannot name and reach, and its actions are my guess.</td>\n</tr>\n<tr>\n<td>J</td>\n<td>Items 4 and 5: “policy makers” is nobody I can name and reach, and what they would do is my guess.</td>\n</tr>\n<tr>\n<td>E</td>\n<td>Rank: 8 against 9; lost a point on item 2 (a trial’s approvals may not fit in time) and on item 3.</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Rank: 8, tied with E; lost points on items 4 and 5, because the medical officer’s plan is second-hand.</td>\n</tr>\n</tbody>\n</table>\n<p>Count the lines: 7 rejected by the rule and 2 on rank.</p>\n<div class=\"working\">\n<p>7 plus 2 = 9</p>\n</div>\n<p>File all nine with today’s date. Two of them are worth a note to yourself. A can come back when the officer plans next year’s school visits, because her answer may change. I can come back as soon as you have asked the medical officer yourself. If she names the decision and two different actions, I scores 2 on items 4 and 5. Its total becomes 10, and it goes ahead of B.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A one-line reason is a summary, not the whole case. If your guide disagrees with a line, go back to the scores and the notes behind it, not to the line.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to keep the question with the highest total. Apply the rule first, then rank what survives.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write one line for every rejection, naming the item that decided it. “Not good enough” is not a reason your guide can check. “Item 5: the officer’s plan is the same whatever the answer” is.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Do not score item 3 until you have looked for an existing answer.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>File the rejected questions with the date and the reason.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A 9 against a 7 is not “about 29 per cent better”. A <dfn data-g=\"317\">percentage change</dfn> between them measures nothing, because a point on one item is not the same amount of anything as a point on another. Do not quote one.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>The sheet is this course’s working tool, and nobody has tested it. When two totals are a point apart, read the items and decide from them, not from the totals.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Write your own list of ten candidate research questions on obesity. Use the setting you are actually in, not the one in this book.</p>\n<p>For each question, produce four things.</p>\n<ul>\n<li>The question as one sentence, with the population and its boundary, the exposure if there is one, and the outcome.</li>\n<li>Its five scores on the sheet, and the total.</li>\n<li>For items 4 and 5, the role you spoke to and the date. Add their words for what they would do with each answer.</li>\n<li>Your verdict: kept, rejected by the rule, or rejected on rank.</li>\n</ul>\n<p>Then write one line for each of the nine you rejected, naming the item that decided it.</p>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>There is no single right list. Check yours against this list.</p>\n<ol type=\"1\">\n<li>Ten questions, each one sentence. No topic phrases. Each names a population with a boundary of place, age and time, and an outcome. An exposure is named, or the question is plainly about how common something is.</li>\n<li>Five scores for each question, and totals that add up. Check each total by adding the five scores again.</li>\n<li>For every question with a 2 on item 5, a named role, a date, and that person’s words for two different actions. An item 5 that rests on your own guess scores 0.</li>\n<li>Item 3 scored only after a look for an existing answer, with a note of what you found.</li>\n<li>Every question with a 0 on item 4 or item 5 marked “rejected by the rule”, whatever its total.</li>\n<li>The kept question is the survivor with the highest total. A tie is broken by items 4 and 5 together. If it has a 1 on item 4 or item 5, you ask the person before you write up.</li>\n<li>Nine lines, each naming an item. None says only “weak” or “not good enough”.</li>\n</ol>\n<p>If fewer than two questions survive the rule, do not lower the bar. Go back to the people around you and ask what decisions they face. Write new candidates from their answers, and score again.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague shows you the rejection lines from their own list. The lines are made up for this exercise.</p>\n<ol type=\"1\">\n<li>“Too broad.”</li>\n<li>“Not interesting.”</li>\n<li>“Scored 5, lower than my top question’s 8.”</li>\n<li>“Nobody would use it.”</li>\n</ol>\n<p>Say what is wrong with each line, and what it would need to say to pass.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>“Too broad” names no item. It probably means item 1 (no boundary on the population) or item 2 (cannot be done as it stands). The line should say which, and what is missing: “Item 1: no age or time boundary on the population.”</li>\n<li>“Not interesting” is a feeling, not an item. If it means nobody is waiting, say so, with the evidence: “Item 4: nobody named; the only answer was ‘the literature’.”</li>\n<li>The totals are right to mention, but a rank line should name the items where the points were lost. Otherwise nobody can check it. For example: “Rank: 5 against 8; lost 2 on item 2, 2 on item 3 and 1 on item 1.”</li>\n<li>“Nobody would use it” sounds like item 4 or 5, but it does not say which. Say whether no one was named (item 4), or the named person would do the same whatever the answer (item 5), and who.</li>\n</ol>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Score item 1, the one-sentence form, for each of these.</p>\n<ol type=\"a\">\n<li>Childhood obesity in Durg.</li>\n<li>What share of adults have obesity?</li>\n<li>Among adults aged 30 to 60 at the Korba district hospital NCD clinic in 2027, what share have obesity as the clinic protocol defines it?</li>\n<li>Among college students aged 18 to 22 in Raipur in 2027, is skipping breakfast associated with measured <dfn data-g=\"41\">body mass index</dfn> and with poor sleep?</li>\n</ol>",
+   "level": 1,
+   "answer": "<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Question</td>\n<td>Item 1</td>\n<td>Because</td>\n</tr>\n<tr>\n<td>a</td>\n<td>0</td>\n<td>a topic, not a question</td>\n</tr>\n<tr>\n<td>b</td>\n<td>1</td>\n<td>a question, but the population has no boundary of place, age or time</td>\n</tr>\n<tr>\n<td>c</td>\n<td>2</td>\n<td>population with its boundary and an outcome; it asks how common, so it needs no exposure</td>\n</tr>\n<tr>\n<td>d</td>\n<td>1</td>\n<td>it has two outcomes, body mass index and poor sleep; split it into two questions</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Score items 4 and 5 for each of these made-up notes.</p>\n<ol type=\"a\">\n<li><p>Who is waiting: future researchers.</p></li>\n<li><p>Who is waiting: the NCD clinic’s medical officer. She said: “If most patients’ weights are missing from the register, I add weighing at registration. If few are missing, I change nothing.”</p></li>\n<li><p>Who is waiting: the state health department. You think they might start a campaign if the share is high.</p></li>\n<li><p>Who is waiting: the college hostel warden. She said: “Dinner stays at 9 pm whatever you find.”</p></li>\n<li><p>Who is waiting: the district NCD programme officer. A colleague tells you she will add a school weighing day if the share is high, and not if it is low. You have not asked her.</p></li>\n</ol>",
+   "level": 2,
+   "answer": "<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Note</td>\n<td>Item 4</td>\n<td>Item 5</td>\n<td>Because</td>\n</tr>\n<tr>\n<td>a</td>\n<td>0</td>\n<td>0</td>\n<td>nobody named; with nobody named there is nobody to act differently</td>\n</tr>\n<tr>\n<td>b</td>\n<td>2</td>\n<td>2</td>\n<td>a named role you can reach, and two different actions in her own words</td>\n</tr>\n<tr>\n<td>c</td>\n<td>0</td>\n<td>0</td>\n<td>a body, not a role you can name and reach; the campaign is your guess</td>\n</tr>\n<tr>\n<td>d</td>\n<td>2</td>\n<td>0</td>\n<td>a named role, but the same action for every answer</td>\n</tr>\n<tr>\n<td>e</td>\n<td>1</td>\n<td>1</td>\n<td>a named role you can reach, but her decision and actions are second-hand; ask her</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Score this made-up candidate on all five items, total it, and give your verdict.</p>\n<p>“Among children aged 6 to 10 at two private schools in Bhilai in 2027, is more than two hours a day of screen time associated with measured body mass index?”</p>\n<p>Notes: the schools will let you in, you can ask about screen time and measure weight and height, it fits your time and budget, and ethics approval looks likely. Your look found studies from other Indian cities, none from Chhattisgarh. The principal of one school is the waiting party. She said: “I send the same letter about screens to parents every year, whatever anyone finds.”</p>",
+   "level": 3,
+   "answer": "<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Item</th>\n<th>Score</th>\n<th>Because</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><ol type=\"1\">\n<li>One sentence</li>\n</ol></td>\n<td>2</td>\n<td>population with its boundary, exposure and outcome</td>\n</tr>\n<tr>\n<td><ol start=\"2\" type=\"1\">\n<li>Answerable</li>\n</ol></td>\n<td>2</td>\n<td>you can reach the children, measure screen time and body mass index, pay for it, finish in time, and get approval</td>\n</tr>\n<tr>\n<td><ol start=\"3\" type=\"1\">\n<li>Not already answered</li>\n</ol></td>\n<td>1</td>\n<td>answered elsewhere, not for this population</td>\n</tr>\n<tr>\n<td><ol start=\"4\" type=\"1\">\n<li>Who is waiting</li>\n</ol></td>\n<td>2</td>\n<td>a named role you can reach, who told you her decision</td>\n</tr>\n<tr>\n<td><ol start=\"5\" type=\"1\">\n<li>What they would do differently</li>\n</ol></td>\n<td>0</td>\n<td>the same letter for every answer</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>2 plus 2 plus 1 plus 2 plus 0 = 7</p>\n</div>\n<p>Verdict: rejected by the rule. Item 5 is 0, so the total of 7 does not matter.</p>\n<p>One line: “Item 5: the principal sends the same letter whatever the answer.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Here are the scores for a made-up short list of five candidates, P to T, in the setting of this book.</p>\n<table style=\"width:79%;\">\n\n<tbody>\n<tr>\n<td>Candidate</td>\n<td>Item 1</td>\n<td>Item 2</td>\n<td>Item 3</td>\n<td>Item 4</td>\n<td>Item 5</td>\n</tr>\n<tr>\n<td>P</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>2</td>\n<td>2</td>\n</tr>\n<tr>\n<td>Q</td>\n<td>2</td>\n<td>2</td>\n<td>2</td>\n<td>2</td>\n<td>0</td>\n</tr>\n<tr>\n<td>R</td>\n<td>2</td>\n<td>1</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n</tr>\n<tr>\n<td>S</td>\n<td>1</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>1</td>\n</tr>\n<tr>\n<td>T</td>\n<td>2</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<p>Total each one. Apply the rule, rank the survivors, and say which you keep. Write one line for each rejection. What percentage of the list did the rule reject by itself?</p>",
+   "level": 4,
+   "answer": "<p>Total each candidate.</p>\n<div class=\"working\">\n<p>P: 2 plus 2 plus 1 plus 2 plus 2 = 9<br />\nQ: 2 plus 2 plus 2 plus 2 plus 0 = 8<br />\nR: 2 plus 1 plus 2 plus 2 plus 1 = 8<br />\nS: 1 plus 2 plus 1 plus 1 plus 1 = 6<br />\nT: 2 plus 2 plus 2 plus 1 plus 1 = 8</p>\n</div>\n<p>Apply the rule. Q has a 0 on item 5, so Q is rejected, even though its 8 ties for second.</p>\n<p>Rank the survivors: P 9, then R and T at 8, then S 6. Break the tie between R and T on items 4 and 5 together.</p>\n<div class=\"working\">\n<p>R: 2 plus 1 = 3<br />\nT: 1 plus 1 = 2</p>\n</div>\n<p>The order is P, R, T, S. Keep P.</p>\n<table>\n\n<thead>\n<tr>\n<th>Candidate</th>\n<th>One line</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Q</td>\n<td>Item 5: the same action for every answer.</td>\n</tr>\n<tr>\n<td>R</td>\n<td>Rank: 8 against 9; lost points on items 2 and 5.</td>\n</tr>\n<tr>\n<td>T</td>\n<td>Rank: 8 against 9, and behind R on items 4 and 5; lost points on items 4 and 5.</td>\n</tr>\n<tr>\n<td>S</td>\n<td>Rank: 6; lost points on items 1, 3, 4 and 5.</td>\n</tr>\n</tbody>\n</table>\n<p>The rule rejected 1 of the 5 by itself.</p>\n<div class=\"working\">\n<p>1 divided by 5 = 0.2<br />\n0.2 times 100 = 20</p>\n</div>\n<p>That is 20 per cent of the list.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Part of a colleague’s made-up <dfn data-g=\"402\">scoring sheet</dfn> has been smudged. For each candidate, one item cannot be read. Find the missing score, and say whether the candidate survives the rule.</p>\n<table style=\"width:93%;\">\n\n<tbody>\n<tr>\n<td>Candidate</td>\n<td>Item 1</td>\n<td>Item 2</td>\n<td>Item 3</td>\n<td>Item 4</td>\n<td>Item 5</td>\n<td>Total</td>\n</tr>\n<tr>\n<td>U</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>2</td>\n<td>smudged</td>\n<td>7</td>\n</tr>\n<tr>\n<td>V</td>\n<td>1</td>\n<td>2</td>\n<td>1</td>\n<td>smudged</td>\n<td>1</td>\n<td>6</td>\n</tr>\n<tr>\n<td>W</td>\n<td>smudged</td>\n<td>1</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>7</td>\n</tr>\n</tbody>\n</table>",
+   "level": 5,
+   "answer": "<p>The missing score is the total minus the four scores you can read.</p>\n<div class=\"working\">\n<p>U: 2 plus 2 plus 1 plus 2 = 7, and 7 minus 7 = 0<br />\nV: 1 plus 2 plus 1 plus 1 = 5, and 6 minus 5 = 1<br />\nW: 1 plus 2 plus 2 plus 1 = 6, and 7 minus 6 = 1</p>\n</div>\n<table style=\"width:98%;\">\n\n<thead>\n<tr>\n<th>Candidate</th>\n<th>Missing item</th>\n<th>Score</th>\n<th>Survives the rule?</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>U</td>\n<td>Item 5</td>\n<td>0</td>\n<td>no: a zero on item 5 rejects it, whatever its total of 7</td>\n</tr>\n<tr>\n<td>V</td>\n<td>Item 4</td>\n<td>1</td>\n<td>yes: no zero on item 4 or item 5</td>\n</tr>\n<tr>\n<td>W</td>\n<td>Item 1</td>\n<td>1</td>\n<td>yes: the rule looks only at items 4 and 5</td>\n</tr>\n</tbody>\n</table>\n<p>U and W have the same total, 7. Only W survives.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>K: 2 plus 2 plus 2 plus 2 plus 0 = 8<br />\nL: 1 plus 2 plus 1 plus 2 plus 1 = 7<br />\nM: 2 plus 1 plus 1 plus 1 plus 1 = 6<br />\nrank by total: K first, L second, M third<br />\nkeep K</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The last two lines broke. The totals are right, but the rule was never applied. K has a 0 on item 5, so K is rejected whatever its total.</p>\n<div class=\"working\">\n<p>K: 2 plus 2 plus 2 plus 2 plus 0 = 8, with a 0 on item 5, so rejected<br />\nL: 1 plus 2 plus 1 plus 2 plus 1 = 7<br />\nM: 2 plus 1 plus 1 plus 1 plus 1 = 6<br />\nrank the survivors: L first, M second<br />\nkeep L</p>\n</div>\n<p>L’s 1 on item 5 means you ask the waiting party before you write up.</p>\n<p>Why the wrong answer looks reasonable: K beats L on three items and has the highest total. The total is the most visible number on the sheet. The zero sits in one small column.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer for a made-up candidate. The next-best candidate on the same list scored 8. Find the step that broke.</p>\n<div class=\"working\">\n<p>candidate: Among adults aged 18 to 60 in urban slum households in Bilaspur in 2027, what share have obesity as the survey protocol defines it?<br />\nitem 1: population with boundary, outcome, a how-common question = 2<br />\nitem 2: reachable, measurable, fits in time = 2<br />\nitem 3: studies from other cities, none from Bilaspur = 1<br />\nitem 4: who is waiting: policy makers in India = 2<br />\nitem 5: they would start a campaign if the share is high = 2<br />\ntotal: 2 plus 2 plus 1 plus 2 plus 2 = 9<br />\nrank: first, ahead of the 8</p>\n</div>",
+   "level": 8,
+   "answer": "<p>Items 4 and 5 broke.</p>\n<p>Item 4: “policy makers in India” is not a role you can name and reach. That scores 0, not 2.</p>\n<p>Item 5: the campaign is the scorer’s own guess. Nobody said it. That scores 0, not 2.</p>\n<div class=\"working\">\n<p>total: 2 plus 2 plus 1 plus 0 plus 0 = 5</p>\n</div>\n<p>A zero on item 4 or item 5 rejects it, so it does not rank at all, behind the 8 or ahead of it. Items 1 to 3 were scored right.</p>\n<p>Why the wrong answer looks reasonable: “policy makers” sounds like someone with power to act, and a campaign sounds like what they would do. But neither was checked with a person. The sheet gives 2 only for a named role and for that person’s own words, and 0 for a body you cannot reach or an action you guessed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>In a made-up department meeting, a senior colleague says: “Let’s just do a survey of obesity among our nursing students. It’s quick, the data are easy to get, and the head of department wants a paper this year.”</p>\n<p>Your current top question scores 9. Score the <dfn data-g=\"354\">proposal</dfn>, rank it against your top question, and give a one-line reason if you reject it. Then say what your score does not establish.</p>",
+   "level": 9,
+   "answer": "<p>First make the proposal a question. As said, it is a topic, which would score 0 on item 1. Written as one sentence it becomes: “Among nursing students aged 17 to 25 at the medical college in 2027, what share have obesity as the protocol defines it, from measured body mass index?”</p>\n<p>Score that sentence. Suppose your look finds surveys from other nursing colleges but not this one.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Item</th>\n<th>Score</th>\n<th>Because</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><ol type=\"1\">\n<li>One sentence</li>\n</ol></td>\n<td>2</td>\n<td>population with its boundary and an outcome; a how-common question</td>\n</tr>\n<tr>\n<td><ol start=\"2\" type=\"1\">\n<li>Answerable</li>\n</ol></td>\n<td>2</td>\n<td>quick, and the students can be reached and measured</td>\n</tr>\n<tr>\n<td><ol start=\"3\" type=\"1\">\n<li>Not already answered</li>\n</ol></td>\n<td>1</td>\n<td>answered elsewhere, not here</td>\n</tr>\n<tr>\n<td><ol start=\"4\" type=\"1\">\n<li>Who is waiting</li>\n</ol></td>\n<td>0</td>\n<td>the head of department is waiting for a paper, not for this answer</td>\n</tr>\n<tr>\n<td><ol start=\"5\" type=\"1\">\n<li>What they would do differently</li>\n</ol></td>\n<td>0</td>\n<td>nobody is named who would act on it</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>2 plus 2 plus 1 plus 0 plus 0 = 5</p>\n</div>\n<p>Rejected by the rule, whatever the total. It would rank below your 9 in any case.</p>\n<p>One line: “Items 4 and 5: the department is waiting for a paper, not for this answer.”</p>\n<p>What the score does not establish:</p>\n<ul>\n<li>That nobody could be waiting. The nursing college’s principal may face a decision this answer would change. Ask before you file it.</li>\n<li>That the survey would be poor work. It could be done well. The sheet says only that, today, no one would act on it.</li>\n<li>That your 9 is better on every item. Compare items, not only totals.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Your guide looks at your sheet and says: “Your top question scored 9 and the second scored 7. So the first is about 29 per cent better. Drop the second without a second thought.”</p>\n<p>Check the arithmetic. Then say what the claim does not establish.</p>",
+   "level": 10,
+   "answer": "<p>The arithmetic is a percentage change from 7 to 9.</p>\n<div class=\"working\">\n<p>9 minus 7 = 2<br />\n2 divided by 7 is about 0.2857<br />\n0.2857 times 100 = 28.57</p>\n</div>\n<p>So “about 29 per cent” is the right arithmetic.</p>\n<p>What it does not establish:</p>\n<ul>\n<li>That the first question is 29 per cent better at anything. The scores are judgements put in order, 0, 1 or 2 on each item. A point on item 3 and a point on item 5 are not the same amount of anything. A percentage change between two totals measures nothing.</li>\n<li>That the gap is real. Another scorer could move one or two items by a point. Two points out of ten is within that.</li>\n<li>Which items made the gap. If the second lost its points on items 4 and 5 because you have not yet asked the waiting party, asking may close the gap.</li>\n</ul>\n<p>So do not drop the second without a thought. Write its one line naming the items where it lost points, and file it.</p>"
+  }
+ ]
+}

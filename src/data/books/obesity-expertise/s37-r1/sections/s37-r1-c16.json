@@ -1,0 +1,164 @@
+{
+ "format": 1,
+ "id": "s37-r1-c16",
+ "label": "16",
+ "title": "The main Indian food policy tools, on one map",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-24.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"142\">food policy tool</dfn> is any means by which a government changes what is grown, stored, traded, processed, sold, served or eaten. Some tools rest on a <dfn data-g=\"356\">statute</dfn>. Others rest on a government decision to run a scheme, or to set a price or a duty until the next change.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Stage</th>\n<th>Tool</th>\n<th>Kind</th>\n<th>Run by</th>\n<th>Rests on</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Production</td>\n<td>Minimum support price (MSP) for 22 mandated crops</td>\n<td>price support</td>\n<td>Union Government, on the recommendation of the Commission for Agricultural Costs and Prices (CACP)</td>\n<td>announced each season (the National Food Security Act defines the term; each season’s figure is a Cabinet decision)</td>\n</tr>\n<tr>\n<td>Production</td>\n<td>Procurement at MSP</td>\n<td>purchase</td>\n<td>Food Corporation of India (FCI) and State agencies for cereals; two national cooperative federations for pulses and oilseeds</td>\n<td>the same decisions, and a price support scheme for pulses and oilseeds</td>\n</tr>\n<tr>\n<td>Production</td>\n<td>Crop missions: oilseeds, oil palm, millets</td>\n<td>scheme</td>\n<td>Department of Agriculture and Farmers Welfare, with the States</td>\n<td>schemes approved by the Union Government</td>\n</tr>\n<tr>\n<td>Storage, distribution</td>\n<td>Buying, holding and moving the central pool of grain, and its buffer stock</td>\n<td>public stock</td>\n<td>FCI</td>\n<td>an Act of 1964, under which FCI was set up in 1965</td>\n</tr>\n<tr>\n<td>Storage</td>\n<td>Limits on how much of a grain traders may hold (wheat, May 2025 to April 2026)</td>\n<td>holding limit</td>\n<td>Government of India</td>\n<td>a government decision; the release names no order or Act</td>\n</tr>\n<tr>\n<td>Distribution</td>\n<td>Regulated markets (mandis) and their fees</td>\n<td>market regulation</td>\n<td>State Agricultural Produce Marketing Committees (APMCs)</td>\n<td>the States; no State law is held here</td>\n</tr>\n<tr>\n<td>Distribution</td>\n<td>Import duty</td>\n<td>trade</td>\n<td>Government of India</td>\n<td>a duty change; its customs notification is not held here</td>\n</tr>\n<tr>\n<td>Processing, retail</td>\n<td>Food standards and labels</td>\n<td>safety and labelling</td>\n<td>Food Safety and Standards Authority of India (FSSAI)</td>\n<td>Food Safety and Standards Act, 2006</td>\n</tr>\n<tr>\n<td>Distribution</td>\n<td>Rations through the public distribution system (PDS)</td>\n<td>provision</td>\n<td>Department of Food and Public Distribution, with the States</td>\n<td>National Food Security Act, 2013 (NFSA)</td>\n</tr>\n<tr>\n<td>Distribution, preparation</td>\n<td>School meals, Pradhan Mantri Poshan Shakti Nirman (PM POSHAN)</td>\n<td>provision</td>\n<td>Ministry of Education, with the States</td>\n<td>a centrally sponsored scheme, 2021-22 to 2025-26</td>\n</tr>\n<tr>\n<td>Distribution, preparation</td>\n<td>Anganwadi food, Saksham Anganwadi and Poshan 2.0</td>\n<td>provision</td>\n<td>Ministry of Women and Child Development, with the States</td>\n<td>a scheme for 2021-22 to 2025-26</td>\n</tr>\n<tr>\n<td>Retail</td>\n<td>Goods and services tax (GST) rates</td>\n<td>tax</td>\n<td>recommended by the GST Council</td>\n<td>the Constitution, Article 279A</td>\n</tr>\n</tbody>\n</table>",
+   "refs": [
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    146,
+    268,
+    223,
+    226,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>For each tool, ask four things. Where in the chain does it act? Who runs it? What does it stand on, a statute or a scheme with an end date? What does its own text say it is for?</p>\n<p>Ask the last question and a pattern shows. The tools on the farm, in storage and at the border say they are for supply, prices and farmers’ incomes. The tools at the plate say they are for nutrition, and where they name a problem it is hunger or undernutrition. Obesity turns up in these texts only as a theme of two awareness campaigns in 2025, Poshan Pakhwada and Poshan Maah.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c16-oil-duty-bars.png",
+   "alt": "Grouped bars for three dates. Before 11 Jun 2025: 20 per cent for crude palm and soybean oil and 20 for crude sunflower oil. Announced 11 Jun 2025: 10 and 10. Announced 24 Sep 2026: 5 for crude palm and soybean oil and 0 for crude sunflower oil.",
+   "w": 1358,
+   "h": 657,
+   "caption": "The basic customs duty on crude edible oils as two releases state it, in per cent: 20 before, and 10 from, the release of 11 Jun 2025; 5 for crude palm and soybean oil and 0 (Nil) for crude sunflower oil from the release of 24 Sep 2026. The same tool, three values."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is the trap with a food policy number. It is true on the day it is written, and then it changes, and the old text stays online looking just as official.</p>\n<p>Suppose a colleague asks you what India’s import duty on palm oil is. Search the Press Information Bureau for the Cabinet’s release of 3 October 2024 approving the National Mission on Edible Oils – Oilseeds (https://www.pib.gov.in/PressReleasePage.aspx?PRID=2061646). Read its last paragraph.</p>\n<blockquote>\n<p>Besides, 20% import duty on edible oils has been imposed to protect domestic producers from cheap imports and encourage local cultivation.</p>\n</blockquote>\n<p>That release says “import duty on edible oils”, not which duty or which oils. Write down 20% and you are wrong twice. Find the Bureau’s release of 11 June 2025, “Centre reduces Basic Custom duty (BCD) on major imported Crude edible Oils from 20% to 10%”. The <dfn data-g=\"31\">basic customs duty</dfn> on crude sunflower, soybean and palm oils fell from 20% to 10%. Then open the release of 24 September 2026 (https://www.pib.gov.in/PressReleasePage.aspx?PRID=2314297).</p>\n<blockquote>\n<p>Accordingly, the BCD on Crude Sunflower Oil has been reduced from 10% to Nil, while the BCD on Crude Soybean Oil and Crude Palm Oil has been reduced from 10% to 5%.</p>\n</blockquote>\n<p>Nil means 0%. Set the two duty releases side by side.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Basic customs duty, as stated</th>\n<th>Crude palm and soybean oil (%)</th>\n<th>Crude sunflower oil (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>before 11 Jun 2025</td>\n<td>20</td>\n<td>20</td>\n</tr>\n<tr>\n<td>announced 11 Jun 2025</td>\n<td>10</td>\n<td>10</td>\n</tr>\n<tr>\n<td>announced 24 Sep 2026</td>\n<td>5</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>\n<p>Now a second trap. The Bureau’s backgrounder of 8 December 2025 on the edible oil missions says the government “raised the <dfn data-g=\"106\">effective customs duty</dfn> on crude edible oils like palm, sunflower and soybean from 5.5% to 16.5%”. That is not the basic duty. The text calls it effective, and it is a different number. The held texts do not say what the effective duty adds to the basic duty. The release of 24 September 2026 gives the basic duty only. So when you repeat a duty, say which duty it is, and the date of the text you took it from.</p>\n<p>Now look at what else acts on the same oil. Three tools, three bodies, three texts.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Tool</td>\n<td>Stage</td>\n<td>Run by</td>\n<td>What its text says</td>\n</tr>\n<tr>\n<td>National Mission on Edible Oils – Oilseeds</td>\n<td>production</td>\n<td>Department of Agriculture and Farmers Welfare</td>\n<td>“reducing import dependency”, “boosting farmers’ incomes”</td>\n</tr>\n<tr>\n<td>Basic customs duty cut, 24 Sep 2026</td>\n<td>distribution (a trade instrument)</td>\n<td>Government of India</td>\n<td>“moderating domestic edible oil prices”</td>\n</tr>\n<tr>\n<td>Labelling regulations, ingredient list</td>\n<td>processing, retail</td>\n<td>FSSAI</td>\n<td>the label must “Give name of the specific edible oil”</td>\n</tr>\n</tbody>\n</table>\n<p>The mission wants more oilseed grown in India. The duty cut wants cheaper oil in the shop. The mission also runs a campaign on “recommended dietary guidelines for edible oils”. The label rule only makes the oil visible. Each tool is run by a different body through its own text. If you want to change how much oil reaches Indian plates, first find out which body owns the lever you are pulling.</p>",
+   "numberRefs": [
+    276,
+    77,
+    76
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The duty rates hold from the release of 24 September 2026 until the next customs duty change. The release gives the basic duty on crude oils only. It does not give the refined-oil rates, the <dfn data-g=\"250\">notification</dfn> number, the date the change took effect, or any effective duty. The 20% row is the basic duty the release of 11 June 2025 says it cut from; the date the 20% began is not in these texts.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now sort the whole map by one question: what does each tool’s own text say it is for?</p>\n<p>Take each tool in turn. Find the sentence in which its text states its purpose. Copy the words, not your memory of them. Then ask whether the sentence names nutrition and, if it does, which problem it names.</p>\n<table style=\"width:100%;\">\n\n<thead>\n<tr>\n<th>Tool</th>\n<th>Its own words</th>\n<th>Nutrition named?</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Minimum support price, kharif 2026-27</td>\n<td>“to ensure remunerative prices to the growers for their produce”</td>\n<td>no</td>\n</tr>\n<tr>\n<td>Procurement and the buffer stock</td>\n<td>“remunerative prices”, “affordable prices”, “food security and price stability”</td>\n<td>no</td>\n</tr>\n<tr>\n<td>Wheat stock limits, 2025</td>\n<td>“to prevent hoarding and unscrupulous speculation”</td>\n<td>no</td>\n</tr>\n<tr>\n<td>Edible oil duty cut, 2026</td>\n<td>“moderating domestic edible oil prices, providing relief to consumers”</td>\n<td>no</td>\n</tr>\n<tr>\n<td>Millets sub-mission</td>\n<td>“To boost the production of millets”</td>\n<td>only in the name of its parent, the National Food Security and Nutrition Mission</td>\n</tr>\n<tr>\n<td>Oilseeds mission</td>\n<td>“reducing import dependency”; one campaign on “recommended dietary guidelines for edible oils”</td>\n<td>one part of it</td>\n</tr>\n<tr>\n<td>Food Safety and Standards Act</td>\n<td>“safe and wholesome food”; labels with “claims on health, nutrition”</td>\n<td>safety first, nutrition on the label</td>\n</tr>\n<tr>\n<td>National Food Security Act</td>\n<td>“food and nutritional security”</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>PM POSHAN</td>\n<td>“hunger and education by improving the nutritional status”</td>\n<td>yes: hunger</td>\n</tr>\n<tr>\n<td>Poshan 2.0</td>\n<td>“to reduce wasting and under-weight prevalence besides stunting and anemia”</td>\n<td>yes: undernutrition</td>\n</tr>\n</tbody>\n</table>\n<p>Read down the right-hand column. The production, price, storage and trade tools state no nutrition aim, beyond one mission’s name and one campaign. The provision tools state one. Where they name a problem, it is the hunger and undernutrition this book’s history section described (section 8).</p>\n<p>Now search the Poshan 2.0 backgrounder of 14 April 2026 (https://www.pib.gov.in/PressReleasePage.aspx?PRID=2251769&amp;reg=3&amp;lang=1) for the word obesity. It appears twice. The Poshan Pakhwada of April 2025 had a theme of “healthy lifestyle promotion to address childhood obesity”. The Poshan Maah of September 2025 had “reduction in sugar and oil consumption to address obesity”. Both are awareness campaigns. They speak to what people choose, not to what the scheme serves.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A stated aim is what a text says a tool is for. It is not what the tool does. A support price with no nutrition word in it still changes which crops are grown and what they cost (section 10 works the arithmetic). And the sort is only as good as the texts held: a scheme document not among this book’s sources may state an aim these releases do not.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“India has no nutrition policy in agriculture” and “India’s food policy is nutrition policy” are both wrong as stated. Read each tool’s own purpose.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>For any food policy tool, write four things before you argue about it: where it acts, who runs it, what it rests on, and what its own text says it is for.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Never repeat a duty, a price or a limit without its date. A Cabinet release of 3 October 2024 put the import duty on edible oils at 20%. The basic customs duty on crude palm oil fell from 20% to 10% in June 2025, and to 5% in the release of 24 September 2026.</p>",
+     "tag": "number",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>“Import duty” can mean the basic customs duty, or what a text calls the effective duty. They are different numbers for the same oil. Say which one you mean, and check which one your source gives.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The same food is touched by tools that pull different ways, run by different bodies. The oilseeds mission wants more oil grown at home. The 2026 duty cut wants cheaper oil in the shop. Before you propose a change, name which body owns the tool you want changed.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Check what each tool stands on before relying on it. The food safety law and the food security <dfn data-g=\"3\">Act</dfn> are statutes. PM POSHAN and Poshan 2.0 were approved as schemes for 2021-22 to 2025-26. Whether and how they continue after March 2026 is not in this book’s sources, so look for the continuation before you cite either as current.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not name the Act behind a <dfn data-g=\"357\">stock limit</dfn> from memory. Find the instrument itself and read what it says it is made under, or say that you have not seen it.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The map tells you where a tool acts, who runs it and what it says it is for. It does not tell you what the tool does to what people eat.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Without looking back, name one food policy tool at each of these stages: production, storage, distribution, processing, retail. For each, name the body that runs it.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Production: the support price. The Union Government announces it each season, on the advice of the <dfn data-g=\"59\">Commission for Agricultural Costs and Prices</dfn>. Or a crop mission, such as the oilseeds mission, run by the Department of Agriculture and Farmers Welfare with the States.</p>\n<p>Storage: the <dfn data-g=\"47\">central pool</dfn> of grain. The Food Corporation of India buys, stores and moves it. Or a limit on how much grain traders may hold, set by the Government of India, as for wheat in 2025.</p>\n<p>Distribution: the import duty on crude edible oils, a trade instrument, set by the Government of India. Or rations through ration shops, run by the Department of Food and Public Distribution with the States. Or regulated markets (mandis), run by the States’ Agricultural Produce Marketing Committees.</p>\n<p>Processing: food standards and labels. The food safety regulator, FSSAI, sets them.</p>\n<p>Retail: goods and services tax rates, a tax instrument. The GST Council recommends them, under Article 279A of the <dfn data-g=\"69\">Constitution</dfn>. Labels also act here.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A newspaper line reads: “Government acts on oil prices, cuts duty to protect health.” Using the release of 24 September 2026, say what the release does and does not support in that line.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The release supports “government cuts duty”. It reduced the basic customs duty on crude sunflower oil to Nil and on crude soybean and crude palm oil to 5%, from 10%.</p>\n<p>It supports “acts on oil prices”. Its stated aim is “moderating domestic edible oil prices, providing relief to consumers”. It also asks industry to revise its prices to distributors and its maximum retail prices.</p>\n<p>It does not support “to protect health”. The release names consumers, inflation (“mitigating inflationary pressures”) and domestic refiners. It says nothing about health or nutrition. Another government text, the Poshan Maah theme of 2025, asked for a “reduction in sugar and oil consumption”. The two were written for different ends. The line has put an aim into the release that its text does not state.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A health secretary has one page and asks: “Which of our food policies were built with nutrition in mind?” Write the answer, answer first.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer: the ones that hand out food. Rations under the National Food Security Act state a nutrition aim in their own text. So do school meals under PM POSHAN and <dfn data-g=\"18\">anganwadi</dfn> food under Poshan 2.0. Where they name a problem, it is hunger or undernutrition: for anganwadi food, wasting, <dfn data-g=\"380\">underweight</dfn>, stunting and anaemia.</p>\n<p>The tools that shape the rest of the food supply state other aims. The support price is for “remunerative prices to the growers”. <dfn data-g=\"290\">Procurement</dfn> and the <dfn data-g=\"39\">buffer stock</dfn> are for fair prices to farmers, affordable grain and stable prices. The edible oil duty cut is for lower prices. The oilseeds mission is for less dependence on imports, with one awareness campaign on dietary guidelines for oil.</p>\n<p>Obesity appears only as a theme of two Poshan 2.0 awareness campaigns in 2025. No tool on the map states an aim about it.</p>\n<p>What this does not tell you: what any of these tools does to diets. A support price with no nutrition aim may still shape what people eat. That needs evidence, not a reading of stated aims.</p>"
+  }
+ ]
+}

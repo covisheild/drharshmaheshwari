@@ -1,0 +1,194 @@
+{
+ "format": 1,
+ "id": "b0-r0-c07",
+ "label": "A7",
+ "title": "Logarithms — what they are for before how they work",
+ "part": "A",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The <dfn data-g=\"107\">logarithm</dfn> of a number to <dfn data-g=\"17\">base ten</dfn> is the power to which ten must be raised to produce that number.</p>\n<p>It is defined only for numbers above zero, because no power of ten produces zero or a <dfn data-g=\"122\">negative number</dfn>. The logarithm of one is zero.</p>\n<p>A logarithm converts multiplication into addition.</p>\n<p>On an axis marked in logarithms, equal distances represent equal multiplications rather than equal additions.</p>",
+   "refs": [
+    11
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>You have a pile of numbers and they are wildly different sizes. Put them on an ordinary scale and the small ones vanish into the left edge.</p>\n<p>So ask a different question of each number. Not how big is it, but how many powers of ten is it?</p>\n<p>Ten is 10<sup>1</sup>, so its logarithm is 1. That is the whole definition: the logarithm is the <dfn data-g=\"63\">exponent</dfn>.</p>\n<p>Numbers in between get an answer in between. Five hundred sits between a hundred and a thousand, so its logarithm sits between 2 and 3. A calculator will tell you it is about 2.7. You do not have to work that out by hand, and you will not be asked to.</p>\n<p>Put logarithms on the side of a graph and equal distances up the page stop meaning equal amounts. They mean equal multiples. One step is ten times, whether you are stepping from 1 to 10 or from 100 to 1,000.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "a7-log-ruler.png",
+   "alt": "A horizontal ruler marked ten to the fourth, fifth and sixth. Four points sit on it at twenty-five thousand, three lakh, five lakh and ten lakh, labelled underneath with their logarithms of 4.4, 5.5, 5.7 and 6.0, and an arrow spanning 1.6 units.",
+   "w": 1109,
+   "h": 476,
+   "caption": "The four penalties on a ruler where each step multiplies by ten. The logarithm of an amount is simply where it sits on that ruler, so the distance between the smallest and the largest is a subtraction that has done a division."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Picture the side of the graph marked like this, bottom to top.</p>\n<div class=\"working\">\n<p>1    10    100    1,000    10,000</p>\n</div>\n<p>The marks are evenly spaced up the page. Somebody looks at it and says this.</p>\n<blockquote>\n<p>The rise from 100 to 1,000 is the same size as the rise from 1 to 10.</p>\n</blockquote>\n<p>Do the subtraction yourself and watch the claim fall apart.</p>\n<div class=\"working\">\n<p>10 minus 1 = 9<br />\n1,000 minus 100 = 900</p>\n</div>\n<p>Nine against nine hundred. The gaps on the page are equal and the amounts are a hundred times apart.</p>\n<p>So what is equal? Do the division instead of the subtraction.</p>\n<div class=\"working\">\n<p>10 divided by 1 = 10<br />\n1,000 divided by 100 = 10</p>\n</div>\n<p>Both steps multiply by ten.</p>\n<p>Open the Food Safety and Standards Act, 2006 again, the one you opened in section A1, and search inside it for “twenty-five thousand”. One hit this time, in the proviso to section 50: a penalty not exceeding twenty-five thousand rupees for small food businesses.</p>\n<p>For the other three, search the section headings rather than the money. So search for “Penalty for misbranded food”, then “Penalty for sub-standard food”, then “Penalty for misleading advertisement”.</p>\n<p>Write the four down and turn each into a power of ten. Use a calculator for the logarithm column; that is what it is for.</p>\n<table style=\"width:64%;\">\n\n<tbody>\n<tr>\n<td>25,000</td>\n<td>2.5 times 10<sup>4</sup></td>\n<td>logarithm 4.4</td>\n</tr>\n<tr>\n<td>3,00,000</td>\n<td>3 times 10<sup>5</sup></td>\n<td>logarithm 5.5</td>\n</tr>\n<tr>\n<td>5,00,000</td>\n<td>5 times 10<sup>5</sup></td>\n<td>logarithm 5.7</td>\n</tr>\n<tr>\n<td>10,00,000</td>\n<td>1 times 10<sup>6</sup></td>\n<td>logarithm 6.0</td>\n</tr>\n</tbody>\n</table>\n<p>The four you wrote down run from 4.4 to 6.0. That is a span of 1.6, and 1.6 powers of ten is a factor of about forty.</p>\n<p>The heaviest of your four is about forty times the lightest.</p>\n<div class=\"working\">\n<p>100 times 1,000 = 1,00,000<br />\nlogarithm 2 plus logarithm 3 = 5<br />\nand 10<sup>5</sup> is indeed 1,00,000</p>\n</div>\n<p>Adding the logarithms did the multiplying.</p>",
+   "numberRefs": [
+    4
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A <dfn data-g=\"108\">logarithmic axis</dfn> makes very different numbers fit on one page, and it does that by squashing the differences between the large ones. A tenfold rise and a hundredfold rise look similar on the page.</p>\n<p>It also cannot show zero, and it cannot show anything below it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>On a logarithmic axis equal distances are equal multiples, not equal amounts.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before reading any figure, look at the axis and decide which kind it is. If the marks go 1, 10, 100, 1,000 the steps are multiplications. If they go 1, 2, 3 they are additions.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A logarithmic axis cannot show zero or anything below it, because no power of ten produces them. Ask what happened to those observations.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A log axis makes a large difference look modest. If you are arguing about the size of an effect rather than its presence, that axis is working against you.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Steps of one <dfn data-g=\"102\">lakh</dfn>, two lakh, three lakh are an ordinary scale. Steps of one lakh, ten lakh, one <dfn data-g=\"43\">crore</dfn> are a log scale. Read the steps rather than the words.</p>",
+     "tag": "india_deviation",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Asked in a viva what the logarithm of one is, the answer is zero, because ten to the power zero is one.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>What you must be able to do is say what one means and read an axis built from them. And notice when a figure has been drawn on one without saying so.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A figure has a vertical axis marked 1, 10, 100, 1,000, 10,000, with the marks evenly spaced. A line climbs steadily across it, at a constant angle, from the bottom left to the top right. Say what a straight line on this figure means about the quantity, and say what the same data would look like on an ordinary scale.</p>",
+   "type": "interpretation",
+   "confidence": true,
+   "answer": "<p>Equal distances up this axis are equal multiplications. A straight line means the quantity is multiplying by the same factor in each equal step along the bottom. Doubling every year, say, or rising tenfold every decade.</p>\n<p>That is a very different claim from the one a straight line usually carries. On an ordinary scale a straight line means the same amount is being added each step.</p>\n<p>On an ordinary scale, this same data would not be a straight line at all. It would hug the bottom of the page for most of its length and then turn sharply upward near the right-hand edge. Almost all of the visible movement would happen in the last part of the figure, and the early values would be indistinguishable from zero.</p>\n<p>Which is worth saying out loud: the log axis did not change the data. It changed which part of the data you can see.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Take the four penalty ceilings from the Food Safety and Standards Act, 2006 in the worked example. Say how many times larger the largest is than the smallest, first by dividing and then by subtracting the logarithms. Then say what the logarithm of ten crore would be.</p>",
+   "type": "calculation",
+   "confidence": false,
+   "answer": "<p>By dividing.</p>\n<div class=\"working\">\n<p>10,00,000 divided by 25,000<br />\n= 1,000 divided by 25    (take three zeros off each)<br />\n= 40</p>\n</div>\n<p>By subtracting the logarithms.</p>\n<div class=\"working\">\n<p>6.0 minus 4.4 = 1.6</p>\n</div>\n<p>A difference of 1.6 on the logarithm scale means a factor of 10<sup>1.6</sup>. A calculator gives about 40, which agrees with the division. Note the shape of it: the division needed the zeros counted, and the subtraction did not.</p>\n<p>Ten crore. A crore is 10<sup>7</sup>, so ten crore is 10<sup>8</sup>, and the logarithm is 8.</p>\n<p>Check it against the ladder. Ten crore is a hundred times the largest penalty in the Act. A hundred is two powers of ten, so the logarithm should be 6 plus 2. It is.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Give the logarithm to base ten of each of these, without a calculator.</p>\n<div class=\"working\">\n<p>100    10,000    1    10<sup>9</sup></p>\n</div>",
+   "level": 1,
+   "answer": "<p>The logarithm is the power of ten, so read the exponent off each number.</p>\n<div class=\"working\">\n<p>100    = 10<sup>2</sup>    so the logarithm is 2<br />\n10,000 = 10<sup>4</sup>    so the logarithm is 4<br />\n1    = 10<sup>0</sup>    so the logarithm is 0<br />\n10<sup>9</sup>    so the logarithm is 9</p>\n</div>\n<p>The third is the one people get wrong under pressure. The logarithm of one is zero, because ten to the power zero is one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Each of these logarithms belongs to a number. Say which number.</p>\n<div class=\"working\">\n<p>3    6    0    -2</p>\n</div>",
+   "level": 2,
+   "answer": "<p>Raise ten to each one.</p>\n<div class=\"working\">\n<p>3    -&gt; 10<sup>3</sup> = 1,000<br />\n6    -&gt; 10<sup>6</sup> = 10,00,000    (ten lakh)<br />\n0    -&gt; 10<sup>0</sup> = 1<br />\n-2 -&gt; 10<sup>-2</sup> = 0.01</p>\n</div>\n<p>A negative logarithm belongs to a number between zero and one. It does not belong to a negative number, and no logarithm does.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Without a calculator, say between which two whole numbers the logarithm of 4,800 lies. Then say which of the two it is closer to, and why.</p>",
+   "level": 3,
+   "answer": "<p>Put 4,800 between the two powers of ten that bracket it.</p>\n<div class=\"working\">\n<p>1,000 = 10<sup>3</sup><br />\n4,800<br />\n10,000 = 10<sup>4</sup></p>\n</div>\n<p>So the logarithm lies between 3 and 4.</p>\n<p>Which end it is nearer. The halfway point on a logarithm scale is not the halfway point in the number. Halfway between 10<sup>3</sup> and 10<sup>4</sup> is about 3,160, and 4,800 is above that. So the logarithm is above 3.5, nearer 4. A calculator gives 3.68.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Work out 100 times 10,000 using logarithms instead of multiplication. Take the logarithm of each number, add the two logarithms, and turn the total back into a number. Then check the result by multiplying directly.</p>",
+   "level": 3,
+   "answer": "<p>The logarithms first. Both numbers are exact powers of ten, so read the exponent off each one.</p>\n<div class=\"working\">\n<p>100    = 10<sup>2</sup>    so log<sub>10</sub> 100    = 2<br />\n10,000 = 10<sup>4</sup>    so log<sub>10</sub> 10,000 = 4</p>\n</div>\n<p>Add them.</p>\n<div class=\"working\">\n<p>2 plus 4 = 6</p>\n</div>\n<p>Turn the total back into a number by raising ten to it.</p>\n<div class=\"working\">\n<p>10<sup>6</sup> = 10,00,000    (ten lakh)</p>\n</div>\n<p>Now the direct check.</p>\n<div class=\"working\">\n<p>100 times 10,000 = 10,00,000</p>\n</div>\n<p>The same number both ways. An addition did a multiplication, and that is the whole reason logarithms were invented. Underneath it is the exponent rule you already have: multiplying two powers of ten adds their exponents, and a logarithm is that exponent.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Section 21(2) of the Consumer Protection Act, 2019 caps a penalty at ten lakh rupees. Sections 34 and 47 cap District and State Commission complaints at one crore and ten crore. Give the logarithm of each figure.</p>",
+   "level": 4,
+   "answer": "<p>Write each as a power of ten first. Every one of the three is an exact power, which is why this problem has clean answers.</p>\n<div class=\"working\">\n<p>ten lakh    = 10,00,000    = 10<sup>6</sup>    logarithm 6<br />\none crore = 1,00,00,000    = 10<sup>7</sup>    logarithm 7<br />\nten crore = 10,00,00,000 = 10<sup>8</sup>    logarithm 8</p>\n</div>\n<p>Six, seven, eight. Each step up the ladder is one on the logarithm scale and ten times in rupees, which is what a logarithm scale is for.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Four vertical axes are marked like this, bottom to top, in every case with the marks evenly spaced up the page.</p>\n<table style=\"width:62%;\">\n\n<tbody>\n<tr>\n<td>A</td>\n<td>1 lakh</td>\n<td>2 lakh</td>\n<td>3 lakh</td>\n<td>4 lakh</td>\n</tr>\n<tr>\n<td>B</td>\n<td>1 lakh</td>\n<td>10 lakh</td>\n<td>1 crore</td>\n<td>10 crore</td>\n</tr>\n<tr>\n<td>C</td>\n<td>0</td>\n<td>250</td>\n<td>500</td>\n<td>750</td>\n</tr>\n<tr>\n<td>D</td>\n<td>100</td>\n<td>1,000</td>\n<td>10,000</td>\n<td>1,00,000</td>\n</tr>\n</tbody>\n</table>\n<p>Say which are logarithmic and which are ordinary. For each logarithmic one, say what a single step up the page means.</p>",
+   "level": 4,
+   "answer": "<p>Read the steps, not the words. Subtract one mark from the next, then divide one by the next, and see which of the two comes out the same every time.</p>\n<div class=\"working\">\n<p>A    2 lakh minus 1 lakh = 1 lakh    3 lakh minus 2 lakh = 1 lakh<br />\nB    10 lakh divided by 1 lakh = 10    1 crore divided by 10 lakh = 10<br />\nC    250 minus 0 = 250    500 minus 250 = 250<br />\nD    1,000 divided by 100 = 10    10,000 divided by 1,000 = 10</p>\n</div>\n<p>A and C are ordinary. Equal distances up the page are equal amounts.</p>\n<p>B and D are logarithmic. Equal distances are equal multiples, and one step is ten times.</p>\n<p>C settles itself before you subtract anything. It has a mark at zero, and a logarithm scale has no position for zero, because no power of ten produces it.</p>\n<p>B is the one that catches people. Lakh and crore are round-sounding words, so a reader skims the labels and takes the axis for an ordinary one. A is built from the same word and is ordinary. The word tells you nothing. The step tells you everything.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Take the four penalty figures from the Food Safety and Standards Act, 2006: 25,000, 3,00,000, 5,00,000 and 10,00,000. Using a calculator for the logarithms, say how many times larger the three lakh figure is than the twenty-five thousand one, by subtracting logarithms.</p>",
+   "level": 5,
+   "answer": "<p>The two logarithms.</p>\n<table style=\"width:38%;\">\n\n<tbody>\n<tr>\n<td>25,000</td>\n<td>logarithm 4.4</td>\n</tr>\n<tr>\n<td>3,00,000</td>\n<td>logarithm 5.5</td>\n</tr>\n</tbody>\n</table>\n<p>Subtract.</p>\n<div class=\"working\">\n<p>5.5 minus 4.4 = 1.1</p>\n</div>\n<p>A difference of 1.1 on the logarithm scale means a factor of 10<sup>1.1</sup>, which a calculator gives as about 12.6.</p>\n<p>Check it by dividing directly.</p>\n<div class=\"working\">\n<p>3,00,000 divided by 25,000<br />\n= 300 divided by 25<br />\n= 12</p>\n</div>\n<p>Twelve against 12.6. The small gap is the <dfn data-g=\"160\">rounding</dfn> in the two logarithms, each given to one place. That is the price of working on the logarithm scale, and it is usually worth paying.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Section 3(1) of the National Food Security Act, 2013 gives 5 kilograms of grain per person per month. A block office is planning for 2,00,000 people. Work out the kilograms needed in one month by adding logarithms rather than by multiplying, then check the answer directly.</p>",
+   "level": 5,
+   "answer": "<p>The two logarithms. A calculator gives the first; the second is an exact power of ten with a digit in front, so a calculator is easiest there too.</p>\n<div class=\"working\">\n<p>log<sub>10</sub> 5    = 0.7<br />\n2,00,000    = 2 times 10<sup>5</sup><br />\nlog<sub>10</sub> 2,00,000 = 5.3</p>\n</div>\n<p>Add them, because adding logarithms multiplies the numbers.</p>\n<div class=\"working\">\n<p>0.7 plus 5.3 = 6.0</p>\n</div>\n<p>Raise ten to the total to get back to a number.</p>\n<div class=\"working\">\n<p>10<sup>6</sup> = 10,00,000 kilograms a month</p>\n</div>\n<p>Ten lakh kilograms, which is a thousand tonnes.</p>\n<p>Now check it directly.</p>\n<div class=\"working\">\n<p>5 times 2,00,000 = 10,00,000</p>\n</div>\n<p>The same figure. Keep the label on it. Kilograms of grain in one month, not people and not rupees.</p>\n<p>Notice what the logarithms bought here: nothing at all. Two numbers this easy are quicker multiplied. The move is worth having for the case where the numbers are not easy, and worth practising on the case where you can check it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A figure has a vertical axis marked 100, 1,000, 10,000 and 1,00,000, evenly spaced. Two points sit on it: one at 300 and one at 30,000. Say how far apart they are in logarithms, and how many times larger one value is than the other.</p>",
+   "level": 6,
+   "answer": "<p>The logarithms, from a calculator.</p>\n<table style=\"width:35%;\">\n\n<tbody>\n<tr>\n<td>300</td>\n<td>logarithm 2.5</td>\n</tr>\n<tr>\n<td>30,000</td>\n<td>logarithm 4.5</td>\n</tr>\n</tbody>\n</table>\n<p>The distance between them.</p>\n<div class=\"working\">\n<p>4.5 minus 2.5 = 2</p>\n</div>\n<p>Two whole steps on the axis, which is two powers of ten.</p>\n<div class=\"working\">\n<p>10<sup>2</sup> = 100</p>\n</div>\n<p>So one value is a hundred times the other. Check it directly: 30,000 divided by 300 is 100.</p>\n<p>Notice what the axis showed you. Two marks apart always means a hundred times, wherever on the axis you measure it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>logarithm of 200 = 2.3<br />\nlogarithm of 300 = 2.5<br />\n2.3 plus 2.5 = 4.8<br />\nso 200 plus 300 = 10<sup>4.8</sup> = about 63,000</p>\n</div>",
+   "level": 7,
+   "answer": "<p>Adding logarithms corresponds to multiplying the numbers, not adding them.</p>\n<p>Check what the working actually computed.</p>\n<div class=\"working\">\n<p>200 times 300 = 60,000</p>\n</div>\n<p>Sixty thousand, and 10<sup>4.8</sup> is about 63,000, which is that figure with the rounding in the two logarithms. So the arithmetic performed a multiplication correctly and the answer was given the wrong name.</p>\n<p>The sum itself is simply 500, and logarithms are no help with it at all.</p>\n<p>Why it looks reasonable: the words “add” and “plus” appear in the working and in the question, so the operations look matched. Adding logarithms multiplies. There is no logarithm rule for adding two numbers.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a claim about a figure whose vertical axis runs 1, 10, 100, 1,000 in evenly spaced marks.</p>\n<blockquote>\n<p>The line rose one mark between 2015 and 2020, and one mark again between 2020 and 2025, so the increase was steady.</p>\n</blockquote>\n<p>Find what is wrong with the word “steady”.</p>",
+   "level": 8,
+   "answer": "<p>Each mark is a multiplication by ten, so equal marks are equal multiples and not equal amounts.</p>\n<p>Suppose the line started at 1.</p>\n<table style=\"width:46%;\">\n\n<tbody>\n<tr>\n<td>2015</td>\n<td>1</td>\n<td></td>\n</tr>\n<tr>\n<td>2020</td>\n<td>10</td>\n<td>an increase of 9</td>\n</tr>\n<tr>\n<td>2025</td>\n<td>100</td>\n<td>an increase of 90</td>\n</tr>\n</tbody>\n</table>\n<p>The second rise is ten times the first in amount.</p>\n<p>“Steady” is right only if it means multiplying by the same factor each period. That is exponential growth, and it is the opposite of what most readers hear in the word.</p>\n<p>Why it looks reasonable: the line is straight and the gaps are equal. On an ordinary axis that is exactly what steady growth looks like. The axis changed and the eye did not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a caption under a figure in a report.</p>\n<blockquote>\n<p>Values below the axis minimum are not shown. The vertical axis is logarithmic.</p>\n</blockquote>\n<p>Decide what to work out about the data, and say what the figure cannot establish.</p>",
+   "level": 9,
+   "answer": "<p>What to work out: what happened to the zeros.</p>\n<p>A logarithm scale has no position for zero, because no power of ten gives zero. So every observation with a value of zero has been dropped from the figure, and the caption’s first sentence is describing that without saying so.</p>\n<div class=\"working\">\n<p>logarithm of 1    = 0<br />\nlogarithm of 0.1 = -1<br />\nlogarithm of 0.01 = -2<br />\nlogarithm of 0    = does not exist</p>\n</div>\n<p>Going down the axis makes values smaller for ever and never reaches zero.</p>\n<p>What the figure cannot establish. It cannot tell you how many observations were zero. Those may be the most important ones: a district with no cases, a facility with no stock. A figure that drops them can show a rising line while the number of places reporting nothing also rises. Ask for the count of zeros before you quote the figure.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A colleague shows you two charts of the same data and asks which to use in a briefing. One has an ordinary vertical axis, the other a logarithmic one. On the log chart the rise looks modest; on the ordinary one it looks dramatic. Decide what to work out, and say what your answer does not settle.</p>",
+   "level": 10,
+   "answer": "<p>What to work out: what the argument is about. That decides the axis, and nothing else does.</p>\n<p>If the question is <strong>whether the thing is growing by a constant factor</strong>, doubling every year say, the log axis answers it. Constant multiplication is a straight line there, and nothing else is.</p>\n<p>If the question is <strong>how many more people are affected</strong>, the ordinary axis answers it, because that is the axis on which distance means amount.</p>\n<table style=\"width:72%;\">\n\n<tbody>\n<tr>\n<td>from 100 to 1,000 on a log axis</td>\n<td>one step</td>\n</tr>\n<tr>\n<td>from 100 to 1,000 in people</td>\n<td>900 more people</td>\n</tr>\n</tbody>\n</table>\n<p>Same data. The log axis shows the shape of the growth and hides its size; the ordinary axis does the reverse.</p>\n<p>What this does not settle. Neither chart tells you whether the rise is real or whether the counting changed. And whichever you choose, say in the briefing which axis it is. A reader who assumes the other one takes away the opposite of what you meant.</p>"
+  }
+ ]
+}

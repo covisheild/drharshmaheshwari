@@ -1,0 +1,124 @@
+{
+ "format": 1,
+ "id": "s02-r1-c17",
+ "label": "17",
+ "title": "Four kinds of equation, and the notebook entry",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Four kinds of equation are worth telling apart when you read, and each is checked a different way. Papers hold other kinds too; later books meet them.</p>\n<p>An identity holds for every value of its symbols because a conservation law, or counting, requires it.</p>\n<p>A definition brings in a new quantity as a combination of others. It cannot be false. A definition rearranged is still a definition.</p>\n<p>A <dfn data-g=\"169\">model assumption</dfn> is a claim, adopted by the author, about how a body or a population behaves. It could be false.</p>\n<p>A <dfn data-g=\"100\">fitted equation</dfn> has a form chosen by its author and constants estimated from one set of measurements.</p>\n<p>One printed equation can mix kinds: a model assumption with a fitted constant, or a definition rearranged and then used to estimate a quantity from inputs that are themselves fitted or adopted. Each part is then checked by its own kind. A model’s output inherits the kinds of the model that produced it, and a fitted value can then be adopted by agreement. Record both.</p>\n<p>A <dfn data-g=\"182\">notebook entry</dfn> records one equation so that it can be used and checked later. It holds six things.</p>\n<ol type=\"1\">\n<li>The equation as printed.</li>\n<li>Each symbol in words, with its unit.</li>\n<li>The whole equation said as one sentence.</li>\n<li>Its kind.</li>\n<li>What it assumes, or whom it was fitted on.</li>\n<li>The paper, with the equation’s number or page.</li>\n</ol>",
+   "refs": [
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    97,
+    147,
+    148,
+    149,
+    135,
+    150,
+    151,
+    54,
+    152,
+    153,
+    154,
+    136,
+    155,
+    156,
+    157
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Equations in papers look alike: letters, an equals sign, more letters. They are not alike. Some are true whatever happens. Some are true because someone decided what a word means. Some are guesses about how bodies behave. Some are lines drawn through somebody else’s measurements.</p>\n<p>Which kind you are looking at decides what you check.</p>\n<p>So keep a notebook.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Start with an equation that went wrong for Indian adults, and find out why by sorting it.</p>\n<p>FAO/WHO/UNU 2004, the report of a consultation, prints equations for <dfn data-g=\"23\">basal metabolic rate</dfn> (BMR). BMR is the energy a body spends lying awake and at rest, after an overnight fast. The equations come from Schofield, and the consultation “decided to retain” them.</p>\n<div class=\"working\">\n<p>BMR = 15.057 × weight + 692.2</p>\n</div>\n<p>Now sort it. It is not an identity: nothing forces a body’s BMR to be this number. It is a fitted equation. Its form, a straight line in weight, was chosen.</p>\n<p>So ask the fitted equation’s question: whom was it fitted on? The Indian Council of Medical Research and National Institute of Nutrition (ICMR-NIN) answers it for you. The FAO/WHO/UNU equations “can overestimate the BMR by 10 -12%, because the FAO/WHO/UNU data set included young and muscular subjects.”</p>\n<p>ICMR-NIN’s complaint is not with the line but with whom it was drawn through.</p>\n<p>Now write the entry.</p>\n<ul>\n<li>Each symbol with its unit: BMR, basal metabolic rate, in kcal a day. Weight in kg. 15.057, in kcal a day for each kg. 692.2, in kcal a day.</li>\n<li>In words: for men aged 18 to 30, BMR is about 15 kcal a day for each kilogram, plus about 692 kcal a day.</li>\n<li>Kind: fitted.</li>\n<li>Assumes, or fitted on: Schofield’s measured men, 2,879 in this band.</li>\n<li>Source: FAO/WHO/UNU 2004, chapter 5, Table 5.2.</li>\n</ul>\n<p>A second entry shows an equation of two kinds at once. Polidori and colleagues write their Equation 4 for how intake answers weight loss (Polidori 2016).</p>\n<div class=\"working\">\n<p>ΔEI(t) = −kP × ΔBW(t)</p>\n</div>\n<ul>\n<li>Symbols: the change in intake from the start, ΔEI(t), is in kcal a day. The change in body weight (BW) from the start, ΔBW(t), is in kg. The constant kP, above zero, is “the feedback strength”, in kcal a day per kg. The minus sign makes intake rise when weight falls.</li>\n<li>In words: for every kilogram lost, intake rises by kP kcal a day.</li>\n<li>Kind: a model assumption with one fitted constant. The straight-line form is the assumption.</li>\n<li>Assumes: intake answers weight in <dfn data-g=\"212\">proportion</dfn>.</li>\n<li>Fitted on: the group means of a 52-week trial of canagliflozin in people with <dfn data-g=\"275\">type 2 diabetes</dfn>.</li>\n<li>Source: Polidori and colleagues 2016, Methods, Equation 4.</li>\n</ul>",
+   "numberRefs": [
+    16,
+    98,
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>ICMR-NIN’s finding is about groups of Indian adults. It is not a correction to apply to a single patient’s measured BMR.</p>\n<p>Sorting is not always this clean. Take the Atwater factors of section 10: 4, 9 and 4 kcal a gram. They are fitted: averages of measurements, rounded. They were then adopted by agreement. Record both kinds when an equation has both.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Say an equation’s kind before you use it, because the check differs. For a definition, read the <dfn data-g=\"282\">where-clause</dfn>. For a model assumption, ask for the evidence. For a fitted equation, ask whom it was fitted on. For an identity, check that every term is counted across the same boundary and over the same interval.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An identity cannot tell you what to change. When someone offers the identity as a reason for an instruction, ask which model assumption they have added to it.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>ICMR-NIN’s 2020 note finds that the FAO/WHO/UNU equations for BMR can run 10 to 12% high for Indians. For an Indian patient, use instead the requirements in the note’s Tables 1a and 1b. They build in the reduction.</p>",
+     "tag": "india_deviation",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>An energy requirement is BMR times the <dfn data-g=\"197\">physical activity level</dfn> (PAL). ICMR-NIN’s 2020 note cut the sedentary figure from 1.53 to 1.40. At the same BMR, that alone lowers the estimate by about 8.5%. Quote such a table with the year of its inputs.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A fitted equation holds for people like those it was fitted on, over the range it was fitted. Outside them, use an equation fitted on people like yours, or a stated correction such as ICMR-NIN’s, and say which you used.</p>",
+     "tag": "boundary",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Polidori’s about 100 kcal a day per kg was fitted to group means. Do not tell a patient their appetite will rise by exactly that much.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A notebook entry without its kind and its assumptions is not finished. When you copy an equation from a typeset image, have a second reader check it symbol by symbol.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Teach a trainee that a definition cannot be confirmed by data.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Start the notebook this book has been building towards: ten equations from papers you have read, each with a full six-part entry.</p>\n<p>Here are ten candidates from papers this book has quoted. Choose any ten, from here or from your own reading. For each, write the six parts.</p>\n<ol type=\"1\">\n<li>The <dfn data-g=\"81\">energy balance</dfn> equation, ES = EI − EO (Hall and colleagues 2012, Question 1).</li>\n<li>PAL = TEE / BMR (FAO/WHO/UNU 2004, glossary and chapter 5).</li>\n<li>TEE = BMR × PAL (FAO/WHO/UNU 2004, chapter 5; ICMR-NIN 2020).</li>\n<li>One row of Table 5.2, such as BMR = 14.818 × weight + 486.6 for women aged 18 to 30 (FAO/WHO/UNU 2004). Table 5.2’s “No.” column gives how many were measured.</li>\n<li>Energy in kcal = 4 × <dfn data-g=\"213\">protein</dfn> + 9 × fat + 4 × carbohydrate, each in grams (FAO Food and Nutrition Paper 77, §3.5.1).</li>\n<li>W(t) = W0 − ΔEB × t / 3500 (Thomas and colleagues 2013, Methods).</li>\n<li>ΔEIi = ρ × dBWi/dt + ε × (BWi − BW0) + (Δδ / (1 − β)) × BW0 + UGE (Polidori and colleagues 2016, Equation 1).</li>\n<li>ΔEI(t) = −kP × ΔBW(t) (Polidori and colleagues 2016, Equation 4).</li>\n<li>ΔEI(t) = −kP × ΔBW(t) − kI × ∫ from 0 to t of ΔBW(τ) dτ (Polidori and colleagues 2016, Equation 5). τ here is the running time inside the <dfn data-g=\"130\">integral</dfn>, not the <dfn data-g=\"270\">time constant</dfn> of section 8.</li>\n<li>The rule of thumb (Hall and colleagues 2012, Question 3). Eventual weight change in pounds = the permanent change in intake in kcal a day, divided by 10.</li>\n</ol>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>The kinds, and the one thing each entry must not leave out.</p>\n<ol type=\"1\">\n<li>Identity. Counted across one boundary, the body, for one interval. Hall and colleagues call it “a statement of the principle of energy conservation”. Their ES here is the rate, which this book writes dES/dt. EO is this book’s EE. Names no cause.</li>\n<li>Definition. PAL has no existence apart from this <dfn data-g=\"223\">ratio</dfn>. Units cancel: PAL has none.</li>\n<li>The same definition, rearranged, used to estimate. Its kind is definition, but its answer is only as good as the BMR (fitted) and the PAL (measured or adopted) put in. ICMR-NIN’s 2020 note changed both inputs for Indian adults.</li>\n<li>Fitted. Schofield’s data, 829 women in this band, by the table’s count. Can run 10 to 12% high for Indians, per ICMR-NIN. Check the units: 14.818 is kcal a day per kg.</li>\n<li>Fitted and then adopted. The factors are averaged from measurements, rounded, and used “regardless of the food”, FAO says, as Book 0, E2 taught. Indian labelling rules then fix the factors by regulation, as Book 0, B4 showed.</li>\n<li>Model assumption. As section 16 showed, it is the identity plus two assumptions. One is 3,500 kcal in every <dfn data-g=\"204\">pound</dfn>. The other is a gap that never changes. ΔEB must be read as expenditure minus intake for the printed minus sign to give a loss. W is in pounds.</li>\n<li>Model. The identity plus premises, as section 16 rebuilt it. The paper calls it “a linearization”. β “accounts for the adaptation of <dfn data-g=\"84\">energy expenditure</dfn> during a diet perturbation”. δ is its physical activity parameter: “The baseline physical activity parameter was δ0 and Δδ represents changes in physical activity”.</li>\n<li>Model assumption with a fitted constant, kP, about 100 kcal a day per kg, fitted to group means. The authors say they do not yet know if it holds across a range of losses.</li>\n<li>Model assumption. The authors “also investigated” it as an alternative. Its kI of 1 kcal a day per kg per day was set for the simulation. The paper’s own words give no fit for it.</li>\n<li>Model assumption (a model’s output, rounded). The panel calls it “a best-case scenario” “for the average overweight person”. It inherits every assumption of that model. It describes the eventual weight, not the time to reach it.</li>\n</ol>\n<p>A full entry, for number 8, is in this section’s illustration. The others follow its pattern.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A state health secretary asks why the national energy requirement for sedentary adults fell in 2020, when nobody’s body changed. One page, answer first, no methods section.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The answer first: the requirement is a calculation, and ICMR-NIN changed two of its inputs. Nobody’s body had to change.</p>\n<p>The requirement is the resting energy a body spends, its basal metabolic rate, times a number for how active people are. That number is the physical activity level. ICMR-NIN’s 2020 note states the formula: TEE = BMR × PAL.</p>\n<p>The first input. The resting figure comes from equations built on measurements of other populations. ICMR-NIN found they can run 10 to 12% high for Indians. It had already cut them by 5% and cut them by another 5% in 2020.</p>\n<p>The second input. For sedentary adults the activity number fell from 1.53 to 1.40. The note’s sentence calls it PAR, the physical activity ratio, but its heading and figures are the physical activity level. ICMR-NIN says the energy spent on each activity is lower for Indians. On its own, at the same resting figure, that lowers the requirement by about 8.5%.</p>\n<div class=\"working\">\n<p>1.40 divided by 1.53 = 0.915</p>\n</div>\n<p>What this means for policy. Any scheme norm still built on the 2010 figures uses a higher estimate than ICMR-NIN now gives. Check such norms against the 2020 figures. Next time the inputs are revised, the requirement will move again. Tie every requirement quoted in a scheme to the year of the inputs behind it.</p>"
+  }
+ ]
+}

@@ -1,0 +1,198 @@
+{
+ "format": 1,
+ "id": "s55-r1-c02",
+ "label": "2",
+ "title": "Population, exposure, outcome: a question in one sentence",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"385\">research question</dfn> can be written as one sentence with up to four parts.</p>\n<p>The population is the group the answer is about. It is bounded by place, by person (an age band, and any other trait that decides who is in) and by time.</p>\n<p>The <dfn data-g=\"159\">exposure</dfn> is what differs between the people being compared: something they have, do or meet. When a researcher or a programme gives it on purpose, as the thing being tested, it is called the <dfn data-g=\"231\">intervention</dfn>.</p>\n<p>The comparison is the group, or the level of exposure, that the exposed group is set against.</p>\n<p>The outcome is what is measured to answer the question. A question has one main outcome and at most one main exposure. “Risk factors” names many possible exposures, so it is not yet an exposure.</p>",
+   "refs": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    6,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p><strong>Population</strong> — who the answer is about.</p>\n<p>Here the population needs a fence round it on three sides. Place: which district, which schools. Person: an age band, and anything else that decides who is in. Time: which year. “School children” has no fence. “Children aged 10 to 14 in government schools in Raipur district in the 2027–28 school year” has all three.</p>\n<p><strong>Exposure</strong> — what differs between the people you compare. It is something they have, do or meet: walking to school, a night shift, living near a sweet shop.</p>\n<p><strong>Comparison</strong> — the group you set the exposed group against. Children who walk to school are compared with children who are driven. Without a comparison, “children who walk have obesity less often” has nothing to be less often than.</p>\n<p><strong>Outcome</strong> — what you measure to answer the question. Obesity judged from measured weight and height is an outcome.</p>\n<p>The set of four parts has two short names, made from their first letters. <dfn data-g=\"324\">PICO</dfn> is population, intervention, comparison, outcome. Use it when someone gives the thing being tested. <dfn data-g=\"314\">PECO</dfn> is population, exposure, comparison, outcome. Use it when people meet the exposure in their ordinary lives.</p>\n<p>Not every question needs all four. “What share of these children have obesity?” has a population and an outcome, and nothing else. It asks how common something is.</p>\n<p>Writing the question this way has a second use, later. When you search for what others have already found, you build the search from these same parts. How to search properly is taught in the next level of this subject.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s55-r1-c02-parts-named.png",
+   "alt": "A bar chart with four parts, each with two bars. Fenced population: 1 in the first drafts, 5 in the rewrites. Exposure, counting an intervention as one: 3 and 4. Comparison: 0 and 4. Outcome: 5 and 5.",
+   "w": 1357,
+   "h": 655,
+   "caption": "The five made-up first drafts and their rewrites in the second illustration, counted by which part each names. All five drafts name an outcome, but only 1 fences its population and none names a comparison. After rewriting, all 5 fence the population and 4 name an exposure and a comparison; rewrite 1 has neither, because it is a how-common question."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a first draft that fails. Suppose your guide names the topic “obesity in school children”, and you write this at the top of your made-up protocol, the written plan of a study drawn up before it starts:</p>\n<p>“To study obesity and its risk factors among school children.”</p>\n<p>Try to find the four parts in it.</p>\n<p>The population is “school children”. Which place? Which ages? Which year? It does not say.</p>\n<p>The exposure is “risk factors”. Name one. The sentence does not.</p>\n<p>There is no comparison, because there is no exposure to compare.</p>\n<p>The outcome is “obesity”. That part is there, because the topic was obesity. But the draft does not say how obesity will be judged.</p>\n<p>Now rebuild it one part at a time.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Part</th>\n<th>First draft</th>\n<th>Rewrite</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>population</td>\n<td>school children</td>\n<td>children aged 10 to 14 in government schools in Raipur district, in the 2027–28 school year</td>\n</tr>\n<tr>\n<td>exposure</td>\n<td>risk factors</td>\n<td>walking or cycling to school</td>\n</tr>\n<tr>\n<td>comparison</td>\n<td>none</td>\n<td>coming to school by bus or motor vehicle</td>\n</tr>\n<tr>\n<td>outcome</td>\n<td>obesity</td>\n<td>obesity, judged from measured weight and height</td>\n</tr>\n</tbody>\n</table>\n<p>Put the rewrite together as one sentence:</p>\n<p>“Among children aged 10 to 14 in government schools in Raipur district in the 2027–28 school year, do those who walk or cycle to school, compared with those who come by bus or motor vehicle, have obesity less often, judged from measured weight and height?”</p>\n<p>Read the sentence and check that you can plan from it. You know which schools to visit, which children to include and in which year. You know the one thing to ask each child about, and the two groups it makes. You know what to measure.</p>\n<p>Now notice two things about it.</p>\n<p>Walking to school is something the children do. Nobody in the study gives it to them. So this is a PECO question. Suppose instead the schools started a walking programme and you asked whether it changed how many children had obesity. The programme would be given on purpose. It would be an intervention, and the question would be PICO.</p>\n<p>Take out the exposure and the comparison, and the sentence still works: “What share of children aged 10 to 14 in government schools in Raipur district, in the 2027–28 school year, have obesity, judged from measured weight and height?” That is a <dfn data-g=\"210\">how-common question</dfn>. It is a smaller question than the first, and a complete one.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The rewrite is one choice among many. “Risk factors” could have become screen time, sleep or meals, and each would be a different question. The one-sentence form shows that you picked one. It does not show that you picked the right one.</p>\n<p>“Judged from measured weight and height” is still a placeholder. A real protocol must say how it defines obesity in children, and where that definition comes from. This section does not teach that. The subject on obesity in children, adolescents and pregnancy does.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now run the check on a whole set. Here are five first drafts, made up, of the kind a batch of postgraduates might bring to a department meeting. Each one is marked for whether it names each part clearly.</p>\n<table style=\"width:98%;\">\n\n<thead>\n<tr>\n<th>No.</th>\n<th>First draft</th>\n<th>Fenced population</th>\n<th>Exposure or intervention</th>\n<th>Comparison</th>\n<th>Outcome</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>To study obesity among school children.</td>\n<td>no</td>\n<td>no</td>\n<td>no</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Prevalence and risk factors of obesity in urban slums.</td>\n<td>no</td>\n<td>no</td>\n<td>no</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Effect of mobile phone use on obesity in college students.</td>\n<td>no</td>\n<td>yes</td>\n<td>no</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Does eating dinner late cause weight gain?</td>\n<td>no</td>\n<td>yes</td>\n<td>no</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Role of text-message reminders in follow-up of adults aged 30 to 60 at the district hospital’s non-communicable disease (NCD) clinic, 2027.</td>\n<td>yes</td>\n<td>yes</td>\n<td>no</td>\n<td>yes</td>\n</tr>\n</tbody>\n</table>\n<p>Draft 5 marks “yes” for its outcome, but loosely. “Follow-up” could mean coming to the next visit, or still coming after a year. The rewrite has to pick one.</p>\n<p>Here are the same five, rewritten.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>No.</th>\n<th>Rewrite</th>\n<th>Fenced population</th>\n<th>Exposure or intervention</th>\n<th>Comparison</th>\n<th>Outcome</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>What share of children aged 10 to 14 in government schools in Raipur district, in the 2027–28 school year, have obesity, judged from measured weight and height?</td>\n<td>yes</td>\n<td>no</td>\n<td>no</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Among women aged 20 to 45 in slum households in Bilaspur city in 2027, do those who work outside the home, compared with those who do not, have obesity less often?</td>\n<td>yes</td>\n<td>yes</td>\n<td>yes</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Among first-year students aged 17 to 20 at one medical college in Chhattisgarh in 2027, do those who spend more than 3 hours a day on a phone screen, compared with those who spend less than 1 hour, have obesity more often?</td>\n<td>yes</td>\n<td>yes</td>\n<td>yes</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Among students aged 18 to 22 at one medical college in Chhattisgarh in 2027, do those who usually eat dinner after 10 pm, compared with those who eat before 8 pm, gain more weight, in kilograms, over one academic year?</td>\n<td>yes</td>\n<td>yes</td>\n<td>yes</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Among adults aged 30 to 60 with obesity attending the NCD clinic of the district hospital in Durg between January and June 2027, does a text-message reminder the day before each visit, compared with no reminder, raise the share who come to their next visit?</td>\n<td>yes</td>\n<td>yes</td>\n<td>yes</td>\n<td>yes</td>\n</tr>\n</tbody>\n</table>\n<p>Rewrite 1 has no exposure on purpose. It is a how-common question, and that is allowed. Rewrite 2 had to drop “risk factors” and pick one. Rewrite 4 dropped the word “cause”: it asks whether the two groups differ, which is a smaller claim. Rewrite 5 is the only PICO question of the five, because the clinic sends the reminder on purpose.</p>\n<p>Count each part down the columns of both tables. There are five drafts. In the count, an intervention is counted under exposure.</p>\n<table style=\"width:64%;\">\n\n<thead>\n<tr>\n<th>Part</th>\n<th>First drafts</th>\n<th>Rewrites</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>fenced population</td>\n<td>1</td>\n<td>5</td>\n</tr>\n<tr>\n<td>exposure</td>\n<td>3</td>\n<td>4</td>\n</tr>\n<tr>\n<td>comparison</td>\n<td>0</td>\n<td>4</td>\n</tr>\n<tr>\n<td>outcome</td>\n<td>5</td>\n<td>5</td>\n</tr>\n</tbody>\n</table>\n<p>Every one of the five drafts named its outcome, and only one fenced its population. That fits what you saw in the first draft above: the topic word, obesity, lands in the outcome slot by itself. The fence and the comparison are the parts you have to go looking for.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The five drafts are made up, and the counts describe only them. They are not a finding about how people write questions. What carries over is the check, not the numbers.</p>\n<p>A “yes” in a column means the part is named. It does not mean the part is well chosen. Rewrite 3’s cut-offs of 3 hours and 1 hour are the drafter’s choice, and another drafter could defend different ones.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to think “school children” is a population. A population has a fence of place, person and time. Refuse to plan a sample until the sentence names all three.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the question as one sentence, then label its population, exposure or intervention, comparison and outcome. If you cannot label a part, the question does not have it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Obesity can be the exposure or the outcome. “Do adults with obesity miss more clinic visits?” has obesity as the exposure.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A question with two outcomes is two questions. Split it, and keep the one you would choose if you could only have one.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Morgan and colleagues report, from a 2009 review they cite, that over half (54%) of 313 research studies did not report on the four PICO parts. This course has not read that review. So when you read a paper, find its population, exposure, comparison and outcome yourself. Do this before you accept what it says it answered.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A trainee brings a title like “<dfn data-g=\"342\">Prevalence</dfn> and risk factors of obesity in urban slums”. Ask them to read out their one outcome and their one exposure. When they list several risk factors, ask which one they would keep if they could only keep one.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>The four-part check tells you a question is complete and asks one thing. A perfectly formed sentence can still be the wrong question to ask.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Go back to the four made-up candidates in the last section’s table. They were about the Raipur schools, the district screening camp, meal timing at your college, and whether clinic patients know their own weight. Rewrite each as one sentence with its population fenced by place, person and time. Label the population, exposure or intervention, comparison and outcome in each. Say which are how-common questions.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>One possible set of rewrites. Yours will differ in the details. Check that each of yours has a fenced population and one outcome.</p>\n<ol type=\"1\">\n<li><p>“What share of children aged 10 to 14 in government schools in Raipur district, in the 2027–28 school year, have obesity, judged from measured weight and height?”</p>\n<p>Population: children aged 10 to 14 in government schools in Raipur district, 2027–28. Exposure: none. Comparison: none. Outcome: obesity from measured weight and height. A how-common question.</p></li>\n<li><p>“Among adults aged 18 and over screened at the district screening camp in 2026, did those living in the town, compared with those living in villages, have obesity more often?”</p>\n<p>Population: adults aged 18 and over screened at that camp in 2026. Exposure: living in the town. Comparison: living in a village. Outcome: obesity. PECO.</p></li>\n<li><p>“Among first-year students aged 17 to 20 at your medical college in 2027, do those who usually eat dinner after 10 pm, compared with those who eat before 8 pm, gain more weight, in kilograms, over one academic year?”</p>\n<p>Population: first-year students aged 17 to 20 at your college, 2027. Exposure: dinner after 10 pm. Comparison: dinner before 8 pm. Outcome: weight gained over the year, in kilograms. PECO.</p></li>\n<li><p>“Among adults aged 18 and over attending the NCD clinic of the district hospital between January and March 2027, what share can state their own weight to within 2 kilograms of the clinic’s reading?”</p>\n<p>Population: adults aged 18 and over at that clinic, January to March 2027. Exposure: none. Comparison: none. Outcome: stating one’s own weight to within 2 kilograms. A how-common question. The rewrite had to turn “know their weight” into something you can measure.</p></li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. Their draft title is “Risk factors of obesity among college students”. Teach them why “risk factors” is not an exposure, and help them rewrite the title as one question.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Write the four labels down the left of the board: population, exposure, comparison, outcome. Ask the resident to fill each from their title.</p>\n<p>They will write “college students” for the population. Ask: which college, which ages, which academic year? Add the fence.</p>\n<p>They will write “risk factors” for the exposure. Ask them to name one. They may name five: sleep, screen time, meals, hostel food, stress. Point out that each one gives a different pair of groups to compare. Five exposures means five questions, and one study is built round one.</p>\n<p>Ask which of the five they would keep if they could only keep one. Say it forms the exposure. The comparison follows from it: students who sleep less than six hours, say, against those who sleep more.</p>\n<p>The outcome is obesity. Ask how it will be judged, and write that in.</p>\n<p>Then read the finished sentence aloud together. The other four risk factors are not lost. Each one is now a candidate question of its own.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Label the population, the exposure, the comparison and the outcome in this question.</p>\n<p>Among adults aged 40 to 60 living in one town in 2025, do those who work night shifts, compared with those who work day shifts, have a higher average weight?</p>",
+   "level": 1,
+   "answer": "<table style=\"width:88%;\">\n\n<thead>\n<tr>\n<th>Part</th>\n<th>In the question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>population</td>\n<td>adults aged 40 to 60 living in one town in 2025</td>\n</tr>\n<tr>\n<td>exposure</td>\n<td>working night shifts</td>\n</tr>\n<tr>\n<td>comparison</td>\n<td>working day shifts</td>\n</tr>\n<tr>\n<td>outcome</td>\n<td>average weight</td>\n</tr>\n</tbody>\n</table>\n<p>The population is fenced by person (aged 40 to 60), place (one town) and time (2025). The study does not give anyone a night shift; the workers already have one. So this is an exposure, and the question is PECO.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Label the parts of each question. Say where a part is missing.</p>\n<ol type=\"a\">\n<li>Among children aged 6 to 10 in the schools of one block in 2026, what share have obesity?</li>\n<li>Among patients aged 30 to 60 at one clinic in 2026, does a weekly phone call from a nurse, compared with no call, raise the share who come to their next visit?</li>\n<li>Do people who sleep less weigh more?</li>\n</ol>",
+   "level": 2,
+   "answer": "<table style=\"width:98%;\">\n\n<thead>\n<tr>\n<th>Question</th>\n<th>Population</th>\n<th>Exposure or intervention</th>\n<th>Comparison</th>\n<th>Outcome</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>a</td>\n<td>children aged 6 to 10 in the schools of one block, 2026</td>\n<td>none</td>\n<td>none</td>\n<td>obesity</td>\n</tr>\n<tr>\n<td>b</td>\n<td>patients aged 30 to 60 at one clinic, 2026</td>\n<td>a weekly phone call from a nurse (intervention)</td>\n<td>no call</td>\n<td>coming to the next visit</td>\n</tr>\n<tr>\n<td>c</td>\n<td>missing</td>\n<td>sleeping less</td>\n<td>not stated</td>\n<td>weight</td>\n</tr>\n</tbody>\n</table>\n<ol type=\"a\">\n<li><p>No exposure and no comparison. It is a how-common question, and nothing is wrong with that.</p></li>\n<li><p>All four parts are there. The clinic gives the call on purpose, so it is an intervention and the question is PICO.</p></li>\n<li><p>Two parts are missing. The population has no fence at all: which people, where, when? And “less” has nothing to be less than. Sleeping less than how many hours, compared with whom? It needs both before it can be planned.</p></li>\n</ol>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Label the parts of this question.</p>\n<p>Is the weight gained over one year by first-year students aged 17 to 20 of one college in 2027 greater among those living in the hostel than among those living at home?</p>",
+   "level": 3,
+   "answer": "<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>In the question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>population</td>\n<td>first-year students aged 17 to 20 of one college in 2027</td>\n</tr>\n<tr>\n<td>exposure</td>\n<td>living in the hostel</td>\n</tr>\n<tr>\n<td>comparison</td>\n<td>living at home</td>\n</tr>\n<tr>\n<td>outcome</td>\n<td>weight gained over one year</td>\n</tr>\n</tbody>\n</table>\n<p>The outcome comes first in this sentence, and the exposure comes last. Word order does not decide the parts.</p>\n<p>Ask two things instead. What differs between the two groups? Where they live. What is measured to answer? Weight gained. The college does not assign students to the hostel for the study, so the question is PECO.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Take the made-up topic “obesity in school children in Raipur”, from this book’s setting. Write a one-sentence how-common question on it. Fence the population by place, person and time, and say how the outcome is judged. Label the parts.</p>",
+   "level": 4,
+   "answer": "<p>One answer: “What share of children aged 6 to 10 in government primary schools in Raipur city, in the 2027–28 school year, have obesity, judged from weight and height measured at school?”</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>In the question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>population</td>\n<td>children aged 6 to 10 in government primary schools in Raipur city, 2027–28</td>\n</tr>\n<tr>\n<td>exposure</td>\n<td>none</td>\n</tr>\n<tr>\n<td>comparison</td>\n<td>none</td>\n</tr>\n<tr>\n<td>outcome</td>\n<td>obesity, judged from weight and height measured at school</td>\n</tr>\n</tbody>\n</table>\n<p>Check the fence. Place: government primary schools in Raipur city. Person: aged 6 to 10. Time: the 2027–28 school year. There is no exposure and no comparison, as a how-common question should have none.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Take the made-up topic “what school children eat at lunch”, from this book’s setting. Write a one-sentence PECO question on it, with a comparison. Label the parts.</p>",
+   "level": 5,
+   "answer": "<p>One answer: “Among children aged 8 to 12 in Korba town’s private schools in 2027–28, do those who bring lunch from home, compared with those who buy it at school, have obesity less often?”</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>In the question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>population</td>\n<td>children aged 8 to 12 in private schools in Korba town, 2027–28</td>\n</tr>\n<tr>\n<td>exposure</td>\n<td>bringing lunch from home</td>\n</tr>\n<tr>\n<td>comparison</td>\n<td>buying lunch at school</td>\n</tr>\n<tr>\n<td>outcome</td>\n<td>obesity</td>\n</tr>\n</tbody>\n</table>\n<p>It is PECO. Where the children get their lunch is part of their lives. The study does not give it to them. The comparison comes straight from the exposure: the same children, split by where their lunch comes from. A protocol would add how obesity is judged, from measured weight and height.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A made-up report on the district screening camp ends with this sentence:</p>\n<p>“Adults who lived within 2 km of the camp site came back for a second check more often than adults who lived further away.”</p>\n<p>Write the one-sentence question this sentence answers. Label its parts. Say which part the report leaves unfenced.</p>",
+   "level": 6,
+   "answer": "<p>The question: “Among adults screened at the district camp, did those living within 2 km of the camp site, compared with those living further away, come back for a second check more often?”</p>\n<table style=\"width:72%;\">\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>In the question</td>\n</tr>\n<tr>\n<td>population</td>\n<td>adults screened at the district camp</td>\n</tr>\n<tr>\n<td>exposure</td>\n<td>living within 2 km of the camp site</td>\n</tr>\n<tr>\n<td>comparison</td>\n<td>living more than 2 km away</td>\n</tr>\n<tr>\n<td>outcome</td>\n<td>coming back for a second check</td>\n</tr>\n</tbody>\n</table>\n<p>Work backwards from the sentence. The two groups set against each other give the exposure and the comparison. What was counted in each group gives the outcome. Who was counted gives the population.</p>\n<p>The population is unfenced in time and in person. The sentence names no year of camp and no age range. You cannot tell whom the answer is about until the report says both.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find what broke.</p>\n<div class=\"working\">\n<p>question: Among adults aged 30 to 60 attending the district hospital’s NCD clinic in 2026, do those with obesity, compared with those without, miss more follow-up visits?<br />\npopulation: adults aged 30 to 60 attending the NCD clinic in 2026<br />\nexposure: missing follow-up visits<br />\ncomparison: adults without obesity<br />\noutcome: obesity</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The exposure and outcome lines broke. They are swapped.</p>\n<p>The groups being compared are adults with obesity and adults without it. So having obesity is the exposure. What is counted in each group, to answer the question, is missed follow-up visits. So that is the outcome.</p>\n<table style=\"width:96%;\">\n\n<thead>\n<tr>\n<th>Part</th>\n<th>Correct label</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>population</td>\n<td>adults aged 30 to 60 attending the NCD clinic in 2026</td>\n</tr>\n<tr>\n<td>exposure</td>\n<td>having obesity</td>\n</tr>\n<tr>\n<td>comparison</td>\n<td>not having obesity</td>\n</tr>\n<tr>\n<td>outcome</td>\n<td>missing follow-up visits</td>\n</tr>\n</tbody>\n</table>\n<p>The worked answer’s own comparison line gives it away. The comparison is “adults without obesity”, so the exposure must be having obesity.</p>\n<p>Why the wrong answer looks reasonable: in a course about obesity, obesity is usually the thing being measured. So the word gets put in the outcome slot by habit. The test is not the word. It is which thing splits the groups and which thing is measured.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the steps that broke.</p>\n<div class=\"working\">\n<p>question: Among school children in Chhattisgarh, does a daily games period, compared with none, reduce obesity and raise exam marks?<br />\npopulation: school children in Chhattisgarh<br />\nintervention: a daily games period<br />\ncomparison: no games period<br />\noutcome: obesity and exam marks<br />\nverdict: all four parts are present, so the question is ready</p>\n</div>",
+   "level": 8,
+   "answer": "<p>Two lines broke, and the verdict rests on both.</p>\n<p>The outcome line holds two outcomes. A games period could lower obesity and leave exam marks where they were. Then the question has no single answer. It is two questions in one sentence.</p>\n<p>The population line has a place and nothing else. It names no ages and no year.</p>\n<p>The verdict counted whether each slot had something in it. It did not check that the outcome was one thing, or that the population was fenced on all three sides.</p>\n<p>A repaired question: “Among children aged 11 to 13 in government schools in Durg district in the 2027–28 school year, does a daily games period, compared with none, change the share with obesity by the end of the year, judged from measured weight and height?” Exam marks become a separate candidate question of their own.</p>\n<p>Why the wrong answer looks reasonable: every slot is filled, and a filled checklist feels finished. The check is not whether each part is there. It is whether each part is one thing, fenced.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A line from a made-up draft protocol reads:</p>\n<p>“The study will assess the nutritional status of adolescents and its determinants in the district.”</p>\n<p>Turn it into one question in one sentence. Then say what your question still cannot answer.</p>",
+   "level": 9,
+   "answer": "<p>First take the line apart.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>In the line</td>\n<td>Problem</td>\n</tr>\n<tr>\n<td>population</td>\n<td>adolescents in the district</td>\n<td>no ages, no year, and no way to find them (schools? homes?)</td>\n</tr>\n<tr>\n<td>exposure</td>\n<td>its determinants</td>\n<td>names none</td>\n</tr>\n<tr>\n<td>comparison</td>\n<td>none</td>\n<td>follows from having no exposure</td>\n</tr>\n<tr>\n<td>outcome</td>\n<td>nutritional status</td>\n<td>several outcomes: being underweight, having obesity, and more</td>\n</tr>\n</tbody>\n</table>\n<p>Pick one of each. One answer: “Among adolescents aged 13 to 17 in government schools of Bilaspur district in the 2027–28 school year, do those who walk or cycle to school, compared with those who come by motor vehicle, have obesity less often, judged from measured weight and height?”</p>\n<p>What this question still cannot answer:</p>\n<ul>\n<li>Anything about the other determinants, or about being <dfn data-g=\"461\">underweight</dfn>. Each is a separate question. The protocol line asked all of them at once, and so could have answered none well.</li>\n<li>Anything about adolescents who are not in government schools, or who live in other districts. The fence you chose sets whom the answer is about.</li>\n<li>Whether walking to school is what makes the difference. The question asks whether two groups differ. Why they differ is a separate question, which needs its own kind of study.</li>\n</ul>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>In a made-up meeting, the district NCD programme officer says:</p>\n<p>“We need to know whether the screening camps are working.”</p>\n<p>Turn this into one question in one sentence. Then say what your question still cannot answer.</p>",
+   "level": 10,
+   "answer": "<p>“Working” is not an outcome. Nobody can measure it until someone says what it means. List what it might mean:</p>\n<ul>\n<li>adults found to have obesity at a camp go on to attend the NCD clinic;</li>\n<li>their weight changes over the following year;</li>\n<li>more adults with obesity are found than would have been found without the camps.</li>\n</ul>\n<p>Each is a different outcome, and so a different question. Pick the first, because the clinic’s register can count it. One answer:</p>\n<p>“Among adults aged 18 and over found to have obesity at the district’s screening camps between January and June 2027, what share attended the NCD clinic within three months of their camp?”</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>In the question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>population</td>\n<td>adults aged 18 and over found to have obesity at the district’s camps, January to June 2027</td>\n</tr>\n<tr>\n<td>exposure</td>\n<td>none</td>\n</tr>\n<tr>\n<td>comparison</td>\n<td>none</td>\n</tr>\n<tr>\n<td>outcome</td>\n<td>attending the NCD clinic within three months</td>\n</tr>\n</tbody>\n</table>\n<p>What this question still cannot answer:</p>\n<ul>\n<li>Whether the camps made any difference. Some of these adults would have gone to the clinic anyway. There is no comparison group, so the question only counts. It cannot show a change.</li>\n<li>Whether attending the clinic changed anyone’s weight. That is the second meaning of “working”, and a different question.</li>\n<li>Whether this is what the officer meant. Go back and ask which decision the answer is for, before you start.</li>\n</ul>"
+  }
+ ]
+}

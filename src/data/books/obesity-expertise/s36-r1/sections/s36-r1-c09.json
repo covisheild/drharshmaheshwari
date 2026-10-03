@@ -1,0 +1,130 @@
+{
+ "format": 1,
+ "id": "s36-r1-c09",
+ "label": "9",
+ "title": "The interviewer is part of the data",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-24.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>What a <dfn data-g=\"262\">respondent</dfn> says in an interview depends in part on who is asking, and where.</p>\n<p>Britten (1995) states the general case. Researchers “need to consider how they are perceived by interviewees and the effects of characteristics such as class, race, sex, and social distance on the interview”. The problem is sharper when the interviewer is a doctor. A respondent who is, or may become, a patient “may wish to please the doctor by giving the responses he or she thinks the doctor wants”. The place matters too: “The setting of an interview affects the content”.</p>\n<p>Mays and Pope (2000) make the effect something a study must report. <dfn data-g=\"258\">Reflexivity</dfn>, in their words, “means <dfn data-g=\"277\">sensitivity</dfn> to the ways in which the researcher and the research process have shaped the collected data”.</p>\n<p>None of these sources measures how large the effect is. Where the interviewer is a doctor or clinic staff, Britten names the direction: towards what the respondent thinks the doctor wants. Whatever the direction, it is the same in every interview one person runs in one setting. By Book 0’s reasoning on <dfn data-g=\"304\">systematic error</dfn>, that makes it bias, and more such interviews do not shrink it.</p>",
+   "refs": [
+    176,
+    176,
+    176,
+    176,
+    184,
+    185,
+    186,
+    186,
+    163,
+    187,
+    187,
+    188,
+    189,
+    126,
+    190
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>People answer the person in front of them. Many patients will say what they think the doctor would like to hear. The same patient, talking at home to someone with no link to the clinic, may say something quite different.</p>\n<p>Age, sex, class and the job you do all tell the person something about you. So does the place. A consultation room and a kitchen draw out different stories.</p>\n<p>Because the pull is the same in every interview one person runs, it is bias: an error that points one way and does not shrink when you collect more. Twenty interviews by the clinic’s own doctor do not cancel it. They repeat it twenty times.</p>\n<p>What you can do is make the pull weaker, and make it visible. Say who you are and who you are not. Promise, truthfully, that the clinic will not know who said what, and say the limits you gave at consent (section 7). Interview where the person is at ease. Then write down who you were to them, so that anyone reading your transcripts can judge.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here are two made-up answers from the running example, translated from Chhattisgarhi. They show the direction of the pull. They are not a measurement of it. Suppose two different interviewers each talk to R3, a woman with obesity who stopped coming to the district hospital’s non-communicable disease (NCD) clinic.</p>\n<p>In the first, the clinic’s own medical officer asks, in her white coat, in the consultation room, during clinic hours.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Tell me about coming to this clinic.</td>\n</tr>\n<tr>\n<td>R3</td>\n<td>The clinic is very good, doctor. Everyone is kind. We get busy at home, that is all.</td>\n</tr>\n</tbody>\n</table>\n<p>In the second, a researcher with no job at the hospital asks the same question in R3’s kitchen. Earlier, the researcher said: “I do not work at the clinic, and the clinic will not know who said what.”</p>\n<table>\n\n<tbody>\n<tr>\n<td>Speaker</td>\n<td>Words</td>\n</tr>\n<tr>\n<td>I</td>\n<td>Tell me about coming to this clinic.</td>\n</tr>\n<tr>\n<td>R3</td>\n<td>The last time, the doctor said if I do not lose weight there is no point coming. In front of the others. After that I did not want to go.</td>\n</tr>\n</tbody>\n</table>\n<p>Read the first answer with Britten’s sentence in mind: a patient “may wish to please the doctor”. Praise, and a reason that asks nothing of the clinic, is what that pull would produce. It may also be true. You cannot tell from the answer alone. That is exactly the difficulty.</p>\n<p>Now suppose the medical officer interviews twenty patients the same way. Each of the twenty meets the same person, the same coat and the same room. The pull is in every interview. So the twenty answers do not scatter around the truth and average out. They lean the same way together. That is Book 0’s systematic error, which more readings on the same instrument do not remove.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The two answers are invented to show a direction, and the second is not “the truth” just because it is critical. An interviewer from outside the clinic brings their own pull. A respondent may, for example, tell a stranger a harsher story than the one they live with. Moving the interview changes the push. It does not remove it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now suppose you are the one with the white coat. You are a doctor at this hospital, and your five pilot interviews will be with people who know the clinic. Here is what you can do about the pull at this stage.</p>\n<p>Do not interview your own patients if you can avoid it. Britten says so directly. If you cannot avoid it, tell them in plain words that they may say what they really think. Then do not correct them when they say something you believe is wrong.</p>\n<p>Take off the coat. Say who you are and who you are not before the first question: “I am a doctor here, but today I am not your doctor. Nothing you tell me will change your care, and the clinic will not know who said what.” DeJonckheere and Vaughn advise telling people that their answers will not influence their care.</p>\n<p>Choose the place with them. Britten notes that the setting changes what is said, and that home is usually better. At home, notice who else can hear.</p>\n<p>If you need an interpreter, choose with the same care. The Indian Council of Medical Research (ICMR) guidelines advise against using a person from the respondent’s own village, “keeping in mind the hierarchies existing in the context”.</p>\n<p>Then write <dfn data-g=\"108\">field notes</dfn> about yourself, the same day. A made-up example:</p>\n<table>\n\n<thead>\n<tr>\n<th>Field note</th>\n<th>Why a reader needs it</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>I am a doctor at the district hospital, though not in the NCD clinic. R3 knew this.</td>\n<td>Her answers may lean towards what a doctor wants to hear.</td>\n</tr>\n<tr>\n<td>We sat in her kitchen. Her husband came in for the last ten minutes.</td>\n<td>She may have said less once he could hear.</td>\n</tr>\n<tr>\n<td>I said “that must be hard” twice about the bus fare.</td>\n<td>That line is agreement, not a neutral probe.</td>\n</tr>\n</tbody>\n</table>\n<p>This is what Mays and Pope call reflexivity: showing how you and your methods may have shaped the data, so a reader can judge it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These steps weaken the pull and record it. They cannot tell you how much of any one answer it shaped. Some pulls, such as the power differences the ICMR guidelines note between researchers and participants in India, run deeper than a removed coat. They are taught in the next level of this subject.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Doing more interviews does not average out the interviewer. To change it, change the interviewer or the setting. Adding interviews will not.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A run of praise from patients interviewed by their own clinic’s staff is not evidence that the clinic is liked. Before you accept such a finding, ask who did the interviews and where.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Do not interview your own patients for research if you can avoid it.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Before the first question, say who you are and who you are not. Say that nothing the person says will change their care, and repeat the limits you gave at consent.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Write field notes about yourself, not only about the respondent. Record who you are to them, where you sat, who else could hear, and any moment you steered. You cannot report what you did not write down.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In India, power differences make it hard for people to refuse a researcher outright, as the ICMR guidelines note. Expect more agreement than people feel.</p>",
+     "tag": "india_deviation",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>None of the sources this section rests on puts a size on the interviewer’s effect. When a finding depends on it, one check this book suggests is to compare what different interviewers heard. It is taught in the next level of this subject.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>A made-up report on the NCD clinic says: “All 12 patients interviewed by the clinic’s diabetes educator said they were satisfied with the service. Missed follow-up is therefore not due to dissatisfaction.” Say what this finding shows, what it does not show, and what you would ask first.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>It shows what 12 patients said to a member of the clinic’s own staff. That is a real finding about those conversations.</p>\n<p>It does not show that the patients are satisfied, and still less that dissatisfaction plays no part in missed follow-up. A patient talking to clinic staff may, in Britten’s words, wish to give the responses they think the staff want. That pull runs in the same direction in all 12 interviews, so the uniform answer is what bias would produce, not evidence against it. Twelve out of twelve is agreement, not confirmation.</p>\n<p>Ask first: who did the interviews, and where? What were people told about whether their answers would reach the clinic? Were they current patients of the person asking? Are there field notes on the interviewer’s role? Then ask whether anyone without a link to the clinic spoke to people who had stopped coming. They are the people the question is about.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Plan the part of your five pilot interviews that deals with who you are. Write the two or three sentences you will say about yourself before the first question. Then write the headings of the field notes you will fill in about yourself after each interview.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>The opening sentences should say who you are, who you are not, and what happens to the answers. For example: “I am training in research at the medical college. I do not work in this clinic, and I am not anyone’s doctor here. Nothing you tell me will change your care, and the clinic will not know who said what.” If you do work at the clinic, say so. A hidden role that comes out later does more damage than one stated at the start.</p>\n<p>Headings for the field notes about yourself might be:</p>\n<ul>\n<li>who I am to this person: job, age, sex, anything they knew about me;</li>\n<li>what I wore, and where we sat;</li>\n<li>who else was in the room or could hear, and when;</li>\n<li>moments I agreed, advised, corrected or steered, with the time on the recording;</li>\n<li>anything the person seemed to say for my benefit.</li>\n</ul>\n<p>Compare the headings across your five interviews. If the same heading keeps filling up, that is a habit of yours, and it is in all five transcripts.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has three minutes. A hospital has told them: “Our interviews show patients love the NCD clinic.” Help them decide what to ask the hospital, with no jargon.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>One quotable line: “What people tell you depends on who is asking.”</p>\n<p>If the clinic’s own doctors or staff did the interviews, patients had good reasons to be polite. Their care depends on those people. So praise in those interviews is what you would expect, whether or not patients are happy.</p>\n<p>Ask the hospital three things. Who did the interviews? Were the people interviewed told that the clinic would not know who said what? And did they talk to people who stopped coming, not only to people who still come?</p>\n<p>Be fair to the hospital too. Friendly interviews are not proof of a cover-up. They just cannot prove that patients are happy. How much the interviewer changed the answers is something nobody can tell from the interviews alone.</p>"
+  }
+ ]
+}

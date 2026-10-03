@@ -1,0 +1,156 @@
+{
+ "format": 1,
+ "id": "s37-r1-c14",
+ "label": "14",
+ "title": "The state as a food provider",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-09-25.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The Indian state does not only regulate food. Through three channels it also buys, stores, cooks and hands out food, to a large share of the population.</p>\n<p>The first is the public distribution system (PDS) under the National Food Security <dfn data-g=\"3\">Act</dfn>, 2013 (NFSA). On 29 November 2023 the Union Cabinet decided to give free foodgrains to about 81.35 <dfn data-g=\"78\">crore</dfn> (813.5 million) beneficiaries under the Pradhan Mantri Garib Kalyan Anna Yojana (PMGKAY) for five years from 1 January 2024. The Department of Food and Public Distribution (DFPD) allocates the grain, and it goes out through 5.51 <dfn data-g=\"197\">lakh</dfn> (551,000) fair price shops.</p>\n<p>The second is PM POSHAN (Pradhan Mantri Poshan Shakti Nirman), the Ministry of Education’s school meal scheme, earlier called the mid-day meal. It was approved for 2021-22 to 2025-26. The DFPD allocated it 22.31 lakh tonnes of foodgrains for 2025-26.</p>\n<p>The third is supplementary nutrition at <dfn data-g=\"18\">anganwadi</dfn> centres, under Mission Saksham Anganwadi and Poshan 2.0, approved for 2021-22 to 2025-26. Its grain comes through the Wheat Based Nutrition Programme (WBNP), which the Ministry of Women and Child Development runs for children up to 6 and for expectant and lactating women. The grain is an ingredient of the cooked meal and the <dfn data-g=\"367\">take-home ration</dfn>, not handed out raw. As on March 2026 the mission’s tracking system followed nearly 14,03,170 (about 1.4 million) anganwadi centres and about 8,95,29,425 (about 89.5 million) eligible beneficiaries.</p>\n<p>In each channel the state decides which foods go in: which grain, which recipe, what may and may not be added. Each such decision changes what very many people eat. So what the state buys and serves is nutrition policy, whether or not it is called that. Hostels and welfare institutions are the same lever: the DFPD allocated them 5.83 lakh tonnes for 2025-26.</p>",
+   "refs": [
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    231,
+    232,
+    233,
+    234,
+    235
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The earlier sections showed what each scheme promises one person: a ration, a school meal, an anganwadi meal or packet. This one steps back and asks how big the whole thing is.</p>\n<p>It is very big. The ration reaches about 81 crore people, that is about 810 million.</p>\n<p>That makes the state one of the largest buyers, cooks and grocers in the country. It writes the rules for what an anganwadi may cook, down to whether it may use white sugar.</p>\n<p>So a decision about a scheme’s menu is a decision about the country’s diet.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c14-grain-allocation.png",
+   "alt": "One bar a scheme, in lakh tonnes: PHH 428.63, AAY 99.39, tide over 26.09, WBNP 23.05, PM POSHAN 22.31, hostels 5.83, festival and calamity 1.52, adolescent girls 0.58. Together 607.40.",
+   "w": 1357,
+   "h": 660,
+   "caption": "Foodgrains the Union allocated for 2025-26, in lakh tonnes (one lakh tonnes is 100 million kg). The ration’s priority households take 428.63 and Antyodaya households 99.39. PM POSHAN school meals take 22.31 and the anganwadi grain, through the Wheat Based Nutrition Programme, 23.05. With the small festival and calamity allocation, 1.52, the bars add to the table’s grand total of 607.40. Allocated, not lifted or eaten."
+  },
+  {
+   "t": "figure",
+   "src": "s37-r1-c14-pm-poshan-lifted.png",
+   "alt": "Two bars: 22.31 lakh tonnes allocated and 15.68 lifted by December 2025.",
+   "w": 1357,
+   "h": 659,
+   "caption": "PM POSHAN grain in 2025-26, in lakh tonnes: 22.31 allocated, 15.68 lifted by December 2025, with a quarter of the year still to run. An allocation is grain set aside, not grain that reached anyone; grain lifted is still not grain eaten."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the sentence you will hear, because it is wrong in two ways at once.</p>\n<blockquote>\n<p>The ration reaches 81.35 crore people, school meals 11.80 crore children and anganwadis 8.95 crore beneficiaries. So the state feeds over 100 crore people.</p>\n</blockquote>\n<p>Each number is real. The first is from the Cabinet’s decision of 29 November 2023. The second is from a Press Information Bureau (PIB) release of 1 April 2022. The third is from a PIB backgrounder of 14 April 2026, as on March 2026. That is the first fault: three years, added as if they were one.</p>\n<p>The second fault is worse. The three counts are not of different people. A child in a <dfn data-g=\"285\">priority household</dfn> is counted in the ration. The same child may also be counted at school, or at the anganwadi. Adding the counts counts that child two or three times. The sum is not a number of people at all.</p>\n<p>So measure the scale a way that does add up: in grain, from one table, for one year. Open the DFPD’s Annual Report 2025-26 at https://dfpd.gov.in/WriteReadData/AnnualRecordUploadDocuments/43bf089b-73cc-4329-aeb6-c883d2f2ea55_Food%20AR%202025-26%20English.pdf and search for “Annual <dfn data-g=\"12\">allocation</dfn> of food grains for 2025-26”. Read it the way Book 0, F1 taught: what one row is, what the column reports, in what unit. The figures are in lakh metric tonnes. A tonne is 1,000 kg, so one lakh tonnes is 10 crore kg, or 100 million kg.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Scheme</td>\n<td>Allocated 2025-26, lakh tonnes</td>\n</tr>\n<tr>\n<td>Antyodaya Anna Yojana (AAY)</td>\n<td>99.39</td>\n</tr>\n<tr>\n<td>Priority households (PHH)</td>\n<td>428.63</td>\n</tr>\n<tr>\n<td>Targeted PDS (TPDS) tide over</td>\n<td>26.09</td>\n</tr>\n<tr>\n<td>PM POSHAN</td>\n<td>22.31</td>\n</tr>\n<tr>\n<td>Wheat Based Nutrition Programme (anganwadi)</td>\n<td>23.05</td>\n</tr>\n<tr>\n<td>Welfare institutions and hostels</td>\n<td>5.83</td>\n</tr>\n<tr>\n<td>Scheme for Adolescent Girls</td>\n<td>0.58</td>\n</tr>\n</tbody>\n</table>\n<p>Tide over and the Scheme for Adolescent Girls are two smaller allocations the report names without explaining.</p>\n<p>These rows can be added, because they are all grain, all allocated, all in 2025-26. The table’s own <dfn data-g=\"161\">grand total</dfn>, with a small festival and calamity allocation, is 607.40 lakh tonnes, about 61 million tonnes. The paragraph above the table says 595.05. When a report’s text and its table disagree, quote the table and say that you did.</p>\n<p>Now check the scale against the people. Take the ration rows, AAY and PHH, and the report’s own count of “around 80 Crore beneficiaries” under the Act, from the same report.</p>\n<div class=\"working\">\n<p>99.39 plus 428.63 = 528.02</p>\n</div>\n<p>That is 528.02 lakh tonnes, or 52,802 million kg. Divide by 800 million people.</p>\n<div class=\"working\">\n<p>52,802 divided by 800 is about 66<br />\n66 divided by 12 = 5.5</p>\n</div>\n<p>About 66 kg a person a year, or 5.5 kg a month. The Act promises 5 kg a person a month to a priority household. The allocation comes out a little higher, which fits: an <dfn data-g=\"20\">Antyodaya household</dfn> gets 35 kg a month whatever its size (for as many households as the Centre specifies for each State). The two numbers from different parts of one report agree to within about a tenth. That is the kind of check that tells you the scale is real.</p>",
+   "numberRefs": [
+    154,
+    178,
+    177,
+    236
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>An allocation is grain set aside for a scheme, not grain that reached anyone. For PM POSHAN in 2025-26 the same report gives 22.31 lakh tonnes allocated and 15.68 lifted by December 2025, with a quarter of the year still to run. Grain lifted is still not grain eaten.</p>\n<p>The 80 crore is a rounded count of ration-card beneficiaries, and the 5.5 kg a month is an average over households of every size. It says nothing about any one household.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now watch the state decide a menu.</p>\n<p>Open the Mission Saksham Anganwadi and Poshan 2.0 Scheme Guidelines (Ministry of Women and Child Development, 2022) at https://wcd.gov.in/documents/uploaded/Mission%20Saksham%20Anganwadi%20and%20Poshan%202.0%20scheme%20guidelines.pdf and search for “jaggery”.</p>\n<blockquote>\n<p>Only jaggery should be used for sweetening; white sugar should not be used.</p>\n</blockquote>\n<p>A few lines on, search for “Millets”.</p>\n<blockquote>\n<p>Millets should be mandatorily supplied at least once a week</p>\n</blockquote>\n<p>Two sentences in a scheme guideline. They apply to the food cooked or packed for every registered beneficiary of anganwadi supplementary nutrition in the country. No shopper chose them and no shop stocked them. A ministry wrote them.</p>\n<p>Now read what the same guidelines say about the programme before them, the anganwadi services of the Integrated Child Development Services (ICDS). Search for “<dfn data-g=\"42\">calorie</dfn> sufficiency”.</p>\n<blockquote>\n<p>The Anganwadi Services under ICDS have focused on ensuring calorie sufficiency, neglecting quality and diversity of diets</p>\n</blockquote>\n<p>That is the state’s own account of its own design: built to fill a calorie gap. It matches what the last section’s arithmetic showed about the ration, which is mostly cereal energy.</p>\n<p>The same thing happens in the other channels. The DFPD’s table allocates nutri-cereals in the ration “in lieu of wheat/rice”, so the state chooses the grain. PM POSHAN encourages States to buy locally grown millets and vegetables for school meals. In each case a buying rule is a diet rule. When you read a scheme guideline, read it as a menu.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A rule in a guideline is not a rule on the plate. Whether a centre in fact uses jaggery, or serves millets every week, depends on the State that runs it. Poshan 2.0 is carried out through the State governments, and PM POSHAN’s day-to-day running lies with the States and Union Territories. The guideline tells you what was decided, not what was done.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The state regulates food; people choose what to eat” misses most of Indian food policy. A change to what a scheme hands out changes what millions eat.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Never add the beneficiaries of the ration, the school meal and the anganwadi to get “people the state feeds”. The same child can sit in all three counts, and the counts come from different years.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>For 2025-26 the Union government allocated 607.40 lakh tonnes of foodgrains, about 61 million tonnes, by its Food Department’s own table. The report’s text says 595.05. When text and table disagree, quote the table and say which figure you used.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>As on March 2026 the anganwadi programme tracked about 14 lakh centres and 8.95 crore eligible beneficiaries. A single line in its guidelines, such as “white sugar should not be used”, reaches all of them.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The anganwadi guidelines say in their own words that the earlier programme focused on “calorie sufficiency, neglecting quality and diversity of diets”. Quote the state’s own sentence when you argue that its food schemes were built for hunger.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Allocated is not lifted, and lifted is not eaten. So grain figures tell you what the state moved, never what anyone ate.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A guideline is not a plate. The Union writes the norms and the States run the kitchens. Before you claim a scheme serves millets or avoids sugar, ask for evidence of what was served, not what was written.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Name the three channels through which the Indian state hands out food. For each, name the ministry or department that runs it at the Union level, and give one scale figure with its date and its source.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<ul>\n<li>The public distribution system under the National Food Security Act, 2013. The Department of Food and Public Distribution allocates the grain. States hand it out through fair price shops. The Cabinet decided on 29 November 2023 to give about 81.35 crore beneficiaries free foodgrains for five years from 1 January 2024. Or: 554.11 lakh tonnes allocated under TPDS for 2025-26, from the Department’s Annual Report 2025-26.</li>\n<li>PM POSHAN school meals, run by the Ministry of Education. The day-to-day running rests on the States and Union Territories. A PIB release of 1 April 2022 counts 11.80 crore children of classes I to VIII in 11.20 lakh schools. Or: 22.31 lakh tonnes of grain allocated for 2025-26.</li>\n<li>Supplementary nutrition at anganwadi centres, under Mission Saksham Anganwadi and Poshan 2.0. The Ministry of Women and Child Development runs it through the States. A PIB backgrounder of 14 April 2026 counts about 14,03,170 centres and 8,95,29,425 eligible beneficiaries, as on March 2026.</li>\n</ul>\n<p>Each figure keeps its own date. None of them is added to another.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A draft op-ed says this.</p>\n<blockquote>\n<p>India’s food schemes are welfare, not nutrition policy. They just hand out grain. What people eat is decided by what they buy.</p>\n</blockquote>\n<p>Say what is wrong with it, using two things the state itself has written down.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The flaw is the idea that handing out food is neutral about diet. Whatever the state hands out is part of what people eat, and the state chooses it.</p>\n<p>Two things it has written down show that.</p>\n<ul>\n<li>The anganwadi guidelines of 2022 set the menu’s rules. “Only jaggery should be used for sweetening; white sugar should not be used.” Millets go in at least once a week. Those rules apply to every registered beneficiary’s food.</li>\n<li>The Food Department’s 2025-26 allocation table gives nutri-cereals “in lieu of wheat/rice” in the ration. The state picks the grain in the ration of about 80 crore people.</li>\n</ul>\n<p>And the anganwadi guidelines describe the earlier programme as focused on “calorie sufficiency, neglecting quality and diversity of diets”. That is the state calling its own design a diet decision.</p>\n<p>A fairer sentence: India’s food schemes are nutrition policy by design, and they were designed for hunger.</p>"
+  }
+ ]
+}
