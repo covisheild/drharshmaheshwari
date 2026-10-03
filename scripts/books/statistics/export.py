@@ -688,6 +688,82 @@ def landing_text(site_root):
     return {"why": "".join(f"<p>{_html.escape(p)}</p>" for p in paras[:2]), "blurb": desc}
 
 
+# ---------------------------------------------------------------- datasets (the In R boxes read data/<file>.csv)
+
+DATA_URL = f"/doctors/books/{SLUG}/data/"
+DATA_README = """Datasets for "Statistics: From First Principles to Regression" (version 3.1)
+Dr. Harsh Maheshwari - drharshmaheshwari.com
+
+These are SYNTHETIC teaching data. No row describes a real person, child, woman, household, village or
+district; names such as "District A", "PHC Urban" and every ID are invented.
+
+How to use them
+  Unzip so that the folder `data` sits in your R working directory. Then the book's code works as printed:
+      cl <- read.csv("data/clinic_children.csv")
+  Empty cells are missing values (NA in R). The files have no comment lines.
+
+What is here
+  *.csv          the datasets the In R boxes read (each book section that uses one is listed on the datasets page)
+  make_data.R    the script that built them, with a fixed seed for every dataset. From the folder that holds
+                 `data`, run: Rscript data/make_data.R (about 3 minutes; needs the survival package).
+                 It writes every file except paired_hb_ifa.csv, a ten-row table typed by hand.
+                 Several datasets are engineered so that a named model reproduces the book's printed numbers;
+                 the script's header explains how.
+
+Licence
+  CC BY-NC-SA 4.0, the same as the book: free to copy, share and adapt for non-commercial use, with credit,
+  under the same licence. https://creativecommons.org/licenses/by-nc-sa/4.0/
+"""
+
+
+def datasets(src, sections, public_dir):
+    """Copies data/*.csv, make_data.R and a README to the site's public folder, zips them, and returns the list for
+    the datasets page: file, rows, columns, and the book sections whose R code reads it."""
+    import csv
+    out = []
+    data = os.path.join(src, "data")
+    os.makedirs(public_dir, exist_ok=True)
+    for f in sorted(os.listdir(public_dir)):
+        os.remove(os.path.join(public_dir, f))
+    code = {}   # file -> sections
+    for sec in sections:
+        for b in sec["blocks"]:
+            if b["t"] == "prose" and b["role"] == "r":
+                for name in set(re.findall(r"data/([\w.-]+\.csv)", _html.unescape(re.sub(r"<[^>]+>", "", b["html"])))):
+                    code.setdefault(name, [])
+                    if sec["id"] not in [x["id"] for x in code[name]]:
+                        code[name].append({"id": sec["id"], "label": sec["label"], "title": re.sub(r"<[^>]+>", "", sec["title"])})
+    for f in sorted(os.listdir(data)):
+        if not f.endswith(".csv"):
+            continue
+        with open(os.path.join(data, f), encoding="utf-8", newline="") as fh:
+            rows = list(csv.reader(fh))
+        out.append({"file": f, "rows": len(rows) - 1, "columns": rows[0], "sections": code.get(f, [])})
+        shutil.copyfile(os.path.join(data, f), os.path.join(public_dir, f))
+    for name in code:
+        if not any(d["file"] == name for d in out):
+            PROBLEMS.append(f"the book's R code reads data/{name}, which is not in the source's data folder")
+    # A dataset no In R box reads is worked by hand in the book; data/README.md says where.
+    readme = {m.group(1): m.group(2).strip() for m in re.finditer(r"^\| `([\w.-]+\.csv)` \| ([^|]+) \|", open(os.path.join(data, "README.md"), encoding="utf-8").read(), re.M)}
+    for d in out:
+        if not d["sections"]:
+            d["note"] = readme.get(d["file"], "")
+            if not d["note"]:
+                PROBLEMS.append(f"data/{d['file']} is not read by any In R box and README.md does not say where it is used")
+    shutil.copyfile(os.path.join(data, "make_data.R"), os.path.join(public_dir, "make_data.R"))
+    with open(os.path.join(public_dir, "README.txt"), "w", encoding="utf-8", newline="\n") as fh:
+        fh.write(DATA_README)
+    # A fixed timestamp makes the zip identical each time it is built from the same files.
+    with zipfile.ZipFile(os.path.join(public_dir, "statsbook-datasets.zip"), "w", zipfile.ZIP_DEFLATED) as z:
+        for f in ["README.txt", "make_data.R"] + [d["file"] for d in out]:
+            info = zipfile.ZipInfo(f"data/{f}", date_time=(2026, 9, 28, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o644 << 16
+            with open(os.path.join(public_dir, f), "rb") as fh:
+                z.writestr(info, fh.read())
+    return out
+
+
 # ---------------------------------------------------------------- compare with the released Word file
 
 def compare_docx(docx, book, sections):
@@ -738,7 +814,7 @@ def main():
     ap.add_argument("--out", required=True, help="the website's src/data/books/<slug> folder")
     ap.add_argument("--figures-out", required=True, help="folder to fill with figures, for upload to R2")
     ap.add_argument("--docx", help="the released Word file: used for figures missing from --src, and to compare the words")
-    ap.add_argument("--site", default=os.getcwd(), help="the website repository (for the book's page text)")
+    ap.add_argument("--site", default=os.getcwd(), help="the website repository (for the book's page text and its public/ folder)")
     args = ap.parse_args()
 
     figures = Figures(args.src, args.docx)
@@ -746,6 +822,7 @@ def main():
     sizes, from_docx = figures.export(args.figures_out)
     outline, sections = finish(book, sizes)
     total = sum(s["words"] for p in outline for s in p["sections"])
+    sets = datasets(args.src, sections, os.path.join(args.site, "public", "doctors", "books", SLUG, "data"))
 
     if args.docx:
         compare_docx(args.docx, book, sections)
@@ -765,9 +842,11 @@ def main():
     for s in sections:
         with open(os.path.join(args.out, "sections", f"{s['id']}.json"), "w", encoding="utf-8") as fh:
             json.dump(s, fh, ensure_ascii=False, separators=(",", ":"))
+    with open(os.path.join(args.out, "datasets.json"), "w", encoding="utf-8") as fh:
+        json.dump(sets, fh, ensure_ascii=False, indent=1)
     with open(os.path.join(args.out, "book.json"), "w", encoding="utf-8") as fh:
         json.dump(meta_book(outline, total, landing_text(args.site)), fh, ensure_ascii=False, indent=1)
-    print(f"{len(sections)} sections, {total} words, {len(sizes)} figures ({from_docx} taken from the Word file) -> {args.out}")
+    print(f"{len(sections)} sections, {total} words, {len(sizes)} figures ({from_docx} taken from the Word file) -> {args.out}; {len(sets)} datasets -> public/doctors/books/{SLUG}/data/")
 
 
 if __name__ == "__main__":

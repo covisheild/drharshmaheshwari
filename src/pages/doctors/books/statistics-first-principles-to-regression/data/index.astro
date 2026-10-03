@@ -1,0 +1,66 @@
+---
+// The datasets behind the In R boxes of "Statistics: From First Principles to Regression". Files are in
+// public/ (written by scripts/books/statistics/export.py), this page lists them. Synthetic data, free to use.
+import Base from '../../../../../layouts/Base.astro';
+import datasets from '../../../../../data/books/statistics-first-principles-to-regression/datasets.json';
+import { STATS_LANDING, statsBook } from '../../../../../lib/stats-book';
+import { SITE } from '../../../../../consts';
+
+const base = `${STATS_LANDING}data/`;
+const total = datasets.reduce((n, d) => n + d.rows, 0);
+const jsonld = [{
+  '@type': 'Dataset', '@id': `${SITE.url}${base}#data`, name: 'Teaching datasets for Statistics: From First Principles to Regression',
+  description: 'Seventeen small synthetic datasets (under-five clinic, household survey, cohort, survey extract and others) used by the In R boxes of the book. No row describes a real person.',
+  url: `${SITE.url}${base}`, creator: { '@id': `${SITE.url}/#person` }, isAccessibleForFree: true,
+  license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/', inLanguage: 'en-IN',
+  distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/zip', contentUrl: `${SITE.url}${base}statsbook-datasets.zip` }],
+}];
+---
+<Base title="Datasets for the Statistics book" description="Seventeen small synthetic datasets that the In R boxes of Statistics: From First Principles to Regression read. Download one or all, free." jsonld={jsonld}>
+  <header class="page-head wrap">
+    <a class="eyebrow" href={STATS_LANDING} style="text-decoration:none">Statistics: From First Principles to Regression</a>
+    <h1>Datasets</h1>
+    <p>The data behind every <b>In R</b> box in the book: {datasets.length} files, {total.toLocaleString('en-IN')} rows in all.</p>
+  </header>
+  <div class="prose-wrap prose">
+    <p><a class="btn btn-primary" href={`${base}statsbook-datasets.zip`}>Download all (zip) <span class="arrow">↓</span></a></p>
+    <p><b>These are synthetic teaching data.</b> No row describes a real person, child, woman, household, village or district; names such as “District A” and “PHC Urban”, and every ID, are invented. Several are built so that the model in the book gives the numbers printed there.</p>
+    <h2>How to use them</h2>
+    <p>Unzip so that the folder <code>data</code> sits in your R working directory. The book's code then runs as printed:</p>
+    <pre><code>cl &lt;- read.csv("data/clinic_children.csv")</code></pre>
+    <p>Or read a file straight from this site, without downloading it:</p>
+    <pre><code>cl &lt;- read.csv("{SITE.url}{base}clinic_children.csv")</code></pre>
+    <p>Empty cells are missing values (<code>NA</code> in R). The files have no comment lines.</p>
+
+    <h2>The files</h2>
+    <ul class="ds">
+      {datasets.map((d) => (
+        <li>
+          <div class="ds-head"><a href={`${base}${d.file}`} download><code>{d.file}</code></a><span class="muted">{d.rows.toLocaleString('en-IN')} rows</span></div>
+          <p class="ds-used small">{d.sections.length
+            ? <>Read in {d.sections.map((s, i) => <>{i > 0 && ', '}<a href={`${statsBook.url}#${s.id}`} title={s.title}>§{s.label}</a></>)}</>
+            : <span class="muted">{d.note}</span>}</p>
+          <details><summary>{d.columns.length} columns</summary><p class="small muted">{d.columns.join(', ')}</p></details>
+        </li>
+      ))}
+    </ul>
+
+    <h2>How they were built</h2>
+    <p><a href={`${base}make_data.R`}><code>make_data.R</code></a> is the script that wrote them, with a fixed random seed for each dataset, so the files can be rebuilt exactly (about three minutes in R; it needs the <code>survival</code> package). Its header explains how the engineered datasets were made. One file, <code>paired_hb_ifa.csv</code>, is a ten-row table typed by hand.</p>
+
+    <h2>Licence</h2>
+    <p>The same as the book: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Free to copy, share and adapt for non-commercial use, with credit, under the same licence. If they help you, you can <a href="/support/">support this project</a>.</p>
+    <p><a href={statsBook.url}>Read the book online</a> · <a href={STATS_LANDING}>About the book</a></p>
+  </div>
+</Base>
+
+<style>
+  .ds { list-style: none; margin: 1rem 0 2rem; padding: 0; border-top: 1px solid var(--line); }
+  .ds li { padding: .8rem 0; border-bottom: 1px solid var(--line); }
+  .ds-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .25rem 1rem; }
+  .ds-used { margin: .25rem 0 .1rem; overflow-wrap: anywhere; }
+  .ds details { margin: 0; }
+  .ds summary { cursor: pointer; color: var(--ink-2); font-size: .85rem; }
+  .ds details p { margin: .35rem 0 0; overflow-wrap: anywhere; }
+  pre { overflow-x: auto; }
+</style>

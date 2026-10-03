@@ -15,7 +15,7 @@ const jsonld = [{
   encoding: { '@type': 'MediaObject', contentUrl: book.pdf, encodingFormat: 'application/pdf' },
 }];
 const end = `<p>End of the book. Shared under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">${book.licence}</a>: free to copy, share and adapt for non-commercial use, with credit, under the same licence. Educational, not personal medical advice.</p>
-        <p><a href="/doctors/books/">All books for doctors</a> · <a href="${book.pdf}" download>Download the PDF</a> · If this book helps you, you can <a href="/support/">support this project</a>.</p>`;
+        <p><a href="/doctors/books/">All books for doctors</a> · <a href="${book.pdf}" download>Download the PDF</a> · <a href="${STATS_LANDING}data/">Datasets for the R examples</a> · If this book helps you, you can <a href="/support/">support this project</a>.</p>`;
 ---
 <BookReader book={book} title={`${book.title} · read online`} description={description} jsonld={jsonld} figures={statsFigureBase()} date={date}
   eyebrow={`<a href="${STATS_LANDING}">About this book</a>`} heading={book.title}

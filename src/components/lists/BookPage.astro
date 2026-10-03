@@ -45,6 +45,7 @@ const jsonld = [{
             {d.read && <a class="btn btn-primary book-btn" href={d.read}>Read online <span class="arrow">→</span></a>}
             <a class:list={['btn', d.read ? 'btn-ghost' : 'btn-primary book-btn']} href={d.pdf} rel="noopener">Download free PDF{d.size && ` (${d.size})`} <span class="arrow">↓</span></a>
           </div>
+          {d.datasets && <p class="small" style="margin-top:1rem"><a href={d.datasets}>Datasets for the R examples</a> · free to download</p>}
         </div>
       </div>
     </header>

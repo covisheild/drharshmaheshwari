@@ -120,7 +120,9 @@ local devDependency. Change production settings only on purpose; preview-only se
   answer from `answers/` (the reader's "try, then reveal"; Appendix A still prints them), links each § reference, and with
   `--docx` compares every word with the released Word file. `src/99-appendix.md` in the zip is the retired v2.2 appendix: ignored.
   Figures (79 PNG) go to R2 at `books/statistics-first-principles-to-regression/figures/`: all of `figs/out/` and 17 `media0/media/imageN.png`
-  (list: `--figures-out`). The In R boxes read `data/<file>.csv`; those files are not published yet.
+  (list: `--figures-out`). The In R boxes read `data/<file>.csv`: the export publishes those 17 synthetic datasets, `make_data.R`,
+  a README and a zip under `public/doctors/books/<slug>/data/`, with their page at `/doctors/books/<slug>/data/` (rows, columns and the
+  sections that read each file come from the book itself). The files are small text, so they live in the repo, not R2.
 - `BookReader.astro` / `BookReview.astro` lay out every book's reader and review; the two series' pages only pass their own titles and links.
 - Progress goes only through `BookProgressStore` (`src/reader/store.ts`, `book:<id>:v1`), never localStorage directly.
 - Signed in, `SyncedBookStore` (`src/reader/sync.ts`) syncs place, bookmarks and sections read (`/api/books/:book`) and

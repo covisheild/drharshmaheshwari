@@ -185,5 +185,6 @@ passes `npm run build && npm test` and the 390 px / desktop screenshots in `CLAU
   Matrix, `calibrate()` as survey, `power.t.test()` and `power.prop.test()` as "base R" (they are `stats`), `ageadjust.direct()` is epitools.
   The converter pins the ten rows to what v3.1 prints (`V31_APPENDIX_B_PACKAGES`); fix them in `build.py` and drop the pin.
 - **Still to do for Phase 3:** cross-book links (Statistics ↔ Book 0), interactive figures (the `figs/*.py` scripts hold the data), offline (PWA),
-  publishing `data/*.csv` for the In R boxes. **Before merging:** upload the 79 figures to R2 and check each link; tick 🌐 on the
-  Statistics row in Notion and update its Live URL.
+  **Done later the same day:** the 17 datasets are published with a page, a zip and `make_data.R` (`/doctors/books/<slug>/data/`).
+  Harsh uploaded the 79 figures to R2; the session cannot reach `files.drharshmaheshwari.com`, so they are unchecked from here.
+  **Before merging:** open the Preview and confirm the figures load; then Notion (Statistics row: 🌐, Live URL, Last published).
