@@ -45,7 +45,7 @@ export function buildPrompt(i: AskInput, task: AiTask): string {
   return out.join('\n');
 }
 
-async function copy(text: string): Promise<boolean> {
+export async function copyText(text: string): Promise<boolean> {
   try { await navigator.clipboard.writeText(text); return true; } catch { /* fall through */ }
   const ta = document.createElement('textarea');
   ta.value = text; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
@@ -58,6 +58,6 @@ async function copy(text: string): Promise<boolean> {
 
 /** Copies the question and says so through `say`. */
 export async function ask(task: AiTask, input: AskInput, say: (html: string) => void) {
-  const copied = await copy(buildPrompt(input, task));
+  const copied = await copyText(buildPrompt(input, task));
   say(copied ? '<p>Question copied. Paste it into your AI.</p>' : '<p>Could not copy. Select the passage and copy it yourself.</p>');
 }

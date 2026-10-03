@@ -36,6 +36,8 @@ export interface HighlightHost {
   onChange?(): void;
   /** "Copy for AI": a question about a passage (a selection, or an existing highlight with its note). */
   ask?(a: { sec: string; text: string; note?: string }): void;
+  /** Copy plain text (the selection, or a highlight's words) to the clipboard and say so. */
+  copy?(text: string): void;
 }
 
 export interface HighlightApi {
@@ -254,6 +256,7 @@ export function mountHighlights(host: HighlightHost): HighlightApi {
     const c = prefs();
     bar.querySelector<HTMLElement>('[data-act="note"]')!.hidden = !c.note;
     bar.querySelector<HTMLElement>('[data-act="ask"]')!.hidden = !c.ai;
+    bar.querySelector<HTMLElement>('[data-act="copy"]')!.hidden = !c.copy;
     bar.querySelectorAll<HTMLElement>('[data-colour]').forEach((b) => b.setAttribute('aria-current', String(Number(b.dataset.colour) === c.colour)));
     bar.hidden = false;
     reposition();
@@ -282,6 +285,10 @@ export function mountHighlights(host: HighlightHost): HighlightApi {
       const h = create(p, prefs().colour);
       hideBar(); clearSelection();
       if (h) openCard(h.id, true);
+    } else if (b.dataset.act === 'copy') {
+      const text = readable(p.range.cloneContents()); // copying does not make a highlight
+      hideBar(); clearSelection();
+      host.copy?.(text);
     } else if (b.dataset.act === 'ask') {
       const text = readable(p.range.cloneContents()); // asking does not make a highlight
       hideBar(); clearSelection();
@@ -350,6 +357,7 @@ export function mountHighlights(host: HighlightHost): HighlightApi {
     cardNote.value = h.note;
     cardSaved.textContent = '';
     card.querySelector<HTMLElement>('[data-act="ask"]')!.hidden = !prefs().ai;
+    card.querySelector<HTMLElement>('[data-act="copy"]')!.hidden = !prefs().copy;
     card.querySelectorAll<HTMLElement>('[data-colour]').forEach((b) => b.setAttribute('aria-checked', String(Number(b.dataset.colour) === h.colour)));
     card.hidden = false;
     placeCard();
@@ -375,6 +383,9 @@ export function mountHighlights(host: HighlightHost): HighlightApi {
       const id = openId;
       closeCard();
       store.removeHighlight(id);
+    } else if (b.dataset.act === 'copy') {
+      const h = store.highlights().find((x) => x.id === openId);
+      if (h) host.copy?.(h.text);
     } else if (b.dataset.act === 'ask') {
       const h = store.highlights().find((x) => x.id === openId);
       flushNote();

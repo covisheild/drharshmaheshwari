@@ -78,6 +78,7 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
         </div></div>
       <div class="rd-aa-row rd-aa-opts">
         <button type="button" role="switch" class="rd-sw" data-opt="note">Note button in the bar</button>
+        <button type="button" role="switch" class="rd-sw" data-opt="copy">Copy button in the bar</button>
         <button type="button" role="switch" class="rd-sw" data-opt="show">Show my highlights</button>
         <button type="button" role="switch" class="rd-sw" data-opt="ai">Copy for AI button</button>
       </div>
@@ -180,6 +181,7 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
         {colours.map((c, i) => <button type="button" class="dot" data-colour={i} aria-label={`Highlight ${c.toLowerCase()}`} style={`--sw:var(--sw-${i})`}></button>)}
       </div>
       <button type="button" class="rd-sel-note" data-act="note">Note</button>
+      <button type="button" class="rd-sel-note" data-act="copy">Copy</button>
       <button type="button" class="rd-sel-note" data-act="ask" hidden>Copy for AI</button>
     </div>
     <div class="rd-hl" id="rd-hl" role="dialog" aria-label="Highlight" tabindex="-1" hidden>
@@ -191,7 +193,7 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
       </div>
       <p class="rd-hl-quote"></p>
       <textarea class="rd-hl-note" rows="3" maxlength="2000" placeholder="Add a note" aria-label="Note on this highlight"></textarea>
-      <div class="rd-hl-actions"><button type="button" data-act="remove">Remove highlight</button><button type="button" data-act="ask" hidden>Copy for AI</button><span class="rd-hl-saved" role="status"></span></div>
+      <div class="rd-hl-actions"><button type="button" data-act="remove">Remove highlight</button><button type="button" data-act="copy">Copy</button><button type="button" data-act="ask" hidden>Copy for AI</button><span class="rd-hl-saved" role="status"></span></div>
     </div>
     <div class="rd-zoom" id="rd-zoom" role="dialog" aria-modal="true" aria-label="Figure" hidden>
       <div class="rd-zoom-bar">

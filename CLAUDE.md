@@ -123,7 +123,7 @@ local devDependency. Change production settings only on purpose; preview-only se
   `[data-p]` paragraphs joined by `\n`) plus the quote and 24 characters either side; on a new book version it is re-found by its
   quote (`resolve`), else listed "text changed" in the Notes tab and not painted. What selecting does is the reader's choice under
   **Aa**: *Show a bar* (default: colours + Note), *Highlight* (at once in the chosen colour, nothing opens), *Nothing*; plus the
-  colour, the Note button, and "Show my highlights" (`ReaderPrefs`, device-local). `H` highlights the selection. Tapping a highlight
+  colour, the Note and Copy buttons, and "Show my highlights" (`ReaderPrefs`, device-local). `H` highlights the selection. Tapping a highlight
   opens its card (colour, note, remove). Stored in `BookState.highlights` (deletions kept as `deleted`; newest `updated` wins),
   synced like bookmarks (D1 `highlights`, migration 4; 3 row-writes each). Notes tab: list, jump, Copy/Download Markdown.
   Colours `--hl-*`/`--sw-*` are checked for 4.5:1 in `tests/e2e.mjs`.

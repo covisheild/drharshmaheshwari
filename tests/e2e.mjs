@@ -409,6 +409,14 @@ try {
     check(hs.length === 1 && hs[0].colour === 2 && hs[0].quote === quote, `${name}: a colour in the bar makes the highlight`);
     check(!await page.locator('#rd-sel').isVisible() && await page.evaluate(() => getSelection().isCollapsed), `${name}: the bar closes and the selection clears`);
     check(await page.evaluate(() => CSS.highlights.get('hl-2')?.size) === 1, `${name}: the highlight is painted`);
+    // Copy: the bar's Copy button copies just the selected words (no question, no highlight).
+    await ctx.grantPermissions(['clipboard-read', 'clipboard-write']);
+    const copied = await pick(page, 1, 3, 30);
+    await page.waitForTimeout(500);
+    await page.locator('#rd-sel [data-act="copy"]').click();
+    await page.waitForTimeout(300);
+    check(await page.evaluate(() => navigator.clipboard.readText()) === copied && /Copied/.test(await page.locator('#rd-toast').textContent()), `${name}: the Copy button copies just the selected words`);
+    check((await liveHl(page)).length === 1, `${name}: and copying does not highlight`);
     const at = await page.evaluate(() => { const c = [...CSS.highlights.get('hl-2')][0].getClientRects()[0]; return { x: c.left + c.width / 2, y: c.top + c.height / 2 }; });
     await (touch ? page.touchscreen.tap(at.x, at.y) : page.mouse.click(at.x, at.y));
     await page.waitForTimeout(150);
@@ -421,6 +429,9 @@ try {
     check(await page.evaluate(() => CSS.highlights.get('hl-2n')?.size) === 1, `${name}: a highlight with a note is underlined`);
     await page.locator('#rd-hl [data-colour="1"]').click();
     check((await liveHl(page))[0].colour === 1, `${name}: the card changes the colour`);
+    await page.locator('#rd-hl [data-act="copy"]').click();
+    await page.waitForTimeout(300);
+    check(await page.evaluate(() => navigator.clipboard.readText()) === quote, `${name}: the card's Copy button copies the highlighted words`);
     await page.keyboard.press('Escape');
     await page.evaluate(() => dispatchEvent(new Event('pagehide')));
     await page.reload();
@@ -439,6 +450,13 @@ try {
     check((await liveHl(page)).length === 3, `${name}: the H key highlights the selection`);
     // Options under Aa: "Highlight" makes it at once and opens nothing; "Nothing" leaves selection alone.
     await page.locator('#rd-aa').click();
+    await page.locator('[data-opt="copy"]').click(); // switched off: the bar and the card lose their Copy button
+    await page.mouse.click(5, 5);
+    await pick(page, 0, 8, 30); // a paragraph that is on screen: the bar hides when its selection is off screen
+    await page.waitForTimeout(500);
+    check(await page.locator('#rd-sel').isVisible() && await page.locator('#rd-sel [data-act="copy"]').isHidden(), `${name}: the Copy button can be switched off under Aa`);
+    await page.locator('#rd-aa').click();
+    await page.locator('[data-opt="copy"]').click();
     await page.locator('[data-select="quick"]').click();
     await page.mouse.click(5, 5);
     await pick(page, 3, 2, 25);

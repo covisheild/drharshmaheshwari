@@ -15,12 +15,12 @@ import { dueCount } from './review';
 import { mountZoom } from './zoom';
 import { mountHighlights, type HighlightApi } from './highlights';
 import { mountNotes } from './notes';
-import { ask as askAi } from './ai';
+import { ask as askAi, copyText } from './ai';
 import type { GlossaryEntry, Location, OutlinePart, Reference, Section } from './types';
 
 interface PageData { outline: OutlinePart[]; references: { part: string; items: Reference[]; note: string | null }[]; glossary: GlossaryEntry[]; sizes: number[] }
 
-type BoolPref = 'note' | 'show' | 'ai' | 'aiHeads';
+type BoolPref = 'note' | 'copy' | 'show' | 'ai' | 'aiHeads';
 const SELECT_HELP: Record<SelectMode, string> = {
   bar: 'A small bar with your colours appears under the text you select.',
   quick: 'Text you select is highlighted at once in your colour. Nothing else opens.',
@@ -516,6 +516,7 @@ export function startReader() {
   marks = mountHighlights({
     root, store, secs: byId, topline,
     ask: askAbout,
+    copy: (text) => { void copyText(text).then((ok) => say(ok ? '<p>Copied.</p>' : '<p>Could not copy. Select the text and copy it yourself.</p>')); },
     getPrefs: () => prefs,
     setPrefs: (patch) => { prefs = { ...prefs, ...patch }; BookProgressStore.setPrefs(prefs); applyPrefs(); },
     jumpTo,

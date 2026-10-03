@@ -70,6 +70,8 @@ export interface ReaderPrefs {
   colour: number;
   /** Show the Note button in the bar. */
   note: boolean;
+  /** Show the Copy button (copies the selected text) in the bar and on a highlight's card. */
+  copy: boolean;
   /** Show highlights in the text. */
   show: boolean;
   /** "Copy for AI": a button that puts a question (with the passage) on the clipboard. Off until switched on. */
@@ -82,7 +84,7 @@ export interface ReaderPrefs {
 const key = (book: string) => `book:${book}:v1`;
 const PREFS = 'reader:prefs:v1';
 const KEEP = 5000;
-export const DEFAULT_PREFS: ReaderPrefs = { size: 2, width: 1, select: 'bar', colour: 0, note: true, show: true, ai: false, aiTask: 'explain', aiHeads: true };
+export const DEFAULT_PREFS: ReaderPrefs = { size: 2, width: 1, select: 'bar', colour: 0, note: true, copy: true, show: true, ai: false, aiTask: 'explain', aiHeads: true };
 
 function read<T>(k: string): T | null {
   try { const raw = localStorage.getItem(k); return raw ? (JSON.parse(raw) as T) : null; } catch { return null; }
