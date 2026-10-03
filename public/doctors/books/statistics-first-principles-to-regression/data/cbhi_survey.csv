@@ -1,0 +1,501 @@
+"hh_id","village_id","distance_km","wealth_index","maternal_education","household_size","cbhi_member","facility_use_past_month","child_sick_2wk","sought_formal_care","reason_not_joining","satisfaction_1to5"
+"H001","V01",10.6,-0.49,"none",4,0,0,0,,"lack of money",
+"H002","V01",9.3,1.64,"primary",7,1,0,0,,,4
+"H003","V01",8,0.52,"primary",5,1,1,0,,,2
+"H004","V01",7.6,-0.61,"secondary+",6,0,0,0,,"other",
+"H005","V01",7.2,2.75,"primary",6,0,0,0,,"lack of money",
+"H006","V01",8.7,-0.4,"primary",9,1,0,0,,,4
+"H007","V01",8.1,-0.93,"none",5,0,0,0,,"other",
+"H008","V01",8.8,0.39,"primary",5,0,0,1,1,"lack of knowledge",
+"H009","V01",7.9,0.37,"primary",4,1,0,0,,,5
+"H010","V01",8.7,0.35,"secondary+",4,0,0,1,0,"bad image",
+"H011","V01",7.1,-3.73,"none",7,0,0,1,0,"lack of knowledge",
+"H012","V01",8.6,-1.83,"primary",7,0,0,1,0,"lack of trust",
+"H013","V01",9.2,0.89,"secondary+",3,0,1,0,,"lack of money",
+"H014","V01",8.1,0.47,"secondary+",2,0,0,0,,"lack of trust",
+"H015","V01",6.2,0.63,"secondary+",4,1,0,0,,,1
+"H016","V01",8.7,-0.24,"secondary+",4,0,1,1,1,"lack of knowledge",
+"H017","V01",6.3,1.07,"secondary+",4,1,0,0,,,4
+"H018","V01",9.3,-2.07,"none",4,0,0,1,1,"lack of money",
+"H019","V01",8.9,-3.76,"secondary+",6,0,0,0,,"lack of knowledge",
+"H020","V01",6.9,-4.13,"none",6,0,0,0,,"other",
+"H021","V01",7.8,0.86,"secondary+",7,0,0,0,,"lack of money",
+"H022","V01",9.7,0.27,"none",6,1,0,1,1,,5
+"H023","V01",8,1.03,"none",7,0,0,1,1,"lack of knowledge",
+"H024","V01",8.5,3.6,"secondary+",4,1,0,0,,,3
+"H025","V01",8.1,0.27,"none",7,0,1,1,0,"lack of money",
+"H026","V02",2.7,2.23,"secondary+",5,1,0,0,,,5
+"H027","V02",2.6,1.76,"secondary+",6,1,1,0,,,1
+"H028","V02",2.7,-0.07,"primary",3,1,0,1,1,,3
+"H029","V02",2,-0.21,"primary",4,0,0,0,,"other",
+"H030","V02",2.8,-0.58,"secondary+",4,1,1,1,0,,4
+"H031","V02",2.1,3.34,"primary",3,1,0,0,,,4
+"H032","V02",3.4,0.42,"secondary+",2,1,0,0,,,5
+"H033","V02",1.8,0.1,"none",6,1,0,0,,,4
+"H034","V02",1.4,-0.87,"secondary+",4,0,0,0,,"lack of knowledge",
+"H035","V02",2.8,2.71,"secondary+",4,1,1,1,1,,2
+"H036","V02",1.1,2,"secondary+",4,1,1,0,,,2
+"H037","V02",1.7,0.48,"primary",4,0,0,0,,"lack of knowledge",
+"H038","V02",3.4,-0.29,"primary",5,0,0,0,,"other",
+"H039","V02",2.7,2.33,"secondary+",6,1,0,1,1,,4
+"H040","V02",4.7,1.97,"secondary+",7,1,1,0,,,4
+"H041","V02",3.2,-2.34,"primary",6,1,0,0,,,2
+"H042","V02",3.5,-0.22,"primary",4,1,0,0,,,4
+"H043","V02",0.9,0.07,"secondary+",5,0,0,0,,"other",
+"H044","V02",4.3,-1.99,"none",5,0,0,0,,"lack of trust",
+"H045","V02",2.4,1.67,"primary",3,0,0,0,,"lack of knowledge",
+"H046","V02",2.1,-0.06,"secondary+",6,0,0,0,,"bad image",
+"H047","V02",4.5,0.82,"secondary+",4,0,0,0,,"lack of knowledge",
+"H048","V02",0,0.16,"secondary+",3,0,0,1,1,"lack of knowledge",
+"H049","V02",3.7,2.64,"secondary+",6,0,0,1,0,"lack of knowledge",
+"H050","V02",4.1,0.69,"secondary+",4,1,1,0,,,5
+"H051","V03",2.4,2.08,"secondary+",5,1,1,1,1,,3
+"H052","V03",1,3.41,"primary",5,1,1,0,,,2
+"H053","V03",1,-1.11,"none",4,0,1,0,,"lack of trust",
+"H054","V03",1.3,1.91,"secondary+",6,1,0,1,1,,4
+"H055","V03",0.2,1.41,"secondary+",3,1,0,1,1,,2
+"H056","V03",2,-0.54,"none",4,0,1,0,,"lack of money",
+"H057","V03",1.1,4.28,"secondary+",10,0,0,0,,"lack of knowledge",
+"H058","V03",0.2,0.62,"primary",5,0,0,1,1,"bad image",
+"H059","V03",0.2,-0.37,"secondary+",6,1,0,0,,,3
+"H060","V03",0.4,2.31,"secondary+",5,0,0,1,1,"lack of money",
+"H061","V03",0.8,3.12,"secondary+",4,1,1,1,1,,4
+"H062","V03",1.6,1.23,"secondary+",8,1,1,1,1,,4
+"H063","V03",0.5,2.81,"secondary+",3,0,0,0,,"lack of money",
+"H064","V03",0.2,0.33,"primary",6,0,0,1,1,"lack of trust",
+"H065","V03",0.8,1.44,"secondary+",5,1,0,0,,,1
+"H066","V03",0,-0.28,"primary",4,0,0,0,,"bad image",
+"H067","V03",0.2,0.97,"secondary+",6,1,0,0,,,4
+"H068","V03",0.4,1.11,"secondary+",9,0,0,0,,"lack of knowledge",
+"H069","V03",2.1,1.7,"primary",4,0,0,0,,"bad image",
+"H070","V03",0.2,2.94,"secondary+",6,1,0,0,,,4
+"H071","V03",2.6,3.25,"secondary+",3,1,1,0,,,3
+"H072","V03",1.6,0.61,"secondary+",9,0,0,0,,"lack of knowledge",
+"H073","V03",1.3,2.38,"secondary+",7,1,1,0,,,3
+"H074","V03",0.2,1.23,"primary",4,0,0,0,,"lack of money",
+"H075","V03",1.2,-0.83,"primary",6,1,0,1,1,,4
+"H076","V04",9.5,2.53,"secondary+",5,1,1,1,1,,4
+"H077","V04",11.1,-0.44,"primary",3,0,0,0,,"lack of trust",
+"H078","V04",11.5,-1.24,"primary",6,0,0,0,,"lack of money",
+"H079","V04",7.9,1.44,"secondary+",5,0,0,0,,"lack of money",
+"H080","V04",11.6,-5.27,"none",5,0,0,0,,"lack of money",
+"H081","V04",8.5,-2.15,"none",8,0,1,1,0,"lack of trust",
+"H082","V04",8.2,-2.97,"none",4,0,0,0,,"lack of trust",
+"H083","V04",10.2,1.06,"none",6,0,0,0,,"lack of knowledge",
+"H084","V04",9.5,-2.02,"none",11,0,1,0,,"lack of trust",
+"H085","V04",9,-1.88,"none",6,0,1,0,,"lack of trust",
+"H086","V04",9.6,-2.06,"none",5,0,1,0,,"other",
+"H087","V04",10.5,1.05,"none",4,0,1,0,,"lack of knowledge",
+"H088","V04",9.4,-1.94,"primary",6,0,0,0,,"lack of money",
+"H089","V04",10.8,-1.2,"none",4,0,0,1,1,"lack of money",
+"H090","V04",9.2,-1.09,"primary",6,0,0,1,0,"lack of money",
+"H091","V04",10.5,2.06,"primary",3,0,0,0,,"lack of money",
+"H092","V04",9.2,-0.74,"secondary+",4,0,0,0,,"lack of money",
+"H093","V04",9.1,-0.29,"primary",6,0,0,0,,"lack of knowledge",
+"H094","V04",11.4,-1.15,"none",7,0,0,0,,"lack of knowledge",
+"H095","V04",9.3,1.75,"none",3,0,1,0,,"lack of money",
+"H096","V04",12.2,-4.27,"none",2,0,0,0,,"other",
+"H097","V04",9.7,-2.06,"none",8,0,0,0,,"lack of knowledge",
+"H098","V04",10.3,1.97,"primary",7,1,0,0,,,3
+"H099","V04",8.3,-1,"none",3,0,1,0,,"lack of knowledge",
+"H100","V04",11.5,2.29,"none",3,0,0,0,,"lack of knowledge",
+"H101","V05",9,0.56,"primary",4,1,0,0,,,3
+"H102","V05",8.1,-0.82,"secondary+",5,0,0,1,0,"lack of money",
+"H103","V05",10.1,-2.11,"primary",5,1,0,0,,,4
+"H104","V05",9.2,-1.11,"secondary+",4,1,1,1,1,,4
+"H105","V05",9.9,0.45,"primary",2,0,1,0,,"lack of knowledge",
+"H106","V05",9.3,0.29,"none",5,0,0,0,,"bad image",
+"H107","V05",7.9,-1.25,"secondary+",5,1,0,0,,,4
+"H108","V05",10,-1.82,"none",7,0,0,1,1,"lack of money",
+"H109","V05",8.9,-2.17,"primary",4,0,0,1,1,"lack of knowledge",
+"H110","V05",8.9,-3.1,"none",9,0,0,0,,"bad image",
+"H111","V05",6.7,-1.5,"primary",2,1,0,0,,,5
+"H112","V05",7.4,-0.72,"secondary+",4,1,1,0,,,4
+"H113","V05",6.4,0.29,"primary",4,0,0,1,1,"lack of money",
+"H114","V05",7.6,-2.16,"secondary+",7,0,1,0,,"lack of trust",
+"H115","V05",11.2,-1.02,"none",3,0,0,0,,"other",
+"H116","V05",7.2,-0.05,"none",6,1,0,0,,,1
+"H117","V05",11.8,-0.55,"primary",8,0,0,1,1,"bad image",
+"H118","V05",9.2,3.13,"secondary+",6,0,0,1,1,"lack of trust",
+"H119","V05",8.1,0.25,"secondary+",7,0,0,0,,"bad image",
+"H120","V05",8.3,-2.45,"primary",7,1,1,0,,,5
+"H121","V05",9,-2.81,"secondary+",4,0,0,0,,"other",
+"H122","V05",7.7,1.54,"primary",4,1,1,0,,,4
+"H123","V05",8,-1.83,"none",3,0,0,0,,"lack of money",
+"H124","V05",6.7,1.82,"primary",5,1,1,0,,,3
+"H125","V05",9.7,-2.26,"primary",5,0,0,0,,"lack of knowledge",
+"H126","V06",5.6,-2.02,"primary",5,0,0,0,,"lack of money",
+"H127","V06",6.2,-1.11,"primary",6,0,0,1,0,"bad image",
+"H128","V06",6.5,1.02,"primary",4,0,0,1,0,"lack of knowledge",
+"H129","V06",5.5,-4.1,"primary",3,0,0,0,,"lack of knowledge",
+"H130","V06",6.3,-0.24,"none",8,0,0,0,,"lack of money",
+"H131","V06",8,0.33,"none",4,0,0,0,,"lack of trust",
+"H132","V06",7.5,-1.11,"secondary+",5,0,0,0,,"bad image",
+"H133","V06",7.9,-1.43,"none",8,0,0,0,,"lack of money",
+"H134","V06",3.7,2.27,"secondary+",7,0,0,0,,"lack of knowledge",
+"H135","V06",8.3,0.52,"none",6,0,0,0,,"bad image",
+"H136","V06",6,-0.2,"secondary+",5,0,0,0,,"lack of knowledge",
+"H137","V06",7.1,-0.7,"primary",5,0,0,0,,"lack of knowledge",
+"H138","V06",6.5,-1.6,"none",7,1,0,0,,,4
+"H139","V06",7.4,-1.59,"none",6,0,1,0,,"lack of money",
+"H140","V06",6.6,0.42,"none",5,0,0,1,0,"lack of money",
+"H141","V06",6.9,0.68,"none",5,1,0,0,,,3
+"H142","V06",5.6,-2.81,"none",3,0,1,0,,"lack of knowledge",
+"H143","V06",7.1,1.5,"secondary+",7,0,0,0,,"lack of trust",
+"H144","V06",6.6,-0.73,"none",5,0,0,0,,"lack of knowledge",
+"H145","V06",5,-0.43,"primary",10,0,0,0,,"lack of money",
+"H146","V06",6,0.64,"primary",5,1,0,0,,,3
+"H147","V06",7.3,-1.69,"primary",5,0,0,1,0,"lack of knowledge",
+"H148","V06",7.1,-2.68,"none",7,0,0,0,,"lack of trust",
+"H149","V06",7.1,-0.34,"none",7,0,1,1,0,"lack of trust",
+"H150","V06",5.8,-2.38,"primary",4,0,0,0,,"lack of knowledge",
+"H151","V07",8.2,2.21,"none",4,0,1,1,1,"lack of knowledge",
+"H152","V07",7.8,-0.4,"none",6,0,0,0,,"lack of trust",
+"H153","V07",9,2.38,"primary",3,0,0,1,1,"lack of money",
+"H154","V07",6.9,0.95,"primary",4,0,0,0,,"bad image",
+"H155","V07",8,-1.34,"primary",6,0,0,1,0,"lack of money",
+"H156","V07",9.7,0.65,"secondary+",7,1,0,0,,,4
+"H157","V07",8.2,-0.36,"primary",6,0,0,1,0,"lack of trust",
+"H158","V07",7.8,-1.02,"primary",6,0,1,0,,"lack of knowledge",
+"H159","V07",8.4,1.83,"secondary+",7,0,0,0,,"lack of knowledge",
+"H160","V07",11.2,-0.25,"primary",10,0,0,0,,"lack of knowledge",
+"H161","V07",9.3,0.76,"secondary+",4,0,1,0,,"other",
+"H162","V07",7.1,-2.21,"none",2,0,0,0,,"lack of money",
+"H163","V07",10.6,0.23,"none",6,0,0,0,,"bad image",
+"H164","V07",8.9,2.8,"secondary+",4,0,0,0,,"lack of trust",
+"H165","V07",9,2.51,"secondary+",7,0,0,1,0,"lack of money",
+"H166","V07",9.4,0.89,"secondary+",3,0,0,1,0,"other",
+"H167","V07",9.5,2.07,"none",6,1,0,1,1,,3
+"H168","V07",7.2,-0.06,"primary",5,0,0,0,,"lack of knowledge",
+"H169","V07",7.5,0.01,"primary",7,0,0,1,1,"bad image",
+"H170","V07",10.4,2.05,"secondary+",4,0,0,1,1,"other",
+"H171","V07",13.3,0.23,"none",2,0,0,0,,"lack of knowledge",
+"H172","V07",9.8,-0.33,"secondary+",5,0,0,1,1,"lack of trust",
+"H173","V07",8.1,1.11,"secondary+",5,0,0,0,,"lack of knowledge",
+"H174","V07",10.5,-4.08,"none",4,0,0,1,0,"lack of knowledge",
+"H175","V07",7.9,-3.26,"none",5,0,0,0,,"lack of trust",
+"H176","V08",12.4,2.22,"primary",5,0,0,0,,"lack of knowledge",
+"H177","V08",11.1,-0.57,"none",5,0,1,0,,"lack of money",
+"H178","V08",12.2,-1.94,"none",5,0,0,0,,"lack of knowledge",
+"H179","V08",14.7,-1.03,"none",9,1,0,0,,,3
+"H180","V08",13.4,-2.02,"primary",4,1,0,0,,,4
+"H181","V08",14.5,-0.98,"none",5,0,0,0,,"lack of trust",
+"H182","V08",12.9,-0.33,"primary",5,0,0,0,,"lack of money",
+"H183","V08",10.2,-2.61,"none",5,0,0,0,,"lack of money",
+"H184","V08",12,-1.6,"secondary+",3,0,0,0,,"bad image",
+"H185","V08",12.2,-1.93,"secondary+",3,0,0,1,0,"other",
+"H186","V08",12.7,-0.22,"secondary+",3,1,0,0,,,2
+"H187","V08",15.3,0.02,"primary",3,0,0,1,1,"other",
+"H188","V08",11.9,-0.69,"primary",4,1,0,0,,,4
+"H189","V08",14.3,1.17,"primary",6,0,0,0,,"lack of knowledge",
+"H190","V08",10.6,-0.03,"none",6,0,1,0,,"lack of knowledge",
+"H191","V08",13.2,0.39,"primary",7,0,0,0,,"lack of money",
+"H192","V08",13,-1.65,"none",4,0,0,1,0,"lack of money",
+"H193","V08",13.5,-2.15,"none",3,0,0,0,,"bad image",
+"H194","V08",13.2,-3.33,"none",5,0,0,0,,"lack of money",
+"H195","V08",13.8,-0.97,"primary",5,1,0,1,1,,4
+"H196","V08",12.2,2.92,"none",5,0,1,0,,"lack of knowledge",
+"H197","V08",12.4,-1.6,"secondary+",4,0,0,1,0,"other",
+"H198","V08",12.6,-2.57,"none",5,0,0,0,,"lack of trust",
+"H199","V08",13,1.58,"primary",6,0,1,0,,"other",
+"H200","V08",14.9,-0.34,"none",6,0,0,0,,"lack of trust",
+"H201","V09",2.7,-0.41,"none",3,1,1,1,1,,3
+"H202","V09",6.3,-2.97,"primary",6,0,0,0,,"lack of knowledge",
+"H203","V09",4.6,-1.27,"secondary+",4,1,0,1,1,,3
+"H204","V09",5.7,0.84,"secondary+",6,0,0,0,,"lack of knowledge",
+"H205","V09",8.1,0.13,"primary",7,0,0,0,,"lack of trust",
+"H206","V09",6.2,2.49,"none",3,1,0,0,,,3
+"H207","V09",5,2.81,"primary",4,0,0,0,,"lack of knowledge",
+"H208","V09",6.5,-0.64,"secondary+",4,0,0,0,,"lack of knowledge",
+"H209","V09",5.1,0.84,"secondary+",5,1,1,0,,,4
+"H210","V09",5.7,0.55,"primary",5,0,0,0,,"lack of money",
+"H211","V09",7.5,0.42,"secondary+",2,1,1,1,0,,4
+"H212","V09",6.4,1.86,"primary",3,0,0,0,,"lack of knowledge",
+"H213","V09",5.7,0.46,"none",9,1,1,0,,,4
+"H214","V09",5.8,2.99,"none",5,1,0,0,,,2
+"H215","V09",7,2.05,"primary",7,1,1,0,,,5
+"H216","V09",7.1,1.19,"secondary+",5,1,0,0,,,2
+"H217","V09",7.4,1.02,"secondary+",5,0,0,1,0,"lack of knowledge",
+"H218","V09",6.1,2.19,"primary",5,0,0,0,,"lack of knowledge",
+"H219","V09",3.9,1.98,"none",3,0,0,0,,"lack of trust",
+"H220","V09",6.8,-2.38,"primary",5,0,0,0,,"lack of money",
+"H221","V09",6.6,-1.08,"primary",4,1,0,1,1,,3
+"H222","V09",5.4,-0.58,"none",5,0,0,0,,"lack of money",
+"H223","V09",6.8,-1.23,"secondary+",6,0,0,0,,"lack of knowledge",
+"H224","V09",7.3,1.2,"primary",7,0,0,0,,"lack of trust",
+"H225","V09",7.2,3.54,"secondary+",7,1,0,0,,,5
+"H226","V10",11.5,-0.42,"primary",7,1,0,0,,,5
+"H227","V10",9.2,-2.32,"none",5,0,0,0,,"lack of money",
+"H228","V10",10.9,0.32,"primary",4,1,0,1,1,,5
+"H229","V10",12.8,-1.37,"secondary+",4,0,0,0,,"lack of money",
+"H230","V10",10.5,-1.12,"none",3,0,0,0,,"lack of money",
+"H231","V10",11.6,0.05,"secondary+",4,0,0,0,,"lack of trust",
+"H232","V10",11.9,-2.61,"none",2,0,0,1,0,"lack of knowledge",
+"H233","V10",10.3,-2.5,"primary",4,0,0,0,,"lack of knowledge",
+"H234","V10",12.1,-1.15,"none",3,0,1,1,0,"lack of trust",
+"H235","V10",12.6,-1.09,"primary",5,0,0,0,,"lack of knowledge",
+"H236","V10",10.3,-1.47,"none",8,0,0,1,0,"lack of money",
+"H237","V10",9.5,1.18,"secondary+",4,0,0,0,,"lack of trust",
+"H238","V10",11.2,-4.29,"none",5,0,0,0,,"lack of trust",
+"H239","V10",10.7,0.87,"primary",3,0,1,0,,"other",
+"H240","V10",10.1,-1.6,"none",4,0,0,0,,"lack of trust",
+"H241","V10",9.1,-1.36,"secondary+",8,1,0,0,,,3
+"H242","V10",10.4,-1.06,"secondary+",3,0,0,0,,"lack of trust",
+"H243","V10",11.6,-1.76,"none",5,0,0,0,,"lack of money",
+"H244","V10",11.3,1.71,"none",3,0,0,0,,"bad image",
+"H245","V10",9.3,-3.41,"primary",4,0,0,0,,"bad image",
+"H246","V10",12.8,-3.96,"primary",4,0,0,0,,"lack of money",
+"H247","V10",9,-0.82,"primary",6,0,0,0,,"lack of knowledge",
+"H248","V10",10.9,-1.54,"none",6,0,0,0,,"lack of knowledge",
+"H249","V10",10.3,-0.7,"secondary+",4,1,1,1,1,,3
+"H250","V10",11.9,-3,"none",6,0,0,0,,"lack of trust",
+"H251","V11",9.5,-1.76,"primary",7,0,0,1,0,"lack of knowledge",
+"H252","V11",11,2.09,"primary",2,0,0,0,,"lack of trust",
+"H253","V11",10.3,-2.01,"primary",7,0,0,1,0,"lack of money",
+"H254","V11",8.5,-3.11,"primary",5,0,0,0,,"lack of knowledge",
+"H255","V11",9.6,2.63,"primary",7,1,0,0,,,5
+"H256","V11",9.6,-1.86,"secondary+",7,0,0,0,,"lack of trust",
+"H257","V11",10.2,-1.02,"secondary+",4,0,0,0,,"lack of knowledge",
+"H258","V11",10.6,-1.23,"primary",4,0,0,1,0,"lack of money",
+"H259","V11",10.5,-1.16,"primary",5,0,0,1,0,"lack of knowledge",
+"H260","V11",10.3,-2.29,"primary",4,0,0,1,1,"lack of money",
+"H261","V11",9.8,-0.8,"primary",4,0,1,0,,"lack of trust",
+"H262","V11",10.2,-1.46,"none",3,0,0,0,,"lack of money",
+"H263","V11",8.7,-1.85,"none",4,0,0,0,,"lack of trust",
+"H264","V11",12.1,-1.84,"primary",4,1,0,0,,,3
+"H265","V11",10.8,-1.02,"none",6,0,0,1,0,"lack of money",
+"H266","V11",8.9,0.6,"secondary+",4,0,0,0,,"lack of knowledge",
+"H267","V11",10.3,-0.91,"none",3,0,0,0,,"lack of money",
+"H268","V11",8.2,0.98,"secondary+",7,1,0,0,,,4
+"H269","V11",9.6,-1.85,"none",7,0,0,1,1,"lack of trust",
+"H270","V11",8.6,-0.9,"secondary+",7,0,0,0,,"lack of trust",
+"H271","V11",7.6,-0.33,"none",4,0,0,0,,"bad image",
+"H272","V11",11.6,-1.64,"primary",4,0,1,0,,"lack of knowledge",
+"H273","V11",8.3,2.47,"secondary+",5,1,0,1,0,,4
+"H274","V11",11.1,-1.33,"none",3,1,0,0,,,4
+"H275","V11",9.8,1.07,"secondary+",4,1,0,0,,,4
+"H276","V12",7.9,-1.61,"none",7,0,0,1,0,"lack of knowledge",
+"H277","V12",9.1,-5.26,"none",8,0,1,0,,"lack of money",
+"H278","V12",8.7,-1.68,"primary",4,0,0,1,0,"lack of knowledge",
+"H279","V12",7.9,-1.92,"none",6,1,0,0,,,5
+"H280","V12",10.2,-1.38,"primary",8,0,0,1,0,"bad image",
+"H281","V12",9.2,-2.24,"primary",5,0,0,0,,"lack of money",
+"H282","V12",11.7,-2.13,"primary",4,0,0,0,,"lack of money",
+"H283","V12",8.1,-1.4,"none",8,0,0,1,1,"lack of trust",
+"H284","V12",8.5,-1.13,"primary",5,0,0,1,1,"lack of money",
+"H285","V12",11.6,-4.3,"none",6,0,0,0,,"lack of money",
+"H286","V12",8.7,-2.83,"none",4,0,0,0,,"lack of knowledge",
+"H287","V12",8.7,0.28,"primary",3,1,1,0,,,4
+"H288","V12",10.9,-4.07,"none",4,0,0,0,,"lack of money",
+"H289","V12",10.5,-0.08,"secondary+",4,1,1,1,0,,4
+"H290","V12",10.4,-1.28,"none",6,1,1,0,,,4
+"H291","V12",9.3,-0.1,"primary",3,0,0,1,0,"lack of knowledge",
+"H292","V12",9.7,-2.63,"none",4,0,0,0,,"lack of money",
+"H293","V12",9.2,-2.11,"none",6,1,0,0,,,4
+"H294","V12",11.4,2.4,"primary",4,0,0,1,0,"bad image",
+"H295","V12",8.7,-0.24,"primary",5,1,1,1,1,,3
+"H296","V12",9.7,-1.36,"primary",6,0,0,0,,"bad image",
+"H297","V12",8.4,0.29,"primary",5,0,0,0,,"lack of money",
+"H298","V12",6.9,-1.83,"none",4,0,0,0,,"lack of trust",
+"H299","V12",10,-2.4,"none",3,0,1,0,,"lack of money",
+"H300","V12",9.1,-0.51,"primary",4,0,0,1,0,"lack of knowledge",
+"H301","V13",6.1,1.44,"secondary+",3,1,1,1,0,,5
+"H302","V13",7.4,2.27,"primary",5,1,1,0,,,3
+"H303","V13",7.6,4.62,"secondary+",5,0,1,0,,"lack of trust",
+"H304","V13",6.8,-0.13,"secondary+",4,0,0,0,,"lack of knowledge",
+"H305","V13",8,1.33,"secondary+",4,1,0,0,,,3
+"H306","V13",6.5,0,"none",3,1,0,0,,,4
+"H307","V13",7.1,-1.3,"none",4,0,0,1,0,"lack of money",
+"H308","V13",6.5,-1.32,"none",6,0,0,0,,"lack of knowledge",
+"H309","V13",5.9,2.95,"secondary+",8,0,0,0,,"lack of trust",
+"H310","V13",9.3,-2.41,"primary",3,0,1,0,,"lack of knowledge",
+"H311","V13",6.1,-0.31,"none",5,0,1,0,,"lack of money",
+"H312","V13",7.5,-0.53,"secondary+",3,0,0,0,,"lack of knowledge",
+"H313","V13",8.5,1.2,"primary",4,0,0,1,0,"other",
+"H314","V13",8.6,-0.31,"primary",3,1,0,1,1,,4
+"H315","V13",7.5,3.21,"primary",7,0,0,1,1,"lack of trust",
+"H316","V13",5.1,-2.02,"none",2,0,0,1,0,"bad image",
+"H317","V13",7.9,1.83,"secondary+",3,1,1,0,,,2
+"H318","V13",5.7,2.45,"secondary+",9,0,0,1,1,"bad image",
+"H319","V13",7,-0.76,"primary",3,1,0,1,0,,4
+"H320","V13",6.7,4.52,"primary",6,1,1,1,1,,5
+"H321","V13",8.6,-0.65,"primary",5,0,0,1,1,"bad image",
+"H322","V13",4.7,1.82,"primary",6,0,0,0,,"lack of money",
+"H323","V13",8.5,1.42,"none",4,0,0,0,,"lack of trust",
+"H324","V13",7,0.61,"none",6,0,0,0,,"bad image",
+"H325","V13",8.4,4.35,"secondary+",3,1,0,1,0,,3
+"H326","V14",5.9,-0.53,"secondary+",6,1,0,0,,,1
+"H327","V14",5.3,1.49,"primary",8,1,1,0,,,3
+"H328","V14",4.7,-0.21,"primary",5,0,0,1,1,"lack of trust",
+"H329","V14",4.4,-0.88,"none",5,0,0,0,,"lack of knowledge",
+"H330","V14",6.8,-1.52,"none",6,1,0,0,,,5
+"H331","V14",6.5,-1.9,"none",4,0,0,1,0,"bad image",
+"H332","V14",7.4,-1.5,"none",7,0,1,0,,"bad image",
+"H333","V14",5.6,-1.18,"secondary+",6,1,1,1,1,,5
+"H334","V14",7.3,-3.24,"none",6,0,0,0,,"lack of knowledge",
+"H335","V14",4.3,-2.38,"none",5,1,0,1,0,,2
+"H336","V14",7.1,3.17,"secondary+",5,1,0,0,,,2
+"H337","V14",6.2,-1.88,"secondary+",6,1,1,0,,,1
+"H338","V14",6.9,-0.83,"primary",6,1,1,0,,,4
+"H339","V14",6.1,-0.99,"secondary+",4,0,1,0,,"lack of knowledge",
+"H340","V14",8.1,-2.19,"none",8,0,1,1,1,"lack of knowledge",
+"H341","V14",7.9,-2.45,"none",4,1,0,0,,,3
+"H342","V14",9.5,-2.7,"none",3,0,0,1,0,"lack of trust",
+"H343","V14",8.3,-1.72,"primary",3,0,1,0,,"lack of trust",
+"H344","V14",7.9,-2.18,"secondary+",5,0,0,0,,"bad image",
+"H345","V14",7.6,-3.17,"primary",4,0,0,1,1,"lack of money",
+"H346","V14",6.2,-0.6,"secondary+",6,0,0,0,,"lack of knowledge",
+"H347","V14",5.1,-0.16,"secondary+",5,0,0,1,0,"lack of trust",
+"H348","V14",6.9,-0.87,"none",5,1,0,1,1,,4
+"H349","V14",6.8,-0.04,"primary",6,0,0,0,,"lack of trust",
+"H350","V14",8.1,0.18,"none",7,0,0,0,,"lack of knowledge",
+"H351","V15",0.2,2.67,"secondary+",6,0,0,0,,"lack of trust",
+"H352","V15",1.1,4,"secondary+",6,1,0,0,,,4
+"H353","V15",1.3,0.34,"secondary+",5,0,0,0,,"lack of trust",
+"H354","V15",3.2,-0.22,"primary",7,0,0,0,,"lack of trust",
+"H355","V15",0.2,-0.15,"none",8,0,0,0,,"lack of money",
+"H356","V15",0.2,2.39,"secondary+",6,1,1,1,1,,4
+"H357","V15",0.2,1.62,"secondary+",3,1,0,0,,,3
+"H358","V15",2.9,-0.84,"none",5,0,0,1,1,"bad image",
+"H359","V15",0,-1.38,"none",4,0,0,0,,"lack of trust",
+"H360","V15",0.2,2.6,"secondary+",6,1,0,0,,,1
+"H361","V15",2,0.12,"none",3,0,0,1,1,"lack of knowledge",
+"H362","V15",3.8,-3.16,"primary",3,0,0,1,0,"lack of knowledge",
+"H363","V15",0.8,0.58,"primary",4,1,0,1,1,,4
+"H364","V15",3.5,-0.84,"primary",8,1,1,0,,,4
+"H365","V15",2.1,0.51,"secondary+",6,1,1,1,1,,5
+"H366","V15",1.7,3.45,"secondary+",5,1,1,1,1,,5
+"H367","V15",1.4,2.76,"none",2,0,0,1,0,"lack of trust",
+"H368","V15",0.2,0.74,"secondary+",5,1,1,0,,,4
+"H369","V15",3.4,0.53,"secondary+",4,0,1,1,1,"lack of knowledge",
+"H370","V15",2.5,-0.23,"primary",7,0,0,0,,"other",
+"H371","V15",3.9,2.28,"primary",9,0,0,0,,"lack of money",
+"H372","V15",1.4,0.33,"secondary+",7,1,0,0,,,2
+"H373","V15",1.3,3.12,"secondary+",6,0,0,1,1,"lack of money",
+"H374","V15",1.9,0.62,"secondary+",5,1,0,0,,,3
+"H375","V15",0.9,2.73,"primary",6,1,1,0,,,1
+"H376","V16",10.4,-1.17,"none",5,0,0,0,,"lack of money",
+"H377","V16",7.5,2.02,"secondary+",7,1,0,1,1,,4
+"H378","V16",8.1,-1.02,"primary",7,0,1,0,,"lack of knowledge",
+"H379","V16",9.8,-2.81,"none",2,0,0,0,,"bad image",
+"H380","V16",8.5,-0.94,"primary",2,0,0,1,0,"lack of money",
+"H381","V16",9.6,1.78,"primary",4,1,0,0,,,4
+"H382","V16",9.1,-1.77,"none",3,0,0,0,,"bad image",
+"H383","V16",9.6,-0.43,"none",7,0,0,0,,"lack of knowledge",
+"H384","V16",9.6,-0.87,"none",4,1,1,0,,,5
+"H385","V16",9.2,-2.11,"none",2,0,0,0,,"lack of trust",
+"H386","V16",9.4,0.01,"primary",3,0,1,0,,"lack of knowledge",
+"H387","V16",9.3,0.98,"none",6,0,0,0,,"bad image",
+"H388","V16",10.3,-2.3,"none",4,0,1,0,,"bad image",
+"H389","V16",9,-1.41,"none",5,0,1,0,,"other",
+"H390","V16",8.8,0.86,"secondary+",6,1,0,1,0,,4
+"H391","V16",9.4,1.43,"none",2,0,0,1,0,"lack of knowledge",
+"H392","V16",9.8,0.41,"primary",5,1,0,0,,,4
+"H393","V16",10.3,-0.52,"secondary+",3,0,0,1,1,"bad image",
+"H394","V16",9.6,-0.62,"primary",7,0,0,0,,"lack of knowledge",
+"H395","V16",11.3,-2.12,"primary",3,0,0,1,0,"lack of knowledge",
+"H396","V16",7.5,1.55,"primary",5,0,0,0,,"lack of knowledge",
+"H397","V16",9.1,1.41,"secondary+",3,0,0,0,,"lack of money",
+"H398","V16",9.6,-1.61,"primary",5,0,0,1,0,"lack of money",
+"H399","V16",12.5,0.46,"primary",3,0,0,0,,"lack of money",
+"H400","V16",9.2,1.14,"secondary+",4,1,0,1,1,,2
+"H401","V17",6.1,0.24,"none",3,0,1,0,,"lack of trust",
+"H402","V17",5.8,-0.25,"secondary+",4,1,0,1,1,,5
+"H403","V17",4.1,-1.86,"none",5,0,1,0,,"lack of money",
+"H404","V17",5.6,2.23,"primary",4,0,0,0,,"lack of money",
+"H405","V17",3.4,-0.06,"primary",5,1,0,0,,,5
+"H406","V17",6.6,-1.46,"none",4,0,0,0,,"lack of money",
+"H407","V17",7,-2.4,"secondary+",5,0,0,0,,"lack of knowledge",
+"H408","V17",5.5,0.75,"primary",6,1,1,0,,,3
+"H409","V17",7.9,-1.85,"primary",6,0,0,0,,"lack of trust",
+"H410","V17",6.4,3.06,"secondary+",7,1,0,1,1,,3
+"H411","V17",8.2,-3.83,"none",4,0,0,0,,"lack of money",
+"H412","V17",6.1,0.8,"primary",5,0,0,1,0,"lack of knowledge",
+"H413","V17",7.6,-1.29,"none",4,0,0,0,,"lack of money",
+"H414","V17",5.7,-2.58,"none",4,1,0,0,,,5
+"H415","V17",5,1.07,"secondary+",7,1,0,0,,,5
+"H416","V17",5.3,1.06,"secondary+",5,1,1,0,,,4
+"H417","V17",6.6,0.96,"primary",3,0,1,0,,"lack of knowledge",
+"H418","V17",7.2,1.05,"primary",3,0,0,0,,"lack of knowledge",
+"H419","V17",6.6,0.08,"primary",4,0,0,0,,"lack of money",
+"H420","V17",7.7,3.56,"primary",3,1,0,0,,,5
+"H421","V17",7.5,-0.21,"secondary+",4,0,1,0,,"lack of money",
+"H422","V17",5.5,-0.22,"none",4,0,1,0,,"lack of knowledge",
+"H423","V17",5.1,1.95,"none",4,1,0,0,,,2
+"H424","V17",5.3,0.55,"primary",4,1,0,0,,,1
+"H425","V17",6.4,1.66,"secondary+",5,0,0,0,,"lack of trust",
+"H426","V18",5.3,-0.37,"primary",6,0,0,0,,"bad image",
+"H427","V18",6.1,2.65,"secondary+",2,1,1,0,,,3
+"H428","V18",5.8,2.39,"secondary+",3,0,0,0,,"other",
+"H429","V18",5.2,1.23,"secondary+",4,0,0,0,,"lack of knowledge",
+"H430","V18",9.3,3.7,"primary",6,0,0,1,1,"lack of knowledge",
+"H431","V18",7.7,-0.53,"none",5,0,0,1,0,"other",
+"H432","V18",4.8,-1.84,"none",3,0,0,0,,"other",
+"H433","V18",6.7,-1.77,"secondary+",6,1,0,0,,,5
+"H434","V18",5.9,1.36,"primary",3,0,1,1,0,"lack of money",
+"H435","V18",6.5,1.13,"none",5,0,0,0,,"lack of knowledge",
+"H436","V18",3.7,-0.46,"primary",3,0,1,1,0,"lack of knowledge",
+"H437","V18",5,0.39,"secondary+",6,0,1,0,,"lack of knowledge",
+"H438","V18",7.2,-0.33,"primary",4,1,0,1,1,,5
+"H439","V18",6.2,1.7,"secondary+",8,0,0,0,,"lack of trust",
+"H440","V18",7.2,-1.87,"none",7,0,0,0,,"lack of knowledge",
+"H441","V18",7.1,0.35,"secondary+",7,1,0,1,0,,4
+"H442","V18",7.4,3.37,"primary",6,1,0,0,,,3
+"H443","V18",6,1.5,"secondary+",4,0,0,0,,"bad image",
+"H444","V18",4.4,-1.44,"none",4,0,0,0,,"other",
+"H445","V18",5.2,-3.04,"none",4,1,0,0,,,2
+"H446","V18",4,0.76,"none",8,1,0,0,,,5
+"H447","V18",8.3,-0.8,"none",3,0,0,1,0,"lack of money",
+"H448","V18",7.4,0.64,"secondary+",7,1,0,0,,,4
+"H449","V18",5.6,-0.02,"primary",5,0,0,0,,"bad image",
+"H450","V18",5.4,0.07,"primary",3,0,0,1,1,"bad image",
+"H451","V19",8.6,2.08,"primary",6,0,0,0,,"lack of trust",
+"H452","V19",10.3,-0.41,"primary",9,0,0,0,,"lack of trust",
+"H453","V19",10.5,1.81,"primary",6,1,0,0,,,4
+"H454","V19",10.2,0.54,"none",4,0,1,0,,"lack of money",
+"H455","V19",9.2,0.77,"primary",4,1,0,0,,,3
+"H456","V19",7.9,0.36,"secondary+",2,0,0,0,,"bad image",
+"H457","V19",7.6,-0.29,"secondary+",8,0,0,1,1,"other",
+"H458","V19",10.7,-4.02,"primary",6,0,0,0,,"lack of money",
+"H459","V19",9.9,-2.51,"none",6,0,0,0,,"lack of money",
+"H460","V19",9.3,0.23,"primary",3,0,0,0,,"bad image",
+"H461","V19",10.9,0.83,"none",5,1,1,1,1,,3
+"H462","V19",11.6,-2.59,"none",3,1,0,0,,,5
+"H463","V19",9.2,2.2,"none",7,0,0,1,1,"bad image",
+"H464","V19",9.6,-1.95,"none",4,0,1,1,0,"lack of trust",
+"H465","V19",11.4,-2.14,"secondary+",3,0,0,0,,"lack of knowledge",
+"H466","V19",9.7,-1.36,"secondary+",7,1,0,0,,,4
+"H467","V19",10.7,-0.09,"secondary+",3,0,0,0,,"lack of knowledge",
+"H468","V19",7.8,-0.99,"secondary+",7,0,0,0,,"lack of money",
+"H469","V19",10.2,-1.72,"none",6,0,0,0,,"lack of money",
+"H470","V19",9.5,1.79,"none",4,1,1,0,,,5
+"H471","V19",11.5,1.67,"secondary+",3,0,0,0,,"bad image",
+"H472","V19",9.5,-2.07,"none",8,0,0,0,,"lack of knowledge",
+"H473","V19",10.4,-0.96,"primary",5,0,0,0,,"bad image",
+"H474","V19",9.9,-1.16,"primary",4,0,0,0,,"lack of money",
+"H475","V19",8.5,-0.78,"primary",6,0,0,1,0,"lack of knowledge",
+"H476","V20",11,-2.07,"primary",5,0,1,0,,"other",
+"H477","V20",11.5,0.7,"none",5,0,1,0,,"lack of knowledge",
+"H478","V20",9.4,-2.75,"none",5,1,0,0,,,2
+"H479","V20",9.5,-0.67,"secondary+",5,0,0,0,,"lack of money",
+"H480","V20",11,-0.91,"none",7,0,0,0,,"lack of trust",
+"H481","V20",11.8,-2.04,"primary",3,0,0,0,,"lack of knowledge",
+"H482","V20",11.1,-1.82,"secondary+",8,0,0,1,0,"lack of knowledge",
+"H483","V20",10.4,-1.74,"primary",5,0,1,0,,"lack of knowledge",
+"H484","V20",9.2,1.52,"none",5,1,0,1,1,,5
+"H485","V20",10,0,"primary",5,0,0,1,0,"lack of money",
+"H486","V20",11.1,1,"primary",6,0,1,1,0,"lack of knowledge",
+"H487","V20",10.5,-0.29,"primary",3,1,1,0,,,2
+"H488","V20",7.8,-0.05,"none",4,0,0,1,0,"bad image",
+"H489","V20",9.7,-0.1,"primary",7,0,0,1,0,"lack of trust",
+"H490","V20",7.8,-1.63,"secondary+",3,0,0,0,,"lack of money",
+"H491","V20",6.9,-2.54,"primary",6,0,0,0,,"lack of money",
+"H492","V20",11,-0.86,"none",5,0,0,1,1,"lack of money",
+"H493","V20",8.3,-3.43,"secondary+",2,0,0,1,0,"lack of money",
+"H494","V20",10.4,2.92,"none",3,1,0,0,,,4
+"H495","V20",9.5,-2.47,"primary",3,0,0,1,0,"lack of money",
+"H496","V20",11.4,0.47,"none",4,0,0,0,,"lack of money",
+"H497","V20",9.3,-1.03,"primary",3,0,0,0,,"lack of knowledge",
+"H498","V20",11.8,-0.36,"secondary+",5,0,0,1,1,"lack of knowledge",
+"H499","V20",10.8,-3,"none",6,0,0,0,,"lack of trust",
+"H500","V20",10.4,0.79,"primary",4,1,0,1,0,,4
