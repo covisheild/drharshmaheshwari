@@ -433,3 +433,16 @@ html.reading { overflow-anchor: none; scroll-behavior: auto; } /* load() keeps y
 .rd-nt .flag { margin-left: auto; font-size: .72rem; font-weight: 600; color: var(--warn-c, var(--ink-3)); }
 .rd-nt-text { font-size: .82rem; overflow-wrap: anywhere; }
 .rd-nt-body { padding-left: .55rem; border-left: 3px solid var(--line); color: var(--ink); font-size: .82rem; overflow-wrap: anywhere; }
+
+/* ---------- Ask AI (ai.ts): only when switched on under Aa ---------- */
+.rd-sec { position: relative; }
+.rd-ask-sec { position: absolute; top: .1rem; right: 0; min-height: 34px; padding: 0 .75rem; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); color: var(--ink-2); font: 600 .78rem var(--font-body); cursor: pointer; }
+.rd-ask-sec:hover { color: var(--ink); border-color: var(--ink-3); }
+.rd-ask-sec:focus-visible { outline: 2px solid var(--b-mark); outline-offset: 2px; }
+.rd-ask-sec[hidden] { display: none; }
+.rd.ask-heads .rd-sec h3 { padding-right: 5.4rem; }
+.rd-aa-ai { display: grid; gap: .8rem; margin-top: .8rem; padding-top: .8rem; border-top: 1px solid var(--line); }
+.rd-aa-ai[hidden] { display: none; }
+.rd-seg button { font-size: .82rem; padding: 0 .2rem; }
+.rd-toast-sub { font-size: .85rem; color: var(--ink-3); }
+.rd-toast a { color: var(--b-ink); }

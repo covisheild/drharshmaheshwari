@@ -36,7 +36,7 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
   <ModeBar mode="doctors" />
   <div class="rd" id="rd" data-book={book.id} data-version={book.version} data-words={book.words}
     data-sections={`${book.url}sections/`} data-figures={figureBase(book)} style={`--hue:${book.hue}`}
-    data-title={`${label} · ${book.title}`} data-url={url} data-licence={book.licence} data-author={book.author}>
+    data-title={`${label} · ${book.title}`} data-url={url} data-licence={book.licence} data-author={book.author} data-series={book.series}>
 
     <header class="rd-bar">
       <button type="button" class="rd-ico rd-menu" aria-controls="rd-side" aria-expanded="false" aria-label="Contents and bookmarks">
@@ -79,6 +79,19 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
       <div class="rd-aa-row rd-aa-opts">
         <button type="button" role="switch" class="rd-sw" data-opt="note">Note button in the bar</button>
         <button type="button" role="switch" class="rd-sw" data-opt="show">Show my highlights</button>
+        <button type="button" role="switch" class="rd-sw" data-opt="ai">Ask AI button</button>
+      </div>
+      <div class="rd-aa-ai" id="rd-aa-ai" hidden>
+        <div class="rd-aa-row"><span>Open with</span>
+          <div class="rd-seg" role="radiogroup" aria-label="Open with">
+            {[['copy', 'Copy only'], ['chatgpt', 'ChatGPT'], ['claude', 'Claude'], ['gemini', 'Gemini']].map(([v, t]) => <button type="button" role="radio" data-aiwith={v}>{t}</button>)}
+          </div></div>
+        <div class="rd-aa-row"><span>Ask it to</span>
+          <div class="rd-seg" role="radiogroup" aria-label="Ask it to">
+            {[['explain', 'Explain'], ['clinical', 'Clinical'], ['quiz', 'Quiz me'], ['challenge', 'Challenge']].map(([v, t]) => <button type="button" role="radio" data-aitask={v}>{t}</button>)}
+          </div></div>
+        <div class="rd-aa-row rd-aa-opts"><button type="button" role="switch" class="rd-sw" data-opt="aiHeads">Button on section headings</button></div>
+        <p class="rd-aa-help">Nothing is sent from this site. The button puts a question, with the passage you chose, on your clipboard and, for ChatGPT and Claude, opens it in a new tab. AI answers can be wrong: check them.</p>
       </div>
     </div>
 
@@ -138,6 +151,7 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
             {p.sections.map((s) => (
               <section class="rd-sec" id={s.id} data-sec={s.id} data-words={s.words} data-label={s.label} data-part={p.id}>
                 <h3><span class="n">{s.label}</span> <span set:html={s.title} /></h3>
+                <button type="button" class="rd-ask-sec" data-ask-sec={s.id} aria-label={`Ask AI about ${s.label}`} hidden>Ask AI</button>
                 <div class="rd-body" data-state="empty"></div>
               </section>
             ))}
@@ -170,6 +184,7 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
         {colours.map((c, i) => <button type="button" class="dot" data-colour={i} aria-label={`Highlight ${c.toLowerCase()}`} style={`--sw:var(--sw-${i})`}></button>)}
       </div>
       <button type="button" class="rd-sel-note" data-act="note">Note</button>
+      <button type="button" class="rd-sel-note" data-act="ask" hidden>Ask AI</button>
     </div>
     <div class="rd-hl" id="rd-hl" role="dialog" aria-label="Highlight" tabindex="-1" hidden>
       <div class="rd-hl-top">
@@ -180,7 +195,7 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
       </div>
       <p class="rd-hl-quote"></p>
       <textarea class="rd-hl-note" rows="3" maxlength="2000" placeholder="Add a note" aria-label="Note on this highlight"></textarea>
-      <div class="rd-hl-actions"><button type="button" data-act="remove">Remove highlight</button><span class="rd-hl-saved" role="status"></span></div>
+      <div class="rd-hl-actions"><button type="button" data-act="remove">Remove highlight</button><button type="button" data-act="ask" hidden>Ask AI</button><span class="rd-hl-saved" role="status"></span></div>
     </div>
     <div class="rd-zoom" id="rd-zoom" role="dialog" aria-modal="true" aria-label="Figure" hidden>
       <div class="rd-zoom-bar">

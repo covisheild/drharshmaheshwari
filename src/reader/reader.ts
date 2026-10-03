@@ -15,10 +15,12 @@ import { dueCount } from './review';
 import { mountZoom } from './zoom';
 import { mountHighlights, type HighlightApi } from './highlights';
 import { mountNotes } from './notes';
+import { ask as askAi } from './ai';
 import type { GlossaryEntry, Location, OutlinePart, Reference, Section } from './types';
 
 interface PageData { outline: OutlinePart[]; references: { part: string; items: Reference[]; note: string | null }[]; glossary: GlossaryEntry[]; sizes: number[] }
 
+type BoolPref = 'note' | 'show' | 'ai' | 'aiHeads';
 const SELECT_HELP: Record<SelectMode, string> = {
   bar: 'A small bar with your colours appears under the text you select.',
   quick: 'Text you select is highlighted at once in your colour. Nothing else opens.',
@@ -58,7 +60,14 @@ export function startReader() {
     root.querySelectorAll<HTMLButtonElement>('[data-width]').forEach((b) => b.setAttribute('aria-checked', String(Number(b.dataset.width) === prefs.width)));
     root.querySelectorAll<HTMLButtonElement>('[data-select]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.select === prefs.select)));
     root.querySelectorAll<HTMLButtonElement>('#rd-aa-panel [data-colour]').forEach((b) => b.setAttribute('aria-checked', String(Number(b.dataset.colour) === prefs.colour)));
-    root.querySelectorAll<HTMLButtonElement>('[data-opt]').forEach((b) => b.setAttribute('aria-checked', String(!!prefs[b.dataset.opt as 'note' | 'show'])));
+    root.querySelectorAll<HTMLButtonElement>('[data-opt]').forEach((b) => b.setAttribute('aria-checked', String(!!prefs[b.dataset.opt as BoolPref])));
+    root.querySelectorAll<HTMLButtonElement>('[data-aiwith]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.aiwith === prefs.aiWith)));
+    root.querySelectorAll<HTMLButtonElement>('[data-aitask]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.aitask === prefs.aiTask)));
+    // The AI settings appear only once Ask AI is switched on; its heading buttons only if that is chosen too.
+    document.getElementById('rd-aa-ai')!.hidden = !prefs.ai;
+    const heads = prefs.ai && prefs.aiHeads;
+    root.classList.toggle('ask-heads', heads);
+    root.querySelectorAll<HTMLElement>('[data-ask-sec]').forEach((b) => { b.hidden = !heads; });
     const help = document.getElementById('rd-aa-help');
     if (help) help.textContent = `${SELECT_HELP[prefs.select]} Keyboard: select text, then press H.`;
     sizePlaceholders();
@@ -302,8 +311,9 @@ export function startReader() {
     if (b.dataset.width) { prefs = { ...prefs, width: Number(b.dataset.width) }; reflow = true; }
     if (b.dataset.select) prefs = { ...prefs, select: b.dataset.select as SelectMode };
     if (b.dataset.colour) prefs = { ...prefs, colour: Number(b.dataset.colour) };
-    if (b.dataset.opt === 'note') prefs = { ...prefs, note: !prefs.note };
-    if (b.dataset.opt === 'show') prefs = { ...prefs, show: !prefs.show };
+    if (b.dataset.opt) { const k = b.dataset.opt as BoolPref; prefs = { ...prefs, [k]: !prefs[k] }; }
+    if (b.dataset.aiwith) prefs = { ...prefs, aiWith: b.dataset.aiwith as ReaderPrefs['aiWith'] };
+    if (b.dataset.aitask) prefs = { ...prefs, aiTask: b.dataset.aitask as ReaderPrefs['aiTask'] };
     BookProgressStore.setPrefs(prefs);
     applyPrefs();
     marks?.prefsChanged();
@@ -484,8 +494,30 @@ export function startReader() {
     book: { id: bookId, title: root.dataset.title!, version: root.dataset.version!, url: root.dataset.url!, licence: root.dataset.licence!, author: root.dataset.author! },
     leave: () => { if (drawer()) setSide(false); },
   });
+  // ---- Ask AI: a question for the reader's own assistant (ai.ts); needs no server
+  const toast = document.getElementById('rd-toast')!;
+  let toastTimer = 0;
+  const say = (html: string) => {
+    toast.innerHTML = `${html}<div><button type="button" data-stay>OK</button></div>`;
+    toast.hidden = false;
+    toast.querySelector('[data-stay]')!.addEventListener('click', () => { toast.hidden = true; });
+    clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(() => { toast.hidden = true; }, 9000);
+  };
+  const askAbout = (a: { sec: string; text?: string; note?: string }) => {
+    const s = byId.get(a.sec);
+    void askAi(prefs.aiWith, prefs.aiTask, {
+      book: root.dataset.title!, series: root.dataset.series!, author: root.dataset.author!,
+      label: s?.dataset.label ?? '', title: s?.querySelector('h3 span:last-child')?.textContent?.trim() ?? '', text: a.text, note: a.note,
+    }, say);
+  };
+  root.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-ask-sec]');
+    if (b) askAbout({ sec: b.dataset.askSec! });
+  });
   marks = mountHighlights({
     root, store, secs: byId, topline,
+    ask: askAbout,
     getPrefs: () => prefs,
     setPrefs: (patch) => { prefs = { ...prefs, ...patch }; BookProgressStore.setPrefs(prefs); applyPrefs(); },
     jumpTo,

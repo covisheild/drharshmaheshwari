@@ -34,6 +34,8 @@ export interface HighlightHost {
   topline(): number;
   /** Called when the set of highlights, or which of them could be placed, changed. */
   onChange?(): void;
+  /** "Ask AI" about a passage (a selection, or an existing highlight with its note). */
+  ask?(a: { sec: string; text: string; note?: string }): void;
 }
 
 export interface HighlightApi {
@@ -251,6 +253,7 @@ export function mountHighlights(host: HighlightHost): HighlightApi {
     picked = p;
     const c = prefs();
     bar.querySelector<HTMLElement>('[data-act="note"]')!.hidden = !c.note;
+    bar.querySelector<HTMLElement>('[data-act="ask"]')!.hidden = !c.ai;
     bar.querySelectorAll<HTMLElement>('[data-colour]').forEach((b) => b.setAttribute('aria-current', String(Number(b.dataset.colour) === c.colour)));
     bar.hidden = false;
     reposition();
@@ -279,6 +282,10 @@ export function mountHighlights(host: HighlightHost): HighlightApi {
       const h = create(p, prefs().colour);
       hideBar(); clearSelection();
       if (h) openCard(h.id, true);
+    } else if (b.dataset.act === 'ask') {
+      const text = readable(p.range.cloneContents()); // asking does not make a highlight
+      hideBar(); clearSelection();
+      host.ask?.({ sec: p.sec, text });
     }
   };
   bar.addEventListener('pointerdown', (e) => { barBusy = true; e.preventDefault(); }); // keeps the selection
@@ -342,6 +349,7 @@ export function mountHighlights(host: HighlightHost): HighlightApi {
     cardQuote.textContent = asLine(h.text, 140);
     cardNote.value = h.note;
     cardSaved.textContent = '';
+    card.querySelector<HTMLElement>('[data-act="ask"]')!.hidden = !prefs().ai;
     card.querySelectorAll<HTMLElement>('[data-colour]').forEach((b) => b.setAttribute('aria-checked', String(Number(b.dataset.colour) === h.colour)));
     card.hidden = false;
     placeCard();
@@ -367,6 +375,11 @@ export function mountHighlights(host: HighlightHost): HighlightApi {
       const id = openId;
       closeCard();
       store.removeHighlight(id);
+    } else if (b.dataset.act === 'ask') {
+      const h = store.highlights().find((x) => x.id === openId);
+      flushNote();
+      const note = h ? store.highlights().find((x) => x.id === openId)?.note : '';
+      if (h) host.ask?.({ sec: h.sec, text: h.text, note });
     } else if (b.dataset.act === 'close') closeCard();
   });
 

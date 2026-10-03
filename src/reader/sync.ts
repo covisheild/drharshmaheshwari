@@ -181,7 +181,8 @@ export class SyncedBookStore extends BookProgressStore {
       const out = s.out;
       if (!out.progress && !out.bookmarks.length && !out.attempts.length && !out.highlights.length) { if (this.state_ !== 'synced') this.setState('synced'); return true; }
       const takeMarks = out.bookmarks.slice(0, keepalive ? 40 : 200);
-      const takeHighlights = out.highlights.slice(0, keepalive ? 20 : 100);
+      // A keepalive request may not exceed 64 KB, and a highlight with its note can be 6 KB: so few go with a closing tab.
+      const takeHighlights = out.highlights.slice(0, keepalive ? 5 : 100);
       const takeAttempts = new Set(out.attempts.slice(0, keepalive ? 60 : 1000));
       const marks = s.bookmarks.filter((b) => takeMarks.includes(b.id));
       const highlights = s.highlights.filter((h) => takeHighlights.includes(h.id));

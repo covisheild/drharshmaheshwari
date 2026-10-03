@@ -72,12 +72,18 @@ export interface ReaderPrefs {
   note: boolean;
   /** Show highlights in the text. */
   show: boolean;
+  /** "Ask AI": a button that puts a question (with the passage) on the clipboard and optionally opens an assistant. Off until switched on. */
+  ai: boolean;
+  aiWith: 'copy' | 'chatgpt' | 'claude' | 'gemini';
+  aiTask: 'explain' | 'clinical' | 'quiz' | 'challenge';
+  /** With `ai` on: also a small button on each section heading. */
+  aiHeads: boolean;
 }
 
 const key = (book: string) => `book:${book}:v1`;
 const PREFS = 'reader:prefs:v1';
 const KEEP = 5000;
-export const DEFAULT_PREFS: ReaderPrefs = { size: 2, width: 1, select: 'bar', colour: 0, note: true, show: true };
+export const DEFAULT_PREFS: ReaderPrefs = { size: 2, width: 1, select: 'bar', colour: 0, note: true, show: true, ai: false, aiWith: 'copy', aiTask: 'explain', aiHeads: true };
 
 function read<T>(k: string): T | null {
   try { const raw = localStorage.getItem(k); return raw ? (JSON.parse(raw) as T) : null; } catch { return null; }

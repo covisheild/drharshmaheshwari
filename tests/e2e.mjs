@@ -493,6 +493,73 @@ try {
     check((await page.locator('.rd-nt .flag').allTextContents()).some((t) => /text changed/.test(t)), 'and it is listed as "text changed in this version"');
     await ctx.close();
   }
+
+  // ---------- Ask AI (off by default; a question on the clipboard, optionally opened in ChatGPT/Claude; nothing is sent from the site) ----------
+  for (const [name, vp, touch] of [['phone', { width: 390, height: 844 }, true], ['desktop', { width: 1280, height: 900 }, false]]) {
+    const ctx = await browser.newContext({ viewport: vp, hasTouch: touch, isMobile: touch });
+    await ctx.grantPermissions(['clipboard-read', 'clipboard-write']);
+    await ctx.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
+    await ctx.route(/chatgpt\.com|claude\.ai|gemini\.google\.com/, (r) => r.fulfill({ contentType: 'text/html', body: '<title>assistant</title>' }));
+    const page = await ctx.newPage();
+    const errs = errorsOf(page);
+    await page.goto(BASE + R + '#b0-r0-c06');
+    await page.waitForSelector('#b0-r0-c06 .rd-body[data-state="done"]');
+    await page.waitForTimeout(700);
+    const clip = () => page.evaluate(() => navigator.clipboard.readText());
+    check(await page.locator('[data-ask-sec]').first().isHidden(), `${name}: no Ask AI button on headings until switched on`);
+    await pick(page, 0, 5, 40);
+    await page.waitForTimeout(500);
+    check(await page.locator('#rd-sel [data-act="ask"]').isHidden(), `${name}: no Ask AI in the bar until switched on`);
+    await page.mouse.click(5, 5);
+    await page.locator('#rd-aa').click();
+    check(await page.locator('#rd-aa-ai').isHidden(), `${name}: the AI settings are hidden until switched on`);
+    await page.locator('[data-opt="ai"]').click();
+    check(await page.locator('#rd-aa-ai').isVisible() && await page.locator('[data-ask-sec]').first().isVisible(), `${name}: switching it on shows its settings and the heading buttons`);
+    await page.locator('[data-opt="aiHeads"]').click();
+    check(await page.locator('[data-ask-sec]').first().isHidden(), `${name}: heading buttons can be turned off on their own`);
+    await page.locator('[data-opt="aiHeads"]').click();
+    await page.mouse.click(5, 5);
+    const quote = await pick(page, 0, 5, 40);
+    await page.waitForTimeout(500);
+    await page.locator('#rd-sel [data-act="ask"]').click();
+    await page.waitForTimeout(300);
+    const q1 = await clip();
+    check(q1.includes(quote) && /Passage:/.test(q1) && /section A6/.test(q1) && /Explain this in plain words/.test(q1), `${name}: Ask AI copies a question with the passage`);
+    check(/copied/i.test(await page.locator('#rd-toast').textContent()), `${name}: and says so`);
+    check((await liveHl(page)).length === 0, `${name}: asking does not make a highlight`);
+    // Open with ChatGPT; ask it to quiz.
+    await page.locator('#rd-aa').click();
+    await page.locator('[data-aiwith="chatgpt"]').click();
+    await page.locator('[data-aitask="quiz"]').click();
+    await page.mouse.click(5, 5);
+    await pick(page, 1, 3, 40);
+    await page.waitForTimeout(500);
+    const [popup] = await Promise.all([ctx.waitForEvent('page'), page.locator('#rd-sel [data-act="ask"]').click()]);
+    check(popup.url().startsWith('https://chatgpt.com/?q=') && /three%20short%20questions/.test(popup.url()), `${name}: with ChatGPT it opens a new tab with the question filled in`);
+    await popup.close();
+    check(/three short questions/.test(await clip()), `${name}: and the question is also on the clipboard`);
+    // A heading button, and a highlight's card.
+    await page.locator('#rd-aa').click();
+    await page.locator('[data-aiwith="copy"]').click();
+    await page.mouse.click(5, 5);
+    await page.locator('[data-ask-sec="b0-r0-c06"]').click();
+    await page.waitForTimeout(300);
+    check(/I have not pasted the text/.test(await clip()) && /A6/.test(await clip()), `${name}: the heading button asks about the concept alone`);
+    check(await overflow(page) <= 0, `${name}: no sideways scroll with the heading buttons`);
+    await pick(page, 2, 2, 25);
+    await page.waitForTimeout(500);
+    await page.locator('#rd-sel [data-act="note"]').click();
+    await page.keyboard.type('why a minus sign?');
+    await page.locator('#rd-hl [data-act="ask"]').click();
+    await page.waitForTimeout(300);
+    check(/My note on it: why a minus sign\?/.test(await clip()), `${name}: a highlight's card asks with its note`);
+    await page.keyboard.press('Escape');
+    await page.locator('#rd-aa').click();
+    await page.locator('[data-opt="ai"]').click();
+    check(await page.locator('[data-ask-sec]').first().isHidden() && await page.locator('#rd-aa-ai').isHidden(), `${name}: switching it off hides everything again`);
+    check(errs.length === 0, `${name}: Ask AI has no script errors ${errs.join(' | ')}`);
+    await ctx.close();
+  }
 } finally {
   await browser.close();
   if (started) try { execSync('npx astro preview stop', { stdio: 'ignore' }); } catch {}

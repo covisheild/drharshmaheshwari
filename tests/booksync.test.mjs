@@ -338,3 +338,15 @@ test('highlights made while the account was not known are found by the first ful
   await s.ready();
   assert.ok(server.highlights.some((h) => h.quote === 'made too early to notice'));
 });
+
+test('closing the tab sends only as many highlights as a keepalive request can hold', { skip: signedOut }, async () => {
+  const s = new SyncedBookStore('B0', '1.2');
+  await s.ready();
+  for (let i = 0; i < 12; i++) s.addHighlight(hl({ start: i * 40, end: i * 40 + 20, quote: `highlight number ${i} text` }));
+  server.requests.length = 0;
+  await s.flush(true);
+  assert.equal(uploads().find((r) => r.path === '/api/books/b0').highlights, 5, 'five at most (about 6 KB each at the limit, 64 KB in all)');
+  assert.equal(s.get().out.highlights.length, 7);
+  await s.flush();
+  assert.equal(server.highlights.length, 12);
+});

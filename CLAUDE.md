@@ -126,7 +126,12 @@ local devDependency. Change production settings only on purpose; preview-only se
   colour, the Note button, and "Show my highlights" (`ReaderPrefs`, device-local). `H` highlights the selection. Tapping a highlight
   opens its card (colour, note, remove). Stored in `BookState.highlights` (deletions kept as `deleted`; newest `updated` wins),
   synced like bookmarks (D1 `highlights`, migration 4; 3 row-writes each). Notes tab: list, jump, Copy/Download Markdown.
-  Colours `--hl-*`/`--sw-*` are checked for 4.5:1 in `tests/e2e.mjs`. "Copy for AI" is parked behind the bar (no server, no cost).
+  Colours `--hl-*`/`--sw-*` are checked for 4.5:1 in `tests/e2e.mjs`.
+- **Ask AI** (`src/reader/ai.ts`), off until switched on under Aa. No server, no cost, nothing stored: it builds a question (book,
+  section, the passage or just the heading, the reader's note, one of four tasks) and puts it on the clipboard; ChatGPT and Claude
+  also open with `?q=` (Gemini has no such address: opens empty, question copied). Shown in the bar, on a highlight's card and,
+  optionally, on section headings. Hosting an AI ourselves is parked until it has sign-in, per-person daily caps, a monthly budget
+  switch and a passage-only prompt. `/privacy/` says what happens.
 - **Sync is built for the Cloudflare free plan** (Worker requests 100,000/day, D1 5M rows read and 100,000 rows written/day;
   since 1 Sep 2026 D1 *fails* queries past the cap until midnight UTC, which would also break sign-in). Static pages cost nothing; only
   `/api/*` counts. So: downloads are **deltas** (`?since=<server ms>`; the cursor `since` lives in the browser copy, two minutes
