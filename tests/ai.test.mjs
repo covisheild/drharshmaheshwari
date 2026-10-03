@@ -1,7 +1,7 @@
-// The question "Ask AI" puts on the clipboard (src/reader/ai.ts). Run by `npm test`.
+// The question "Copy for AI" puts on the clipboard (src/reader/ai.ts). Run by `npm test`.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildPrompt, linkFor, MAX_LINK } from '../src/reader/ai.ts';
+import { buildPrompt } from '../src/reader/ai.ts';
 
 const input = { book: 'Book 0 · Ground floor', series: 'Obesity Expertise', author: 'Dr Harsh Maheshwari', label: 'A6', title: 'Powers, roots and scientific notation' };
 
@@ -27,20 +27,4 @@ test('each task asks for something different', () => {
   assert.equal(new Set(asks).size, 4);
   assert.match(asks[2], /three short questions/);
   assert.match(asks[3], /objections or exceptions/);
-});
-
-test('ChatGPT and Claude get the question in the address; Gemini and Copy do not; a long one is only copied', () => {
-  const p = buildPrompt({ ...input, text: 'a b & c?' }, 'explain');
-  const gpt = linkFor('chatgpt', p);
-  assert.ok(gpt.filled && gpt.url.startsWith('https://chatgpt.com/?q='));
-  assert.equal(decodeURIComponent(gpt.url.split('?q=')[1]), p, 'the whole question survives the address');
-  const claude = linkFor('claude', p);
-  assert.ok(claude.filled && claude.url.startsWith('https://claude.ai/new?q='));
-  assert.deepEqual(linkFor('gemini', p), { url: 'https://gemini.google.com/app', filled: false });
-  assert.equal(linkFor('copy', p), null);
-  const long = buildPrompt({ ...input, text: 'word '.repeat(2000) }, 'explain');
-  const l = linkFor('chatgpt', long);
-  assert.equal(l.filled, false, 'too long for an address');
-  assert.equal(l.url, 'https://chatgpt.com/');
-  assert.ok(MAX_LINK >= 4000);
 });

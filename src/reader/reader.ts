@@ -61,9 +61,8 @@ export function startReader() {
     root.querySelectorAll<HTMLButtonElement>('[data-select]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.select === prefs.select)));
     root.querySelectorAll<HTMLButtonElement>('#rd-aa-panel [data-colour]').forEach((b) => b.setAttribute('aria-checked', String(Number(b.dataset.colour) === prefs.colour)));
     root.querySelectorAll<HTMLButtonElement>('[data-opt]').forEach((b) => b.setAttribute('aria-checked', String(!!prefs[b.dataset.opt as BoolPref])));
-    root.querySelectorAll<HTMLButtonElement>('[data-aiwith]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.aiwith === prefs.aiWith)));
     root.querySelectorAll<HTMLButtonElement>('[data-aitask]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.aitask === prefs.aiTask)));
-    // The AI settings appear only once Ask AI is switched on; its heading buttons only if that is chosen too.
+    // The AI settings appear only once Copy for AI is switched on; its heading buttons only if that is chosen too.
     document.getElementById('rd-aa-ai')!.hidden = !prefs.ai;
     const heads = prefs.ai && prefs.aiHeads;
     root.classList.toggle('ask-heads', heads);
@@ -312,7 +311,6 @@ export function startReader() {
     if (b.dataset.select) prefs = { ...prefs, select: b.dataset.select as SelectMode };
     if (b.dataset.colour) prefs = { ...prefs, colour: Number(b.dataset.colour) };
     if (b.dataset.opt) { const k = b.dataset.opt as BoolPref; prefs = { ...prefs, [k]: !prefs[k] }; }
-    if (b.dataset.aiwith) prefs = { ...prefs, aiWith: b.dataset.aiwith as ReaderPrefs['aiWith'] };
     if (b.dataset.aitask) prefs = { ...prefs, aiTask: b.dataset.aitask as ReaderPrefs['aiTask'] };
     BookProgressStore.setPrefs(prefs);
     applyPrefs();
@@ -494,7 +492,7 @@ export function startReader() {
     book: { id: bookId, title: root.dataset.title!, version: root.dataset.version!, url: root.dataset.url!, licence: root.dataset.licence!, author: root.dataset.author! },
     leave: () => { if (drawer()) setSide(false); },
   });
-  // ---- Ask AI: a question for the reader's own assistant (ai.ts); needs no server
+  // ---- Copy for AI: a question to paste into the reader's own assistant (ai.ts); needs no server
   const toast = document.getElementById('rd-toast')!;
   let toastTimer = 0;
   const say = (html: string) => {
@@ -506,7 +504,7 @@ export function startReader() {
   };
   const askAbout = (a: { sec: string; text?: string; note?: string }) => {
     const s = byId.get(a.sec);
-    void askAi(prefs.aiWith, prefs.aiTask, {
+    void askAi(prefs.aiTask, {
       book: root.dataset.title!, series: root.dataset.series!, author: root.dataset.author!,
       label: s?.dataset.label ?? '', title: s?.querySelector('h3 span:last-child')?.textContent?.trim() ?? '', text: a.text, note: a.note,
     }, say);

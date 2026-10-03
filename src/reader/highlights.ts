@@ -34,7 +34,7 @@ export interface HighlightHost {
   topline(): number;
   /** Called when the set of highlights, or which of them could be placed, changed. */
   onChange?(): void;
-  /** "Ask AI" about a passage (a selection, or an existing highlight with its note). */
+  /** "Copy for AI": a question about a passage (a selection, or an existing highlight with its note). */
   ask?(a: { sec: string; text: string; note?: string }): void;
 }
 
