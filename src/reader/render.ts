@@ -38,7 +38,7 @@ function card(kind: 'exercise' | 'practice', id: string, head: string, b: Extrac
 
 /** Each line of a working block becomes its own element, so a phone can wrap a long line with a hanging
  *  indent instead of hiding it off the side. The text is untouched. */
-const lines = (html: string) => html.replace(/<div class="working">\s*<p>([\s\S]*?)<\/p>\s*<\/div>/g,
+export const lines = (html: string) => html.replace(/<div class="working">\s*<p>([\s\S]*?)<\/p>\s*<\/div>/g,
   (_, body: string) => `<div class="working">${body.split(/<br\s*\/?>\s*/).map((l) => `<span class="wl">${l}</span>`).join('')}</div>`);
 
 export function renderSection(sec: Section, figureBase: string): string {

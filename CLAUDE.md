@@ -113,6 +113,9 @@ local devDependency. Change production settings only on purpose; preview-only se
 - Figures and PDFs are on R2 (`books/obesity-expertise/figures/`, `books/obesity-expertise/<ID>-v<version>.pdf`).
   `PUBLIC_BOOK_FIGURES` overrides the figure base for local testing.
 - Progress goes only through `BookProgressStore` (`src/reader/store.ts`, `book:<id>:v1`), never localStorage directly.
+- Signed in, `SyncedBookStore` (`src/reader/sync.ts`) syncs place, bookmarks and sections read (`/api/books/:book`) and
+  practice marks (`attempts`, trainer `book-<id>`). Review (`<book>/review/`, `src/reader/review.ts`) is FSRS over those marks
+  and the must-know points of sections read. The top bar has no PDF button; the PDF is offered at the start and end of a book.
 
 ## Accounts (optional Google sign-in) and `/api/`
 

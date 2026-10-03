@@ -1,8 +1,8 @@
-// The signed-in person, as the browser sees it. Accounts are optional: they only keep trainer progress
-// across devices. When the site has accounts switched off (or /api/ can't be reached), everything here
+// The signed-in person, as the browser sees it. Accounts are optional: they only keep trainer and book
+// progress across devices. When the site has accounts switched off (or /api/ can't be reached), everything here
 // reports "off" and the trainers keep progress in the browser.
 
-export interface AccountUser { name: string | null; email: string }
+export interface AccountUser { name: string | null; email: string; picture?: string | null }
 export interface Account { enabled: boolean; user: AccountUser | null }
 
 const OWNER_KEY = 'account:owner'; // whose progress this browser's trainer copies belong to
@@ -22,10 +22,10 @@ export const signInHref = (returnTo = location.pathname) => `/api/auth/google?re
 const send = (method: string, path: string) =>
   fetch(path, { method, credentials: 'same-origin', headers: { 'content-type': 'application/json' }, body: method === 'POST' ? '{}' : undefined });
 
-/** Removes this browser's copies of trainer progress (they stay in the account). */
+/** Removes this browser's copies of trainer and book-reader progress (they stay in the account). */
 export function clearLocalProgress() {
   try {
-    for (const k of Object.keys(localStorage)) if (k.startsWith('trainer:')) localStorage.removeItem(k);
+    for (const k of Object.keys(localStorage)) if (k.startsWith('trainer:') || k.startsWith('book:')) localStorage.removeItem(k);
     localStorage.removeItem(OWNER_KEY);
   } catch { /* storage unavailable */ }
 }

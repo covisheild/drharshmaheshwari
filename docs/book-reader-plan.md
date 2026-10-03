@@ -142,3 +142,26 @@ passes `npm run build && npm test` and the 390 px / desktop screenshots in `CLAU
 - **Blocked in the session:** the environment has no `R2_*` variables, and its "Cloudflare R2" proxy credential
   is set up as an AWS credential, so the proxy refuses to sign `*.r2.cloudflarestorage.com`;
   `files.drharshmaheshwari.com` is not on the network allow-list. The Statistics sources could not be inspected.
+
+## Progress (3 Oct 2026): Phase 2 built
+
+- **Phases 0 and 1 are live** (10 books). Books are published by `obesity-course`'s GitHub Actions publisher
+  (`check/web/PUBLISHING.md`), which opens a site PR from `books/auto-publish`.
+- **Sync.** Migration 2 (`src/server/schema.ts`): `reading_progress` (place, percent, sections read) and
+  `bookmarks` (deletions kept as `deleted_at` so they reach every device), plus `users.picture`.
+  `/api/books/:book` GET/POST/DELETE (`src/server/api.ts`): the newest place wins, the sections-read list only
+  grows, a deleted bookmark stays deleted. Practice marks are `attempts` under trainer `book-<id>` (`-` not `:`,
+  to fit the trainer-id rule), uploaded with `/api/progress/book-<id>`.
+- **Client.** `src/reader/sync.ts` `SyncedBookStore` extends `BookProgressStore` the way `SyncedProgressStore`
+  wraps the trainers' store: local first, merged on each page load, each change uploaded. A newer place in
+  another section asks "You reached C9 on another device. Jump there? / Stay here" instead of moving the page.
+  Another person's reading in the same browser is cleared, never merged (`claimLocalProgress`).
+- **Review** at `/doctors/books/obesity-expertise/<book>/review/` (`src/reader/review.ts`): FSRS from
+  `src/trainers/core/schedule.ts`, rebuilt from the marks. Items: questions you marked (`-e<n>`, `-p<n>`) and
+  must-know points (`-k<n>`) of sections read to the end, at most 10 new a day. "N due" shows by Review in
+  the contents.
+- **Top bar.** The PDF button is gone (the PDF stays at the start and end of the book); in its place a small
+  "Sign in", or the Google picture circle (initial if none) that opens the account line in the contents panel.
+  The picture is an address at `*.googleusercontent.com`, loaded from Google, never copied.
+- Tests: `tests/api.test.mjs` (books API), `tests/booksync.test.mjs` (merge and sync against a pretend
+  server), `tests/e2e.mjs` (Review, top bar).

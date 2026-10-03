@@ -68,7 +68,7 @@ test('Google sign-in: PKCE code exchange, session cookie, return to the same pag
   const raw = cb.headers.getSetCookie().find((c) => c.startsWith('sid='));
   assert.match(raw, /HttpOnly/); assert.match(raw, /SameSite=Lax/); assert.match(raw, /Secure/);
   const me = await (await handleApi(req('/api/me', { headers: { cookie: sid } }), env)).json();
-  assert.deepEqual(me, { enabled: true, user: { name: 'Dr A', email: 'a@example.org' } });
+  assert.deepEqual(me, { enabled: true, user: { name: 'Dr A', email: 'a@example.org', picture: null } });
   const row = await env.DB.prepare('SELECT token_hash FROM sessions LIMIT 1').first();
   assert.ok(!row.token_hash.includes(sid.slice(4)), 'only a hash of the session token is stored');
 });
@@ -127,4 +127,57 @@ test('sign out ends the session; deleting the account removes the person and all
   }
   assert.equal((await env.DB.prepare(`SELECT COUNT(*) AS n FROM attempts WHERE id = 'd1'`).first()).n, 0, 'answers deleted');
   assert.equal((await env.DB.prepare(`SELECT COUNT(*) AS n FROM users WHERE google_sub = 'google-d'`).first()).n, 0, 'user deleted');
+});
+
+test('books: reading place (newest wins), bookmarks (deletions stick), practice marks, and deleting it all', async () => {
+  const { sid } = await signIn({ sub: 'google-b', email: 'b@example.org' });
+  const { sid: other } = await signIn({ sub: 'google-c', email: 'c@example.org' });
+  const get = async (s = sid, book = 'b0') => (await handleApi(req(`/api/books/${book}`, { headers: { cookie: s } }), env)).json();
+  const loc = (s, p = 0, f = 0) => ({ s, p, f });
+  assert.deepEqual(await get(), { progress: null, bookmarks: [] });
+
+  assert.equal((await post('/api/books/b0', sid, { progress: { version: '1.2', loc: loc('b0-r0-c05', 3, 0.5), percent: 0.1, updated: 2000 } })).status, 200);
+  assert.equal((await post('/api/books/b0', sid, { progress: { version: '1.2', loc: loc('b0-r0-c02'), percent: 0.02, updated: 1000 } })).status, 200, 'an older place');
+  assert.deepEqual((await get()).progress, { version: '1.2', loc: loc('b0-r0-c05', 3, 0.5), percent: 0.1, updated: 2000, done: [] }, 'the older place does not win');
+  await post('/api/books/b0', sid, { progress: { version: '1.2', loc: loc('b0-r0-c02'), percent: 0.02, updated: 1500, done: ['b0-r0-c01', 'b0-r0-c02'] } });
+  assert.deepEqual((await get()).progress.done, ['b0-r0-c01', 'b0-r0-c02'], 'sections read to the end arrive even from an older place');
+  assert.equal((await get()).progress.loc.s, 'b0-r0-c05', 'while the newer place stays');
+  await post('/api/books/b0', sid, { progress: { version: '1.2', loc: loc('b0-r0-c09'), percent: 0.2, updated: 3000 } });
+  assert.equal((await get()).progress.loc.s, 'b0-r0-c09', 'a newer place wins');
+
+  const mark = { id: 'm1', loc: loc('b0-r0-c05', 2), label: 'A5', snippet: 'A ratio compares two quantities', created: 1500 };
+  assert.equal((await post('/api/books/b0', sid, { bookmarks: [mark, mark] })).status, 200, 'the same bookmark twice');
+  assert.deepEqual((await get()).bookmarks, [{ ...mark, deleted: null }]);
+  await post('/api/books/b0', sid, { bookmarks: [{ ...mark, deleted: 5000 }] });
+  await post('/api/books/b0', sid, { bookmarks: [mark] });
+  assert.equal((await get()).bookmarks[0].deleted, 5000, 'a deletion is not undone by a device that still had the bookmark');
+
+  assert.deepEqual(await get(other), { progress: null, bookmarks: [] }, 'another person sees nothing');
+  assert.equal((await post('/api/books/b0', sid, { progress: { version: '1.2', loc: { s: 'X Y', p: 0, f: 0 }, percent: 0, updated: 1 } })).status, 400);
+  assert.equal((await post('/api/books/b0', sid, { bookmarks: [{ ...mark, id: 'm2', snippet: 'x'.repeat(201) }] })).status, 400);
+  assert.equal((await post('/api/books/B0!', sid, {})).status, 404);
+  assert.equal((await post('/api/books/b0', sid, { progress: { version: '1.2', loc: loc('b0-r0-c01'), percent: 0, updated: 9000 } }, 'https://evil.example')).status, 403);
+
+  const practice = { id: 'k1', trainer: 'book-b0', version: '1.2', item: 'b0-r0-c05:p3', set: 'b0-r0-c05', activity: 'practice', parts: [], correct: false, t: 4000 };
+  assert.equal((await post('/api/progress/book-b0', sid, { attempts: [practice] })).status, 200, 'practice marks use the attempts table');
+
+  const del = await handleApi(req('/api/books/b0', { method: 'DELETE', headers: { cookie: sid, origin: ORIGIN } }), env);
+  assert.equal(del.status, 200);
+  assert.deepEqual(await get(), { progress: null, bookmarks: [] });
+  assert.deepEqual((await (await handleApi(req('/api/progress/book-b0', { headers: { cookie: sid } }), env)).json()).attempts, []);
+
+  await post('/api/books/s01-r1', sid, { progress: { version: '1.2', loc: loc('s01-r1-c01'), percent: 0, updated: 1 }, bookmarks: [{ ...mark, id: 'm9' }] });
+  await handleApi(req('/api/account', { method: 'DELETE', headers: { cookie: sid, origin: ORIGIN } }), env);
+  for (const table of ['reading_progress', 'bookmarks']) {
+    assert.equal((await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${table} WHERE book_id = 's01-r1'`).first()).n, 0, `${table} deleted with the account`);
+  }
+});
+
+test('the Google profile picture address is kept only when Google hosts it', async () => {
+  const me = async (sid) => (await (await handleApi(req('/api/me', { headers: { cookie: sid } }), env)).json()).user;
+  const pic = 'https://lh3.googleusercontent.com/a/abc=s96-c';
+  const { sid } = await signIn({ sub: 'google-pic', email: 'pic@example.org', tamper: (c) => ({ ...c, picture: pic }) });
+  assert.equal((await me(sid)).picture, pic);
+  const { sid: bad } = await signIn({ sub: 'google-pic2', email: 'pic2@example.org', tamper: (c) => ({ ...c, picture: 'https://evil.example/x.png' }) });
+  assert.equal((await me(bad)).picture, null);
 });

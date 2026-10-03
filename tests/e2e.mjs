@@ -290,6 +290,22 @@ try {
     const back = await page.locator('#rd-where').textContent();
     check(back === before, `${name}: reopening the book returns to your place (${back})`);
     check(errs.length === 0, `${name}: reader has no script errors ${errs.join(' | ')}`);
+    // Review: the question just marked comes back; marking it there records a review.
+    // (Changed from the Review page: the book page saves its own copy when it is left.)
+    await page.goto(BASE + R + 'review/');
+    await page.evaluate(() => { const k = 'book:B0:v1'; const s = JSON.parse(localStorage.getItem(k)); s.attempts.forEach((a) => { a.correct = false; }); s.attempts.forEach((a) => { s.practice[a.item].mark = 'missed'; }); s.done = []; localStorage.setItem(k, JSON.stringify(s)); });
+    await page.reload();
+    await page.waitForSelector('.rv-card .q, .rv-done');
+    check(await page.locator('.rv-card .q').count() === 1, `${name}: Review shows the missed question`);
+    check((await page.locator('.rv-count').textContent()).includes('of'), `${name}: Review counts its items`);
+    await page.locator('.rv-card .q-reveal').click();
+    await page.locator('.rv-card [data-mark="got"]').click();
+    await page.waitForSelector('.rv-done');
+    check(/Done: 1 reviewed/.test(await page.locator('.rv-done').textContent()), `${name}: Review finishes and says what was done`);
+    const reviewed = await page.evaluate(() => JSON.parse(localStorage.getItem('book:B0:v1')).attempts.filter((a) => a.activity === 'review').length);
+    check(reviewed === 1, `${name}: the review mark is recorded`);
+    check(await overflow(page) <= 0, `${name}: Review has no sideways scroll`);
+    check(await page.locator('.rd-bar .rd-dl').count() === 0, `${name}: no PDF button in the top bar`);
     await page.goto(BASE + '/doctors/books/obesity-expertise/');
     check(await page.locator('#continue').isVisible(), `${name}: series page shows Continue reading after reading`);
     check(await overflow(page) <= 0, `${name}: series page has no sideways scroll`);

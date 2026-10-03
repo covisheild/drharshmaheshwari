@@ -289,3 +289,42 @@ html.reading { overflow-anchor: none; scroll-behavior: auto; } /* load() keeps y
 }
 .rd-scrub-label b { color: inherit; opacity: .7; margin-right: .3em; }
 @media (min-width: 1100px) { .rd-main { padding-right: 40px; } }
+
+/* ---------- account line, device-jump prompt, Review link ---------- */
+.rd-acct { padding: .75rem 1rem 1rem; border-top: 1px solid var(--line); font-size: .8rem; color: var(--ink-2); line-height: 1.45; }
+.rd-acct p { margin: 0 0 .4rem; }
+.rd-acct a, .rd-acct button { color: var(--b-ink); }
+.rd-acct button { border: 0; background: none; padding: 0; font: inherit; text-decoration: underline; cursor: pointer; }
+.rd-acct-in { font-weight: 700; }
+.rd-due { margin-left: auto; font-size: .75rem; font-weight: 700; color: var(--q); }
+.rd-review-link { display: flex; }
+.rd-toast {
+  position: fixed; z-index: 75; left: 50%; bottom: 16px; transform: translateX(-50%); width: min(460px, calc(100vw - 24px));
+  padding: .8rem 1rem; border-radius: 12px; background: var(--surface); color: var(--ink); border: 1px solid var(--line);
+  box-shadow: 0 16px 40px rgb(0 0 0 / .25); font: .92rem/1.45 var(--font-body);
+}
+:root[data-theme='dark'] .rd-toast { background: #111; border-color: #333; }
+.rd-toast p { margin: 0 0 .6rem; }
+.rd-toast div { display: flex; gap: .5rem; }
+.rd-toast button { min-height: 40px; padding: .4rem .9rem; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); font: 600 .88rem var(--font-body); cursor: pointer; }
+.rd-toast [data-go] { background: var(--b-ink); border-color: var(--b-ink); color: var(--brand-ink); }
+
+/* ---------- Review ---------- */
+.rv-main { margin-left: 0 !important; }
+.rv-head { padding: 2rem 0 .5rem; }
+.rv-head h1 { font-size: 1.8em; margin: 0 0 .2em; }
+.rv-how { font-size: .85em; color: var(--ink-2); font-family: var(--font-body); }
+.rv-kind { font: 700 .7em var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 .6em !important; }
+.rv-ask { font-style: italic; color: var(--ink-2); }
+.rv-src { margin: .9em 0 0 !important; font: .78em var(--font-body); }
+.rv-done { padding: 1.5rem 0; font-family: var(--font-body); }
+
+/* the account control in the top bar (it replaced the PDF button, Harsh 3 Oct 2026: the PDF is offered at the
+   start and the end of the book) */
+.rd-me { flex: none; display: inline-flex; align-items: center; min-width: 8px; }
+.rd-signin { padding: .3rem .65rem; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-2); font: 600 .8rem var(--font-body); text-decoration: none; white-space: nowrap; }
+.rd-signin:hover { color: var(--ink); border-color: var(--ink-3); }
+.rd-avatar { position: relative; width: 30px; height: 30px; margin: 0 .3rem; padding: 0; border-radius: 50%; border: 1px solid var(--line); overflow: hidden;
+  background: var(--b-ink); color: var(--brand-ink); font: 700 .8rem var(--font-body); cursor: pointer; display: grid; place-items: center; }
+.rd-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.rd-avatar:focus-visible { outline: 2px solid var(--b-mark); outline-offset: 2px; }

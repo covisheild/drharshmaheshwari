@@ -9,6 +9,9 @@
 
 import { numberParagraphs, renderSection } from './render';
 import { BookProgressStore, type ReaderPrefs } from './store';
+import { SyncedBookStore } from './sync';
+import { mountReaderAccount, mountReaderMe } from './account';
+import { dueCount } from './review';
 import type { GlossaryEntry, Location, OutlinePart, Reference, Section } from './types';
 
 interface PageData { outline: OutlinePart[]; references: { part: string; items: Reference[]; note: string | null }[]; glossary: GlossaryEntry[]; sizes: number[] }
@@ -22,7 +25,7 @@ export function startReader() {
   const root: HTMLElement = found;
   const data = JSON.parse(document.getElementById('rd-data')!.textContent!) as PageData;
   const bookId = root.dataset.book!;
-  const store = new BookProgressStore(bookId, root.dataset.version!);
+  const store = new SyncedBookStore(bookId, root.dataset.version!);
   const base = root.dataset.sections!;
   const figures = root.dataset.figures!;
   const bar = root.querySelector<HTMLElement>('.rd-bar')!;
@@ -236,19 +239,19 @@ export function startReader() {
   const marksList = side.querySelector<HTMLOListElement>('.rd-marks ol')!;
   const near = (a: Location, b: Location) => a.s === b.s && a.p === b.p;
   function updateMarkButton(loc?: Location) {
-    const on = !!loc && store.get().bookmarks.some((b) => near(b.loc, loc));
+    const on = !!loc && store.bookmarks().some((b) => near(b.loc, loc));
     markBtn.setAttribute('aria-pressed', String(on));
     markBtn.setAttribute('aria-label', on ? 'Remove this bookmark' : 'Bookmark this place');
   }
   function drawMarks() {
-    const bms = [...store.get().bookmarks].sort((a, b) => b.created - a.created);
+    const bms = [...store.bookmarks()].sort((a, b) => b.created - a.created);
     side.querySelector<HTMLElement>('.rd-marks .rd-empty')!.hidden = bms.length > 0;
     marksList.innerHTML = bms.map((b) => `<li><a href="#${b.loc.s}" data-bm="${b.id}"><span class="n">${b.label}</span><span class="t">${escapeHtml(b.snippet)}</span></a><button type="button" data-rm="${b.id}" aria-label="Remove bookmark">×</button></li>`).join('');
   }
   markBtn.addEventListener('click', () => {
     const c = current();
     if (!c) return;
-    const existing = store.get().bookmarks.find((b) => near(b.loc, c.loc));
+    const existing = store.bookmarks().find((b) => near(b.loc, c.loc));
     if (existing) store.removeBookmark(existing.id);
     else {
       const el = byId.get(c.loc.s)?.querySelector<HTMLElement>(`[data-p="${c.loc.p}"]`);
@@ -265,7 +268,7 @@ export function startReader() {
     const a = t.closest<HTMLAnchorElement>('[data-bm]');
     if (!a) return;
     e.preventDefault();
-    const b = store.get().bookmarks.find((x) => x.id === a.dataset.bm);
+    const b = store.bookmarks().find((x) => x.id === a.dataset.bm);
     if (b) { if (drawer()) setSide(false); void jumpTo(b.loc); }
   });
   drawMarks();
@@ -414,6 +417,39 @@ export function startReader() {
   // Glossary terms are focusable for keyboard readers.
   new MutationObserver(() => root.querySelectorAll<HTMLElement>('dfn[data-g]:not([tabindex])').forEach((d) => { d.tabIndex = 0; d.setAttribute('role', 'button'); }))
     .observe(root, { childList: true, subtree: true });
+
+  // ---------------------------------------------------------------- your other devices
+  // When the account copy arrives (sync.ts), bookmarks and practice marks from other devices appear here.
+  store.subscribe(() => {
+    drawMarks();
+    updateMarkButton(current()?.loc);
+    root.querySelectorAll<HTMLElement>('.rd-body[data-state="done"]').forEach(restorePractice);
+  });
+  // Further on in another section on another device: ask, never move the page under the reader.
+  store.onElsewhere((loc) => {
+    const s = byId.get(loc.s);
+    if (!s) return;
+    const toast = document.getElementById('rd-toast')!;
+    toast.innerHTML = `<p>You reached <b>${s.dataset.label} · ${s.querySelector('h3 span:last-child')?.innerHTML ?? ''}</b> on another device.</p>
+      <div><button type="button" data-go>Jump there</button><button type="button" data-stay>Stay here</button></div>`;
+    toast.hidden = false;
+    toast.querySelector('[data-go]')!.addEventListener('click', () => { toast.hidden = true; void jumpTo(loc); });
+    toast.querySelector('[data-stay]')!.addEventListener('click', () => { toast.hidden = true; save(); });
+  });
+  const acct = document.getElementById('rd-acct');
+  if (acct) void mountReaderAccount(acct, store);
+  const me = document.getElementById('rd-me');
+  if (me) void mountReaderMe(me, () => {
+    if (drawer()) setSide(true);
+    else if (root.classList.contains('side-closed')) { root.classList.remove('side-closed'); menu.setAttribute('aria-expanded', 'true'); }
+    acct?.scrollIntoView({ block: 'end' });
+    acct?.querySelector<HTMLElement>('a, button')?.focus({ preventScroll: true });
+  });
+  // How many Review items are due, beside the Review link in the contents.
+  const due = document.getElementById('rd-due');
+  const drawDue = () => { if (due) { const n = dueCount(store); due.textContent = n ? `${n} due` : ''; } };
+  store.subscribe(drawDue);
+  drawDue();
 
   // ---------------------------------------------------------------- start
   applyPrefs();
