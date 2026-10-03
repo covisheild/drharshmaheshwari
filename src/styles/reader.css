@@ -191,6 +191,23 @@ html.reading { overflow-anchor: none; scroll-behavior: auto; } /* load() keeps y
 }
 .rd-main sup, .rd-main sub { line-height: 0; }
 
+/* R code, its printed output and shell commands (S52-R1 on), as the PDF prints them: verbatim, monospace,
+   no syntax colours; code tinted in the book's colour, output on the page under a faint rule. Long lines
+   wrap rather than hide off the side. Ligatures off, so `<-` and `==` show the characters you type. */
+.rd-main pre, .rd-main code { font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+  font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0, "dlig" 0; }
+.rd-main code { font-size: .86em; padding: .05em .25em; border-radius: 3px; background: var(--work-bg); }
+.rd-main pre code { font-size: inherit; padding: 0; background: none; color: inherit; }
+.rd-main div.sourceCode { margin: .5em 0; }
+.rd-main pre.sourceCode, .rd-main pre.output {
+  margin: .5em 0; padding: .6em .9em; font-size: .78em; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere;
+  border-radius: 0 6px 6px 0; color: var(--ink); }
+.rd-main div.sourceCode pre.sourceCode { margin: 0; }
+.rd-main pre.sourceCode { background: var(--b-tint); border-left: 3px solid var(--b-mark); }
+.rd-main pre.output { background: var(--bg); border: 1px solid var(--line); border-left-width: 3px; }
+.rd-main pre a { color: inherit; text-decoration: none; }
+.rd-main pre span { color: inherit; font-style: normal; font-weight: inherit; }
+
 /* tables scroll sideways on a phone instead of squeezing */
 .rd-main table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: .5em 0 1.1em; font-size: .78em; line-height: 1.4; }
 .rd-main th, .rd-main td { padding: .45em .7em; border: 1px solid var(--line); text-align: left; vertical-align: top; }
