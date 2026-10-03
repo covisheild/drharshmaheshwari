@@ -125,9 +125,33 @@ local devDependency. Change production settings only on purpose; preview-only se
   sections that read each file come from the book itself). The files are small text, so they live in the repo, not R2.
 - `BookReader.astro` / `BookReview.astro` lay out every book's reader and review; the two series' pages only pass their own titles and links.
 - Progress goes only through `BookProgressStore` (`src/reader/store.ts`, `book:<id>:v1`), never localStorage directly.
+- Figures: tap the picture or its enlarge button to open the viewer (`src/reader/zoom.ts`, `#rd-zoom`): pinch, double-tap, wheel,
+  `+ - 0`, arrows, Back/Esc to close. The button sits beside `.fig-card`, never inside a `.c` (children of `.c` are the numbered paragraphs).
 - Signed in, `SyncedBookStore` (`src/reader/sync.ts`) syncs place, bookmarks and sections read (`/api/books/:book`) and
   practice marks (`attempts`, trainer `book-<id>`). Review (`<book>/review/`, `src/reader/review.ts`) is FSRS over those marks
   and the must-know points of sections read. The top bar has no PDF button; the PDF is offered at the start and end of a book.
+- **Highlights and notes** (`src/reader/highlights.ts`, `anchor.ts`, `notes.ts`). Painted with the CSS Custom Highlight API, so the
+  book's HTML is never touched (paragraph numbers stay valid). A highlight is a character range in the section's text (the
+  `[data-p]` paragraphs joined by `\n`) plus the quote and 24 characters either side; on a new book version it is re-found by its
+  quote (`resolve`), else listed "text changed" in the Notes tab and not painted. What selecting does is the reader's choice under
+  **Aa**: *Show a bar* (default: colours + Note), *Highlight* (at once in the chosen colour, nothing opens), *Nothing*; plus the
+  colour, the Note and Copy buttons, and "Show my highlights" (`ReaderPrefs`, device-local). `H` highlights the selection. Tapping a highlight
+  opens its card (colour, note, remove). Stored in `BookState.highlights` (deletions kept as `deleted`; newest `updated` wins),
+  synced like bookmarks (D1 `highlights`, migration 4; 3 row-writes each). Notes tab: list, jump, Copy/Download Markdown.
+  Colours `--hl-*`/`--sw-*` are checked for 4.5:1 in `tests/e2e.mjs`.
+- **Copy for AI** (`src/reader/ai.ts`), off until switched on under Aa. No server, no cost, nothing stored: it builds a question (book,
+  section, the passage or just the heading, the reader's note, one of four tasks) and puts it on the clipboard; the reader pastes it
+  into their own AI. Shown in the bar, on a highlight's card and, optionally, on section headings. Opening ChatGPT/Claude/Gemini from
+  the button was tried and removed (Harsh, 3 Oct 2026): Claude shows a caution notice for any filled-in link and Gemini takes no
+  question from a link. Hosting an AI ourselves is parked until it has sign-in, per-person daily caps, a monthly budget switch and
+  a passage-only prompt. `/privacy/` says what happens.
+- **Sync is built for the Cloudflare free plan** (Worker requests 100,000/day, D1 5M rows read and 100,000 rows written/day;
+  since 1 Sep 2026 D1 *fails* queries past the cap until midnight UTC, which would also break sign-in). Static pages cost nothing; only
+  `/api/*` counts. So: downloads are **deltas** (`?since=<server ms>`; the cursor `since` lives in the browser copy, two minutes
+  behind the server clock; `attempts.received_at` + index make the query read only new rows; a first/full download compares
+  everything), and uploads are **batched** from an outbox (`out`): 10 s after the last change, at most 30 s after the first, at once
+  when the tab is hidden or closed, and the reading place alone at most once a minute. A change made while signed out drops the cursor
+  (next sign-in compares everything). Never add a per-keystroke or per-scroll request; D1 bills rows *scanned*, so new queries need an index.
 
 ## Accounts (optional Google sign-in) and `/api/`
 

@@ -17,7 +17,7 @@ health professionals; nothing goes under For Everyone).
   body text is off-white (~`#d6d6d6`), not `#fff`. Follow the site's existing theme toggle
   (`ThemeToggle.astro`, `data-theme`); the reader overrides `--bg` to `#000` in dark.
   Figures with white backgrounds sit on a slightly dimmed card in black mode.
-- **No highlighting** for now. Positions are stored per paragraph, so it can be added later.
+- ~~No highlighting for now~~ (3 Oct 2026: added, see the last section).
 - **Interactive** (Harsh wants this): the reader presents existing fields interactively; it never
   adds or rewrites content.
 
@@ -165,6 +165,21 @@ passes `npm run build && npm test` and the 390 px / desktop screenshots in `CLAU
   The picture is an address at `*.googleusercontent.com`, loaded from Google, never copied.
 - Tests: `tests/api.test.mjs` (books API), `tests/booksync.test.mjs` (merge and sync against a pretend
   server), `tests/e2e.mjs` (Review, top bar).
+
+## Progress (3 Oct 2026, later): delta sync, then reader tools
+
+Harsh asked for Kindle-like tools: highlights with notes, image zoom, and "discuss with AI". Agreed order, each a
+separate commit so it can be reviewed on a Preview before `main`:
+
+1. **Delta sync and batched upload** (done). `GET /api/books/:book` and `GET /api/progress/:trainer` take `?since=<ms of server time>`
+   and return `now` (and `next`, for a full page); migration 3 adds `attempts.received_at` and its index. The client keeps a cursor and an
+   outbox in the browser copy (`BookState.since`, `BookState.out`). Timing: upload 10 s after the last change (30 s at most), at once on
+   tab hide, the place alone once a minute. Tests: `tests/booksync.test.mjs`, `tests/api.test.mjs` (including a rows-read check).
+   The trainers still download everything on each page load (`/api/progress/<trainer>` without `since`); they can use the same cursor later.
+2. Image zoom (done): `src/reader/zoom.ts`; tests in `tests/e2e.mjs` ("Figure viewer").
+3. Highlights and notes (done): see "Highlights and notes" in `CLAUDE.md`. Choices Harsh asked for: nothing opens unless wanted. Under **Aa**: when selecting text show a bar / highlight at once / do nothing; colour; Note button on or off; show or hide highlights.
+4. "Copy for AI" (done): copies a question (passage or heading, your note, one of four tasks) to the clipboard; no server, no cost. Under **Aa**: switch on; choose the task; heading buttons on or off. Links that open ChatGPT/Claude/Gemini were removed on 3 Oct 2026 (Claude shows a caution notice for filled-in links; Gemini takes none).
+   Hosting an AI ourselves is parked: it needs sign-in, a daily cap per person, a monthly budget switch and a passage-only prompt first.
 
 ## Progress (3 Oct 2026, later): Phase 3, the Statistics converter
 

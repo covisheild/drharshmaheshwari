@@ -7,6 +7,7 @@ import '../../styles/reader.css';
 import Base from '../../layouts/Base.astro';
 import ModeBar from '../site/ModeBar.astro';
 import ThemeToggle from '../ThemeToggle.astro';
+import { SITE } from '../../consts';
 import type { Book } from '../../reader/types';
 
 interface Props {
@@ -27,12 +28,14 @@ interface Props {
 }
 const { book, title, description, jsonld, figures, eyebrow, heading, headingNote, barFull, barShort, backHref, backLabel, end, date } = Astro.props;
 const sizes = [15, 16.5, 18, 19.5, 21.5];
+const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
 ---
 <Base title={title} description={description} jsonld={jsonld} chrome="app">
   <link slot="head" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=JetBrains+Mono:wght@400;500&display=swap" />
   <ModeBar mode="doctors" />
   <div class="rd" id="rd" data-book={book.id} data-version={book.version} data-words={book.words}
-    data-sections={`${book.url}sections/`} data-figures={figures} style={`--hue:${book.hue}`}>
+    data-sections={`${book.url}sections/`} data-figures={figures} style={`--hue:${book.hue}`}
+    data-title={title} data-url={`${SITE.url}${book.url}`} data-licence={book.licence} data-author={book.author} data-series={book.series}>
 
     <header class="rd-bar">
       <button type="button" class="rd-ico rd-menu" aria-controls="rd-side" aria-expanded="false" aria-label="Contents and bookmarks">
@@ -47,7 +50,7 @@ const sizes = [15, 16.5, 18, 19.5, 21.5];
       <button type="button" class="rd-ico" id="rd-mark" aria-pressed="false" aria-label="Bookmark this place">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/></svg>
       </button>
-      <button type="button" class="rd-ico rd-aa" id="rd-aa" aria-controls="rd-aa-panel" aria-expanded="false" aria-label="Text size and line width">Aa</button>
+      <button type="button" class="rd-ico rd-aa" id="rd-aa" aria-controls="rd-aa-panel" aria-expanded="false" aria-label="Text size, line width and highlighting">Aa</button>
       <ThemeToggle />
       <span class="rd-me" id="rd-me"></span>
     </header>
@@ -61,12 +64,38 @@ const sizes = [15, 16.5, 18, 19.5, 21.5];
         <div class="rd-seg" role="radiogroup" aria-label="Line width">
           {['Narrow', 'Medium', 'Wide'].map((w, i) => <button type="button" role="radio" data-width={i}>{w}</button>)}
         </div></div>
+      <div class="rd-aa-row"><span>When I select text</span>
+        <div class="rd-seg" role="radiogroup" aria-label="When I select text">
+          <button type="button" role="radio" data-select="bar">Show a bar</button>
+          <button type="button" role="radio" data-select="quick">Highlight</button>
+          <button type="button" role="radio" data-select="off">Nothing</button>
+        </div>
+        <p class="rd-aa-help" id="rd-aa-help"></p></div>
+      <div class="rd-aa-row"><span>Highlight colour</span>
+        <div class="rd-dots" role="radiogroup" aria-label="Highlight colour">
+          {colours.map((c, i) => <button type="button" role="radio" class="dot" data-colour={i} aria-label={c} style={`--sw:var(--sw-${i})`}></button>)}
+        </div></div>
+      <div class="rd-aa-row rd-aa-opts">
+        <button type="button" role="switch" class="rd-sw" data-opt="note">Note button in the bar</button>
+        <button type="button" role="switch" class="rd-sw" data-opt="copy">Copy button in the bar</button>
+        <button type="button" role="switch" class="rd-sw" data-opt="show">Show my highlights</button>
+        <button type="button" role="switch" class="rd-sw" data-opt="ai">Copy for AI button</button>
+      </div>
+      <div class="rd-aa-ai" id="rd-aa-ai" hidden>
+        <div class="rd-aa-row"><span>The question asks the AI to</span>
+          <div class="rd-seg" role="radiogroup" aria-label="Ask it to">
+            {[['explain', 'Explain'], ['clinical', 'Clinical'], ['quiz', 'Quiz me'], ['challenge', 'Challenge']].map(([v, t]) => <button type="button" role="radio" data-aitask={v}>{t}</button>)}
+          </div></div>
+        <div class="rd-aa-row rd-aa-opts"><button type="button" role="switch" class="rd-sw" data-opt="aiHeads">Button on section headings</button></div>
+        <p class="rd-aa-help">Nothing is sent from this site. The button copies a question, with the passage you chose, to your clipboard: paste it into any AI you use. AI answers can be wrong: check them.</p>
+      </div>
     </div>
 
     <aside class="rd-side" id="rd-side" aria-label="Contents">
       <div class="rd-side-tabs" role="tablist">
         <button type="button" role="tab" aria-selected="true" data-tab="toc">Contents</button>
         <button type="button" role="tab" aria-selected="false" data-tab="marks">Bookmarks</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="notes">Notes</button>
       </div>
       <nav class="rd-toc" data-panel="toc">
         <a class="rd-toc-top" href="#top">About this book</a>
@@ -81,6 +110,12 @@ const sizes = [15, 16.5, 18, 19.5, 21.5];
         ))}
       </nav>
       <div class="rd-marks" data-panel="marks" hidden><p class="rd-empty">No bookmarks yet. Tap the bookmark at the top to keep your place.</p><ol></ol></div>
+      <div class="rd-notes" data-panel="notes" hidden>
+        <p class="rd-empty">No highlights yet. Select text in the book to highlight it; a small bar offers the colours and a note. Change what selecting does under Aa.</p>
+        <div class="rd-notes-tools" hidden><button type="button" data-notes="copy">Copy as Markdown</button><button type="button" data-notes="download">Download .md</button></div>
+        <p class="rd-notes-status" role="status"></p>
+        <ol></ol>
+      </div>
       <div class="rd-acct" id="rd-acct"></div>
     </aside>
     <div class="rd-scrim" hidden></div>
@@ -112,6 +147,7 @@ const sizes = [15, 16.5, 18, 19.5, 21.5];
             {p.sections.map((s) => (
               <section class="rd-sec" id={s.id} data-sec={s.id} data-words={s.words} data-label={s.label} data-part={p.id}>
                 <h3><span class="n">{s.label}</span> <span set:html={s.title} /></h3>
+                <button type="button" class="rd-ask-sec" data-ask-sec={s.id} aria-label={`Copy a question about ${s.label} for AI`} hidden>Copy for AI</button>
                 <div class="rd-body" data-state="empty"></div>
               </section>
             ))}
@@ -136,6 +172,37 @@ const sizes = [15, 16.5, 18, 19.5, 21.5];
       <div class="rd-scrub-label" hidden></div>
     </div>
     <div class="rd-toast" id="rd-toast" role="status" hidden></div>
+    <div class="rd-sel" id="rd-sel" role="toolbar" aria-label="Highlight the selected text" hidden>
+      <div class="rd-dots">
+        {colours.map((c, i) => <button type="button" class="dot" data-colour={i} aria-label={`Highlight ${c.toLowerCase()}`} style={`--sw:var(--sw-${i})`}></button>)}
+      </div>
+      <button type="button" class="rd-sel-note" data-act="note">Note</button>
+      <button type="button" class="rd-sel-note" data-act="copy">Copy</button>
+      <button type="button" class="rd-sel-note" data-act="ask" hidden>Copy for AI</button>
+    </div>
+    <div class="rd-hl" id="rd-hl" role="dialog" aria-label="Highlight" tabindex="-1" hidden>
+      <div class="rd-hl-top">
+        <div class="rd-dots" role="radiogroup" aria-label="Colour">
+          {colours.map((c, i) => <button type="button" role="radio" class="dot" data-colour={i} aria-label={c} style={`--sw:var(--sw-${i})`}></button>)}
+        </div>
+        <button type="button" class="rd-hl-x" data-act="close" aria-label="Close">×</button>
+      </div>
+      <p class="rd-hl-quote"></p>
+      <textarea class="rd-hl-note" rows="3" maxlength="2000" placeholder="Add a note" aria-label="Note on this highlight"></textarea>
+      <div class="rd-hl-actions"><button type="button" data-act="remove">Remove highlight</button><button type="button" data-act="copy">Copy</button><button type="button" data-act="ask" hidden>Copy for AI</button><span class="rd-hl-saved" role="status"></span></div>
+    </div>
+    <div class="rd-zoom" id="rd-zoom" role="dialog" aria-modal="true" aria-label="Figure" hidden>
+      <div class="rd-zoom-bar">
+        <p class="rd-zoom-cap"></p>
+        <div class="rd-zoom-tools">
+          <button type="button" data-z="out" aria-label="Zoom out">−</button>
+          <button type="button" data-z="in" aria-label="Zoom in">+</button>
+          <button type="button" data-z="fit" aria-label="Fit to screen">Fit</button>
+          <button type="button" data-z="close" aria-label="Close figure">×</button>
+        </div>
+      </div>
+      <div class="rd-zoom-stage"><div class="rd-zoom-sheet"><img alt="" decoding="async"></div></div>
+    </div>
     <div class="rd-pop" id="rd-pop" role="dialog" aria-modal="false" hidden><button type="button" class="rd-pop-x" aria-label="Close">×</button><div class="rd-pop-body"></div></div>
   </div>
   <script id="rd-data" type="application/json" set:html={JSON.stringify({ outline: book.outline, references: book.references, glossary: book.glossary, sizes })} />
