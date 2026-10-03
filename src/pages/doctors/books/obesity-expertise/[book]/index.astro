@@ -91,7 +91,7 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
             {[['explain', 'Explain'], ['clinical', 'Clinical'], ['quiz', 'Quiz me'], ['challenge', 'Challenge']].map(([v, t]) => <button type="button" role="radio" data-aitask={v}>{t}</button>)}
           </div></div>
         <div class="rd-aa-row rd-aa-opts"><button type="button" role="switch" class="rd-sw" data-opt="aiHeads">Button on section headings</button></div>
-        <p class="rd-aa-help">Nothing is sent from this site. The button puts a question, with the passage you chose, on your clipboard and, for ChatGPT and Claude, opens it in a new tab. AI answers can be wrong: check them.</p>
+        <p class="rd-aa-help">Nothing is sent from this site. The button puts a question, with the passage you chose, on your clipboard. ChatGPT and Claude also open in a new tab with it filled in (Claude shows its own caution notice for any filled-in link). Gemini cannot take a question from a link: paste it. AI answers can be wrong: check them.</p>
       </div>
     </div>
 

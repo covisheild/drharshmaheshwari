@@ -81,6 +81,9 @@ export async function ask(w: AiWith, task: AiTask, input: AskInput, say: (html: 
   const a = document.createElement('a');
   a.href = link.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
   document.body.append(a); a.click(); a.remove();
-  const note = link.filled ? 'The question should be filled in.' : copied ? 'Paste the question (copied) into the box.' : 'Could not copy the question.';
+  const note = !copied && !link.filled ? 'Could not copy the question.'
+    : w === 'gemini' ? 'Gemini cannot take a question from a link, so the question is copied: paste it into its box (Ctrl+V, or press and hold on a phone).'
+    : w === 'claude' && link.filled ? 'Claude shows its own caution notice for any question filled in from a link; the question is the one you chose, so check it and press send.'
+    : link.filled ? 'The question should be filled in.' : 'The question is too long for a link, so it is copied: paste it into the box.';
   say(`<p>Opening ${name} in a new tab. ${note}</p><p class="rd-toast-sub"><a href="${link.url.length > 300 ? HOME[w as Exclude<AiWith, 'copy'>] : link.url}" target="_blank" rel="noopener noreferrer">Did it not open? Open ${name}</a></p>`);
 }
