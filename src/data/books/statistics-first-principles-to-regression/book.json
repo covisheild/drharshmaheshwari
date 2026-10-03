@@ -1,0 +1,1262 @@
+{
+ "format": 1,
+ "id": "stats",
+ "slug": "statistics-first-principles-to-regression",
+ "url": "/doctors/books/statistics-first-principles-to-regression/read/",
+ "series": "",
+ "number": 0,
+ "title": "Statistics: From First Principles to Regression",
+ "subtitle": "An introductory book, written as an unbroken chain of logic",
+ "hue": 258,
+ "colours": {
+  "ink": "#3f2194",
+  "accent": "#5b35c8",
+  "accent2": "#b8378f",
+  "tint": "#f4f0fd",
+  "tint2": "#e6dcfa",
+  "rule": "#cfc0f2"
+ },
+ "version": "3.1",
+ "date": "2026-09-28",
+ "author": "Dr. Harsh Maheshwari",
+ "licence": "CC BY-NC-SA 4.0",
+ "pdf": "https://files.drharshmaheshwari.com/books/Statistics-From_First_Principles_to_Regression_v3.1.pdf",
+ "figureBase": "https://files.drharshmaheshwari.com/books/statistics-first-principles-to-regression/figures/",
+ "about": {
+  "why": "<p>Most statistics books ask you to memorise formulas. This one derives them. Starting from what a clinician already knows, it builds every idea step by step — from describing data, through probability, sampling and estimation, to hypothesis testing, correlation and regression — without a single unexplained leap.</p><p>Later chapters extend the same reasoning to generalised linear models, survival analysis, measurement theory (validity and reliability) and threats to study validity. The aim is not to make you a calculator but to let you understand why each method works, and so recognise where it stops working. About 500 pages, with checkpoint questions and answers.</p>",
+  "howToRead": "",
+  "prerequisites": null
+ },
+ "blurb": "A derivation-first statistics book for doctors: from describing data through probability, estimation and testing to regression and survival analysis.",
+ "requires": [],
+ "words": 194510,
+ "outline": [
+  {
+   "id": "front",
+   "title": "Introduction",
+   "sections": [
+    {
+     "id": "front-why-this-book-exists",
+     "label": "i",
+     "title": "Why this book exists",
+     "words": 206,
+     "practice": 0
+    },
+    {
+     "id": "front-how-to-use-this-book",
+     "label": "ii",
+     "title": "How to use this book",
+     "words": 392,
+     "practice": 0
+    },
+    {
+     "id": "front-if-you-are-new-to-statistics",
+     "label": "iii",
+     "title": "If you are new to statistics",
+     "words": 103,
+     "practice": 0
+    },
+    {
+     "id": "front-r-and-software-are-optional",
+     "label": "iv",
+     "title": "R and software are optional",
+     "words": 107,
+     "practice": 0
+    },
+    {
+     "id": "front-symbols-and-notation",
+     "label": "v",
+     "title": "Symbols and notation",
+     "words": 935,
+     "practice": 0
+    }
+   ]
+  },
+  {
+   "id": "1",
+   "title": "Chapter 1: Statistics – Foundations of Data",
+   "sections": [
+    {
+     "id": "c01",
+     "label": "1",
+     "title": "Overview",
+     "words": 92,
+     "practice": 0
+    },
+    {
+     "id": "c01-s01",
+     "label": "1.1",
+     "title": "What Is a Variable",
+     "words": 2701,
+     "practice": 6
+    },
+    {
+     "id": "c01-s02",
+     "label": "1.2",
+     "title": "Population vs Sample",
+     "words": 387,
+     "practice": 0
+    },
+    {
+     "id": "c01-s03",
+     "label": "1.3",
+     "title": "Parameter vs Statistic",
+     "words": 498,
+     "practice": 3
+    },
+    {
+     "id": "c01-s04",
+     "label": "1.4",
+     "title": "Organising Raw Data",
+     "words": 2642,
+     "practice": 6
+    },
+    {
+     "id": "c01-s05",
+     "label": "1.5",
+     "title": "Study Designs – A First Map",
+     "words": 1123,
+     "practice": 3
+    },
+    {
+     "id": "c01-s06",
+     "label": "1.6",
+     "title": "Data in Software – Codebooks, Entry, Cleaning and an R Primer",
+     "words": 1430,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "title": "Chapter 2: Descriptive Statistics – Central Tendency",
+   "sections": [
+    {
+     "id": "c02",
+     "label": "2",
+     "title": "Overview",
+     "words": 86,
+     "practice": 0
+    },
+    {
+     "id": "c02-s01",
+     "label": "2.1",
+     "title": "Why We Need a Typical Value",
+     "words": 181,
+     "practice": 0
+    },
+    {
+     "id": "c02-s02",
+     "label": "2.2",
+     "title": "Mean",
+     "words": 1989,
+     "practice": 3
+    },
+    {
+     "id": "c02-s03",
+     "label": "2.3",
+     "title": "Median",
+     "words": 464,
+     "practice": 0
+    },
+    {
+     "id": "c02-s04",
+     "label": "2.4",
+     "title": "Mode",
+     "words": 477,
+     "practice": 0
+    },
+    {
+     "id": "c02-s05",
+     "label": "2.5",
+     "title": "Choosing the Right Measure of Central Tendency",
+     "words": 686,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "3",
+   "title": "Chapter 3: Descriptive Statistics – Dispersion",
+   "sections": [
+    {
+     "id": "c03",
+     "label": "3",
+     "title": "Overview",
+     "words": 82,
+     "practice": 0
+    },
+    {
+     "id": "c03-s01",
+     "label": "3.1",
+     "title": "Why Average Alone Is Not Enough",
+     "words": 180,
+     "practice": 0
+    },
+    {
+     "id": "c03-s02",
+     "label": "3.2",
+     "title": "Range",
+     "words": 176,
+     "practice": 0
+    },
+    {
+     "id": "c03-s03",
+     "label": "3.3",
+     "title": "Quartiles Deciles and Percentiles",
+     "words": 461,
+     "practice": 0
+    },
+    {
+     "id": "c03-s04",
+     "label": "3.4",
+     "title": "Interquartile Range",
+     "words": 549,
+     "practice": 3
+    },
+    {
+     "id": "c03-s05",
+     "label": "3.5",
+     "title": "Mean Deviation",
+     "words": 369,
+     "practice": 0
+    },
+    {
+     "id": "c03-s06",
+     "label": "3.6",
+     "title": "Variance",
+     "words": 1239,
+     "practice": 0
+    },
+    {
+     "id": "c03-s07",
+     "label": "3.7",
+     "title": "Standard Deviation",
+     "words": 697,
+     "practice": 3
+    },
+    {
+     "id": "c03-s08",
+     "label": "3.8",
+     "title": "Coefficient of Variation",
+     "words": 186,
+     "practice": 0
+    },
+    {
+     "id": "c03-s09",
+     "label": "3.9",
+     "title": "Skewness",
+     "words": 619,
+     "practice": 0
+    },
+    {
+     "id": "c03-s10",
+     "label": "3.10",
+     "title": "Kurtosis",
+     "words": 630,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "4",
+   "title": "Chapter 4: Data Visualisation",
+   "sections": [
+    {
+     "id": "c04",
+     "label": "4",
+     "title": "Overview",
+     "words": 114,
+     "practice": 0
+    },
+    {
+     "id": "c04-s01",
+     "label": "4.1",
+     "title": "Tables for Data Presentation",
+     "words": 203,
+     "practice": 0
+    },
+    {
+     "id": "c04-s02",
+     "label": "4.2",
+     "title": "Diagrams for Qualitative Data",
+     "words": 1287,
+     "practice": 3
+    },
+    {
+     "id": "c04-s03",
+     "label": "4.3",
+     "title": "Diagrams for Quantitative Data",
+     "words": 2291,
+     "practice": 3
+    },
+    {
+     "id": "c04-s04",
+     "label": "4.4",
+     "title": "Scatter Diagram",
+     "words": 458,
+     "practice": 3
+    },
+    {
+     "id": "c04-s05",
+     "label": "4.5",
+     "title": "Diagrams for Time, Place and Population",
+     "words": 3219,
+     "practice": 6
+    }
+   ]
+  },
+  {
+   "id": "5",
+   "title": "Chapter 5: Foundations of Probability",
+   "sections": [
+    {
+     "id": "c05",
+     "label": "5",
+     "title": "Overview",
+     "words": 100,
+     "practice": 0
+    },
+    {
+     "id": "c05-s01",
+     "label": "5.1",
+     "title": "From Counting to Probability",
+     "words": 1295,
+     "practice": 3
+    },
+    {
+     "id": "c05-s02",
+     "label": "5.2",
+     "title": "Basic Probability Rules",
+     "words": 1057,
+     "practice": 3
+    },
+    {
+     "id": "c05-s03",
+     "label": "5.3",
+     "title": "Conditional Probability",
+     "words": 375,
+     "practice": 0
+    },
+    {
+     "id": "c05-s04",
+     "label": "5.4",
+     "title": "Independence of Events",
+     "words": 496,
+     "practice": 3
+    },
+    {
+     "id": "c05-s05",
+     "label": "5.5",
+     "title": "Bayes’ Theorem",
+     "words": 2441,
+     "practice": 3
+    },
+    {
+     "id": "c05-s06",
+     "label": "5.6",
+     "title": "Random Variables",
+     "words": 802,
+     "practice": 3
+    },
+    {
+     "id": "c05-s07",
+     "label": "5.7",
+     "title": "Probability Distributions",
+     "words": 5746,
+     "practice": 12
+    }
+   ]
+  },
+  {
+   "id": "6",
+   "title": "Chapter 6: Sampling",
+   "sections": [
+    {
+     "id": "c06",
+     "label": "6",
+     "title": "Overview",
+     "words": 101,
+     "practice": 0
+    },
+    {
+     "id": "c06-s01",
+     "label": "6.1",
+     "title": "Why We Sample",
+     "words": 237,
+     "practice": 0
+    },
+    {
+     "id": "c06-s02",
+     "label": "6.2",
+     "title": "Probability Sampling Methods",
+     "words": 4123,
+     "practice": 6
+    },
+    {
+     "id": "c06-s03",
+     "label": "6.3",
+     "title": "Non-Probability Sampling Methods",
+     "words": 628,
+     "practice": 0
+    },
+    {
+     "id": "c06-s04",
+     "label": "6.4",
+     "title": "Sampling Error vs Bias",
+     "words": 891,
+     "practice": 3
+    },
+    {
+     "id": "c06-s05",
+     "label": "6.5",
+     "title": "Sampling Distribution of a Statistic",
+     "words": 786,
+     "practice": 0
+    },
+    {
+     "id": "c06-s06",
+     "label": "6.6",
+     "title": "Central Limit Theorem",
+     "words": 524,
+     "practice": 0
+    },
+    {
+     "id": "c06-s07",
+     "label": "6.7",
+     "title": "Standard Error",
+     "words": 692,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "7",
+   "title": "Chapter 7: Estimation",
+   "sections": [
+    {
+     "id": "c07",
+     "label": "7",
+     "title": "Overview",
+     "words": 86,
+     "practice": 0
+    },
+    {
+     "id": "c07-s01",
+     "label": "7.1",
+     "title": "Point Estimation",
+     "words": 675,
+     "practice": 3
+    },
+    {
+     "id": "c07-s02",
+     "label": "7.2",
+     "title": "Confidence Intervals",
+     "words": 3072,
+     "practice": 6
+    },
+    {
+     "id": "c07-s03",
+     "label": "7.3",
+     "title": "Margin of Error and Sample Size Estimation",
+     "words": 1125,
+     "practice": 3
+    },
+    {
+     "id": "c07-s04",
+     "label": "7.4",
+     "title": "Rates, Ratios and Standardisation",
+     "words": 3177,
+     "practice": 6
+    },
+    {
+     "id": "c07-s05",
+     "label": "7.5",
+     "title": "The Life Table",
+     "words": 1241,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "8",
+   "title": "Chapter 8: Hypothesis Testing – The Framework",
+   "sections": [
+    {
+     "id": "c08",
+     "label": "8",
+     "title": "Overview",
+     "words": 104,
+     "practice": 0
+    },
+    {
+     "id": "c08-s01",
+     "label": "8.1",
+     "title": "Logic of Hypothesis Testing",
+     "words": 264,
+     "practice": 0
+    },
+    {
+     "id": "c08-s02",
+     "label": "8.2",
+     "title": "Null and Alternative Hypothesis",
+     "words": 345,
+     "practice": 0
+    },
+    {
+     "id": "c08-s03",
+     "label": "8.3",
+     "title": "Type I and Type II Error",
+     "words": 411,
+     "practice": 0
+    },
+    {
+     "id": "c08-s04",
+     "label": "8.4",
+     "title": "Significance Level and Power",
+     "words": 1293,
+     "practice": 3
+    },
+    {
+     "id": "c08-s05",
+     "label": "8.5",
+     "title": "p-value – Correct Interpretation",
+     "words": 831,
+     "practice": 0
+    },
+    {
+     "id": "c08-s06",
+     "label": "8.6",
+     "title": "One-Tailed vs Two-Tailed Tests",
+     "words": 623,
+     "practice": 3
+    },
+    {
+     "id": "c08-s07",
+     "label": "8.7",
+     "title": "General Steps in Hypothesis Testing",
+     "words": 454,
+     "practice": 0
+    },
+    {
+     "id": "c08-s08",
+     "label": "8.8",
+     "title": "Choosing the Right Statistical Test",
+     "words": 1539,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "9",
+   "title": "Chapter 9: Comparing Groups – Parametric Tests",
+   "sections": [
+    {
+     "id": "c09",
+     "label": "9",
+     "title": "Overview",
+     "words": 104,
+     "practice": 0
+    },
+    {
+     "id": "c09-s01",
+     "label": "9.1",
+     "title": "z-test",
+     "words": 1669,
+     "practice": 3
+    },
+    {
+     "id": "c09-s02",
+     "label": "9.2",
+     "title": "t-test",
+     "words": 2586,
+     "practice": 4
+    },
+    {
+     "id": "c09-s03",
+     "label": "9.3",
+     "title": "Tests of Normality",
+     "words": 670,
+     "practice": 0
+    },
+    {
+     "id": "c09-s04",
+     "label": "9.4",
+     "title": "Data Transformation Techniques",
+     "words": 577,
+     "practice": 2
+    },
+    {
+     "id": "c09-s05",
+     "label": "9.5",
+     "title": "ANOVA",
+     "words": 2905,
+     "practice": 6
+    }
+   ]
+  },
+  {
+   "id": "10",
+   "title": "Chapter 10: Comparing Groups – Non-Parametric Tests",
+   "sections": [
+    {
+     "id": "c10",
+     "label": "10",
+     "title": "Overview",
+     "words": 80,
+     "practice": 0
+    },
+    {
+     "id": "c10-s01",
+     "label": "10.1",
+     "title": "When to Use Non-Parametric Tests",
+     "words": 1102,
+     "practice": 2
+    },
+    {
+     "id": "c10-s02",
+     "label": "10.2",
+     "title": "Mann-Whitney U Test",
+     "words": 551,
+     "practice": 0
+    },
+    {
+     "id": "c10-s03",
+     "label": "10.3",
+     "title": "Wilcoxon Signed-Rank Test",
+     "words": 448,
+     "practice": 0
+    },
+    {
+     "id": "c10-s04",
+     "label": "10.4",
+     "title": "Kruskal-Wallis Test",
+     "words": 583,
+     "practice": 0
+    },
+    {
+     "id": "c10-s05",
+     "label": "10.5",
+     "title": "Friedman Test",
+     "words": 578,
+     "practice": 3
+    },
+    {
+     "id": "c10-s06",
+     "label": "10.6",
+     "title": "Chi-Square Test",
+     "words": 4238,
+     "practice": 6
+    },
+    {
+     "id": "c10-s07",
+     "label": "10.7",
+     "title": "Fisher’s Exact Test",
+     "words": 616,
+     "practice": 0
+    },
+    {
+     "id": "c10-s08",
+     "label": "10.8",
+     "title": "McNemar’s Test",
+     "words": 1039,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "11",
+   "title": "Chapter 11: Correlation",
+   "sections": [
+    {
+     "id": "c11",
+     "label": "11",
+     "title": "Overview",
+     "words": 97,
+     "practice": 0
+    },
+    {
+     "id": "c11-s01",
+     "label": "11.1",
+     "title": "The Idea of Association",
+     "words": 200,
+     "practice": 0
+    },
+    {
+     "id": "c11-s02",
+     "label": "11.2",
+     "title": "Pearson Correlation Coefficient",
+     "words": 1387,
+     "practice": 0
+    },
+    {
+     "id": "c11-s03",
+     "label": "11.3",
+     "title": "Spearman Rank Correlation",
+     "words": 521,
+     "practice": 0
+    },
+    {
+     "id": "c11-s04",
+     "label": "11.4",
+     "title": "Point-Biserial and Phi Coefficient",
+     "words": 515,
+     "practice": 3
+    },
+    {
+     "id": "c11-s05",
+     "label": "11.5",
+     "title": "Correlation vs Causation",
+     "words": 386,
+     "practice": 0
+    },
+    {
+     "id": "c11-s06",
+     "label": "11.6",
+     "title": "Confounding – A Working Introduction",
+     "words": 1812,
+     "practice": 3
+    },
+    {
+     "id": "c11-s07",
+     "label": "11.7",
+     "title": "Stratified Analysis – Mantel–Haenszel, Effect Modification and Simpson’s Paradox",
+     "words": 2104,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "12",
+   "title": "Chapter 12: Regression – Foundations",
+   "sections": [
+    {
+     "id": "c12",
+     "label": "12",
+     "title": "Overview",
+     "words": 122,
+     "practice": 0
+    },
+    {
+     "id": "c12-s01",
+     "label": "12.1",
+     "title": "From Correlation to Prediction",
+     "words": 535,
+     "practice": 0
+    },
+    {
+     "id": "c12-s02",
+     "label": "12.2",
+     "title": "Simple Linear Regression",
+     "words": 3651,
+     "practice": 6
+    },
+    {
+     "id": "c12-s03",
+     "label": "12.3",
+     "title": "Assumptions of Linear Regression",
+     "words": 673,
+     "practice": 3
+    },
+    {
+     "id": "c12-s04",
+     "label": "12.4",
+     "title": "Multiple Linear Regression",
+     "words": 3744,
+     "practice": 5
+    },
+    {
+     "id": "c12-s05",
+     "label": "12.5",
+     "title": "Regression Diagnostics",
+     "words": 1166,
+     "practice": 3
+    },
+    {
+     "id": "c12-s06",
+     "label": "12.6",
+     "title": "Analysis Journey – Multiple Linear Regression",
+     "words": 1458,
+     "practice": 2
+    }
+   ]
+  },
+  {
+   "id": "13",
+   "title": "Chapter 13: Generalised Linear Models",
+   "sections": [
+    {
+     "id": "c13",
+     "label": "13",
+     "title": "Overview",
+     "words": 94,
+     "practice": 0
+    },
+    {
+     "id": "c13-s01",
+     "label": "13.1",
+     "title": "Why We Need a Generalised Framework",
+     "words": 676,
+     "practice": 0
+    },
+    {
+     "id": "c13-s02",
+     "label": "13.2",
+     "title": "Logistic Regression",
+     "words": 4808,
+     "practice": 9
+    },
+    {
+     "id": "c13-s03",
+     "label": "13.3",
+     "title": "Analysis Journey – Logistic Regression",
+     "words": 886,
+     "practice": 0
+    },
+    {
+     "id": "c13-s04",
+     "label": "13.4",
+     "title": "Counts, Person-Time, Rate, and the Offset",
+     "words": 444,
+     "practice": 0
+    },
+    {
+     "id": "c13-s05",
+     "label": "13.5",
+     "title": "Poisson Regression",
+     "words": 337,
+     "practice": 0
+    },
+    {
+     "id": "c13-s06",
+     "label": "13.6",
+     "title": "Negative Binomial Regression",
+     "words": 1076,
+     "practice": 3
+    },
+    {
+     "id": "c13-s07",
+     "label": "13.7",
+     "title": "Estimating Prevalence and Risk Ratios Directly",
+     "words": 1447,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "14",
+   "title": "Chapter 14: Survival Analysis",
+   "sections": [
+    {
+     "id": "c14",
+     "label": "14",
+     "title": "Overview",
+     "words": 105,
+     "practice": 0
+    },
+    {
+     "id": "c14-s01",
+     "label": "14.1",
+     "title": "Why Ordinary Regression Fails for Time-to-Event Data",
+     "words": 287,
+     "practice": 0
+    },
+    {
+     "id": "c14-s02",
+     "label": "14.2",
+     "title": "Censoring",
+     "words": 457,
+     "practice": 0
+    },
+    {
+     "id": "c14-s03",
+     "label": "14.3",
+     "title": "Survival Function, Hazard, and the At-Risk Set",
+     "words": 461,
+     "practice": 0
+    },
+    {
+     "id": "c14-s04",
+     "label": "14.4",
+     "title": "Kaplan-Meier Survival Curve",
+     "words": 1638,
+     "practice": 3
+    },
+    {
+     "id": "c14-s05",
+     "label": "14.5",
+     "title": "Log-Rank Test",
+     "words": 969,
+     "practice": 3
+    },
+    {
+     "id": "c14-s06",
+     "label": "14.6",
+     "title": "Cox Proportional Hazards Regression",
+     "words": 2496,
+     "practice": 5
+    },
+    {
+     "id": "c14-s07",
+     "label": "14.7",
+     "title": "Analysis Journey – Cox Regression",
+     "words": 1105,
+     "practice": 0
+    },
+    {
+     "id": "c14-s08",
+     "label": "14.8",
+     "title": "Competing Risks",
+     "words": 1505,
+     "practice": 2
+    }
+   ]
+  },
+  {
+   "id": "15",
+   "title": "Chapter 15: Advanced Topics for the Community Medicine Researcher",
+   "sections": [
+    {
+     "id": "c15",
+     "label": "15",
+     "title": "Overview",
+     "words": 91,
+     "practice": 0
+    },
+    {
+     "id": "c15-s01",
+     "label": "15.1",
+     "title": "Model Selection",
+     "words": 3285,
+     "practice": 6
+    },
+    {
+     "id": "c15-s02",
+     "label": "15.2",
+     "title": "Clustered and Hierarchical Data",
+     "words": 5147,
+     "practice": 9
+    },
+    {
+     "id": "c15-s03",
+     "label": "15.3",
+     "title": "Confounding Handling Techniques",
+     "words": 2926,
+     "practice": 3
+    },
+    {
+     "id": "c15-s04",
+     "label": "15.4",
+     "title": "Missing Data",
+     "words": 1943,
+     "practice": 3
+    },
+    {
+     "id": "c15-s05",
+     "label": "15.5",
+     "title": "Diagnostic Test Statistics",
+     "words": 3040,
+     "practice": 6
+    },
+    {
+     "id": "c15-s06",
+     "label": "15.6",
+     "title": "Sample Size and Power Calculation",
+     "words": 1642,
+     "practice": 3
+    },
+    {
+     "id": "c15-s07",
+     "label": "15.7",
+     "title": "Meta-Analysis Statistics",
+     "words": 3734,
+     "practice": 6
+    },
+    {
+     "id": "c15-s08",
+     "label": "15.8",
+     "title": "Introduction to Bayesian Statistics",
+     "words": 1142,
+     "practice": 3
+    },
+    {
+     "id": "c15-s09",
+     "label": "15.9",
+     "title": "Randomised Trials – Randomisation, ITT, Baseline Adjustment, Cluster and Non-Inferiority Designs",
+     "words": 1957,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "16",
+   "title": "Chapter 16: Measurement Theory – Constructs, Validity, and Reliability",
+   "sections": [
+    {
+     "id": "c16",
+     "label": "16",
+     "title": "Overview",
+     "words": 107,
+     "practice": 0
+    },
+    {
+     "id": "c16-s01",
+     "label": "16.1",
+     "title": "What Is a Construct",
+     "words": 201,
+     "practice": 0
+    },
+    {
+     "id": "c16-s02",
+     "label": "16.2",
+     "title": "Validity of a Measurement Instrument",
+     "words": 2015,
+     "practice": 5
+    },
+    {
+     "id": "c16-s03",
+     "label": "16.3",
+     "title": "Reliability of a Measurement Instrument",
+     "words": 4937,
+     "practice": 5
+    },
+    {
+     "id": "c16-s04",
+     "label": "16.4",
+     "title": "Relationship Between Validity and Reliability",
+     "words": 514,
+     "practice": 0
+    },
+    {
+     "id": "c16-s05",
+     "label": "16.5",
+     "title": "Principal Component Analysis",
+     "words": 1148,
+     "practice": 0
+    },
+    {
+     "id": "c16-s06",
+     "label": "16.6",
+     "title": "Building Composite Variables",
+     "words": 211,
+     "practice": 0
+    },
+    {
+     "id": "c16-s07",
+     "label": "16.7",
+     "title": "Questionnaire Validation Methodology",
+     "words": 957,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "17",
+   "title": "Chapter 17: Threats to Study Validity",
+   "sections": [
+    {
+     "id": "c17",
+     "label": "17",
+     "title": "Overview",
+     "words": 126,
+     "practice": 0
+    },
+    {
+     "id": "c17-s01",
+     "label": "17.1",
+     "title": "Validity of a Study",
+     "words": 1144,
+     "practice": 3
+    },
+    {
+     "id": "c17-s02",
+     "label": "17.2",
+     "title": "Bias in Research",
+     "words": 4362,
+     "practice": 6
+    },
+    {
+     "id": "c17-s03",
+     "label": "17.3",
+     "title": "Confounding",
+     "words": 2180,
+     "practice": 3
+    },
+    {
+     "id": "c17-s04",
+     "label": "17.4",
+     "title": "Reporting Guidelines and Writing the Statistical Methods",
+     "words": 733,
+     "practice": 0
+    },
+    {
+     "id": "c17-s05",
+     "label": "17.5",
+     "title": "Qualitative and Mixed Methods – What a Quantitative Researcher Must Know",
+     "words": 844,
+     "practice": 3
+    }
+   ]
+  },
+  {
+   "id": "A",
+   "title": "Appendix A: Checkpoint Answers",
+   "sections": [
+    {
+     "id": "appa",
+     "label": "A",
+     "title": "Checkpoint Answers",
+     "words": 36,
+     "practice": 0
+    },
+    {
+     "id": "appa-01",
+     "label": "A1",
+     "title": "Chapter 1: Statistics – Foundations of Data",
+     "words": 1664,
+     "practice": 0
+    },
+    {
+     "id": "appa-02",
+     "label": "A2",
+     "title": "Chapter 2: Descriptive Statistics – Central Tendency",
+     "words": 683,
+     "practice": 0
+    },
+    {
+     "id": "appa-03",
+     "label": "A3",
+     "title": "Chapter 3: Descriptive Statistics – Dispersion",
+     "words": 902,
+     "practice": 0
+    },
+    {
+     "id": "appa-04",
+     "label": "A4",
+     "title": "Chapter 4: Data Visualisation",
+     "words": 1354,
+     "practice": 0
+    },
+    {
+     "id": "appa-05",
+     "label": "A5",
+     "title": "Chapter 5: Foundations of Probability",
+     "words": 1814,
+     "practice": 0
+    },
+    {
+     "id": "appa-06",
+     "label": "A6",
+     "title": "Chapter 6: Sampling",
+     "words": 1101,
+     "practice": 0
+    },
+    {
+     "id": "appa-07",
+     "label": "A7",
+     "title": "Chapter 7: Estimation",
+     "words": 1401,
+     "practice": 0
+    },
+    {
+     "id": "appa-08",
+     "label": "A8",
+     "title": "Chapter 8: Hypothesis Testing – The Framework",
+     "words": 1240,
+     "practice": 0
+    },
+    {
+     "id": "appa-09",
+     "label": "A9",
+     "title": "Chapter 9: Comparing Groups – Parametric Tests",
+     "words": 1434,
+     "practice": 0
+    },
+    {
+     "id": "appa-10",
+     "label": "A10",
+     "title": "Chapter 10: Comparing Groups – Non-Parametric Tests",
+     "words": 1086,
+     "practice": 0
+    },
+    {
+     "id": "appa-11",
+     "label": "A11",
+     "title": "Chapter 11: Correlation",
+     "words": 1035,
+     "practice": 0
+    },
+    {
+     "id": "appa-12",
+     "label": "A12",
+     "title": "Chapter 12: Regression – Foundations",
+     "words": 1984,
+     "practice": 0
+    },
+    {
+     "id": "appa-13",
+     "label": "A13",
+     "title": "Chapter 13: Generalised Linear Models",
+     "words": 1565,
+     "practice": 0
+    },
+    {
+     "id": "appa-14",
+     "label": "A14",
+     "title": "Chapter 14: Survival Analysis",
+     "words": 1391,
+     "practice": 0
+    },
+    {
+     "id": "appa-15",
+     "label": "A15",
+     "title": "Chapter 15: Advanced Topics for the Community Medicine Researcher",
+     "words": 4566,
+     "practice": 0
+    },
+    {
+     "id": "appa-16",
+     "label": "A16",
+     "title": "Chapter 16: Measurement Theory – Constructs, Validity, and Reliability",
+     "words": 1509,
+     "practice": 0
+    },
+    {
+     "id": "appa-17",
+     "label": "A17",
+     "title": "Chapter 17: Threats to Study Validity",
+     "words": 1847,
+     "practice": 0
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "title": "Appendix B: R Quick Reference",
+   "sections": [
+    {
+     "id": "appb",
+     "label": "B",
+     "title": "R Quick Reference",
+     "words": 544,
+     "practice": 0
+    }
+   ]
+  },
+  {
+   "id": "R",
+   "title": "References",
+   "sections": [
+    {
+     "id": "refs",
+     "label": "R",
+     "title": "References",
+     "words": 5267,
+     "practice": 0
+    }
+   ]
+  }
+ ],
+ "references": [],
+ "glossary": []
+}

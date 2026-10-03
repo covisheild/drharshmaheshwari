@@ -1,0 +1,7 @@
+---
+// The Statistics book's Review (src/components/books/BookReview.astro).
+import BookReview from '../../../../../components/books/BookReview.astro';
+import { statsBook, statsFigureBase } from '../../../../../lib/stats-book';
+---
+<BookReview book={statsBook} label="Statistics" name={statsBook.title} figures={statsFigureBase()} backLabel="Back to the book"
+  description="Spaced review for Statistics: From First Principles to Regression: the checkpoint questions you marked and the must-know points of the sections you have read." />

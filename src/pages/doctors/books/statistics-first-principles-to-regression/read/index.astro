@@ -1,0 +1,24 @@
+---
+// "Statistics: From First Principles to Regression" in the reader (src/components/books/BookReader.astro).
+// The book's own page, with the PDF and its contents, stays at STATS_LANDING.
+import BookReader from '../../../../../components/books/BookReader.astro';
+import { statsBook as book, statsFigureBase, STATS_LANDING } from '../../../../../lib/stats-book';
+import { SITE } from '../../../../../consts';
+
+const date = new Date(book.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const url = `${SITE.url}${book.url}`;
+const description = 'Read Statistics: From First Principles to Regression online: every idea derived, not asserted, with checkpoint questions you can answer and check as you go. Free, or download the PDF.';
+const jsonld = [{
+  '@type': 'Book', '@id': `${url}#book`, name: book.title, alternativeHeadline: book.subtitle, url,
+  author: { '@id': `${SITE.url}/#person` }, dateModified: book.date, version: book.version, inLanguage: 'en-IN',
+  isAccessibleForFree: true, license: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+  encoding: { '@type': 'MediaObject', contentUrl: book.pdf, encodingFormat: 'application/pdf' },
+}];
+const end = `<p>End of the book. Shared under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">${book.licence}</a>: free to copy, share and adapt for non-commercial use, with credit, under the same licence. Educational, not personal medical advice.</p>
+        <p><a href="/doctors/books/">All books for doctors</a> · <a href="${book.pdf}" download>Download the PDF</a> · If this book helps you, you can <a href="/support/">support this project</a>.</p>`;
+---
+<BookReader book={book} title={`${book.title} · read online`} description={description} jsonld={jsonld} figures={statsFigureBase()} date={date}
+  eyebrow={`<a href="${STATS_LANDING}">About this book</a>`} heading={book.title}
+  barFull={book.title} barShort="Statistics" backHref={STATS_LANDING} backLabel="About this book" end={end}>
+  <img slot="cover" class="rd-cover-img" src="/books/statistics-first-principles-to-regression.webp" alt="" width="180" height="255" />
+</BookReader>

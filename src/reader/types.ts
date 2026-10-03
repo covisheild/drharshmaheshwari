@@ -1,5 +1,6 @@
 // The book format the reader reads (docs/book-reader-plan.md). Each source has a converter that writes it;
-// the Obesity Expertise books come from obesity-course/check/web/export.py. HTML fields are already rendered
+// the Obesity Expertise books come from obesity-course/check/web/export.py, the Statistics book from
+// scripts/books/statistics/export.py. HTML fields are already rendered
 // (superscripts, working blocks, tables) and come from this repository, never from readers.
 
 export interface OutlineSection { id: string; label: string; title: string; words: number; practice: number }
@@ -28,7 +29,9 @@ export interface Book {
   licence: string;
   pdf: string;
   figureBase: string;
-  about: { why: string; howToRead: string; prerequisites: string | null };
+  /** Statistics book: the cover image (the Obesity Expertise covers are generated from the Part hue). */
+  cover?: string;
+  about: { why: string; howToRead?: string; prerequisites: string | null };
   blurb: string;
   requires: string[];
   words: number;
@@ -41,9 +44,13 @@ export type Block =
   | { t: 'prose'; label: string; role: string; html: string; refs?: number[]; numberRefs?: number[] }
   | { t: 'note'; html: string }
   | { t: 'figure'; src: string; alt: string; w: number; h: number; caption: string }
-  | { t: 'mustknow'; points: { html: string; tag?: string; bearing?: string }[] }
+  | { t: 'mustknow'; label?: string; points: { html: string; tag?: string; bearing?: string }[] }
   | { t: 'exercise'; n: number; type: string; confidence: boolean; prompt: string; answer: string }
-  | { t: 'practice'; n: number; level: number; prompt: string; answer: string };
+  | { t: 'practice'; n: number; level: number; prompt: string; answer: string }
+  // Statistics book (scripts/books/statistics/export.py): a sub-heading inside a section, and a checkpoint:
+  // the book's own questions, each with the model answer that Appendix A prints.
+  | { t: 'heading'; level: number; num: string; html: string }
+  | { t: 'checkpoint'; id: string; label: string; questions: { n: number; prompt: string; answer: string }[]; note: string };
 
 export interface Section { format: number; id: string; label: string; title: string; part: string; blocks: Block[] }
 
