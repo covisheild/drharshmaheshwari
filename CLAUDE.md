@@ -141,6 +141,15 @@ local devDependency. Change production settings only on purpose; preview-only se
   "Support"). Trainer pages say "Real patients may differ: use clinical judgement", never "not for diagnosing patients".
 - Finding slugs (`config.ts`) are permanent URLs. Teaching notes are clinical content: Harsh reviews changes before `main`.
 
+## Design direction (decided, roll-out in progress)
+
+- The new look is **Beam** (dark-first, light beam, floating glass nav, big rounded cards, drifting dust): `docs/design-direction.md`,
+  prototypes in `design/prototypes/` (not built). Fonts: Outfit, DM Sans, DM Mono, self-hosted. The round photo stays as it is.
+- Colours come from one hue number per palette, different for For Everyone and For Doctors, fixed or rotating weekly/monthly
+  (planned `src/data/theme.json`). Ask Claude to change the palette; do not hand-edit colours in components.
+- The home page's calculator picture is visual only; its fields link to `/tools/bmi-calculator/#height|#weight|#waist|#sex`,
+  which open with that box ready to type in (built and tested). Do not break these hashes.
+
 ## Drafts
 
 `draft: true` in frontmatter shows the page on local dev and Cloudflare preview builds (any branch other than `main`,

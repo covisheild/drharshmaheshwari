@@ -96,6 +96,23 @@ try {
     await ctx.close();
   }
 
+  // ---------- BMI calculator: #height, #weight, #waist open with that box ready to type in ----------
+  {
+    const ctx = await context({ width: 390, height: 844 });
+    const page = await ctx.newPage();
+    const errs = errorsOf(page);
+    for (const [hash, id] of [['height', 'hcm'], ['weight', 'wkg'], ['waist', 'waist']]) {
+      await page.goto(BASE + '/tools/bmi-calculator/#' + hash);
+      check(await page.evaluate((i) => document.activeElement && document.activeElement.id === i, id), `calculator #${hash}: the ${id} box has the cursor`);
+    }
+    await page.goto(BASE + '/tools/bmi-calculator/#sex');
+    check(await page.evaluate(() => document.activeElement && document.activeElement.name === 'sex'), 'calculator #sex: the sex choice has the cursor');
+    await page.goto(BASE + '/tools/bmi-calculator/');
+    check(await page.evaluate(() => document.activeElement === document.body), 'calculator without a hash: nothing is focused');
+    check(errs.length === 0, `calculator hash links: no script errors (${errs.join('; ')})`);
+    await ctx.close();
+  }
+
   // ---------- Support page: one-time UPI; closed until configured, QR/app link/copy when open ----------
   for (const [name, vp] of [['phone', { width: 390, height: 844 }], ['desktop', { width: 1280, height: 900 }]]) {
     const ctx = await context(vp);

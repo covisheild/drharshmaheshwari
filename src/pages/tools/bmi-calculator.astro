@@ -211,4 +211,18 @@ const jsonld = [
   form.addEventListener('input', update);
   form.addEventListener('submit', (e) => e.preventDefault());
   update();
+
+  // A link such as /tools/bmi-calculator/#weight opens the calculator with that box selected and ready to type in
+  // (the home page's calculator picture links its Height, Weight, Waist and Sex fields this way).
+  const READY: Record<string, string> = { height: 'hcm', weight: 'wkg', waist: 'waist' };
+  function readyFromHash() {
+    const key = location.hash.slice(1);
+    const box = key === 'sex' ? form.querySelector<HTMLInputElement>('input[name=sex]:checked') : READY[key] ? $<HTMLInputElement>(READY[key]) : null;
+    if (!box) return;
+    box.scrollIntoView({ block: 'center' });
+    box.focus({ preventScroll: true });
+    if (box.type === 'number') box.select();
+  }
+  readyFromHash();
+  addEventListener('hashchange', readyFromHash);
 </script>

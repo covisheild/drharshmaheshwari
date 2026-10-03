@@ -1,0 +1,62 @@
+<title>Site Design Directions</title>
+<style>
+:root { --bg: #f4f5f8; --card: #ffffff; --ink: #0c1020; --ink2: #3d4560; --ink3: #5d6682; --line: #d8dce8; --accent: #2547e0; --accent-ink: #ffffff; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #07090f; --card: #0d111c; --ink: #e9edf8; --ink2: #aab3cc; --ink3: #8089a6; --line: #1d2640; --accent: #7d9bff; --accent-ink: #060a18; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #07090f; --card: #0d111c; --ink: #e9edf8; --ink2: #aab3cc; --ink3: #8089a6; --line: #1d2640; --accent: #7d9bff; --accent-ink: #060a18; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; padding-inline: 16px; padding-block: 0; }
+.w { max-width: 1100px; margin: 0 auto; padding-block: 3rem 4rem; }
+.k { font: 500 .72rem/1 ui-monospace, Menlo, monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--ink3); }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.05; letter-spacing: -.03em; margin: .8rem 0 1rem; max-width: 18ch; text-wrap: balance; }
+.lede { color: var(--ink2); max-width: 62ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1.2rem; margin-top: 2.2rem; }
+.card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; border-bottom: 1px solid var(--line); background: var(--line); }
+.card .b { padding: 1.2rem 1.2rem 1.3rem; display: flex; flex-direction: column; gap: .7rem; flex: 1; }
+.card h2 { margin: 0; font-size: 1.4rem; letter-spacing: -.02em; }
+.card p { margin: 0; color: var(--ink2); font-size: .95rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tags span { font: 500 .68rem/1 ui-monospace, Menlo, monospace; letter-spacing: .06em; text-transform: uppercase; padding: .3rem .45rem; border: 1px solid var(--line); border-radius: 5px; color: var(--ink3); }
+.links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: auto; padding-top: .6rem; }
+.links a { display: inline-block; padding: .65rem 1rem; border-radius: 9px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-weight: 600; font-size: .92rem; }
+.links a.p { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.links a:hover { border-color: var(--accent); }
+.soon { opacity: .75; border-style: dashed; }
+.note { margin-top: 2.2rem; padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 12px; color: var(--ink2); font-size: .93rem; background: var(--card); }
+.note b { color: var(--ink); }
+</style>
+<div class="w">
+  <span class="k">Prototypes for drharshmaheshwari.com</span>
+  <h1>Beam is the chosen direction</h1>
+  <p class="lede">Beam is now the working direction. Open it, tap the round colour button at the bottom right to try the colour options, move your cursor through the dust, and tap Height, Weight or Waist in the calculator picture to see the real calculator open ready to type. Signal and Atlas stay below for reference. Nothing here is on your live site.</p>
+  <div class="grid">
+    <article class="card">
+      <div class="b">
+        <span class="k">Chosen · version 2</span>
+        <h2>Beam</h2>
+        <p>Floating glass nav, a soft light beam over near-black, big rounded cards holding live mock-ups. New: six colour palettes (different for For Everyone and For Doctors, fixed or changing weekly or monthly), dust that scatters and curls around your cursor, and a calculator picture whose fields open the real calculator.</p>
+        <div class="tags"><span>6 palettes</span><span>Cursor-reactive dust</span><span>Click-through fields</span></div>
+        <div class="links"><a class="p" href="beam.html">For Everyone</a><a href="beam.html#doctors">For Doctors</a><a href="calculator.html#weight">Calculator page</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="b">
+        <span class="k">Reference</span>
+        <h2>Signal</h2>
+        <p>A dark instrument panel. A live BMI ruler comparing Indian and global cut-offs, dot-matrix readouts, thin ruled panels, mono labels.</p>
+        <div class="tags"><span>Sci-fi</span><span>Dark first</span><span>Interactive ruler</span></div>
+        <div class="links"><a class="p" href="signal.html">For Everyone</a><a href="signal.html#doctors">For Doctors</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="b">
+        <span class="k">Reference</span>
+        <h2>Atlas</h2>
+        <p>Swiss editorial. Huge wide headlines, a measuring-scale header edge, journal-style figure, one flat cobalt block, tables for doctors.</p>
+        <div class="tags"><span>Editorial</span><span>Light first</span><span>Professional</span></div>
+        <div class="links"><a class="p" href="atlas.html">For Everyone</a><a href="atlas.html#doctors">For Doctors</a></div>
+      </div>
+    </article>
+  </div>
+  <p class="note"><b>Fonts are new in all three.</b> Signal uses Sora, Geist and Geist Mono with dot-matrix numerals. Atlas uses Archivo (a wide grotesque) with JetBrains Mono. Beam uses Outfit, DM Sans and DM Mono. The round photo of you is kept as it is. All three animate: items rise in as you scroll, numbers count up, and the heart-sound playhead moves. Animation switches off for visitors who prefer reduced motion. Pages are static HTML and CSS with a few lines of script, so the real site would stay fast.</p>
+</div>

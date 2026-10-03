@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculator Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* The page the calculator picture links to. On the real site this is /tools/bmi-calculator/, which now reads
+   #height, #weight, #waist and #sex from the link and puts the cursor in that box. */
+:root { --h: 192; --bg:#050608; --card:#0c0e13; --card2:#11141b; --line:#1c2029; --line2:#2a303c; --ink:#f3f5f9; --ink2:#a3abba; --ink3:#7c8697; --blue: hsl(var(--h) 92% 62%); --blue-soft: hsl(var(--h) 100% 78%); --white:#f5f6f9; --white-ink:#0a0c10; --mint:#5fe0b8; --amber:#ffbc52; --coral:#ff7a68; --glass: rgb(34 37 45 / .55); --glass-line: rgb(255 255 255 / .09); --glow: hsl(var(--h) 85% 52% / .34); color-scheme: dark; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg:#f5f6fa; --card:#fff; --card2:#f0f2f8; --line:#e0e4ee; --line2:#c9cfde; --ink:#0a0d14; --ink2:#434c61; --ink3:#5f697f; --blue: hsl(var(--h) 80% 46%); --blue-soft: hsl(var(--h) 85% 33%); --white:#0a0d14; --white-ink:#fff; --mint:#0b8a63; --amber:#a96300; --coral:#c23a2b; --glass: rgb(255 255 255 / .72); --glass-line: rgb(10 13 20 / .09); --glow: hsl(var(--h) 90% 66% / .22); color-scheme: light; } }
+:root[data-theme="light"] { --bg:#f5f6fa; --card:#fff; --card2:#f0f2f8; --line:#e0e4ee; --line2:#c9cfde; --ink:#0a0d14; --ink2:#434c61; --ink3:#5f697f; --blue: hsl(var(--h) 80% 46%); --blue-soft: hsl(var(--h) 85% 33%); --white:#0a0d14; --white-ink:#fff; --mint:#0b8a63; --amber:#a96300; --coral:#c23a2b; --glass: rgb(255 255 255 / .72); --glass-line: rgb(10 13 20 / .09); --glow: hsl(var(--h) 90% 66% / .22); color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.65 'DM Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; padding-inline: 16px; }
+a { color: inherit; text-decoration: none; } p { margin: 0; }
+h1, h2 { font-family: 'Outfit', system-ui, sans-serif; font-weight: 400; letter-spacing: -.02em; line-height: 1.12; margin: 0; }
+.nav { position: sticky; top: 14px; z-index: 5; max-width: 1120px; margin: 14px auto 0; display: flex; align-items: center; gap: .8rem; padding: .5rem .6rem .5rem .75rem; border-radius: 999px; background: var(--glass); border: 1px solid var(--glass-line); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+.nav img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; object-position: 50% 30%; box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--line2); }
+.nav b { font: 500 1rem/1 'Outfit', sans-serif; white-space: nowrap; } .nav .sp { margin-left: auto; }
+.nav a.back { font: 500 .78rem/1 'DM Mono', monospace; letter-spacing: .08em; color: var(--ink2); padding: .6rem .8rem; border-radius: 999px; border: 1px solid var(--glass-line); }
+.wrap { max-width: 760px; margin: 0 auto; padding-block: 3.5rem 4rem; }
+.tag { font: 500 .74rem/1 'DM Mono', monospace; letter-spacing: .22em; text-transform: uppercase; color: var(--ink2); }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 1rem 0 .8rem; } .lede { color: var(--ink2); max-width: 54ch; }
+form { margin-top: 2rem; padding: 1.6rem; border: 1px solid var(--line); border-radius: 28px; background: var(--card); display: grid; gap: 1.4rem; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; } legend { padding: 0; font: 500 .7rem/1 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--ink3); margin-bottom: .6rem; }
+.seg { display: inline-flex; padding: 3px; gap: 2px; border: 1px solid var(--line2); border-radius: 999px; }
+.seg label { cursor: pointer; } .seg input { position: absolute; opacity: 0; } .seg span { display: block; padding: .5rem 1rem; border-radius: 999px; color: var(--ink2); font-size: .9rem; }
+.seg input:checked + span { background: var(--white); color: var(--white-ink); } .seg input:focus-visible + span { outline: 2px solid var(--blue-soft); outline-offset: 2px; }
+.field { display: flex; align-items: center; border: 1px solid var(--line2); border-radius: 16px; background: var(--card2); padding-right: 1rem; transition: border-color .2s, box-shadow .2s; }
+.field:focus-within { border-color: var(--blue); box-shadow: 0 0 0 4px var(--glow); }
+.field input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ink); font: 400 1.6rem/1 'Outfit', sans-serif; padding: 1rem 1rem; outline: none; }
+.field span { color: var(--ink3); font: 500 .85rem/1 'DM Mono', monospace; }
+.results { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .8rem; margin-top: 1.4rem; }
+.res { padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
+.res b { display: block; font: 400 2.2rem/1.1 'Outfit', sans-serif; margin: .4rem 0; font-variant-numeric: tabular-nums; }
+.state { font-size: .85rem; } .ok { color: var(--mint); } .over { color: var(--amber); } .obese { color: var(--coral); }
+.fine { margin-top: 1.4rem; font-size: .82rem; color: var(--ink3); } .fine a { text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+<nav class="nav"><img src="avatar.jpg" alt="Dr. Harsh Maheshwari" width="38" height="38"><b>Dr. Harsh Maheshwari</b><span class="sp"></span><a class="back" href="beam.html">← HOME</a></nav>
+<main class="wrap">
+  <span class="tag">Tools · Indian cut-offs</span>
+  <h1>BMI &amp; waist calculator</h1>
+  <p class="lede">BMI, waist-to-height ratio and abdominal obesity, using Indian cut-offs. Nothing you type leaves your browser.</p>
+  <form id="calc" novalidate>
+    <fieldset><legend>Sex</legend><div class="seg"><label><input type="radio" name="sex" value="m" checked><span>Man</span></label><label><input type="radio" name="sex" value="f"><span>Woman</span></label></div></fieldset>
+    <fieldset><legend>Height</legend><label class="field"><input type="number" inputmode="decimal" id="hcm" min="100" max="230" placeholder="165"><span>cm</span></label></fieldset>
+    <fieldset><legend>Weight</legend><label class="field"><input type="number" inputmode="decimal" id="wkg" min="25" max="300" placeholder="66"><span>kg</span></label></fieldset>
+    <fieldset><legend>Waist (optional, but recommended)</legend><label class="field"><input type="number" inputmode="decimal" id="waist" min="40" max="200" placeholder="85"><span>cm</span></label></fieldset>
+  </form>
+  <div class="results" aria-live="polite">
+    <div class="res"><span class="tag">BMI</span><b id="bmi">—</b><span class="state" id="sb">Enter height and weight.</span></div>
+    <div class="res"><span class="tag">Waist ÷ height</span><b id="wh">—</b><span class="state" id="sw">Add your waist to see risk.</span></div>
+  </div>
+  <p class="fine">Screening only, not a diagnosis. <a href="#">Disclaimer</a></p>
+</main>
+<script>
+(function () {
+  var root = document.documentElement, $ = function (i) { return document.getElementById(i); };
+  var PAL = { ion: 228, violet: 262, cyan: 192, orchid: 322, jade: 158, ember: 24 };
+  try { var c = JSON.parse(localStorage.getItem('beam:cfg') || 'null'); if (c && PAL[c.fixed.everyone] && c.schedule === 'fixed') root.style.setProperty('--h', PAL[c.fixed.everyone]); } catch (e) {}
+  function num(i) { var v = parseFloat($(i).value); return isFinite(v) ? v : NaN; }
+  function upd() {
+    var h = num('hcm'), w = num('wkg'), wa = num('waist'), sex = document.querySelector('input[name=sex]:checked').value;
+    var okH = h >= 100 && h <= 230, okW = w >= 25 && w <= 300;
+    if (okH && okW) { var b = w / Math.pow(h / 100, 2); $('bmi').textContent = b.toFixed(1); var s = b < 18.5 ? ['Underweight', 'over'] : b < 23 ? ['Normal for Indian adults', 'ok'] : b < 25 ? ['Overweight (Indian cut-off 23 to 24.9)', 'over'] : ['Obesity (Indian cut-off 25 or more)', 'obese']; $('sb').textContent = s[0]; $('sb').className = 'state ' + s[1]; }
+    else { $('bmi').textContent = '—'; $('sb').textContent = 'Enter height and weight.'; $('sb').className = 'state'; }
+    if (okH && wa >= 40 && wa <= 200) { var r = wa / h; $('wh').textContent = r.toFixed(2); var cut = sex === 'm' ? 90 : 80; var t = r < .5 ? ['Below 0.5: no increased risk', 'ok'] : r < .6 ? ['0.5 to 0.59: increased risk', 'over'] : ['0.6 or more: high risk', 'obese']; $('sw').textContent = t[0] + (wa >= cut ? '. Waist is above ' + cut + ' cm.' : ''); $('sw').className = 'state ' + t[1]; }
+    else { $('wh').textContent = '—'; $('sw').textContent = 'Add your waist to see risk.'; $('sw').className = 'state'; }
+  }
+  $('calc').addEventListener('input', upd); upd();
+  /* #height, #weight, #waist, #sex: open ready to type in that box */
+  var READY = { height: 'hcm', weight: 'wkg', waist: 'waist' };
+  function ready() { var k = location.hash.slice(1), el = k === 'sex' ? document.querySelector('input[name=sex]:checked') : READY[k] && $(READY[k]); if (!el) return; el.scrollIntoView({ block: 'center' }); el.focus({ preventScroll: true }); if (el.select) el.select(); }
+  ready(); addEventListener('hashchange', ready);
+})();
+</script>
+</body>
+</html>
