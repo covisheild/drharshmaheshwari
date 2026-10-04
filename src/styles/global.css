@@ -75,7 +75,7 @@ picture:has(> .avatar) { flex: none; display: block; line-height: 0; }
   .nav .mode-switch { margin-left: auto; }
   .nav-links {
     position: absolute; top: calc(100% + 8px); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: .6rem;
-    border-radius: 24px; background: var(--header-bg); border: 1px solid var(--header-line); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    border-radius: 24px; background: var(--surface); border: 1px solid var(--line-2); box-shadow: 0 18px 50px rgb(0 0 0 / .45);
     transform: translateY(-8px); opacity: 0; visibility: hidden; transition: opacity .25s, transform .25s, visibility .25s;
   }
   .menu-open .nav-links { opacity: 1; transform: none; visibility: visible; }
