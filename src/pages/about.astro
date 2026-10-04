@@ -21,7 +21,7 @@ const jsonld = [{ '@type': 'ProfilePage', url: `${SITE.url}/about/`, mainEntity:
     <ol class="timeline">
       {timeline.map((t) => (
         <li class="reveal">
-          <div class="when">{t.date ? `${fmt(t.date)}${t.end ? ` – ${fmt(t.end)}` : ''}` : ''} · {t.category}</div>
+          <div class="when">{t.date ? `${fmt(t.date)}${t.end ? ` – ${fmt(t.end)}` : ''} · ` : ''}{t.category}</div>
           <b>{t.title}</b>
           <div class="muted">{t.place}</div>
           {t.details && <p class="small muted" style="margin:.25rem 0 0">{t.details}</p>}
