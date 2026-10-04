@@ -1,11 +1,14 @@
 ---
-// The For Everyone / For Doctors switch. Each side links to that mode's home; the current mode is marked.
+// The For Everyone / For Doctors switch. Each side links to that audience's home; the current one is marked.
+// On phones the "For " is hidden (see global.css) so the switch fits; the link text stays "For Everyone" / "For Doctors".
 import { MODES, type Mode } from '../../lib/modes';
 interface Props { mode: Mode }
 const { mode } = Astro.props;
+const split = (label: string) => (label.startsWith('For ') ? ['For ', label.slice(4)] : ['', label]);
 ---
 <nav class="mode-switch" aria-label="Choose who this site is for">
-  {Object.values(MODES).map((m) => (
-    <a href={m.home} aria-current={m.id === mode ? 'true' : undefined} data-mode-link={m.id}>{m.label}</a>
-  ))}
+  {Object.values(MODES).map((m) => {
+    const [pre, rest] = split(m.label);
+    return <a href={m.home} aria-current={m.id === mode ? 'true' : undefined} data-mode-link={m.id}>{pre && <span class="pre">{pre}</span>}{rest}</a>;
+  })}
 </nav>

@@ -1,8 +1,13 @@
 ---
+import '../styles/fonts.css';
 import '../styles/tokens.css';
 import '../styles/global.css';
+import '../styles/beam.css';
 import { SITE, PERSON_JSONLD } from '../consts';
 import { modeOf, type Mode } from '../lib/modes';
+import { paletteFor, paletteStyle, themeScript, type ThemeConfig, type Palette } from '../lib/theme';
+import themeJson from '../data/theme.json';
+import palettesJson from '../data/palettes.json';
 import SiteHeader from '../components/site/SiteHeader.astro';
 import SiteFooter from '../components/site/SiteFooter.astro';
 
@@ -23,6 +28,10 @@ const mode = Astro.props.mode ?? modeOf(Astro.url.pathname);
 const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} — ${SITE.tagline}`;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
 const path = Astro.url.pathname;
+// The site colour (admin settings: src/data/theme.json). Written on <html> at build time; a weekly or monthly rotation
+// is corrected by a tiny script before first paint, so the colour is right on whatever day the page is opened.
+const pal = paletteFor(themeJson as ThemeConfig, palettesJson as Palette[], mode);
+const palScript = themeScript(themeJson as ThemeConfig, palettesJson as Palette[], mode);
 const graph = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -33,7 +42,7 @@ const graph = {
 };
 ---
 <!doctype html>
-<html lang="en-IN" class="no-js" data-mode={mode}>
+<html lang="en-IN" class="no-js" data-mode={mode} style={paletteStyle(pal)}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,7 +51,8 @@ const graph = {
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
     <meta name="author" content={SITE.name} />
-    <meta name="theme-color" content={mode === 'doctors' ? '#0f2342' : '#0f6e64'} />
+    <meta name="theme-color" content="#050608" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f6fa" media="(prefers-color-scheme: light)" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title={`${SITE.name} — new articles`} href="/rss.xml" />
@@ -55,9 +65,9 @@ const graph = {
     <meta property="og:locale" content={SITE.locale} />
     <meta property="og:image" content={`${SITE.url}/og.png`} />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400..700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    {palScript && <script is:inline set:html={palScript} />}
     <slot name="head" />
     <script type="application/ld+json" set:html={JSON.stringify(graph)} />
     <script is:inline>
@@ -76,11 +86,12 @@ const graph = {
     {progress && <div class="progress" aria-hidden="true"></div>}
     {chrome === 'site' && <SiteHeader mode={mode} path={path} />}
 
-    <main id="main"><slot /></main>
+    <main id="main" class:list={{ 'with-nav': chrome === 'site' }}><slot /></main>
 
     {chrome === 'site' && <SiteFooter mode={mode} />}
 
     <script>
+      import '../scripts/fx';
       const header = document.querySelector('.site-header');
       const btn = document.querySelector('.menu-btn');
       btn?.addEventListener('click', () => {

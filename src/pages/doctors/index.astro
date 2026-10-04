@@ -1,65 +1,108 @@
 ---
+// For Doctors home: the same look as For Everyone, with a picture of the Auscultation Trainer in place of the calculator.
 import Base from '../../layouts/Base.astro';
-import { articles, books, bookUrl, SECTION } from '../../lib/content';
+import Cover from '../../components/books/Cover.astro';
+import { articles, books, bookUrl, SECTION, fmtDate } from '../../lib/content';
 import { TOOLS } from '../../data/tools';
 import { TRAINERS, trainerBase } from '../../trainers/registry';
+import { obesityBooks, series, SERIES_URL } from '../../lib/obesity-books';
+import { wave, WAVE_LABELS } from '../../lib/wave';
 
-const evidence = (await articles('clinicians')).slice(0, 4);
+const evidence = (await articles('clinicians')).slice(0, 3);
 const bookList = await books('doctors');
 const trainers = TRAINERS.filter((t) => t.mode === 'doctors');
 const tools = TOOLS.filter((t) => t.mode === 'doctors');
+const trainer = trainers.find((t) => t.status === 'ready')!;
+const T = trainerBase(trainer);
+const w = wave(170);
+const shelf = obesityBooks.slice(0, 7);
+const outPct = Math.max(2, (obesityBooks.length / series.books.length) * 100).toFixed(1);
+const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>';
+const icon = (d: string) => `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const ICONS = { pulse: '<path d="M3 12h4l3-8 4 16 3-8h4"/>', ecg: '<path d="M2 12h3l2-6 3 12 3-9 2 3h7"/>', xray: '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 8c2 2 2 6 0 9M16 8c-2 2-2 6 0 9"/>', chart: '<path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/>', book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/>', calc: '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01"/>' };
+const trainerIcon = (m: string) => (m === 'audio' ? ICONS.pulse : m === 'ecg' ? ICONS.ecg : ICONS.xray);
+const side = [['Home', '', '<path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>'], ['Learn', 'learn/', '<path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/>'], ['Practice', 'practice/', '<path d="M12 3v18M3 12h18"/>'], ['Quiz', 'quiz/', '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/>'], ['Review', 'review/', '<path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/>'], ['Progress', 'progress/', '<path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/>']];
 ---
 <Base title="For Doctors" description="For doctors and medical students: evidence syntheses on obesity and its complications, clinical skill trainers, clinical tools and free books by Dr. Harsh Maheshwari.">
-  <header class="page-head wrap doc-head">
-    <span class="eyebrow">For Doctors</span>
-    <h1>Evidence, trainers and tools for clinical practice</h1>
-    <p>For doctors and medical students. Evidence syntheses with effect sizes, apps that train clinical skills on real recordings, and free books on statistics and research methods.</p>
-  </header>
+  <section class="hero">
+    <div class="beam" aria-hidden="true"></div><div class="beam-2" aria-hidden="true"></div>
+    <canvas class="dust" data-count="260" data-spread=".98" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="bm-tag" set:html={`${sparkle}For Doctors · Evidence · Trainers`}></span>
+      <h1>Evidence, trainers and tools for <em>clinical practice</em>.</h1>
+      <p class="lede">For doctors and medical students. Evidence syntheses with effect sizes, apps that train clinical skills on real recordings, and free books on statistics and research methods.</p>
+      <div class="cta">
+        <a class="btn btn-primary btn-lg" href={T}>Open the {trainer.title} <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost btn-lg" href={SERIES_URL}>Obesity Expertise books</a>
+      </div>
 
-  <div class="wrap doc-grid">
-    <section class="doc-panel" aria-labelledby="h-trainers">
-      <div class="doc-panel-head"><h2 id="h-trainers">Clinical trainers</h2><a href="/doctors/trainers/">All trainers →</a></div>
-      <ul class="doc-list">
-        {trainers.map((t) => (
-          <li>{t.status === 'ready' ? <a href={trainerBase(t)}>{t.title}</a> : <span>{t.title}</span>}
-            <span class="doc-tag">{t.status === 'ready' ? 'Ready' : 'Coming later'}</span><p>{t.summary}</p></li>
-        ))}
-      </ul>
-    </section>
+      <div class="bm-window reveal" aria-label={`A picture of the ${trainer.title}`}>
+        <div class="bm-win-bar"><i></i><i></i><i></i><span>{trainer.title} · Learn</span></div>
+        <div class="bm-win-body">
+          <div class="bm-win-side" aria-hidden="true">
+            {side.map(([label, path, d]) => <span class:list={[{ on: label === 'Learn' }]}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={d}></svg>{label}</span>)}
+          </div>
+          <div class="bm-win-main">
+            <span class="bm-tag">Early systolic murmur</span>
+            <h3 style="margin:.7rem 0 .4rem">Example 1 of 14</h3>
+            <p style="color:var(--ink-2);max-width:60ch;margin:0"><b style="color:var(--ink);font-weight:500">Listen for:</b> a murmur that begins with S1 and fades away by mid-systole. The second half of systole and S2 are clear.</p>
+            <svg class="bm-wave" data-wave viewBox="0 0 600 170" preserveAspectRatio="none" role="img" aria-label="Heart sound waveform with S1 and S2 marked" style="margin-top:.8rem">
+              <line x1="0" y1={w.mid} x2="600" y2={w.mid} stroke="var(--line-2)" /><path class="env" d={w.env} /><path class="sig" d={w.sig} /><line class="head" x1="0" y1="8" x2="0" y2="150" />
+              {WAVE_LABELS.map(([t, l]) => <text x={(t / 3) * 600 - 8} data-x={(t / 3) * 600} y="164">{l}</text>)}
+            </svg>
+            <div class="cta" style="justify-content:flex-start;margin-top:.6rem"><a class="btn btn-ghost" href={`${T}learn/early-systolic-murmur/`}>Listen in the trainer <span class="arrow" aria-hidden="true">→</span></a></div>
+            <p class="bm-fine">Real patients may differ: use clinical judgement. <a href="/disclaimer/#credits">Recording credits (CC BY 4.0)</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="doc-panel" aria-labelledby="h-evidence">
-      <div class="doc-panel-head"><h2 id="h-evidence">Evidence syntheses</h2><a href={SECTION.clinicians.base}>All evidence →</a></div>
-      {evidence.length ? (
-        <ul class="doc-list">{evidence.map((e) => <li><a href={`${SECTION.clinicians.base}${e.id}/`}>{e.data.title}</a><p>{e.data.description}</p></li>)}</ul>
-      ) : <p class="muted">The first syntheses on obesity and its complications are in preparation: what the trials show, effect sizes, and what they do not show.</p>}
-    </section>
+  <section class="bm-sec"><div class="wrap">
+    <div class="bm-sec-head reveal"><span class="bm-tag">For clinical practice</span><h2>Train the skill, read the evidence</h2></div>
+    <div class="bento">
+      <article class="bcard reveal"><h3>Clinical trainers</h3><p>Heart and lung sounds from recordings: learn each sound, then practise, quiz and review.</p>
+        <a class="btn btn-ghost" href="/doctors/trainers/">All trainers <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="bm-stage"><div class="bm-list">
+          {trainers.map((t) => {
+            const inner = <><span class="bm-ic" set:html={icon(trainerIcon(t.media))}></span><span><b>{t.title}</b><small>{t.summary}</small></span><span class:list={['bm-pchip', { ready: t.status === 'ready' }]}>{t.status === 'ready' ? 'Ready' : 'Later'}</span></>;
+            return t.status === 'ready' ? <a class="bm-li" href={trainerBase(t)}>{inner}</a> : <div class="bm-li">{inner}</div>;
+          })}
+        </div></div>
+      </article>
+      <article class="bcard reveal"><h3>Evidence syntheses</h3><p>What the trials show, effect sizes, and what they do not show.</p>
+        <a class="btn btn-ghost" href={SECTION.clinicians.base}>All evidence <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="bm-stage"><div class="bm-list">
+          {evidence.map((e) => <a class="bm-li" href={`${SECTION.clinicians.base}${e.id}/`}><span class="bm-ic" set:html={icon(ICONS.chart)}></span><span><b>{e.data.title}</b><small>{fmtDate(e.data.published)}</small></span></a>)}
+          {!evidence.length && <div class="bm-li"><span class="bm-ic" set:html={icon(ICONS.chart)}></span><span><b>The first syntheses are in preparation</b><small>On obesity and its complications</small></span><span class="bm-pchip">Soon</span></div>}
+          {tools.map((t) => <div class="bm-li"><span class="bm-ic" set:html={icon(ICONS.calc)}></span><span><b>{t.title}</b><small>{t.text}</small></span><span class="bm-pchip">{t.href ? 'Ready' : 'Soon'}</span></div>)}
+        </div></div>
+      </article>
+      <article class="bcard wide reveal"><h3>Obesity Expertise: {series.books.length} books, each building on the last</h3><p>{series.subtitle}. Each book is free to read here or to download as a PDF.</p>
+        <a class="btn btn-primary" href={SERIES_URL}>Open the series <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="bm-stage" style="min-height:0;-webkit-mask-image:none;mask-image:none">
+          <div class="bm-shelf-row" aria-hidden="true">{shelf.map((b) => <Cover hue={b.hue ?? 200} number={b.number} title={b.title} level={b.level} size="sm" />)}</div>
+          <div class="bm-bar-prog" role="img" aria-label={`${obesityBooks.length} of ${series.books.length} books out`}><i style={`width:${outPct}%`}></i></div>
+          <p style="font:500 .82rem/1.4 var(--font-mono);color:var(--ink-2);margin:0 0 1.6rem"><b style="color:var(--ink);font-weight:500">{obesityBooks.length} of {series.books.length}</b> out · <a href={`${SERIES_URL}b0/`}>Start with Book 0</a></p>
+        </div>
+      </article>
+      {bookList.map((b) => (
+        <a class="bcard wide reveal" href={bookUrl(b)} style="min-height:0;padding-bottom:2rem"><h3>{b.data.title}</h3><p>{b.data.description}</p><span class="bm-pchip ready" style="margin:1.2rem 0 0;align-self:flex-start;position:relative">Free PDF · {b.data.license}</span></a>
+      ))}
+    </div>
+  </div></section>
 
-    <section class="doc-panel" aria-labelledby="h-books">
-      <div class="doc-panel-head"><h2 id="h-books">Books</h2><a href="/doctors/books/">All books →</a></div>
-      <ul class="doc-list">{bookList.map((b) => <li><a href={bookUrl(b)}>{b.data.title}</a><span class="doc-tag">Free PDF</span><p>{b.data.description}</p></li>)}</ul>
-    </section>
-
-    <section class="doc-panel" aria-labelledby="h-tools">
-      <div class="doc-panel-head"><h2 id="h-tools">Clinical tools</h2><a href="/doctors/tools/">All tools →</a></div>
-      <ul class="doc-list">{tools.map((t) => <li>{t.href ? <a href={t.href}>{t.title}</a> : <span>{t.title}</span>}<span class="doc-tag">{t.href ? 'Ready' : 'Coming soon'}</span><p>{t.text}</p></li>)}</ul>
-    </section>
-  </div>
-  <div class="wrap" style="padding-block:2rem 4rem">
-    <p class="muted small">Content here is written for health professionals and assumes clinical training. For plain-language guides, switch to <a href="/">For Everyone</a>.</p>
-  </div>
+  <section class="closer">
+    <canvas class="dust" data-count="320" data-spread="1" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="bm-tag" set:html={`${sparkle}Stay in the loop`}></span>
+      <h2>New evidence, trainers and books as they are published</h2>
+      <p>Follow by RSS, or write to contact@drharshmaheshwari.com and I'll add you to the list when the newsletter launches.</p>
+      <div class="cta"><a class="btn btn-primary btn-lg" href="/rss.xml">Follow by RSS</a><a class="btn btn-ghost btn-lg" href="/support/">Support this project</a></div>
+    </div>
+  </section>
 </Base>
 
-<style>
-  .doc-head { border-bottom: 1px solid var(--line); margin-bottom: 1.5rem; padding-bottom: 1.5rem; }
-  .doc-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); }
-  .doc-panel { padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
-  .doc-panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--line); padding-bottom: .5rem; margin-bottom: .25rem; }
-  .doc-panel-head h2 { font-size: 1.05rem; margin: 0; text-transform: uppercase; letter-spacing: .05em; }
-  .doc-panel-head a { font-size: .88rem; font-weight: 600; text-decoration: none; }
-  .doc-list { list-style: none; margin: 0; padding: 0; }
-  .doc-list li { padding: .65rem 0; border-bottom: 1px solid var(--line); }
-  .doc-list li:last-child { border-bottom: 0; }
-  .doc-list a, .doc-list span:first-child { font-weight: 650; }
-  .doc-list p { margin: .2rem 0 0; font-size: .92rem; color: var(--ink-2); }
-  .doc-tag { margin-left: .5rem; padding: .05rem .4rem; border: 1px solid var(--line); border-radius: 4px; font-size: .72rem; font-weight: 600; color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em; }
-</style>
+<script>
+  import '../../scripts/home-wave';
+</script>

@@ -86,9 +86,10 @@ test('every page has the mode switch with the exact labels, marking the current 
     if (url === '/404.html') continue;
     const sw = doc.match(/<nav class="mode-switch"[\s\S]*?<\/nav>/)?.[0];
     assert.ok(sw, `${url} has no mode switch`);
-    assert.match(sw, /href="\/"[^>]*>For Everyone</, url);
-    assert.match(sw, /href="\/doctors\/"[^>]*>For Doctors</, url);
-    const current = sw.match(/aria-current="true"[^>]*>([^<]+)</)?.[1];
+    // The link text is "For Everyone" / "For Doctors" (the "For " is wrapped in a span that phones hide to make room).
+    const links = [...sw.matchAll(/<a href="([^"]+)"([^>]*)>([\s\S]*?)<\/a>/g)].map((m) => ({ href: m[1], attrs: m[2], text: m[3].replace(/<[^>]+>/g, '') }));
+    assert.deepEqual(links.map((l) => [l.href, l.text]), [['/', 'For Everyone'], ['/doctors/', 'For Doctors']], url);
+    const current = links.find((l) => l.attrs.includes('aria-current="true"'))?.text;
     assert.equal(current, url.startsWith('/doctors/') ? 'For Doctors' : 'For Everyone', url);
     assert.doesNotMatch(doc, />\s*General\s*</, `${url} uses the word "General" as a label`);
   }

@@ -1,111 +1,118 @@
 ---
+// For Everyone home. Centred hero with a light beam and dust, a picture of the calculator (its fields link into the real one),
+// big cards for what is on the site, and a closing section. Everything shown comes from the site's own content.
 import Base from '../layouts/Base.astro';
-import ArticleCard from '../components/ArticleCard.astro';
-import { articles, books } from '../lib/content';
+import { articles, books, bookUrl, fmtDate } from '../lib/content';
+import { TOOLS } from '../data/tools';
+import { PEOPLE, readout, pct, ZONES_GLOBAL, ZONES_INDIA, TICKS } from '../lib/bmi-demo';
 
-const learn = (await articles('learn')).slice(0, 3);
+const guides = (await articles('learn')).slice(0, 3);
 const bookList = await books('everyone');
+const tools = TOOLS.filter((t) => t.mode === 'everyone');
+const r = readout(PEOPLE[0]), p = PEOPLE[0];
+const bar = (zones: [number, number, string][]) => zones.map(([a, b, c]) => ({ c, w: pct(b) - pct(a) }));
+const fields = [
+  { id: 'height', label: 'Height', unit: `${p.h} cm`, key: 'h', fill: r.h, o: 'data-oh', hint: 'Enter your height' },
+  { id: 'weight', label: 'Weight', unit: `${p.w} kg`, key: 'w', fill: r.w, o: 'data-ow', hint: 'Enter your weight' },
+  { id: 'waist', label: 'Waist', unit: `${p.wa} cm`, key: 'wa', fill: r.wa, o: 'data-owa', hint: 'Enter your waist' },
+];
+const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>';
 ---
 <Base>
-  <section class="hero">
-    <div class="blob a" aria-hidden="true"></div>
-    <div class="blob b" aria-hidden="true"></div>
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow reveal">Obesity · Public health · Evidence</span>
-        <h1 class="reveal" style="--d:.05s">Reversing obesity in India, <span class="hl">one clear idea</span> at a time.</h1>
-        <p class="lede reveal" style="--d:.12s">I'm Dr. Harsh Maheshwari, a physician and public health researcher. I turn obesity research into guides, tools and free books that families and doctors can use.</p>
-        <div class="hero-actions reveal" style="--d:.2s">
-          <a class="btn btn-primary" href="/tools/bmi-calculator/">Check your BMI & waist <span class="arrow">→</span></a>
-          <a class="btn btn-ghost" href="/learn/">Start learning</a>
+  <section class="hero" style="padding-block-end:clamp(2.5rem,5vw,3.5rem)">
+    <div class="beam" aria-hidden="true"></div><div class="beam-2" aria-hidden="true"></div>
+    <canvas class="dust" data-count="260" data-spread=".98" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <span class="bm-tag" set:html={`${sparkle}Obesity · Public health · Evidence`}></span>
+      <h1>Reversing obesity in India, <em>one clear idea</em> at a time.</h1>
+      <p class="lede">I'm Dr. Harsh Maheshwari, a physician and public health researcher. I turn obesity research into guides, tools and free books that families and doctors can use.</p>
+      <div class="cta">
+        <a class="btn btn-primary btn-lg" href="/tools/bmi-calculator/#height">Check your BMI &amp; waist <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost btn-lg" href="/learn/">Start learning</a>
+      </div>
+
+      <div class="bm-window reveal" data-demo aria-label="A picture of the BMI and waist calculator. Each field opens the real calculator.">
+        <div class="bm-win-bar"><i></i><i></i><i></i><span>BMI &amp; waist calculator · Indian cut-offs</span></div>
+        <div class="bm-win-body">
+          <div class="bm-win-side" aria-hidden="true">
+            <span class="on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01"/></svg>Calculator</span>
+            <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/></svg>Guides</span>
+            <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg>Videos</span>
+          </div>
+          <div class="bm-win-main">
+            <h3>Where do your numbers fall?</h3>
+            <div class="bm-fields">
+              {fields.map((f) => (
+                <a class="bm-fld" href={`/tools/bmi-calculator/#${f.id}`}>
+                  <span class="bm-fld-l">{f.label} <output {...{ [f.o]: '' }}>{f.unit}</output></span>
+                  <span class="bm-trk"><i data-t={f.key} style={`width:calc(${f.fill}% + 9px)`}></i><b data-k={f.key} style={`left:${f.fill}%`}></b></span>
+                  <span class="bm-fld-go">{f.hint} →</span>
+                </a>
+              ))}
+            </div>
+            <a class="bm-sexpick" href="/tools/bmi-calculator/#sex" aria-label="Choose man or woman in the calculator"><span data-sx="m" class="on">Men</span><span data-sx="f">Women</span></a>
+            <div class="bm-scale" style={`--p:${r.marker}`}>
+              <div class="bm-srow"><span class="bm-tag">Global</span><div class="bm-bar">{bar(ZONES_GLOBAL).map((z) => <span class={z.c} style={`width:${z.w}%`}></span>)}</div></div>
+              <div class="bm-srow"><span class="bm-tag" style="color:var(--brand)">India</span><div class="bm-bar">{bar(ZONES_INDIA).map((z) => <span class={z.c} style={`width:${z.w}%`}></span>)}</div></div>
+              <div class="bm-ticks">{TICKS.map((t) => <span style={`left:${pct(t)}%`}>{t}</span>)}</div>
+              <div class="bm-marker" aria-hidden="true"></div>
+            </div>
+            <div class="bm-results">
+              <a class="bm-res" href="/tools/bmi-calculator/"><span class="bm-tag">BMI</span><b data-bmi>{r.bmi.toFixed(1)}</b><span class={`bm-state ${r.sBmi[1]}`} data-sbmi>{r.sBmi[0]}</span></a>
+              <a class="bm-res" href="/tools/bmi-calculator/#waist"><span class="bm-tag">Waist ÷ height</span><b data-whtr>{r.whtr.toFixed(2)}</b><span class={`bm-state ${r.sWhtr[1]}`} data-swhtr>{r.sWhtr[0]}</span></a>
+              <a class="bm-res" href="/tools/bmi-calculator/#waist"><span class="bm-tag">Waist</span><b data-waist>{p.wa} cm</b><span class={`bm-state ${r.sWaist[1]}`} data-swaist>{r.sWaist[0]}</span></a>
+            </div>
+            <p class="bm-fine">An illustration that steps through example people. Tap any field to enter your own numbers. Screening only. <a href="/disclaimer/">Disclaimer</a></p>
+          </div>
         </div>
       </div>
-      <div class="hero-card reveal" style="--d:.25s">
-        <span class="eyebrow">Why India needs its own numbers</span>
-        <p style="margin:0" class="muted">Indians carry more abdominal fat, and get diabetes at a lower BMI, than the global charts assume.</p>
-        <div class="stat-row">
-          <div class="stat"><b data-count="23">23</b><span>BMI where overweight begins for Indians</span></div>
-          <div class="stat"><b data-count="0.5" data-dec="1">0.5</b><span>waist-to-height ratio to stay under</span></div>
-          <div class="stat"><b data-count="90" data-suffix="/80">90/80</b><span>cm waist cut-off, men / women</span></div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section style="padding-top:0">
+  <section class="bm-sec"><div class="wrap">
+    <div class="bm-sec-head reveal"><span class="bm-tag">What you will find</span><h2>Understand your body, then change your habits</h2></div>
+    <div class="bento">
+      <article class="bcard reveal"><h3>Plain guides</h3><p>Plain-language guides on food, activity, sleep and weight, with Indian examples and without fads.</p>
+        <div class="bm-stage"><div class="bm-list">
+          {guides.map((g) => (
+            <a class="bm-li" href={`/learn/${g.id}/`}><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/></svg></span><span><b>{g.data.title}</b><small>{g.data.topic[0]} · {fmtDate(g.data.published)}</small></span><span class="bm-pchip">Guide</span></a>
+          ))}
+          <div class="bm-li"><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><span><b>{guides.length ? 'More guides on food, sleep and activity' : 'The first guides are being written'}</b><small>On food, activity, sleep and weight</small></span><span class="bm-pchip">Soon</span></div>
+        </div></div>
+      </article>
+      <article class="bcard reveal"><h3>Tools built on Indian cut-offs</h3><p>Calculators and risk scores that use the numbers that fit Indian bodies.</p>
+        <div class="bm-stage"><div class="bm-list">
+          {tools.map((t) => {
+            const inner = <><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01"/></svg></span><span><b>{t.title}</b><small>{t.text}</small></span><span class:list={['bm-pchip', { ready: !!t.href }]}>{t.href ? 'Ready' : 'Coming'}</span></>;
+            return t.href ? <a class="bm-li" href={t.href}>{inner}</a> : <div class="bm-li">{inner}</div>;
+          })}
+        </div></div>
+      </article>
+      <article class="bcard reveal"><h3>Free books</h3><p>{bookList.length ? `${bookList.length} book${bookList.length > 1 ? 's' : ''}, free to download and share for non-commercial use.` : 'Full-length books on obesity for families are being written. Free to download and share for non-commercial use.'}</p>
+        <a class="btn btn-ghost" href="/books/">Browse books <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="bm-stage"><div class="bm-list">
+          {bookList.map((b) => <a class="bm-li" href={bookUrl(b)}><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></span><span><b>{b.data.title}</b><small>Free PDF</small></span></a>)}
+          {!bookList.length && <div class="bm-li"><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></span><span><b>Books for families</b><small>Being written</small></span><span class="bm-pchip">Soon</span></div>}
+        </div></div>
+      </article>
+      <article class="bcard reveal"><h3>For Doctors</h3><p>Evidence syntheses with effect sizes, clinical skill trainers such as heart and lung sounds, and books on statistics and research methods.</p>
+        <a class="btn btn-primary" href="/doctors/">Go to For Doctors <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="bm-stage"><svg class="bm-wave" viewBox="0 0 600 170" preserveAspectRatio="none" aria-hidden="true"><path class="env" d="M0 85 L600 85"/><path class="sig" d="M0 85 L40 85 L48 40 L56 130 L64 60 L72 105 L80 85 L170 85 L178 55 L186 115 L194 85 L300 85 L308 40 L316 130 L324 60 L332 105 L340 85 L430 85 L438 55 L446 115 L454 85 L600 85"/></svg></div>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="closer">
+    <canvas class="dust" id="dust-closer" data-count="320" data-spread="1" aria-hidden="true"></canvas>
     <div class="wrap">
-      <div class="split">
-        <a class="card public reveal" href="/learn/">
-          <span class="eyebrow">For everyone</span>
-          <h2 style="margin:0">Understand your body, then change your habits</h2>
-          <p>Plain-language guides on food, activity, sleep and weight, with Indian examples and without fads.</p>
-          <span class="more">Explore guides →</span>
-        </a>
-        <a class="card pro reveal" style="--d:.1s" href="/doctors/">
-          <span class="eyebrow" style="color:var(--accent)">For Doctors</span>
-          <h2 style="margin:0">Evidence, trainers and tools for practice</h2>
-          <p>Evidence syntheses with effect sizes, clinical skill trainers such as heart and lung sounds, and books on statistics and research methods.</p>
-          <span class="more" style="color:var(--accent)">Go to For Doctors →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Latest guides</span>
-        <h2>Start here</h2>
-      </div>
-      {learn.length ? (
-        <div class="grid">
-          {learn.map((e, i) => <ArticleCard href={`/learn/${e.id}/`} title={e.data.title} description={e.data.description} date={e.data.published} topic={e.data.topic[0]} draft={e.data.draft} delay={i * 0.08} />)}
-        </div>
-      ) : <p class="empty">The first guides are being written.</p>}
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap grid">
-      <a class="card reveal" href="/tools/">
-        <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h8"/></svg></div>
-        <h3>Tools</h3><p>Calculators built on Indian cut-offs. Risk scores for diabetes, liver and heart disease are coming next.</p><span class="more">Open tools →</span>
-      </a>
-      <a class="card reveal" style="--d:.08s" href="/books/">
-        <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></div>
-        <h3>Free books</h3><p>{bookList.length ? `${bookList.length} book${bookList.length > 1 ? 's' : ''}, free to download and share for non-commercial use.` : 'Full-length books on obesity for families are being written. Free to download and share for non-commercial use.'}</p><span class="more">Browse books →</span>
-      </a>
-      <a class="card reveal" style="--d:.16s" href="/videos/">
-        <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></div>
-        <h3>Videos</h3><p>Short explainers on weight, food and health.</p><span class="more">Watch →</span>
-      </a>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="card reveal" style="padding:clamp(1.5rem,4vw,3rem);text-align:center;align-items:center;background:linear-gradient(135deg,var(--brand-soft),var(--accent-soft))">
-        <span class="eyebrow">Stay in the loop</span>
-        <h2 style="max-width:22ch">New guides, tools and books as they are published</h2>
-        <p class="muted" style="max-width:52ch">Follow by <a href="/rss.xml">RSS</a>, or write to me and I'll add you to the list when the newsletter launches.</p>
-        <a class="btn btn-primary" href="mailto:contact@drharshmaheshwari.com?subject=Add%20me%20to%20the%20newsletter">Email me to subscribe <span class="arrow">→</span></a>
-      </div>
+      <span class="bm-tag" set:html={`${sparkle}Stay in the loop`}></span>
+      <h2>New guides, tools and books as they are published</h2>
+      <p>Follow by RSS, or write to contact@drharshmaheshwari.com and I'll add you to the list when the newsletter launches.</p>
+      <div class="cta"><a class="btn btn-primary btn-lg" href="/rss.xml">Follow by RSS</a><a class="btn btn-ghost btn-lg" href="/support/">Support this project</a></div>
     </div>
   </section>
 </Base>
 
 <script>
-  // Count-up animation for hero stats; skipped when the reader prefers reduced motion.
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
-      const target = parseFloat(el.dataset.count!), dec = Number(el.dataset.dec ?? 0), suffix = el.dataset.suffix ?? '';
-      const t0 = performance.now(), dur = 1200;
-      const step = (t: number) => {
-        const p = Math.min((t - t0) / dur, 1), e = 1 - (1 - p) ** 3;
-        el.textContent = (target * e).toFixed(dec) + suffix;
-        if (p < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    });
-  }
+  import '../scripts/home-demo';
 </script>
