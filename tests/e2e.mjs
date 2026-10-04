@@ -65,8 +65,9 @@ try {
       const lum = (c) => { const [r, g, b] = c.map((x) => { x /= 255; return x <= .03928 ? x / 12.92 : ((x + .055) / 1.055) ** 2.4; }); return .2126 * r + .7152 * g + .0722 * b; };
       const ratio = (a, b) => { const [x, y] = [lum(rgb(a)), lum(rgb(b))].sort((p, q) => q - p); return (x + .05) / (y + .05); };
       const pairs = [['--ink', '--bg'], ['--ink-2', '--bg'], ['--ink-3', '--bg'], ['--ink-3', '--surface'], ['--brand', '--bg'], ['--brand', '--surface'],
-        ['--brand-ink', '--brand'], ['--brand', '--brand-soft'], ['--accent', '--accent-soft'], ['--ok', '--ok-soft'], ['--risk', '--risk-soft'], ['--warn', '--warn-soft']];
-      if (document.documentElement.dataset.mode === 'doctors') pairs.push(['--header-ink', '--header-bg'], ['--header-ink-2', '--header-bg']);
+        ['--brand-ink', '--brand'], ['--brand-ink', '--brand-fill'], ['--btn-ink', '--btn'], ['--ink', '--surface'], ['--ink-2', '--surface'], ['--ink-2', '--surface-2'],
+        ['--brand', '--brand-soft'], ['--accent', '--accent-soft'], ['--ok', '--ok-soft'], ['--risk', '--risk-soft'], ['--warn', '--warn-soft'],
+        ['--header-ink', '--header-bg'], ['--header-ink-2', '--header-bg']];
       return pairs.map(([a, b]) => [a, b, ratio(a, b)]);
     });
     for (const [a, b, r] of res) check(r >= 4.5, `contrast ${url} ${theme}: ${a} on ${b} = ${r.toFixed(2)}`);
@@ -87,10 +88,13 @@ try {
       check(new URL(page.url()).pathname === to, `${name} redirect ${from} -> ${to}`);
     }
     await page.goto(BASE + '/');
-    await page.click('.mode-bar a[data-mode-link="doctors"]');
+    await page.click('.site-header a[data-mode-link="doctors"]');
     check(await page.evaluate(() => location.pathname === '/doctors/' && document.documentElement.dataset.mode === 'doctors'), `${name} mode switch goes to For Doctors`);
-    check(await page.isVisible('.mode-badge'), `${name} For Doctors badge visible in header`);
-    await page.click('.mode-bar a[data-mode-link="everyone"]');
+    // Desktop: the "For Doctors" badge beside the name. Phone: no room, so the switch itself says it (its "For " is hidden).
+    check(name === 'phone'
+      ? (await page.textContent('.site-header a[data-mode-link="doctors"][aria-current="true"]'))?.trim() === 'For Doctors' && (await page.isVisible('.site-header a[data-mode-link="doctors"]'))
+      : await page.isVisible('.site-header .mode-badge'), `${name} For Doctors marked in the header`);
+    await page.click('.site-header a[data-mode-link="everyone"]');
     check(await page.evaluate(() => location.pathname === '/' && document.documentElement.dataset.mode === 'everyone'), `${name} mode switch back to For Everyone`);
     check(errs.length === 0, `${name} no script errors (${errs.join('; ')})`);
     await ctx.close();

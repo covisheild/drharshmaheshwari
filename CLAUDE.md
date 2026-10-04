@@ -12,9 +12,10 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
   (`everyone` → `/books/<slug>/`, `doctors` → `/doctors/books/<slug>/`); videos have `mode` in `src/data/videos.json`;
   tools are listed in `src/data/tools.ts`; trainers in `src/trainers/registry.ts`. Evidence articles (`src/content/clinicians/`)
   are published at `/doctors/evidence/<slug>/`.
-- Design tokens: `src/styles/tokens.css` (mode × light/dark). Components use only semantic tokens. The modes differ in colour,
-  type (Fraunces vs Inter headings), shape and density, and For Doctors pages carry a "For Doctors" label in the header.
-  All four combinations must keep 4.5:1 text contrast (checked by `npm run test:e2e`).
+- Design tokens: `src/styles/tokens.css` (audience colour x light/dark). Components use only semantic tokens. One look for both audiences
+  (Beam: Outfit headings, DM Sans text, DM Mono labels; rounded cards; floating glass header); they differ by **colour** (see "Site colours"
+  below) and the "For Doctors" label in the header. Class names of the Beam components are prefixed `bm-` (`src/styles/beam.css`) so they
+  cannot clash with the calculator, reader or trainers. All four combinations must keep 4.5:1 text contrast (`tests/theme.test.mjs`, `npm run test:e2e`).
 - **Moved URLs get a 301 in `public/_redirects`; never delete a line there.** `tests/site.test.mjs` lists every URL
   production has served and fails if one breaks.
 
@@ -177,14 +178,22 @@ local devDependency. Change production settings only on purpose; preview-only se
   "Support"). Trainer pages say "Real patients may differ: use clinical judgement", never "not for diagnosing patients".
 - Finding slugs (`config.ts`) are permanent URLs. Teaching notes are clinical content: Harsh reviews changes before `main`.
 
-## Design direction (decided, roll-out in progress)
+## Site colours (admin only) and the Beam look
 
-- The new look is **Beam** (dark-first, light beam, floating glass nav, big rounded cards, drifting dust): `docs/design-direction.md`,
-  prototypes in `design/prototypes/` (not built). Fonts: Outfit, DM Sans, DM Mono, self-hosted. The round photo stays as it is.
-- Colours come from one hue number per palette, different for For Everyone and For Doctors, fixed or rotating weekly/monthly
-  (planned `src/data/theme.json`). Ask Claude to change the palette; do not hand-edit colours in components.
-- The home page's calculator picture is visual only; its fields link to `/tools/bmi-calculator/#height|#weight|#waist|#sex`,
-  which open with that box ready to type in (built and tested). Do not break these hashes.
+- **The colour is chosen only by Harsh** (no visitor picker). `src/data/theme.json`: `schedule` (`fixed` | `weekly` | `monthly`), `fixed` (one colour
+  per audience), `rotation` (an ordered list per audience), `start` (a Monday for weekly, the 1st for monthly). Dates change at midnight India time.
+  The colours are the **36 in `src/data/palettes.json`** (one per 10 degrees of the wheel, each with lightness values that keep text and buttons
+  at 4.5:1; regenerate with `node scripts/design/palettes.mjs`, `tests/theme.test.mjs` checks all 36). Harsh picks with the admin colour wheel
+  (`design/colour-wheel.html`, a private page, not on the site) and sends the settings text; Claude applies them to `theme.json`.
+  Keep the two audiences on different colours at every step. `Base.astro` writes `--pal-h/--pal-ld/--pal-ll` on `<html>`; a rotating schedule
+  adds a tiny inline script (`src/lib/theme.ts`) that corrects them before first paint. Do not hand-edit colours in components.
+- **Beam look**: `docs/design-direction.md`; prototypes in `design/prototypes/` (not built). Fonts are self-hosted in `public/fonts/`
+  (`src/styles/fonts.css`). The round photo stays as it is. Home pages: `src/pages/index.astro`, `src/pages/doctors/index.astro`.
+- **Dust and glow** (`src/scripts/fx.ts`): `canvas.dust` grains scatter and curl around the cursor or a finger; fewer grains on phones;
+  nothing runs under "reduce motion". The calculator picture is visual only (`src/lib/bmi-demo.ts`, `src/scripts/home-demo.ts`); its fields
+  link to `/tools/bmi-calculator/#height|#weight|#waist|#sex`, which open with that box ready to type in. Do not break these hashes.
+- The header is fixed and floating, so pages with the site chrome get `padding-top: var(--nav-space)` (`main.with-nav`); a hero that wants
+  the beam behind the header pulls itself up by the same amount.
 
 ## Drafts
 

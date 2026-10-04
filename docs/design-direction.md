@@ -1,4 +1,4 @@
-# New look: Beam (decided 3 Oct 2026, roll-out not started)
+# New look: Beam (decided 3 Oct 2026; roll-out started 4 Oct 2026)
 
 Harsh chose direction **Beam** from three prototypes (`design/prototypes/`). Inspiration he supplied: the DeepSeek Harness page
 (near-black, a soft light beam, floating glass nav pill, big rounded cards holding live mock-ups, mono tags, white pill buttons,
@@ -32,16 +32,19 @@ sci-fi/tech, professional; fast; animated at the level of the prototype.
 - Other pages already changed this session and kept: reader account menu and `/account/`, series-page Subject dropdown, serial
   subject numbers, `/disclaimer/` ("Disclaimer and credits"), short trainer footer.
 
-## Roll-out plan (nothing below is done yet)
-1. Tokens and fonts: new `tokens.css` (hue-driven palette, both audiences, both themes), self-hosted fonts, `theme.json` and the
-   head script. Check contrast for every palette in all four audience x theme combinations.
-2. Shell: glass nav pill, footer, mode switch, theme toggle, dust and reveal scripts (one small shared script).
-3. Home pages (For Everyone, For Doctors), then Tools, Books, Videos, Learn, About.
-4. Trainers and the book reader keep their own app frames; give them the new tokens and fonts last, with Harsh's review.
-5. Screenshots at 390 px and 1280 px, no sideways scroll, Lighthouse check, then merge.
-Work on a design branch and merge `main` into it often: other chats keep adding books and features.
+## Roll-out status
+Done (branch `claude/vibrant-hypatia-fqdjed`, Cloudflare preview):
+1. Tokens and fonts: `tokens.css` (hue-driven, dark and light), self-hosted Outfit / DM Sans / DM Mono, `theme.json` and `palettes.json`
+   (36 colours, admin only, fixed / weekly / monthly), `src/lib/theme.ts`, `tests/theme.test.mjs`.
+2. Shell: floating glass header with the audience switch inside it (short labels on phones), pill buttons, rounded cards, footer.
+3. Home pages for both audiences; dust that reacts to the cursor or a finger (`fx.ts`); the other pages take the new look through the tokens.
+Still to do:
+- Review each inner page (Tools, Books, Videos, Learn, About, Support, Account, articles) at 390 px and 1280 px, in all palettes.
+- Trainers and the book reader keep their own frames; they already use the new tokens and fonts. Polish with Harsh's review.
+- Lighthouse check on the preview; decide whether to subset DM Sans further (63 KB for Latin).
+- Merge: `main` is merged into the branch regularly; open the PR when Harsh approves the preview.
 
 ## Open
-- Final palette defaults and rotation lists (Harsh to confirm after seeing them on the preview).
+- Final colours: Harsh chooses on the admin colour wheel (36 colours). Today: fixed, For Everyone = Cyan, For Doctors = Violet.
 - Whether Signal's ruler panel or the waveform should also appear on the real home page (currently the waveform is in the For
   Doctors window and the For Doctors card).

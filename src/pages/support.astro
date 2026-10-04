@@ -100,7 +100,7 @@ const helps = [
 
 <style>
   .support-head p:first-of-type { font-size: 1.2rem; color: var(--ink); }
-  .support-grid > section { padding-block: 0; }
+  .support-grid > section:not(.card) { padding-block: 0; }
   .support-grid { display: grid; grid-template-columns: 1fr minmax(0, 520px); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
   @media (max-width: 900px) { .support-grid { grid-template-columns: 1fr; } .support-form-card { order: -1; } }
   .support-why h2 { font-size: 1.25rem; margin-top: 0; }

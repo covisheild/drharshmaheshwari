@@ -31,6 +31,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .mode-bar { background: var(--modebar-bg); border-bottom: 1px solid var(--header-line); }
 .mode-bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 40px; }
 .mode-bar .hint { font-size: .8rem; color: var(--ink-3); }
+@media (max-width: 640px) { .mode-bar .hint { display: none; } .mode-bar .wrap { justify-content: center; } }
 
 /* ---------- The For Everyone / For Doctors switch ---------- */
 .mode-switch { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: color-mix(in oklab, var(--ink) 8%, transparent); border: 1px solid var(--header-line); }
