@@ -38,13 +38,16 @@ Done (branch `claude/vibrant-hypatia-fqdjed`, Cloudflare preview):
    (36 colours, admin only, fixed / weekly / monthly), `src/lib/theme.ts`, `tests/theme.test.mjs`.
 2. Shell: floating glass header with the audience switch inside it (short labels on phones), pill buttons, rounded cards, footer.
 3. Home pages for both audiences; dust that reacts to the cursor or a finger (`fx.ts`); the other pages take the new look through the tokens.
+4. Inner pages reviewed at 390 px and 1280 px, dark and light, with the chosen colours (Tools, Books, Learn, About, Support, Account, Videos,
+   Blog, Disclaimer, Privacy, For Doctors Tools / Books / Trainers / Videos): colour glow behind page titles, solid header, phone menu.
+5. Trainer screens (home, learn, practice with an answered question) and both book readers checked in both themes and sizes: no overflow, no errors.
 Still to do:
-- Review each inner page (Tools, Books, Videos, Learn, About, Support, Account, articles) at 390 px and 1280 px, in all palettes.
-- Trainers and the book reader keep their own frames; they already use the new tokens and fonts. Polish with Harsh's review.
+- Article pages (Learn / Evidence) once real articles exist; Quiz and Review screens with real progress.
 - Lighthouse check on the preview; decide whether to subset DM Sans further (63 KB for Latin).
+- `npm run test:e2e` has never been run on this branch (browser contrast and layout checks); run it before the PR.
 - Merge: `main` is merged into the branch regularly; open the PR when Harsh approves the preview.
 
 ## Open
-- Final colours: Harsh chooses on the admin colour wheel (36 colours). Today: fixed, For Everyone = Cyan, For Doctors = Violet.
+- Colours: Harsh can change them any time on the admin colour wheel (36 colours). Chosen 4 Oct 2026: fixed, For Everyone = Turquoise, For Doctors = Vermilion.
 - Whether Signal's ruler panel or the waveform should also appear on the real home page (currently the waveform is in the For
   Doctors window and the For Doctors card).
