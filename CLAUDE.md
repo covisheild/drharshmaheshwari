@@ -185,7 +185,7 @@ local devDependency. Change production settings only on purpose; preview-only se
   The colours are the **36 in `src/data/palettes.json`** (one per 10 degrees of the wheel, each with lightness values that keep text and buttons
   at 4.5:1; regenerate with `node scripts/design/palettes.mjs`, `tests/theme.test.mjs` checks all 36). Harsh picks with the admin colour wheel
   (`design/colour-wheel.html`, a private page, not on the site) and sends the settings text; Claude applies them to `theme.json`.
-  Keep the two audiences on different colours at every step. `Base.astro` writes `--pal-h/--pal-ld/--pal-ll` on `<html>`; a rotating schedule
+  Current choice (4 Oct 2026): fixed, For Everyone = 17 Turquoise, For Doctors = 3 Vermilion. To change colours or switch to weekly/monthly later, Harsh opens the wheel, picks, and sends the settings text; Claude pastes it into `theme.json` (the `rotation` lists are already filled in). Keep the two audiences on different colours at every step. `Base.astro` writes `--pal-h/--pal-ld/--pal-ll` on `<html>`; a rotating schedule
   adds a tiny inline script (`src/lib/theme.ts`) that corrects them before first paint. Do not hand-edit colours in components.
 - **Beam look**: `docs/design-direction.md`; prototypes in `design/prototypes/` (not built). Fonts are self-hosted in `public/fonts/`
   (`src/styles/fonts.css`). The round photo stays as it is. Home pages: `src/pages/index.astro`, `src/pages/doctors/index.astro`.

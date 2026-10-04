@@ -118,7 +118,11 @@ a.card:hover { transform: translateY(-3px); border-color: color-mix(in oklab, va
 .empty { padding: 2rem; border: 1px dashed var(--line-2); border-radius: var(--radius); text-align: center; color: var(--ink-2); }
 
 /* ---------- Page header ---------- */
-.page-head { padding-block: var(--page-head-pad) 2rem; }
+.page-head { padding-block: var(--page-head-pad) 2rem; position: relative; isolation: isolate; }
+/* A soft light in the audience colour behind the page title, so inner pages feel like the home page. */
+.page-head::before { content: ''; position: absolute; z-index: -1; left: 0; right: 30%; top: -70%; height: 150%; pointer-events: none;
+  background: radial-gradient(closest-side at 40% 45%, var(--glow), transparent); opacity: .7; }
+@media (max-width: 1160px) { .page-head::before { left: 0; right: 0; } }
 .page-head h1 { max-width: 20ch; }
 .page-head p { font-size: 1.15rem; color: var(--ink-2); max-width: 60ch; }
 
