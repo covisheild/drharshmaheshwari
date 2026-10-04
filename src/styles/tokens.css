@@ -27,7 +27,7 @@
   --glow: hsl(var(--pal-h) 85% 52% / .34);       /* closing-section light, card hover glow */
   --beam-a: hsl(var(--pal-h) 50% 68% / .78); --beam-b: hsl(var(--pal-h) 56% 42% / .42);
   --dust-c: hsl(var(--pal-h) 100% 80%);
-  --header-bg: rgb(22 25 32 / .82); --header-ink: var(--ink); --header-ink-2: var(--ink-2); --header-line: rgb(255 255 255 / .1);
+  --header-bg: rgb(22 25 32 / .92); --header-ink: var(--ink); --header-ink-2: var(--ink-2); --header-line: rgb(255 255 255 / .1);
   --modebar-bg: var(--surface); --shadow: 0 1px 0 rgb(255 255 255 / .03) inset;
   --hl-sel: var(--brand);
   color-scheme: dark;
@@ -62,7 +62,7 @@
   --glow: hsl(var(--pal-h) 90% 66% / .22);
   --beam-a: hsl(var(--pal-h) 70% 74% / .55); --beam-b: hsl(var(--pal-h) 80% 82% / .35);
   --dust-c: hsl(var(--pal-h) 85% 40%);
-  --header-bg: rgb(255 255 255 / .86); --header-line: rgb(10 13 20 / .1);
+  --header-bg: rgb(255 255 255 / .93); --header-line: rgb(10 13 20 / .1);
   --shadow: 0 1px 2px rgb(10 13 20 / .04), 0 14px 34px -14px rgb(10 13 20 / .14);
   color-scheme: light;
 }
