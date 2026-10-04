@@ -17,7 +17,7 @@ health professionals; nothing goes under For Everyone).
   body text is off-white (~`#d6d6d6`), not `#fff`. Follow the site's existing theme toggle
   (`ThemeToggle.astro`, `data-theme`); the reader overrides `--bg` to `#000` in dark.
   Figures with white backgrounds sit on a slightly dimmed card in black mode.
-- **No highlighting** for now. Positions are stored per paragraph, so it can be added later.
+- ~~No highlighting for now~~ (3 Oct 2026: added, see the last section).
 - **Interactive** (Harsh wants this): the reader presents existing fields interactively; it never
   adds or rewrites content.
 
@@ -124,7 +124,7 @@ passes `npm run build && npm test` and the 390 px / desktop screenshots in `CLAU
 
 ## Open items
 
-- Inspect the Statistics sources in `drhm-sources/stats/` and pick its converter.
+- ~~Inspect the Statistics sources and pick its converter.~~ Done 3 Oct 2026 (see the last section).
 - Confirm `R2_*` access and the network allow-list (`*.r2.cloudflarestorage.com`,
   `files.drharshmaheshwari.com`) at the start of the next session.
 
@@ -165,3 +165,41 @@ passes `npm run build && npm test` and the 390 px / desktop screenshots in `CLAU
   The picture is an address at `*.googleusercontent.com`, loaded from Google, never copied.
 - Tests: `tests/api.test.mjs` (books API), `tests/booksync.test.mjs` (merge and sync against a pretend
   server), `tests/e2e.mjs` (Review, top bar).
+
+## Progress (3 Oct 2026, later): delta sync, then reader tools
+
+Harsh asked for Kindle-like tools: highlights with notes, image zoom, and "discuss with AI". Agreed order, each a
+separate commit so it can be reviewed on a Preview before `main`:
+
+1. **Delta sync and batched upload** (done). `GET /api/books/:book` and `GET /api/progress/:trainer` take `?since=<ms of server time>`
+   and return `now` (and `next`, for a full page); migration 3 adds `attempts.received_at` and its index. The client keeps a cursor and an
+   outbox in the browser copy (`BookState.since`, `BookState.out`). Timing: upload 10 s after the last change (30 s at most), at once on
+   tab hide, the place alone once a minute. Tests: `tests/booksync.test.mjs`, `tests/api.test.mjs` (including a rows-read check).
+   The trainers still download everything on each page load (`/api/progress/<trainer>` without `since`); they can use the same cursor later.
+2. Image zoom (done): `src/reader/zoom.ts`; tests in `tests/e2e.mjs` ("Figure viewer").
+3. Highlights and notes (done): see "Highlights and notes" in `CLAUDE.md`. Choices Harsh asked for: nothing opens unless wanted. Under **Aa**: when selecting text show a bar / highlight at once / do nothing; colour; Note button on or off; show or hide highlights.
+4. "Copy for AI" (done): copies a question (passage or heading, your note, one of four tasks) to the clipboard; no server, no cost. Under **Aa**: switch on; choose the task; heading buttons on or off. Links that open ChatGPT/Claude/Gemini were removed on 3 Oct 2026 (Claude shows a caution notice for filled-in links; Gemini takes none).
+   Hosting an AI ourselves is parked: it needs sign-in, a daily cap per person, a monthly budget switch and a passage-only prompt first.
+
+## Progress (3 Oct 2026, later): Phase 3, the Statistics converter
+
+- **Sources.** Reached through Harsh's Drive (`Stats-book 3.1/statsbook_v3.1/`, an unzipped copy of `statsbook-v3.1-source.zip`), because
+  the session still has no `R2_*` variables and `*.r2.cloudflarestorage.com` is not allowed. The source is pandoc markdown
+  (`src/chNN.md`, one file per chapter, `ch15a`/`ch15b` = Chapter 15), `answers/`, `refs/*.yml`, `tools/build.py` (assembles Appendix A,
+  Appendix B and References), `figs/` (matplotlib scripts and PNGs), `data/` (synthetic CSVs the In R boxes read), `plan/` and `defects/`
+  (the v3.1 working notes). `src/99-appendix.md` is the retired v2.2 appendix; `build.py` does not use it.
+- **Converter** `scripts/books/statistics/export.py`: pandoc's AST, cut at the book's labels (Definition, Simplified Explanation,
+  Illustration / Example, Derivation, Worked Calculation, In R, Common Misreading, Must-Know Notes, Checkpoint). 157 sections: front
+  matter (5), each chapter's overview plus its n.n sections, Appendix A by chapter, Appendix B, References. Verified word for word against
+  the released v3.1 Word file (175,432 words; 143 tokens differ, all list markers, Word's table-of-contents placeholder and section numbers).
+- **Reader additions** (all backwards compatible): `heading` and `checkpoint` blocks, a label-less continuation of a labelled block,
+  a must-know label, `-q<n>` item ids for checkpoint questions (Review handles them; must-know points now number across a section's
+  several lists), `§` links that jump and offer "Back to where you were", `BookReader.astro` / `BookReview.astro` shared by both series.
+- **Findings for the next edition (not changed here).** Appendix B's package column, built with R's `find()`, names the first *attached*
+  package, so ten rows are misleading: `cov()` is shown as pROC, `Surv()` and `vif()` as rms, `update()`, `as.matrix()` and `unname()` as
+  Matrix, `calibrate()` as survey, `power.t.test()` and `power.prop.test()` as "base R" (they are `stats`), `ageadjust.direct()` is epitools.
+  The converter pins the ten rows to what v3.1 prints (`V31_APPENDIX_B_PACKAGES`); fix them in `build.py` and drop the pin.
+- **Still to do for Phase 3:** cross-book links (Statistics ↔ Book 0), interactive figures (the `figs/*.py` scripts hold the data), offline (PWA),
+  **Done later the same day:** the 17 datasets are published with a page, a zip and `make_data.R` (`/doctors/books/<slug>/data/`).
+  Harsh uploaded the 79 figures to R2; the session cannot reach `files.drharshmaheshwari.com`, so they are unchecked from here.
+  **Before merging:** open the Preview and confirm the figures load; then Notion (Statistics row: 🌐, Live URL, Last published).

@@ -33,6 +33,10 @@ const books = defineCollection({
     size: z.string().optional(), // shown on the download button, e.g. '9.5 MB'
     pdf: z.string(), // path under /public/books/ or an external URL
     cover: z.string().optional(),
+    // A book with a reader on the site: its address. The page then offers "Read online" beside the PDF.
+    read: z.string().optional(),
+    // Datasets that go with the book: the address of their page.
+    datasets: z.string().optional(),
     // Optional page colours taken from the cover: main (text/buttons on light), second (gradient partner), onDark (main in dark mode).
     theme: z.object({ main: z.string(), second: z.string(), onDark: z.string() }).optional(),
     license: z.string().default('CC BY-NC-SA 4.0'),

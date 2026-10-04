@@ -1,11 +1,6 @@
 ---
-// A book's Review: the questions you marked and the must-know points of the sections you have read, brought
-// back when it helps to see them again (spaced repetition, src/reader/review.ts). Static page; works without
-// an account (marks kept in the browser) and syncs when signed in.
-import '../../../../../styles/reader.css';
-import Base from '../../../../../layouts/Base.astro';
-import ModeBar from '../../../../../components/site/ModeBar.astro';
-import ThemeToggle from '../../../../../components/ThemeToggle.astro';
+// An Obesity Expertise book's Review (src/components/books/BookReview.astro).
+import BookReview from '../../../../../components/books/BookReview.astro';
 import { obesityBooks, figureBase } from '../../../../../lib/obesity-books';
 import type { Book } from '../../../../../reader/types';
 
@@ -17,29 +12,5 @@ const { book } = Astro.props;
 const name = book.title.replace(/\s*·\s*Rung \d$/, '');
 const label = `Book ${book.number}`;
 ---
-<Base title={`Review · ${label} · ${name}`} description={`Spaced review for ${label} of the Obesity Expertise series: the questions you marked and the must-know points of the sections you have read.`} chrome="app" noindex>
-  <link slot="head" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <ModeBar mode="doctors" />
-  <div class="rd" id="rv" data-book={book.id} data-version={book.version} style={`--hue:${book.hue}`}>
-    <header class="rd-bar">
-      <a class="rd-back" href={book.url} aria-label={`Back to ${label}`} style="display:inline-grid">←</a>
-      <div class="rd-titles"><span class="rd-book">Review · {label}</span><span class="rd-where rv-count" aria-live="polite"></span></div>
-      <span class="mode-badge">For Doctors</span>
-      <ThemeToggle />
-    </header>
-    <main class="rd-main rv-main">
-      <header class="rv-head">
-        <h1>Review</h1>
-        <p class="rd-meta">{label} · {name}</p>
-        <p class="rv-how">Questions you marked come back when it helps to see them again: a miss straight away, a hit when you would start to forget it. Must-know points from sections you have read to the end join too, up to ten new ones a day. Try first, then open the answer and mark yourself honestly.</p>
-      </header>
-      <div class="rv-card" aria-live="polite"><p class="rd-meta">Loading…</p></div>
-    </main>
-  </div>
-  <script id="rv-data" type="application/json" set:html={JSON.stringify({ outline: book.outline, sectionsBase: `${book.url}sections/`, figureBase: figureBase(book), bookUrl: book.url })} />
-</Base>
-
-<script>
-  import { mountReview } from '../../../../../reader/review';
-  void mountReview();
-</script>
+<BookReview book={book} label={label} name={name} figures={figureBase(book)} backLabel={`Back to ${label}`}
+  description={`Spaced review for ${label} of the Obesity Expertise series: the questions you marked and the must-know points of the sections you have read.`} />

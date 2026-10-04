@@ -8,14 +8,24 @@
 // through BookProgressStore; signing in is never needed.
 
 import { numberParagraphs, renderSection } from './render';
-import { BookProgressStore, type ReaderPrefs } from './store';
+import { BookProgressStore, type ReaderPrefs, type SelectMode } from './store';
 import { SyncedBookStore } from './sync';
 import { mountReaderMe } from './account';
 import { dueCount } from './review';
+import { mountZoom } from './zoom';
+import { mountHighlights, type HighlightApi } from './highlights';
+import { mountNotes } from './notes';
+import { ask as askAi, copyText } from './ai';
 import type { GlossaryEntry, Location, OutlinePart, Reference, Section } from './types';
 
 interface PageData { outline: OutlinePart[]; references: { part: string; items: Reference[]; note: string | null }[]; glossary: GlossaryEntry[]; sizes: number[] }
 
+type BoolPref = 'note' | 'copy' | 'show' | 'ai' | 'aiHeads';
+const SELECT_HELP: Record<SelectMode, string> = {
+  bar: 'A small bar with your colours appears under the text you select.',
+  quick: 'Text you select is highlighted at once in your colour. Nothing else opens.',
+  off: 'Selecting text works as on any web page. Highlights you made stay.',
+};
 const WIDTHS = [30, 36, 44]; // line width, in em of the body text
 const SAVE_AFTER = 2500;     // ms after scrolling stops
 
@@ -48,11 +58,23 @@ export function startReader() {
     root.style.setProperty('--rd-measure', `${(WIDTHS[prefs.width] ?? WIDTHS[1]) * px}px`);
     root.querySelectorAll<HTMLButtonElement>('[data-size]').forEach((b) => b.setAttribute('aria-checked', String(Number(b.dataset.size) === prefs.size)));
     root.querySelectorAll<HTMLButtonElement>('[data-width]').forEach((b) => b.setAttribute('aria-checked', String(Number(b.dataset.width) === prefs.width)));
+    root.querySelectorAll<HTMLButtonElement>('[data-select]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.select === prefs.select)));
+    root.querySelectorAll<HTMLButtonElement>('#rd-aa-panel [data-colour]').forEach((b) => b.setAttribute('aria-checked', String(Number(b.dataset.colour) === prefs.colour)));
+    root.querySelectorAll<HTMLButtonElement>('[data-opt]').forEach((b) => b.setAttribute('aria-checked', String(!!prefs[b.dataset.opt as BoolPref])));
+    root.querySelectorAll<HTMLButtonElement>('[data-aitask]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.aitask === prefs.aiTask)));
+    // The AI settings appear only once Copy for AI is switched on; its heading buttons only if that is chosen too.
+    document.getElementById('rd-aa-ai')!.hidden = !prefs.ai;
+    const heads = prefs.ai && prefs.aiHeads;
+    root.classList.toggle('ask-heads', heads);
+    root.querySelectorAll<HTMLElement>('[data-ask-sec]').forEach((b) => { b.hidden = !heads; });
+    const help = document.getElementById('rd-aa-help');
+    if (help) help.textContent = `${SELECT_HELP[prefs.select]} Keyboard: select text, then press H.`;
     sizePlaceholders();
   };
 
   // ---------------------------------------------------------------- lazy sections
   const loading = new Map<string, Promise<void>>();
+  let marks: HighlightApi | null = null; // highlights and notes, mounted below
 
   function sizePlaceholders() {
     const sample = root.querySelector<HTMLElement>('.rd-main')!;
@@ -81,6 +103,7 @@ export function startReader() {
         body.style.height = '';
         body.dataset.state = 'done';
         numberParagraphs(body);
+        marks?.sectionLoaded(id, body);
         restorePractice(body);
         // Correct now, in the same task as the change: a scroll event handled before the ResizeObserver
         // runs would otherwise take the shifted position as the new anchor.
@@ -282,11 +305,17 @@ export function startReader() {
     const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button');
     if (!b) return;
     const keep = current()?.loc;
-    if (b.dataset.size) prefs = { ...prefs, size: Number(b.dataset.size) };
-    if (b.dataset.width) prefs = { ...prefs, width: Number(b.dataset.width) };
+    let reflow = false;
+    if (b.dataset.size) { prefs = { ...prefs, size: Number(b.dataset.size) }; reflow = true; }
+    if (b.dataset.width) { prefs = { ...prefs, width: Number(b.dataset.width) }; reflow = true; }
+    if (b.dataset.select) prefs = { ...prefs, select: b.dataset.select as SelectMode };
+    if (b.dataset.colour) prefs = { ...prefs, colour: Number(b.dataset.colour) };
+    if (b.dataset.opt) { const k = b.dataset.opt as BoolPref; prefs = { ...prefs, [k]: !prefs[k] }; }
+    if (b.dataset.aitask) prefs = { ...prefs, aiTask: b.dataset.aitask as ReaderPrefs['aiTask'] };
     BookProgressStore.setPrefs(prefs);
     applyPrefs();
-    if (keep) void jumpTo(keep);
+    marks?.prefsChanged();
+    if (reflow && keep) void jumpTo(keep);
   });
   document.addEventListener('click', () => { if (!panel.hidden) { panel.hidden = true; aa.setAttribute('aria-expanded', 'false'); } });
 
@@ -358,7 +387,8 @@ export function startReader() {
       const ans = document.getElementById(rev.getAttribute('aria-controls')!)!;
       ans.hidden = !ans.hidden;
       rev.setAttribute('aria-expanded', String(!ans.hidden));
-      rev.textContent = ans.hidden ? 'Show worked answer' : 'Hide worked answer';
+      const word = rev.dataset.word ?? 'worked answer'; // a checkpoint's is a "model answer"
+      rev.textContent = `${ans.hidden ? 'Show' : 'Hide'} ${word}`;
       scheduleScrub();
       return;
     }
@@ -418,9 +448,41 @@ export function startReader() {
   new MutationObserver(() => root.querySelectorAll<HTMLElement>('dfn[data-g]:not([tabindex])').forEach((d) => { d.tabIndex = 0; d.setAttribute('role', 'button'); }))
     .observe(root, { childList: true, subtree: true });
 
+  // ---------------------------------------------------------------- § references (Statistics book)
+  // "§4.5.6" in the text links to that place. Jump there, and offer the way back: the reader keeps its own
+  // place, so the browser's Back button would not return you to the paragraph you were reading.
+  root.addEventListener('click', (e) => {
+    const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a.xref');
+    if (!a) return;
+    e.preventDefault();
+    // Back goes to the paragraph that holds the link, which is where the reader's eyes were.
+    const para = a.closest<HTMLElement>('[data-p]');
+    const home = a.closest<HTMLElement>('.rd-sec');
+    const from: Location | undefined = para && home ? { s: home.dataset.sec!, p: Number(para.dataset.p), f: 0 } : current()?.loc;
+    const num = a.dataset.num!;
+    const sid = a.dataset.sec!;
+    void (async () => {
+      await jumpTo({ s: sid, p: 0, f: 0 }, true);
+      const h = byId.get(sid)?.querySelector<HTMLElement>(`[data-num="${CSS.escape(num)}"]`);
+      if (h) {
+        window.scrollTo({ top: window.scrollY + h.getBoundingClientRect().top - topline(), behavior: 'instant' });
+        captureAnchor(h);
+      }
+      if (!from) return;
+      const toast = document.getElementById('rd-toast')!;
+      toast.innerHTML = `<p>Jumped to <b>§${escapeHtml(num)}</b>.</p>
+        <div><button type="button" data-go>Back to where you were</button><button type="button" data-stay>Stay here</button></div>`;
+      toast.hidden = false;
+      const hide = setTimeout(() => { toast.hidden = true; }, 15000);
+      toast.querySelector('[data-go]')!.addEventListener('click', () => { clearTimeout(hide); toast.hidden = true; void jumpTo(from); });
+      toast.querySelector('[data-stay]')!.addEventListener('click', () => { clearTimeout(hide); toast.hidden = true; });
+    })();
+  });
+
   // ---------------------------------------------------------------- your other devices
   // When the account copy arrives (sync.ts), bookmarks and practice marks from other devices appear here.
   store.subscribe(() => {
+    marks?.refresh();
     drawMarks();
     updateMarkButton(current()?.loc);
     root.querySelectorAll<HTMLElement>('.rd-body[data-state="done"]').forEach(restorePractice);
@@ -443,6 +505,49 @@ export function startReader() {
   const drawDue = () => { if (due) { const n = dueCount(store); due.textContent = n ? `${n} due` : ''; } };
   store.subscribe(drawDue);
   drawDue();
+
+  mountZoom(root);
+
+  // ---------------------------------------------------------------- highlights and notes
+  const notes = mountNotes({
+    panel: side.querySelector<HTMLElement>('.rd-notes')!,
+    highlights: () => store.highlights(),
+    api: () => marks!,
+    secs: byId,
+    book: { id: bookId, title: root.dataset.title!, version: root.dataset.version!, url: root.dataset.url!, licence: root.dataset.licence!, author: root.dataset.author! },
+    leave: () => { if (drawer()) setSide(false); },
+  });
+  // ---- Copy for AI: a question to paste into the reader's own assistant (ai.ts); needs no server
+  const toast = document.getElementById('rd-toast')!;
+  let toastTimer = 0;
+  const say = (html: string) => {
+    toast.innerHTML = `${html}<div><button type="button" data-stay>OK</button></div>`;
+    toast.hidden = false;
+    toast.querySelector('[data-stay]')!.addEventListener('click', () => { toast.hidden = true; });
+    clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(() => { toast.hidden = true; }, 9000);
+  };
+  const askAbout = (a: { sec: string; text?: string; note?: string }) => {
+    const s = byId.get(a.sec);
+    void askAi(prefs.aiTask, {
+      book: root.dataset.title!, series: root.dataset.series!, author: root.dataset.author!,
+      label: s?.dataset.label ?? '', title: s?.querySelector('h3 span:last-child')?.textContent?.trim() ?? '', text: a.text, note: a.note,
+    }, say);
+  };
+  root.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-ask-sec]');
+    if (b) askAbout({ sec: b.dataset.askSec! });
+  });
+  marks = mountHighlights({
+    root, store, secs: byId, topline,
+    ask: askAbout,
+    copy: (text) => { void copyText(text).then((ok) => say(ok ? '<p>Copied.</p>' : '<p>Could not copy. Select the text and copy it yourself.</p>')); },
+    getPrefs: () => prefs,
+    setPrefs: (patch) => { prefs = { ...prefs, ...patch }; BookProgressStore.setPrefs(prefs); applyPrefs(); },
+    jumpTo,
+    onChange: () => notes.draw(),
+  });
+  marks.refresh(); // the Notes tab lists highlights in sections that have not been loaded yet
 
   // ---------------------------------------------------------------- start
   applyPrefs();

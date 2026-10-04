@@ -262,3 +262,68 @@ test('series page: "Find a subject" lists All then every subject in planned orde
     }
   }
 });
+
+// ---------- Statistics book in the reader (scripts/books/statistics/export.py) ----------
+test('the Statistics book is exported whole and its links resolve', () => {
+  const base = join(DIST, 'doctors/books/statistics-first-principles-to-regression/read/');
+  assert.ok(existsSync(join(base, 'index.html')), 'reader page missing');
+  assert.ok(existsSync(join(base, 'review/index.html')), 'review page missing');
+  assert.match(readFileSync(join(DIST, 'doctors/books/statistics-first-principles-to-regression/index.html'), 'utf8'),
+    /href="\/doctors\/books\/statistics-first-principles-to-regression\/read\/"/, "the book's page does not offer Read online");
+  const dir = new URL('../src/data/books/statistics-first-principles-to-regression/', import.meta.url).pathname;
+  const book = JSON.parse(readFileSync(join(dir, 'book.json'), 'utf8'));
+  const sections = new Map();
+  for (const f of readdirSync(join(dir, 'sections'))) {
+    const s = JSON.parse(readFileSync(join(dir, 'sections', f), 'utf8'));
+    assert.equal(`${s.id}.json`, f);
+    sections.set(s.id, s);
+  }
+  const ids = book.outline.flatMap((p) => p.sections.map((s) => s.id));
+  assert.equal(new Set(ids).size, ids.length, 'a section id is used twice');
+  assert.deepEqual([...sections.keys()].sort(), [...ids].sort(), 'outline and section files differ');
+  assert.equal(ids.length, 157);
+  const checkpoints = [];
+  for (const [id, s] of sections) {
+    // A question's id is the section id plus -q<n>: a section id must never look like one (reader/store.ts sectionOf).
+    assert.doesNotMatch(id, /-[epkq]\d+$/, `${id} could be mistaken for a question id`);
+    assert.ok(existsSync(join(base, 'sections', `${id}.json`)), `${id} is not published`);
+    for (const b of s.blocks) {
+      if (b.t === 'figure') { assert.ok(b.alt && b.caption && b.w > 0 && b.h > 0, `${id}: a figure lacks alt, caption or size`); assert.match(b.src, /^[\w.-]+\.png$/); }
+      if (b.t === 'checkpoint') for (const q of b.questions) { checkpoints.push(`${id}-q${q.n}`); assert.ok(q.prompt && q.answer, `${id}: checkpoint ${b.id} has a question without an answer`); }
+      for (const h of [b.html, b.prompt, b.answer, b.caption, b.note]) {
+        for (const m of String(h ?? '').matchAll(/class="xref" href="#([\w-]+)" data-sec="([\w-]+)"/g)) assert.ok(ids.includes(m[2]) && m[1] === m[2], `${id}: a § link goes nowhere (${m[1]})`);
+      }
+    }
+  }
+  assert.equal(new Set(checkpoints).size, checkpoints.length, 'two checkpoint questions share an id');
+  assert.ok(checkpoints.length >= 200, `only ${checkpoints.length} checkpoint questions`);
+  // Every section reaches the reader's outline with its words counted.
+  for (const p of book.outline) for (const s of p.sections) assert.ok(s.words > 0 || sections.get(s.id).blocks.length === 0, `${s.id} has no words`);
+});
+
+test('every file the Statistics book reads with read.csv("data/...") is published, and the zip holds them all', () => {
+  const root = new URL('../src/data/books/statistics-first-principles-to-regression/', import.meta.url).pathname;
+  const base = join(DIST, 'doctors/books/statistics-first-principles-to-regression/data/');
+  assert.ok(existsSync(join(base, 'index.html')), 'datasets page missing');
+  const wanted = new Set();
+  for (const f of readdirSync(join(root, 'sections'))) {
+    for (const m of readFileSync(join(root, 'sections', f), 'utf8').matchAll(/data\/([\w.-]+\.csv)/g)) wanted.add(m[1]);
+  }
+  assert.ok(wanted.size >= 15, `only ${wanted.size} data files are read in the book`);
+  const listed = JSON.parse(readFileSync(join(root, 'datasets.json'), 'utf8'));
+  for (const name of wanted) {
+    assert.ok(existsSync(join(base, name)), `${name} is read by the book but not published`);
+    assert.ok(listed.some((d) => d.file === name), `${name} is not on the datasets page`);
+  }
+  for (const d of listed) {
+    const text = readFileSync(join(base, d.file), 'utf8');
+    assert.equal(text.trim().split('\n').length - 1, d.rows, `${d.file}: row count differs`);
+    assert.match(text, /^"?[\w.]+"?(,"?[\w.]+"?)*\r?\n/, `${d.file}: no header row`);
+  }
+  // The zip: a stored copy of every file, under data/, so that read.csv("data/<file>") works once unzipped.
+  const zip = readFileSync(join(base, 'statsbook-datasets.zip'));
+  assert.equal(zip.subarray(0, 2).toString(), 'PK');
+  for (const d of listed) assert.ok(zip.includes(Buffer.from(`data/${d.file}`)), `${d.file} is not in the zip`);
+  assert.ok(zip.includes(Buffer.from('data/README.txt')) && zip.includes(Buffer.from('data/make_data.R')));
+  assert.match(readFileSync(join(base, 'index.html'), 'utf8'), /synthetic teaching data/i);
+});

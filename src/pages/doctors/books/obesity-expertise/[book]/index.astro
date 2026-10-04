@@ -1,10 +1,7 @@
 ---
-// The book reader: one continuous page per book. Section headings and the outline are in the HTML; each
-// section's text is fetched as it nears the screen (sections/<id>.json), so a 150,000-word book opens fast.
-import '../../../../../styles/reader.css';
-import Base from '../../../../../layouts/Base.astro';
-import ModeBar from '../../../../../components/site/ModeBar.astro';
-import ThemeToggle from '../../../../../components/ThemeToggle.astro';
+// An Obesity Expertise book in the reader (src/components/books/BookReader.astro). This page says what is
+// particular to the series: the generated cover, "Book N", the link back to the series.
+import BookReader from '../../../../../components/books/BookReader.astro';
 import Cover from '../../../../../components/books/Cover.astro';
 import { obesityBooks, figureBase, SERIES_URL } from '../../../../../lib/obesity-books';
 import { SITE } from '../../../../../consts';
@@ -28,124 +25,13 @@ const jsonld = [{
   isPartOf: { '@type': 'BookSeries', name: book.series, url: `${SITE.url}${SERIES_URL}` },
   encoding: { '@type': 'MediaObject', contentUrl: book.pdf, encodingFormat: 'application/pdf' },
 }];
-const sizes = [15, 16.5, 18, 19.5, 21.5];
+const end = `<p>End of ${label}. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">${book.licence}</a></p>
+        <p><a href="${SERIES_URL}">All books in the series</a> · <a href="${book.pdf}" download>Download the PDF</a> · <a href="/disclaimer/">Disclaimer</a> · <a href="/support/">Support</a></p>`;
 ---
-<Base title={`${label} · ${name}`} description={description} jsonld={jsonld} chrome="app">
-  <link slot="head" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <ModeBar mode="doctors" />
-  <div class="rd" id="rd" data-book={book.id} data-version={book.version} data-words={book.words}
-    data-sections={`${book.url}sections/`} data-figures={figureBase(book)} style={`--hue:${book.hue}`}>
-
-    <header class="rd-bar">
-      <button type="button" class="rd-ico rd-menu" aria-controls="rd-side" aria-expanded="false" aria-label="Contents and bookmarks">
-        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
-      </button>
-      <a class="rd-back" href={SERIES_URL} aria-label="All books in the series">←</a>
-      <div class="rd-titles">
-        <span class="rd-book"><span class="full">{label} · {name}{rung && ` · Rung ${rung}`}</span><span class="short">{label}</span></span>
-        <span class="rd-where" id="rd-where" aria-live="polite"></span>
-      </div>
-      <span class="mode-badge">For Doctors</span>
-      <button type="button" class="rd-ico" id="rd-mark" aria-pressed="false" aria-label="Bookmark this place">
-        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/></svg>
-      </button>
-      <button type="button" class="rd-ico rd-aa" id="rd-aa" aria-controls="rd-aa-panel" aria-expanded="false" aria-label="Text size and line width">Aa</button>
-      <ThemeToggle />
-      <span class="rd-me" id="rd-me"></span>
-    </header>
-
-    <div class="rd-aa-panel" id="rd-aa-panel" hidden>
-      <div class="rd-aa-row"><span>Text size</span>
-        <div class="rd-seg" role="radiogroup" aria-label="Text size">
-          {sizes.map((px, i) => <button type="button" role="radio" data-size={i} style={`font-size:${11 + i * 2}px`} aria-label={`Text size ${i + 1} of ${sizes.length}`}>A</button>)}
-        </div></div>
-      <div class="rd-aa-row"><span>Line width</span>
-        <div class="rd-seg" role="radiogroup" aria-label="Line width">
-          {['Narrow', 'Medium', 'Wide'].map((w, i) => <button type="button" role="radio" data-width={i}>{w}</button>)}
-        </div></div>
-    </div>
-
-    <aside class="rd-side" id="rd-side" aria-label="Contents">
-      <div class="rd-side-tabs" role="tablist">
-        <button type="button" role="tab" aria-selected="true" data-tab="toc">Contents</button>
-        <button type="button" role="tab" aria-selected="false" data-tab="marks">Bookmarks</button>
-      </div>
-      <nav class="rd-toc" data-panel="toc">
-        <a class="rd-toc-top" href="#top">About this book</a>
-        <a class="rd-toc-top rd-review-link" href={`${book.url}review/`}>Review <span class="rd-due" id="rd-due"></span></a>
-        {book.outline.map((p) => (
-          <div class="rd-toc-part">
-            {book.outline.length > 1 && <p class="rd-toc-ph">{p.title}</p>}
-            <ol>
-              {p.sections.map((s) => <li><a href={`#${s.id}`} data-sec={s.id}><span class="n">{s.label}</span><span class="t" set:html={s.title} /></a></li>)}
-            </ol>
-          </div>
-        ))}
-      </nav>
-      <div class="rd-marks" data-panel="marks" hidden><p class="rd-empty">No bookmarks yet. Tap the bookmark at the top to keep your place.</p><ol></ol></div>
-    </aside>
-    <div class="rd-scrim" hidden></div>
-
-    <main class="rd-main" id="top">
-      <header class="rd-front">
-        <Cover hue={book.hue} number={book.number} title={book.title} level={book.level} size="lg" />
-        <div>
-          <p class="rd-eyebrow"><a href={SERIES_URL}>{book.series}</a> · {label}</p>
-          <h1>{name}{rung && <span class="rd-rung">Rung {rung}{book.level && ` · ${book.level}`}</span>}</h1>
-          {book.subtitle && <p class="rd-sub">{book.subtitle}</p>}
-          <p class="rd-meta">{book.author} · Version {book.version} · updated {date} · {book.licence}</p>
-          <p class="rd-resume" id="rd-resume" hidden></p>
-          <a class="btn btn-primary" href={book.pdf} download rel="noopener">Download the PDF <span aria-hidden="true">↓</span></a>
-        </div>
-      </header>
-      <section class="rd-about">
-        <h2>Why this book</h2><div set:html={book.about.why} />
-        <h2>How to read it</h2><div set:html={book.about.howToRead} />
-        {book.about.prerequisites && <><h2>Before you start</h2><div set:html={book.about.prerequisites} /></>}
-        <noscript><p>The reader loads each section as you reach it, which needs JavaScript. The <a href={book.pdf}>PDF</a> has the whole book.</p></noscript>
-      </section>
-
-      {book.outline.map((p) => {
-        const refs = book.references.find((r) => r.part === p.id || (book.outline.length === 1 && r.part === ''));
-        return (
-          <>
-            {book.outline.length > 1 && <h2 class="rd-part" id={`part-${p.id.toLowerCase()}`}>{p.title}</h2>}
-            {p.sections.map((s) => (
-              <section class="rd-sec" id={s.id} data-sec={s.id} data-words={s.words} data-label={s.label} data-part={p.id}>
-                <h3><span class="n">{s.label}</span> <span set:html={s.title} /></h3>
-                <div class="rd-body" data-state="empty"></div>
-              </section>
-            ))}
-            {refs && (
-              <section class="rd-refs" id={`refs-${(p.id || 'all').toLowerCase()}`} data-part={p.id}>
-                <h3>References{book.outline.length > 1 && ` · Part ${p.id}`}</h3>
-                <ol>{refs.items.map((r) => <li value={r.n} id={`ref-${(p.id || 'all').toLowerCase()}-${r.n}`} set:html={r.html} />)}</ol>
-                {refs.note && <p class="rd-note" set:html={refs.note} />}
-              </section>
-            )}
-          </>
-        );
-      })}
-
-      <footer class="rd-end">
-        <p>End of {label}. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">{book.licence}</a></p>
-        <p><a href={SERIES_URL}>All books in the series</a> · <a href={book.pdf} download>Download the PDF</a> · <a href="/disclaimer/">Disclaimer</a> · <a href="/support/">Support</a></p>
-      </footer>
-    </main>
-
-    <div class="rd-scrub" id="rd-scrub" aria-hidden="true">
-      <div class="rd-track"></div>
-      <div class="rd-ticks"></div>
-      <div class="rd-thumb"></div>
-      <div class="rd-scrub-label" hidden></div>
-    </div>
-    <div class="rd-toast" id="rd-toast" role="status" hidden></div>
-    <div class="rd-pop" id="rd-pop" role="dialog" aria-modal="false" hidden><button type="button" class="rd-pop-x" aria-label="Close">×</button><div class="rd-pop-body"></div></div>
-  </div>
-  <script id="rd-data" type="application/json" set:html={JSON.stringify({ outline: book.outline, references: book.references, glossary: book.glossary, sizes })} />
-</Base>
-
-<script>
-  import { startReader } from '../../../../../reader/reader';
-  startReader();
-</script>
+<BookReader book={book} title={`${label} · ${name}`} description={description} jsonld={jsonld} figures={figureBase(book)} date={date}
+  eyebrow={`<a href="${SERIES_URL}">${book.series}</a> · ${label}`} heading={name}
+  headingNote={rung ? `Rung ${rung}${book.level ? ` · ${book.level}` : ''}` : undefined}
+  barFull={`${label} · ${name}${rung ? ` · Rung ${rung}` : ''}`} barShort={label}
+  backHref={SERIES_URL} backLabel="All books in the series" end={end}>
+  <Cover slot="cover" hue={book.hue} number={book.number} title={book.title} level={book.level} size="lg" />
+</BookReader>
