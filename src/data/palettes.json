@@ -1,0 +1,290 @@
+[
+ {
+  "id": "red",
+  "n": 1,
+  "name": "Red",
+  "hue": 0,
+  "ld": 56,
+  "ll": 43
+ },
+ {
+  "id": "scarlet",
+  "n": 2,
+  "name": "Scarlet",
+  "hue": 10,
+  "ld": 56,
+  "ll": 41
+ },
+ {
+  "id": "vermilion",
+  "n": 3,
+  "name": "Vermilion",
+  "hue": 20,
+  "ld": 56,
+  "ll": 38
+ },
+ {
+  "id": "orange",
+  "n": 4,
+  "name": "Orange",
+  "hue": 30,
+  "ld": 56,
+  "ll": 35
+ },
+ {
+  "id": "amber",
+  "n": 5,
+  "name": "Amber",
+  "hue": 40,
+  "ld": 56,
+  "ll": 31
+ },
+ {
+  "id": "gold",
+  "n": 6,
+  "name": "Gold",
+  "hue": 50,
+  "ld": 56,
+  "ll": 27
+ },
+ {
+  "id": "yellow",
+  "n": 7,
+  "name": "Yellow",
+  "hue": 60,
+  "ld": 56,
+  "ll": 24
+ },
+ {
+  "id": "citron",
+  "n": 8,
+  "name": "Citron",
+  "hue": 70,
+  "ld": 56,
+  "ll": 25
+ },
+ {
+  "id": "chartreuse",
+  "n": 9,
+  "name": "Chartreuse",
+  "hue": 80,
+  "ld": 56,
+  "ll": 25
+ },
+ {
+  "id": "lime",
+  "n": 10,
+  "name": "Lime",
+  "hue": 90,
+  "ld": 56,
+  "ll": 26
+ },
+ {
+  "id": "fern",
+  "n": 11,
+  "name": "Fern",
+  "hue": 100,
+  "ld": 56,
+  "ll": 26
+ },
+ {
+  "id": "green",
+  "n": 12,
+  "name": "Green",
+  "hue": 110,
+  "ld": 56,
+  "ll": 27
+ },
+ {
+  "id": "emerald",
+  "n": 13,
+  "name": "Emerald",
+  "hue": 120,
+  "ld": 56,
+  "ll": 27
+ },
+ {
+  "id": "jade",
+  "n": 14,
+  "name": "Jade",
+  "hue": 130,
+  "ld": 56,
+  "ll": 27
+ },
+ {
+  "id": "mint",
+  "n": 15,
+  "name": "Mint",
+  "hue": 140,
+  "ld": 56,
+  "ll": 27
+ },
+ {
+  "id": "sea",
+  "n": 16,
+  "name": "Sea",
+  "hue": 150,
+  "ld": 56,
+  "ll": 27
+ },
+ {
+  "id": "turquoise",
+  "n": 17,
+  "name": "Turquoise",
+  "hue": 160,
+  "ld": 56,
+  "ll": 26
+ },
+ {
+  "id": "teal",
+  "n": 18,
+  "name": "Teal",
+  "hue": 170,
+  "ld": 56,
+  "ll": 26
+ },
+ {
+  "id": "aqua",
+  "n": 19,
+  "name": "Aqua",
+  "hue": 180,
+  "ld": 56,
+  "ll": 26
+ },
+ {
+  "id": "cyan",
+  "n": 20,
+  "name": "Cyan",
+  "hue": 190,
+  "ld": 56,
+  "ll": 30
+ },
+ {
+  "id": "sky",
+  "n": 21,
+  "name": "Sky",
+  "hue": 200,
+  "ld": 56,
+  "ll": 35
+ },
+ {
+  "id": "azure",
+  "n": 22,
+  "name": "Azure",
+  "hue": 210,
+  "ld": 56,
+  "ll": 41
+ },
+ {
+  "id": "cobalt",
+  "n": 23,
+  "name": "Cobalt",
+  "hue": 220,
+  "ld": 58,
+  "ll": 46
+ },
+ {
+  "id": "ion",
+  "n": 24,
+  "name": "Ion",
+  "hue": 230,
+  "ld": 65,
+  "ll": 46
+ },
+ {
+  "id": "blue",
+  "n": 25,
+  "name": "Blue",
+  "hue": 240,
+  "ld": 70,
+  "ll": 46
+ },
+ {
+  "id": "indigo",
+  "n": 26,
+  "name": "Indigo",
+  "hue": 250,
+  "ld": 68,
+  "ll": 46
+ },
+ {
+  "id": "violet",
+  "n": 27,
+  "name": "Violet",
+  "hue": 260,
+  "ld": 66,
+  "ll": 46
+ },
+ {
+  "id": "purple",
+  "n": 28,
+  "name": "Purple",
+  "hue": 270,
+  "ld": 64,
+  "ll": 46
+ },
+ {
+  "id": "amethyst",
+  "n": 29,
+  "name": "Amethyst",
+  "hue": 280,
+  "ld": 60,
+  "ll": 46
+ },
+ {
+  "id": "orchid",
+  "n": 30,
+  "name": "Orchid",
+  "hue": 290,
+  "ld": 56,
+  "ll": 43
+ },
+ {
+  "id": "magenta",
+  "n": 31,
+  "name": "Magenta",
+  "hue": 300,
+  "ld": 56,
+  "ll": 39
+ },
+ {
+  "id": "fuchsia",
+  "n": 32,
+  "name": "Fuchsia",
+  "hue": 310,
+  "ld": 56,
+  "ll": 40
+ },
+ {
+  "id": "pink",
+  "n": 33,
+  "name": "Pink",
+  "hue": 320,
+  "ld": 56,
+  "ll": 41
+ },
+ {
+  "id": "rose",
+  "n": 34,
+  "name": "Rose",
+  "hue": 330,
+  "ld": 56,
+  "ll": 42
+ },
+ {
+  "id": "raspberry",
+  "n": 35,
+  "name": "Raspberry",
+  "hue": 340,
+  "ld": 56,
+  "ll": 43
+ },
+ {
+  "id": "ruby",
+  "n": 36,
+  "name": "Ruby",
+  "hue": 350,
+  "ld": 56,
+  "ll": 43
+ }
+]

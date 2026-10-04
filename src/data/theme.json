@@ -1,0 +1,10 @@
+{
+  "_help": "Admin settings for the site's colour. Ask Claude to change them. Colours are the 36 ids in palettes.json (one per 10 degrees of the colour wheel). schedule: fixed = always 'fixed'; weekly or monthly = go round the 'rotation' list of that audience, one step per week or month, counting from 'start' (use a Monday for weekly, the 1st for monthly). Dates change at midnight India time.",
+  "schedule": "fixed",
+  "start": "2026-10-01",
+  "fixed": { "everyone": "cyan", "doctors": "violet" },
+  "rotation": {
+    "everyone": ["cyan", "jade", "orchid", "azure", "vermilion", "teal", "gold", "indigo", "rose", "emerald", "sky", "magenta"],
+    "doctors": ["violet", "cobalt", "amber", "turquoise", "raspberry", "ion", "lime", "pink", "aqua", "purple", "orange", "green"]
+  }
+}

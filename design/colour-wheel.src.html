@@ -1,0 +1,182 @@
+<title>Colour Wheel</title>
+<style>
+/* Admin tool: pick the site colour for each audience from 36 colours (one every 10 degrees), fixed or going round a list weekly or monthly.
+   It only shows a preview and writes out the settings to send to Claude; it changes nothing by itself. */
+:root { --bg:#f4f5f9; --card:#fff; --card2:#eef0f6; --ink:#0b0e17; --ink2:#434b61; --ink3:#5b647c; --line:#d6dbe8; --focus:#2547e0; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#06080d; --card:#0d1119; --card2:#131925; --ink:#eef1f8; --ink2:#a9b2c8; --ink3:#8a94ac; --line:#1f2738; --focus:#8fa5ff; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg:#06080d; --card:#0d1119; --card2:#131925; --ink:#eef1f8; --ink2:#a9b2c8; --ink3:#8a94ac; --line:#1f2738; --focus:#8fa5ff; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; padding-inline: 16px; }
+.w { max-width: 1120px; margin: 0 auto; padding-block: 2rem 4rem; }
+h1 { margin: .2rem 0 .4rem; font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -.02em; line-height: 1.1; }
+h2 { margin: 0 0 .7rem; font-size: 1.05rem; }
+.k { font: 500 .72rem/1 ui-monospace, Menlo, monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--ink3); }
+.lede { color: var(--ink2); max-width: 70ch; margin: 0 0 1.4rem; }
+.top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.seg { display: inline-flex; padding: 3px; gap: 2px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
+.seg button { border: 0; background: none; padding: .55rem 1rem; border-radius: 999px; font-weight: 600; font-size: .9rem; color: var(--ink2); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 1.2rem; min-width: 0; }
+.wheelbox { display: grid; place-items: center; }
+svg.wheel { width: min(100%, 440px); height: auto; display: block; }
+.sw { cursor: pointer; }
+.sw circle.f { stroke: var(--card); stroke-width: 1.5; transition: transform .15s; transform-box: fill-box; transform-origin: center; }
+.sw:hover circle.f { transform: scale(1.12); }
+.sw text { font: 700 11px ui-monospace, Menlo, monospace; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.sw .sel { fill: none; stroke: var(--ink); stroke-width: 3; }
+.sw .rot { fill: none; stroke: var(--ink); stroke-width: 2; stroke-dasharray: 3 3; }
+.ctr text { text-anchor: middle; fill: var(--ink); }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: .8rem 0; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0 .2rem; }
+.chip { display: inline-flex; align-items: center; gap: .35rem; padding: .25rem .3rem .25rem .25rem; border: 1px solid var(--line); border-radius: 999px; background: var(--card2); font-size: .82rem; }
+.chip i { width: 20px; height: 20px; border-radius: 50%; display: inline-block; }
+.chip button { border: 0; background: none; padding: 0 .3rem; color: var(--ink3); font-size: .95rem; line-height: 1; }
+.chip button:hover { color: var(--ink); }
+.btn { border: 1px solid var(--line); background: var(--card2); border-radius: 10px; padding: .5rem .8rem; font-size: .85rem; font-weight: 600; }
+.btn.p { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+input[type=date] { font: inherit; color: var(--ink); background: var(--card2); border: 1px solid var(--line); border-radius: 10px; padding: .45rem .6rem; }
+.note { font-size: .84rem; color: var(--ink2); }
+.prevs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1rem; margin-top: 1.2rem; }
+/* the miniature of the site, drawn with the same colour formulas as the site */
+.pv { --h: 190; --ld: 56%; --ll: 30%; border-radius: 18px; padding: 1rem; border: 1px solid var(--line); background: var(--pbg); color: var(--pink); position: relative; overflow: hidden; isolation: isolate; }
+.pv[data-t="dark"] { --pbg:#050608; --pcard:#0c0e13; --pink:#f3f5f9; --pink2:#a3abba; --pline:#1c2029; --brand: hsl(var(--h) 92% var(--ld)); --bink:#04070c; --txt: hsl(var(--h) 100% 78%); --soft: hsl(var(--h) 55% 16%); --beam: hsl(var(--h) 50% 68% / .6); }
+.pv[data-t="light"] { --pbg:#f5f6fa; --pcard:#ffffff; --pink:#0a0d14; --pink2:#434c61; --pline:#e0e4ee; --brand: hsl(var(--h) 80% var(--ll)); --bink:#ffffff; --txt: hsl(var(--h) 80% var(--ll)); --soft: hsl(var(--h) 100% 94%); --beam: hsl(var(--h) 70% 74% / .5); }
+.pv::before { content: ""; position: absolute; z-index: -1; top: -40%; left: -20%; width: 90%; height: 120%; background: linear-gradient(112deg, var(--beam), transparent 50%); filter: blur(28px); }
+.pv .nav { display: flex; align-items: center; gap: .5rem; padding: .35rem .5rem; border-radius: 999px; border: 1px solid var(--pline); background: color-mix(in oklab, var(--pcard) 70%, transparent); font-size: .8rem; }
+.pv .dot { width: 24px; height: 24px; border-radius: 50%; background: var(--brand); display: inline-block; }
+.pv .badge { margin-left: auto; padding: .12rem .4rem; background: var(--brand); color: var(--bink); font: 700 .62rem/1.4 ui-monospace, monospace; letter-spacing: .08em; }
+.pv h3 { margin: 1rem 0 .4rem; font-size: 1.4rem; font-weight: 400; line-height: 1.12; letter-spacing: -.02em; }
+.pv h3 em { font-style: normal; color: var(--txt); }
+.pv p { margin: 0 0 .8rem; font-size: .84rem; color: var(--pink2); }
+.pv .pill { display: inline-block; padding: .5rem .9rem; border-radius: 999px; background: var(--pink); color: var(--pbg); font-weight: 600; font-size: .82rem; }
+.pv .fill { display: inline-block; padding: .5rem .9rem; border-radius: 999px; background: var(--brand); color: var(--bink); font-weight: 600; font-size: .82rem; margin-left: .4rem; }
+.pv .soft { display: inline-block; margin-top: .8rem; padding: .3rem .6rem; border-radius: 8px; background: var(--soft); color: var(--txt); font-size: .78rem; font-weight: 600; }
+.pv .lnk { color: var(--txt); text-decoration: underline; text-underline-offset: 3px; font-size: .82rem; margin-left: .6rem; }
+.pv .meta { margin-top: .8rem; font: 500 .68rem/1.4 ui-monospace, monospace; color: var(--pink2); }
+pre { margin: .5rem 0 0; padding: .9rem; border-radius: 12px; background: var(--card2); border: 1px solid var(--line); font: 12.5px/1.5 ui-monospace, Menlo, monospace; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 300px; overflow: auto; }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+</style>
+<div class="w">
+  <div class="top"><div><span class="k">Admin only · not on the website</span><h1>Colour wheel</h1></div>
+    <div class="seg" role="group" aria-label="Preview theme"><button type="button" data-th="dark" aria-pressed="true">Dark</button><button type="button" data-th="light" aria-pressed="false">Light</button></div></div>
+  <p class="lede">36 colours, one every 10° around the wheel. Choose the colour of each audience, then either keep it fixed or let it go round a list every week or month. The two previews show the real look. When you are happy, copy the settings at the bottom and send them to me; I apply them to the site.</p>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="row" style="margin-top:0"><div class="seg" role="group" aria-label="Which audience you are choosing for"><button type="button" data-aud="everyone" aria-pressed="true">For Everyone</button><button type="button" data-aud="doctors" aria-pressed="false">For Doctors</button></div></div>
+      <div class="wheelbox"><svg class="wheel" id="wheel" viewBox="0 0 460 460" role="group" aria-label="36 colours"></svg></div>
+    </div>
+    <div class="panel">
+      <h2>How the colour changes</h2>
+      <div class="seg" role="group" aria-label="Schedule" id="sched"><button type="button" data-s="fixed">Fixed</button><button type="button" data-s="weekly">Weekly</button><button type="button" data-s="monthly">Monthly</button></div>
+      <p class="note" id="schednote" style="margin:.7rem 0 0"></p>
+      <div id="fixedbox"></div>
+      <div id="rotbox"></div>
+    </div>
+  </div>
+
+  <div class="prevs" id="prevs"></div>
+
+  <div class="panel" style="margin-top:1.2rem">
+    <h2>Settings to send me</h2>
+    <p class="note" style="margin:0 0 .5rem">Copy this and paste it in our chat. Nothing is changed until I apply it.</p>
+    <div class="row" style="margin-top:0"><button class="btn p" type="button" id="copy">Copy settings</button><span class="note" id="copied" role="status"></span></div>
+    <pre id="out"></pre>
+  </div>
+</div>
+<script>
+(function () {
+  var P = /*PALETTES*/[], T0 = /*THEME*/{};
+  var $ = function (id) { return document.getElementById(id); }, root = document.documentElement;
+  var S = { aud: 'everyone', th: matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark', schedule: T0.schedule, start: T0.start, fixed: JSON.parse(JSON.stringify(T0.fixed)), rotation: JSON.parse(JSON.stringify(T0.rotation)) };
+  try { var sv = JSON.parse(localStorage.getItem('wheel:v1') || 'null'); if (sv && sv.fixed) { S.schedule = sv.schedule; S.start = sv.start; S.fixed = sv.fixed; S.rotation = sv.rotation; } } catch (e) {}
+  function save() { try { localStorage.setItem('wheel:v1', JSON.stringify({ schedule: S.schedule, start: S.start, fixed: S.fixed, rotation: S.rotation })); } catch (e) {} }
+  var byId = {}; P.forEach(function (p) { byId[p.id] = p; });
+  var LABEL = { everyone: 'For Everyone', doctors: 'For Doctors' };
+  function fill(p) { return S.th === 'dark' ? 'hsl(' + p.hue + ',92%,' + p.ld + '%)' : 'hsl(' + p.hue + ',80%,' + p.ll + '%)'; }
+  function ink() { return S.th === 'dark' ? '#04070c' : '#ffffff'; }
+  function current(aud) { if (S.schedule === 'fixed') return byId[S.fixed[aud]]; var l = S.rotation[aud]; return byId[l[0]] || byId[S.fixed[aud]]; }
+
+  function wheel() {
+    var svg = $('wheel'), cx = 230, cy = 230, R = 196, h = '';
+    P.forEach(function (p, i) {
+      var a = (i * 10 - 90) * Math.PI / 180, x = cx + R * Math.cos(a), y = cy + R * Math.sin(a);
+      var isFixed = S.fixed[S.aud] === p.id, inRot = S.schedule !== 'fixed' && S.rotation[S.aud].indexOf(p.id) >= 0;
+      h += '<g class="sw" data-id="' + p.id + '" tabindex="0" role="button" aria-label="' + p.n + ' ' + p.name + (isFixed || inRot ? ', chosen' : '') + '">' +
+        '<circle class="f" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="16.5" fill="' + fill(p) + '"/>' +
+        '<text x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" fill="' + ink() + '">' + p.n + '</text>' +
+        (S.schedule === 'fixed' && isFixed ? '<circle class="sel" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="21.5"/>' : '') +
+        (inRot ? '<circle class="rot" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="21.5"/>' : '') + '</g>';
+    });
+    var c = current(S.aud);
+    h += '<g class="ctr"><circle cx="230" cy="230" r="108" fill="' + fill(c) + '" opacity=".95"/><text x="230" y="214" font-size="12" fill="' + ink() + '" style="font-family:ui-monospace,monospace;letter-spacing:.1em">' + LABEL[S.aud].toUpperCase() + '</text><text x="230" y="244" font-size="28" font-weight="600" fill="' + ink() + '">' + c.name + '</text><text x="230" y="268" font-size="12" fill="' + ink() + '" style="font-family:ui-monospace,monospace">' + c.n + ' of 36 · ' + c.hue + '°</text></g>';
+    svg.innerHTML = h;
+  }
+  function chips(aud) { return S.rotation[aud].map(function (id, i) { var p = byId[id]; return '<span class="chip"><i style="background:' + fill(p) + '"></i>' + (i + 1) + '. ' + p.name + '<button type="button" data-mv="-1" data-i="' + i + '" aria-label="Move earlier">‹</button><button type="button" data-mv="1" data-i="' + i + '" aria-label="Move later">›</button><button type="button" data-rm="' + i + '" aria-label="Remove ' + p.name + '">×</button></span>'; }).join(''); }
+  function panel() {
+    document.querySelectorAll('#sched button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.s === S.schedule)); });
+    var c = byId[S.fixed[S.aud]];
+    $('schednote').textContent = S.schedule === 'fixed' ? 'The colour stays the same until you change it.' : 'The colour moves one step along the list each ' + (S.schedule === 'weekly' ? 'week (start on a Monday)' : 'month (start on the 1st)') + ', and goes back to the first at the end. Dates change at midnight India time.';
+    $('fixedbox').innerHTML = S.schedule === 'fixed' ? '<p style="margin:.9rem 0 0"><b>' + LABEL[S.aud] + ':</b> ' + c.n + ' ' + c.name + '. Tap another colour on the wheel to change it.</p>' : '';
+    if (S.schedule === 'fixed') { $('rotbox').innerHTML = ''; return; }
+    $('rotbox').innerHTML = '<div class="row"><label for="start" class="note">Start date</label><input type="date" id="start" value="' + S.start + '"></div>' +
+      '<p style="margin:.4rem 0 0"><b>' + LABEL[S.aud] + ' list</b> <span class="note">(tap colours on the wheel to add them; first is used from the start date)</span></p><div class="chips">' + (chips(S.aud) || '<span class="note">Empty: tap colours on the wheel.</span>') + '</div>' +
+      '<div class="row"><button class="btn" type="button" id="twelve">Fill with 12 spaced colours from this one</button><button class="btn" type="button" id="clear">Clear list</button></div>' +
+      '<p class="note" style="margin:.2rem 0 0">Keep the two audiences on different colours at every step.</p>';
+  }
+  function now(aud) { return current(aud); }
+  function previews() {
+    $('prevs').innerHTML = ['everyone', 'doctors'].map(function (a) {
+      var p = now(a);
+      return '<div><span class="k">' + LABEL[a] + ' · ' + (S.schedule === 'fixed' ? 'fixed' : 'first colour in the list') + '</span><div class="pv" data-t="' + S.th + '" style="--h:' + p.hue + ';--ld:' + p.ld + '%;--ll:' + p.ll + '%;margin-top:.4rem">' +
+        '<div class="nav"><span class="dot"></span><b style="font-weight:500">Dr. Harsh Maheshwari</b>' + (a === 'doctors' ? '<span class="badge">FOR DOCTORS</span>' : '') + '</div>' +
+        '<h3>' + (a === 'doctors' ? 'Evidence, trainers and tools for <em>clinical practice</em>.' : 'Reversing obesity in India, <em>one clear idea</em> at a time.') + '</h3>' +
+        '<p>' + (a === 'doctors' ? 'Evidence syntheses, trainers on real recordings and free books.' : 'Guides, tools and free books that families and doctors can use.') + '</p>' +
+        '<span class="pill">' + (a === 'doctors' ? 'Open the trainer' : 'Check your BMI &amp; waist') + '</span><span class="fill">Free PDF</span><span class="lnk">Read more</span><br><span class="soft">Obesity basics</span>' +
+        '<div class="meta">' + p.n + ' ' + p.name + ' · ' + p.hue + '°</div></div></div>';
+    }).join('');
+  }
+  function out() {
+    var lines = ['Colours for drharshmaheshwari.com', 'Schedule: ' + S.schedule + (S.schedule === 'fixed' ? '' : ', starting ' + S.start)];
+    ['everyone', 'doctors'].forEach(function (a) { lines.push(LABEL[a] + ': ' + (S.schedule === 'fixed' ? byId[S.fixed[a]].n + ' ' + byId[S.fixed[a]].name : S.rotation[a].map(function (id) { return byId[id].n + ' ' + byId[id].name; }).join(', '))); });
+    var cfg = { schedule: S.schedule, start: S.start, fixed: S.fixed, rotation: S.rotation };
+    var clash = []; var n = Math.max(S.rotation.everyone.length, S.rotation.doctors.length) * 2;
+    if (S.schedule !== 'fixed') for (var i = 0; i < n; i++) { var e = S.rotation.everyone[i % S.rotation.everyone.length], d = S.rotation.doctors[i % S.rotation.doctors.length]; if (e && e === d && clash.indexOf(e) < 0) clash.push(e); }
+    if (S.schedule === 'fixed' && S.fixed.everyone === S.fixed.doctors) clash.push(S.fixed.everyone);
+    if (clash.length) lines.push('', 'Note: both audiences get the same colour at some step (' + clash.join(', ') + '). Please change one.');
+    $('out').textContent = lines.join('\n') + '\n\n' + JSON.stringify(cfg, null, 2);
+  }
+  function render() { wheel(); panel(); previews(); out(); save(); document.querySelectorAll('[data-aud]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.aud === S.aud)); }); document.querySelectorAll('[data-th]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.th === S.th)); }); }
+  function pick(id) {
+    if (S.schedule === 'fixed') S.fixed[S.aud] = id;
+    else { var l = S.rotation[S.aud], k = l.indexOf(id); if (k >= 0) l.splice(k, 1); else l.push(id); }
+    render();
+  }
+  $('wheel').addEventListener('click', function (e) { var g = e.target.closest('.sw'); if (g) pick(g.dataset.id); });
+  $('wheel').addEventListener('keydown', function (e) { if ((e.key === 'Enter' || e.key === ' ') && e.target.closest('.sw')) { e.preventDefault(); pick(e.target.closest('.sw').dataset.id); } });
+  $('sched').addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; S.schedule = b.dataset.s; if (S.schedule !== 'fixed') { ['everyone', 'doctors'].forEach(function (a) { if (!S.rotation[a].length) S.rotation[a] = [S.fixed[a]]; }); S.start = S.schedule === 'weekly' ? nextMonday() : firstOfMonth(); } render(); });
+  function iso(d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function firstOfMonth() { var d = new Date(); return iso(new Date(d.getFullYear(), d.getMonth(), 1)); }
+  function nextMonday() { var d = new Date(); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return iso(d); }
+  $('rotbox').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return; var l = S.rotation[S.aud];
+    if (b.dataset.rm) l.splice(+b.dataset.rm, 1);
+    else if (b.dataset.mv) { var i = +b.dataset.i, j = i + +b.dataset.mv; if (j >= 0 && j < l.length) { var t = l[i]; l[i] = l[j]; l[j] = t; } }
+    else if (b.id === 'clear') S.rotation[S.aud] = [];
+    else if (b.id === 'twelve') { var c = byId[S.fixed[S.aud]] || P[0], base = c.n - 1; S.rotation[S.aud] = Array.from({ length: 12 }, function (_, k) { return P[(base + k * 3) % 36].id; }); }
+    render();
+  });
+  $('rotbox').addEventListener('change', function (e) { if (e.target.id === 'start' && e.target.value) { S.start = e.target.value; render(); } });
+  document.querySelectorAll('[data-aud]').forEach(function (b) { b.addEventListener('click', function () { S.aud = b.dataset.aud; render(); }); });
+  document.querySelectorAll('[data-th]').forEach(function (b) { b.addEventListener('click', function () { S.th = b.dataset.th; render(); }); });
+  $('copy').addEventListener('click', function () {
+    var t = $('out').textContent, done = function (ok) { $('copied').textContent = ok ? 'Copied. Paste it in the chat.' : 'Select the text below and copy it.'; };
+    try { navigator.clipboard.writeText(t).then(function () { done(true); }, function () { sel(); done(false); }); } catch (e) { sel(); done(false); }
+    function sel() { var r = document.createRange(); r.selectNodeContents($('out')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  });
+  render();
+})();
+</script>
