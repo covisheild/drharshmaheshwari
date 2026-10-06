@@ -19,7 +19,7 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 - **Moved URLs get a 301 in `public/_redirects`; never delete a line there.** `tests/site.test.mjs` lists every URL
   production has served and fails if one breaks.
 
-- **Back button** (`.back-btn` in `SiteHeader.astro`, logic in `Base.astro`, `src/lib/back.ts`): a translucent glass circle with a left arrow (no text), fixed just under the photo, on every page with the site header except `/`. Shown when the page opens, fades after 2 s, reappears on scroll (held while pointed at or focused; without JS it stays visible).
+- **Back button** (`.back-btn` in `SiteHeader.astro`, logic in `Base.astro`, `src/lib/back.ts`): a translucent glass circle with a left arrow (no text), fixed just under the photo, on every page with the site header except the two home pages (`/`, `/doctors/`). Always visible at the top of a page (first 40 px); further down it fades 2 s after the last scroll and reappears on the next scroll (held while pointed at or focused; without JS it stays visible).
   Its link is the page one level up in the URL, so repeated presses always end at the home page. In the browser it first takes one real step back if the
   previous page is on this site; if the page was opened directly, or was itself reached by a Back jump (`sessionStorage.backTo`), it goes one level up instead.
   Trainer and book-reader pages (`chrome="app"`) keep their own top bar and back arrow. `tests/site.test.mjs` checks every page's parent chain.

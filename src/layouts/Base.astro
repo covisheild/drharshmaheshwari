@@ -111,11 +111,16 @@ const graph = {
         if (fromHere) { e.preventDefault(); history.back(); return; }
         try { sessionStorage.setItem('backTo', new URL(backLink.href).pathname); } catch {}
       });
-      // Visible when the page opens, gone after 2 s, back whenever the page is scrolled; held while pointed at, touched or focused.
+      // At the top of a page it is always there. Further down it fades 2 s after the last scroll and returns on the next one;
+      // it also stays while pointed at, touched or focused.
       if (backLink) {
         let timer = 0, held = false;
-        const rest = () => { clearTimeout(timer); if (!held) timer = window.setTimeout(() => backLink.classList.remove('show'), 2000); };
-        const wake = () => { backLink.classList.add('show'); rest(); };
+        const atTop = () => scrollY < 40;
+        const wake = () => {
+          backLink.classList.add('show');
+          clearTimeout(timer);
+          if (!held && !atTop()) timer = window.setTimeout(() => { if (!held && !atTop()) backLink.classList.remove('show'); }, 2000);
+        };
         const hold = (on: boolean) => () => { held = on; wake(); };
         addEventListener('scroll', wake, { passive: true });
         backLink.addEventListener('pointerenter', hold(true));

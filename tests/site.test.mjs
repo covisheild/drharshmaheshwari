@@ -330,7 +330,7 @@ test('every file the Statistics book reads with read.csv("data/...") is publishe
 });
 
 // ---------- Back button ----------
-test('Back button: on every site-chrome page except home, and every page can reach home through its parents', () => {
+test('Back button: on every site-chrome page except the two home pages, and every page can reach home through its parents', () => {
   const pages = [];
   const walk = (dir, url) => {
     for (const f of readdirSync(dir)) {
@@ -348,7 +348,7 @@ test('Back button: on every site-chrome page except home, and every page can rea
     const html = readFileSync(fileFor(url), 'utf8');
     const hasHeader = html.includes('class="site-header"');
     const m = html.match(/<a class="back-btn" href="([^"]+)"/);
-    if (url === '/') { assert.ok(!m, 'home has no Back button'); continue; }
+    if (url === '/' || url === '/doctors/') { assert.ok(!m, `${url} (a home page) has no Back button`); continue; }
     if (!hasHeader) continue; // trainer and reader pages bring their own top bar with a back arrow
     assert.ok(m, `${url} has a Back button`);
     assert.equal(m[1], parent(url), `${url} Back goes one level up`);

@@ -10,7 +10,7 @@ import { parentOf } from '../../lib/back';
 interface Props { mode: Mode; path: string }
 const { mode, path } = Astro.props;
 const m = MODES[mode];
-const back = parentOf(path);
+const back = path === m.home ? null : parentOf(path); // none on either home page
 const current = (href: string) => (href === m.home ? path === href : path.startsWith(href));
 ---
 <header class="site-header">
