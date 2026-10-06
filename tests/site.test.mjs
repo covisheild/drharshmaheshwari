@@ -328,3 +328,31 @@ test('every file the Statistics book reads with read.csv("data/...") is publishe
   assert.ok(zip.includes(Buffer.from('data/README.txt')) && zip.includes(Buffer.from('data/make_data.R')));
   assert.match(readFileSync(join(base, 'index.html'), 'utf8'), /synthetic teaching data/i);
 });
+
+// ---------- Back button ----------
+test('Back button: on every site-chrome page except home, and every page can reach home through its parents', () => {
+  const pages = [];
+  const walk = (dir, url) => {
+    for (const f of readdirSync(dir)) {
+      const p = join(dir, f);
+      if (statSync(p).isDirectory()) walk(p, `${url}${f}/`);
+      else if (f === 'index.html') pages.push(url);
+    }
+  };
+  walk(DIST, '/');
+  const parent = (url) => {
+    const parts = url.split('/').filter(Boolean); parts.pop();
+    return parts.length ? `/${parts.join('/')}/` : '/';
+  };
+  for (const url of pages) {
+    const html = readFileSync(fileFor(url), 'utf8');
+    const hasHeader = html.includes('class="site-header"');
+    const m = html.match(/<a class="back-btn" href="([^"]+)"/);
+    if (url === '/') { assert.ok(!m, 'home has no Back button'); continue; }
+    if (!hasHeader) continue; // trainer and reader pages bring their own top bar with a back arrow
+    assert.ok(m, `${url} has a Back button`);
+    assert.equal(m[1], parent(url), `${url} Back goes one level up`);
+    let u = url, hops = 0;
+    while (u !== '/') { u = parent(u); assert.ok(fileFor(u), `${u} exists (parent chain of ${url})`); assert.ok(++hops < 12); }
+  }
+});

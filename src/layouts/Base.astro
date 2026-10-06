@@ -86,7 +86,7 @@ const graph = {
     {progress && <div class="progress" aria-hidden="true"></div>}
     {chrome === 'site' && <SiteHeader mode={mode} path={path} />}
 
-    <main id="main" class:list={{ 'with-nav': chrome === 'site' }}><slot /></main>
+    <main id="main" class:list={{ 'with-nav': chrome === 'site', 'has-back': chrome === 'site' && path !== '/' }}><slot /></main>
 
     {chrome === 'site' && <SiteFooter mode={mode} />}
 
@@ -97,6 +97,19 @@ const graph = {
       btn?.addEventListener('click', () => {
         const open = document.body.classList.toggle('menu-open');
         btn!.setAttribute('aria-expanded', String(open));
+      });
+      // Back: one real step back if the previous page is on this site. If there is none (page opened directly), or this page was
+      // itself reached by a Back jump, go one level up instead (the link's own address), so repeated presses always end at home.
+      const backLink = document.querySelector<HTMLAnchorElement>('[data-back]');
+      backLink?.addEventListener('click', (e) => {
+        if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        let fromHere = false;
+        try {
+          fromHere = !!document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1
+            && sessionStorage.getItem('backTo') !== location.pathname;
+        } catch {}
+        if (fromHere) { e.preventDefault(); history.back(); return; }
+        try { sessionStorage.setItem('backTo', new URL(backLink.href).pathname); } catch {}
       });
       const bar = document.querySelector<HTMLElement>('.progress');
       const onScroll = () => {

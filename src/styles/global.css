@@ -89,6 +89,19 @@ picture:has(> .avatar) { flex: none; display: block; line-height: 0; }
   .nav { gap: .45rem; padding-left: .55rem; }
 }
 
+/* ---------- Back button: just under the photo, scrolls away with the page ---------- */
+.back-btn {
+  position: absolute; z-index: 40; top: 82px; left: calc(50% - min(var(--max), 100% - 24px) / 2 + 12px);
+  display: inline-flex; align-items: center; gap: .4rem; min-height: 34px; padding: .3rem .8rem .3rem .65rem; border-radius: 999px;
+  font-size: .86rem; font-weight: 500; text-decoration: none; color: var(--ink-2);
+  background: color-mix(in oklab, var(--surface) 80%, transparent); border: 1px solid var(--line-2);
+  transition: background .2s, color .2s, border-color .2s;
+}
+.back-btn:hover { color: var(--ink); border-color: var(--brand); }
+.back-btn:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+/* Room for it on pages whose first thing is not a full-bleed hero. */
+main.with-nav.has-back:not(:has(> .hero:first-child)) { padding-top: calc(var(--nav-space) + 40px); }
+
 /* ---------- Buttons & chips ---------- */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 46px; padding: .7rem 1.4rem; border-radius: 999px; font: 500 1rem/1 var(--font-body); text-decoration: none; border: 1px solid transparent; transition: transform .2s, box-shadow .2s, border-color .2s, background .2s; cursor: pointer; }
 .btn-primary { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); }

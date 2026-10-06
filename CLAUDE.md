@@ -19,6 +19,11 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 - **Moved URLs get a 301 in `public/_redirects`; never delete a line there.** `tests/site.test.mjs` lists every URL
   production has served and fails if one breaks.
 
+- **Back button** (`.back-btn` in `SiteHeader.astro`, logic in `Base.astro`, `src/lib/back.ts`): top left, just under the photo, on every page with the site header except `/`.
+  Its link is the page one level up in the URL, so repeated presses always end at the home page. In the browser it first takes one real step back if the
+  previous page is on this site; if the page was opened directly, or was itself reached by a Back jump (`sessionStorage.backTo`), it goes one level up instead.
+  Trainer and book-reader pages (`chrome="app"`) keep their own top bar and back arrow. `tests/site.test.mjs` checks every page's parent chain.
+
 ## Support this project (`/support/`)
 
 - One-time support by **direct UPI only**: QR code (generated at build time, `src/lib/upi-qr.ts`), "Copy UPI ID",

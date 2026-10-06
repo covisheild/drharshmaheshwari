@@ -5,10 +5,12 @@ import { MODES, type Mode } from '../../lib/modes';
 import Avatar from '../Avatar.astro';
 import ThemeToggle from '../ThemeToggle.astro';
 import ModeSwitch from './ModeSwitch.astro';
+import { parentOf } from '../../lib/back';
 
 interface Props { mode: Mode; path: string }
 const { mode, path } = Astro.props;
 const m = MODES[mode];
+const back = parentOf(path);
 const current = (href: string) => (href === m.home ? path === href : path.startsWith(href));
 ---
 <header class="site-header">
@@ -25,3 +27,9 @@ const current = (href: string) => (href === m.home ? path === href : path.starts
     <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
   </nav>
 </header>
+{back && (
+  <a class="back-btn" href={back} data-back aria-label="Go back">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>
+    <span>Back</span>
+  </a>
+)}
