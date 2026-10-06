@@ -596,15 +596,20 @@ try {
     await ctx.close();
   }
 
-  // ---------- Statistics book in the reader (/doctors/books/statistics-first-principles-to-regression/read/) ----------
+  // ---------- Statistics book in the reader (/doctors/books/statistics-first-principles-to-regression/) ----------
   const SB = '/doctors/books/statistics-first-principles-to-regression/';
   for (const [name, vp] of [['phone', { width: 390, height: 844 }], ['desktop', { width: 1280, height: 900 }]]) {
     const ctx = await context(vp);
     const page = await ctx.newPage();
     const errs = errorsOf(page);
+    // The books list opens the book straight in the reader, the same reader as the Obesity Expertise books.
+    await page.goto(BASE + '/doctors/books/');
+    check(await page.locator(`a.rbook-card[href="${SB}"]`).count() === 1, `${name}: the books list links the Statistics book straight to the reader`);
     await page.goto(BASE + SB);
-    check(await page.locator(`a.btn[href="${SB}read/"]`).count() === 1, `${name}: the book's page offers "Read online"`);
+    check(await page.locator('#rd .rd-bar, #rd-aa, #rd-side').count() === 3 && await page.locator('#rd-scrub').count() === 1, `${name}: the book's own address is the reader (top bar, Aa, contents, scrub line)`);
+    check(await page.locator('.rd-front a.btn[href$=".pdf"]').count() === 1, `${name}: the PDF is offered at the start of the book`);
     await page.goto(BASE + SB + 'read/#c04-s02');
+    check(new URL(page.url()).pathname === SB && new URL(page.url()).hash === '#c04-s02', `${name}: the old /read/ address lands on the book at the same section`);
     await page.waitForSelector('#c04-s02 .rd-body[data-state="done"]');
     await page.waitForTimeout(700);
     check(/^4\.2 /.test(await page.locator('#rd-where').textContent()), `${name}: a section link lands on that section (4.2)`);
@@ -631,16 +636,16 @@ try {
     await page.waitForTimeout(500);
     check(/^4\.2 /.test(await page.locator('#rd-where').textContent()), `${name}: "Back to where you were" returns to 4.2`);
     // R code and its output, and the references list.
-    await page.goto(BASE + SB + 'read/#c09-s01');
+    await page.goto(BASE + SB + '#c09-s01');
     await page.waitForSelector('#c09-s01 .rd-body[data-state="done"]');
     check(await page.locator('#c09-s01 pre.sourceCode').count() > 0 && await page.locator('#c09-s01 pre.output').count() > 0, `${name}: R code and its output are in code boxes`);
-    await page.goto(BASE + SB + 'read/#refs');
+    await page.goto(BASE + SB + '#refs');
     await page.waitForSelector('#refs .rd-body[data-state="done"]');
     check(await page.locator('#refs ol li').count() > 200, `${name}: the references list is there`);
     check(await page.locator('#refs a.xref').count() === 0, `${name}: NIST § numbers in the references are not turned into links`);
     check(errs.length === 0, `${name}: Statistics reader has no script errors ${errs.join(' | ')}`);
     // Review: the missed checkpoint question comes back.
-    await page.goto(BASE + SB + 'read/review/');
+    await page.goto(BASE + SB + 'review/');
     await page.waitForSelector('.rv-card .q, .rv-done');
     check(/Checkpoint 4\.1 · question 1 of 3/.test(await page.locator('.rv-card .rv-kind').textContent()), `${name}: Review brings back the missed checkpoint question`);
     await page.locator('.rv-card .q-reveal').click();

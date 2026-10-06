@@ -3,10 +3,11 @@
 // public/ (written by scripts/books/statistics/export.py), this page lists them. Synthetic data, free to use.
 import Base from '../../../../../layouts/Base.astro';
 import datasets from '../../../../../data/books/statistics-first-principles-to-regression/datasets.json';
-import { STATS_LANDING, statsBook } from '../../../../../lib/stats-book';
+import { readerBook } from '../../../../../lib/reader-books';
 import { SITE } from '../../../../../consts';
 
-const base = `${STATS_LANDING}data/`;
+const book = readerBook('statistics-first-principles-to-regression')!;
+const base = `${book.url}data/`;
 const total = datasets.reduce((n, d) => n + d.rows, 0);
 const jsonld = [{
   '@type': 'Dataset', '@id': `${SITE.url}${base}#data`, name: 'Teaching datasets for Statistics: From First Principles to Regression',
@@ -18,7 +19,7 @@ const jsonld = [{
 ---
 <Base title="Datasets for the Statistics book" description="Seventeen small synthetic datasets that the In R boxes of Statistics: From First Principles to Regression read. Download one or all, free." jsonld={jsonld}>
   <header class="page-head wrap">
-    <a class="eyebrow" href={STATS_LANDING} style="text-decoration:none">Statistics: From First Principles to Regression</a>
+    <a class="eyebrow" href={book.url} style="text-decoration:none">Statistics: From First Principles to Regression</a>
     <h1>Datasets</h1>
     <p>The data behind every <b>In R</b> box in the book: {datasets.length} files, {total.toLocaleString('en-IN')} rows in all.</p>
   </header>
@@ -38,7 +39,7 @@ const jsonld = [{
         <li>
           <div class="ds-head"><a href={`${base}${d.file}`} download><code>{d.file}</code></a><span class="muted">{d.rows.toLocaleString('en-IN')} rows</span></div>
           <p class="ds-used small">{d.sections.length
-            ? <>Read in {d.sections.map((s, i) => <>{i > 0 && ', '}<a href={`${statsBook.url}#${s.id}`} title={s.title}>§{s.label}</a></>)}</>
+            ? <>Read in {d.sections.map((s, i) => <>{i > 0 && ', '}<a href={`${book.url}#${s.id}`} title={s.title}>§{s.label}</a></>)}</>
             : <span class="muted">{d.note}</span>}</p>
           <details><summary>{d.columns.length} columns</summary><p class="small muted">{d.columns.join(', ')}</p></details>
         </li>
@@ -50,7 +51,7 @@ const jsonld = [{
 
     <h2>Licence</h2>
     <p>The same as the book: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Free to copy, share and adapt for non-commercial use, with credit, under the same licence. If they help you, you can <a href="/support/">support this project</a>.</p>
-    <p><a href={statsBook.url}>Read the book online</a> · <a href={STATS_LANDING}>About the book</a></p>
+    <p><a href={book.url}>Read the book online</a></p>
   </div>
 </Base>
 

@@ -41,7 +41,7 @@ FORMAT = 1
 BOOK_ID = "stats"
 SLUG = "statistics-first-principles-to-regression"
 FILES = "https://files.drharshmaheshwari.com"
-READ_URL = f"/doctors/books/{SLUG}/read/"
+BOOK_URL = f"/doctors/books/{SLUG}/"
 FIGURE_BASE = f"{FILES}/books/{SLUG}/figures/"
 
 TITLE = "Statistics: From First Principles to Regression"
@@ -671,7 +671,7 @@ def finish(book, sizes):
 
 def meta_book(outline, total_words, landing):
     return {
-        "format": FORMAT, "id": BOOK_ID, "slug": SLUG, "url": READ_URL, "series": "", "number": 0,
+        "format": FORMAT, "id": BOOK_ID, "slug": SLUG, "url": BOOK_URL, "series": "", "number": 0,
         "title": TITLE, "subtitle": SUBTITLE, "hue": 258,
         "colours": {"ink": "#3f2194", "accent": "#5b35c8", "accent2": "#b8378f", "tint": "#f4f0fd", "tint2": "#e6dcfa", "rule": "#cfc0f2"},
         "version": VERSION, "date": DATE, "author": AUTHOR, "licence": LICENCE, "pdf": PDF, "figureBase": FIGURE_BASE,

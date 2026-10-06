@@ -1,8 +1,13 @@
 ---
+// A book for doctors. A book with text on the site (src/data/books/<slug>/, see lib/reader-books.ts) opens in the
+// reader, like every Obesity Expertise book; any other book gets its page with the PDF.
 import BookPage from '../../../components/lists/BookPage.astro';
+import StandaloneBook from '../../../components/books/StandaloneBook.astro';
 import { books } from '../../../lib/content';
+import { readerBook } from '../../../lib/reader-books';
 export async function getStaticPaths() {
-  return (await books('doctors')).map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+  return (await books('doctors')).map((entry) => ({ params: { slug: entry.id }, props: { entry, book: readerBook(entry.id) } }));
 }
+const { entry, book } = Astro.props;
 ---
-<BookPage entry={Astro.props.entry} />
+{book ? <StandaloneBook entry={entry} book={book} /> : <BookPage entry={entry} />}

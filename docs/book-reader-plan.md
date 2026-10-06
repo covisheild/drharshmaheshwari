@@ -203,3 +203,11 @@ separate commit so it can be reviewed on a Preview before `main`:
   **Done later the same day:** the 17 datasets are published with a page, a zip and `make_data.R` (`/doctors/books/<slug>/data/`).
   Harsh uploaded the 79 figures to R2; the session cannot reach `files.drharshmaheshwari.com`, so they are unchecked from here.
   **Before merging:** open the Preview and confirm the figures load; then Notion (Statistics row: 🌐, Live URL, Last published).
+
+## Progress (6 Oct 2026): every book opens in the same reader
+
+Harsh found the Statistics book odd: its card led to a page with "Read online" and "Download" buttons, and only then to the reader, while an
+Obesity Expertise cover opens the reader at once. Now there is no landing page: the book's own address is the reader (cover, "Download the PDF",
+"Why this book", then the text), its card on `/doctors/books/` is a wide card like the series card, and `.../read/` 301s to it. The routes are
+generic (`src/lib/reader-books.ts`, `src/pages/doctors/books/[slug]/`), so a future standalone book needs only its exported text in
+`src/data/books/<slug>/` and its entry in `src/content/books/<slug>.md`. `scripts/books/statistics/export.py` now writes `url` without `/read/`.

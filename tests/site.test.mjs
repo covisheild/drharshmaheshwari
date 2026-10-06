@@ -266,11 +266,22 @@ test('series page: "Find a subject" lists All then every subject in planned orde
 
 // ---------- Statistics book in the reader (scripts/books/statistics/export.py) ----------
 test('the Statistics book is exported whole and its links resolve', () => {
-  const base = join(DIST, 'doctors/books/statistics-first-principles-to-regression/read/');
+  const SB = '/doctors/books/statistics-first-principles-to-regression/';
+  const base = join(DIST, SB);
   assert.ok(existsSync(join(base, 'index.html')), 'reader page missing');
   assert.ok(existsSync(join(base, 'review/index.html')), 'review page missing');
-  assert.match(readFileSync(join(DIST, 'doctors/books/statistics-first-principles-to-regression/index.html'), 'utf8'),
-    /href="\/doctors\/books\/statistics-first-principles-to-regression\/read\/"/, "the book's page does not offer Read online");
+  // The book's own address is the reader (like every Obesity Expertise book): no landing page in front of it.
+  const page = readFileSync(join(base, 'index.html'), 'utf8');
+  assert.match(page, /class="rd" id="rd"/, 'the book address does not open the reader');
+  assert.match(page, /data-sections="\/doctors\/books\/statistics-first-principles-to-regression\/sections\/"/);
+  assert.ok(!existsSync(join(base, 'read/index.html')), 'the old /read/ page should be a redirect, not a second page');
+  assert.equal(resolve(`${SB}read/`), SB);
+  assert.equal(resolve(`${SB}read/review/`), `${SB}review/`);
+  for (const [from, to] of [[`${SB}read`, SB], [`${SB}read/`, SB], [`${SB}read/review/`, `${SB}review/`], [`${SB}read/sections/c04-s02.json`, `${SB}sections/c04-s02.json`]]) {
+    assert.equal(resolve(from), to, `${from} no longer reaches ${to}`);
+  }
+  // The books list opens it straight in the reader, with no step in between.
+  assert.match(readFileSync(join(DIST, 'doctors/books/index.html'), 'utf8'), new RegExp(`class="rbook-card[^"]*" href="${SB}"`), 'the books list does not link straight to the reader');
   const dir = new URL('../src/data/books/statistics-first-principles-to-regression/', import.meta.url).pathname;
   const book = JSON.parse(readFileSync(join(dir, 'book.json'), 'utf8'));
   const sections = new Map();

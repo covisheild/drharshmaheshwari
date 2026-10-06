@@ -35,8 +35,7 @@ const jsonld = [{
           {d.subtitle && <p class="muted" style="font-size:1.15rem">{d.subtitle}</p>}
           <div class="meta"><span>For: {d.audience}</span>{d.pages && <span>{d.pages} pages</span>}<span>{licenseUrl ? <a href={licenseUrl}>{d.license}</a> : d.license}</span></div>
           <div class="book-actions">
-            {d.read && <a class="btn btn-primary book-btn" href={d.read}>Read online <span class="arrow">→</span></a>}
-            <a class:list={['btn', d.read ? 'btn-ghost' : 'btn-primary book-btn']} href={d.pdf} rel="noopener">Download free PDF{d.size && ` (${d.size})`} <span class="arrow">↓</span></a>
+            <a class="btn btn-primary book-btn" href={d.pdf} rel="noopener">Download free PDF{d.size && ` (${d.size})`} <span class="arrow">↓</span></a>
           </div>
           {d.datasets && <p class="small" style="margin-top:1rem"><a href={d.datasets}>Datasets for the R examples</a> · free to download</p>}
         </div>

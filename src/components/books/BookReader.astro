@@ -129,12 +129,14 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
           <p class="rd-meta">{book.author} · Version {book.version} · updated {date} · {book.licence}</p>
           <p class="rd-resume" id="rd-resume" hidden></p>
           <a class="btn btn-primary" href={book.pdf} download rel="noopener">Download the PDF <span aria-hidden="true">↓</span></a>
+          <slot name="links" />
         </div>
       </header>
       <section class="rd-about">
         <h2>Why this book</h2><div set:html={book.about.why} />
         {book.about.howToRead && <><h2>How to read it</h2><div set:html={book.about.howToRead} /></>}
         {book.about.prerequisites && <><h2>Before you start</h2><div set:html={book.about.prerequisites} /></>}
+        <slot name="about" />
         <noscript><p>The reader loads each section as you reach it, which needs JavaScript. The <a href={book.pdf}>PDF</a> has the whole book.</p></noscript>
       </section>
 

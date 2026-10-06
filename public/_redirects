@@ -9,3 +9,8 @@
 # The Statistics book is for doctors, so it moved to For Doctors > Books (Oct 2026).
 /books/statistics-first-principles-to-regression    /doctors/books/statistics-first-principles-to-regression/  301
 /books/statistics-first-principles-to-regression/   /doctors/books/statistics-first-principles-to-regression/  301
+
+# The Statistics book opens in the reader at its own address, like every other book (Oct 2026): no separate "read" page.
+/doctors/books/statistics-first-principles-to-regression/read     /doctors/books/statistics-first-principles-to-regression/  301
+/doctors/books/statistics-first-principles-to-regression/read/    /doctors/books/statistics-first-principles-to-regression/  301
+/doctors/books/statistics-first-principles-to-regression/read/*   /doctors/books/statistics-first-principles-to-regression/:splat  301

@@ -2,11 +2,16 @@
 // The list of books for one audience. /books/ and /doctors/books/ are thin wrappers around this.
 import Base from '../../layouts/Base.astro';
 import { books, bookUrl } from '../../lib/content';
+import ReaderBookCard from '../books/ReaderBookCard.astro';
+import { readerBook } from '../../lib/reader-books';
 import { MODES, section, type Mode } from '../../lib/modes';
 
 interface Props { mode: Mode; title: string; description: string; intro: string }
 const { mode, title, description, intro } = Astro.props;
-const list = await books(mode);
+const all = await books(mode);
+// Books with text on the site (opened in the reader) get a wide card; the rest are PDF-only cards.
+const inReader = all.filter((b) => readerBook(b.id));
+const list = all.filter((b) => !readerBook(b.id));
 const other: Mode = mode === 'doctors' ? 'everyone' : 'doctors';
 const otherCount = (await books(other)).length;
 ---
@@ -18,6 +23,7 @@ const otherCount = (await books(other)).length;
   </header>
   <div class="wrap" style="padding-bottom:4rem">
     <slot name="lead" />
+    {inReader.map((b) => <ReaderBookCard entry={b} />)}
     {list.length ? (
       <div class="grid">
         {list.map((b, i) => (
@@ -28,7 +34,7 @@ const otherCount = (await books(other)).length;
           </a>
         ))}
       </div>
-    ) : <p class="empty">The first books for this section are being prepared.</p>}
+    ) : !inReader.length && <p class="empty">The first books for this section are being prepared.</p>}
     {otherCount > 0 && <p class="muted" style="margin-top:2rem">Looking for books {other === 'doctors' ? 'for doctors and medical students' : 'for everyone'}? See <a href={section(other, 'books')}>{MODES[other].label} · Books</a>.</p>}
   </div>
 </Base>

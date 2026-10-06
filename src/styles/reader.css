@@ -133,6 +133,7 @@ html.reading { overflow-anchor: none; scroll-behavior: auto; } /* load() keeps y
 .rd-eyebrow a { color: inherit; text-decoration: none; }
 .rd-sub { font-size: 1.05em; color: var(--ink-2); font-style: italic; }
 .rd-meta { font-size: .78em; color: var(--ink-3); }
+.rd-extra { font-size: .85em; margin: .9rem 0 0; color: var(--ink-3); }
 .rd-resume { font-size: .85em; padding: .6rem .8rem; border-radius: 8px; background: var(--b-tint); }
 .rd-front .btn { font-size: .85em; }
 .rd-main a.btn-primary { color: var(--brand-ink); background: var(--b-ink); font-family: var(--font-body); }
@@ -141,6 +142,7 @@ html.reading { overflow-anchor: none; scroll-behavior: auto; } /* load() keeps y
   .rd-front .cover { --w: 128px !important; }
 }
 .rd-about { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.rd-about ul { padding-left: 1.2rem; }
 .rd-about h2 { font-size: .8em; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin: 1.4em 0 .5em; }
 
 .rd-part { font-size: 1.45em; line-height: 1.2; margin-top: 3rem; padding-top: 1.5rem; border-top: 3px solid var(--b-mark); color: var(--b-ink); letter-spacing: -.015em; scroll-margin-top: calc(var(--barh) + 12px); }

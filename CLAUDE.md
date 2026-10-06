@@ -113,8 +113,16 @@ local devDependency. Change production settings only on purpose; preview-only se
   these files by hand; re-export. Book URLs use the book id (`b0`, `s01-r1`) and are permanent.
 - Figures and PDFs are on R2 (`books/obesity-expertise/figures/`, `books/obesity-expertise/<ID>-v<version>.pdf`).
   `PUBLIC_BOOK_FIGURES` overrides the figure base for local testing.
-- **Statistics: From First Principles to Regression** (`stats`) is read at `/doctors/books/statistics-first-principles-to-regression/read/`
-  (its PDF page stays at the parent URL, which offers "Read online" through `read:` in `src/content/books/<slug>.md`). Text:
+- **One reader for every book, no landing page in front of it.** A book with text on the site opens straight in the reader from its card;
+  the reader's top shows the cover, "Download the PDF" and the book's "Why this book", the same for every book. An Obesity Expertise book is at
+  `/doctors/books/obesity-expertise/<book>/`. **A standalone book** (not in a series) needs only two things, with the same slug: its exported text in
+  `src/data/books/<slug>/` (`book.json` with `url` = `/doctors/books/<slug>/`, `sections/*.json`) and its entry `src/content/books/<slug>.md`
+  (cover, `pdf`, `audience`, optional `datasets`; the Markdown body, if any, is shown under "Why this book", e.g. "Who is it for?"). Then
+  `src/lib/reader-books.ts` finds it and `/doctors/books/[slug]` (reader, via `StandaloneBook.astro`), `[slug]/review/`, `[slug]/sections/<id>.json`,
+  the wide card on `/doctors/books/` (`ReaderBookCard.astro`) and the home-page card all appear by themselves. Do not build a per-book page;
+  a book without exported text still gets the plain PDF page (`BookPage.astro`). Extra pages (the Statistics datasets) go in their own folder under the slug.
+- **Statistics: From First Principles to Regression** (`stats`) is read at `/doctors/books/statistics-first-principles-to-regression/`
+  (the old `.../read/` addresses 301 to it, `public/_redirects`). Text:
   `src/data/books/statistics-first-principles-to-regression/`, written by `scripts/books/statistics/export.py` from the
   unzipped source (`statsbook-v3.1-source.zip`: `src/`, `answers/`, `refs/`, `tools/build.py`); never edit it by hand, re-export.
   The converter parses the markdown with pandoc, cuts it at the book's own labels, pairs each checkpoint question with its model

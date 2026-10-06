@@ -1,0 +1,18 @@
+---
+// A standalone book's Review (src/components/books/BookReview.astro).
+import BookReview from '../../../../components/books/BookReview.astro';
+import { books } from '../../../../lib/content';
+import { readerBook, readerFigureBase } from '../../../../lib/reader-books';
+import type { Book } from '../../../../reader/types';
+
+export async function getStaticPaths() {
+  return (await books('doctors')).flatMap((entry) => {
+    const book = readerBook(entry.id);
+    return book ? [{ params: { slug: entry.id }, props: { book } }] : [];
+  });
+}
+interface Props { book: Book }
+const { book } = Astro.props;
+---
+<BookReview book={book} label={book.title.split(':')[0]} name={book.title} figures={readerFigureBase(book)} backLabel="Back to the book"
+  description={`Spaced review for ${book.title}: the checkpoint questions you marked and the must-know points of the sections you have read.`} />

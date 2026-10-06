@@ -5,6 +5,7 @@ import Cover from '../../components/books/Cover.astro';
 import { articles, books, bookUrl, SECTION, fmtDate } from '../../lib/content';
 import { TOOLS } from '../../data/tools';
 import { TRAINERS, trainerBase } from '../../trainers/registry';
+import { readerBook } from '../../lib/reader-books';
 import { obesityBooks, series, SERIES_URL } from '../../lib/obesity-books';
 import { wave, WAVE_LABELS } from '../../lib/wave';
 
@@ -87,7 +88,7 @@ const side = [['Home', '', '<path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a
         </div>
       </article>
       {bookList.map((b) => (
-        <a class="bcard wide reveal" href={bookUrl(b)} style="min-height:0;padding-bottom:2rem"><h3>{b.data.title}</h3><p>{b.data.description}</p><span class="bm-pchip ready" style="margin:1.2rem 0 0;align-self:flex-start;position:relative">Free PDF · {b.data.license}</span></a>
+        <a class="bcard wide reveal" href={bookUrl(b)} style="min-height:0;padding-bottom:2rem"><h3>{b.data.title}</h3><p>{b.data.description}</p><span class="bm-pchip ready" style="margin:1.2rem 0 0;align-self:flex-start;position:relative">{readerBook(b.id) ? 'Read online · ' : ''}Free PDF · {b.data.license}</span></a>
       ))}
     </div>
   </div></section>

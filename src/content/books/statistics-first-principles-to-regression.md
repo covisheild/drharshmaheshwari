@@ -7,7 +7,6 @@ published: 2026-09-28
 size: "9.5 MB"
 pdf: "https://files.drharshmaheshwari.com/books/Statistics-From_First_Principles_to_Regression_v3.1.pdf"
 cover: "/books/statistics-first-principles-to-regression.webp"
-read: "/doctors/books/statistics-first-principles-to-regression/read/"
 datasets: "/doctors/books/statistics-first-principles-to-regression/data/"
 theme: { main: "#5b35c8", second: "#b8378f", onDark: "#b9a4ff" }
 license: "CC BY-NC-SA 4.0"
@@ -32,10 +31,6 @@ contents:
   - "Measurement Theory – Constructs, Validity, and Reliability"
   - "Threats to Study Validity"
 ---
-
-Most statistics books ask you to memorise formulas. This one derives them. Starting from what a clinician already knows, it builds every idea step by step — from describing data, through probability, sampling and estimation, to hypothesis testing, correlation and regression — without a single unexplained leap.
-
-Later chapters extend the same reasoning to generalised linear models, survival analysis, measurement theory (validity and reliability) and threats to study validity. The aim is not to make you a calculator but to let you understand why each method works, and so recognise where it stops working. About 500 pages, with checkpoint questions and answers.
 
 ## Who is it for?
 
