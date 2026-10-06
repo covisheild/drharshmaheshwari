@@ -604,7 +604,12 @@ try {
     const errs = errorsOf(page);
     // The books list opens the book straight in the reader, the same reader as the Obesity Expertise books.
     await page.goto(BASE + '/doctors/books/');
-    check(await page.locator(`a.rbook-card[href="${SB}"]`).count() === 1, `${name}: the books list links the Statistics book straight to the reader`);
+    check(await page.locator('a.series-card[href="/doctors/books/public-health/"]').count() === 1, `${name}: the books list has a Public Health card`);
+    check(await page.locator('div.series-card.soon').count() === 1, `${name}: the Clinical Medicine card is there, not a link`);
+    await page.goto(BASE + '/doctors/books/public-health/');
+    check(await overflow(page) <= 0, `${name}: the Public Health shelf has no sideways scroll`);
+    await page.locator(`a.subj-cover[href="${SB}"]`).click();
+    await page.waitForURL(BASE + SB);
     await page.goto(BASE + SB);
     check(await page.locator('#rd .rd-bar, #rd-aa, #rd-side').count() === 3 && await page.locator('#rd-scrub').count() === 1, `${name}: the book's own address is the reader (top bar, Aa, contents, scrub line)`);
     check(await page.locator('.rd-front a.btn[href$=".pdf"]').count() === 1, `${name}: the PDF is offered at the start of the book`);

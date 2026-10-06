@@ -33,6 +33,8 @@ const books = defineCollection({
     size: z.string().optional(), // shown on the download button, e.g. '9.5 MB'
     pdf: z.string(), // path under /public/books/ or an external URL
     cover: z.string().optional(),
+    // For doctors' books: the subject shelf it sits on (a slug from src/data/book-shelves.ts); the shelf's page lists it.
+    shelf: z.string().optional(),
     // Datasets that go with the book: the address of their page.
     datasets: z.string().optional(),
     // Optional page colours taken from the cover: main (text/buttons on light), second (gradient partner), onDark (main in dark mode).

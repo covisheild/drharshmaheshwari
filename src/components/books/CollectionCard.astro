@@ -1,0 +1,41 @@
+---
+// The big card on /doctors/books/: a stack of covers on the left, "Book series", the title, a line of text and a status line.
+// One card for the Obesity Expertise series and for each subject shelf, so they all look alike. With no `href` the card is
+// not a link (a shelf whose books are still being written) and its covers are faint.
+interface Cover { hue: number; label?: string; img?: string }
+interface Props { href?: string; title: string; text: string; status: string; covers: Cover[]; cta?: string }
+const { href, title, text, status, covers, cta } = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+<Tag class:list={['series-card', 'reveal', { soon: !href }]} href={href}>
+  <div class="sc-covers" style={`--n:${Math.min(covers.length, 6)}`} aria-hidden="true">
+    {covers.slice(0, 6).map((c, i) => (
+      <span style={`--h:${c.hue};--i:${i}`}>
+        {c.img ? <img src={c.img} alt="" width="82" height="116" loading="lazy" /> : c.label && <b>{c.label}</b>}
+      </span>
+    ))}
+  </div>
+  <div class="sc-text">
+    <span class="eyebrow">Book series</span>
+    <h2>{title}</h2>
+    <p>{text}</p>
+    <p class="sc-count"><b>{status}</b>{cta && <> · {cta}</>}</p>
+  </div>
+</Tag>
+
+<style>
+  .series-card { display: grid; grid-template-columns: auto 1fr; gap: 1.75rem; align-items: center; margin-bottom: 1.5rem; padding: 1.25rem 1.5rem;
+    border: var(--card-border); border-radius: var(--radius); background: var(--surface); color: var(--ink); text-decoration: none; }
+  a.series-card:hover { border-color: var(--brand); }
+  .series-card h2 { margin: .2rem 0 .4rem; font-size: 1.4rem; }
+  .series-card p { margin: 0 0 .4rem; color: var(--ink-2); }
+  .sc-count { color: var(--brand) !important; }
+  .soon .sc-count { color: var(--ink-3) !important; }
+  .sc-covers { position: relative; width: 210px; height: calc(116px + (var(--n) - 1) * 4px + 14px); }
+  .sc-covers span { position: absolute; left: calc(var(--i) * 26px); top: calc(var(--i) * 4px); width: 82px; aspect-ratio: 1 / 1.414; border-radius: 3px 6px 6px 3px; overflow: hidden;
+    background: linear-gradient(160deg, hsl(var(--h) 55% 16%), hsl(calc(var(--h) + 38) 62% 32%)); box-shadow: -2px 0 6px rgb(0 0 0 / .25);
+    display: flex; align-items: flex-end; padding: 8px; color: #fff; font-size: .8rem; }
+  .sc-covers img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .soon .sc-covers span { opacity: .35; filter: saturate(.6); }
+  @media (max-width: 640px) { .series-card { grid-template-columns: 1fr; gap: 1rem; } .sc-covers { height: calc(116px + (var(--n) - 1) * 4px); } }
+</style>

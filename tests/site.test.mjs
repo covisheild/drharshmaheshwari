@@ -265,6 +265,22 @@ test('series page: "Find a subject" lists All then every subject in planned orde
 });
 
 // ---------- Statistics book in the reader (scripts/books/statistics/export.py) ----------
+test('Clinical Medicine is shown as in preparation, without a link, until it has a book', () => {
+  const list = readFileSync(join(DIST, 'doctors/books/index.html'), 'utf8');
+  assert.match(list, /<div [^>]*class="series-card[^"]*soon/, 'Clinical Medicine card missing or linked');
+  assert.match(list, /Clinical Medicine/);
+  assert.ok(!existsSync(join(DIST, 'doctors/books/clinical-medicine/index.html')), 'an empty shelf should not have a page');
+});
+
+test('book pages never call books "free"', () => {
+  const pages = ['doctors/books/index.html', 'doctors/books/public-health/index.html', 'doctors/books/statistics-first-principles-to-regression/index.html',
+    'doctors/books/obesity-expertise/index.html', 'doctors/index.html', 'books/index.html', 'index.html', 'llms.txt'];
+  for (const f of pages) {
+    const text = readFileSync(join(DIST, f), 'utf8').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '');
+    assert.doesNotMatch(text, /[Ff]ree (book|PDF|to read|to download|to copy)|free to read|free to download|\bfree books\b/, `${f} calls books free`);
+  }
+});
+
 test('the Statistics book is exported whole and its links resolve', () => {
   const SB = '/doctors/books/statistics-first-principles-to-regression/';
   const base = join(DIST, SB);
@@ -280,8 +296,13 @@ test('the Statistics book is exported whole and its links resolve', () => {
   for (const [from, to] of [[`${SB}read`, SB], [`${SB}read/`, SB], [`${SB}read/review/`, `${SB}review/`], [`${SB}read/sections/c04-s02.json`, `${SB}sections/c04-s02.json`]]) {
     assert.equal(resolve(from), to, `${from} no longer reaches ${to}`);
   }
-  // The books list opens it straight in the reader, with no step in between.
-  assert.match(readFileSync(join(DIST, 'doctors/books/index.html'), 'utf8'), new RegExp(`class="rbook-card[^"]*" href="${SB}"`), 'the books list does not link straight to the reader');
+  // The books list shows a Public Health card (the subject the book is on); it opens the shelf, and the shelf opens the reader.
+  const list = readFileSync(join(DIST, 'doctors/books/index.html'), 'utf8');
+  assert.match(list, /<a href="\/doctors\/books\/public-health\/"[^>]*class="series-card/, 'the books list has no Public Health card');
+  assert.doesNotMatch(list, /class="[^"]*"[^>]*href="\/doctors\/books\/statistics-first-principles-to-regression\/"/, 'the Statistics book is shown beside, not inside, its shelf');
+  const shelf = readFileSync(join(DIST, 'doctors/books/public-health/index.html'), 'utf8');
+  assert.match(shelf, new RegExp(`class="subj-cover" href="${SB}"`), 'the Public Health shelf does not open the book');
+  assert.match(page, /href="\/doctors\/books\/public-health\/"/, 'the book does not link back to its shelf');
   const dir = new URL('../src/data/books/statistics-first-principles-to-regression/', import.meta.url).pathname;
   const book = JSON.parse(readFileSync(join(dir, 'book.json'), 'utf8'));
   const sections = new Map();

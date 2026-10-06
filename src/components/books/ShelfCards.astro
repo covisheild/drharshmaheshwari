@@ -1,0 +1,15 @@
+---
+// One big card per subject shelf (src/data/book-shelves.ts), in the same style as the Obesity Expertise series card.
+import CollectionCard from './CollectionCard.astro';
+import { shelves } from '../../lib/shelves';
+const list = await shelves();
+---
+{list.map((s) => {
+  const n = s.books.length;
+  return (
+    <CollectionCard href={n ? s.url : undefined} title={s.title} text={s.text}
+      status={n ? `${n} ${n === 1 ? 'book' : 'books'} out` : 'In preparation'}
+      cta={n ? `Start with ${s.books[0].data.title.split(':')[0]} →` : undefined}
+      covers={n ? s.books.map((b) => ({ hue: s.hue, img: b.data.cover })) : [0, 1, 2].map(() => ({ hue: s.hue }))} />
+  );
+})}

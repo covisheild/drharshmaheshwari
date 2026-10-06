@@ -25,7 +25,7 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
     <div class="wrap">
       <span class="bm-tag" set:html={`${sparkle}Obesity · Public health · Evidence`}></span>
       <h1>Reversing obesity in India, <em>one clear idea</em> at a time.</h1>
-      <p class="lede">I'm Dr. Harsh Maheshwari, a physician and public health researcher. I turn obesity research into guides, tools and free books that families and doctors can use.</p>
+      <p class="lede">I'm Dr. Harsh Maheshwari, a physician and public health researcher. I turn obesity research into guides, tools and books that families and doctors can use.</p>
       <div class="cta">
         <a class="btn btn-primary btn-lg" href="/tools/bmi-calculator/#height">Check your BMI &amp; waist <span class="arrow" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost btn-lg" href="/learn/">Start learning</a>
@@ -88,10 +88,10 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
           })}
         </div></div>
       </article>
-      <article class="bcard reveal"><h3>Free books</h3><p>{bookList.length ? `${bookList.length} book${bookList.length > 1 ? 's' : ''}, free to download and share for non-commercial use.` : 'Full-length books on obesity for families are being written. Free to download and share for non-commercial use.'}</p>
+      <article class="bcard reveal"><h3>Books</h3><p>{bookList.length ? `${bookList.length} book${bookList.length > 1 ? 's' : ''}, to download and share for non-commercial use.` : 'Full-length books on obesity for families are being written.'}</p>
         <a class="btn btn-ghost" href="/books/">Browse books <span class="arrow" aria-hidden="true">→</span></a>
         <div class="bm-stage"><div class="bm-list">
-          {bookList.map((b) => <a class="bm-li" href={bookUrl(b)}><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></span><span><b>{b.data.title}</b><small>Free PDF</small></span></a>)}
+          {bookList.map((b) => <a class="bm-li" href={bookUrl(b)}><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></span><span><b>{b.data.title}</b><small>PDF</small></span></a>)}
           {!bookList.length && <div class="bm-li"><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></span><span><b>Books for families</b><small>Being written</small></span><span class="bm-pchip">Soon</span></div>}
         </div></div>
       </article>

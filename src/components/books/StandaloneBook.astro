@@ -5,6 +5,7 @@
 import { render, type CollectionEntry } from 'astro:content';
 import BookReader from './BookReader.astro';
 import { readerFigureBase } from '../../lib/reader-books';
+import { shelfOf, shelfUrl } from '../../lib/shelves';
 import { section } from '../../lib/modes';
 import { SITE } from '../../consts';
 import type { Book } from '../../reader/types';
@@ -14,7 +15,10 @@ const { entry, book } = Astro.props;
 const d = entry.data;
 const { Content } = await render(entry);
 const hasMore = !!entry.body?.trim();
-const home = section(d.mode, 'books');
+const shelf = shelfOf(entry);
+// "Back" goes to the book's subject shelf if it has one, else to the list of books.
+const home = shelf ? shelfUrl(shelf) : section(d.mode, 'books');
+const homeLabel = shelf ? shelf.title : 'All books for doctors';
 const date = new Date(book.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 const url = `${SITE.url}${book.url}`;
 const short = book.title.split(':')[0];
@@ -26,12 +30,12 @@ const jsonld = [{
   encoding: { '@type': 'MediaObject', contentUrl: book.pdf, encodingFormat: 'application/pdf' },
 }];
 const end = `<p>End of the book. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">${book.licence}</a></p>
-        <p><a href="${home}">All books for doctors</a> · <a href="${book.pdf}" download>Download the PDF</a>${d.datasets ? ` · <a href="${d.datasets}">Datasets for the R examples</a>` : ''} · <a href="/disclaimer/">Disclaimer</a> · <a href="/support/">Support</a></p>`;
+        <p><a href="${home}">${homeLabel}</a>${shelf ? ' · <a href="/doctors/books/">All books for doctors</a>' : ''} · <a href="${book.pdf}" download>Download the PDF</a>${d.datasets ? ` · <a href="${d.datasets}">Datasets for the R examples</a>` : ''} · <a href="/disclaimer/">Disclaimer</a> · <a href="/support/">Support</a></p>`;
 ---
 <BookReader book={book} title={book.title} description={d.description} jsonld={jsonld} figures={readerFigureBase(book)} date={date}
-  eyebrow={`<a href="${home}">Free book</a>`} heading={book.title}
-  barFull={book.title} barShort={short} backHref={home} backLabel="All books for doctors" end={end}>
+  eyebrow={`<a href="${home}">${homeLabel}</a>`} heading={book.title}
+  barFull={book.title} barShort={short} backHref={home} backLabel={homeLabel} end={end}>
   {d.cover && <img slot="cover" class="rd-cover-img" src={d.cover} alt="" width="180" height="255" />}
-  {d.datasets && <p slot="links" class="rd-extra"><a href={d.datasets}>Datasets for the R examples</a> · free to download</p>}
+  {d.datasets && <p slot="links" class="rd-extra"><a href={d.datasets}>Datasets for the R examples</a></p>}
   {hasMore && <div slot="about"><Content /></div>}
 </BookReader>

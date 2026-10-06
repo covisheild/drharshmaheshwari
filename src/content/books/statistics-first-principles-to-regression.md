@@ -11,6 +11,7 @@ datasets: "/doctors/books/statistics-first-principles-to-regression/data/"
 theme: { main: "#5b35c8", second: "#b8378f", onDark: "#b9a4ff" }
 license: "CC BY-NC-SA 4.0"
 mode: doctors
+shelf: public-health
 draft: false
 contents:
   - "Statistics – Foundations of Data"

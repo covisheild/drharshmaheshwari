@@ -211,3 +211,7 @@ Obesity Expertise cover opens the reader at once. Now there is no landing page: 
 "Why this book", then the text), its card on `/doctors/books/` is a wide card like the series card, and `.../read/` 301s to it. The routes are
 generic (`src/lib/reader-books.ts`, `src/pages/doctors/books/[slug]/`), so a future standalone book needs only its exported text in
 `src/data/books/<slug>/` and its entry in `src/content/books/<slug>.md`. `scripts/books/statistics/export.py` now writes `url` without `/read/`.
+
+Same day, later: the books page is a set of big cards (Obesity Expertise, Public Health, Clinical Medicine), each a subject. Public Health holds the Statistics
+book; Clinical Medicine is "In preparation" until its first book. Shelves: `src/data/book-shelves.ts`; a book joins with `shelf:` in its Markdown entry.
+All "free" wording was removed from book pages (licence lines stay).

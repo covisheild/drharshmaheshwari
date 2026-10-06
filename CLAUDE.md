@@ -113,6 +113,13 @@ local devDependency. Change production settings only on purpose; preview-only se
   these files by hand; re-export. Book URLs use the book id (`b0`, `s01-r1`) and are permanent.
 - Figures and PDFs are on R2 (`books/obesity-expertise/figures/`, `books/obesity-expertise/<ID>-v<version>.pdf`).
   `PUBLIC_BOOK_FIGURES` overrides the figure base for local testing.
+- **Books page = big cards, one per subject** (`/doctors/books/`): the Obesity Expertise series card, then a card per subject shelf listed in
+  `src/data/book-shelves.ts` (Public Health, Clinical Medicine), all drawn by `CollectionCard.astro`. A book joins a shelf with `shelf: <slug>` in its
+  `src/content/books/<slug>.md`; the shelf card then opens `/doctors/books/<shelf>/` (`ShelfPage.astro`, covers in a row, same layout as the series page)
+  and the cover opens the reader. A shelf with no book yet shows "In preparation" and no link; its first book turns it on. Shelf slugs are permanent
+  and must differ from every book slug (the build stops if not). The home page's For Doctors section shows the same shelves. New subject = add one entry.
+- **Never write "free" about the books, datasets or PDFs** (Harsh, 6 Oct 2026: it should feel premium). Say "Read online", "Download the PDF". The licence
+  line ("CC BY-NC-SA 4.0 ... free to copy, share and adapt") and `/disclaimer/` and `/support/` keep their wording; `tests/site.test.mjs` checks the book pages.
 - **One reader for every book, no landing page in front of it.** A book with text on the site opens straight in the reader from its card;
   the reader's top shows the cover, "Download the PDF" and the book's "Why this book", the same for every book. An Obesity Expertise book is at
   `/doctors/books/obesity-expertise/<book>/`. **A standalone book** (not in a series) needs only two things, with the same slug: its exported text in

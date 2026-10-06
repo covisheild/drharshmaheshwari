@@ -1,33 +1,13 @@
 ---
 // The whole Obesity Expertise series as one wide card on /doctors/books/, so 196 planned books take the
 // space of one. Shows how many are out and where to start.
+import CollectionCard from './CollectionCard.astro';
 import { obesityBooks, series, SERIES_URL } from '../../lib/obesity-books';
 const out = obesityBooks.length;
 ---
 {out > 0 && (
-  <a class="series-card reveal" href={SERIES_URL}>
-    <div class="sc-covers" aria-hidden="true">
-      {obesityBooks.slice(0, 6).map((b, i) => <span style={`--h:${b.hue};--i:${i}`}><b>{b.number}</b></span>)}
-    </div>
-    <div class="sc-text">
-      <span class="eyebrow">Book series</span>
-      <h2>{series.title}</h2>
-      <p>{series.subtitle}. Read online, with practice problems you can check as you go, or download each book as a PDF.</p>
-      <p class="sc-count"><b>{out} of {series.books.length} out</b> · Start with Book 0 →</p>
-    </div>
-  </a>
+  <CollectionCard href={SERIES_URL} title={series.title}
+    text={`${series.subtitle}. Read online, with practice problems you can check as you go, or download each book as a PDF.`}
+    status={`${out} of ${series.books.length} out`} cta="Start with Book 0 →"
+    covers={obesityBooks.slice(0, 6).map((b) => ({ hue: b.hue, label: String(b.number) }))} />
 )}
-
-<style>
-  .series-card { display: grid; grid-template-columns: auto 1fr; gap: 1.75rem; align-items: center; margin-bottom: 1.5rem; padding: 1.25rem 1.5rem;
-    border: var(--card-border); border-radius: var(--radius); background: var(--surface); color: var(--ink); text-decoration: none; }
-  .series-card:hover { border-color: var(--brand); }
-  .series-card h2 { margin: .2rem 0 .4rem; font-size: 1.4rem; }
-  .series-card p { margin: 0 0 .4rem; color: var(--ink-2); }
-  .sc-count { color: var(--brand) !important; }
-  .sc-covers { position: relative; width: 210px; height: 150px; }
-  .sc-covers span { position: absolute; left: calc(var(--i) * 26px); top: calc(var(--i) * 4px); width: 82px; aspect-ratio: 1 / 1.414; border-radius: 3px 6px 6px 3px;
-    background: linear-gradient(160deg, hsl(var(--h) 55% 16%), hsl(calc(var(--h) + 38) 62% 32%)); box-shadow: -2px 0 6px rgb(0 0 0 / .25);
-    display: flex; align-items: flex-end; padding: 8px; color: #fff; font-size: .8rem; }
-  @media (max-width: 640px) { .series-card { grid-template-columns: 1fr; gap: 1rem; } .sc-covers { height: 116px; } }
-</style>

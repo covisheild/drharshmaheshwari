@@ -4,7 +4,7 @@ export const SITE = {
   name: 'Dr. Harsh Maheshwari',
   tagline: 'Physician & public health researcher working to reverse obesity in India',
   description:
-    'Evidence-based guides, tools and free books on obesity and its downstream diseases — for the public and for doctors — by Dr. Harsh Maheshwari.',
+    'Evidence-based guides, tools and books on obesity and its downstream diseases — for the public and for doctors — by Dr. Harsh Maheshwari.',
   email: 'contact@drharshmaheshwari.com',
   locale: 'en_IN',
   // Profiles listed here become schema.org sameAs links. Fill from Notion "Site settings".

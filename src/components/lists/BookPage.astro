@@ -30,14 +30,14 @@ const jsonld = [{
         {d.cover && <img class="book-cover" src={d.cover} alt={`Cover of ${d.title}`} width="600" height="849" />}
         <div>
           {d.draft && <p class="draft-banner"><b>Draft under review.</b> Visible only on the preview site.</p>}
-          <a class="eyebrow" href={section(d.mode, 'books')} style="text-decoration:none">Free book</a>
+          <a class="eyebrow" href={section(d.mode, 'books')} style="text-decoration:none">Book</a>
           <h1>{d.title}</h1>
           {d.subtitle && <p class="muted" style="font-size:1.15rem">{d.subtitle}</p>}
           <div class="meta"><span>For: {d.audience}</span>{d.pages && <span>{d.pages} pages</span>}<span>{licenseUrl ? <a href={licenseUrl}>{d.license}</a> : d.license}</span></div>
           <div class="book-actions">
-            <a class="btn btn-primary book-btn" href={d.pdf} rel="noopener">Download free PDF{d.size && ` (${d.size})`} <span class="arrow">↓</span></a>
+            <a class="btn btn-primary book-btn" href={d.pdf} rel="noopener">Download PDF{d.size && ` (${d.size})`} <span class="arrow">↓</span></a>
           </div>
-          {d.datasets && <p class="small" style="margin-top:1rem"><a href={d.datasets}>Datasets for the R examples</a> · free to download</p>}
+          {d.datasets && <p class="small" style="margin-top:1rem"><a href={d.datasets}>Datasets for the R examples</a></p>}
         </div>
       </div>
     </header>

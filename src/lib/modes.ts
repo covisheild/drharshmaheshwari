@@ -31,7 +31,7 @@ export const MODES: Record<Mode, ModeInfo> = {
     ],
     footer: [
       { title: 'Learn', links: [{ href: '/learn/', label: 'Guides' }, { href: '/blog/', label: 'Blog' }] },
-      { title: 'Use', links: [{ href: '/tools/', label: 'Tools' }, { href: '/books/', label: 'Free books' }, { href: '/videos/', label: 'Videos' }] },
+      { title: 'Use', links: [{ href: '/tools/', label: 'Tools' }, { href: '/books/', label: 'Books' }, { href: '/videos/', label: 'Videos' }] },
     ],
   },
   doctors: {

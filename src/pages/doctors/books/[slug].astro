@@ -1,13 +1,22 @@
 ---
-// A book for doctors. A book with text on the site (src/data/books/<slug>/, see lib/reader-books.ts) opens in the
-// reader, like every Obesity Expertise book; any other book gets its page with the PDF.
+// /doctors/books/<slug>/ is one of three things: a subject shelf with books on it (Public Health...), a book with text on
+// the site (opens in the reader, like every Obesity Expertise book), or a book with only a PDF (its own page).
 import BookPage from '../../../components/lists/BookPage.astro';
+import ShelfPage from '../../../components/books/ShelfPage.astro';
 import StandaloneBook from '../../../components/books/StandaloneBook.astro';
 import { books } from '../../../lib/content';
+import { shelves } from '../../../lib/shelves';
 import { readerBook } from '../../../lib/reader-books';
 export async function getStaticPaths() {
-  return (await books('doctors')).map((entry) => ({ params: { slug: entry.id }, props: { entry, book: readerBook(entry.id) } }));
+  const entries = await books('doctors');
+  const shelfPaths = (await shelves()).filter((s) => s.books.length)
+    .map((shelf) => ({ params: { slug: shelf.slug }, props: { shelf } }));
+  const bookPaths = entries.map((entry) => ({ params: { slug: entry.id }, props: { entry, book: readerBook(entry.id) } }));
+  const slugs = [...shelfPaths, ...bookPaths].map((p) => p.params.slug);
+  const dup = slugs.find((s, i) => slugs.indexOf(s) !== i);
+  if (dup) throw new Error(`"${dup}" is both a shelf and a book: a shelf slug must not equal a book slug`);
+  return [...shelfPaths, ...bookPaths];
 }
-const { entry, book } = Astro.props;
+const { shelf, entry, book } = Astro.props;
 ---
-{book ? <StandaloneBook entry={entry} book={book} /> : <BookPage entry={entry} />}
+{shelf ? <ShelfPage shelf={shelf} /> : book ? <StandaloneBook entry={entry} book={book} /> : <BookPage entry={entry} />}

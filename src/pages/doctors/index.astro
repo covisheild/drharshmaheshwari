@@ -2,15 +2,15 @@
 // For Doctors home: the same look as For Everyone, with a picture of the Auscultation Trainer in place of the calculator.
 import Base from '../../layouts/Base.astro';
 import Cover from '../../components/books/Cover.astro';
-import { articles, books, bookUrl, SECTION, fmtDate } from '../../lib/content';
+import { articles, bookUrl, SECTION, fmtDate } from '../../lib/content';
 import { TOOLS } from '../../data/tools';
 import { TRAINERS, trainerBase } from '../../trainers/registry';
-import { readerBook } from '../../lib/reader-books';
+import { shelves } from '../../lib/shelves';
 import { obesityBooks, series, SERIES_URL } from '../../lib/obesity-books';
 import { wave, WAVE_LABELS } from '../../lib/wave';
 
 const evidence = (await articles('clinicians')).slice(0, 3);
-const bookList = await books('doctors');
+const shelfList = await shelves();
 const trainers = TRAINERS.filter((t) => t.mode === 'doctors');
 const tools = TOOLS.filter((t) => t.mode === 'doctors');
 const trainer = trainers.find((t) => t.status === 'ready')!;
@@ -24,14 +24,14 @@ const ICONS = { pulse: '<path d="M3 12h4l3-8 4 16 3-8h4"/>', ecg: '<path d="M2 1
 const trainerIcon = (m: string) => (m === 'audio' ? ICONS.pulse : m === 'ecg' ? ICONS.ecg : ICONS.xray);
 const side = [['Home', '', '<path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>'], ['Learn', 'learn/', '<path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/>'], ['Practice', 'practice/', '<path d="M12 3v18M3 12h18"/>'], ['Quiz', 'quiz/', '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/>'], ['Review', 'review/', '<path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/>'], ['Progress', 'progress/', '<path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/>']];
 ---
-<Base title="For Doctors" description="For doctors and medical students: evidence syntheses on obesity and its complications, clinical skill trainers, clinical tools and free books by Dr. Harsh Maheshwari.">
+<Base title="For Doctors" description="For doctors and medical students: evidence syntheses on obesity and its complications, clinical skill trainers, clinical tools and books by Dr. Harsh Maheshwari.">
   <section class="hero">
     <div class="beam" aria-hidden="true"></div><div class="beam-2" aria-hidden="true"></div>
     <canvas class="dust" data-count="260" data-spread=".98" aria-hidden="true"></canvas>
     <div class="wrap">
       <span class="bm-tag" set:html={`${sparkle}For Doctors · Evidence · Trainers`}></span>
       <h1>Evidence, trainers and tools for <em>clinical practice</em>.</h1>
-      <p class="lede">For doctors and medical students. Evidence syntheses with effect sizes, apps that train clinical skills on real recordings, and free books on statistics and research methods.</p>
+      <p class="lede">For doctors and medical students. Evidence syntheses with effect sizes, apps that train clinical skills on real recordings, and books on public health, statistics and research methods.</p>
       <div class="cta">
         <a class="btn btn-primary btn-lg" href={T}>Open the {trainer.title} <span class="arrow" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost btn-lg" href={SERIES_URL}>Obesity Expertise books</a>
@@ -79,7 +79,7 @@ const side = [['Home', '', '<path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a
           {tools.map((t) => <div class="bm-li"><span class="bm-ic" set:html={icon(ICONS.calc)}></span><span><b>{t.title}</b><small>{t.text}</small></span><span class="bm-pchip">{t.href ? 'Ready' : 'Soon'}</span></div>)}
         </div></div>
       </article>
-      <article class="bcard wide reveal"><h3>Obesity Expertise: {series.books.length} books, each building on the last</h3><p>{series.subtitle}. Each book is free to read here or to download as a PDF.</p>
+      <article class="bcard wide reveal"><h3>Obesity Expertise: {series.books.length} books, each building on the last</h3><p>{series.subtitle}. Each book can be read here or downloaded as a PDF.</p>
         <a class="btn btn-primary" href={SERIES_URL}>Open the series <span class="arrow" aria-hidden="true">→</span></a>
         <div class="bm-stage" style="min-height:0;-webkit-mask-image:none;mask-image:none">
           <div class="bm-shelf-row" aria-hidden="true">{shelf.map((b) => <Cover hue={b.hue ?? 200} number={b.number} title={b.title} level={b.level} size="sm" />)}</div>
@@ -87,9 +87,25 @@ const side = [['Home', '', '<path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a
           <p style="font:500 .82rem/1.4 var(--font-mono);color:var(--ink-2);margin:0 0 1.6rem"><b style="color:var(--ink);font-weight:500">{obesityBooks.length} of {series.books.length}</b> out · <a href={`${SERIES_URL}b0/`}>Start with Book 0</a></p>
         </div>
       </article>
-      {bookList.map((b) => (
-        <a class="bcard wide reveal" href={bookUrl(b)} style="min-height:0;padding-bottom:2rem"><h3>{b.data.title}</h3><p>{b.data.description}</p><span class="bm-pchip ready" style="margin:1.2rem 0 0;align-self:flex-start;position:relative">{readerBook(b.id) ? 'Read online · ' : ''}Free PDF · {b.data.license}</span></a>
-      ))}
+      {shelfList.map((s) => {
+        const n = s.books.length;
+        const tile = 'width:96px;aspect-ratio:1/1.414;flex:none;border-radius:3px 7px 7px 3px;box-shadow:-2px 0 8px rgb(0 0 0 / .3);object-fit:cover;';
+        return (
+          <article class="bcard wide reveal"><h3>{s.title}</h3><p>{s.text}</p>
+            {n > 0 && <a class="btn btn-primary" href={s.url}>Open {s.title} <span class="arrow" aria-hidden="true">→</span></a>}
+            <div class="bm-stage" style="min-height:0;-webkit-mask-image:none;mask-image:none">
+              <div class="bm-shelf-row" aria-hidden="true">
+                {n > 0
+                  ? s.books.map((b) => <img class="cover" src={b.data.cover} alt="" width="96" height="136" loading="lazy" style={tile} />)
+                  : [0, 1, 2].map(() => <span class="cover" style={`${tile}opacity:.35;background:linear-gradient(160deg,hsl(${s.hue} 55% 16%),hsl(${s.hue + 38} 62% 32%))`}></span>)}
+              </div>
+              <p style="font:500 .82rem/1.4 var(--font-mono);color:var(--ink-2);margin:0 0 1.6rem">
+                {n > 0 ? <><b style="color:var(--ink);font-weight:500">{n} {n === 1 ? 'book' : 'books'}</b> out · <a href={bookUrl(s.books[0])}>Start with {s.books[0].data.title.split(':')[0]}</a></> : 'In preparation'}
+              </p>
+            </div>
+          </article>
+        );
+      })}
     </div>
   </div></section>
 

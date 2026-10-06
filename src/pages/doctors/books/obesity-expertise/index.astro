@@ -43,7 +43,7 @@ const client = obesityBooks.map((b) => ({
   sections: Object.fromEntries(b.outline.flatMap((p) => p.sections.map((s) => [s.id, s.label]))),
   count: b.outline.reduce((n, p) => n + p.sections.length, 0),
 }));
-const description = `Obesity Expertise: a first-principles curriculum for doctors in ${total} books. ${released.size} are out, free to read online or download.`;
+const description = `Obesity Expertise: a first-principles curriculum for doctors in ${total} books. ${released.size} are out, to read online or download.`;
 const jsonld = [{ '@type': 'BookSeries', name: series.title, description: series.subtitle, url: `${SITE.url}${SERIES_URL}`, author: { '@id': `${SITE.url}/#person` },
   hasPart: obesityBooks.map((b) => ({ '@type': 'Book', name: `Book ${b.number} · ${b.title}`, url: `${SITE.url}${b.url}` })) }];
 ---
@@ -51,7 +51,7 @@ const jsonld = [{ '@type': 'BookSeries', name: series.title, description: series
   <header class="page-head wrap">
     <a class="eyebrow" href="/doctors/books/" style="text-decoration:none">Books</a>
     <h1>{series.title}</h1>
-    <p>{series.subtitle}. Each book builds on the ones before it, and each is free to read here or to download as a PDF.</p>
+    <p>{series.subtitle}. Each book builds on the ones before it, and each can be read here or downloaded as a PDF.</p>
     <p class="series-count"><b>{released.size} of {total}</b> out · <a href={`${SERIES_URL}b0/`}>Start with Book 0</a></p>
   </header>
 

@@ -17,7 +17,7 @@ const rung = book.title.match(/Rung (\d)$/)?.[1];
 const label = `Book ${book.number}`;
 const date = new Date(book.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 const url = `${SITE.url}${book.url}`;
-const description = `${label} of the Obesity Expertise series: ${book.subtitle ?? name}. Free to read online or download (${book.licence}).`.slice(0, 170);
+const description = `${label} of the Obesity Expertise series: ${book.subtitle ?? name}. Read online or download (${book.licence}).`.slice(0, 170);
 const jsonld = [{
   '@type': 'Book', '@id': `${url}#book`, name: `${label} · ${book.title}`, alternativeHeadline: book.subtitle, url,
   author: { '@id': `${SITE.url}/#person` }, dateModified: book.date, version: book.version, inLanguage: 'en-IN',

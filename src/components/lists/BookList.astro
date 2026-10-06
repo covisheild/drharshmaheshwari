@@ -2,16 +2,13 @@
 // The list of books for one audience. /books/ and /doctors/books/ are thin wrappers around this.
 import Base from '../../layouts/Base.astro';
 import { books, bookUrl } from '../../lib/content';
-import ReaderBookCard from '../books/ReaderBookCard.astro';
-import { readerBook } from '../../lib/reader-books';
 import { MODES, section, type Mode } from '../../lib/modes';
 
 interface Props { mode: Mode; title: string; description: string; intro: string }
 const { mode, title, description, intro } = Astro.props;
+// A book on a subject shelf (Public Health...) is shown by its shelf's card in the lead slot, not here.
 const all = await books(mode);
-// Books with text on the site (opened in the reader) get a wide card; the rest are PDF-only cards.
-const inReader = all.filter((b) => readerBook(b.id));
-const list = all.filter((b) => !readerBook(b.id));
+const list = all.filter((b) => !b.data.shelf);
 const other: Mode = mode === 'doctors' ? 'everyone' : 'doctors';
 const otherCount = (await books(other)).length;
 ---
@@ -23,18 +20,17 @@ const otherCount = (await books(other)).length;
   </header>
   <div class="wrap" style="padding-bottom:4rem">
     <slot name="lead" />
-    {inReader.map((b) => <ReaderBookCard entry={b} />)}
     {list.length ? (
       <div class="grid">
         {list.map((b, i) => (
           <a class="card reveal" href={bookUrl(b)} style={`--d:${(i % 3) * .08}s`}>
             {b.data.cover && <img src={b.data.cover} alt={`Cover of ${b.data.title}`} loading="lazy" style="border-radius:var(--radius-sm);aspect-ratio:1/1.414;object-fit:cover;margin-bottom:.5rem" />}
             {b.data.draft && <span class="chip draft">Draft</span>}
-            <h3>{b.data.title}</h3><p>{b.data.description}</p><span class="more">Details & free PDF →</span>
+            <h3>{b.data.title}</h3><p>{b.data.description}</p><span class="more">Details & PDF →</span>
           </a>
         ))}
       </div>
-    ) : !inReader.length && <p class="empty">The first books for this section are being prepared.</p>}
+    ) : !all.length && <p class="empty">The first books for this section are being prepared.</p>}
     {otherCount > 0 && <p class="muted" style="margin-top:2rem">Looking for books {other === 'doctors' ? 'for doctors and medical students' : 'for everyone'}? See <a href={section(other, 'books')}>{MODES[other].label} · Books</a>.</p>}
   </div>
 </Base>

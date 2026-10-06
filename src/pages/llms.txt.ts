@@ -32,7 +32,7 @@ export async function GET() {
   lines.push('');
   const bookList = (await books()).filter((b) => !b.data.draft);
   if (bookList.length) {
-    lines.push('## Free books', '');
+    lines.push('## Books', '');
     for (const b of bookList) lines.push(`- [${b.data.title}](${SITE.url}${bookUrl(b)}): ${b.data.description}`);
     lines.push('');
   }

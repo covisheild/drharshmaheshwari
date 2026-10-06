@@ -1,0 +1,55 @@
+---
+// A subject shelf's page (Public Health...): the same layout as the Obesity Expertise series page. Its books
+// are covers in a row; a cover opens the book in the reader.
+import Base from '../../layouts/Base.astro';
+import { bookUrl } from '../../lib/content';
+import { SITE } from '../../consts';
+import type { ShelfWithBooks } from '../../lib/shelves';
+
+interface Props { shelf: ShelfWithBooks }
+const { shelf } = Astro.props;
+const n = shelf.books.length;
+const first = shelf.books[0];
+const description = `${shelf.title}: ${shelf.subtitle}. ${n} ${n === 1 ? 'book is' : 'books are'} out, to read online or download.`;
+const jsonld = [{ '@type': 'CollectionPage', name: shelf.title, description: shelf.subtitle, url: `${SITE.url}${shelf.url}`, author: { '@id': `${SITE.url}/#person` },
+  hasPart: shelf.books.map((b) => ({ '@type': 'Book', name: b.data.title, url: `${SITE.url}${bookUrl(b)}` })) }];
+---
+<Base title={shelf.title} description={description} jsonld={jsonld}>
+  <header class="page-head wrap">
+    <a class="eyebrow" href="/doctors/books/" style="text-decoration:none">Books</a>
+    <h1>{shelf.title}</h1>
+    <p>{shelf.text}</p>
+    <p class="series-count"><b>{n} {n === 1 ? 'book' : 'books'}</b> out · <a href={bookUrl(first)}>Start with {first.data.title.split(':')[0]}</a></p>
+  </header>
+
+  <div class="wrap series">
+    <section class="row" aria-labelledby="h-books">
+      <h2 id="h-books">The books</h2>
+      <p class="row-note">Each opens in the reader, with the PDF at the start and end.</p>
+      <div class="shelf">
+        {shelf.books.map((b) => (
+          <div class="subj">
+            <a class="subj-cover" href={bookUrl(b)} aria-label={b.data.title}>
+              <img src={b.data.cover} alt={`Cover of ${b.data.title}`} width="140" height="198" loading="lazy" />
+            </a>
+            <p class="subj-name">{b.data.title}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .series-count { font-size: .95rem; }
+  .series { padding-bottom: 4rem; }
+  .series section.row { margin-top: 2rem; padding-block: 0; }
+  .row h2 { font-size: 1.15rem; margin: 0 0 .25rem; }
+  .row-note { margin: 0 0 .75rem; font-size: .88rem; color: var(--ink-3); }
+  .shelf { display: flex; gap: 1.1rem; overflow-x: auto; padding: .5rem 2px 1rem; scroll-snap-type: x proximity; overscroll-behavior-x: contain; }
+  .subj { width: 140px; flex: none; scroll-snap-align: start; }
+  .subj-cover { display: block; text-decoration: none; border-radius: 8px; }
+  .subj-cover:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+  .subj-cover img { display: block; width: 140px; height: auto; aspect-ratio: 1 / 1.414; object-fit: cover; border-radius: 4px 8px 8px 4px; box-shadow: 0 1px 2px rgb(0 0 0 / .2), 0 6px 16px -6px rgb(0 0 0 / .35); }
+  .subj-name { margin: .5rem 0 .2rem; font-size: .84rem; font-weight: 600; line-height: 1.3; color: var(--ink); }
+</style>
