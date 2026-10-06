@@ -98,6 +98,37 @@ const graph = {
         const open = document.body.classList.toggle('menu-open');
         btn!.setAttribute('aria-expanded', String(open));
       });
+      // Back: one real step back if the previous page is on this site. If there is none (page opened directly), or this page was
+      // itself reached by a Back jump, go one level up instead (the link's own address), so repeated presses always end at home.
+      const backLink = document.querySelector<HTMLAnchorElement>('[data-back]');
+      backLink?.addEventListener('click', (e) => {
+        if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        let fromHere = false;
+        try {
+          fromHere = !!document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1
+            && sessionStorage.getItem('backTo') !== location.pathname;
+        } catch {}
+        if (fromHere) { e.preventDefault(); history.back(); return; }
+        try { sessionStorage.setItem('backTo', new URL(backLink.href).pathname); } catch {}
+      });
+      // At the top of a page it is always there. Further down it fades 2 s after the last scroll and returns on the next one;
+      // it also stays while pointed at, touched or focused.
+      if (backLink) {
+        let timer = 0, held = false;
+        const atTop = () => scrollY < 40;
+        const wake = () => {
+          backLink.classList.add('show');
+          clearTimeout(timer);
+          if (!held && !atTop()) timer = window.setTimeout(() => { if (!held && !atTop()) backLink.classList.remove('show'); }, 2000);
+        };
+        const hold = (on: boolean) => () => { held = on; wake(); };
+        addEventListener('scroll', wake, { passive: true });
+        backLink.addEventListener('pointerenter', hold(true));
+        backLink.addEventListener('pointerleave', hold(false));
+        backLink.addEventListener('focus', hold(true));
+        backLink.addEventListener('blur', hold(false));
+        wake();
+      }
       const bar = document.querySelector<HTMLElement>('.progress');
       const onScroll = () => {
         header?.classList.toggle('scrolled', scrollY > 8);
