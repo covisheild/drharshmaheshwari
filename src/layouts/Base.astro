@@ -86,7 +86,7 @@ const graph = {
     {progress && <div class="progress" aria-hidden="true"></div>}
     {chrome === 'site' && <SiteHeader mode={mode} path={path} />}
 
-    <main id="main" class:list={{ 'with-nav': chrome === 'site', 'has-back': chrome === 'site' && path !== '/' }}><slot /></main>
+    <main id="main" class:list={{ 'with-nav': chrome === 'site' }}><slot /></main>
 
     {chrome === 'site' && <SiteFooter mode={mode} />}
 
@@ -111,6 +111,19 @@ const graph = {
         if (fromHere) { e.preventDefault(); history.back(); return; }
         try { sessionStorage.setItem('backTo', new URL(backLink.href).pathname); } catch {}
       });
+      // Visible when the page opens, gone after 2 s, back whenever the page is scrolled; held while pointed at, touched or focused.
+      if (backLink) {
+        let timer = 0, held = false;
+        const rest = () => { clearTimeout(timer); if (!held) timer = window.setTimeout(() => backLink.classList.remove('show'), 2000); };
+        const wake = () => { backLink.classList.add('show'); rest(); };
+        const hold = (on: boolean) => () => { held = on; wake(); };
+        addEventListener('scroll', wake, { passive: true });
+        backLink.addEventListener('pointerenter', hold(true));
+        backLink.addEventListener('pointerleave', hold(false));
+        backLink.addEventListener('focus', hold(true));
+        backLink.addEventListener('blur', hold(false));
+        wake();
+      }
       const bar = document.querySelector<HTMLElement>('.progress');
       const onScroll = () => {
         header?.classList.toggle('scrolled', scrollY > 8);
