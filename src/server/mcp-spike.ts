@@ -3,9 +3,11 @@
 //
 // It answers one question: does Claude on Android, in voice mode, call a custom connector's tools (read and write),
 // and which way of showing a figure reaches the screen? So it has no sign-in (anyone with the preview address can call
-// it; it holds nothing private: Chapter 1 text that is already public, and test notes), and it is hand-written:
+// it; it holds nothing private: Chapters 1-5 text that is already public, and test notes), and it is hand-written:
 // stateless Streamable HTTP, each POST is one JSON-RPC message answered with plain JSON, no sessions, no SSE.
 // The real tutor (Milestones 1-4) replaces it; delete this file and its route then.
+
+import book from '../data/books/statistics-first-principles-to-regression/book.json' with { type: 'json' };
 
 export interface SpikeEnv {
   DB?: D1Database;
@@ -34,6 +36,14 @@ const VIEWER = 'ui://drhm/figure-viewer';
 const MAX_IMAGE_B64 = 140_000;
 const MAX_NOTES = 500;
 const PROTOCOLS = ['2025-11-25', '2025-06-18', '2025-03-26'];
+
+// The spike covers Chapters 1-5. Their sections, from the book's own outline: label ("2.4", or "2" for a chapter's overview) → id and title.
+const CHAPTERS = (book.outline as { id: string; title: string; sections: { id: string; label: string; title: string }[] }[])
+  .filter((p) => /^[1-5]$/.test(p.id));
+const SECTIONS = new Map(CHAPTERS.flatMap((p) => p.sections.map((x) => [x.label, x] as const)));
+const SECTION_IDS = new Set([...SECTIONS.values()].map((x) => x.id));
+const CONCEPT_PATTERN = '^stats:[1-5](\\.\\d{1,2}){0,4}$';
+const FIGURE_PATTERN = '^stats:fig:c0[1-5](-s\\d{2})?:[a-z0-9-]{1,40}$';
 
 const RULES = `You are a friendly, patient spoken tutor for "Statistics: From First Principles to Regression" by Dr. Harsh Maheshwari (version ${BOOK_VERSION}). You are talking with a doctor who is walking outdoors.
 
@@ -73,13 +83,18 @@ export function plain(html: string): string {
     .replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
 }
 
-/** `stats:1.3` → section `c01-s03`; `stats:1.1.1` → the part of `c01-s01` under heading 1.1.1. Chapter 1 only (the spike). */
+/** `stats:1.3` → section `c01-s03`; `stats:1.1.1` → the part of `c01-s01` under heading 1.1.1; `stats:2` → Chapter 2's
+ *  overview. Chapters 1-5 only (the spike). */
 export function locate(conceptId: string): { section: string; num: string } | null {
-  const m = /^stats:(1\.[1-6](?:\.\d{1,2}){0,2})$/.exec(conceptId);
+  const m = /^stats:([1-5](?:\.\d{1,2}){0,4})$/.exec(conceptId);
   if (!m) return null;
-  const [c, s] = m[1].split('.');
-  return { section: `c${c.padStart(2, '0')}-s${s.padStart(2, '0')}`, num: m[1] };
+  const parts = m[1].split('.');
+  const sec = SECTIONS.get(parts.slice(0, 2).join('.'));
+  return sec ? { section: sec.id, num: m[1] } : null;
 }
+
+/** A figure's id names its section, so it can be found with one read: `stats:fig:c04-s03:ch04-histogram`. */
+const figureId = (section: string, src: string) => `stats:fig:${section}:${src.replace(/\.png$/, '')}`;
 
 /** The blocks of one concept: a section's own opening (before its first heading), or a heading and what follows it
  *  until the next heading that is not inside it. */
@@ -100,12 +115,14 @@ function conceptText(id: string, num: string, sec: Section, c: { title: string; 
     `CONCEPT: ${id} (§${num} ${c.title}; section ${sec.label} ${sec.title})`, `SOURCE: ${SITE}/doctors/books/${BOOK}/#${sec.id}`, ''];
   const figures: { id: string; caption: string }[] = [];
   const subs: string[] = [];
+  // A section's opening stops at its first heading: name the parts that follow, so the tutor can go on to them.
+  const parts = num === sec.label ? sec.blocks.filter((b) => b.t === 'heading').map((b) => `stats:${b.num} ${plain(b.html ?? '')}`) : [];
   for (const b of c.blocks) {
     if (b.t === 'prose' && b.html) out.push(`[${b.label ?? 'Text'}]`, plain(b.html), '');
     else if (b.t === 'mustknow') out.push(`[${b.label ?? 'Must-Know'}]`, ...(b.points ?? []).map((p) => `- ${plain(p.html)}`), '');
     else if (b.t === 'heading') { subs.push(`stats:${b.num}`); out.push(`== §${b.num} ${plain(b.html ?? '')} ==`, ''); }
     else if (b.t === 'figure' && b.src) {
-      const fid = `stats:${b.src.replace(/\.png$/, '')}`;
+      const fid = figureId(sec.id, b.src);
       figures.push({ id: fid, caption: plain(b.caption ?? '') });
       out.push(`[Figure ${fid}] ${plain(b.caption ?? '')} (call show_figure to show it)`, '');
     } else if (b.t === 'checkpoint') {
@@ -115,6 +132,7 @@ function conceptText(id: string, num: string, sec: Section, c: { title: string; 
     }
   }
   if (subs.length) out.push(`Sub-concepts inside this one: ${subs.join(', ')}`);
+  if (parts.length) out.push(`This section continues in these concepts (call get_concept for each): ${parts.join('; ')}`);
   return { text: out.join('\n').trim(), figures };
 }
 
@@ -123,12 +141,19 @@ const TOOLS = [
   {
     name: 'get_concept',
     title: 'Get a concept from the Statistics book',
-    description: 'Returns the exact book text of one concept from Chapter 1 of "Statistics: From First Principles to Regression" '
-      + '(definition, explanation, example, must-know points and checkpoint questions, without their answers), plus the tutor rules. '
-      + 'Concept ids are "stats:" plus the book\'s section number. Chapter 1: stats:1.1 What Is a Variable (with sub-concepts '
-      + 'stats:1.1.1 Qualitative vs Quantitative Data, stats:1.1.2 Scales of Measurement), stats:1.2 Population vs Sample, '
-      + 'stats:1.3 Parameter vs Statistic, stats:1.4 Organising Raw Data, stats:1.5 Study Designs (has Figure 1.1), stats:1.6 Data in Software.',
-    inputSchema: { type: 'object', properties: { concept_id: { type: 'string', description: 'e.g. "stats:1.3"', pattern: '^stats:1(\\.\\d{1,2}){1,3}$' } }, required: ['concept_id'], additionalProperties: false },
+    description: 'Returns the exact book text of one concept from Chapters 1-5 of "Statistics: From First Principles to Regression" '
+      + '(definition, explanation, example, must-know points, figures and checkpoint questions, without their answers), plus the tutor rules. '
+      + 'Concept ids are "stats:" plus the book\'s section number, e.g. stats:1.3 (Parameter vs Statistic), stats:2.2.1, stats:3 (Chapter 3 overview). '
+      + 'Chapters: 1 Foundations of Data, 2 Central Tendency, 3 Dispersion, 4 Data Visualisation, 5 Foundations of Probability. Use list_concepts to find ids.',
+    inputSchema: { type: 'object', properties: { concept_id: { type: 'string', description: 'e.g. "stats:1.3"', pattern: CONCEPT_PATTERN } }, required: ['concept_id'], additionalProperties: false },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
+  },
+  {
+    name: 'list_concepts',
+    title: 'List the concepts in the Statistics book',
+    description: 'Without a chapter: lists Chapters 1-5 and their sections with concept ids. With a chapter (1-5): lists every concept in it, '
+      + 'including sub-headings, with how many figures and checkpoint questions each has. Use it to find a concept id or to plan a lesson.',
+    inputSchema: { type: 'object', properties: { chapter: { type: 'integer', minimum: 1, maximum: 5 } }, additionalProperties: false },
     annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
   },
   {
@@ -138,7 +163,7 @@ const TOOLS = [
       + 'Call it ONLY after the learner has finished answering that question (or has asked for the answer). Never call it before asking the question.',
     inputSchema: {
       type: 'object',
-      properties: { concept_id: { type: 'string', pattern: '^stats:1(\\.\\d{1,2}){1,3}$' }, question: { type: 'integer', minimum: 1, maximum: 999, description: 'The question number, e.g. 7 for Q7' } },
+      properties: { concept_id: { type: 'string', pattern: CONCEPT_PATTERN }, question: { type: 'integer', minimum: 1, maximum: 999, description: 'The question number, e.g. 7 for Q7' } },
       required: ['concept_id', 'question'], additionalProperties: false,
     },
     annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
@@ -146,15 +171,15 @@ const TOOLS = [
   {
     name: 'show_figure',
     title: 'Show a figure from the book',
-    description: 'Returns the original figure image from the book (as an image), with its caption and a link to open it. Use the figure id from get_concept, e.g. "stats:ch01-designs".',
-    inputSchema: { type: 'object', properties: { figure_id: { type: 'string', pattern: '^stats:[a-z0-9-]{1,40}$' } }, required: ['figure_id'], additionalProperties: false },
+    description: 'Returns the original figure image from the book (as an image), with its caption and a link to open it. Use the figure id from get_concept, e.g. "stats:fig:c01-s05:ch01-designs".',
+    inputSchema: { type: 'object', properties: { figure_id: { type: 'string', pattern: FIGURE_PATTERN } }, required: ['figure_id'], additionalProperties: false },
     annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
   },
   {
     name: 'open_figure_viewer',
     title: 'Open a figure in a viewer',
     description: 'Opens the original figure in an on-screen viewer inside the conversation (an interactive view), with its caption. Same figure ids as show_figure.',
-    inputSchema: { type: 'object', properties: { figure_id: { type: 'string', pattern: '^stats:[a-z0-9-]{1,40}$' } }, required: ['figure_id'], additionalProperties: false },
+    inputSchema: { type: 'object', properties: { figure_id: { type: 'string', pattern: FIGURE_PATTERN } }, required: ['figure_id'], additionalProperties: false },
     annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
     _meta: { ui: { resourceUri: VIEWER }, 'ui/resourceUri': VIEWER },
   },
@@ -165,7 +190,7 @@ const TOOLS = [
     inputSchema: {
       type: 'object',
       properties: {
-        concept_id: { type: 'string', pattern: '^stats:1(\\.\\d{1,2}){1,3}$' },
+        concept_id: { type: 'string', pattern: CONCEPT_PATTERN },
         result: { type: 'string', enum: ['correct', 'partly correct', 'incorrect'], description: 'Your overall judgement of the learner\'s answers' },
         note: { type: 'string', maxLength: 300, description: 'What the learner understood or confused, in one or two sentences' },
       },
@@ -192,16 +217,41 @@ function b64(bytes: Uint8Array) {
   return btoa(s);
 }
 
-/** The figure's caption, found in the Chapter 1 section that holds it. */
+/** The figure's caption, from the section its id names. */
 async function figureInfo(id: string, deps: SpikeDeps) {
-  const m = /^stats:(ch01-[a-z0-9-]{1,40})$/.exec(id);
-  if (!m) return null;
-  for (let s = 1; s <= 6; s++) {
-    const sec = await deps.section(`c01-s0${s}`);
-    const b = sec?.blocks.find((x) => x.t === 'figure' && x.src === `${m[1]}.png`);
-    if (b) return { file: b.src!, caption: plain(b.caption ?? ''), alt: b.alt ?? '', w: b.w, h: b.h, url: FIGURES + b.src };
+  const m = /^stats:fig:(c0[1-5](?:-s\d{2})?):([a-z0-9-]{1,40})$/.exec(id);
+  if (!m || !SECTION_IDS.has(m[1])) return null;
+  const sec = await deps.section(m[1]);
+  const b = sec?.blocks.find((x) => x.t === 'figure' && x.src === `${m[2]}.png`);
+  return b ? { file: b.src!, caption: plain(b.caption ?? ''), alt: b.alt ?? '', w: b.w, h: b.h, url: FIGURES + b.src } : null;
+}
+
+/** list_concepts: the outline of Chapters 1-5, or every concept of one chapter with its figure and question counts. */
+async function listConcepts(chapter: unknown, deps: SpikeDeps) {
+  if (chapter === undefined) {
+    return CHAPTERS.map((p) => [p.title, ...p.sections.map((x) => `  stats:${x.label}  ${x.label === p.id ? 'Overview' : x.title}`)].join('\n')).join('\n\n')
+      + '\n\nCall list_concepts with a chapter number to see the sub-concepts inside each section.';
   }
-  return null;
+  const p = CHAPTERS.find((x) => x.id === String(chapter));
+  if (!p) return null;
+  const lines = [p.title];
+  for (const x of p.sections) {
+    const sec = await deps.section(x.id);
+    if (!sec) continue;
+    // Count what belongs to each concept: blocks before the first heading go to the section, the rest to their heading.
+    let cur = { id: `stats:${x.label}`, title: x.label === p.id ? 'Overview' : x.title, depth: 0, figs: 0, qs: 0 };
+    const rows = [cur];
+    for (const b of sec.blocks) {
+      if (b.t === 'heading') { cur = { id: `stats:${b.num}`, title: plain(b.html ?? ''), depth: (b.num ?? '').split('.').length - 2, figs: 0, qs: 0 }; rows.push(cur); }
+      else if (b.t === 'figure') cur.figs++;
+      else if (b.t === 'checkpoint') cur.qs += b.questions?.length ?? 0;
+    }
+    for (const r of rows) {
+      const extra = [r.figs && `${r.figs} figure${r.figs > 1 ? 's' : ''}`, r.qs && `${r.qs} question${r.qs > 1 ? 's' : ''}`].filter(Boolean).join(', ');
+      lines.push(`${'  '.repeat(r.depth + 1)}${r.id}  ${r.title}${extra ? `  (${extra})` : ''}`);
+    }
+  }
+  return lines.join('\n');
 }
 
 const ensureNotes = (db: D1Database) => db.prepare(
@@ -210,24 +260,30 @@ const ensureNotes = (db: D1Database) => db.prepare(
 async function callTool(name: string, args: Record<string, unknown>, env: SpikeEnv, deps: SpikeDeps): Promise<ToolResult> {
   if (name === 'get_concept') {
     const loc = typeof args.concept_id === 'string' ? locate(args.concept_id) : null;
-    if (!loc) return text('Unknown concept id. Use "stats:" plus a Chapter 1 section number, e.g. stats:1.3.', true);
+    if (!loc) return text('Unknown concept id. Use "stats:" plus a section number from Chapters 1-5, e.g. stats:1.3; list_concepts shows them all.', true);
     const sec = await deps.section(loc.section);
     const c = sec && conceptBlocks(sec, loc.num);
-    if (!sec || !c) return text(`No concept ${args.concept_id} in Chapter 1.`, true);
+    if (!sec || !c) return text(`No concept ${args.concept_id} in Chapters 1-5; list_concepts shows them all.`, true);
     const { text: body } = conceptText(args.concept_id as string, loc.num, sec, c);
     return text(`TUTOR RULES\n${RULES}\n\n${body}`);
+  }
+  if (name === 'list_concepts') {
+    const out = await listConcepts(args.chapter, deps);
+    return out ? text(out) : text('Chapter must be a number from 1 to 5.', true);
   }
   if (name === 'get_answer_key') {
     const loc = typeof args.concept_id === 'string' ? locate(args.concept_id) : null;
     const sec = loc && await deps.section(loc.section);
     const c = sec && conceptBlocks(sec, loc!.num);
-    const q = c && c.blocks.flatMap((b) => (b.t === 'checkpoint' ? b.questions ?? [] : [])).find((x) => x.n === args.question);
+    const qs = (blocks: Block[]) => blocks.flatMap((b) => (b.t === 'checkpoint' ? b.questions ?? [] : [])).find((x) => x.n === args.question);
+    // A section's checkpoint comes after its last sub-heading, so look in the whole section if the concept itself lacks it.
+    const q = c && (qs(c.blocks) ?? qs(sec!.blocks));
     if (!q) return text(`No question ${String(args.question)} in concept ${String(args.concept_id)}.`, true);
     return text(`ANSWER KEY (book's model answer) for Q${q.n}: ${plain(q.answer)}\nJudge the learner's finished answer against it. Say what was right first, then what was missing.`);
   }
   if (name === 'show_figure' || name === 'open_figure_viewer') {
     const f = typeof args.figure_id === 'string' ? await figureInfo(args.figure_id, deps) : null;
-    if (!f) return text('Unknown figure id. Chapter 1 has one figure: stats:ch01-designs.', true);
+    if (!f) return text('Unknown figure id. Use the figure id exactly as get_concept gave it, e.g. stats:fig:c01-s05:ch01-designs.', true);
     const sc = { figure_id: args.figure_id, url: f.url, caption: f.caption, alt: f.alt, w: f.w, h: f.h };
     if (name === 'open_figure_viewer') return { content: [{ type: 'text', text: `Figure opened in the viewer (tap the picture to zoom). Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }], structuredContent: sc };
     const bytes = await deps.figure(f.file);
@@ -310,7 +366,7 @@ const err = (id: Rpc['id'], code: number, message: string, status = 200) => repl
 export function defaultDeps(req: Request, env: SpikeEnv): SpikeDeps {
   return {
     section: async (id) => {
-      if (!env.ASSETS || !/^c01-s0[1-6]$/.test(id)) return null;
+      if (!env.ASSETS || !SECTION_IDS.has(id)) return null;
       const res = await env.ASSETS.fetch(new Request(new URL(`/doctors/books/${BOOK}/sections/${id}.json`, req.url)));
       return res.ok ? ((await res.json()) as Section) : null;
     },

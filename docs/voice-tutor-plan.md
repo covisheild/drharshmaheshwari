@@ -414,3 +414,10 @@ Send screenshots (or just pass/fail per row). **Go to Milestone 1** if rows 1, 4
 - Tool results are text only (except the viewer). With `structuredContent` present, Claude Code passed the model only that JSON, not the book text (claude.ai on Android did get the text); not relying on which part a client picks.
 
 **Not fixable from the connector:** when a spoken turn ends is decided by the Claude app's voice engine, which our server never hears. Workarounds: Claude's **push-to-talk** mode (its docs suggest it for being cut off), the "Go on" rule above, and saying "done" at the end of an answer. If that is still not good enough, the only real fix is the own-voice-client fallback (§H), where we choose a voice model and tune its end-of-turn detection.
+
+### Spike extended to Chapters 1–5 (Harsh's request, 10 Oct 2026)
+- `get_concept` accepts any section or heading of Chapters 1–5 (`stats:2.2.1`, `stats:5.7.2.2.1`, `stats:3` for a chapter overview); 38 sections, 31 figures. Section list comes from the book's own outline (`book.json`).
+- New read tool `list_concepts`: the outline of Chapters 1–5, or one chapter in full with figure and question counts per concept.
+- Figure ids now name their section (`stats:fig:c04-s03:ch04-histogram`), because some figures are named `image10` etc.
+- `get_answer_key` also looks in the whole section, because a section's checkpoint follows its last sub-heading.
+
