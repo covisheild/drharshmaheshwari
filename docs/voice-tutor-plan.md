@@ -394,5 +394,20 @@ No sign-in (stage A). Tests: `tests/mcp-spike.test.mjs` (in `npm test`).
 
 Send screenshots (or just pass/fail per row). **Go to Milestone 1** if rows 1, 4 and 8 pass and at least one of row 5, row 6 or the link shows the figure.
 
-### Results
-_(to be filled in after the test walk)_
+### Results: first test (Harsh, 10 Oct 2026, paid Claude plan, connector added on the computer, Android app, voice mode)
+| Row | Result |
+|---|---|
+| 1 Read in voice | **Pass.** `get_concept` ran in voice; it read the exact lines of "Parameter vs Statistic" |
+| 3 Questions | Asked only the book's questions. **Fail:** for a two-part question it asked part one, then gave the book's answer to part two (the answer key was in the tool result) |
+| Fidelity | For study designs it summarised instead of using the book's words |
+| 5 Figure | Image shown **in the chat** (seen after leaving voice mode); **not zoomable** |
+| Stop / wait | Did not just stop: "Okay stopping, I'm here whenever you want to pick it back up" |
+| Turn-taking | **Fail (platform):** took brief pauses as the end of an answer, interrupted, spoke the full answer. Tone "stating things", less natural than ChatGPT Live |
+| 4, 6, 7, 8 | Not reported yet (save in voice, viewer, screen locked, new conversation) |
+
+**Fixes on our side (commit after d967b64):**
+- Answer key removed from `get_concept`. The new tool `get_answer_key(concept, question)` returns one model answer, to be called only after the learner finishes answering, so the answer is not in the model's context while it waits.
+- Rules rewritten: read the book's Definition word for word first; conversational turns of 2–3 sentences; "stop/wait" gets only "Okay."; no filler; for an unfinished answer say only "Go on" or "Take your time"; never answer any part early; hint before answer.
+- Figures: the full-size link is always shown ("tap to zoom"); the viewer zooms on tap (2.5×, drag to pan).
+
+**Not fixable from the connector:** when a spoken turn ends is decided by the Claude app's voice engine, which our server never hears. Workarounds: Claude's **push-to-talk** mode (its docs suggest it for being cut off), the "Go on" rule above, and saying "done" at the end of an answer. If that is still not good enough, the only real fix is the own-voice-client fallback (§H), where we choose a voice model and tune its end-of-turn detection.

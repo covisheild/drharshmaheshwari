@@ -46,7 +46,7 @@ test('initialize, notifications and tool list follow the MCP handshake', async (
   const note = await handleMcpSpike(new Request('https://x/api/mcp-spike', { method: 'POST', body: JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' }) }), env, deps);
   assert.equal(note.status, 202);
   const tools = (await rpc('tools/list')).body.result.tools;
-  assert.deepEqual(tools.map((t) => t.name), ['get_concept', 'show_figure', 'open_figure_viewer', 'save_note', 'list_notes']);
+  assert.deepEqual(tools.map((t) => t.name), ['get_concept', 'get_answer_key', 'show_figure', 'open_figure_viewer', 'save_note', 'list_notes']);
   for (const t of tools) {
     assert.equal(typeof t.annotations.readOnlyHint, 'boolean', t.name);
     assert.equal(t.annotations.destructiveHint, false, t.name);
@@ -66,10 +66,21 @@ test('get_concept returns the exact book text of one concept, with questions and
   // Word for word from c01-s03.json's definition.
   assert.ok(t.includes('A parameter is a numerical characteristic of a population: fixed and usually unknown.'));
   assert.match(t, /Q7\. A colleague says/);
-  assert.match(t, /ANSWER KEY/);
-  assert.ok(t.indexOf('Q7.') < t.indexOf('A7.'));
+  // The answers stay on the server until asked for, so the tutor cannot blurt them out.
+  assert.doesNotMatch(t, /Only a census/);
+  assert.doesNotMatch(t, /A7\./);
+  assert.match(t, /call get_answer_key/);
   assert.equal(r.structuredContent.book_version, '3.1');
   assert.equal(r.isError, undefined);
+});
+
+test('get_answer_key returns one question\'s model answer, only for questions in that concept', async () => {
+  const r = await call('get_answer_key', { concept_id: 'stats:1.3', question: 7 });
+  assert.match(r.content[0].text, /^ANSWER KEY \(book's model answer\) for Q7: No\.\sOnly a census/);
+  assert.doesNotMatch(r.content[0].text, /CBHI/); // Q9's answer is not included
+  assert.equal((await call('get_answer_key', { concept_id: 'stats:1.2', question: 7 })).isError, true);
+  assert.equal((await call('get_answer_key', { concept_id: 'stats:1.3', question: 99 })).isError, true);
+  assert.equal((await call('get_answer_key', { concept_id: 'stats:9.9', question: 7 })).isError, true);
 });
 
 test('a heading-level concept stops at the next heading outside it', async () => {
@@ -107,6 +118,7 @@ test('figures: image content with caption and link; too large falls back to the 
   assert.equal(r.content[0].mimeType, 'image/png');
   assert.equal(Buffer.from(r.content[0].data, 'base64').length, 1000);
   assert.match(r.content[1].text, /Figure 1\.1\./);
+  assert.match(r.content[1].text, /Full size, zoomable/);
   assert.equal(r.structuredContent.url, 'https://files.drharshmaheshwari.com/books/statistics-first-principles-to-regression/figures/ch01-designs.png');
   figureBytes = new Uint8Array(200_000);
   const big = await call('show_figure', { figure_id: 'stats:ch01-designs' });

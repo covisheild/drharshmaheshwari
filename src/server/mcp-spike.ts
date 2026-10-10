@@ -35,13 +35,30 @@ const MAX_IMAGE_B64 = 140_000;
 const MAX_NOTES = 500;
 const PROTOCOLS = ['2025-11-25', '2025-06-18', '2025-03-26'];
 
-const RULES = `You are a spoken tutor for "Statistics: From First Principles to Regression" by Dr. Harsh Maheshwari (version ${BOOK_VERSION}).
-- The book text returned by these tools is the only source of truth. Never invent a claim, example or quotation that is not in it. If asked something the text does not cover, say "the book doesn't cover that here" and offer what it does cover.
-- Speak in short turns (under about 80 words). Teach one idea, then ask one question and wait for the answer.
-- The answer key is for judging the learner's answer. Never read it out before the learner has tried.
-- Judge each answer against the answer key: correct, partly correct or incorrect. Say why in one or two sentences, then continue.
-- Only say a figure is on screen if show_figure or open_figure_viewer returned it. Otherwise say you could not show it and give its caption in words.
-- Say symbols aloud: x̄ "x-bar", μ "mu", σ "sigma", p̂ "p-hat", s "s".
+const RULES = `You are a friendly, patient spoken tutor for "Statistics: From First Principles to Regression" by Dr. Harsh Maheshwari (version ${BOOK_VERSION}). You are talking with a doctor who is walking outdoors.
+
+Source
+- The book text returned by these tools is the only source of truth. Never invent a claim, example or quotation. If asked something the book does not cover here, say so in one sentence.
+- When you start a concept, read the book's Definition word for word first. Then explain it in your own words, using the book's own example. Say "the book puts it like this" before any word-for-word quote.
+
+Talking
+- Talk like a tutor in conversation, not like a lecturer. Two or three sentences per turn, then hand the turn back.
+- Check understanding by asking, not telling: "What do you think…?", "Why would that be?"
+- If the learner says "stop", "wait", "one minute", "hold on" or "pause": reply with only "Okay." and nothing else. Then wait silently until they speak again.
+- Never end a turn with filler such as "I'm here whenever you're ready" or "let me know if you have questions".
+
+Questions and answers
+- Ask the book's checkpoint questions, one at a time, using the whole question as written. If a question has several parts, ask all its parts together or one part at a time, but never answer any part yourself.
+- The learner often pauses to think. If an answer sounds unfinished (trails off, "umm", half a sentence, only one part of a several-part question), say only "Go on" or "Take your time" and wait. Treat the answer as finished only when it is clearly complete, or the learner says "done", "that's it" or "I don't know".
+- Only after the answer is finished, call get_answer_key for that question and judge the answer against it: correct, partly correct or incorrect. Say what was right first, then what was missing, in two or three sentences. If the learner says "I don't know", give one hint first; give the answer only if they ask for it.
+- Never state an answer, or any part of one, before the learner has finished trying.
+
+Figures
+- Only say a figure is shown if show_figure or open_figure_viewer returned it. Otherwise say you could not show it and describe its caption.
+- When you show a figure, also show its full-size link and say "tap the link to zoom".
+
+Other
+- Say symbols aloud: x̄ "x-bar", μ "mu", σ "sigma", p̂ "p-hat".
 - After the learner has answered at least two questions on a concept, call save_note once with your judgement.`;
 
 // ---------- book text ----------
@@ -92,11 +109,9 @@ function conceptText(id: string, num: string, sec: Section, c: { title: string; 
       figures.push({ id: fid, caption: plain(b.caption ?? '') });
       out.push(`[Figure ${fid}] ${plain(b.caption ?? '')} (call show_figure to show it)`, '');
     } else if (b.t === 'checkpoint') {
-      out.push(`[${b.label ?? 'Checkpoint'}: questions to ask]`);
+      out.push(`[${b.label ?? 'Checkpoint'}: questions to ask, one at a time, whole question as written]`);
       for (const q of b.questions ?? []) out.push(`Q${q.n}. ${plain(q.prompt)}`);
-      out.push('', `[ANSWER KEY for ${b.label}: do not read out before the learner answers]`);
-      for (const q of b.questions ?? []) out.push(`A${q.n}. ${plain(q.answer)}`);
-      out.push('');
+      out.push('(The answers are not included here. After the learner has finished answering, call get_answer_key with this concept and the question number.)', '');
     }
   }
   if (subs.length) out.push(`Sub-concepts inside this one: ${subs.join(', ')}`);
@@ -109,11 +124,23 @@ const TOOLS = [
     name: 'get_concept',
     title: 'Get a concept from the Statistics book',
     description: 'Returns the exact book text of one concept from Chapter 1 of "Statistics: From First Principles to Regression" '
-      + '(definition, explanation, example, must-know points, checkpoint questions and their answer key), plus the tutor rules. '
+      + '(definition, explanation, example, must-know points and checkpoint questions, without their answers), plus the tutor rules. '
       + 'Concept ids are "stats:" plus the book\'s section number. Chapter 1: stats:1.1 What Is a Variable (with sub-concepts '
       + 'stats:1.1.1 Qualitative vs Quantitative Data, stats:1.1.2 Scales of Measurement), stats:1.2 Population vs Sample, '
       + 'stats:1.3 Parameter vs Statistic, stats:1.4 Organising Raw Data, stats:1.5 Study Designs (has Figure 1.1), stats:1.6 Data in Software.',
     inputSchema: { type: 'object', properties: { concept_id: { type: 'string', description: 'e.g. "stats:1.3"', pattern: '^stats:1(\\.\\d{1,2}){1,3}$' } }, required: ['concept_id'], additionalProperties: false },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
+  },
+  {
+    name: 'get_answer_key',
+    title: 'Get the book\'s answer to a checkpoint question',
+    description: 'Returns the book\'s model answer to one checkpoint question, for judging the learner\'s answer. '
+      + 'Call it ONLY after the learner has finished answering that question (or has asked for the answer). Never call it before asking the question.',
+    inputSchema: {
+      type: 'object',
+      properties: { concept_id: { type: 'string', pattern: '^stats:1(\\.\\d{1,2}){1,3}$' }, question: { type: 'integer', minimum: 1, maximum: 999, description: 'The question number, e.g. 7 for Q7' } },
+      required: ['concept_id', 'question'], additionalProperties: false,
+    },
     annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
   },
   {
@@ -190,16 +217,24 @@ async function callTool(name: string, args: Record<string, unknown>, env: SpikeE
     const { text: body, figures } = conceptText(args.concept_id as string, loc.num, sec, c);
     return { content: [{ type: 'text', text: `TUTOR RULES\n${RULES}\n\n${body}` }], structuredContent: { concept_id: args.concept_id, book_version: BOOK_VERSION, figures } };
   }
+  if (name === 'get_answer_key') {
+    const loc = typeof args.concept_id === 'string' ? locate(args.concept_id) : null;
+    const sec = loc && await deps.section(loc.section);
+    const c = sec && conceptBlocks(sec, loc!.num);
+    const q = c && c.blocks.flatMap((b) => (b.t === 'checkpoint' ? b.questions ?? [] : [])).find((x) => x.n === args.question);
+    if (!q) return text(`No question ${String(args.question)} in concept ${String(args.concept_id)}.`, true);
+    return text(`ANSWER KEY (book's model answer) for Q${q.n}: ${plain(q.answer)}\nJudge the learner's finished answer against it. Say what was right first, then what was missing.`);
+  }
   if (name === 'show_figure' || name === 'open_figure_viewer') {
     const f = typeof args.figure_id === 'string' ? await figureInfo(args.figure_id, deps) : null;
     if (!f) return text('Unknown figure id. Chapter 1 has one figure: stats:ch01-designs.', true);
     const sc = { figure_id: args.figure_id, url: f.url, caption: f.caption, alt: f.alt, w: f.w, h: f.h };
-    if (name === 'open_figure_viewer') return { content: [{ type: 'text', text: `Figure opened in the viewer. Caption: ${f.caption}\nLink: ${f.url}` }], structuredContent: sc };
+    if (name === 'open_figure_viewer') return { content: [{ type: 'text', text: `Figure opened in the viewer (tap the picture to zoom). Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }], structuredContent: sc };
     const bytes = await deps.figure(f.file);
     const data = bytes && b64(bytes);
-    if (!data) return { content: [{ type: 'text', text: `The figure image could not be loaded. Caption: ${f.caption}\nLink: ${f.url}` }], structuredContent: sc };
-    if (data.length > MAX_IMAGE_B64) return { content: [{ type: 'text', text: `The figure is too large to send as an image (${bytes!.length} bytes). Caption: ${f.caption}\nLink: ${f.url}` }], structuredContent: sc };
-    return { content: [{ type: 'image', data, mimeType: 'image/png' }, { type: 'text', text: `Figure (original from the book, ${bytes!.length} bytes). Caption: ${f.caption}\nLink: ${f.url}` }], structuredContent: sc };
+    if (!data) return { content: [{ type: 'text', text: `The figure image could not be loaded. Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }], structuredContent: sc };
+    if (data.length > MAX_IMAGE_B64) return { content: [{ type: 'text', text: `The figure is too large to send as an image (${bytes!.length} bytes). Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }], structuredContent: sc };
+    return { content: [{ type: 'image', data, mimeType: 'image/png' }, { type: 'text', text: `Figure (original from the book, ${bytes!.length} bytes). Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }], structuredContent: sc };
   }
   if (name === 'save_note' || name === 'list_notes') {
     if (!env.DB) return text('No database on this deployment.', true);
@@ -228,7 +263,10 @@ const VIEWER_HTML = `<!DOCTYPE html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><title>Figure</title>
 <style>
   body { font: 14px/1.45 system-ui, sans-serif; margin: 0; padding: 12px; }
-  img { display: block; width: 100%; height: auto; background: #fff; border-radius: 8px; touch-action: pinch-zoom; }
+  #pan { overflow: auto; border-radius: 8px; background: #fff; max-height: 80vh; }
+  img { display: block; width: 100%; height: auto; cursor: zoom-in; }
+  #pan.z img { width: 250%; max-width: none; cursor: zoom-out; }
+  .hint { opacity: .7; font-size: 12px; }
   p { margin: 10px 0 0; }
   a { color: inherit; }
 </style></head>
@@ -242,10 +280,19 @@ const VIEWER_HTML = `<!DOCTYPE html>
     if (!sc || !sc.url) { box.textContent = content?.[0]?.text ?? "No figure."; return; }
     const img = Object.assign(document.createElement("img"), { src: sc.url, alt: sc.alt || "" });
     if (sc.w && sc.h) { img.width = sc.w; img.height = sc.h; }
+    const pan = Object.assign(document.createElement("div"), { id: "pan" });
+    pan.append(img);
+    img.onclick = (e) => {
+      const r = img.getBoundingClientRect(), fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
+      pan.classList.toggle("z");
+      // Keep the tapped point under the finger after zooming in.
+      if (pan.classList.contains("z")) requestAnimationFrame(() => { pan.scrollLeft = fx * img.offsetWidth - pan.clientWidth / 2; pan.scrollTop = fy * img.offsetHeight - pan.clientHeight / 2; });
+    };
+    const hint = Object.assign(document.createElement("p"), { className: "hint", textContent: "Tap the picture to zoom in or out; drag to move around." });
     const cap = document.createElement("p"); cap.textContent = sc.caption || "";
     const link = Object.assign(document.createElement("a"), { href: sc.url, textContent: "Open the original", target: "_blank", rel: "noopener" });
     const p2 = document.createElement("p"); p2.append(link);
-    box.replaceChildren(img, cap, p2);
+    box.replaceChildren(pan, hint, cap, p2);
   };
   await app.connect();
 </script>
