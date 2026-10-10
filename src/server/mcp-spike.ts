@@ -73,9 +73,21 @@ Other
 
 // ---------- book text ----------
 const ENT: Record<string, string> = { amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'", apos: "'", nbsp: ' ' };
+const cells = (row: string) => [...row.matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/g)].map((m) => plain(m[1]).replace(/\s+/g, ' '));
+/** Tables read row by row, each cell labelled with its column heading ("Design: Cohort; Unit: Individuals; …"),
+ *  which makes sense when spoken; a cell-per-line dump does not. */
+function tables(html: string): string {
+  return html.replace(/<table[\s\S]*?<\/table>/g, (t) => {
+    const rows = [...t.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/g)].map((m) => m[1]);
+    const head = rows.length && /<th/.test(rows[0]) ? cells(rows.shift()!) : [];
+    const lines = rows.map((r) => cells(r).map((c, i) => (head[i] ? `${head[i]}: ${c}` : c)).join('; '));
+    return `<p>${lines.map((l) => `- ${l}`).join('<br>')}</p>`;
+  });
+}
+
 /** The book's HTML as plain text, word for word: list items on their own lines, paragraphs separated by a blank line. */
 export function plain(html: string): string {
-  return html
+  return tables(html)
     .replace(/<li[^>]*>/g, '\n- ').replace(/<\/(p|ul|ol|div|h\d)>/g, '\n\n').replace(/<br\s*\/?>/g, '\n')
     .replace(/<[^>]+>/g, '')
     .replace(/&(#\d+|#x[0-9a-f]+|[a-z0-9]+);/gi, (m, e: string) =>

@@ -192,6 +192,12 @@ test('notes are saved, validated and listed', async () => {
   assert.match(list, /stats:1\.3 {2}partly correct: Mixed up x̄ and μ once\./);
 });
 
+test('tables are read row by row with their column headings', async () => {
+  const t = (await call('get_concept', { concept_id: 'stats:1.5' })).content[0].text;
+  assert.match(t, /- Design: Case-control; Unit: Individuals; Sampled on: Outcome; Can estimate: Odds ratio of exposure; Analysed in: §10\.6\.4, §10\.8, §13\.2/);
+  assert.doesNotMatch(t, /\nUnit\n/);
+});
+
 test('plain() keeps the words and decodes entities', () => {
   assert.equal(plain('<p>A &amp; B&nbsp;&#8211; <strong>C</strong></p><ul><li>one</li><li>two</li></ul>'), 'A & B – C\n\n- one\n- two');
 });
