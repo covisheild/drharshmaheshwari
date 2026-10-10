@@ -7,11 +7,15 @@
 
 import './d1';
 import { ensureSchema } from './schema';
+import { handleMcpSpike, type SpikeEnv } from './mcp-spike';
 
 export interface Env {
   DB?: D1Database;
   GOOGLE_CLIENT_ID?: string;
   GOOGLE_CLIENT_SECRET?: string;
+  /** "on" only in Preview builds: the voice-tutor spike at /api/mcp-spike (docs/voice-tutor-plan.md, Milestone 0). */
+  MCP_SPIKE?: string;
+  ASSETS?: SpikeEnv['ASSETS'];
 }
 
 /** Outside calls, replaceable in tests. */
@@ -304,6 +308,8 @@ export async function handleApi(req: Request, env: Env, deps: Deps = DEFAULT_DEP
   const path = url.pathname.replace(/\/+$/, '');
   // Which settings this deployment has (yes/no only, never values): lets a person check a deployment from the browser.
   if (path === '/api/health') return json({ worker: true, db: !!env.DB, googleClientId: !!env.GOOGLE_CLIENT_ID, googleClientSecret: !!env.GOOGLE_CLIENT_SECRET, accounts: enabled(env) });
+  // The voice-tutor spike has no sign-in and exists only where MCP_SPIKE is on (Preview builds), never in production.
+  if (path === '/api/mcp-spike') return env.MCP_SPIKE === 'on' ? handleMcpSpike(req, env) : json({ error: 'not found' }, 404);
   if (!enabled(env)) return path === '/api/me' ? json({ enabled: false, user: null }) : json({ error: 'accounts are not enabled' }, 404);
   try {
     if (path === '/api/auth/google' && req.method === 'GET') return startGoogle(req, url, env);

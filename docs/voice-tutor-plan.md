@@ -357,3 +357,42 @@ Whole Statistics book (the concept index already covers it; the work is reviewin
 6. **Chapter for the prototype:** Chapter 1 concepts listed in §E (recommended; it has Figure 1.1), unless you would rather walk with a chapter you are currently studying.
 
 Things I will do without asking (reasoned defaults): DCR first, CIMD later; hand-written OAuth on D1 instead of the KV-based library; stateless MCP inside `/api/`; FSRS reuse; Excel built in the browser; no new Cloudflare products beyond a rate-limit binding.
+
+---
+
+## Milestone 0: spike as built (10 Oct 2026) and Harsh's test script
+
+**Built:** `src/server/mcp-spike.ts` (hand-written stateless MCP server, no new packages), routed at `/api/mcp-spike` in
+`src/server/api.ts`, switched on only by `MCP_SPIKE = "on"` in `wrangler.jsonc → previews.vars` (production returns 404).
+No sign-in (stage A). Tests: `tests/mcp-spike.test.mjs` (in `npm test`).
+
+| Tool | Kind | What it tests |
+|---|---|---|
+| `get_concept` | read | Any Chapter 1 concept (`stats:1.1` … `stats:1.6`, and headings like `stats:1.1.2.1`): exact book text, checkpoint questions, answer key, tutor rules |
+| `show_figure` | read | Figure 1.1 as an **image** in the tool result (+ caption + link); reports its size |
+| `open_figure_viewer` | read | Figure 1.1 in an **MCP App** viewer (pinned `@modelcontextprotocol/ext-apps@1.7.5` from unpkg) |
+| `save_note` | **write** | Saves a judgement to the preview database (table `spike_notes`, max 500 rows) |
+| `list_notes` | read | Reads the notes back: tests "continue in a new conversation" |
+
+### Setup (once, on a computer)
+1. Find the Preview URL of branch `claude/gracious-bardeen-o5bk5m` (Cloudflare dashboard → Workers → drharshmaheshwari → Deployments, or the Cloudflare check on the GitHub commit). The connector URL is `<preview URL>/api/mcp-spike`.
+2. claude.ai → Settings → Connectors → **Add custom connector** → name "DrHM books (test)", URL as above, no OAuth fields.
+3. In a new **text** chat on claude.ai, turn the connector on and say: *"Use get_concept for stats:1.3 and tell me the first sentence."* Approve the tool. Then open the connector's tool settings and set **save_note** (and the others) to **Always allow**.
+
+### On the Android phone (voice mode)
+| # | Say / do | Record |
+|---|---|---|
+| 1 | Open Claude, check the connector is on, start **voice mode**. "Teach me parameter versus statistic from Dr Harsh's book." | Did it call `get_concept`? Any prompt on screen? Delay? |
+| 2 | Interrupt mid-explanation: "Wait, why Greek letters?" | Did it stop and answer from the book? |
+| 3 | Answer its questions, one deliberately wrong. | Did it judge correctly against the answer key? |
+| 4 | "Save how I did." (or it saves itself) | Did `save_note` run in voice? Any approval prompt? |
+| 5 | "Show me the study-design figure." (it should call `show_figure`) | Was the **image visible** on screen during voice? |
+| 6 | "Open it in the viewer." (`open_figure_viewer`) | Did the **viewer** appear? Permission prompt? |
+| 7 | Lock the screen / phone in pocket and keep talking for 2 minutes, ask for one more tool call. | Did voice and tools continue? |
+| 8 | End. Start a **new** conversation in voice: "What did we study last time?" (`list_notes`) | Did it read back the saved note? |
+| 9 | Optional: a 20–30 min walk lesson. | Any usage-limit message? When? |
+
+Send screenshots (or just pass/fail per row). **Go to Milestone 1** if rows 1, 4 and 8 pass and at least one of row 5, row 6 or the link shows the figure.
+
+### Results
+_(to be filled in after the test walk)_

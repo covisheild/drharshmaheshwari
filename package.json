@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "node --import ./tests/ts-hooks.mjs --test tests/site.test.mjs tests/upi.test.mjs tests/theme.test.mjs tests/schedule.test.mjs tests/anchor.test.mjs tests/ai.test.mjs tests/booksync.test.mjs tests/api.test.mjs",
+    "test": "node --import ./tests/ts-hooks.mjs --test tests/site.test.mjs tests/upi.test.mjs tests/theme.test.mjs tests/schedule.test.mjs tests/anchor.test.mjs tests/ai.test.mjs tests/booksync.test.mjs tests/api.test.mjs tests/mcp-spike.test.mjs",
     "test:e2e": "node tests/e2e.mjs"
   },
   "dependencies": {

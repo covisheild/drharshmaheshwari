@@ -21,6 +21,7 @@
 		"d1_databases": [
 			{ "binding": "DB", "database_name": "drharshmaheshwari-preview", "database_id": "1ec668c6-7746-494c-bf17-e8c4129d24a3" }
 		],
-		"vars": { "GOOGLE_CLIENT_ID": "916290480627-mea850qnd8c58il1384j9n5icg75b5vv.apps.googleusercontent.com" }
+		// MCP_SPIKE: the voice-tutor test connector at /api/mcp-spike (docs/voice-tutor-plan.md, Milestone 0). Previews only.
+		"vars": { "GOOGLE_CLIENT_ID": "916290480627-mea850qnd8c58il1384j9n5icg75b5vv.apps.googleusercontent.com", "MCP_SPIKE": "on" }
 	}
 }
