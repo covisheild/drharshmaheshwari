@@ -403,11 +403,14 @@ Send screenshots (or just pass/fail per row). **Go to Milestone 1** if rows 1, 4
 | 5 Figure | Image shown **in the chat** (seen after leaving voice mode); **not zoomable** |
 | Stop / wait | Did not just stop: "Okay stopping, I'm here whenever you want to pick it back up" |
 | Turn-taking | **Fail (platform):** took brief pauses as the end of an answer, interrupted, spoke the full answer. Tone "stating things", less natural than ChatGPT Live |
-| 4, 6, 7, 8 | Not reported yet (save in voice, viewer, screen locked, new conversation) |
+| 4 Save | **Pass** (seen in `list_notes`: note saved 13:15 UTC for stats:1.3 with a fair summary) |
+| 6, 7, 8 | Not reported yet (viewer, screen locked, new conversation) |
 
 **Fixes on our side (commit after d967b64):**
 - Answer key removed from `get_concept`. The new tool `get_answer_key(concept, question)` returns one model answer, to be called only after the learner finishes answering, so the answer is not in the model's context while it waits.
 - Rules rewritten: read the book's Definition word for word first; conversational turns of 2–3 sentences; "stop/wait" gets only "Okay."; no filler; for an unfinished answer say only "Go on" or "Take your time"; never answer any part early; hint before answer.
 - Figures: the full-size link is always shown ("tap to zoom"); the viewer zooms on tap (2.5×, drag to pan).
+
+- Tool results are text only (except the viewer). With `structuredContent` present, Claude Code passed the model only that JSON, not the book text (claude.ai on Android did get the text); not relying on which part a client picks.
 
 **Not fixable from the connector:** when a spoken turn ends is decided by the Claude app's voice engine, which our server never hears. Workarounds: Claude's **push-to-talk** mode (its docs suggest it for being cut off), the "Go on" rule above, and saying "done" at the end of an answer. If that is still not good enough, the only real fix is the own-voice-client fallback (§H), where we choose a voice model and tune its end-of-turn detection.

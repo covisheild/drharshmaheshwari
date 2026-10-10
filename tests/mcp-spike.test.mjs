@@ -70,7 +70,9 @@ test('get_concept returns the exact book text of one concept, with questions and
   assert.doesNotMatch(t, /Only a census/);
   assert.doesNotMatch(t, /A7\./);
   assert.match(t, /call get_answer_key/);
-  assert.equal(r.structuredContent.book_version, '3.1');
+  assert.match(t, /version 3\.1/);
+  // Text only: some clients show the model only structuredContent when it is present.
+  assert.equal(r.structuredContent, undefined);
   assert.equal(r.isError, undefined);
 });
 
@@ -112,14 +114,15 @@ test('bad concept ids are refused', async () => {
 
 test('figures: image content with caption and link; too large falls back to the link', async () => {
   const concept = await call('get_concept', { concept_id: 'stats:1.5' });
-  assert.deepEqual(concept.structuredContent.figures.map((f) => f.id), ['stats:ch01-designs']);
+  assert.match(concept.content[0].text, /\[Figure stats:ch01-designs\] Figure 1\.1\./);
   const r = await call('show_figure', { figure_id: 'stats:ch01-designs' });
   assert.equal(r.content[0].type, 'image');
   assert.equal(r.content[0].mimeType, 'image/png');
   assert.equal(Buffer.from(r.content[0].data, 'base64').length, 1000);
   assert.match(r.content[1].text, /Figure 1\.1\./);
   assert.match(r.content[1].text, /Full size, zoomable/);
-  assert.equal(r.structuredContent.url, 'https://files.drharshmaheshwari.com/books/statistics-first-principles-to-regression/figures/ch01-designs.png');
+  assert.ok(r.content[1].text.includes('https://files.drharshmaheshwari.com/books/statistics-first-principles-to-regression/figures/ch01-designs.png'));
+  assert.equal(r.structuredContent, undefined);
   figureBytes = new Uint8Array(200_000);
   const big = await call('show_figure', { figure_id: 'stats:ch01-designs' });
   assert.equal(big.content.length, 1);

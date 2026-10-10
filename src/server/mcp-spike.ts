@@ -214,8 +214,8 @@ async function callTool(name: string, args: Record<string, unknown>, env: SpikeE
     const sec = await deps.section(loc.section);
     const c = sec && conceptBlocks(sec, loc.num);
     if (!sec || !c) return text(`No concept ${args.concept_id} in Chapter 1.`, true);
-    const { text: body, figures } = conceptText(args.concept_id as string, loc.num, sec, c);
-    return { content: [{ type: 'text', text: `TUTOR RULES\n${RULES}\n\n${body}` }], structuredContent: { concept_id: args.concept_id, book_version: BOOK_VERSION, figures } };
+    const { text: body } = conceptText(args.concept_id as string, loc.num, sec, c);
+    return text(`TUTOR RULES\n${RULES}\n\n${body}`);
   }
   if (name === 'get_answer_key') {
     const loc = typeof args.concept_id === 'string' ? locate(args.concept_id) : null;
@@ -232,9 +232,9 @@ async function callTool(name: string, args: Record<string, unknown>, env: SpikeE
     if (name === 'open_figure_viewer') return { content: [{ type: 'text', text: `Figure opened in the viewer (tap the picture to zoom). Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }], structuredContent: sc };
     const bytes = await deps.figure(f.file);
     const data = bytes && b64(bytes);
-    if (!data) return { content: [{ type: 'text', text: `The figure image could not be loaded. Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }], structuredContent: sc };
-    if (data.length > MAX_IMAGE_B64) return { content: [{ type: 'text', text: `The figure is too large to send as an image (${bytes!.length} bytes). Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }], structuredContent: sc };
-    return { content: [{ type: 'image', data, mimeType: 'image/png' }, { type: 'text', text: `Figure (original from the book, ${bytes!.length} bytes). Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }], structuredContent: sc };
+    if (!data) return { content: [{ type: 'text', text: `The figure image could not be loaded. Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }] };
+    if (data.length > MAX_IMAGE_B64) return { content: [{ type: 'text', text: `The figure is too large to send as an image (${bytes!.length} bytes). Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }] };
+    return { content: [{ type: 'image', data, mimeType: 'image/png' }, { type: 'text', text: `Figure (original from the book, ${bytes!.length} bytes). Caption: ${f.caption}\nFull size, zoomable (show this link to the learner): ${f.url}` }] };
   }
   if (name === 'save_note' || name === 'list_notes') {
     if (!env.DB) return text('No database on this deployment.', true);
