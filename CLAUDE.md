@@ -236,7 +236,9 @@ local devDependency. Change production settings only on purpose; preview-only se
   already typed, so nobody calculates by hand. Kinds (`src/lib/units.ts`): `height` cm ⇄ ft + in, `length` (waist, neck) cm ⇄ in,
   `weight` kg ⇄ lb, `minutes` min ⇄ h, `hours` h ⇄ min; `per="/day"` adds a suffix. The first unit is the base: the page reads
   `unitValue(id)` (`src/scripts/unit-fields.ts`) and always gets cm, kg, min or h, whatever the person chose. Switching back and forth
-  keeps the exact value (no rounding drift). New unit = add it to `units.ts` with a test in `tests/units.test.mjs`.
+  keeps the exact value (no rounding drift).
+  The unit last chosen for each kind is remembered in the browser (`localStorage` `units:v1`, only the unit, never a number;
+  `/privacy/` says so), so every tool opens in it next time. New unit = add it to `units.ts` with a test in `tests/units.test.mjs`.
 - Applies to calculators, tools and trackers on every page. A number with nothing to convert (age in years, days, a count, rupees,
   a percentage) gets `data-unitless`. `tests/site.test.mjs` fails on any built number box that has neither.
 

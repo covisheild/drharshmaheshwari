@@ -18,12 +18,12 @@ const ph = toDisplay(placeholder, kind, unit)[0];
 ---
 <div class="uf" data-unit-field data-kind={kind} data-unit={unit} data-ph={placeholder} data-per={per} data-label={label}>
   <div class="uf-box">
-    <input data-uf type="number" inputmode="decimal" step="any" min="0" id={id} placeholder={ph} aria-label={`${label} in ${NAME[unit]}`} />
+    <input data-uf type="number" inputmode="decimal" step="any" min="0" autocomplete="off" id={id} placeholder={ph} aria-label={`${label} in ${NAME[unit]}`} />
     <button type="button" class="uf-unit" title={`Switch to ${NAME[KINDS[kind][1]]}`} aria-label={`Unit: ${NAME[unit]}. Switch to ${NAME[KINDS[kind][1]]}`}><span class="uf-label">{LABEL[unit]}{per}</span><span class="uf-swap" aria-hidden="true">⇄</span></button>
   </div>
   {ftin && (
     <div class="uf-box" hidden>
-      <input data-uf type="number" inputmode="decimal" step="any" min="0" id={`${id}-in`} aria-label={`${label}: inches`} />
+      <input data-uf type="number" inputmode="decimal" step="any" min="0" autocomplete="off" id={`${id}-in`} aria-label={`${label}: inches`} />
       <span class="uf-fixed">in</span>
     </div>
   )}

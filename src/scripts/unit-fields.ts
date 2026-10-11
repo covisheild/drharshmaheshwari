@@ -1,7 +1,18 @@
 // Wires every UnitField (src/components/UnitField.astro): clicking the unit converts what is typed into the next unit.
 // State lives on the element (data-unit, data-base), not in this module, so a page script that imports
 // unitValue() reads the same thing even if the bundler gives it its own copy of this file.
-import { LABEL, NAME, nextUnit, toDisplay, fromDisplay, type Kind, type UnitId } from '../lib/units';
+import { KINDS, LABEL, NAME, nextUnit, toDisplay, fromDisplay, type Kind, type UnitId } from '../lib/units';
+
+// The unit a person last chose for each kind (height, weight...) is remembered in this browser only, so every
+// tool opens in it next time. Only the unit is kept, never a number typed. Storage can be missing or blocked: then
+// fields simply open in the base unit.
+const KEY = 'units:v1';
+function saved(): Partial<Record<Kind, UnitId>> {
+  try { return JSON.parse(localStorage.getItem(KEY) ?? '{}') ?? {}; } catch { return {}; }
+}
+function remember(kind: Kind, unit: UnitId) {
+  try { const all = saved(); all[kind] = unit; localStorage.setItem(KEY, JSON.stringify(all)); } catch { /* not kept */ }
+}
 
 const rootOf = (id: string) => document.getElementById(id)?.closest<HTMLElement>('[data-unit-field]') ?? null;
 const boxes = (root: HTMLElement) => [...root.querySelectorAll<HTMLInputElement>('input[data-uf]')];
@@ -37,7 +48,9 @@ function setUnit(root: HTMLElement, unit: UnitId) {
 function wire(root: HTMLElement) {
   if (root.dataset.wired) return;
   root.dataset.wired = '1';
-  setUnit(root, root.dataset.unit as UnitId);
+  const kind = root.dataset.kind as Kind, pref = saved()[kind];
+  setUnit(root, pref && KINDS[kind].includes(pref) ? pref : root.dataset.unit as UnitId);
+  delete root.dataset.base; // read afresh from the boxes, in the unit now shown
   root.addEventListener('input', () => {
     if (root.dataset.converting) return;
     const v = typed(root);
@@ -48,6 +61,7 @@ function wire(root: HTMLElement) {
     const base = unitValue(boxes(root)[0].id);
     const next = nextUnit(kind, root.dataset.unit as UnitId);
     setUnit(root, next);
+    remember(kind, next);
     const shown = toDisplay(base, kind, next);
     boxes(root).forEach((b, i) => { b.value = shown[i] ?? ''; });
     // Keep the exact value (no drift from rounding when switching back and forth); tell the calculator.
