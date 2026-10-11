@@ -226,6 +226,13 @@ local devDependency. Change production settings only on purpose; preview-only se
 `draft: true` in frontmatter shows the page on local dev and Cloudflare preview builds (any branch other than `main`,
 via `WORKERS_CI_BRANCH`, read in `astro.config.mjs`) and hides it on production. Starter articles written by Claude stay `draft: true` until Harsh approves.
 
+## BMI calculator (`/tools/bmi-calculator/`)
+
+- Adults (18+): Indian cut-offs; target weight = BMI 21–22 (Harsh, 11 Oct 2026); largest healthy waist = lower of 90/80 cm and half the height.
+  Children (2–17): WHO BMI-for-age z-score and percentile (2006 standards under 5, 2007 reference from 5; WHO's own cut-offs for each).
+  Arithmetic in `src/lib/bmi.ts` (tested in `tests/bmi.test.mjs` against WHO AnthroPlus); LMS table `src/data/who-bmi-lms.json`
+  written by `scripts/tools/who-bmi-lms.py` from WHO's files; never edit it by hand. "More calculators" under it lists `src/data/tools.ts`.
+
 ## Rules
 
 - NMC conduct: no testimonials, patient details, fees, appointment booking, superlatives, or "specialist" claims.
