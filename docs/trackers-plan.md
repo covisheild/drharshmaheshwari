@@ -12,7 +12,10 @@ sees them over time, gets an urgent alert for dangerous values, and shares a liv
 | Sign-in | Google sign-in is required to save anything (same accounts as trainers and reader). Before sign-in the page explains the tracker and shows a sample chart. |
 | Whose data | The account holder plus **adult family members** (several "people" per account). |
 | Age | **18+ only.** Birth month/year that makes the person under 18 is refused with a short reason (children's BP needs height percentiles; DPDP Act needs parental consent). |
-| Interpretation | **Log + urgent alerts only.** No "you have hypertension/diabetes" labels. Charts may show faint reference lines. |
+| Interpretation | **Log + urgent alerts only.** No "you have hypertension/diabetes" labels. |
+| Alerts | A **soft alert on the patient's own screen only** (Harsh, 11 Oct 2026): a calm coloured note under the saved reading. Never sent to anyone else (no message, email, WhatsApp, notification), and no beeps, sounds, vibration or pop-ups. Not shown on the doctor share view. |
+| Chart lines | **Keep faint, unlabelled reference lines** on the charts. |
+| For Doctors | Trackers is **not** listed under For Doctors. A doctor sees readings only through a patient's share link. |
 | Menu | New top-level **Trackers** item in the For Everyone menu (`src/lib/modes.ts`), URL `/trackers/` (permanent). |
 | Doctor sharing | **In version 1**: a live, read-only link that always shows the latest readings (details below). |
 | Parked for later | Medicines log, reminders, other markers (lipids, creatinine, TSH ...), pregnancy/GDM, children. No UI or code for them now. |
@@ -60,7 +63,9 @@ Diabetes (2018); RSSDI clinical practice recommendations; ADA Standards of Care 
 Faint chart reference lines (no labels): clinic 140/90, home 135/85; FBS 126, HbA1c 6.5 % (India first: Indian guideline values
 if they differ).
 
-Alerts are shown on save and marked on the chart. Never pop-ups, sounds or emails.
+The alert appears only on the patient's screen: a soft note under the reading when it is saved, and a small mark beside that
+reading in the patient's own list and chart. Nothing is sent anywhere, and there are no pop-ups, sounds, vibration or notifications.
+The doctor share view shows the readings but not the alert notes or marks.
 
 ## Doctor share link (live)
 
@@ -69,7 +74,7 @@ Alerts are shown on save and marked on the chart. Never pop-ups, sounds or email
 - **Live**: the doctor's page fetches the current readings each time it is opened (and has a Refresh button), so the same
   link always shows the latest data. No sign-in for the doctor.
 - Shows: label, age, sex, height/BMI, the optional history answers; BP chart (clinic and home in different marks), home
-  average of the last 7 days, latest clinic reading; sugar charts per test; latest HbA1c; list of all readings; alerts marked;
+  average of the last 7 days, latest clinic reading; sugar charts per test; latest HbA1c; list of all readings (no alert notes);
   "last reading added on ...". Printable (print stylesheet).
 - Holder chooses for each link: which person (one person per link), what it includes (BP / sugar / weight), and how long it
   lasts (**30 days / 90 days (default) / until I stop it**). Holder sees each link's last-opened time and can **stop** it
@@ -109,6 +114,4 @@ Alerts are shown on save and marked on the chart. Never pop-ups, sounds or email
 
 ## Still open (Harsh)
 
-1. Confirm the alert numbers and wording above (and whether to alert on low BP).
-2. Reference lines on charts: keep (faint, unlabelled) or none?
-3. List Trackers under For Doctors > Tools too? (Suggestion: no; doctor view is reached only by a patient's link.)
+1. Confirm the alert numbers and wording above (after Claude opens and checks each source), and whether to alert on low BP.
