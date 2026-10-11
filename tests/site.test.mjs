@@ -104,8 +104,11 @@ test('header navigation stays inside the current mode', () => {
       else assert.ok(!h.startsWith('/doctors/'), `${url}: everyone nav links to ${h}`);
     }
   }
-  assert.deepEqual(navHrefs(html.get('/doctors/')), ['/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/', '/doctors/books/', '/doctors/videos/']);
-  assert.deepEqual(navHrefs(html.get('/')), ['/learn/', '/tools/', '/trackers/', '/books/', '/videos/', '/blog/', '/about/']);
+  assert.deepEqual(navHrefs(html.get('/doctors/')), ['/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/']);
+  for (const h of ['/doctors/books/', '/doctors/videos/']) assert.match(html.get('/doctors/evidence/'), new RegExp(`<a class="card[^"]*" href="${h}"`), `/doctors/evidence/ should link to ${h}`);
+  assert.deepEqual(navHrefs(html.get('/')), ['/learn/', '/tools/', '/trackers/', '/blog/', '/about/']);
+  // For Everyone books and videos are reached from Learn, not the header.
+  for (const h of ['/books/', '/videos/']) assert.match(html.get('/learn/'), new RegExp(`<a class="card[^"]*" href="${h}"`), `/learn/ should link to ${h}`);
 });
 
 test('trackers: in the For Everyone menu, not For Doctors; private pages stay out of search and the sitemap', () => {
@@ -283,6 +286,21 @@ test('Clinical Medicine is shown as in preparation, without a link, until it has
   assert.match(list, /<div [^>]*class="series-card[^"]*soon/, 'Clinical Medicine card missing or linked');
   assert.match(list, /Clinical Medicine/);
   assert.ok(!existsSync(join(DIST, 'doctors/books/clinical-medicine/index.html')), 'an empty shelf should not have a page');
+});
+
+test('units: every number box on the site converts its unit on a click (UnitField), or is marked as having no unit', () => {
+  // Rule in CLAUDE.md ("Units everywhere"): a typed number with a unit (cm, kg, minutes, hours...) uses
+  // src/components/UnitField.astro, whose boxes carry data-uf. Counts and units with nothing to convert to
+  // (age in years, days, rupees, a percentage) carry data-unitless.
+  const bad = [];
+  for (const [url, page] of html) {
+    for (const tag of page.match(/<input\b[^>]*>/g) ?? []) {
+      if (/type="?number/.test(tag) && !/\sdata-(uf|unitless)\b/.test(tag)) bad.push(`${url}: ${tag.slice(0, 120)}`);
+    }
+  }
+  assert.deepEqual(bad, [], 'number boxes without a convertible unit field or data-unitless');
+  const fields = [...html.get('/tools/bmi-calculator/').matchAll(/data-unit-field[^>]*data-kind="(\w+)"/g)].map((m) => m[1]);
+  assert.deepEqual(fields, ['height', 'weight', 'length'], 'BMI: height (cm/ft+in), weight (kg/lb), waist (cm/in)');
 });
 
 test('book pages never call books "free"', () => {

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import UnitField from '../../components/UnitField.astro';
 import { SITE } from '../../consts';
 
 // STOP-Bang as published by Chung et al.: eight yes/no items, 1 point each. Risk bands and the
@@ -55,8 +56,8 @@ const jsonld = [
             <details class="sb-help" id="bmi-help">
               <summary>Not sure? Work it out</summary>
               <div class="sb-row">
-                <label class="field"><input type="number" inputmode="decimal" id="hcm" min="100" max="230" placeholder="165" aria-label="Height in cm" /><span>cm</span></label>
-                <label class="field"><input type="number" inputmode="decimal" id="wkg" min="25" max="300" placeholder="66" aria-label="Weight in kg" /><span>kg</span></label>
+                <UnitField id="hcm" kind="height" label="Height" placeholder={165} />
+                <UnitField id="wkg" kind="weight" label="Weight" placeholder={66} />
               </div>
               <p class="small muted" id="bmi-out" aria-live="polite">Enter height and weight; the answer is filled in for you.</p>
             </details>
@@ -132,11 +133,7 @@ const jsonld = [
   .seg input:focus-visible + span { outline: 3px solid var(--accent); }
   .sb-help { margin: 0 0 .7rem; }
   .sb-help summary { cursor: pointer; color: var(--brand); font-weight: 550; font-size: .95rem; }
-  .sb-row { display: flex; gap: .6rem; margin-top: .6rem; }
-  .field { flex: 1; display: flex; align-items: center; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding-right: .9rem; transition: border-color .2s; }
-  .field:focus-within { border-color: var(--brand); }
-  .field input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ink); font: 600 1.1rem var(--font-body); padding: .6rem .8rem; outline: none; }
-  .field span { color: var(--ink-3); }
+  .sb-row { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .6rem; }
   .sb-help .small { margin: .4rem 0 0; }
   .sb-reset { border: 0; background: none; padding: 0; color: var(--brand); font: inherit; text-decoration: underline; cursor: pointer; margin-left: .3rem; }
   .sb-form > p { padding-top: 1rem; }
@@ -155,6 +152,7 @@ const jsonld = [
 </style>
 
 <script>
+  import { unitValue } from '../../scripts/unit-fields';
   import { stopBang } from '../../lib/stop-bang';
 
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -172,7 +170,7 @@ const jsonld = [
 
   // Optional helper: height + weight fill in the BMI question.
   function bmiHelper() {
-    const h = parseFloat($<HTMLInputElement>('hcm').value), w = parseFloat($<HTMLInputElement>('wkg').value);
+    const h = unitValue('hcm'), w = unitValue('wkg');
     const out = $('bmi-out');
     if (!(h >= 100 && h <= 230 && w >= 25 && w <= 300)) { out.textContent = 'Enter height and weight; the answer is filled in for you.'; return; }
     const bmi = w / (h / 100) ** 2;
@@ -208,7 +206,7 @@ const jsonld = [
 
   form.addEventListener('input', (e) => {
     const t = e.target as HTMLElement;
-    if (t.id === 'hcm' || t.id === 'wkg') bmiHelper();
+    if (t.closest('[data-unit-field]')) bmiHelper();
     update();
   });
   form.addEventListener('reset', () => setTimeout(() => { bmiHelper(); update(); }));

@@ -25,14 +25,12 @@ export const MODES: Record<Mode, ModeInfo> = {
       { href: '/learn/', label: 'Learn' },
       { href: '/tools/', label: 'Tools' },
       { href: '/trackers/', label: 'Trackers' },
-      { href: '/books/', label: 'Books' },
-      { href: '/videos/', label: 'Videos' },
       { href: '/blog/', label: 'Blog' },
       { href: '/about/', label: 'About' },
     ],
     footer: [
-      { title: 'Learn', links: [{ href: '/learn/', label: 'Guides' }, { href: '/blog/', label: 'Blog' }] },
-      { title: 'Use', links: [{ href: '/tools/', label: 'Tools' }, { href: '/trackers/', label: 'Trackers' }, { href: '/books/', label: 'Books' }, { href: '/videos/', label: 'Videos' }] },
+      { title: 'Learn', links: [{ href: '/learn/', label: 'Guides' }, { href: '/books/', label: 'Books' }, { href: '/videos/', label: 'Videos' }, { href: '/blog/', label: 'Blog' }] },
+      { title: 'Use', links: [{ href: '/tools/', label: 'Tools' }, { href: '/trackers/', label: 'Trackers' }] },
     ],
   },
   doctors: {
@@ -44,8 +42,6 @@ export const MODES: Record<Mode, ModeInfo> = {
       { href: '/doctors/evidence/', label: 'Evidence' },
       { href: '/doctors/trainers/', label: 'Trainers' },
       { href: '/doctors/tools/', label: 'Tools' },
-      { href: '/doctors/books/', label: 'Books' },
-      { href: '/doctors/videos/', label: 'Videos' },
     ],
     footer: [
       { title: 'Practice', links: [{ href: '/doctors/trainers/', label: 'Clinical trainers' }, { href: '/doctors/tools/', label: 'Clinical tools' }] },

@@ -146,11 +146,11 @@ export const ALERT_TEXT: Record<string, { title: string; text: string }> = {
   },
   low: {
     title: 'Low sugar',
-    text: 'Take 15 g of fast-acting sugar now (15 g glucose powder, 4 teaspoons of sugar in water, or something sweet you have) and measure again after 15 minutes; repeat if still below 70. If the person is drowsy or confused, do not give anything by mouth: get help now.',
+    text: 'Take 15 g of fast-acting sugar now (15 g glucose powder, 4 teaspoons of sugar in water, or something sweet you have) and measure again after 15 minutes; repeat if still below 70 mg/dL (3.9 mmol/L). If the person is drowsy or confused, do not give anything by mouth: get help now.',
   },
   'very-low': {
     title: 'Severely low sugar',
-    text: 'Take 15 g of fast-acting sugar now (15 g glucose powder, 4 teaspoons of sugar in water, or something sweet you have) and measure again after 15 minutes; repeat if still below 70. If the person is drowsy or confused, do not give anything by mouth: get help now.',
+    text: 'Take 15 g of fast-acting sugar now (15 g glucose powder, 4 teaspoons of sugar in water, or something sweet you have) and measure again after 15 minutes; repeat if still below 70 mg/dL (3.9 mmol/L). If the person is drowsy or confused, do not give anything by mouth: get help now.',
   },
 };
 export const alertText = (r: Reading) => {

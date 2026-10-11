@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { SITE } from '../../consts';
 import { articles } from '../../lib/content';
 import CardList from '../../components/lists/CardList.astro';
+import UnitField from '../../components/UnitField.astro';
 import { TOOLS } from '../../data/tools';
 
 // Link to a guide only once it is published (drafts are not built on production, so a link would 404).
@@ -53,8 +54,8 @@ const jsonld = [
       <fieldset id="age-set" hidden>
         <legend>Age</legend>
         <div class="row">
-          <label class="field"><input type="number" inputmode="numeric" id="ay" min="2" max="17" placeholder="8" /><span>years</span></label>
-          <label class="field"><input type="number" inputmode="numeric" id="am" min="0" max="11" placeholder="0" /><span>months</span></label>
+          <label class="field"><input type="number" data-unitless inputmode="numeric" id="ay" min="2" max="17" placeholder="8" /><span>years</span></label>
+          <label class="field"><input type="number" data-unitless inputmode="numeric" id="am" min="0" max="11" placeholder="0" /><span>months</span></label>
         </div>
       </fieldset>
 
@@ -68,25 +69,17 @@ const jsonld = [
 
       <fieldset>
         <legend>Height</legend>
-        <div class="seg small-seg">
-          <label><input type="radio" name="hu" value="cm" checked /> <span>cm</span></label>
-          <label><input type="radio" name="hu" value="ft" /> <span>ft + in</span></label>
-        </div>
-        <div class="row" id="h-cm"><label class="field"><input type="number" inputmode="decimal" id="hcm" min="70" max="230" placeholder="165" /><span>cm</span></label></div>
-        <div class="row" id="h-ft" hidden>
-          <label class="field"><input type="number" inputmode="numeric" id="hft" min="3" max="7" placeholder="5" /><span>ft</span></label>
-          <label class="field"><input type="number" inputmode="decimal" id="hin" min="0" max="11.9" placeholder="5" /><span>in</span></label>
-        </div>
+        <div class="row"><UnitField id="hcm" kind="height" label="Height" placeholder={165} /></div>
       </fieldset>
 
       <fieldset>
         <legend>Weight</legend>
-        <div class="row"><label class="field"><input type="number" inputmode="decimal" id="wkg" min="7" max="300" placeholder="66" /><span>kg</span></label></div>
+        <div class="row"><UnitField id="wkg" kind="weight" label="Weight" placeholder={66} /></div>
       </fieldset>
 
       <fieldset>
         <legend>Waist <span class="muted small">(optional, but recommended)</span></legend>
-        <div class="row"><label class="field"><input type="number" inputmode="decimal" id="waist" min="30" max="200" placeholder="85" /><span>cm</span></label></div>
+        <div class="row"><UnitField id="waist" kind="length" label="Waist" placeholder={85} /></div>
         <p class="small muted" style="margin:.5rem 0 0">Midway between lowest rib and top of hip bone, after breathing out.{live.has('waist-to-height-ratio') && <> <a href="/learn/waist-to-height-ratio/">How to measure</a></>}</p>
       </fieldset>
       <p class="small muted" style="margin:0" id="calc-note">For adults 18 and over. Not valid in pregnancy.</p>
@@ -212,6 +205,7 @@ const jsonld = [
 </style>
 
 <script>
+  import { unitValue } from '../../scripts/unit-fields';
   import { adultCategory, bmiOf, childHealthyBmi, childWaistCategory, childWaistLines, CHILD_MONTHS, IAP_FROM, iapBand, iapCategory, iapLines, kgAt, maxWaist, percentile, targetWeight, TARGET_BMI, WAIST_CUT, whoUnder5Category, zScore, type Sex } from '../../lib/bmi';
 
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -222,12 +216,6 @@ const jsonld = [
   const kg = (v: number) => v.toFixed(0);
   const ordinal = (n: number) => { const r = Math.round(n), t = r % 100; return r + (t >= 11 && t <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][r % 10] ?? 'th'); };
 
-  function heightCm(): number {
-    if (picked('hu') === 'cm') return num('hcm');
-    const ft = num('hft'), inch = num('hin');
-    if (!Number.isFinite(ft)) return NaN;
-    return (ft * 12 + (Number.isFinite(inch) ? inch : 0)) * 2.54;
-  }
 
   /** Child's age in months, or NaN when outside 2 years 0 months to 17 years 11 months. */
   function ageMonths(): number {
@@ -258,8 +246,6 @@ const jsonld = [
 
   function update() {
     const child = picked('who') === 'child';
-    $('h-cm').hidden = picked('hu') !== 'cm';
-    $('h-ft').hidden = picked('hu') === 'cm';
     $('age-set').hidden = !child;
     form.querySelectorAll<HTMLElement>('[data-adult]').forEach((el) => { el.textContent = (child ? el.dataset.child : el.dataset.adult) ?? ''; });
     $('calc-note').textContent = child
@@ -267,7 +253,7 @@ const jsonld = [
       : 'For adults 18 and over. Not valid in pregnancy.';
 
     const sex = picked('sex') as Sex;
-    const h = heightCm(), w = num('wkg'), waist = num('waist'), months = child ? ageMonths() : NaN;
+    const h = unitValue('hcm'), w = unitValue('wkg'), waist = unitValue('waist'), months = child ? ageMonths() : NaN;
     const validH = h >= (child ? 70 : 100) && h <= 230, validW = w >= (child ? 7 : 25) && w <= 300;
     const under5 = child && months < IAP_FROM;
     const [pts, labels] = scaleFor(months, sex); // adult scale when months is NaN

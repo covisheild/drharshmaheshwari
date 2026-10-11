@@ -47,6 +47,8 @@ const sampleSvg = chartSvg({ label: 'Sample blood pressure chart', unit: 'mmHg',
   import { TrackerStore, newId } from '../../trackers/store';
   import { ageOn, isAdult, bpOf, sugarOf, latest, bpAverage, bpShown, sugarShown, formatWhen, LIMITS, RANGE, TEST_NAME, type Person } from '../../lib/trackers';
   import { esc } from '../../trackers/render';
+  import { unitFieldHTML } from '../../lib/units';
+  import { initUnitFields, unitValue } from '../../scripts/unit-fields';
 
   const el = document.getElementById('tk-app')!;
   const result = signInResult();
@@ -95,13 +97,13 @@ const sampleSvg = chartSvg({ label: 'Sample blood pressure chart', unit: 'mmHg',
         <fieldset><legend>Month and year of birth <span class="tk-hint">(for adults, 18 and over)</span></legend>
           <div class="tk-grid">
             <label class="tk-f">Month<select name="month" required><option value="">Month</option>${months.map((m, i) => `<option value="${String(i + 1).padStart(2, '0')}">${m}</option>`).join('')}</select></label>
-            <label class="tk-f">Year<input name="year" type="number" inputmode="numeric" min="${years - 120}" max="${years - 18}" placeholder="${years - 40}" required></label>
+            <label class="tk-f">Year<input name="year" type="number" data-unitless inputmode="numeric" min="${years - 120}" max="${years - 18}" placeholder="${years - 40}" required></label>
           </div>
         </fieldset>
         <fieldset><legend>Sex</legend>
           <div class="tk-seg"><label><input type="radio" name="sex" value="m"><span>Male</span></label><label><input type="radio" name="sex" value="f"><span>Female</span></label></div>
         </fieldset>
-        <label class="tk-f">Height in cm <span class="tk-hint">(optional; with weight it shows BMI)</span><input name="height" type="number" inputmode="decimal" min="${RANGE.heightCm[0]}" max="${RANGE.heightCm[1]}" placeholder="165"></label>
+        <div class="tk-f"><span>Height <span class="tk-hint">(optional; with weight it shows BMI)</span></span>${unitFieldHTML({ id: 'tk-height', kind: 'height', label: 'Height', placeholder: 165 })}</div>
         <details><summary>Optional: health history (shown to your doctor if you share a link)</summary>
           <div class="tk-grid" style="margin-top:.75rem">
             ${[['htn', 'Known high BP?'], ['dm', 'Known diabetes?'], ['meds', 'On medicines for either?']].map(([n, l]) => `<label class="tk-f">${l}<select name="${n}"><option value="">—</option><option value="yes">Yes</option><option value="no">No</option><option value="unsure">Not sure</option></select></label>`).join('')}
@@ -124,6 +126,7 @@ const sampleSvg = chartSvg({ label: 'Sample blood pressure chart', unit: 'mmHg',
       el.querySelector('[data-cancel]')?.addEventListener('click', () => { adding = false; draw(); });
       const f = el.querySelector<HTMLFormElement>('#tk-person-form');
       if (!f) return;
+      initUnitFields(f);
       f.addEventListener('change', (e) => {
         const t = e.target as HTMLInputElement;
         if (t.name === 'who') {
@@ -138,7 +141,7 @@ const sampleSvg = chartSvg({ label: 'Sample blood pressure chart', unit: 'mmHg',
         const fd = new FormData(f);
         const err = (m: string) => { const p = el.querySelector<HTMLElement>('#tk-perr')!; p.textContent = m; p.hidden = false; };
         const who = fd.get('who'), label = String(fd.get('label') ?? '').trim(), born = `${fd.get('year')}-${fd.get('month')}`;
-        const height = fd.get('height') ? Number(fd.get('height')) : null;
+        const h = unitValue('tk-height'), height = Number.isFinite(h) ? Math.round(h * 10) / 10 : null; // cm, whatever unit was shown
         if (!label) return err('Please enter a name.');
         if (!/^\d{4}-\d{2}$/.test(born)) return err('Please choose the month and year of birth.');
         if (!isAdult(born, new Date())) return err('The tracker is for adults, 18 and over. Children’s blood pressure needs different charts.');

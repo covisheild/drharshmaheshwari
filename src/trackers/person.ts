@@ -4,16 +4,22 @@
 
 import qrcode from 'qrcode-generator';
 import {
-  ageOn, askToRepeat, bmiFor, bpAverage, fromInputs, isAdult, toInputs, toMgdl, toMmol, validBp, validSugar,
+  ageOn, askToRepeat, bmiFor, bpAverage, fromInputs, isAdult, toInputs, validBp, validSugar,
   LIMITS, RANGE, SAMPLE_NAME, SETTING_NAME, TEST_NAME, type BpReading, type BpValue, type Person, type Reading,
   type SugarReading, type SugarTest, type WeightReading,
 } from '../lib/trackers';
 import { alertBox, bpSection, esc, historyLine, sugarSection, weightSection } from './render';
 import { TrackerStore, listShares, makeShare, newId, shareUrl, stopShare, type Share } from './store';
+import { unitFieldHTML, type Kind as UnitKind } from '../lib/units';
+import { initUnitFields, setUnitValue, unitShown, unitValue } from '../scripts/unit-fields';
 
 type Kind = 'bp' | 'sugar' | 'weight';
 const STATUS = { syncing: 'Saving…', synced: 'Saved to your account.', offline: 'Not connected: saved on this device and will upload when you are back online.' };
 const tzNow = () => -new Date().getTimezoneOffset();
+// Every number with a unit converts on a click of its unit (CLAUDE.md, "Units everywhere"): BP mmHg/kPa, sugar mg/dL/mmol/L,
+// weight kg/lb, height cm/ft+in. The page reads them in the base unit with unitValue().
+const uf = (id: string, kind: UnitKind, label: string, placeholder: number) => unitFieldHTML({ id, kind, label, placeholder });
+const field = (label: string, html: string) => `<div class="tk-f"><span>${label}</span>${html}</div>`;
 const fmtDate = (t: number) => new Date(t).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
 export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) {
@@ -46,9 +52,9 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
         ${(['home', 'clinic'] as const).map((s) => `<label><input type="radio" name="setting" value="${s}" ${s === setting ? 'checked' : ''}><span>${SETTING_NAME[s]}</span></label>`).join('')}
       </div></fieldset>
       ${vals.map((v, i) => `<fieldset><legend>${rows > 1 ? `Reading ${i + 1}` : 'Reading'}</legend><div class="tk-grid">
-        <label class="tk-f">Systolic (top)<input name="s${i}" type="number" inputmode="numeric" min="${RANGE.s[0]}" max="${RANGE.s[1]}" value="${v?.s ?? ''}" placeholder="120"></label>
-        <label class="tk-f">Diastolic (bottom)<input name="d${i}" type="number" inputmode="numeric" min="${RANGE.d[0]}" max="${RANGE.d[1]}" value="${v?.d ?? ''}" placeholder="80"></label>
-        <label class="tk-f">Pulse <span class="tk-hint">(optional)</span><input name="p${i}" type="number" inputmode="numeric" min="${RANGE.p[0]}" max="${RANGE.p[1]}" value="${v?.p ?? ''}" placeholder="72"></label>
+        ${field('Systolic (top)', uf(`tk-s${i}`, 'pressure', `Reading ${i + 1}: systolic`, 120))}
+        ${field('Diastolic (bottom)', uf(`tk-d${i}`, 'pressure', `Reading ${i + 1}: diastolic`, 80))}
+        <label class="tk-f">Pulse <span class="tk-hint">(optional, per minute)</span><input name="p${i}" type="number" data-unitless inputmode="numeric" min="${RANGE.p[0]}" max="${RANGE.p[1]}" value="${v?.p ?? ''}" placeholder="72"></label>
       </div></fieldset>`).join('')}
       ${asked ? '<div class="tk-alert" role="note"><b>This reading is very high.</b> Sit quietly and measure again after 1–2 minutes, and enter it as reading 2. The two are averaged. If you cannot measure again now, just save.</div>' : ''}
       ${rows < LIMITS.bpPerSitting ? '<button type="button" class="tk-link" data-more>+ Another reading at this sitting</button>' : ''}
@@ -60,8 +66,7 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
 
   function sugarForm(r?: SugarReading, test: SugarTest = r?.test ?? 'fbs') {
     const pct = test === 'hba1c';
-    const unit = r?.unit === 'mmol' ? 'mmol' : 'mgdl';
-    const shown = r ? (r.test === 'hba1c' ? r.value.toFixed(1) : unit === 'mmol' ? toMmol(r.value).toFixed(1) : String(Math.round(r.value))) : '';
+    const shown = r && r.test === 'hba1c' ? r.value.toFixed(1) : '';
     return `<form class="tk-form" data-form="sugar" novalidate>
       <h3>${r ? 'Edit' : 'Add'} blood sugar</h3>
       <fieldset><legend>Which test?</legend><div class="tk-seg">
@@ -71,8 +76,8 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
         ${(['lab', 'meter'] as const).map((s) => `<label><input type="radio" name="sample" value="${s}" ${s === (r?.sample ?? 'lab') ? 'checked' : ''}><span>${s === 'lab' ? 'Lab blood test' : 'Glucometer (finger-prick)'}</span></label>`).join('')}
       </div></fieldset>`}
       <div class="tk-grid">
-        <label class="tk-f">${pct ? 'HbA1c' : 'Value'}<input name="value" type="number" inputmode="decimal" step="${pct || unit === 'mmol' ? '0.1' : '1'}" value="${shown}" placeholder="${pct ? '6.2' : '110'}"></label>
-        <label class="tk-f">Unit${pct ? '<input value="%" disabled>' : `<select name="unit"><option value="mgdl" ${unit === 'mgdl' ? 'selected' : ''}>mg/dL</option><option value="mmol" ${unit === 'mmol' ? 'selected' : ''}>mmol/L</option></select>`}</label>
+        ${pct ? `<label class="tk-f">HbA1c in %<input name="value" type="number" data-unitless inputmode="decimal" step="0.1" value="${shown}" placeholder="6.2"></label>`
+          : field('Value', uf('tk-glu', 'glucose', 'Blood sugar', 110))}
       </div>
       ${test === 'ppbs' ? '<p class="small muted" style="margin:0">2 hours after the start of a meal.</p>' : ''}
       ${when(r, pct)}${note(r)}${buttons()}
@@ -82,7 +87,7 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
   function weightForm(r?: WeightReading) {
     return `<form class="tk-form" data-form="weight" novalidate>
       <h3>${r ? 'Edit' : 'Add'} weight</h3>
-      <label class="tk-f">Weight in kg<input name="kg" type="number" inputmode="decimal" step="0.1" min="${RANGE.kg[0]}" max="${RANGE.kg[1]}" value="${r?.kg ?? ''}" placeholder="66"></label>
+      ${field('Weight', uf('tk-kg', 'weight', 'Weight', 66))}
       ${when(r, true)}${note(r)}${buttons()}
     </form>`;
   }
@@ -96,10 +101,10 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
       <label class="tk-f">Name<input name="label" maxlength="${LIMITS.label}" value="${esc(p.label)}" required></label>
       <div class="tk-grid">
         <label class="tk-f">Month of birth<select name="month">${months.map((n, i) => { const v = String(i + 1).padStart(2, '0'); return `<option value="${v}" ${v === m ? 'selected' : ''}>${n}</option>`; }).join('')}</select></label>
-        <label class="tk-f">Year of birth<input name="year" type="number" inputmode="numeric" value="${y}"></label>
+        <label class="tk-f">Year of birth<input name="year" type="number" data-unitless inputmode="numeric" value="${y}"></label>
       </div>
       <fieldset><legend>Sex</legend><div class="tk-seg"><label><input type="radio" name="sex" value="m" ${p.sex === 'm' ? 'checked' : ''}><span>Male</span></label><label><input type="radio" name="sex" value="f" ${p.sex === 'f' ? 'checked' : ''}><span>Female</span></label></div></fieldset>
-      <label class="tk-f">Height in cm <span class="tk-hint">(optional)</span><input name="height" type="number" inputmode="decimal" value="${p.heightCm ?? ''}"></label>
+      ${field('Height <span class="tk-hint">(optional)</span>', uf('tk-eheight', 'height', 'Height', 165))}
       <div class="tk-grid">${sel('htn', 'Known high BP?')}${sel('dm', 'Known diabetes?')}${sel('meds', 'On medicines for either?')}</div>
       ${buttons()}
       <p class="small" style="margin:0"><button type="button" class="tk-link danger" data-remove>Remove ${esc(p.label)} and all their readings</button></p>
@@ -107,7 +112,8 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
   }
 
   // ---------- drawing ----------
-  function draw() {
+  function draw(keep = false) {
+    const kept = keep ? snapshot() : null;
     const p = person();
     if (!p) {
       root.innerHTML = `<div class="tk-card"><p>${store.state === 'syncing' ? 'Loading…' : 'This person is not in your trackers (they may have been removed).'}</p><p><a href="/trackers/">All trackers</a></p></div>`;
@@ -143,7 +149,25 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
       ${sec('weight', 'Weight', weightSection(p, rs, o))}
       <section class="tk-card" id="tk-share">${shareHtml(p)}</section>
       <p class="small"><button type="button" class="tk-link" data-csv>Download all readings (CSV)</button> · <a href="/trackers/">All trackers</a></p>`;
+    initUnitFields(root);
+    fill(p, kept);
     wire();
+  }
+
+  /** What is typed in the unit fields, by id (base units), so a redraw of the same form keeps it. */
+  function snapshot() {
+    const m = new Map<string, number>();
+    root.querySelectorAll<HTMLElement>('[data-unit-field] input[data-uf]:first-child').forEach((b) => { if (b.id) m.set(b.id, unitValue(b.id)); });
+    return m;
+  }
+  /** Puts the reading being edited (or what was typed before a redraw) into the unit fields. */
+  function fill(p: Person, kept: Map<string, number> | null) {
+    const e = open?.edit;
+    if (e?.kind === 'bp') e.values.forEach((v, i) => { setUnitValue(`tk-s${i}`, v.s); setUnitValue(`tk-d${i}`, v.d); });
+    if (e?.kind === 'sugar' && e.test !== 'hba1c') setUnitValue('tk-glu', e.value);
+    if (e?.kind === 'weight') setUnitValue('tk-kg', e.kg);
+    if (editingPerson) setUnitValue('tk-eheight', p.heightCm ?? null);
+    if (kept) for (const [k, v] of kept) if (Number.isFinite(v)) setUnitValue(k, v);
   }
 
   function formFor(kind: Kind) {
@@ -227,8 +251,8 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
       const rows = open?.rows ?? 1;
       const values: BpValue[] = [];
       for (let i = 0; i < rows; i++) {
-        const s = Number(fd.get(`s${i}`)), d = Number(fd.get(`d${i}`)), p = fd.get(`p${i}`) ? Number(fd.get(`p${i}`)) : null;
-        if (!fd.get(`s${i}`) && !fd.get(`d${i}`) && i > 0) continue; // an empty extra row is ignored
+        const s = Math.round(unitValue(`tk-s${i}`)), d = Math.round(unitValue(`tk-d${i}`)), p = fd.get(`p${i}`) ? Number(fd.get(`p${i}`)) : null;
+        if (Number.isNaN(s) && Number.isNaN(d) && i > 0) continue; // an empty extra row is ignored
         const v = { s, d, p };
         if (!validBp(v)) return err(`Please check reading ${i + 1}: systolic ${RANGE.s[0]}–${RANGE.s[1]}, diastolic ${RANGE.d[0]}–${RANGE.d[1]}, systolic higher than diastolic${p !== null ? `, pulse ${RANGE.p[0]}–${RANGE.p[1]}` : ''}.`);
         values.push(p === null ? { s, d } : v);
@@ -251,10 +275,10 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
     if (kind === 'sugar') {
       const test = String(fd.get('test')) as SugarTest;
       const pct = test === 'hba1c';
-      const unit = pct ? 'pct' : fd.get('unit') === 'mmol' ? 'mmol' : 'mgdl';
-      const typed = Number(fd.get('value'));
-      if (!fd.get('value') || !Number.isFinite(typed)) return err('Please enter the value.');
-      const value = unit === 'mmol' ? Math.round(toMgdl(typed) * 10) / 10 : typed;
+      const unit = pct ? 'pct' : unitShown('tk-glu') === 'mmol' ? 'mmol' : 'mgdl';
+      const typed = pct ? (fd.get('value') ? Number(fd.get('value')) : NaN) : unitValue('tk-glu'); // mg/dL whatever unit was shown
+      if (!Number.isFinite(typed)) return err('Please enter the value.');
+      const value = Math.round(typed * 10) / 10;
       if (!validSugar(test, value)) return err(pct ? `HbA1c should be between ${RANGE.pct[0]} and ${RANGE.pct[1]} %.` : `Blood sugar should be between ${RANGE.mgdl[0]} and ${RANGE.mgdl[1]} mg/dL (${(RANGE.mgdl[0] / 18.016).toFixed(1)}–${(RANGE.mgdl[1] / 18.016).toFixed(1)} mmol/L).`);
       const at = readWhen(f, pct);
       if (typeof at === 'string') return err(at);
@@ -263,7 +287,7 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
       return saved('sugar', r);
     }
     if (kind === 'weight') {
-      const kg = Number(fd.get('kg'));
+      const kg = unitValue('tk-kg');
       if (!(kg >= RANGE.kg[0] && kg <= RANGE.kg[1])) return err(`Weight should be between ${RANGE.kg[0]} and ${RANGE.kg[1]} kg.`);
       const at = readWhen(f, true);
       if (typeof at === 'string') return err(at);
@@ -274,7 +298,7 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
     if (kind === 'person') {
       const p = person()!;
       const label = String(fd.get('label') ?? '').trim(), born = `${fd.get('year')}-${fd.get('month')}`;
-      const height = fd.get('height') ? Number(fd.get('height')) : null;
+      const h = unitValue('tk-eheight'), height = Number.isFinite(h) ? Math.round(h * 10) / 10 : null;
       if (!label) return err('Please enter a name.');
       if (!isAdult(born, new Date())) return err('The tracker is for adults, 18 and over.');
       if (height !== null && !(height >= RANGE.heightCm[0] && height <= RANGE.heightCm[1])) return err(`Height should be between ${RANGE.heightCm[0]} and ${RANGE.heightCm[1]} cm.`);
@@ -327,14 +351,14 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
       const t = e.target as HTMLInputElement;
       if (t.name !== 'test' || !open) return;
       (open as { test?: SugarTest }).test = t.value as SugarTest;
-      draw();
+      draw(true);
       root.querySelector<HTMLInputElement>(`form[data-form=sugar] input[name=test][value=${t.value}]`)?.focus();
     });
     root.querySelector('[data-more]')?.addEventListener('click', () => {
       const f = root.querySelector<HTMLFormElement>('form[data-form=bp]')!;
       const keep = new FormData(f);
       open = { ...open!, rows: (open?.rows ?? 1) + 1 };
-      draw();
+      draw(true);
       const g = root.querySelector<HTMLFormElement>('form[data-form=bp]')!;
       for (const [k, v] of keep) { const el = g.elements.namedItem(k); if (el instanceof HTMLInputElement && el.type !== 'radio') el.value = String(v); else if (el instanceof RadioNodeList) el.value = String(v); }
       g.querySelector<HTMLInputElement>(`input[name=s${(open.rows ?? 2) - 1}]`)?.focus();
