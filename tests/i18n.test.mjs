@@ -135,7 +135,8 @@ test('production builds carry no Hindi until it is live', { skip: built && 'this
 // The exceptions are deliberate (docs/translation.md): the account page (it belongs to the trainers and the book reader,
 // which are English) and single book pages (books are always in English). A new For Everyone page must either be added
 // to LOCAL_PAGES (src/i18n/routes.ts) with its words translated, or be listed here with the reason.
-const ENGLISH_ONLY = [/^\/account\/$/, /^\/books\/[^/]+\/$/, /^\/404\//];
+// /trackers/view/ is the doctor's view of a shared link: read by a doctor, so it stays English like the rest of For Doctors.
+const ENGLISH_ONLY = [/^\/account\/$/, /^\/books\/[^/]+\/$/, /^\/404\//, /^\/trackers\/view\//];
 test('every For Everyone page has a Hindi page', { skip: !built && 'no Hindi pages in this build' }, () => {
   const missing = pages(DIST).map(urlOf)
     .filter((u) => !u.startsWith('/doctors/') && !u.startsWith('/hi/') && !u.startsWith('/og/') && !ENGLISH_ONLY.some((r) => r.test(u)))

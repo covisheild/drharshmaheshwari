@@ -1,17 +1,27 @@
 ---
 // One person's BP, sugar and weight readings (/trackers/person/#<id>). Private to the signed-in account: not indexed,
 // not in the sitemap. The page code is in src/trackers/person.ts.
+// Also /<lang>/trackers/person/: the page through the dictionary (t()), the browser code through w() (src/i18n/client.ts).
 import Base from '../../../layouts/Base.astro';
+import ClientWords from '../../../components/ClientWords.astro';
+import { langOf } from '../../../i18n/languages';
+import { localHref } from '../../../i18n/routes';
+import { useT } from '../../../i18n/t';
 import '../../../styles/trackers.css';
+
+const lang = langOf(Astro.url.pathname);
+const t = useT(Astro.url.pathname);
+const L = (href: string) => localHref(lang, href);
 ---
-<Base title="Readings" description="Blood pressure, blood sugar and weight readings, with charts, alerts and a link to share with your doctor." noindex>
+<Base title={t('Readings')} description={t('Blood pressure, blood sugar and weight readings, with charts, alerts and a link to share with your doctor.')} noindex>
+  <ClientWords sources={['/src/pages/trackers/person/index.astro', '/src/trackers/person.ts', '/src/trackers/render.ts', '/src/trackers/chart.ts', '/src/lib/trackers.ts']} />
   <header class="page-head wrap" style="padding-bottom:1rem">
-    <span class="eyebrow">Trackers</span>
-    <h1>Readings</h1>
+    <span class="eyebrow">{t('Trackers')}</span>
+    <h1>{t('Readings')}</h1>
   </header>
-  <div class="wrap tk-wrap" id="tk-person" aria-live="polite"><p class="muted">Loading…</p></div>
-  <noscript><p class="wrap">This page needs JavaScript.</p></noscript>
-  <p class="wrap small muted">Very high or very low readings show a note on this screen only; nothing is sent to anyone. <a href="/privacy/#trackers">What is stored</a> · <a href="/disclaimer/">Disclaimer</a></p>
+  <div class="wrap tk-wrap" id="tk-person" aria-live="polite"><p class="muted">{t('Loading…')}</p></div>
+  <noscript><p class="wrap">{t('This page needs JavaScript.')}</p></noscript>
+  <p class="wrap small muted">{t('Very high or very low readings show a note on this screen only; nothing is sent to anyone.')} <a href={L('/privacy/#trackers')}>{t('What is stored')}</a> · <a href={L('/disclaimer/')}>{t('Disclaimer')}</a></p>
 </Base>
 
 <script>
@@ -19,14 +29,18 @@ import '../../../styles/trackers.css';
   import { TrackerStore } from '../../../trackers/store';
   import { mountPerson } from '../../../trackers/person';
   import { esc } from '../../../trackers/render';
+  import { w } from '../../../i18n/client';
+  import { langOf } from '../../../i18n/languages';
 
   const root = document.getElementById('tk-person')!;
   const id = location.hash.slice(1);
+  // The trackers list in the page's language (/hi/trackers/ from /hi/trackers/person/).
+  const home = `${langOf(location.pathname) === 'en' ? '' : `/${langOf(location.pathname)}`}/trackers/`;
   const a = await account();
   if (!a.enabled || !a.user) {
-    root.innerHTML = `<div class="tk-card"><p>Please sign in to see these readings.</p><div class="tk-row-btns">${a.enabled ? `<a class="btn btn-primary" href="${esc(signInHref('/trackers/'))}">Sign in with Google</a>` : ''}<a class="btn btn-ghost" href="/trackers/">All trackers</a></div></div>`;
+    root.innerHTML = `<div class="tk-card"><p>${w('Please sign in to see these readings.')}</p><div class="tk-row-btns">${a.enabled ? `<a class="btn btn-primary" href="${esc(signInHref(home))}">${w('Sign in with Google')}</a>` : ''}<a class="btn btn-ghost" href="${home}">${w('All trackers')}</a></div></div>`;
   } else if (!/^[A-Za-z0-9_-]{6,64}$/.test(id)) {
-    location.replace('/trackers/');
+    location.replace(home);
   } else {
     claimLocalProgress(a.user.email);
     const store = new TrackerStore();

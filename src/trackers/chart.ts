@@ -22,11 +22,17 @@ export interface ChartOpts {
   decimals?: number;
   /** Drawn at the width it is shown, so its labels stay at their real size on a phone. */
   width?: number;
+  /** The page's words (t() at build time, w() in the browser); English when left out. */
+  words?: (en: string, vars?: Record<string, string | number>) => string;
 }
 
 const L = 40, R = 12, T = 16, B = 28;
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const DAY = 86_400_000;
+// The words a chart shows go through o.words, so they are listed here for src/components/ClientWords.astro:
+// w('Jan') w('Feb') w('Mar') w('Apr') w('May') w('Jun') w('Jul') w('Aug') w('Sep') w('Oct') w('Nov') w('Dec')
+// w('{d} {month}') w('{d} {month} {yy}') w('{label}: {n} reading') w('{label}: {n} readings') w('{label}: no readings yet')
+const english = (s: string, v: Record<string, string | number> = {}) => s.replace(/\{(\w+)\}/g, (m, k) => (k in v ? String(v[k]) : m));
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
 function niceStep(span: number) {
@@ -37,6 +43,7 @@ function niceStep(span: number) {
 export function chartSvg(o: ChartOpts): string {
   const W = Math.round(Math.min(900, Math.max(280, o.width ?? 640))), H = Math.round(Math.min(260, Math.max(190, W * 0.4)));
   const pts = o.points;
+  const tr = o.words ?? english;
   const vals = pts.flatMap((p) => (p.v2 == null ? [p.v] : [p.v, p.v2])).concat(o.lines ?? [], o.floor);
   const step = niceStep(Math.max(...vals) - Math.min(...vals) || 10);
   const lo = Math.floor(Math.min(...vals) / step) * step, hi = Math.ceil(Math.max(...vals) / step) * step;
@@ -59,7 +66,8 @@ export function chartSvg(o: ChartOpts): string {
     for (let i = 0; i < n; i++) {
       const t = pts[n === 1 ? 0 : Math.round(((pts.length - 1) * i) / (n - 1))].t;
       const d = new Date(t + 330 * 60_000);
-      const label = `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]}${t1 - t0 > 300 * DAY ? ` ${String(d.getUTCFullYear()).slice(2)}` : ''}`;
+      const month = tr(MONTHS[d.getUTCMonth()]);
+      const label = t1 - t0 > 300 * DAY ? tr('{d} {month} {yy}', { d: d.getUTCDate(), month, yy: String(d.getUTCFullYear()).slice(2) }) : tr('{d} {month}', { d: d.getUTCDate(), month });
       if (seen.has(label) || x(t) - lastX < 56) continue;
       seen.add(label); lastX = x(t);
       out.push(`<text class="ch-ax" x="${f(x(t))}" y="${H - 8}" text-anchor="middle">${label}</text>`);
@@ -76,6 +84,7 @@ export function chartSvg(o: ChartOpts): string {
       if (p.alert) out.push(`<circle class="ch-alert" cx="${cx}" cy="${f(y(v))}" r="8"/>`);
     }
   }
-  const summary = pts.length ? `${o.label}: ${pts.length} reading${pts.length > 1 ? 's' : ''}` : `${o.label}: no readings yet`;
+  const summary = !pts.length ? tr('{label}: no readings yet', { label: o.label })
+    : pts.length > 1 ? tr('{label}: {n} readings', { label: o.label, n: pts.length }) : tr('{label}: {n} reading', { label: o.label, n: pts.length });
   return `<svg class="ch" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(summary)}" preserveAspectRatio="xMidYMid meet"><text class="ch-ax ch-unit" x="${L}" y="10">${esc(o.unit)}</text>${out.join('')}</svg>`;
 }

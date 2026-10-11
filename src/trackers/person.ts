@@ -9,18 +9,25 @@ import {
   type SugarReading, type SugarTest, type WeightReading,
 } from '../lib/trackers';
 import { alertBox, bpSection, esc, historyLine, sugarSection, weightSection } from './render';
+import { w } from '../i18n/client';
+import { langOf } from '../i18n/languages';
 import { TrackerStore, listShares, makeShare, newId, shareUrl, stopShare, type Share } from './store';
 import { unitFieldHTML, type Kind as UnitKind } from '../lib/units';
 import { initUnitFields, setUnitValue, unitShown, unitValue } from '../scripts/unit-fields';
 
 type Kind = 'bp' | 'sugar' | 'weight';
-const STATUS = { syncing: 'Saving…', synced: 'Saved to your account.', offline: 'Not connected: saved on this device and will upload when you are back online.' };
+const STATUS = { syncing: w('Saving…'), synced: w('Saved to your account.'), offline: w('Not connected: saved on this device and will upload when you are back online.') };
+// Links stay in the page's language: /hi/trackers/ from /hi/trackers/person/ (src/i18n/routes.ts, LOCAL_PAGES).
+const LANG_PREFIX = langOf(location.pathname) === 'en' ? '' : `/${langOf(location.pathname)}`;
+const HOME = `${LANG_PREFIX}/trackers/`;
+// Fixed texts from src/lib/trackers.ts shown here (listed for src/components/ClientWords.astro; render.ts lists the rest):
+// w('Fasting (FBS)') w('2 h after a meal (PPBS)') w('Random (RBS)') w('HbA1c') w("Doctor's clinic") w('Home or work')
 const tzNow = () => -new Date().getTimezoneOffset();
 // Every number with a unit converts on a click of its unit (CLAUDE.md, "Units everywhere"): BP mmHg/kPa, sugar mg/dL/mmol/L,
 // weight kg/lb, height cm/ft+in. The page reads them in the base unit with unitValue().
-const uf = (id: string, kind: UnitKind, label: string, placeholder: number) => unitFieldHTML({ id, kind, label, placeholder });
+const uf = (id: string, kind: UnitKind, label: string, placeholder: number) => unitFieldHTML({ id, kind, label, placeholder }, w);
 const field = (label: string, html: string) => `<div class="tk-f"><span>${label}</span>${html}</div>`;
-const fmtDate = (t: number) => new Date(t).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+const fmtDate = (t: number) => new Date(t).toLocaleDateString(document.documentElement.lang || 'en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
 export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) {
   let open: { kind: Kind; edit?: Reading; asked?: boolean; rows?: number } | null = null;
@@ -36,30 +43,30 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
   const when = (r?: Reading, timeOptional = false) => {
     const v = r ? toInputs(r.at, r.tz) : toInputs(Date.now(), tzNow());
     return `<div class="tk-grid">
-      <label class="tk-f">Date<input type="date" name="date" value="${v.date}" max="${toInputs(Date.now(), tzNow()).date}" required></label>
-      <label class="tk-f">Time${timeOptional ? ' <span class="tk-hint">(optional)</span>' : ''}<input type="time" name="time" value="${v.time}"></label>
+      <label class="tk-f">${w('Date')}<input type="date" name="date" value="${v.date}" max="${toInputs(Date.now(), tzNow()).date}" required></label>
+      <label class="tk-f">${w('Time')}${timeOptional ? ` <span class="tk-hint">${w('(optional)')}</span>` : ''}<input type="time" name="time" value="${v.time}"></label>
     </div>`;
   };
-  const note = (r?: Reading) => `<label class="tk-f">Note <span class="tk-hint">(optional, e.g. "missed my tablet")</span><input name="note" maxlength="${LIMITS.note}" value="${esc(r?.note ?? '')}" autocomplete="off"></label>`;
-  const buttons = (label = 'Save') => `<p class="tk-err" role="alert" hidden></p><div class="tk-row-btns"><button class="btn btn-primary" type="submit">${label}</button><button class="btn btn-ghost" type="button" data-cancel>Cancel</button></div>`;
+  const note = (r?: Reading) => `<label class="tk-f">${w('Note')} <span class="tk-hint">${w('(optional, e.g. "missed my tablet")')}</span><input name="note" maxlength="${LIMITS.note}" value="${esc(r?.note ?? '')}" autocomplete="off"></label>`;
+  const buttons = (label = w('Save')) => `<p class="tk-err" role="alert" hidden></p><div class="tk-row-btns"><button class="btn btn-primary" type="submit">${label}</button><button class="btn btn-ghost" type="button" data-cancel>${w('Cancel')}</button></div>`;
 
   function bpForm(r?: BpReading, rows = r?.values.length ?? 1, asked = false) {
     const vals: (BpValue | null)[] = Array.from({ length: rows }, (_, i) => r?.values[i] ?? null);
     const setting = r?.setting ?? 'home';
     return `<form class="tk-form" data-form="bp" novalidate>
-      <h3>${r ? 'Edit' : 'Add'} blood pressure</h3>
-      <fieldset><legend>Where was it measured?</legend><div class="tk-seg">
-        ${(['home', 'clinic'] as const).map((s) => `<label><input type="radio" name="setting" value="${s}" ${s === setting ? 'checked' : ''}><span>${SETTING_NAME[s]}</span></label>`).join('')}
+      <h3>${r ? w('Edit blood pressure') : w('Add blood pressure')}</h3>
+      <fieldset><legend>${w('Where was it measured?')}</legend><div class="tk-seg">
+        ${(['home', 'clinic'] as const).map((s) => `<label><input type="radio" name="setting" value="${s}" ${s === setting ? 'checked' : ''}><span>${w(SETTING_NAME[s])}</span></label>`).join('')}
       </div></fieldset>
-      ${vals.map((v, i) => `<fieldset><legend>${rows > 1 ? `Reading ${i + 1}` : 'Reading'}</legend><div class="tk-grid">
-        ${field('Systolic (top)', uf(`tk-s${i}`, 'pressure', `Reading ${i + 1}: systolic`, 120))}
-        ${field('Diastolic (bottom)', uf(`tk-d${i}`, 'pressure', `Reading ${i + 1}: diastolic`, 80))}
-        <label class="tk-f">Pulse <span class="tk-hint">(optional, per minute)</span><input name="p${i}" type="number" data-unitless inputmode="numeric" min="${RANGE.p[0]}" max="${RANGE.p[1]}" value="${v?.p ?? ''}" placeholder="72"></label>
+      ${vals.map((v, i) => `<fieldset><legend>${rows > 1 ? w('Reading {n}', { n: i + 1 }) : w('Reading')}</legend><div class="tk-grid">
+        ${field(w('Systolic (top)'), uf(`tk-s${i}`, 'pressure', w('Reading {n}: systolic', { n: i + 1 }), 120))}
+        ${field(w('Diastolic (bottom)'), uf(`tk-d${i}`, 'pressure', w('Reading {n}: diastolic', { n: i + 1 }), 80))}
+        <label class="tk-f">${w('Pulse')} <span class="tk-hint">${w('(optional, per minute)')}</span><input name="p${i}" type="number" data-unitless inputmode="numeric" min="${RANGE.p[0]}" max="${RANGE.p[1]}" value="${v?.p ?? ''}" placeholder="72"></label>
       </div></fieldset>`).join('')}
-      ${asked ? '<div class="tk-alert" role="note"><b>This reading is very high.</b> Sit quietly and measure again after 1–2 minutes, and enter it as reading 2. The two are averaged. If you cannot measure again now, just save.</div>' : ''}
-      ${rows < LIMITS.bpPerSitting ? '<button type="button" class="tk-link" data-more>+ Another reading at this sitting</button>' : ''}
+      ${asked ? `<div class="tk-alert" role="note">${w('<b>This reading is very high.</b> Sit quietly and measure again after 1–2 minutes, and enter it as reading 2. The two are averaged. If you cannot measure again now, just save.')}</div>` : ''}
+      ${rows < LIMITS.bpPerSitting ? `<button type="button" class="tk-link" data-more>${w('+ Another reading at this sitting')}</button>` : ''}
       ${when(r)}${note(r)}
-      <p class="small muted" style="margin:0">Sit for 5 minutes first, back supported, feet flat, arm resting at heart level. Take two readings 1 minute apart and enter both.</p>
+      <p class="small muted" style="margin:0">${w('Sit for 5 minutes first, back supported, feet flat, arm resting at heart level. Take two readings 1 minute apart and enter both.')}</p>
       ${buttons()}
     </form>`;
   }
@@ -68,46 +75,46 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
     const pct = test === 'hba1c';
     const shown = r && r.test === 'hba1c' ? r.value.toFixed(1) : '';
     return `<form class="tk-form" data-form="sugar" novalidate>
-      <h3>${r ? 'Edit' : 'Add'} blood sugar</h3>
-      <fieldset><legend>Which test?</legend><div class="tk-seg">
-        ${(['fbs', 'ppbs', 'rbs', 'hba1c'] as const).map((t) => `<label><input type="radio" name="test" value="${t}" ${t === test ? 'checked' : ''}><span>${TEST_NAME[t]}</span></label>`).join('')}
+      <h3>${r ? w('Edit blood sugar') : w('Add blood sugar')}</h3>
+      <fieldset><legend>${w('Which test?')}</legend><div class="tk-seg">
+        ${(['fbs', 'ppbs', 'rbs', 'hba1c'] as const).map((t) => `<label><input type="radio" name="test" value="${t}" ${t === test ? 'checked' : ''}><span>${w(TEST_NAME[t])}</span></label>`).join('')}
       </div></fieldset>
-      ${pct ? '' : `<fieldset><legend>How was it measured?</legend><div class="tk-seg">
-        ${(['lab', 'meter'] as const).map((s) => `<label><input type="radio" name="sample" value="${s}" ${s === (r?.sample ?? 'lab') ? 'checked' : ''}><span>${s === 'lab' ? 'Lab blood test' : 'Glucometer (finger-prick)'}</span></label>`).join('')}
+      ${pct ? '' : `<fieldset><legend>${w('How was it measured?')}</legend><div class="tk-seg">
+        ${(['lab', 'meter'] as const).map((s) => `<label><input type="radio" name="sample" value="${s}" ${s === (r?.sample ?? 'lab') ? 'checked' : ''}><span>${s === 'lab' ? w('Lab blood test') : w('Glucometer (finger-prick)')}</span></label>`).join('')}
       </div></fieldset>`}
       <div class="tk-grid">
-        ${pct ? `<label class="tk-f">HbA1c in %<input name="value" type="number" data-unitless inputmode="decimal" step="0.1" value="${shown}" placeholder="6.2"></label>`
-          : field('Value', uf('tk-glu', 'glucose', 'Blood sugar', 110))}
+        ${pct ? `<label class="tk-f">${w('HbA1c in %')}<input name="value" type="number" data-unitless inputmode="decimal" step="0.1" value="${shown}" placeholder="6.2"></label>`
+          : field(w('Value'), uf('tk-glu', 'glucose', w('Blood sugar'), 110))}
       </div>
-      ${test === 'ppbs' ? '<p class="small muted" style="margin:0">2 hours after the start of a meal.</p>' : ''}
+      ${test === 'ppbs' ? `<p class="small muted" style="margin:0">${w('2 hours after the start of a meal.')}</p>` : ''}
       ${when(r, pct)}${note(r)}${buttons()}
     </form>`;
   }
 
   function weightForm(r?: WeightReading) {
     return `<form class="tk-form" data-form="weight" novalidate>
-      <h3>${r ? 'Edit' : 'Add'} weight</h3>
-      ${field('Weight', uf('tk-kg', 'weight', 'Weight', 66))}
+      <h3>${r ? w('Edit weight') : w('Add weight')}</h3>
+      ${field(w('Weight'), uf('tk-kg', 'weight', w('Weight'), 66))}
       ${when(r, true)}${note(r)}${buttons()}
     </form>`;
   }
 
   function personForm(p: Person) {
     const [y, m] = p.born.split('-');
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    const sel = (n: 'htn' | 'dm' | 'meds', l: string) => `<label class="tk-f">${l}<select name="${n}">${[['', '—'], ['yes', 'Yes'], ['no', 'No'], ['unsure', 'Not sure']].map(([v, t]) => `<option value="${v}" ${(p[n] ?? '') === v ? 'selected' : ''}>${t}</option>`).join('')}</select></label>`;
+    const months = [w('January'), w('February'), w('March'), w('April'), w('May'), w('June'), w('July'), w('August'), w('September'), w('October'), w('November'), w('December')];
+    const sel = (n: 'htn' | 'dm' | 'meds', l: string) => `<label class="tk-f">${l}<select name="${n}">${[['', '—'], ['yes', w('Yes')], ['no', w('No')], ['unsure', w('Not sure')]].map(([v, t]) => `<option value="${v}" ${(p[n] ?? '') === v ? 'selected' : ''}>${t}</option>`).join('')}</select></label>`;
     return `<form class="tk-form" data-form="person" novalidate>
-      <h3>Edit details</h3>
-      <label class="tk-f">Name<input name="label" maxlength="${LIMITS.label}" value="${esc(p.label)}" required></label>
+      <h3>${w('Edit details')}</h3>
+      <label class="tk-f">${w('Name')}<input name="label" maxlength="${LIMITS.label}" value="${esc(p.label)}" required></label>
       <div class="tk-grid">
-        <label class="tk-f">Month of birth<select name="month">${months.map((n, i) => { const v = String(i + 1).padStart(2, '0'); return `<option value="${v}" ${v === m ? 'selected' : ''}>${n}</option>`; }).join('')}</select></label>
-        <label class="tk-f">Year of birth<input name="year" type="number" data-unitless inputmode="numeric" value="${y}"></label>
+        <label class="tk-f">${w('Month of birth')}<select name="month">${months.map((n, i) => { const v = String(i + 1).padStart(2, '0'); return `<option value="${v}" ${v === m ? 'selected' : ''}>${n}</option>`; }).join('')}</select></label>
+        <label class="tk-f">${w('Year of birth')}<input name="year" type="number" data-unitless inputmode="numeric" value="${y}"></label>
       </div>
-      <fieldset><legend>Sex</legend><div class="tk-seg"><label><input type="radio" name="sex" value="m" ${p.sex === 'm' ? 'checked' : ''}><span>Male</span></label><label><input type="radio" name="sex" value="f" ${p.sex === 'f' ? 'checked' : ''}><span>Female</span></label></div></fieldset>
-      ${field('Height <span class="tk-hint">(optional)</span>', uf('tk-eheight', 'height', 'Height', 165))}
-      <div class="tk-grid">${sel('htn', 'Known high BP?')}${sel('dm', 'Known diabetes?')}${sel('meds', 'On medicines for either?')}</div>
+      <fieldset><legend>${w('Sex')}</legend><div class="tk-seg"><label><input type="radio" name="sex" value="m" ${p.sex === 'm' ? 'checked' : ''}><span>${w('Male')}</span></label><label><input type="radio" name="sex" value="f" ${p.sex === 'f' ? 'checked' : ''}><span>${w('Female')}</span></label></div></fieldset>
+      ${field(`${w('Height')} <span class="tk-hint">${w('(optional)')}</span>`, uf('tk-eheight', 'height', w('Height'), 165))}
+      <div class="tk-grid">${sel('htn', w('Known high BP?'))}${sel('dm', w('Known diabetes?'))}${sel('meds', w('On medicines for either?'))}</div>
       ${buttons()}
-      <p class="small" style="margin:0"><button type="button" class="tk-link danger" data-remove>Remove ${esc(p.label)} and all their readings</button></p>
+      <p class="small" style="margin:0"><button type="button" class="tk-link danger" data-remove>${w('Remove {name} and all their readings', { name: esc(p.label) })}</button></p>
     </form>`;
   }
 
@@ -116,10 +123,10 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
     const kept = keep ? snapshot() : null;
     const p = person();
     if (!p) {
-      root.innerHTML = `<div class="tk-card"><p>${store.state === 'syncing' ? 'Loading…' : 'This person is not in your trackers (they may have been removed).'}</p><p><a href="/trackers/">All trackers</a></p></div>`;
+      root.innerHTML = `<div class="tk-card"><p>${store.state === 'syncing' ? w('Loading…') : w('This person is not in your trackers (they may have been removed).')}</p><p><a href="${HOME}">${w('All trackers')}</a></p></div>`;
       return;
     }
-    document.title = `${p.label} · Trackers · Dr. Harsh Maheshwari`;
+    document.title = w('{name} · Trackers · Dr. Harsh Maheshwari', { name: p.label });
     const h1 = document.querySelector('.page-head h1');
     if (h1) h1.textContent = p.label;
     const rs = store.readings(id);
@@ -127,28 +134,28 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
     const bmi = bmiFor(p, rs);
     const o = { alerts: true, editable: true, width: root.clientWidth - 42 };
     const sec = (kind: Kind, title: string, body: string) => `<section class="tk-card" id="tk-${kind}">
-      <div class="tk-sec-head"><h2>${title}</h2><button class="btn btn-ghost" type="button" data-open="${kind}">+ Add</button></div>
+      <div class="tk-sec-head"><h2>${title}</h2><button class="btn btn-ghost" type="button" data-open="${kind}">${w('+ Add')}</button></div>
       ${flash?.kind === kind ? flash.html : ''}
       ${open?.kind === kind ? `<div class="tk-card" style="margin:.75rem 0;background:var(--surface-2)">${formFor(open.kind)}</div>` : ''}
       <div style="margin-top:1rem">${body}</div>
     </section>`;
     root.innerHTML = `
       <section class="tk-card">
-        <p class="muted" style="margin:0">${age} years · ${p.sex === 'm' ? 'Male' : 'Female'}${p.heightCm ? ` · ${p.heightCm} cm` : ''}${bmi ? ` · BMI ${bmi}` : ''}</p>
+        <p class="muted" style="margin:0">${w('{age} years', { age: String(age) })} · ${p.sex === 'm' ? w('Male') : w('Female')}${p.heightCm ? ` · ${p.heightCm} cm` : ''}${bmi ? ` · ${w('BMI {bmi}', { bmi })}` : ''}</p>
         ${historyLine(p) ? `<p class="small muted" style="margin:.35rem 0 0">${esc(historyLine(p))}</p>` : ''}
-        ${editingPerson ? `<div style="margin-top:1rem">${personForm(p)}</div>` : '<p class="small" style="margin:.6rem 0 0"><button type="button" class="tk-link" data-editperson>Edit details</button></p>'}
+        ${editingPerson ? `<div style="margin-top:1rem">${personForm(p)}</div>` : `<p class="small" style="margin:.6rem 0 0"><button type="button" class="tk-link" data-editperson>${w('Edit details')}</button></p>`}
         <div class="tk-add" style="margin-top:1rem">
-          <button class="btn btn-primary" type="button" data-open="bp">+ Blood pressure</button>
-          <button class="btn btn-primary" type="button" data-open="sugar">+ Blood sugar</button>
-          <button class="btn btn-ghost" type="button" data-open="weight">+ Weight</button>
+          <button class="btn btn-primary" type="button" data-open="bp">${w('+ Blood pressure')}</button>
+          <button class="btn btn-primary" type="button" data-open="sugar">${w('+ Blood sugar')}</button>
+          <button class="btn btn-ghost" type="button" data-open="weight">${w('+ Weight')}</button>
         </div>
         <p class="tk-status" style="margin-top:.75rem">${STATUS[store.state]}</p>
       </section>
-      ${sec('bp', 'Blood pressure', bpSection(rs, o))}
-      ${sec('sugar', 'Blood sugar', sugarSection(rs, o))}
-      ${sec('weight', 'Weight', weightSection(p, rs, o))}
+      ${sec('bp', w('Blood pressure'), bpSection(rs, o))}
+      ${sec('sugar', w('Blood sugar'), sugarSection(rs, o))}
+      ${sec('weight', w('Weight'), weightSection(p, rs, o))}
       <section class="tk-card" id="tk-share">${shareHtml(p)}</section>
-      <p class="small"><button type="button" class="tk-link" data-csv>Download all readings (CSV)</button> · <a href="/trackers/">All trackers</a></p>`;
+      <p class="small"><button type="button" class="tk-link" data-csv>${w('Download all readings (CSV)')}</button> · <a href="${HOME}">${w('All trackers')}</a></p>`;
     initUnitFields(root);
     fill(p, kept);
     wire();
@@ -180,31 +187,33 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
   // ---------- share ----------
   function shareHtml(p: Person) {
     const mine = (shares ?? []).filter((s) => s.person === p.id && !s.stopped && (!s.expires || s.expires > Date.now()));
-    const what = (s: Share) => [s.scope.bp && 'BP', s.scope.sugar && 'sugar', s.scope.weight && 'weight'].filter(Boolean).join(', ');
-    return `<h2>Share with my doctor</h2>
-      <p class="muted">Your doctor opens the link (or scans the QR code) and sees ${esc(p.label === 'Me' ? 'your' : `${p.label}’s`)} latest readings each time, with no sign-in. <b>Anyone with the link can see these readings until you stop it.</b></p>
+    const what = (s: Share) => [s.scope.bp && w('BP'), s.scope.sugar && w('sugar'), s.scope.weight && w('weight')].filter(Boolean).join(', ');
+    const isMe = p.label === 'Me' || p.label === w('Me');
+    return `<h2>${w('Share with my doctor')}</h2>
+      <p class="muted">${isMe ? w('Your doctor opens the link (or scans the QR code) and sees your latest readings each time, with no sign-in. <b>Anyone with the link can see these readings until you stop it.</b>')
+        : w('Your doctor opens the link (or scans the QR code) and sees {name}’s latest readings each time, with no sign-in. <b>Anyone with the link can see these readings until you stop it.</b>', { name: esc(p.label) })}</p>
       ${shareMsg ? `<p class="tk-saved" role="status">${esc(shareMsg)}</p>` : ''}
-      ${shares === null ? '<p class="muted small">Loading links…</p>' : mine.length ? `<ul class="tk-shares">${mine.map((s) => `<li class="tk-share">
-        <div><b>${esc(what(s))}</b> · made ${fmtDate(s.created)} · ${s.expires ? `lasts until ${fmtDate(s.expires)}` : 'until you stop it'} · ${s.opened ? `last opened ${fmtDate(s.opened)}` : 'not opened yet'}</div>
+      ${shares === null ? `<p class="muted small">${w('Loading links…')}</p>` : mine.length ? `<ul class="tk-shares">${mine.map((s) => `<li class="tk-share">
+        <div><b>${esc(what(s))}</b> · ${w('made {date}', { date: fmtDate(s.created) })} · ${s.expires ? w('lasts until {date}', { date: fmtDate(s.expires) }) : w('until you stop it')} · ${s.opened ? w('last opened {date}', { date: fmtDate(s.opened) }) : w('not opened yet')}</div>
         <code>${esc(shareUrl(s))}</code>
         <div class="tk-row-btns">
-          <button class="btn btn-ghost" type="button" data-copy="${s.id}">Copy link</button>
-          <button class="btn btn-ghost" type="button" data-qr="${s.id}">${qrFor === s.id ? 'Hide QR code' : 'Show QR code'}</button>
-          <a class="btn btn-ghost" href="https://wa.me/?text=${encodeURIComponent(`My readings: ${shareUrl(s)}`)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          <button class="tk-link danger" type="button" data-stop="${s.id}">Stop this link</button>
+          <button class="btn btn-ghost" type="button" data-copy="${s.id}">${w('Copy link')}</button>
+          <button class="btn btn-ghost" type="button" data-qr="${s.id}">${qrFor === s.id ? w('Hide QR code') : w('Show QR code')}</button>
+          <a class="btn btn-ghost" href="https://wa.me/?text=${encodeURIComponent(w('My readings: {url}', { url: shareUrl(s) }))}" target="_blank" rel="noopener noreferrer">${w('WhatsApp')}</a>
+          <button class="tk-link danger" type="button" data-stop="${s.id}">${w('Stop this link')}</button>
         </div>
         ${qrFor === s.id ? `<div class="tk-qr">${qrSvg(shareUrl(s))}</div>` : ''}
-      </li>`).join('')}</ul>` : '<p class="small muted">No links yet.</p>'}
+      </li>`).join('')}</ul>` : `<p class="small muted">${w('No links yet.')}</p>`}
       <form class="tk-form" data-form="share" novalidate style="margin-top:1rem">
-        <fieldset><legend>Make a new link: what to include</legend><div class="tk-grid">
-          <label class="tk-check"><input type="checkbox" name="bp" checked> <span>Blood pressure</span></label>
-          <label class="tk-check"><input type="checkbox" name="sugar" checked> <span>Blood sugar</span></label>
-          <label class="tk-check"><input type="checkbox" name="weight"> <span>Weight</span></label>
+        <fieldset><legend>${w('Make a new link: what to include')}</legend><div class="tk-grid">
+          <label class="tk-check"><input type="checkbox" name="bp" checked> <span>${w('Blood pressure')}</span></label>
+          <label class="tk-check"><input type="checkbox" name="sugar" checked> <span>${w('Blood sugar')}</span></label>
+          <label class="tk-check"><input type="checkbox" name="weight"> <span>${w('Weight')}</span></label>
         </div></fieldset>
-        <label class="tk-f" style="max-width:20rem">How long it works<select name="days"><option value="30">30 days</option><option value="90" selected>90 days</option><option value="0">Until I stop it</option></select></label>
-        <p class="small muted" style="margin:0">The doctor sees the name, age, sex, height, the health history above, and the readings with their notes, for the last year (older ones on request). Alert notes are not shown.</p>
+        <label class="tk-f" style="max-width:20rem">${w('How long it works')}<select name="days"><option value="30">${w('{n} days', { n: 30 })}</option><option value="90" selected>${w('{n} days', { n: 90 })}</option><option value="0">${w('Until I stop it')}</option></select></label>
+        <p class="small muted" style="margin:0">${w('The doctor sees the name, age, sex, height, the health history above, and the readings with their notes, for the last year (older ones on request). Alert notes are not shown.')}</p>
         <p class="tk-err" role="alert" hidden></p>
-        <div class="tk-row-btns"><button class="btn btn-primary" type="submit">Make a link</button></div>
+        <div class="tk-row-btns"><button class="btn btn-primary" type="submit">${w('Make a link')}</button></div>
       </form>`;
   }
 
@@ -212,11 +221,11 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
     const qr = qrcode(0, 'M');
     qr.addData(text);
     qr.make();
-    return qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true }).replace('<svg ', '<svg role="img" aria-label="QR code for the share link" ');
+    return qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true }).replace('<svg ', `<svg role="img" aria-label="${esc(w('QR code for the share link'))}" `);
   }
 
   async function loadShares() {
-    try { shares = await listShares(); } catch { shares = []; shareMsg = 'Could not load your links (no connection?).'; }
+    try { shares = await listShares(); } catch { shares = []; shareMsg = w('Could not load your links (no connection?).'); }
     draw();
   }
 
@@ -224,17 +233,17 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
   function readWhen(f: HTMLFormElement, timeOptional: boolean): number | string {
     const fd = new FormData(f);
     const date = String(fd.get('date') ?? ''), time = String(fd.get('time') ?? '') || (timeOptional ? '09:00' : '');
-    if (!date) return 'Please enter the date.';
-    if (!time) return 'Please enter the time.';
+    if (!date) return w('Please enter the date.');
+    if (!time) return w('Please enter the time.');
     const at = fromInputs(date, time, tzNow());
-    if (at === null) return 'Please check the date and time.';
-    if (at > Date.now() + 5 * 60_000) return 'The date and time cannot be in the future.';
+    if (at === null) return w('Please check the date and time.');
+    if (at > Date.now() + 5 * 60_000) return w('The date and time cannot be in the future.');
     return at;
   }
 
   function saved(kind: Kind, r: Reading) {
     const box = alertBox(r);
-    flash = { kind, html: `<div role="status" style="display:grid;gap:.6rem;margin-top:.75rem"><p class="tk-saved" style="margin:0">Saved.</p>${box}</div>` };
+    flash = { kind, html: `<div role="status" style="display:grid;gap:.6rem;margin-top:.75rem"><p class="tk-saved" style="margin:0">${w('Saved.')}</p>${box}</div>` };
     open = null;
     draw();
     document.getElementById(`tk-${kind}`)?.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
@@ -254,10 +263,13 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
         const s = Math.round(unitValue(`tk-s${i}`)), d = Math.round(unitValue(`tk-d${i}`)), p = fd.get(`p${i}`) ? Number(fd.get(`p${i}`)) : null;
         if (Number.isNaN(s) && Number.isNaN(d) && i > 0) continue; // an empty extra row is ignored
         const v = { s, d, p };
-        if (!validBp(v)) return err(`Please check reading ${i + 1}: systolic ${RANGE.s[0]}–${RANGE.s[1]}, diastolic ${RANGE.d[0]}–${RANGE.d[1]}, systolic higher than diastolic${p !== null ? `, pulse ${RANGE.p[0]}–${RANGE.p[1]}` : ''}.`);
+        const nums = { n: i + 1, s0: RANGE.s[0], s1: RANGE.s[1], d0: RANGE.d[0], d1: RANGE.d[1], p0: RANGE.p[0], p1: RANGE.p[1] };
+        if (!validBp(v)) return err(p !== null
+          ? w('Please check reading {n}: systolic {s0}–{s1}, diastolic {d0}–{d1}, systolic higher than diastolic, pulse {p0}–{p1}.', nums)
+          : w('Please check reading {n}: systolic {s0}–{s1}, diastolic {d0}–{d1}, systolic higher than diastolic.', nums));
         values.push(p === null ? { s, d } : v);
       }
-      if (!values.length) return err('Please enter the reading.');
+      if (!values.length) return err(w('Please enter the reading.'));
       const at = readWhen(f, false);
       if (typeof at === 'string') return err(at);
       if (!edit && !open?.asked && askToRepeat(values)) {
@@ -277,9 +289,10 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
       const pct = test === 'hba1c';
       const unit = pct ? 'pct' : unitShown('tk-glu') === 'mmol' ? 'mmol' : 'mgdl';
       const typed = pct ? (fd.get('value') ? Number(fd.get('value')) : NaN) : unitValue('tk-glu'); // mg/dL whatever unit was shown
-      if (!Number.isFinite(typed)) return err('Please enter the value.');
+      if (!Number.isFinite(typed)) return err(w('Please enter the value.'));
       const value = Math.round(typed * 10) / 10;
-      if (!validSugar(test, value)) return err(pct ? `HbA1c should be between ${RANGE.pct[0]} and ${RANGE.pct[1]} %.` : `Blood sugar should be between ${RANGE.mgdl[0]} and ${RANGE.mgdl[1]} mg/dL (${(RANGE.mgdl[0] / 18.016).toFixed(1)}–${(RANGE.mgdl[1] / 18.016).toFixed(1)} mmol/L).`);
+      if (!validSugar(test, value)) return err(pct ? w('HbA1c should be between {lo} and {hi} %.', { lo: RANGE.pct[0], hi: RANGE.pct[1] })
+        : w('Blood sugar should be between {lo} and {hi} mg/dL ({mlo}–{mhi} mmol/L).', { lo: RANGE.mgdl[0], hi: RANGE.mgdl[1], mlo: (RANGE.mgdl[0] / 18.016).toFixed(1), mhi: (RANGE.mgdl[1] / 18.016).toFixed(1) }));
       const at = readWhen(f, pct);
       if (typeof at === 'string') return err(at);
       const r: SugarReading = { ...base, kind: 'sugar', test, sample: pct ? 'lab' : fd.get('sample') === 'meter' ? 'meter' : 'lab', value, unit, at };
@@ -288,7 +301,7 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
     }
     if (kind === 'weight') {
       const kg = unitValue('tk-kg');
-      if (!(kg >= RANGE.kg[0] && kg <= RANGE.kg[1])) return err(`Weight should be between ${RANGE.kg[0]} and ${RANGE.kg[1]} kg.`);
+      if (!(kg >= RANGE.kg[0] && kg <= RANGE.kg[1])) return err(w('Weight should be between {lo} and {hi} kg.', { lo: RANGE.kg[0], hi: RANGE.kg[1] }));
       const at = readWhen(f, true);
       if (typeof at === 'string') return err(at);
       const r: WeightReading = { ...base, kind: 'weight', kg: Math.round(kg * 10) / 10, at };
@@ -299,9 +312,9 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
       const p = person()!;
       const label = String(fd.get('label') ?? '').trim(), born = `${fd.get('year')}-${fd.get('month')}`;
       const h = unitValue('tk-eheight'), height = Number.isFinite(h) ? Math.round(h * 10) / 10 : null;
-      if (!label) return err('Please enter a name.');
-      if (!isAdult(born, new Date())) return err('The tracker is for adults, 18 and over.');
-      if (height !== null && !(height >= RANGE.heightCm[0] && height <= RANGE.heightCm[1])) return err(`Height should be between ${RANGE.heightCm[0]} and ${RANGE.heightCm[1]} cm.`);
+      if (!label) return err(w('Please enter a name.'));
+      if (!isAdult(born, new Date())) return err(w('The tracker is for adults, 18 and over.'));
+      if (height !== null && !(height >= RANGE.heightCm[0] && height <= RANGE.heightCm[1])) return err(w('Height should be between {lo} and {hi} cm.', { lo: RANGE.heightCm[0], hi: RANGE.heightCm[1] }));
       const yn = (n: string) => (['yes', 'no', 'unsure'].includes(String(fd.get(n))) ? String(fd.get(n)) as 'yes' : null);
       store.putPerson({ ...p, label, born, sex: fd.get('sex') === 'f' ? 'f' : 'm', heightCm: height, htn: yn('htn'), dm: yn('dm'), meds: yn('meds'), updated: now });
       editingPerson = false;
@@ -309,11 +322,11 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
     }
     if (kind === 'share') {
       const scope = { bp: !!fd.get('bp'), sugar: !!fd.get('sugar'), weight: !!fd.get('weight') };
-      if (!scope.bp && !scope.sugar && !scope.weight) return err('Choose at least one thing to include.');
+      if (!scope.bp && !scope.sugar && !scope.weight) return err(w('Choose at least one thing to include.'));
       const days = Number(fd.get('days')) as 30 | 90 | 0;
       store.flush(); // the doctor should see the readings just added
-      makeShare(id, scope, days).then((s) => { shares = [s, ...(shares ?? [])]; shareMsg = 'Link made. Copy it, show the QR code, or send it on WhatsApp.'; qrFor = s.id; draw(); })
-        .catch((e: Error) => err(/unknown person/.test(e.message) ? 'Please wait a moment for this person to finish saving, then try again.' : `Could not make the link: ${e.message}`));
+      makeShare(id, scope, days).then((s) => { shares = [s, ...(shares ?? [])]; shareMsg = w('Link made. Copy it, show the QR code, or send it on WhatsApp.'); qrFor = s.id; draw(); })
+        .catch((e: Error) => err(/unknown person/.test(e.message) ? w('Please wait a moment for this person to finish saving, then try again.') : w('Could not make the link: {error}', { error: e.message })));
     }
   }
 
@@ -366,9 +379,9 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
     root.querySelector('[data-editperson]')?.addEventListener('click', () => { editingPerson = true; draw(); });
     root.querySelector('[data-remove]')?.addEventListener('click', () => {
       const p = person()!;
-      if (!confirm(`Remove ${p.label} and all their readings? Any links shared with a doctor stop working. This cannot be undone.`)) return;
+      if (!confirm(w('Remove {name} and all their readings? Any links shared with a doctor stop working. This cannot be undone.', { name: p.label }))) return;
       store.removePerson(id);
-      store.flush().finally(() => { location.href = '/trackers/'; });
+      store.flush().finally(() => { location.href = HOME; });
     });
     root.querySelectorAll<HTMLButtonElement>('[data-edit]').forEach((b) => b.addEventListener('click', () => {
       const r = store.reading(b.dataset.edit!);
@@ -377,20 +390,20 @@ export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) 
       document.getElementById(`tk-${r.kind}`)?.scrollIntoView({ block: 'start' });
     }));
     root.querySelectorAll<HTMLButtonElement>('[data-del]').forEach((b) => b.addEventListener('click', () => {
-      if (!confirm('Delete this reading?')) return;
+      if (!confirm(w('Delete this reading?'))) return;
       store.removeReading(b.dataset.del!);
     }));
     root.querySelector('[data-csv]')?.addEventListener('click', csv);
     root.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
       const s = shares?.find((x) => x.id === b.dataset.copy);
       if (!s) return;
-      try { await navigator.clipboard.writeText(shareUrl(s)); b.textContent = 'Copied'; } catch { prompt('Copy this link:', shareUrl(s)); }
+      try { await navigator.clipboard.writeText(shareUrl(s)); b.textContent = w('Copied'); } catch { prompt(w('Copy this link:'), shareUrl(s)); }
     }));
     root.querySelectorAll<HTMLButtonElement>('[data-qr]').forEach((b) => b.addEventListener('click', () => { qrFor = qrFor === b.dataset.qr ? '' : b.dataset.qr!; draw(); }));
     root.querySelectorAll<HTMLButtonElement>('[data-stop]').forEach((b) => b.addEventListener('click', async () => {
-      if (!confirm('Stop this link? Anyone who has it will no longer see the readings.')) return;
-      try { await stopShare(b.dataset.stop!); shares = (shares ?? []).map((s) => (s.id === b.dataset.stop ? { ...s, stopped: Date.now() } : s)); shareMsg = 'Link stopped.'; draw(); }
-      catch { alert('Could not stop the link. Please try again.'); }
+      if (!confirm(w('Stop this link? Anyone who has it will no longer see the readings.'))) return;
+      try { await stopShare(b.dataset.stop!); shares = (shares ?? []).map((s) => (s.id === b.dataset.stop ? { ...s, stopped: Date.now() } : s)); shareMsg = w('Link stopped.'); draw(); }
+      catch { alert(w('Could not stop the link. Please try again.')); }
     }));
   }
 
