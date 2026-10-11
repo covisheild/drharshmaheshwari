@@ -63,6 +63,9 @@ high blood pressure, diabetes, asthma, osteoporosis or obesity, after being inac
    are shown with the advice to limit them, without a pass mark.
 5. **Words**: "Reached" / "Not yet", never "inactive" or "unhealthy"; no score out of 100. Results say what would close
    the gap (for example, "40 more minutes a week, about 6 a day").
+6. **ICMR-NIN age bands** ">5–19", ">19–60", ">60" are read as 5–19, 20–60 and over 60 (Harsh, 11 Oct 2026).
+7. **Children: 60 minutes every day, read literally** (ICMR-NIN "a minimum of 60 minutes per day"): the target is 7 of the
+   last 7 days with 60 minutes or more, not a weekly average as in WHO (Harsh, 11 Oct 2026).
 
 ## Also noted
 
