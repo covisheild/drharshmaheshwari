@@ -49,19 +49,35 @@ Every reading: date and time (default now, India time, editable; future times re
 
 **Weight** (optional, its own series, so a BMI trend comes from `src/lib/bmi.ts` with the person's height).
 
-## Urgent alerts (proposed; Harsh to confirm each number and wording; sources to be opened before build)
+## Urgent alerts (sources opened 11 Oct 2026; numbers and wording await Harsh's approval)
 
-| Reading | Message |
-|---|---|
-| SBP ≥ 180 or DBP ≥ 110 (any setting) | "This reading is very high. Sit quietly for 5 minutes and measure again. If it is still this high, or you have chest pain, breathlessness, severe headache, weakness, or trouble seeing or speaking, go to a hospital now." |
-| SBP < 90 with dizziness? (needs decision: alert on number alone or not at all) | to decide |
-| Glucose < 70 mg/dL | "Low sugar. Take 15 g of fast sugar now (e.g. 3 teaspoons of sugar in water) and recheck in 15 minutes. If confused or drowsy, get help now." |
-| Glucose ≥ 300 mg/dL | "Very high sugar. Contact your doctor today. Go to a hospital now if vomiting, drowsy or breathing fast." |
+| Reading | Proposed alert | Basis |
+|---|---|---|
+| SBP ≥ 180 or DBP ≥ 110 (clinic or home) | "Very high reading. Sit quietly and measure again after 1-2 minutes. If it stays this high, contact your doctor today. If you have chest pain, breathlessness, back pain, weakness or numbness, a change in vision, or trouble speaking, go to a hospital now." | IGH-V 2025-26 "Severe ≥180 or ≥110"; ESH 2023 grade 3; MoHFW STG 2016 urgency >180/>110. Retest wait and symptom list: AHA patient page (no Indian patient-facing list found). |
+| Low BP | Decision pending: no guideline gives a home low-BP alert number. Option: SBP < 90 with "if you feel dizzy or faint, sit or lie down and contact your doctor", labelled as the site's own convention. | None (orthostatic fall ≥20/10 in ESH and IGH-V is a different test). |
+| Glucose < 70 mg/dL (lab or glucometer) | "Low sugar. Take 15 g of fast-acting sugar now and measure again after 15 minutes; repeat if still below 70. If the person is drowsy or confused, do not give anything by mouth: get help now." Below 54: same, marked "severely low". | ADA 2026 Table 6.4 (level 1 <70, level 2 <54), 15 g + recheck 15 min; RSSDI 2022 alert value <70, 15-20 g; RSSDI 2024 monitoring consensus 15 g / 15 min. ICMR 2018 gives no number. |
+| Glucose ≥ 300 mg/dL | "Very high sugar. Contact your doctor today. Go to a hospital now if there is vomiting, stomach pain, fast breathing, drowsiness or confusion." | No single Indian number. CDC: stays ≥300 → emergency; RSSDI 2022 (COVID chapter) severe >300 pre-meal. ICMR 2018: ketones if >400; ADA 2026: ketones with illness if >200. |
+| HbA1c | No alert (not an acute measure). | — |
 
-Sources to check: Indian Guidelines on Hypertension IV (2019); ESH 2023; ISH 2020; ICMR Guidelines for Management of Type 2
-Diabetes (2018); RSSDI clinical practice recommendations; ADA Standards of Care (hypoglycaemia levels <70 and <54 mg/dL).
-Faint chart reference lines (no labels): clinic 140/90, home 135/85; FBS 126, HbA1c 6.5 % (India first: Indian guideline values
-if they differ).
+Chart reference lines (faint, unlabelled): BP clinic 140/90 and home 135/85 (IGH-IV 2019, IGH-V 2025-26, ESH 2023);
+FBS 126 mg/dL and HbA1c 6.5 % (ICMR 2018, RSSDI 2022, ADA 2026). No line on PPBS (a meal is not the 75 g OGTT) or RBS.
+
+Sources opened:
+- Indian Hypertension Guideline V 2025-2026. J Assoc Physicians India 2026;74(5) (japi.org).
+- Indian Guidelines on Hypertension IV (2019), abridged: J Hum Hypertens 2020;34:745-58. doi:10.1038/s41371-020-0349-x (PMID 32427886).
+- MoHFW Standard Treatment Guidelines: Hypertension, May 2016.
+- ESH 2023: Mancia G et al. J Hypertens 2023. doi:10.1097/HJH.0000000000003480 (PMID 37345492).
+- ISH 2020: Unger T et al. Hypertension 2020. doi:10.1161/HYPERTENSIONAHA.120.15026 (PMID 32370572).
+- AHA/ACC 2025: Jones DW et al. Hypertension 2025;82:e212-e316. doi:10.1161/HYP.0000000000000249 (PMID 40811516).
+- AHA patient page "When to call 911 about high blood pressure", reviewed 6 May 2024.
+- ICMR Guidelines for Management of Type 2 Diabetes 2018; ICMR/DHR Standard Treatment Workflow, Diabetes Mellitus Type 2 (2024).
+- RSSDI Clinical Practice Recommendations 2022 (official summary); RSSDI 2024 expert consensus on glucose monitoring.
+- ADA Standards of Care 2026, Section 2 (doi:10.2337/dc26-S002, PMID 41358893) and Section 6 (doi:10.2337/dc26-S006, PMID 41358894).
+- Hyperglycaemic crises consensus: Umpierrez GE et al. Diabetes Care 2024;47:1257. doi:10.2337/dci24-0032 (PMID 39052901).
+- CDC "Treatment of Low Blood Sugar" and "Diabetic Ketoacidosis" (2024).
+
+How the BP alert is applied: if the first reading of a sitting is at or above 180/110, the form asks for a second reading
+1-2 minutes later; the alert stays only if the sitting's average is still at or above the line.
 
 The alert appears only on the patient's screen: a soft note under the reading when it is saved, and a small mark beside that
 reading in the patient's own list and chart. Nothing is sent anywhere, and there are no pop-ups, sounds, vibration or notifications.
