@@ -113,7 +113,7 @@ const jsonld = [
       </div>
       <div class="card result" id="r-waist">
         <span class="eyebrow">Waist</span>
-        <div class="big"><b id="whtr-val">—</b><span>waist ÷ height</span></div>
+        <div class="big"><b id="whtr-val">—</b><span id="whtr-unit">waist ÷ height</span></div>
         <p class="verdict" id="whtr-verdict">Add your waist to see abdominal fat risk.</p>
         <p class="small muted" id="waist-verdict"></p>
       </div>
@@ -141,6 +141,7 @@ const jsonld = [
         <tr><td>2 to 4 years (WHO 2006)</td><td>below −2 SD (wasted)</td><td>−2 to +1 SD</td><td>above +2 SD (+1 to +2: possible risk)</td><td>above +3 SD</td></tr>
       </tbody>
     </table>
+    <p><b>Waist in children</b> (2 to 17 years) is compared with Indian children of the same age and sex (Khadilkar 2014). At or above the <b>70th percentile</b>, risk factors for metabolic syndrome become common; that is the "largest healthy waist" shown.</p>
     <p>The adult-equivalent lines are the BMI at each age that tracks to a BMI of 23 or 27 at 18 years, the Indian adult cut-offs for overweight and obesity. Growing children usually do not need to lose weight: keeping weight steady while they grow taller brings BMI down. Talk to a paediatrician before changing a child's diet.</p>
     {live.has('bmi-cut-offs-for-indians') && <p>Why lower numbers for Indians? Read <a href="/learn/bmi-cut-offs-for-indians/">Is BMI accurate for Indians?</a></p>}
     <div class="faq">
@@ -154,6 +155,7 @@ const jsonld = [
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/19582986/">Misra A, et al. Consensus statement for diagnosis of obesity, abdominal obesity and the metabolic syndrome for Asian Indians. J Assoc Physicians India 2009;57:163-70.</a></li>
         <li><a href="https://www.nice.org.uk/guidance/cg189">NICE CG189, waist-to-height ratio recommendations (2022 update).</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/25638185/">Indian Academy of Pediatrics Growth Charts Committee. Revised IAP growth charts for height, weight and body mass index for 5- to 18-year-old Indian children. Indian Pediatr 2015;52:47-55.</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/24655536/">Khadilkar A, et al. Waist circumference percentiles in 2-18 year old Indian children. J Pediatr 2014;164:1358-62.</a></li>
         <li><a href="https://www.who.int/tools/child-growth-standards">WHO Child Growth Standards (2006): BMI-for-age, birth to 5 years.</a></li>
       </ol>
     </div>
@@ -210,7 +212,7 @@ const jsonld = [
 </style>
 
 <script>
-  import { adultCategory, bmiOf, childHealthyBmi, CHILD_MONTHS, IAP_FROM, iapBand, iapCategory, iapLines, kgAt, maxWaist, percentile, targetWeight, TARGET_BMI, WAIST_CUT, whoUnder5Category, zScore, type Sex } from '../../lib/bmi';
+  import { adultCategory, bmiOf, childHealthyBmi, childWaistCategory, childWaistLines, CHILD_MONTHS, IAP_FROM, iapBand, iapCategory, iapLines, kgAt, maxWaist, percentile, targetWeight, TARGET_BMI, WAIST_CUT, whoUnder5Category, zScore, type Sex } from '../../lib/bmi';
 
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
   const num = (id: string) => { const v = parseFloat($<HTMLInputElement>(id).value); return Number.isFinite(v) ? v : NaN; };
@@ -314,36 +316,45 @@ const jsonld = [
       bg.textContent = ''; tw.textContent = '—'; twu.textContent = ''; twn.textContent = child ? 'Enter age, height and weight.' : 'Enter height and weight.';
     }
 
-    // Largest healthy waist: adults, the lower of the Indian cut-off and half the height; children from 5 years, half the height.
+    // Largest healthy waist: adults, the lower of the Indian cut-off and half the height; children, the Indian 70th percentile for age.
     const mw = $('mw-val'), mwu = $('mw-unit'), mwn = $('mw-note');
-    if (validH && child && !(months >= 60)) {
-      mw.textContent = '—'; mwu.textContent = ''; mwn.textContent = Number.isFinite(months) ? 'Waist is not used to judge children under 5.' : 'Enter age and height.';
+    const kidsWord = sex === 'm' ? 'boys' : 'girls';
+    if (child && Number.isFinite(months)) {
+      const l = childWaistLines(months, sex);
+      mw.textContent = `under ${l.p70.toFixed(1)}`; mwu.textContent = 'cm';
+      mwn.textContent = `The 70th percentile of waist for Indian ${kidsWord} aged ${Math.floor(months / 12)}, the cut-off above which risk factors for metabolic syndrome become common.`;
+    } else if (child) {
+      mw.textContent = '—'; mwu.textContent = ''; mwn.textContent = 'Enter age.';
     } else if (validH) {
-      const m = child ? { cm: h / 2, by: 'half height' as const } : maxWaist(h, sex);
+      const m = maxWaist(h, sex);
       const v = Math.round(m.cm * 10) / 10;
       mw.textContent = `under ${Number.isInteger(v) ? v : v.toFixed(1)}`; mwu.textContent = 'cm';
-      mwn.textContent = child
-        ? 'Half the height (waist-to-height ratio below 0.5), the usual sign of healthy waist size in children from 5 years.'
-        : m.by === 'half height'
-          ? `Half your height, which for you is lower than the Indian cut-off for ${sex === 'm' ? 'men' : 'women'} (${WAIST_CUT[sex]} cm).`
-          : `The Indian cut-off for ${sex === 'm' ? 'men' : 'women'} (${WAIST_CUT[sex]} cm), which for you is lower than half your height (${(h / 2).toFixed(0)} cm).`;
+      mwn.textContent = m.by === 'half height'
+        ? `Half your height, which for you is lower than the Indian cut-off for ${sex === 'm' ? 'men' : 'women'} (${WAIST_CUT[sex]} cm).`
+        : `The Indian cut-off for ${sex === 'm' ? 'men' : 'women'} (${WAIST_CUT[sex]} cm), which for you is lower than half your height (${(h / 2).toFixed(0)} cm).`;
     } else {
       mw.textContent = '—'; mwu.textContent = ''; mwn.textContent = 'Enter height.';
     }
 
+    // Waist card: adults, waist-to-height ratio and the Indian cut-off; children, the waist against Indian percentiles for age.
     const wv = $('whtr-val'), whv = $('whtr-verdict'), wav = $('waist-verdict');
-    if (child && !(months >= 60)) {
-      wv.textContent = '—'; setVerdict(whv, Number.isFinite(months) ? 'Waist is not used to judge children under 5.' : 'Add age and waist to see abdominal fat.'); wav.textContent = '';
-    } else if (validH && waist >= (child ? 30 : 40) && waist <= 200) {
+    $('whtr-unit').textContent = child ? 'cm' : 'waist ÷ height';
+    if (child) {
+      if (Number.isFinite(months) && waist >= 30 && waist <= 200) {
+        const l = childWaistLines(months, sex), c = childWaistCategory(waist, months, sex);
+        wv.textContent = waist.toFixed(0); setVerdict(whv, c.label, c.tone);
+        wav.textContent = `For Indian ${kidsWord} aged ${Math.floor(months / 12)}: 50th percentile ${l.p50.toFixed(1)} cm, 70th ${l.p70.toFixed(1)} cm (cut-off), 90th ${l.p90.toFixed(1)} cm.`;
+      } else {
+        wv.textContent = '—'; setVerdict(whv, Number.isFinite(months) ? 'Add the waist to see abdominal fat risk.' : 'Add age and waist to see abdominal fat risk.'); wav.textContent = '';
+      }
+    } else if (validH && waist >= 40 && waist <= 200) {
       const r = waist / h;
       wv.textContent = r.toFixed(2);
       if (r < 0.5) setVerdict(whv, 'Below 0.5: no increased risk', 'ok');
       else if (r < 0.6) setVerdict(whv, '0.5–0.59: increased risk', 'warn');
       else setVerdict(whv, '0.6 or more: high risk', 'risk');
       const cut = WAIST_CUT[sex];
-      wav.textContent = child
-        ? `Keep the waist under ${(h / 2).toFixed(0)} cm (half the height).`
-        : `Keep your waist under ${(h / 2).toFixed(0)} cm (half your height). Indian waist cut-off for ${sex === 'm' ? 'men' : 'women'}: ${cut} cm — yours is ${waist >= cut ? 'at or above' : 'below'} it.`;
+      wav.textContent = `Keep your waist under ${(h / 2).toFixed(0)} cm (half your height). Indian waist cut-off for ${sex === 'm' ? 'men' : 'women'}: ${cut} cm — yours is ${waist >= cut ? 'at or above' : 'below'} it.`;
     } else {
       wv.textContent = '—'; setVerdict(whv, 'Add your waist to see abdominal fat risk.'); wav.textContent = '';
     }

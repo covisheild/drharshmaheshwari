@@ -1,7 +1,8 @@
-// Unit tests for the BMI calculator's arithmetic (src/lib/bmi.ts): adult targets, IAP 2015 charts (5-17) and WHO (2-4) for children.
+// Unit tests for the BMI calculator's arithmetic (src/lib/bmi.ts): adult targets, IAP 2015 charts (5-17) and WHO (2-4) for children,
+// and Indian waist percentiles for children.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { adultCategory, childHealthyBmi, iapBand, iapCategory, iapLines, maxWaist, percentile, targetWeight, whoUnder5Category, zScore } from '../src/lib/bmi.ts';
+import { adultCategory, childHealthyBmi, childWaistCategory, childWaistLines, iapBand, iapCategory, iapLines, maxWaist, percentile, targetWeight, whoUnder5Category, zScore } from '../src/lib/bmi.ts';
 
 test('adult target weight is BMI 21-22 at the given height', () => {
   const [lo, hi] = targetWeight(170);
@@ -53,6 +54,19 @@ test('under 5: WHO z-scores and categories (IAP recommends WHO below 5 years)', 
   assert.match(whoUnder5Category(-2.5).label, /^Wasted/);
   const [lo, hi] = childHealthyBmi(36, 'f');
   assert.ok(Math.abs(zScore(lo, 36, 'f') + 2) < 1e-9 && Math.abs(zScore(hi, 36, 'f') - 1) < 1e-9);
+});
+
+test('child waist uses the Indian percentiles by completed year (Khadilkar 2014, Tables II and V)', () => {
+  // Table V: 70th percentile, 10+ years, boys 71.4, girls 71.3; 2+ years boys 48.8; 17+ girls 85.9.
+  assert.equal(childWaistLines(120, 'm').p70, 71.4);
+  assert.equal(childWaistLines(131, 'f').p70, 71.3);
+  assert.equal(childWaistLines(24, 'm').p70, 48.8);
+  assert.equal(childWaistLines(215, 'f').p70, 85.9);
+  // Table II, boys 10+: 90th percentile 78.4.
+  assert.equal(childWaistLines(120, 'm').p90, 78.4);
+  assert.equal(childWaistCategory(71.3, 120, 'm').tone, 'ok');
+  assert.equal(childWaistCategory(71.4, 120, 'm').tone, 'warn');
+  assert.equal(childWaistCategory(78.4, 120, 'm').tone, 'risk');
 });
 
 test('percentiles of z-scores are sane', () => {

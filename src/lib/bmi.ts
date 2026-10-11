@@ -2,6 +2,7 @@
 // Pure functions, no DOM: the page's script calls them and tests/bmi.test.mjs checks them.
 import LMS from '../data/who-bmi-lms.json' with { type: 'json' };
 import IAP from '../data/iap-bmi-2015.json' with { type: 'json' };
+import WAIST from '../data/indian-waist-children.json' with { type: 'json' };
 
 export type Sex = 'm' | 'f';
 
@@ -32,6 +33,7 @@ export function maxWaist(cm: number, sex: Sex): { cm: number; by: 'cut-off' | 'h
 }
 
 // ---------- Children (2 to 17 years): Indian charts where they exist ----------
+// Waist, 2 to 17 years: Indian percentiles (Khadilkar 2014), cut-off at the 70th.
 // 5 to 17 years: IAP 2015 charts for Indian children (overweight from the adult-equivalent 23 line, obesity from 27,
 // thinness below the 3rd percentile). 2 to 4 years: WHO Child Growth Standards 2006, which IAP recommends under 5.
 
@@ -111,6 +113,21 @@ export const childHealthyBmi = (months: number, sex: Sex): [number, number] => {
   if (months >= IAP_FROM) { const l = iapLines(months, sex); return [l.p3, l.ow]; }
   return [bmiAt(-2, months, sex), bmiAt(1, months, sex)];
 };
+
+/** Indian waist percentiles for a child's completed year of age (Khadilkar 2014, 2 to 17 years): 50th, 70th (cut-off), 75th, 90th, in cm. */
+export function childWaistLines(months: number, sex: Sex): { p50: number; p70: number; p75: number; p90: number } {
+  const t = (sex === 'm' ? WAIST.boys : WAIST.girls) as number[][];
+  const r = t[Math.min(Math.max(Math.floor(months / 12) - 2, 0), t.length - 1)];
+  return { p50: r[1], p70: r[2], p75: r[3], p90: r[4] };
+}
+
+/** Child's waist against the Indian percentiles: the 70th percentile marks risk of metabolic syndrome. */
+export function childWaistCategory(waist: number, months: number, sex: Sex): Verdict {
+  const l = childWaistLines(months, sex);
+  if (waist >= l.p90) return { label: '90th percentile or above: high risk', tone: 'risk' };
+  if (waist >= l.p70) return { label: '70th to 90th percentile: increased risk', tone: 'warn' };
+  return { label: 'Below the 70th percentile: no increased risk', tone: 'ok' };
+}
 
 /** Percentile (0–100) of a z-score: standard normal distribution (Abramowitz–Stegun 7.1.26, error under 1.5e-7). */
 export function percentile(z: number): number {
