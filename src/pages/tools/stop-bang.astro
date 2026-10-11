@@ -2,6 +2,16 @@
 import Base from '../../layouts/Base.astro';
 import UnitField from '../../components/UnitField.astro';
 import { SITE } from '../../consts';
+import T from '../../components/T.astro';
+import ClientWords from '../../components/ClientWords.astro';
+import { inLang, langOf } from '../../i18n/languages';
+import { localHref } from '../../i18n/routes';
+import { useT } from '../../i18n/t';
+
+// Also /<lang>/tools/stop-bang/: the page through the dictionary (t, <T>), the results through w() (src/i18n/client.ts).
+const lang = langOf(Astro.url.pathname);
+const t = useT(Astro.url.pathname);
+const L = (href: string) => localHref(lang, href);
 
 // STOP-Bang as published by Chung et al.: eight yes/no items, 1 point each. Risk bands and the
 // "STOP 2 or more plus male / BMI over 35 / large neck" rule follow Chung 2012 (BJA) and Chung 2016 (Chest).
@@ -15,35 +25,36 @@ const QUESTIONS = [
   { id: 'a', letter: 'A', title: 'Age', text: 'Are you older than 50?' },
   { id: 'n', letter: 'N', title: 'Neck', text: 'Is your neck large? Measured around the Adam’s apple: 43 cm (17 in shirt collar) or more for men, 41 cm (16 in) or more for women.' },
   { id: 'g', letter: 'G', title: 'Gender', text: 'Are you a man?' },
-];
+].map((q) => ({ ...q, title: t(q.title), text: t(q.text) }));
 
-const url = `${SITE.url}/tools/stop-bang/`;
+const url = `${SITE.url}${inLang(lang, '/tools/stop-bang/')}`;
 const faq = [
   { q: 'What does a STOP-Bang score mean?', a: 'Each yes scores 1 point, out of 8. A score of 0 to 2 means low risk of moderate to severe obstructive sleep apnoea, 3 to 4 intermediate risk, and 5 to 8 high risk. A score of 3 or 4 also counts as high risk if at least two of the first four answers (snoring, tired, observed, pressure) are yes and you are a man, have a BMI over 35, or have a large neck.' },
   { q: 'Can STOP-Bang diagnose sleep apnoea?', a: 'No. It is a screening questionnaire: it tells you how likely sleep apnoea is. Only a sleep study (polysomnography or a home sleep test) can confirm or rule it out.' },
   { q: 'Is a low score a guarantee I do not have sleep apnoea?', a: 'No. A low score makes moderate to severe sleep apnoea less likely, but not impossible. The BMI and neck cut-offs were set in Canadian patients, and many Indians with sleep apnoea have a lower BMI than 35. If you snore loudly, stop breathing in your sleep or are sleepy in the day, see a doctor whatever your score.' },
-];
+].map((f) => ({ q: t(f.q), a: t(f.a) }));
 const jsonld = [
   {
     '@type': ['WebApplication', 'MedicalWebPage'],
     '@id': `${url}#app`,
-    name: 'STOP-Bang sleep apnoea questionnaire',
+    name: t('STOP-Bang sleep apnoea questionnaire'),
     url,
     applicationCategory: 'HealthApplication',
     operatingSystem: 'Any (runs in the browser)',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
-    description: 'Eight yes/no questions that estimate the risk of obstructive sleep apnoea (STOP-Bang). Nothing you answer leaves your device.',
+    description: t('Eight yes/no questions that estimate the risk of obstructive sleep apnoea (STOP-Bang). Nothing you answer leaves your device.'),
     author: { '@id': `${SITE.url}/#person` },
     audience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
   },
   { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ];
 ---
-<Base title="STOP-Bang: sleep apnoea risk" description="Eight yes/no questions (STOP-Bang) that estimate your risk of obstructive sleep apnoea. Runs in your browser; nothing is stored." jsonld={jsonld}>
+<Base title={t('STOP-Bang: sleep apnoea risk')} description={t('Eight yes/no questions (STOP-Bang) that estimate your risk of obstructive sleep apnoea. Runs in your browser; nothing is stored.')} jsonld={jsonld}>
+  <ClientWords sources={['/src/pages/tools/stop-bang.astro', '/src/lib/stop-bang.ts']} />
   <header class="page-head wrap">
-    <span class="eyebrow">Tools</span>
-    <h1>STOP-Bang: sleep apnoea risk</h1>
-    <p>Eight yes/no questions that estimate how likely <b>obstructive sleep apnoea</b> is: breathing that stops again and again during sleep. Everything is calculated on your device; nothing you answer is sent or stored.</p>
+    <span class="eyebrow">{t('Tools')}</span>
+    <h1>{t('STOP-Bang: sleep apnoea risk')}</h1>
+    <p><T>Eight yes/no questions that estimate how likely <b>obstructive sleep apnoea</b> is: breathing that stops again and again during sleep. Everything is calculated on your device; nothing you answer is sent or stored.</T></p>
   </header>
 
   <div class="wrap sb-wrap">
@@ -54,63 +65,63 @@ const jsonld = [
           <p class="sb-text">{q.text}</p>
           {q.id === 'b' && (
             <details class="sb-help" id="bmi-help">
-              <summary>Not sure? Work it out</summary>
+              <summary>{t('Not sure? Work it out')}</summary>
               <div class="sb-row">
-                <UnitField id="hcm" kind="height" label="Height" placeholder={165} />
-                <UnitField id="wkg" kind="weight" label="Weight" placeholder={66} />
+                <UnitField id="hcm" kind="height" label={t('Height')} placeholder={165} />
+                <UnitField id="wkg" kind="weight" label={t('Weight')} placeholder={66} />
               </div>
-              <p class="small muted" id="bmi-out" aria-live="polite">Enter height and weight; the answer is filled in for you.</p>
+              <p class="small muted" id="bmi-out" aria-live="polite">{t('Enter height and weight; the answer is filled in for you.')}</p>
             </details>
           )}
           <div class="seg">
-            <label><input type="radio" name={q.id} value="1" /> <span>Yes</span></label>
-            <label><input type="radio" name={q.id} value="0" /> <span>No</span></label>
+            <label><input type="radio" name={q.id} value="1" /> <span>{t('Yes')}</span></label>
+            <label><input type="radio" name={q.id} value="0" /> <span>{t('No')}</span></label>
           </div>
         </fieldset>
       ))}
-      <p class="small muted" style="margin:0">For adults 18 and over. <button type="reset" class="sb-reset">Clear answers</button></p>
+      <p class="small muted" style="margin:0">{t('For adults 18 and over.')} <button type="reset" class="sb-reset">{t('Clear answers')}</button></p>
     </form>
 
     <div class="sb-results" aria-live="polite">
       <div class="card">
-        <span class="eyebrow">Your STOP-Bang score</span>
-        <div class="big"><b id="sb-score">—</b><span>out of 8</span></div>
+        <span class="eyebrow">{t('Your STOP-Bang score')}</span>
+        <div class="big"><b id="sb-score">—</b><span>{t('out of 8')}</span></div>
         <div class="sb-dots" aria-hidden="true">{QUESTIONS.map((q) => <span data-dot={q.id}>{q.letter}</span>)}</div>
-        <p class="verdict" id="sb-verdict">Answer all eight questions.</p>
+        <p class="verdict" id="sb-verdict">{t('Answer all eight questions.')}</p>
         <p class="small" id="sb-next"></p>
-        <p class="small muted" id="sb-count">0 of 8 answered</p>
+        <p class="small muted" id="sb-count">{t('0 of 8 answered')}</p>
       </div>
-      <p class="small muted sb-drive"><b>Sleepy while driving?</b> Do not drive until you have seen a doctor.</p>
+      <p class="small muted sb-drive"><T><b>Sleepy while driving?</b> Do not drive until you have seen a doctor.</T></p>
     </div>
   </div>
 
   <section class="prose-wrap prose" style="padding-top:2rem">
-    <h2>How to read your score</h2>
+    <h2>{t('How to read your score')}</h2>
     <table>
-      <thead><tr><th>Score</th><th>Risk of moderate to severe sleep apnoea</th></tr></thead>
+      <thead><tr><th>{t('Score')}</th><th>{t('Risk of moderate to severe sleep apnoea')}</th></tr></thead>
       <tbody>
-        <tr><td>0 – 2</td><td>Low</td></tr>
-        <tr><td>3 – 4</td><td>Intermediate; <b>high</b> if 2 or more of S, T, O, P are yes <i>and</i> you are a man, your BMI is over 35, or your neck is large</td></tr>
-        <tr><td>5 – 8</td><td>High</td></tr>
+        <tr><td>0 – 2</td><td>{t('Low')}</td></tr>
+        <tr><td>3 – 4</td><td><T>Intermediate; <b>high</b> if 2 or more of S, T, O, P are yes <i>and</i> you are a man, your BMI is over 35, or your neck is large</T></td></tr>
+        <tr><td>5 – 8</td><td>{t('High')}</td></tr>
       </tbody>
     </table>
-    <p>The higher the score, the more likely sleep apnoea is. Among people sent to sleep clinics, a score of 3 or more picked up about 94% of those with moderate to severe sleep apnoea. But a questionnaire cannot diagnose it: only a sleep study can.</p>
-    <h2>Why it matters</h2>
-    <p>Untreated sleep apnoea is linked with high blood pressure, heart disease, diabetes and road accidents from daytime sleepiness. Extra weight, especially around the neck and waist, is one of its strongest causes, and losing weight often makes it better. It is also important before an operation: tell the anaesthetist if your score is high.</p>
+    <p>{t('The higher the score, the more likely sleep apnoea is. Among people sent to sleep clinics, a score of 3 or more picked up about 94% of those with moderate to severe sleep apnoea. But a questionnaire cannot diagnose it: only a sleep study can.')}</p>
+    <h2>{t('Why it matters')}</h2>
+    <p>{t('Untreated sleep apnoea is linked with high blood pressure, heart disease, diabetes and road accidents from daytime sleepiness. Extra weight, especially around the neck and waist, is one of its strongest causes, and losing weight often makes it better. It is also important before an operation: tell the anaesthetist if your score is high.')}</p>
     <div class="faq">
-      <h2>Common questions</h2>
+      <h2>{t('Common questions')}</h2>
       {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
     </div>
     <div class="refs" style="margin-top:2rem">
-      <h2>Sources</h2>
-      <ol>
+      <h2>{t('Sources')}</h2>
+      <ol lang="en">
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/18431116/">Chung F, et al. STOP questionnaire: a tool to screen patients for obstructive sleep apnea. Anesthesiology 2008;108:812-21.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/22401881/">Chung F, et al. High STOP-Bang score indicates a high probability of obstructive sleep apnoea. Br J Anaesth 2012;108:768-75.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/26378880/">Chung F, Abdullah HR, Liao P. STOP-Bang questionnaire: a practical approach to screen for obstructive sleep apnea. Chest 2016;149:631-8.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/26658438/">Nagappa M, et al. Validation of the STOP-Bang questionnaire as a screening tool for obstructive sleep apnea among different populations: a systematic review and meta-analysis. PLoS One 2015;10:e0143697.</a></li>
       </ol>
     </div>
-    <p class="disclaimer"><a href="/disclaimer/">Disclaimer</a></p>
+    <p class="disclaimer"><a href={L('/disclaimer/')}>{t('Disclaimer')}</a></p>
   </section>
 </Base>
 
@@ -153,6 +164,7 @@ const jsonld = [
 
 <script>
   import { unitValue } from '../../scripts/unit-fields';
+  import { w } from '../../i18n/client';
   import { stopBang } from '../../lib/stop-bang';
 
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -170,13 +182,35 @@ const jsonld = [
 
   // Optional helper: height + weight fill in the BMI question.
   function bmiHelper() {
-    const h = unitValue('hcm'), w = unitValue('wkg');
+    const h = unitValue('hcm'), wt = unitValue('wkg');
     const out = $('bmi-out');
-    if (!(h >= 100 && h <= 230 && w >= 25 && w <= 300)) { out.textContent = 'Enter height and weight; the answer is filled in for you.'; return; }
-    const bmi = w / (h / 100) ** 2;
+    if (!(h >= 100 && h <= 230 && wt >= 25 && wt <= 300)) { out.textContent = w('Enter height and weight; the answer is filled in for you.'); return; }
+    const bmi = wt / (h / 100) ** 2;
     const over = bmi > 35;
-    out.textContent = `Your BMI is ${bmi.toFixed(1)} kg/m²: ${over ? 'more than 35, so the answer is Yes' : '35 or less, so the answer is No'}.`;
+    out.textContent = over
+      ? w('Your BMI is {bmi} kg/m²: more than 35, so the answer is Yes.', { bmi: bmi.toFixed(1) })
+      : w('Your BMI is {bmi} kg/m²: 35 or less, so the answer is No.', { bmi: bmi.toFixed(1) });
     form.querySelector<HTMLInputElement>(`input[name=b][value="${over ? 1 : 0}"]`)!.checked = true;
+  }
+
+  // src/lib/stop-bang.ts explains a high-risk 3 or 4 in English ("2 of the first four answers are yes and you are a man");
+  // this says the same in the page's language, one whole phrase for each combination of reasons.
+  const reasonText = (s: string) => {
+    switch (s) {
+      case 'you are a man': return w('you are a man');
+      case 'your BMI is over 35': return w('your BMI is over 35');
+      case 'your neck is large': return w('your neck is large');
+      case 'you are a man and your BMI is over 35': return w('you are a man and your BMI is over 35');
+      case 'you are a man and your neck is large': return w('you are a man and your neck is large');
+      case 'your BMI is over 35 and your neck is large': return w('your BMI is over 35 and your neck is large');
+      default: return s;
+    }
+  };
+  function ruleText(score: number, byRule: string, advice: string) {
+    const m = byRule.match(/^(\d+) of the first four answers are yes and (.+)$/);
+    return m
+      ? w('A score of {score} counts as high risk because {stop} of the first four answers are yes and {reasons}. {advice}', { score, stop: m[1], reasons: reasonText(m[2]), advice })
+      : w('A score of {score} counts as high risk because {reason}. {advice}', { score, reason: byRule, advice });
   }
 
   function update() {
@@ -186,22 +220,22 @@ const jsonld = [
       const dot = document.querySelector<HTMLElement>(`[data-dot="${id}"]`)!;
       dot.className = a[id] === true ? 'yes' : a[id] === false ? 'no' : '';
     }
-    $('sb-count').textContent = `${answered} of 8 answered`;
+    $('sb-count').textContent = w('{n} of 8 answered', { n: answered });
     const v = $('sb-verdict'), next = $('sb-next');
     const r = stopBang(a);
     $('sb-score').textContent = answered ? String(r.score) : '—';
     if (answered < 8) {
-      v.textContent = 'Answer all eight questions.'; v.className = 'verdict'; next.textContent = ''; return;
+      v.textContent = w('Answer all eight questions.'); v.className = 'verdict'; next.textContent = ''; return;
     }
     const TEXT = {
-      low: ['Low risk of moderate to severe sleep apnoea', 'ok', 'A low score makes it less likely, not impossible. If you snore loudly, stop breathing in your sleep or feel sleepy in the day, tell your doctor anyway.'],
-      intermediate: ['Intermediate risk of sleep apnoea', 'warn', 'Talk to your doctor about these answers; they may suggest a sleep study.'],
-      high: ['High risk of moderate to severe sleep apnoea', 'risk', 'See a doctor and ask whether you need a sleep study. Sleep apnoea is common, treatable, and often improves with weight loss.'],
-    } as const;
+      low: [w('Low risk of moderate to severe sleep apnoea'), 'ok', w('A low score makes it less likely, not impossible. If you snore loudly, stop breathing in your sleep or feel sleepy in the day, tell your doctor anyway.')],
+      intermediate: [w('Intermediate risk of sleep apnoea'), 'warn', w('Talk to your doctor about these answers; they may suggest a sleep study.')],
+      high: [w('High risk of moderate to severe sleep apnoea'), 'risk', w('See a doctor and ask whether you need a sleep study. Sleep apnoea is common, treatable, and often improves with weight loss.')],
+    };
     const [label, cls, advice] = TEXT[r.risk];
     v.textContent = label;
     v.className = `verdict ${cls}`;
-    next.textContent = r.byRule ? `A score of ${r.score} counts as high risk because ${r.byRule}. ${advice}` : advice;
+    next.textContent = r.byRule ? ruleText(r.score, r.byRule, advice) : advice;
   }
 
   form.addEventListener('input', (e) => {
