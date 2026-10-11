@@ -224,7 +224,7 @@ const jsonld = [
   const num = (id: string) => { const v = parseFloat($<HTMLInputElement>(id).value); return Number.isFinite(v) ? v : NaN; };
   const form = $<HTMLFormElement>('calc');
   const picked = (name: string) => (form.querySelector(`input[name=${name}]:checked`) as HTMLInputElement).value;
-  // Verdict labels come English from src/lib/bmi.ts; w() translates them (ClientWords sends every `label: '...'` there).
+  // Verdict labels come English from src/lib/bmi.ts; w() translates them (ClientWords sends every verdict label found there).
   const setVerdict = (el: HTMLElement, text: string, cls = '') => { el.textContent = w(text); el.className = `verdict ${cls}`; };
   const kg = (v: number) => v.toFixed(0);
   const suffix = (r: number) => { const t = r % 100; return t >= 11 && t <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][r % 10] ?? 'th'; };
@@ -319,8 +319,10 @@ const jsonld = [
           drawScale(pts, labels, z);
           const c = whoUnder5Category(z); setVerdict(bv, c.label, c.tone);
           const pct = percentile(z);
-          const pctText = pct < 1 ? w('below the 1st percentile') : pct > 99 ? w('above the 99th percentile') : w('the {ordinal} percentile', { ordinal: ordinal(pct) });
-          bg.textContent = w('BMI-for-age z-score {z} SD: {pct} for {kids} of this age (WHO Child Growth Standards, which IAP recommends under 5).', { z: `${z >= 0 ? '+' : '−'}${Math.abs(z).toFixed(2)}`, pct: pctText, kids });
+          const zv = { z: `${z >= 0 ? '+' : '−'}${Math.abs(z).toFixed(2)}`, kids, ordinal: ordinal(pct) };
+          bg.textContent = pct < 1 ? w('BMI-for-age z-score {z} SD: below the 1st percentile for {kids} of this age (WHO Child Growth Standards, which IAP recommends under 5).', zv)
+            : pct > 99 ? w('BMI-for-age z-score {z} SD: above the 99th percentile for {kids} of this age (WHO Child Growth Standards, which IAP recommends under 5).', zv)
+            : w('BMI-for-age z-score {z} SD: the {ordinal} percentile for {kids} of this age (WHO Child Growth Standards, which IAP recommends under 5).', zv);
         }
         const [blo, bhi] = childHealthyBmi(months, sex);
         tw.textContent = `${kg(kgAt(blo, h))}–${kg(kgAt(bhi, h))}`; twu.textContent = 'kg';

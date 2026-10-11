@@ -1,16 +1,22 @@
 ---
 // Cards at the top of a reading section (Learn, Evidence) for the sections that are not in the header: Books and Videos.
+// On a translated page (/hi/learn/) the words are translated and the links go to that language's pages.
+import { langOf } from '../i18n/languages';
+import { localHref } from '../i18n/routes';
+import { useT } from '../i18n/t';
 interface Item { href: string; label: string; text: string; count: string }
 interface Props { items: Item[] }
 const { items } = Astro.props;
+const lang = langOf(Astro.url.pathname);
+const t = useT(Astro.url.pathname);
 ---
 <div class="wrap" style="padding-bottom:2rem">
   <div class="grid">
     {items.map((m) => (
-      <a class="card reveal" href={m.href}>
+      <a class="card reveal" href={localHref(lang, m.href)}>
         <span class="eyebrow">{m.count}</span>
-        <h3>{m.label}</h3><p>{m.text}</p>
-        <span class="more">Open {m.label.toLowerCase()} →</span>
+        <h3>{t(m.label)}</h3><p>{t(m.text)}</p>
+        <span class="more">{t('Open {section}', { section: t(m.label).toLowerCase() })} →</span>
       </a>
     ))}
   </div>

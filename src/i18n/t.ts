@@ -9,7 +9,7 @@
 import { langOf, LANG, type Lang } from './languages';
 import hi from './hi.json';
 
-const DICTS: Partial<Record<Lang, Record<string, string>>> = { hi };
+export const DICTS: Partial<Record<Lang, Record<string, string>>> = { hi };
 
 export const MISSING_START = '\u2063', MISSING_END = '\u2060';
 

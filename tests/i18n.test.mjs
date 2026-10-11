@@ -94,7 +94,7 @@ test('built Hindi pages: Hindi throughout, nothing left untranslated, linked to 
     assert.deepEqual(links, [['/hi/', 'सबके लिए'], ['/doctors/', 'डॉक्टरों के लिए']], url);
     assert.match(doc, new RegExp(`class="lang-list"[\\s\\S]*?href="${en}"[^>]*hreflang="en-IN"`), `${url}: language menu links to the English page`);
     const nav = [...(doc.match(/<ul class="nav-links"[\s\S]*?<\/ul>/)?.[0] ?? '').matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
-    assert.deepEqual(nav, ['/hi/learn/', '/hi/tools/', '/hi/books/', '/hi/videos/', '/hi/blog/', '/hi/about/'], `${url} nav stays in Hindi`);
+    assert.deepEqual(nav, ['/hi/learn/', '/hi/tools/', '/hi/blog/', '/hi/about/'], `${url} nav stays in Hindi`);
   }
   // Book pages never call the books free, in Hindi either.
   const books = readFileSync(join(DIST, 'hi/books/index.html'), 'utf8');
@@ -118,8 +118,8 @@ test('built English pages offer Hindi when it is built, and are otherwise unchan
   const doc = readFileSync(join(DIST, 'doctors/index.html'), 'utf8');
   assert.doesNotMatch(doc, /class="lang-menu"/);
   assert.doesNotMatch(doc, /hreflang="hi-IN"/);
-  // A page without a Hindi version (a calculator) offers the Hindi home page instead.
-  const calc = readFileSync(join(DIST, 'tools/bmi-calculator/index.html'), 'utf8');
+  // A page without a Hindi version (the account page, English on purpose) offers the Hindi home page instead.
+  const calc = readFileSync(join(DIST, 'account/index.html'), 'utf8');
   assert.match(calc, /class="lang-list"[\s\S]*?href="\/hi\/"[^>]*hreflang="hi-IN"/);
   assert.doesNotMatch(calc, /hreflang="hi-IN" href=/);
 });
@@ -129,4 +129,16 @@ test('production builds carry no Hindi until it is live', { skip: built && 'this
   if (hiLive) return;
   const home = readFileSync(join(DIST, 'index.html'), 'utf8');
   assert.doesNotMatch(home, /class="lang-menu"|hreflang="hi-IN"/, 'no language menu or Hindi links while Hindi is not live');
+});
+
+// Every For Everyone page has a Hindi version, so a visitor reading in Hindi never falls back to English halfway through.
+// The exceptions are deliberate (docs/translation.md): the account page (it belongs to the trainers and the book reader,
+// which are English) and single book pages (books are always in English). A new For Everyone page must either be added
+// to LOCAL_PAGES (src/i18n/routes.ts) with its words translated, or be listed here with the reason.
+const ENGLISH_ONLY = [/^\/account\/$/, /^\/books\/[^/]+\/$/, /^\/404\//];
+test('every For Everyone page has a Hindi page', { skip: !built && 'no Hindi pages in this build' }, () => {
+  const missing = pages(DIST).map(urlOf)
+    .filter((u) => !u.startsWith('/doctors/') && !u.startsWith('/hi/') && !u.startsWith('/og/') && !ENGLISH_ONLY.some((r) => r.test(u)))
+    .filter((u) => !existsSync(join(DIST, 'hi', u, 'index.html')));
+  assert.deepEqual(missing, [], 'For Everyone pages without a Hindi version');
 });

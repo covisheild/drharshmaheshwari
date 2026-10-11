@@ -54,7 +54,7 @@ export function checkPair(en, tr, glossary, { lang = 'hi', exempt = [] } = {}) {
   }
   for (const ban of glossary.banned) if (new RegExp(ban.pattern).test(strip(tr, false))) errors.push(`banned word /${ban.pattern}/: ${ban.why}`);
   for (const run of latinRuns(tr)) errors.push(`untranslated English: "${run}"`);
-  if (strip(en).split(/\s+/).filter(Boolean).length >= 5 && devanagariShare(tr) < 0.5) errors.push(`mostly not in Devanagari (${Math.round(devanagariShare(tr) * 100)}%)`);
+  if ((strip(en).match(/[A-Za-z]{2,}/g) ?? []).length >= 5 && devanagariShare(tr) < 0.5) errors.push(`mostly not in Devanagari (${Math.round(devanagariShare(tr) * 100)}%)`);
   const ratio = strip(tr).length / Math.max(1, strip(en).length);
   if (strip(en).length > 60 && (ratio < 0.6 || ratio > 1.8)) warnings.push(`length ratio ${ratio.toFixed(2)} (dropped or added text?)`);
   const negEn = (plainEn.match(/\b(not|no|never|don't|doesn't|cannot|can't|isn't|aren't|nothing|without)\b|n't\b/gi) ?? []).length;

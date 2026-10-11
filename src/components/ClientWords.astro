@@ -1,9 +1,10 @@
 ---
 // The words a page's script shows, in the page's language (src/i18n/client.ts). Every w('...') call in the listed source
-// files, and every `label: '...'` in them (the calculation libraries' verdicts), is looked up in the dictionary. Nothing on
-// English pages. A word with no translation is sent marked (src/i18n/t.ts), so `npm run i18n:missing` and the tests find it.
+// files is looked up in the dictionary; a missing one is sent marked (src/i18n/t.ts), so `npm run i18n:missing` and the
+// tests find it. From the calculation libraries (src/lib/*.ts), whose verdicts the page passes through w() when it shows them,
+// every quoted string that has a translation is sent too. Nothing on English pages.
 import { langOf } from '../i18n/languages';
-import { translate } from '../i18n/t';
+import { DICTS, translate } from '../i18n/t';
 
 interface Props { sources: string[] }
 const lang = langOf(Astro.url.pathname);
@@ -14,7 +15,9 @@ for (const src of Astro.props.sources) {
   const raw = RAW[src];
   if (raw === undefined) throw new Error(`ClientWords: no source ${src}`);
   for (const m of raw.matchAll(/\bw\(\s*(?:'((?:\\.|[^'\\])*)'|"((?:\\.|[^"\\])*)"|`((?:\\.|[^`\\$])*)`)/g)) keys.add(unq(m[1] ?? m[2] ?? m[3]));
-  for (const m of raw.matchAll(/\blabel: (?:'((?:\\.|[^'\\])*)'|"((?:\\.|[^"\\])*)")/g)) keys.add(unq(m[1] ?? m[2]));
+  if (src.startsWith('/src/lib/') && lang !== 'en') {
+    for (const k of Object.keys(DICTS[lang] ?? {})) if (raw.includes(`'${k}'`) || raw.includes(`"${k}"`)) keys.add(k);
+  }
 }
 const words = lang === 'en' ? null : JSON.stringify(Object.fromEntries([...keys].map((k) => [k, translate(lang, k)]))).replace(/</g, '\\u003c');
 ---
