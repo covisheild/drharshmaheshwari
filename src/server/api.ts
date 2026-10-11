@@ -1,12 +1,15 @@
 // Every /api/ request: Google sign-in, sessions, trainer progress sync, book reading sync, account deletion.
 //
-// The site stays static; only /api/ runs code. Accounts are optional and exist only to keep trainer and
-// book-reader progress across devices. Stored per person: Google's account id, email and name, their
-// trainer answers, and in each book their reading place, bookmarks, highlights with their notes, and practice marks. No Google access token is kept. If the database or the Google credentials are not configured,
+// The site stays static; only /api/ runs code. Accounts are optional: they keep trainer and book-reader progress
+// across devices, and the trackers need one to save readings. Stored per person: Google's account id, email and name,
+// their trainer answers, in each book their reading place, bookmarks, highlights with their notes, and practice marks,
+// and the BP and blood sugar readings they keep for themselves and adult family members, with any doctor share links
+// (src/server/trackers.ts). No Google access token is kept. If the database or the Google credentials are not configured,
 // /api/me says accounts are off and the trainers quietly keep progress in the browser, as before.
 
 import './d1';
 import { ensureSchema } from './schema';
+import { sharedView, trackerRoutes } from './trackers';
 
 export interface Env {
   DB?: D1Database;
@@ -310,6 +313,8 @@ export async function handleApi(req: Request, env: Env, deps: Deps = DEFAULT_DEP
     if (path === '/api/auth/callback' && req.method === 'GET') return finishGoogle(req, url, env, deps);
 
     await ensureSchema(env.DB);
+    // A doctor opening a tracker share link: no sign-in, read-only, only what the link allows.
+    if (path === '/api/trackers/shared' && req.method === 'GET') return sharedView(req, env.DB, url, deps.now);
     const user = await currentUser(req, env, deps);
     if (path === '/api/me' && req.method === 'GET') return json({ enabled: true, user: user && { name: user.name, email: user.email, picture: user.picture ?? null } });
 
@@ -322,7 +327,7 @@ export async function handleApi(req: Request, env: Env, deps: Deps = DEFAULT_DEP
     if (!user) return json({ error: 'not signed in' }, 401);
 
     if (path === '/api/account' && req.method === 'DELETE') {
-      await env.DB.prepare('DELETE FROM users WHERE id = ?').bind(user.id).run(); // sessions, attempts, prefs cascade
+      await env.DB.prepare('DELETE FROM users WHERE id = ?').bind(user.id).run(); // everything else (progress, books, trackers, share links) cascades
       return json({ ok: true }, 200, { 'set-cookie': cookie('sid', '', url, 0) });
     }
     const m = path.match(/^\/api\/progress\/([^/]+)$/);
@@ -338,6 +343,10 @@ export async function handleApi(req: Request, env: Env, deps: Deps = DEFAULT_DEP
         ]);
         return json({ ok: true });
       }
+    }
+    if (path.startsWith('/api/trackers')) {
+      const res = await trackerRoutes(req, path, url, env.DB, user, deps.now);
+      if (res) return res;
     }
     const bm = path.match(/^\/api\/books\/([^/]+)$/);
     if (bm) {

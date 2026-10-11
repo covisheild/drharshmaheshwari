@@ -1,0 +1,74 @@
+---
+// The doctor's view of a patient's shared readings (/trackers/view/#<token>). No sign-in: the secret is after the #, so
+// it never reaches server logs or other sites, and the page sends it to /api/trackers/shared in a header. Live: the
+// readings are fetched each time the page is opened (and on Refresh). No alert notes are shown here (Harsh, 11 Oct 2026).
+import Base from '../../../layouts/Base.astro';
+import '../../../styles/trackers.css';
+---
+<Base title="Shared readings" description="Blood pressure and blood sugar readings shared by a patient." noindex>
+  <meta slot="head" name="referrer" content="no-referrer" />
+  <header class="page-head wrap" style="padding-bottom:1rem">
+    <span class="eyebrow">Shared readings</span>
+    <h1>Shared readings</h1>
+  </header>
+  <div class="wrap tk-wrap" id="tk-view" aria-live="polite"><p class="muted">Loading…</p></div>
+  <noscript><p class="wrap">This page needs JavaScript.</p></noscript>
+</Base>
+
+<script>
+  import { bpSection, esc, historyLine, sugarSection, weightSection } from '../../../trackers/render';
+  import { bmiFor, type Reading } from '../../../lib/trackers';
+
+  interface View {
+    now: number; expires: number | null; older: boolean;
+    scope: { bp: boolean; sugar: boolean; weight: boolean };
+    person: { label: string; age: number | null; sex: 'm' | 'f'; heightCm: number | null; htn: 'yes' | 'no' | 'unsure' | null; dm: 'yes' | 'no' | 'unsure' | null; meds: 'yes' | 'no' | 'unsure' | null };
+    readings: Reading[];
+  }
+  const root = document.getElementById('tk-view')!;
+  const token = location.hash.slice(1);
+  let all = false;
+  const o = { alerts: false, editable: false, width: 0 };
+  const when = (t: number) => new Date(t).toLocaleString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+
+  async function load() {
+    root.setAttribute('aria-busy', 'true');
+    let res: Response | null = null;
+    try { res = await fetch(`/api/trackers/shared${all ? '?all=1' : ''}`, { headers: { 'x-share-token': token, accept: 'application/json' }, cache: 'no-store', referrerPolicy: 'no-referrer' }); } catch { /* offline */ }
+    root.removeAttribute('aria-busy');
+    if (!res) { root.innerHTML = '<div class="tk-card"><p>Could not reach the site. Please check the connection and try again.</p><button class="btn btn-ghost" type="button" data-refresh>Try again</button></div>'; return wire(); }
+    if (!res.ok) { root.innerHTML = '<div class="tk-card"><p>This link has been stopped or has expired. Please ask for a new one.</p></div>'; return; }
+    const v = await res.json() as View;
+    o.width = root.clientWidth - 42;
+    const p = v.person;
+    const rs = v.readings;
+    const last = rs.length ? Math.max(...rs.map((r) => r.updated)) : null;
+    const bmi = v.scope.weight ? bmiFor({ heightCm: p.heightCm } as never, rs) : null;
+    document.querySelector('.page-head h1')!.textContent = p.label;
+    document.title = `${p.label} · Shared readings`;
+    root.innerHTML = `
+      <div class="tk-banner"><b>Live:</b> shows the latest readings each time it is opened. Loaded ${esc(when(v.now))}${last ? `; last change by the patient ${esc(when(last))}` : ''}.
+        ${v.expires ? `This link works until ${esc(new Date(v.expires).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }))}.` : ''}
+        <span class="tk-noprint"><button class="tk-link" type="button" data-refresh>Refresh</button> · <button class="tk-link" type="button" data-print>Print</button></span></div>
+      <section class="tk-card">
+        <p style="margin:0"><b>${esc(p.label)}</b> · ${p.age ?? '—'} years · ${p.sex === 'm' ? 'Male' : 'Female'}${p.heightCm ? ` · ${p.heightCm} cm` : ''}${bmi ? ` · BMI ${bmi}` : ''}</p>
+        ${historyLine(p) ? `<p class="small muted" style="margin:.35rem 0 0">${esc(historyLine(p))}</p>` : ''}
+        <p class="small muted" style="margin:.35rem 0 0">Readings ${all ? 'of all time' : 'of the last 12 months'}, as entered by the patient. Home and glucometer readings are not checked by a lab.</p>
+      </section>
+      ${v.scope.bp ? `<section class="tk-card"><h2>Blood pressure</h2>${bpSection(rs, o)}</section>` : ''}
+      ${v.scope.sugar ? `<section class="tk-card"><h2>Blood sugar</h2>${sugarSection(rs, o)}</section>` : ''}
+      ${v.scope.weight ? `<section class="tk-card"><h2>Weight</h2>${weightSection({ heightCm: p.heightCm }, rs, o)}</section>` : ''}
+      ${v.older ? '<p class="tk-noprint"><button class="btn btn-ghost" type="button" data-older>Show older readings</button></p>' : ''}
+      <p class="small muted">Shared by the patient through drharshmaheshwari.com. Reference lines on the charts: BP 140/90 (clinic) and 135/85 (home); fasting sugar 126 mg/dL; HbA1c 6.5%.</p>`;
+    wire();
+  }
+  function wire() {
+    root.querySelectorAll('[data-refresh]').forEach((b) => b.addEventListener('click', load));
+    root.querySelector('[data-print]')?.addEventListener('click', () => print());
+    root.querySelector('[data-older]')?.addEventListener('click', () => { all = true; load(); });
+  }
+  if (!/^[A-Za-z0-9_-]{20,64}$/.test(token)) root.innerHTML = '<div class="tk-card"><p>This link is not complete. Please check that the whole link was copied.</p></div>';
+  else load();
+  // Coming back to the tab later shows the latest readings without a reload.
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && /^[A-Za-z0-9_-]{20,64}$/.test(token)) load(); });
+</script>

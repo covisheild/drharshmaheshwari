@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { KINDS, nextUnit, toDisplay, fromDisplay, toFtIn, show, unitFieldHTML } from '../src/lib/units.ts';
 
 test('each kind starts with its base unit and a click cycles through its units', () => {
-  assert.deepEqual(Object.fromEntries(Object.entries(KINDS).map(([k, u]) => [k, u[0]])), { height: 'cm', length: 'cm', weight: 'kg', minutes: 'min', hours: 'h' });
+  assert.deepEqual(Object.fromEntries(Object.entries(KINDS).map(([k, u]) => [k, u[0]])), { height: 'cm', length: 'cm', weight: 'kg', minutes: 'min', hours: 'h', pressure: 'mmHg', glucose: 'mgdl' });
   assert.equal(nextUnit('height', 'cm'), 'ftin'); assert.equal(nextUnit('height', 'ftin'), 'cm');
   assert.equal(nextUnit('minutes', 'min'), 'h'); assert.equal(nextUnit('hours', 'h'), 'min');
 });
@@ -35,6 +35,15 @@ test('time: minutes <-> hours, both ways', () => {
   assert.equal(fromDisplay(['1.5'], 'minutes', 'h'), 90);
   assert.deepEqual(toDisplay(7.5, 'hours', 'min'), ['450']);
   assert.equal(fromDisplay(['30'], 'hours', 'min'), 0.5);
+});
+
+test('trackers: blood pressure mmHg <-> kPa, blood sugar mg/dL <-> mmol/L', () => {
+  assert.deepEqual(toDisplay(120, 'pressure', 'kPa'), ['16']);
+  assert.ok(Math.abs(fromDisplay(['16'], 'pressure', 'kPa') - 120.0098) < 1e-3);
+  assert.deepEqual(toDisplay(126, 'glucose', 'mmol'), ['7']);
+  assert.deepEqual(toDisplay(70, 'glucose', 'mmol'), ['3.9']);
+  assert.equal(Math.round(fromDisplay(['7'], 'glucose', 'mmol')), 126);
+  assert.deepEqual(toDisplay(fromDisplay(['5.6'], 'glucose', 'mmol'), 'glucose', 'mmol'), ['5.6'], 'no drift back and forth');
 });
 
 test('empty stays empty; shown values have no trailing zeros', () => {

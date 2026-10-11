@@ -8,7 +8,7 @@ import { DICTS, translate } from '../i18n/t';
 
 interface Props { sources: string[] }
 const lang = langOf(Astro.url.pathname);
-const RAW = import.meta.glob(['/src/pages/**/*.astro', '/src/lib/*.ts', '/src/scripts/*.ts', '/src/components/**/*.astro'], { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+const RAW = import.meta.glob(['/src/pages/**/*.astro', '/src/lib/*.ts', '/src/scripts/*.ts', '/src/trackers/*.ts', '/src/components/**/*.astro'], { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
 const unq = (s: string) => s.replace(/\\(['"`\\])/g, '$1');
 const keys = new Set<string>();
 // Every page with a unit field needs its words too (src/scripts/unit-fields.ts relabels the field when the unit is switched).

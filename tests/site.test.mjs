@@ -108,9 +108,22 @@ test('header navigation stays inside the current mode', () => {
   }
   assert.deepEqual(navHrefs(html.get('/doctors/')), ['/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/']);
   for (const h of ['/doctors/books/', '/doctors/videos/']) assert.match(html.get('/doctors/evidence/'), new RegExp(`<a class="card[^"]*" href="${h}"`), `/doctors/evidence/ should link to ${h}`);
-  assert.deepEqual(navHrefs(html.get('/')), ['/learn/', '/tools/', '/blog/', '/about/']);
+  assert.deepEqual(navHrefs(html.get('/')), ['/learn/', '/tools/', '/trackers/', '/blog/', '/about/']);
   // For Everyone books and videos are reached from Learn, not the header.
   for (const h of ['/books/', '/videos/']) assert.match(html.get('/learn/'), new RegExp(`<a class="card[^"]*" href="${h}"`), `/learn/ should link to ${h}`);
+});
+
+test('trackers: in the For Everyone menu, not For Doctors; private pages stay out of search and the sitemap', () => {
+  assert.ok(html.get('/trackers/'), '/trackers/ is built');
+  assert.ok(!html.has('/doctors/trackers/'), 'no For Doctors trackers page');
+  const sitemap = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
+  assert.match(sitemap, /\/trackers\/<\/loc>/);
+  for (const url of ['/trackers/person/', '/trackers/view/']) {
+    assert.match(html.get(url), /<meta name="robots" content="noindex"/, `${url} is noindex`);
+    assert.doesNotMatch(sitemap, new RegExp(url.replace(/\//g, '\\/')), `${url} is not in the sitemap`);
+  }
+  assert.match(html.get('/trackers/view/'), /<meta name="referrer" content="no-referrer"/, 'the doctor view sends no referrer');
+  assert.match(html.get('/privacy/'), /id="trackers"/, '/privacy/ says what the trackers store');
 });
 
 test('no internal link is broken', () => {

@@ -27,6 +27,18 @@ export function unitValue(id: string): number {
   return b === undefined ? typed(root) : b === '' ? NaN : Number(b);
 }
 
+/** Puts a value (in the base unit) into a unit field, shown in whatever unit the field is in; NaN or null empties it. */
+export function setUnitValue(id: string, base: number | null) {
+  const root = rootOf(id);
+  if (!root) return;
+  const v = base ?? NaN;
+  toDisplay(v, root.dataset.kind as Kind, root.dataset.unit as UnitId).forEach((s, i) => { const b = boxes(root)[i]; if (b) b.value = s; });
+  root.dataset.base = Number.isFinite(v) ? String(v) : '';
+}
+
+/** The unit a field is showing now (e.g. 'mmol' for a glucose field), so a tracker can show a reading back as it was typed. */
+export const unitShown = (id: string) => (rootOf(id)?.dataset.unit ?? null) as UnitId | null;
+
 function setUnit(root: HTMLElement, unit: UnitId) {
   const kind = root.dataset.kind as Kind, per = root.dataset.per ?? '';
   const [main, second] = boxes(root);

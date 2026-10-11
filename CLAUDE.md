@@ -250,6 +250,22 @@ local devDependency. Change production settings only on purpose; preview-only se
   Walking counts towards the target minutes; the 10-minute rule applies only to the IPAQ score; screen time and sleep are checked only under 5.
   Words: "Reached" / "Not yet", never "inactive". Clinical wording: Harsh reviews before `main`.
 
+## Trackers: BP and blood sugar (`/trackers/`)
+
+- Plan, sources and settled decisions: `docs/trackers-plan.md`. For Everyone only (a menu item; not under For Doctors). Google sign-in is required
+  to save. One account keeps readings for the holder and **adult (18+) family members** (a tick that they agreed). Readings: BP (clinic or home/work,
+  1-3 readings per sitting averaged, pulse optional), sugar (FBS, PPBS, RBS from lab or glucometer; HbA1c), weight. Medicines, reminders and other
+  markers are parked.
+- Rules in `src/lib/trackers.ts` (tested in `tests/trackers.test.mjs`). **Log + soft alerts only** (Harsh, 11 Oct 2026): SBP >= 180 or DBP >= 110
+  (judged on the sitting's average; a very high first reading asks for a repeat), sugar < 70 (< 54 severely low) and >= 300 mg/dL; no low-BP alert,
+  no HbA1c alert. The alert is a note on the patient's own screen only: never sent anywhere, no sound or pop-up, not on the doctor's view.
+  Faint unlabelled chart lines: BP 140/90 and 135/85, FBS 126, HbA1c 6.5. Alert numbers and wording are clinical content: Harsh reviews before `main`.
+- Pages: `src/pages/trackers/` (home, `person/#<id>`, `view/#<token>`); code `src/trackers/` (`store.ts` TrackerStore, `person.ts`, `render.ts`,
+  `chart.ts`). Server `src/server/trackers.ts`, D1 migration 5. The person and doctor pages are noindex and out of the sitemap.
+- **Doctor share link**: `/trackers/view/#<token>`, live (fetched on every opening), read-only, one person, scope BP/sugar/weight, 30 or 90 days or
+  until stopped; the owner sees when it was last opened and can stop it. The token stays after `#` and goes to `/api/trackers/shared` in a header.
+  Removing a person or deleting the account stops every link. Keep `/privacy/#trackers` in step with what is stored and shown.
+
 ## Units everywhere: tools, calculators, trainers, trackers (Harsh, 11 Oct 2026)
 
 - **Every number a person types that has a unit converts on a click of its unit**, so nobody calculates by hand. This applies to
@@ -258,9 +274,9 @@ local devDependency. Change production settings only on purpose; preview-only se
   `createUnitField()` from `src/scripts/unit-fields.ts`. Both come from one markup source (`unitFieldHTML()` in `src/lib/units.ts`)
   and one stylesheet (`src/styles/units.css`, loaded on every page by `Base.astro`), so they look and behave the same.
 - Kinds (`src/lib/units.ts`): `height` cm ⇄ ft + in, `length` (waist, neck) cm ⇄ in, `weight` kg ⇄ lb, `minutes` min ⇄ h,
-  `hours` h ⇄ min; `per="/day"` adds a suffix. The first unit is the base: the page reads `unitValue(id)` and always gets cm, kg, min
+  `hours` h ⇄ min, `pressure` mmHg ⇄ kPa and `glucose` mg/dL ⇄ mmol/L (trackers; base mmHg and mg/dL); `per="/day"` adds a suffix. The first unit is the base: the page reads `unitValue(id)` and always gets cm, kg, min
   or h, whatever the person chose. Switching back and forth keeps the exact value (no rounding drift). A measure not yet covered
-  (blood pressure mmHg ⇄ kPa, glucose mg/dL ⇄ mmol/L, temperature °C ⇄ °F, distance km ⇄ miles...) is added to `units.ts` as a new
+  (temperature °C ⇄ °F, distance km ⇄ miles...) is added to `units.ts` as a new
   kind, with tests in `tests/units.test.mjs`, before the tool that needs it is built.
 - The unit last chosen for each kind is remembered in the browser (`localStorage` `units:v1`, only the unit, never a number;
   `/privacy/` says so), so every tool, trainer and tracker opens in it next time.

@@ -3,8 +3,8 @@
 // The field is src/components/UnitField.astro on built pages, or createUnitField() (src/scripts/unit-fields.ts) on
 // screens built in the browser (trainers, trackers); either way the page reads the base unit with unitValue(). Rule in CLAUDE.md ("Units everywhere").
 
-export type UnitId = 'cm' | 'in' | 'ftin' | 'kg' | 'lb' | 'min' | 'h';
-export type Kind = 'height' | 'length' | 'weight' | 'minutes' | 'hours';
+export type UnitId = 'cm' | 'in' | 'ftin' | 'kg' | 'lb' | 'min' | 'h' | 'mmHg' | 'kPa' | 'mgdl' | 'mmol';
+export type Kind = 'height' | 'length' | 'weight' | 'minutes' | 'hours' | 'pressure' | 'glucose';
 
 /** The units a field offers, in the order a click cycles through them; the first is the base unit the calculator gets. */
 export const KINDS: Record<Kind, UnitId[]> = {
@@ -13,14 +13,16 @@ export const KINDS: Record<Kind, UnitId[]> = {
   weight: ['kg', 'lb'],
   minutes: ['min', 'h'],
   hours: ['h', 'min'],
+  pressure: ['mmHg', 'kPa'],   // blood pressure (trackers)
+  glucose: ['mgdl', 'mmol'],   // blood sugar (trackers); 1 mmol/L = 18.016 mg/dL
 };
 
-export const LABEL: Record<UnitId, string> = { cm: 'cm', in: 'in', ftin: 'ft', kg: 'kg', lb: 'lb', min: 'min', h: 'h' };
-export const NAME: Record<UnitId, string> = { cm: 'centimetres', in: 'inches', ftin: 'feet and inches', kg: 'kilograms', lb: 'pounds', min: 'minutes', h: 'hours' };
+export const LABEL: Record<UnitId, string> = { cm: 'cm', in: 'in', ftin: 'ft', kg: 'kg', lb: 'lb', min: 'min', h: 'h', mmHg: 'mmHg', kPa: 'kPa', mgdl: 'mg/dL', mmol: 'mmol/L' };
+export const NAME: Record<UnitId, string> = { cm: 'centimetres', in: 'inches', ftin: 'feet and inches', kg: 'kilograms', lb: 'pounds', min: 'minutes', h: 'hours', mmHg: 'millimetres of mercury', kPa: 'kilopascals', mgdl: 'milligrams per decilitre', mmol: 'millimoles per litre' };
 
-// Size of one unit in its dimension's reference (cm, kg, minute). ft + in is handled on its own.
-const SIZE: Record<Exclude<UnitId, 'ftin'>, number> = { cm: 1, in: 2.54, kg: 1, lb: 0.45359237, min: 1, h: 60 };
-const DECIMALS: Record<UnitId, number> = { cm: 1, in: 1, ftin: 1, kg: 1, lb: 1, min: 0, h: 2 };
+// Size of one unit in its dimension's reference (cm, kg, minute, mmHg, mg/dL). ft + in is handled on its own.
+const SIZE: Record<Exclude<UnitId, 'ftin'>, number> = { cm: 1, in: 2.54, kg: 1, lb: 0.45359237, min: 1, h: 60, mmHg: 1, kPa: 7.500615, mgdl: 1, mmol: 18.016 };
+const DECIMALS: Record<UnitId, number> = { cm: 1, in: 1, ftin: 1, kg: 1, lb: 1, min: 0, h: 2, mmHg: 0, kPa: 1, mgdl: 0, mmol: 1 };
 
 export const baseOf = (kind: Kind) => KINDS[kind][0];
 export const nextUnit = (kind: Kind, unit: UnitId) => { const u = KINDS[kind]; return u[(u.indexOf(unit) + 1) % u.length]; };
