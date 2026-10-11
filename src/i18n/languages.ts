@@ -30,7 +30,7 @@ export interface LangInfo {
 
 export const LANGS: LangInfo[] = [
   { code: 'en', name: 'English', short: 'EN', english: 'English', html: 'en-IN', og: 'en_IN', dates: 'en-IN', live: true, checkedBy: 'author', stop: '.', modeAffix: { text: 'For ', at: 'start' } },
-  { code: 'hi', name: 'हिन्दी', short: 'हिं', english: 'Hindi', html: 'hi-IN', og: 'hi_IN', dates: 'hi-IN', live: false, checkedBy: 'ai', stop: '।', modeAffix: { text: ' के लिए', at: 'end' } },
+  { code: 'hi', name: 'हिन्दी', short: 'हिं', english: 'Hindi', html: 'hi-IN', og: 'hi_IN', dates: 'hi-IN', live: true, checkedBy: 'ai', stop: '।', modeAffix: { text: ' के लिए', at: 'end' } },
 ];
 
 export const LANG = Object.fromEntries(LANGS.map((l) => [l.code, l])) as Record<Lang, LangInfo>;

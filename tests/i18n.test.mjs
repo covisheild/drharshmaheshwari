@@ -102,6 +102,7 @@ test('built Hindi pages: Hindi throughout, nothing left untranslated, linked to 
   for (const ban of glossary.bannedOnBookPages) assert.doesNotMatch(visible(books), new RegExp(ban.pattern), `/hi/books/: ${ban.why}`);
   // The guides and blog post are in Hindi, with the English references kept in English.
   for (const url of ['/hi/learn/bmi-cut-offs-for-indians/', '/hi/learn/waist-to-height-ratio/', '/hi/blog/interpretation-of-the-world/']) {
+    if (!existsSync(join(DIST, url, 'index.html'))) continue; // a draft guide is built on preview builds only
     const doc = readFileSync(join(DIST, url, 'index.html'), 'utf8');
     assert.match(doc, /<h1>[^<]*[ऀ-ॿ]/, `${url} title in Hindi`);
     assert.match(doc, /"inLanguage":"hi-IN"/, `${url} schema.org language`);

@@ -89,7 +89,7 @@ automated check, a stricter comparison prompt) before publishing any other langu
 
 | Phase | Status |
 |---|---|
-| 1. Machinery + Hindi | Built 11 Oct 2026, preview only. Waiting for Harsh's reading (calibration). |
+| 1. Machinery + Hindi | Live 11 Oct 2026 (Harsh). Label: "checked" (AI); switches to "checked by the author" once Harsh has read it. |
 | 1b. Calculators in Hindi | Done 11 Oct 2026: BMI, Activity check, IDRS, STOP-Bang, with their results |
 | 2. Pilot: Bengali, Marathi, Tamil | After Hindi calibration |
 | 3. Telugu, Gujarati, Kannada, Malayalam, Odia, Punjabi, Assamese | |
