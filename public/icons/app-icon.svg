@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- The app icon (source for every icon size, drawn by scripts/pwa/integration.mjs). Two arcs, one per audience
+       (turquoise: For Everyone, vermilion: For Doctors), around one point. Full-bleed square: the artwork stays inside
+       the central 80% circle, so Android can crop it to any shape (maskable). -->
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.45" r="0.75"><stop offset="0" stop-color="#141a22"/><stop offset="1" stop-color="#07090d"/></radialGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffffff" stop-opacity=".55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <path d="M232 108 A150 150 0 0 0 232 404" fill="none" stroke="#23c791" stroke-width="44" stroke-linecap="round"/>
+  <path d="M280 108 A150 150 0 0 1 280 404" fill="none" stroke="#f26e2c" stroke-width="44" stroke-linecap="round"/>
+  <circle cx="256" cy="256" r="70" fill="url(#glow)"/>
+  <circle cx="256" cy="256" r="30" fill="#ffffff"/>
+</svg>

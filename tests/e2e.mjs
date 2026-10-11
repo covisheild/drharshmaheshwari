@@ -9,6 +9,9 @@ import { createRequire } from 'node:module';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
+// Lets context.route() also answer requests made by the app's service worker (the offline checks below).
+process.env.PW_EXPERIMENTAL_SERVICE_WORKER_NETWORK_EVENTS ??= '1';
+
 let chromium;
 try { ({ chromium } = await import('playwright')); } catch {
   try { ({ chromium } = createRequire(execSync('npm root -g').toString().trim() + '/')('playwright')); } catch {
@@ -658,6 +661,62 @@ try {
     check(await overflow(page) <= 0, `${name}: Statistics Review has no sideways scroll`);
     await ctx.close();
   }
+  // ---------- The app: installable, Save for offline, reading and practising with no network ----------
+  {
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    await ctx.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
+    // A stand-in for R2: small figures, audio and waveforms, with CORS headers like R2's.
+    const tiny = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==', 'base64');
+    await ctx.route('https://files.drharshmaheshwari.com/**', (r) => {
+      const u = r.request().url();
+      const [body, type] = u.endsWith('.png') ? [tiny, 'image/png'] : u.endsWith('.json')
+        ? [Buffer.from('{"version":2,"channels":1,"sample_rate":4000,"samples_per_pixel":20,"bits":16,"length":2,"data":[-100,100,-200,200]}'), 'application/json']
+        : [Buffer.alloc(6000, 1), 'audio/mpeg'];
+      return r.fulfill({ body, contentType: type, headers: { 'access-control-allow-origin': '*' } });
+    });
+    const page = await ctx.newPage();
+    const errors = errorsOf(page);
+    page.on('dialog', (d) => d.accept());
+    await page.goto(`${BASE}/app/`);
+    await page.evaluate(() => navigator.serviceWorker.ready);
+    const cdp = await ctx.newCDPSession(page);
+    const inst = (await cdp.send('Page.getInstallabilityErrors')).installabilityErrors;
+    check(inst.length === 0, `the site is installable as an app (${inst.map((e) => e.errorId).join(', ') || 'no errors'})`);
+    await page.reload();
+    check(await page.evaluate(() => !!navigator.serviceWorker.controller), 'the service worker controls the page after a reload');
+    await page.waitForSelector('#app-packs .ofl:not(.ofl-wait)');
+    check(await page.locator('#app-packs li').count() >= 3, '/app/ lists the books and trainers that can be saved');
+    check(await overflow(page) <= 0, '/app/ has no horizontal overflow at 390px');
+    const nothing = await page.evaluate(async () => (await caches.keys()).filter((k) => k.startsWith('pack:')).length);
+    check(nothing === 0, 'nothing is saved for offline until someone taps Save');
+
+    const BOOK = '/doctors/books/statistics-first-principles-to-regression/';
+    await page.goto(BASE + BOOK);
+    await page.waitForSelector('.rd-front .ofl:not(.ofl-wait)');
+    await page.click('.rd-front .ofl-main');
+    await page.waitForSelector('.rd-front .ofl-main.ofl-saved', { timeout: 60000 }).catch(() => {});
+    check(await page.locator('.rd-front .ofl-main.ofl-saved').count() === 1, `Save for offline finishes (${await page.locator('.rd-front .ofl-note').textContent()})`);
+    const packsNow = await page.evaluate(async () => (await caches.keys()).filter((k) => k.startsWith('pack:')));
+    check(packsNow.join() === 'pack:book-stats', `only the book asked for is saved (${packsNow.join()})`);
+
+    await ctx.setOffline(true);
+    await page.goto(`${BASE}${BOOK}#c05`);
+    await page.waitForFunction(() => document.querySelector('#c05 .rd-body')?.dataset.state === 'done', null, { timeout: 8000 }).catch(() => {});
+    check(await page.evaluate(() => document.querySelector('#c05 .rd-body')?.dataset.state) === 'done', 'offline: a saved book opens and its sections load');
+    await page.goto(`${BASE}/learn/`);
+    check((await page.title()).startsWith('Offline'), 'offline: a page not on the device shows the offline page');
+    check((await page.locator('#off-saved').innerText()).includes('Statistics'), 'the offline page lists the saved book');
+    await ctx.setOffline(false);
+
+    await page.goto(BASE + BOOK);
+    await page.waitForSelector('.rd-front .ofl-remove:not([hidden])');
+    await page.click('.rd-front .ofl-remove');
+    await page.waitForFunction(async () => !(await caches.has('pack:book-stats')));
+    check(true, 'Remove deletes the saved book from the device');
+    check(errors.length === 0, `no script errors in the app checks (${errors.join(' | ')})`);
+    await ctx.close();
+  }
+
 } finally {
   await browser.close();
   if (started) try { execSync('npx astro preview stop', { stdio: 'ignore' }); } catch {}

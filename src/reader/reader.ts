@@ -111,7 +111,9 @@ export function startReader() {
         scheduleScrub();
       }).catch(() => {
         body.dataset.state = 'error';
-        body.innerHTML = `<p class="rd-err">This section did not load. <button type="button" class="rd-retry">Try again</button></p>`;
+        body.innerHTML = navigator.onLine
+          ? `<p class="rd-err">This section did not load. <button type="button" class="rd-retry">Try again</button></p>`
+          : `<p class="rd-err">You are offline, and this section is not on this device. To read the whole book without internet, use <b>Save for offline</b> at the top of the book when you are back online. <button type="button" class="rd-retry">Try again</button></p>`;
         body.style.height = '';
         loading.delete(id);
       }));

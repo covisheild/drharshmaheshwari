@@ -1,0 +1,41 @@
+---
+// Shown by the app's service worker (scripts/pwa/sw.js) when there is no internet and the page asked for is not on
+// this device. Lists what is: books and trainers saved for offline, and pages opened recently. Not in the sitemap.
+import Base from '../layouts/Base.astro';
+---
+<Base title="Offline" description="You are offline. Books and trainers saved for offline, and pages you opened recently, still work." noindex>
+  <div class="prose-wrap prose" style="padding-block:3rem 4rem">
+    <h1>You are offline</h1>
+    <p>This page is not on this device yet. These are, and work without internet:</p>
+    <h2>Saved for offline</h2>
+    <div id="off-saved"><p class="muted">Nothing saved yet. Open a book or trainer when you are online and tap <b>Save for offline</b>.</p></div>
+    <h2>Pages you opened recently</h2>
+    <div id="off-recent"><p class="muted">None yet.</p></div>
+    <p style="margin-top:2rem"><a class="btn btn-ghost" href="" id="off-retry">Try again</a> <a class="btn btn-ghost" href="/app/#offline">Manage saved books and trainers</a></p>
+  </div>
+</Base>
+
+<script>
+  import { savedPacks } from '../pwa/packs';
+
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  const retry = document.getElementById('off-retry') as HTMLAnchorElement;
+  retry.href = location.href;
+
+  if ('caches' in window) {
+    const saved = await savedPacks().catch(() => []);
+    if (saved.length) {
+      document.getElementById('off-saved')!.innerHTML = `<ul>${saved.map((p) =>
+        `<li><a href="${esc(p.open)}">${esc(p.title)}</a>${p.done ? '' : ' <span class="muted small">(partly saved)</span>'}</li>`).join('')}</ul>`;
+    }
+    const pages = await caches.open('pages');
+    const keys = [...(await pages.keys())].reverse().filter((r) => !/\/offline\/$/.test(new URL(r.url).pathname)).slice(0, 20);
+    const items: string[] = [];
+    for (const k of keys) {
+      const text = await (await pages.match(k))?.text() ?? '';
+      const title = (text.match(/<title>([^<]*)<\/title>/)?.[1] ?? new URL(k.url).pathname).replace(/\s*·\s*Dr\. Harsh Maheshwari$/, '');
+      items.push(`<li><a href="${esc(new URL(k.url).pathname)}">${title}</a></li>`);
+    }
+    if (items.length) document.getElementById('off-recent')!.innerHTML = `<ul>${items.join('')}</ul>`;
+  }
+</script>

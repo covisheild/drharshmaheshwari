@@ -24,6 +24,26 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
   previous page is on this site; if the page was opened directly, or was itself reached by a Back jump (`sessionStorage.backTo`), it goes one level up instead.
   Trainer and book-reader pages (`chrome="app"`) keep their own top bar and back arrow. `tests/site.test.mjs` checks every page's parent chain.
 
+## The app (PWA): install, auto-update, Save for offline
+
+- One installable app for both modes: name "Dr. Harsh Maheshwari", short name **DrHM** (Harsh, 11 Oct 2026), `public/manifest.webmanifest`
+  (start `/`, shortcuts For Doctors, Books, Trainers, BMI). Icon: two arcs (turquoise = For Everyone, vermilion = For Doctors) around a point,
+  `public/icons/app-icon.svg` (not the photo, not "HM"); every PNG size is drawn from it after each build. `public/favicon.svg` is the same mark.
+- `/app/` (footer "Install the app") is the only place that offers installing: a one-tap button where the browser allows it, Share → Add to Home
+  Screen steps on iPhone. The browser's own install banner is held back (`src/pwa/client.ts`); never add install pop-ups or banners.
+- Auto-update: `scripts/pwa/integration.mjs` writes `/sw.js` (template `scripts/pwa/sw.js`) with a new build id each build; it takes over at once.
+  Pages are network first (always the latest online; the last 60 opened kept for offline); `/api/` is never touched. `_headers`: `/sw.js` no-cache.
+  Emergency: `pwa({ build, kill: true })` in `astro.config.mjs` ships a worker that deletes the app's caches and unregisters on every device.
+- **Save for offline downloads only what the person taps, one book or trainer at a time** (Harsh, 11 Oct 2026: never fill phones automatically).
+  `<OfflineSave>` (in `BookReader.astro`, so every reader book; and on each trainer's Home via `TrainerShell.astro`) declares a pack; after the build the
+  integration lists its files in `/offline/packs/<id>.json`: everything under its root (pages, section JSON, data files; never PDFs or zips), the scripts
+  and styles they load, the book's figures (R2) and, for a trainer, the media in `<trainer>/offline-media.json`. `src/pwa/packs.ts` downloads into cache
+  `pack:<id>` (resumable), and after a new build refreshes saved packs, fetching only files whose hash changed. Pack ids (`book-<id>`, `trainer-<id>`)
+  are permanent. A new book or trainer needs nothing extra; a new trainer with media adds its own `offline-media.json` endpoint.
+- R2 files are saved with CORS (`mode: 'cors'`): the bucket's CORS policy must allow GET from the site's origins (it already does for peaks).
+- `/offline/` (noindex, not in the sitemap) is shown when offline and the page is not on the device; it lists saved packs and recent pages.
+- Tests: `tests/pwa.test.mjs` (manifest, icons, worker, packs); `tests/e2e.mjs` installs, saves a book, reads it offline, removes it.
+
 ## Support this project (`/support/`)
 
 - One-time support by **direct UPI only**: QR code (generated at build time, `src/lib/upi-qr.ts`), "Copy UPI ID",

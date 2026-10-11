@@ -56,6 +56,11 @@ const graph = {
     <meta name="theme-color" content="#050608" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#f5f6fa" media="(prefers-color-scheme: light)" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="DrHM" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title={`${SITE.name} — new articles`} href="/rss.xml" />
     <link rel="alternate" type="text/plain" title="LLM-readable site guide" href="/llms.txt" />
@@ -99,6 +104,8 @@ const graph = {
 
     <script>
       import '../scripts/fx';
+      import { startApp } from '../pwa/client';
+      startApp();
       const header = document.querySelector('.site-header');
       const btn = document.querySelector('.menu-btn');
       btn?.addEventListener('click', () => {

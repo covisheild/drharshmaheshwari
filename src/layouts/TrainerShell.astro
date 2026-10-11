@@ -6,6 +6,7 @@ import '../styles/trainer.css';
 import Base from './Base.astro';
 import ModeBar from '../components/site/ModeBar.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import OfflineSave from '../components/OfflineSave.astro';
 import { MODES, section as modeSection } from '../lib/modes';
 import { SECTIONS, type Section, type TrainerMeta } from '../trainers/core/types';
 import { trainerBase } from '../trainers/registry';
@@ -54,6 +55,7 @@ const sectionLabel = SECTIONS.find((s) => s.id === section)!.label;
         <span class="eyebrow">{trainer.title} · {sectionLabel}</span>
         <h1>{heading ?? sectionLabel}</h1>
         <slot name="intro" />
+        {section === 'home' && <OfflineSave id={`trainer-${trainer.id}`} title={trainer.title} root={base} kind="trainer" />}
       </div>
       <div class="t-body"><slot /></div>
       <footer class="t-foot"><slot name="credits" /><p><a href="/disclaimer/">Disclaimer</a> · <a href="/support/">Support</a></p></footer>
