@@ -1,6 +1,7 @@
-// BMI arithmetic for /tools/bmi-calculator/: Indian adult cut-offs, the adult target ranges, and WHO BMI-for-age for children.
+// BMI arithmetic for /tools/bmi-calculator/: Indian adult cut-offs and targets; children on the IAP 2015 charts (5 to 17) and WHO (2 to 4).
 // Pure functions, no DOM: the page's script calls them and tests/bmi.test.mjs checks them.
 import LMS from '../data/who-bmi-lms.json' with { type: 'json' };
+import IAP from '../data/iap-bmi-2015.json' with { type: 'json' };
 
 export type Sex = 'm' | 'f';
 
@@ -14,7 +15,7 @@ export const TARGET_BMI = [21, 22] as const;
 /** Indian abdominal obesity cut-offs (Misra 2009). */
 export const WAIST_CUT = { m: 90, f: 80 } as const;
 
-export function adultCategory(bmi: number): { label: string; tone: 'ok' | 'warn' | 'risk' } {
+export function adultCategory(bmi: number): Verdict {
   if (bmi < 18.5) return { label: 'Underweight', tone: 'warn' };
   if (bmi < 23) return { label: 'Normal for Indian adults', tone: 'ok' };
   if (bmi < 25) return { label: 'Overweight (Indian cut-off: 23–24.9)', tone: 'warn' };
@@ -30,15 +31,50 @@ export function maxWaist(cm: number, sex: Sex): { cm: number; by: 'cut-off' | 'h
   return half < cut ? { cm: half, by: 'half height' } : { cm: cut, by: 'cut-off' };
 }
 
-// ---------- Children (2 to 17 years): WHO BMI-for-age ----------
+// ---------- Children (2 to 17 years): Indian charts where they exist ----------
+// 5 to 17 years: IAP 2015 charts for Indian children (overweight from the adult-equivalent 23 line, obesity from 27,
+// thinness below the 3rd percentile). 2 to 4 years: WHO Child Growth Standards 2006, which IAP recommends under 5.
 
 /** Ages covered, in completed months. Under 2, WHO uses weight-for-length instead; from 18, the adult cut-offs apply. */
 export const CHILD_MONTHS = [24, 215] as const;
+/** From this age (months) the IAP 2015 charts apply. */
+export const IAP_FROM = 60;
+
+export interface Verdict { label: string; tone: 'ok' | 'warn' | 'risk' }
+
+/** IAP 2015 lines at an age, interpolated between the half-yearly rows of the paper's Tables VI and VII. */
+export interface IapLines { p3: number; p5: number; p10: number; p25: number; p50: number; ow: number; ob: number }
+export function iapLines(months: number, sex: Sex): IapLines {
+  const t = (sex === 'm' ? IAP.boys : IAP.girls) as number[][];
+  const years = Math.min(Math.max(months / 12, 5), 18);
+  const i = Math.min(Math.floor((years - 5) * 2), t.length - 2), f = (years - t[i][0]) / 0.5;
+  const v = (k: number) => t[i][k] + (t[i + 1][k] - t[i][k]) * f;
+  return { p3: v(1), p5: v(2), p10: v(3), p25: v(4), p50: v(5), ow: v(6), ob: v(7) };
+}
+
+export function iapCategory(bmi: number, l: IapLines): Verdict {
+  if (bmi < l.p3) return { label: 'Thinness (below the 3rd percentile)', tone: 'warn' };
+  if (bmi >= l.ob) return { label: 'Obesity (IAP: adult-equivalent 27 or more)', tone: 'risk' };
+  if (bmi >= l.ow) return { label: 'Overweight (IAP: adult-equivalent 23 or more)', tone: 'warn' };
+  return { label: 'Healthy weight for age', tone: 'ok' };
+}
+
+/** Where the BMI falls on the IAP chart, in words. The 23 and 27 lines sit near the 71st and 90th percentiles in boys, 75th and 95th in girls. */
+export function iapBand(bmi: number, l: IapLines, sex: Sex): string {
+  const [owP, obP] = sex === 'm' ? ['71st', '90th'] : ['75th', '95th'];
+  const lines: [number, string][] = [[l.p3, '3rd percentile'], [l.p5, '5th percentile'], [l.p10, '10th percentile'], [l.p25, '25th percentile'],
+    [l.p50, '50th percentile'], [l.ow, `overweight line (about the ${owP} percentile)`], [l.ob, `obesity line (about the ${obP} percentile)`]];
+  if (bmi < lines[0][0]) return 'below the 3rd percentile';
+  for (let i = lines.length - 1; i >= 0; i--) {
+    if (bmi >= lines[i][0]) return i === lines.length - 1 ? `at or above the ${lines[i][1]}` : `between the ${lines[i][1]} and the ${lines[i + 1][1]}`;
+  }
+  return '';
+}
 
 type Row = [number, number, number, number]; // month, L, M, S
 const table = (sex: Sex) => (sex === 'm' ? LMS.boys : LMS.girls) as Row[];
 
-/** L, M, S at an age in months (may be fractional), interpolated between the monthly rows. */
+/** WHO L, M, S at an age in months (may be fractional), interpolated between the monthly rows (24 to 60 months). */
 export function lmsAt(months: number, sex: Sex): [number, number, number] {
   const t = table(sex), first = t[0][0];
   const i = Math.min(Math.max(Math.floor(months) - first, 0), t.length - 1);
@@ -48,7 +84,7 @@ export function lmsAt(months: number, sex: Sex): [number, number, number] {
 
 const bmiAtZ = (z: number, [l, m, s]: [number, number, number]) => m * (1 + l * s * z) ** (1 / l);
 
-/** WHO z-score, with WHO's restricted calculation beyond ±3 SD (as in the WHO anthro and anthroplus software). */
+/** WHO z-score, with WHO's restricted calculation beyond ±3 SD (as in the WHO anthro software). */
 export function zScore(bmi: number, months: number, sex: Sex): number {
   const lms = lmsAt(months, sex), [l, m, s] = lms;
   const z = ((bmi / m) ** l - 1) / (s * l);
@@ -57,27 +93,24 @@ export function zScore(bmi: number, months: number, sex: Sex): number {
   return z;
 }
 
-/** BMI at a z-score for an age (used for the healthy range and the scale). */
+/** BMI at a WHO z-score for an age. */
 export const bmiAt = (z: number, months: number, sex: Sex) => bmiAtZ(z, lmsAt(months, sex));
 
-/** WHO categories: under 5 (Child Growth Standards 2006) and 5–19 years (Growth Reference 2007) use different lines. */
-export function childCategory(z: number, months: number): { label: string; tone: 'ok' | 'warn' | 'risk' } {
-  const under5 = months < 60;
-  if (z < -3) return { label: under5 ? 'Severely wasted (below −3 SD)' : 'Severe thinness (below −3 SD)', tone: 'risk' };
-  if (z < -2) return { label: under5 ? 'Wasted (below −2 SD)' : 'Thinness (below −2 SD)', tone: 'warn' };
-  if (under5) {
-    if (z > 3) return { label: 'Obesity (above +3 SD)', tone: 'risk' };
-    if (z > 2) return { label: 'Overweight (above +2 SD)', tone: 'warn' };
-    if (z > 1) return { label: 'Possible risk of overweight (above +1 SD)', tone: 'warn' };
-  } else {
-    if (z > 2) return { label: 'Obesity (above +2 SD)', tone: 'risk' };
-    if (z > 1) return { label: 'Overweight (above +1 SD)', tone: 'warn' };
-  }
+/** WHO categories for children under 5 (Child Growth Standards 2006). */
+export function whoUnder5Category(z: number): Verdict {
+  if (z < -3) return { label: 'Severely wasted (below −3 SD)', tone: 'risk' };
+  if (z < -2) return { label: 'Wasted (below −2 SD)', tone: 'warn' };
+  if (z > 3) return { label: 'Obesity (above +3 SD)', tone: 'risk' };
+  if (z > 2) return { label: 'Overweight (above +2 SD)', tone: 'warn' };
+  if (z > 1) return { label: 'Possible risk of overweight (above +1 SD)', tone: 'warn' };
   return { label: 'Healthy weight for age', tone: 'ok' };
 }
 
-/** Healthy BMI-for-age: from −2 SD up to +1 SD. */
-export const childHealthyBmi = (months: number, sex: Sex): [number, number] => [bmiAt(-2, months, sex), bmiAt(1, months, sex)];
+/** Healthy BMI-for-age: IAP from the 3rd percentile up to the adult-equivalent 23 line; WHO under 5 from −2 SD up to +1 SD. */
+export const childHealthyBmi = (months: number, sex: Sex): [number, number] => {
+  if (months >= IAP_FROM) { const l = iapLines(months, sex); return [l.p3, l.ow]; }
+  return [bmiAt(-2, months, sex), bmiAt(1, months, sex)];
+};
 
 /** Percentile (0–100) of a z-score: standard normal distribution (Abramowitz–Stegun 7.1.26, error under 1.5e-7). */
 export function percentile(z: number): number {

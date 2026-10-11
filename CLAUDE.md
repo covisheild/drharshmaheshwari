@@ -229,13 +229,16 @@ via `WORKERS_CI_BRANCH`, read in `astro.config.mjs`) and hides it on production.
 ## BMI calculator (`/tools/bmi-calculator/`)
 
 - Adults (18+): Indian cut-offs; target weight = BMI 21–22 (Harsh, 11 Oct 2026); largest healthy waist = lower of 90/80 cm and half the height.
-  Children (2–17): WHO BMI-for-age z-score and percentile (2006 standards under 5, 2007 reference from 5; WHO's own cut-offs for each).
-  Arithmetic in `src/lib/bmi.ts` (tested in `tests/bmi.test.mjs` against WHO AnthroPlus); LMS table `src/data/who-bmi-lms.json`
-  written by `scripts/tools/who-bmi-lms.py` from WHO's files; never edit it by hand. "More calculators" under it lists `src/data/tools.ts`.
+  Children 5–17: IAP 2015 charts (thinness < 3rd percentile, overweight from the adult-equivalent 23 line, obesity from 27), table
+  `src/data/iap-bmi-2015.json` copied from the paper by `scripts/tools/iap-bmi-2015.py` (the paper publishes no LMS values, so no z-score).
+  Children 2–4: WHO 2006 z-score (IAP recommends WHO under 5), LMS `src/data/who-bmi-lms.json` from `scripts/tools/who-bmi-lms.py`.
+  Child waist: half the height from 5 years until the Indian waist percentiles (Khadilkar 2014, 70th percentile) are added.
+  Arithmetic in `src/lib/bmi.ts`, tested in `tests/bmi.test.mjs`; never edit the data files by hand. "More calculators" under it lists `src/data/tools.ts`.
 
 ## Rules
 
 - NMC conduct: no testimonials, patient details, fees, appointment booking, superlatives, or "specialist" claims.
+- **India first** (Harsh, 11 Oct 2026): every tool and article uses Indian cut-offs and Indian charts; WHO or other international ones only where no Indian one exists, and the page says so.
 - Indian cut-offs: BMI overweight 23–24.9, obesity ≥25; waist ≥90 cm men / ≥80 cm women; WHtR risk from 0.5.
 - Never change a published URL (slug). Hindi pages will live under `/hi/` (Phase 2).
 - SEO/AEO plumbing is automatic: sitemap, `robots.txt` (AI crawlers allowed), `/llms.txt`, `/llms-full.txt`, RSS, schema.org JSON-LD in `Base.astro` / `Article.astro`.

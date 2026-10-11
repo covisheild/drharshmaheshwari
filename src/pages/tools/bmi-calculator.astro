@@ -15,7 +15,7 @@ const faq = [
   { q: 'What waist size is too high for Indians?', a: 'Indian guidelines flag abdominal obesity at a waist of 90 cm or more in men and 80 cm or more in women.' },
   { q: 'What is a healthy waist-to-height ratio?', a: 'Below 0.5 — keep your waist to less than half your height. 0.5 to 0.59 means increased risk and 0.6 or more high risk.' },
   { q: 'What weight should I aim for?', a: 'For Indian adults this calculator suggests the weight at which BMI is 21 to 22, the middle of the healthy range (18.5 to 22.9), together with a waist below the Indian cut-off (90 cm men, 80 cm women) and below half your height.' },
-  { q: 'How is BMI judged in children?', a: 'Children are still growing, so their BMI is compared with children of the same age and sex on the WHO growth charts (BMI-for-age). From 5 to 19 years, above +1 SD is overweight and above +2 SD obesity; under 5 years, above +2 SD is overweight and above +3 SD obesity.' },
+  { q: 'How is BMI judged in Indian children?', a: 'Children are still growing, so their BMI is compared with children of the same age and sex. From 5 to 18 years the Indian Academy of Pediatrics (IAP 2015) charts are used: overweight from the line that corresponds to an adult BMI of 23, obesity from the line for 27, and thinness below the 3rd percentile. Under 5 years, IAP recommends the WHO standards: above +2 SD is overweight and above +3 SD obesity.' },
 ];
 const jsonld = [
   {
@@ -26,18 +26,18 @@ const jsonld = [
     applicationCategory: 'HealthApplication',
     operatingSystem: 'Any (runs in the browser)',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
-    description: 'Calculates BMI, a target weight range (BMI 21–22), the largest healthy waist, waist-to-height ratio and abdominal obesity using Asian/Indian cut-offs for adults, and WHO BMI-for-age for children aged 2 to 17. Nothing you type leaves your device.',
+    description: 'Calculates BMI, a target weight range (BMI 21–22), the largest healthy waist, waist-to-height ratio and abdominal obesity using Asian/Indian cut-offs for adults, and the IAP 2015 charts for Indian children (WHO standards under 5). Nothing you type leaves your device.',
     author: { '@id': `${SITE.url}/#person` },
     audience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
   },
   { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ];
 ---
-<Base title="BMI & waist calculator (Indian cut-offs)" description="Free BMI, target weight, waist and waist-to-height ratio calculator using Indian cut-offs for adults and WHO charts for children. Runs in your browser; nothing is stored." jsonld={jsonld}>
+<Base title="BMI & waist calculator (Indian cut-offs)" description="Free BMI, target weight, waist and waist-to-height ratio calculator using Indian cut-offs for adults and IAP charts for children. Runs in your browser; nothing is stored." jsonld={jsonld}>
   <header class="page-head wrap">
     <span class="eyebrow">Tools</span>
     <h1>BMI & waist calculator</h1>
-    <p>Uses the cut-offs for <b>Indian adults</b>, not the global ones, and the <b>WHO growth charts</b> for children. Everything is calculated on your device; nothing you type is sent or stored.</p>
+    <p>Uses the cut-offs for <b>Indian adults</b>, not the global ones, and the <b>IAP 2015 charts for Indian children</b> (WHO under 5). Everything is calculated on your device; nothing you type is sent or stored.</p>
   </header>
 
   <div class="wrap calc-wrap">
@@ -132,16 +132,16 @@ const jsonld = [
       </tbody>
     </table>
     <p><b>Target weight</b> for adults is the weight at which BMI would be 21 to 22, the middle of the healthy range for Indian adults. <b>Largest healthy waist</b> is the lower of the Indian waist cut-off and half your height.</p>
-    <h3>Children (2 to 17 years): WHO BMI-for-age</h3>
-    <p>A child's BMI changes with age, so it is compared with children of the same age and sex on the WHO charts and given as a z-score (SD) and percentile.</p>
+    <h3>Children (2 to 17 years)</h3>
+    <p>A child's BMI changes with age, so it is compared with children of the same age and sex. From 5 years the calculator uses the <b>IAP 2015 charts for Indian children</b>; under 5, IAP recommends the WHO standards.</p>
     <table>
       <thead><tr><th>Age</th><th>Thinness</th><th>Healthy</th><th>Overweight</th><th>Obesity</th></tr></thead>
       <tbody>
-        <tr><td>5 to 17 years</td><td>below −2 SD</td><td>−2 to +1 SD</td><td>above +1 SD</td><td>above +2 SD</td></tr>
-        <tr><td>2 to 4 years</td><td>below −2 SD (wasted)</td><td>−2 to +1 SD</td><td>above +2 SD (+1 to +2: possible risk)</td><td>above +3 SD</td></tr>
+        <tr><td>5 to 17 years (IAP 2015)</td><td>below the 3rd percentile</td><td>3rd percentile to the 23 line</td><td>adult-equivalent 23 line or above</td><td>adult-equivalent 27 line or above</td></tr>
+        <tr><td>2 to 4 years (WHO 2006)</td><td>below −2 SD (wasted)</td><td>−2 to +1 SD</td><td>above +2 SD (+1 to +2: possible risk)</td><td>above +3 SD</td></tr>
       </tbody>
     </table>
-    <p>Growing children usually do not need to lose weight: keeping weight steady while they grow taller brings BMI down. Talk to a paediatrician before changing a child's diet. The Indian Academy of Pediatrics (2015) charts for Indian children aged 5 to 18 use slightly lower cut-offs; this calculator follows WHO.</p>
+    <p>The adult-equivalent lines are the BMI at each age that tracks to a BMI of 23 or 27 at 18 years, the Indian adult cut-offs for overweight and obesity. Growing children usually do not need to lose weight: keeping weight steady while they grow taller brings BMI down. Talk to a paediatrician before changing a child's diet.</p>
     {live.has('bmi-cut-offs-for-indians') && <p>Why lower numbers for Indians? Read <a href="/learn/bmi-cut-offs-for-indians/">Is BMI accurate for Indians?</a></p>}
     <div class="faq">
       <h2>Common questions</h2>
@@ -153,9 +153,8 @@ const jsonld = [
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/14726171/">WHO Expert Consultation. Appropriate body-mass index for Asian populations. Lancet 2004;363:157-63.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/19582986/">Misra A, et al. Consensus statement for diagnosis of obesity, abdominal obesity and the metabolic syndrome for Asian Indians. J Assoc Physicians India 2009;57:163-70.</a></li>
         <li><a href="https://www.nice.org.uk/guidance/cg189">NICE CG189, waist-to-height ratio recommendations (2022 update).</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/25638185/">Indian Academy of Pediatrics Growth Charts Committee. Revised IAP growth charts for height, weight and body mass index for 5- to 18-year-old Indian children. Indian Pediatr 2015;52:47-55.</a></li>
         <li><a href="https://www.who.int/tools/child-growth-standards">WHO Child Growth Standards (2006): BMI-for-age, birth to 5 years.</a></li>
-        <li><a href="https://www.who.int/tools/growth-reference-data-for-5to19-years">WHO Growth Reference Data for 5–19 years (2007): BMI-for-age.</a> de Onis M, et al. Bull World Health Organ 2007;85:660-7.</li>
-        <li><a href="https://pubmed.ncbi.nlm.nih.gov/26519848/">Indian Academy of Pediatrics Growth Charts Committee. Revised IAP growth charts for height, weight and body mass index for 5- to 18-year-old Indian children. Indian Pediatr 2015;52:47-55.</a></li>
       </ol>
     </div>
     <p class="disclaimer"><a href="/disclaimer/">Disclaimer</a></p>
@@ -211,7 +210,7 @@ const jsonld = [
 </style>
 
 <script>
-  import { adultCategory, bmiOf, childCategory, childHealthyBmi, CHILD_MONTHS, kgAt, maxWaist, percentile, targetWeight, TARGET_BMI, WAIST_CUT, zScore, type Sex } from '../../lib/bmi';
+  import { adultCategory, bmiOf, childHealthyBmi, CHILD_MONTHS, IAP_FROM, iapBand, iapCategory, iapLines, kgAt, maxWaist, percentile, targetWeight, TARGET_BMI, WAIST_CUT, whoUnder5Category, zScore, type Sex } from '../../lib/bmi';
 
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
   const num = (id: string) => { const v = parseFloat($<HTMLInputElement>(id).value); return Number.isFinite(v) ? v : NaN; };
@@ -236,15 +235,23 @@ const jsonld = [
     return total >= CHILD_MONTHS[0] && total <= CHILD_MONTHS[1] + 0.99 ? total : NaN;
   }
 
-  // The bar under the BMI: adults on the BMI scale 15–35; children on the z-score scale −4 to +4 SD.
+  // The bar under the BMI: four bands (thin, healthy, overweight, obesity) between lo and hi, split at a, b and c.
+  // Adults: BMI 15–35 split at 18.5/23/25. Children 5–17: BMI around the IAP lines. Children 2–4: WHO z-score −4 to +4.
   const scale = $('r-bmi');
-  function setScale(child: boolean, under5: boolean) {
-    const s = scale.style;
-    if (!child) { ['--cols', '--l1', '--l2', '--l3'].forEach((k) => s.removeProperty(k)); $('sl1').textContent = '18.5'; $('sl2').textContent = '23'; $('sl3').textContent = '25'; return; }
-    const hi = under5 ? 3 : 2; // obesity line
-    s.setProperty('--cols', `2fr 3fr ${hi - 1}fr ${4 - hi}fr`);
-    s.setProperty('--l1', '25%'); s.setProperty('--l2', '62.5%'); s.setProperty('--l3', `${((hi + 4) / 8) * 100}%`);
-    $('sl1').textContent = '−2 SD'; $('sl2').textContent = '+1 SD'; $('sl3').textContent = `+${hi} SD`;
+  function drawScale([lo, a, b, c, hi]: number[], labels: string[], value: number) {
+    const w = hi - lo, s = scale.style, pct = (v: number) => `${((v - lo) / w) * 100}%`;
+    s.setProperty('--cols', `${a - lo}fr ${b - a}fr ${c - b}fr ${hi - c}fr`);
+    s.setProperty('--l1', pct(a)); s.setProperty('--l2', pct(b)); s.setProperty('--l3', pct(c));
+    ['sl1', 'sl2', 'sl3'].forEach((id, i) => { $(id).textContent = labels[i]; });
+    const marker = $('bmi-marker');
+    if (Number.isFinite(value)) { marker.style.left = `calc(${Math.min(Math.max((value - lo) / w, 0), 1) * 100}% - 2px)`; marker.style.opacity = '1'; }
+    else marker.style.opacity = '0';
+  }
+  function scaleFor(months: number, sex: Sex): [number[], string[]] {
+    if (!Number.isFinite(months)) return [[15, 18.5, 23, 25, 35], ['18.5', '23', '25']];
+    if (months < IAP_FROM) return [[-4, -2, 1, 3, 4], ['−2 SD', '+1 SD', '+3 SD']];
+    const l = iapLines(months, sex);
+    return [[l.p3 - 3, l.p3, l.ow, l.ob, l.ob + 7], ['3rd', '23 AE', '27 AE']];
   }
 
   function update() {
@@ -254,16 +261,16 @@ const jsonld = [
     $('age-set').hidden = !child;
     form.querySelectorAll<HTMLElement>('[data-adult]').forEach((el) => { el.textContent = (child ? el.dataset.child : el.dataset.adult) ?? ''; });
     $('calc-note').textContent = child
-      ? 'For children aged 2 to 17 years, using the WHO growth charts. Measure height standing, without shoes.'
+      ? 'For children aged 2 to 17 years: IAP 2015 charts for Indian children from 5 years, WHO standards under 5. Measure height standing, without shoes.'
       : 'For adults 18 and over. Not valid in pregnancy.';
 
     const sex = picked('sex') as Sex;
     const h = heightCm(), w = num('wkg'), waist = num('waist'), months = child ? ageMonths() : NaN;
     const validH = h >= (child ? 70 : 100) && h <= 230, validW = w >= (child ? 7 : 25) && w <= 300;
-    const under5 = child && months < 60;
-    setScale(child, under5);
+    const under5 = child && months < IAP_FROM;
+    const [pts, labels] = scaleFor(months, sex); // adult scale when months is NaN
 
-    const bmiEl = $('bmi-val'), marker = $('bmi-marker'), bv = $('bmi-verdict'), bg = $('bmi-global');
+    const bmiEl = $('bmi-val'), bv = $('bmi-verdict'), bg = $('bmi-global');
     const tw = $('tw-val'), twu = $('tw-unit'), twn = $('tw-note');
     $('target-eyebrow').textContent = child ? 'Healthy range' : 'Your targets';
     $('tw-label').textContent = child ? 'Healthy weight for this height now' : `Target weight (BMI ${TARGET_BMI[0]}–${TARGET_BMI[1]})`;
@@ -273,8 +280,7 @@ const jsonld = [
       const bmi = bmiOf(w, h);
       bmiEl.textContent = bmi.toFixed(1);
       if (!child) {
-        const pos = Math.min(Math.max((bmi - 15) / 20, 0), 1) * 100;
-        marker.style.left = `calc(${pos}% - 2px)`; marker.style.opacity = '1';
+        drawScale(pts, labels, bmi);
         const c = adultCategory(bmi); setVerdict(bv, c.label, c.tone);
         const global = bmi < 18.5 ? 'underweight' : bmi < 25 ? 'normal' : bmi < 30 ? 'overweight' : 'obesity';
         bg.textContent = `On the global WHO chart this would be "${global}". Healthy weight range for your height (Indian cut-offs): ${kg(kgAt(18.5, h))}–${kg(kgAt(22.9, h))} kg.`;
@@ -283,19 +289,27 @@ const jsonld = [
         const gap = w > hi ? `${(w - hi).toFixed(1)} kg above the top of this range` : w < lo ? `${(lo - w).toFixed(1)} kg below this range` : 'You are within this range';
         twn.textContent = `${gap}. BMI ${TARGET_BMI[0]}–${TARGET_BMI[1]} is the middle of the healthy range for Indian adults (18.5–22.9).` + (w > hi ? ' Losing even 5–10% of your weight brings real health gains.' : '');
       } else {
-        const z = zScore(bmi, months, sex);
-        const pos = Math.min(Math.max((z + 4) / 8, 0), 1) * 100;
-        marker.style.left = `calc(${pos}% - 2px)`; marker.style.opacity = '1';
-        const c = childCategory(z, months); setVerdict(bv, c.label, c.tone);
-        const pct = percentile(z);
-        const pctText = pct < 1 ? 'below the 1st' : pct > 99 ? 'above the 99th' : `the ${ordinal(pct)}`;
-        bg.textContent = `BMI-for-age z-score ${z >= 0 ? '+' : '−'}${Math.abs(z).toFixed(2)} SD: ${pctText} percentile for ${sex === 'm' ? 'boys' : 'girls'} of this age (WHO ${under5 ? 'Child Growth Standards' : 'Growth Reference 5–19 years'}).`;
+        const kids = sex === 'm' ? 'boys' : 'girls';
+        if (!under5) {
+          const l = iapLines(months, sex);
+          drawScale(pts, labels, bmi);
+          const c = iapCategory(bmi, l); setVerdict(bv, c.label, c.tone);
+          bg.textContent = `On the IAP 2015 chart for Indian ${kids}, this BMI is ${iapBand(bmi, l, sex)}. At this age: thinness below ${l.p3.toFixed(1)}, overweight from ${l.ow.toFixed(1)}, obesity from ${l.ob.toFixed(1)}.`;
+        } else {
+          const z = zScore(bmi, months, sex);
+          drawScale(pts, labels, z);
+          const c = whoUnder5Category(z); setVerdict(bv, c.label, c.tone);
+          const pct = percentile(z);
+          const pctText = pct < 1 ? 'below the 1st' : pct > 99 ? 'above the 99th' : `the ${ordinal(pct)}`;
+          bg.textContent = `BMI-for-age z-score ${z >= 0 ? '+' : '−'}${Math.abs(z).toFixed(2)} SD: ${pctText} percentile for ${kids} of this age (WHO Child Growth Standards, which IAP recommends under 5).`;
+        }
         const [blo, bhi] = childHealthyBmi(months, sex);
         tw.textContent = `${kg(kgAt(blo, h))}–${kg(kgAt(bhi, h))}`; twu.textContent = 'kg';
-        twn.textContent = `Healthy BMI at this age: ${blo.toFixed(1)}–${bhi.toFixed(1)} (−2 to +1 SD). Children usually should not diet to lose weight: holding weight steady while they grow taller brings BMI down. Ask a paediatrician.`;
+        twn.textContent = `Healthy BMI at this age: ${blo.toFixed(1)} to under ${bhi.toFixed(1)} (${under5 ? 'WHO −2 to +1 SD' : 'IAP 3rd percentile to the adult-equivalent 23 line'}). Children usually should not diet to lose weight: holding weight steady while they grow taller brings BMI down. Ask a paediatrician.`;
       }
     } else {
-      bmiEl.textContent = '—'; marker.style.opacity = '0';
+      bmiEl.textContent = '—';
+      drawScale(pts, labels, NaN);
       setVerdict(bv, child && validH && validW ? 'Enter an age from 2 to 17 years.' : child ? 'Enter age, height and weight.' : 'Enter height and weight.');
       bg.textContent = ''; tw.textContent = '—'; twu.textContent = ''; twn.textContent = child ? 'Enter age, height and weight.' : 'Enter height and weight.';
     }

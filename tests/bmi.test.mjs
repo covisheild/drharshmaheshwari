@@ -1,7 +1,7 @@
-// Unit tests for the BMI calculator's arithmetic (src/lib/bmi.ts): adult targets and WHO BMI-for-age for children.
+// Unit tests for the BMI calculator's arithmetic (src/lib/bmi.ts): adult targets, IAP 2015 charts (5-17) and WHO (2-4) for children.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { adultCategory, childCategory, childHealthyBmi, maxWaist, percentile, targetWeight, zScore } from '../src/lib/bmi.ts';
+import { adultCategory, childHealthyBmi, iapBand, iapCategory, iapLines, maxWaist, percentile, targetWeight, whoUnder5Category, zScore } from '../src/lib/bmi.ts';
 
 test('adult target weight is BMI 21-22 at the given height', () => {
   const [lo, hi] = targetWeight(170);
@@ -22,28 +22,40 @@ test('adult categories use the Indian cut-offs', () => {
   assert.equal(adultCategory(25).tone, 'risk');
 });
 
-test('child z-scores match WHO AnthroPlus (WHO 2007 survey example)', () => {
-  // Rows of anthroplus Survey_WHO2007: age in months, BMI, WHO's z-score.
-  assert.equal(zScore(21.4615074952304, 166.59, 'm').toFixed(2), '0.94');
-  // The median gives z = 0; WHO M at 120 months, boys, is 16.4433.
-  assert.equal(zScore(16.4433, 120, 'm').toFixed(2), '0.00');
-  // Under 5 (WHO 2006 standards): boys 36 months (day 1096) median BMI 15.5986.
+test('IAP 2015 lines are read from the paper at half-year ages and interpolated between them', () => {
+  // Table VI, boys 10.0 years: P3 12.9, adult-equivalent 23 = 18.0, 27 = 20.5.
+  const b10 = iapLines(120, 'm');
+  assert.deepEqual([b10.p3, b10.ow, b10.ob], [12.9, 18.0, 20.5]);
+  // Table VII, girls 14.0 / 14.5 years: 23-line 21.8 / 22.0, so 14 years 3 months is 21.9.
+  assert.equal(iapLines(171, 'f').ow.toFixed(2), '21.90');
+  // 17 years 11 months stays inside the table (18.0 row): boys 23-line between 22.9 and 23.2.
+  const b17 = iapLines(215, 'm').ow;
+  assert.ok(b17 > 22.9 && b17 < 23.2);
+});
+
+test('IAP categories: thinness below P3, overweight from the 23 line, obesity from the 27 line', () => {
+  const l = iapLines(120, 'm');
+  assert.match(iapCategory(12.8, l).label, /^Thinness/);
+  assert.equal(iapCategory(16, l).tone, 'ok');
+  assert.match(iapCategory(18.0, l).label, /^Overweight/);
+  assert.match(iapCategory(20.5, l).label, /^Obesity/);
+  assert.equal(iapBand(15.0, l, 'm'), 'between the 25th percentile and the 50th percentile');
+  assert.equal(iapBand(21, l, 'm'), 'at or above the obesity line (about the 90th percentile)');
+  assert.deepEqual(childHealthyBmi(120, 'm'), [12.9, 18.0]);
+});
+
+test('under 5: WHO z-scores and categories (IAP recommends WHO below 5 years)', () => {
+  // WHO 2006 median for boys at 36 months (day 1096) is 15.5986, so z = 0.
   assert.ok(Math.abs(zScore(15.5986, 36, 'm')) < 0.01);
+  assert.match(whoUnder5Category(1.5).label, /^Possible risk/);
+  assert.match(whoUnder5Category(2.5).label, /^Overweight/);
+  assert.match(whoUnder5Category(3.5).label, /^Obesity/);
+  assert.match(whoUnder5Category(-2.5).label, /^Wasted/);
+  const [lo, hi] = childHealthyBmi(36, 'f');
+  assert.ok(Math.abs(zScore(lo, 36, 'f') + 2) < 1e-9 && Math.abs(zScore(hi, 36, 'f') - 1) < 1e-9);
 });
 
-test('WHO cut-offs differ under 5 and from 5 years', () => {
-  assert.match(childCategory(1.5, 120).label, /^Overweight/);
-  assert.match(childCategory(2.5, 120).label, /^Obesity/);
-  assert.match(childCategory(1.5, 36).label, /^Possible risk/);
-  assert.match(childCategory(2.5, 36).label, /^Overweight/);
-  assert.match(childCategory(3.5, 36).label, /^Obesity/);
-  assert.match(childCategory(-2.5, 120).label, /^Thinness/);
-  assert.equal(childCategory(0, 120).tone, 'ok');
-});
-
-test('healthy child BMI range spans -2 to +1 SD and percentiles are sane', () => {
-  const [lo, hi] = childHealthyBmi(120, 'f');
-  assert.ok(Math.abs(zScore(lo, 120, 'f') + 2) < 1e-9 && Math.abs(zScore(hi, 120, 'f') - 1) < 1e-9);
+test('percentiles of z-scores are sane', () => {
   assert.equal(percentile(0).toFixed(1), '50.0');
   assert.equal(percentile(1).toFixed(1), '84.1');
   assert.equal(percentile(-2).toFixed(1), '2.3');
