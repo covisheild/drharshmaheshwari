@@ -52,9 +52,10 @@ const jsonld = [
       <fieldset>
         <legend>3. Physical activity</legend>
         <div class="choices">
-          <label><input type="radio" name="act" value="both" /> <span><b>Regular exercise and physically demanding work</b><small>Both: you exercise regularly, and your work at home or job is physically hard.</small></span></label>
-          <label><input type="radio" name="act" value="one" /> <span><b>One of the two</b><small>Either regular exercise or physically demanding work, not both.</small></span></label>
-          <label><input type="radio" name="act" value="none" /> <span><b>Neither</b><small>No regular exercise, and mostly sitting work.</small></span></label>
+          <label><input type="radio" name="act" value="vigorous" /> <span><b>Vigorous</b><small>Regular vigorous exercise, or strenuous (manual) work at home or at work.</small></span></label>
+          <label><input type="radio" name="act" value="moderate" /> <span><b>Moderate</b><small>Regular moderate exercise, or moderate physical activity at home or at work.</small></span></label>
+          <label><input type="radio" name="act" value="mild" /> <span><b>Mild</b><small>Regular mild exercise, or mild physical activity at home or at work.</small></span></label>
+          <label><input type="radio" name="act" value="none" /> <span><b>None</b><small>No exercise, and sitting (sedentary) activities at home and at work.</small></span></label>
         </div>
       </fieldset>
 
@@ -104,9 +105,10 @@ const jsonld = [
         <tr><td rowspan="3">Waist</td><td>Women under 80 cm, men under 90 cm</td><td>0</td></tr>
         <tr><td>Women 80 – 89 cm, men 90 – 99 cm</td><td>10</td></tr>
         <tr><td>Women 90 cm or more, men 100 cm or more</td><td>20</td></tr>
-        <tr><td rowspan="3">Physical activity</td><td>Regular exercise and physically demanding work</td><td>0</td></tr>
-        <tr><td>One of the two</td><td>20</td></tr>
-        <tr><td>Neither (no exercise, sitting work)</td><td>30</td></tr>
+        <tr><td rowspan="4">Physical activity</td><td>Vigorous: regular vigorous exercise or strenuous (manual) work at home or work</td><td>0</td></tr>
+        <tr><td>Moderate: regular moderate exercise or moderate activity at home or work</td><td>10</td></tr>
+        <tr><td>Mild: regular mild exercise or mild activity at home or work</td><td>20</td></tr>
+        <tr><td>None: no exercise, sedentary at home and work</td><td>30</td></tr>
         <tr><td rowspan="3">Parents with diabetes</td><td>Neither</td><td>0</td></tr>
         <tr><td>One</td><td>10</td></tr>
         <tr><td>Both</td><td>20</td></tr>
