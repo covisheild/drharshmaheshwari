@@ -1,0 +1,217 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../consts';
+
+// STOP-Bang as published by Chung et al.: eight yes/no items, 1 point each. Risk bands and the
+// "STOP 2 or more plus male / BMI over 35 / large neck" rule follow Chung 2012 (BJA) and Chung 2016 (Chest).
+// Neck cut-off: 43 cm (17 in collar) men, 41 cm (16 in) women, as in the 2016 version.
+const QUESTIONS = [
+  { id: 's', letter: 'S', title: 'Snoring', text: 'Do you snore loudly — louder than talking, or loud enough to be heard through a closed door? (Ask whoever sleeps near you.)' },
+  { id: 't', letter: 'T', title: 'Tired', text: 'Do you often feel tired, fatigued or sleepy during the day, for example dozing off while driving or sitting?' },
+  { id: 'o', letter: 'O', title: 'Observed', text: 'Has anyone seen you stop breathing, or choke or gasp, while you sleep?' },
+  { id: 'p', letter: 'P', title: 'Pressure', text: 'Do you have high blood pressure, or are you being treated for it?' },
+  { id: 'b', letter: 'B', title: 'BMI', text: 'Is your BMI more than 35 kg/m²?' },
+  { id: 'a', letter: 'A', title: 'Age', text: 'Are you older than 50?' },
+  { id: 'n', letter: 'N', title: 'Neck', text: 'Is your neck large? Measured around the Adam’s apple: 43 cm (17 in shirt collar) or more for men, 41 cm (16 in) or more for women.' },
+  { id: 'g', letter: 'G', title: 'Gender', text: 'Are you a man?' },
+];
+
+const url = `${SITE.url}/tools/stop-bang/`;
+const faq = [
+  { q: 'What does a STOP-Bang score mean?', a: 'Each yes scores 1 point, out of 8. A score of 0 to 2 means low risk of moderate to severe obstructive sleep apnoea, 3 to 4 intermediate risk, and 5 to 8 high risk. A score of 3 or 4 also counts as high risk if at least two of the first four answers (snoring, tired, observed, pressure) are yes and you are a man, have a BMI over 35, or have a large neck.' },
+  { q: 'Can STOP-Bang diagnose sleep apnoea?', a: 'No. It is a screening questionnaire: it tells you how likely sleep apnoea is. Only a sleep study (polysomnography or a home sleep test) can confirm or rule it out.' },
+  { q: 'Is a low score a guarantee I do not have sleep apnoea?', a: 'No. A low score makes moderate to severe sleep apnoea less likely, but not impossible. The BMI and neck cut-offs were set in Canadian patients, and many Indians with sleep apnoea have a lower BMI than 35. If you snore loudly, stop breathing in your sleep or are sleepy in the day, see a doctor whatever your score.' },
+];
+const jsonld = [
+  {
+    '@type': ['WebApplication', 'MedicalWebPage'],
+    '@id': `${url}#app`,
+    name: 'STOP-Bang sleep apnoea questionnaire',
+    url,
+    applicationCategory: 'HealthApplication',
+    operatingSystem: 'Any (runs in the browser)',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
+    description: 'Eight yes/no questions that estimate the risk of obstructive sleep apnoea (STOP-Bang). Nothing you answer leaves your device.',
+    author: { '@id': `${SITE.url}/#person` },
+    audience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
+  },
+  { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+];
+---
+<Base title="STOP-Bang: sleep apnoea risk" description="Eight yes/no questions (STOP-Bang) that estimate your risk of obstructive sleep apnoea. Runs in your browser; nothing is stored." jsonld={jsonld}>
+  <header class="page-head wrap">
+    <span class="eyebrow">Tools</span>
+    <h1>STOP-Bang: sleep apnoea risk</h1>
+    <p>Eight yes/no questions that estimate how likely <b>obstructive sleep apnoea</b> is: breathing that stops again and again during sleep. Everything is calculated on your device; nothing you answer is sent or stored.</p>
+  </header>
+
+  <div class="wrap sb-wrap">
+    <form class="card sb-form" id="sb" novalidate>
+      {QUESTIONS.map((q) => (
+        <fieldset class="sb-q" id={`q-${q.id}`}>
+          <legend><span class="sb-letter" aria-hidden="true">{q.letter}</span><span class="sb-title">{q.title}</span></legend>
+          <p class="sb-text">{q.text}</p>
+          {q.id === 'b' && (
+            <details class="sb-help" id="bmi-help">
+              <summary>Not sure? Work it out</summary>
+              <div class="sb-row">
+                <label class="field"><input type="number" inputmode="decimal" id="hcm" min="100" max="230" placeholder="165" aria-label="Height in cm" /><span>cm</span></label>
+                <label class="field"><input type="number" inputmode="decimal" id="wkg" min="25" max="300" placeholder="66" aria-label="Weight in kg" /><span>kg</span></label>
+              </div>
+              <p class="small muted" id="bmi-out" aria-live="polite">Enter height and weight; the answer is filled in for you.</p>
+            </details>
+          )}
+          <div class="seg">
+            <label><input type="radio" name={q.id} value="1" /> <span>Yes</span></label>
+            <label><input type="radio" name={q.id} value="0" /> <span>No</span></label>
+          </div>
+        </fieldset>
+      ))}
+      <p class="small muted" style="margin:0">For adults 18 and over. <button type="reset" class="sb-reset">Clear answers</button></p>
+    </form>
+
+    <div class="sb-results" aria-live="polite">
+      <div class="card">
+        <span class="eyebrow">Your STOP-Bang score</span>
+        <div class="big"><b id="sb-score">—</b><span>out of 8</span></div>
+        <div class="sb-dots" aria-hidden="true">{QUESTIONS.map((q) => <span data-dot={q.id}>{q.letter}</span>)}</div>
+        <p class="verdict" id="sb-verdict">Answer all eight questions.</p>
+        <p class="small" id="sb-next"></p>
+        <p class="small muted" id="sb-count">0 of 8 answered</p>
+      </div>
+      <p class="small muted sb-drive"><b>Sleepy while driving?</b> Do not drive until you have seen a doctor.</p>
+    </div>
+  </div>
+
+  <section class="prose-wrap prose" style="padding-top:2rem">
+    <h2>How to read your score</h2>
+    <table>
+      <thead><tr><th>Score</th><th>Risk of moderate to severe sleep apnoea</th></tr></thead>
+      <tbody>
+        <tr><td>0 – 2</td><td>Low</td></tr>
+        <tr><td>3 – 4</td><td>Intermediate; <b>high</b> if 2 or more of S, T, O, P are yes <i>and</i> you are a man, your BMI is over 35, or your neck is large</td></tr>
+        <tr><td>5 – 8</td><td>High</td></tr>
+      </tbody>
+    </table>
+    <p>The higher the score, the more likely sleep apnoea is. Among people sent to sleep clinics, a score of 3 or more picked up about 94% of those with moderate to severe sleep apnoea. But a questionnaire cannot diagnose it: only a sleep study can.</p>
+    <h2>Why it matters</h2>
+    <p>Untreated sleep apnoea is linked with high blood pressure, heart disease, diabetes and road accidents from daytime sleepiness. Extra weight, especially around the neck and waist, is one of its strongest causes, and losing weight often makes it better. It is also important before an operation: tell the anaesthetist if your score is high.</p>
+    <div class="faq">
+      <h2>Common questions</h2>
+      {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+    </div>
+    <div class="refs" style="margin-top:2rem">
+      <h2>Sources</h2>
+      <ol>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/18431116/">Chung F, et al. STOP questionnaire: a tool to screen patients for obstructive sleep apnea. Anesthesiology 2008;108:812-21.</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/22401881/">Chung F, et al. High STOP-Bang score indicates a high probability of obstructive sleep apnoea. Br J Anaesth 2012;108:768-75.</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/26378880/">Chung F, Abdullah HR, Liao P. STOP-Bang questionnaire: a practical approach to screen for obstructive sleep apnea. Chest 2016;149:631-8.</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/26658438/">Nagappa M, et al. Validation of the STOP-Bang questionnaire as a screening tool for obstructive sleep apnea among different populations: a systematic review and meta-analysis. PLoS One 2015;10:e0143697.</a></li>
+      </ol>
+    </div>
+    <p class="disclaimer"><a href="/disclaimer/">Disclaimer</a></p>
+  </section>
+</Base>
+
+<style>
+  .sb-wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.25rem; align-items: start; }
+  @media (max-width: 820px) { .sb-wrap { grid-template-columns: 1fr; } }
+  .sb-form { gap: 0; }
+  fieldset { border: 0; padding: 0; margin: 0; }
+  .sb-q { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+  .sb-q:first-child { padding-top: 0; }
+  .sb-q legend { display: flex; align-items: center; gap: .6rem; font-weight: 650; margin-bottom: .35rem; float: left; width: 100%; }
+  .sb-q legend + * { clear: both; }
+  .sb-letter { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 999px; background: var(--surface-2); color: var(--brand); font: 600 1rem var(--font-display); }
+  .sb-text { margin: 0 0 .7rem; color: var(--ink-2); }
+  .seg { display: inline-flex; background: var(--surface-2); border-radius: 999px; padding: 4px; gap: 2px; }
+  .seg label { cursor: pointer; }
+  .seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg span { display: block; padding: .45rem 1.3rem; border-radius: 999px; font-weight: 550; color: var(--ink-2); transition: background .2s, color .2s; }
+  .seg input:checked + span { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+  .seg input:focus-visible + span { outline: 3px solid var(--accent); }
+  .sb-help { margin: 0 0 .7rem; }
+  .sb-help summary { cursor: pointer; color: var(--brand); font-weight: 550; font-size: .95rem; }
+  .sb-row { display: flex; gap: .6rem; margin-top: .6rem; }
+  .field { flex: 1; display: flex; align-items: center; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding-right: .9rem; transition: border-color .2s; }
+  .field:focus-within { border-color: var(--brand); }
+  .field input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ink); font: 600 1.1rem var(--font-body); padding: .6rem .8rem; outline: none; }
+  .field span { color: var(--ink-3); }
+  .sb-help .small { margin: .4rem 0 0; }
+  .sb-reset { border: 0; background: none; padding: 0; color: var(--brand); font: inherit; text-decoration: underline; cursor: pointer; margin-left: .3rem; }
+  .sb-form > p { padding-top: 1rem; }
+  .sb-results { display: grid; gap: .75rem; position: sticky; top: 84px; }
+  @media (max-width: 820px) { .sb-results { position: static; } }
+  .big { display: flex; align-items: baseline; gap: .5rem; }
+  .big b { font: 600 3.2rem/1 var(--font-display); color: var(--ink); }
+  .big span { color: var(--ink-3); }
+  .sb-dots { display: flex; gap: .3rem; margin-top: .9rem; flex-wrap: wrap; }
+  .sb-dots span { display: inline-grid; place-items: center; width: 1.9rem; height: 1.9rem; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-3); font: 500 .8rem var(--font-mono); transition: background .2s, color .2s; }
+  .sb-dots span.yes { background: var(--brand-fill); border-color: var(--brand-fill); color: var(--brand-ink); }
+  .sb-dots span.no { background: var(--surface-2); color: var(--ink-2); }
+  .verdict { font-weight: 600; margin: .9rem 0 .25rem; padding: .6rem .8rem; border-radius: 10px; background: var(--surface-2); }
+  .verdict.ok { background: var(--ok-soft); color: var(--ok); } .verdict.warn { background: var(--warn-soft); color: var(--warn); } .verdict.risk { background: var(--risk-soft); color: var(--risk); }
+  .sb-drive { margin: 0 .25rem; }
+</style>
+
+<script>
+  import { stopBang } from '../../lib/stop-bang';
+
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+  const form = $<HTMLFormElement>('sb');
+  const IDS = ['s', 't', 'o', 'p', 'b', 'a', 'n', 'g'] as const;
+
+  function answers(): Record<string, boolean | null> {
+    const out: Record<string, boolean | null> = {};
+    for (const id of IDS) {
+      const c = form.querySelector<HTMLInputElement>(`input[name=${id}]:checked`);
+      out[id] = c ? c.value === '1' : null;
+    }
+    return out;
+  }
+
+  // Optional helper: height + weight fill in the BMI question.
+  function bmiHelper() {
+    const h = parseFloat($<HTMLInputElement>('hcm').value), w = parseFloat($<HTMLInputElement>('wkg').value);
+    const out = $('bmi-out');
+    if (!(h >= 100 && h <= 230 && w >= 25 && w <= 300)) { out.textContent = 'Enter height and weight; the answer is filled in for you.'; return; }
+    const bmi = w / (h / 100) ** 2;
+    const over = bmi > 35;
+    out.textContent = `Your BMI is ${bmi.toFixed(1)} kg/m²: ${over ? 'more than 35, so the answer is Yes' : '35 or less, so the answer is No'}.`;
+    form.querySelector<HTMLInputElement>(`input[name=b][value="${over ? 1 : 0}"]`)!.checked = true;
+  }
+
+  function update() {
+    const a = answers();
+    const answered = IDS.filter((id) => a[id] !== null).length;
+    for (const id of IDS) {
+      const dot = document.querySelector<HTMLElement>(`[data-dot="${id}"]`)!;
+      dot.className = a[id] === true ? 'yes' : a[id] === false ? 'no' : '';
+    }
+    $('sb-count').textContent = `${answered} of 8 answered`;
+    const v = $('sb-verdict'), next = $('sb-next');
+    const r = stopBang(a);
+    $('sb-score').textContent = answered ? String(r.score) : '—';
+    if (answered < 8) {
+      v.textContent = 'Answer all eight questions.'; v.className = 'verdict'; next.textContent = ''; return;
+    }
+    const TEXT = {
+      low: ['Low risk of moderate to severe sleep apnoea', 'ok', 'A low score makes it less likely, not impossible. If you snore loudly, stop breathing in your sleep or feel sleepy in the day, tell your doctor anyway.'],
+      intermediate: ['Intermediate risk of sleep apnoea', 'warn', 'Talk to your doctor about these answers; they may suggest a sleep study.'],
+      high: ['High risk of moderate to severe sleep apnoea', 'risk', 'See a doctor and ask whether you need a sleep study. Sleep apnoea is common, treatable, and often improves with weight loss.'],
+    } as const;
+    const [label, cls, advice] = TEXT[r.risk];
+    v.textContent = label;
+    v.className = `verdict ${cls}`;
+    next.textContent = r.byRule ? `A score of ${r.score} counts as high risk because ${r.byRule}. ${advice}` : advice;
+  }
+
+  form.addEventListener('input', (e) => {
+    const t = e.target as HTMLElement;
+    if (t.id === 'hcm' || t.id === 'wkg') bmiHelper();
+    update();
+  });
+  form.addEventListener('reset', () => setTimeout(() => { bmiHelper(); update(); }));
+  form.addEventListener('submit', (e) => e.preventDefault());
+  update();
+</script>

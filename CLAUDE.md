@@ -234,9 +234,20 @@ local devDependency. Change production settings only on purpose; preview-only se
 `draft: true` in frontmatter shows the page on local dev and Cloudflare preview builds (any branch other than `main`,
 via `WORKERS_CI_BRANCH`, read in `astro.config.mjs`) and hides it on production. Starter articles written by Claude stay `draft: true` until Harsh approves.
 
+## BMI calculator (`/tools/bmi-calculator/`)
+
+- Adults (18+): Indian cut-offs; target weight = BMI 21–22 (Harsh, 11 Oct 2026); largest healthy waist = lower of 90/80 cm and half the height.
+  Children 5–17: IAP 2015 charts (thinness < 3rd percentile, overweight from the adult-equivalent 23 line, obesity from 27), table
+  `src/data/iap-bmi-2015.json` copied from the paper by `scripts/tools/iap-bmi-2015.py` (the paper publishes no LMS values, so no z-score).
+  Children 2–4: WHO 2006 z-score (IAP recommends WHO under 5), LMS `src/data/who-bmi-lms.json` from `scripts/tools/who-bmi-lms.py`.
+  Child waist (2–17): Indian percentiles by completed year, cut-off the 70th (Khadilkar, J Pediatr 2014, Tables II and V),
+  `src/data/indian-waist-children.json` from `scripts/tools/indian-waist-children.py`.
+  Arithmetic in `src/lib/bmi.ts`, tested in `tests/bmi.test.mjs`; never edit the data files by hand. "More calculators" under it lists `src/data/tools.ts`.
+
 ## Rules
 
 - NMC conduct: no testimonials, patient details, fees, appointment booking, superlatives, or "specialist" claims.
+- **India first** (Harsh, 11 Oct 2026): every tool and article uses Indian cut-offs and Indian charts; WHO or other international ones only where no Indian one exists, and the page says so.
 - Indian cut-offs: BMI overweight 23–24.9, obesity ≥25; waist ≥90 cm men / ≥80 cm women; WHtR risk from 0.5.
 - Never change a published URL (slug). Hindi pages will live under `/hi/` (Phase 2).
 - SEO/AEO plumbing is automatic: sitemap, `robots.txt` (AI crawlers allowed), `/llms.txt`, `/llms-full.txt`, RSS, schema.org JSON-LD in `Base.astro` / `Article.astro`.
