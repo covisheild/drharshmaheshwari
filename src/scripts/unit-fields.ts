@@ -2,6 +2,7 @@
 // State lives on the element (data-unit, data-base), not in this module, so a page script that imports
 // unitValue() reads the same thing even if the bundler gives it its own copy of this file.
 import { KINDS, LABEL, NAME, nextUnit, toDisplay, fromDisplay, unitFieldHTML, type FieldOptions, type Kind, type UnitId } from '../lib/units';
+import { w } from '../i18n/client';
 
 // The unit a person last chose for each kind (height, weight...) is remembered in this browser only, so every
 // tool opens in it next time. Only the unit is kept, never a number typed. Storage can be missing or blocked: then
@@ -33,12 +34,12 @@ function setUnit(root: HTMLElement, unit: UnitId) {
   const btn = root.querySelector<HTMLButtonElement>('.uf-unit')!;
   btn.querySelector('.uf-label')!.textContent = LABEL[unit] + (unit === 'ftin' ? '' : per);
   const next = nextUnit(kind, unit);
-  btn.setAttribute('aria-label', `Unit: ${NAME[unit]}. Switch to ${NAME[next]}`);
-  btn.title = `Switch to ${NAME[next]}`;
+  btn.setAttribute('aria-label', w('Unit: {unit}. Switch to {next}', { unit: w(NAME[unit]), next: w(NAME[next]) }));
+  btn.title = w('Switch to {unit}', { unit: w(NAME[next]) });
   const ph = Number(root.dataset.ph);
   const phs = toDisplay(ph, kind, unit);
   main.placeholder = phs[0];
-  main.setAttribute('aria-label', `${root.dataset.label} in ${unit === 'ftin' ? 'feet' : NAME[unit]}`);
+  main.setAttribute('aria-label', w('{label} in {unit}', { label: root.dataset.label ?? '', unit: w(unit === 'ftin' ? 'feet' : NAME[unit]) }));
   if (second) {
     second.closest<HTMLElement>('.uf-box')!.hidden = unit !== 'ftin';
     second.placeholder = phs[1] ?? '';
@@ -81,7 +82,7 @@ export function initUnitFields(scope: ParentNode = document) {
  *  behaviour as UnitField.astro. Put it in the page, then read it with unitValue(id). */
 export function createUnitField(o: FieldOptions): HTMLElement {
   const t = document.createElement('template');
-  t.innerHTML = unitFieldHTML(o);
+  t.innerHTML = unitFieldHTML(o, w);
   const root = t.content.firstElementChild as HTMLElement;
   wire(root);
   return root;

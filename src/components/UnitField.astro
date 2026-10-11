@@ -3,10 +3,12 @@
 // kg ⇄ lb, min ⇄ h). Every number with a unit on a built page uses this (CLAUDE.md, "Units everywhere"); the page reads
 // the value in the base unit (the first of the kind: cm, kg, min or h) with unitValue(id) from src/scripts/unit-fields.ts.
 import { unitFieldHTML, type FieldOptions } from '../lib/units';
+import { useT } from '../i18n/t';
 
 type Props = FieldOptions;
+// On a translated page the field's own words (screen-reader labels, "Switch to inches") are translated; the unit symbols stay.
 ---
-<Fragment set:html={unitFieldHTML(Astro.props)} />
+<Fragment set:html={unitFieldHTML(Astro.props, useT(Astro.url.pathname))} />
 
 <script>
   import { initUnitFields } from '../scripts/unit-fields';

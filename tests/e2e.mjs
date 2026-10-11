@@ -121,6 +121,28 @@ try {
     await ctx.close();
   }
 
+  // ---------- Hindi calculators: the results the scripts write are in Hindi too (preview builds, until Hindi is live) ----------
+  // Fills each calculator with cases that reach every kind of result, then looks for any English sentence (3+ English words in a row).
+  if (await fetch(BASE + '/hi/tools/bmi-calculator/').then((r) => r.ok, () => false)) {
+    const ctx = await context({ width: 390, height: 900 });
+    const page = await ctx.newPage();
+    const errs = errorsOf(page);
+    const english = async (sel) => (await page.evaluate((s) => document.querySelector(s)?.innerText ?? '', sel)).match(/(?:\b[A-Za-z][A-Za-z'’-]*\b[ ,]+){2,}[A-Za-z][A-Za-z'’-]*/g) ?? [];
+    await page.goto(BASE + '/hi/tools/bmi-calculator/');
+    const cases = [
+      ['adult', { hcm: '165', wkg: '78', waist: '92' }], ['adult', { hcm: '170', wkg: '50', waist: '70' }], ['adult', { hcm: '160', wkg: '62', waist: '88' }],
+      ['child', { ay: '9', hcm: '130', wkg: '35', waist: '70' }], ['child', { ay: '12', hcm: '150', wkg: '30', waist: '55' }], ['child', { ay: '3', hcm: '95', wkg: '15', waist: '45' }], ['child', { ay: '', hcm: '', wkg: '' }],
+    ];
+    for (const [who, fields] of cases) {
+      await page.check(`input[name=who][value=${who}]`, { force: true });
+      for (const [id, v] of Object.entries(fields)) await page.fill(`#${id}`, v);
+      const found = await english('.results');
+      check(found.length === 0, `Hindi BMI calculator (${who} ${JSON.stringify(fields)}): results in Hindi${found.length ? ` (English: ${found.join(' | ')})` : ''}`);
+    }
+    check(errs.length === 0, `Hindi BMI calculator: no script errors (${errs.join('; ')})`);
+    await ctx.close();
+  }
+
   // ---------- Support page: one-time UPI; closed until configured, QR/app link/copy when open ----------
   for (const [name, vp] of [['phone', { width: 390, height: 844 }], ['desktop', { width: 1280, height: 900 }]]) {
     const ctx = await context(vp);

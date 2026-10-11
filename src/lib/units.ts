@@ -63,17 +63,22 @@ export interface FieldOptions {
 
 const esc = (v: string | number) => String(v).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
+/** Words of a unit field, for a translated page (src/i18n/): w('English with {placeholders}', vars). English by default. */
+export type Words = (en: string, vars?: Record<string, string | number>) => string;
+const english: Words = (s, v = {}) => s.replace(/\{(\w+)\}/g, (m, k) => (k in v ? String(v[k]) : m));
+
 /** The HTML of a unit field, shared by UnitField.astro (built pages) and createUnitField() (screens built in the browser,
  *  such as trainers and trackers), so both look and behave the same. Styles: src/styles/units.css (loaded on every page). */
-export function unitFieldHTML({ id, kind, label, placeholder, per = '' }: FieldOptions): string {
+export function unitFieldHTML({ id, kind, label, placeholder, per = '' }: FieldOptions, w: Words = english): string {
   const [unit, next] = KINDS[kind];
   const ftin = KINDS[kind].includes('ftin');
   const box = (boxId: string, aria: string, ph: string) =>
     `<input data-uf type="number" inputmode="decimal" step="any" min="0" autocomplete="off" id="${esc(boxId)}" placeholder="${esc(ph)}" aria-label="${esc(aria)}" />`;
+  const name = (u: UnitId) => w(NAME[u]);
   return `<div class="uf" data-unit-field data-kind="${kind}" data-unit="${unit}" data-ph="${esc(placeholder)}" data-per="${esc(per)}" data-label="${esc(label)}">`
-    + `<div class="uf-box">${box(id, `${label} in ${NAME[unit]}`, toDisplay(placeholder, kind, unit)[0])}`
-    + `<button type="button" class="uf-unit" title="Switch to ${NAME[next]}" aria-label="Unit: ${NAME[unit]}. Switch to ${NAME[next]}">`
+    + `<div class="uf-box">${box(id, w('{label} in {unit}', { label, unit: name(unit) }), toDisplay(placeholder, kind, unit)[0])}`
+    + `<button type="button" class="uf-unit" title="${esc(w('Switch to {unit}', { unit: name(next) }))}" aria-label="${esc(w('Unit: {unit}. Switch to {next}', { unit: name(unit), next: name(next) }))}">`
     + `<span class="uf-label">${LABEL[unit]}${esc(per)}</span><span class="uf-swap" aria-hidden="true">⇄</span></button></div>`
-    + (ftin ? `<div class="uf-box" hidden>${box(`${id}-in`, `${label}: inches`, '')}<span class="uf-fixed">in</span></div>` : '')
+    + (ftin ? `<div class="uf-box" hidden>${box(`${id}-in`, w('{label}: inches', { label }), '')}<span class="uf-fixed">in</span></div>` : '')
     + '</div>';
 }
