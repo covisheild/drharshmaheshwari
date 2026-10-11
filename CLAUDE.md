@@ -221,6 +221,14 @@ local devDependency. Change production settings only on purpose; preview-only se
 - The header is fixed and floating, so pages with the site chrome get `padding-top: var(--nav-space)` (`main.with-nav`); a hero that wants
   the beam behind the header pulls itself up by the same amount.
 
+## Activity check (`/tools/activity-check/`)
+
+- One page for every age (For Everyone; For Doctors > Tools lists the same page). Plan, sources and settled decisions:
+  `docs/activity-check-plan.md`. Engine `src/lib/activity.ts` (no page code), tests `tests/activity.test.mjs` (boundary examples).
+- WHO 2020 targets (WHO 2019 for under-5s) for each age; IPAQ short form scored by its Nov 2005 protocol from 15 years.
+  Walking counts towards WHO minutes; the 10-minute rule applies only to the IPAQ score; screen time and sleep are checked only under 5.
+  Words: "Reached" / "Not yet", never "inactive". Clinical wording: Harsh reviews before `main`.
+
 ## Drafts
 
 `draft: true` in frontmatter shows the page on local dev and Cloudflare preview builds (any branch other than `main`,
