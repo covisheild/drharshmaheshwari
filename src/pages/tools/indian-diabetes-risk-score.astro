@@ -168,7 +168,7 @@ const jsonld = [
   .choices small { display: block; color: var(--ink-3); font-size: .85rem; margin-top: .15rem; }
   .choices input:checked + span { border-color: var(--brand); background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--brand); }
   .row { display: flex; gap: .6rem; }
-  .field { flex: 1; display: flex; align-items: center; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding-right: .9rem; transition: border-color .2s; }
+  .field { flex: 1; display: flex; align-items: center; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding-inline-end: .9rem; transition: border-color .2s; }
   .field:focus-within { border-color: var(--brand); }
   .field input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ink); font: 600 1.25rem var(--font-body); padding: .75rem .9rem; outline: none; }
   .field span { color: var(--ink-3); }
@@ -190,7 +190,7 @@ const jsonld = [
   .parts { width: 100%; border-collapse: collapse; margin: .75rem 0 .25rem; font-size: .95rem; }
   .parts[hidden] { display: none; }
   .parts td { padding: .35rem 0; border-bottom: 1px solid var(--line); color: var(--ink-2); }
-  .parts td:last-child { text-align: right; font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .parts td:last-child { text-align: end; font-weight: 600; color: var(--ink); white-space: nowrap; }
 </style>
 
 <script>

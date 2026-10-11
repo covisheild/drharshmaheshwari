@@ -18,7 +18,7 @@ export default defineConfig({
   trailingSlash: 'ignore',
   // Private pages (one person's readings, a doctor's shared view) stay out of the sitemap; they are also noindex.
   // Hindi pages (src/i18n/) are listed with hreflang alternates beside their English pages.
-  integrations: [sitemap({ filter: (page) => !/\/trackers\/(person|view)\//.test(page), i18n: { defaultLocale: 'en', locales: { en: 'en-IN', hi: 'hi-IN', mr: 'mr-IN', bn: 'bn-IN', or: 'or-IN', ta: 'ta-IN', te: 'te-IN', kn: 'kn-IN', ml: 'ml-IN' } } }), ogImages({ theme: json('./src/data/theme.json'), palettes: json('./src/data/palettes.json') })],
+  integrations: [sitemap({ filter: (page) => !/\/trackers\/(person|view)\//.test(page), i18n: { defaultLocale: 'en', locales: { en: 'en-IN', hi: 'hi-IN', mr: 'mr-IN', bn: 'bn-IN', or: 'or-IN', ta: 'ta-IN', te: 'te-IN', kn: 'kn-IN', ml: 'ml-IN', ur: 'ur-IN' } } }), ogImages({ theme: json('./src/data/theme.json'), palettes: json('./src/data/palettes.json') })],
   prefetch: true,
   // The site is fully static and never uses Astro sessions. Without this, the Cloudflare adapter adds a
   // SESSION KV binding with no ID, which Worker Previews reject (code 10021).

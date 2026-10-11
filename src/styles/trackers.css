@@ -39,7 +39,8 @@
 .tk-add { display: flex; flex-wrap: wrap; gap: .6rem; }
 
 /* Alert: a calm note on the patient's own screen. No sound, no pop-up, nothing sent. */
-.tk-alert { border-left: 4px solid var(--risk); background: var(--risk-soft); color: var(--ink); padding: .75rem 1rem; border-radius: 0 12px 12px 0; font-size: .95rem; }
+.tk-alert { border-inline-start: 4px solid var(--risk); background: var(--risk-soft); color: var(--ink); padding: .75rem 1rem; border-radius: 0 12px 12px 0; font-size: .95rem; }
+[dir="rtl"] .tk-alert { border-radius: 12px 0 0 12px; }
 .tk-alert b { color: var(--risk); }
 .tk-saved { background: var(--ok-soft); color: var(--ok); padding: .6rem .9rem; border-radius: 12px; font-weight: 600; }
 
@@ -78,7 +79,7 @@
 .tk-val small { color: var(--ink-3); font-weight: 400; }
 .tk-detail { grid-column: 2 / 3; color: var(--ink-2); font-size: .88rem; }
 .tk-acts { grid-column: 3; grid-row: 1 / span 2; display: flex; gap: .8rem; font-size: .9rem; }
-.tk-flag { display: inline-block; margin-left: .35rem; padding: .1rem .5rem; border-radius: 999px; font-size: .74rem; font-weight: 600; color: var(--risk); border: 1px solid currentColor; }
+.tk-flag { display: inline-block; margin-inline-start: .35rem; padding: .1rem .5rem; border-radius: 999px; font-size: .74rem; font-weight: 600; color: var(--risk); border: 1px solid currentColor; }
 @media (max-width: 560px) {
   .tk-row { grid-template-columns: minmax(0, 1fr) auto; }
   .tk-when { grid-column: 1 / -1; }

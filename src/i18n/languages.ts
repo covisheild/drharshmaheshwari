@@ -3,7 +3,7 @@
 // Only For Everyone pages are translated; For Doctors, the books and the calculators stay in English (docs/translation.md).
 // Pure data, no build-time imports: tests import this file directly.
 
-export type Lang = 'en' | 'hi' | 'mr' | 'bn' | 'or' | 'ta' | 'te' | 'kn' | 'ml';
+export type Lang = 'en' | 'hi' | 'mr' | 'bn' | 'or' | 'ta' | 'te' | 'kn' | 'ml' | 'ur';
 
 export interface LangInfo {
   code: Lang;
@@ -26,6 +26,8 @@ export interface LangInfo {
   script: string;
   /** Full stop, where the code itself ends a sentence. */
   stop: string;
+  /** Writing direction: 'rtl' for Urdu (<html dir="rtl">; the layout mirrors, src/styles/global.css). */
+  dir?: 'ltr' | 'rtl';
   /** The part of "For Everyone" / "For Doctors" that phones hide to make room (English hides the leading "For "). */
   modeAffix: { text: string; at: 'start' | 'end' };
 }
@@ -41,6 +43,8 @@ export const LANGS: LangInfo[] = [
   { code: 'te', name: 'తెలుగు', short: 'తె', english: 'Telugu', html: 'te-IN', og: 'te_IN', dates: 'te-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0C00-\\u0C7F', stop: '.', modeAffix: { text: '', at: 'end' } },
   { code: 'kn', name: 'ಕನ್ನಡ', short: 'ಕ', english: 'Kannada', html: 'kn-IN', og: 'kn_IN', dates: 'kn-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0C80-\\u0CFF', stop: '.', modeAffix: { text: '', at: 'end' } },
   { code: 'ml', name: 'മലയാളം', short: 'മ', english: 'Malayalam', html: 'ml-IN', og: 'ml_IN', dates: 'ml-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0D00-\\u0D7F', stop: '.', modeAffix: { text: '', at: 'end' } },
+  // Urdu (Harsh, 11 Oct 2026): right to left, Nastaliq. Preview only until approved.
+  { code: 'ur', name: 'اردو', short: 'ار', english: 'Urdu', html: 'ur-IN', og: 'ur_IN', dates: 'ur-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0600-\\u06FF\\u0750-\\u077F\\uFB50-\\uFDFF\\uFE70-\\uFEFF', stop: '۔', dir: 'rtl', modeAffix: { text: '', at: 'end' } },
 ];
 
 export const LANG = Object.fromEntries(LANGS.map((l) => [l.code, l])) as Record<Lang, LangInfo>;

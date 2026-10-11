@@ -21,7 +21,8 @@ const FONTS = () => [
 ];
 // Translated pages (/hi/...): the labels below come from that language's dictionary (src/i18n/<lang>.json), the title and
 // description from the page itself.
-const DICTS = Object.fromEntries(['hi', 'mr', 'bn', 'or', 'ta', 'te', 'kn', 'ml'].map((l) => [l, JSON.parse(readFileSync(new URL(`../../src/i18n/${l}.json`, import.meta.url), 'utf8'))]));
+const LANG_DIRS = new Set(['hi', 'mr', 'bn', 'or', 'ta', 'te', 'kn', 'ml', 'ur']);
+const DICTS = Object.fromEntries(['hi', 'mr', 'bn', 'or', 'ta', 'te', 'kn', 'ml', 'ur'].map((l) => [l, JSON.parse(readFileSync(new URL(`../../src/i18n/${l}.json`, import.meta.url), 'utf8'))]));
 
 const SECTION = { blog: 'Blog', learn: 'Guides', books: 'Books', tools: 'Tools', videos: 'Videos', about: 'About', evidence: 'Evidence', trainers: 'Trainers' };
 const MODE = { everyone: 'For Everyone', doctors: 'For Doctors' };
@@ -96,14 +97,19 @@ export default function ogImages({ theme, palettes }) {
         let n = 0;
         for (const { pathname } of pages) {
           const path = pathname.replace(/\/$/, '');
-          const html = readFileSync(join(root, path, path === '404' ? '../404.html' : 'index.html'), 'utf8');
-          const lang = (html.match(/<html[^>]*lang="([a-z]{2})-/) ?? [])[1] ?? 'en';
+          let html = readFileSync(join(root, path, path === '404' ? '../404.html' : 'index.html'), 'utf8');
+          let lang = (html.match(/<html[^>]*lang="([a-z]{2})-/) ?? [])[1] ?? 'en';
+          // satori cannot lay out right-to-left text (Urdu): those pages share the English page's picture, drawn under their own name.
+          if (/<html[^>]*dir="rtl"/.test(html)) {
+            html = readFileSync(join(root, path.replace(new RegExp(`^/?${lang}(/|$)`), '/'), 'index.html'), 'utf8');
+            lang = 'en';
+          }
           const tr = (s) => DICTS[lang]?.[s] || s;
           const mode = (html.match(/<html[^>]*data-mode="(\w+)"/) ?? [])[1] === 'doctors' ? 'doctors' : 'everyone';
           const palette = palettes.find((p) => p.id === theme.fixed[mode]) ?? palettes[0];
           const hue = (html.match(/--pal-h:(\d+)/) ?? [])[1] ?? palette.hue;
           const segs = path.split('/').filter(Boolean);
-          if (lang !== 'en' && segs[0] === lang) segs.shift();
+          if (LANG_DIRS.has(segs[0])) segs.shift();
           const sec = SECTION[segs[0] === 'doctors' ? segs[1] : segs[0]];
           const section = sec && tr(sec);
           const home = segs.length === 0 || (segs.length === 1 && segs[0] === 'doctors');
