@@ -14,7 +14,7 @@ My thoughts on how we interpret the world.
 
 ## 1. What we believe about the world is only a statistic, not the parameter itself
 
-The way the world actually works is the parameter. Our understanding of how it works is merely a statistic—an estimate based on the limited sample of the world we have observed. Most of us form our beliefs from personal anecdotes, our own experiences, and a handful of people around us. Our sample size is tiny compared with the vastness of the world.
+The way the world actually works is the parameter - very hard or close to impossible to know fully. Our understanding of how it works is merely a statistic—an estimate based on the limited sample of the world we have observed. Most of us form our beliefs from personal anecdotes, our own experiences, and a handful of people around us. Our sample size is tiny compared with the vastness of the world.
 
 Therefore, we should be careful about generalizing conclusions from our personal lives to the entire world. The world may work in many more ways than we can currently imagine. What we have experienced is only a small fraction of what is possible.
 
