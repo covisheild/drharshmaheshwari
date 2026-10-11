@@ -225,8 +225,9 @@ local devDependency. Change production settings only on purpose; preview-only se
 
 - One page for every age (For Everyone; For Doctors > Tools lists the same page). Plan, sources and settled decisions:
   `docs/activity-check-plan.md`. Engine `src/lib/activity.ts` (no page code), tests `tests/activity.test.mjs` (boundary examples).
-- WHO 2020 targets (WHO 2019 for under-5s) for each age; IPAQ short form scored by its Nov 2005 protocol from 15 years.
-  Walking counts towards WHO minutes; the 10-minute rule applies only to the IPAQ score; screen time and sleep are checked only under 5.
+- Targets: ICMR-NIN Dietary Guidelines 2024, Guideline 10, from 5 years (5–19, 20–60, over 60); WHO 2019 under 5 and WHO 2020 in
+  pregnancy, where ICMR-NIN gives no numbers (the page says so). IPAQ short form scored by its Nov 2005 protocol from 15 years.
+  Walking counts towards the target minutes; the 10-minute rule applies only to the IPAQ score; screen time and sleep are checked only under 5.
   Words: "Reached" / "Not yet", never "inactive". Clinical wording: Harsh reviews before `main`.
 
 ## Drafts
