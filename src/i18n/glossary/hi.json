@@ -226,9 +226,10 @@
       "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
     }
   ],
-  "exempt": {
-    "Indian Diabetes Risk Score (IDRS)": [
-      "risk"
-    ]
-  }
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ]
 }

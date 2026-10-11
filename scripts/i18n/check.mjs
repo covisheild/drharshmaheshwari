@@ -15,7 +15,7 @@ export function runChecks() {
     const dict = JSON.parse(read(`src/i18n/${lang}.json`));
     for (const [en, tr] of Object.entries(dict)) {
       if (!tr) continue;
-      out.push({ lang, where: `${lang}.json "${en.slice(0, 70)}${en.length > 70 ? '…' : ''}"`, ...checkPair(en, tr, glossary, { lang, exempt: glossary.exempt?.[en] ?? [] }) });
+      out.push({ lang, where: `${lang}.json "${en.slice(0, 70)}${en.length > 70 ? '…' : ''}"`, ...checkPair(en, tr, glossary, { lang }) });
     }
     const dir = join(root, 'src/content/i18n', lang);
     if (!existsSync(dir)) continue;

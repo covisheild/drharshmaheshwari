@@ -63,7 +63,7 @@ export interface FieldOptions {
 
 const esc = (v: string | number) => String(v).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
-/** Words of a unit field, for a translated page (src/i18n/): w('English with {placeholders}', vars). English by default. */
+/** Words of a unit field, for a translated page (src/i18n/): English text with {placeholders} in, the page's words out. English by default. */
 export type Words = (en: string, vars?: Record<string, string | number>) => string;
 const english: Words = (s, v = {}) => s.replace(/\{(\w+)\}/g, (m, k) => (k in v ? String(v[k]) : m));
 

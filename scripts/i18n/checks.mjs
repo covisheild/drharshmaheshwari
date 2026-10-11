@@ -47,7 +47,8 @@ export function checkPair(en, tr, glossary, { lang = 'hi', exempt = [] } = {}) {
   if (placeholders(en).join() !== placeholders(tr).join()) errors.push(`placeholders differ: {${placeholders(en)}} vs {${placeholders(tr)}}`);
   const ta = tags(en).join(), tb = tags(tr).join();
   if (ta !== tb) errors.push(`inline markup differs: <${ta}> vs <${tb}>`);
-  const plainEn = strip(en);
+  // Proper names (glossary "names") are transliterated, not translated: their words do not count as glossary terms.
+  const plainEn = (glossary.names ?? []).reduce((t, n) => t.split(n).join(' '), strip(en));
   for (const term of glossary.terms) {
     if (exempt.includes(term.en) || !termRe(term.en).test(plainEn)) continue;
     if (!term.hi.some((h) => fold(tr).includes(fold(h)))) errors.push(`glossary: "${term.en}" must be translated as ${term.hi.map((h) => `"${h}"`).join(' or ')}`);

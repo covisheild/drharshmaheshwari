@@ -123,23 +123,39 @@ try {
 
   // ---------- Hindi calculators: the results the scripts write are in Hindi too (preview builds, until Hindi is live) ----------
   // Fills each calculator with cases that reach every kind of result, then looks for any English sentence (3+ English words in a row).
+  // A case is a list of steps: ['#id', 'value'] fills a box, ['name', 'value'] picks a radio button.
+  const yes = (names) => 'stoPbang'.toLowerCase().split('').map((n) => [n, names.includes(n) ? '1' : '0']);
+  const HINDI_CALCS = [
+    ['/hi/tools/bmi-calculator/', '.results', [
+      [['who', 'adult'], ['#hcm', '165'], ['#wkg', '78'], ['#waist', '92']], [['#hcm', '170'], ['#wkg', '50'], ['#waist', '70']], [['#hcm', '160'], ['#wkg', '62'], ['#waist', '88']],
+      [['who', 'child'], ['#ay', '9'], ['#hcm', '130'], ['#wkg', '35'], ['#waist', '70']], [['#ay', '12'], ['#hcm', '150'], ['#wkg', '30'], ['#waist', '55']],
+      [['#ay', '3'], ['#hcm', '95'], ['#wkg', '15'], ['#waist', '45']], [['#ay', ''], ['#hcm', ''], ['#wkg', '']],
+    ]],
+    ['/hi/tools/indian-diabetes-risk-score/', '.results', [
+      [['#age', '30']], [['#age', '30'], ['#waist', '75'], ['act', 'vigorous'], ['fam', 'none']], [['#age', '42'], ['#waist', '85'], ['act', 'mild'], ['fam', 'one']],
+      [['#age', '60'], ['#waist', '102'], ['act', 'none'], ['fam', 'both']], [['#age', '12']],
+    ]],
+    ['/hi/tools/stop-bang/', '.sb-results', [
+      yes(''), yes('s'), yes('st'), yes('stog'), yes('stb'), yes('sta'), yes('ston'), yes('stbn'), yes('stopbang'), [['s', '1']],
+    ]],
+  ];
   if (await fetch(BASE + '/hi/tools/bmi-calculator/').then((r) => r.ok, () => false)) {
     const ctx = await context({ width: 390, height: 900 });
     const page = await ctx.newPage();
     const errs = errorsOf(page);
-    const english = async (sel) => (await page.evaluate((s) => document.querySelector(s)?.innerText ?? '', sel)).match(/(?:\b[A-Za-z][A-Za-z'’-]*\b[ ,]+){2,}[A-Za-z][A-Za-z'’-]*/g) ?? [];
-    await page.goto(BASE + '/hi/tools/bmi-calculator/');
-    const cases = [
-      ['adult', { hcm: '165', wkg: '78', waist: '92' }], ['adult', { hcm: '170', wkg: '50', waist: '70' }], ['adult', { hcm: '160', wkg: '62', waist: '88' }],
-      ['child', { ay: '9', hcm: '130', wkg: '35', waist: '70' }], ['child', { ay: '12', hcm: '150', wkg: '30', waist: '55' }], ['child', { ay: '3', hcm: '95', wkg: '15', waist: '45' }], ['child', { ay: '', hcm: '', wkg: '' }],
-    ];
-    for (const [who, fields] of cases) {
-      await page.check(`input[name=who][value=${who}]`, { force: true });
-      for (const [id, v] of Object.entries(fields)) await page.fill(`#${id}`, v);
-      const found = await english('.results');
-      check(found.length === 0, `Hindi BMI calculator (${who} ${JSON.stringify(fields)}): results in Hindi${found.length ? ` (English: ${found.join(' | ')})` : ''}`);
+    for (const [url, results, cases] of HINDI_CALCS) {
+      await page.goto(BASE + url);
+      for (const steps of cases) {
+        for (const [k, v] of steps) {
+          if (k.startsWith('#')) await page.fill(k, v);
+          else await page.evaluate(([n, val]) => { const r = document.querySelector(`input[name="${n}"][value="${val}"]`); r.checked = true; r.dispatchEvent(new Event('input', { bubbles: true })); r.dispatchEvent(new Event('change', { bubbles: true })); }, [k, v]);
+        }
+        const text = await page.evaluate((sel) => document.querySelector(sel)?.innerText ?? '', results);
+        const found = text.match(/(?:\b[A-Za-z][A-Za-z'’-]*\b[ ,]+){2,}[A-Za-z][A-Za-z'’-]*/g) ?? [];
+        check(found.length === 0, `Hindi ${url} ${JSON.stringify(steps)}: results in Hindi${found.length ? ` (English: ${found.join(' | ')})` : ''}`);
+      }
     }
-    check(errs.length === 0, `Hindi BMI calculator: no script errors (${errs.join('; ')})`);
+    check(errs.length === 0, `Hindi calculators: no script errors (${errs.join('; ')})`);
     await ctx.close();
   }
 
