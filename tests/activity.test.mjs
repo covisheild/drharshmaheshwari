@@ -1,8 +1,8 @@
-// Unit tests for the activity check (src/lib/activity.ts): IPAQ-SF scoring (protocol of Nov 2005) and the WHO
-// targets by age (WHO 2020; WHO 2019 for under-5s). Worked examples sit on each boundary. See docs/activity-check-plan.md.
+// Unit tests for the activity check (src/lib/activity.ts): IPAQ-SF scoring (protocol of Nov 2005) and the targets
+// by age (ICMR-NIN 2024 from 5 years; WHO 2019 under 5 and WHO 2020 in pregnancy). Worked examples sit on each boundary. See docs/activity-check-plan.md.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { ipaqScore, whoAdult, whoYouth, whoTeen, whoUnder5 } from '../src/lib/activity.ts';
+import { ipaqScore, checkAdult, checkYouth, checkTeen, checkUnder5, activeDays } from '../src/lib/activity.ts';
 
 const b = (days, minutes = null) => ({ days, minutes });
 const none = { vigorous: b(0), moderate: b(0), walking: b(0) };
@@ -79,88 +79,100 @@ test('IPAQ cleaning: under 10 minutes a day is zero, over 180 is cut to 180, ove
   assert.equal(ipaqScore({ vigorous: b(1, 400), moderate: b(1, 400), walking: b(1, 160) }).ok, true, '960 exactly is allowed');
 });
 
-// ---------- WHO adults ----------
+// ---------- Adults: ICMR-NIN 2024 (WHO in pregnancy) ----------
 
-test('WHO adult: moderate-equivalent = moderate + walking + 2 x vigorous; 149 vs 150; 300 upper', () => {
-  const a = (vig, mod, walk) => whoAdult('adult', { vigorous: vig, moderate: mod, walking: walk, strengthDays: 2 });
+test('ICMR-NIN adult: 150 moderate-equivalent minutes on 5+ days; 149 vs 150; 300 upper', () => {
+  const a = (vig, mod, walk) => checkAdult('adult', { vigorous: vig, moderate: mod, walking: walk, strengthDays: 2 });
   let r = a(b(0), b(0), b(5, 30));
-  assert.equal(r.aerobic.minutes, 150); assert.equal(status(r, 'aerobic'), 'met'); assert.equal(status(r, 'upper'), 'not');
-  r = a(b(1, 4), b(0), b(1, 141)); // 8 + 141 = 149
-  assert.equal(r.aerobic.minutes, 149); assert.equal(status(r, 'aerobic'), 'not');
-  assert.match(r.aerobic.gap, /^1 more minutes? a week/);
-  r = a(b(3, 25), b(0), b(0)); // 75 vigorous = 150
-  assert.equal(r.aerobic.minutes, 150); assert.equal(status(r, 'aerobic'), 'met');
-  r = a(b(3, 50), b(0), b(0)); // 150 vigorous = 300
+  assert.equal(r.source, 'ICMR-NIN');
+  assert.equal(r.aerobic.value, 150); assert.equal(status(r, 'aerobic'), 'met'); assert.equal(status(r, 'upper'), 'not');
+  r = a(b(1, 4), b(0), b(5, 28)); // 8 + 140 = 148
+  assert.equal(r.aerobic.value, 148); assert.equal(status(r, 'aerobic'), 'not');
+  assert.match(r.aerobic.gap, /^2 more minutes a week/);
+  r = a(b(5, 15), b(0), b(0)); // ICMR-NIN: 15 min vigorous on 5 days = 150
+  assert.equal(r.aerobic.value, 150); assert.equal(status(r, 'aerobic'), 'met');
+  r = a(b(5, 30), b(0), b(0)); // = 300
   assert.equal(status(r, 'upper'), 'met');
 });
 
-test('WHO adult: every minute counts (no 10-minute rule), unlike the IPAQ score', () => {
+test('ICMR-NIN adult: enough minutes on fewer than 5 days is not yet the target', () => {
+  const r = checkAdult('adult', { vigorous: b(0), moderate: b(0), walking: b(3, 60), strengthDays: 2 }); // 180 min, 3 days
+  assert.equal(r.aerobic.value, 180);
+  assert.equal(status(r, 'aerobic'), 'not');
+  assert.match(r.aerobic.gap, /5 or more days \(now 3 days\)/);
+  // days of different kinds are added (IPAQ protocol), capped at 7
+  assert.equal(status(checkAdult('adult', { vigorous: b(0), moderate: b(2, 40), walking: b(3, 30), strengthDays: 2 }), 'aerobic'), 'met');
+  assert.equal(activeDays({ vigorous: b(7, 20), moderate: b(7, 20), walking: b(7, 20) }), 7);
+});
+
+test('Every minute counts in the target check (no 10-minute rule), unlike the IPAQ score', () => {
   const ans = { vigorous: b(0), moderate: b(0), walking: b(7, 9), strengthDays: 0 };
-  assert.equal(whoAdult('adult', ans).aerobic.minutes, 63);
+  assert.equal(checkAdult('adult', ans).aerobic.value, 63);
   assert.equal(ipaqScore(ans).total, 0);
 });
 
-test('WHO adult: strength on 2+ days; 65+ also balance on 3+ days', () => {
+test('ICMR-NIN: strength on 2+ days; over 60 also strength and balance on 3+ days', () => {
   const base = { ...none, strengthDays: 1 };
-  assert.equal(status(whoAdult('adult', base), 'strength'), 'not');
-  assert.equal(status(whoAdult('adult', { ...base, strengthDays: 2 }), 'strength'), 'met');
-  assert.equal(status(whoAdult('adult', base), 'balance'), undefined);
-  assert.equal(status(whoAdult('older', { ...base, balanceDays: 2 }), 'balance'), 'not');
-  assert.equal(status(whoAdult('older', { ...base, balanceDays: 3 }), 'balance'), 'met');
-  assert.equal(status(whoAdult('older', { ...base, balanceDays: null }), 'balance'), 'unknown');
+  assert.equal(status(checkAdult('adult', base), 'strength'), 'not');
+  assert.equal(status(checkAdult('adult', { ...base, strengthDays: 2 }), 'strength'), 'met');
+  assert.equal(status(checkAdult('adult', base), 'balance'), undefined);
+  assert.equal(status(checkAdult('older', { ...base, balanceDays: 2 }), 'balance'), 'not');
+  assert.equal(status(checkAdult('older', { ...base, balanceDays: 3 }), 'balance'), 'met');
+  assert.equal(status(checkAdult('older', { ...base, balanceDays: null }), 'balance'), 'unknown');
 });
 
-test('WHO pregnancy: 150 minimum, no upper target, any strengthening counts', () => {
-  const r = whoAdult('adult', { vigorous: b(0), moderate: b(5, 30), walking: b(0), strengthDays: 1, pregnant: true });
-  assert.equal(status(r, 'aerobic'), 'met'); assert.equal(status(r, 'upper'), undefined); assert.equal(status(r, 'strength'), 'met');
+test('Pregnancy uses WHO (ICMR-NIN gives no number): 150 minimum, no day count, no upper target, any strengthening', () => {
+  const r = checkAdult('adult', { vigorous: b(0), moderate: b(3, 50), walking: b(0), strengthDays: 1, pregnant: true });
+  assert.equal(r.source, 'WHO');
+  assert.equal(status(r, 'aerobic'), 'met', '150 minutes on 3 days is enough for WHO');
+  assert.equal(status(r, 'upper'), undefined); assert.equal(status(r, 'strength'), 'met');
   assert.equal(r.aerobic.upper, undefined);
   assert.equal(r.notes.length, 1);
-  assert.equal(status(whoAdult('older', { ...none, strengthDays: 2, pregnant: true }), 'upper'), 'not', 'the pregnancy option is only for 18-64');
+  assert.equal(status(checkAdult('older', { ...none, strengthDays: 2, pregnant: true }), 'upper'), 'not', 'the pregnancy option is only for 20-60');
 });
 
-// ---------- WHO children and adolescents ----------
+// ---------- 5-19 years: ICMR-NIN 2024 ----------
 
-test('WHO 5-17: average 60 a day across the week = 420 a week; vigorous and strength on 3+ days', () => {
-  let r = whoYouth({ mvpaWeekMin: 420, vigorousDays: 3, strengthDays: 3 });
+test('ICMR-NIN 5-19: 60 minutes every day (7 of 7); vigorous and strength on 3+ days', () => {
+  let r = checkYouth({ days60: 7, vigorousDays: 3, strengthDays: 3 });
+  assert.equal(r.source, 'ICMR-NIN');
   assert.deepEqual(r.checks.map((c) => c.status), ['met', 'met', 'met']);
-  r = whoYouth({ mvpaWeekMin: 419, vigorousDays: 2, strengthDays: 2 });
+  r = checkYouth({ days60: 6, vigorousDays: 2, strengthDays: 2 });
   assert.deepEqual(r.checks.map((c) => c.status), ['not', 'not', 'not']);
-  assert.match(r.aerobic.gap, /^1 more minute/);
-  // an average, not every day: 4 days of 105 minutes reaches it
-  assert.equal(whoYouth({ mvpaWeekMin: 4 * 105, vigorousDays: 0, strengthDays: 0 }).checks[0].status, 'met');
+  assert.match(r.aerobic.gap, /^1 more day a week/);
+  assert.equal(checkYouth({ days60: null, vigorousDays: null, strengthDays: null }).checks[0].status, 'unknown');
 });
 
-test('WHO 15-17: IPAQ answers give the child figures (no doubling of vigorous)', () => {
-  const r = whoTeen({ vigorous: b(3, 40), moderate: b(2, 60), walking: b(7, 30), strengthDays: 3 });
-  assert.equal(r.aerobic.minutes, 120 + 120 + 210); // 450
-  assert.equal(r.aerobic.target, 420);
+test('15-19: vigorous days come from the IPAQ answers', () => {
+  const r = checkTeen({ vigorous: b(3, 40), moderate: b(2, 60), walking: b(7, 30), days60: 7, strengthDays: 3 });
+  assert.equal(r.aerobic.value, 7);
   assert.equal(status(r, 'vigorous'), 'met');
-  assert.equal(status(whoTeen({ ...none, strengthDays: 0 }), 'vigorous'), 'not');
+  assert.equal(status(checkTeen({ ...none, days60: 0, strengthDays: 0 }), 'vigorous'), 'not');
 });
 
-// ---------- WHO under 5 ----------
+// ---------- Under 5: WHO 2019 (ICMR-NIN gives no numbers) ----------
 
 test('WHO under 1: tummy time if not yet mobile, floor play if mobile; no screens; sleep by age', () => {
-  let r = whoUnder5('infant', { mobile: false, tummyMin: 30, restrained: false, screenMin: 0, sleepH: 15 });
+  let r = checkUnder5('infant', { mobile: false, tummyMin: 30, restrained: false, screenMin: 0, sleepH: 15 });
   assert.deepEqual(r.checks.map((c) => [c.id, c.status]), [['tummy', 'met'], ['restrained', 'met'], ['screen', 'met'], ['sleep', 'met']]);
-  r = whoUnder5('infant', { mobile: false, tummyMin: 29, restrained: true, screenMin: 5, sleepH: 13 });
+  r = checkUnder5('infant', { mobile: false, tummyMin: 29, restrained: true, screenMin: 5, sleepH: 13 });
   assert.deepEqual(r.checks.map((c) => c.status), ['not', 'not', 'not', 'not']);
-  assert.equal(status(whoUnder5('infant', { older: true, sleepH: 13 }), 'sleep'), 'met', '4-11 months: 12-16 h');
-  assert.equal(status(whoUnder5('infant', { mobile: true, floorPlay: true }), 'play'), 'met');
-  assert.equal(status(whoUnder5('infant', {}), 'play'), 'unknown');
+  assert.equal(status(checkUnder5('infant', { older: true, sleepH: 13 }), 'sleep'), 'met', '4-11 months: 12-16 h');
+  assert.equal(status(checkUnder5('infant', { mobile: true, floorPlay: true }), 'play'), 'met');
+  assert.equal(status(checkUnder5('infant', {}), 'play'), 'unknown');
 });
 
 test('WHO 1-2 years: 180 min any intensity; screens none at 1, up to 1 hour at 2; sleep 11-14', () => {
-  assert.equal(status(whoUnder5('toddler', { activeMin: 179 }), 'active'), 'not');
-  assert.equal(status(whoUnder5('toddler', { activeMin: 180 }), 'active'), 'met');
-  assert.equal(status(whoUnder5('toddler', { screenMin: 30 }), 'screen'), 'not');
-  assert.equal(status(whoUnder5('toddler', { older: true, screenMin: 60 }), 'screen'), 'met');
-  assert.equal(status(whoUnder5('toddler', { older: true, screenMin: 61 }), 'screen'), 'not');
-  assert.equal(status(whoUnder5('toddler', { sleepH: 14 }), 'sleep'), 'met');
-  assert.equal(status(whoUnder5('toddler', { sleepH: 15 }), 'sleep'), 'not');
+  assert.equal(status(checkUnder5('toddler', { activeMin: 179 }), 'active'), 'not');
+  assert.equal(status(checkUnder5('toddler', { activeMin: 180 }), 'active'), 'met');
+  assert.equal(status(checkUnder5('toddler', { screenMin: 30 }), 'screen'), 'not');
+  assert.equal(status(checkUnder5('toddler', { older: true, screenMin: 60 }), 'screen'), 'met');
+  assert.equal(status(checkUnder5('toddler', { older: true, screenMin: 61 }), 'screen'), 'not');
+  assert.equal(status(checkUnder5('toddler', { sleepH: 14 }), 'sleep'), 'met');
+  assert.equal(status(checkUnder5('toddler', { sleepH: 15 }), 'sleep'), 'not');
 });
 
 test('WHO 3-4 years: 180 min of which 60 energetic; screens up to 1 hour; sleep 10-13', () => {
-  const r = whoUnder5('preschool', { activeMin: 180, mvpaMin: 59, restrained: false, screenMin: 60, sleepH: 10 });
+  const r = checkUnder5('preschool', { activeMin: 180, mvpaMin: 59, restrained: false, screenMin: 60, sleepH: 10 });
   assert.deepEqual(r.checks.map((c) => [c.id, c.status]), [['active', 'met'], ['mvpa', 'not'], ['restrained', 'met'], ['screen', 'met'], ['sleep', 'met']]);
 });

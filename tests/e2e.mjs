@@ -83,7 +83,7 @@ try {
     const hindi = (await fetch(BASE + '/hi/').then((r) => r.ok, () => false))
       ? ['/hi/', '/hi/learn/', '/hi/learn/bmi-cut-offs-for-indians/', '/hi/learn/waist-to-height-ratio/', '/hi/blog/', '/hi/blog/interpretation-of-the-world/', '/hi/tools/', '/hi/books/', '/hi/videos/', '/hi/about/', '/hi/disclaimer/', '/hi/privacy/', '/hi/support/']
       : [];
-    for (const url of [...hindi, '/', '/learn/', '/tools/', '/tools/bmi-calculator/', '/tools/stop-bang/', '/books/', '/videos/', '/about/', '/doctors/', '/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/', '/doctors/books/', '/doctors/books/statistics-first-principles-to-regression/', '/doctors/videos/', '/support/', T, `${T}learn/`, `${T}learn/s3/`, `${T}learn/heart-and-lungs-together/`, `${T}practice/`, `${T}quiz/`, `${T}review/`, `${T}progress/`]) {
+    for (const url of [...hindi, '/', '/learn/', '/tools/', '/tools/bmi-calculator/', '/tools/stop-bang/', '/tools/indian-diabetes-risk-score/', '/books/', '/videos/', '/about/', '/doctors/', '/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/', '/doctors/books/', '/doctors/books/statistics-first-principles-to-regression/', '/doctors/videos/', '/support/', T, `${T}learn/`, `${T}learn/s3/`, `${T}learn/heart-and-lungs-together/`, `${T}practice/`, `${T}quiz/`, `${T}review/`, `${T}progress/`]) {
       const r = await page.goto(BASE + url);
       check(r.status() === 200 && (await overflow(page)) <= 0, `${name} ${url}: 200, no sideways scroll`);
     }

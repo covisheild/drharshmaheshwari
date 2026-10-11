@@ -1,6 +1,8 @@
-// Activity check: WHO physical activity targets by age, and the IPAQ short form score.
+// Activity check: physical activity targets by age (ICMR-NIN 2024 from 5 years; WHO under 5 and in pregnancy),
+// and the IPAQ short form score.
 // Plain functions, no page code, so tests/activity.test.mjs can check them directly.
 // Sources and settled decisions: docs/activity-check-plan.md.
+//   ICMR-NIN Dietary Guidelines for Indians 2024, Guideline 10.
 //   WHO 2020 guidelines on physical activity and sedentary behaviour (Bull et al., Br J Sports Med 2020;54:1451-62).
 //   WHO 2019 guidelines on physical activity, sedentary behaviour and sleep for children under 5 years of age.
 //   IPAQ Research Committee, Guidelines for data processing and analysis of the IPAQ, November 2005.
@@ -12,9 +14,9 @@ export const AGE_GROUPS: { id: AgeGroup; label: string }[] = [
   { id: 'toddler', label: '1–2 years' },
   { id: 'preschool', label: '3–4 years' },
   { id: 'child', label: '5–14 years' },
-  { id: 'teen', label: '15–17 years' },
-  { id: 'adult', label: '18–64 years' },
-  { id: 'older', label: '65+ years' },
+  { id: 'teen', label: '15–19 years' },
+  { id: 'adult', label: '20–60 years' },
+  { id: 'older', label: 'Over 60' },
 ];
 
 /** IPAQ applies from 15 years (tested in ages 15–69). */
@@ -73,83 +75,99 @@ export function ipaqScore(a: IpaqAnswers): IpaqResult {
 }
 const cap = (s: string) => s[0].toUpperCase() + s.slice(1);
 
-// ---------- WHO targets ----------
+// ---------- Targets: ICMR-NIN 2024 from 5 years (India first); WHO where ICMR-NIN gives no numbers ----------
+// ICMR-NIN Dietary Guidelines for Indians 2024, Guideline 10 (pp. 69-72): children and adolescents (>5-19 years),
+// adults (>19-60), elderly (>60). It gives no numbers for under-5s or pregnancy, so those use WHO (2019, 2020).
 
 export type Status = 'met' | 'not' | 'unknown';
+export type Source = 'ICMR-NIN' | 'WHO';
 export interface Check { id: string; label: string; status: Status; detail: string }
 export interface Aerobic {
-  minutes: number;          // adults: moderate-equivalent minutes a week; children: moderate-to-vigorous minutes a week
-  target: number;           // WHO minimum, minutes a week
-  upper?: number;           // adults: upper end of the WHO range
-  unit: string;             // what `minutes` means, for the page
+  value: number;            // adults: moderate-equivalent minutes a week; 5-19: days with 60+ minutes
+  target: number;           // the minimum
+  upper?: number;           // adults: upper end of the range (60 minutes on 5 days = 300)
+  max: number;              // right end of the page's bar
+  unit: string;             // what `value` means, for the page
   gap?: string;             // what would close the gap
 }
-export interface WhoResult { checks: Check[]; aerobic?: Aerobic; notes: string[] }
+export interface TargetResult { source: Source; checks: Check[]; aerobic?: Aerobic; notes: string[] }
 
 const days = (n: number) => `${n} ${n === 1 ? 'day' : 'days'}`;
-const perDay = (weekMin: number) => Math.ceil(weekMin / 7);
-const daysCheck = (id: string, label: string, got: number | null | undefined, need: number): Check =>
-  !known(got) ? { id, label, status: 'unknown', detail: `WHO: ${need} or more days a week.` }
-    : { id, label, status: got >= need ? 'met' : 'not', detail: `${days(dayCount(got))} a week; WHO: ${need} or more.` };
+const perDay = (weekMin: number, n = 7) => Math.ceil(weekMin / n);
+const daysCheck = (src: Source, id: string, label: string, got: number | null | undefined, need: number): Check =>
+  !known(got) ? { id, label, status: 'unknown', detail: `${src}: ${need} or more days a week.` }
+    : { id, label, status: got >= need ? 'met' : 'not', detail: `${days(dayCount(got))} a week; ${src}: ${need} or more.` };
 
 export interface AdultAnswers extends IpaqAnswers { strengthDays: number | null; balanceDays?: number | null; pregnant?: boolean }
 
-/** 18–64 (or pregnant / after birth) and 65+. Moderate-equivalent minutes = moderate + walking + 2 x vigorous. */
-export function whoAdult(group: 'adult' | 'older', a: AdultAnswers): WhoResult {
+/** Days with any of the three kinds of activity. IPAQ does not record whether kinds fall on the same day,
+ *  so they are added and capped at 7, as the IPAQ protocol does (section 7.6). */
+export const activeDays = (a: IpaqAnswers) => Math.min(7, (['vigorous', 'moderate', 'walking'] as const).reduce((s, k) => s + (weekly(a[k]) > 0 ? dayCount(a[k].days!) : 0), 0));
+
+/** Adults (20-60, ICMR-NIN) and over 60 (ICMR-NIN), or pregnant / after birth (WHO).
+ *  Moderate-equivalent minutes = moderate + walking + 2 x vigorous (ICMR-NIN: 30 min moderate or 15 min vigorous a day). */
+export function checkAdult(group: 'adult' | 'older', a: AdultAnswers): TargetResult {
   const pregnant = group === 'adult' && !!a.pregnant;
+  const src: Source = pregnant ? 'WHO' : 'ICMR-NIN';
   const checks: Check[] = [], notes: string[] = [];
   let aerobic: Aerobic | undefined;
   const ready = answered(a.vigorous) && answered(a.moderate) && answered(a.walking);
-  const target = 150, upper = 300;
+  const target = 150, upper = 300, needDays = 5;
+  const label = pregnant ? 'Aerobic activity, 150 minutes a week' : 'Aerobic activity, 30 minutes on 5 or more days';
   if (ready) {
     const minutes = weekly(a.moderate) + weekly(a.walking) + 2 * weekly(a.vigorous);
-    aerobic = { minutes, target, upper: pregnant ? undefined : upper, unit: 'moderate-intensity minutes a week (vigorous minutes count double)' };
+    const d = activeDays(a);
+    const enough = minutes >= target && (pregnant || d >= needDays);
+    aerobic = { value: minutes, target, upper: pregnant ? undefined : upper, max: 450, unit: 'moderate-intensity minutes a week (vigorous minutes count double)' };
     if (minutes < target) {
       const need = target - minutes;
       aerobic.gap = `${need} more minutes a week of brisk walking or other moderate activity (about ${perDay(need)} a day), or about ${Math.ceil(need / 2)} minutes of vigorous activity.`;
+    } else if (!enough) {
+      aerobic.gap = `Spread the same activity over 5 or more days (now ${days(d)}): 30 minutes a day, or 15 of vigorous activity.`;
     }
-    checks.push({ id: 'aerobic', label: 'Aerobic activity, WHO minimum', status: minutes >= target ? 'met' : 'not', detail: `${minutes} of ${target} minutes a week.` });
-    if (!pregnant) checks.push({ id: 'upper', label: 'Aerobic activity, upper target (more benefit)', status: minutes >= upper ? 'met' : 'not', detail: `${minutes} of ${upper} minutes a week. WHO: up to 300, and more brings additional benefit.` });
+    checks.push({ id: 'aerobic', label, status: enough ? 'met' : 'not',
+      detail: pregnant ? `${minutes} of ${target} minutes a week.` : `${minutes} of ${target} minutes a week, on ${days(d)}. ICMR-NIN: 30-60 minutes of moderate activity (or 15 of vigorous) on at least 5 days.` });
+    if (!pregnant) checks.push({ id: 'upper', label: 'Aerobic activity, upper target (60 minutes on 5 days)', status: minutes >= upper ? 'met' : 'not', detail: `${minutes} of ${upper} minutes a week.` });
   } else {
-    checks.push({ id: 'aerobic', label: 'Aerobic activity, WHO minimum', status: 'unknown', detail: `WHO: ${target} minutes a week of moderate activity, or ${target / 2} of vigorous.` });
+    checks.push({ id: 'aerobic', label, status: 'unknown', detail: pregnant ? 'WHO: at least 150 minutes a week of moderate activity.' : 'ICMR-NIN: 30-60 minutes of moderate activity, or 15 of vigorous, on at least 5 days a week.' });
   }
   if (pregnant) {
     checks.push(known(a.strengthDays)
       ? { id: 'strength', label: 'Muscle-strengthening activity', status: a.strengthDays >= 1 ? 'met' : 'not', detail: `${days(dayCount(a.strengthDays))} a week. WHO: include some (no set number of days); gentle stretching may help too.` }
       : { id: 'strength', label: 'Muscle-strengthening activity', status: 'unknown', detail: 'WHO: include some (no set number of days).' });
-    notes.push('In pregnancy and after birth WHO asks for at least 150 minutes of moderate activity a week, if you have no medical reason to avoid it. Vigorous activity is fine if you did it regularly before pregnancy.');
+    notes.push('ICMR-NIN gives no number for pregnancy (it advises enough exercise with 2-3 hours of rest in the day), so this uses WHO: at least 150 minutes of moderate activity a week, if you have no medical reason to avoid it. Vigorous activity is fine if you did it regularly before pregnancy.');
   } else {
-    checks.push(daysCheck('strength', 'Muscle strengthening, all major muscle groups', a.strengthDays, 2));
+    checks.push(daysCheck(src, 'strength', 'Muscle strengthening, all major muscle groups', a.strengthDays, 2));
   }
-  if (group === 'older') checks.push(daysCheck('balance', 'Balance and strength (multicomponent) activity', a.balanceDays, 3));
-  return { checks, aerobic, notes };
+  if (group === 'older') checks.push(daysCheck(src, 'balance', 'Strength and balance activities', a.balanceDays, 3));
+  return { source: src, checks, aerobic, notes };
 }
 
-export interface YouthAnswers { mvpaWeekMin: number | null; vigorousDays: number | null; strengthDays: number | null }
+export interface YouthAnswers { days60: number | null; vigorousDays: number | null; strengthDays: number | null }
 
-/** 5–17 years: an average of 60 minutes a day of moderate-to-vigorous activity across the week (420 a week). */
-export function whoYouth(a: YouthAnswers): WhoResult {
-  const target = 420;
+/** 5-19 years (ICMR-NIN): at least 60 minutes of moderate-to-vigorous activity every day; vigorous and strength on 3+ days.
+ *  Asked directly: on how many of the last 7 days was there 60 minutes or more in total. */
+export function checkYouth(a: YouthAnswers): TargetResult {
   const checks: Check[] = [];
   let aerobic: Aerobic | undefined;
-  if (known(a.mvpaWeekMin)) {
-    const minutes = Math.round(a.mvpaWeekMin);
-    aerobic = { minutes, target, unit: 'minutes a week of moderate-to-vigorous activity' };
-    if (minutes < target) aerobic.gap = `${target - minutes} more minutes a week of energetic activity (about ${perDay(target - minutes)} a day).`;
-    checks.push({ id: 'aerobic', label: 'Energetic activity, average 60 minutes a day', status: minutes >= target ? 'met' : 'not', detail: `Average ${Math.round(minutes / 7)} minutes a day (${minutes} of ${target} a week).` });
+  const label = 'Energetic activity, 60 minutes every day';
+  if (known(a.days60)) {
+    const d = dayCount(a.days60);
+    aerobic = { value: d, target: 7, max: 7, unit: `of 7 days with 60 minutes or more of energetic activity` };
+    if (d < 7) aerobic.gap = `${7 - d} more ${7 - d === 1 ? 'day' : 'days'} a week with 60 minutes of energetic activity.`;
+    checks.push({ id: 'aerobic', label, status: d >= 7 ? 'met' : 'not', detail: `${days(d)} of 7. ICMR-NIN: a minimum of 60 minutes a day.` });
   } else {
-    checks.push({ id: 'aerobic', label: 'Energetic activity, average 60 minutes a day', status: 'unknown', detail: 'WHO: an average of 60 minutes a day across the week.' });
+    checks.push({ id: 'aerobic', label, status: 'unknown', detail: 'ICMR-NIN: a minimum of 60 minutes of moderate-to-vigorous activity a day.' });
   }
-  checks.push(daysCheck('vigorous', 'Vigorous activity', a.vigorousDays, 3));
-  checks.push(daysCheck('strength', 'Muscle- and bone-strengthening activity', a.strengthDays, 3));
-  return { checks, aerobic, notes: [] };
+  checks.push(daysCheck('ICMR-NIN', 'vigorous', 'Vigorous activity', a.vigorousDays, 3));
+  checks.push(daysCheck('ICMR-NIN', 'strength', 'Strength training (muscles and bones)', a.strengthDays, 3));
+  return { source: 'ICMR-NIN', checks, aerobic, notes: [] };
 }
 
-/** 15–17: the IPAQ answers give the WHO child figures. Walking counts as moderate (brisk walking). */
-export function whoTeen(a: IpaqAnswers & { strengthDays: number | null }): WhoResult {
-  const ready = answered(a.vigorous) && answered(a.moderate) && answered(a.walking);
+/** 15-19: vigorous days come from the IPAQ answers; the 60-minute days are asked as for 5-14. */
+export function checkTeen(a: IpaqAnswers & { days60: number | null; strengthDays: number | null }): TargetResult {
   const vigDays = answered(a.vigorous) ? (weekly(a.vigorous) > 0 ? dayCount(a.vigorous.days!) : 0) : null;
-  return whoYouth({ mvpaWeekMin: ready ? weekly(a.vigorous) + weekly(a.moderate) + weekly(a.walking) : null, vigorousDays: vigDays, strengthDays: a.strengthDays });
+  return checkYouth({ days60: a.days60, vigorousDays: vigDays, strengthDays: a.strengthDays });
 }
 
 // ---------- Under 5 (WHO 2019, a typical 24 hours) ----------
@@ -168,7 +186,7 @@ export interface Under5Answers {
 
 export const SLEEP: Record<string, [number, number]> = { infant0: [14, 17], infant4: [12, 16], toddler: [11, 14], preschool: [10, 13] };
 
-export function whoUnder5(group: 'infant' | 'toddler' | 'preschool', a: Under5Answers): WhoResult {
+export function checkUnder5(group: 'infant' | 'toddler' | 'preschool', a: Under5Answers): TargetResult {
   const checks: Check[] = [];
   const yesNo = (id: string, label: string, v: boolean | null | undefined, good: boolean, detail: string): Check =>
     ({ id, label, status: v == null ? 'unknown' : v === good ? 'met' : 'not', detail });
@@ -206,5 +224,5 @@ export function whoUnder5(group: 'infant' | 'toddler' | 'preschool', a: Under5An
     ? { id: 'sleep', label: 'Sleep, naps included', status: a.sleepH >= lo && a.sleepH <= hi ? 'met' : 'not', detail: `${a.sleepH} hours in 24; WHO: ${lo}–${hi} hours${a.sleepH > hi ? ' (above the range)' : ''}.` }
     : { id: 'sleep', label: 'Sleep, naps included', status: 'unknown', detail: `WHO: ${lo}–${hi} hours in 24, with regular sleep and wake-up times.` });
 
-  return { checks, notes: [] };
+  return { source: 'WHO', checks, notes: ['ICMR-NIN gives no activity numbers for children under 5, so this uses the WHO 2019 guideline.'] };
 }
