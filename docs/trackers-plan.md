@@ -49,13 +49,13 @@ Every reading: date and time (default now, India time, editable; future times re
 
 **Weight** (optional, its own series, so a BMI trend comes from `src/lib/bmi.ts` with the person's height).
 
-## Urgent alerts (sources opened 11 Oct 2026; numbers and wording await Harsh's approval)
+## Urgent alerts (sources opened 11 Oct 2026; numbers approved by Harsh 11 Oct 2026; final wording reviewed before `main`)
 
 | Reading | Proposed alert | Basis |
 |---|---|---|
 | SBP ≥ 180 or DBP ≥ 110 (clinic or home) | "Very high reading. Sit quietly and measure again after 1-2 minutes. If it stays this high, contact your doctor today. If you have chest pain, breathlessness, back pain, weakness or numbness, a change in vision, or trouble speaking, go to a hospital now." | IGH-V 2025-26 "Severe ≥180 or ≥110"; ESH 2023 grade 3; MoHFW STG 2016 urgency >180/>110. Retest wait and symptom list: AHA patient page (no Indian patient-facing list found). |
-| Low BP | Decision pending: no guideline gives a home low-BP alert number. Option: SBP < 90 with "if you feel dizzy or faint, sit or lie down and contact your doctor", labelled as the site's own convention. | None (orthostatic fall ≥20/10 in ESH and IGH-V is a different test). |
-| Glucose < 70 mg/dL (lab or glucometer) | "Low sugar. Take 15 g of fast-acting sugar now and measure again after 15 minutes; repeat if still below 70. If the person is drowsy or confused, do not give anything by mouth: get help now." Below 54: same, marked "severely low". | ADA 2026 Table 6.4 (level 1 <70, level 2 <54), 15 g + recheck 15 min; RSSDI 2022 alert value <70, 15-20 g; RSSDI 2024 monitoring consensus 15 g / 15 min. ICMR 2018 gives no number. |
+| Low BP | **No alert** (Harsh, 11 Oct 2026). No guideline gives a home low-BP alert number. | — |
+| Glucose < 70 mg/dL (lab or glucometer) | "Low sugar. Take 15 g of fast-acting sugar now (15 g glucose powder, or 4 teaspoons of sugar in water) and measure again after 15 minutes; repeat if still below 70. If the person is drowsy or confused, do not give anything by mouth: get help now." Below 54: same, marked "severely low". | ADA 2026 Table 6.4 (level 1 <70, level 2 <54), 15 g + recheck 15 min; RSSDI 2022 alert value <70, 15-20 g; RSSDI 2024 monitoring consensus 15 g / 15 min. ICMR 2018 gives no number. |
 | Glucose ≥ 300 mg/dL | "Very high sugar. Contact your doctor today. Go to a hospital now if there is vomiting, stomach pain, fast breathing, drowsiness or confusion." | No single Indian number. CDC: stays ≥300 → emergency; RSSDI 2022 (COVID chapter) severe >300 pre-meal. ICMR 2018: ketones if >400; ADA 2026: ketones with illness if >200. |
 | HbA1c | No alert (not an acute measure). | — |
 
@@ -128,6 +128,6 @@ The doctor share view shows the readings but not the alert notes or marks.
 - API: owner-only access, share token works, expired and stopped links refuse, deleted account removes everything, idempotent uploads.
 - e2e: 390 px and desktop, 4.5:1 contrast in both modes, no horizontal overflow.
 
-## Still open (Harsh)
+## Still open
 
-1. Confirm the alert numbers and wording above (after Claude opens and checks each source), and whether to alert on low BP.
+Nothing. Build in this order: D1 migration and API, store and sync, pages, doctor view, privacy and account deletion, tests.
