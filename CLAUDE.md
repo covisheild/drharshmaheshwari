@@ -230,6 +230,16 @@ local devDependency. Change production settings only on purpose; preview-only se
   Walking counts towards the target minutes; the 10-minute rule applies only to the IPAQ score; screen time and sleep are checked only under 5.
   Words: "Reached" / "Not yet", never "inactive". Clinical wording: Harsh reviews before `main`.
 
+## Units in tools (Harsh, 11 Oct 2026)
+
+- **Every number a person types that has a unit uses `src/components/UnitField.astro`**: clicking the unit converts what is
+  already typed, so nobody calculates by hand. Kinds (`src/lib/units.ts`): `height` cm ⇄ ft + in, `length` (waist, neck) cm ⇄ in,
+  `weight` kg ⇄ lb, `minutes` min ⇄ h, `hours` h ⇄ min; `per="/day"` adds a suffix. The first unit is the base: the page reads
+  `unitValue(id)` (`src/scripts/unit-fields.ts`) and always gets cm, kg, min or h, whatever the person chose. Switching back and forth
+  keeps the exact value (no rounding drift). New unit = add it to `units.ts` with a test in `tests/units.test.mjs`.
+- Applies to calculators, tools and trackers on every page. A number with nothing to convert (age in years, days, a count, rupees,
+  a percentage) gets `data-unitless`. `tests/site.test.mjs` fails on any built number box that has neither.
+
 ## Drafts
 
 `draft: true` in frontmatter shows the page on local dev and Cloudflare preview builds (any branch other than `main`,

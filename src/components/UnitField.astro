@@ -1,0 +1,48 @@
+---
+// A number box with a clickable unit: clicking the unit converts what is typed (cm ⇄ in, cm ⇄ ft + in for height,
+// kg ⇄ lb, min ⇄ h). Every number with a unit in a tool uses this (CLAUDE.md, "Units in tools"); the page reads
+// the value in the base unit (the first of the kind: cm, kg, min or h) with unitValue(id) from src/scripts/unit-fields.ts.
+import { KINDS, LABEL, NAME, toDisplay, type Kind } from '../lib/units';
+
+interface Props {
+  id: string;          // id of the main box (the inches box of ft + in is `${id}-in`)
+  kind: Kind;
+  label: string;       // what the number is, for screen readers: "Height", "Walking: time a day"
+  placeholder: number; // in the base unit; converted with the unit
+  per?: string;        // shown after the unit, e.g. "/day"
+}
+const { id, kind, label, placeholder, per = '' } = Astro.props;
+const unit = KINDS[kind][0];
+const ftin = KINDS[kind].includes('ftin');
+const ph = toDisplay(placeholder, kind, unit)[0];
+---
+<div class="uf" data-unit-field data-kind={kind} data-unit={unit} data-ph={placeholder} data-per={per} data-label={label}>
+  <div class="uf-box">
+    <input data-uf type="number" inputmode="decimal" step="any" min="0" id={id} placeholder={ph} aria-label={`${label} in ${NAME[unit]}`} />
+    <button type="button" class="uf-unit" title={`Switch to ${NAME[KINDS[kind][1]]}`} aria-label={`Unit: ${NAME[unit]}. Switch to ${NAME[KINDS[kind][1]]}`}><span class="uf-label">{LABEL[unit]}{per}</span><span class="uf-swap" aria-hidden="true">⇄</span></button>
+  </div>
+  {ftin && (
+    <div class="uf-box" hidden>
+      <input data-uf type="number" inputmode="decimal" step="any" min="0" id={`${id}-in`} aria-label={`${label}: inches`} />
+      <span class="uf-fixed">in</span>
+    </div>
+  )}
+</div>
+
+<script>
+  import { initUnitFields } from '../scripts/unit-fields';
+  initUnitFields();
+</script>
+
+<style>
+  .uf { flex: 1 1 13rem; display: flex; gap: .5rem; min-width: 0; }
+  .uf-box { flex: 1; min-width: 6.5rem; display: flex; align-items: center; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding-right: .35rem; transition: border-color .2s; }
+  .uf-box[hidden] { display: none; }
+  .uf-box:focus-within { border-color: var(--brand); }
+  .uf-box input { flex: 1; min-width: 0; width: 100%; border: 0; background: transparent; color: var(--ink); font: 600 1.2rem var(--font-body); padding: .7rem .85rem; outline: none; }
+  .uf-unit { display: inline-flex; align-items: center; gap: .3rem; flex: none; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-2); color: var(--ink-2); font: 500 .9rem var(--font-body); padding: .35rem .65rem; cursor: pointer; white-space: nowrap; transition: background .2s, color .2s, border-color .2s; }
+  .uf-unit:hover { border-color: var(--brand); color: var(--ink); }
+  .uf-unit:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .uf-swap { color: var(--brand); font-size: .85rem; }
+  .uf-fixed { color: var(--ink-3); padding: 0 .55rem; }
+</style>

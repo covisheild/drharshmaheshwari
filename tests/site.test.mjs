@@ -272,6 +272,21 @@ test('Clinical Medicine is shown as in preparation, without a link, until it has
   assert.ok(!existsSync(join(DIST, 'doctors/books/clinical-medicine/index.html')), 'an empty shelf should not have a page');
 });
 
+test('units: every number box on the site converts its unit on a click (UnitField), or is marked as having no unit', () => {
+  // Rule in CLAUDE.md ("Units in tools"): a typed number with a unit (cm, kg, minutes, hours...) uses
+  // src/components/UnitField.astro, whose boxes carry data-uf. Counts and units with nothing to convert to
+  // (age in years, days, rupees, a percentage) carry data-unitless.
+  const bad = [];
+  for (const [url, page] of html) {
+    for (const tag of page.match(/<input\b[^>]*>/g) ?? []) {
+      if (/type="?number/.test(tag) && !/\sdata-(uf|unitless)\b/.test(tag)) bad.push(`${url}: ${tag.slice(0, 120)}`);
+    }
+  }
+  assert.deepEqual(bad, [], 'number boxes without a convertible unit field or data-unitless');
+  const fields = [...html.get('/tools/bmi-calculator/').matchAll(/data-unit-field[^>]*data-kind="(\w+)"/g)].map((m) => m[1]);
+  assert.deepEqual(fields, ['height', 'weight', 'length'], 'BMI: height (cm/ft+in), weight (kg/lb), waist (cm/in)');
+});
+
 test('book pages never call books "free"', () => {
   const pages = ['doctors/books/index.html', 'doctors/books/public-health/index.html', 'doctors/books/statistics-first-principles-to-regression/index.html',
     'doctors/books/obesity-expertise/index.html', 'doctors/index.html', 'books/index.html', 'index.html', 'llms.txt'];

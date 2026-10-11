@@ -24,7 +24,7 @@ const cites = (refs: number[] | undefined, part: string) =>
 interface Card { t?: string; confidence?: boolean; prompt: string; answer: string }
 function card(kind: 'exercise' | 'practice' | 'checkpoint', id: string, head: string, b: Card, answerWord = 'worked answer') {
   const conf = b.t === 'exercise' && b.confidence
-    ? `<p class="q-conf"><label>Your confidence before you look <input type="number" inputmode="numeric" min="0" max="100" step="5" class="q-conf-in" aria-label="Your confidence, as a percentage"> %</label></p>`
+    ? `<p class="q-conf"><label>Your confidence before you look <input type="number" data-unitless inputmode="numeric" min="0" max="100" step="5" class="q-conf-in" aria-label="Your confidence, as a percentage"> %</label></p>`
     : '';
   return `<div class="q q-${kind}" data-q="${id}">
   <div class="q-head">${head}</div>
