@@ -232,6 +232,24 @@ local devDependency. Change production settings only on purpose; preview-only se
   Walking counts towards the target minutes; the 10-minute rule applies only to the IPAQ score; screen time and sleep are checked only under 5.
   Words: "Reached" / "Not yet", never "inactive". Clinical wording: Harsh reviews before `main`.
 
+## Units everywhere: tools, calculators, trainers, trackers (Harsh, 11 Oct 2026)
+
+- **Every number a person types that has a unit converts on a click of its unit**, so nobody calculates by hand. This applies to
+  every calculator, tool, trainer and tracker, present and future, For Everyone and For Doctors alike.
+- On a built page use `src/components/UnitField.astro`; on a screen built in the browser (a trainer question, a tracker entry) use
+  `createUnitField()` from `src/scripts/unit-fields.ts`. Both come from one markup source (`unitFieldHTML()` in `src/lib/units.ts`)
+  and one stylesheet (`src/styles/units.css`, loaded on every page by `Base.astro`), so they look and behave the same.
+- Kinds (`src/lib/units.ts`): `height` cm ⇄ ft + in, `length` (waist, neck) cm ⇄ in, `weight` kg ⇄ lb, `minutes` min ⇄ h,
+  `hours` h ⇄ min; `per="/day"` adds a suffix. The first unit is the base: the page reads `unitValue(id)` and always gets cm, kg, min
+  or h, whatever the person chose. Switching back and forth keeps the exact value (no rounding drift). A measure not yet covered
+  (blood pressure mmHg ⇄ kPa, glucose mg/dL ⇄ mmol/L, temperature °C ⇄ °F, distance km ⇄ miles...) is added to `units.ts` as a new
+  kind, with tests in `tests/units.test.mjs`, before the tool that needs it is built.
+- The unit last chosen for each kind is remembered in the browser (`localStorage` `units:v1`, only the unit, never a number;
+  `/privacy/` says so), so every tool, trainer and tracker opens in it next time.
+- A number with nothing to convert (age in years, days, a count, rupees, a percentage, a score) gets `data-unitless`.
+  Two guards: `tests/units.test.mjs` scans all of `src/` (including number boxes made in scripts) and `tests/site.test.mjs` scans
+  every built page; both fail on a number box that is neither a unit field nor `data-unitless`.
+
 ## Drafts
 
 `draft: true` in frontmatter shows the page on local dev and Cloudflare preview builds (any branch other than `main`,
@@ -250,6 +268,7 @@ via `WORKERS_CI_BRANCH`, read in `astro.config.mjs`) and hides it on production.
 ## Rules
 
 - NMC conduct: no testimonials, patient details, fees, appointment booking, superlatives, or "specialist" claims.
+- **Units convert on a click** everywhere a number with a unit is typed (see "Units everywhere" above).
 - **India first** (Harsh, 11 Oct 2026): every tool and article uses Indian cut-offs and Indian charts; WHO or other international ones only where no Indian one exists, and the page says so.
 - Indian cut-offs: BMI overweight 23–24.9, obesity ≥25; waist ≥90 cm men / ≥80 cm women; WHtR risk from 0.5.
 - Never change a published URL (slug). Hindi pages will live under `/hi/` (Phase 2).
