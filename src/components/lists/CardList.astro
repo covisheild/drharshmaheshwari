@@ -2,7 +2,7 @@
 // A grid of ready / coming-soon cards, shared by the tool and trainer lists of both modes.
 // On a translated page the words are translated; a card whose page is English only says so.
 import { langOf } from '../../i18n/languages';
-import { hasPage } from '../../i18n/routes';
+import { hasPage, localHref } from '../../i18n/routes';
 import { useT } from '../../i18n/t';
 interface Item { title: string; text: string; href?: string; meta?: string }
 interface Props { items: Item[]; soon?: string }
@@ -13,6 +13,6 @@ const english = (href: string) => lang !== 'en' && !hasPage(lang, href.replace(/
 ---
 <div class="grid">
   {items.map((it, i) => it.href
-    ? <a class="card reveal" href={it.href} style={`--d:${(i % 3) * .08}s`}><span class="chip">{english(it.href) ? t('In English') : t('Ready')}</span><h3>{t(it.title)}</h3><p>{t(it.text)}</p>{it.meta && <p class="small muted">{t(it.meta)}</p>}<span class="more">{t('Open')} →</span></a>
+    ? <a class="card reveal" href={localHref(lang, it.href)} style={`--d:${(i % 3) * .08}s`}><span class="chip">{english(it.href) ? t('In English') : t('Ready')}</span><h3>{t(it.title)}</h3><p>{t(it.text)}</p>{it.meta && <p class="small muted">{t(it.meta)}</p>}<span class="more">{t('Open')} →</span></a>
     : <div class="card reveal" style={`--d:${(i % 3) * .08}s;opacity:.75`}><span class="chip draft">{t(soon)}</span><h3>{t(it.title)}</h3><p>{t(it.text)}</p></div>)}
 </div>

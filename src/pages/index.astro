@@ -38,7 +38,7 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
       <h1><T>Reversing obesity in India, <em>one clear idea</em> at a time.</T></h1>
       <p class="lede"><T>I'm Dr. Harsh Maheshwari, a physician and public health researcher. I turn obesity research into guides, tools and books that families and doctors can use.</T></p>
       <div class="cta">
-        <a class="btn btn-primary btn-lg" href="/tools/bmi-calculator/#height"><T>Check your BMI &amp; waist</T> <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-primary btn-lg" href={L('/tools/bmi-calculator/#height')}><T>Check your BMI &amp; waist</T> <span class="arrow" aria-hidden="true">→</span></a>
         <a class="btn btn-ghost btn-lg" href={L('/learn/')}>{t('Start learning')}</a>
       </div>
 
@@ -54,14 +54,14 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
             <h3>{t('Where do your numbers fall?')}</h3>
             <div class="bm-fields">
               {fields.map((f) => (
-                <a class="bm-fld" href={`/tools/bmi-calculator/#${f.id}`}>
+                <a class="bm-fld" href={L(`/tools/bmi-calculator/#${f.id}`)}>
                   <span class="bm-fld-l">{f.label} <output {...{ [f.o]: '' }}>{f.unit}</output></span>
                   <span class="bm-trk"><i data-t={f.key} style={`width:calc(${f.fill}% + 9px)`}></i><b data-k={f.key} style={`left:${f.fill}%`}></b></span>
                   <span class="bm-fld-go">{f.hint} →</span>
                 </a>
               ))}
             </div>
-            <a class="bm-sexpick" href="/tools/bmi-calculator/#sex" aria-label={t('Choose man or woman in the calculator')}><span data-sx="m" class="on">{t('Men')}</span><span data-sx="f">{t('Women')}</span></a>
+            <a class="bm-sexpick" href={L('/tools/bmi-calculator/#sex')} aria-label={t('Choose man or woman in the calculator')}><span data-sx="m" class="on">{t('Men')}</span><span data-sx="f">{t('Women')}</span></a>
             <div class="bm-scale" style={`--p:${r.marker}`}>
               <div class="bm-srow"><span class="bm-tag">{t('Global')}</span><div class="bm-bar">{bar(ZONES_GLOBAL).map((z) => <span class={z.c} style={`width:${z.w}%`}></span>)}</div></div>
               <div class="bm-srow"><span class="bm-tag" style="color:var(--brand)">{t('India')}</span><div class="bm-bar">{bar(ZONES_INDIA).map((z) => <span class={z.c} style={`width:${z.w}%`}></span>)}</div></div>
@@ -69,9 +69,9 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
               <div class="bm-marker" aria-hidden="true"></div>
             </div>
             <div class="bm-results">
-              <a class="bm-res" href="/tools/bmi-calculator/"><span class="bm-tag">BMI</span><b data-bmi>{r.bmi.toFixed(1)}</b><span class={`bm-state ${r.sBmi[1]}`} data-sbmi>{state(r.sBmi)}</span></a>
-              <a class="bm-res" href="/tools/bmi-calculator/#waist"><span class="bm-tag">{t('Waist ÷ height')}</span><b data-whtr>{r.whtr.toFixed(2)}</b><span class={`bm-state ${r.sWhtr[1]}`} data-swhtr>{state(r.sWhtr)}</span></a>
-              <a class="bm-res" href="/tools/bmi-calculator/#waist"><span class="bm-tag">{t('Waist')}</span><b data-waist>{p.wa} cm</b><span class={`bm-state ${r.sWaist[1]}`} data-swaist>{state(r.sWaist)}</span></a>
+              <a class="bm-res" href={L('/tools/bmi-calculator/')}><span class="bm-tag">BMI</span><b data-bmi>{r.bmi.toFixed(1)}</b><span class={`bm-state ${r.sBmi[1]}`} data-sbmi>{state(r.sBmi)}</span></a>
+              <a class="bm-res" href={L('/tools/bmi-calculator/#waist')}><span class="bm-tag">{t('Waist ÷ height')}</span><b data-whtr>{r.whtr.toFixed(2)}</b><span class={`bm-state ${r.sWhtr[1]}`} data-swhtr>{state(r.sWhtr)}</span></a>
+              <a class="bm-res" href={L('/tools/bmi-calculator/#waist')}><span class="bm-tag">{t('Waist')}</span><b data-waist>{p.wa} cm</b><span class={`bm-state ${r.sWaist[1]}`} data-swaist>{state(r.sWaist)}</span></a>
             </div>
             <p class="bm-fine"><T>An illustration that steps through example people. Tap any field to enter your own numbers. Screening only.</T> <a href={L('/disclaimer/')}>{t('Disclaimer')}</a></p>
           </div>
@@ -95,7 +95,7 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
         <div class="bm-stage scroll" data-scroll><div class="bm-list">
           {tools.map((t) => {
             const inner = <><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01"/></svg></span><span><b>{tr(t.title)}</b><small>{tr(t.text)}</small></span><span class:list={['bm-pchip', { ready: !!t.href }]}>{!t.href ? tr('Coming') : lang !== 'en' && !hasPage(lang, t.href) ? tr('In English') : tr('Ready')}</span></>;
-            return t.href ? <a class="bm-li" href={t.href}>{inner}</a> : <div class="bm-li">{inner}</div>;
+            return t.href ? <a class="bm-li" href={L(t.href)}>{inner}</a> : <div class="bm-li">{inner}</div>;
           })}
         </div></div>
       </article>

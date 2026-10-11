@@ -8,7 +8,7 @@ import { useT } from '../i18n/t';
 type Props = FieldOptions;
 // On a translated page the field's own words (screen-reader labels, "Switch to inches") are translated; the unit symbols stay.
 ---
-<Fragment set:html={unitFieldHTML(Astro.props, useT(Astro.url.pathname))} />
+<Fragment set:html={unitFieldHTML({ ...Astro.props, per: Astro.props.per && useT(Astro.url.pathname)(Astro.props.per) }, useT(Astro.url.pathname))} />
 
 <script>
   import { initUnitFields } from '../scripts/unit-fields';

@@ -81,7 +81,7 @@ try {
     const errs = errorsOf(page);
     // Hindi pages (preview builds, until Hindi is live): the same check.
     const hindi = (await fetch(BASE + '/hi/').then((r) => r.ok, () => false))
-      ? ['/hi/', '/hi/learn/', '/hi/learn/bmi-cut-offs-for-indians/', '/hi/learn/waist-to-height-ratio/', '/hi/blog/', '/hi/blog/interpretation-of-the-world/', '/hi/tools/', '/hi/books/', '/hi/videos/', '/hi/about/', '/hi/disclaimer/', '/hi/privacy/', '/hi/support/']
+      ? ['/hi/', '/hi/learn/', '/hi/learn/bmi-cut-offs-for-indians/', '/hi/learn/waist-to-height-ratio/', '/hi/blog/', '/hi/blog/interpretation-of-the-world/', '/hi/tools/', '/hi/tools/bmi-calculator/', '/hi/tools/activity-check/', '/hi/tools/indian-diabetes-risk-score/', '/hi/tools/stop-bang/', '/hi/books/', '/hi/videos/', '/hi/about/', '/hi/disclaimer/', '/hi/privacy/', '/hi/support/']
       : [];
     for (const url of [...hindi, '/', '/learn/', '/tools/', '/tools/bmi-calculator/', '/tools/stop-bang/', '/tools/indian-diabetes-risk-score/', '/books/', '/videos/', '/about/', '/doctors/', '/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/', '/doctors/books/', '/doctors/books/statistics-first-principles-to-regression/', '/doctors/videos/', '/support/', T, `${T}learn/`, `${T}learn/s3/`, `${T}learn/heart-and-lungs-together/`, `${T}practice/`, `${T}quiz/`, `${T}review/`, `${T}progress/`]) {
       const r = await page.goto(BASE + url);
@@ -135,6 +135,17 @@ try {
       [['#age', '30']], [['#age', '30'], ['#waist', '75'], ['act', 'vigorous'], ['fam', 'none']], [['#age', '42'], ['#waist', '85'], ['act', 'mild'], ['fam', 'one']],
       [['#age', '60'], ['#waist', '102'], ['act', 'none'], ['fam', 'both']], [['#age', '12']],
     ]],
+    ['/hi/tools/activity-check/', '.results', [
+      [['age', 'adult']], [['age', 'adult'], ['vig-d', '0'], ['mod-d', '2'], ['#mod-m', '20'], ['walk-d', '3'], ['#walk-m', '15'], ['str-d', '0'], ['#sit', '9']],
+      [['age', 'adult'], ['vig-d', '3'], ['#vig-m', '30'], ['mod-d', '5'], ['#mod-m', '40'], ['walk-d', '7'], ['#walk-m', '200'], ['str-d', '2']],
+      [['age', 'older'], ['vig-d', '0'], ['mod-d', '5'], ['#mod-m', '5'], ['walk-d', '7'], ['#walk-m', '40'], ['str-d', '1'], ['bal-d', '0']],
+      [['age', 'teen'], ['vig-d', '1'], ['#vig-m', '20'], ['mod-d', '1'], ['#mod-m', '20'], ['walk-d', '1'], ['#walk-m', '10'], ['d60', '2'], ['cv-d', '1'], ['str-d', '0'], ['#cscreen', '3']],
+      [['age', 'child'], ['d60', '6'], ['cv-d', '3'], ['str-d', '3'], ['#cscreen', '1']],
+      [['age', 'preschool'], ['#active', '120'], ['#mvpa', '30'], ['restr', '1'], ['#u5screen', '90'], ['#sleep', '9']],
+      [['age', 'toddler'], ['#active', '200'], ['restr', '0'], ['#u5screen', '0'], ['#sleep', '12']],
+      [['age', 'infant'], ['mobile', '0'], ['#tummy', '10'], ['play', '0'], ['restr', '1'], ['#u5screen', '20'], ['#sleep', '18']],
+      [['age', 'infant'], ['mobile', '1'], ['play', '1'], ['restr', '0'], ['#u5screen', '0'], ['#sleep', '14']],
+    ]],
     ['/hi/tools/stop-bang/', '.sb-results', [
       yes(''), yes('s'), yes('st'), yes('stog'), yes('stb'), yes('sta'), yes('ston'), yes('stbn'), yes('stopbang'), [['s', '1']],
     ]],
@@ -147,7 +158,7 @@ try {
       await page.goto(BASE + url);
       for (const steps of cases) {
         for (const [k, v] of steps) {
-          if (k.startsWith('#')) await page.fill(k, v);
+          if (k.startsWith('#')) { if (await page.isVisible(k)) await page.fill(k, v); } // a box hidden for this age is skipped
           else await page.evaluate(([n, val]) => { const r = document.querySelector(`input[name="${n}"][value="${val}"]`); r.checked = true; r.dispatchEvent(new Event('input', { bubbles: true })); r.dispatchEvent(new Event('change', { bubbles: true })); }, [k, v]);
         }
         const text = await page.evaluate((sel) => document.querySelector(sel)?.innerText ?? '', results);

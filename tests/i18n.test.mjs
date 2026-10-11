@@ -85,7 +85,7 @@ test('built Hindi pages: Hindi throughout, nothing left untranslated, linked to 
     assert.match(doc, /class="tr-note[^"]*"/, `${url} lacks the translation note`);
     assert.match(doc, new RegExp(`class="tr-note[\\s\\S]*?href="${en}"`), `${url}: the note links to the English page`);
     const text = visible(doc);
-    const runs = [...text.matchAll(/(?:\b[A-Za-z][A-Za-z'’-]*\b[ ,]+){3,}[A-Za-z][A-Za-z'’-]*/g)].map((m) => m[0].trim());
+    const runs = [...text.matchAll(/(?:\b[A-Za-z][A-Za-z'’-]+\b[ ,]+){3,}[A-Za-z][A-Za-z'’-]+/g)].map((m) => m[0].trim());
     assert.deepEqual(runs, [], `${url} has English text outside lang="en"`);
     for (const ban of glossary.banned) assert.doesNotMatch(text, new RegExp(ban.pattern), `${url}: ${ban.why}`);
     // Header: the mode switch in Hindi, For Everyone pointing to the Hindi home; the language menu offers English.
@@ -141,4 +141,37 @@ test('every For Everyone page has a Hindi page', { skip: !built && 'no Hindi pag
     .filter((u) => !u.startsWith('/doctors/') && !u.startsWith('/hi/') && !u.startsWith('/og/') && !ENGLISH_ONLY.some((r) => r.test(u)))
     .filter((u) => !existsSync(join(DIST, 'hi', u, 'index.html')));
   assert.deepEqual(missing, [], 'For Everyone pages without a Hindi version');
+});
+
+// A Hindi page links to the Hindi version of every page that has one: a reader who chose Hindi stays in Hindi.
+// Only the translation note's "Read in English" and the language menu point to English on purpose.
+test('Hindi pages link to Hindi pages wherever one exists', { skip: !built && 'no Hindi pages in this build' }, () => {
+  const wrong = [];
+  for (const f of pages(join(DIST, 'hi'))) {
+    const doc = readFileSync(f, 'utf8').replace(/<aside class="tr-note[\s\S]*?<\/aside>|<ul class="lang-list"[\s\S]*?<\/ul>|<link [^>]*>/g, '');
+    for (const [, href] of doc.matchAll(/href="(\/[^"#?]*)/g)) {
+      if (href.startsWith('/hi/') || href.startsWith('/_astro/') || href.startsWith('/og/') || /\.\w+$/.test(href)) continue;
+      if (existsSync(join(DIST, 'hi', href, 'index.html'))) wrong.push(`${urlOf(f)} -> ${href}`);
+    }
+  }
+  assert.deepEqual([...new Set(wrong)], []);
+});
+
+// The calculators show texts that their calculation libraries write in English (verdicts, labels); the page translates them
+// as it shows them. Every such text needs a Hindi entry, or the Hindi page would show it in English.
+// Internal values (ids, not shown) are listed here.
+const INTERNAL = new Set(['half height', ' (above the range)']);
+test('every text a calculation library shows has a Hindi translation', () => {
+  const dict = JSON.parse(readFileSync(join(ROOT, 'src/i18n/hi.json'), 'utf8'));
+  const libs = new Set();
+  for (const f of readdirSync(join(ROOT, 'src/pages/tools'))) {
+    for (const m of readFileSync(join(ROOT, 'src/pages/tools', f), 'utf8').matchAll(/'(\/src\/lib\/[\w-]+\.ts)'/g)) libs.add(m[1]);
+  }
+  assert.ok(libs.size >= 4, `only ${libs.size} calculation libraries found`);
+  const missing = [];
+  for (const lib of libs) {
+    const src = readFileSync(join(ROOT, lib), 'utf8');
+    for (const [, s] of src.matchAll(/'((?:\\.|[^'\\\n])*)'/g)) if (/[A-Za-z]{3,} [A-Za-z]/.test(s) && !INTERNAL.has(s) && !(s in dict)) missing.push(`${lib}: ${s}`);
+  }
+  assert.deepEqual([...new Set(missing)], []);
 });

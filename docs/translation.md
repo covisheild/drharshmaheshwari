@@ -9,13 +9,13 @@ Plan agreed with Harsh on 11 Oct 2026. Phase 1 (Hindi) is built; other languages
 - **One small language button** in the header (globe + `EN` / `हिं`), on For Everyone pages only. It opens a list of languages in
   their own script; each links to the same page in that language, or to that language's home page when the page is not translated.
 - **English is the original.** Every translated page says so, links to the English page, and offers "Report a translation error".
-- **What is translated:** For Everyone: home, Learn (guides), Blog, Tools list, Books list, Videos list, About, Disclaimer, Privacy,
-  Support, and the header and footer.
+- **What is translated:** every For Everyone page: home, Learn (guides), Blog, Tools and **every calculator, results included** (BMI,
+  Activity check, IDRS, STOP-Bang), Books list, Videos list, About, Disclaimer, Privacy, Support, and the header and footer
+  (Harsh, 11 Oct 2026: "Hindi support is not there in tools / calculators / blogs / guides").
 - **What stays English:** For Doctors (all of it), every book and the book reader, references and publications (citations), the
-  account page, RSS and `llms.txt`, and for now the calculators (`/tools/bmi-calculator/`, `/tools/activity-check/`,
-  `/tools/stop-bang/`). The calculators were being changed every day when Phase 1 was built, and STOP-Bang and IPAQ are validated
-  questionnaires: a translated questionnaire is a different instrument until it has been validated, so only an already-validated
-  Hindi version should be used. Translated pages mark links to English-only pages "अंग्रेज़ी में" (in English).
+  account page, RSS and `llms.txt`. Translated pages mark links to English-only pages "अंग्रेज़ी में" (in English).
+- **Validated questionnaires** (STOP-Bang, IPAQ short form, IDRS): their Hindi wording here is this site's AI translation, not a
+  published validated Hindi version. If a validated Hindi version is adopted later, its wording replaces ours in `hi.json`.
 - **Register:** everyday spoken language a family would use, not textbook Sanskritised/Persianised words. Common English health
   words stay as people say them (BMI, ब्लड शुगर, डायबिटीज़). Digits 0-9 only (never Devanagari digits): medical numbers must read
   the same in every language. Units as in English.
@@ -34,6 +34,7 @@ Plan agreed with Harsh on 11 Oct 2026. Phase 1 (Hindi) is built; other languages
 | Languages, `langOf()`, live flag, label | `src/i18n/languages.ts` |
 | Which pages exist in which language, links | `src/i18n/routes.ts` (`LOCAL_PAGES`, `localHref`, `hasPage`) |
 | Words of pages, header, footer | `src/i18n/<lang>.json`: English text → translation. `t('...')` in code, `<T>...</T>` around inline HTML |
+| Words a page script shows (calculator results) | `w('...')` (`src/i18n/client.ts`); `<ClientWords sources={[...]}>` sends the translations of every `w('...')` in the listed files, of the unit fields, and of every library text that has an entry |
 | Guides and blog posts | `src/content/i18n/<lang>/<collection>/<slug>.md` (collection `translations`) |
 | Routes | `src/pages/[lang]/...`: each imports the English page; the page reads the language from the URL |
 | Glossary, banned words | `src/i18n/glossary/<lang>.json` |
@@ -89,7 +90,7 @@ automated check, a stricter comparison prompt) before publishing any other langu
 | Phase | Status |
 |---|---|
 | 1. Machinery + Hindi | Built 11 Oct 2026, preview only. Waiting for Harsh's reading (calibration). |
-| 1b. Calculators in Hindi | BMI calculator once it settles; STOP-Bang/IPAQ only from validated Hindi versions |
+| 1b. Calculators in Hindi | Done 11 Oct 2026: BMI, Activity check, IDRS, STOP-Bang, with their results |
 | 2. Pilot: Bengali, Marathi, Tamil | After Hindi calibration |
 | 3. Telugu, Gujarati, Kannada, Malayalam, Odia, Punjabi, Assamese | |
 | 4. Urdu (right to left) | |

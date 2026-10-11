@@ -28,11 +28,16 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 
 ## Languages (`/hi/`): plan and pipeline in `docs/translation.md`
 
-- The URL decides the language like the mode: `/hi/...` is Hindi (`src/i18n/languages.ts`, `langOf`). For Everyone pages only; For Doctors,
-  books, references, the account page and (for now) the calculators stay English. Language button in the header (`LangSwitch.astro`).
+- The URL decides the language like the mode: `/hi/...` is Hindi (`src/i18n/languages.ts`, `langOf`). **Every For Everyone page has a Hindi page**,
+  calculators included (`tests/i18n.test.mjs` fails on one without; exceptions: account page, single book pages). For Doctors, books and
+  references stay English. Language button in the header (`LangSwitch.astro`). On a Hindi page every link to a page that has a Hindi version
+  goes to it (`localHref()`; tested).
 - Hindi is `live: false`: built only on preview builds until Harsh approves it. Harsh reads Hindi; every other language relies on the
   AI pipeline only (automated checks + independent back-translation), never on colleagues.
-- Words: `src/i18n/hi.json` (English text → Hindi; `t()` / `<T>`). Guides: `src/content/i18n/hi/<collection>/<slug>.md` with the English
+- Words: `src/i18n/hi.json` (English text → Hindi; `t()` / `<T>` on the page; in a page script `w('Whole sentence with {placeholders}', vars)`
+  from `src/i18n/client.ts`, with `<ClientWords sources={[page, lib]} />` on the page: never build a shown sentence from pieces or template literals).
+  A calculation library's English texts are translated where the page shows them; each needs a dictionary entry (tested). `npm run test:e2e`
+  fills every Hindi calculator and fails on English in the results. Guides: `src/content/i18n/hi/<collection>/<slug>.md` with the English
   file's fingerprint (`npm run i18n:status`). Changed English shows as English until retranslated; never ship a stale medical translation.
 - **Whenever English text on a For Everyone page changes, update its translations in the same commit**: `WORKERS_CI_BRANCH=preview npm run build`,
   `npm run i18n:missing -- hi --json`, translate with the glossary (`src/i18n/glossary/hi.json`), `npm run i18n:check`, back-translate
