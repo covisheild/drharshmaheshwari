@@ -273,7 +273,7 @@ test('Clinical Medicine is shown as in preparation, without a link, until it has
 });
 
 test('units: every number box on the site converts its unit on a click (UnitField), or is marked as having no unit', () => {
-  // Rule in CLAUDE.md ("Units in tools"): a typed number with a unit (cm, kg, minutes, hours...) uses
+  // Rule in CLAUDE.md ("Units everywhere"): a typed number with a unit (cm, kg, minutes, hours...) uses
   // src/components/UnitField.astro, whose boxes carry data-uf. Counts and units with nothing to convert to
   // (age in years, days, rupees, a percentage) carry data-unitless.
   const bad = [];

@@ -1,7 +1,7 @@
 // Wires every UnitField (src/components/UnitField.astro): clicking the unit converts what is typed into the next unit.
 // State lives on the element (data-unit, data-base), not in this module, so a page script that imports
 // unitValue() reads the same thing even if the bundler gives it its own copy of this file.
-import { KINDS, LABEL, NAME, nextUnit, toDisplay, fromDisplay, type Kind, type UnitId } from '../lib/units';
+import { KINDS, LABEL, NAME, nextUnit, toDisplay, fromDisplay, unitFieldHTML, type FieldOptions, type Kind, type UnitId } from '../lib/units';
 
 // The unit a person last chose for each kind (height, weight...) is remembered in this browser only, so every
 // tool opens in it next time. Only the unit is kept, never a number typed. Storage can be missing or blocked: then
@@ -73,6 +73,16 @@ function wire(root: HTMLElement) {
   root.closest('form')?.addEventListener('reset', () => setTimeout(() => { root.dataset.base = ''; }));
 }
 
-export function initUnitFields() {
-  for (const root of document.querySelectorAll<HTMLElement>('[data-unit-field]')) wire(root);
+export function initUnitFields(scope: ParentNode = document) {
+  for (const root of scope.querySelectorAll<HTMLElement>('[data-unit-field]')) wire(root);
+}
+
+/** A unit field for a screen built in the browser (a trainer question, a tracker entry): same markup, styles and
+ *  behaviour as UnitField.astro. Put it in the page, then read it with unitValue(id). */
+export function createUnitField(o: FieldOptions): HTMLElement {
+  const t = document.createElement('template');
+  t.innerHTML = unitFieldHTML(o);
+  const root = t.content.firstElementChild as HTMLElement;
+  wire(root);
+  return root;
 }

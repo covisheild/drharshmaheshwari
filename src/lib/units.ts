@@ -1,7 +1,7 @@
 // Units for every number a person types in a tool: clicking the unit converts what is already typed
 // (cm ⇄ in, cm ⇄ ft + in for height, kg ⇄ lb, min ⇄ h). Plain functions, no page code (tests/units.test.mjs).
-// The field itself is src/components/UnitField.astro; calculators read the value in the base unit with
-// unitValue() from src/scripts/unit-fields.ts. Rule in CLAUDE.md ("Units in tools").
+// The field is src/components/UnitField.astro on built pages, or createUnitField() (src/scripts/unit-fields.ts) on
+// screens built in the browser (trainers, trackers); either way the page reads the base unit with unitValue(). Rule in CLAUDE.md ("Units everywhere").
 
 export type UnitId = 'cm' | 'in' | 'ftin' | 'kg' | 'lb' | 'min' | 'h';
 export type Kind = 'height' | 'length' | 'weight' | 'minutes' | 'hours';
@@ -51,4 +51,29 @@ export function fromDisplay(values: string[], kind: Kind, unit: UnitId): number 
     ref = ((Number.isFinite(n[0]) ? n[0] : 0) * 12 + (Number.isFinite(n[1]) ? n[1] : 0)) * 2.54;
   } else ref = n[0] * SIZE[unit];
   return ref / SIZE[baseOf(kind) as Exclude<UnitId, 'ftin'>];
+}
+
+export interface FieldOptions {
+  id: string;          // id of the main box (the inches box of ft + in is `${id}-in`)
+  kind: Kind;
+  label: string;       // what the number is, for screen readers: "Height", "Walking: time a day"
+  placeholder: number; // in the base unit; converted with the unit
+  per?: string;        // shown after the unit, e.g. "/day"
+}
+
+const esc = (v: string | number) => String(v).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+
+/** The HTML of a unit field, shared by UnitField.astro (built pages) and createUnitField() (screens built in the browser,
+ *  such as trainers and trackers), so both look and behave the same. Styles: src/styles/units.css (loaded on every page). */
+export function unitFieldHTML({ id, kind, label, placeholder, per = '' }: FieldOptions): string {
+  const [unit, next] = KINDS[kind];
+  const ftin = KINDS[kind].includes('ftin');
+  const box = (boxId: string, aria: string, ph: string) =>
+    `<input data-uf type="number" inputmode="decimal" step="any" min="0" autocomplete="off" id="${esc(boxId)}" placeholder="${esc(ph)}" aria-label="${esc(aria)}" />`;
+  return `<div class="uf" data-unit-field data-kind="${kind}" data-unit="${unit}" data-ph="${esc(placeholder)}" data-per="${esc(per)}" data-label="${esc(label)}">`
+    + `<div class="uf-box">${box(id, `${label} in ${NAME[unit]}`, toDisplay(placeholder, kind, unit)[0])}`
+    + `<button type="button" class="uf-unit" title="Switch to ${NAME[next]}" aria-label="Unit: ${NAME[unit]}. Switch to ${NAME[next]}">`
+    + `<span class="uf-label">${LABEL[unit]}${esc(per)}</span><span class="uf-swap" aria-hidden="true">⇄</span></button></div>`
+    + (ftin ? `<div class="uf-box" hidden>${box(`${id}-in`, `${label}: inches`, '')}<span class="uf-fixed">in</span></div>` : '')
+    + '</div>';
 }

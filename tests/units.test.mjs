@@ -1,7 +1,7 @@
 // Unit tests for the unit conversions behind every UnitField (src/lib/units.ts).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { KINDS, nextUnit, toDisplay, fromDisplay, toFtIn, show } from '../src/lib/units.ts';
+import { KINDS, nextUnit, toDisplay, fromDisplay, toFtIn, show, unitFieldHTML } from '../src/lib/units.ts';
 
 test('each kind starts with its base unit and a click cycles through its units', () => {
   assert.deepEqual(Object.fromEntries(Object.entries(KINDS).map(([k, u]) => [k, u[0]])), { height: 'cm', length: 'cm', weight: 'kg', minutes: 'min', hours: 'h' });
@@ -41,4 +41,35 @@ test('empty stays empty; shown values have no trailing zeros', () => {
   assert.deepEqual(toDisplay(NaN, 'weight', 'lb'), ['']);
   assert.ok(Number.isNaN(fromDisplay([''], 'weight', 'kg')));
   assert.equal(show(65.0, 'in'), '65'); assert.equal(show(1.50, 'h'), '1.5');
+});
+
+test('the field markup is one source for built pages and browser-built screens (trainers, trackers)', () => {
+  const h = unitFieldHTML({ id: 'hcm', kind: 'height', label: 'Height', placeholder: 165 });
+  assert.match(h, /data-unit-field data-kind="height" data-unit="cm"/);
+  assert.equal((h.match(/<input data-uf /g) ?? []).length, 2, 'height has a feet box and an inches box');
+  assert.match(h, /id="hcm-in"/);
+  const m = unitFieldHTML({ id: 'x', kind: 'minutes', label: 'A "quoted" <label>', placeholder: 30, per: '/day' });
+  assert.match(m, /<span class="uf-label">min\/day<\/span>/);
+  assert.doesNotMatch(m, /"quoted"|<label>/, 'attribute text is escaped');
+});
+
+// Rule (CLAUDE.md, "Units everywhere"): no number box anywhere in the source, including screens that trainers and
+// trackers build in the browser, may skip the unit field. A box with nothing to convert says so with data-unitless.
+test('source guard: every number box in src/ is a unit field or marked data-unitless', async () => {
+  const { readdirSync, readFileSync, statSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const files = [];
+  const walk = (d) => { for (const n of readdirSync(d)) { const f = join(d, n); statSync(f).isDirectory() ? walk(f) : /\.(astro|ts|tsx|js|mjs|html)$/.test(n) && files.push(f); } };
+  walk(new URL('../src/', import.meta.url).pathname);
+  const bad = [];
+  for (const f of files) {
+    const text = readFileSync(f, 'utf8');
+    for (const tag of text.match(/<input\b[^>]*>/g) ?? []) {
+      if (/type=["'{]?number/.test(tag) && !/data-(uf|unitless)\b/.test(tag)) bad.push(`${f}: ${tag.slice(0, 100)}`);
+    }
+    text.split('\n').forEach((line, i) => {
+      if (/\.type\s*=\s*['"]number['"]|type:\s*['"]number['"]|setAttribute\(\s*['"]type['"]\s*,\s*['"]number['"]/.test(line) && !/unitless/.test(line)) bad.push(`${f}:${i + 1}: ${line.trim().slice(0, 100)}`);
+    });
+  }
+  assert.deepEqual(bad, [], 'use UnitField / createUnitField, or add data-unitless if the number has no unit to convert');
 });
