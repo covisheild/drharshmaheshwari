@@ -53,7 +53,8 @@ export function checkPair(en, tr, glossary, { lang = 'hi', exempt = [] } = {}) {
   const plainEn = (glossary.names ?? []).reduce((t, n) => t.split(n).join(' '), strip(en));
   for (const term of glossary.terms) {
     if (exempt.includes(term.en) || !termRe(term.en).test(plainEn)) continue;
-    if (!term.hi.some((h) => fold(tr).includes(fold(h)))) errors.push(`glossary: "${term.en}" must be translated as ${term.hi.map((h) => `"${h}"`).join(' or ')}`);
+    const ok = term[lang] ?? term.tr; // the accepted forms: keyed by the language code (hi.json) or "tr"
+    if (!ok.some((h) => fold(tr).includes(fold(h)))) errors.push(`glossary: "${term.en}" must be translated as ${ok.map((h) => `"${h}"`).join(' or ')}`);
   }
   for (const ban of glossary.banned) if (new RegExp(ban.pattern).test(strip(tr, false))) errors.push(`banned word /${ban.pattern}/: ${ban.why}`);
   for (const run of latinRuns(tr)) errors.push(`untranslated English: "${run}"`);
