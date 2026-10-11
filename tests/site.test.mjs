@@ -105,7 +105,9 @@ test('header navigation stays inside the current mode', () => {
     }
   }
   assert.deepEqual(navHrefs(html.get('/doctors/')), ['/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/', '/doctors/books/', '/doctors/videos/']);
-  assert.deepEqual(navHrefs(html.get('/')), ['/learn/', '/tools/', '/books/', '/videos/', '/blog/', '/about/']);
+  assert.deepEqual(navHrefs(html.get('/')), ['/learn/', '/tools/', '/blog/', '/about/']);
+  // For Everyone books and videos are reached from Learn, not the header.
+  for (const h of ['/books/', '/videos/']) assert.match(html.get('/learn/'), new RegExp(`<a class="card[^"]*" href="${h}"`), `/learn/ should link to ${h}`);
 });
 
 test('no internal link is broken', () => {

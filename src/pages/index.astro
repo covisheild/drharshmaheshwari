@@ -81,7 +81,7 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
         </div></div>
       </article>
       <article class="bcard reveal"><h3>Tools built on Indian cut-offs</h3><p>Calculators and risk scores that use the numbers that fit Indian bodies.</p>
-        <div class="bm-stage"><div class="bm-list">
+        <div class="bm-stage scroll" data-scroll><div class="bm-list">
           {tools.map((t) => {
             const inner = <><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01"/></svg></span><span><b>{t.title}</b><small>{t.text}</small></span><span class:list={['bm-pchip', { ready: !!t.href }]}>{t.href ? 'Ready' : 'Coming'}</span></>;
             return t.href ? <a class="bm-li" href={t.href}>{inner}</a> : <div class="bm-li">{inner}</div>;
@@ -115,4 +115,11 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
 
 <script>
   import '../scripts/home-demo';
+  // The tools box scrolls; its bottom fade shows only while more tools are below.
+  for (const box of document.querySelectorAll<HTMLElement>('[data-scroll]')) {
+    const update = () => box.classList.toggle('at-end', box.scrollTop + box.clientHeight >= box.scrollHeight - 4);
+    box.addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update);
+    update();
+  }
 </script>

@@ -1,4 +1,26 @@
 ---
 import ArticleList from '../../components/ArticleList.astro';
+import { books } from '../../lib/content';
+import videos from '../../data/videos.json';
+
+// Books and videos for everyone are reached from here (they are not in the header).
+const bookCount = (await books('everyone')).length;
+const videoCount = videos.filter((v) => v.mode === 'everyone').length;
+const more = [
+  { href: '/books/', label: 'Books', text: 'Full-length books on weight, food and health for families. Read and download the PDF.', count: bookCount ? `${bookCount} book${bookCount > 1 ? 's' : ''}` : 'Being written' },
+  { href: '/videos/', label: 'Videos', text: 'Short explainers on weight, food, activity and the diseases that follow obesity.', count: videoCount ? `${videoCount} video${videoCount > 1 ? 's' : ''}` : 'In production' },
+];
 ---
-<ArticleList collection="learn" title="Learn about obesity" intro="Plain-language guides on weight, food, activity, sleep and the diseases that follow obesity — written for Indian families and kept up to date with the evidence." empty="The first guides are being written. Check back soon." />
+<ArticleList collection="learn" title="Learn about obesity" intro="Plain-language guides on weight, food, activity, sleep and the diseases that follow obesity — written for Indian families and kept up to date with the evidence." empty="The first guides are being written. Check back soon.">
+  <div class="wrap" style="padding-bottom:2rem">
+    <div class="grid">
+      {more.map((m) => (
+        <a class="card reveal" href={m.href}>
+          <span class="eyebrow">{m.count}</span>
+          <h3>{m.label}</h3><p>{m.text}</p>
+          <span class="more">Open {m.label.toLowerCase()} →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</ArticleList>
