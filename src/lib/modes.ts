@@ -41,8 +41,6 @@ export const MODES: Record<Mode, ModeInfo> = {
       { href: '/doctors/evidence/', label: 'Evidence' },
       { href: '/doctors/trainers/', label: 'Trainers' },
       { href: '/doctors/tools/', label: 'Tools' },
-      { href: '/doctors/books/', label: 'Books' },
-      { href: '/doctors/videos/', label: 'Videos' },
     ],
     footer: [
       { title: 'Practice', links: [{ href: '/doctors/trainers/', label: 'Clinical trainers' }, { href: '/doctors/tools/', label: 'Clinical tools' }] },

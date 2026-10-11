@@ -104,7 +104,8 @@ test('header navigation stays inside the current mode', () => {
       else assert.ok(!h.startsWith('/doctors/'), `${url}: everyone nav links to ${h}`);
     }
   }
-  assert.deepEqual(navHrefs(html.get('/doctors/')), ['/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/', '/doctors/books/', '/doctors/videos/']);
+  assert.deepEqual(navHrefs(html.get('/doctors/')), ['/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/']);
+  for (const h of ['/doctors/books/', '/doctors/videos/']) assert.match(html.get('/doctors/evidence/'), new RegExp(`<a class="card[^"]*" href="${h}"`), `/doctors/evidence/ should link to ${h}`);
   assert.deepEqual(navHrefs(html.get('/')), ['/learn/', '/tools/', '/blog/', '/about/']);
   // For Everyone books and videos are reached from Learn, not the header.
   for (const h of ['/books/', '/videos/']) assert.match(html.get('/learn/'), new RegExp(`<a class="card[^"]*" href="${h}"`), `/learn/ should link to ${h}`);

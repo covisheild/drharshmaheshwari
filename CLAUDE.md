@@ -8,7 +8,9 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 - The URL decides the mode: `/` and everything not under `/doctors/` is **For Everyone**; `/doctors/...` is **For Doctors**.
   Nothing about the mode is stored in the browser. Use these exact labels; never "General".
 - `src/lib/modes.ts` holds each mode's label, home, navigation and footer. `Base.astro` sets `<html data-mode>` from the URL.
-- Each mode has its own Books, Videos, Tools and Trainers. Content carries its mode: books have `mode:` in frontmatter
+- Each mode has its own Books, Videos, Tools and Trainers. Books and Videos are not in the header (Harsh, 11 Oct 2026): they are reached from cards at the top of
+  Learn (`/learn/`) and Evidence (`/doctors/evidence/`), `MoreCards.astro`, and from the footer. Both home pages show a Blog card instead of books; the
+  For Everyone home lists the tools in a box that scrolls inside its card. Content carries its mode: books have `mode:` in frontmatter
   (`everyone` → `/books/<slug>/`, `doctors` → `/doctors/books/<slug>/`); videos have `mode` in `src/data/videos.json`;
   tools are listed in `src/data/tools.ts`; trainers in `src/trainers/registry.ts`. Evidence articles (`src/content/clinicians/`)
   are published at `/doctors/evidence/<slug>/`.
@@ -122,7 +124,7 @@ local devDependency. Change production settings only on purpose; preview-only se
   `src/data/book-shelves.ts` (Public Health, Clinical Medicine), all drawn by `CollectionCard.astro`. A book joins a shelf with `shelf: <slug>` in its
   `src/content/books/<slug>.md`; the shelf card then opens `/doctors/books/<shelf>/` (`ShelfPage.astro`, covers in a row, same layout as the series page)
   and the cover opens the reader. A shelf with no book yet shows "In preparation" and no link; its first book turns it on. Shelf slugs are permanent
-  and must differ from every book slug (the build stops if not). The home page's For Doctors section shows the same shelves. New subject = add one entry.
+  and must differ from every book slug (the build stops if not). New subject = add one entry.
 - **Never write "free" about the books, datasets or PDFs** (Harsh, 6 Oct 2026: it should feel premium). Say "Read online", "Download the PDF". The licence
   line ("CC BY-NC-SA 4.0 ... free to copy, share and adapt") and `/disclaimer/` and `/support/` keep their wording; `tests/site.test.mjs` checks the book pages.
 - **One reader for every book, no landing page in front of it.** A book with text on the site opens straight in the reader from its card;
