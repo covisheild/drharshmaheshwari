@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import UnitField from '../../components/UnitField.astro';
 import { SITE } from '../../consts';
 
 const url = `${SITE.url}/tools/indian-diabetes-risk-score/`;
@@ -36,7 +37,7 @@ const jsonld = [
     <form class="calc card" id="idrs" novalidate>
       <fieldset>
         <legend>1. Your age</legend>
-        <div class="row"><label class="field"><input type="number" inputmode="numeric" id="age" min="18" max="110" placeholder="42" aria-label="Age in years" /><span>years</span></label></div>
+        <div class="row"><label class="field"><input type="number" data-unitless inputmode="numeric" id="age" min="18" max="110" placeholder="42" aria-label="Age in years" /><span>years</span></label></div>
       </fieldset>
 
       <fieldset>
@@ -45,8 +46,8 @@ const jsonld = [
           <label><input type="radio" name="sex" value="m" checked /> <span>Man</span></label>
           <label><input type="radio" name="sex" value="f" /> <span>Woman</span></label>
         </div>
-        <div class="row"><label class="field"><input type="number" inputmode="decimal" id="waist" min="40" max="200" placeholder="88" aria-label="Waist in centimetres" /><span>cm</span></label></div>
-        <p class="small muted" style="margin:.5rem 0 0">Midway between the lowest rib and the top of the hip bone, after breathing out. Inches × 2.54 = cm.</p>
+        <div class="row"><UnitField id="waist" kind="length" label="Waist" placeholder={88} /></div>
+        <p class="small muted" style="margin:.5rem 0 0">Midway between the lowest rib and the top of the hip bone, after breathing out. Tap the unit to switch between cm and inches.</p>
       </fieldset>
 
       <fieldset>
@@ -182,6 +183,7 @@ const jsonld = [
 </style>
 
 <script>
+  import { unitValue } from '../../scripts/unit-fields';
   import { idrs, type Activity, type Family, type Sex } from '../../lib/idrs';
 
   const $ = (id: string) => document.getElementById(id)!;
@@ -196,7 +198,7 @@ const jsonld = [
   } as const;
 
   function update() {
-    const age = num('age'), waist = num('waist');
+    const age = num('age'), waist = unitValue('waist');
     const sex = picked('sex') as Sex, activity = picked('act') as Activity | undefined, family = picked('fam') as Family | undefined;
     const ready = age >= 18 && age <= 110 && waist >= 40 && waist <= 200 && activity && family;
     const verdict = $('verdict'), parts = $('parts');

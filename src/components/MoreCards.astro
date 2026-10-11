@@ -1,0 +1,17 @@
+---
+// Cards at the top of a reading section (Learn, Evidence) for the sections that are not in the header: Books and Videos.
+interface Item { href: string; label: string; text: string; count: string }
+interface Props { items: Item[] }
+const { items } = Astro.props;
+---
+<div class="wrap" style="padding-bottom:2rem">
+  <div class="grid">
+    {items.map((m) => (
+      <a class="card reveal" href={m.href}>
+        <span class="eyebrow">{m.count}</span>
+        <h3>{m.label}</h3><p>{m.text}</p>
+        <span class="more">Open {m.label.toLowerCase()} →</span>
+      </a>
+    ))}
+  </div>
+</div>

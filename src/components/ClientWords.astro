@@ -1,0 +1,21 @@
+---
+// The words a page's script shows, in the page's language (src/i18n/client.ts). Every w('...') call in the listed source
+// files, and every `label: '...'` in them (the calculation libraries' verdicts), is looked up in the dictionary. Nothing on
+// English pages. A word with no translation is sent marked (src/i18n/t.ts), so `npm run i18n:missing` and the tests find it.
+import { langOf } from '../i18n/languages';
+import { translate } from '../i18n/t';
+
+interface Props { sources: string[] }
+const lang = langOf(Astro.url.pathname);
+const RAW = import.meta.glob(['/src/pages/**/*.astro', '/src/lib/*.ts', '/src/scripts/*.ts', '/src/components/**/*.astro'], { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+const unq = (s: string) => s.replace(/\\(['"`\\])/g, '$1');
+const keys = new Set<string>();
+for (const src of Astro.props.sources) {
+  const raw = RAW[src];
+  if (raw === undefined) throw new Error(`ClientWords: no source ${src}`);
+  for (const m of raw.matchAll(/\bw\(\s*(?:'((?:\\.|[^'\\])*)'|"((?:\\.|[^"\\])*)"|`((?:\\.|[^`\\$])*)`)/g)) keys.add(unq(m[1] ?? m[2] ?? m[3]));
+  for (const m of raw.matchAll(/\blabel: (?:'((?:\\.|[^'\\])*)'|"((?:\\.|[^"\\])*)")/g)) keys.add(unq(m[1] ?? m[2]));
+}
+const words = lang === 'en' ? null : JSON.stringify(Object.fromEntries([...keys].map((k) => [k, translate(lang, k)]))).replace(/</g, '\\u003c');
+---
+{words && <script is:inline type="application/json" id="i18n-words" set:html={words} />}

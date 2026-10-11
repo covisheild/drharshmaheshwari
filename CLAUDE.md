@@ -8,7 +8,9 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 - The URL decides the mode: `/` and everything not under `/doctors/` is **For Everyone**; `/doctors/...` is **For Doctors**.
   Nothing about the mode is stored in the browser. Use these exact labels; never "General".
 - `src/lib/modes.ts` holds each mode's label, home, navigation and footer. `Base.astro` sets `<html data-mode>` from the URL.
-- Each mode has its own Books, Videos, Tools and Trainers. Content carries its mode: books have `mode:` in frontmatter
+- Each mode has its own Books, Videos, Tools and Trainers. Books and Videos are not in the header (Harsh, 11 Oct 2026): they are reached from cards at the top of
+  Learn (`/learn/`) and Evidence (`/doctors/evidence/`), `MoreCards.astro`, and from the footer. Both home pages show a Blog card instead of books; the
+  For Everyone home lists the tools in a box that scrolls inside its card. Content carries its mode: books have `mode:` in frontmatter
   (`everyone` → `/books/<slug>/`, `doctors` → `/doctors/books/<slug>/`); videos have `mode` in `src/data/videos.json`;
   tools are listed in `src/data/tools.ts`; trainers in `src/trainers/registry.ts`. Evidence articles (`src/content/clinicians/`)
   are published at `/doctors/evidence/<slug>/`.
@@ -135,7 +137,7 @@ local devDependency. Change production settings only on purpose; preview-only se
   `src/data/book-shelves.ts` (Public Health, Clinical Medicine), all drawn by `CollectionCard.astro`. A book joins a shelf with `shelf: <slug>` in its
   `src/content/books/<slug>.md`; the shelf card then opens `/doctors/books/<shelf>/` (`ShelfPage.astro`, covers in a row, same layout as the series page)
   and the cover opens the reader. A shelf with no book yet shows "In preparation" and no link; its first book turns it on. Shelf slugs are permanent
-  and must differ from every book slug (the build stops if not). The home page's For Doctors section shows the same shelves. New subject = add one entry.
+  and must differ from every book slug (the build stops if not). New subject = add one entry.
 - **Never write "free" about the books, datasets or PDFs** (Harsh, 6 Oct 2026: it should feel premium). Say "Read online", "Download the PDF". The licence
   line ("CC BY-NC-SA 4.0 ... free to copy, share and adapt") and `/disclaimer/` and `/support/` keep their wording; `tests/site.test.mjs` checks the book pages.
 - **One reader for every book, no landing page in front of it.** A book with text on the site opens straight in the reader from its card;
@@ -243,6 +245,24 @@ local devDependency. Change production settings only on purpose; preview-only se
   Walking counts towards the target minutes; the 10-minute rule applies only to the IPAQ score; screen time and sleep are checked only under 5.
   Words: "Reached" / "Not yet", never "inactive". Clinical wording: Harsh reviews before `main`.
 
+## Units everywhere: tools, calculators, trainers, trackers (Harsh, 11 Oct 2026)
+
+- **Every number a person types that has a unit converts on a click of its unit**, so nobody calculates by hand. This applies to
+  every calculator, tool, trainer and tracker, present and future, For Everyone and For Doctors alike.
+- On a built page use `src/components/UnitField.astro`; on a screen built in the browser (a trainer question, a tracker entry) use
+  `createUnitField()` from `src/scripts/unit-fields.ts`. Both come from one markup source (`unitFieldHTML()` in `src/lib/units.ts`)
+  and one stylesheet (`src/styles/units.css`, loaded on every page by `Base.astro`), so they look and behave the same.
+- Kinds (`src/lib/units.ts`): `height` cm ⇄ ft + in, `length` (waist, neck) cm ⇄ in, `weight` kg ⇄ lb, `minutes` min ⇄ h,
+  `hours` h ⇄ min; `per="/day"` adds a suffix. The first unit is the base: the page reads `unitValue(id)` and always gets cm, kg, min
+  or h, whatever the person chose. Switching back and forth keeps the exact value (no rounding drift). A measure not yet covered
+  (blood pressure mmHg ⇄ kPa, glucose mg/dL ⇄ mmol/L, temperature °C ⇄ °F, distance km ⇄ miles...) is added to `units.ts` as a new
+  kind, with tests in `tests/units.test.mjs`, before the tool that needs it is built.
+- The unit last chosen for each kind is remembered in the browser (`localStorage` `units:v1`, only the unit, never a number;
+  `/privacy/` says so), so every tool, trainer and tracker opens in it next time.
+- A number with nothing to convert (age in years, days, a count, rupees, a percentage, a score) gets `data-unitless`.
+  Two guards: `tests/units.test.mjs` scans all of `src/` (including number boxes made in scripts) and `tests/site.test.mjs` scans
+  every built page; both fail on a number box that is neither a unit field nor `data-unitless`.
+
 ## Drafts
 
 `draft: true` in frontmatter shows the page on local dev and Cloudflare preview builds (any branch other than `main`,
@@ -261,6 +281,7 @@ via `WORKERS_CI_BRANCH`, read in `astro.config.mjs`) and hides it on production.
 ## Rules
 
 - NMC conduct: no testimonials, patient details, fees, appointment booking, superlatives, or "specialist" claims.
+- **Units convert on a click** everywhere a number with a unit is typed (see "Units everywhere" above).
 - **India first** (Harsh, 11 Oct 2026): every tool and article uses Indian cut-offs and Indian charts; WHO or other international ones only where no Indian one exists, and the page says so.
 - Indian cut-offs: BMI overweight 23–24.9, obesity ≥25; waist ≥90 cm men / ≥80 cm women; WHtR risk from 0.5.
 - Never change a published URL (slug). Hindi pages live under `/hi/` with the English slug (`docs/translation.md`).

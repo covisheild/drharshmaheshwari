@@ -1,4 +1,15 @@
 ---
 import ArticleList from '../../../components/ArticleList.astro';
+import MoreCards from '../../../components/MoreCards.astro';
+import videos from '../../../data/videos.json';
+
+// Books and lectures for doctors are reached from here (they are not in the header).
+const videoCount = videos.filter((v) => v.mode === 'doctors').length;
+const more = [
+  { href: '/doctors/books/', label: 'Books', text: 'The Obesity Expertise series and books on public health, statistics and clinical medicine. Read online or download the PDF.', count: 'Read online' },
+  { href: '/doctors/videos/', label: 'Lectures', text: 'Video lectures on obesity, its complications and research methods.', count: videoCount ? `${videoCount} lecture${videoCount > 1 ? 's' : ''}` : 'In production' },
+];
 ---
-<ArticleList collection="clinicians" title="Evidence for doctors" intro="Evidence syntheses on obesity and its complications for doctors and health professionals: what the trials show, effect sizes, and what they do not show." empty="The first evidence syntheses are in preparation." />
+<ArticleList collection="clinicians" title="Evidence for doctors" intro="Evidence syntheses on obesity and its complications for doctors and health professionals: what the trials show, effect sizes, and what they do not show." empty="The first evidence syntheses are in preparation.">
+  <MoreCards items={more} />
+</ArticleList>

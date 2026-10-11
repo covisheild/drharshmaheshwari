@@ -1,10 +1,9 @@
 ---
 // For Everyone home. Centred hero with a light beam and dust, a picture of the calculator (its fields link into the real one),
-// big cards for what is on the site, and a closing section. Everything shown comes from the site's own content.
+// big cards for what is on the site (guides, tools, blog, For Doctors), and a closing section. Everything shown comes from the site's own content.
 // Also the home page of each translated language (/hi/, src/pages/[lang]/index.astro): every word goes through the dictionary.
 import Base from '../layouts/Base.astro';
 import T from '../components/T.astro';
-import { books, bookUrl } from '../lib/content';
 import { TOOLS } from '../data/tools';
 import { PEOPLE, readout, pct, ZONES_GLOBAL, ZONES_INDIA, TICKS } from '../lib/bmi-demo';
 import { langOf } from '../i18n/languages';
@@ -16,7 +15,7 @@ const t = useT(Astro.url.pathname);
 const tr = t; // inside the tools list, where `t` is a tool
 const L = (href: string) => localHref(lang, href);
 const guides = (await localArticles('learn', lang)).slice(0, 3).map((a) => articleCard(lang, '/learn/', a));
-const bookList = await books('everyone');
+const posts = (await localArticles('blog', lang)).slice(0, 3).map((a) => articleCard(lang, '/blog/', a));
 const tools = TOOLS.filter((t) => t.mode === 'everyone');
 const r = readout(PEOPLE[0]), p = PEOPLE[0];
 const state = (s: [string, string]) => t(s[0], { cut: r.cut });
@@ -93,18 +92,18 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
         </div></div>
       </article>
       <article class="bcard reveal"><h3>{t('Tools built on Indian cut-offs')}</h3><p>{t('Calculators and risk scores that use the numbers that fit Indian bodies.')}</p>
-        <div class="bm-stage"><div class="bm-list">
+        <div class="bm-stage scroll" data-scroll><div class="bm-list">
           {tools.map((t) => {
             const inner = <><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01"/></svg></span><span><b>{tr(t.title)}</b><small>{tr(t.text)}</small></span><span class:list={['bm-pchip', { ready: !!t.href }]}>{!t.href ? tr('Coming') : lang !== 'en' && !hasPage(lang, t.href) ? tr('In English') : tr('Ready')}</span></>;
             return t.href ? <a class="bm-li" href={t.href}>{inner}</a> : <div class="bm-li">{inner}</div>;
           })}
         </div></div>
       </article>
-      <article class="bcard reveal"><h3>{t('Books')}</h3><p>{bookList.length > 1 ? t('{n} books, to download and share for non-commercial use.', { n: bookList.length }) : bookList.length ? t('1 book, to download and share for non-commercial use.') : t('Full-length books on obesity for families are being written.')}</p>
-        <a class="btn btn-ghost" href={L('/books/')}>{t('Browse books')} <span class="arrow" aria-hidden="true">→</span></a>
+      <article class="bcard reveal"><h3>{t('Blog')}</h3><p>{t('Notes and reflections on health, evidence and how we think.')}</p>
+        <a class="btn btn-ghost" href={L('/blog/')}>{t('All posts')} <span class="arrow" aria-hidden="true">→</span></a>
         <div class="bm-stage"><div class="bm-list">
-          {bookList.map((b) => <a class="bm-li" href={bookUrl(b)}><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></span><span><b lang="en">{b.data.title}</b><small>PDF</small></span></a>)}
-          {!bookList.length && <div class="bm-li"><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></span><span><b>{t('Books for families')}</b><small>{t('Being written')}</small></span><span class="bm-pchip">{t('Soon')}</span></div>}
+          {posts.map((b) => <a class="bm-li" href={b.href}><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span><span><b lang={b.english ? 'en' : undefined}>{b.title}</b><small>{b.topic} · {fmtDateIn(lang, b.date)}</small></span><span class="bm-pchip">{b.english ? t('In English') : t('Post')}</span></a>)}
+          {!posts.length && <div class="bm-li"><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span><span><b>{t('The first posts are being written')}</b><small>{t('Notes and reflections')}</small></span><span class="bm-pchip">{t('Soon')}</span></div>}
         </div></div>
       </article>
       <article class="bcard reveal"><h3>{t('For Doctors')}</h3><p>{t('Evidence syntheses with effect sizes, clinical skill trainers such as heart and lung sounds, and books on statistics and research methods.')}</p>
@@ -127,4 +126,11 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
 
 <script>
   import '../scripts/home-demo';
+  // The tools box scrolls; its bottom fade shows only while more tools are below.
+  for (const box of document.querySelectorAll<HTMLElement>('[data-scroll]')) {
+    const update = () => box.classList.toggle('at-end', box.scrollTop + box.clientHeight >= box.scrollHeight - 4);
+    box.addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update);
+    update();
+  }
 </script>

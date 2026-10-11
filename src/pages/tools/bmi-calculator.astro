@@ -3,154 +3,158 @@ import Base from '../../layouts/Base.astro';
 import { SITE } from '../../consts';
 import { articles } from '../../lib/content';
 import CardList from '../../components/lists/CardList.astro';
+import UnitField from '../../components/UnitField.astro';
 import { TOOLS } from '../../data/tools';
+import T from '../../components/T.astro';
+import ClientWords from '../../components/ClientWords.astro';
+import { inLang, langOf } from '../../i18n/languages';
+import { localHref } from '../../i18n/routes';
+import { useT } from '../../i18n/t';
+
+// Also /<lang>/tools/bmi-calculator/: the page through the dictionary (t, <T>), the results through w() (src/i18n/client.ts).
+const lang = langOf(Astro.url.pathname);
+const t = useT(Astro.url.pathname);
+const L = (href: string) => localHref(lang, href);
 
 // Link to a guide only once it is published (drafts are not built on production, so a link would 404).
 const live = new Set((await articles('learn')).map((e) => e.id));
 
 const more = TOOLS.filter((t) => t.mode === 'everyone' && t.href !== '/tools/bmi-calculator/');
-const url = `${SITE.url}/tools/bmi-calculator/`;
+const url = `${SITE.url}${inLang(lang, '/tools/bmi-calculator/')}`;
 const faq = [
   { q: 'What BMI is overweight for Indians?', a: 'For Indian adults, a BMI of 23 to 24.9 kg/m² is overweight and 25 or more is obesity, following the Asia-Pacific and Indian consensus cut-offs.' },
   { q: 'What waist size is too high for Indians?', a: 'Indian guidelines flag abdominal obesity at a waist of 90 cm or more in men and 80 cm or more in women.' },
   { q: 'What is a healthy waist-to-height ratio?', a: 'Below 0.5 — keep your waist to less than half your height. 0.5 to 0.59 means increased risk and 0.6 or more high risk.' },
   { q: 'What weight should I aim for?', a: 'For Indian adults this calculator suggests the weight at which BMI is 21 to 22, the middle of the healthy range (18.5 to 22.9), together with a waist below the Indian cut-off (90 cm men, 80 cm women) and below half your height.' },
   { q: 'How is BMI judged in Indian children?', a: 'Children are still growing, so their BMI is compared with children of the same age and sex. From 5 to 18 years the Indian Academy of Pediatrics (IAP 2015) charts are used: overweight from the line that corresponds to an adult BMI of 23, obesity from the line for 27, and thinness below the 3rd percentile. Under 5 years, IAP recommends the WHO standards: above +2 SD is overweight and above +3 SD obesity.' },
-];
+].map((f) => ({ q: t(f.q), a: t(f.a) }));
 const jsonld = [
   {
     '@type': ['WebApplication', 'MedicalWebPage'],
     '@id': `${url}#app`,
-    name: 'BMI & waist calculator with Indian cut-offs',
+    name: t('BMI & waist calculator with Indian cut-offs'),
     url,
     applicationCategory: 'HealthApplication',
     operatingSystem: 'Any (runs in the browser)',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
-    description: 'Calculates BMI, a target weight range (BMI 21–22), the largest healthy waist, waist-to-height ratio and abdominal obesity using Asian/Indian cut-offs for adults, and the IAP 2015 charts for Indian children (WHO standards under 5). Nothing you type leaves your device.',
+    description: t('Calculates BMI, a target weight range (BMI 21–22), the largest healthy waist, waist-to-height ratio and abdominal obesity using Asian/Indian cut-offs for adults, and the IAP 2015 charts for Indian children (WHO standards under 5). Nothing you type leaves your device.'),
     author: { '@id': `${SITE.url}/#person` },
     audience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
   },
   { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ];
 ---
-<Base title="BMI & waist calculator (Indian cut-offs)" description="Free BMI, target weight, waist and waist-to-height ratio calculator using Indian cut-offs for adults and IAP charts for children. Runs in your browser; nothing is stored." jsonld={jsonld}>
+<Base title={t('BMI & waist calculator (Indian cut-offs)')} description={t('Free BMI, target weight, waist and waist-to-height ratio calculator using Indian cut-offs for adults and IAP charts for children. Runs in your browser; nothing is stored.')} jsonld={jsonld}>
+  <ClientWords sources={['/src/pages/tools/bmi-calculator.astro', '/src/lib/bmi.ts']} />
   <header class="page-head wrap">
-    <span class="eyebrow">Tools</span>
-    <h1>BMI & waist calculator</h1>
-    <p>Uses the cut-offs for <b>Indian adults</b>, not the global ones, and the <b>IAP 2015 charts for Indian children</b> (WHO under 5). Everything is calculated on your device; nothing you type is sent or stored.</p>
+    <span class="eyebrow">{t('Tools')}</span>
+    <h1>{t('BMI & waist calculator')}</h1>
+    <p><T>Uses the cut-offs for <b>Indian adults</b>, not the global ones, and the <b>IAP 2015 charts for Indian children</b> (WHO under 5). Everything is calculated on your device; nothing you type is sent or stored.</T></p>
   </header>
 
   <div class="wrap calc-wrap">
     <form class="calc card" id="calc" novalidate>
       <fieldset>
-        <legend>Who is this for?</legend>
+        <legend>{t('Who is this for?')}</legend>
         <div class="seg">
-          <label><input type="radio" name="who" value="adult" checked /> <span>Adult (18+)</span></label>
-          <label><input type="radio" name="who" value="child" /> <span>Child (2–17)</span></label>
+          <label><input type="radio" name="who" value="adult" checked /> <span>{t('Adult (18+)')}</span></label>
+          <label><input type="radio" name="who" value="child" /> <span>{t('Child (2–17)')}</span></label>
         </div>
       </fieldset>
 
       <fieldset id="age-set" hidden>
-        <legend>Age</legend>
+        <legend>{t('Age')}</legend>
         <div class="row">
-          <label class="field"><input type="number" inputmode="numeric" id="ay" min="2" max="17" placeholder="8" /><span>years</span></label>
-          <label class="field"><input type="number" inputmode="numeric" id="am" min="0" max="11" placeholder="0" /><span>months</span></label>
+          <label class="field"><input type="number" data-unitless inputmode="numeric" id="ay" min="2" max="17" placeholder="8" /><span>{t('years')}</span></label>
+          <label class="field"><input type="number" data-unitless inputmode="numeric" id="am" min="0" max="11" placeholder="0" /><span>{t('months')}</span></label>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>Sex</legend>
+        <legend>{t('Sex')}</legend>
         <div class="seg">
-          <label><input type="radio" name="sex" value="m" checked /> <span data-adult="Man" data-child="Boy">Man</span></label>
-          <label><input type="radio" name="sex" value="f" /> <span data-adult="Woman" data-child="Girl">Woman</span></label>
+          <label><input type="radio" name="sex" value="m" checked /> <span data-adult={t('Man')} data-child={t('Boy')}>{t('Man')}</span></label>
+          <label><input type="radio" name="sex" value="f" /> <span data-adult={t('Woman')} data-child={t('Girl')}>{t('Woman')}</span></label>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>Height</legend>
-        <div class="seg small-seg">
-          <label><input type="radio" name="hu" value="cm" checked /> <span>cm</span></label>
-          <label><input type="radio" name="hu" value="ft" /> <span>ft + in</span></label>
-        </div>
-        <div class="row" id="h-cm"><label class="field"><input type="number" inputmode="decimal" id="hcm" min="70" max="230" placeholder="165" /><span>cm</span></label></div>
-        <div class="row" id="h-ft" hidden>
-          <label class="field"><input type="number" inputmode="numeric" id="hft" min="3" max="7" placeholder="5" /><span>ft</span></label>
-          <label class="field"><input type="number" inputmode="decimal" id="hin" min="0" max="11.9" placeholder="5" /><span>in</span></label>
-        </div>
+        <legend>{t('Height')}</legend>
+        <div class="row"><UnitField id="hcm" kind="height" label={t('Height')} placeholder={165} /></div>
       </fieldset>
 
       <fieldset>
-        <legend>Weight</legend>
-        <div class="row"><label class="field"><input type="number" inputmode="decimal" id="wkg" min="7" max="300" placeholder="66" /><span>kg</span></label></div>
+        <legend>{t('Weight')}</legend>
+        <div class="row"><UnitField id="wkg" kind="weight" label={t('Weight')} placeholder={66} /></div>
       </fieldset>
 
       <fieldset>
-        <legend>Waist <span class="muted small">(optional, but recommended)</span></legend>
-        <div class="row"><label class="field"><input type="number" inputmode="decimal" id="waist" min="30" max="200" placeholder="85" /><span>cm</span></label></div>
-        <p class="small muted" style="margin:.5rem 0 0">Midway between lowest rib and top of hip bone, after breathing out.{live.has('waist-to-height-ratio') && <> <a href="/learn/waist-to-height-ratio/">How to measure</a></>}</p>
+        <legend>{t('Waist')} <span class="muted small">{t('(optional, but recommended)')}</span></legend>
+        <div class="row"><UnitField id="waist" kind="length" label={t('Waist')} placeholder={85} /></div>
+        <p class="small muted" style="margin:.5rem 0 0">{t('Midway between lowest rib and top of hip bone, after breathing out.')}{live.has('waist-to-height-ratio') && <> <a href={L('/learn/waist-to-height-ratio/')}>{t('How to measure')}</a></>}</p>
       </fieldset>
-      <p class="small muted" style="margin:0" id="calc-note">For adults 18 and over. Not valid in pregnancy.</p>
+      <p class="small muted" style="margin:0" id="calc-note">{t('For adults 18 and over. Not valid in pregnancy.')}</p>
     </form>
 
     <div class="results" aria-live="polite">
       <div class="card result" id="r-bmi">
-        <span class="eyebrow">Body mass index</span>
+        <span class="eyebrow">{t('Body mass index')}</span>
         <div class="big"><b id="bmi-val">—</b><span>kg/m²</span></div>
         <div class="scale" aria-hidden="true">
           <div class="band u"></div><div class="band n"></div><div class="band o"></div><div class="band ob"></div>
           <div class="marker" id="bmi-marker"></div>
         </div>
         <div class="scale-labels" aria-hidden="true"><span id="sl1">18.5</span><span id="sl2">23</span><span id="sl3">25</span></div>
-        <p class="verdict" id="bmi-verdict">Enter height and weight.</p>
+        <p class="verdict" id="bmi-verdict">{t('Enter height and weight.')}</p>
         <p class="small muted" id="bmi-global"></p>
       </div>
       <div class="card result" id="r-target">
-        <span class="eyebrow" id="target-eyebrow">Your targets</span>
+        <span class="eyebrow" id="target-eyebrow">{t('Your targets')}</span>
         <dl class="targets">
-          <div><dt id="tw-label">Target weight</dt><dd><b id="tw-val">—</b><span id="tw-unit"></span></dd><p class="small muted" id="tw-note">Enter height and weight.</p></div>
-          <div><dt>Largest healthy waist</dt><dd><b id="mw-val">—</b><span id="mw-unit"></span></dd><p class="small muted" id="mw-note">Enter height.</p></div>
+          <div><dt id="tw-label">{t('Target weight')}</dt><dd><b id="tw-val">—</b><span id="tw-unit"></span></dd><p class="small muted" id="tw-note">{t('Enter height and weight.')}</p></div>
+          <div><dt>{t('Largest healthy waist')}</dt><dd><b id="mw-val">—</b><span id="mw-unit"></span></dd><p class="small muted" id="mw-note">{t('Enter height.')}</p></div>
         </dl>
       </div>
       <div class="card result" id="r-waist">
-        <span class="eyebrow">Waist</span>
-        <div class="big"><b id="whtr-val">—</b><span id="whtr-unit">waist ÷ height</span></div>
-        <p class="verdict" id="whtr-verdict">Add your waist to see abdominal fat risk.</p>
+        <span class="eyebrow">{t('Waist')}</span>
+        <div class="big"><b id="whtr-val">—</b><span id="whtr-unit">{t('waist ÷ height')}</span></div>
+        <p class="verdict" id="whtr-verdict">{t('Add your waist to see abdominal fat risk.')}</p>
         <p class="small muted" id="waist-verdict"></p>
       </div>
     </div>
   </div>
 
   <section class="prose-wrap prose" style="padding-top:2rem">
-    <h2>How to read your result</h2>
+    <h2>{t('How to read your result')}</h2>
     <table>
-      <thead><tr><th>Measure</th><th>Healthy</th><th>Increased risk</th><th>High risk</th></tr></thead>
+      <thead><tr><th>{t('Measure')}</th><th>{t('Healthy')}</th><th>{t('Increased risk')}</th><th>{t('High risk')}</th></tr></thead>
       <tbody>
-        <tr><td>BMI, Indian adults</td><td>18.5 – 22.9</td><td>23 – 24.9 (overweight)</td><td>25 or more (obesity)</td></tr>
-        <tr><td>Waist-to-height ratio</td><td>below 0.5</td><td>0.5 – 0.59</td><td>0.6 or more</td></tr>
-        <tr><td>Waist, men</td><td>below 90 cm</td><td colspan="2">90 cm or more</td></tr>
-        <tr><td>Waist, women</td><td>below 80 cm</td><td colspan="2">80 cm or more</td></tr>
+        <tr><td>{t('BMI, Indian adults')}</td><td>18.5 – 22.9</td><td>{t('23 – 24.9 (overweight)')}</td><td>{t('25 or more (obesity)')}</td></tr>
+        <tr><td>{t('Waist-to-height ratio')}</td><td>{t('below 0.5')}</td><td>0.5 – 0.59</td><td>{t('0.6 or more')}</td></tr>
+        <tr><td>{t('Waist, men')}</td><td>{t('below 90 cm')}</td><td colspan="2">{t('90 cm or more')}</td></tr>
+        <tr><td>{t('Waist, women')}</td><td>{t('below 80 cm')}</td><td colspan="2">{t('80 cm or more')}</td></tr>
       </tbody>
     </table>
-    <p><b>Target weight</b> for adults is the weight at which BMI would be 21 to 22, the middle of the healthy range for Indian adults. <b>Largest healthy waist</b> is the lower of the Indian waist cut-off and half your height.</p>
-    <h3>Children (2 to 17 years)</h3>
-    <p>A child's BMI changes with age, so it is compared with children of the same age and sex. From 5 years the calculator uses the <b>IAP 2015 charts for Indian children</b>; under 5, IAP recommends the WHO standards.</p>
+    <p><T><b>Target weight</b> for adults is the weight at which BMI would be 21 to 22, the middle of the healthy range for Indian adults. <b>Largest healthy waist</b> is the lower of the Indian waist cut-off and half your height.</T></p>
+    <h3>{t('Children (2 to 17 years)')}</h3>
+    <p><T>A child's BMI changes with age, so it is compared with children of the same age and sex. From 5 years the calculator uses the <b>IAP 2015 charts for Indian children</b>; under 5, IAP recommends the WHO standards.</T></p>
     <table>
-      <thead><tr><th>Age</th><th>Thinness</th><th>Healthy</th><th>Overweight</th><th>Obesity</th></tr></thead>
+      <thead><tr><th>{t('Age')}</th><th>{t('Thinness')}</th><th>{t('Healthy')}</th><th>{t('Overweight')}</th><th>{t('Obesity')}</th></tr></thead>
       <tbody>
-        <tr><td>5 to 17 years (IAP 2015)</td><td>below the 3rd percentile</td><td>3rd percentile to the 23 line</td><td>adult-equivalent 23 line or above</td><td>adult-equivalent 27 line or above</td></tr>
-        <tr><td>2 to 4 years (WHO 2006)</td><td>below −2 SD (wasted)</td><td>−2 to +1 SD</td><td>above +2 SD (+1 to +2: possible risk)</td><td>above +3 SD</td></tr>
+        <tr><td>{t('5 to 17 years (IAP 2015)')}</td><td>{t('below the 3rd percentile')}</td><td>{t('3rd percentile to the 23 line')}</td><td>{t('adult-equivalent 23 line or above')}</td><td>{t('adult-equivalent 27 line or above')}</td></tr>
+        <tr><td>{t('2 to 4 years (WHO 2006)')}</td><td>{t('below −2 SD (wasted)')}</td><td>{t('−2 to +1 SD')}</td><td>{t('above +2 SD (+1 to +2: possible risk)')}</td><td>{t('above +3 SD')}</td></tr>
       </tbody>
     </table>
-    <p><b>Waist in children</b> (2 to 17 years) is compared with Indian children of the same age and sex (Khadilkar 2014). At or above the <b>70th percentile</b>, risk factors for metabolic syndrome become common; that is the "largest healthy waist" shown.</p>
-    <p>The adult-equivalent lines are the BMI at each age that tracks to a BMI of 23 or 27 at 18 years, the Indian adult cut-offs for overweight and obesity. Growing children usually do not need to lose weight: keeping weight steady while they grow taller brings BMI down. Talk to a paediatrician before changing a child's diet.</p>
-    {live.has('bmi-cut-offs-for-indians') && <p>Why lower numbers for Indians? Read <a href="/learn/bmi-cut-offs-for-indians/">Is BMI accurate for Indians?</a></p>}
+    <p><T><b>Waist in children</b> (2 to 17 years) is compared with Indian children of the same age and sex (Khadilkar 2014). At or above the <b>70th percentile</b>, risk factors for metabolic syndrome become common; that is the "largest healthy waist" shown.</T></p>
+    <p><T>The adult-equivalent lines are the BMI at each age that tracks to a BMI of 23 or 27 at 18 years, the Indian adult cut-offs for overweight and obesity. Growing children usually do not need to lose weight: keeping weight steady while they grow taller brings BMI down. Talk to a paediatrician before changing a child's diet.</T></p>
+    {live.has('bmi-cut-offs-for-indians') && <p>{t('Why lower numbers for Indians? Read')} <a href={L('/learn/bmi-cut-offs-for-indians/')}>{t('Is BMI accurate for Indians?')}</a></p>}
     <div class="faq">
-      <h2>Common questions</h2>
+      <h2>{t('Common questions')}</h2>
       {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
     </div>
     <div class="refs" style="margin-top:2rem">
-      <h2>Sources</h2>
-      <ol>
+      <h2>{t('Sources')}</h2>
+      <ol lang="en">
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/14726171/">WHO Expert Consultation. Appropriate body-mass index for Asian populations. Lancet 2004;363:157-63.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/19582986/">Misra A, et al. Consensus statement for diagnosis of obesity, abdominal obesity and the metabolic syndrome for Asian Indians. J Assoc Physicians India 2009;57:163-70.</a></li>
         <li><a href="https://www.nice.org.uk/guidance/cg189">NICE CG189, waist-to-height ratio recommendations (2022 update).</a></li>
@@ -159,13 +163,13 @@ const jsonld = [
         <li><a href="https://www.who.int/tools/child-growth-standards">WHO Child Growth Standards (2006): BMI-for-age, birth to 5 years.</a></li>
       </ol>
     </div>
-    <p class="disclaimer"><a href="/disclaimer/">Disclaimer</a></p>
+    <p class="disclaimer"><a href={L('/disclaimer/')}>{t('Disclaimer')}</a></p>
   </section>
 
   <section class="wrap more-tools">
-    <h2>More calculators</h2>
+    <h2>{t('More calculators')}</h2>
     <CardList items={more} />
-    <p class="muted" style="margin-top:1.5rem">All tools are listed on <a href="/tools/">Tools</a>. Clinical scores for health professionals are in <a href="/doctors/tools/">For Doctors · Tools</a>.</p>
+    <p class="muted" style="margin-top:1.5rem"><T>All tools are listed on <a href="/tools/">Tools</a>. Clinical scores for health professionals are in <a href="/doctors/tools/">For Doctors · Tools</a>.</T></p>
   </section>
 </Base>
 
@@ -212,22 +216,37 @@ const jsonld = [
 </style>
 
 <script>
+  import { unitValue } from '../../scripts/unit-fields';
+  import { w } from '../../i18n/client';
   import { adultCategory, bmiOf, childHealthyBmi, childWaistCategory, childWaistLines, CHILD_MONTHS, IAP_FROM, iapBand, iapCategory, iapLines, kgAt, maxWaist, percentile, targetWeight, TARGET_BMI, WAIST_CUT, whoUnder5Category, zScore, type Sex } from '../../lib/bmi';
 
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
   const num = (id: string) => { const v = parseFloat($<HTMLInputElement>(id).value); return Number.isFinite(v) ? v : NaN; };
   const form = $<HTMLFormElement>('calc');
   const picked = (name: string) => (form.querySelector(`input[name=${name}]:checked`) as HTMLInputElement).value;
-  const setVerdict = (el: HTMLElement, text: string, cls = '') => { el.textContent = text; el.className = `verdict ${cls}`; };
+  // Verdict labels come English from src/lib/bmi.ts; w() translates them (ClientWords sends every `label: '...'` there).
+  const setVerdict = (el: HTMLElement, text: string, cls = '') => { el.textContent = w(text); el.className = `verdict ${cls}`; };
   const kg = (v: number) => v.toFixed(0);
-  const ordinal = (n: number) => { const r = Math.round(n), t = r % 100; return r + (t >= 11 && t <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][r % 10] ?? 'th'); };
+  const suffix = (r: number) => { const t = r % 100; return t >= 11 && t <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][r % 10] ?? 'th'; };
+  // "3rd", "71st": w('{n}st') w('{n}nd') w('{n}rd') w('{n}th')
+  const ordinal = (n: number | string) => { const r = Math.round(Number(n)); return w(`{n}${suffix(r)}`, { n: r }); };
+  // src/lib/bmi.ts iapBand() describes where a BMI sits among the IAP lines in English; this says the same in the page's language.
+  const lineText = (s: string) => {
+    let m = s.match(/^(\d+)(?:st|nd|rd|th) percentile$/);
+    if (m) return w('the {ordinal} percentile', { ordinal: ordinal(m[1]) });
+    m = s.match(/^(overweight|obesity) line \(about the (\d+)(?:st|nd|rd|th) percentile\)$/);
+    if (m) return m[1] === 'overweight' ? w('the overweight line (about the {ordinal} percentile)', { ordinal: ordinal(m[2]) }) : w('the obesity line (about the {ordinal} percentile)', { ordinal: ordinal(m[2]) });
+    return s;
+  };
+  const iapBandText = (s: string) => {
+    if (s === 'below the 3rd percentile') return w('below the 3rd percentile');
+    let m = s.match(/^at or above the (.+)$/);
+    if (m) return w('at or above {line}', { line: lineText(m[1]) });
+    m = s.match(/^between the (.+) and the (.+)$/);
+    if (m) return w('between {a} and {b}', { a: lineText(m[1]), b: lineText(m[2]) });
+    return s;
+  };
 
-  function heightCm(): number {
-    if (picked('hu') === 'cm') return num('hcm');
-    const ft = num('hft'), inch = num('hin');
-    if (!Number.isFinite(ft)) return NaN;
-    return (ft * 12 + (Number.isFinite(inch) ? inch : 0)) * 2.54;
-  }
 
   /** Child's age in months, or NaN when outside 2 years 0 months to 17 years 11 months. */
   function ageMonths(): number {
@@ -241,122 +260,123 @@ const jsonld = [
   // Adults: BMI 15–35 split at 18.5/23/25. Children 5–17: BMI around the IAP lines. Children 2–4: WHO z-score −4 to +4.
   const scale = $('r-bmi');
   function drawScale([lo, a, b, c, hi]: number[], labels: string[], value: number) {
-    const w = hi - lo, s = scale.style, pct = (v: number) => `${((v - lo) / w) * 100}%`;
+    const span = hi - lo, s = scale.style, pct = (v: number) => `${((v - lo) / span) * 100}%`;
     s.setProperty('--cols', `${a - lo}fr ${b - a}fr ${c - b}fr ${hi - c}fr`);
     s.setProperty('--l1', pct(a)); s.setProperty('--l2', pct(b)); s.setProperty('--l3', pct(c));
     ['sl1', 'sl2', 'sl3'].forEach((id, i) => { $(id).textContent = labels[i]; });
     const marker = $('bmi-marker');
-    if (Number.isFinite(value)) { marker.style.left = `calc(${Math.min(Math.max((value - lo) / w, 0), 1) * 100}% - 2px)`; marker.style.opacity = '1'; }
+    if (Number.isFinite(value)) { marker.style.left = `calc(${Math.min(Math.max((value - lo) / span, 0), 1) * 100}% - 2px)`; marker.style.opacity = '1'; }
     else marker.style.opacity = '0';
   }
   function scaleFor(months: number, sex: Sex): [number[], string[]] {
     if (!Number.isFinite(months)) return [[15, 18.5, 23, 25, 35], ['18.5', '23', '25']];
     if (months < IAP_FROM) return [[-4, -2, 1, 3, 4], ['−2 SD', '+1 SD', '+3 SD']];
     const l = iapLines(months, sex);
-    return [[l.p3 - 3, l.p3, l.ow, l.ob, l.ob + 7], ['3rd', '23 AE', '27 AE']];
+    return [[l.p3 - 3, l.p3, l.ow, l.ob, l.ob + 7], [w('3rd'), w('23 AE'), w('27 AE')]];
   }
 
   function update() {
     const child = picked('who') === 'child';
-    $('h-cm').hidden = picked('hu') !== 'cm';
-    $('h-ft').hidden = picked('hu') === 'cm';
     $('age-set').hidden = !child;
     form.querySelectorAll<HTMLElement>('[data-adult]').forEach((el) => { el.textContent = (child ? el.dataset.child : el.dataset.adult) ?? ''; });
     $('calc-note').textContent = child
-      ? 'For children aged 2 to 17 years: IAP 2015 charts for Indian children from 5 years, WHO standards under 5. Measure height standing, without shoes.'
-      : 'For adults 18 and over. Not valid in pregnancy.';
+      ? w('For children aged 2 to 17 years: IAP 2015 charts for Indian children from 5 years, WHO standards under 5. Measure height standing, without shoes.')
+      : w('For adults 18 and over. Not valid in pregnancy.');
 
     const sex = picked('sex') as Sex;
-    const h = heightCm(), w = num('wkg'), waist = num('waist'), months = child ? ageMonths() : NaN;
-    const validH = h >= (child ? 70 : 100) && h <= 230, validW = w >= (child ? 7 : 25) && w <= 300;
+    const h = unitValue('hcm'), wt = unitValue('wkg'), waist = unitValue('waist'), months = child ? ageMonths() : NaN;
+    const validH = h >= (child ? 70 : 100) && h <= 230, validW = wt >= (child ? 7 : 25) && wt <= 300;
     const under5 = child && months < IAP_FROM;
     const [pts, labels] = scaleFor(months, sex); // adult scale when months is NaN
 
     const bmiEl = $('bmi-val'), bv = $('bmi-verdict'), bg = $('bmi-global');
     const tw = $('tw-val'), twu = $('tw-unit'), twn = $('tw-note');
-    $('target-eyebrow').textContent = child ? 'Healthy range' : 'Your targets';
-    $('tw-label').textContent = child ? 'Healthy weight for this height now' : `Target weight (BMI ${TARGET_BMI[0]}–${TARGET_BMI[1]})`;
+    $('target-eyebrow').textContent = child ? w('Healthy range') : w('Your targets');
+    $('tw-label').textContent = child ? w('Healthy weight for this height now') : w('Target weight (BMI {lo}–{hi})', { lo: TARGET_BMI[0], hi: TARGET_BMI[1] });
     const ready = validH && validW && (!child || Number.isFinite(months));
 
     if (ready) {
-      const bmi = bmiOf(w, h);
+      const bmi = bmiOf(wt, h);
       bmiEl.textContent = bmi.toFixed(1);
       if (!child) {
         drawScale(pts, labels, bmi);
         const c = adultCategory(bmi); setVerdict(bv, c.label, c.tone);
-        const global = bmi < 18.5 ? 'underweight' : bmi < 25 ? 'normal' : bmi < 30 ? 'overweight' : 'obesity';
-        bg.textContent = `On the global WHO chart this would be "${global}". Healthy weight range for your height (Indian cut-offs): ${kg(kgAt(18.5, h))}–${kg(kgAt(22.9, h))} kg.`;
+        const global = bmi < 18.5 ? w('underweight') : bmi < 25 ? w('normal') : bmi < 30 ? w('overweight') : w('obesity');
+        bg.textContent = w('On the global WHO chart this would be "{global}". Healthy weight range for your height (Indian cut-offs): {lo}–{hi} kg.', { global, lo: kg(kgAt(18.5, h)), hi: kg(kgAt(22.9, h)) });
         const [lo, hi] = targetWeight(h);
         tw.textContent = `${kg(lo)}–${kg(hi)}`; twu.textContent = 'kg';
-        const gap = w > hi ? `${(w - hi).toFixed(1)} kg above the top of this range` : w < lo ? `${(lo - w).toFixed(1)} kg below this range` : 'You are within this range';
-        twn.textContent = `${gap}. BMI ${TARGET_BMI[0]}–${TARGET_BMI[1]} is the middle of the healthy range for Indian adults (18.5–22.9).` + (w > hi ? ' Losing even 5–10% of your weight brings real health gains.' : '');
+        const gap = wt > hi ? w('{kg} kg above the top of this range', { kg: (wt - hi).toFixed(1) }) : wt < lo ? w('{kg} kg below this range', { kg: (lo - wt).toFixed(1) }) : w('You are within this range');
+        twn.textContent = w('{gap}. BMI {lo}–{hi} is the middle of the healthy range for Indian adults (18.5–22.9).', { gap, lo: TARGET_BMI[0], hi: TARGET_BMI[1] }) + (wt > hi ? ' ' + w('Losing even 5–10% of your weight brings real health gains.') : '');
       } else {
-        const kids = sex === 'm' ? 'boys' : 'girls';
+        const kids = sex === 'm' ? w('boys') : w('girls');
         if (!under5) {
           const l = iapLines(months, sex);
           drawScale(pts, labels, bmi);
           const c = iapCategory(bmi, l); setVerdict(bv, c.label, c.tone);
-          bg.textContent = `On the IAP 2015 chart for Indian ${kids}, this BMI is ${iapBand(bmi, l, sex)}. At this age: thinness below ${l.p3.toFixed(1)}, overweight from ${l.ow.toFixed(1)}, obesity from ${l.ob.toFixed(1)}.`;
+          bg.textContent = w('On the IAP 2015 chart for Indian {kids}, this BMI is {band}. At this age: thinness below {p3}, overweight from {ow}, obesity from {ob}.', { kids, band: iapBandText(iapBand(bmi, l, sex)), p3: l.p3.toFixed(1), ow: l.ow.toFixed(1), ob: l.ob.toFixed(1) });
         } else {
           const z = zScore(bmi, months, sex);
           drawScale(pts, labels, z);
           const c = whoUnder5Category(z); setVerdict(bv, c.label, c.tone);
           const pct = percentile(z);
-          const pctText = pct < 1 ? 'below the 1st' : pct > 99 ? 'above the 99th' : `the ${ordinal(pct)}`;
-          bg.textContent = `BMI-for-age z-score ${z >= 0 ? '+' : '−'}${Math.abs(z).toFixed(2)} SD: ${pctText} percentile for ${kids} of this age (WHO Child Growth Standards, which IAP recommends under 5).`;
+          const pctText = pct < 1 ? w('below the 1st percentile') : pct > 99 ? w('above the 99th percentile') : w('the {ordinal} percentile', { ordinal: ordinal(pct) });
+          bg.textContent = w('BMI-for-age z-score {z} SD: {pct} for {kids} of this age (WHO Child Growth Standards, which IAP recommends under 5).', { z: `${z >= 0 ? '+' : '−'}${Math.abs(z).toFixed(2)}`, pct: pctText, kids });
         }
         const [blo, bhi] = childHealthyBmi(months, sex);
         tw.textContent = `${kg(kgAt(blo, h))}–${kg(kgAt(bhi, h))}`; twu.textContent = 'kg';
-        twn.textContent = `Healthy BMI at this age: ${blo.toFixed(1)} to under ${bhi.toFixed(1)} (${under5 ? 'WHO −2 to +1 SD' : 'IAP 3rd percentile to the adult-equivalent 23 line'}). Children usually should not diet to lose weight: holding weight steady while they grow taller brings BMI down. Ask a paediatrician.`;
+        twn.textContent = w('Healthy BMI at this age: {lo} to under {hi} ({basis}). Children usually should not diet to lose weight: holding weight steady while they grow taller brings BMI down. Ask a paediatrician.', { lo: blo.toFixed(1), hi: bhi.toFixed(1), basis: under5 ? w('WHO −2 to +1 SD') : w('IAP 3rd percentile to the adult-equivalent 23 line') });
       }
     } else {
       bmiEl.textContent = '—';
       drawScale(pts, labels, NaN);
-      setVerdict(bv, child && validH && validW ? 'Enter an age from 2 to 17 years.' : child ? 'Enter age, height and weight.' : 'Enter height and weight.');
-      bg.textContent = ''; tw.textContent = '—'; twu.textContent = ''; twn.textContent = child ? 'Enter age, height and weight.' : 'Enter height and weight.';
+      setVerdict(bv, child && validH && validW ? w('Enter an age from 2 to 17 years.') : child ? w('Enter age, height and weight.') : w('Enter height and weight.'));
+      bg.textContent = ''; tw.textContent = '—'; twu.textContent = ''; twn.textContent = child ? w('Enter age, height and weight.') : w('Enter height and weight.');
     }
 
     // Largest healthy waist: adults, the lower of the Indian cut-off and half the height; children, the Indian 70th percentile for age.
     const mw = $('mw-val'), mwu = $('mw-unit'), mwn = $('mw-note');
-    const kidsWord = sex === 'm' ? 'boys' : 'girls';
+    const kidsWord = sex === 'm' ? w('boys') : w('girls');
     if (child && Number.isFinite(months)) {
       const l = childWaistLines(months, sex);
-      mw.textContent = `under ${l.p70.toFixed(1)}`; mwu.textContent = 'cm';
-      mwn.textContent = `The 70th percentile of waist for Indian ${kidsWord} aged ${Math.floor(months / 12)}, the cut-off above which risk factors for metabolic syndrome become common.`;
+      mw.textContent = w('under {cm}', { cm: l.p70.toFixed(1) }); mwu.textContent = 'cm';
+      mwn.textContent = w('The 70th percentile of waist for Indian {kids} aged {age}, the cut-off above which risk factors for metabolic syndrome become common.', { kids: kidsWord, age: Math.floor(months / 12) });
     } else if (child) {
-      mw.textContent = '—'; mwu.textContent = ''; mwn.textContent = 'Enter age.';
+      mw.textContent = '—'; mwu.textContent = ''; mwn.textContent = w('Enter age.');
     } else if (validH) {
       const m = maxWaist(h, sex);
       const v = Math.round(m.cm * 10) / 10;
-      mw.textContent = `under ${Number.isInteger(v) ? v : v.toFixed(1)}`; mwu.textContent = 'cm';
+      mw.textContent = w('under {cm}', { cm: Number.isInteger(v) ? v : v.toFixed(1) }); mwu.textContent = 'cm';
+      const people = sex === 'm' ? w('men') : w('women');
       mwn.textContent = m.by === 'half height'
-        ? `Half your height, which for you is lower than the Indian cut-off for ${sex === 'm' ? 'men' : 'women'} (${WAIST_CUT[sex]} cm).`
-        : `The Indian cut-off for ${sex === 'm' ? 'men' : 'women'} (${WAIST_CUT[sex]} cm), which for you is lower than half your height (${(h / 2).toFixed(0)} cm).`;
+        ? w('Half your height, which for you is lower than the Indian cut-off for {people} ({cut} cm).', { people, cut: WAIST_CUT[sex] })
+        : w('The Indian cut-off for {people} ({cut} cm), which for you is lower than half your height ({half} cm).', { people, cut: WAIST_CUT[sex], half: (h / 2).toFixed(0) });
     } else {
-      mw.textContent = '—'; mwu.textContent = ''; mwn.textContent = 'Enter height.';
+      mw.textContent = '—'; mwu.textContent = ''; mwn.textContent = w('Enter height.');
     }
 
     // Waist card: adults, waist-to-height ratio and the Indian cut-off; children, the waist against Indian percentiles for age.
     const wv = $('whtr-val'), whv = $('whtr-verdict'), wav = $('waist-verdict');
-    $('whtr-unit').textContent = child ? 'cm' : 'waist ÷ height';
+    $('whtr-unit').textContent = child ? 'cm' : w('waist ÷ height');
     if (child) {
       if (Number.isFinite(months) && waist >= 30 && waist <= 200) {
         const l = childWaistLines(months, sex), c = childWaistCategory(waist, months, sex);
         wv.textContent = waist.toFixed(0); setVerdict(whv, c.label, c.tone);
-        wav.textContent = `For Indian ${kidsWord} aged ${Math.floor(months / 12)}: 50th percentile ${l.p50.toFixed(1)} cm, 70th ${l.p70.toFixed(1)} cm (cut-off), 90th ${l.p90.toFixed(1)} cm.`;
+        wav.textContent = w('For Indian {kids} aged {age}: 50th percentile {p50} cm, 70th {p70} cm (cut-off), 90th {p90} cm.', { kids: kidsWord, age: Math.floor(months / 12), p50: l.p50.toFixed(1), p70: l.p70.toFixed(1), p90: l.p90.toFixed(1) });
       } else {
-        wv.textContent = '—'; setVerdict(whv, Number.isFinite(months) ? 'Add the waist to see abdominal fat risk.' : 'Add age and waist to see abdominal fat risk.'); wav.textContent = '';
+        wv.textContent = '—'; setVerdict(whv, Number.isFinite(months) ? w('Add the waist to see abdominal fat risk.') : w('Add age and waist to see abdominal fat risk.')); wav.textContent = '';
       }
     } else if (validH && waist >= 40 && waist <= 200) {
       const r = waist / h;
       wv.textContent = r.toFixed(2);
-      if (r < 0.5) setVerdict(whv, 'Below 0.5: no increased risk', 'ok');
-      else if (r < 0.6) setVerdict(whv, '0.5–0.59: increased risk', 'warn');
-      else setVerdict(whv, '0.6 or more: high risk', 'risk');
-      const cut = WAIST_CUT[sex];
-      wav.textContent = `Keep your waist under ${(h / 2).toFixed(0)} cm (half your height). Indian waist cut-off for ${sex === 'm' ? 'men' : 'women'}: ${cut} cm — yours is ${waist >= cut ? 'at or above' : 'below'} it.`;
+      if (r < 0.5) setVerdict(whv, w('Below 0.5: no increased risk'), 'ok');
+      else if (r < 0.6) setVerdict(whv, w('0.5–0.59: increased risk'), 'warn');
+      else setVerdict(whv, w('0.6 or more: high risk'), 'risk');
+      const cut = WAIST_CUT[sex], half = (h / 2).toFixed(0), people = sex === 'm' ? w('men') : w('women');
+      wav.textContent = waist >= cut
+        ? w('Keep your waist under {half} cm (half your height). Indian waist cut-off for {people}: {cut} cm — yours is at or above it.', { half, people, cut })
+        : w('Keep your waist under {half} cm (half your height). Indian waist cut-off for {people}: {cut} cm — yours is below it.', { half, people, cut });
     } else {
-      wv.textContent = '—'; setVerdict(whv, 'Add your waist to see abdominal fat risk.'); wav.textContent = '';
+      wv.textContent = '—'; setVerdict(whv, w('Add your waist to see abdominal fat risk.')); wav.textContent = '';
     }
   }
   form.addEventListener('input', update);
