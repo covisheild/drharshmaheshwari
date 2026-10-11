@@ -2,92 +2,103 @@
 import Base from '../../layouts/Base.astro';
 import UnitField from '../../components/UnitField.astro';
 import { SITE } from '../../consts';
+import T from '../../components/T.astro';
+import ClientWords from '../../components/ClientWords.astro';
+import { inLang, langOf } from '../../i18n/languages';
+import { localHref } from '../../i18n/routes';
+import { useT } from '../../i18n/t';
 
-const url = `${SITE.url}/tools/indian-diabetes-risk-score/`;
+// Also /<lang>/tools/indian-diabetes-risk-score/: the page through the dictionary (t, <T>), the results through w() (src/i18n/client.ts).
+const lang = langOf(Astro.url.pathname);
+const t = useT(Astro.url.pathname);
+const L = (href: string) => localHref(lang, href);
+
+const url = `${SITE.url}${inLang(lang, '/tools/indian-diabetes-risk-score/')}`;
 const faq = [
   { q: 'What is the Indian Diabetes Risk Score?', a: 'A four-question score made by the Madras Diabetes Research Foundation (Mohan and colleagues, 2005) from the Chennai Urban Rural Epidemiology Study. It adds points for age, waist, physical activity and diabetes in your parents, out of 100, to find adults who may have type 2 diabetes without knowing it.' },
   { q: 'What is a high IDRS score?', a: '60 or more is high risk, 30 to 50 moderate and below 30 low. In the original study a score of 60 or more picked up about 7 in 10 people with undiagnosed diabetes.' },
   { q: 'Does a low score mean I do not have diabetes?', a: 'No. The score only estimates risk; it misses some people who do have diabetes. Only a blood test (fasting glucose, HbA1c or a glucose tolerance test) can tell. If you have symptoms such as thirst, passing a lot of urine or weight loss, get tested whatever your score.' },
   { q: 'Which parts of the score can I change?', a: 'Waist and physical activity: together up to 50 of the 100 points. Age and family history cannot change.' },
-];
+].map((f) => ({ q: t(f.q), a: t(f.a) }));
 const jsonld = [
   {
     '@type': ['WebApplication', 'MedicalWebPage'],
     '@id': `${url}#app`,
-    name: 'Indian Diabetes Risk Score (IDRS) calculator',
+    name: t('Indian Diabetes Risk Score (IDRS) calculator'),
     url,
     applicationCategory: 'HealthApplication',
     operatingSystem: 'Any (runs in the browser)',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
-    description: 'Calculates the MDRF Indian Diabetes Risk Score from age, waist, physical activity and family history. Nothing you type leaves your device.',
+    description: t('Calculates the MDRF Indian Diabetes Risk Score from age, waist, physical activity and family history. Nothing you type leaves your device.'),
     author: { '@id': `${SITE.url}/#person` },
     audience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
   },
   { '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ];
 ---
-<Base title="Indian Diabetes Risk Score (IDRS) calculator" description="Four questions — age, waist, activity and family history — that estimate your risk of type 2 diabetes, using the Indian Diabetes Risk Score. Runs in your browser; nothing is stored." jsonld={jsonld}>
+<Base title={t('Indian Diabetes Risk Score (IDRS) calculator')} description={t('Four questions — age, waist, activity and family history — that estimate your risk of type 2 diabetes, using the Indian Diabetes Risk Score. Runs in your browser; nothing is stored.')} jsonld={jsonld}>
+  <ClientWords sources={['/src/pages/tools/indian-diabetes-risk-score.astro', '/src/lib/idrs.ts']} />
   <header class="page-head wrap">
-    <span class="eyebrow">Tools</span>
-    <h1>Indian Diabetes Risk Score</h1>
-    <p>Four questions, made for <b>Indian adults</b>, that estimate whether you could have type 2 diabetes without knowing it. Everything is calculated on your device; nothing you type is sent or stored.</p>
+    <span class="eyebrow">{t('Tools')}</span>
+    <h1>{t('Indian Diabetes Risk Score')}</h1>
+    <p><T>Four questions, made for <b>Indian adults</b>, that estimate whether you could have type 2 diabetes without knowing it. Everything is calculated on your device; nothing you type is sent or stored.</T></p>
   </header>
 
   <div class="wrap calc-wrap">
     <form class="calc card" id="idrs" novalidate>
       <fieldset>
-        <legend>1. Your age</legend>
-        <div class="row"><label class="field"><input type="number" data-unitless inputmode="numeric" id="age" min="18" max="110" placeholder="42" aria-label="Age in years" /><span>years</span></label></div>
+        <legend>{t('1. Your age')}</legend>
+        <div class="row"><label class="field"><input type="number" data-unitless inputmode="numeric" id="age" min="18" max="110" placeholder="42" aria-label={t('Age in years')} /><span>{t('years')}</span></label></div>
       </fieldset>
 
       <fieldset>
-        <legend>2. Waist</legend>
+        <legend>{t('2. Waist')}</legend>
         <div class="seg small-seg">
-          <label><input type="radio" name="sex" value="m" checked /> <span>Man</span></label>
-          <label><input type="radio" name="sex" value="f" /> <span>Woman</span></label>
+          <label><input type="radio" name="sex" value="m" checked /> <span>{t('Man')}</span></label>
+          <label><input type="radio" name="sex" value="f" /> <span>{t('Woman')}</span></label>
         </div>
-        <div class="row"><UnitField id="waist" kind="length" label="Waist" placeholder={88} /></div>
-        <p class="small muted" style="margin:.5rem 0 0">Midway between the lowest rib and the top of the hip bone, after breathing out. Tap the unit to switch between cm and inches.</p>
+        <div class="row"><UnitField id="waist" kind="length" label={t('Waist')} placeholder={88} /></div>
+        <p class="small muted" style="margin:.5rem 0 0">{t('Midway between the lowest rib and the top of the hip bone, after breathing out. Tap the unit to switch between cm and inches.')}</p>
       </fieldset>
 
       <fieldset>
-        <legend>3. Physical activity</legend>
+        <legend>{t('3. Physical activity')}</legend>
         <div class="choices">
-          <label><input type="radio" name="act" value="vigorous" /> <span><b>Vigorous</b><small>Regular vigorous exercise, or strenuous (manual) work at home or at work.</small></span></label>
-          <label><input type="radio" name="act" value="moderate" /> <span><b>Moderate</b><small>Regular moderate exercise, or moderate physical activity at home or at work.</small></span></label>
-          <label><input type="radio" name="act" value="mild" /> <span><b>Mild</b><small>Regular mild exercise, or mild physical activity at home or at work.</small></span></label>
-          <label><input type="radio" name="act" value="none" /> <span><b>None</b><small>No exercise, and sitting (sedentary) activities at home and at work.</small></span></label>
+          <label><input type="radio" name="act" value="vigorous" /> <span><b>{t('Vigorous')}</b><small>{t('Regular vigorous exercise, or strenuous (manual) work at home or at work.')}</small></span></label>
+          <label><input type="radio" name="act" value="moderate" /> <span><b>{t('Moderate')}</b><small>{t('Regular moderate exercise, or moderate physical activity at home or at work.')}</small></span></label>
+          <label><input type="radio" name="act" value="mild" /> <span><b>{t('Mild')}</b><small>{t('Regular mild exercise, or mild physical activity at home or at work.')}</small></span></label>
+          <label><input type="radio" name="act" value="none" /> <span><b>{t('None')}</b><small>{t('No exercise, and sitting (sedentary) activities at home and at work.')}</small></span></label>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>4. Parents with diabetes</legend>
+        <legend>{t('4. Parents with diabetes')}</legend>
         <div class="choices">
-          <label><input type="radio" name="fam" value="none" /> <span><b>Neither parent</b></span></label>
-          <label><input type="radio" name="fam" value="one" /> <span><b>One parent</b></span></label>
-          <label><input type="radio" name="fam" value="both" /> <span><b>Both parents</b></span></label>
+          <label><input type="radio" name="fam" value="none" /> <span><b>{t('Neither parent')}</b></span></label>
+          <label><input type="radio" name="fam" value="one" /> <span><b>{t('One parent')}</b></span></label>
+          <label><input type="radio" name="fam" value="both" /> <span><b>{t('Both parents')}</b></span></label>
         </div>
       </fieldset>
-      <p class="small muted" style="margin:0">For adults who have not been told they have diabetes. Not valid in pregnancy.</p>
+      <p class="small muted" style="margin:0">{t('For adults who have not been told they have diabetes. Not valid in pregnancy.')}</p>
     </form>
 
     <div class="results" aria-live="polite">
       <div class="card result">
-        <span class="eyebrow">Your score</span>
-        <div class="big"><b id="score">—</b><span>out of 100</span></div>
+        <span class="eyebrow">{t('Your score')}</span>
+        <div class="big"><b id="score">—</b><span>{t('out of 100')}</span></div>
         <div class="scale" aria-hidden="true">
           <div class="band ok"></div><div class="band warn"></div><div class="band risk"></div>
           <div class="marker" id="marker"></div>
         </div>
         <div class="scale-labels" aria-hidden="true"><span>30</span><span>60</span></div>
-        <p class="verdict" id="verdict">Answer the four questions.</p>
+        <p class="verdict" id="verdict">{t('Answer the four questions.')}</p>
         <p class="small" id="advice"></p>
         <table class="parts" id="parts" hidden>
           <tbody>
-            <tr><td>Age</td><td id="p-age"></td></tr>
-            <tr><td>Waist</td><td id="p-waist"></td></tr>
-            <tr><td>Physical activity</td><td id="p-activity"></td></tr>
-            <tr><td>Parents with diabetes</td><td id="p-family"></td></tr>
+            <tr><td>{t('Age')}</td><td id="p-age"></td></tr>
+            <tr><td>{t('Waist')}</td><td id="p-waist"></td></tr>
+            <tr><td>{t('Physical activity')}</td><td id="p-activity"></td></tr>
+            <tr><td>{t('Parents with diabetes')}</td><td id="p-family"></td></tr>
           </tbody>
         </table>
         <p class="small muted" id="changeable"></p>
@@ -96,44 +107,44 @@ const jsonld = [
   </div>
 
   <section class="prose-wrap prose" style="padding-top:2rem">
-    <h2>How is the score worked out?</h2>
+    <h2>{t('How is the score worked out?')}</h2>
     <table>
-      <thead><tr><th>Question</th><th>Answer</th><th>Points</th></tr></thead>
+      <thead><tr><th>{t('Question')}</th><th>{t('Answer')}</th><th>{t('Points')}</th></tr></thead>
       <tbody>
-        <tr><td rowspan="3">Age</td><td>Under 35</td><td>0</td></tr>
+        <tr><td rowspan="3">{t('Age')}</td><td>{t('Under 35')}</td><td>0</td></tr>
         <tr><td>35 – 49</td><td>20</td></tr>
-        <tr><td>50 or more</td><td>30</td></tr>
-        <tr><td rowspan="3">Waist</td><td>Women under 80 cm, men under 90 cm</td><td>0</td></tr>
-        <tr><td>Women 80 – 89 cm, men 90 – 99 cm</td><td>10</td></tr>
-        <tr><td>Women 90 cm or more, men 100 cm or more</td><td>20</td></tr>
-        <tr><td rowspan="4">Physical activity</td><td>Vigorous: regular vigorous exercise or strenuous (manual) work at home or work</td><td>0</td></tr>
-        <tr><td>Moderate: regular moderate exercise or moderate activity at home or work</td><td>10</td></tr>
-        <tr><td>Mild: regular mild exercise or mild activity at home or work</td><td>20</td></tr>
-        <tr><td>None: no exercise, sedentary at home and work</td><td>30</td></tr>
-        <tr><td rowspan="3">Parents with diabetes</td><td>Neither</td><td>0</td></tr>
-        <tr><td>One</td><td>10</td></tr>
-        <tr><td>Both</td><td>20</td></tr>
+        <tr><td>{t('50 or more')}</td><td>30</td></tr>
+        <tr><td rowspan="3">{t('Waist')}</td><td>{t('Women under 80 cm, men under 90 cm')}</td><td>0</td></tr>
+        <tr><td>{t('Women 80 – 89 cm, men 90 – 99 cm')}</td><td>10</td></tr>
+        <tr><td>{t('Women 90 cm or more, men 100 cm or more')}</td><td>20</td></tr>
+        <tr><td rowspan="4">{t('Physical activity')}</td><td>{t('Vigorous: regular vigorous exercise or strenuous (manual) work at home or work')}</td><td>0</td></tr>
+        <tr><td>{t('Moderate: regular moderate exercise or moderate activity at home or work')}</td><td>10</td></tr>
+        <tr><td>{t('Mild: regular mild exercise or mild activity at home or work')}</td><td>20</td></tr>
+        <tr><td>{t('None: no exercise, sedentary at home and work')}</td><td>30</td></tr>
+        <tr><td rowspan="3">{t('Parents with diabetes')}</td><td>{t('Neither')}</td><td>0</td></tr>
+        <tr><td>{t('One')}</td><td>10</td></tr>
+        <tr><td>{t('Both')}</td><td>20</td></tr>
       </tbody>
     </table>
-    <p>Total below 30: low risk. 30 to 50: moderate. 60 or more: high risk.</p>
+    <p>{t('Total below 30: low risk. 30 to 50: moderate. 60 or more: high risk.')}</p>
 
-    <h2>How good is it?</h2>
-    <p>In the study that built it (2,350 adults in Chennai), a score of 60 or more found 72.5% of the people who had undiagnosed diabetes (sensitivity) and correctly cleared 60.1% of those who did not (specificity). Of the people scoring 60 or more, about 1 in 6 actually had diabetes; of those below 60, about 95 in 100 did not. It is a cheap first sieve that tells you who should have a blood test, not a test itself. Later studies in Mangalore and Lucknow found it worked in their populations too.</p>
-    <p>Want to check your BMI and waist-to-height ratio as well? Use the <a href="/tools/bmi-calculator/">BMI & waist calculator</a>.</p>
+    <h2>{t('How good is it?')}</h2>
+    <p>{t('In the study that built it (2,350 adults in Chennai), a score of 60 or more found 72.5% of the people who had undiagnosed diabetes (sensitivity) and correctly cleared 60.1% of those who did not (specificity). Of the people scoring 60 or more, about 1 in 6 actually had diabetes; of those below 60, about 95 in 100 did not. It is a cheap first sieve that tells you who should have a blood test, not a test itself. Later studies in Mangalore and Lucknow found it worked in their populations too.')}</p>
+    <p><T>Want to check your BMI and waist-to-height ratio as well? Use the <a href="/tools/bmi-calculator/">BMI & waist calculator</a>.</T></p>
 
     <div class="faq">
-      <h2>Common questions</h2>
+      <h2>{t('Common questions')}</h2>
       {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
     </div>
     <div class="refs" style="margin-top:2rem">
-      <h2>Sources</h2>
-      <ol>
+      <h2>{t('Sources')}</h2>
+      <ol lang="en">
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/16334618/">Mohan V, Deepa R, Deepa M, Somannavar S, Datta M. A simplified Indian Diabetes Risk Score for screening for undiagnosed diabetic subjects. J Assoc Physicians India 2005;53:759-63.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/21121209/">Adhikari P, Pathak R, Kotian S. Validation of the MDRF-Indian Diabetes Risk Score (IDRS) in another south Indian population through the Boloor Diabetes Study. J Assoc Physicians India 2010;58:434-6.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/29302549/">Khan MM, et al. Validity of Indian Diabetes Risk Score and its association with body mass index and glycosylated hemoglobin for screening of diabetes in and around areas of Lucknow. J Family Med Prim Care 2017;6:366-73.</a></li>
       </ol>
     </div>
-    <p class="disclaimer"><a href="/disclaimer/">Disclaimer</a></p>
+    <p class="disclaimer"><a href={L('/disclaimer/')}>{t('Disclaimer')}</a></p>
   </section>
 </Base>
 
@@ -185,6 +196,7 @@ const jsonld = [
 <script>
   import { unitValue } from '../../scripts/unit-fields';
   import { idrs, type Activity, type Family, type Sex } from '../../lib/idrs';
+  import { w } from '../../i18n/client';
 
   const $ = (id: string) => document.getElementById(id)!;
   const form = $('idrs') as HTMLFormElement;
@@ -192,9 +204,9 @@ const jsonld = [
   const num = (id: string) => parseFloat(($(id) as HTMLInputElement).value);
 
   const VERDICT = {
-    low: ['Low risk (below 30)', 'ok', 'Keep your waist and activity where they are. A low score does not rule diabetes out: if you have thirst, pass a lot of urine or lose weight without trying, get a blood test.'],
-    moderate: ['Moderate risk (30 to 50)', 'warn', 'Worth a blood test for diabetes (fasting glucose or HbA1c) at your next check-up, and worth bringing your waist down and moving more.'],
-    high: ['High risk (60 or more)', 'risk', 'Please get a blood test for diabetes soon: ask a doctor for a fasting glucose or HbA1c. Many people at this score already have diabetes without symptoms.'],
+    low: [w('Low risk (below 30)'), 'ok', w('Keep your waist and activity where they are. A low score does not rule diabetes out: if you have thirst, pass a lot of urine or lose weight without trying, get a blood test.')],
+    moderate: [w('Moderate risk (30 to 50)'), 'warn', w('Worth a blood test for diabetes (fasting glucose or HbA1c) at your next check-up, and worth bringing your waist down and moving more.')],
+    high: [w('High risk (60 or more)'), 'risk', w('Please get a blood test for diabetes soon: ask a doctor for a fasting glucose or HbA1c. Many people at this score already have diabetes without symptoms.')],
   } as const;
 
   function update() {
@@ -204,8 +216,8 @@ const jsonld = [
     const verdict = $('verdict'), parts = $('parts');
     if (!ready) {
       $('score').textContent = '—'; $('marker').style.opacity = '0';
-      const left = [!(age >= 18 && age <= 110) && 'age', !(waist >= 40 && waist <= 200) && 'waist', !activity && 'activity', !family && 'parents'].filter(Boolean);
-      verdict.textContent = age > 0 && age < 18 ? 'This score is for adults (18 and over).' : `Still to answer: ${left.join(', ')}.`;
+      const left = [!(age >= 18 && age <= 110) && w('age'), !(waist >= 40 && waist <= 200) && w('waist'), !activity && w('activity'), !family && w('parents')].filter(Boolean);
+      verdict.textContent = age > 0 && age < 18 ? w('This score is for adults (18 and over).') : w('Still to answer: {list}.', { list: left.join(', ') });
       verdict.className = 'verdict';
       $('advice').textContent = ''; $('changeable').textContent = ''; parts.hidden = true;
       return;
@@ -216,11 +228,11 @@ const jsonld = [
     const [text, cls, advice] = VERDICT[r.band];
     verdict.textContent = text; verdict.className = `verdict ${cls}`;
     $('advice').textContent = advice;
-    for (const k of ['age', 'waist', 'activity', 'family'] as const) $(`p-${k}`).textContent = `${r.parts[k]} pts`;
+    for (const k of ['age', 'waist', 'activity', 'family'] as const) $(`p-${k}`).textContent = w('{points} pts', { points: r.parts[k] });
     parts.hidden = false;
     $('changeable').textContent = r.changeable
-      ? `${r.changeable} of your ${r.score} points come from waist and activity, the two you can change.`
-      : 'Your waist and activity add no points: the score comes only from age and family history, which cannot change.';
+      ? w('{changeable} of your {score} points come from waist and activity, the two you can change.', { changeable: r.changeable, score: r.score })
+      : w('Your waist and activity add no points: the score comes only from age and family history, which cannot change.');
   }
   form.addEventListener('input', update);
   form.addEventListener('change', update);
