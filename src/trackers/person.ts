@@ -1,0 +1,381 @@
+// /trackers/person/#<id>: one person's readings. Add, edit and delete BP, sugar and weight; charts and lists; the
+// soft alert (on this screen only); share links for the doctor; CSV download. The person is chosen by the address
+// hash, so one static page serves everyone.
+
+import qrcode from 'qrcode-generator';
+import {
+  ageOn, askToRepeat, bmiFor, bpAverage, fromInputs, isAdult, toInputs, toMgdl, toMmol, validBp, validSugar,
+  LIMITS, RANGE, SAMPLE_NAME, SETTING_NAME, TEST_NAME, type BpReading, type BpValue, type Person, type Reading,
+  type SugarReading, type SugarTest, type WeightReading,
+} from '../lib/trackers';
+import { alertBox, bpSection, esc, historyLine, sugarSection, weightSection } from './render';
+import { TrackerStore, listShares, makeShare, newId, shareUrl, stopShare, type Share } from './store';
+
+type Kind = 'bp' | 'sugar' | 'weight';
+const STATUS = { syncing: 'Saving…', synced: 'Saved to your account.', offline: 'Not connected: saved on this device and will upload when you are back online.' };
+const tzNow = () => -new Date().getTimezoneOffset();
+const fmtDate = (t: number) => new Date(t).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+export function mountPerson(root: HTMLElement, store: TrackerStore, id: string) {
+  let open: { kind: Kind; edit?: Reading; asked?: boolean; rows?: number } | null = null;
+  let flash: { kind: Kind; html: string } | null = null;
+  let editingPerson = false;
+  let shares: Share[] | null = null;
+  let shareMsg = '';
+  let qrFor = '';
+
+  const person = () => store.person(id);
+
+  // ---------- forms ----------
+  const when = (r?: Reading, timeOptional = false) => {
+    const v = r ? toInputs(r.at, r.tz) : toInputs(Date.now(), tzNow());
+    return `<div class="tk-grid">
+      <label class="tk-f">Date<input type="date" name="date" value="${v.date}" max="${toInputs(Date.now(), tzNow()).date}" required></label>
+      <label class="tk-f">Time${timeOptional ? ' <span class="tk-hint">(optional)</span>' : ''}<input type="time" name="time" value="${v.time}"></label>
+    </div>`;
+  };
+  const note = (r?: Reading) => `<label class="tk-f">Note <span class="tk-hint">(optional, e.g. "missed my tablet")</span><input name="note" maxlength="${LIMITS.note}" value="${esc(r?.note ?? '')}" autocomplete="off"></label>`;
+  const buttons = (label = 'Save') => `<p class="tk-err" role="alert" hidden></p><div class="tk-row-btns"><button class="btn btn-primary" type="submit">${label}</button><button class="btn btn-ghost" type="button" data-cancel>Cancel</button></div>`;
+
+  function bpForm(r?: BpReading, rows = r?.values.length ?? 1, asked = false) {
+    const vals: (BpValue | null)[] = Array.from({ length: rows }, (_, i) => r?.values[i] ?? null);
+    const setting = r?.setting ?? 'home';
+    return `<form class="tk-form" data-form="bp" novalidate>
+      <h3>${r ? 'Edit' : 'Add'} blood pressure</h3>
+      <fieldset><legend>Where was it measured?</legend><div class="tk-seg">
+        ${(['home', 'clinic'] as const).map((s) => `<label><input type="radio" name="setting" value="${s}" ${s === setting ? 'checked' : ''}><span>${SETTING_NAME[s]}</span></label>`).join('')}
+      </div></fieldset>
+      ${vals.map((v, i) => `<fieldset><legend>${rows > 1 ? `Reading ${i + 1}` : 'Reading'}</legend><div class="tk-grid">
+        <label class="tk-f">Systolic (top)<input name="s${i}" type="number" inputmode="numeric" min="${RANGE.s[0]}" max="${RANGE.s[1]}" value="${v?.s ?? ''}" placeholder="120"></label>
+        <label class="tk-f">Diastolic (bottom)<input name="d${i}" type="number" inputmode="numeric" min="${RANGE.d[0]}" max="${RANGE.d[1]}" value="${v?.d ?? ''}" placeholder="80"></label>
+        <label class="tk-f">Pulse <span class="tk-hint">(optional)</span><input name="p${i}" type="number" inputmode="numeric" min="${RANGE.p[0]}" max="${RANGE.p[1]}" value="${v?.p ?? ''}" placeholder="72"></label>
+      </div></fieldset>`).join('')}
+      ${asked ? '<div class="tk-alert" role="note"><b>This reading is very high.</b> Sit quietly and measure again after 1–2 minutes, and enter it as reading 2. The two are averaged. If you cannot measure again now, just save.</div>' : ''}
+      ${rows < LIMITS.bpPerSitting ? '<button type="button" class="tk-link" data-more>+ Another reading at this sitting</button>' : ''}
+      ${when(r)}${note(r)}
+      <p class="small muted" style="margin:0">Sit for 5 minutes first, back supported, feet flat, arm resting at heart level. Take two readings 1 minute apart and enter both.</p>
+      ${buttons()}
+    </form>`;
+  }
+
+  function sugarForm(r?: SugarReading, test: SugarTest = r?.test ?? 'fbs') {
+    const pct = test === 'hba1c';
+    const unit = r?.unit === 'mmol' ? 'mmol' : 'mgdl';
+    const shown = r ? (r.test === 'hba1c' ? r.value.toFixed(1) : unit === 'mmol' ? toMmol(r.value).toFixed(1) : String(Math.round(r.value))) : '';
+    return `<form class="tk-form" data-form="sugar" novalidate>
+      <h3>${r ? 'Edit' : 'Add'} blood sugar</h3>
+      <fieldset><legend>Which test?</legend><div class="tk-seg">
+        ${(['fbs', 'ppbs', 'rbs', 'hba1c'] as const).map((t) => `<label><input type="radio" name="test" value="${t}" ${t === test ? 'checked' : ''}><span>${TEST_NAME[t]}</span></label>`).join('')}
+      </div></fieldset>
+      ${pct ? '' : `<fieldset><legend>How was it measured?</legend><div class="tk-seg">
+        ${(['lab', 'meter'] as const).map((s) => `<label><input type="radio" name="sample" value="${s}" ${s === (r?.sample ?? 'lab') ? 'checked' : ''}><span>${s === 'lab' ? 'Lab blood test' : 'Glucometer (finger-prick)'}</span></label>`).join('')}
+      </div></fieldset>`}
+      <div class="tk-grid">
+        <label class="tk-f">${pct ? 'HbA1c' : 'Value'}<input name="value" type="number" inputmode="decimal" step="${pct || unit === 'mmol' ? '0.1' : '1'}" value="${shown}" placeholder="${pct ? '6.2' : '110'}"></label>
+        <label class="tk-f">Unit${pct ? '<input value="%" disabled>' : `<select name="unit"><option value="mgdl" ${unit === 'mgdl' ? 'selected' : ''}>mg/dL</option><option value="mmol" ${unit === 'mmol' ? 'selected' : ''}>mmol/L</option></select>`}</label>
+      </div>
+      ${test === 'ppbs' ? '<p class="small muted" style="margin:0">2 hours after the start of a meal.</p>' : ''}
+      ${when(r, pct)}${note(r)}${buttons()}
+    </form>`;
+  }
+
+  function weightForm(r?: WeightReading) {
+    return `<form class="tk-form" data-form="weight" novalidate>
+      <h3>${r ? 'Edit' : 'Add'} weight</h3>
+      <label class="tk-f">Weight in kg<input name="kg" type="number" inputmode="decimal" step="0.1" min="${RANGE.kg[0]}" max="${RANGE.kg[1]}" value="${r?.kg ?? ''}" placeholder="66"></label>
+      ${when(r, true)}${note(r)}${buttons()}
+    </form>`;
+  }
+
+  function personForm(p: Person) {
+    const [y, m] = p.born.split('-');
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const sel = (n: 'htn' | 'dm' | 'meds', l: string) => `<label class="tk-f">${l}<select name="${n}">${[['', '—'], ['yes', 'Yes'], ['no', 'No'], ['unsure', 'Not sure']].map(([v, t]) => `<option value="${v}" ${(p[n] ?? '') === v ? 'selected' : ''}>${t}</option>`).join('')}</select></label>`;
+    return `<form class="tk-form" data-form="person" novalidate>
+      <h3>Edit details</h3>
+      <label class="tk-f">Name<input name="label" maxlength="${LIMITS.label}" value="${esc(p.label)}" required></label>
+      <div class="tk-grid">
+        <label class="tk-f">Month of birth<select name="month">${months.map((n, i) => { const v = String(i + 1).padStart(2, '0'); return `<option value="${v}" ${v === m ? 'selected' : ''}>${n}</option>`; }).join('')}</select></label>
+        <label class="tk-f">Year of birth<input name="year" type="number" inputmode="numeric" value="${y}"></label>
+      </div>
+      <fieldset><legend>Sex</legend><div class="tk-seg"><label><input type="radio" name="sex" value="m" ${p.sex === 'm' ? 'checked' : ''}><span>Male</span></label><label><input type="radio" name="sex" value="f" ${p.sex === 'f' ? 'checked' : ''}><span>Female</span></label></div></fieldset>
+      <label class="tk-f">Height in cm <span class="tk-hint">(optional)</span><input name="height" type="number" inputmode="decimal" value="${p.heightCm ?? ''}"></label>
+      <div class="tk-grid">${sel('htn', 'Known high BP?')}${sel('dm', 'Known diabetes?')}${sel('meds', 'On medicines for either?')}</div>
+      ${buttons()}
+      <p class="small" style="margin:0"><button type="button" class="tk-link danger" data-remove>Remove ${esc(p.label)} and all their readings</button></p>
+    </form>`;
+  }
+
+  // ---------- drawing ----------
+  function draw() {
+    const p = person();
+    if (!p) {
+      root.innerHTML = `<div class="tk-card"><p>${store.state === 'syncing' ? 'Loading…' : 'This person is not in your trackers (they may have been removed).'}</p><p><a href="/trackers/">All trackers</a></p></div>`;
+      return;
+    }
+    document.title = `${p.label} · Trackers · Dr. Harsh Maheshwari`;
+    const h1 = document.querySelector('.page-head h1');
+    if (h1) h1.textContent = p.label;
+    const rs = store.readings(id);
+    const age = ageOn(p.born, new Date());
+    const bmi = bmiFor(p, rs);
+    const o = { alerts: true, editable: true, width: root.clientWidth - 42 };
+    const sec = (kind: Kind, title: string, body: string) => `<section class="tk-card" id="tk-${kind}">
+      <div class="tk-sec-head"><h2>${title}</h2><button class="btn btn-ghost" type="button" data-open="${kind}">+ Add</button></div>
+      ${flash?.kind === kind ? flash.html : ''}
+      ${open?.kind === kind ? `<div class="tk-card" style="margin:.75rem 0;background:var(--surface-2)">${formFor(open.kind)}</div>` : ''}
+      <div style="margin-top:1rem">${body}</div>
+    </section>`;
+    root.innerHTML = `
+      <section class="tk-card">
+        <p class="muted" style="margin:0">${age} years · ${p.sex === 'm' ? 'Male' : 'Female'}${p.heightCm ? ` · ${p.heightCm} cm` : ''}${bmi ? ` · BMI ${bmi}` : ''}</p>
+        ${historyLine(p) ? `<p class="small muted" style="margin:.35rem 0 0">${esc(historyLine(p))}</p>` : ''}
+        ${editingPerson ? `<div style="margin-top:1rem">${personForm(p)}</div>` : '<p class="small" style="margin:.6rem 0 0"><button type="button" class="tk-link" data-editperson>Edit details</button></p>'}
+        <div class="tk-add" style="margin-top:1rem">
+          <button class="btn btn-primary" type="button" data-open="bp">+ Blood pressure</button>
+          <button class="btn btn-primary" type="button" data-open="sugar">+ Blood sugar</button>
+          <button class="btn btn-ghost" type="button" data-open="weight">+ Weight</button>
+        </div>
+        <p class="tk-status" style="margin-top:.75rem">${STATUS[store.state]}</p>
+      </section>
+      ${sec('bp', 'Blood pressure', bpSection(rs, o))}
+      ${sec('sugar', 'Blood sugar', sugarSection(rs, o))}
+      ${sec('weight', 'Weight', weightSection(p, rs, o))}
+      <section class="tk-card" id="tk-share">${shareHtml(p)}</section>
+      <p class="small"><button type="button" class="tk-link" data-csv>Download all readings (CSV)</button> · <a href="/trackers/">All trackers</a></p>`;
+    wire();
+  }
+
+  function formFor(kind: Kind) {
+    const e = open?.edit;
+    if (kind === 'bp') return bpForm(e as BpReading | undefined, open?.rows ?? (e as BpReading | undefined)?.values.length ?? 1, open?.asked);
+    if (kind === 'sugar') return sugarForm(e as SugarReading | undefined, (open as { test?: SugarTest }).test ?? (e as SugarReading | undefined)?.test);
+    return weightForm(e as WeightReading | undefined);
+  }
+
+  // ---------- share ----------
+  function shareHtml(p: Person) {
+    const mine = (shares ?? []).filter((s) => s.person === p.id && !s.stopped && (!s.expires || s.expires > Date.now()));
+    const what = (s: Share) => [s.scope.bp && 'BP', s.scope.sugar && 'sugar', s.scope.weight && 'weight'].filter(Boolean).join(', ');
+    return `<h2>Share with my doctor</h2>
+      <p class="muted">Your doctor opens the link (or scans the QR code) and sees ${esc(p.label === 'Me' ? 'your' : `${p.label}’s`)} latest readings each time, with no sign-in. <b>Anyone with the link can see these readings until you stop it.</b></p>
+      ${shareMsg ? `<p class="tk-saved" role="status">${esc(shareMsg)}</p>` : ''}
+      ${shares === null ? '<p class="muted small">Loading links…</p>' : mine.length ? `<ul class="tk-shares">${mine.map((s) => `<li class="tk-share">
+        <div><b>${esc(what(s))}</b> · made ${fmtDate(s.created)} · ${s.expires ? `lasts until ${fmtDate(s.expires)}` : 'until you stop it'} · ${s.opened ? `last opened ${fmtDate(s.opened)}` : 'not opened yet'}</div>
+        <code>${esc(shareUrl(s))}</code>
+        <div class="tk-row-btns">
+          <button class="btn btn-ghost" type="button" data-copy="${s.id}">Copy link</button>
+          <button class="btn btn-ghost" type="button" data-qr="${s.id}">${qrFor === s.id ? 'Hide QR code' : 'Show QR code'}</button>
+          <a class="btn btn-ghost" href="https://wa.me/?text=${encodeURIComponent(`My readings: ${shareUrl(s)}`)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <button class="tk-link danger" type="button" data-stop="${s.id}">Stop this link</button>
+        </div>
+        ${qrFor === s.id ? `<div class="tk-qr">${qrSvg(shareUrl(s))}</div>` : ''}
+      </li>`).join('')}</ul>` : '<p class="small muted">No links yet.</p>'}
+      <form class="tk-form" data-form="share" novalidate style="margin-top:1rem">
+        <fieldset><legend>Make a new link: what to include</legend><div class="tk-grid">
+          <label class="tk-check"><input type="checkbox" name="bp" checked> <span>Blood pressure</span></label>
+          <label class="tk-check"><input type="checkbox" name="sugar" checked> <span>Blood sugar</span></label>
+          <label class="tk-check"><input type="checkbox" name="weight"> <span>Weight</span></label>
+        </div></fieldset>
+        <label class="tk-f" style="max-width:20rem">How long it works<select name="days"><option value="30">30 days</option><option value="90" selected>90 days</option><option value="0">Until I stop it</option></select></label>
+        <p class="small muted" style="margin:0">The doctor sees the name, age, sex, height, the health history above, and the readings with their notes, for the last year (older ones on request). Alert notes are not shown.</p>
+        <p class="tk-err" role="alert" hidden></p>
+        <div class="tk-row-btns"><button class="btn btn-primary" type="submit">Make a link</button></div>
+      </form>`;
+  }
+
+  function qrSvg(text: string) {
+    const qr = qrcode(0, 'M');
+    qr.addData(text);
+    qr.make();
+    return qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true }).replace('<svg ', '<svg role="img" aria-label="QR code for the share link" ');
+  }
+
+  async function loadShares() {
+    try { shares = await listShares(); } catch { shares = []; shareMsg = 'Could not load your links (no connection?).'; }
+    draw();
+  }
+
+  // ---------- saving ----------
+  function readWhen(f: HTMLFormElement, timeOptional: boolean): number | string {
+    const fd = new FormData(f);
+    const date = String(fd.get('date') ?? ''), time = String(fd.get('time') ?? '') || (timeOptional ? '09:00' : '');
+    if (!date) return 'Please enter the date.';
+    if (!time) return 'Please enter the time.';
+    const at = fromInputs(date, time, tzNow());
+    if (at === null) return 'Please check the date and time.';
+    if (at > Date.now() + 5 * 60_000) return 'The date and time cannot be in the future.';
+    return at;
+  }
+
+  function saved(kind: Kind, r: Reading) {
+    const box = alertBox(r);
+    flash = { kind, html: `<div role="status" style="display:grid;gap:.6rem;margin-top:.75rem"><p class="tk-saved" style="margin:0">Saved.</p>${box}</div>` };
+    open = null;
+    draw();
+    document.getElementById(`tk-${kind}`)?.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
+
+  function submit(f: HTMLFormElement) {
+    const kind = f.dataset.form as Kind | 'person' | 'share';
+    const fd = new FormData(f);
+    const err = (m: string) => { const e = f.querySelector<HTMLElement>('.tk-err')!; e.textContent = m; e.hidden = false; };
+    const now = Date.now();
+    const edit = open?.edit;
+    const base = { id: edit?.id ?? newId(), person: id, tz: edit?.tz ?? tzNow(), note: String(fd.get('note') ?? '').trim().slice(0, LIMITS.note), created: edit?.created ?? now, updated: now };
+    if (kind === 'bp') {
+      const rows = open?.rows ?? 1;
+      const values: BpValue[] = [];
+      for (let i = 0; i < rows; i++) {
+        const s = Number(fd.get(`s${i}`)), d = Number(fd.get(`d${i}`)), p = fd.get(`p${i}`) ? Number(fd.get(`p${i}`)) : null;
+        if (!fd.get(`s${i}`) && !fd.get(`d${i}`) && i > 0) continue; // an empty extra row is ignored
+        const v = { s, d, p };
+        if (!validBp(v)) return err(`Please check reading ${i + 1}: systolic ${RANGE.s[0]}–${RANGE.s[1]}, diastolic ${RANGE.d[0]}–${RANGE.d[1]}, systolic higher than diastolic${p !== null ? `, pulse ${RANGE.p[0]}–${RANGE.p[1]}` : ''}.`);
+        values.push(p === null ? { s, d } : v);
+      }
+      if (!values.length) return err('Please enter the reading.');
+      const at = readWhen(f, false);
+      if (typeof at === 'string') return err(at);
+      if (!edit && !open?.asked && askToRepeat(values)) {
+        // Very high: ask for a second reading 1-2 minutes later before saving (the form keeps what was typed).
+        open = { kind: 'bp', asked: true, rows: 2, edit: { ...base, kind: 'bp', setting: fd.get('setting') === 'clinic' ? 'clinic' : 'home', values, at } as BpReading };
+        draw();
+        document.querySelector<HTMLInputElement>('#tk-bp input[name=s1]')?.focus();
+        open.edit = undefined; // still a new reading
+        return;
+      }
+      const r: BpReading = { ...base, kind: 'bp', setting: fd.get('setting') === 'clinic' ? 'clinic' : 'home', values, at };
+      store.putReading(r);
+      return saved('bp', r);
+    }
+    if (kind === 'sugar') {
+      const test = String(fd.get('test')) as SugarTest;
+      const pct = test === 'hba1c';
+      const unit = pct ? 'pct' : fd.get('unit') === 'mmol' ? 'mmol' : 'mgdl';
+      const typed = Number(fd.get('value'));
+      if (!fd.get('value') || !Number.isFinite(typed)) return err('Please enter the value.');
+      const value = unit === 'mmol' ? Math.round(toMgdl(typed) * 10) / 10 : typed;
+      if (!validSugar(test, value)) return err(pct ? `HbA1c should be between ${RANGE.pct[0]} and ${RANGE.pct[1]} %.` : `Blood sugar should be between ${RANGE.mgdl[0]} and ${RANGE.mgdl[1]} mg/dL (${(RANGE.mgdl[0] / 18.016).toFixed(1)}–${(RANGE.mgdl[1] / 18.016).toFixed(1)} mmol/L).`);
+      const at = readWhen(f, pct);
+      if (typeof at === 'string') return err(at);
+      const r: SugarReading = { ...base, kind: 'sugar', test, sample: pct ? 'lab' : fd.get('sample') === 'meter' ? 'meter' : 'lab', value, unit, at };
+      store.putReading(r);
+      return saved('sugar', r);
+    }
+    if (kind === 'weight') {
+      const kg = Number(fd.get('kg'));
+      if (!(kg >= RANGE.kg[0] && kg <= RANGE.kg[1])) return err(`Weight should be between ${RANGE.kg[0]} and ${RANGE.kg[1]} kg.`);
+      const at = readWhen(f, true);
+      if (typeof at === 'string') return err(at);
+      const r: WeightReading = { ...base, kind: 'weight', kg: Math.round(kg * 10) / 10, at };
+      store.putReading(r);
+      return saved('weight', r);
+    }
+    if (kind === 'person') {
+      const p = person()!;
+      const label = String(fd.get('label') ?? '').trim(), born = `${fd.get('year')}-${fd.get('month')}`;
+      const height = fd.get('height') ? Number(fd.get('height')) : null;
+      if (!label) return err('Please enter a name.');
+      if (!isAdult(born, new Date())) return err('The tracker is for adults, 18 and over.');
+      if (height !== null && !(height >= RANGE.heightCm[0] && height <= RANGE.heightCm[1])) return err(`Height should be between ${RANGE.heightCm[0]} and ${RANGE.heightCm[1]} cm.`);
+      const yn = (n: string) => (['yes', 'no', 'unsure'].includes(String(fd.get(n))) ? String(fd.get(n)) as 'yes' : null);
+      store.putPerson({ ...p, label, born, sex: fd.get('sex') === 'f' ? 'f' : 'm', heightCm: height, htn: yn('htn'), dm: yn('dm'), meds: yn('meds'), updated: now });
+      editingPerson = false;
+      return draw();
+    }
+    if (kind === 'share') {
+      const scope = { bp: !!fd.get('bp'), sugar: !!fd.get('sugar'), weight: !!fd.get('weight') };
+      if (!scope.bp && !scope.sugar && !scope.weight) return err('Choose at least one thing to include.');
+      const days = Number(fd.get('days')) as 30 | 90 | 0;
+      store.flush(); // the doctor should see the readings just added
+      makeShare(id, scope, days).then((s) => { shares = [s, ...(shares ?? [])]; shareMsg = 'Link made. Copy it, show the QR code, or send it on WhatsApp.'; qrFor = s.id; draw(); })
+        .catch((e: Error) => err(/unknown person/.test(e.message) ? 'Please wait a moment for this person to finish saving, then try again.' : `Could not make the link: ${e.message}`));
+    }
+  }
+
+  function csv() {
+    const p = person()!;
+    const rows = [['date', 'time', 'type', 'where / test', 'sample', 'systolic', 'diastolic', 'pulse', 'value', 'unit', 'note']];
+    for (const r of store.readings(id)) {
+      const t = toInputs(r.at, r.tz);
+      if (r.kind === 'bp') r.values.forEach((v, i) => rows.push([t.date, t.time, 'BP', SETTING_NAME[r.setting], '', String(v.s), String(v.d), v.p ? String(v.p) : '', '', 'mmHg', i === 0 ? r.note ?? '' : '']));
+      else if (r.kind === 'sugar') rows.push([t.date, t.time, 'Sugar', TEST_NAME[r.test], r.test === 'hba1c' ? 'Lab' : SAMPLE_NAME[r.sample], '', '', '', r.test === 'hba1c' ? r.value.toFixed(1) : String(Math.round(r.value)), r.test === 'hba1c' ? '%' : 'mg/dL', r.note ?? '']);
+      else rows.push([t.date, t.time, 'Weight', '', '', '', '', '', String(r.kg), 'kg', r.note ?? '']);
+    }
+    const text = rows.map((r) => r.map((c) => (/[",\n]/.test(c) ? `"${c.replace(/"/g, '""')}"` : c)).join(',')).join('\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([`﻿${text}`], { type: 'text/csv;charset=utf-8' }));
+    a.download = `readings-${p.label.replace(/[^A-Za-z0-9]+/g, '-').toLowerCase() || 'person'}.csv`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+
+  // ---------- events ----------
+  function wire() {
+    root.querySelectorAll<HTMLButtonElement>('[data-open]').forEach((b) => b.addEventListener('click', () => {
+      open = { kind: b.dataset.open as Kind }; flash = null; draw();
+      const sec = document.getElementById(`tk-${open.kind}`);
+      sec?.querySelector<HTMLElement>('form input:not([type=radio]), form select')?.focus({ preventScroll: true });
+      sec?.scrollIntoView({ block: 'start' });
+    }));
+    root.querySelectorAll<HTMLFormElement>('form[data-form]').forEach((f) => {
+      f.addEventListener('submit', (e) => { e.preventDefault(); submit(f); });
+      f.querySelector('[data-cancel]')?.addEventListener('click', () => { if (f.dataset.form === 'person') editingPerson = false; else open = null; draw(); });
+    });
+    // Changing the sugar test redraws the form: HbA1c has no sample or unit choice, and its time is optional.
+    root.querySelector<HTMLFormElement>('form[data-form=sugar]')?.addEventListener('change', (e) => {
+      const t = e.target as HTMLInputElement;
+      if (t.name !== 'test' || !open) return;
+      (open as { test?: SugarTest }).test = t.value as SugarTest;
+      draw();
+      root.querySelector<HTMLInputElement>(`form[data-form=sugar] input[name=test][value=${t.value}]`)?.focus();
+    });
+    root.querySelector('[data-more]')?.addEventListener('click', () => {
+      const f = root.querySelector<HTMLFormElement>('form[data-form=bp]')!;
+      const keep = new FormData(f);
+      open = { ...open!, rows: (open?.rows ?? 1) + 1 };
+      draw();
+      const g = root.querySelector<HTMLFormElement>('form[data-form=bp]')!;
+      for (const [k, v] of keep) { const el = g.elements.namedItem(k); if (el instanceof HTMLInputElement && el.type !== 'radio') el.value = String(v); else if (el instanceof RadioNodeList) el.value = String(v); }
+      g.querySelector<HTMLInputElement>(`input[name=s${(open.rows ?? 2) - 1}]`)?.focus();
+    });
+    root.querySelector('[data-editperson]')?.addEventListener('click', () => { editingPerson = true; draw(); });
+    root.querySelector('[data-remove]')?.addEventListener('click', () => {
+      const p = person()!;
+      if (!confirm(`Remove ${p.label} and all their readings? Any links shared with a doctor stop working. This cannot be undone.`)) return;
+      store.removePerson(id);
+      store.flush().finally(() => { location.href = '/trackers/'; });
+    });
+    root.querySelectorAll<HTMLButtonElement>('[data-edit]').forEach((b) => b.addEventListener('click', () => {
+      const r = store.reading(b.dataset.edit!);
+      if (!r) return;
+      open = { kind: r.kind, edit: r, rows: r.kind === 'bp' ? r.values.length : undefined }; flash = null; draw();
+      document.getElementById(`tk-${r.kind}`)?.scrollIntoView({ block: 'start' });
+    }));
+    root.querySelectorAll<HTMLButtonElement>('[data-del]').forEach((b) => b.addEventListener('click', () => {
+      if (!confirm('Delete this reading?')) return;
+      store.removeReading(b.dataset.del!);
+    }));
+    root.querySelector('[data-csv]')?.addEventListener('click', csv);
+    root.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
+      const s = shares?.find((x) => x.id === b.dataset.copy);
+      if (!s) return;
+      try { await navigator.clipboard.writeText(shareUrl(s)); b.textContent = 'Copied'; } catch { prompt('Copy this link:', shareUrl(s)); }
+    }));
+    root.querySelectorAll<HTMLButtonElement>('[data-qr]').forEach((b) => b.addEventListener('click', () => { qrFor = qrFor === b.dataset.qr ? '' : b.dataset.qr!; draw(); }));
+    root.querySelectorAll<HTMLButtonElement>('[data-stop]').forEach((b) => b.addEventListener('click', async () => {
+      if (!confirm('Stop this link? Anyone who has it will no longer see the readings.')) return;
+      try { await stopShare(b.dataset.stop!); shares = (shares ?? []).map((s) => (s.id === b.dataset.stop ? { ...s, stopped: Date.now() } : s)); shareMsg = 'Link stopped.'; draw(); }
+      catch { alert('Could not stop the link. Please try again.'); }
+    }));
+  }
+
+  // Redraw on sync, but never while a form is being filled in (only the status line changes then).
+  store.subscribe(() => {
+    if (root.querySelector('form[data-form]:not([data-form=share]) input:focus, form[data-form]:not([data-form=share]) select:focus') || open || editingPerson) {
+      const s = root.querySelector('.tk-status'); if (s) s.textContent = STATUS[store.state];
+    } else draw();
+  });
+  draw();
+  loadShares();
+}

@@ -1,0 +1,37 @@
+---
+// One person's BP, sugar and weight readings (/trackers/person/#<id>). Private to the signed-in account: not indexed,
+// not in the sitemap. The page code is in src/trackers/person.ts.
+import Base from '../../../layouts/Base.astro';
+import '../../../styles/trackers.css';
+---
+<Base title="Readings" description="Blood pressure, blood sugar and weight readings, with charts, alerts and a link to share with your doctor." noindex>
+  <header class="page-head wrap" style="padding-bottom:1rem">
+    <span class="eyebrow">Trackers</span>
+    <h1>Readings</h1>
+  </header>
+  <div class="wrap tk-wrap" id="tk-person" aria-live="polite"><p class="muted">Loading…</p></div>
+  <noscript><p class="wrap">This page needs JavaScript.</p></noscript>
+  <p class="wrap small muted">Very high or very low readings show a note on this screen only; nothing is sent to anyone. <a href="/privacy/#trackers">What is stored</a> · <a href="/disclaimer/">Disclaimer</a></p>
+</Base>
+
+<script>
+  import { account, claimLocalProgress, signInHref } from '../../../trainers/core/account';
+  import { TrackerStore } from '../../../trackers/store';
+  import { mountPerson } from '../../../trackers/person';
+  import { esc } from '../../../trackers/render';
+
+  const root = document.getElementById('tk-person')!;
+  const id = location.hash.slice(1);
+  const a = await account();
+  if (!a.enabled || !a.user) {
+    root.innerHTML = `<div class="tk-card"><p>Please sign in to see these readings.</p><div class="tk-row-btns">${a.enabled ? `<a class="btn btn-primary" href="${esc(signInHref('/trackers/'))}">Sign in with Google</a>` : ''}<a class="btn btn-ghost" href="/trackers/">All trackers</a></div></div>`;
+  } else if (!/^[A-Za-z0-9_-]{6,64}$/.test(id)) {
+    location.replace('/trackers/');
+  } else {
+    claimLocalProgress(a.user.email);
+    const store = new TrackerStore();
+    mountPerson(root, store, id);
+    await store.sync();
+  }
+  addEventListener('hashchange', () => location.reload());
+</script>

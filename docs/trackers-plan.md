@@ -1,6 +1,6 @@
 # Trackers (BP and blood sugar): plan and settled decisions
 
-Status: **planning, not built.** Agreed with Harsh on 11 Oct 2026. Clinical wording and cut-offs: Harsh reviews before `main`.
+Status: **built on branch `claude/modest-newton-4q0s6e`, not yet on `main`.** Agreed with Harsh on 11 Oct 2026. Clinical wording and cut-offs: Harsh reviews before `main`.
 
 A place where a signed-in person logs blood pressure and blood sugar readings for themselves and adult family members,
 sees them over time, gets an urgent alert for dangerous values, and shares a live read-only link with their doctor.
@@ -96,8 +96,11 @@ The doctor share view shows the readings but not the alert notes or marks.
   lasts (**30 days / 90 days (default) / until I stop it**). Holder sees each link's last-opened time and can **stop** it
   at once; a new link can be made any time.
 - Security:
-  - Token: 128-bit random, only its SHA-256 hash stored (like session cookies). It sits after `#`, so it is never in server
-    logs, analytics or the Referer header; the static page sends it to `/api/trackers/shared` in a request header.
+  - Token: 192-bit random (32 characters). It sits after `#`, so it is never in server logs, analytics or the Referer
+    header; the static page sends it to `/api/trackers/shared` in a request header.
+  - The token is stored as it is (not hashed, unlike session cookies), so the owner can copy the link or show its QR code
+    again at the next visit. Hashing would protect nothing here: the readings a token opens sit in the same database.
+  - A person called "Me" is shown to the doctor as "Patient"; month of birth and account details are never sent.
   - Read-only; responses `Cache-Control: no-store`; page `noindex`, `Referrer-Policy: no-referrer`.
   - The page says plainly: "Anyone with this link can see these readings until you stop it."
   - Optional later: a 4-digit PIN on the link (parked).
@@ -105,12 +108,14 @@ The doctor share view shows the readings but not the alert notes or marks.
 
 ## Storage and sync (D1 migration 5; never edit shipped migrations)
 
-- `tracked_people` (id, user_id, label, birth_ym, sex, height_cm, history json, consent_at, created/updated/deleted, received_at).
-- `measurements` (id, user_id, person_id, kind `bp|glucose|hba1c|weight`, values json, setting/sample, measured_at (UTC ms)
-  + tz offset, note, created/updated/deleted, received_at). Indexes `(user_id, received_at)` and `(person_id, measured_at)`.
-- `share_links` (token_hash, user_id, person_id, scope, expires_at, revoked_at, last_opened_at, created_at).
+- `tracker_people` (user_id, id, data json, updated_at, deleted_at, received_at).
+- `tracker_readings` (user_id, id, person_id, kind `bp|sugar|weight`, at (UTC ms), data json, updated_at, deleted_at,
+  received_at). Indexes `(user_id, received_at)` (delta sync) and `(user_id, person_id, at)` (doctor view).
+  HbA1c is a sugar reading with test `hba1c`. The JSON shapes and their checks are in `src/lib/trackers.ts` (server and browser).
+- `tracker_shares` (token, id, user_id, person_id, scope json, created_at, expires_at, stopped_at, opened_at).
 - Sync like highlights: client ids, newest `updated` wins, deletes kept as `deleted`, delta download `?since=`, batched
-  outbox upload. Store behind a `TrackerStore` (`SyncedTrackerStore`), the UI never touches localStorage directly.
+  outbox upload. All through `TrackerStore` (`src/trackers/store.ts`, browser copy `tracker:v1`, cleared on sign-out);
+  the pages never touch localStorage directly. Limits: 20 people, 20,000 readings, 10 live links per person.
 - Free-plan budget: a person adds a few readings a day; far below the reader's load. No per-keystroke requests.
 
 ## Pages

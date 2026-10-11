@@ -24,6 +24,7 @@ export const MODES: Record<Mode, ModeInfo> = {
     nav: [
       { href: '/learn/', label: 'Learn' },
       { href: '/tools/', label: 'Tools' },
+      { href: '/trackers/', label: 'Trackers' },
       { href: '/books/', label: 'Books' },
       { href: '/videos/', label: 'Videos' },
       { href: '/blog/', label: 'Blog' },
@@ -31,7 +32,7 @@ export const MODES: Record<Mode, ModeInfo> = {
     ],
     footer: [
       { title: 'Learn', links: [{ href: '/learn/', label: 'Guides' }, { href: '/blog/', label: 'Blog' }] },
-      { title: 'Use', links: [{ href: '/tools/', label: 'Tools' }, { href: '/books/', label: 'Books' }, { href: '/videos/', label: 'Videos' }] },
+      { title: 'Use', links: [{ href: '/tools/', label: 'Tools' }, { href: '/trackers/', label: 'Trackers' }, { href: '/books/', label: 'Books' }, { href: '/videos/', label: 'Videos' }] },
     ],
   },
   doctors: {

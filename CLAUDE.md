@@ -229,6 +229,22 @@ local devDependency. Change production settings only on purpose; preview-only se
   Walking counts towards WHO minutes; the 10-minute rule applies only to the IPAQ score; screen time and sleep are checked only under 5.
   Words: "Reached" / "Not yet", never "inactive". Clinical wording: Harsh reviews before `main`.
 
+## Trackers: BP and blood sugar (`/trackers/`)
+
+- Plan, sources and settled decisions: `docs/trackers-plan.md`. For Everyone only (a menu item; not under For Doctors). Google sign-in is required
+  to save. One account keeps readings for the holder and **adult (18+) family members** (a tick that they agreed). Readings: BP (clinic or home/work,
+  1-3 readings per sitting averaged, pulse optional), sugar (FBS, PPBS, RBS from lab or glucometer; HbA1c), weight. Medicines, reminders and other
+  markers are parked.
+- Rules in `src/lib/trackers.ts` (tested in `tests/trackers.test.mjs`). **Log + soft alerts only** (Harsh, 11 Oct 2026): SBP >= 180 or DBP >= 110
+  (judged on the sitting's average; a very high first reading asks for a repeat), sugar < 70 (< 54 severely low) and >= 300 mg/dL; no low-BP alert,
+  no HbA1c alert. The alert is a note on the patient's own screen only: never sent anywhere, no sound or pop-up, not on the doctor's view.
+  Faint unlabelled chart lines: BP 140/90 and 135/85, FBS 126, HbA1c 6.5. Alert numbers and wording are clinical content: Harsh reviews before `main`.
+- Pages: `src/pages/trackers/` (home, `person/#<id>`, `view/#<token>`); code `src/trackers/` (`store.ts` TrackerStore, `person.ts`, `render.ts`,
+  `chart.ts`). Server `src/server/trackers.ts`, D1 migration 5. The person and doctor pages are noindex and out of the sitemap.
+- **Doctor share link**: `/trackers/view/#<token>`, live (fetched on every opening), read-only, one person, scope BP/sugar/weight, 30 or 90 days or
+  until stopped; the owner sees when it was last opened and can stop it. The token stays after `#` and goes to `/api/trackers/shared` in a header.
+  Removing a person or deleting the account stops every link. Keep `/privacy/#trackers` in step with what is stored and shown.
+
 ## Drafts
 
 `draft: true` in frontmatter shows the page on local dev and Cloudflare preview builds (any branch other than `main`,

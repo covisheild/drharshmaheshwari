@@ -105,7 +105,20 @@ test('header navigation stays inside the current mode', () => {
     }
   }
   assert.deepEqual(navHrefs(html.get('/doctors/')), ['/doctors/evidence/', '/doctors/trainers/', '/doctors/tools/', '/doctors/books/', '/doctors/videos/']);
-  assert.deepEqual(navHrefs(html.get('/')), ['/learn/', '/tools/', '/books/', '/videos/', '/blog/', '/about/']);
+  assert.deepEqual(navHrefs(html.get('/')), ['/learn/', '/tools/', '/trackers/', '/books/', '/videos/', '/blog/', '/about/']);
+});
+
+test('trackers: in the For Everyone menu, not For Doctors; private pages stay out of search and the sitemap', () => {
+  assert.ok(html.get('/trackers/'), '/trackers/ is built');
+  assert.ok(!html.has('/doctors/trackers/'), 'no For Doctors trackers page');
+  const sitemap = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
+  assert.match(sitemap, /\/trackers\/<\/loc>/);
+  for (const url of ['/trackers/person/', '/trackers/view/']) {
+    assert.match(html.get(url), /<meta name="robots" content="noindex"/, `${url} is noindex`);
+    assert.doesNotMatch(sitemap, new RegExp(url.replace(/\//g, '\\/')), `${url} is not in the sitemap`);
+  }
+  assert.match(html.get('/trackers/view/'), /<meta name="referrer" content="no-referrer"/, 'the doctor view sends no referrer');
+  assert.match(html.get('/privacy/'), /id="trackers"/, '/privacy/ says what the trackers store');
 });
 
 test('no internal link is broken', () => {

@@ -16,7 +16,8 @@ const branch = process.env.WORKERS_CI_BRANCH ?? process.env.CF_PAGES_BRANCH ?? '
 export default defineConfig({
   site: 'https://drharshmaheshwari.com',
   trailingSlash: 'ignore',
-  integrations: [sitemap(), ogImages({ theme: json('./src/data/theme.json'), palettes: json('./src/data/palettes.json') })],
+  // Private pages (one person's readings, a doctor's shared view) stay out of the sitemap; they are also noindex.
+  integrations: [sitemap({ filter: (page) => !/\/trackers\/(person|view)\//.test(page) }), ogImages({ theme: json('./src/data/theme.json'), palettes: json('./src/data/palettes.json') })],
   prefetch: true,
   // The site is fully static and never uses Astro sessions. Without this, the Cloudflare adapter adds a
   // SESSION KV binding with no ID, which Worker Previews reject (code 10021).
