@@ -197,14 +197,14 @@ a.card:hover { transform: translateY(-3px); border-color: color-mix(in oklab, va
 .pbar { height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
 .pbar i { display: block; height: 100%; background: var(--brand); }
 
-/* Hindi pages (Devanagari, src/i18n/): taller lines for the vowel signs above and below the letters, and no tight or wide
+/* Indian-language pages (src/i18n/): taller lines for the vowel signs above and below the letters, and no tight or wide
    letter-spacing, which pulls the joined letters apart. Labels stay small but are not spaced out. */
-:root:lang(hi) { --leading: 1.8; --h-tracking: 0; --eyebrow-tracking: .03em; }
-:lang(hi) h1, :lang(hi) h2, :lang(hi) h3 { line-height: 1.38; }
-:lang(hi) .bm-tag, :lang(hi) .keypoints h2, :lang(hi) .footer-grid h4, :lang(hi) .bm-fld-l, :lang(hi) .mode-badge, :lang(hi) .brand-name { letter-spacing: .02em; }
-:lang(hi) .eyebrow, :lang(hi) .bm-tag, :lang(hi) .keypoints h2, :lang(hi) .footer-grid h4 { font-size: .82rem; }
-/* The monospace label font has no Devanagari and wide spaces: Hindi labels use the text font. */
-:lang(hi) .eyebrow, :lang(hi) .bm-tag, :lang(hi) .keypoints h2, :lang(hi) .footer-grid h4, :lang(hi) .bm-fld-l, :lang(hi) .bm-win-bar span, :lang(hi) .mode-badge { font-family: var(--font-body); }
+:root:is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) { --leading: 1.8; --h-tracking: 0; --eyebrow-tracking: .03em; }
+:is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) h1, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) h2, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) h3 { line-height: 1.38; }
+:is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .bm-tag, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .keypoints h2, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .footer-grid h4, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .bm-fld-l, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .mode-badge, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .brand-name { letter-spacing: .02em; }
+:is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .eyebrow, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .bm-tag, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .keypoints h2, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .footer-grid h4 { font-size: .82rem; }
+/* The monospace label font has no Devanagari and wide spaces: so these labels use the text font. */
+:is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .eyebrow, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .bm-tag, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .keypoints h2, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .footer-grid h4, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .bm-fld-l, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .bm-win-bar span, :is(:lang(hi), :lang(mr), :lang(bn), :lang(or), :lang(ta), :lang(te), :lang(kn), :lang(ml)) .mode-badge { font-family: var(--font-body); }
 
 /* Language menu (src/components/site/LangSwitch.astro): For Everyone pages only, when the build has more than one language. */
 .lang-menu { position: relative; flex: none; }

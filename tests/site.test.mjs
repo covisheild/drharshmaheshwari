@@ -8,6 +8,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { UPI_CONFIG } from '../src/lib/support.ts';
+import { LANGS, langOf } from '../src/i18n/languages.ts';
 
 const DIST = new URL('../dist/client/', import.meta.url).pathname;
 
@@ -87,9 +88,10 @@ test('every page has the mode switch with the exact labels, marking the current 
     const sw = doc.match(/<nav class="mode-switch"[\s\S]*?<\/nav>/)?.[0];
     assert.ok(sw, `${url} has no mode switch`);
     // The link text is "For Everyone" / "For Doctors" (the "For " is wrapped in a span that phones hide to make room).
-    const links = [...sw.matchAll(/<a href="([^"]+)"([^>]*)>([\s\S]*?)<\/a>/g)].map((m) => ({ href: m[1], attrs: m[2], text: m[3].replace(/<[^>]+>/g, '') }));
-    // Hindi pages (/hi/, tests/i18n.test.mjs) carry the same switch in Hindi.
-    const [everyone, doctors] = url.startsWith('/hi/') ? [['/hi/', 'सबके लिए'], ['/doctors/', 'डॉक्टरों के लिए']] : [['/', 'For Everyone'], ['/doctors/', 'For Doctors']];
+    const links = [...sw.matchAll(/<a href="([^"]+)"([^>]*)>([\s\S]*?)<\/a>/g)].map((m) => ({ href: m[1], attrs: m[2], text: m[3].replace(/<[^>]+>|[\u2060\u2063]/g, '') })); // untranslated words are marked; tests/i18n.test.mjs reports them
+    // Pages in another language (/hi/..., tests/i18n.test.mjs) carry the same switch in that language.
+    const lang = langOf(url), dict = lang === 'en' ? {} : JSON.parse(readFileSync(new URL(`../src/i18n/${lang}.json`, import.meta.url), 'utf8'));
+    const [everyone, doctors] = lang === 'en' ? [['/', 'For Everyone'], ['/doctors/', 'For Doctors']] : [[`/${lang}/`, dict['For Everyone'] ?? 'For Everyone'], ['/doctors/', dict['For Doctors'] ?? 'For Doctors']];
     assert.deepEqual(links.map((l) => [l.href, l.text]), [everyone, doctors], url);
     const current = links.find((l) => l.attrs.includes('aria-current="true"'))?.text;
     assert.equal(current, url.startsWith('/doctors/') ? doctors[1] : everyone[1], url);
@@ -174,7 +176,7 @@ test('/disclaimer/ carries the full CC BY credit for the recordings, the book li
 
 test('pages stay clean: the long licence and disclaimer lines are gone from book, series, article and trainer pages', () => {
   for (const [url, doc] of html) {
-    if (url === '/disclaimer/') continue;
+    if (url === '/disclaimer/' || /^\/[a-z]{2}\/disclaimer\/$/.test(url)) continue; // its translations carry the same lines
     assert.doesNotMatch(doc, /Educational, not personal medical advice\.<\/p>|free to copy, share and adapt for non-commercial use, with credit, under the same licence|If (this|these) (book|books|trainer) helps? you|not for diagnosing patients|Progress is saved in this browser only/, `${url} still carries a long disclaimer line`);
   }
 });
@@ -237,7 +239,7 @@ test('/support/: one-time UPI only, closed until a UPI ID is configured, linked 
   assert.doesNotMatch(doc, /api\.qrserver|chart\.googleapis|quickchart|qr-code-generator|razorpay|cashfree|payu|juspay/i, 'no third-party QR service or gateway');
   for (const [url, page] of html) {
     if (url.startsWith('/doctors/trainers/auscultation/')) assert.match(page, /href="\/support\/"/, `${url} lacks the quiet support line`);
-    else if (/<footer class="site-footer"/.test(page)) assert.match(page.match(/<footer class="site-footer"[\s\S]*?<\/footer>/)[0], url.startsWith('/hi/') ? /href="\/hi\/support\/"/ : /href="\/support\/"/, `${url} footer lacks /support/`);
+    else if (/<footer class="site-footer"/.test(page)) assert.match(page.match(/<footer class="site-footer"[\s\S]*?<\/footer>/)[0], new RegExp(`href="${langOf(url) === 'en' ? '' : `/${langOf(url)}`}/support/"`), `${url} footer lacks /support/`);
   }
 });
 
@@ -395,7 +397,7 @@ test('every file the Statistics book reads with read.csv("data/...") is publishe
 });
 
 // ---------- Back button ----------
-test('Back button: on every site-chrome page except the home pages (and /hi/), and every page can reach home through its parents', () => {
+test('Back button: on every site-chrome page except the home pages (including every language home page), and every page can reach home through its parents', () => {
   const pages = [];
   const walk = (dir, url) => {
     for (const f of readdirSync(dir)) {
@@ -413,7 +415,7 @@ test('Back button: on every site-chrome page except the home pages (and /hi/), a
     const html = readFileSync(fileFor(url), 'utf8');
     const hasHeader = html.includes('class="site-header"');
     const m = html.match(/<a class="back-btn" href="([^"]+)"/);
-    if (url === '/' || url === '/doctors/' || url === '/hi/') { assert.ok(!m, `${url} (a home page) has no Back button`); continue; }
+    if (url === '/' || url === '/doctors/' || LANGS.some((l) => url === `/${l.code}/`)) { assert.ok(!m, `${url} (a home page) has no Back button`); continue; }
     if (!hasHeader) continue; // trainer and reader pages bring their own top bar with a back arrow
     assert.ok(m, `${url} has a Back button`);
     assert.equal(m[1], parent(url), `${url} Back goes one level up`);

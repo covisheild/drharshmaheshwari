@@ -8,8 +8,15 @@
 
 import { langOf, LANG, type Lang } from './languages';
 import hi from './hi.json';
+import mr from './mr.json';
+import bn from './bn.json';
+import or from './or.json';
+import ta from './ta.json';
+import te from './te.json';
+import kn from './kn.json';
+import ml from './ml.json';
 
-export const DICTS: Partial<Record<Lang, Record<string, string>>> = { hi };
+export const DICTS: Partial<Record<Lang, Record<string, string>>> = { hi, mr, bn, or, ta, te, kn, ml };
 
 export const MISSING_START = '\u2063', MISSING_END = '\u2060';
 

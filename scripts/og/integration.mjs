@@ -15,12 +15,13 @@ const FONTS = () => [
   { name: 'Outfit', data: font('@fontsource/outfit', 'outfit-latin-600-normal.woff'), weight: 600, style: 'normal' },
   { name: 'DM Sans', data: font('@fontsource/dm-sans', 'dm-sans-latin-400-normal.woff'), weight: 400, style: 'normal' },
   { name: 'DM Sans', data: font('@fontsource/dm-sans', 'dm-sans-latin-500-normal.woff'), weight: 500, style: 'normal' },
-  // Hindi pages: satori falls back to these for Devanagari letters (it shapes the joined letters correctly).
-  ...[400, 500, 600].map((weight) => ({ name: 'Noto Sans Devanagari', data: font('@fontsource/noto-sans-devanagari', `noto-sans-devanagari-devanagari-${weight}-normal.woff`), weight, style: 'normal' })),
+  // Indian-language pages: satori falls back to these for each script's letters (it shapes the joined letters correctly).
+  ...['devanagari', 'bengali', 'oriya', 'tamil', 'telugu', 'kannada', 'malayalam'].flatMap((script) => [400, 500, 600].map((weight) =>
+    ({ name: `Noto Sans ${script}`, data: font(`@fontsource/noto-sans-${script}`, `noto-sans-${script}-${script}-${weight}-normal.woff`), weight, style: 'normal' }))),
 ];
 // Translated pages (/hi/...): the labels below come from that language's dictionary (src/i18n/<lang>.json), the title and
 // description from the page itself.
-const DICTS = { hi: JSON.parse(readFileSync(new URL('../../src/i18n/hi.json', import.meta.url), 'utf8')) };
+const DICTS = Object.fromEntries(['hi', 'mr', 'bn', 'or', 'ta', 'te', 'kn', 'ml'].map((l) => [l, JSON.parse(readFileSync(new URL(`../../src/i18n/${l}.json`, import.meta.url), 'utf8'))]));
 
 const SECTION = { blog: 'Blog', learn: 'Guides', books: 'Books', tools: 'Tools', videos: 'Videos', about: 'About', evidence: 'Evidence', trainers: 'Trainers' };
 const MODE = { everyone: 'For Everyone', doctors: 'For Doctors' };
@@ -33,8 +34,8 @@ const meta = (html, prop) => {
   const m = html.match(new RegExp(`<meta property="${prop}" content="([^"]*)"`));
   return m ? unescapeHtml(m[1]) : '';
 };
-// Devanagari needs taller lines (vowel signs above and below) and no negative letter-spacing.
-const DEVA = /[\u0900-\u097F]/;
+// Indian scripts need taller lines (vowel signs above and below) and no negative letter-spacing.
+const DEVA = /[\u0900-\u0D7F]/;
 const clip = (s, n) => (s.length <= n ? s : s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…');
 const h = (type, style, children) => ({ type, props: { style: { display: 'flex', boxSizing: 'border-box', ...style }, children } });
 
