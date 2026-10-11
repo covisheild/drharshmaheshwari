@@ -1,21 +1,24 @@
 ---
 title: "Interpretation of the world"
-description: "My thoughts on how the way we interpret what happens shapes our feelings, actions and future, and why today's world offers more opportunities than before."
+description: "My thoughts on why our beliefs are only an estimate from a small sample, how interpretation shapes feelings and actions, and why today offers more opportunities."
 published: 2026-10-11
 topic: ["Reflections"]
-draft: true
 ---
 
 My thoughts on how we interpret the world.
 
 <picture>
-  <source media="(max-width: 600px)" srcset="/blog/interpretation-of-the-world-tall.svg" width="400" height="1070">
-  <img src="/blog/interpretation-of-the-world.svg" width="1200" height="460" alt="Line drawings: two people look at the same half-filled glass, one sees sunshine and the other rain; an eye leads to a heart, then footsteps, then a sunrise; one narrow door from the past stands beside many doors and a ladder of today.">
+  <source media="(max-width: 600px)" srcset="/blog/interpretation-of-the-world-tall.svg" width="400" height="1428">
+  <img src="/blog/interpretation-of-the-world.svg" width="800" height="764" alt="Line drawings: a person holds three dots taken from a large circle full of many different dots; two people look at the same half-filled glass, one sees sunshine and the other rain; an eye leads to a heart, then footsteps, then a sunrise; one narrow door from the past stands beside many doors and a ladder of today.">
 </picture>
 
-## 1. [Point 1: waiting for Harsh's text]
+## 1. What we believe about the world is only a statistic, not the parameter itself
 
-## 2. Reality is neutral, but our interpretation shapes our experience of it
+The way the world actually works is the parameter. Our understanding of how it works is merely a statistic—an estimate based on the limited sample of the world we have observed. Most of us form our beliefs from personal anecdotes, our own experiences, and a handful of people around us. Our sample size is tiny compared with the vastness of the world.
+
+Therefore, we should be careful about generalizing conclusions from our personal lives to the entire world. The world may work in many more ways than we can currently imagine. What we have experienced is only a small fraction of what is possible.
+
+## 2. The way we interpret the world determines how we feel about it
 
 Reality is neutral, but our interpretation of reality shapes our emotional experience of it. Two people can experience the same situation and feel completely differently because they interpret it differently.
 

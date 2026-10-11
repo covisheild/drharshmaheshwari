@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 1070" width="400" height="1070" role="img" aria-labelledby="t">
-  <title id="t">Line drawings: two people see the same half-filled glass differently; a chain from eye to heart to footsteps to a sunrise; one narrow door of the past beside many doors and a ladder of today.</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 1428" width="400" height="1428" role="img" aria-labelledby="t">
+  <title id="t">Line drawings: a person holds three dots taken from a large circle full of many different dots (a statistic from a small sample, and the parameter of the whole world); two people see the same half-filled glass differently; a chain from eye to heart to footsteps to a sunrise; one narrow door of the past beside many doors and a ladder of today.</title>
   <defs>
     <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
       <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
@@ -8,17 +8,70 @@
     <marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M1 1 L8 5 L1 9" fill="none" stroke="#2b2a33" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
     </marker>
-  <clipPath id="c0"><rect x="8" y="62" width="384" height="352"/></clipPath><clipPath id="c1"><rect x="408" y="62" width="384" height="352"/></clipPath><clipPath id="c2"><rect x="808" y="62" width="384" height="352"/></clipPath></defs>
-  <rect width="400" height="1070" rx="24" fill="#fbf7ef"/>
-  <g transform="translate(0,-50)"><g clip-path="url(#c0)">
-  
-
-  <g filter="url(#rough)" fill="none" stroke="#2b2a33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-    <!-- dividers -->
-    <path d="M400 60 q8 40 0 80 t0 80 t0 80 t0 80" stroke="#c9c2b3" stroke-dasharray="2 10"/>
-    <path d="M800 60 q-8 40 0 80 t0 80 t0 80 t0 80" stroke="#c9c2b3" stroke-dasharray="2 10"/>
-
-    <!-- PANEL 1: same glass, two stories -->
+  <clipPath id="p0"><rect x="8" y="62" width="384" height="352"/></clipPath><clipPath id="p1"><rect x="8" y="62" width="384" height="352"/></clipPath><clipPath id="p2"><rect x="408" y="62" width="384" height="352"/></clipPath><clipPath id="p3"><rect x="808" y="62" width="384" height="352"/></clipPath></defs>
+  <rect width="400" height="1428" rx="26" fill="#fbf7ef"/>
+  <g transform="translate(0,-52)"><g clip-path="url(#p0)"><g filter="url(#rough)" fill="none" stroke="#2b2a33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- PANEL 0: a tiny sample of a big world -->
+    <circle cx="268" cy="228" r="112" fill="#fff"/>
+    <path d="M257 234 L264 246 L250 246 Z" fill="#d6dbe3" stroke-width="2"/>
+<circle cx="197" cy="231" r="6" fill="#9fd9d4" stroke-width="2"/>
+<circle cx="256" cy="148" r="6" fill="#b9a6e0" stroke-width="2"/>
+<circle cx="302" cy="254" r="6" fill="#b9a6e0" stroke-width="2"/>
+<circle cx="260" cy="215" r="6" fill="#b9a6e0" stroke-width="2"/>
+<circle cx="208" cy="182" r="6" fill="#fff" stroke-width="2"/>
+<circle cx="282" cy="140" r="6" fill="#f2c14e" stroke-width="2"/>
+<rect x="292" y="285" width="10" height="10" fill="#f2c14e" stroke-width="2"/>
+<circle cx="281" cy="216" r="6" fill="#fff" stroke-width="2"/>
+<path d="M328 203 L335 215 L321 215 Z" fill="#9fd9d4" stroke-width="2"/>
+<circle cx="186" cy="202" r="6" fill="#f2c14e" stroke-width="2"/>
+<circle cx="212" cy="159" r="6" fill="#fff" stroke-width="2"/>
+<path d="M314 167 L321 179 L307 179 Z" fill="#f2c14e" stroke-width="2"/>
+<circle cx="272" cy="324" r="6" fill="#f4a493" stroke-width="2"/>
+<rect x="342" y="249" width="10" height="10" fill="#f4a493" stroke-width="2"/>
+<rect x="232" y="311" width="10" height="10" fill="#fff" stroke-width="2"/>
+<circle cx="320" cy="233" r="6" fill="#b9a6e0" stroke-width="2"/>
+<circle cx="278" cy="281" r="6" fill="#f2c14e" stroke-width="2"/>
+<circle cx="235" cy="269" r="6" fill="#d6dbe3" stroke-width="2"/>
+<circle cx="304" cy="201" r="6" fill="#b9a6e0" stroke-width="2"/>
+<path d="M249 183 L256 195 L242 195 Z" fill="#d6dbe3" stroke-width="2"/>
+<circle cx="357" cy="198" r="6" fill="#fff" stroke-width="2"/>
+<circle cx="364" cy="228" r="6" fill="#f2c14e" stroke-width="2"/>
+<path d="M316 298 L323 310 L309 310 Z" fill="#f2c14e" stroke-width="2"/>
+<circle cx="225" cy="293" r="6" fill="#fff" stroke-width="2"/>
+<path d="M318 138 L325 150 L311 150 Z" fill="#f4a493" stroke-width="2"/>
+<path d="M296 313 L303 325 L289 325 Z" fill="#b9a6e0" stroke-width="2"/>
+<circle cx="260" cy="262" r="6" fill="#9fd9d4" stroke-width="2"/>
+<rect x="294" y="228" width="10" height="10" fill="#f2c14e" stroke-width="2"/>
+<path d="M278 170 L285 182 L271 182 Z" fill="#f4a493" stroke-width="2"/>
+<rect x="229" y="152" width="10" height="10" fill="#f4a493" stroke-width="2"/>
+<rect x="224" y="216" width="10" height="10" fill="#d6dbe3" stroke-width="2"/>
+<circle cx="335" cy="184" r="6" fill="#9fd9d4" stroke-width="2"/>
+<path d="M173 224 L180 236 L166 236 Z" fill="#fff" stroke-width="2"/>
+<path d="M277 243 L284 255 L270 255 Z" fill="#d6dbe3" stroke-width="2"/>
+<circle cx="250" cy="290" r="6" fill="#f2c14e" stroke-width="2"/>
+<rect x="313" y="266" width="10" height="10" fill="#f4a493" stroke-width="2"/>
+<circle cx="211" cy="210" r="6" fill="#d6dbe3" stroke-width="2"/>
+<rect x="210" y="238" width="10" height="10" fill="#9fd9d4" stroke-width="2"/>
+<circle cx="237" cy="245" r="6" fill="#9fd9d4" stroke-width="2"/>
+<circle cx="341" cy="288" r="6" fill="#d6dbe3" stroke-width="2"/>
+<circle cx="208" cy="304" r="6" fill="#9fd9d4" stroke-width="2"/>
+<circle cx="276" cy="304" r="6" fill="#f4a493" stroke-width="2"/>
+<path d="M258 162 L265 174 L251 174 Z" fill="#f4a493" stroke-width="2"/>
+<circle cx="295" cy="163" r="6" fill="#fff" stroke-width="2"/>
+<path d="M341 220 L348 232 L334 232 Z" fill="#f2c14e" stroke-width="2"/>
+    <circle cx="196" cy="270" r="24" stroke="#1a8f8a" stroke-dasharray="4 6"/>
+    <circle cx="196" cy="262" r="6" fill="#9fd9d4" stroke-width="2"/> <circle cx="184" cy="276" r="6" fill="#9fd9d4" stroke-width="2"/> <circle cx="208" cy="276" r="6" fill="#9fd9d4" stroke-width="2"/>
+    <path d="M176 254 Q140 180 116 156" stroke="#1a8f8a" stroke-dasharray="4 6" marker-end="url(#ah)"/>
+    <circle cx="82" cy="146" r="30" fill="#fff"/>
+    <circle cx="70" cy="142" r="6" fill="#9fd9d4" stroke-width="2"/> <circle cx="92" cy="132" r="6" fill="#9fd9d4" stroke-width="2"/> <circle cx="84" cy="158" r="6" fill="#9fd9d4" stroke-width="2"/>
+    <circle cx="60" cy="196" r="3"/><circle cx="56" cy="212" r="4.5"/>
+    <circle cx="56" cy="250" r="16"/>
+    <circle cx="51" cy="247" r="1.5" fill="#2b2a33"/><circle cx="61" cy="247" r="1.5" fill="#2b2a33"/>
+    <path d="M51 257 h10"/>
+    <path d="M56 266 L56 320 M56 280 L36 302 M56 280 L80 300 M56 320 L42 360 M56 320 L70 360"/>
+</g><g font-family="'Segoe Print','Bradley Hand','Comic Sans MS','Chalkboard SE',cursive" fill="#2b2a33" text-anchor="middle"><text x="200" y="400" font-size="20">a tiny sample of a big world</text><text x="82" y="100" font-size="15" fill="#6b655a">statistic</text><text x="268" y="368" font-size="15" fill="#6b655a">parameter</text></g></g></g>
+  <g transform="translate(0,300)"><g clip-path="url(#p1)"><g filter="url(#rough)" fill="none" stroke="#2b2a33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<!-- PANEL 1: same glass, two stories -->
     <path d="M182.6 292 Q191 287 200 292 T217.4 292 L215 334 L185 334 Z" fill="#9fd9d4" stroke="none"/>
     <path d="M178 250 L222 250 L215 334 L185 334 Z"/>
     <path d="M182.6 292 Q191 287 200 292 T217.4 292"/>
@@ -42,7 +95,9 @@
     <path d="M276 124 q-12 0 -10 -12 q2 -10 14 -8 q6 -12 20 -6 q12 0 12 12 q10 2 6 14 z" fill="#d6dbe3"/>
     <path d="M280 132 l-3 9 M292 132 l-3 9 M304 132 l-3 9" stroke="#5b8bd0"/>
 
-    <!-- PANEL 2: interpretation -> feeling -> action -> future -->
+    </g><g font-family="'Segoe Print','Bradley Hand','Comic Sans MS','Chalkboard SE',cursive" fill="#2b2a33" text-anchor="middle"><text x="200" y="400" font-size="20">same glass, two stories</text></g></g></g>
+  <g transform="translate(-400,652)"><g clip-path="url(#p2)"><g filter="url(#rough)" fill="none" stroke="#2b2a33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<!-- PANEL 2: interpretation -> feeling -> action -> future -->
     <path d="M428 180 Q458 152 488 180 Q458 208 428 180 Z" fill="#fff"/>
     <circle cx="458" cy="180" r="11" fill="#9fd9d4"/><circle cx="458" cy="180" r="4.5" fill="#2b2a33"/>
     <path d="M478 200 Q500 238 520 246" marker-end="url(#ah)"/>
@@ -59,7 +114,9 @@
     <path d="M734 268 L706 352 M742 268 L770 352" stroke="#8a8478"/>
     <path d="M738 284 v8 M738 306 v10 M738 332 v12" stroke="#8a8478"/>
 
-    <!-- PANEL 3: one door then, many doors now -->
+    </g><g font-family="'Segoe Print','Bradley Hand','Comic Sans MS','Chalkboard SE',cursive" fill="#2b2a33" text-anchor="middle"><text x="600" y="400" font-size="20">see → feel → act → become</text></g></g></g>
+  <g transform="translate(-800,1004)"><g clip-path="url(#p3)"><g filter="url(#rough)" fill="none" stroke="#2b2a33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<!-- PANEL 3: one door then, many doors now -->
     <path d="M820 334 L912 334" stroke="#8a8478"/>
     <path d="M854 334 L854 236 L878 236 L878 334" fill="#e8e2d6"/>
     <circle cx="873" cy="288" r="2" fill="#2b2a33"/>
@@ -76,164 +133,5 @@
     <circle cx="1155" cy="249" r="1.4" fill="#2b2a33"/><circle cx="1165" cy="249" r="1.4" fill="#2b2a33"/>
     <path d="M1154 256 Q1160 262 1166 256"/>
     <path d="M1160 265 L1160 304 M1160 274 L1142 256 M1160 274 L1178 256 M1160 304 L1150 333 M1160 304 L1170 333"/>
-  </g>
-
-  <g font-family="'Segoe Print','Bradley Hand','Comic Sans MS','Chalkboard SE',cursive" font-size="20" fill="#2b2a33" text-anchor="middle">
-    <text x="200" y="400">same glass, two stories</text>
-    <text x="600" y="400">see → feel → act → become</text>
-    <text x="1000" y="400">more doors than before</text>
-    <text x="866" y="226" font-size="15" fill="#6b655a">then</text>
-    <text x="1040" y="230" font-size="15" fill="#6b655a">now</text>
-  </g>
-</g></g><g transform="translate(-400,302)"><g clip-path="url(#c1)">
-  
-
-  <g filter="url(#rough)" fill="none" stroke="#2b2a33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-    <!-- dividers -->
-    <path d="M400 60 q8 40 0 80 t0 80 t0 80 t0 80" stroke="#c9c2b3" stroke-dasharray="2 10"/>
-    <path d="M800 60 q-8 40 0 80 t0 80 t0 80 t0 80" stroke="#c9c2b3" stroke-dasharray="2 10"/>
-
-    <!-- PANEL 1: same glass, two stories -->
-    <path d="M182.6 292 Q191 287 200 292 T217.4 292 L215 334 L185 334 Z" fill="#9fd9d4" stroke="none"/>
-    <path d="M178 250 L222 250 L215 334 L185 334 Z"/>
-    <path d="M182.6 292 Q191 287 200 292 T217.4 292"/>
-    <path d="M150 336 L250 336" stroke="#8a8478"/>
-    <!-- left person, smiling -->
-    <circle cx="90" cy="220" r="18"/>
-    <circle cx="84" cy="216" r="1.6" fill="#2b2a33"/><circle cx="96" cy="216" r="1.6" fill="#2b2a33"/>
-    <path d="M82 225 Q90 233 98 225"/>
-    <path d="M90 238 L90 300 M90 255 L64 282 M90 255 L140 268 M90 300 L74 345 M90 300 L106 345"/>
-    <circle cx="112" cy="192" r="4"/><circle cx="124" cy="174" r="7"/>
-    <path d="M60 135 q-18 -30 12 -42 q14 -26 44 -10 q30 -8 36 20 q22 18 -4 38 q-10 18 -38 10 q-30 12 -50 -16 z" fill="#fff"/>
-    <circle cx="104" cy="116" r="13" fill="#f2c14e"/>
-    <path d="M104 92 v-7 M104 140 v7 M80 116 h-7 M128 116 h7 M87 99 l-5 -5 M121 99 l5 -5 M87 133 l-5 5 M121 133 l5 5"/>
-    <!-- right person, frowning -->
-    <circle cx="310" cy="220" r="18"/>
-    <circle cx="304" cy="216" r="1.6" fill="#2b2a33"/><circle cx="316" cy="216" r="1.6" fill="#2b2a33"/>
-    <path d="M302 230 Q310 222 318 230"/>
-    <path d="M310 238 L310 300 M310 255 L260 268 M310 255 L336 282 M310 300 L294 345 M310 300 L326 345"/>
-    <circle cx="288" cy="192" r="4"/><circle cx="276" cy="174" r="7"/>
-    <path d="M248 135 q-18 -30 12 -42 q14 -26 44 -10 q30 -8 36 20 q22 18 -4 38 q-10 18 -38 10 q-30 12 -50 -16 z" fill="#fff"/>
-    <path d="M276 124 q-12 0 -10 -12 q2 -10 14 -8 q6 -12 20 -6 q12 0 12 12 q10 2 6 14 z" fill="#d6dbe3"/>
-    <path d="M280 132 l-3 9 M292 132 l-3 9 M304 132 l-3 9" stroke="#5b8bd0"/>
-
-    <!-- PANEL 2: interpretation -> feeling -> action -> future -->
-    <path d="M428 180 Q458 152 488 180 Q458 208 428 180 Z" fill="#fff"/>
-    <circle cx="458" cy="180" r="11" fill="#9fd9d4"/><circle cx="458" cy="180" r="4.5" fill="#2b2a33"/>
-    <path d="M478 200 Q500 238 520 246" marker-end="url(#ah)"/>
-    <path d="M548 282 C514 258 520 228 538 232 C544 233 548 239 548 244 C548 239 552 233 558 232 C576 228 582 258 548 282 Z" fill="#f4a493"/>
-    <path d="M572 236 Q590 200 612 190" marker-end="url(#ah)"/>
-    <ellipse cx="628" cy="194" rx="8" ry="14" transform="rotate(-12 628 194)" fill="#fff"/>
-    <circle cx="621" cy="176" r="2.4"/><circle cx="628" cy="174" r="2.4"/><circle cx="635" cy="176" r="2.4"/>
-    <ellipse cx="652" cy="168" rx="8" ry="14" transform="rotate(10 652 168)" fill="#fff"/>
-    <circle cx="645" cy="149" r="2.4"/><circle cx="652" cy="148" r="2.4"/><circle cx="659" cy="150" r="2.4"/>
-    <path d="M665 196 Q690 230 702 244" marker-end="url(#ah)"/>
-    <path d="M708 266 a30 30 0 0 1 60 0" fill="#f2c14e"/>
-    <path d="M738 226 v-10 M712 238 l-7 -7 M764 238 l7 -7 M700 258 h-9 M776 258 h9"/>
-    <path d="M690 268 L786 268"/>
-    <path d="M734 268 L706 352 M742 268 L770 352" stroke="#8a8478"/>
-    <path d="M738 284 v8 M738 306 v10 M738 332 v12" stroke="#8a8478"/>
-
-    <!-- PANEL 3: one door then, many doors now -->
-    <path d="M820 334 L912 334" stroke="#8a8478"/>
-    <path d="M854 334 L854 236 L878 236 L878 334" fill="#e8e2d6"/>
-    <circle cx="873" cy="288" r="2" fill="#2b2a33"/>
-    <path d="M930 334 L1186 334" stroke="#8a8478"/>
-    <path d="M944 334 L944 260 Q961 238 978 260 L978 334" fill="#fff"/>
-    <path d="M992 334 L992 246 L1028 246 L1028 334" fill="#fff"/>
-    <path d="M1028 246 L1044 256 L1044 330 L1028 334 Z" fill="#fff"/>
-    <path d="M995 330 L995 250 L1025 250 L1025 330 Z" fill="#fbe7a8" stroke="none"/>
-    <path d="M1056 334 L1056 276 L1084 276 L1084 334" fill="#9fd9d4"/>
-    <circle cx="1078" cy="306" r="2" fill="#2b2a33"/>
-    <path d="M1100 334 L1104 196 M1124 334 L1128 196 M1101 312 h24 M1101 288 h24 M1102 264 h24 M1102 240 h24 M1103 216 h24"/>
-    <!-- person with open arms -->
-    <circle cx="1160" cy="252" r="13"/>
-    <circle cx="1155" cy="249" r="1.4" fill="#2b2a33"/><circle cx="1165" cy="249" r="1.4" fill="#2b2a33"/>
-    <path d="M1154 256 Q1160 262 1166 256"/>
-    <path d="M1160 265 L1160 304 M1160 274 L1142 256 M1160 274 L1178 256 M1160 304 L1150 333 M1160 304 L1170 333"/>
-  </g>
-
-  <g font-family="'Segoe Print','Bradley Hand','Comic Sans MS','Chalkboard SE',cursive" font-size="20" fill="#2b2a33" text-anchor="middle">
-    <text x="200" y="400">same glass, two stories</text>
-    <text x="600" y="400">see → feel → act → become</text>
-    <text x="1000" y="400">more doors than before</text>
-    <text x="866" y="226" font-size="15" fill="#6b655a">then</text>
-    <text x="1040" y="230" font-size="15" fill="#6b655a">now</text>
-  </g>
-</g></g><g transform="translate(-800,654)"><g clip-path="url(#c2)">
-  
-
-  <g filter="url(#rough)" fill="none" stroke="#2b2a33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-    <!-- dividers -->
-    <path d="M400 60 q8 40 0 80 t0 80 t0 80 t0 80" stroke="#c9c2b3" stroke-dasharray="2 10"/>
-    <path d="M800 60 q-8 40 0 80 t0 80 t0 80 t0 80" stroke="#c9c2b3" stroke-dasharray="2 10"/>
-
-    <!-- PANEL 1: same glass, two stories -->
-    <path d="M182.6 292 Q191 287 200 292 T217.4 292 L215 334 L185 334 Z" fill="#9fd9d4" stroke="none"/>
-    <path d="M178 250 L222 250 L215 334 L185 334 Z"/>
-    <path d="M182.6 292 Q191 287 200 292 T217.4 292"/>
-    <path d="M150 336 L250 336" stroke="#8a8478"/>
-    <!-- left person, smiling -->
-    <circle cx="90" cy="220" r="18"/>
-    <circle cx="84" cy="216" r="1.6" fill="#2b2a33"/><circle cx="96" cy="216" r="1.6" fill="#2b2a33"/>
-    <path d="M82 225 Q90 233 98 225"/>
-    <path d="M90 238 L90 300 M90 255 L64 282 M90 255 L140 268 M90 300 L74 345 M90 300 L106 345"/>
-    <circle cx="112" cy="192" r="4"/><circle cx="124" cy="174" r="7"/>
-    <path d="M60 135 q-18 -30 12 -42 q14 -26 44 -10 q30 -8 36 20 q22 18 -4 38 q-10 18 -38 10 q-30 12 -50 -16 z" fill="#fff"/>
-    <circle cx="104" cy="116" r="13" fill="#f2c14e"/>
-    <path d="M104 92 v-7 M104 140 v7 M80 116 h-7 M128 116 h7 M87 99 l-5 -5 M121 99 l5 -5 M87 133 l-5 5 M121 133 l5 5"/>
-    <!-- right person, frowning -->
-    <circle cx="310" cy="220" r="18"/>
-    <circle cx="304" cy="216" r="1.6" fill="#2b2a33"/><circle cx="316" cy="216" r="1.6" fill="#2b2a33"/>
-    <path d="M302 230 Q310 222 318 230"/>
-    <path d="M310 238 L310 300 M310 255 L260 268 M310 255 L336 282 M310 300 L294 345 M310 300 L326 345"/>
-    <circle cx="288" cy="192" r="4"/><circle cx="276" cy="174" r="7"/>
-    <path d="M248 135 q-18 -30 12 -42 q14 -26 44 -10 q30 -8 36 20 q22 18 -4 38 q-10 18 -38 10 q-30 12 -50 -16 z" fill="#fff"/>
-    <path d="M276 124 q-12 0 -10 -12 q2 -10 14 -8 q6 -12 20 -6 q12 0 12 12 q10 2 6 14 z" fill="#d6dbe3"/>
-    <path d="M280 132 l-3 9 M292 132 l-3 9 M304 132 l-3 9" stroke="#5b8bd0"/>
-
-    <!-- PANEL 2: interpretation -> feeling -> action -> future -->
-    <path d="M428 180 Q458 152 488 180 Q458 208 428 180 Z" fill="#fff"/>
-    <circle cx="458" cy="180" r="11" fill="#9fd9d4"/><circle cx="458" cy="180" r="4.5" fill="#2b2a33"/>
-    <path d="M478 200 Q500 238 520 246" marker-end="url(#ah)"/>
-    <path d="M548 282 C514 258 520 228 538 232 C544 233 548 239 548 244 C548 239 552 233 558 232 C576 228 582 258 548 282 Z" fill="#f4a493"/>
-    <path d="M572 236 Q590 200 612 190" marker-end="url(#ah)"/>
-    <ellipse cx="628" cy="194" rx="8" ry="14" transform="rotate(-12 628 194)" fill="#fff"/>
-    <circle cx="621" cy="176" r="2.4"/><circle cx="628" cy="174" r="2.4"/><circle cx="635" cy="176" r="2.4"/>
-    <ellipse cx="652" cy="168" rx="8" ry="14" transform="rotate(10 652 168)" fill="#fff"/>
-    <circle cx="645" cy="149" r="2.4"/><circle cx="652" cy="148" r="2.4"/><circle cx="659" cy="150" r="2.4"/>
-    <path d="M665 196 Q690 230 702 244" marker-end="url(#ah)"/>
-    <path d="M708 266 a30 30 0 0 1 60 0" fill="#f2c14e"/>
-    <path d="M738 226 v-10 M712 238 l-7 -7 M764 238 l7 -7 M700 258 h-9 M776 258 h9"/>
-    <path d="M690 268 L786 268"/>
-    <path d="M734 268 L706 352 M742 268 L770 352" stroke="#8a8478"/>
-    <path d="M738 284 v8 M738 306 v10 M738 332 v12" stroke="#8a8478"/>
-
-    <!-- PANEL 3: one door then, many doors now -->
-    <path d="M820 334 L912 334" stroke="#8a8478"/>
-    <path d="M854 334 L854 236 L878 236 L878 334" fill="#e8e2d6"/>
-    <circle cx="873" cy="288" r="2" fill="#2b2a33"/>
-    <path d="M930 334 L1186 334" stroke="#8a8478"/>
-    <path d="M944 334 L944 260 Q961 238 978 260 L978 334" fill="#fff"/>
-    <path d="M992 334 L992 246 L1028 246 L1028 334" fill="#fff"/>
-    <path d="M1028 246 L1044 256 L1044 330 L1028 334 Z" fill="#fff"/>
-    <path d="M995 330 L995 250 L1025 250 L1025 330 Z" fill="#fbe7a8" stroke="none"/>
-    <path d="M1056 334 L1056 276 L1084 276 L1084 334" fill="#9fd9d4"/>
-    <circle cx="1078" cy="306" r="2" fill="#2b2a33"/>
-    <path d="M1100 334 L1104 196 M1124 334 L1128 196 M1101 312 h24 M1101 288 h24 M1102 264 h24 M1102 240 h24 M1103 216 h24"/>
-    <!-- person with open arms -->
-    <circle cx="1160" cy="252" r="13"/>
-    <circle cx="1155" cy="249" r="1.4" fill="#2b2a33"/><circle cx="1165" cy="249" r="1.4" fill="#2b2a33"/>
-    <path d="M1154 256 Q1160 262 1166 256"/>
-    <path d="M1160 265 L1160 304 M1160 274 L1142 256 M1160 274 L1178 256 M1160 304 L1150 333 M1160 304 L1170 333"/>
-  </g>
-
-  <g font-family="'Segoe Print','Bradley Hand','Comic Sans MS','Chalkboard SE',cursive" font-size="20" fill="#2b2a33" text-anchor="middle">
-    <text x="200" y="400">same glass, two stories</text>
-    <text x="600" y="400">see → feel → act → become</text>
-    <text x="1000" y="400">more doors than before</text>
-    <text x="866" y="226" font-size="15" fill="#6b655a">then</text>
-    <text x="1040" y="230" font-size="15" fill="#6b655a">now</text>
-  </g>
-</g></g>
+</g><g font-family="'Segoe Print','Bradley Hand','Comic Sans MS','Chalkboard SE',cursive" fill="#2b2a33" text-anchor="middle"><text x="1000" y="400" font-size="20">more doors than before</text><text x="866" y="226" font-size="15" fill="#6b655a">then</text><text x="1040" y="230" font-size="15" fill="#6b655a">now</text></g></g></g>
 </svg>
