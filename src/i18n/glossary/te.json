@@ -1,0 +1,316 @@
+{
+  "about": "Telugu glossary for drharshmaheshwari.com. Every Telugu translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Telugu has one of the accepted forms (a substring match, so stems are listed where Telugu adds case endings: ఊబకాయం, ఊబకాయాన్ని, ఊబకాయంతో all contain ఊబకాయ). Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "register": "Everyday spoken Telugu that a family in Hyderabad or Vijayawada would use, not bookish (గ్రాంథిక) Telugu. Common English health words that people say in Telugu stay as they are said (BMI, బీపీ, బ్లడ్ షుగర్, డయాబెటిస్, డాక్టర్). Short sentences, polite plural (మీరు, చేయండి). Numbers in 0-9, never Telugu digits. Units as in English (cm, kg). Moderate = మితమైన; vigorous activity = తీవ్రమైన శ్రమ (severity of a disease is తీవ్రస్థాయి; a very high or very low reading is చాలా ఎక్కువ / చాలా తక్కువ); energetic = హుషారైన (మితమైన నుంచి తీవ్రమైన). Support = మద్దతు, contribution = తోడ్పాటు.",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "tr": [
+        "ఊబకాయ"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "tr": [
+        "పొట్ట ఊబకాయ",
+        "పొట్ట దగ్గర ఊబకాయ"
+      ]
+    },
+    {
+      "en": "overweight",
+      "tr": [
+        "అధిక బరువు",
+        "ఎక్కువ బరువు"
+      ]
+    },
+    {
+      "en": "underweight",
+      "tr": [
+        "తక్కువ బరువు"
+      ]
+    },
+    {
+      "en": "weight",
+      "tr": [
+        "బరువు"
+      ]
+    },
+    {
+      "en": "height",
+      "tr": [
+        "ఎత్తు"
+      ]
+    },
+    {
+      "en": "waist",
+      "tr": [
+        "నడుము"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "tr": [
+        "నడుము-ఎత్తు నిష్పత్తి",
+        "నడుము, ఎత్తుల నిష్పత్తి",
+        "నడుము-ఎత్తుల నిష్పత్తి"
+      ]
+    },
+    {
+      "en": "body fat",
+      "tr": [
+        "కొవ్వు"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "tr": [
+        "డయాబెటిస్",
+        "షుగర్ వ్యాధి"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "tr": [
+        "హై బీపీ",
+        "హై బ్లడ్ ప్రెషర్",
+        "అధిక రక్తపోటు"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "tr": [
+        "గుండె జబ్బ",
+        "గుండె వ్యాధ"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "tr": [
+        "బ్లడ్ షుగర్",
+        "రక్తంలో చక్కెర"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "tr": [
+        "కొలెస్ట్రాల్"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "tr": [
+        "ఫ్యాటీ లివర్"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": [
+        "ప్రమాద",
+        "రిస్క్"
+      ]
+    },
+    {
+      "en": "doctor",
+      "tr": [
+        "డాక్టర్",
+        "డాక్టర్ల"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "tr": [
+        "కట్-ఆఫ్",
+        "కటాఫ్"
+      ]
+    },
+    {
+      "en": "guideline",
+      "tr": [
+        "మార్గదర్శక"
+      ]
+    },
+    {
+      "en": "screening",
+      "tr": [
+        "స్క్రీనింగ్",
+        "పరీక్ష"
+      ]
+    },
+    {
+      "en": "muscle",
+      "tr": [
+        "కండర",
+        "కండల"
+      ]
+    },
+    {
+      "en": "calculator",
+      "tr": [
+        "కాలిక్యులేటర్"
+      ]
+    },
+    {
+      "en": "evidence",
+      "tr": [
+        "ఆధార",
+        "సాక్ష్య"
+      ]
+    },
+    {
+      "en": "public health",
+      "tr": [
+        "ప్రజారోగ్య"
+      ]
+    },
+    {
+      "en": "contribution",
+      "tr": [
+        "తోడ్పాటు"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "tr": [
+        "డిస్క్లైమర్"
+      ]
+    },
+    {
+      "en": "privacy",
+      "tr": [
+        "గోప్యత",
+        "ప్రైవసీ"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "tr": [
+        "తీవ్ర"
+      ]
+    },
+    {
+      "en": "energetic",
+      "tr": [
+        "హుషార"
+      ]
+    },
+    {
+      "en": "percentile",
+      "tr": [
+        "పర్సంటైల్"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "tr": [
+        "స్లీప్ ఆప్నియా"
+      ]
+    }
+  ],
+  "banned": [
+    {
+      "pattern": "(?<![\\u0C00-\\u0C7F])దానం|విరాళ|డొనేషన్",
+      "why": "donation; the site says support (మద్దతు) and contribution (తోడ్పాటు)"
+    },
+    {
+      "pattern": "దాతృత్వ|ధార్మిక|చారిటీ|ధర్మకార్య",
+      "why": "charity"
+    },
+    {
+      "pattern": "[\\u0C66-\\u0C6F]",
+      "why": "Telugu digits: numbers stay 0-9"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "ఉచిత|ఫ్రీ|ఊరికే|డబ్బు లేకుండా",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ],
+  "script": "\\u0C00-\\u0C7F",
+  "negations": [
+    "లేదు",
+    "కాదు",
+    "కావు",
+    "లేవు",
+    "లేరు",
+    "లేని",
+    "కుండా",
+    "వద్దు",
+    "కూడదు",
+    "రాదు",
+    "కండి",
+    "ఉండదు",
+    "అవదు",
+    "అవ్వదు",
+    "చేయదు",
+    "పోదు",
+    "తెలియదు",
+    "బడదు",
+    "పించదు",
+    "ఉంచదు",
+    "తీసుకోదు",
+    "లేకపో",
+    "జరగదు",
+    "మార్చదు",
+    "చూపదు",
+    "సరిపోదు",
+    "కాని ",
+    "వీల్లేదు",
+    "వెళ్లదు",
+    "వెళ్లవు",
+    "లేన",
+    "వర్తించదు",
+    "ఇవ్వను",
+    "ఇవ్వదు",
+    "ఇవ్వరు",
+    "కపోతే",
+    "లేదని",
+    "పుచ్చదు",
+    "తెలియద",
+    "పించవు",
+    "అడగదు",
+    "మారవు",
+    "ఏర్పడదు",
+    "బడవు",
+    "చేయం",
+    "వాడం",
+    "అమ్మం",
+    "తీసుకోం",
+    "చెప్పదు",
+    "చూపించదు"
+  ]
+}
