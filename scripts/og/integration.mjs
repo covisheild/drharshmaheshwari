@@ -1,7 +1,7 @@
 // Share pictures (WhatsApp, Telegram, X, LinkedIn link previews): one 1200x630 card per page, drawn after the build from each page's
 // own title and description, in the page's audience colour (src/data/theme.json). Written to /og/<page path>.png; Base.astro points
 // og:image at the same name. Nothing to maintain: a new page gets its own picture by itself.
-import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
@@ -10,6 +10,7 @@ import sharp from 'sharp';
 
 const require = createRequire(import.meta.url);
 const font = (pkg, file) => readFileSync(require.resolve(`${pkg}/files/${file}`));
+const PUBLIC = fileURLToPath(new URL('../../public/', import.meta.url));
 const FONTS = () => [
   { name: 'Outfit', data: font('@fontsource/outfit', 'outfit-latin-600-normal.woff'), weight: 600, style: 'normal' },
   { name: 'DM Sans', data: font('@fontsource/dm-sans', 'dm-sans-latin-400-normal.woff'), weight: 400, style: 'normal' },
@@ -49,6 +50,34 @@ function card({ eyebrow, title, description, hue }) {
   ]);
 }
 
+// A blog post with a drawing (public/blog/<slug>.svg, the one shown in the post) shows it in its share picture, beside the title, on the
+// drawing's own paper colour. The drawing's text labels are left out: they use fonts the build machine may not have.
+async function drawingPng(slug) {
+  const file = join(PUBLIC, 'blog', `${slug}.svg`);
+  if (!existsSync(file)) return null;
+  const svg = readFileSync(file, 'utf8').replace(/<text\b[\s\S]*?<\/text>/g, '');
+  return sharp(Buffer.from(svg), { density: 144 }).resize({ height: 544 }).png().toBuffer();
+}
+
+function drawingCard({ eyebrow, title, hue, light, png }) {
+  const size = title.length > 60 ? 50 : 62;
+  return h('div', {
+    width: 1200, height: 630, padding: '43px 60px', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#fbf7ef', color: '#1d1c24', fontFamily: 'DM Sans',
+  }, [
+    h('div', { flexDirection: 'column', justifyContent: 'space-between', width: 450, height: 544 }, [
+      h('div', { flexDirection: 'column', marginTop: 40 }, [
+        h('div', { fontSize: 24, fontWeight: 500, letterSpacing: 3, textTransform: 'uppercase', color: `hsl(${hue}, 80%, ${light}%)`, marginBottom: 26 }, eyebrow),
+        h('div', { fontFamily: 'Outfit', fontWeight: 600, fontSize: size, lineHeight: 1.1, letterSpacing: -1.2 }, title),
+      ]),
+      h('div', { flexDirection: 'column', fontSize: 24, color: '#6b6877' }, [
+        h('div', { fontFamily: 'Outfit', fontWeight: 600, fontSize: 28, color: '#1d1c24' }, SITE_NAME),
+        h('div', {}, 'drharshmaheshwari.com'),
+      ]),
+    ]),
+    { type: 'img', props: { src: `data:image/png;base64,${png.toString('base64')}`, width: 570, height: 544, style: { width: 570, height: 544 } } },
+  ]);
+}
+
 export default function ogImages({ theme, palettes }) {
   return {
     name: 'og-images',
@@ -69,7 +98,9 @@ export default function ogImages({ theme, palettes }) {
           const title = home ? TAGLINE : meta(html, 'og:title') || SITE_NAME;
           const description = home ? '' : meta(html, 'og:description');
           const eyebrow = [section, MODE[mode]].filter(Boolean).join(' · ');
-          const svg = await satori(card({ eyebrow, title, description, hue }), { width: 1200, height: 630, fonts });
+          const drawing = segs[0] === 'blog' && segs.length === 2 ? await drawingPng(segs[1]) : null;
+          const tree = drawing ? drawingCard({ eyebrow, title, hue, light: palette.ll, png: drawing }) : card({ eyebrow, title, description, hue });
+          const svg = await satori(tree, { width: 1200, height: 630, fonts });
           const png = await sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toBuffer();
           const out = join(root, 'og', (path || 'index') + '.png');
           mkdirSync(dirname(out), { recursive: true });

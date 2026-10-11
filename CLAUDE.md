@@ -212,7 +212,8 @@ local devDependency. Change production settings only on purpose; preview-only se
 - **Share pictures** (the small image in WhatsApp, Telegram, X, LinkedIn link previews): drawn per page after every build by `scripts/og/integration.mjs`
   (satori + sharp, fonts from `@fontsource`), from the page's own title, description, section and audience colour, to `/og/<page path>.png`
   (home = `/og/index.png`). `Base.astro` points `og:image` at that name. There is no fixed image and nothing to maintain; a new page gets its own
-  picture. `tests/site.test.mjs` checks every page has one (1200x630, under 300 KB). WhatsApp keeps an old preview for a link it has already
+  picture. **A blog post with a drawing** (`public/blog/<slug>.svg`, same slug as the post) shows that drawing beside its title on paper colour (text labels
+  in the drawing are left out of the picture); a blog post without one gets the plain card. `tests/site.test.mjs` checks every page has one (1200x630, under 300 KB). WhatsApp keeps an old preview for a link it has already
   fetched for days; adding `?v=2` to the link shows the new one at once.
 - **Dust and glow** (`src/scripts/fx.ts`): `canvas.dust` grains scatter and curl around the cursor or a finger; fewer grains on phones;
   nothing runs under "reduce motion". The calculator picture is visual only (`src/lib/bmi-demo.ts`, `src/scripts/home-demo.ts`); its fields
