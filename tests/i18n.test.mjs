@@ -8,6 +8,7 @@ import { runChecks } from '../scripts/i18n/check.mjs';
 import { checkPair } from '../scripts/i18n/checks.mjs';
 import { fingerprint } from '../src/i18n/fingerprint.ts';
 import { LANGS, langOf, basePath } from '../src/i18n/languages.ts';
+import { MODES } from '../src/lib/modes.ts';
 
 const ROOT = new URL('../', import.meta.url).pathname;
 const DIST = join(ROOT, 'dist/client/');
@@ -94,7 +95,7 @@ test('built Hindi pages: Hindi throughout, nothing left untranslated, linked to 
     assert.deepEqual(links, [['/hi/', 'सबके लिए'], ['/doctors/', 'डॉक्टरों के लिए']], url);
     assert.match(doc, new RegExp(`class="lang-list"[\\s\\S]*?href="${en}"[^>]*hreflang="en-IN"`), `${url}: language menu links to the English page`);
     const nav = [...(doc.match(/<ul class="nav-links"[\s\S]*?<\/ul>/)?.[0] ?? '').matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
-    assert.deepEqual(nav, ['/hi/learn/', '/hi/tools/', '/hi/blog/', '/hi/about/'], `${url} nav stays in Hindi`);
+    assert.deepEqual(nav, MODES.everyone.nav.map((n) => `/hi${n.href}`), `${url} nav stays in Hindi`);
   }
   // Book pages never call the books free, in Hindi either.
   const books = readFileSync(join(DIST, 'hi/books/index.html'), 'utf8');

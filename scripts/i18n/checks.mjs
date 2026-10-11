@@ -8,6 +8,7 @@ const strip = (s, english = true) => (english ? s : s.replace(/<span lang="en">[
   .replace(/\]\([^)]*\)/g, ']')                           // markdown link targets
   .replace(/<[^>]+>/g, ' ')                               // HTML tags and their attributes
   .replace(/https?:\/\/\S+|mailto:\S+|[\w.+-]+@[\w-]+\.[\w.]+/g, ' ')
+  .replace(/\{\w+\}/g, ' ')                                // {placeholders}: filled in by the program
   .replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ');
 
 // Nukta, chandrabindu and anusvara spellings vary (ज़/ज, आँ/आं): compare without them.
