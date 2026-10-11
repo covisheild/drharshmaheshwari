@@ -1,0 +1,8 @@
+---
+// <T>English text, may hold inline markup</T>: shows the page language's translation of exactly that text (src/i18n/t.ts).
+// Use it around the words inside an element (<p><T>...</T></p>), not around block elements.
+import { langOf } from '../i18n/languages';
+import { translateHtml } from '../i18n/t';
+const html = await Astro.slots.render('default');
+---
+<Fragment set:html={translateHtml(langOf(Astro.url.pathname), html)} />

@@ -1,0 +1,25 @@
+---
+// On every translated page: how it was translated, that the English page is the original, a link to it and a way to report
+// an error. Never shown on English pages. `stale`: the English changed after translation, so the page shows the English.
+import { SITE } from '../../consts';
+import { LANG, basePath, langOf } from '../../i18n/languages';
+import { translate } from '../../i18n/t';
+
+interface Props { checkedBy?: 'ai' | 'author'; stale?: boolean; top?: boolean }
+const path = Astro.url.pathname;
+const lang = langOf(path);
+const { checkedBy = LANG[lang].checkedBy, stale = false, top = false } = Astro.props;
+const t = (s: string, v?: Record<string, string>) => translate(lang, s, v);
+const english = basePath(path);
+const report = `mailto:${SITE.email}?subject=${encodeURIComponent(`Translation error: ${SITE.url}${path}`)}`;
+---
+{lang !== 'en' && (
+  <aside class:list={['tr-note', { top }]} aria-label={t('About this translation')}>
+    {stale
+      ? <p>{t('The English text of this page changed recently, so it is shown in English until the translation is redone.')}</p>
+      : <p>{checkedBy === 'author'
+          ? t('Translated from English with AI assistance and checked by the author. The English page is the original: if the two differ, follow the English.')
+          : t('Translated from English with AI assistance and checked. The English page is the original: if the two differ, follow the English.')}</p>}
+    <p><a href={english} hreflang="en-IN" lang="en">Read in English</a> · <a href={report}>{t('Report a translation error')}</a></p>
+  </aside>
+)}

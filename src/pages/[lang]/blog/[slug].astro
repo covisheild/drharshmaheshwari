@@ -1,0 +1,12 @@
+---
+// /<lang>/blog/<slug>/: a translated blog post (src/content/i18n/<lang>/blog/<slug>.md). If the English changed after it was
+// translated, the page shows the English with a note until it is translated again (src/i18n/routes.ts).
+import { render } from 'astro:content';
+import Article from '../../../layouts/Article.astro';
+import { articlePaths, type LocalArticle } from '../../../i18n/routes';
+
+export const getStaticPaths = () => articlePaths('blog');
+const { entry, tr, stale } = Astro.props as LocalArticle;
+const { Content } = await render(tr && !stale ? tr : entry);
+---
+<Article entry={entry} collection="blog" tr={tr} stale={stale}><Content /></Article>

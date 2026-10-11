@@ -10,6 +10,10 @@ import themeJson from '../data/theme.json';
 import palettesJson from '../data/palettes.json';
 import SiteHeader from '../components/site/SiteHeader.astro';
 import SiteFooter from '../components/site/SiteFooter.astro';
+import TranslationNote from '../components/site/TranslationNote.astro';
+import { LANG, basePath, inLang, langOf } from '../i18n/languages';
+import { builtLangs, hasPage } from '../i18n/routes';
+import { useT } from '../i18n/t';
 
 interface Props {
   title?: string;
@@ -22,12 +26,21 @@ interface Props {
   mode?: Mode;
   /** 'site': header, navigation and footer. 'app': the page brings its own chrome (trainer apps). */
   chrome?: 'site' | 'app';
+  /** On a translated page, the note on how it was translated (at the end of the page). Article.astro shows its own at the top. */
+  translationNote?: boolean;
 }
-const { title, description = SITE.description, type = 'website', jsonld = [], noindex = false, progress = false, chrome = 'site' } = Astro.props;
-const mode = Astro.props.mode ?? modeOf(Astro.url.pathname);
-const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} — ${SITE.tagline}`;
-const canonical = new URL(Astro.url.pathname, SITE.url).href;
 const path = Astro.url.pathname;
+// The language comes from the URL (/hi/... is Hindi), like the mode. src/i18n/.
+const lang = langOf(path);
+const t = useT(path);
+const { title, description = t(SITE.description), type = 'website', jsonld = [], noindex = false, progress = false, chrome = 'site', translationNote = true } = Astro.props;
+const mode = Astro.props.mode ?? modeOf(path);
+const siteName = t(SITE.name);
+const fullTitle = title ? `${title} · ${siteName}` : `${siteName} — ${t(SITE.tagline)}`;
+const canonical = new URL(path, SITE.url).href;
+// The same page in the other built languages (hreflang), when it exists there.
+const base = basePath(path);
+const versions = builtLangs().filter((l) => hasPage(l.code, base)).map((l) => ({ ...l, href: new URL(inLang(l.code, base), SITE.url).href }));
 // Share picture: drawn for this page after the build (scripts/og/integration.mjs) at /og/<page path>.png.
 const ogImage = `${SITE.url}/og/${path.replace(/^\/|\/$/g, '') || 'index'}.png`;
 // The site colour (admin settings: src/data/theme.json). Written on <html> at build time; a weekly or monthly rotation
@@ -44,7 +57,7 @@ const graph = {
 };
 ---
 <!doctype html>
-<html lang="en-IN" class="no-js" data-mode={mode} style={paletteStyle(pal)}>
+<html lang={LANG[lang].html} class="no-js" data-mode={mode} style={paletteStyle(pal)}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -60,16 +73,19 @@ const graph = {
     <link rel="alternate" type="application/rss+xml" title={`${SITE.name} — new articles`} href="/rss.xml" />
     <link rel="alternate" type="text/plain" title="LLM-readable site guide" href="/llms.txt" />
     <meta property="og:type" content={type} />
-    <meta property="og:site_name" content={SITE.name} />
-    <meta property="og:title" content={title ?? SITE.name} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title ?? siteName} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:locale" content={LANG[lang].og} />
+    {versions.length > 1 && versions.filter((v) => v.code !== lang).map((v) => <meta property="og:locale:alternate" content={v.og} />)}
+    {versions.length > 1 && versions.map((v) => <link rel="alternate" hreflang={v.html} href={v.href} />)}
+    {versions.length > 1 && <link rel="alternate" hreflang="x-default" href={versions[0].href} />}
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={`${title ?? SITE.name} · ${SITE.name}`} />
+    <meta property="og:image:alt" content={`${title ?? siteName} · ${siteName}`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage} />
     <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -89,11 +105,11 @@ const graph = {
     </script>
   </head>
   <body>
-    <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">{t('Skip to content')}</a>
     {progress && <div class="progress" aria-hidden="true"></div>}
     {chrome === 'site' && <SiteHeader mode={mode} path={path} />}
 
-    <main id="main" class:list={{ 'with-nav': chrome === 'site' }}><slot /></main>
+    <main id="main" class:list={{ 'with-nav': chrome === 'site' }}><slot />{chrome === 'site' && translationNote && <TranslationNote />}</main>
 
     {chrome === 'site' && <SiteFooter mode={mode} />}
 
@@ -135,6 +151,12 @@ const graph = {
         backLink.addEventListener('focus', hold(true));
         backLink.addEventListener('blur', hold(false));
         wake();
+      }
+      // The language menu is a <details>: close it on a click elsewhere or Esc.
+      const langMenu = document.querySelector<HTMLDetailsElement>('.lang-menu');
+      if (langMenu) {
+        addEventListener('click', (e) => { if (langMenu.open && !langMenu.contains(e.target as Node)) langMenu.open = false; });
+        addEventListener('keydown', (e) => { if (e.key === 'Escape' && langMenu.open) { langMenu.open = false; langMenu.querySelector('summary')?.focus(); } });
       }
       const bar = document.querySelector<HTMLElement>('.progress');
       const onScroll = () => {

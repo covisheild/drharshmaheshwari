@@ -13,13 +13,14 @@ export const ZONES_INDIA: [number, number, string][] = [[16, 18.5, 'z-low'], [18
 export const TICKS = [18.5, 23, 25, 30];
 export const RANGES = { h: [140, 200], w: [40, 140], wa: [60, 130] } as const;
 
+// label is English; {cut} in it is filled with `cut`. Translated pages pass it through their dictionary (src/i18n/).
 export type State = [label: string, cls: string];
 export function readout(p: Person) {
   const bmi = p.w / (p.h / 100) ** 2, whtr = p.wa / p.h, cut = p.s === 'm' ? 90 : 80;
   const sBmi: State = bmi < 18.5 ? ['Underweight', 's-low'] : bmi < 23 ? ['Healthy range', 's-ok'] : bmi < 25 ? ['Overweight', 's-over'] : ['Obesity', 's-obese'];
   const sWhtr: State = whtr < 0.5 ? ['Below 0.5: good', 's-ok'] : whtr < 0.6 ? ['Increased risk', 's-over'] : ['High risk', 's-obese'];
-  const sWaist: State = p.wa < cut ? [`Under ${cut} cm`, 's-ok'] : ['Abdominal obesity', 's-obese'];
+  const sWaist: State = p.wa < cut ? ['Under {cut} cm', 's-ok'] : ['Abdominal obesity', 's-obese'];
   const at = (v: number, [lo, hi]: readonly [number, number]) => (((v - lo) / (hi - lo)) * 100).toFixed(1);
-  return { bmi, whtr, sBmi, sWhtr, sWaist, marker: (pct(bmi) / 100).toFixed(4),
+  return { bmi, whtr, sBmi, sWhtr, sWaist, cut, marker: (pct(bmi) / 100).toFixed(4),
     h: at(p.h, RANGES.h), w: at(p.w, RANGES.w), wa: at(p.wa, RANGES.wa) };
 }

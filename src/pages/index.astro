@@ -1,20 +1,32 @@
 ---
 // For Everyone home. Centred hero with a light beam and dust, a picture of the calculator (its fields link into the real one),
 // big cards for what is on the site, and a closing section. Everything shown comes from the site's own content.
+// Also the home page of each translated language (/hi/, src/pages/[lang]/index.astro): every word goes through the dictionary.
 import Base from '../layouts/Base.astro';
-import { articles, books, bookUrl, fmtDate } from '../lib/content';
+import T from '../components/T.astro';
+import { books, bookUrl } from '../lib/content';
 import { TOOLS } from '../data/tools';
 import { PEOPLE, readout, pct, ZONES_GLOBAL, ZONES_INDIA, TICKS } from '../lib/bmi-demo';
+import { langOf } from '../i18n/languages';
+import { articleCard, hasPage, localArticles, localHref } from '../i18n/routes';
+import { fmtDateIn, useT } from '../i18n/t';
 
-const guides = (await articles('learn')).slice(0, 3);
+const lang = langOf(Astro.url.pathname);
+const t = useT(Astro.url.pathname);
+const tr = t; // inside the tools list, where `t` is a tool
+const L = (href: string) => localHref(lang, href);
+const guides = (await localArticles('learn', lang)).slice(0, 3).map((a) => articleCard(lang, '/learn/', a));
 const bookList = await books('everyone');
 const tools = TOOLS.filter((t) => t.mode === 'everyone');
 const r = readout(PEOPLE[0]), p = PEOPLE[0];
+const state = (s: [string, string]) => t(s[0], { cut: r.cut });
+// The result labels the picture cycles through, for its script (src/scripts/home-demo.ts).
+const words = lang === 'en' ? undefined : JSON.stringify(Object.fromEntries(['Underweight', 'Healthy range', 'Overweight', 'Obesity', 'Below 0.5: good', 'Increased risk', 'High risk', 'Under {cut} cm', 'Abdominal obesity'].map((k) => [k, t(k)])));
 const bar = (zones: [number, number, string][]) => zones.map(([a, b, c]) => ({ c, w: pct(b) - pct(a) }));
 const fields = [
-  { id: 'height', label: 'Height', unit: `${p.h} cm`, key: 'h', fill: r.h, o: 'data-oh', hint: 'Enter your height' },
-  { id: 'weight', label: 'Weight', unit: `${p.w} kg`, key: 'w', fill: r.w, o: 'data-ow', hint: 'Enter your weight' },
-  { id: 'waist', label: 'Waist', unit: `${p.wa} cm`, key: 'wa', fill: r.wa, o: 'data-owa', hint: 'Enter your waist' },
+  { id: 'height', label: t('Height'), unit: `${p.h} cm`, key: 'h', fill: r.h, o: 'data-oh', hint: t('Enter your height') },
+  { id: 'weight', label: t('Weight'), unit: `${p.w} kg`, key: 'w', fill: r.w, o: 'data-ow', hint: t('Enter your weight') },
+  { id: 'waist', label: t('Waist'), unit: `${p.wa} cm`, key: 'wa', fill: r.wa, o: 'data-owa', hint: t('Enter your waist') },
 ];
 const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>';
 ---
@@ -23,24 +35,24 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
     <div class="beam" aria-hidden="true"></div><div class="beam-2" aria-hidden="true"></div>
     <canvas class="dust" data-count="260" data-spread=".98" aria-hidden="true"></canvas>
     <div class="wrap">
-      <span class="bm-tag" set:html={`${sparkle}Obesity · Public health · Evidence`}></span>
-      <h1>Reversing obesity in India, <em>one clear idea</em> at a time.</h1>
-      <p class="lede">I'm Dr. Harsh Maheshwari, a physician and public health researcher. I turn obesity research into guides, tools and books that families and doctors can use.</p>
+      <span class="bm-tag" set:html={`${sparkle}${t('Obesity · Public health · Evidence')}`}></span>
+      <h1><T>Reversing obesity in India, <em>one clear idea</em> at a time.</T></h1>
+      <p class="lede"><T>I'm Dr. Harsh Maheshwari, a physician and public health researcher. I turn obesity research into guides, tools and books that families and doctors can use.</T></p>
       <div class="cta">
-        <a class="btn btn-primary btn-lg" href="/tools/bmi-calculator/#height">Check your BMI &amp; waist <span class="arrow" aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost btn-lg" href="/learn/">Start learning</a>
+        <a class="btn btn-primary btn-lg" href="/tools/bmi-calculator/#height"><T>Check your BMI &amp; waist</T> <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost btn-lg" href={L('/learn/')}>{t('Start learning')}</a>
       </div>
 
-      <div class="bm-window reveal" data-demo aria-label="A picture of the BMI and waist calculator. Each field opens the real calculator.">
-        <div class="bm-win-bar"><i></i><i></i><i></i><span>BMI &amp; waist calculator · Indian cut-offs</span></div>
+      <div class="bm-window reveal" data-demo data-words={words} aria-label={t('A picture of the BMI and waist calculator. Each field opens the real calculator.')}>
+        <div class="bm-win-bar"><i></i><i></i><i></i><span><T>BMI &amp; waist calculator · Indian cut-offs</T></span></div>
         <div class="bm-win-body">
           <div class="bm-win-side" aria-hidden="true">
-            <span class="on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01"/></svg>Calculator</span>
-            <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/></svg>Guides</span>
-            <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg>Videos</span>
+            <span class="on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01"/></svg>{t('Calculator')}</span>
+            <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/></svg>{t('Guides')}</span>
+            <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg>{t('Videos')}</span>
           </div>
           <div class="bm-win-main">
-            <h3>Where do your numbers fall?</h3>
+            <h3>{t('Where do your numbers fall?')}</h3>
             <div class="bm-fields">
               {fields.map((f) => (
                 <a class="bm-fld" href={`/tools/bmi-calculator/#${f.id}`}>
@@ -50,19 +62,19 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
                 </a>
               ))}
             </div>
-            <a class="bm-sexpick" href="/tools/bmi-calculator/#sex" aria-label="Choose man or woman in the calculator"><span data-sx="m" class="on">Men</span><span data-sx="f">Women</span></a>
+            <a class="bm-sexpick" href="/tools/bmi-calculator/#sex" aria-label={t('Choose man or woman in the calculator')}><span data-sx="m" class="on">{t('Men')}</span><span data-sx="f">{t('Women')}</span></a>
             <div class="bm-scale" style={`--p:${r.marker}`}>
-              <div class="bm-srow"><span class="bm-tag">Global</span><div class="bm-bar">{bar(ZONES_GLOBAL).map((z) => <span class={z.c} style={`width:${z.w}%`}></span>)}</div></div>
-              <div class="bm-srow"><span class="bm-tag" style="color:var(--brand)">India</span><div class="bm-bar">{bar(ZONES_INDIA).map((z) => <span class={z.c} style={`width:${z.w}%`}></span>)}</div></div>
+              <div class="bm-srow"><span class="bm-tag">{t('Global')}</span><div class="bm-bar">{bar(ZONES_GLOBAL).map((z) => <span class={z.c} style={`width:${z.w}%`}></span>)}</div></div>
+              <div class="bm-srow"><span class="bm-tag" style="color:var(--brand)">{t('India')}</span><div class="bm-bar">{bar(ZONES_INDIA).map((z) => <span class={z.c} style={`width:${z.w}%`}></span>)}</div></div>
               <div class="bm-ticks">{TICKS.map((t) => <span style={`left:${pct(t)}%`}>{t}</span>)}</div>
               <div class="bm-marker" aria-hidden="true"></div>
             </div>
             <div class="bm-results">
-              <a class="bm-res" href="/tools/bmi-calculator/"><span class="bm-tag">BMI</span><b data-bmi>{r.bmi.toFixed(1)}</b><span class={`bm-state ${r.sBmi[1]}`} data-sbmi>{r.sBmi[0]}</span></a>
-              <a class="bm-res" href="/tools/bmi-calculator/#waist"><span class="bm-tag">Waist ÷ height</span><b data-whtr>{r.whtr.toFixed(2)}</b><span class={`bm-state ${r.sWhtr[1]}`} data-swhtr>{r.sWhtr[0]}</span></a>
-              <a class="bm-res" href="/tools/bmi-calculator/#waist"><span class="bm-tag">Waist</span><b data-waist>{p.wa} cm</b><span class={`bm-state ${r.sWaist[1]}`} data-swaist>{r.sWaist[0]}</span></a>
+              <a class="bm-res" href="/tools/bmi-calculator/"><span class="bm-tag">BMI</span><b data-bmi>{r.bmi.toFixed(1)}</b><span class={`bm-state ${r.sBmi[1]}`} data-sbmi>{state(r.sBmi)}</span></a>
+              <a class="bm-res" href="/tools/bmi-calculator/#waist"><span class="bm-tag">{t('Waist ÷ height')}</span><b data-whtr>{r.whtr.toFixed(2)}</b><span class={`bm-state ${r.sWhtr[1]}`} data-swhtr>{state(r.sWhtr)}</span></a>
+              <a class="bm-res" href="/tools/bmi-calculator/#waist"><span class="bm-tag">{t('Waist')}</span><b data-waist>{p.wa} cm</b><span class={`bm-state ${r.sWaist[1]}`} data-swaist>{state(r.sWaist)}</span></a>
             </div>
-            <p class="bm-fine">An illustration that steps through example people. Tap any field to enter your own numbers. Screening only. <a href="/disclaimer/">Disclaimer</a></p>
+            <p class="bm-fine"><T>An illustration that steps through example people. Tap any field to enter your own numbers. Screening only.</T> <a href={L('/disclaimer/')}>{t('Disclaimer')}</a></p>
           </div>
         </div>
       </div>
@@ -70,33 +82,33 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
   </section>
 
   <section class="bm-sec"><div class="wrap">
-    <div class="bm-sec-head reveal"><span class="bm-tag">What you will find</span><h2>Understand your body, then change your habits</h2></div>
+    <div class="bm-sec-head reveal"><span class="bm-tag">{t('What you will find')}</span><h2>{t('Understand your body, then change your habits')}</h2></div>
     <div class="bento">
-      <article class="bcard reveal"><h3>Plain guides</h3><p>Plain-language guides on food, activity, sleep and weight, with Indian examples and without fads.</p>
+      <article class="bcard reveal"><h3>{t('Plain guides')}</h3><p>{t('Plain-language guides on food, activity, sleep and weight, with Indian examples and without fads.')}</p>
         <div class="bm-stage"><div class="bm-list">
           {guides.map((g) => (
-            <a class="bm-li" href={`/learn/${g.id}/`}><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/></svg></span><span><b>{g.data.title}</b><small>{g.data.topic[0]} · {fmtDate(g.data.published)}</small></span><span class="bm-pchip">Guide</span></a>
+            <a class="bm-li" href={g.href}><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/></svg></span><span><b lang={g.english ? 'en' : undefined}>{g.title}</b><small>{g.topic} · {fmtDateIn(lang, g.date)}</small></span><span class="bm-pchip">{g.english ? t('In English') : t('Guide')}</span></a>
           ))}
-          <div class="bm-li"><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><span><b>{guides.length ? 'More guides on food, sleep and activity' : 'The first guides are being written'}</b><small>On food, activity, sleep and weight</small></span><span class="bm-pchip">Soon</span></div>
+          <div class="bm-li"><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><span><b>{guides.length ? t('More guides on food, sleep and activity') : t('The first guides are being written')}</b><small>{t('On food, activity, sleep and weight')}</small></span><span class="bm-pchip">{t('Soon')}</span></div>
         </div></div>
       </article>
-      <article class="bcard reveal"><h3>Tools built on Indian cut-offs</h3><p>Calculators and risk scores that use the numbers that fit Indian bodies.</p>
+      <article class="bcard reveal"><h3>{t('Tools built on Indian cut-offs')}</h3><p>{t('Calculators and risk scores that use the numbers that fit Indian bodies.')}</p>
         <div class="bm-stage"><div class="bm-list">
           {tools.map((t) => {
-            const inner = <><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01"/></svg></span><span><b>{t.title}</b><small>{t.text}</small></span><span class:list={['bm-pchip', { ready: !!t.href }]}>{t.href ? 'Ready' : 'Coming'}</span></>;
+            const inner = <><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01"/></svg></span><span><b>{tr(t.title)}</b><small>{tr(t.text)}</small></span><span class:list={['bm-pchip', { ready: !!t.href }]}>{!t.href ? tr('Coming') : lang !== 'en' && !hasPage(lang, t.href) ? tr('In English') : tr('Ready')}</span></>;
             return t.href ? <a class="bm-li" href={t.href}>{inner}</a> : <div class="bm-li">{inner}</div>;
           })}
         </div></div>
       </article>
-      <article class="bcard reveal"><h3>Books</h3><p>{bookList.length ? `${bookList.length} book${bookList.length > 1 ? 's' : ''}, to download and share for non-commercial use.` : 'Full-length books on obesity for families are being written.'}</p>
-        <a class="btn btn-ghost" href="/books/">Browse books <span class="arrow" aria-hidden="true">→</span></a>
+      <article class="bcard reveal"><h3>{t('Books')}</h3><p>{bookList.length > 1 ? t('{n} books, to download and share for non-commercial use.', { n: bookList.length }) : bookList.length ? t('1 book, to download and share for non-commercial use.') : t('Full-length books on obesity for families are being written.')}</p>
+        <a class="btn btn-ghost" href={L('/books/')}>{t('Browse books')} <span class="arrow" aria-hidden="true">→</span></a>
         <div class="bm-stage"><div class="bm-list">
-          {bookList.map((b) => <a class="bm-li" href={bookUrl(b)}><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></span><span><b>{b.data.title}</b><small>PDF</small></span></a>)}
-          {!bookList.length && <div class="bm-li"><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></span><span><b>Books for families</b><small>Being written</small></span><span class="bm-pchip">Soon</span></div>}
+          {bookList.map((b) => <a class="bm-li" href={bookUrl(b)}><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></span><span><b lang="en">{b.data.title}</b><small>PDF</small></span></a>)}
+          {!bookList.length && <div class="bm-li"><span class="bm-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zM20 17v4H6.5"/></svg></span><span><b>{t('Books for families')}</b><small>{t('Being written')}</small></span><span class="bm-pchip">{t('Soon')}</span></div>}
         </div></div>
       </article>
-      <article class="bcard reveal"><h3>For Doctors</h3><p>Evidence syntheses with effect sizes, clinical skill trainers such as heart and lung sounds, and books on statistics and research methods.</p>
-        <a class="btn btn-primary" href="/doctors/">Go to For Doctors <span class="arrow" aria-hidden="true">→</span></a>
+      <article class="bcard reveal"><h3>{t('For Doctors')}</h3><p>{t('Evidence syntheses with effect sizes, clinical skill trainers such as heart and lung sounds, and books on statistics and research methods.')}</p>
+        <a class="btn btn-primary" href="/doctors/">{t('Go to For Doctors')} <span class="arrow" aria-hidden="true">→</span></a>
         <div class="bm-stage"><svg class="bm-wave" viewBox="0 0 600 170" preserveAspectRatio="none" aria-hidden="true"><path class="env" d="M0 85 L600 85"/><path class="sig" d="M0 85 L40 85 L48 40 L56 130 L64 60 L72 105 L80 85 L170 85 L178 55 L186 115 L194 85 L300 85 L308 40 L316 130 L324 60 L332 105 L340 85 L430 85 L438 55 L446 115 L454 85 L600 85"/></svg></div>
       </article>
     </div>
@@ -105,10 +117,10 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
   <section class="closer">
     <canvas class="dust" id="dust-closer" data-count="320" data-spread="1" aria-hidden="true"></canvas>
     <div class="wrap">
-      <span class="bm-tag" set:html={`${sparkle}Stay in the loop`}></span>
-      <h2>New guides, tools and books as they are published</h2>
-      <p>Follow by RSS, or write to contact@drharshmaheshwari.com and I'll add you to the list when the newsletter launches.</p>
-      <div class="cta"><a class="btn btn-primary btn-lg" href="/rss.xml">Follow by RSS</a><a class="btn btn-ghost btn-lg" href="/support/">Support this project</a></div>
+      <span class="bm-tag" set:html={`${sparkle}${t('Stay in the loop')}`}></span>
+      <h2>{t('New guides, tools and books as they are published')}</h2>
+      <p>{t("Follow by RSS, or write to contact@drharshmaheshwari.com and I'll add you to the list when the newsletter launches.")}</p>
+      <div class="cta"><a class="btn btn-primary btn-lg" href="/rss.xml">{t('Follow by RSS')}</a><a class="btn btn-ghost btn-lg" href={L('/support/')}>{t('Support this project')}</a></div>
     </div>
   </section>
 </Base>

@@ -24,6 +24,18 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
   previous page is on this site; if the page was opened directly, or was itself reached by a Back jump (`sessionStorage.backTo`), it goes one level up instead.
   Trainer and book-reader pages (`chrome="app"`) keep their own top bar and back arrow. `tests/site.test.mjs` checks every page's parent chain.
 
+## Languages (`/hi/`): plan and pipeline in `docs/translation.md`
+
+- The URL decides the language like the mode: `/hi/...` is Hindi (`src/i18n/languages.ts`, `langOf`). For Everyone pages only; For Doctors,
+  books, references, the account page and (for now) the calculators stay English. Language button in the header (`LangSwitch.astro`).
+- Hindi is `live: false`: built only on preview builds until Harsh approves it. Harsh reads Hindi; every other language relies on the
+  AI pipeline only (automated checks + independent back-translation), never on colleagues.
+- Words: `src/i18n/hi.json` (English text → Hindi; `t()` / `<T>`). Guides: `src/content/i18n/hi/<collection>/<slug>.md` with the English
+  file's fingerprint (`npm run i18n:status`). Changed English shows as English until retranslated; never ship a stale medical translation.
+- **Whenever English text on a For Everyone page changes, update its translations in the same commit**: `WORKERS_CI_BRANCH=preview npm run build`,
+  `npm run i18n:missing -- hi --json`, translate with the glossary (`src/i18n/glossary/hi.json`), `npm run i18n:check`, back-translate
+  what changed, then `npm test` on the preview build.
+
 ## Support this project (`/support/`)
 
 - One-time support by **direct UPI only**: QR code (generated at build time, `src/lib/upi-qr.ts`), "Copy UPI ID",
@@ -74,8 +86,9 @@ is where Harsh writes drafts and instructions. Never edit Notion content to matc
    - Page update / Site change → edit the named page or `src/consts.ts`
    - Stage = Remove from site → delete the file/entry
 3. Apply `Voice & rules`: key points, question headings, references (open every one; PubMed tool for PMIDs), `reviewed` date. Download Notion images/attachments into the repo — Notion file URLs expire.
-4. `npm run build` must pass; screenshot mobile (390px) and desktop; check no horizontal overflow.
-5. Commit, push to `main`. Then in Notion: untick `🚀 Publish`, Stage = Live, fill Live URL (the site page, not the PDF link) and Last published, write what changed in Claude notes. Add a line to Publish log. Update Site map if a section changed.
+4. Translate what the row adds or changes on a For Everyone page, once the English is final (Languages, above).
+5. `npm run build` must pass; screenshot mobile (390px) and desktop; check no horizontal overflow.
+6. Commit, push to `main`. Then in Notion: untick `🚀 Publish`, Stage = Live, fill Live URL (the site page, not the PDF link) and Last published, write what changed in Claude notes. Add a line to Publish log. Update Site map if a section changed.
 
 Questions for Harsh go in the row's **Claude notes** with Stage = Needs your input.
 
@@ -249,6 +262,6 @@ via `WORKERS_CI_BRANCH`, read in `astro.config.mjs`) and hides it on production.
 - NMC conduct: no testimonials, patient details, fees, appointment booking, superlatives, or "specialist" claims.
 - **India first** (Harsh, 11 Oct 2026): every tool and article uses Indian cut-offs and Indian charts; WHO or other international ones only where no Indian one exists, and the page says so.
 - Indian cut-offs: BMI overweight 23–24.9, obesity ≥25; waist ≥90 cm men / ≥80 cm women; WHtR risk from 0.5.
-- Never change a published URL (slug). Hindi pages will live under `/hi/` (Phase 2).
+- Never change a published URL (slug). Hindi pages live under `/hi/` with the English slug (`docs/translation.md`).
 - SEO/AEO plumbing is automatic: sitemap, `robots.txt` (AI crawlers allowed), `/llms.txt`, `/llms-full.txt`, RSS, schema.org JSON-LD in `Base.astro` / `Article.astro`.
 - Respect `prefers-reduced-motion`; animations use the `.reveal` class.

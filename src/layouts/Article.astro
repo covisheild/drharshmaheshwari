@@ -2,16 +2,27 @@
 import Base from './Base.astro';
 import Avatar from '../components/Avatar.astro';
 import { SITE } from '../consts';
-import { SECTION, fmtDate, modeHome, type ArticleCollection } from '../lib/content';
+import { SECTION, modeHome, type ArticleCollection } from '../lib/content';
 import { MODES } from '../lib/modes';
 import type { CollectionEntry } from 'astro:content';
+import TranslationNote from '../components/site/TranslationNote.astro';
+import { LANG, inLang, langOf } from '../i18n/languages';
+import { localHref } from '../i18n/routes';
+import { fmtDateIn, useT } from '../i18n/t';
 
-interface Props { entry: CollectionEntry<ArticleCollection>; collection: ArticleCollection; }
-const { entry, collection } = Astro.props;
-const d = entry.data;
+// tr: on a translated page, the translation (its words replace the English ones; dates, references and draft stay the English
+// file's). stale: there is a translation but the English changed since, so the English is shown with a note.
+interface Props { entry: CollectionEntry<ArticleCollection>; collection: ArticleCollection; tr?: CollectionEntry<'translations'>; stale?: boolean }
+const { entry, collection, tr, stale = false } = Astro.props;
+const lang = langOf(Astro.url.pathname);
+const t = useT(Astro.url.pathname);
+const local = !!tr && !stale;
+const d = local ? { ...entry.data, ...tr!.data } : entry.data;
 const sec = SECTION[collection];
-const url = new URL(`${sec.base}${entry.id}/`, SITE.url).href;
+const englishUrl = new URL(`${sec.base}${entry.id}/`, SITE.url).href;
+const url = new URL(inLang(lang, `${sec.base}${entry.id}/`), SITE.url).href;
 const reviewed = d.reviewed ?? d.published;
+const fmtDate = (x: Date) => fmtDateIn(lang, x);
 
 const jsonld: Record<string, unknown>[] = [
   {
@@ -21,7 +32,8 @@ const jsonld: Record<string, unknown>[] = [
     headline: d.title,
     name: d.title,
     description: d.description,
-    inLanguage: 'en-IN',
+    inLanguage: local ? LANG[lang].html : 'en-IN',
+    ...(local && { translationOfWork: { '@id': `${englishUrl}#page` } }),
     datePublished: d.published.toISOString(),
     dateModified: reviewed.toISOString(),
     ...(collection !== 'blog' && { lastReviewed: reviewed.toISOString().slice(0, 10), audience: { '@type': 'MedicalAudience', audienceType: sec.audience } }),
@@ -34,8 +46,8 @@ const jsonld: Record<string, unknown>[] = [
   {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: MODES[sec.mode].label, item: new URL(modeHome(sec.mode), SITE.url).href },
-      { '@type': 'ListItem', position: 2, name: sec.label, item: new URL(sec.base, SITE.url).href },
+      { '@type': 'ListItem', position: 1, name: t(MODES[sec.mode].label), item: new URL(localHref(lang, modeHome(sec.mode)), SITE.url).href },
+      { '@type': 'ListItem', position: 2, name: t(sec.label), item: new URL(localHref(lang, sec.base), SITE.url).href },
       { '@type': 'ListItem', position: 3, name: d.title, item: url },
     ],
   },
@@ -47,23 +59,24 @@ if (d.faq.length) {
   });
 }
 ---
-<Base title={d.title} description={d.description} type="article" jsonld={jsonld} noindex={d.draft} progress>
-  <article>
+<Base title={d.title} description={d.description} type="article" jsonld={jsonld} noindex={d.draft} progress translationNote={false}>
+  <article lang={lang !== 'en' && !local ? 'en' : undefined}>
     <header class="article-head prose-wrap">
-      {d.draft && <p class="draft-banner"><b>Draft under review.</b> Visible only on the preview site; not public yet.</p>}
-      <a class="eyebrow" href={sec.base} style="text-decoration:none">{sec.label}{d.topic[0] && ` · ${d.topic[0]}`}</a>
+      {lang !== 'en' && <div lang={LANG[lang].html}><TranslationNote checkedBy={tr?.data.checkedBy} stale={stale} top /></div>}
+      {d.draft && <p class="draft-banner" lang={LANG[lang].html}><b>{t('Draft under review.')}</b> {t('Visible only on the preview site; not public yet.')}</p>}
+      <a class="eyebrow" href={localHref(lang, sec.base)} style="text-decoration:none">{t(sec.label)}{d.topic[0] && ` · ${local ? d.topic[0] : t(d.topic[0])}`}</a>
       <h1>{d.title}</h1>
       <p class="desc">{d.description}</p>
-      <div class="meta">
-        <span>By <a href="/about/">{SITE.name}</a></span>
-        <span>Published <time datetime={d.published.toISOString()}>{fmtDate(d.published)}</time></span>
-        {d.reviewed && <span>Last reviewed <time datetime={d.reviewed.toISOString()}>{fmtDate(d.reviewed)}</time></span>}
+      <div class="meta" lang={LANG[lang].html}>
+        <span>{t('By')} <a href={localHref(lang, '/about/')}>{t(SITE.name)}</a></span>
+        <span>{t('Published')} <time datetime={d.published.toISOString()}>{fmtDate(d.published)}</time></span>
+        {d.reviewed && <span>{t('Last reviewed')} <time datetime={d.reviewed.toISOString()}>{fmtDate(d.reviewed)}</time></span>}
       </div>
     </header>
     <div class="prose-wrap">
       {d.keyPoints.length > 0 && (
-        <aside class="keypoints" aria-label="Key points">
-          <h2>Key points</h2>
+        <aside class="keypoints" aria-label={t('Key points')}>
+          <h2>{t('Key points')}</h2>
           <ul>{d.keyPoints.map((k) => <li>{k}</li>)}</ul>
         </aside>
       )}
@@ -71,26 +84,26 @@ if (d.faq.length) {
 
       {d.faq.length > 0 && (
         <section class="faq" style="padding-block:1rem 0" aria-labelledby="faq-h">
-          <h2 id="faq-h">Common questions</h2>
+          <h2 id="faq-h">{t('Common questions')}</h2>
           {d.faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
         </section>
       )}
 
       {d.references.length > 0 && (
         <section class="refs" style="padding-block:1.5rem 0" aria-labelledby="refs-h">
-          <h2 id="refs-h">References</h2>
-          <ol>{d.references.map((r) => <li>{r.url ? <a href={r.url} rel="noopener">{r.text}</a> : r.text}</li>)}</ol>
+          <h2 id="refs-h">{t('References')}</h2>
+          <ol lang="en">{d.references.map((r) => <li>{r.url ? <a href={r.url} rel="noopener">{r.text}</a> : r.text}</li>)}</ol>
         </section>
       )}
 
       <div class="author-box">
         <Avatar size={52} />
         <div>
-          <b><a href="/about/">{SITE.name}</a></b>
-          <div class="muted small">MBBS (KGMU, Lucknow) · MD Community Medicine resident, AIIMS Raipur. Works on obesity prevention and evidence synthesis.</div>
+          <b><a href={localHref(lang, '/about/')}>{t(SITE.name)}</a></b>
+          <div class="muted small">{t('MBBS (KGMU, Lucknow) · MD Community Medicine resident, AIIMS Raipur. Works on obesity prevention and evidence synthesis.')}</div>
         </div>
       </div>
-      <p class="disclaimer"><a href="/disclaimer/">Disclaimer</a></p>
+      <p class="disclaimer"><a href={localHref(lang, '/disclaimer/')}>{t('Disclaimer')}</a></p>
     </div>
   </article>
 </Base>

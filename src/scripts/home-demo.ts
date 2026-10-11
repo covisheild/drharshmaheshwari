@@ -5,7 +5,9 @@ const win = document.querySelector<HTMLElement>('[data-demo]');
 if (win) {
   const $ = (s: string) => win.querySelector<HTMLElement>(s)!;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const set = (el: HTMLElement, s: [string, string]) => { el.textContent = s[0]; el.className = `bm-state ${s[1]}`; };
+  // The page's translations of the result labels (English pages send none).
+  const words: Record<string, string> = JSON.parse(win.dataset.words || '{}');
+  const set = (el: HTMLElement, s: [string, string], cut = 0) => { el.textContent = (words[s[0]] ?? s[0]).replace('{cut}', String(cut)); el.className = `bm-state ${s[1]}`; };
   let shown = { bmi: 0, whtr: 0, waist: 0 }, raf = 0, i = 0, held = false;
   const paint = (o: typeof shown) => { $('[data-bmi]').textContent = o.bmi.toFixed(1); $('[data-whtr]').textContent = o.whtr.toFixed(2); $('[data-waist]').textContent = `${Math.round(o.waist)} cm`; };
   const show = (n: number, first: boolean) => {
@@ -13,7 +15,7 @@ if (win) {
     $('[data-oh]').textContent = `${p.h} cm`; $('[data-ow]').textContent = `${p.w} kg`; $('[data-owa]').textContent = `${p.wa} cm`;
     ([['h', r.h], ['w', r.w], ['wa', r.wa]] as const).forEach(([k, v]) => { $(`[data-t="${k}"]`).style.width = `calc(${v}% + 9px)`; $(`[data-k="${k}"]`).style.left = `${v}%`; });
     $('[data-sx="m"]').className = p.s === 'm' ? 'on' : ''; $('[data-sx="f"]').className = p.s === 'f' ? 'on' : '';
-    set($('[data-sbmi]'), r.sBmi); set($('[data-swhtr]'), r.sWhtr); set($('[data-swaist]'), r.sWaist);
+    set($('[data-sbmi]'), r.sBmi); set($('[data-swhtr]'), r.sWhtr); set($('[data-swaist]'), r.sWaist, r.cut);
     $('.bm-scale').style.setProperty('--p', r.marker);
     const to = { bmi: r.bmi, whtr: r.whtr, waist: p.wa };
     if (reduce) { shown = to; paint(to); return; }

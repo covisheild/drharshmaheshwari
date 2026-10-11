@@ -47,4 +47,22 @@ const books = defineCollection({
   }),
 });
 
-export const collections = { learn, clinicians, blog, books };
+// Translations of guides and blog posts: src/content/i18n/<lang>/<collection>/<slug>.md (id "hi/learn/<slug>"). Only the words
+// are translated; dates, references and draft status come from the English file. `source` is the fingerprint of the English
+// file it was translated from (src/i18n/fingerprint.ts): when the English changes, the translation is not shown until redone.
+const translations = defineCollection({
+  loader: glob({ pattern: '*/*/*.md', base: './src/content/i18n' }),
+  schema: z.object({
+    source: z.string(),
+    translated: z.coerce.date(),
+    title: z.string(),
+    description: z.string(),
+    topic: z.array(z.string()).default([]),
+    keyPoints: z.array(z.string()).default([]),
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+    // Overrides the language's checkedBy (src/i18n/languages.ts) for this page: 'author' once Harsh has read it.
+    checkedBy: z.enum(['ai', 'author']).optional(),
+  }),
+});
+
+export const collections = { learn, clinicians, blog, books, translations };

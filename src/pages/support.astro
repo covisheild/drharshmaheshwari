@@ -6,6 +6,15 @@ import Base from '../layouts/Base.astro';
 import { SITE } from '../consts';
 import { LIMITS, ONE_TIME_PRESETS, UPI_CONFIG, formatINR, supportOpen, upiUri } from '../lib/support';
 import { qrSvg } from '../lib/upi-qr';
+import T from '../components/T.astro';
+import { useT } from '../i18n/t';
+
+// Also /<lang>/support/. The words the script writes come from data-words (translated pages only).
+const t = useT(Astro.url.pathname);
+const scriptWords = ['Enter an amount between {min} and {max}.', 'Choose an amount, or pay any amount you like.', '{amount}, once.',
+  'Scan with any UPI app and enter the amount you choose.', 'Scan with any UPI app. {amount} is filled in; check it before you pay.',
+  'Scan with any UPI app, then enter {amount} in the app.', 'Copied', 'Selected: copy it now'];
+const words = JSON.stringify(Object.fromEntries(scriptWords.map((k) => [k, t(k)])));
 
 const open = supportOpen();
 const cfg = UPI_CONFIG;
@@ -23,74 +32,74 @@ const helps = [
   ['Research and writing', 'Reading the evidence and turning it into guides, syntheses and books.'],
   ['Maintenance', 'Fixing errors, updating content as evidence changes, keeping everything secure.'],
   ['New educational tools', 'Building the next trainers and calculators.'],
-];
+].map(([a, b]) => [t(a), t(b)]);
 ---
-<Base title="Support this project" description="Help keep this project free and support its continued development. Voluntary one-time contributions by UPI.">
+<Base title={t('Support this project')} description={t('Help keep this project free and support its continued development. Voluntary one-time contributions by UPI.')}>
   <header class="page-head wrap support-head">
-    <span class="eyebrow">Support</span>
-    <h1>Support this project</h1>
-    <p>Help keep this project free and support its continued development.</p>
-    <p class="muted">The core educational resources on this site are intended to remain freely accessible. Your support helps us keep building and maintaining the platform.</p>
+    <span class="eyebrow">{t('Support')}</span>
+    <h1>{t('Support this project')}</h1>
+    <p>{t('Help keep this project free and support its continued development.')}</p>
+    <p class="muted">{t('The core educational resources on this site are intended to remain freely accessible. Your support helps us keep building and maintaining the platform.')}</p>
   </header>
 
   <div class="wrap support-grid">
     <section class="support-why" aria-labelledby="why-h">
-      <h2 id="why-h">What support helps with</h2>
+      <h2 id="why-h">{t('What support helps with')}</h2>
       <ul class="helps">
         {helps.map(([title, text]) => <li><b>{title}.</b> {text}</li>)}
       </ul>
-      <h2>Other ways to help</h2>
+      <h2>{t('Other ways to help')}</h2>
       <ul class="helps">
-        <li><b>Share</b> a guide, book or trainer with someone who would use it.</li>
-        <li><b>Report an error</b> or a broken link: <a href={`mailto:${SITE.email}?subject=Correction`}>{SITE.email}</a>.</li>
-        <li><b>Suggest</b> a topic, tool or trainer you would find useful.</li>
+        <li><T><b>Share</b> a guide, book or trainer with someone who would use it.</T></li>
+        <li><T><b>Report an error</b> or a broken link: <a href={`mailto:${SITE.email}?subject=Correction`}>{SITE.email}</a>.</T></li>
+        <li><T><b>Suggest</b> a topic, tool or trainer you would find useful.</T></li>
       </ul>
     </section>
 
     <section class="card support-form-card" aria-labelledby="form-h">
-      <h2 id="form-h">Make a contribution</h2>
-      {!open && <p class="soon" role="status"><b>Contributions open soon.</b> You can look through the options below; the UPI details will appear here when contributions open.</p>}
+      <h2 id="form-h">{t('Make a contribution')}</h2>
+      {!open && <p class="soon" role="status"><b>{t('Contributions open soon.')}</b> {t('You can look through the options below; the UPI details will appear here when contributions open.')}</p>}
 
       <div id="support-upi" class="support-form" data-open={String(open)} data-amount-in-qr={String(cfg.amountInQr)}
-        data-upi-id={open ? cfg.upiId.trim() : undefined} data-payee={cfg.payeeName} data-note={cfg.note}>
+        data-upi-id={open ? cfg.upiId.trim() : undefined} data-payee={cfg.payeeName} data-note={cfg.note} data-words={words}>
         <fieldset class="amounts">
-          <legend>Choose an amount</legend>
+          <legend>{t('Choose an amount')}</legend>
           <div class="chips">
             {ONE_TIME_PRESETS.map((a) => <label class="chip-opt"><input type="radio" name="amount" value={a} /> <span>{formatINR(a)}</span></label>)}
-            <label class="chip-opt"><input type="radio" name="amount" value="custom" /> <span>Other amount</span></label>
+            <label class="chip-opt"><input type="radio" name="amount" value="custom" /> <span>{t('Other amount')}</span></label>
           </div>
           <label class="custom" hidden>
-            <span>Amount in ₹</span>
-            <input type="number" inputmode="numeric" name="custom" min={LIMITS.min} max={LIMITS.max} step="1" placeholder="e.g. 300" />
+            <span>{t('Amount in ₹')}</span>
+            <input type="number" inputmode="numeric" name="custom" min={LIMITS.min} max={LIMITS.max} step="1" placeholder={t('e.g. 300')} />
           </label>
         </fieldset>
 
-        <div class="summary" aria-live="polite" id="summary">Choose an amount, or pay any amount you like.</div>
+        <div class="summary" aria-live="polite" id="summary">{t('Choose an amount, or pay any amount you like.')}</div>
 
         {open ? (
           <div class="pay">
-            <p class="payee">Paying <b>{cfg.payeeName}</b><br /><span class="upi-id">UPI ID: <code id="upi-id">{cfg.upiId.trim()}</code></span></p>
+            <p class="payee">{t('Paying')} <b lang="en">{cfg.payeeName}</b><br /><span class="upi-id">{t('UPI ID:')} <code id="upi-id">{cfg.upiId.trim()}</code></span></p>
             <div class="qr-box">
               {qrs.map((q) => <figure class="qr" data-qr={q.amount} hidden={q.amount !== 'any'} set:html={q.svg} />)}
             </div>
-            <p class="qr-hint" id="qr-hint">Scan with any UPI app.</p>
+            <p class="qr-hint" id="qr-hint">{t('Scan with any UPI app.')}</p>
             <div class="pay-actions">
-              {cfg.appLink && <a class="btn btn-primary" id="upi-open" href={upiUri()} hidden>Open your UPI app</a>}
-              <button class="btn btn-ghost" type="button" id="upi-copy">Copy UPI ID</button>
+              {cfg.appLink && <a class="btn btn-primary" id="upi-open" href={upiUri()} hidden>{t('Open your UPI app')}</a>}
+              <button class="btn btn-ghost" type="button" id="upi-copy">{t('Copy UPI ID')}</button>
               <span class="copied" id="copied" role="status" aria-live="polite"></span>
             </div>
             <p class="small muted mobile-only" hidden id="app-hint">{cfg.appLink
-              ? "If your UPI app doesn't open or declines the payment, take a screenshot of the QR code and scan it from your gallery in the app, or copy the UPI ID."
-              : 'On a phone: take a screenshot of the QR code and scan it from your gallery in any UPI app, or copy the UPI ID.'}</p>
+              ? t("If your UPI app doesn't open or declines the payment, take a screenshot of the QR code and scan it from your gallery in the app, or copy the UPI ID.")
+              : t('On a phone: take a screenshot of the QR code and scan it from your gallery in any UPI app, or copy the UPI ID.')}</p>
           </div>
         ) : (
-          <div class="qr-box qr-placeholder" aria-hidden="true"><span>UPI QR code</span></div>
+          <div class="qr-box qr-placeholder" aria-hidden="true"><span>{t('UPI QR code')}</span></div>
         )}
 
         <div class="fine">
-          <p><b>How it works:</b> you pay directly by UPI from your own app. Your UPI app keeps the record of the payment; this site doesn't collect your details or keep any record.</p>
-          <p>Contributions are voluntary support for the project: they do not buy access, features or medical advice, and they are not tax-deductible. No account is needed.</p>
-          <p>If you think a payment went wrong (for example, paid twice by mistake), write to <a href={`mailto:${SITE.email}?subject=Payment%20query`}>{SITE.email}</a>.</p>
+          <p><T><b>How it works:</b> you pay directly by UPI from your own app. Your UPI app keeps the record of the payment; this site doesn't collect your details or keep any record.</T></p>
+          <p><T>Contributions are voluntary support for the project: they do not buy access, features or medical advice, and they are not tax-deductible. No account is needed.</T></p>
+          <p><T>If you think a payment went wrong (for example, paid twice by mistake), write to <a href={`mailto:${SITE.email}?subject=Payment%20query`}>{SITE.email}</a>.</T></p>
         </div>
       </div>
     </section>
@@ -151,6 +160,9 @@ const helps = [
   const hint = document.getElementById('qr-hint');
   const openLink = document.getElementById('upi-open') as HTMLAnchorElement | null;
   const appHint = document.getElementById('app-hint');
+  // English here; a translated page sends its words in data-words.
+  const words: Record<string, string> = JSON.parse(root.dataset.words || '{}');
+  const w = (en: string, vars: Record<string, string> = {}) => (words[en] ?? en).replace(/\{(\w+)\}/g, (m, k) => vars[k] ?? m);
 
   // Phone guidance (and "Open your UPI app", when UPI_CONFIG.appLink is on) only where a UPI app can exist.
   // The link is best effort: some apps decline payments started from a link, so the QR and UPI ID stay there.
@@ -169,28 +181,28 @@ const helps = [
     const custom = root.querySelector<HTMLInputElement>('input[name=amount]:checked')?.value === 'custom';
     customBox.hidden = !custom;
     const a = chosen();
-    if (a === 'invalid') summary.textContent = `Enter an amount between ${formatINR(LIMITS.min)} and ${formatINR(LIMITS.max)}.`;
-    else if (a === 'none') summary.textContent = 'Choose an amount, or pay any amount you like.';
-    else summary.textContent = `${formatINR(a)}, once.`;
+    if (a === 'invalid') summary.textContent = w('Enter an amount between {min} and {max}.', { min: formatINR(LIMITS.min), max: formatINR(LIMITS.max) });
+    else if (a === 'none') summary.textContent = w('Choose an amount, or pay any amount you like.');
+    else summary.textContent = w('{amount}, once.', { amount: formatINR(a) });
     if (!open) return;
 
     const amount = typeof a === 'number' ? a : undefined;
     // A QR with the amount exists only for preset amounts (built ahead of time); otherwise show the open QR.
     const qrKey = amount && amountInQr && root.querySelector(`[data-qr="${amount}"]`) ? String(amount) : 'any';
     root.querySelectorAll<HTMLElement>('[data-qr]').forEach((f) => { f.hidden = f.dataset.qr !== qrKey; });
-    hint!.textContent = !amount ? 'Scan with any UPI app and enter the amount you choose.'
-      : qrKey !== 'any' ? `Scan with any UPI app. ${formatINR(amount)} is filled in; check it before you pay.`
-      : `Scan with any UPI app, then enter ${formatINR(amount)} in the app.`;
+    hint!.textContent = !amount ? w('Scan with any UPI app and enter the amount you choose.')
+      : qrKey !== 'any' ? w('Scan with any UPI app. {amount} is filled in; check it before you pay.', { amount: formatINR(amount) })
+      : w('Scan with any UPI app, then enter {amount} in the app.', { amount: formatINR(amount) });
     if (openLink) openLink.href = upiUri(amount, cfg);
   }
 
   document.getElementById('upi-copy')?.addEventListener('click', async () => {
     const status = document.getElementById('copied')!;
-    try { await navigator.clipboard.writeText(cfg.upiId); status.textContent = 'Copied'; }
+    try { await navigator.clipboard.writeText(cfg.upiId); status.textContent = w('Copied'); }
     catch {
       const sel = getSelection(); const r = document.createRange();
       r.selectNodeContents(document.getElementById('upi-id')!); sel?.removeAllRanges(); sel?.addRange(r);
-      status.textContent = 'Selected: copy it now';
+      status.textContent = w('Selected: copy it now');
     }
     setTimeout(() => { status.textContent = ''; }, 3000);
   });

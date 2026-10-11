@@ -88,9 +88,11 @@ test('every page has the mode switch with the exact labels, marking the current 
     assert.ok(sw, `${url} has no mode switch`);
     // The link text is "For Everyone" / "For Doctors" (the "For " is wrapped in a span that phones hide to make room).
     const links = [...sw.matchAll(/<a href="([^"]+)"([^>]*)>([\s\S]*?)<\/a>/g)].map((m) => ({ href: m[1], attrs: m[2], text: m[3].replace(/<[^>]+>/g, '') }));
-    assert.deepEqual(links.map((l) => [l.href, l.text]), [['/', 'For Everyone'], ['/doctors/', 'For Doctors']], url);
+    // Hindi pages (/hi/, tests/i18n.test.mjs) carry the same switch in Hindi.
+    const [everyone, doctors] = url.startsWith('/hi/') ? [['/hi/', 'सबके लिए'], ['/doctors/', 'डॉक्टरों के लिए']] : [['/', 'For Everyone'], ['/doctors/', 'For Doctors']];
+    assert.deepEqual(links.map((l) => [l.href, l.text]), [everyone, doctors], url);
     const current = links.find((l) => l.attrs.includes('aria-current="true"'))?.text;
-    assert.equal(current, url.startsWith('/doctors/') ? 'For Doctors' : 'For Everyone', url);
+    assert.equal(current, url.startsWith('/doctors/') ? doctors[1] : everyone[1], url);
     assert.doesNotMatch(doc, />\s*General\s*</, `${url} uses the word "General" as a label`);
   }
 });
@@ -219,7 +221,7 @@ test('/support/: one-time UPI only, closed until a UPI ID is configured, linked 
   assert.doesNotMatch(doc, /api\.qrserver|chart\.googleapis|quickchart|qr-code-generator|razorpay|cashfree|payu|juspay/i, 'no third-party QR service or gateway');
   for (const [url, page] of html) {
     if (url.startsWith('/doctors/trainers/auscultation/')) assert.match(page, /href="\/support\/"/, `${url} lacks the quiet support line`);
-    else if (/<footer class="site-footer"/.test(page)) assert.match(page.match(/<footer class="site-footer"[\s\S]*?<\/footer>/)[0], /href="\/support\/"/, `${url} footer lacks /support/`);
+    else if (/<footer class="site-footer"/.test(page)) assert.match(page.match(/<footer class="site-footer"[\s\S]*?<\/footer>/)[0], url.startsWith('/hi/') ? /href="\/hi\/support\/"/ : /href="\/support\/"/, `${url} footer lacks /support/`);
   }
 });
 
@@ -362,7 +364,7 @@ test('every file the Statistics book reads with read.csv("data/...") is publishe
 });
 
 // ---------- Back button ----------
-test('Back button: on every site-chrome page except the two home pages, and every page can reach home through its parents', () => {
+test('Back button: on every site-chrome page except the home pages (and /hi/), and every page can reach home through its parents', () => {
   const pages = [];
   const walk = (dir, url) => {
     for (const f of readdirSync(dir)) {
@@ -380,7 +382,7 @@ test('Back button: on every site-chrome page except the two home pages, and ever
     const html = readFileSync(fileFor(url), 'utf8');
     const hasHeader = html.includes('class="site-header"');
     const m = html.match(/<a class="back-btn" href="([^"]+)"/);
-    if (url === '/' || url === '/doctors/') { assert.ok(!m, `${url} (a home page) has no Back button`); continue; }
+    if (url === '/' || url === '/doctors/' || url === '/hi/') { assert.ok(!m, `${url} (a home page) has no Back button`); continue; }
     if (!hasHeader) continue; // trainer and reader pages bring their own top bar with a back arrow
     assert.ok(m, `${url} has a Back button`);
     assert.equal(m[1], parent(url), `${url} Back goes one level up`);

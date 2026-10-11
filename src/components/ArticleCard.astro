@@ -1,14 +1,19 @@
 ---
-import { fmtDate } from '../lib/content';
-interface Props { href: string; title: string; description: string; date: Date; topic?: string; draft?: boolean; delay?: number; }
-const { href, title, description, date, topic, draft, delay = 0 } = Astro.props;
+import { langOf } from '../i18n/languages';
+import { fmtDateIn, useT } from '../i18n/t';
+// english: on a translated page, a guide that has no translation yet (it links to the English page).
+interface Props { href: string; title: string; description: string; date: Date; topic?: string; draft?: boolean; english?: boolean; delay?: number; }
+const { href, title, description, date, topic, draft, english, delay = 0 } = Astro.props;
+const lang = langOf(Astro.url.pathname);
+const t = useT(Astro.url.pathname);
 ---
 <a class="card reveal" href={href} style={`--d:${delay}s`}>
   <div style="display:flex;gap:.4rem;flex-wrap:wrap">
     {topic && <span class="chip">{topic}</span>}
-    {draft && <span class="chip draft">Draft</span>}
+    {english && <span class="chip">{t('In English')}</span>}
+    {draft && <span class="chip draft">{t('Draft')}</span>}
   </div>
-  <h3>{title}</h3>
-  <p>{description}</p>
-  <span class="more">Read · <time datetime={date.toISOString()}>{fmtDate(date)}</time></span>
+  <h3 lang={english ? 'en' : undefined}>{title}</h3>
+  <p lang={english ? 'en' : undefined}>{description}</p>
+  <span class="more">{t('Read')} · <time datetime={date.toISOString()}>{fmtDateIn(lang, date)}</time></span>
 </a>
