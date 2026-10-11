@@ -209,6 +209,11 @@ local devDependency. Change production settings only on purpose; preview-only se
   adds a tiny inline script (`src/lib/theme.ts`) that corrects them before first paint. Do not hand-edit colours in components.
 - **Beam look**: `docs/design-direction.md`; prototypes in `design/prototypes/` (not built). Fonts are self-hosted in `public/fonts/`
   (`src/styles/fonts.css`). The round photo stays as it is. Home pages: `src/pages/index.astro`, `src/pages/doctors/index.astro`.
+- **Share pictures** (the small image in WhatsApp, Telegram, X, LinkedIn link previews): drawn per page after every build by `scripts/og/integration.mjs`
+  (satori + sharp, fonts from `@fontsource`), from the page's own title, description, section and audience colour, to `/og/<page path>.png`
+  (home = `/og/index.png`). `Base.astro` points `og:image` at that name. There is no fixed image and nothing to maintain; a new page gets its own
+  picture. `tests/site.test.mjs` checks every page has one (1200x630, under 300 KB). WhatsApp keeps an old preview for a link it has already
+  fetched for days; adding `?v=2` to the link shows the new one at once.
 - **Dust and glow** (`src/scripts/fx.ts`): `canvas.dust` grains scatter and curl around the cursor or a finger; fewer grains on phones;
   nothing runs under "reduce motion". The calculator picture is visual only (`src/lib/bmi-demo.ts`, `src/scripts/home-demo.ts`); its fields
   link to `/tools/bmi-calculator/#height|#weight|#waist|#sex`, which open with that box ready to type in. Do not break these hashes.

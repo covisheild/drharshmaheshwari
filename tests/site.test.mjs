@@ -388,3 +388,20 @@ test('Back button: on every site-chrome page except the two home pages, and ever
     while (u !== '/') { u = parent(u); assert.ok(fileFor(u), `${u} exists (parent chain of ${url})`); assert.ok(++hops < 12); }
   }
 });
+
+test('share pictures: every page names its own picture (og:image) and that file exists, 1200x630 PNG under 300 KB', () => {
+  const seen = new Set();
+  for (const [url, doc] of html) {
+    const m = doc.match(/<meta property="og:image" content="https:\/\/drharshmaheshwari\.com(\/og\/[^"]+\.png)"/);
+    assert.ok(m, `${url} has no og:image under /og/`);
+    assert.ok(!seen.has(m[1]), `${url} shares its picture ${m[1]} with another page`);
+    seen.add(m[1]);
+    const file = join(DIST, m[1]);
+    assert.ok(existsSync(file), `${url}: ${m[1]} was not written`);
+    const png = readFileSync(file);
+    assert.equal(png.readUInt32BE(16), 1200, `${m[1]} width`);
+    assert.equal(png.readUInt32BE(20), 630, `${m[1]} height`);
+    assert.ok(png.length < 300 * 1024, `${m[1]} is ${Math.round(png.length / 1024)} KB (WhatsApp skips images over about 300 KB)`);
+  }
+  assert.ok(seen.has('/og/blog/interpretation-of-the-world.png'));
+});
