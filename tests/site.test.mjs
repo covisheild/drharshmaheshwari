@@ -88,7 +88,7 @@ test('every page has the mode switch with the exact labels, marking the current 
     const sw = doc.match(/<nav class="mode-switch"[\s\S]*?<\/nav>/)?.[0];
     assert.ok(sw, `${url} has no mode switch`);
     // The link text is "For Everyone" / "For Doctors" (the "For " is wrapped in a span that phones hide to make room).
-    const links = [...sw.matchAll(/<a href="([^"]+)"([^>]*)>([\s\S]*?)<\/a>/g)].map((m) => ({ href: m[1], attrs: m[2], text: m[3].replace(/<[^>]+>|[\u2060\u2063]/g, '') })); // untranslated words are marked; tests/i18n.test.mjs reports them
+    const links = [...sw.matchAll(/<a href="([^"]+)"([^>]*)>([\s\S]*?)<\/a>/g)].map((m) => ({ href: m[1], attrs: m[2], text: m[3].replace(/<span class="short"[^>]*>[\s\S]*?<\/span>/, '').replace(/<[^>]+>|[\u2060\u2063]/g, '') })); // a short phone label (ModeSwitch.astro) is left out; // untranslated words are marked; tests/i18n.test.mjs reports them
     // Pages in another language (/hi/..., tests/i18n.test.mjs) carry the same switch in that language.
     const lang = langOf(url), dict = lang === 'en' ? {} : JSON.parse(readFileSync(new URL(`../src/i18n/${lang}.json`, import.meta.url), 'utf8'));
     const [everyone, doctors] = lang === 'en' ? [['/', 'For Everyone'], ['/doctors/', 'For Doctors']] : [[`/${lang}/`, dict['For Everyone'] ?? 'For Everyone'], ['/doctors/', dict['For Doctors'] ?? 'For Doctors']];

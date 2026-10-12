@@ -5,7 +5,7 @@
 import { MODES, type Mode } from '../../lib/modes';
 import { LANG, langOf } from '../../i18n/languages';
 import { localHref } from '../../i18n/routes';
-import { translate } from '../../i18n/t';
+import { lookup, translate } from '../../i18n/t';
 interface Props { mode: Mode }
 const { mode } = Astro.props;
 const lang = langOf(Astro.url.pathname);
@@ -20,6 +20,9 @@ const split = (label: string): [string, string, string] => {
 <nav class="mode-switch" aria-label={translate(lang, 'Choose who this site is for')}>
   {Object.values(MODES).map((m) => {
     const [pre, rest, post] = split(translate(lang, m.label));
-    return <a href={localHref(lang, m.home)} aria-current={m.id === mode ? 'true' : undefined} data-mode-link={m.id}>{pre && <span class="pre">{pre}</span>}{rest}{post && <span class="pre">{post}</span>}</a>;
+    // A language whose labels are long on a phone gives its own short form: dictionary keys "Everyone" / "Doctors"
+    // (the words English shows on phones). The link's accessible name stays the full label.
+    const short = lang !== 'en' ? lookup(lang, m.label.replace(/^For /, '')) : undefined;
+    return <a href={localHref(lang, m.home)} aria-current={m.id === mode ? 'true' : undefined} data-mode-link={m.id} aria-label={short ? translate(lang, m.label) : undefined}>{short ? <><span class="full">{pre}{rest}{post}</span><span class="short" aria-hidden="true">{short}</span></> : <>{pre && <span class="pre">{pre}</span>}{rest}{post && <span class="pre">{post}</span>}</>}</a>;
   })}
 </nav>

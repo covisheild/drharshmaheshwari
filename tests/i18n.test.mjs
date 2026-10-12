@@ -108,7 +108,7 @@ for (const l of BUILT) {
       for (const ban of g.banned) assert.doesNotMatch(text, new RegExp(ban.pattern), `${url}: ${ban.why}`);
       // Header: the mode switch in the language, For Everyone pointing to this language's home; the language menu offers English.
       const sw = doc.match(/<nav class="mode-switch"[\s\S]*?<\/nav>/)[0];
-      const links = [...sw.matchAll(/<a href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)].map((m) => [m[1], m[2].replace(/<[^>]+>/g, '')]);
+      const links = [...sw.matchAll(/<a href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)].map((m) => [m[1], m[2].replace(/<span class="short"[^>]*>[\s\S]*?<\/span>/, '').replace(/<[^>]+>/g, '')]); // a short phone label is left out
       assert.deepEqual(links, [[`/${code}/`, dict['For Everyone']], ['/doctors/', dict['For Doctors']]], url);
       assert.match(doc, new RegExp(`class="lang-list"[\\s\\S]*?href="${en}"[^>]*hreflang="en-IN"`), `${url}: language menu links to the English page`);
       const nav = [...(doc.match(/<ul class="nav-links"[\s\S]*?<\/ul>/)?.[0] ?? '').matchAll(/href="([^"]+)"/g)].map((m) => m[1]);

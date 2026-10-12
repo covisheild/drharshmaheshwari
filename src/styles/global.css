@@ -36,6 +36,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 /* ---------- The For Everyone / For Doctors switch ---------- */
 .mode-switch { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: color-mix(in oklab, var(--ink) 8%, transparent); border: 1px solid var(--header-line); }
 .mode-switch a { display: block; padding: .45rem .9rem; border-radius: 999px; font-size: .85rem; font-weight: 500; text-decoration: none; color: var(--ink-2); white-space: nowrap; transition: background .2s, color .2s; }
+.mode-switch .short { display: none; }
 .mode-switch a[aria-current='true'] { background: var(--btn); color: var(--btn-ink); }
 .mode-switch a:not([aria-current='true']):hover { color: var(--ink); }
 
@@ -87,6 +88,16 @@ picture:has(> .avatar) { flex: none; display: block; line-height: 0; }
   .mode-switch .pre { display: none; }
   .mode-switch a { padding: .5rem .75rem; }
   .nav { gap: .45rem; padding-inline-start: .55rem; }
+  /* Other languages' labels can be longer than "Everyone" / "Doctors": the switch gives way first (smaller type, then
+     clipped), so the photo and the menu button always stay on screen. */
+  html:not(:lang(en)) .nav .mode-switch { flex: 0 1 auto; min-width: 0; }
+  html:not(:lang(en)) .mode-switch a { min-width: 0; overflow: hidden; text-overflow: ellipsis; padding: .5rem .6rem; font-size: .8rem; }
+  /* A language's own short phone labels ("Everyone" / "Doctors" in its dictionary), when it has them. */
+  .mode-switch .full:has(+ .short) { display: none; }
+  .mode-switch .short { display: inline; }
+}
+@media (max-width: 380px) {
+  html:not(:lang(en)) .mode-switch a { padding: .5rem .45rem; font-size: .74rem; }
 }
 
 /* ---------- Back button: a glass circle just under the photo; fixed, fades after 2 s, returns on scroll ---------- */
