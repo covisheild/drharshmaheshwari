@@ -1,6 +1,6 @@
 ---
 // The app: install it, and what works without internet. Also /<lang>/app/. Linked from every footer ("Install the app")
-// and from the Install card on the home pages. Settings live on their own page (/app/settings/).
+// and from the Install card on the home pages. What is kept offline is chosen in Settings (/settings/).
 import Base from '../../layouts/Base.astro';
 import InstallApp from '../../components/InstallApp.astro';
 import T from '../../components/T.astro';
@@ -22,13 +22,13 @@ const L = (href: string) => localHref(langOf(path), href);
 
     <h2>{t('What works without internet')}</h2>
     <ul>
-      <li><T><b>Guides, calculators and trackers:</b> the app keeps them on your device, in English and in your second language.</T></li>
+      <li><T><b>Guides, calculators, trackers and evidence:</b> you choose in Settings what stays on your device, in English and in a second language. In the installed app they are on until you turn them off.</T></li>
       <li><T><b>Blog posts from the last 6 months.</b> Older posts are removed from the device and open when you are online.</T></li>
-      <li><T><b>Books and trainers:</b> only the ones you choose, with <b>Save for offline</b>.</T></li>
+      <li><T><b>Books and trainers:</b> only the ones you turn on.</T></li>
       <li><T><b>Videos</b> need internet.</T></li>
     </ul>
     <p><T>Tracker readings you add without internet are saved on the device and reach your account when you are back online.</T></p>
-    <p><a class="btn btn-ghost" href={L('/app/settings/')}>{t('App settings')}</a></p>
+    <p><a class="btn btn-ghost" href={L('/settings/')}>{t('Settings')}</a></p>
 
     <h2>{t('Updates')}</h2>
     <p><T>Nothing to download or approve. Whenever the app opens with internet it shows the site as it is today, and what it keeps on your device updates itself in the background, downloading only what changed.</T></p>

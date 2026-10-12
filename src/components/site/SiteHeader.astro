@@ -1,10 +1,10 @@
 ---
-// The floating glass header: photo and name, this audience's pages, the For Everyone / For Doctors switch, language,
-// App settings (a gear, only inside the installed app, which has no browser menu), light/dark, menu.
+// The floating glass header: photo and name, this audience's pages, the For Everyone / For Doctors switch, language, menu.
+// Settings (theme, what is kept offline) is the last item of the menu: a row on phones, a gear on wide screens. The header
+// has no theme button (Harsh, 12 Oct 2026: it crowded the photo); the theme is chosen in Settings.
 import { SITE } from '../../consts';
 import { MODES, type Mode } from '../../lib/modes';
 import Avatar from '../Avatar.astro';
-import ThemeToggle from '../ThemeToggle.astro';
 import ModeSwitch from './ModeSwitch.astro';
 import LangSwitch from './LangSwitch.astro';
 import { parentOf } from '../../lib/back';
@@ -19,6 +19,7 @@ const lang = langOf(path);
 const t = useT(path);
 const home = localHref(lang, m.home);
 const back = path === home ? null : parentOf(path); // none on the home pages
+const settings = localHref(lang, '/settings/');
 const current = (href: string) => (href === home ? path === href : path.startsWith(href));
 ---
 <header class="site-header">
@@ -29,13 +30,13 @@ const current = (href: string) => (href === home ? path === href : path.startsWi
     </a>
     <ul class="nav-links" id="nav-links">
       {m.nav.map((n) => { const href = localHref(lang, n.href); return <li><a href={href} aria-current={current(href) ? 'page' : undefined}>{t(n.label)}</a></li>; })}
+      <li class="nav-settings"><a href={settings} aria-current={path === settings ? 'page' : undefined} title={t('Settings')}>
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+        <span>{t('Settings')}</span>
+      </a></li>
     </ul>
     <ModeSwitch mode={mode} />
     {mode === 'everyone' && <LangSwitch />}
-    <a class="app-gear" href={localHref(lang, '/app/settings/')} aria-label={t('App settings')} title={t('App settings')}>
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
-    </a>
-    <ThemeToggle />
     <button class="menu-btn" aria-label={t('Menu')} aria-expanded="false" aria-controls="nav-links"><span></span></button>
   </nav>
 </header>
@@ -46,8 +47,15 @@ const current = (href: string) => (href === home ? path === href : path.startsWi
 )}
 
 <style is:global>
-  /* Only inside the installed app (a browser tab reaches App settings from the footer). */
-  .app-gear { display: none; width: 38px; height: 38px; align-items: center; justify-content: center; border-radius: 50%; color: var(--ink); }
-  .app-gear:hover { color: var(--brand); }
-  @media (display-mode: standalone) { .app-gear { display: inline-flex; } }
+  /* Settings: the last menu item. Wide screens: a gear only (its name stays for screen readers). Phones: a row under a line. */
+  .nav-settings a { display: inline-flex; align-items: center; gap: .55rem; }
+  .nav-settings svg { flex: none; }
+  @media (min-width: 941px) {
+    .nav-settings a { padding: .5rem .6rem; }
+    .nav-settings span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  }
+  @media (max-width: 940px) {
+    .nav-settings { margin-top: .35rem; padding-top: .35rem; border-top: 1px solid var(--line); }
+    .nav-settings a { display: flex; }
+  }
 </style>

@@ -51,34 +51,38 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 - One installable app for both modes: name "Dr. Harsh Maheshwari", short name **DrHM** (Harsh, 11 Oct 2026), `public/manifest.webmanifest`
   (start `/`, shortcuts For Doctors, Books, Trainers, BMI). Icon: two arcs (turquoise = For Everyone, vermilion = For Doctors) around a point,
   `public/icons/app-icon.svg` (not the photo, not "HM"); every PNG size is drawn from it after each build. `public/favicon.svg` is the same mark.
-- **Install** (Harsh, 12 Oct 2026: one-click on the home page, any browser): `InstallApp.astro`, a card on `/`, `/hi/`, `/doctors/` and on `/app/`.
-  One tap opens the browser's own install where it has one (Chrome, Edge, Samsung, Opera; its banner is held back in `src/pwa/client.ts`); elsewhere the same
-  tap shows that browser's steps (iPhone/iPad Share → Add to Home Screen, Mac Safari File → Add to Dock, Firefox Android menu → Install; Firefox on a
-  computer cannot install). Hidden inside the app. Never add install pop-ups or banners.
+- **Install** (Harsh, 12 Oct 2026: one-click on the home page, any browser): `InstallApp.astro`, a card on `/` (+ languages), `/doctors/` and `/app/`.
+  One tap opens the browser's own install where it has one (Chrome, Edge, Samsung; its banner is held back in `src/pwa/client.ts`); elsewhere the same
+  tap shows that browser's steps: iPhone/iPad Share → Add to Home Screen, Mac Safari File → Add to Dock, Firefox Android menu → Install, **Opera Android
+  menu → Add to… → Home screen** (Opera gives sites no install event), Firefox on a computer cannot install. Hidden inside the app. No install pop-ups.
+- **Header** (Harsh, 12 Oct 2026): photo, mode switch, language, ☰. No theme button and no gear in the header (they pushed the switch onto the photo).
+  **Settings** is the last item of the ☰ menu (`.nav-settings`; a gear at the end of the links on wide screens) and in every footer.
 - **Auto-update**: `scripts/pwa/integration.mjs` writes `/sw.js` (template `scripts/pwa/sw.js`) with a new build id each build; it takes over at once.
-  Pages are network first (always the latest online; the last 60 opened kept); `/api/` is never touched. `_headers`: `/sw.js` no-cache.
-  Emergency: `pwa({ build, kill: true })` in `astro.config.mjs` ships a worker that deletes the app's caches and unregisters on every device.
-- **What works offline** (Harsh, 12 Oct 2026). Light material is kept automatically; heavy material only on request; videos never:
-  - `core-<lang>`: every page in that language except optional packs, videos, blog posts, `/account/`, `/trackers/view/` (guides, evidence, all
-    calculators and trackers, home pages, lists). About 1.4 MB English, 1.2 MB Hindi.
-  - `blog-<lang>`: blog posts, each with its date; the device keeps **the last 6 calendar months** and removes older posts (they open online only).
-    Re-checked once a day (`src/pwa/auto.ts`, `blogCutoff`).
-  - English is always kept; plus **one second language** (App settings; default: the last non-English language read on the device, else the browser's).
-  - Automatic keeping is **on in the installed app and off in a plain browser tab** until changed in App settings (`src/pwa/settings.ts`), so a one-time
-    visitor downloads nothing extra. Nothing downloads on Data Saver.
-  - **Books and trainers: Save for offline only**, one at a time (Harsh, 11 Oct 2026: never fill phones automatically). `<OfflineSave>` (every reader
-    book via `BookReader.astro`; each trainer's Home via `TrainerShell.astro`) declares a pack; the integration lists everything under its root (never
-    PDFs or zips), what those pages load, the book's figures (R2) and a trainer's `<trainer>/offline-media.json`. Pack ids are permanent.
-  - Packs: `/offline/packs.json` + `/offline/packs/<id>.json`, one cache `pack:<id>` each, downloaded by the page (`src/pwa/packs.ts`, resumable); after a
-    new build only files whose hash changed are fetched. A new page, book, trainer or language joins its pack by itself.
-  - Trackers offline: `account()` remembers the last signed-in person (`account:last`, cleared on sign-out) so readings can be added offline; they
-    upload from the outbox when back online.
-- **App settings** `/app/settings/` (+ `/hi/`): toggles for the above, the second language, books and trainers, storage and "Remove everything kept
-  offline". Footer link "App settings"; a gear in the header only inside the installed app. Future app options go in `settings.ts` + a row there.
+  Pages are network first; offline, only what Settings keep is there: **pages just opened are not kept**, and the offline page lists no "recent pages"
+  (Harsh, 12 Oct 2026). `/api/` is never touched. Emergency: `pwa({ build, kill: true })` in `astro.config.mjs` unregisters it everywhere.
+- **Settings** `/settings/` (+ every language): a phone-style settings screen (grouped lists, a switch per row, sizes shown). Appearance: theme
+  System / Light / Dark. **Keep on this device**: one switch per kind: Guides, Calculators and tools, Trackers, Blog posts from the last 6 months,
+  Evidence for doctors; Second language. Books and Trainers: one switch each (on = downloaded, off = removed). Storage: used, Update now, Remove
+  everything. App: Install, Version. Choices live in `src/pwa/settings.ts` (device only); a new setting = a field there + a row on the page.
+- **What is kept** (Harsh, 12 Oct 2026: the person chooses; light material directly, heavy only on request, videos never):
+  - Packs per kind and language, written after the build: `base-<lang>` (home, lists, about, settings: kept whenever any kind is, so the app opens
+    offline), `guides-` (`/learn/`), `tools-` (`/tools/`, `/doctors/tools/`), `trackers-`, `evidence-` (`/doctors/evidence/`), `blog-` (each post dated;
+    the device keeps **the last 6 calendar months**, older posts are removed and open online only; re-checked daily, `src/pwa/auto.ts`). Shared files are
+    stored once (base-en first). Never in a pack: books, trainers (their own packs), videos, `/account/`, `/trackers/view/`.
+  - The kinds are **on in the installed app and off in a browser tab** until switched; English always, plus one second language (default: the last
+    non-English language read on the device, else the browser's). Nothing downloads on Data Saver.
+  - Books and trainers: only when turned on (Settings) or Save for offline on the book or trainer (`<OfflineSave>`); a pack lists everything under its
+    root (never PDFs or zips), what those pages load, the book's figures (R2) and a trainer's `<trainer>/offline-media.json`. Pack ids are permanent.
+  - `src/pwa/packs.ts`: one cache `pack:<id>` each, downloaded by the page (resumable); after a new build only files whose hash changed. Read a pack's
+    record with `metaOf()` (never `caches.open()` just to look: it re-creates a cache being removed).
+- **A removed app leaves nothing behind** (Harsh, 12 Oct 2026). Android keeps a removed web app's data with Chrome, so: a new installation after an earlier
+  one (`appinstalled` + `app:installed`) clears everything kept and resets Settings; and on the live site Chrome's `getInstalledRelatedApps()` (the manifest's
+  `related_applications` names the app) reports removal, trusted only on a device where it once said "installed". iPhone removes the data itself.
+- Trackers offline: `account()` remembers the last signed-in person (`account:last`, cleared on sign-out); readings added offline upload later.
 - R2 files are saved with CORS (`mode: 'cors'`): the bucket's CORS policy must allow GET from the site's origins (it already does for peaks).
-- `/offline/` and `/hi/offline/` (noindex, not in the sitemap): shown when offline and the page is not on the device; list what is.
-- Tests: `tests/pwa.test.mjs` (manifest, icons, worker, packs, the 6-month rule); `tests/e2e.mjs` installs, saves a book, keeps the light
-  material, reads offline, removes.
+- `/offline/` (+ languages; noindex, not in the sitemap): shown when offline and the page is not on the device; lists what Settings keep.
+- Tests: `tests/pwa.test.mjs` (manifest, icons, worker, packs per kind, stored once, the 6-month rule, header); `tests/e2e.mjs` (install, Settings
+  switches, theme, offline pages, trackers offline, 6 months, reinstall clears, Opera, menu).
 
 ## Support this project (`/support/`)
 

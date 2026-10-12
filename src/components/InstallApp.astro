@@ -2,7 +2,7 @@
 // "Install the app" (home pages and /app/). One tap where the browser can install apps by itself (Chrome, Edge, Samsung
 // Internet, Opera: the browser's own offer, held back in src/pwa/client.ts, opens on the tap). Where it cannot, the same tap
 // shows the two or three steps for this browser: iPhone and iPad (Apple allows only Share > Add to Home Screen), Safari on a
-// Mac (File > Add to Dock), Firefox on Android (menu > Install), Firefox on a computer (cannot install apps: use Chrome or
+// Mac (File > Add to Dock), Firefox on Android (menu > Install), Opera on Android (menu > Add to > Home screen), Firefox on a computer (cannot install apps: use Chrome or
 // Edge, or keep the site as a bookmark). Hidden inside the app itself. Never a pop-up or banner.
 import '../styles/install.css';
 import T from './T.astro';
@@ -45,6 +45,9 @@ const share = '<svg class="inst-share" viewBox="0 0 24 24" width="18" height="18
     <div class="inst-steps" data-for="android-firefox" hidden>
       <p><T>Tap the menu <b>⋮</b>, then <b>Install</b> (or <b>Add to Home screen</b>).</T></p>
     </div>
+    <div class="inst-steps" data-for="android-opera" hidden>
+      <p><T>Opera installs apps from its own menu: tap <b>⋮</b> beside the address bar, then <b>Add to…</b> and <b>Home screen</b>.</T></p>
+    </div>
     <div class="inst-steps" data-for="desktop-firefox" hidden>
       <p><T>Firefox on a computer cannot install apps. Open this site in Chrome or Edge to install it, or bookmark it: it works the same.</T></p>
     </div>
@@ -61,8 +64,10 @@ const share = '<svg class="inst-share" viewBox="0 0 24 24" width="18" height="18
   const ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   const firefox = /Firefox\//.test(ua);
   const android = /Android/.test(ua);
+  // Opera on Android does not let a site open its install (no beforeinstallprompt), so its tap shows Opera's own steps.
+  const opera = /OPR\/|OPT\/|Opera/.test(ua);
   const macSafari = !ios && /Macintosh/.test(ua) && /Safari\//.test(ua) && !/Chrome\/|Chromium\/|Edg\//.test(ua);
-  const which = ios ? 'ios' : firefox ? (android ? 'android-firefox' : 'desktop-firefox') : macSafari ? 'mac-safari' : 'other';
+  const which = ios ? 'ios' : firefox ? (android ? 'android-firefox' : 'desktop-firefox') : opera && android ? 'android-opera' : macSafari ? 'mac-safari' : 'other';
 
   for (const box of document.querySelectorAll<HTMLElement>('[data-install]')) {
     // Inside the app there is nothing to install.

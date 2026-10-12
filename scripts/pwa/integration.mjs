@@ -169,48 +169,65 @@ function writePacks(root, files, build) {
   return index;
 }
 
-// ---------- automatic packs: the light material, kept by the app without asking (src/pwa/auto.ts, App settings) ----------
-// core-<lang>: every page in that language except what is optional or needs the network: the books in the reader and the
-// trainers (their own packs, saved only on request), videos (online only), blog posts (below), the account page, a
-// doctor's shared tracker view, and the offline page itself (already in the worker's shell).
-// blog-<lang>: each blog post with its publication date (d); the device keeps only the last 6 months (auto.ts).
+// ---------- the light material, one pack per kind, kept as Settings say (src/pwa/auto.ts, src/pwa/settings.ts) ----------
+// Each page in a language goes to one kind, by its path:
+//   guides    /learn/...                   tools     /tools/..., /doctors/tools/...      trackers  /trackers/...
+//   evidence  /doctors/evidence/...        blog      /blog/<post>/ (each dated; the device keeps the last 6 months)
+//   base      everything else: home pages, lists, about, settings... (kept whenever any kind is, so the app opens offline)
+// Never in a pack: the books in the reader and the trainers (their own packs, saved only on request), videos (online only),
+// the account page, a doctor's shared tracker view, and the offline page (already in the worker's shell).
+// A file goes in the first pack that needs it, in this order: base-en, base-<lang>, then the kind's own pack, so shared
+// scripts, styles and fonts are stored once.
 const NOT_AUTO = [/\/videos\//, /^(\/[a-z]{2})?\/offline\/$/, /^\/account\/$/, /\/trackers\/view\//, /^\/404\.html$/, /^\/api\//];
-const BLOG_POST = /^(\/[a-z]{2})?\/blog\/[^/]+\/$/;
+const KINDS = [
+  ['blog', /^\/blog\/[^/]+\/$/],
+  ['guides', /^\/learn\//],
+  ['tools', /^(\/doctors)?\/tools\//],
+  ['trackers', /^\/trackers\//],
+  ['evidence', /^\/doctors\/evidence\//],
+];
+export const AUTO_KINDS = ['base', ...KINDS.map(([k]) => k)];
 const langOfPath = (u) => (u.match(/^\/([a-z]{2})\//) ?? [])[1] ?? 'en';
+const kindOf = (u) => { const p = langOfPath(u) === 'en' ? u : u.slice(3); return (KINDS.find(([, r]) => r.test(p)) ?? ['base'])[0]; };
 
 function autoPacks(root, files, build, optionalRoots) {
   const pages = [...files.keys()].filter((u) => u.endsWith('/') && !NOT_AUTO.some((r) => r.test(u)) && !optionalRoots.some((r) => u.startsWith(r)));
   const langs = [...new Set(pages.map(langOfPath))].sort((a, b) => (a === 'en' ? -1 : b === 'en' ? 1 : a.localeCompare(b)));
   const out = [];
   const entry = (u, d) => { const f = files.get(u); return { u, h: hash(f), b: statSync(f).size, ...(d ? { d } : {}) }; };
-  const write = (id, kind, lang, open, list) => {
+  const write = (kind, lang, list) => {
+    if (!list.length) return;
+    const id = `${kind}-${lang}`;
+    const open = (lang === 'en' ? '' : `/${lang}`) + ({ base: '/', blog: '/blog/', guides: '/learn/', tools: '/tools/', trackers: '/trackers/', evidence: '/doctors/evidence/' })[kind];
     const bytes = list.reduce((a, f) => a + f.b, 0);
-    const title = kind === 'core' ? 'Guides, calculators and trackers' : 'Blog posts from the last 6 months';
-    writeFileSync(join(root, 'offline', 'packs', `${id}.json`), JSON.stringify({ id, title, kind, lang, open, build, files: list }));
-    out.push({ id, title, kind, lang, open, bytes, count: list.length, approx: false });
+    writeFileSync(join(root, 'offline', 'packs', `${id}.json`), JSON.stringify({ id, title: id, kind, lang, open, build, files: list }));
+    out.push({ id, title: id, kind, lang, open, bytes, count: list.length, approx: false });
   };
+  const withDeps = (us) => { const set = new Set(); for (const u of us) { set.add(u); for (const x of deps(root, files, u)) set.add(x); } return set; };
+  const baseEn = withDeps(pages.filter((u) => langOfPath(u) === 'en' && kindOf(u) === 'base'));
   for (const lang of langs) {
     const mine = pages.filter((u) => langOfPath(u) === lang);
-    const home = lang === 'en' ? '/' : `/${lang}/`;
-    // Core: the pages and everything they load.
-    const core = new Set();
-    for (const u of mine.filter((x) => !BLOG_POST.test(x))) { core.add(u); for (const x of deps(root, files, u)) core.add(x); }
-    write(`core-${lang}`, 'core', lang, home, [...core].sort().map((u) => entry(u)));
-    // Blog: each post dated; its own pictures share its date, shared scripts and fonts have none (always kept).
-    const posts = mine.filter((x) => BLOG_POST.test(x));
-    if (!posts.length) continue;
-    const dated = new Map();
-    for (const u of posts) {
-      const html = readFileSync(files.get(u), 'utf8');
-      const d = (html.match(/"datePublished":"(\d{4}-\d{2}-\d{2})/) ?? [])[1];
-      if (!d) throw new Error(`blog post ${u} has no datePublished`);
-      dated.set(u, d);
-      for (const x of deps(root, files, u)) {
-        if (/^\/(_astro|fonts|icons)\//.test(x)) { if (!dated.has(x)) dated.set(x, ''); }
-        else if ((dated.get(x) ?? '') < d) dated.set(x, d); // a picture shared by two posts lives as long as the newer
+    const base = lang === 'en' ? baseEn : new Set([...withDeps(mine.filter((u) => kindOf(u) === 'base'))].filter((u) => !baseEn.has(u)));
+    write('base', lang, [...base].sort().map((u) => entry(u)));
+    const shared = (u) => baseEn.has(u) || base.has(u);
+    for (const [kind] of KINDS) {
+      const own = mine.filter((u) => kindOf(u) === kind);
+      if (kind !== 'blog') { write(kind, lang, [...withDeps(own)].filter((u) => !shared(u)).sort().map((u) => entry(u))); continue; }
+      // Blog: each post dated; its own pictures share its date, shared scripts and fonts have none (kept while the pack is).
+      const dated = new Map();
+      for (const u of own) {
+        const html = readFileSync(files.get(u), 'utf8');
+        const d = (html.match(/"datePublished":"(\d{4}-\d{2}-\d{2})/) ?? [])[1];
+        if (!d) throw new Error(`blog post ${u} has no datePublished`);
+        dated.set(u, d);
+        for (const x of deps(root, files, u)) {
+          if (shared(x)) continue;
+          if (/^\/(_astro|fonts|icons)\//.test(x)) { if (!dated.has(x)) dated.set(x, ''); }
+          else if ((dated.get(x) ?? '') < d) dated.set(x, d); // a picture shared by two posts lives as long as the newer
+        }
       }
+      write('blog', lang, [...dated].sort().map(([u, d]) => entry(u, d)));
     }
-    write(`blog-${lang}`, 'blog', lang, lang === 'en' ? '/blog/' : `/${lang}/blog/`, [...dated].sort().map(([u, d]) => entry(u, d)));
   }
   return out;
 }

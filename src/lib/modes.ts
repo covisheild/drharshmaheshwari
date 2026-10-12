@@ -54,7 +54,7 @@ export const MODES: Record<Mode, ModeInfo> = {
 export const SHARED_LINKS: Link[] = [
   { href: '/about/', label: 'About' },
   { href: '/app/', label: 'Install the app' },
-  { href: '/app/settings/', label: 'App settings' },
+  { href: '/settings/', label: 'Settings' },
   { href: '/account/', label: 'Your account' },
   { href: '/support/', label: 'Support this project' },
   { href: '/disclaimer/', label: 'Disclaimer and credits' },
