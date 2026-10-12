@@ -38,7 +38,9 @@ Plan agreed with Harsh on 11 Oct 2026. Phase 1 (Hindi) is built; other languages
 | Guides and blog posts | `src/content/i18n/<lang>/<collection>/<slug>.md` (collection `translations`) |
 | Routes | `src/pages/[lang]/...`: each imports the English page; the page reads the language from the URL |
 | Glossary, banned words | `src/i18n/glossary/<lang>.json` |
-| Fonts | `public/fonts/noto-sans-devanagari-wght.woff2` (loaded only by pages with Devanagari: `unicode-range`) |
+| Fonts | One variable Noto font per script in `public/fonts/` (Devanagari, Bengali, Oriya, Tamil, Telugu, Kannada, Malayalam; Noto Nastaliq Urdu), each loaded only by pages with that script (`unicode-range`, `src/styles/fonts.css`) |
+| Right to left (Urdu) | `dir` in `LANGS` → `<html dir="rtl">`. For Everyone styles use logical properties (`margin-inline-start`, `inset-inline-end`, `text-align: start`...), so the layout mirrors by itself; never add `left`/`right`/`margin-left` to them. `global.css` turns arrows round and keeps scales, charts and English citations left to right. Share pictures of Urdu pages reuse the English picture (satori cannot lay out RTL text). |
+| Phone header | A translated page's For Everyone / For Doctors switch shrinks before the photo and menu do. A language whose labels are long gives short phone forms: dictionary keys `Everyone` and `Doctors` (`ModeSwitch.astro`). |
 | Share pictures | `scripts/og/integration.mjs` (Hindi labels from the dictionary; satori shapes Devanagari correctly) |
 
 The English text is the dictionary key. When English wording changes, its old translation no longer matches, so the page shows
@@ -82,8 +84,9 @@ automated check, a stricter comparison prompt) before publishing any other langu
    <script>, variable, its own `unicode-range`) to `src/styles/fonts.css`, the font stacks in `tokens.css`, and the share picture
    fonts. Typography adjustments go with `:lang(<code>)` in `global.css`.
 2. Write `src/i18n/glossary/<code>.json` first (terms, register, banned words): every page reuses it, so it carries most of the risk.
-3. Run the pipeline on every page. Right-to-left scripts (Urdu) need the layout mirrored: a separate piece of work.
-4. Going live: Harsh says so → `live: true`.
+3. Run the pipeline on every page. For a right-to-left script, set `dir: 'rtl'` (the layout is already direction-aware).
+4. Check the phone header at 320, 360 and 390 px; add short `Everyone` / `Doctors` labels if the switch is clipped.
+5. Going live: Harsh says so → `live: true`.
 
 ## Roll-out
 
@@ -91,6 +94,6 @@ automated check, a stricter comparison prompt) before publishing any other langu
 |---|---|
 | 1. Machinery + Hindi | Live 11 Oct 2026 (Harsh). Label: "checked" (AI); switches to "checked by the author" once Harsh has read it. |
 | 1b. Calculators in Hindi | Done 11 Oct 2026: BMI, Activity check, IDRS, STOP-Bang, with their results |
-| 2. Pilot: Bengali, Marathi, Tamil | After Hindi calibration |
-| 3. Telugu, Gujarati, Kannada, Malayalam, Odia, Punjabi, Assamese | |
-| 4. Urdu (right to left) | |
+| 2. Marathi, Bengali, Odia, Tamil, Telugu, Kannada, Malayalam (Harsh, 11 Oct 2026) | Translated and through the full pipeline 11-12 Oct 2026 (reports `docs/translation-qa/<code>-2026-10-11.md`). Preview only (`live: false`) until Harsh says. |
+| 3. Urdu (right to left; Harsh, 11 Oct 2026) | Layout mirrored, Nastaliq font, translated and through the pipeline 12 Oct 2026. Preview only. |
+| 4. Gujarati, Punjabi, Assamese | Not started |
