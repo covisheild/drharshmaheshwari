@@ -1,5 +1,5 @@
 {
-  "about": "Assamese glossary for drharshmaheshwari.com. Every Assamese translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Assamese has one of the accepted forms (substring match, so a stem shared by every inflection is listed). Written in Assamese spelling (ৰ U+09F0, ৱ U+09F1), never Bengali (র U+09B0 is banned). Activity words: moderate = মজলীয়া, vigorous = জোৰদাৰ, energetic = উদ্যমী (always followed by '(মজলীয়াৰ পৰা জোৰদাৰ)'), disease severity (severe) = গুৰুতৰ: four different words. Waist = কঁকাল (measured round the belly); hip / hip bone = নিতম্ব / নিতম্বৰ হাড়, never কঁকাল. Common = সচৰাচৰ দেখা যায় (not সাধাৰণ, which can read 'normal'); normal = স্বাভাৱিক. Teaspoon = চাহ-চামুচ. Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "about": "Assamese glossary for drharshmaheshwari.com. Every Assamese translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Assamese has one of the accepted forms (substring match, so a stem shared by every inflection is listed). Written in Assamese spelling (ৰ U+09F0, ৱ U+09F1), never Bengali (র U+09B0 is banned). Activity words: moderate = মজলীয়া, vigorous = জোৰদাৰ, energetic = খৰতকীয়া (brisk; always followed by '(মজলীয়াৰ পৰা জোৰদাৰ)'; not উদ্যমী, which describes a person's character), mild (IDRS) = পাতল (not সামান্য, 'negligible'), disease severity (severe) = গুৰুতৰ: four different words. Waist = কঁকাল (measured round the belly; কঁকাল alone can mean the lower back, so a bare label reads 'কঁকালৰ জোখ (পেটৰ চাৰিওফালে)' and other labels 'কঁকালৰ জোখ'); hip / hip bone = নিতম্ব / নিতম্বৰ হাড়, never কঁকাল. Common = সচৰাচৰ দেখা যায় (not সাধাৰণ, which can read 'normal'); normal = স্বাভাৱিক. Risk = ঝুঁকি (not আশংকা, which reads 'fear, alarm'). Physical activity = শাৰীৰিক লৰচৰ, activity = লৰচৰ (not কাম-কাজ, which reads 'work, chores'); sedentary = বহি বহি কৰা (নিষ্ক্ৰিয় = 'inactive', only where the English says inactive). Pram = কেঁচুৱাৰ ঠেলা গাড়ী (never প্ৰেম, 'love'). Reflections (blog topic) = চিন্তা-ভাৱনা (চিন্তা alone reads 'worry'). Liver = লিভাৰ. Paediatrician = শিশুৰোগৰ ডাক্তৰ. Teaspoon = চাহ-চামুচ. Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
   "register": "Everyday spoken Assamese that a family in Guwahati or Jorhat would use, not heavily Sanskritised words. Common English health words that people say in Assamese stay as they are said (BMI, ব্লাড চুগাৰ, ব্লাড প্ৰেছাৰ, ডায়েবেটিছ). Polite আপুনি form. Short sentences ending in '।'. Numbers in 0-9, never Assamese/Bengali digits. Units as in English (cm, kg). AM/PM kept as AM/PM.",
   "keepLatin": [
     "BMI",
@@ -132,7 +132,7 @@
     {
       "en": "risk",
       "tr": [
-        "আশংকা"
+        "ঝুঁকি"
       ]
     },
     {
@@ -216,7 +216,7 @@
     {
       "en": "energetic",
       "tr": [
-        "উদ্যমী"
+        "খৰতকীয়া"
       ]
     },
     {
