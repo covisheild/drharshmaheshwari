@@ -3,8 +3,8 @@
 // The field is src/components/UnitField.astro on built pages, or createUnitField() (src/scripts/unit-fields.ts) on
 // screens built in the browser (trainers, trackers); either way the page reads the base unit with unitValue(). Rule in CLAUDE.md ("Units everywhere").
 
-export type UnitId = 'cm' | 'in' | 'ftin' | 'kg' | 'lb' | 'min' | 'h' | 'mmHg' | 'kPa' | 'mgdl' | 'mmol';
-export type Kind = 'height' | 'length' | 'weight' | 'minutes' | 'hours' | 'pressure' | 'glucose';
+export type UnitId = 'cm' | 'in' | 'ftin' | 'kg' | 'lb' | 'min' | 'h' | 'mmHg' | 'kPa' | 'mgdl' | 'mmol' | 'g9l' | 'lakh';
+export type Kind = 'height' | 'length' | 'weight' | 'minutes' | 'hours' | 'pressure' | 'glucose' | 'platelets';
 
 /** The units a field offers, in the order a click cycles through them; the first is the base unit the calculator gets. */
 export const KINDS: Record<Kind, UnitId[]> = {
@@ -15,14 +15,15 @@ export const KINDS: Record<Kind, UnitId[]> = {
   hours: ['h', 'min'],
   pressure: ['mmHg', 'kPa'],   // blood pressure (trackers)
   glucose: ['mgdl', 'mmol'],   // blood sugar (trackers); 1 mmol/L = 18.016 mg/dL
+  platelets: ['g9l', 'lakh'],  // platelet count (FIB-4); 1 lakh/mm³ = 100 × 10⁹/L
 };
 
-export const LABEL: Record<UnitId, string> = { cm: 'cm', in: 'in', ftin: 'ft', kg: 'kg', lb: 'lb', min: 'min', h: 'h', mmHg: 'mmHg', kPa: 'kPa', mgdl: 'mg/dL', mmol: 'mmol/L' };
-export const NAME: Record<UnitId, string> = { cm: 'centimetres', in: 'inches', ftin: 'feet and inches', kg: 'kilograms', lb: 'pounds', min: 'minutes', h: 'hours', mmHg: 'millimetres of mercury', kPa: 'kilopascals', mgdl: 'milligrams per decilitre', mmol: 'millimoles per litre' };
+export const LABEL: Record<UnitId, string> = { cm: 'cm', in: 'in', ftin: 'ft', kg: 'kg', lb: 'lb', min: 'min', h: 'h', mmHg: 'mmHg', kPa: 'kPa', mgdl: 'mg/dL', mmol: 'mmol/L', g9l: '× 10⁹/L', lakh: 'lakh/mm³' };
+export const NAME: Record<UnitId, string> = { cm: 'centimetres', in: 'inches', ftin: 'feet and inches', kg: 'kilograms', lb: 'pounds', min: 'minutes', h: 'hours', mmHg: 'millimetres of mercury', kPa: 'kilopascals', mgdl: 'milligrams per decilitre', mmol: 'millimoles per litre', g9l: 'thousand million per litre', lakh: 'lakh per cubic millimetre' };
 
-// Size of one unit in its dimension's reference (cm, kg, minute, mmHg, mg/dL). ft + in is handled on its own.
-const SIZE: Record<Exclude<UnitId, 'ftin'>, number> = { cm: 1, in: 2.54, kg: 1, lb: 0.45359237, min: 1, h: 60, mmHg: 1, kPa: 7.500615, mgdl: 1, mmol: 18.016 };
-const DECIMALS: Record<UnitId, number> = { cm: 1, in: 1, ftin: 1, kg: 1, lb: 1, min: 0, h: 2, mmHg: 0, kPa: 1, mgdl: 0, mmol: 1 };
+// Size of one unit in its dimension's reference (cm, kg, minute, mmHg, mg/dL, 10⁹/L). ft + in is handled on its own.
+const SIZE: Record<Exclude<UnitId, 'ftin'>, number> = { cm: 1, in: 2.54, kg: 1, lb: 0.45359237, min: 1, h: 60, mmHg: 1, kPa: 7.500615, mgdl: 1, mmol: 18.016, g9l: 1, lakh: 100 };
+const DECIMALS: Record<UnitId, number> = { cm: 1, in: 1, ftin: 1, kg: 1, lb: 1, min: 0, h: 2, mmHg: 0, kPa: 1, mgdl: 0, mmol: 1, g9l: 0, lakh: 2 };
 
 export const baseOf = (kind: Kind) => KINDS[kind][0];
 export const nextUnit = (kind: Kind, unit: UnitId) => { const u = KINDS[kind]; return u[(u.indexOf(unit) + 1) % u.length]; };
