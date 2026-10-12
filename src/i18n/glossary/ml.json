@@ -1,6 +1,6 @@
 {
   "about": "Malayalam glossary for drharshmaheshwari.com. Every Malayalam translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Malayalam has one of the accepted forms (substring match, so most forms are stems that every inflection contains: Malayalam joins case endings to the word, and a final chillu letter changes when an ending is added, e.g. കൊളസ്ട്രോൾ / കൊളസ്ട്രോളിന്റെ). Modern atomic chillu letters (ൻ ർ ൽ ൾ ൺ) are used throughout. Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
-  "register": "Everyday Malayalam that a family in Kochi or Thiruvananthapuram would read easily, like a good health column in a Malayalam newspaper, not heavy Sanskritised Malayalam. Common English health words that people say in Malayalam stay as they are said (BMI, ബ്ലഡ് ഷുഗർ, കൊളസ്ട്രോൾ, ഫാറ്റി ലിവർ, ഡോക്ടർ). Short sentences. Numbers in 0-9, never Malayalam digits. Units as in English (cm, kg). Modern Unicode chillu letters.",
+  "register": "Everyday Malayalam that a family in Kochi or Thiruvananthapuram would read easily, like a good health column in a Malayalam newspaper, not heavy Sanskritised Malayalam. Common English health words that people say in Malayalam stay as they are said (BMI, ബ്ലഡ് ഷുഗർ, കൊളസ്ട്രോൾ, ഫാറ്റി ലിവർ, ഡോക്ടർ). Short sentences. Numbers in 0-9, never Malayalam digits. Units as in English (cm, kg). Modern Unicode chillu letters. \"Low\" as an IPAQ category is താഴ്ന്നത് (കുറഞ്ഞത് means \"at least\"). \"Reverse obesity\" is \"കൂടിവരുന്ന അമിതവണ്ണം തിരികെ കുറച്ചുകൊണ്ടുവരിക\" (bring rising obesity back down). A baby \"strapped in\" a pram or seat is \"ഒരേ ഇരിപ്പിൽ ഇരുത്തുക\", never കെട്ടിയിരുത്തുക (tied up). Never join a case ending to a placeholder ({name}-ന്റെ): the value may be a Malayalam word; put it in brackets after a noun (\"ഈ വ്യക്തിയുടെ ({name})\"), after a colon, or before a separate word (\"{unit} ആക്കി\").",
   "keepLatin": [
     "BMI",
     "WHO",
@@ -188,7 +188,7 @@
     {
       "en": "contribution",
       "tr": [
-        "വിഹിത"
+        "പിന്തുണ"
       ]
     },
     {
@@ -232,7 +232,7 @@
   "banned": [
     {
       "pattern": "സംഭാവന",
-      "why": "means donation; the site says support (പിന്തുണ) and contribution (വിഹിതം)"
+      "why": "means donation; the site says support (പിന്തുണ) and, for a contribution, \"പിന്തുണയായി നൽകുന്ന തുക\" (an amount given as support). Not വിഹിതം: it reads as a share or quota that is owed."
     },
     {
       "pattern": "(?<![\\u0D00-\\u0D7F])ദാന",
