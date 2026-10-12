@@ -1,6 +1,6 @@
 {
   "about": "Telugu glossary for drharshmaheshwari.com. Every Telugu translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Telugu has one of the accepted forms (a substring match, so stems are listed where Telugu adds case endings: ఊబకాయం, ఊబకాయాన్ని, ఊబకాయంతో all contain ఊబకాయ). Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
-  "register": "Everyday spoken Telugu that a family in Hyderabad or Vijayawada would use, not bookish (గ్రాంథిక) Telugu. Common English health words that people say in Telugu stay as they are said (BMI, బీపీ, బ్లడ్ షుగర్, డయాబెటిస్, డాక్టర్). Short sentences, polite plural (మీరు, చేయండి). Numbers in 0-9, never Telugu digits. Units as in English (cm, kg). Moderate = మితమైన; vigorous activity = తీవ్రమైన శ్రమ (severity of a disease is తీవ్రస్థాయి; a very high or very low reading is చాలా ఎక్కువ / చాలా తక్కువ); energetic = హుషారైన (మితమైన నుంచి తీవ్రమైన). Support = మద్దతు, contribution = తోడ్పాటు.",
+  "register": "Everyday spoken Telugu that a family in Hyderabad or Vijayawada would use, not bookish (గ్రాంథిక) Telugu. Common English health words that people say in Telugu stay as they are said (BMI, బీపీ, బ్లడ్ షుగర్, డయాబెటిస్, డాక్టర్). Short sentences, polite plural (మీరు, చేయండి). Numbers in 0-9, never Telugu digits. Units as in English (cm, kg). Moderate = మితమైన; vigorous activity = గట్టి శ్రమ, vigorous exercise = గట్టి వ్యాయామం; energetic = జోరైన (మితమైన నుంచి గట్టి); intensity = స్థాయి (any intensity = ఏ స్థాయిలోనైనా, moderate-intensity = మితమైన స్థాయి). తీవ్ర- is kept only for the severity of a disease (తీవ్రస్థాయి), never for exercise, so the two never look like one scale. A very high or very low reading is చాలా ఎక్కువ / చాలా తక్కువ. Sex/gender = లింగం everywhere. A BP sitting = ఒకే సారి కూర్చుని కొలవడం (not సిట్టింగ్). Reading progress = చదివిన వివరాలు (not చదువు, which means education). Support = మద్దతు, contribution = తోడ్పాటు.",
   "keepLatin": [
     "BMI",
     "WHO",
@@ -212,13 +212,13 @@
     {
       "en": "vigorous",
       "tr": [
-        "తీవ్ర"
+        "గట్టి"
       ]
     },
     {
       "en": "energetic",
       "tr": [
-        "హుషార"
+        "జోరై"
       ]
     },
     {
