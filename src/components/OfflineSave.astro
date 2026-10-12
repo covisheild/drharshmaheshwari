@@ -9,10 +9,12 @@ interface Props {
   title: string;
   root: string;          // URL folder that holds the pack's pages and files
   kind: 'book' | 'trainer';
+  /** Heading it is listed under in Settings: the book's series or shelf. */
+  group?: string;
 }
-const { id, title, root, kind } = Astro.props;
+const { id, title, root, kind, group } = Astro.props;
 ---
-<Fragment set:html={offlineSaveHtml({ id, title, root, kind })} />
+<Fragment set:html={offlineSaveHtml({ id, title, root, kind, group })} />
 
 <script>
   import { mountOfflineSave } from '../pwa/ui';

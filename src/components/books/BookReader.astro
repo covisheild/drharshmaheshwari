@@ -26,8 +26,10 @@ interface Props {
   backLabel: string;
   end: string;                 // HTML closing the book: "End of Book 0. ..." and its links
   date: string;
+  /** Heading the book is listed under in Settings (default: its series). */
+  group?: string;
 }
-const { book, title, description, jsonld, figures, eyebrow, heading, headingNote, barFull, barShort, backHref, backLabel, end, date } = Astro.props;
+const { book, title, description, jsonld, figures, eyebrow, heading, headingNote, barFull, barShort, backHref, backLabel, end, date, group } = Astro.props;
 const sizes = [15, 16.5, 18, 19.5, 21.5];
 const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
 ---
@@ -130,7 +132,7 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
           <p class="rd-meta">{book.author} · Version {book.version} · updated {date} · {book.licence}</p>
           <p class="rd-resume" id="rd-resume" hidden></p>
           <a class="btn btn-primary" href={book.pdf} download rel="noopener">Download the PDF <span aria-hidden="true">↓</span></a>
-          <OfflineSave id={`book-${book.id.toLowerCase()}`} title={title} root={book.url} kind="book" />
+          <OfflineSave id={`book-${book.id.toLowerCase()}`} title={title} root={book.url} kind="book" group={group ?? book.series} />
           <slot name="links" />
         </div>
       </header>

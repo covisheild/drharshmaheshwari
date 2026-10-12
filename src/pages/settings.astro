@@ -1,6 +1,8 @@
 ---
 // Settings: this device's choices, laid out like a phone's settings screen (grouped lists, one row per choice, a switch on
 // the right). Also /<lang>/settings/. Reached from the ☰ menu (a gear on wide screens) and every footer.
+//   Laid out as a main list and one screen per category (Harsh, 12 Oct 2026: nest what has many options so the main list stays
+//   clean): Guides, calculators and more / Books (grouped by series or shelf) / Trainers / Storage, each at #<category>.
 //   Appearance: theme (system, light, dark): the header has no theme button (Harsh, 12 Oct 2026).
 //   Keep on this device: one switch per kind of light material (src/pwa/settings.ts, auto.ts), the second language.
 //   Books, Trainers: one switch each; on = saved for offline (packs.ts), off = removed.
@@ -32,6 +34,8 @@ const ICON = {
   remove: svg('M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14'),
   install: svg('M12 4v11M7 10l5 5 5-5M5 20h14'),
   info: svg('M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 16v-5M12 8h.01'),
+  book: svg('M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z'),
+  trainer: svg('M4 3v6a4 4 0 0 0 8 0V3M8 13v3a5 5 0 0 0 10 0v-2M18 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'),
 };
 const kinds = [
   { key: 'guides', icon: ICON.guides, label: t('Guides') },
@@ -43,6 +47,7 @@ const kinds = [
 ---
 <Base title={t('Settings')} description={t('Choose the theme, and what this device keeps to use without internet.')} noindex>
   <div class="prose-wrap sg-page" style="padding-block:2.5rem 4rem" id="sg" data-langs={langs.map((l) => l.code).join(',')}>
+    <div class="sg-screen" data-screen="main">
     <h1>{t('Settings')}</h1>
 
     <section class="sg" aria-labelledby="sg-look">
@@ -62,53 +67,29 @@ const kinds = [
 
     <section class="sg" aria-labelledby="sg-keep" data-needs-offline>
       <h2 class="sg-h" id="sg-keep">{t('Keep on this device')}</h2>
-      <p class="sg-note">{t('Choose what opens without internet. Turning one off removes it from this device.')}</p>
       <div class="sg-list">
-        {kinds.map((k) => (
-          <button type="button" role="switch" class="sg-row sg-tap" data-keep={k.key} aria-checked="false">
-            <span class="sg-ic" set:html={k.icon} />
-            <span class="sg-text"><span class="sg-t">{k.label}</span><span class="sg-s" data-sub={k.key}></span></span>
-            <span class="sg-sw" aria-hidden="true"><i></i></span>
-          </button>
-        ))}
-        <label class="sg-row">
-          <span class="sg-ic" set:html={ICON.lang} />
-          <span class="sg-text"><span class="sg-t">{t('Second language')}</span><span class="sg-s">{t('English is always kept.')}</span></span>
-          <select class="sg-select" id="sg-lang2">
-            <option value="none">{t('None')}</option>
-            {langs.map((l) => <option value={l.code} lang={l.html}>{l.name}</option>)}
-          </select>
-        </label>
-      </div>
-      <p class="sg-note" data-base-note></p>
-      <p class="sg-note"><T><b>Videos</b> need internet.</T></p>
-    </section>
-
-    <section class="sg" aria-labelledby="sg-books" data-needs-offline>
-      <h2 class="sg-h" id="sg-books">{t('Books')}</h2>
-      <div class="sg-list" data-packs="book"><div class="sg-row"><span class="sg-text"><span class="sg-s">{t('Loading…')}</span></span></div></div>
-      <h2 class="sg-h" id="sg-trainers">{t('Trainers')}</h2>
-      <div class="sg-list" data-packs="trainer"></div>
-      <p class="sg-note">{t('Saved only when you turn them on. Each is downloaded once and updates itself.')}</p>
-    </section>
-
-    <section class="sg" aria-labelledby="sg-store" data-needs-offline>
-      <h2 class="sg-h" id="sg-store">{t('Storage')}</h2>
-      <div class="sg-list">
-        <div class="sg-row">
+        <a class="sg-row sg-tap" href="#content" data-open="content">
+          <span class="sg-ic" set:html={ICON.guides} />
+          <span class="sg-text"><span class="sg-t">{t('Guides, calculators and more')}</span><span class="sg-s" data-sum="content"></span></span>
+          <span class="sg-chev" aria-hidden="true">›</span>
+        </a>
+        <a class="sg-row sg-tap" href="#books" data-open="books">
+          <span class="sg-ic" set:html={ICON.book} />
+          <span class="sg-text"><span class="sg-t">{t('Books')}</span><span class="sg-s" data-sum="books"></span></span>
+          <span class="sg-chev" aria-hidden="true">›</span>
+        </a>
+        <a class="sg-row sg-tap" href="#trainers" data-open="trainers">
+          <span class="sg-ic" set:html={ICON.trainer} />
+          <span class="sg-text"><span class="sg-t">{t('Trainers')}</span><span class="sg-s" data-sum="trainers"></span></span>
+          <span class="sg-chev" aria-hidden="true">›</span>
+        </a>
+        <a class="sg-row sg-tap" href="#storage" data-open="storage">
           <span class="sg-ic" set:html={ICON.storage} />
-          <span class="sg-text"><span class="sg-t">{t('Used on this device')}</span></span>
-          <span class="sg-val" id="sg-usage">—</span>
-        </div>
-        <button type="button" class="sg-row sg-tap" id="sg-update">
-          <span class="sg-ic" set:html={ICON.update} />
-          <span class="sg-text"><span class="sg-t">{t('Update now')}</span><span class="sg-s" id="sg-update-s"></span></span>
-        </button>
-        <button type="button" class="sg-row sg-tap sg-danger" id="sg-clear">
-          <span class="sg-ic" set:html={ICON.remove} />
-          <span class="sg-text"><span class="sg-t">{t('Remove everything kept offline')}</span></span>
-        </button>
+          <span class="sg-text"><span class="sg-t">{t('Storage')}</span><span class="sg-s" data-sum="storage"></span></span>
+          <span class="sg-chev" aria-hidden="true">›</span>
+        </a>
       </div>
+      <p class="sg-note"><T><b>Videos</b> need internet.</T></p>
     </section>
     <p class="sg-note" data-unsupported hidden>{t('This browser cannot keep pages for use without internet. Chrome, Edge, Firefox and Safari can.')}</p>
 
@@ -128,6 +109,66 @@ const kinds = [
       </div>
       <p class="sg-note">{t('These choices are for this device only. Nothing about them is sent anywhere.')}</p>
     </section>
+    </div>
+
+  <section class="sg-screen" data-screen="content" aria-labelledby="sg-content-h" hidden>
+    <button type="button" class="sg-back" data-back><span aria-hidden="true">‹</span> {t('Settings')}</button>
+    <h2 class="sg-title" id="sg-content-h" tabindex="-1">{t('Guides, calculators and more')}</h2>
+    <p class="sg-note sg-lead">{t('Choose what opens without internet. Turning one off removes it from this device.')}</p>
+      <div class="sg-list">
+        {kinds.map((k) => (
+          <button type="button" role="switch" class="sg-row sg-tap" data-keep={k.key} aria-checked="false">
+            <span class="sg-ic" set:html={k.icon} />
+            <span class="sg-text"><span class="sg-t">{k.label}</span><span class="sg-s" data-sub={k.key}></span></span>
+            <span class="sg-sw" aria-hidden="true"><i></i></span>
+          </button>
+        ))}
+        <label class="sg-row">
+          <span class="sg-ic" set:html={ICON.lang} />
+          <span class="sg-text"><span class="sg-t">{t('Second language')}</span><span class="sg-s">{t('English is always kept.')}</span></span>
+          <select class="sg-select" id="sg-lang2">
+            <option value="none">{t('None')}</option>
+            {langs.map((l) => <option value={l.code} lang={l.html}>{l.name}</option>)}
+          </select>
+        </label>
+      </div>
+    <p class="sg-note" data-base-note></p>
+  </section>
+
+  <section class="sg-screen" data-screen="books" aria-labelledby="sg-books-h" hidden>
+    <button type="button" class="sg-back" data-back><span aria-hidden="true">‹</span> {t('Settings')}</button>
+    <h2 class="sg-title" id="sg-books-h" tabindex="-1">{t('Books')}</h2>
+    <p class="sg-note sg-lead">{t('Saved only when you turn them on. Each is downloaded once and updates itself.')}</p>
+    <div data-packs="book"><div class="sg-list"><div class="sg-row"><span class="sg-text"><span class="sg-s">{t('Loading…')}</span></span></div></div></div>
+  </section>
+
+  <section class="sg-screen" data-screen="trainers" aria-labelledby="sg-trainers-h" hidden>
+    <button type="button" class="sg-back" data-back><span aria-hidden="true">‹</span> {t('Settings')}</button>
+    <h2 class="sg-title" id="sg-trainers-h" tabindex="-1">{t('Trainers')}</h2>
+    <p class="sg-note sg-lead">{t('Saved only when you turn them on. Each is downloaded once and updates itself.')}</p>
+    <div data-packs="trainer"></div>
+  </section>
+
+  <section class="sg-screen" data-screen="storage" aria-labelledby="sg-storage-h" hidden>
+    <button type="button" class="sg-back" data-back><span aria-hidden="true">‹</span> {t('Settings')}</button>
+    <h2 class="sg-title" id="sg-storage-h" tabindex="-1">{t('Storage')}</h2>
+      <div class="sg-list">
+        <div class="sg-row">
+          <span class="sg-ic" set:html={ICON.storage} />
+          <span class="sg-text"><span class="sg-t">{t('Used on this device')}</span></span>
+          <span class="sg-val" id="sg-usage">—</span>
+        </div>
+        <button type="button" class="sg-row sg-tap" id="sg-update">
+          <span class="sg-ic" set:html={ICON.update} />
+          <span class="sg-text"><span class="sg-t">{t('Update now')}</span><span class="sg-s" id="sg-update-s"></span></span>
+        </button>
+        <button type="button" class="sg-row sg-tap sg-danger" id="sg-clear">
+          <span class="sg-ic" set:html={ICON.remove} />
+          <span class="sg-text"><span class="sg-t">{t('Remove everything kept offline')}</span></span>
+        </button>
+      </div>
+  </section>
+
     <noscript><p>{t('Settings need JavaScript.')}</p></noscript>
   </div>
   <ClientWords sources={['/src/pages/settings.astro']} />
@@ -136,6 +177,7 @@ const kinds = [
 <style is:global>
   .sg-page h1 { margin-bottom: 1.25rem; }
   .sg-page .sg { margin-top: 1.75rem; padding-block: 0; } /* not the site's big section spacing */
+  .sg-page .sg-screen { padding-block: 0; }
   .sg-page .sg-h { margin: 0 0 .5rem; margin-inline-start: .9rem; font: 500 .74rem/1.2 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
   /* Spaced capitals suit Latin letters only: other scripts get the plain text font, unspaced. */
   html:not([lang|="en"]) .sg-page .sg-h { font: 600 .8rem/1.3 var(--font-body); letter-spacing: 0; }
@@ -171,8 +213,23 @@ const kinds = [
   .sg-seg button { border: 0; background: none; color: var(--ink-2); font: inherit; font-size: .85rem; padding: .35rem .7rem; border-radius: 8px; cursor: pointer; }
   .sg-seg button[aria-checked="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgb(0 0 0 / .2); }
   .sg-select { flex: none; max-width: 45%; font: inherit; font-size: .9rem; padding: .4rem .6rem; border-radius: 10px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); }
+  /* Category screens: a back link, a title, and the category's own lists; they slide in like a phone's settings. */
+  .sg-back { display: inline-flex; align-items: center; gap: .35rem; margin: 0 0 .75rem -.25rem; padding: .35rem .5rem; border: 0; border-radius: 10px;
+    background: none; color: var(--brand); font: inherit; font-size: 1rem; cursor: pointer; }
+  .sg-back span { font-size: 1.5rem; line-height: 1; }
+  .sg-back:hover { background: color-mix(in oklab, var(--ink) 6%, transparent); }
+  .sg-title { margin: 0 0 1rem; font-size: clamp(1.6rem, 6vw, 2.1rem); }
+  .sg-title:focus { outline: none; }
+  .sg-lead { margin: 0 .9rem 1rem; }
+  [data-packs] .sg-h { margin-top: 1.25rem; }
+  [data-packs] .sg-h:first-child { margin-top: 0; }
+  .sg-screen:not([data-screen="main"]):not([hidden]) { animation: sg-in .22s ease-out; }
+  @keyframes sg-in { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+  [dir="rtl"] .sg-screen:not([data-screen="main"]):not([hidden]) { animation-name: sg-in-rtl; }
+  @keyframes sg-in-rtl { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: none; } }
+  [dir="rtl"] .sg-back span, [dir="rtl"] .sg-chev { display: inline-block; transform: scaleX(-1); }
   @media (max-width: 420px) { .sg-row { gap: .7rem; padding-inline: .85rem; } .sg-seg button { padding: .35rem .5rem; } }
-  @media (prefers-reduced-motion: reduce) { .sg-sw, .sg-sw i { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .sg-sw, .sg-sw i { transition: none; } .sg-screen:not([hidden]) { animation: none !important; } }
 </style>
 
 <script>
@@ -188,6 +245,28 @@ const kinds = [
   const $ = <T extends Element>(sel: string) => root.querySelector<T>(sel)!;
   const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
 
+  // ---------- screens: the main list, and one screen per category (#content, #books, #trainers, #storage)
+  // Each category is its own address after #, so the phone's Back button returns to the main list.
+  const screens = [...root.querySelectorAll<HTMLElement>('[data-screen]')];
+  let fromMain = false;
+  const show = () => {
+    const want = location.hash.slice(1);
+    const at = screens.some((x) => x.dataset.screen === want && want !== 'main' && !x.hasAttribute('data-off')) ? want : 'main';
+    screens.forEach((x) => { x.hidden = x.dataset.screen !== at; });
+    root.dataset.at = at;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (at !== 'main') root.querySelector<HTMLElement>(`#sg-${at}-h`)?.focus({ preventScroll: true });
+    else if (fromMain) root.querySelector<HTMLElement>(`[data-open="${lastOpen}"]`)?.focus({ preventScroll: true });
+  };
+  let lastOpen = '';
+  root.querySelectorAll<HTMLAnchorElement>('[data-open]').forEach((a) => a.addEventListener('click', () => { fromMain = true; lastOpen = a.dataset.open!; }));
+  root.querySelectorAll<HTMLButtonElement>('[data-back]').forEach((b) => b.addEventListener('click', () => {
+    if (fromMain) history.back();
+    else { history.replaceState(null, '', location.pathname + location.search); show(); }
+  }));
+  addEventListener('hashchange', show);
+  show();
+
   // ---------- appearance
   const drawTheme = () => root.querySelectorAll<HTMLButtonElement>('[data-theme-set]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.themeSet === getTheme())));
   root.querySelectorAll<HTMLButtonElement>('[data-theme-set]').forEach((b) => b.addEventListener('click', () => { setTheme(b.dataset.themeSet as Theme); drawTheme(); }));
@@ -201,6 +280,8 @@ const kinds = [
   // ---------- keep on this device
   if (!supported()) {
     root.querySelectorAll<HTMLElement>('[data-needs-offline]').forEach((el) => { el.hidden = true; });
+    screens.forEach((x) => { if (x.dataset.screen !== 'main') x.setAttribute('data-off', ''); });
+    show();
     $<HTMLElement>('[data-unsupported]').hidden = false;
   } else {
     let index: PackSummary[] = [];
@@ -231,6 +312,17 @@ const kinds = [
       $<HTMLElement>('[data-base-note]').textContent = keepsAnything(s) && base.length ? w('The home and menu pages ({size}) are kept with any of these, so the app opens without internet.', { size: sizeOf(base) }) : '';
       const est = await navigator.storage?.estimate?.().catch(() => null);
       $<HTMLElement>('#sg-usage').textContent = est?.usage != null ? formatBytes(est.usage) : '—';
+      // One line under each category on the main screen: how much of it is on this device.
+      const summary = (on: number, total: number, bytes: number) =>
+        on ? w('{on} of {total} on this device · {size}', { on: String(on), total: String(total), size: formatBytes(bytes) }) : w('None on this device');
+      const kinds = KEEP.filter((k) => !$<HTMLElement>(`[data-keep="${k}"]`).hidden);
+      const keptAuto = saved.filter((p) => p.done && (p.kind === 'base' || (kinds as readonly string[]).includes(p.kind)));
+      $<HTMLElement>('[data-sum="content"]').textContent = summary(kinds.filter((k) => s.keep[k]).length, kinds.length, keptAuto.reduce((a, p) => a + p.bytes, 0));
+      for (const [kind, key] of [['book', 'books'], ['trainer', 'trainers']]) {
+        const mine = saved.filter((p) => p.kind === kind);
+        $<HTMLElement>(`[data-sum="${key}"]`).textContent = summary(mine.length, index.filter((p) => p.kind === kind).length, mine.reduce((a, p) => a + p.bytes, 0));
+      }
+      $<HTMLElement>('[data-sum="storage"]').textContent = est?.usage != null ? w('{size} used', { size: formatBytes(est.usage) }) : '';
     };
 
     const sync = async (force = false) => {
@@ -325,12 +417,13 @@ const kinds = [
       for (const kind of ['book', 'trainer']) {
         const list = $<HTMLElement>(`[data-packs="${kind}"]`);
         const ps = index.filter((p) => p.kind === kind);
-        list.innerHTML = ps.map(packRow).join('');
+        const groups = [...new Set(ps.map((p) => p.group ?? ''))];
+        list.innerHTML = groups.map((g) => `${g ? `<h3 class="sg-h" lang="en">${esc(g)}</h3>` : ''}<div class="sg-list">${ps.filter((p) => (p.group ?? '') === g).map(packRow).join('')}</div>`).join('');
         list.hidden = !ps.length;
         list.querySelectorAll<HTMLElement>('[data-pack]').forEach((row) => { row.addEventListener('click', () => { void togglePack(row); }); void drawPack(row); });
       }
     } catch {
-      $<HTMLElement>('[data-packs="book"]').innerHTML = `<div class="sg-row"><span class="sg-text"><span class="sg-s">${w('The list did not load. Check your internet connection and reload the page.')}</span></span></div>`;
+      $<HTMLElement>('[data-packs="book"]').innerHTML = `<div class="sg-list"><div class="sg-row"><span class="sg-text"><span class="sg-s">${w('The list did not load. Check your internet connection and reload the page.')}</span></span></div></div>`;
     }
     await drawKeep();
     addEventListener('drhm:settings', () => { void drawKeep(); });

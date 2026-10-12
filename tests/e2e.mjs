@@ -737,7 +737,7 @@ try {
     const page = await ctx.newPage();
     const errors = errorsOf(page);
     page.on('dialog', (d) => d.accept());
-    await page.goto(`${BASE}/settings/`);
+    await page.goto(`${BASE}/settings/#books`);
     await page.evaluate(() => navigator.serviceWorker.ready);
     const cdp = await ctx.newCDPSession(page);
     const inst = (await cdp.send('Page.getInstallabilityErrors')).installabilityErrors;
@@ -791,7 +791,15 @@ try {
     check((await packsNow()).length === 0, 'a browser tab keeps nothing automatically until Settings say so');
     await page.click('.app-sec .inst-btn');
     check(await page.locator('.app-sec .inst-steps:not([hidden])').count() === 1, 'Install on the home page: one tap, then this browser\'s steps where it cannot install by itself');
+    // The main list holds only categories; each opens its own screen, and Back returns to the list.
     await page.goto(`${BASE}/settings/`);
+    await page.waitForSelector('[data-sum="books"]:not(:empty)');
+    check(await page.locator('[data-keep]:visible, [data-pack]:visible').count() === 0 && await page.locator('[data-open]').count() === 4, 'Settings: the main list shows categories only, nested switches stay inside them');
+    await page.click('[data-open="books"]');
+    check(await page.locator('[data-screen="books"]').isVisible() && await page.locator('[data-packs="book"] h3').count() >= 2, 'Settings > Books: its own screen, books grouped under their series or shelf');
+    await page.goBack();
+    check(await page.locator('[data-screen="main"]').isVisible(), "Settings: the phone's Back returns from a category to the main list");
+    await page.click('[data-open="content"]');
     await page.waitForSelector('[data-sub="guides"]:not(:empty)');
     for (const k of ['guides', 'tools', 'trackers', 'blog', 'evidence']) await page.click(`[data-keep="${k}"]`);
     await page.selectOption('#sg-lang2', 'hi');
@@ -804,6 +812,8 @@ try {
     for (let i = 0; i < 30 && (await packsNow()).includes('pack:evidence-en'); i++) await page.waitForTimeout(500);
     check(!(await packsNow()).includes('pack:evidence-en'), 'turning a kind off removes it from the device');
     await page.click('[data-keep="evidence"]');
+    await page.click('.sg-screen:not([hidden]) [data-back]');
+    check(/of \d+ on this device/.test(await page.locator('[data-sum="content"]').textContent()), `Settings: the category shows how much of it is kept (${await page.locator('[data-sum="content"]').textContent()})`);
     await page.click('[data-theme-set="dark"]');
     check(await page.evaluate(() => document.documentElement.dataset.theme === 'dark' && localStorage.getItem('theme') === 'dark'), 'Settings: the theme is chosen there (the header has no theme button)');
     await page.goto(`${BASE}/trackers/`);

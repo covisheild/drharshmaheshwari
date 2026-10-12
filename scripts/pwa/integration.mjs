@@ -125,7 +125,7 @@ function writePacks(root, files, build) {
     const html = readFileSync(file, 'utf8');
     for (const m of html.matchAll(/<[a-z]+\b[^>]*\sdata-offline-pack="([a-z0-9-]+)"[^>]*>/g)) {
       const tag = m[0];
-      const d = { id: m[1], title: unescapeHtml(attr(tag, 'data-offline-title') ?? m[1]), kind: attr(tag, 'data-offline-kind') ?? 'book', root: attr(tag, 'data-offline-root') ?? u };
+      const d = { id: m[1], title: unescapeHtml(attr(tag, 'data-offline-title') ?? m[1]), kind: attr(tag, 'data-offline-kind') ?? 'book', group: unescapeHtml(attr(tag, 'data-offline-group') ?? ''), root: attr(tag, 'data-offline-root') ?? u };
       const prev = decl.get(d.id);
       if (prev && prev.root !== d.root) throw new Error(`offline pack ${d.id} declared with two roots: ${prev.root}, ${d.root}`);
       decl.set(d.id, d);
@@ -162,7 +162,7 @@ function writePacks(root, files, build) {
     ];
     const bytes = list.reduce((a, f) => a + f.b, 0);
     writeFileSync(join(root, 'offline', 'packs', `${d.id}.json`), JSON.stringify({ id: d.id, title: d.title, kind: d.kind, open: d.root, build, files: list }));
-    index.push({ id: d.id, title: d.title, kind: d.kind, open: d.root, bytes, count: list.length, approx: remote.size > 0 });
+    index.push({ id: d.id, title: d.title, kind: d.kind, ...(d.group ? { group: d.group } : {}), open: d.root, bytes, count: list.length, approx: remote.size > 0 });
   }
   index.push(...autoPacks(root, files, build, [...decl.values()].map((d) => d.root)));
   writeFileSync(join(root, 'offline', 'packs.json'), JSON.stringify({ build, packs: index }));
