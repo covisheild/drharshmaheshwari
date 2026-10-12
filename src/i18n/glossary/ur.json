@@ -1,0 +1,281 @@
+{
+  "about": "Urdu glossary for drharshmaheshwari.com. Every Urdu translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Urdu has one of the accepted forms (substring match, so a stem shared by every inflection is listed). Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "register": "Everyday spoken Urdu (Hindustani) that a family in Lucknow, Hyderabad or Delhi would use, close to everyday Hindi speech, not heavy Persianised or Arabicised literary Urdu. Common English health words that people say stay as they are said, written in Urdu script (بلڈ شوگر، ڈائبٹیز، بلڈ پریشر); BMI and the other keepLatin items stay in Latin letters. Polite آپ form. Short sentences. Urdu punctuation (۔ ، ؟). Urdu letters ی ک ہ ے, not Arabic ي ك ه. Numbers in 0-9, never Arabic-Indic or Extended Arabic-Indic digits. Units as in English (cm, kg). Right to left; HTML tags and Latin items stay as they are.",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "tr": [
+        "موٹاپا",
+        "موٹاپے"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "tr": [
+        "پیٹ کا موٹاپا",
+        "پیٹ کے موٹاپے"
+      ]
+    },
+    {
+      "en": "overweight",
+      "tr": [
+        "زیادہ وزن",
+        "وزن زیادہ"
+      ]
+    },
+    {
+      "en": "underweight",
+      "tr": [
+        "کم وزن",
+        "وزن کم"
+      ]
+    },
+    {
+      "en": "weight",
+      "tr": [
+        "وزن"
+      ]
+    },
+    {
+      "en": "height",
+      "tr": [
+        "قد"
+      ]
+    },
+    {
+      "en": "waist",
+      "tr": [
+        "کمر"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "tr": [
+        "کمر اور قد کا تناسب",
+        "کمر اور قد کے تناسب",
+        "کمر-قد تناسب"
+      ]
+    },
+    {
+      "en": "body fat",
+      "tr": [
+        "چربی"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "tr": [
+        "ڈائبٹیز"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "tr": [
+        "ہائی بلڈ پریشر"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "tr": [
+        "دل کی بیماری",
+        "دل کی بیماریوں",
+        "دل کی بیماریاں"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "tr": [
+        "بلڈ شوگر"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "tr": [
+        "کولیسٹرول"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "tr": [
+        "فیٹی لیور"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": [
+        "خطرہ",
+        "خطرے",
+        "خطرات"
+      ]
+    },
+    {
+      "en": "doctor",
+      "tr": [
+        "ڈاکٹر"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "tr": [
+        "کٹ آف"
+      ]
+    },
+    {
+      "en": "guideline",
+      "tr": [
+        "گائیڈ لائن"
+      ]
+    },
+    {
+      "en": "screening",
+      "tr": [
+        "جانچ"
+      ]
+    },
+    {
+      "en": "muscle",
+      "tr": [
+        "پٹھ"
+      ]
+    },
+    {
+      "en": "calculator",
+      "tr": [
+        "کیلکولیٹر"
+      ]
+    },
+    {
+      "en": "evidence",
+      "tr": [
+        "ثبوت"
+      ]
+    },
+    {
+      "en": "public health",
+      "tr": [
+        "عوامی صحت"
+      ]
+    },
+    {
+      "en": "contribution",
+      "tr": [
+        "تعاون"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "tr": [
+        "ڈسکلیمر"
+      ]
+    },
+    {
+      "en": "privacy",
+      "tr": [
+        "پرائیویسی"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "tr": [
+        "زوردار"
+      ]
+    },
+    {
+      "en": "energetic",
+      "tr": [
+        "پھرتیل"
+      ]
+    },
+    {
+      "en": "percentile",
+      "tr": [
+        "پرسنٹائل"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "tr": [
+        "سلیپ ایپنیا"
+      ]
+    }
+  ],
+  "banned": [
+    {
+      "pattern": "عطیہ|عطیے|عطیات",
+      "why": "donation; the site says support (سپورٹ) and contribution (تعاون)"
+    },
+    {
+      "pattern": "خیرات|خیراتی",
+      "why": "charity"
+    },
+    {
+      "pattern": "چندہ|چندے",
+      "why": "donation"
+    },
+    {
+      "pattern": "صدقہ|صدقے",
+      "why": "charity"
+    },
+    {
+      "pattern": "ڈونیشن|ڈونیشنز",
+      "why": "donation"
+    },
+    {
+      "pattern": "[\\u0660-\\u0669\\u06F0-\\u06F9]",
+      "why": "Arabic-Indic digits: numbers stay 0-9"
+    },
+    {
+      "pattern": "[يكه]",
+      "why": "Arabic letters: use Urdu ی ک ہ"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "مفت|(?<![\\u0600-\\u06FF])فری(?![\\u0600-\\u06FF])|بلا معاوضہ",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ],
+  "script": "\\u0600-\\u06FF\\u0750-\\u077F\\uFB50-\\uFDFF\\uFE70-\\uFEFF",
+  "negations": [
+    "نہیں",
+    "نہ ",
+    "مت ",
+    "بغیر",
+    "بنا "
+  ]
+}
