@@ -290,10 +290,10 @@ const jsonld = [
   .checks :global(small) { color: var(--ink-2); font-size: .88rem; }
   details summary { cursor: pointer; font-weight: 600; margin-top: .6rem; color: var(--brand); }
   .ipaq-table { width: 100%; border-collapse: collapse; margin: .75rem 0; font-size: .9rem; }
-  .ipaq-table th, .ipaq-table :global(td) { text-align: right; padding: .4rem .35rem; border-bottom: 1px solid var(--line); }
-  .ipaq-table th:first-child, .ipaq-table :global(td:first-child) { text-align: left; }
+  .ipaq-table th, .ipaq-table :global(td) { text-align: end; padding: .4rem .35rem; border-bottom: 1px solid var(--line); }
+  .ipaq-table th:first-child, .ipaq-table :global(td:first-child) { text-align: start; }
   .ipaq-table :global(tr:last-child td) { font-weight: 650; border-bottom: 0; }
-  #ipaq-notes { padding-left: 1.1rem; margin: .3rem 0 0; }
+  #ipaq-notes { padding-inline-start: 1.1rem; margin: .3rem 0 0; }
 </style>
 
 <script>

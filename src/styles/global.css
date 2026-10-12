@@ -18,8 +18,8 @@ h3 { font-size: 1.25rem; }
 p { margin: 0 0 1em; text-wrap: pretty; }
 :focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
 .with-nav { padding-top: var(--nav-space); }
-.skip { position: absolute; left: -999px; top: 8px; background: var(--brand); color: var(--brand-ink); padding: .5rem 1rem; border-radius: 8px; z-index: 100; }
-.skip:focus { left: 8px; }
+.skip { position: absolute; inset-inline-start: -999px; top: 8px; background: var(--brand); color: var(--brand-ink); padding: .5rem 1rem; border-radius: 8px; z-index: 100; }
+.skip:focus { inset-inline-start: 8px; }
 
 .wrap { width: min(100% - 32px, var(--max)); margin-inline: auto; }
 .prose-wrap { width: min(100% - 32px, var(--prose)); margin-inline: auto; }
@@ -36,6 +36,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 /* ---------- The For Everyone / For Doctors switch ---------- */
 .mode-switch { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: color-mix(in oklab, var(--ink) 8%, transparent); border: 1px solid var(--header-line); }
 .mode-switch a { display: block; padding: .45rem .9rem; border-radius: 999px; font-size: .85rem; font-weight: 500; text-decoration: none; color: var(--ink-2); white-space: nowrap; transition: background .2s, color .2s; }
+.mode-switch .short { display: none; }
 .mode-switch a[aria-current='true'] { background: var(--btn); color: var(--btn-ink); }
 .mode-switch a:not([aria-current='true']):hover { color: var(--ink); }
 
@@ -53,7 +54,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 picture:has(> .avatar) { flex: none; display: block; line-height: 0; }
 .brand small { display: block; font-weight: 450; color: var(--header-ink-2); font-size: .74rem; }
 /* The persistent "For Doctors" label next to the name: a label, not just a colour. */
-.mode-badge { display: inline-block; margin-left: .45rem; padding: .22rem .4rem; border-radius: 3px; font: 500 .62rem/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; vertical-align: .12em; background: var(--btn); color: var(--btn-ink); }
+.mode-badge { display: inline-block; margin-inline-start: .45rem; padding: .22rem .4rem; border-radius: 3px; font: 500 .62rem/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; vertical-align: .12em; background: var(--btn); color: var(--btn-ink); }
 .nav-links { display: flex; gap: .1rem; list-style: none; margin: 0 0 0 auto; padding: 0; align-items: center; }
 .nav-links a { color: var(--header-ink-2); text-decoration: none; padding: .5rem .75rem; border-radius: 999px; font-size: .92rem; transition: background .2s, color .2s; }
 .nav-links a:hover, .nav-links a[aria-current='page'] { background: color-mix(in oklab, var(--header-ink) 9%, transparent); color: var(--header-ink); }
@@ -72,7 +73,7 @@ picture:has(> .avatar) { flex: none; display: block; line-height: 0; }
 @media (max-width: 940px) {
   .menu-btn { display: block; }
   .nav-links { margin: 0; }
-  .nav .mode-switch { margin-left: auto; }
+  .nav .mode-switch { margin-inline-start: auto; }
   .nav-links {
     position: absolute; top: calc(100% + 8px); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: .6rem;
     border-radius: 24px; background: var(--surface); border: 1px solid var(--line-2); box-shadow: 0 18px 50px rgb(0 0 0 / .45);
@@ -86,12 +87,22 @@ picture:has(> .avatar) { flex: none; display: block; line-height: 0; }
   .brand-name, .brand small, .mode-badge { display: none; }
   .mode-switch .pre { display: none; }
   .mode-switch a { padding: .5rem .75rem; }
-  .nav { gap: .45rem; padding-left: .55rem; }
+  .nav { gap: .45rem; padding-inline-start: .55rem; }
+  /* Other languages' labels can be longer than "Everyone" / "Doctors": the switch gives way first (smaller type, then
+     clipped), so the photo and the menu button always stay on screen. */
+  html:not(:lang(en)) .nav .mode-switch { flex: 0 1 auto; min-width: 0; }
+  html:not(:lang(en)) .mode-switch a { min-width: 0; overflow: hidden; text-overflow: ellipsis; padding: .5rem .6rem; font-size: .8rem; }
+  /* A language's own short phone labels ("Everyone" / "Doctors" in its dictionary), when it has them. */
+  .mode-switch .full:has(+ .short) { display: none; }
+  .mode-switch .short { display: inline; }
+}
+@media (max-width: 380px) {
+  html:not(:lang(en)) .mode-switch a { padding: .5rem .45rem; font-size: .74rem; }
 }
 
 /* ---------- Back button: a glass circle just under the photo; fixed, fades after 2 s, returns on scroll ---------- */
 .back-btn {
-  position: fixed; z-index: 45; top: 84px; left: calc(50% - min(var(--max), 100% - 24px) / 2 + 12px);
+  position: fixed; z-index: 45; top: 84px; inset-inline-start: calc(50% - min(var(--max), 100% - 24px) / 2 + 12px);
   display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; text-decoration: none; color: var(--header-ink);
   background: color-mix(in oklab, var(--header-bg) 55%, transparent); border: 1px solid var(--header-line);
   backdrop-filter: blur(14px) saturate(1.4); -webkit-backdrop-filter: blur(14px) saturate(1.4); box-shadow: 0 6px 22px rgb(0 0 0 / .18);
@@ -145,24 +156,26 @@ a.card:hover { transform: translateY(-3px); border-color: color-mix(in oklab, va
 .meta { display: flex; flex-wrap: wrap; gap: .5rem 1rem; font-size: .9rem; color: var(--ink-3); align-items: center; }
 .keypoints { background: var(--brand-soft); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0 2rem; }
 .keypoints h2 { font: 500 .74rem/1 var(--font-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--brand); margin-bottom: .75rem; }
-.keypoints ul { margin: 0; padding-left: 1.2rem; } .keypoints li { margin: .35rem 0; }
+.keypoints ul { margin: 0; padding-inline-start: 1.2rem; } .keypoints li { margin: .35rem 0; }
 .prose h2 { margin-top: 2.2rem; } .prose h3 { margin-top: 1.6rem; }
-.prose ul, .prose ol { padding-left: 1.3rem; } .prose li { margin: .3rem 0; }
+.prose ul, .prose ol { padding-inline-start: 1.3rem; } .prose li { margin: .3rem 0; }
 .prose table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: .95rem; display: block; overflow-x: auto; }
-.prose th, .prose td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--line); }
+.prose th, .prose td { text-align: start; padding: .6rem .75rem; border-bottom: 1px solid var(--line); }
 .prose th { background: var(--surface-2); }
-.prose blockquote { margin: 1.5rem 0; padding: .5rem 1.25rem; border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; }
+.prose blockquote { margin: 1.5rem 0; padding: .5rem 1.25rem; border-inline-start: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; }
+[dir="rtl"] .prose blockquote { border-radius: 10px 0 0 10px; }
 .author-box { display: flex; gap: 1rem; align-items: center; padding: 1.25rem; border: 1px solid var(--line); border-radius: var(--radius); margin: 2.5rem 0 1.5rem; background: var(--surface); }
 /* Sources and references: a small heading that opens the list (Sources.astro). */
 .refs { margin-top: 2rem; padding-top: .9rem; border-top: 1px solid var(--line); }
 .refs > summary, .rd-refs > summary { display: inline-flex; align-items: center; gap: .5rem; cursor: pointer; list-style: none; padding: .35rem 0;
   font: 500 .74rem/1.2 var(--font-mono); letter-spacing: var(--eyebrow-tracking); text-transform: uppercase; color: var(--ink-2); }
 .refs > summary::-webkit-details-marker, .rd-refs > summary::-webkit-details-marker { display: none; }
-.refs > summary::before, .rd-refs > summary::before { content: ""; width: .42em; height: .42em; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(-45deg); transition: transform .2s; margin-right: .15rem; }
+.refs > summary::before, .rd-refs > summary::before { content: ""; width: .42em; height: .42em; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(-45deg); transition: transform .2s; margin-inline-end: .15rem; }
+[dir="rtl"] .refs:not([open]) > summary::before, [dir="rtl"] .rd-refs:not([open]) > summary::before { transform: rotate(135deg); }
 .refs[open] > summary::before, .rd-refs[open] > summary::before { transform: rotate(45deg); }
 .refs > summary:hover, .rd-refs > summary:hover { color: var(--ink); }
 .refs-n { font-size: .9em; padding: .1em .5em; border-radius: 99px; background: var(--surface-2); border: 1px solid var(--line); letter-spacing: 0; }
-.refs ol { font-size: .92rem; color: var(--ink-2); padding-left: 1.3rem; margin-top: .8rem; } .refs li { margin: .4rem 0; overflow-wrap: anywhere; }
+.refs ol { font-size: .92rem; color: var(--ink-2); padding-inline-start: 1.3rem; margin-top: .8rem; } .refs li { margin: .4rem 0; overflow-wrap: anywhere; }
 .disclaimer { font-size: .88rem; color: var(--ink-3); border-top: 1px solid var(--line); padding-top: 1rem; margin-top: 2rem; }
 .draft-banner { background: var(--accent-soft); color: var(--ink); padding: .75rem 1rem; border-radius: 12px; font-size: .92rem; margin-bottom: 1rem; }
 .faq details { border-bottom: 1px solid var(--line); padding: .9rem 0; }
@@ -181,9 +194,9 @@ a.card:hover { transform: translateY(-3px); border-color: color-mix(in oklab, va
 
 /* ---------- Timeline ---------- */
 .timeline { list-style: none; padding: 0; margin: 0; position: relative; }
-.timeline::before { content: ''; position: absolute; left: 11px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
-.timeline li { position: relative; padding: 0 0 1.75rem 2.5rem; }
-.timeline li::before { content: ''; position: absolute; left: 4px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--surface); border: 3px solid var(--brand); }
+.timeline::before { content: ''; position: absolute; inset-inline-start: 11px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+.timeline li { position: relative; padding: 0 0 1.75rem; padding-inline-start: 2.5rem; }
+.timeline li::before { content: ''; position: absolute; inset-inline-start: 4px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--surface); border: 3px solid var(--brand); }
 .timeline .when { font-size: .85rem; color: var(--ink-3); }
 
 /* ---------- Motion ---------- */
@@ -206,14 +219,27 @@ a.card:hover { transform: translateY(-3px); border-color: color-mix(in oklab, va
 .pbar { height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
 .pbar i { display: block; height: 100%; background: var(--brand); }
 
-/* Hindi pages (Devanagari, src/i18n/): taller lines for the vowel signs above and below the letters, and no tight or wide
+/* Pages in another language (src/i18n/): taller lines for the vowel signs above and below the letters, and no tight or wide
    letter-spacing, which pulls the joined letters apart. Labels stay small but are not spaced out. */
-:root:lang(hi) { --leading: 1.8; --h-tracking: 0; --eyebrow-tracking: .03em; }
-:lang(hi) h1, :lang(hi) h2, :lang(hi) h3 { line-height: 1.38; }
-:lang(hi) .bm-tag, :lang(hi) .keypoints h2, :lang(hi) .footer-grid h4, :lang(hi) .bm-fld-l, :lang(hi) .mode-badge, :lang(hi) .brand-name { letter-spacing: .02em; }
-:lang(hi) .eyebrow, :lang(hi) .bm-tag, :lang(hi) .keypoints h2, :lang(hi) .footer-grid h4 { font-size: .82rem; }
-/* The monospace label font has no Devanagari and wide spaces: Hindi labels use the text font. */
-:lang(hi) .eyebrow, :lang(hi) .bm-tag, :lang(hi) .keypoints h2, :lang(hi) .footer-grid h4, :lang(hi) .bm-fld-l, :lang(hi) .bm-win-bar span, :lang(hi) .mode-badge { font-family: var(--font-body); }
+:root:not(:lang(en)) { --leading: 1.8; --h-tracking: 0; --eyebrow-tracking: .03em; }
+html:not(:lang(en)) h1, html:not(:lang(en)) h2, html:not(:lang(en)) h3 { line-height: 1.38; }
+html:not(:lang(en)) .bm-tag, html:not(:lang(en)) .keypoints h2, html:not(:lang(en)) .footer-grid h4, html:not(:lang(en)) .bm-fld-l, html:not(:lang(en)) .mode-badge, html:not(:lang(en)) .brand-name { letter-spacing: .02em; }
+html:not(:lang(en)) .eyebrow, html:not(:lang(en)) .bm-tag, html:not(:lang(en)) .keypoints h2, html:not(:lang(en)) .footer-grid h4 { font-size: .82rem; }
+/* The monospace label font has no Devanagari and wide spaces: so these labels use the text font. */
+html:not(:lang(en)) .eyebrow, html:not(:lang(en)) .bm-tag, html:not(:lang(en)) .keypoints h2, html:not(:lang(en)) .footer-grid h4, html:not(:lang(en)) .bm-fld-l, html:not(:lang(en)) .bm-win-bar span, html:not(:lang(en)) .mode-badge { font-family: var(--font-body); }
+
+/* Urdu: Nastaliq is written on a slope, with tall ascenders and deep descenders, so it needs much taller lines. */
+:root:lang(ur) { --leading: 2.15; }
+html:lang(ur) h1, html:lang(ur) h2, html:lang(ur) h3 { line-height: 1.85; }
+
+/* Right-to-left pages (Urdu, <html dir="rtl">). The layout uses logical properties (margin-inline-start...), so it mirrors by
+   itself; these rules turn the arrows round. Number lines, scales and charts stay left to right, as in Urdu newspapers and
+   textbooks. English inside the page (references, citations) keeps its own direction. */
+[dir="rtl"] .back-btn svg, [dir="rtl"] .btn .arrow, [dir="rtl"] .arrow-flip { transform: scaleX(-1); }
+[dir="rtl"] .btn:hover .arrow { transform: scaleX(-1) translateX(3px); }
+[dir="rtl"] .progress { transform-origin: 100% 50%; }
+[dir="rtl"] svg, [dir="rtl"] .bm-scale, [dir="rtl"] .bm-trk, [dir="rtl"] .scale, [dir="rtl"] .scale-labels, [dir="rtl"] .ltr { direction: ltr; }
+[dir="rtl"] [lang^="en"] { direction: ltr; unicode-bidi: isolate; }
 
 /* Language menu (src/components/site/LangSwitch.astro): For Everyone pages only, when the build has more than one language. */
 .lang-menu { position: relative; flex: none; }
@@ -221,7 +247,7 @@ a.card:hover { transform: translateY(-3px); border-color: color-mix(in oklab, va
 .lang-btn::-webkit-details-marker { display: none; }
 .lang-btn:hover, .lang-menu[open] .lang-btn { background: color-mix(in oklab, var(--header-ink) 9%, transparent); color: var(--header-ink); }
 .lang-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.lang-list { position: absolute; right: 0; top: calc(100% + 12px); z-index: 60; min-width: 12rem; margin: 0; padding: .4rem; list-style: none; border-radius: 18px; background: var(--surface); border: 1px solid var(--line-2); box-shadow: 0 18px 50px rgb(0 0 0 / .35); }
+.lang-list { position: absolute; inset-inline-end: 0; top: calc(100% + 12px); z-index: 60; min-width: 12rem; margin: 0; padding: .4rem; list-style: none; border-radius: 18px; background: var(--surface); border: 1px solid var(--line-2); box-shadow: 0 18px 50px rgb(0 0 0 / .35); }
 .lang-list a { display: block; padding: .65rem .85rem; border-radius: 12px; color: var(--ink); text-decoration: none; font-size: 1rem; }
 .lang-list a:hover { background: var(--surface-2); }
 .lang-list a[aria-current='true'] { background: var(--brand-soft); color: var(--brand); font-weight: 600; }

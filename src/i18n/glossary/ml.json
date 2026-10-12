@@ -1,0 +1,277 @@
+{
+  "about": "Malayalam glossary for drharshmaheshwari.com. Every Malayalam translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Malayalam has one of the accepted forms (substring match, so most forms are stems that every inflection contains: Malayalam joins case endings to the word, and a final chillu letter changes when an ending is added, e.g. കൊളസ്ട്രോൾ / കൊളസ്ട്രോളിന്റെ). Modern atomic chillu letters (ൻ ർ ൽ ൾ ൺ) are used throughout. Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "register": "Everyday Malayalam that a family in Kochi or Thiruvananthapuram would read easily, like a good health column in a Malayalam newspaper, not heavy Sanskritised Malayalam. Common English health words that people say in Malayalam stay as they are said (BMI, ബ്ലഡ് ഷുഗർ, കൊളസ്ട്രോൾ, ഫാറ്റി ലിവർ, ഡോക്ടർ). Short sentences. Numbers in 0-9, never Malayalam digits. Units as in English (cm, kg). Modern Unicode chillu letters. \"Low\" as an IPAQ category is താഴ്ന്നത് (കുറഞ്ഞത് means \"at least\"). \"Reverse obesity\" is \"കൂടിവരുന്ന അമിതവണ്ണം തിരികെ കുറച്ചുകൊണ്ടുവരിക\" (bring rising obesity back down). A baby \"strapped in\" a pram or seat is \"ഒരേ ഇരിപ്പിൽ ഇരുത്തുക\", never കെട്ടിയിരുത്തുക (tied up). Never join a case ending to a placeholder ({name}-ന്റെ): the value may be a Malayalam word; put it in brackets after a noun (\"ഈ വ്യക്തിയുടെ ({name})\"), after a colon, or before a separate word (\"{unit} ആക്കി\").",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "tr": [
+        "അമിതവണ്ണ"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "tr": [
+        "വയറിലെ അമിതവണ്ണ",
+        "വയറ്റിലെ അമിതവണ്ണ"
+      ]
+    },
+    {
+      "en": "overweight",
+      "tr": [
+        "അമിതഭാര"
+      ]
+    },
+    {
+      "en": "underweight",
+      "tr": [
+        "ഭാരക്കുറവ",
+        "ഭാരം കുറവ"
+      ]
+    },
+    {
+      "en": "weight",
+      "tr": [
+        "ഭാര"
+      ]
+    },
+    {
+      "en": "height",
+      "tr": [
+        "ഉയര"
+      ]
+    },
+    {
+      "en": "waist",
+      "tr": [
+        "അരവണ്ണ",
+        "അരക്കെട്ട"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "tr": [
+        "അരവണ്ണ-ഉയര അനുപാത",
+        "അരവണ്ണവും ഉയരവും തമ്മിലുള്ള അനുപാത"
+      ]
+    },
+    {
+      "en": "body fat",
+      "tr": [
+        "കൊഴുപ്പ"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "tr": [
+        "പ്രമേഹ"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "tr": [
+        "ഉയർന്ന രക്തസമ്മർദ",
+        "ഹൈ ബിപി"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "tr": [
+        "ഹൃദ്രോഗ",
+        "ഹൃദയരോഗ"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "tr": [
+        "ബ്ലഡ് ഷുഗ",
+        "രക്തത്തിലെ പഞ്ചസാര"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "tr": [
+        "കൊളസ്ട്രോ"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "tr": [
+        "ഫാറ്റി ലിവ"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": [
+        "സാധ്യത",
+        "റിസ്ക"
+      ]
+    },
+    {
+      "en": "doctor",
+      "tr": [
+        "ഡോക്ട"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "tr": [
+        "കട്ട്-ഓഫ"
+      ]
+    },
+    {
+      "en": "guideline",
+      "tr": [
+        "മാർഗനിർദേശ",
+        "മാർഗ്ഗനിർദ്ദേശ"
+      ]
+    },
+    {
+      "en": "screening",
+      "tr": [
+        "സ്ക്രീനിങ",
+        "പരിശോധന"
+      ]
+    },
+    {
+      "en": "muscle",
+      "tr": [
+        "പേശ"
+      ]
+    },
+    {
+      "en": "calculator",
+      "tr": [
+        "കാൽക്കുലേറ്റ"
+      ]
+    },
+    {
+      "en": "evidence",
+      "tr": [
+        "തെളിവ"
+      ]
+    },
+    {
+      "en": "public health",
+      "tr": [
+        "പൊതുജനാരോഗ്യ"
+      ]
+    },
+    {
+      "en": "contribution",
+      "tr": [
+        "പിന്തുണ"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "tr": [
+        "നിരാകരണ"
+      ]
+    },
+    {
+      "en": "privacy",
+      "tr": [
+        "സ്വകാര്യത"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "tr": [
+        "കഠിന"
+      ]
+    },
+    {
+      "en": "energetic",
+      "tr": [
+        "ഊർജസ്വല"
+      ]
+    },
+    {
+      "en": "percentile",
+      "tr": [
+        "പെർസന്റൈ"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "tr": [
+        "സ്ലീപ് അപ്നിയ",
+        "സ്ലീപ്പ് അപ്നിയ"
+      ]
+    }
+  ],
+  "banned": [
+    {
+      "pattern": "സംഭാവന",
+      "why": "means donation; the site says support (പിന്തുണ) and, for a contribution, \"പിന്തുണയായി നൽകുന്ന തുക\" (an amount given as support). Not വിഹിതം: it reads as a share or quota that is owed."
+    },
+    {
+      "pattern": "(?<![\\u0D00-\\u0D7F])ദാന",
+      "why": "ദാനം = alms, giving (ദാനം, ദാനധർമം as a word; പ്രദാനം is fine)"
+    },
+    {
+      "pattern": "ജീവകാരുണ്യ|ധർമസ്ഥാപന|ധർമ്മസ്ഥാപന|പിരിവ",
+      "why": "charity / collection of donations"
+    },
+    {
+      "pattern": "[\\u0D66-\\u0D6F]",
+      "why": "Malayalam digits: numbers stay 0-9"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "സൗജന്യ|ഫ്രീ",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ],
+  "script": "\\u0D00-\\u0D7F",
+  "negations": [
+    "ഇല്ല",
+    "ില്ല",
+    "അല്ല ",
+    "അല്ല.",
+    "അല്ല,",
+    "അല്ല:",
+    "മല്ല",
+    "രുത്",
+    "ാതെ",
+    "വേണ്ട",
+    "ഒരിക്കലും",
+    "ാത്ത"
+  ]
+}

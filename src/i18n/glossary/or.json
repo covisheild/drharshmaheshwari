@@ -1,0 +1,275 @@
+{
+  "about": "Odia glossary for drharshmaheshwari.com. Every Odia translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Odia has one of the accepted forms. Change a term here, then retranslate what uses it. docs/translation.md has the rules. Spelling: ୟ (U+0B5F) for ya-phala sounds as in modern print, ଡ଼ for the flapped da.",
+  "register": "Everyday spoken Odia that a family in Bhubaneswar or Cuttack would use, not heavily Sanskritised. Common English health words that people say in Odia stay as they are said (BMI, ବ୍ଲଡ ସୁଗାର, ଡାଇବେଟିସ୍, ବ୍ଲଡ ପ୍ରେସର). Polite 'ଆପଣ'. Short sentences ending in '।'. Numbers in 0-9, never Odia digits. Units as in English (cm, kg).",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "tr": [
+        "ମୋଟାପଣ"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "tr": [
+        "ପେଟର ମୋଟାପଣ",
+        "ପେଟ ମୋଟାପଣ"
+      ]
+    },
+    {
+      "en": "overweight",
+      "tr": [
+        "ଅଧିକ ଓଜନ",
+        "ଓଜନ ଅଧିକ"
+      ]
+    },
+    {
+      "en": "underweight",
+      "tr": [
+        "କମ୍ ଓଜନ",
+        "ଓଜନ କମ୍"
+      ]
+    },
+    {
+      "en": "weight",
+      "tr": [
+        "ଓଜନ"
+      ]
+    },
+    {
+      "en": "height",
+      "tr": [
+        "ଉଚ୍ଚତା"
+      ]
+    },
+    {
+      "en": "waist",
+      "tr": [
+        "ଅଣ୍ଟା"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "tr": [
+        "ଅଣ୍ଟା-ଉଚ୍ଚତା ଅନୁପାତ",
+        "ଅଣ୍ଟା ଓ ଉଚ୍ଚତାର ଅନୁପାତ"
+      ]
+    },
+    {
+      "en": "body fat",
+      "tr": [
+        "ଚର୍ବି"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "tr": [
+        "ଡାଇବେଟିସ୍",
+        "ଡାଇବେଟିସ"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "tr": [
+        "ହାଇ ବ୍ଲଡ ପ୍ରେସର"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "tr": [
+        "ହୃଦରୋଗ"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "tr": [
+        "ବ୍ଲଡ ସୁଗାର"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "tr": [
+        "କୋଲେଷ୍ଟେରଲ"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "tr": [
+        "ଫ୍ୟାଟି ଲିଭର"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": [
+        "ଝୁଙ୍କି"
+      ]
+    },
+    {
+      "en": "doctor",
+      "tr": [
+        "ଡାକ୍ତର"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "tr": [
+        "କଟ୍-ଅଫ୍"
+      ]
+    },
+    {
+      "en": "guideline",
+      "tr": [
+        "ନିର୍ଦ୍ଦେଶିକା"
+      ]
+    },
+    {
+      "en": "screening",
+      "tr": [
+        "ଯାଞ୍ଚ"
+      ]
+    },
+    {
+      "en": "muscle",
+      "tr": [
+        "ମାଂସପେଶୀ"
+      ]
+    },
+    {
+      "en": "calculator",
+      "tr": [
+        "କାଲକୁଲେଟର"
+      ]
+    },
+    {
+      "en": "evidence",
+      "tr": [
+        "ପ୍ରମାଣ"
+      ]
+    },
+    {
+      "en": "public health",
+      "tr": [
+        "ଜନସ୍ୱାସ୍ଥ୍ୟ"
+      ]
+    },
+    {
+      "en": "contribution",
+      "tr": [
+        "ଅବଦାନ"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "tr": [
+        "ଜରୁରୀ ସୂଚନା"
+      ]
+    },
+    {
+      "en": "privacy",
+      "tr": [
+        "ଗୋପନୀୟତା"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "tr": [
+        "ଜୋରଦାର"
+      ]
+    },
+    {
+      "en": "energetic",
+      "tr": [
+        "ଊର୍ଜାଭରା"
+      ]
+    },
+    {
+      "en": "percentile",
+      "tr": [
+        "ପର୍ସେଣ୍ଟାଇଲ"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "tr": [
+        "ସ୍ଲିପ୍ ଆପ୍ନିଆ"
+      ]
+    }
+  ],
+  "banned": [
+    {
+      "pattern": "(?<![\\u0B00-\\u0B7F])ଦାନ",
+      "why": "means donation (ଦାନ as a word; ଅବଦାନ and ପ୍ରଦାନ are fine); the site says support (ସହଯୋଗ) and contribution (ଅବଦାନ)"
+    },
+    {
+      "pattern": "ଚାନ୍ଦା",
+      "why": "donation"
+    },
+    {
+      "pattern": "ଦାତବ୍ୟ|ପରୋପକାର",
+      "why": "charity"
+    },
+    {
+      "pattern": "[\\u0B66-\\u0B6F]",
+      "why": "Odia digits: numbers stay 0-9"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "ମାଗଣା|ନିଃଶୁଳ୍କ|ମୁଫତ|ଫ୍ରି|ବିନାମୂଲ୍ୟ",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ],
+  "script": "\\u0B00-\\u0B7F",
+  "negations": [
+    "ନାହିଁ",
+    "ନୁହେଁ",
+    "ନୁହଁ",
+    "ନାହାନ୍ତି",
+    "ନୁହନ୍ତି",
+    "ବିନା",
+    "ନଥି",
+    "ନଥା",
+    "ନକରି",
+    "ନ ",
+    "ମନା",
+    "କେବେବି",
+    "କଦାପି",
+    "ନା।",
+    "ନା,",
+    "ନଦେ"
+  ]
+}

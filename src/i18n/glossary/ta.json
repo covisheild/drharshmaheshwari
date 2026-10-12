@@ -1,0 +1,287 @@
+{
+  "about": "Tamil glossary for drharshmaheshwari.com. Every Tamil translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Tamil has one of the accepted forms (substring match, so most forms are stems that every inflection contains, e.g. பருமன covers பருமன், பருமனை, பருமனுக்கு). Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "register": "Everyday spoken Tamil that a family in Chennai or Madurai would understand, written in plain standard spelling, not formal literary (செந்தமிழ்) Tamil and not heavy dialect. Common English health words people say in Tamil stay as they are said (BMI, கொலஸ்ட்ரால், ஃபேட்டி லிவர், டாக்டர்). Diabetes is always சர்க்கரை நோய் and blood sugar ரத்த சர்க்கரை (consistently). Vigorous = தீவிரமான; moderate = மிதமான; energetic (moderate to vigorous) = சுறுசுறுப்பான. Short sentences. Numbers in 0-9, never Tamil digits. Units as in English (cm, kg). Words with a second meaning: இடுப்பு is the waist only; for hips as a place where fat or muscle sits use பிட்டம், and for the hip bone (landmark for measuring the waist) இடுப்புக் கூட்டு எலும்பு. Activity as a name or short label is உடல் செயல்பாடு (bare செயல்பாடு reads as \"function\"). Strapped in (pram, car seat) is பெல்ட் போட்டு உட்கார வைத்தல், never கட்டி வைத்தல் (tied up). Storage is தரவுச் சேமிப்பு (bare சேமிப்பு also means savings). Reverse obesity = அதிகரித்துவரும் உடல் பருமனைப் பின்னோக்கித் திருப்புதல். Times keep AM / PM.",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "tr": [
+        "பருமன"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "tr": [
+        "வயிற்றுப் பருமன",
+        "வயிற்று பருமன"
+      ]
+    },
+    {
+      "en": "overweight",
+      "tr": [
+        "அதிக எடை",
+        "கூடுதல் எடை"
+      ]
+    },
+    {
+      "en": "underweight",
+      "tr": [
+        "குறைந்த எடை",
+        "எடை குறைவ"
+      ]
+    },
+    {
+      "en": "weight",
+      "tr": [
+        "எடை"
+      ]
+    },
+    {
+      "en": "height",
+      "tr": [
+        "உயரம்",
+        "உயரத்",
+        "உயரமு"
+      ]
+    },
+    {
+      "en": "waist",
+      "tr": [
+        "இடுப்ப"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "tr": [
+        "இடுப்பு-உயர விகித",
+        "இடுப்புக்கும் உயரத்துக்கும் உள்ள விகித"
+      ]
+    },
+    {
+      "en": "body fat",
+      "tr": [
+        "கொழுப்ப"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "tr": [
+        "சர்க்கரை நோய"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "tr": [
+        "உயர் ரத்த அழுத்த",
+        "உயர் இரத்த அழுத்த"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "tr": [
+        "இதய நோய"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "tr": [
+        "ரத்த சர்க்கரை",
+        "இரத்த சர்க்கரை",
+        "சுகர்"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "tr": [
+        "கொலஸ்ட்ரால"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "tr": [
+        "ஃபேட்டி லிவர"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": [
+        "ஆபத்த",
+        "அபாய"
+      ]
+    },
+    {
+      "en": "doctor",
+      "tr": [
+        "டாக்டர",
+        "மருத்துவர"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "tr": [
+        "கட்-ஆஃப"
+      ]
+    },
+    {
+      "en": "guideline",
+      "tr": [
+        "வழிகாட்டு"
+      ]
+    },
+    {
+      "en": "screening",
+      "tr": [
+        "சோதனை",
+        "சோதி"
+      ]
+    },
+    {
+      "en": "muscle",
+      "tr": [
+        "தசை"
+      ]
+    },
+    {
+      "en": "calculator",
+      "tr": [
+        "கால்குலேட்டர"
+      ]
+    },
+    {
+      "en": "evidence",
+      "tr": [
+        "ஆதார"
+      ]
+    },
+    {
+      "en": "public health",
+      "tr": [
+        "பொது சுகாதார",
+        "பொதுச் சுகாதார"
+      ]
+    },
+    {
+      "en": "contribution",
+      "tr": [
+        "பங்களிப்ப"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "tr": [
+        "பொறுப்புத் துறப்ப",
+        "பொறுப்பு துறப்ப"
+      ]
+    },
+    {
+      "en": "privacy",
+      "tr": [
+        "தனியுரிமை"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "tr": [
+        "தீவிர"
+      ]
+    },
+    {
+      "en": "energetic",
+      "tr": [
+        "சுறுசுறுப்பா"
+      ]
+    },
+    {
+      "en": "percentile",
+      "tr": [
+        "பெர்சென்டைல"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "tr": [
+        "ஸ்லீப் அப்னியா"
+      ]
+    }
+  ],
+  "banned": [
+    {
+      "pattern": "நன்கொடை",
+      "why": "means donation; the site says support (ஆதரவு) and contribution (பங்களிப்பு)"
+    },
+    {
+      "pattern": "(?<![\\u0B80-\\u0BFF])தானம்",
+      "why": "donation (as in இரத்த தானம்)"
+    },
+    {
+      "pattern": "தர்ம|அறக்கட்டளை|அறப்பணி",
+      "why": "charity"
+    },
+    {
+      "pattern": "[௦-௯]",
+      "why": "Tamil digits: numbers stay 0-9"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "இலவச|ஃப்ரீ|கட்டணமில்லா|கட்டணம் இல்லா",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ],
+  "script": "\\u0B80-\\u0BFF",
+  "negations": [
+    "இல்லை",
+    "ில்லை",
+    "இல்லா",
+    "ில்லா",
+    "அல்ல ",
+    "அல்ல.",
+    "அல்ல,",
+    "அல்ல:",
+    "அல்ல;",
+    "அல்லாத",
+    "வேண்டாம்",
+    "கூடாது",
+    "முடியா",
+    "மாட்ட",
+    "ாமல",
+    "ாது",
+    "படாத",
+    "ஒருபோதும்",
+    "மட்டுமல்ல"
+  ]
+}

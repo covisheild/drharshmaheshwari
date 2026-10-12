@@ -17,13 +17,13 @@ canvas.dust { position: absolute; z-index: -1; inset: 0; width: 100%; height: 10
 .cta { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 2.1rem; }
 
 /* ---------- Window: a picture of a tool, with its fields linking to the real one ---------- */
-.bm-window { position: relative; margin: clamp(2.2rem, 5vw, 3.4rem) auto 0; max-width: 1040px; text-align: left; border-radius: 22px; border: 1px solid var(--line-2); background: var(--surface); box-shadow: 0 40px 120px -30px color-mix(in oklab, var(--brand-fill) 45%, transparent), var(--shadow); overflow: hidden; }
+.bm-window { position: relative; margin: clamp(2.2rem, 5vw, 3.4rem) auto 0; max-width: 1040px; text-align: start; border-radius: 22px; border: 1px solid var(--line-2); background: var(--surface); box-shadow: 0 40px 120px -30px color-mix(in oklab, var(--brand-fill) 45%, transparent), var(--shadow); overflow: hidden; }
 .bm-win-bar { display: flex; align-items: center; gap: .5rem; padding: .8rem 1.1rem; border-bottom: 1px solid var(--line); }
 .bm-win-bar i { width: 12px; height: 12px; border-radius: 50%; flex: none; }
 .bm-win-bar i:nth-child(1) { background: #ff5f57; } .bm-win-bar i:nth-child(2) { background: #febc2e; } .bm-win-bar i:nth-child(3) { background: #28c840; }
-.bm-win-bar span { margin-left: .7rem; font: 500 .78rem/1.2 var(--font-mono); color: var(--ink-3); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bm-win-bar span { margin-inline-start: .7rem; font: 500 .78rem/1.2 var(--font-mono); color: var(--ink-3); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bm-win-body { display: grid; grid-template-columns: 200px minmax(0, 1fr); }
-.bm-win-side { padding: 1rem .8rem; border-right: 1px solid var(--line); background: var(--surface-2); display: grid; gap: .2rem; align-content: start; }
+.bm-win-side { padding: 1rem .8rem; border-inline-end: 1px solid var(--line); background: var(--surface-2); display: grid; gap: .2rem; align-content: start; }
 .bm-win-side a, .bm-win-side span { display: flex; align-items: center; gap: .7rem; padding: .55rem .7rem; border-radius: 10px; font-size: .9rem; color: var(--ink-2); text-decoration: none; }
 .bm-win-side .on { background: color-mix(in oklab, var(--ink) 9%, transparent); color: var(--ink); }
 .bm-win-main { padding: 1.4rem 1.5rem 1.5rem; min-width: 0; }
@@ -51,7 +51,7 @@ canvas.dust { position: absolute; z-index: -1; inset: 0; width: 100%; height: 10
 .bm-bar { display: flex; height: 22px; border-radius: 999px; overflow: hidden; }
 .bm-bar span { display: block; height: 100%; }
 .z-low { background: var(--ink-3); opacity: .5; } .z-ok { background: var(--ok); } .z-over { background: var(--warn); } .z-obese { background: var(--risk); }
-.bm-ticks { position: relative; height: 22px; margin-left: var(--lab); font: 500 .64rem/1 var(--font-mono); color: var(--ink-3); }
+.bm-ticks { position: relative; height: 22px; margin-inline-start: var(--lab); font: 500 .64rem/1 var(--font-mono); color: var(--ink-3); }
 .bm-ticks span { position: absolute; top: 4px; transform: translateX(-50%); }
 .bm-marker { position: absolute; top: -8px; bottom: 20px; left: calc(var(--lab) + (100% - var(--lab)) * var(--p)); width: 0; border-left: 2px solid var(--ink); pointer-events: none; transition: left .9s cubic-bezier(.2, .8, .2, 1); }
 .bm-marker::after { content: ""; position: absolute; left: -5px; bottom: -3px; width: 8px; height: 8px; background: var(--ink); border-radius: 50%; }
@@ -87,7 +87,7 @@ a.bm-li:hover { border-color: var(--brand); }
 .bm-ic { width: 46px; height: 46px; border-radius: 14px; border: 1px solid var(--line-2); display: grid; place-items: center; flex: none; color: var(--brand); background: var(--surface); }
 .bm-li > span:nth-child(2) { min-width: 0; }
 .bm-li b { display: block; font: 400 1.02rem/1.25 var(--font-display); } .bm-li small { display: block; color: var(--ink-3); font-size: .8rem; margin-top: .15rem; }
-.bm-pchip { margin-left: auto; padding: .22rem .6rem; border-radius: 999px; font-size: .72rem; line-height: 1.2; background: var(--brand-soft); color: var(--brand); white-space: nowrap; flex: none; }
+.bm-pchip { margin-inline-start: auto; padding: .22rem .6rem; border-radius: 999px; font-size: .72rem; line-height: 1.2; background: var(--brand-soft); color: var(--brand); white-space: nowrap; flex: none; }
 .bm-pchip.ready { background: var(--ok-soft); color: var(--ok); }
 .bm-shelf-row { display: flex; gap: 1rem; align-items: flex-end; padding-bottom: 1.2rem; overflow: hidden; }
 .bm-shelf-row .cover { transition: transform .35s cubic-bezier(.2, .8, .2, 1); }

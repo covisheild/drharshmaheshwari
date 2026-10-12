@@ -28,10 +28,11 @@ export function links(text) {
 const placeholders = (s) => [...s.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort();
 const tags = (s) => [...s.matchAll(/<(b|i|em|strong|a|code)\b/g)].map((m) => m[1]).sort();
 const latinRuns = (s) => [...strip(s, false).matchAll(/(?:\b[A-Za-z][A-Za-z'’-]*\b[ ,]+){3,}[A-Za-z][A-Za-z'’-]*/g)].map((m) => m[0].trim());
-const devanagariShare = (s) => {
+// Share of the letters that are in the language's own script (glossary "script", a Unicode range such as \\u0B80-\\u0BFF).
+const scriptShare = (s, range) => {
   const t = strip(s, false);
-  const deva = (t.match(/[ऀ-ॿ]/g) ?? []).length, latin = (t.match(/[A-Za-z]/g) ?? []).length;
-  return deva + latin ? deva / (deva + latin) : 1;
+  const own = (t.match(new RegExp(`[${range}]`, 'g')) ?? []).length, latin = (t.match(/[A-Za-z]/g) ?? []).length;
+  return own + latin ? own / (own + latin) : 1;
 };
 const termRe = (en) => new RegExp(`(?<![\\w-])${en.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(s|es)?(?![\\w])`, 'i');
 
@@ -52,15 +53,18 @@ export function checkPair(en, tr, glossary, { lang = 'hi', exempt = [] } = {}) {
   const plainEn = (glossary.names ?? []).reduce((t, n) => t.split(n).join(' '), strip(en));
   for (const term of glossary.terms) {
     if (exempt.includes(term.en) || !termRe(term.en).test(plainEn)) continue;
-    if (!term.hi.some((h) => fold(tr).includes(fold(h)))) errors.push(`glossary: "${term.en}" must be translated as ${term.hi.map((h) => `"${h}"`).join(' or ')}`);
+    const ok = term[lang] ?? term.tr; // the accepted forms: keyed by the language code (hi.json) or "tr"
+    if (!ok.some((h) => fold(tr).includes(fold(h)))) errors.push(`glossary: "${term.en}" must be translated as ${ok.map((h) => `"${h}"`).join(' or ')}`);
   }
   for (const ban of glossary.banned) if (new RegExp(ban.pattern).test(strip(tr, false))) errors.push(`banned word /${ban.pattern}/: ${ban.why}`);
   for (const run of latinRuns(tr)) errors.push(`untranslated English: "${run}"`);
-  if ((strip(en).match(/[A-Za-z]{2,}/g) ?? []).length >= 5 && devanagariShare(tr) < 0.5) errors.push(`mostly not in Devanagari (${Math.round(devanagariShare(tr) * 100)}%)`);
+  const share = scriptShare(tr, glossary.script ?? '\\u0900-\\u097F');
+  if ((strip(en).match(/[A-Za-z]{2,}/g) ?? []).length >= 5 && share < 0.5) errors.push(`mostly not in the language's script (${Math.round(share * 100)}%)`);
   const ratio = strip(tr).length / Math.max(1, strip(en).length);
   if (strip(en).length > 60 && (ratio < 0.6 || ratio > 1.8)) warnings.push(`length ratio ${ratio.toFixed(2)} (dropped or added text?)`);
   const negEn = (plainEn.match(/\b(not|no|never|don't|doesn't|cannot|can't|isn't|aren't|nothing|without)\b|n't\b/gi) ?? []).length;
-  const negTr = (strip(tr).match(/नहीं|न |मत |बिना|कभी नहीं|कुछ नहीं|कोई नहीं/g) ?? []).length;
+  // The language's words for "not", "no", "without" (glossary "negations").
+  const negTr = (glossary.negations ?? []).reduce((n, word) => n + strip(tr).split(word).length - 1, 0);
   if (negEn > negTr) warnings.push(`fewer negations (${negTr}) than the English (${negEn}): check that no "not" was lost`);
   return { errors, warnings };
 }
