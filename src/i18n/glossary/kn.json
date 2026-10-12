@@ -1,6 +1,6 @@
 {
   "about": "Kannada glossary for drharshmaheshwari.com. Every Kannada translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Kannada has one of the accepted forms (a substring match, so most entries are stems that every inflection contains: ಬೊಜ್ಜ covers ಬೊಜ್ಜು, ಬೊಜ್ಜಿನ, ಬೊಜ್ಜನ್ನು). Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
-  "register": "Everyday spoken Kannada that a family in Bengaluru or Mysuru would use, not heavy Sanskritised (grānthika) Kannada. Common English health words that people say in Kannada stay as they are said, in Kannada script (BMI, ಬ್ಲಡ್ ಶುಗರ್, ಡಯಾಬಿಟಿಸ್, ಡಾಕ್ಟರ್, ಫ್ಯಾಟಿ ಲಿವರ್). Short sentences, polite plural (ನೀವು, ಮಾಡಿ). Numbers in 0-9, never Kannada digits. Units as in English (cm, kg). Vigorous = ತೀವ್ರ; moderate = ಮಧ್ಯಮ; energetic (moderate to vigorous) = ಚುರುಕಾದ, never ತೀವ್ರ alone.",
+  "register": "Everyday spoken Kannada that a family in Bengaluru or Mysuru would use, not heavy Sanskritised (grānthika) Kannada. Common English health words that people say in Kannada stay as they are said, in Kannada script (BMI, ಬ್ಲಡ್ ಶುಗರ್, ಡಯಾಬಿಟಿಸ್, ಡಾಕ್ಟರ್, ಫ್ಯಾಟಿ ಲಿವರ್). Short sentences, polite plural (ನೀವು, ಮಾಡಿ). Numbers in 0-9, never Kannada digits. Units as in English (cm, kg). Vigorous = ಹೆಚ್ಚು ಶ್ರಮದ (never ತೀವ್ರ, which reads as \"severe\"; ತೀವ್ರ only for severe illness or severely low sugar); intensity = ಮಟ್ಟ (ಯಾವುದೇ ಮಟ್ಟದ, ಮಧ್ಯಮ ಮಟ್ಟದ); moderate = ಮಧ್ಯಮ; energetic = ಚುರುಕಾದ, always followed by (ಮಧ್ಯಮದಿಂದ ಹೆಚ್ಚು ಶ್ರಮದ). Words with a second meaning (QA 12 Oct 2026): waist = ಹೊಟ್ಟೆಯ ಸುತ್ತಳತೆ (belly circumference), never ಸೊಂಟ, which families read as hip or lower back; ಸೊಂಟದ ಮೂಳೆ only for the hip bone (the measuring landmark); hips (body part) = ಪೃಷ್ಠ. Common = ಹಲವರಲ್ಲಿ ಕಂಡುಬರುವ / ಹಲವರು, never ಸಾಮಾನ್ಯ (which also means normal); ಸಾಮಾನ್ಯ only for normal, general or usual. Thinness = ತೆಳ್ಳಗಿರುವುದು, wasted = ಸೊರಗಿರುವುದು (never ಸಣಕಲು, scrawny). Pram = ಮಗುವಿನ ಗಾಡಿ (ಪ್ರ್ಯಾಮ್), never ತಳ್ಳುಗಾಡಿ (vendor cart); strapped in = ಬೆಲ್ಟ್ ಹಾಕಿ ಕೂರಿಸಿಡು, never ಕಟ್ಟಿ ಕೂರಿಸು (tied up). Disclaimer = ಸೂಚನೆ (ಡಿಸ್‌ಕ್ಲೈಮರ್), never ಹಕ್ಕು ನಿರಾಕರಣೆ (refusal of rights). Reverse obesity = ಹೆಚ್ಚುತ್ತಿರುವ ಬೊಜ್ಜನ್ನು ಹಿಂದಕ್ಕೆ ತಿರುಗಿಸು. AM/PM stay AM/PM. A placeholder never carries a case ending ({unit} ಗೆ, {name} ನಲ್ಲಿ): put it after a colon or before a separate word.",
   "keepLatin": [
     "BMI",
     "WHO",
@@ -73,14 +73,14 @@
     {
       "en": "waist",
       "tr": [
-        "ಸೊಂಟ"
+        "ಹೊಟ್ಟೆಯ ಸುತ್ತಳತೆ"
       ]
     },
     {
       "en": "waist-to-height ratio",
       "tr": [
-        "ಸೊಂಟ-ಎತ್ತರ ಅನುಪಾತ",
-        "ಸೊಂಟ ಮತ್ತು ಎತ್ತರದ ಅನುಪಾತ"
+        "ಹೊಟ್ಟೆಯ ಸುತ್ತಳತೆ-ಎತ್ತರ ಅನುಪಾತ",
+        "ಹೊಟ್ಟೆಯ ಸುತ್ತಳತೆ ಮತ್ತು ಎತ್ತರದ ಅನುಪಾತ"
       ]
     },
     {
@@ -193,7 +193,7 @@
     {
       "en": "disclaimer",
       "tr": [
-        "ಹಕ್ಕು ನಿರಾಕರಣೆ"
+        "ಡಿಸ್‌ಕ್ಲೈಮರ್"
       ]
     },
     {
@@ -205,7 +205,7 @@
     {
       "en": "vigorous",
       "tr": [
-        "ತೀವ್ರ"
+        "ಹೆಚ್ಚು ಶ್ರಮದ"
       ]
     },
     {

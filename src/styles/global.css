@@ -228,6 +228,11 @@ html:not(:lang(en)) .eyebrow, html:not(:lang(en)) .bm-tag, html:not(:lang(en)) .
 /* The monospace label font has no Devanagari and wide spaces: so these labels use the text font. */
 html:not(:lang(en)) .eyebrow, html:not(:lang(en)) .bm-tag, html:not(:lang(en)) .keypoints h2, html:not(:lang(en)) .footer-grid h4, html:not(:lang(en)) .bm-fld-l, html:not(:lang(en)) .bm-win-bar span, html:not(:lang(en)) .mode-badge { font-family: var(--font-body); }
 
+/* Tamil, Malayalam, Telugu and Kannada join many syllables into one long word: on phones the big headings are a little smaller,
+   and a word still wider than the screen wraps rather than pushing the page sideways. */
+html:not(:lang(en)) :is(h1, h2, h3) { overflow-wrap: break-word; }
+@media (max-width: 640px) { :root:is(:lang(ta), :lang(ml), :lang(te), :lang(kn)) { --h1: clamp(1.75rem, 7.6vw, 2.2rem); --h2: clamp(1.4rem, 6vw, 1.7rem); } }
+
 /* Urdu: Nastaliq is written on a slope, with tall ascenders and deep descenders, so it needs much taller lines. */
 :root:lang(ur) { --leading: 2.15; }
 html:lang(ur) h1, html:lang(ur) h2, html:lang(ur) h3 { line-height: 1.85; }
