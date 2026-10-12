@@ -1,0 +1,272 @@
+{
+  "about": "Gujarati glossary for drharshmaheshwari.com. Every Gujarati translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Gujarati has one of the accepted forms (a substring match, so stems such as મેદસ્વ, પુરાવ and સ્ફૂર્તિલ cover the inflected forms). Four activity words are kept apart, one word each, everywhere: vigorous = જોરદાર, moderate = મધ્યમ, energetic = સ્ફૂર્તિલી (always followed by '(મધ્યમથી જોરદાર)'), and disease severity = ગંભીર. Waist = કમર (measured round the belly, at the navel line: કમરનો ઘેરાવો); hip = નિતંબ, hip bone = થાપાનું હાડકું, lower back = પીઠનો નીચેનો ભાગ, never કમર. Teaspoon = 'નાની ચમચી (ટીસ્પૂન)', never just ચમચી. Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "register": "Everyday spoken Gujarati that a family in Ahmedabad, Surat or Rajkot would use, not textbook Sanskritised Gujarati, and Gujarati grammar and words (છે, નથી, માટે, વજન), never Hindi. Common English health words that people say in Gujarati stay as they are said (BMI, બ્લડ શુગર, ડાયાબિટીસ, બ્લડ પ્રેશર, ડૉક્ટર). Polite plural for the reader (તમે, તમારું). Short sentences. Numbers in 0-9, never Gujarati digits. Units as in English (cm, kg). Full stop is '.'. AM/PM stay as AM/PM. Words with a second meaning (QA 12 Oct 2026): sex/gender = લિંગ, as a form label 'લિંગ (પુરુષ/સ્ત્રી)', for children 'એ જ લિંગનાં (છોકરો કે છોકરી)'; never જાતિ (reads as caste). Next = હવે પછી / હવે પછીનું, previous = અગાઉનું; never આગલું (it reads both ways). Short people = ઓછી ઊંચાઈવાળા, never નીચા લોકો. Vigorous never stands alone as a label (alone જોરદાર reads 'Great!'): write 'જોરદાર પ્રવૃત્તિ'. Tired/fatigued = થાક, સુસ્તી (કંટાળો is boredom). 'Time a day' = દિવસમાં કેટલો સમય (દિવસનો સમય is the time of day). 2 h after a meal = જમવાનું શરૂ કર્યાના 2 કલાક પછી. Babies = શિશુઓ. Adult-equivalent 23 = 'પુખ્તના BMI 23 ને સમકક્ષ રેખા' (chart label 'પુખ્ત BMI 23 સમકક્ષ'). Validation studies = ચોકસાઈ ચકાસતા અભ્યાસો (માન્યતા is belief). Month abbreviations: એપ્રિલ, જુલાઈ in full.",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "tr": [
+        "મેદસ્વિતા",
+        "મેદસ્વી"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "tr": [
+        "પેટની મેદસ્વિતા",
+        "પેટ પરની મેદસ્વિતા"
+      ]
+    },
+    {
+      "en": "overweight",
+      "tr": [
+        "વધુ વજન",
+        "વધારે વજન"
+      ]
+    },
+    {
+      "en": "underweight",
+      "tr": [
+        "ઓછું વજન",
+        "ઓછા વજન"
+      ]
+    },
+    {
+      "en": "weight",
+      "tr": [
+        "વજન"
+      ]
+    },
+    {
+      "en": "height",
+      "tr": [
+        "ઊંચાઈ",
+        "ઊંચાઇ"
+      ]
+    },
+    {
+      "en": "waist",
+      "tr": [
+        "કમર"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "tr": [
+        "કમર-ઊંચાઈ ગુણોત્તર",
+        "કમર અને ઊંચાઈનો ગુણોત્તર"
+      ]
+    },
+    {
+      "en": "body fat",
+      "tr": [
+        "ચરબી"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "tr": [
+        "ડાયાબિટીસ"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "tr": [
+        "હાઈ બ્લડ પ્રેશર"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "tr": [
+        "હૃદયની બીમારી",
+        "હૃદયરોગ",
+        "હૃદયના રોગ"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "tr": [
+        "બ્લડ શુગર"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "tr": [
+        "કોલેસ્ટ્રોલ",
+        "કોલેસ્ટેરોલ"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "tr": [
+        "ફેટી લિવર"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": [
+        "જોખમ"
+      ]
+    },
+    {
+      "en": "doctor",
+      "tr": [
+        "ડૉક્ટર",
+        "ડોક્ટર"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "tr": [
+        "કટ-ઑફ",
+        "કટ-ઓફ"
+      ]
+    },
+    {
+      "en": "guideline",
+      "tr": [
+        "માર્ગદર્શિકા"
+      ]
+    },
+    {
+      "en": "screening",
+      "tr": [
+        "તપાસ"
+      ]
+    },
+    {
+      "en": "muscle",
+      "tr": [
+        "સ્નાયુ"
+      ]
+    },
+    {
+      "en": "calculator",
+      "tr": [
+        "કેલ્ક્યુલેટર"
+      ]
+    },
+    {
+      "en": "evidence",
+      "tr": [
+        "પુરાવ"
+      ]
+    },
+    {
+      "en": "public health",
+      "tr": [
+        "જાહેર આરોગ્ય"
+      ]
+    },
+    {
+      "en": "contribution",
+      "tr": [
+        "યોગદાન"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "tr": [
+        "અસ્વીકરણ"
+      ]
+    },
+    {
+      "en": "privacy",
+      "tr": [
+        "ગોપનીયતા"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "tr": [
+        "જોરદાર"
+      ]
+    },
+    {
+      "en": "energetic",
+      "tr": [
+        "સ્ફૂર્તિલ"
+      ]
+    },
+    {
+      "en": "percentile",
+      "tr": [
+        "પર્સેન્ટાઇલ"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "tr": [
+        "સ્લીપ એપનિયા"
+      ]
+    }
+  ],
+  "banned": [
+    {
+      "pattern": "(?<![\\u0A80-\\u0AFF])દાન",
+      "why": "means donation (દાન as a word; યોગદાન, નિદાન and પ્રદાન are fine); the site says support (સહયોગ / ટેકો) and contribution (યોગદાન)"
+    },
+    {
+      "pattern": "ચેરિટી|ધર્માદા|સખાવત|પરોપકાર",
+      "why": "charity"
+    },
+    {
+      "pattern": "[\\u0AE6-\\u0AEF]",
+      "why": "Gujarati digits: numbers stay 0-9"
+    },
+    {
+      "pattern": "(?<![\\u0A80-\\u0AFF])જાતિ",
+      "why": "reads as caste; sex is લિંગ (પુરુષ/સ્ત્રી)"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "મફત|ફ્રી|વિનામૂલ્યે|નિઃશુલ્ક",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ],
+  "script": "\\u0A80-\\u0AFF",
+  "negations": [
+    "નથી",
+    "નહીં",
+    "નહિ",
+    " ન ",
+    "વગર",
+    "વિના",
+    "સિવાય"
+  ]
+}

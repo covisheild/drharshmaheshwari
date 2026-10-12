@@ -1,0 +1,301 @@
+{
+  "about": "Assamese glossary for drharshmaheshwari.com. Every Assamese translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Assamese has one of the accepted forms (substring match, so a stem shared by every inflection is listed). Written in Assamese spelling (ৰ U+09F0, ৱ U+09F1), never Bengali (র U+09B0 is banned). Activity words: moderate = মজলীয়া, vigorous = জোৰদাৰ, energetic = খৰতকীয়া (brisk; always followed by '(মজলীয়াৰ পৰা জোৰদাৰ)'; not উদ্যমী, which describes a person's character), mild (IDRS) = পাতল (not সামান্য, 'negligible'), disease severity (severe) = গুৰুতৰ: four different words. Waist = কঁকাল (measured round the belly; কঁকাল alone can mean the lower back, so a bare label reads 'কঁকালৰ জোখ (পেটৰ চাৰিওফালে)' and other labels 'কঁকালৰ জোখ'); hip / hip bone = নিতম্ব / নিতম্বৰ হাড়, never কঁকাল. Common = সচৰাচৰ দেখা যায় (not সাধাৰণ, which can read 'normal'); normal = স্বাভাৱিক. Risk = ঝুঁকি (not আশংকা, which reads 'fear, alarm'). Physical activity = শাৰীৰিক লৰচৰ, activity = লৰচৰ (not কাম-কাজ, which reads 'work, chores'); sedentary = বহি বহি কৰা (নিষ্ক্ৰিয় = 'inactive', only where the English says inactive). Pram = কেঁচুৱাৰ ঠেলা গাড়ী (never প্ৰেম, 'love'). Reflections (blog topic) = চিন্তা-ভাৱনা (চিন্তা alone reads 'worry'). Liver = লিভাৰ. Paediatrician = শিশুৰোগৰ ডাক্তৰ. Teaspoon = চাহ-চামুচ. Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "register": "Everyday spoken Assamese that a family in Guwahati or Jorhat would use, not heavily Sanskritised words. Common English health words that people say in Assamese stay as they are said (BMI, ব্লাড চুগাৰ, ব্লাড প্ৰেছাৰ, ডায়েবেটিছ). Polite আপুনি form. Short sentences ending in '।'. Numbers in 0-9, never Assamese/Bengali digits. Units as in English (cm, kg). AM/PM kept as AM/PM.",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "tr": [
+        "মেদবহুলতা"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "tr": [
+        "পেটৰ মেদবহুলতা"
+      ]
+    },
+    {
+      "en": "overweight",
+      "tr": [
+        "অতিৰিক্ত ওজন",
+        "ওজন বেছি",
+        "বেছি ওজন"
+      ]
+    },
+    {
+      "en": "underweight",
+      "tr": [
+        "কম ওজন",
+        "ওজন কম"
+      ]
+    },
+    {
+      "en": "weight",
+      "tr": [
+        "ওজন"
+      ]
+    },
+    {
+      "en": "height",
+      "tr": [
+        "উচ্চতা",
+        "ওখ"
+      ]
+    },
+    {
+      "en": "waist",
+      "tr": [
+        "কঁকাল"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "tr": [
+        "কঁকাল-উচ্চতা অনুপাত",
+        "কঁকাল আৰু উচ্চতাৰ অনুপাত"
+      ]
+    },
+    {
+      "en": "body fat",
+      "tr": [
+        "চৰ্বি",
+        "মেদ"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "tr": [
+        "ডায়েবেটিছ"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "tr": [
+        "উচ্চ ৰক্তচাপ",
+        "হাই ব্লাড প্ৰেছাৰ"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "tr": [
+        "হৃদৰোগ",
+        "হৃদযন্ত্ৰৰ ৰোগ"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "tr": [
+        "ব্লাড চুগাৰ"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "tr": [
+        "কলেষ্টেৰল"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "tr": [
+        "ফেটী লিভাৰ"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": [
+        "ঝুঁকি"
+      ]
+    },
+    {
+      "en": "doctor",
+      "tr": [
+        "ডাক্তৰ",
+        "চিকিৎসক"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "tr": [
+        "কাট-অফ"
+      ]
+    },
+    {
+      "en": "guideline",
+      "tr": [
+        "নিৰ্দেশিকা",
+        "নিৰ্দেশনা",
+        "গাইডলাইন"
+      ]
+    },
+    {
+      "en": "screening",
+      "tr": [
+        "স্ক্ৰীনিং",
+        "স্ক্ৰীনিঙ",
+        "পৰীক্ষা"
+      ]
+    },
+    {
+      "en": "muscle",
+      "tr": [
+        "মাংসপেশী",
+        "পেশী"
+      ]
+    },
+    {
+      "en": "calculator",
+      "tr": [
+        "কেলকুলেটৰ"
+      ]
+    },
+    {
+      "en": "evidence",
+      "tr": [
+        "প্ৰমাণ"
+      ]
+    },
+    {
+      "en": "public health",
+      "tr": [
+        "জনস্বাস্থ্য"
+      ]
+    },
+    {
+      "en": "contribution",
+      "tr": [
+        "অৱদান"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "tr": [
+        "দায়বৰ্জন"
+      ]
+    },
+    {
+      "en": "privacy",
+      "tr": [
+        "গোপনীয়তা"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "tr": [
+        "জোৰদাৰ"
+      ]
+    },
+    {
+      "en": "energetic",
+      "tr": [
+        "খৰতকীয়া"
+      ]
+    },
+    {
+      "en": "percentile",
+      "tr": [
+        "পাৰ্চেণ্টাইল"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "tr": [
+        "স্লিপ এপনিয়া"
+      ]
+    }
+  ],
+  "banned": [
+    {
+      "pattern": "(?<![\\u0980-\\u09FF])দান",
+      "why": "means donation (দান as a word; অৱদান = contribution and প্ৰদান are fine); the site says support (সহায়) and contribution (অৱদান)"
+    },
+    {
+      "pattern": "বৰঙণি|চান্দা|ডোনেশ্যন|ডোনেশন",
+      "why": "donation"
+    },
+    {
+      "pattern": "দাতব্য|চেৰিটি|পৰোপকাৰ",
+      "why": "charity"
+    },
+    {
+      "pattern": "[\\u09E6-\\u09EF]",
+      "why": "Assamese/Bengali digits: numbers stay 0-9"
+    },
+    {
+      "pattern": "\\u09B0",
+      "why": "Bengali letter র (U+09B0): Assamese writes ৰ (U+09F0)"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "বিনামূলীয়া|বিনামূল্যে|বিনা মূল্যে|মাগনা|ফ্ৰী",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ],
+  "script": "\\u0980-\\u09FF",
+  "negations": [
+    "নহয়",
+    "নাই",
+    "নকৰ",
+    "নহ'",
+    "নোৱাৰ",
+    "নাথাক",
+    "নালাগে",
+    "নাপা",
+    "নিদি",
+    "নোহো",
+    "নাযা",
+    "নাৰাখ",
+    "নোসোধ",
+    "নেদেখ",
+    "নচল",
+    "নবনা",
+    "নিটিপ",
+    "নিমিল",
+    "নিপিন্ধ",
+    "নুবুজ",
+    "নাখা",
+    "কেতিয়াও",
+    "অবিহনে",
+    "বিনা",
+    "নাছিল",
+    "নলয়",
+    "নকৰে",
+    "নকয়",
+    "নধৰ"
+  ]
+}

@@ -16,8 +16,11 @@ import te from './te.json';
 import kn from './kn.json';
 import ml from './ml.json';
 import ur from './ur.json';
+import gu from './gu.json';
+import pa from './pa.json';
+import as_ from './as.json';
 
-export const DICTS: Partial<Record<Lang, Record<string, string>>> = { hi, mr, bn, or, ta, te, kn, ml, ur };
+export const DICTS: Partial<Record<Lang, Record<string, string>>> = { hi, mr, bn, or, ta, te, kn, ml, ur, gu, pa, as: as_ };
 
 export const MISSING_START = '\u2063', MISSING_END = '\u2060';
 

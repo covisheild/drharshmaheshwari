@@ -31,3 +31,7 @@
 
 /* Urdu: Noto Nastaliq Urdu 400-700, Arabic script only (234 KB), downloaded only by Urdu pages. SIL OFL. */
 @font-face { font-family: 'Noto Nastaliq Urdu'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/fonts/noto-nastaliq-urdu-wght.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF; }
+
+/* Gujarati and Punjabi (Gurmukhi), each downloaded only by pages with that script. Assamese uses Noto Sans Bengali above. SIL OFL. */
+@font-face { font-family: 'Noto Sans Gujarati'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/fonts/noto-sans-gujarati-wght.woff2') format('woff2'); unicode-range: U+0A80-0AFF, U+200C-200D, U+25CC, U+A830-A839; }
+@font-face { font-family: 'Noto Sans Gurmukhi'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/fonts/noto-sans-gurmukhi-wght.woff2') format('woff2'); unicode-range: U+0A01-0A76, U+200C-200D, U+25CC, U+262C, U+A830-A839; }

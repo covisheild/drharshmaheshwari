@@ -1,0 +1,283 @@
+{
+  "about": "Punjabi (Gurmukhi) glossary for drharshmaheshwari.com. Every Punjabi translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Punjabi has one of the accepted forms (substring match, so a stem shared by every inflection is listed). Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "register": "Everyday spoken Punjabi in Gurmukhi script, as a family in Ludhiana, Amritsar or Patiala would speak it, not heavily Sanskritised or Persianised literary Punjabi. Common English health words that people say stay as they are said, written in Gurmukhi (ਬਲੱਡ ਸ਼ੂਗਰ, ਡਾਇਬਟੀਜ਼, ਬਲੱਡ ਪ੍ਰੈਸ਼ਰ, ਰੀਡਿੰਗ); BMI and the other keepLatin items stay in Latin letters. Polite ਤੁਸੀਂ form. Short sentences ending in ।. Numbers in 0-9, never Gurmukhi digits. Units as in English (cm, kg). Word choices: weight = ਭਾਰ; height = ਕੱਦ; waist = ਕਮਰ, and a waist label standing alone = ਕਮਰ ਦਾ ਨਾਪ (ਕਮਰ alone can also mean the lower back); hip / hip bone = ਕੁੱਲ੍ਹਾ / ਕੁੱਲ੍ਹੇ ਦੀ ਹੱਡੀ (never ਕਮਰ); neck = ਧੌਣ; Adam's apple = ਗਲੇ ਦੀ ਘੰਡੀ; activity = ਸਰਗਰਮੀ; moderate (activity) = ਦਰਮਿਆਨੀ; vigorous = ਜ਼ੋਰਦਾਰ; energetic = ਫੁਰਤੀਲੀ, always followed by (ਦਰਮਿਆਨੀ ਤੋਂ ਜ਼ੋਰਦਾਰ); severe (disease) = ਗੰਭੀਰ; mild = ਹਲਕੀ; IPAQ categories Low / Moderate / High = ਨੀਵਾਂ / ਦਰਮਿਆਨਾ / ਉੱਚਾ (Low is never ਘੱਟੋ-ਘੱਟ, which means at least); total = ਕੁੱਲ (never ਕੱਲ੍ਹ, yesterday); normal = ਨਾਰਮਲ, common = ਆਮ ਮਿਲਣ ਵਾਲਾ; adult = ਬਾਲਗ (never ਬਜ਼ੁਰਗ, elderly); international / global = ਅੰਤਰਰਾਸ਼ਟਰੀ; support (money) = ਸਹਾਇਤਾ, contribution = ਯੋਗਦਾਨ (never ਦਾਨ, ਚੰਦਾ or ਸਹਿਯੋਗ, which reads as cooperation); confusion (a symptom) = ਸੋਚ ਗੜਬੜਾਉਣਾ (ਕਨਫ਼ਿਊਜ਼ਨ); teaspoon = ਛੋਟਾ ਚਮਚ (ਚਾਹ ਵਾਲਾ ਚਮਚ, ਟੀ-ਸਪੂਨ), never a plain ਚਮਚ; a baby strapped in = ਪ੍ਰੈਮ, ਸੀਟ ਜਾਂ ਕੈਰੀਅਰ ਵਿੱਚ (never ਬੰਨ੍ਹਿਆ, tied up); AM / PM kept in Latin; ordinals built from a placeholder are written ਪਰਸੈਂਟਾਈਲ {ordinal} (the {n}st/nd/rd/th keys are plain {n}); a placeholder filled with a word ({kids}, {people}, {name}, {line}...) goes in brackets or after a colon, never with a case ending glued to it.",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "tr": [
+        "ਮੋਟਾਪ"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "tr": [
+        "ਪੇਟ ਦਾ ਮੋਟਾਪਾ",
+        "ਪੇਟ ਦੇ ਮੋਟਾਪੇ"
+      ]
+    },
+    {
+      "en": "overweight",
+      "tr": [
+        "ਵੱਧ ਭਾਰ",
+        "ਭਾਰ ਵੱਧ",
+        "ਜ਼ਿਆਦਾ ਭਾਰ",
+        "ਵਾਧੂ ਭਾਰ"
+      ]
+    },
+    {
+      "en": "underweight",
+      "tr": [
+        "ਘੱਟ ਭਾਰ",
+        "ਭਾਰ ਘੱਟ"
+      ]
+    },
+    {
+      "en": "weight",
+      "tr": [
+        "ਭਾਰ"
+      ]
+    },
+    {
+      "en": "height",
+      "tr": [
+        "ਕੱਦ"
+      ]
+    },
+    {
+      "en": "waist",
+      "tr": [
+        "ਕਮਰ"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "tr": [
+        "ਕਮਰ ਅਤੇ ਕੱਦ ਦਾ ਅਨੁਪਾਤ",
+        "ਕਮਰ ਅਤੇ ਕੱਦ ਦੇ ਅਨੁਪਾਤ",
+        "ਕਮਰ-ਕੱਦ ਅਨੁਪਾਤ"
+      ]
+    },
+    {
+      "en": "body fat",
+      "tr": [
+        "ਚਰਬੀ"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "tr": [
+        "ਡਾਇਬਟੀਜ਼",
+        "ਡਾਇਬਟੀਜ"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "tr": [
+        "ਹਾਈ ਬਲੱਡ ਪ੍ਰੈਸ਼ਰ"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "tr": [
+        "ਦਿਲ ਦੀ ਬਿਮਾਰੀ",
+        "ਦਿਲ ਦੀਆਂ ਬਿਮਾਰੀਆਂ",
+        "ਦਿਲ ਦੇ ਰੋਗ"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "tr": [
+        "ਬਲੱਡ ਸ਼ੂਗਰ"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "tr": [
+        "ਕੋਲੈਸਟ੍ਰੋਲ"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "tr": [
+        "ਫੈਟੀ ਲਿਵਰ"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": [
+        "ਖ਼ਤਰ",
+        "ਖਤਰ"
+      ]
+    },
+    {
+      "en": "doctor",
+      "tr": [
+        "ਡਾਕਟਰ"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "tr": [
+        "ਕੱਟ-ਆਫ",
+        "ਕੱਟ ਆਫ"
+      ]
+    },
+    {
+      "en": "guideline",
+      "tr": [
+        "ਗਾਈਡਲਾਈਨ",
+        "ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼"
+      ]
+    },
+    {
+      "en": "screening",
+      "tr": [
+        "ਸਕ੍ਰੀਨਿੰਗ",
+        "ਜਾਂਚ"
+      ]
+    },
+    {
+      "en": "muscle",
+      "tr": [
+        "ਮਾਸਪੇਸ਼ੀ",
+        "ਮਾਸਪੇਸ਼ੀਆਂ"
+      ]
+    },
+    {
+      "en": "calculator",
+      "tr": [
+        "ਕੈਲਕੁਲੇਟਰ"
+      ]
+    },
+    {
+      "en": "evidence",
+      "tr": [
+        "ਸਬੂਤ"
+      ]
+    },
+    {
+      "en": "public health",
+      "tr": [
+        "ਜਨਤਕ ਸਿਹਤ",
+        "ਲੋਕ ਸਿਹਤ"
+      ]
+    },
+    {
+      "en": "contribution",
+      "tr": [
+        "ਯੋਗਦਾਨ"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "tr": [
+        "ਡਿਸਕਲੇਮਰ"
+      ]
+    },
+    {
+      "en": "privacy",
+      "tr": [
+        "ਪ੍ਰਾਈਵੇਸੀ"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "tr": [
+        "ਜ਼ੋਰਦਾਰ"
+      ]
+    },
+    {
+      "en": "energetic",
+      "tr": [
+        "ਫੁਰਤੀਲ"
+      ]
+    },
+    {
+      "en": "percentile",
+      "tr": [
+        "ਪਰਸੈਂਟਾਈਲ"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "tr": [
+        "ਸਲੀਪ ਐਪਨੀਆ"
+      ]
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ],
+  "banned": [
+    {
+      "pattern": "(?<![\\u0A00-\\u0A7F])ਦਾਨ",
+      "why": "means donation (ਦਾਨ as a word; ਯੋਗਦਾਨ is fine); the site says support (ਸਹਾਇਤਾ) and contribution (ਯੋਗਦਾਨ)"
+    },
+    {
+      "pattern": "ਚੰਦਾ|ਚੰਦੇ",
+      "why": "donation"
+    },
+    {
+      "pattern": "ਡੋਨੇਸ਼ਨ",
+      "why": "donation"
+    },
+    {
+      "pattern": "ਚੈਰਿਟੀ",
+      "why": "charity"
+    },
+    {
+      "pattern": "ਖ਼ੈਰਾਤ|ਖ਼ੈਰਾਤ|ਖੈਰਾਤ",
+      "why": "charity"
+    },
+    {
+      "pattern": "[\\u0A66-\\u0A6F]",
+      "why": "Gurmukhi digits: numbers stay 0-9"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "ਮੁਫ਼ਤ|ਮੁਫ਼ਤ|ਮੁਫਤ|ਫ੍ਰੀ|ਫਰੀ",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "script": "\\u0A00-\\u0A7F",
+  "negations": [
+    "ਨਹੀਂ",
+    "ਨਾ ",
+    "ਬਿਨਾਂ",
+    "ਬਗ਼ੈਰ",
+    "ਬਗੈਰ"
+  ]
+}

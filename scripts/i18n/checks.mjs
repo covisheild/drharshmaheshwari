@@ -12,7 +12,8 @@ const strip = (s, english = true) => (english ? s : s.replace(/<span lang="en">[
   .replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ');
 
 // Nukta, chandrabindu and anusvara spellings vary (ज़/ज, आँ/आं): compare without them.
-const fold = (s) => s.normalize('NFC').replace(/़/g, '').replace(/ँ/g, 'ं').toLowerCase();
+// The dot below letters (nukta: Devanagari ़, Gurmukhi ਼) is written both ways in everyday text, so comparisons ignore it.
+const fold = (s) => s.normalize('NFC').replace(/[\u093C\u0A3C]/g, '').replace(/ँ/g, 'ं').toLowerCase();
 
 /** Every number, in order of size, with thousands separators removed. List numbering ("1. ") is not counted. */
 export function numbers(text) {
