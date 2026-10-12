@@ -135,8 +135,10 @@ const kinds = [
 
 <style is:global>
   .sg-page h1 { margin-bottom: 1.25rem; }
-  .sg { margin-top: 1.75rem; }
-  .sg-page .sg-h { margin: 0 0 .5rem .9rem; font: 500 .74rem/1.2 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+  .sg-page .sg { margin-top: 1.75rem; padding-block: 0; } /* not the site's big section spacing */
+  .sg-page .sg-h { margin: 0 0 .5rem; margin-inline-start: .9rem; font: 500 .74rem/1.2 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+  /* Spaced capitals suit Latin letters only: other scripts get the plain text font, unspaced. */
+  html:not([lang|="en"]) .sg-page .sg-h { font: 600 .8rem/1.3 var(--font-body); letter-spacing: 0; }
   .sg-page .sg-list + .sg-h { margin-top: 1.25rem; }
   .sg-list { border-radius: 16px; background: var(--surface); border: 1px solid var(--line); overflow: hidden; }
   .sg-row { display: flex; align-items: center; gap: .85rem; width: 100%; min-height: 58px; padding: .7rem 1rem; margin: 0; border: 0; border-bottom: 1px solid var(--line);
@@ -155,6 +157,7 @@ const kinds = [
   .sg-val { flex: none; font-size: .9rem; color: var(--ink-2); }
   .sg-chev { flex: none; font-size: 1.4rem; line-height: 1; color: var(--ink-3); }
   .sg-note { margin: .5rem .9rem 0; font-size: .82rem; color: var(--ink-2); }
+  .sg-h + .sg-note { margin-bottom: .5rem; margin-top: 0; }
   .sg-note:empty { display: none; }
   /* The switch */
   .sg-sw { flex: none; position: relative; width: 50px; height: 30px; border-radius: 999px; background: var(--line-2); transition: background .2s; }

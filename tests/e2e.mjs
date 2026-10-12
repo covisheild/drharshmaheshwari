@@ -770,8 +770,8 @@ try {
     await page.goto(BASE + BOOK);
     await page.waitForSelector('.rd-front .ofl-remove:not([hidden])');
     await page.click('.rd-front .ofl-remove');
-    await page.waitForFunction(async () => !(await caches.has('pack:book-stats')));
-    check(true, 'Remove deletes the saved book from the device');
+    for (let i = 0; i < 30 && await page.evaluate(() => caches.has('pack:book-stats')); i++) await page.waitForTimeout(300);
+    check(!(await page.evaluate(() => caches.has('pack:book-stats'))), 'Remove deletes the saved book from the device');
     check(errors.length === 0, `no script errors in the app checks (${errors.join(' | ')})`);
     await ctx.close();
   }
@@ -801,7 +801,7 @@ try {
     check(kept.join() === expect.join(), `Settings keep each kind turned on, in English and Hindi (${kept.join()})`);
     check(await overflow(page) <= 0, 'Settings: no sideways scroll at 390px');
     await page.click('[data-keep="evidence"]');
-    await page.waitForFunction(async () => !(await caches.keys()).includes('pack:evidence-en'), null, { timeout: 15000 }).catch(() => {});
+    for (let i = 0; i < 30 && (await packsNow()).includes('pack:evidence-en'); i++) await page.waitForTimeout(500);
     check(!(await packsNow()).includes('pack:evidence-en'), 'turning a kind off removes it from the device');
     await page.click('[data-keep="evidence"]');
     await page.click('[data-theme-set="dark"]');
