@@ -16,13 +16,13 @@ const FONTS = () => [
   { name: 'DM Sans', data: font('@fontsource/dm-sans', 'dm-sans-latin-400-normal.woff'), weight: 400, style: 'normal' },
   { name: 'DM Sans', data: font('@fontsource/dm-sans', 'dm-sans-latin-500-normal.woff'), weight: 500, style: 'normal' },
   // Indian-language pages: satori falls back to these for each script's letters (it shapes the joined letters correctly).
-  ...['devanagari', 'bengali', 'oriya', 'tamil', 'telugu', 'kannada', 'malayalam'].flatMap((script) => [400, 500, 600].map((weight) =>
+  ...['devanagari', 'bengali', 'oriya', 'tamil', 'telugu', 'kannada', 'malayalam', 'gujarati', 'gurmukhi'].flatMap((script) => [400, 500, 600].map((weight) =>
     ({ name: `Noto Sans ${script}`, data: font(`@fontsource/noto-sans-${script}`, `noto-sans-${script}-${script}-${weight}-normal.woff`), weight, style: 'normal' }))),
 ];
 // Translated pages (/hi/...): the labels below come from that language's dictionary (src/i18n/<lang>.json), the title and
 // description from the page itself.
-const LANG_DIRS = new Set(['hi', 'mr', 'bn', 'or', 'ta', 'te', 'kn', 'ml', 'ur']);
-const DICTS = Object.fromEntries(['hi', 'mr', 'bn', 'or', 'ta', 'te', 'kn', 'ml', 'ur'].map((l) => [l, JSON.parse(readFileSync(new URL(`../../src/i18n/${l}.json`, import.meta.url), 'utf8'))]));
+const LANG_DIRS = new Set(['hi', 'mr', 'bn', 'or', 'ta', 'te', 'kn', 'ml', 'ur', 'gu', 'pa', 'as']);
+const DICTS = Object.fromEntries(['hi', 'mr', 'bn', 'or', 'ta', 'te', 'kn', 'ml', 'ur', 'gu', 'pa', 'as'].map((l) => [l, JSON.parse(readFileSync(new URL(`../../src/i18n/${l}.json`, import.meta.url), 'utf8'))]));
 
 const SECTION = { blog: 'Blog', learn: 'Guides', books: 'Books', tools: 'Tools', videos: 'Videos', about: 'About', evidence: 'Evidence', trainers: 'Trainers' };
 const MODE = { everyone: 'For Everyone', doctors: 'For Doctors' };

@@ -3,7 +3,7 @@
 // Only For Everyone pages are translated; For Doctors, the books and the calculators stay in English (docs/translation.md).
 // Pure data, no build-time imports: tests import this file directly.
 
-export type Lang = 'en' | 'hi' | 'mr' | 'bn' | 'or' | 'ta' | 'te' | 'kn' | 'ml' | 'ur';
+export type Lang = 'en' | 'hi' | 'mr' | 'bn' | 'or' | 'ta' | 'te' | 'kn' | 'ml' | 'ur' | 'gu' | 'pa' | 'as';
 
 export interface LangInfo {
   code: Lang;
@@ -45,6 +45,10 @@ export const LANGS: LangInfo[] = [
   { code: 'ml', name: 'മലയാളം', short: 'മ', english: 'Malayalam', html: 'ml-IN', og: 'ml_IN', dates: 'ml-IN-u-nu-latn', live: true, checkedBy: 'ai', script: '\\u0D00-\\u0D7F', stop: '.', modeAffix: { text: '', at: 'end' } },
   // Urdu (Harsh, 11 Oct 2026): right to left, Nastaliq. Live 12 Oct 2026 (Harsh).
   { code: 'ur', name: 'اردو', short: 'ار', english: 'Urdu', html: 'ur-IN', og: 'ur_IN', dates: 'ur-IN-u-nu-latn', live: true, checkedBy: 'ai', script: '\\u0600-\\u06FF\\u0750-\\u077F\\uFB50-\\uFDFF\\uFE70-\\uFEFF', stop: '۔', dir: 'rtl', modeAffix: { text: '', at: 'end' } },
+  // Phase 4 (Harsh, 12 Oct 2026): Gujarati, Punjabi (Gurmukhi) and Assamese (Bengali script). Live once every test and check passes.
+  { code: 'gu', name: 'ગુજરાતી', short: 'ગુ', english: 'Gujarati', html: 'gu-IN', og: 'gu_IN', dates: 'gu-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0A80-\\u0AFF', stop: '.', modeAffix: { text: '', at: 'end' } },
+  { code: 'pa', name: 'ਪੰਜਾਬੀ', short: 'ਪੰ', english: 'Punjabi', html: 'pa-IN', og: 'pa_IN', dates: 'pa-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0A00-\\u0A7F', stop: '।', modeAffix: { text: '', at: 'end' } },
+  { code: 'as', name: 'অসমীয়া', short: 'অ', english: 'Assamese', html: 'as-IN', og: 'as_IN', dates: 'as-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0980-\\u09FF', stop: '।', modeAffix: { text: '', at: 'end' } },
 ];
 
 export const LANG = Object.fromEntries(LANGS.map((l) => [l.code, l])) as Record<Lang, LangInfo>;
