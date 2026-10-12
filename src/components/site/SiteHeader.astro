@@ -1,5 +1,6 @@
 ---
-// The floating glass header: photo and name, this audience's pages, the For Everyone / For Doctors switch, language, light/dark, menu.
+// The floating glass header: photo and name, this audience's pages, the For Everyone / For Doctors switch, language,
+// App settings (a gear, only inside the installed app, which has no browser menu), light/dark, menu.
 import { SITE } from '../../consts';
 import { MODES, type Mode } from '../../lib/modes';
 import Avatar from '../Avatar.astro';
@@ -31,6 +32,9 @@ const current = (href: string) => (href === home ? path === href : path.startsWi
     </ul>
     <ModeSwitch mode={mode} />
     {mode === 'everyone' && <LangSwitch />}
+    <a class="app-gear" href={localHref(lang, '/app/settings/')} aria-label={t('App settings')} title={t('App settings')}>
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+    </a>
     <ThemeToggle />
     <button class="menu-btn" aria-label={t('Menu')} aria-expanded="false" aria-controls="nav-links"><span></span></button>
   </nav>
@@ -40,3 +44,10 @@ const current = (href: string) => (href === home ? path === href : path.startsWi
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>
   </a>
 )}
+
+<style is:global>
+  /* Only inside the installed app (a browser tab reaches App settings from the footer). */
+  .app-gear { display: none; width: 38px; height: 38px; align-items: center; justify-content: center; border-radius: 50%; color: var(--ink); }
+  .app-gear:hover { color: var(--brand); }
+  @media (display-mode: standalone) { .app-gear { display: inline-flex; } }
+</style>

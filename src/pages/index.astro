@@ -2,6 +2,7 @@
 // For Everyone home. Centred hero with a light beam and dust, a picture of the calculator (its fields link into the real one),
 // big cards for what is on the site (guides, tools, blog, For Doctors), and a closing section. Everything shown comes from the site's own content.
 // Also the home page of each translated language (/hi/, src/pages/[lang]/index.astro): every word goes through the dictionary.
+import InstallApp from '../components/InstallApp.astro';
 import Base from '../layouts/Base.astro';
 import T from '../components/T.astro';
 import { TOOLS } from '../data/tools';
@@ -112,6 +113,8 @@ const sparkle = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentCo
       </article>
     </div>
   </div></section>
+
+  <section class="app-sec" data-install-section><div class="wrap"><InstallApp /></div></section>
 
   <section class="closer">
     <canvas class="dust" id="dust-closer" data-count="320" data-spread="1" aria-hidden="true"></canvas>

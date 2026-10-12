@@ -730,16 +730,15 @@ try {
     const page = await ctx.newPage();
     const errors = errorsOf(page);
     page.on('dialog', (d) => d.accept());
-    await page.goto(`${BASE}/app/`);
+    await page.goto(`${BASE}/app/settings/`);
     await page.evaluate(() => navigator.serviceWorker.ready);
     const cdp = await ctx.newCDPSession(page);
     const inst = (await cdp.send('Page.getInstallabilityErrors')).installabilityErrors;
     check(inst.length === 0, `the site is installable as an app (${inst.map((e) => e.errorId).join(', ') || 'no errors'})`);
     await page.reload();
     check(await page.evaluate(() => !!navigator.serviceWorker.controller), 'the service worker controls the page after a reload');
-    await page.waitForSelector('#app-packs .ofl:not(.ofl-wait)');
-    check(await page.locator('#app-packs li').count() >= 3, '/app/ lists the books and trainers that can be saved');
-    check(await overflow(page) <= 0, '/app/ has no horizontal overflow at 390px');
+    await page.waitForSelector('#set-packs .ofl:not(.ofl-wait)');
+    check(await page.locator('#set-packs li').count() >= 3, 'App settings list the books and trainers that can be saved');
     const nothing = await page.evaluate(async () => (await caches.keys()).filter((k) => k.startsWith('pack:')).length);
     check(nothing === 0, 'nothing is saved for offline until someone taps Save');
 
@@ -767,6 +766,53 @@ try {
     await page.waitForFunction(async () => !(await caches.has('pack:book-stats')));
     check(true, 'Remove deletes the saved book from the device');
     check(errors.length === 0, `no script errors in the app checks (${errors.join(' | ')})`);
+    await ctx.close();
+  }
+
+  // ---------- The app keeps the light material offline (App settings), recent blog posts only, and installs from the home page ----------
+  {
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    await ctx.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
+    await ctx.route('**/api/me', (r) => r.fulfill({ json: { enabled: true, user: { name: 'Test', email: 't@example.com' } } }));
+    await ctx.route('**/api/trackers**', (r) => r.fulfill({ json: { people: [], readings: [], now: Date.now(), next: 0, more: false } }));
+    const page = await ctx.newPage();
+    const errors = errorsOf(page);
+    const packsNow = () => page.evaluate(async () => (await caches.keys()).filter((k) => k.startsWith('pack:')).sort());
+    await page.goto(`${BASE}/`);
+    await page.evaluate(() => navigator.serviceWorker.ready);
+    await page.waitForTimeout(5500);
+    check((await packsNow()).length === 0, 'a browser tab keeps nothing automatically until App settings say so');
+    await page.click('.app-sec .inst-btn');
+    check(await page.locator('.app-sec .inst-steps:not([hidden])').count() === 1, 'Install on the home page: one tap, then this browser\'s steps where it cannot install by itself');
+    await page.goto(`${BASE}/app/settings/`);
+    await page.waitForSelector('[data-st="essentials"]:not(:empty)');
+    await page.click('[data-set="essentials"]');
+    await page.check('input[name=lang2][value=hi]');
+    await page.click('[data-set="blog"]');
+    await page.waitForFunction(() => /On this device/.test(document.querySelector('[data-st="essentials"]').textContent) && /On this device/.test(document.querySelector('[data-st="blog"]').textContent), null, { timeout: 90000 }).catch(() => {});
+    const kept = await packsNow();
+    check(kept.join() === 'pack:blog-en,pack:blog-hi,pack:core-en,pack:core-hi', `App settings keep guides, calculators, trackers and recent posts in English and Hindi (${kept.join()})`);
+    check(await overflow(page) <= 0, 'App settings: no sideways scroll at 390px');
+    await page.goto(`${BASE}/trackers/`);
+    await page.waitForTimeout(1000);
+    await ctx.setOffline(true);
+    for (const u of ['/tools/bmi-calculator/', '/hi/tools/stop-bang/', '/learn/', '/doctors/', '/blog/interpretation-of-the-world/']) {
+      await page.goto(BASE + u);
+      check(!(await page.title()).startsWith('Offline'), `offline: ${u} opens from the device`);
+    }
+    await page.goto(`${BASE}/trackers/`);
+    await page.waitForTimeout(1000);
+    check(!/Sign in with Google/.test(await page.locator('#tk-app').innerText()), 'offline: the trackers open for the person signed in last');
+    await page.goto(`${BASE}/hi/videos/`);
+    check((await page.title()).startsWith('ऑफ़लाइन'), 'offline: videos need the internet (Hindi offline page)');
+    await ctx.setOffline(false);
+    // Nine months on, the post is older than 6 months: it leaves the device.
+    await page.clock.install({ time: new Date(Date.now() + 270 * 864e5) });
+    await page.goto(`${BASE}/`);
+    await page.waitForTimeout(7000);
+    const posts = await page.evaluate(async () => (await (await caches.open('pack:blog-en')).keys()).map((r) => new URL(r.url).pathname).filter((x) => /^\/blog\/[^/]+\/$/.test(x)));
+    check(posts.length === 0, `blog posts older than 6 months are removed from the device (${posts.join() || 'none left'})`);
+    check(errors.length === 0, `no script errors in the offline-material checks (${errors.join(' | ')})`);
     await ctx.close();
   }
 

@@ -18,7 +18,7 @@ export const isBuilt = (lang: Lang) => builtLangs().some((l) => l.code === lang)
 export const langPaths = () => otherLangs().map((l) => ({ params: { lang: l.code } }));
 
 /** English pages that every built language also has (their words come from the dictionary). */
-export const LOCAL_PAGES = ['/', '/learn/', '/blog/', '/tools/', '/tools/bmi-calculator/', '/tools/activity-check/', '/tools/indian-diabetes-risk-score/', '/tools/stop-bang/', '/trackers/', '/trackers/person/', '/books/', '/videos/', '/about/', '/disclaimer/', '/privacy/', '/support/'];
+export const LOCAL_PAGES = ['/', '/learn/', '/blog/', '/tools/', '/tools/bmi-calculator/', '/tools/activity-check/', '/tools/indian-diabetes-risk-score/', '/tools/stop-bang/', '/trackers/', '/trackers/person/', '/books/', '/videos/', '/about/', '/disclaimer/', '/privacy/', '/support/', '/app/', '/app/settings/', '/offline/'];
 
 const TRANSLATED = new Set(Object.keys(import.meta.glob('/src/content/i18n/*/*/*.md')).map((k) => {
   const [, , , , lang, coll, file] = k.split('/');

@@ -1,5 +1,6 @@
 ---
 // For Doctors home: the same look as For Everyone, with a picture of the Auscultation Trainer in place of the calculator.
+import InstallApp from '../../components/InstallApp.astro';
 import Base from '../../layouts/Base.astro';
 import { articles, SECTION, fmtDate } from '../../lib/content';
 import { TOOLS } from '../../data/tools';
@@ -84,6 +85,8 @@ const side = [['Home', '', '<path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a
       </article>
     </div>
   </div></section>
+
+  <section class="app-sec" data-install-section><div class="wrap"><InstallApp /></div></section>
 
   <section class="closer">
     <canvas class="dust" data-count="320" data-spread="1" aria-hidden="true"></canvas>

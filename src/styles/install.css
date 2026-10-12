@@ -1,0 +1,14 @@
+/* "Install the app" (src/components/InstallApp.astro). */
+.inst-card { display: flex; gap: 1.25rem; align-items: flex-start; padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--line-2); border-radius: 22px; background: var(--surface); }
+.inst-icon { flex: none; width: 72px; height: 72px; border-radius: 18px; }
+.inst-body { min-width: 0; }
+.inst-card h2 { margin: 0 0 .35rem; font-size: clamp(1.35rem, 3vw, 1.75rem); }
+.inst-lead { margin: 0 0 1rem; color: var(--ink-2); max-width: 52ch; }
+.inst-row { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; }
+.inst-more { font-size: .95rem; }
+.inst-steps { margin-top: 1rem; padding: .9rem 1.1rem; border-radius: 14px; background: var(--brand-soft); max-width: 60ch; }
+.inst-steps p, .inst-steps ol { margin: 0; }
+.inst-steps ol { margin-top: .4rem; padding-left: 1.3rem; }
+.inst-share { vertical-align: -3px; }
+.app-sec { margin-top: clamp(2.5rem, 6vw, 4rem); }
+@media (max-width: 520px) { .inst-card { flex-direction: column; } .inst-icon { width: 60px; height: 60px; border-radius: 15px; } }

@@ -30,7 +30,7 @@ export default function pwa({ build, kill = false }) {
         await icons(root);
         const files = walk(root);
         const packs = writePacks(root, files, build);
-        const shell = ['/offline/', '/manifest.webmanifest', '/favicon.svg', '/icons/icon-192.png', '/icons/icon-512.png'];
+        const shell = ['/offline/', ...[...files.keys()].filter((u) => /^\/[a-z]{2}\/offline\/$/.test(u)), '/manifest.webmanifest', '/favicon.svg', '/icons/icon-192.png', '/icons/icon-512.png'];
         const shellAll = [...new Set(shell.flatMap((u) => [u, ...deps(root, files, u)]))];
         const sw = kill ? KILL : readFileSync(SW, 'utf8').replace("'__BUILD__'", JSON.stringify(build)).replace('__SHELL__', JSON.stringify(shellAll));
         writeFileSync(join(root, 'sw.js'), sw);
@@ -164,8 +164,55 @@ function writePacks(root, files, build) {
     writeFileSync(join(root, 'offline', 'packs', `${d.id}.json`), JSON.stringify({ id: d.id, title: d.title, kind: d.kind, open: d.root, build, files: list }));
     index.push({ id: d.id, title: d.title, kind: d.kind, open: d.root, bytes, count: list.length, approx: remote.size > 0 });
   }
+  index.push(...autoPacks(root, files, build, [...decl.values()].map((d) => d.root)));
   writeFileSync(join(root, 'offline', 'packs.json'), JSON.stringify({ build, packs: index }));
   return index;
+}
+
+// ---------- automatic packs: the light material, kept by the app without asking (src/pwa/auto.ts, App settings) ----------
+// core-<lang>: every page in that language except what is optional or needs the network: the books in the reader and the
+// trainers (their own packs, saved only on request), videos (online only), blog posts (below), the account page, a
+// doctor's shared tracker view, and the offline page itself (already in the worker's shell).
+// blog-<lang>: each blog post with its publication date (d); the device keeps only the last 6 months (auto.ts).
+const NOT_AUTO = [/\/videos\//, /^(\/[a-z]{2})?\/offline\/$/, /^\/account\/$/, /\/trackers\/view\//, /^\/404\.html$/, /^\/api\//];
+const BLOG_POST = /^(\/[a-z]{2})?\/blog\/[^/]+\/$/;
+const langOfPath = (u) => (u.match(/^\/([a-z]{2})\//) ?? [])[1] ?? 'en';
+
+function autoPacks(root, files, build, optionalRoots) {
+  const pages = [...files.keys()].filter((u) => u.endsWith('/') && !NOT_AUTO.some((r) => r.test(u)) && !optionalRoots.some((r) => u.startsWith(r)));
+  const langs = [...new Set(pages.map(langOfPath))].sort((a, b) => (a === 'en' ? -1 : b === 'en' ? 1 : a.localeCompare(b)));
+  const out = [];
+  const entry = (u, d) => { const f = files.get(u); return { u, h: hash(f), b: statSync(f).size, ...(d ? { d } : {}) }; };
+  const write = (id, kind, lang, open, list) => {
+    const bytes = list.reduce((a, f) => a + f.b, 0);
+    const title = kind === 'core' ? 'Guides, calculators and trackers' : 'Blog posts from the last 6 months';
+    writeFileSync(join(root, 'offline', 'packs', `${id}.json`), JSON.stringify({ id, title, kind, lang, open, build, files: list }));
+    out.push({ id, title, kind, lang, open, bytes, count: list.length, approx: false });
+  };
+  for (const lang of langs) {
+    const mine = pages.filter((u) => langOfPath(u) === lang);
+    const home = lang === 'en' ? '/' : `/${lang}/`;
+    // Core: the pages and everything they load.
+    const core = new Set();
+    for (const u of mine.filter((x) => !BLOG_POST.test(x))) { core.add(u); for (const x of deps(root, files, u)) core.add(x); }
+    write(`core-${lang}`, 'core', lang, home, [...core].sort().map((u) => entry(u)));
+    // Blog: each post dated; its own pictures share its date, shared scripts and fonts have none (always kept).
+    const posts = mine.filter((x) => BLOG_POST.test(x));
+    if (!posts.length) continue;
+    const dated = new Map();
+    for (const u of posts) {
+      const html = readFileSync(files.get(u), 'utf8');
+      const d = (html.match(/"datePublished":"(\d{4}-\d{2}-\d{2})/) ?? [])[1];
+      if (!d) throw new Error(`blog post ${u} has no datePublished`);
+      dated.set(u, d);
+      for (const x of deps(root, files, u)) {
+        if (/^\/(_astro|fonts|icons)\//.test(x)) { if (!dated.has(x)) dated.set(x, ''); }
+        else if ((dated.get(x) ?? '') < d) dated.set(x, d); // a picture shared by two posts lives as long as the newer
+      }
+    }
+    write(`blog-${lang}`, 'blog', lang, lang === 'en' ? '/blog/' : `/${lang}/blog/`, [...dated].sort().map(([u, d]) => entry(u, d)));
+  }
+  return out;
 }
 
 // Emergency switch (astro.config.mjs: pwa({ kill: true })): replaces the app's worker on every device with one that

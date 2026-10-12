@@ -3,17 +3,35 @@
 // reports "off" and the trainers keep progress in the browser.
 
 export interface AccountUser { name: string | null; email: string; picture?: string | null }
-export interface Account { enabled: boolean; user: AccountUser | null }
+export interface Account { enabled: boolean; user: AccountUser | null; offline?: boolean }
 
 const OWNER_KEY = 'account:owner'; // whose progress this browser's trainer copies belong to
 
 let current: Promise<Account> | null = null;
 
+const LAST_KEY = 'account:last'; // who was signed in when /api/me last answered: lets the app work offline (trackers)
+
+function remembered(): Account {
+  try {
+    const user = JSON.parse(localStorage.getItem(LAST_KEY) ?? 'null') as AccountUser | null;
+    if (user?.email) return { enabled: true, user, offline: true };
+  } catch { /* storage unavailable */ }
+  return { enabled: false, user: null };
+}
+
+/** The signed-in person. With no network (the app offline), the person who was signed in last on this device, marked
+ *  `offline`: their saved copies (tracker readings, progress) open and new changes wait in the outbox until back online. */
 export function account(): Promise<Account> {
   current ??= fetch('/api/me', { credentials: 'same-origin', headers: { accept: 'application/json' } })
-    .then((r) => (r.ok ? r.json() : { enabled: false, user: null }))
-    .then((a: Account) => ({ enabled: !!a.enabled, user: a.user ?? null }))
-    .catch(() => ({ enabled: false, user: null }));
+    .then(async (r) => {
+      if (!r.ok) return { enabled: false, user: null };
+      const a = (await r.json()) as Account;
+      const out = { enabled: !!a.enabled, user: a.user ?? null };
+      // Only a real answer changes who is remembered (a server error says nothing about who is signed in).
+      try { if (out.user) localStorage.setItem(LAST_KEY, JSON.stringify(out.user)); else localStorage.removeItem(LAST_KEY); } catch { /* storage unavailable */ }
+      return out;
+    })
+    .catch(() => remembered());
   return current;
 }
 
@@ -27,6 +45,7 @@ export function clearLocalProgress() {
   try {
     for (const k of Object.keys(localStorage)) if (k.startsWith('trainer:') || k.startsWith('book:') || k.startsWith('tracker:')) localStorage.removeItem(k);
     localStorage.removeItem(OWNER_KEY);
+    localStorage.removeItem(LAST_KEY);
   } catch { /* storage unavailable */ }
 }
 
