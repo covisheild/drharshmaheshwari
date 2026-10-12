@@ -60,7 +60,7 @@ test('offline packs: one per reader book and per trainer; site files exist with 
   for (const p of packs) {
     const def = JSON.parse(read(`offline/packs/${p.id}.json`));
     assert.equal(def.open, p.open);
-    assert.ok(def.files.some((f) => f.u === p.open), `${p.id} holds its own page`);
+    if (p.kind !== 'blog') assert.ok(def.files.some((f) => f.u === p.open), `${p.id} holds its own page`);
     for (const f of def.files) {
       assert.doesNotMatch(f.u, /\.(pdf|zip)$/i, `${p.id}: ${f.u}`);
       if (f.x) { assert.match(f.u, /^https:\/\/files\.drharshmaheshwari\.com\//); continue; }
@@ -90,4 +90,36 @@ test('a book in the reader and a trainer home offer Save for offline; other page
   assert.match(read('doctors/trainers/auscultation/index.html'), /data-offline-pack="trainer-auscultation"/);
   assert.doesNotMatch(read('doctors/trainers/auscultation/practice/index.html'), /data-offline-pack=/);
   assert.doesNotMatch(read('index.html'), /data-offline-pack=/);
+});
+
+test('automatic packs: the light pages in each language, recent blog posts dated, nothing optional or online-only', () => {
+  const { packs } = JSON.parse(read('offline/packs.json'));
+  const ids = packs.map((p) => p.id);
+  for (const id of ['core-en', 'core-hi', 'blog-en', 'blog-hi']) assert.ok(ids.includes(id), `${id} missing (${ids.join()})`);
+  const core = JSON.parse(read('offline/packs/core-en.json')).files.map((f) => f.u);
+  for (const u of ['/', '/learn/', '/tools/bmi-calculator/', '/tools/activity-check/', '/tools/stop-bang/', '/tools/indian-diabetes-risk-score/', '/trackers/', '/trackers/person/', '/doctors/', '/app/settings/'])
+    assert.ok(core.includes(u), `core-en lacks ${u}`);
+  for (const u of core) {
+    assert.doesNotMatch(u, /\/videos\/|^\/hi\/|^\/account\/|\/trackers\/view\/|^\/blog\/[^/]+\/$/, `core-en must not hold ${u}`);
+    assert.ok(!u.startsWith('/doctors/books/obesity-expertise/b0/') && !u.startsWith('/doctors/trainers/auscultation/'), `core-en holds an optional pack's page ${u}`);
+  }
+  const hi = JSON.parse(read('offline/packs/core-hi.json')).files.map((f) => f.u);
+  assert.ok(hi.includes('/hi/') && hi.includes('/hi/tools/bmi-calculator/') && hi.includes('/hi/trackers/'), 'core-hi has the Hindi pages');
+  assert.ok(hi.every((u) => u.startsWith('/hi/') || /^\/(_astro|fonts|icons)\/|^\/[^/]+\.\w+$/.test(u) || /^\/[a-z-]+\/[^/]+\.(svg|png|webp|jpg)$/.test(u)), 'core-hi holds only Hindi pages and what they load');
+  const blog = JSON.parse(read('offline/packs/blog-en.json')).files;
+  const posts = blog.filter((f) => /^\/blog\/[^/]+\/$/.test(f.u));
+  assert.ok(posts.length >= 1);
+  for (const f of posts) assert.match(f.d ?? '', /^\d{4}-\d{2}-\d{2}$/, `${f.u} has its publication date`);
+  assert.ok(blog.every((f) => f.d !== undefined || /^\/(_astro|fonts|icons)\//.test(f.u)), 'only shared scripts, styles and fonts go undated');
+  const shell = JSON.parse(read('sw.js').match(/const SHELL = (\[[^\n]*\]);/)[1]);
+  assert.ok(shell.includes('/hi/offline/'), 'the Hindi offline page is in the shell');
+});
+
+test('the 6-month rule: blogCutoff and the date filter keep the last 6 calendar months only', async () => {
+  const { blogCutoff } = await import('../src/pwa/auto.ts');
+  assert.equal(blogCutoff(new Date('2026-10-12T10:00:00')), '2026-04-12');
+  assert.equal(blogCutoff(new Date('2027-01-31T10:00:00')), '2026-07-31');
+  const keep = (d, now) => d >= blogCutoff(new Date(now));
+  assert.ok(keep('2026-04-12', '2026-10-12T10:00:00'), 'exactly 6 months old is kept');
+  assert.ok(!keep('2026-04-11', '2026-10-12T10:00:00'), 'older is removed');
 });

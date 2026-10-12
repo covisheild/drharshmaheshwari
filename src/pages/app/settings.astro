@@ -1,0 +1,191 @@
+---
+// App settings: this device's choices for the app (src/pwa/settings.ts), as toggles. Also /<lang>/app/settings/.
+// Linked from every footer, from /app/, and from the gear in the header inside the installed app. New app features add
+// their setting to settings.ts and a row here.
+//   Works without internet: guides, calculators and trackers; blog posts from the last 6 months; the second language
+//   (auto.ts keeps them). Books and trainers: Save for offline, one at a time (packs.ts). Storage: what is kept, remove all.
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import ClientWords from '../../components/ClientWords.astro';
+import { useT } from '../../i18n/t';
+import { otherLangs } from '../../i18n/routes';
+import '../../styles/offline.css';
+
+const t = useT(Astro.url.pathname);
+const langs = otherLangs();
+const sw = (key: string, label: string, help: string) => ({ key, label, help });
+const toggles = [
+  sw('essentials', t('Guides, calculators and trackers'), t('Kept on this device, so they open without internet.')),
+  sw('blog', t('Blog posts from the last 6 months'), t('Older posts are removed from the device and open when you are online.')),
+];
+---
+<Base title={t('App settings')} description={t('Choose what the DrHM app keeps on this device to use without internet, and how much space it uses.')} noindex>
+  <div class="prose-wrap prose set" style="padding-block:3rem 4rem" id="set" data-langs={langs.map((l) => l.code).join(',')}>
+    <h1>{t('App settings')}</h1>
+    <p class="muted">{t('These choices are for this device only. Nothing about them is sent anywhere.')}</p>
+
+    <section aria-labelledby="set-offline">
+      <h2 id="set-offline">{t('Works without internet')}</h2>
+      <p class="set-unsupported" hidden>{t('This browser cannot keep pages for use without internet. Chrome, Edge, Firefox and Safari can.')}</p>
+      <div class="set-list" data-needs-support>
+        {toggles.map((s) => (
+          <div class="set-row">
+            <div class="set-text"><span class="set-label" id={`lbl-${s.key}`}>{s.label}</span><span class="set-help">{s.help}</span><span class="set-st" data-st={s.key} aria-live="polite"></span></div>
+            <button type="button" role="switch" class="set-sw" data-set={s.key} aria-checked="false" aria-labelledby={`lbl-${s.key}`}><span class="set-knob"></span></button>
+          </div>
+        ))}
+        <fieldset class="set-row set-lang">
+          <legend class="set-label">{t('Second language kept offline')}</legend>
+          <span class="set-help">{t('English is always kept. Choose one more language.')}</span>
+          <div class="set-seg">
+            <label><input type="radio" name="lang2" value="none" /> <span>{t('English only')}</span></label>
+            {langs.map((l) => <label><input type="radio" name="lang2" value={l.code} /> <span lang={l.html}>{l.name}</span></label>)}
+          </div>
+        </fieldset>
+        <p class="set-note" data-browser-note hidden>{t('In the installed app these are on until you turn them off. In a browser tab they start off.')}</p>
+        <div class="set-actions"><button type="button" class="btn btn-ghost" data-update>{t('Update now')}</button><span class="set-st" data-sync aria-live="polite"></span></div>
+        <p class="set-note"><T><b>Videos</b> need internet.</T> <T>Tracker readings you add without internet are saved on the device and reach your account when you are back online.</T></p>
+      </div>
+    </section>
+
+    <section aria-labelledby="set-books" data-needs-support>
+      <h2 id="set-books">{t('Books and trainers')}</h2>
+      <p>{t('Kept only when you choose: tap Save for offline on the ones you want.')}</p>
+      <div id="set-packs"><p class="muted">{t('Loading…')}</p></div>
+    </section>
+
+    <section aria-labelledby="set-storage" data-needs-support>
+      <h2 id="set-storage">{t('Storage')}</h2>
+      <p id="set-usage" class="muted"></p>
+      <button type="button" class="set-danger" data-clear>{t('Remove everything kept offline')}</button>
+    </section>
+    <noscript><p>{t('App settings need JavaScript.')}</p></noscript>
+  </div>
+  <ClientWords sources={['/src/pages/app/settings.astro', '/src/pwa/ui.ts']} />
+</Base>
+
+<style is:global>
+  .set-list { display: grid; gap: .75rem; margin-top: 1rem; }
+  .set-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 14px; margin: 0; }
+  .set-text { display: grid; gap: .2rem; min-width: 0; }
+  .set-label { font-weight: 600; color: var(--ink); padding: 0; }
+  .set-help, .set-st { font-size: .85rem; color: var(--ink-2); }
+  .set-st:empty { display: none; }
+  .set-sw { flex: none; position: relative; width: 52px; height: 30px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface-2, var(--line)); cursor: pointer; padding: 0; }
+  .set-sw .set-knob { position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: var(--ink-3); transition: transform .2s, background .2s; }
+  .set-sw[aria-checked="true"] { background: var(--brand-fill); border-color: var(--brand-fill); }
+  .set-sw[aria-checked="true"] .set-knob { transform: translateX(22px); background: var(--brand-ink); }
+  .set-sw:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+  .set-lang { display: grid; justify-content: stretch; gap: .35rem; }
+  .set-lang legend { float: left; width: 100%; }
+  .set-seg { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: .35rem; }
+  .set-seg label { display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; }
+  .set-note { font-size: .85rem; color: var(--ink-2); margin: .25rem 0 0; }
+  .set-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; }
+  .set-danger { border: 0; background: none; padding: 0; font: inherit; color: var(--risk); text-decoration: underline; cursor: pointer; }
+  .set-packs { list-style: none; padding: 0 !important; margin: 1rem 0; display: grid; gap: .75rem; }
+  .set-packs li { margin: 0 !important; padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 14px; }
+  .set-packs .ofl { margin-top: .6rem; }
+  @media (prefers-reduced-motion: reduce) { .set-sw .set-knob { transition: none; } }
+</style>
+
+<script>
+  import { getSettings, setSetting, standalone, isChosen, type AppSettings } from '../../pwa/settings';
+  import { autoSync, wantedPacks } from '../../pwa/auto';
+  import { formatBytes, packIndex, savedPacks, supported, type PackSummary } from '../../pwa/packs';
+  import { offlineSaveHtml } from '../../pwa/markup';
+  import { mountOfflineSave } from '../../pwa/ui';
+  import { w } from '../../i18n/client';
+  // Also shown by offlineSaveHtml(): w('Remove')
+
+  const root = document.getElementById('set')!;
+  const langs = (root.dataset.langs ?? '').split(',').filter(Boolean);
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  const $ = <T extends Element>(sel: string) => root.querySelector<T>(sel)!;
+
+  if (!supported()) {
+    $<HTMLElement>('.set-unsupported').hidden = false;
+    root.querySelectorAll<HTMLElement>('[data-needs-support]').forEach((el) => { el.hidden = true; });
+  } else {
+    let index: PackSummary[] = [];
+    let busy = false, again = false;
+    const progress: Record<string, number> = {};
+
+    const draw = async () => {
+      const s = getSettings(langs);
+      root.querySelectorAll<HTMLButtonElement>('[data-set]').forEach((b) => b.setAttribute('aria-checked', String(!!s[b.dataset.set as 'essentials' | 'blog'])));
+      root.querySelectorAll<HTMLInputElement>('input[name="lang2"]').forEach((r) => { r.checked = r.value === s.lang2; });
+      $<HTMLElement>('[data-browser-note]').hidden = standalone() || isChosen('essentials') || isChosen('blog');
+      const saved = await savedPacks();
+      const want = wantedPacks(index, s);
+      for (const kind of ['core', 'blog'] as const) {
+        const st = $<HTMLElement>(`[data-st="${kind === 'core' ? 'essentials' : 'blog'}"]`);
+        const on = kind === 'core' ? s.essentials : s.blog;
+        const mine = want.filter((p) => p.kind === kind);
+        const all = index.filter((p) => p.kind === kind && (p.lang === 'en' || p.lang === s.lang2));
+        const kept = saved.filter((p) => p.kind === kind && p.done);
+        const pc = mine.map((p) => progress[p.id]).filter((x) => x !== undefined);
+        if (!on) st.textContent = all.length ? w('Off. About {size} when on.', { size: formatBytes(all.reduce((a, p) => a + p.bytes, 0)) }) : w('Off.');
+        else if (pc.length) st.textContent = w('Downloading… {percent}%', { percent: String(Math.min(...pc)) });
+        else if (mine.length && mine.every((p) => kept.some((k) => k.id === p.id))) st.textContent = w('On this device: {size}.', { size: formatBytes(kept.filter((k) => mine.some((p) => p.id === k.id)).reduce((a, p) => a + p.bytes, 0)) });
+        else st.textContent = navigator.onLine ? w('Will download in a moment.') : w('Will download when you are online.');
+      }
+      const est = await navigator.storage?.estimate?.().catch(() => null);
+      $<HTMLElement>('#set-usage').textContent = est?.usage != null ? w('This site uses {size} on this device in all.', { size: formatBytes(est.usage) }) : '';
+    };
+
+    const sync = async (force = false) => {
+      const msg = $<HTMLElement>('[data-sync]');
+      if (!navigator.onLine) { msg.textContent = w('You are offline. Changes apply when you are back online.'); return; }
+      // A change made while a download runs is applied as soon as it ends.
+      if (busy) { again = true; return; }
+      busy = true;
+      msg.textContent = '';
+      try {
+        await autoSync({ force, progress: (id, d, t) => { progress[id] = t ? Math.min(99, Math.round((d / t) * 100)) : 0; void draw(); } });
+        msg.textContent = w('Up to date.');
+      } catch {
+        msg.textContent = w('Could not finish: check your connection and try again.');
+      } finally {
+        busy = false;
+        for (const k of Object.keys(progress)) delete progress[k];
+        await draw();
+      }
+      if (again) { again = false; await sync(); }
+    };
+
+    root.querySelectorAll<HTMLButtonElement>('[data-set]').forEach((b) => b.addEventListener('click', () => {
+      const k = b.dataset.set as 'essentials' | 'blog';
+      setSetting(k, !getSettings(langs)[k]);
+      void draw().then(() => sync());
+    }));
+    root.querySelectorAll<HTMLInputElement>('input[name="lang2"]').forEach((r) => r.addEventListener('change', () => {
+      setSetting('lang2', r.value as AppSettings['lang2']);
+      void draw().then(() => sync());
+    }));
+    $<HTMLButtonElement>('[data-update]').addEventListener('click', () => { void sync(true); });
+    $<HTMLButtonElement>('[data-clear]').addEventListener('click', async () => {
+      if (!confirm(w('Remove everything this site keeps on this device for offline use? Books and trainers you saved are removed too, and automatic keeping is turned off. Your reading places and tracker readings stay.'))) return;
+      setSetting('essentials', false);
+      setSetting('blog', false);
+      for (const k of await caches.keys()) await caches.delete(k);
+      location.reload();
+    });
+
+    try {
+      index = (await packIndex()).packs;
+      const list = $<HTMLElement>('#set-packs');
+      const kinds: [string, string][] = [['book', w('Books')], ['trainer', w('Trainers')]];
+      list.innerHTML = kinds.map(([k, label]) => {
+        const ps = index.filter((p) => p.kind === k);
+        return ps.length ? `<h3>${label}</h3><ul class="set-packs">${ps.map((p) => `<li><a href="${esc(p.open)}" lang="en">${esc(p.title)}</a>${offlineSaveHtml({ id: p.id, title: p.title, root: p.open, kind: p.kind }, w)}</li>`).join('')}</ul>` : '';
+      }).join('');
+      mountOfflineSave(list);
+      list.addEventListener('click', () => setTimeout(draw, 1500));
+    } catch {
+      $<HTMLElement>('#set-packs').innerHTML = `<p>${w('The list did not load. Check your internet connection and reload the page.')}</p>`;
+    }
+    await draw();
+    addEventListener('drhm:settings', () => { void draw(); });
+  }
+</script>

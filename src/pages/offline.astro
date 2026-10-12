@@ -1,49 +1,57 @@
 ---
-// Shown by the app's service worker (scripts/pwa/sw.js) when there is no internet and the page asked for is not on
-// this device. Lists what is: books and trainers saved for offline, and pages opened recently. Not in the sitemap.
-// Also /<lang>/offline/ (the service worker shows the English one).
+// Shown by the app's service worker (scripts/pwa/sw.js) when there is no internet and the page asked for is not on this
+// device; also /<lang>/offline/ for pages in that language. Lists what is on the device. Not in the sitemap.
 import Base from '../layouts/Base.astro';
 import T from '../components/T.astro';
 import ClientWords from '../components/ClientWords.astro';
-import { langOf } from '../i18n/languages';
-import { localHref } from '../i18n/routes';
 import { useT } from '../i18n/t';
-const t = useT(Astro.url.pathname);
-const L = (href: string) => localHref(langOf(Astro.url.pathname), href);
+import { localHref } from '../i18n/routes';
+import { langOf } from '../i18n/languages';
+
+const path = Astro.url.pathname;
+const t = useT(path);
+const L = (href: string) => localHref(langOf(path), href);
 ---
-<Base title={t('Offline')} description={t('You are offline. Books and trainers saved for offline, and pages you opened recently, still work.')} noindex>
-  <ClientWords sources={['/src/pages/offline.astro']} />
+<Base title={t('Offline')} description={t('You are offline. What this device keeps still works: guides, calculators, trackers, recent blog posts, and the books and trainers you saved.')} noindex>
   <div class="prose-wrap prose" style="padding-block:3rem 4rem">
     <h1>{t('You are offline')}</h1>
     <p>{t('This page is not on this device yet. These are, and work without internet:')}</p>
-    <h2>{t('Saved for offline')}</h2>
-    <div id="off-saved"><p class="muted"><T>Nothing saved yet. Open a book or trainer when you are online and tap <b>Save for offline</b>.</T></p></div>
+    <div id="off-saved"><p class="muted">{t('Nothing is kept on this device yet.')}</p></div>
     <h2>{t('Pages you opened recently')}</h2>
     <div id="off-recent"><p class="muted">{t('None yet.')}</p></div>
-    <p style="margin-top:2rem"><a class="btn btn-ghost" href="" id="off-retry">{t('Try again')}</a> <a class="btn btn-ghost" href={L('/app/') + '#offline'}>{t('Manage saved books and trainers')}</a></p>
+    <p class="muted small"><T><b>Videos</b> need internet.</T></p>
+    <p style="margin-top:2rem"><a class="btn btn-ghost" href="" id="off-retry">{t('Try again')}</a> <a class="btn btn-ghost" href={L('/app/settings/')}>{t('App settings')}</a></p>
   </div>
+  <ClientWords sources={['/src/pages/offline.astro']} />
 </Base>
 
 <script>
   import { savedPacks } from '../pwa/packs';
+  import { LANG, type Lang } from '../i18n/languages';
   import { w } from '../i18n/client';
 
   const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
-  const retry = document.getElementById('off-retry') as HTMLAnchorElement;
-  retry.href = location.href;
+  (document.getElementById('off-retry') as HTMLAnchorElement).href = location.href;
+  const langOfPack = (id: string) => (id.match(/-([a-z]{2})$/)?.[1] ?? 'en') as Lang;
+  const name = (p: { id: string; kind: string; title: string }) => {
+    const lang = LANG[langOfPack(p.id)];
+    if (p.kind === 'core') return `${w('Guides, calculators and trackers')} · <span lang="${lang.html}">${lang.name}</span>`;
+    if (p.kind === 'blog') return `${w('Blog posts from the last 6 months')} · <span lang="${lang.html}">${lang.name}</span>`;
+    return `<span lang="en">${esc(p.title)}</span>`;
+  };
 
   if ('caches' in window) {
     const saved = await savedPacks().catch(() => []);
     if (saved.length) {
       document.getElementById('off-saved')!.innerHTML = `<ul>${saved.map((p) =>
-        `<li><a href="${esc(p.open)}">${esc(p.title)}</a>${p.done ? '' : ` <span class="muted small">${w('(partly saved)')}</span>`}</li>`).join('')}</ul>`;
+        `<li><a href="${esc(p.open)}">${name(p)}</a>${p.done ? '' : ` <span class="muted small">${w('(partly saved)')}</span>`}</li>`).join('')}</ul>`;
     }
     const pages = await caches.open('pages');
     const keys = [...(await pages.keys())].reverse().filter((r) => !/\/offline\/$/.test(new URL(r.url).pathname)).slice(0, 20);
     const items: string[] = [];
     for (const k of keys) {
-      const text = await (await pages.match(k))?.text() ?? '';
-      const title = (text.match(/<title>([^<]*)<\/title>/)?.[1] ?? new URL(k.url).pathname).replace(/\s*·\s*Dr\. Harsh Maheshwari$/, '');
+      const text = (await (await pages.match(k))?.text()) ?? '';
+      const title = (text.match(/<title>([^<]*)<\/title>/)?.[1] ?? esc(new URL(k.url).pathname)).replace(/\s*·\s*[^·]*$/, '');
       items.push(`<li><a href="${esc(new URL(k.url).pathname)}">${title}</a></li>`);
     }
     if (items.length) document.getElementById('off-recent')!.innerHTML = `<ul>${items.join('')}</ul>`;

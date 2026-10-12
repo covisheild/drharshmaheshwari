@@ -8,6 +8,8 @@
 // - /api/ (sign-in, sync) is never touched or cached.
 // - Books, figures and trainer audio are never downloaded here. They are kept only when someone taps "Save for
 //   offline" (src/pwa/packs.ts, one cache per book or trainer); this file only reads those caches.
+// - Guides, calculators, trackers and recent blog posts are kept by the app itself (src/pwa/auto.ts, App settings), also
+//   in a cache per pack; this file only reads them.
 // - With no network and no kept copy: the offline page, which lists what is saved on the device.
 
 const BUILD = '__BUILD__';
@@ -80,7 +82,10 @@ async function page(e) {
   try {
     return await Promise.race([net, slow]);
   } catch {
-    return (await kept) || (await caches.match('/offline/', { cacheName: SHELL_CACHE })) || Response.error();
+    // The offline page in the page's language (/hi/... -> /hi/offline/), else English.
+    const lang = (new URL(req.url).pathname.match(/^\/([a-z]{2})\//) ?? [])[1];
+    return (await kept) || (lang && (await caches.match(`/${lang}/offline/`, { cacheName: SHELL_CACHE })))
+      || (await caches.match('/offline/', { cacheName: SHELL_CACHE })) || Response.error();
   }
 }
 

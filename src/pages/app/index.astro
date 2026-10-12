@@ -1,0 +1,46 @@
+---
+// The app: install it, and what works without internet. Also /<lang>/app/. Linked from every footer ("Install the app")
+// and from the Install card on the home pages. Settings live on their own page (/app/settings/).
+import Base from '../../layouts/Base.astro';
+import InstallApp from '../../components/InstallApp.astro';
+import T from '../../components/T.astro';
+import { useT } from '../../i18n/t';
+import { localHref } from '../../i18n/routes';
+import { langOf } from '../../i18n/languages';
+
+const path = Astro.url.pathname;
+const t = useT(path);
+const L = (href: string) => localHref(langOf(path), href);
+---
+<Base title={t('Install the app')} description={t('Install drharshmaheshwari.com as an app on your phone or computer. It updates itself and works without internet; books and trainers can be saved too.')}>
+  <div class="prose-wrap prose" style="padding-block:3rem 4rem">
+    <img class="app-icon" src="/icons/icon-192.png" alt="" width="88" height="88" />
+    <h1>{t('The DrHM app')}</h1>
+    <p><T>This website, as an app: its own icon on your phone or computer, full screen, one tap to open. Because the app is the website, it is always the latest version. There is nothing to update.</T></p>
+    <InstallApp look="plain" />
+    <p class="app-using" hidden><b>{t('You are using the app.')}</b> {t('It updates itself each time it opens with internet.')}</p>
+
+    <h2>{t('What works without internet')}</h2>
+    <ul>
+      <li><T><b>Guides, calculators and trackers:</b> the app keeps them on your device, in English and in your second language.</T></li>
+      <li><T><b>Blog posts from the last 6 months.</b> Older posts are removed from the device and open when you are online.</T></li>
+      <li><T><b>Books and trainers:</b> only the ones you choose, with <b>Save for offline</b>.</T></li>
+      <li><T><b>Videos</b> need internet.</T></li>
+    </ul>
+    <p><T>Tracker readings you add without internet are saved on the device and reach your account when you are back online.</T></p>
+    <p><a class="btn btn-ghost" href={L('/app/settings/')}>{t('App settings')}</a></p>
+
+    <h2>{t('Updates')}</h2>
+    <p><T>Nothing to download or approve. Whenever the app opens with internet it shows the site as it is today, and what it keeps on your device updates itself in the background, downloading only what changed.</T></p>
+  </div>
+</Base>
+
+<style is:global>
+  .app-icon { display: block; width: 88px; height: 88px; border-radius: 22px; margin-bottom: 1rem; }
+  .prose .inst-plain { margin: 1.5rem 0 .5rem; }
+</style>
+
+<script>
+  import { standalone } from '../../pwa/settings';
+  if (standalone()) document.querySelector<HTMLElement>('.app-using')!.hidden = false;
+</script>

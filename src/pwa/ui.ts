@@ -1,9 +1,10 @@
-// The "Save for offline" control (OfflineSave.astro): one per book or trainer, also listed on /app/.
+// The "Save for offline" control (OfflineSave.astro): one per book or trainer, also listed on App settings.
 // Hidden where the browser cannot keep files (no Cache Storage or service worker); everything else is in packs.ts.
 
-import { w } from '../i18n/client';
 import { OutOfSpace, formatBytes, packIndex, packState, removePack, savePack, supported } from './packs';
+import { w } from '../i18n/client';
 
+// Words via w() (src/i18n/client.ts): English on English pages; a translated page lists this file in <ClientWords>.
 const what = (kind: string) => (kind === 'trainer' ? w('Practise without internet, with all the recordings.') : w('Read it without internet.'));
 
 export function mountOfflineSave(scope: ParentNode = document) {
@@ -27,7 +28,6 @@ async function mount(el: HTMLElement) {
     expected = p.bytes; approx = p.approx;
   } catch { /* offline: sizes unknown */ }
   const size = () => (expected ? (approx ? w('About {size}', { size: formatBytes(expected) }) : formatBytes(expected)) : '');
-  remove.textContent = w('Remove');
   let running: AbortController | null = null;
 
   const show = (s: { label: string; icon?: 'down' | 'stop' | 'done'; busy?: boolean; disabled?: boolean; removable?: boolean; percent?: number | null; text: string; done?: boolean }) => {
@@ -44,8 +44,8 @@ async function mount(el: HTMLElement) {
   const idle = async () => {
     const st = await packState(id, expected);
     if (st.saved && st.done) show({ label: w('Saved for offline'), icon: 'done', done: true, removable: true, text: w('{size} on this device. Updates itself.', { size: formatBytes(st.bytes) }) });
-    else if (st.saved) show({ label: w('Continue saving'), removable: true, percent: st.percent, text: w('Partly saved ({percent}%). Continue to finish, or remove it.', { percent: st.percent }) });
-    else show({ label: w('Save for offline'), text: [size(), what(kind)].filter(Boolean).join('. ') });
+    else if (st.saved) show({ label: w('Continue saving'), removable: true, percent: st.percent, text: w('Partly saved ({percent}%). Continue to finish, or remove it.', { percent: String(st.percent) }) });
+    else show({ label: w('Save for offline'), text: size() ? w('{size}. {what}', { size: size(), what: what(kind) }) : what(kind) });
   };
 
   const save = async () => {
@@ -56,7 +56,7 @@ async function mount(el: HTMLElement) {
       await savePack(id, (done, total) => {
         const pc = total ? Math.min(99, Math.round((done / total) * 100)) : 0;
         fill.style.width = `${pc}%`;
-        note.textContent = w('Saving for offline… {percent}%', { percent: pc });
+        note.textContent = w('Saving for offline… {percent}%', { percent: String(pc) });
       }, running.signal);
       running = null;
       await idle();
