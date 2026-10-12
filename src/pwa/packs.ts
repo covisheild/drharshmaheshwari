@@ -11,7 +11,7 @@
 /** u: URL; h: content hash (site files); b: bytes; x: on R2 (saved with CORS); d: date (YYYY-MM-DD) of a dated file (blog posts). */
 export interface PackFile { u: string; h?: string; b: number; x?: 1; d?: string }
 export interface PackDef { id: string; title: string; kind: string; lang?: string; open: string; build: string; files: PackFile[] }
-export interface PackSummary { id: string; title: string; kind: string; lang?: string; open: string; bytes: number; count: number; approx: boolean }
+export interface PackSummary { id: string; title: string; kind: string; group?: string; lang?: string; open: string; bytes: number; count: number; approx: boolean }
 interface Meta { build: string; done: boolean; saved: number; title: string; kind: string; open: string; files: Record<string, [string, number]>; day?: string }
 export interface PackState { saved: boolean; done: boolean; bytes: number; percent: number }
 export interface SavedPack { id: string; title: string; kind: string; open: string; bytes: number; done: boolean; saved: number; build: string; day?: string }

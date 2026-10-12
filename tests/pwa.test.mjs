@@ -151,3 +151,18 @@ test('the 6-month rule: blogCutoff and the date filter keep the last 6 calendar 
   assert.ok(keep('2026-04-12', '2026-10-12T10:00:00'), 'exactly 6 months old is kept');
   assert.ok(!keep('2026-04-11', '2026-10-12T10:00:00'), 'older is removed');
 });
+
+test('Settings: a clean main list of categories; each category with many options is its own screen', () => {
+  for (const f of ['settings/index.html', 'hi/settings/index.html']) {
+    const doc = read(f);
+    const main = doc.match(/<div class="sg-screen" data-screen="main">[\s\S]*?<\/div>\s*<section class="sg-screen"/)[0];
+    for (const k of ['content', 'books', 'trainers', 'storage']) {
+      assert.match(main, new RegExp(`data-open="${k}"`), `${f}: main list has ${k}`);
+      assert.match(doc, new RegExp(`<section class="sg-screen" data-screen="${k}"[^>]*hidden>`), `${f}: ${k} is a screen of its own, closed at first`);
+    }
+    assert.doesNotMatch(main, /data-keep=|data-packs=|id="sg-clear"/, `${f}: switches and storage actions are inside their categories, not on the main list`);
+  }
+  const { packs } = JSON.parse(read('offline/packs.json'));
+  const groups = new Set(packs.filter((p) => p.kind === 'book').map((p) => p.group));
+  assert.ok(groups.has('Obesity Expertise') && groups.size >= 2, `books are grouped by series or shelf (${[...groups]})`);
+});

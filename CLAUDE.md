@@ -61,10 +61,13 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 - **Auto-update**: `scripts/pwa/integration.mjs` writes `/sw.js` (template `scripts/pwa/sw.js`) with a new build id each build; it takes over at once.
   Pages are network first; offline, only what Settings keep is there: **pages just opened are not kept**, and the offline page lists no "recent pages"
   (Harsh, 12 Oct 2026). `/api/` is never touched. Emergency: `pwa({ build, kill: true })` in `astro.config.mjs` unregisters it everywhere.
-- **Settings** `/settings/` (+ every language): a phone-style settings screen (grouped lists, a switch per row, sizes shown). Appearance: theme
-  System / Light / Dark. **Keep on this device**: one switch per kind: Guides, Calculators and tools, Trackers, Blog posts from the last 6 months,
-  Evidence for doctors; Second language. Books and Trainers: one switch each (on = downloaded, off = removed). Storage: used, Update now, Remove
-  everything. App: Install, Version. Choices live in `src/pwa/settings.ts` (device only); a new setting = a field there + a row on the page.
+- **Settings** `/settings/` (+ every language): a phone-style settings screen (grouped lists, a switch per row, sizes shown). **The main list stays
+  short** (Harsh, 12 Oct 2026): Appearance (theme System / Light / Dark, inline), then one row per category with a one-line summary ("3 of 5 on this
+  device · 450 KB") that opens **its own screen** (`#content`, `#books`, `#trainers`, `#storage`; the phone's Back returns): Guides, calculators and more
+  (one switch per kind: Guides, Calculators and tools, Trackers, Blog posts from the last 6 months, Evidence for doctors; Second language), Books
+  (grouped by series or shelf: `<OfflineSave group>`), Trainers (one switch each: on = downloaded, off = removed), Storage (used, Update now, Remove
+  everything); then App: Install, Version. Anything with several options goes in a category screen, never as a long list on the main one.
+  Choices live in `src/pwa/settings.ts` (device only); a new setting = a field there + a row in its category.
 - **What is kept** (Harsh, 12 Oct 2026: the person chooses; light material directly, heavy only on request, videos never):
   - Packs per kind and language, written after the build: `base-<lang>` (home, lists, about, settings: kept whenever any kind is, so the app opens
     offline), `guides-` (`/learn/`), `tools-` (`/tools/`, `/doctors/tools/`), `trackers-`, `evidence-` (`/doctors/evidence/`), `blog-` (each post dated;

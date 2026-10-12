@@ -32,7 +32,7 @@ const jsonld = [{
 const end = `<p>End of the book. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">${book.licence}</a></p>
         <p><a href="${home}">${homeLabel}</a>${shelf ? ' · <a href="/doctors/books/">All books for doctors</a>' : ''} · <a href="${book.pdf}" download>Download the PDF</a>${d.datasets ? ` · <a href="${d.datasets}">Datasets for the R examples</a>` : ''} · <a href="/disclaimer/">Disclaimer</a> · <a href="/support/">Support</a></p>`;
 ---
-<BookReader book={book} title={book.title} description={d.description} jsonld={jsonld} figures={readerFigureBase(book)} date={date}
+<BookReader group={shelf?.title ?? 'Other books'} book={book} title={book.title} description={d.description} jsonld={jsonld} figures={readerFigureBase(book)} date={date}
   eyebrow={`<a href="${home}">${homeLabel}</a>`} heading={book.title}
   barFull={book.title} barShort={short} backHref={home} backLabel={homeLabel} end={end}>
   {d.cover && <img slot="cover" class="rd-cover-img" src={d.cover} alt="" width="180" height="255" />}
