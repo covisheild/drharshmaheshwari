@@ -94,6 +94,6 @@ automated check, a stricter comparison prompt) before publishing any other langu
 |---|---|
 | 1. Machinery + Hindi | Live 11 Oct 2026 (Harsh). Label: "checked" (AI); switches to "checked by the author" once Harsh has read it. |
 | 1b. Calculators in Hindi | Done 11 Oct 2026: BMI, Activity check, IDRS, STOP-Bang, with their results |
-| 2. Marathi, Bengali, Odia, Tamil, Telugu, Kannada, Malayalam (Harsh, 11 Oct 2026) | Translated and through the full pipeline 11-12 Oct 2026 (reports `docs/translation-qa/<code>-2026-10-11.md`). Preview only (`live: false`) until Harsh says. |
-| 3. Urdu (right to left; Harsh, 11 Oct 2026) | Layout mirrored, Nastaliq font, translated and through the pipeline 12 Oct 2026. Preview only. |
-| 4. Gujarati, Punjabi, Assamese | Not started |
+| 2. Marathi, Bengali, Odia, Tamil, Telugu, Kannada, Malayalam (Harsh, 11 Oct 2026) | Translated and through the full pipeline 11-12 Oct 2026 (reports `docs/translation-qa/<code>-2026-10-11.md`). Live 12 Oct 2026 (Harsh). |
+| 3. Urdu (right to left; Harsh, 11 Oct 2026) | Layout mirrored, Nastaliq font, translated and through the pipeline 12 Oct 2026. Live 12 Oct 2026 (Harsh). |
+| 4. Gujarati, Punjabi, Assamese | Started 12 Oct 2026. Harsh: live once every test and check passes. |

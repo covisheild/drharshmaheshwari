@@ -32,8 +32,9 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
   calculators included (`tests/i18n.test.mjs` fails on one without; exceptions: account page, single book pages). For Doctors, books and
   references stay English. Language button in the header (`LangSwitch.astro`). On a Hindi page every link to a page that has a Hindi version
   goes to it (`localHref()`; tested).
-- Hindi is live (Harsh, 11 Oct 2026). Marathi, Bengali, Odia, Tamil, Telugu, Kannada, Malayalam and Urdu (right to left) are built and checked, `live: false`
-  (preview builds only) until Harsh says. A new language starts `live: false`. Urdu: `<html dir="rtl">`; For Everyone styles use logical properties
+- Live: Hindi (Harsh, 11 Oct 2026); Marathi, Bengali, Odia, Tamil, Telugu, Kannada, Malayalam and Urdu (right to left) (Harsh, 12 Oct 2026).
+  A new language starts `live: false` (preview builds only); Harsh's standing instruction (12 Oct 2026) for Gujarati, Punjabi and Assamese:
+  make it live once it passes every test and check of the pipeline. Urdu: `<html dir="rtl">`; For Everyone styles use logical properties
   (`margin-inline-start`...), never `left`/`right`, so the layout mirrors (docs/translation.md).
   Harsh reads Hindi; every other language relies on the AI pipeline only (automated checks + independent back-translation), never on colleagues.
 - Words: `src/i18n/hi.json` (English text → Hindi; `t()` / `<T>` on the page; in a page script `w('Whole sentence with {placeholders}', vars)`

@@ -35,16 +35,16 @@ export interface LangInfo {
 export const LANGS: LangInfo[] = [
   { code: 'en', name: 'English', short: 'EN', english: 'English', html: 'en-IN', og: 'en_IN', dates: 'en-IN', live: true, checkedBy: 'author', script: 'A-Za-z', stop: '.', modeAffix: { text: 'For ', at: 'start' } },
   { code: 'hi', name: 'हिन्दी', short: 'हिं', english: 'Hindi', html: 'hi-IN', og: 'hi_IN', dates: 'hi-IN-u-nu-latn', live: true, checkedBy: 'ai', script: '\\u0900-\\u097F', stop: '।', modeAffix: { text: ' के लिए', at: 'end' } },
-  // Phase 2 (Harsh, 11 Oct 2026): the four South Indian languages, Marathi, Bengali and Odia. Preview only until approved.
-  { code: 'mr', name: 'मराठी', short: 'म', english: 'Marathi', html: 'mr-IN', og: 'mr_IN', dates: 'mr-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0900-\\u097F', stop: '.', modeAffix: { text: '', at: 'end' } },
-  { code: 'bn', name: 'বাংলা', short: 'বা', english: 'Bengali', html: 'bn-IN', og: 'bn_IN', dates: 'bn-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0980-\\u09FF', stop: '।', modeAffix: { text: '', at: 'end' } },
-  { code: 'or', name: 'ଓଡ଼ିଆ', short: 'ଓ', english: 'Odia', html: 'or-IN', og: 'or_IN', dates: 'or-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0B00-\\u0B7F', stop: '।', modeAffix: { text: '', at: 'end' } },
-  { code: 'ta', name: 'தமிழ்', short: 'த', english: 'Tamil', html: 'ta-IN', og: 'ta_IN', dates: 'ta-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0B80-\\u0BFF', stop: '.', modeAffix: { text: '', at: 'end' } },
-  { code: 'te', name: 'తెలుగు', short: 'తె', english: 'Telugu', html: 'te-IN', og: 'te_IN', dates: 'te-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0C00-\\u0C7F', stop: '.', modeAffix: { text: '', at: 'end' } },
-  { code: 'kn', name: 'ಕನ್ನಡ', short: 'ಕ', english: 'Kannada', html: 'kn-IN', og: 'kn_IN', dates: 'kn-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0C80-\\u0CFF', stop: '.', modeAffix: { text: '', at: 'end' } },
-  { code: 'ml', name: 'മലയാളം', short: 'മ', english: 'Malayalam', html: 'ml-IN', og: 'ml_IN', dates: 'ml-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0D00-\\u0D7F', stop: '.', modeAffix: { text: '', at: 'end' } },
-  // Urdu (Harsh, 11 Oct 2026): right to left, Nastaliq. Preview only until approved.
-  { code: 'ur', name: 'اردو', short: 'ار', english: 'Urdu', html: 'ur-IN', og: 'ur_IN', dates: 'ur-IN-u-nu-latn', live: false, checkedBy: 'ai', script: '\\u0600-\\u06FF\\u0750-\\u077F\\uFB50-\\uFDFF\\uFE70-\\uFEFF', stop: '۔', dir: 'rtl', modeAffix: { text: '', at: 'end' } },
+  // Phase 2 (Harsh, 11 Oct 2026): the four South Indian languages, Marathi, Bengali and Odia. Live 12 Oct 2026 (Harsh).
+  { code: 'mr', name: 'मराठी', short: 'म', english: 'Marathi', html: 'mr-IN', og: 'mr_IN', dates: 'mr-IN-u-nu-latn', live: true, checkedBy: 'ai', script: '\\u0900-\\u097F', stop: '.', modeAffix: { text: '', at: 'end' } },
+  { code: 'bn', name: 'বাংলা', short: 'বা', english: 'Bengali', html: 'bn-IN', og: 'bn_IN', dates: 'bn-IN-u-nu-latn', live: true, checkedBy: 'ai', script: '\\u0980-\\u09FF', stop: '।', modeAffix: { text: '', at: 'end' } },
+  { code: 'or', name: 'ଓଡ଼ିଆ', short: 'ଓ', english: 'Odia', html: 'or-IN', og: 'or_IN', dates: 'or-IN-u-nu-latn', live: true, checkedBy: 'ai', script: '\\u0B00-\\u0B7F', stop: '।', modeAffix: { text: '', at: 'end' } },
+  { code: 'ta', name: 'தமிழ்', short: 'த', english: 'Tamil', html: 'ta-IN', og: 'ta_IN', dates: 'ta-IN-u-nu-latn', live: true, checkedBy: 'ai', script: '\\u0B80-\\u0BFF', stop: '.', modeAffix: { text: '', at: 'end' } },
+  { code: 'te', name: 'తెలుగు', short: 'తె', english: 'Telugu', html: 'te-IN', og: 'te_IN', dates: 'te-IN-u-nu-latn', live: true, checkedBy: 'ai', script: '\\u0C00-\\u0C7F', stop: '.', modeAffix: { text: '', at: 'end' } },
+  { code: 'kn', name: 'ಕನ್ನಡ', short: 'ಕ', english: 'Kannada', html: 'kn-IN', og: 'kn_IN', dates: 'kn-IN-u-nu-latn', live: true, checkedBy: 'ai', script: '\\u0C80-\\u0CFF', stop: '.', modeAffix: { text: '', at: 'end' } },
+  { code: 'ml', name: 'മലയാളം', short: 'മ', english: 'Malayalam', html: 'ml-IN', og: 'ml_IN', dates: 'ml-IN-u-nu-latn', live: true, checkedBy: 'ai', script: '\\u0D00-\\u0D7F', stop: '.', modeAffix: { text: '', at: 'end' } },
+  // Urdu (Harsh, 11 Oct 2026): right to left, Nastaliq. Live 12 Oct 2026 (Harsh).
+  { code: 'ur', name: 'اردو', short: 'ار', english: 'Urdu', html: 'ur-IN', og: 'ur_IN', dates: 'ur-IN-u-nu-latn', live: true, checkedBy: 'ai', script: '\\u0600-\\u06FF\\u0750-\\u077F\\uFB50-\\uFDFF\\uFE70-\\uFEFF', stop: '۔', dir: 'rtl', modeAffix: { text: '', at: 'end' } },
 ];
 
 export const LANG = Object.fromEntries(LANGS.map((l) => [l.code, l])) as Record<Lang, LangInfo>;
