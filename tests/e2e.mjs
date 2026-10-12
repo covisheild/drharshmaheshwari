@@ -796,6 +796,7 @@ try {
     await page.waitForSelector('[data-sum="books"]:not(:empty)');
     check(await page.locator('[data-keep]:visible, [data-pack]:visible').count() === 0 && await page.locator('[data-open]').count() === 4, 'Settings: the main list shows categories only, nested switches stay inside them');
     await page.click('[data-open="books"]');
+    await page.waitForSelector('[data-screen="books"]:not([hidden]) [data-packs="book"] h3', { timeout: 5000 }).catch(() => {});
     check(await page.locator('[data-screen="books"]').isVisible() && await page.locator('[data-packs="book"] h3').count() >= 2, 'Settings > Books: its own screen, books grouped under their series or shelf');
     await page.goBack();
     check(await page.locator('[data-screen="main"]').isVisible(), "Settings: the phone's Back returns from a category to the main list");
