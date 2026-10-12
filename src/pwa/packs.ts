@@ -1,5 +1,5 @@
 // Offline packs. Books and trainers: kept on this device only when the reader taps Save for offline. Guides, calculators,
-// trackers and recent blog posts: kept by the app itself, as App settings say (auto.ts, kinds 'core' and 'blog').
+// trackers, evidence and recent blog posts: kept by the app itself, as Settings say (auto.ts, kinds in AUTO_KINDS).
 //
 // Each pack is one Cache Storage cache (`pack:<id>`) holding the files listed in /offline/packs/<id>.json (written
 // after the build by scripts/pwa/integration.mjs). The service worker only reads these caches; downloading happens
@@ -17,7 +17,8 @@ export interface PackState { saved: boolean; done: boolean; bytes: number; perce
 export interface SavedPack { id: string; title: string; kind: string; open: string; bytes: number; done: boolean; saved: number; build: string; day?: string }
 
 /** Packs the app keeps by itself (auto.ts); the others (books, trainers) only on request. */
-export const isAuto = (kind: string) => kind === 'core' || kind === 'blog';
+export const AUTO_KINDS = ['base', 'guides', 'tools', 'trackers', 'evidence', 'blog'] as const;
+export const isAuto = (kind: string) => (AUTO_KINDS as readonly string[]).includes(kind);
 
 const META = '/__offline-pack-meta';
 const PREFIX = 'pack:';
@@ -36,6 +37,13 @@ export function packIndex() {
   return indexP;
 }
 
+/** A pack's record, read without opening its cache: caches.open() would create a cache another tab or task has just
+ *  removed (an empty pack that nothing could clean up). */
+async function metaOf(name: string): Promise<Meta | null> {
+  const r = await caches.match(META, { cacheName: name });
+  return r ? r.json() : null;
+}
+
 async function readMeta(cache: Cache): Promise<Meta | null> {
   const r = await cache.match(META);
   return r ? r.json() : null;
@@ -45,8 +53,7 @@ const writeMeta = (cache: Cache, m: Meta) => cache.put(META, new Response(JSON.s
 const sum = (m: Meta) => Object.values(m.files).reduce((a, [, b]) => a + b, 0);
 
 export async function packState(id: string, expected?: number): Promise<PackState> {
-  if (!(await caches.has(cacheName(id)))) return { saved: false, done: false, bytes: 0, percent: 0 };
-  const m = await readMeta(await caches.open(cacheName(id)));
+  const m = await metaOf(cacheName(id));
   if (!m) return { saved: false, done: false, bytes: 0, percent: 0 };
   const bytes = sum(m);
   return { saved: true, done: m.done, bytes, percent: m.done ? 100 : expected ? Math.min(99, Math.round((bytes / expected) * 100)) : 0 };
@@ -56,7 +63,7 @@ export async function savedPacks(): Promise<SavedPack[]> {
   const out: SavedPack[] = [];
   for (const k of await caches.keys()) {
     if (!k.startsWith(PREFIX)) continue;
-    const m = await readMeta(await caches.open(k));
+    const m = await metaOf(k);
     if (m) out.push({ id: k.slice(PREFIX.length), title: m.title, kind: m.kind, open: m.open, bytes: sum(m), done: m.done, saved: m.saved, build: m.build, day: m.day });
   }
   return out.sort((a, b) => b.saved - a.saved);
@@ -154,7 +161,7 @@ export async function refreshPacks() {
 export async function anyStale(build: string) {
   for (const k of await caches.keys()) {
     if (!k.startsWith(PREFIX)) continue;
-    const m = await readMeta(await caches.open(k));
+    const m = await metaOf(k);
     if (m?.done && !isAuto(m.kind) && m.build !== build) return true;
   }
   return false;

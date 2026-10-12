@@ -2,24 +2,23 @@
 // after every build; a new build is a new file, so every installed copy picks it up by itself and takes over at once.
 //
 // What it does, and what it never does:
-// - Pages: network first, so the app always shows the latest site when online. A copy of each page opened is kept
-//   (the last RUNTIME_MAX) for when there is no network; with a slow network a kept copy is shown after SLOW_MS.
+// - Pages: network first, so the app always shows the latest site when online. Without network, the copy kept on the
+//   device (only what Settings keep: nothing else is stored, not even pages just opened); with a slow network that copy
+//   is shown after SLOW_MS.
 // - /_astro/ and /fonts/ files have hashed or fixed names: served from the device once kept.
 // - /api/ (sign-in, sync) is never touched or cached.
 // - Books, figures and trainer audio are never downloaded here. They are kept only when someone taps "Save for
 //   offline" (src/pwa/packs.ts, one cache per book or trainer); this file only reads those caches.
-// - Guides, calculators, trackers and recent blog posts are kept by the app itself (src/pwa/auto.ts, App settings), also
-//   in a cache per pack; this file only reads them.
+// - Guides, calculators, trackers, evidence and recent blog posts are kept as Settings say (src/pwa/auto.ts), also in a
+//   cache per pack; this file only reads them.
 // - With no network and no kept copy: the offline page, which lists what is saved on the device.
 
 const BUILD = '__BUILD__';
 const SHELL = __SHELL__;
 const SHELL_CACHE = `shell-${BUILD}`;
-const PAGES = 'pages';
 const ASSETS = 'assets';
 const FONTS = 'fonts';
-const RUNTIME_MAX = 60;   // pages kept from browsing
-const ASSETS_MAX = 250;   // scripts, styles and images of those pages
+const ASSETS_MAX = 250;   // scripts, styles and images of pages opened (hashed names, so never stale)
 const SLOW_MS = 4000;
 const MEDIA_HOST = 'files.drharshmaheshwari.com';
 const MATCH = { ignoreVary: true };
@@ -32,7 +31,10 @@ self.addEventListener('install', (e) => {
 
 self.addEventListener('activate', (e) => {
   e.waitUntil((async () => {
-    for (const k of await caches.keys()) if (k.startsWith('shell-') && k !== SHELL_CACHE) await caches.delete(k);
+    for (const k of await caches.keys()) {
+      // 'pages': copies of opened pages, kept by earlier versions; pages are now kept only as Settings say.
+      if ((k.startsWith('shell-') && k !== SHELL_CACHE) || k === 'pages') await caches.delete(k);
+    }
     if (self.registration.navigationPreload) await self.registration.navigationPreload.enable();
     await self.clients.claim();
   })());
@@ -70,14 +72,8 @@ async function keptPage(href) {
 async function page(e) {
   const req = e.request;
   const kept = keptPage(req.url);
-  const net = (async () => {
-    const res = (await e.preloadResponse) || (await fetch(req));
-    if (res.ok && res.type === 'basic' && (res.headers.get('content-type') || '').includes('text/html')) {
-      e.waitUntil(keep(PAGES, req.url, res.clone(), RUNTIME_MAX));
-    }
-    return res;
-  })();
-  // Slow network and a copy on the device: show the copy; the network answer still refreshes it for next time.
+  const net = (async () => (await e.preloadResponse) || (await fetch(req)))();
+  // Slow network and a copy on the device: show the copy.
   const slow = new Promise((resolve) => setTimeout(() => kept.then((c) => c && resolve(c)), SLOW_MS));
   try {
     return await Promise.race([net, slow]);

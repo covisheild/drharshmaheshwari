@@ -92,20 +92,33 @@ test('a book in the reader and a trainer home offer Save for offline; other page
   assert.doesNotMatch(read('index.html'), /data-offline-pack=/);
 });
 
-test('automatic packs: the light pages in each language, recent blog posts dated, nothing optional or online-only', () => {
+test('automatic packs: one per kind and language, each file stored once, nothing optional or online-only', () => {
   const { packs } = JSON.parse(read('offline/packs.json'));
   const ids = packs.map((p) => p.id);
-  for (const id of ['core-en', 'core-hi', 'blog-en', 'blog-hi']) assert.ok(ids.includes(id), `${id} missing (${ids.join()})`);
-  const core = JSON.parse(read('offline/packs/core-en.json')).files.map((f) => f.u);
-  for (const u of ['/', '/learn/', '/tools/bmi-calculator/', '/tools/activity-check/', '/tools/stop-bang/', '/tools/indian-diabetes-risk-score/', '/trackers/', '/trackers/person/', '/doctors/', '/app/settings/'])
-    assert.ok(core.includes(u), `core-en lacks ${u}`);
-  for (const u of core) {
-    assert.doesNotMatch(u, /\/videos\/|^\/hi\/|^\/account\/|\/trackers\/view\/|^\/blog\/[^/]+\/$/, `core-en must not hold ${u}`);
-    assert.ok(!u.startsWith('/doctors/books/obesity-expertise/b0/') && !u.startsWith('/doctors/trainers/auscultation/'), `core-en holds an optional pack's page ${u}`);
+  for (const id of ['base-en', 'guides-en', 'tools-en', 'trackers-en', 'evidence-en', 'blog-en', 'base-hi', 'guides-hi', 'tools-hi', 'trackers-hi', 'blog-hi'])
+    assert.ok(ids.includes(id), `${id} missing (${ids.join()})`);
+  const files = (id) => JSON.parse(read(`offline/packs/${id}.json`)).files.map((f) => f.u);
+  const base = files('base-en');
+  for (const u of ['/', '/doctors/', '/settings/', '/app/', '/blog/']) assert.ok(base.includes(u), `base-en lacks ${u}`);
+  assert.ok(files('guides-en').includes('/learn/'), 'guides-en has the guides');
+  for (const u of ['/tools/bmi-calculator/', '/tools/activity-check/', '/tools/stop-bang/', '/tools/indian-diabetes-risk-score/']) assert.ok(files('tools-en').includes(u), `tools-en lacks ${u}`);
+  assert.ok(files('trackers-en').includes('/trackers/') && files('trackers-en').includes('/trackers/person/'), 'trackers-en has the trackers');
+  assert.ok(files('evidence-en').includes('/doctors/evidence/'), 'evidence-en has the evidence pages');
+  assert.ok(files('base-hi').includes('/hi/') && files('tools-hi').includes('/hi/tools/bmi-calculator/') && files('trackers-hi').includes('/hi/trackers/'));
+  const auto = packs.filter((p) => /^(base|guides|tools|trackers|evidence|blog)$/.test(p.kind));
+  const seen = new Map();
+  for (const p of auto) for (const u of files(p.id)) {
+    assert.doesNotMatch(u, /\/videos\/|^\/account\/|\/trackers\/view\/|\/offline\/$/, `${p.id} must not hold ${u}`);
+    assert.ok(!u.startsWith('/doctors/books/obesity-expertise/b0/') && !u.startsWith('/doctors/trainers/auscultation/'), `${p.id} holds an optional pack's page ${u}`);
+    if (p.lang !== 'en' && !u.startsWith(`/${p.lang}/`) && /\/$/.test(u)) assert.fail(`${p.id} holds a page of another language: ${u}`);
+    // Stored once: a file in base-en is in no other pack; a file in a language's base is in none of that language's kinds.
+    if (seen.has(u)) {
+      const other = seen.get(u);
+      assert.ok(!(other === 'base-en' || p.id === 'base-en'), `${u} is in ${other} and ${p.id}`);
+      if (other.startsWith('base-') || p.id.startsWith('base-')) assert.notEqual(other.split('-')[1], p.id.split('-')[1], `${u} is in ${other} and ${p.id}`);
+    }
+    seen.set(u, p.id);
   }
-  const hi = JSON.parse(read('offline/packs/core-hi.json')).files.map((f) => f.u);
-  assert.ok(hi.includes('/hi/') && hi.includes('/hi/tools/bmi-calculator/') && hi.includes('/hi/trackers/'), 'core-hi has the Hindi pages');
-  assert.ok(hi.every((u) => u.startsWith('/hi/') || /^\/(_astro|fonts|icons)\/|^\/[^/]+\.\w+$/.test(u) || /^\/[a-z-]+\/[^/]+\.(svg|png|webp|jpg)$/.test(u)), 'core-hi holds only Hindi pages and what they load');
   const blog = JSON.parse(read('offline/packs/blog-en.json')).files;
   const posts = blog.filter((f) => /^\/blog\/[^/]+\/$/.test(f.u));
   assert.ok(posts.length >= 1);
@@ -113,6 +126,21 @@ test('automatic packs: the light pages in each language, recent blog posts dated
   assert.ok(blog.every((f) => f.d !== undefined || /^\/(_astro|fonts|icons)\//.test(f.u)), 'only shared scripts, styles and fonts go undated');
   const shell = JSON.parse(read('sw.js').match(/const SHELL = (\[[^\n]*\]);/)[1]);
   assert.ok(shell.includes('/hi/offline/'), 'the Hindi offline page is in the shell');
+  assert.doesNotMatch(read('sw.js'), /keep\(PAGES/, 'pages just opened are not kept: only what Settings keep');
+});
+
+test('a removed app leaves nothing behind: the manifest names the app for the installed-app check', () => {
+  const m = JSON.parse(read('manifest.webmanifest'));
+  assert.deepEqual(m.related_applications, [{ platform: 'webapp', url: 'https://drharshmaheshwari.com/manifest.webmanifest' }]);
+  assert.equal(m.prefer_related_applications, false);
+});
+
+test('the header has no theme button; Settings is the last item of the menu', () => {
+  for (const f of ['index.html', 'doctors/index.html', 'hi/index.html']) {
+    const head = read(f).match(/<header class="site-header"[\s\S]*?<\/header>/)[0];
+    assert.doesNotMatch(head, /theme-toggle|app-gear/, `${f}: theme button or gear in the header`);
+    assert.match(head, /<li class="nav-settings"><a href="(\/hi)?\/settings\/"/, `${f}: Settings in the menu`);
+  }
 });
 
 test('the 6-month rule: blogCutoff and the date filter keep the last 6 calendar months only', async () => {

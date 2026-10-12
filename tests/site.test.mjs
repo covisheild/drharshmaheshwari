@@ -59,7 +59,8 @@ function pages(dir = DIST, out = []) {
 }
 const urlOf = (file) => '/' + file.slice(DIST.length).replace(/index\.html$/, '').replace(/\\/g, '/');
 const html = new Map(pages().map((f) => [urlOf(f), readFileSync(f, 'utf8')]));
-const navHrefs = (doc) => [...(doc.match(/<ul class="nav-links"[\s\S]*?<\/ul>/)?.[0] ?? '').matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
+// The mode's own pages (the last menu item, Settings, belongs to no mode).
+const navHrefs = (doc) => [...(doc.match(/<ul class="nav-links"[\s\S]*?<\/ul>/)?.[0] ?? '').replace(/<li class="nav-settings"[\s\S]*?<\/li>/, '').matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
 
 // ---------- tests ----------
 test('every previously published URL still works, directly or through a 301', () => {
