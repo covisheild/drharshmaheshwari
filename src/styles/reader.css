@@ -297,7 +297,7 @@ html.reading { overflow-anchor: none; scroll-behavior: auto; } /* load() keeps y
 
 /* references and the end */
 .rd-refs { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: calc(var(--rd-size) * .82) !important; scroll-margin-top: calc(var(--barh) + 12px); }
-.rd-refs h3 { font-size: 1em; color: var(--ink-2); }
+.rd-refs > summary { font-size: .82rem; }
 .rd-refs ol { padding-left: 1.6em; overflow-wrap: anywhere; }
 .rd-refs li { margin-bottom: .4em; }
 .rd-note { color: var(--ink-3); }

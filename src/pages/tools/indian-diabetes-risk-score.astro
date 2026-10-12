@@ -1,4 +1,5 @@
 ---
+import Sources from '../../components/Sources.astro';
 import Base from '../../layouts/Base.astro';
 import UnitField from '../../components/UnitField.astro';
 import { SITE } from '../../consts';
@@ -136,14 +137,13 @@ const jsonld = [
       <h2>{t('Common questions')}</h2>
       {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
     </div>
-    <div class="refs" style="margin-top:2rem">
-      <h2>{t('Sources')}</h2>
+    <Sources label={t('Sources')}>
       <ol lang="en">
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/16334618/">Mohan V, Deepa R, Deepa M, Somannavar S, Datta M. A simplified Indian Diabetes Risk Score for screening for undiagnosed diabetic subjects. J Assoc Physicians India 2005;53:759-63.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/21121209/">Adhikari P, Pathak R, Kotian S. Validation of the MDRF-Indian Diabetes Risk Score (IDRS) in another south Indian population through the Boloor Diabetes Study. J Assoc Physicians India 2010;58:434-6.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/29302549/">Khan MM, et al. Validity of Indian Diabetes Risk Score and its association with body mass index and glycosylated hemoglobin for screening of diabetes in and around areas of Lucknow. J Family Med Prim Care 2017;6:366-73.</a></li>
       </ol>
-    </div>
+    </Sources>
     <p class="disclaimer"><a href={L('/disclaimer/')}>{t('Disclaimer')}</a></p>
   </section>
 </Base>

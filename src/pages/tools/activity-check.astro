@@ -1,4 +1,5 @@
 ---
+import Sources from '../../components/Sources.astro';
 import Base from '../../layouts/Base.astro';
 import { SITE } from '../../consts';
 import { AGE_GROUPS } from '../../lib/activity';
@@ -227,8 +228,7 @@ const jsonld = [
       {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
       <details><summary>{t('How is this check different from the original IPAQ?')}</summary><p>{t('The original IPAQ asks only about activity done for at least 10 minutes at a time. This page asks about all of it, because short spells count too (WHO has counted every minute since 2020, and ICMR-NIN suggests walking 5 to 10 minutes every few hours). The IPAQ score here then follows the IPAQ scoring protocol: a day with under 10 minutes counts as zero, more than 180 minutes a day counts as 180, and answers adding up to more than 16 hours a day are not scored. Walking counts towards the target minutes, as brisk walking is moderate-intensity activity.')}</p></details>
     </div>
-    <div class="refs" style="margin-top:2rem">
-      <h2>{t('Sources')}</h2>
+    <Sources label={t('Sources')}>
       <ol lang="en">
         <li><a href="https://www.nin.res.in/dietaryguidelines/pdfjs/locale/DGI_2024.pdf">ICMR-National Institute of Nutrition. Dietary Guidelines for Indians. Hyderabad: ICMR-NIN; 2024. Guideline 10, pp. 69-72.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/33239350/">Bull FC, et al. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. Br J Sports Med 2020;54:1451-62.</a></li>
@@ -237,7 +237,7 @@ const jsonld = [
         <li><a href="https://sites.google.com/view/ipaq/score">IPAQ Research Committee. Guidelines for data processing and analysis of the IPAQ, short and long forms. November 2005.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/22018588/">Lee PH, et al. Validity of the International Physical Activity Questionnaire Short Form (IPAQ-SF): a systematic review. Int J Behav Nutr Phys Act 2011;8:115.</a></li>
       </ol>
-    </div>
+    </Sources>
     <p class="disclaimer"><a href={L('/disclaimer/')}>{t('Disclaimer')}</a></p>
   </section>
 </Base>

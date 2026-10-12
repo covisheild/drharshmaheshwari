@@ -308,3 +308,5 @@ via `WORKERS_CI_BRANCH`, read in `astro.config.mjs`) and hides it on production.
 - Never change a published URL (slug). Hindi pages live under `/hi/` with the English slug (`docs/translation.md`).
 - SEO/AEO plumbing is automatic: sitemap, `robots.txt` (AI crawlers allowed), `/llms.txt`, `/llms-full.txt`, RSS, schema.org JSON-LD in `Base.astro` / `Article.astro`.
 - Respect `prefers-reduced-motion`; animations use the `.reveal` class.
+- **Sources and references are folded** (Harsh, 12 Oct 2026): every list of sources or references sits under a small heading that opens on a click
+  (`Sources.astro`, `details.refs`; in the book reader `details.rd-refs`), never under a big heading.

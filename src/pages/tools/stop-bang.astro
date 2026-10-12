@@ -1,4 +1,5 @@
 ---
+import Sources from '../../components/Sources.astro';
 import Base from '../../layouts/Base.astro';
 import UnitField from '../../components/UnitField.astro';
 import { SITE } from '../../consts';
@@ -112,15 +113,14 @@ const jsonld = [
       <h2>{t('Common questions')}</h2>
       {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
     </div>
-    <div class="refs" style="margin-top:2rem">
-      <h2>{t('Sources')}</h2>
+    <Sources label={t('Sources')}>
       <ol lang="en">
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/18431116/">Chung F, et al. STOP questionnaire: a tool to screen patients for obstructive sleep apnea. Anesthesiology 2008;108:812-21.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/22401881/">Chung F, et al. High STOP-Bang score indicates a high probability of obstructive sleep apnoea. Br J Anaesth 2012;108:768-75.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/26378880/">Chung F, Abdullah HR, Liao P. STOP-Bang questionnaire: a practical approach to screen for obstructive sleep apnea. Chest 2016;149:631-8.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/26658438/">Nagappa M, et al. Validation of the STOP-Bang questionnaire as a screening tool for obstructive sleep apnea among different populations: a systematic review and meta-analysis. PLoS One 2015;10:e0143697.</a></li>
       </ol>
-    </div>
+    </Sources>
     <p class="disclaimer"><a href={L('/disclaimer/')}>{t('Disclaimer')}</a></p>
   </section>
 </Base>

@@ -153,11 +153,11 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
               </section>
             ))}
             {refs && (
-              <section class="rd-refs" id={`refs-${(p.id || 'all').toLowerCase()}`} data-part={p.id}>
-                <h3>References{book.outline.length > 1 && ` · Part ${p.id}`}</h3>
+              <details class="rd-refs" id={`refs-${(p.id || 'all').toLowerCase()}`} data-part={p.id}>
+                <summary>References{book.outline.length > 1 && ` · Part ${p.id}`} <span class="refs-n">{refs.items.length}</span></summary>
                 <ol>{refs.items.map((r) => <li value={r.n} id={`ref-${(p.id || 'all').toLowerCase()}-${r.n}`} set:html={r.html} />)}</ol>
                 {refs.note && <p class="rd-note" set:html={refs.note} />}
-              </section>
+              </details>
             )}
           </>
         );

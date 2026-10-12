@@ -1,4 +1,5 @@
 ---
+import Sources from '../../components/Sources.astro';
 import Base from '../../layouts/Base.astro';
 import { SITE } from '../../consts';
 import { articles } from '../../lib/content';
@@ -152,8 +153,7 @@ const jsonld = [
       <h2>{t('Common questions')}</h2>
       {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
     </div>
-    <div class="refs" style="margin-top:2rem">
-      <h2>{t('Sources')}</h2>
+    <Sources label={t('Sources')}>
       <ol lang="en">
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/14726171/">WHO Expert Consultation. Appropriate body-mass index for Asian populations. Lancet 2004;363:157-63.</a></li>
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/19582986/">Misra A, et al. Consensus statement for diagnosis of obesity, abdominal obesity and the metabolic syndrome for Asian Indians. J Assoc Physicians India 2009;57:163-70.</a></li>
@@ -162,7 +162,7 @@ const jsonld = [
         <li><a href="https://pubmed.ncbi.nlm.nih.gov/24655536/">Khadilkar A, et al. Waist circumference percentiles in 2-18 year old Indian children. J Pediatr 2014;164:1358-62.</a></li>
         <li><a href="https://www.who.int/tools/child-growth-standards">WHO Child Growth Standards (2006): BMI-for-age, birth to 5 years.</a></li>
       </ol>
-    </div>
+    </Sources>
     <p class="disclaimer"><a href={L('/disclaimer/')}>{t('Disclaimer')}</a></p>
   </section>
 
