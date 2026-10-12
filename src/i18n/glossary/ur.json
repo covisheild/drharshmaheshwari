@@ -1,6 +1,6 @@
 {
   "about": "Urdu glossary for drharshmaheshwari.com. Every Urdu translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Urdu has one of the accepted forms (substring match, so a stem shared by every inflection is listed). Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
-  "register": "Everyday spoken Urdu (Hindustani) that a family in Lucknow, Hyderabad or Delhi would use, close to everyday Hindi speech, not heavy Persianised or Arabicised literary Urdu. Common English health words that people say stay as they are said, written in Urdu script (بلڈ شوگر، ڈائبٹیز، بلڈ پریشر); BMI and the other keepLatin items stay in Latin letters. Polite آپ form. Short sentences. Urdu punctuation (۔ ، ؟). Urdu letters ی ک ہ ے, not Arabic ي ك ه. Numbers in 0-9, never Arabic-Indic or Extended Arabic-Indic digits. Units as in English (cm, kg). Right to left; HTML tags and Latin items stay as they are.",
+  "register": "Everyday spoken Urdu (Hindustani) that a family in Lucknow, Hyderabad or Delhi would use, close to everyday Hindi speech, not heavy Persianised or Arabicised literary Urdu. Common English health words that people say stay as they are said, written in Urdu script (بلڈ شوگر، ڈائبٹیز، بلڈ پریشر); BMI and the other keepLatin items stay in Latin letters. Polite آپ form. Short sentences. Urdu punctuation (۔ ، ؟). Urdu letters ی ک ہ ے, not Arabic ي ك ه. Numbers in 0-9, never Arabic-Indic or Extended Arabic-Indic digits. Units as in English (cm, kg). Right to left; HTML tags and Latin items stay as they are. Word choices (QA 12 Oct 2026): India/Indian = ہندوستان/ہندوستانی (not بھارت/بھارتی); advice = مشورہ (not صلاح); information = معلومات (not جانکاری); feet = پاؤں; slow = آہستہ; \"more\" = مزید (not اور, which reads as \"and\"); \"total\" = ٹوٹل or کل ملا کر (کل alone also means yesterday/tomorrow); a contribution of money is always مالی تعاون (تعاون alone reads as \"cooperation\"); \"waist\" standing alone as a label is کمر کا ناپ (کمر alone also means the back); short spells of activity = تھوڑی تھوڑی دیر کی سرگرمی (never وقفے, which means rest breaks); a baby strapped in = پرام، سیٹ یا کیریئر میں (never بندھا); Adam's apple = ٹینٹوا; ordinals built from a placeholder are written \"پرسنٹائل {ordinal}\" (the {n}st/nd/rd/th keys are plain \"{n}\"), never \"{ordinal} واں/ویں\"; wording that addresses the reader stays gender-neutral (a passive or a noun phrase) unless the sentence is only about women (pregnancy).",
   "keepLatin": [
     "BMI",
     "WHO",
@@ -188,7 +188,7 @@
     {
       "en": "contribution",
       "tr": [
-        "تعاون"
+        "مالی تعاون"
       ]
     },
     {
