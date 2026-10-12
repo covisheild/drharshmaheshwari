@@ -179,6 +179,23 @@ test('pages stay clean: the long licence and disclaimer lines are gone from book
   }
 });
 
+test('every finding has its teaching note with references; question pages carry the notes', () => {
+  for (const s of FINDING_SLUGS.filter((x) => x !== 'heart-and-lungs-together')) {
+    const doc = html.get(`${TRAINER}learn/${s}/`);
+    assert.match(doc, /<b>Listen for:<\/b>\s*\S/, `${s}: listen text`);
+    assert.match(doc, /<b>Usually means:<\/b>\s*\S/, `${s}: means text`);
+    const refs = doc.match(/<details class="refs"[\s\S]*?<\/details>/)?.[0] ?? '';
+    assert.ok((refs.match(/<li/g) ?? []).length >= 1, `${s}: no references`);
+  }
+  for (const page of ['practice/', 'quiz/', 'review/']) {
+    const json = html.get(TRAINER + page).match(/<script type="application\/json" id="trainer-notes">([\s\S]*?)<\/script>/)?.[1];
+    assert.ok(json, `${page} lacks the notes`);
+    const notes = JSON.parse(json);
+    assert.equal(Object.keys(notes).length, 16, page);
+    assert.ok(Object.values(notes).every((n) => n.listen.length > 20), page);
+  }
+});
+
 test('sitemap and llms.txt point to the new locations only', () => {
   const sitemap = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
   assert.match(sitemap, /\/doctors\/trainers\/auscultation\//);

@@ -1,0 +1,8 @@
+---
+// Puts the "what to listen for" text on pages that ask questions, for the explanation after each answer.
+// The notes are content files read at build time, so the page carries the small part the browser needs.
+import { notesByFinding } from './notes.server';
+const notes = Object.fromEntries([...(await notesByFinding())].map(([id, n]) => [id, { listen: n.listen }]));
+const json = JSON.stringify(notes).replace(/</g, '\\u003c');
+---
+<script type="application/json" id="trainer-notes" set:html={json} />

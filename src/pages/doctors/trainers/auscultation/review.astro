@@ -1,11 +1,13 @@
 ---
 import TrainerShell from '../../../../layouts/TrainerShell.astro';
 import Credits from '../../../../trainers/auscultation/Credits.astro';
+import Notes from '../../../../trainers/auscultation/Notes.astro';
 import { trainer } from '../../../../trainers/registry';
 ---
 <TrainerShell trainer={trainer('auscultation')} section="review" heading="Review" title="Review · Auscultation Trainer" description="Review the heart and lung sounds you got wrong last time.">
   <p slot="intro">The recordings you got wrong last time, asked again until you get them right.</p>
   <div id="app"><noscript><p>This section needs JavaScript.</p></noscript></div>
+  <Notes />
   <Fragment slot="credits"><Credits /></Fragment>
 </TrainerShell>
 

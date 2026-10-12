@@ -216,7 +216,9 @@ local devDependency. Change production settings only on purpose; preview-only se
   ("Recording credits (CC BY 4.0)", `Credits.astro`). Keep both, and keep the list of changes in step with `prepare.py`.
 - Long licence and disclaimer text lives only on `/disclaimer/` ("Disclaimer and credits"); other pages carry a short link ("Disclaimer",
   "Support"). Trainer pages say "Real patients may differ: use clinical judgement", never "not for diagnosing patients".
-- Finding slugs (`config.ts`) are permanent URLs. Teaching notes are clinical content: Harsh reviews changes before `main`.
+- Finding slugs (`config.ts`) are permanent URLs. Teaching notes live in `src/content/trainers/auscultation/<slug>.md`
+  (listen, means, references; at least one reference each; the build fails if a finding has no note). They are
+  clinical content: Harsh reviews changes before `main`. Cite only references checked in PubMed or the actual book.
 
 ## Site colours (admin only) and the Beam look
 
