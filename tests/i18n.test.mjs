@@ -111,7 +111,7 @@ for (const l of BUILT) {
       const links = [...sw.matchAll(/<a href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)].map((m) => [m[1], m[2].replace(/<span class="short"[^>]*>[\s\S]*?<\/span>/, '').replace(/<[^>]+>/g, '')]); // a short phone label is left out
       assert.deepEqual(links, [[`/${code}/`, dict['For Everyone']], ['/doctors/', dict['For Doctors']]], url);
       assert.match(doc, new RegExp(`class="lang-list"[\\s\\S]*?href="${en}"[^>]*hreflang="en-IN"`), `${url}: language menu links to the English page`);
-      const nav = [...(doc.match(/<ul class="nav-links"[\s\S]*?<\/ul>/)?.[0] ?? '').matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
+      const nav = [...(doc.match(/<ul class="nav-links"[\s\S]*?<\/ul>/)?.[0] ?? '').replace(/<li class="nav-settings"[\s\S]*?<\/li>/, '').matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
       assert.deepEqual(nav, MODES.everyone.nav.map((n) => `/${code}${n.href}`), `${url} nav stays in ${l.english}`);
     }
     // Book pages never call the books free, in any language.

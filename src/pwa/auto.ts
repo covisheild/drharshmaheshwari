@@ -1,10 +1,10 @@
-// The light material the app keeps by itself, as App settings say (settings.ts): guides, calculators, trackers and the
-// other light pages in English and the second language (packs core-<lang>), and blog posts from the last 6 months
-// (blog-<lang>; a post older than that is removed from the device and opens only online). Books and trainers are never
-// downloaded here: only when someone taps Save for offline (packs.ts). Videos are never kept.
+// The light material the app keeps by itself, as Settings say (settings.ts): one pack per kind (guides, tools, trackers,
+// evidence, blog) in English and the second language, plus the base pages (home, lists) whenever any kind is kept, so the
+// app opens without internet. Blog: posts from the last 6 months only; an older post is removed from the device and opens
+// only online. Books and trainers are never downloaded here, only when the person turns them on (packs.ts). Videos never.
 // Runs a few seconds after a page loads (client.ts), at most once per site build, plus once a day for the blog's 6 months.
 
-import { getSettings } from './settings';
+import { getSettings, keepsAnything, type Keep } from './settings';
 import { isAuto, packIndex, removePack, savePack, savedPacks, type PackSummary } from './packs';
 
 /** Today on this device, YYYY-MM-DD. */
@@ -19,8 +19,9 @@ export function blogCutoff(now = new Date()) {
 
 /** The automatic packs this device should hold, given its settings and what the site offers. */
 export function wantedPacks(packs: PackSummary[], s = getSettings()): PackSummary[] {
+  if (!keepsAnything(s)) return [];
   const langs = ['en', ...(s.lang2 !== 'none' ? [s.lang2] : [])];
-  return packs.filter((p) => isAuto(p.kind) && langs.includes(p.lang ?? 'en') && (p.kind === 'core' ? s.essentials : s.blog));
+  return packs.filter((p) => isAuto(p.kind) && langs.includes(p.lang ?? 'en') && (p.kind === 'base' || s.keep[p.kind as Keep]));
 }
 
 /**
@@ -32,6 +33,11 @@ export async function autoSync(opts: { force?: boolean; progress?: (id: string, 
   const want = wantedPacks(packs);
   const ids = new Set(want.map((p) => p.id));
   const saved = await savedPacks();
+  // An automatic pack's cache with no record (an interrupted removal) holds nothing usable: drop it.
+  for (const k of await caches.keys()) {
+    const id = k.slice(5);
+    if (k.startsWith('pack:') && isAuto(id.replace(/-[a-z]{2}$/, '')) && !saved.some((p) => p.id === id)) await caches.delete(k);
+  }
   for (const s of saved) if (isAuto(s.kind) && !ids.has(s.id)) await removePack(s.id);
   const day = today();
   const cutoff = blogCutoff();

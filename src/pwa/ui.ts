@@ -1,4 +1,4 @@
-// The "Save for offline" control (OfflineSave.astro): one per book or trainer, also listed on App settings.
+// The "Save for offline" control (OfflineSave.astro): one per book or trainer, also listed on Settings.
 // Hidden where the browser cannot keep files (no Cache Storage or service worker); everything else is in packs.ts.
 
 import { OutOfSpace, formatBytes, packIndex, packState, removePack, savePack, supported } from './packs';

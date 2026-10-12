@@ -737,15 +737,15 @@ try {
     const page = await ctx.newPage();
     const errors = errorsOf(page);
     page.on('dialog', (d) => d.accept());
-    await page.goto(`${BASE}/app/settings/`);
+    await page.goto(`${BASE}/settings/`);
     await page.evaluate(() => navigator.serviceWorker.ready);
     const cdp = await ctx.newCDPSession(page);
     const inst = (await cdp.send('Page.getInstallabilityErrors')).installabilityErrors;
     check(inst.length === 0, `the site is installable as an app (${inst.map((e) => e.errorId).join(', ') || 'no errors'})`);
     await page.reload();
     check(await page.evaluate(() => !!navigator.serviceWorker.controller), 'the service worker controls the page after a reload');
-    await page.waitForSelector('#set-packs .ofl:not(.ofl-wait)');
-    check(await page.locator('#set-packs li').count() >= 3, 'App settings list the books and trainers that can be saved');
+    await page.waitForSelector('[data-packs="book"] [data-pack] .sg-s:not(:empty)');
+    check(await page.locator('[data-packs] [data-pack]').count() >= 3, 'Settings list the books and trainers, each with its own switch');
     const nothing = await page.evaluate(async () => (await caches.keys()).filter((k) => k.startsWith('pack:')).length);
     check(nothing === 0, 'nothing is saved for offline until someone taps Save');
 
@@ -770,13 +770,13 @@ try {
     await page.goto(BASE + BOOK);
     await page.waitForSelector('.rd-front .ofl-remove:not([hidden])');
     await page.click('.rd-front .ofl-remove');
-    await page.waitForFunction(async () => !(await caches.has('pack:book-stats')));
-    check(true, 'Remove deletes the saved book from the device');
+    for (let i = 0; i < 30 && await page.evaluate(() => caches.has('pack:book-stats')); i++) await page.waitForTimeout(300);
+    check(!(await page.evaluate(() => caches.has('pack:book-stats'))), 'Remove deletes the saved book from the device');
     check(errors.length === 0, `no script errors in the app checks (${errors.join(' | ')})`);
     await ctx.close();
   }
 
-  // ---------- The app keeps the light material offline (App settings), recent blog posts only, and installs from the home page ----------
+  // ---------- Settings: what is kept offline, one switch per kind; recent blog posts only; theme; install from the home page ----------
   {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     await ctx.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
@@ -788,18 +788,24 @@ try {
     await page.goto(`${BASE}/`);
     await page.evaluate(() => navigator.serviceWorker.ready);
     await page.waitForTimeout(5500);
-    check((await packsNow()).length === 0, 'a browser tab keeps nothing automatically until App settings say so');
+    check((await packsNow()).length === 0, 'a browser tab keeps nothing automatically until Settings say so');
     await page.click('.app-sec .inst-btn');
     check(await page.locator('.app-sec .inst-steps:not([hidden])').count() === 1, 'Install on the home page: one tap, then this browser\'s steps where it cannot install by itself');
-    await page.goto(`${BASE}/app/settings/`);
-    await page.waitForSelector('[data-st="essentials"]:not(:empty)');
-    await page.click('[data-set="essentials"]');
-    await page.check('input[name=lang2][value=hi]');
-    await page.click('[data-set="blog"]');
-    await page.waitForFunction(() => /On this device/.test(document.querySelector('[data-st="essentials"]').textContent) && /On this device/.test(document.querySelector('[data-st="blog"]').textContent), null, { timeout: 90000 }).catch(() => {});
+    await page.goto(`${BASE}/settings/`);
+    await page.waitForSelector('[data-sub="guides"]:not(:empty)');
+    for (const k of ['guides', 'tools', 'trackers', 'blog', 'evidence']) await page.click(`[data-keep="${k}"]`);
+    await page.selectOption('#sg-lang2', 'hi');
+    await page.waitForFunction(() => ['guides', 'tools', 'trackers', 'blog', 'evidence'].every((k) => /On this device/.test(document.querySelector(`[data-sub="${k}"]`).textContent)), null, { timeout: 90000 }).catch(() => {});
     const kept = await packsNow();
-    check(kept.join() === 'pack:blog-en,pack:blog-hi,pack:core-en,pack:core-hi', `App settings keep guides, calculators, trackers and recent posts in English and Hindi (${kept.join()})`);
-    check(await overflow(page) <= 0, 'App settings: no sideways scroll at 390px');
+    const expect = ['base', 'blog', 'evidence', 'guides', 'tools', 'trackers'].flatMap((k) => [`pack:${k}-en`, ...(k === 'evidence' ? [] : [`pack:${k}-hi`])]).sort();
+    check(kept.join() === expect.join(), `Settings keep each kind turned on, in English and Hindi (${kept.join()})`);
+    check(await overflow(page) <= 0, 'Settings: no sideways scroll at 390px');
+    await page.click('[data-keep="evidence"]');
+    for (let i = 0; i < 30 && (await packsNow()).includes('pack:evidence-en'); i++) await page.waitForTimeout(500);
+    check(!(await packsNow()).includes('pack:evidence-en'), 'turning a kind off removes it from the device');
+    await page.click('[data-keep="evidence"]');
+    await page.click('[data-theme-set="dark"]');
+    check(await page.evaluate(() => document.documentElement.dataset.theme === 'dark' && localStorage.getItem('theme') === 'dark'), 'Settings: the theme is chosen there (the header has no theme button)');
     await page.goto(`${BASE}/trackers/`);
     await page.waitForTimeout(1000);
     await ctx.setOffline(true);
@@ -819,8 +825,32 @@ try {
     await page.waitForTimeout(7000);
     const posts = await page.evaluate(async () => (await (await caches.open('pack:blog-en')).keys()).map((r) => new URL(r.url).pathname).filter((x) => /^\/blog\/[^/]+\/$/.test(x)));
     check(posts.length === 0, `blog posts older than 6 months are removed from the device (${posts.join() || 'none left'})`);
+    // A new installation after an earlier one starts empty (Android keeps a removed web app's data with the browser).
+    await page.evaluate(() => { localStorage.setItem('app:installed', '1'); dispatchEvent(new Event('appinstalled')); });
+    await page.waitForTimeout(1500);
+    check((await packsNow()).length === 0, 'installing the app again removes everything the earlier installation kept');
     check(errors.length === 0, `no script errors in the offline-material checks (${errors.join(' | ')})`);
     await ctx.close();
+    // Header: Settings is the last item of the menu; the offline page lists no recently opened pages.
+    const phone = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    const p2 = await phone.newPage();
+    await p2.goto(`${BASE}/`);
+    await p2.click('.menu-btn');
+    await p2.click('.nav-settings a');
+    check(new URL(p2.url()).pathname === '/settings/', 'the menu opens Settings');
+    const head = await p2.locator('.site-header').boundingBox();
+    const photo = await p2.locator('.site-header .brand').boundingBox(), sw = await p2.locator('.site-header .mode-switch').boundingBox();
+    check(photo.x + photo.width <= sw.x + 1 && head.width <= 390, 'phone header: the mode switch does not overlap the photo');
+    await p2.goto(`${BASE}/offline/`);
+    check(await p2.locator('#off-recent').count() === 0, 'the offline page lists no recently opened pages');
+    await phone.close();
+    // Opera on Android cannot open an install from a page: the tap shows Opera's own steps.
+    const opera = await browser.newContext({ viewport: { width: 390, height: 844 }, userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Mobile Safari/537.36 OPR/85.0.0.0' });
+    const p3 = await opera.newPage();
+    await p3.goto(`${BASE}/`);
+    await p3.click('.app-sec .inst-btn');
+    check(await p3.locator('.app-sec .inst-steps[data-for="android-opera"]:not([hidden])').count() === 1, 'Install in Opera on Android shows Opera\'s steps');
+    await opera.close();
   }
 
 } finally {

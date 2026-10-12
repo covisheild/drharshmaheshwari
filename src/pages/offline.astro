@@ -1,6 +1,6 @@
 ---
 // Shown by the app's service worker (scripts/pwa/sw.js) when there is no internet and the page asked for is not on this
-// device; also /<lang>/offline/ for pages in that language. Lists what is on the device. Not in the sitemap.
+// device; also /<lang>/offline/ for pages in that language. Lists what Settings keep on the device. Not in the sitemap.
 import Base from '../layouts/Base.astro';
 import T from '../components/T.astro';
 import ClientWords from '../components/ClientWords.astro';
@@ -17,10 +17,8 @@ const L = (href: string) => localHref(langOf(path), href);
     <h1>{t('You are offline')}</h1>
     <p>{t('This page is not on this device yet. These are, and work without internet:')}</p>
     <div id="off-saved"><p class="muted">{t('Nothing is kept on this device yet.')}</p></div>
-    <h2>{t('Pages you opened recently')}</h2>
-    <div id="off-recent"><p class="muted">{t('None yet.')}</p></div>
     <p class="muted small"><T><b>Videos</b> need internet.</T></p>
-    <p style="margin-top:2rem"><a class="btn btn-ghost" href="" id="off-retry">{t('Try again')}</a> <a class="btn btn-ghost" href={L('/app/settings/')}>{t('App settings')}</a></p>
+    <p style="margin-top:2rem"><a class="btn btn-ghost" href="" id="off-retry">{t('Try again')}</a> <a class="btn btn-ghost" href={L('/settings/')}>{t('Settings')}</a></p>
   </div>
   <ClientWords sources={['/src/pages/offline.astro']} />
 </Base>
@@ -33,10 +31,14 @@ const L = (href: string) => localHref(langOf(path), href);
   const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
   (document.getElementById('off-retry') as HTMLAnchorElement).href = location.href;
   const langOfPack = (id: string) => (id.match(/-([a-z]{2})$/)?.[1] ?? 'en') as Lang;
+  // What each kept pack is called (Settings uses the same words).
+  const KIND: Record<string, string> = {
+    base: w('Home and menu pages'), guides: w('Guides'), tools: w('Calculators and tools'), trackers: w('Trackers'),
+    evidence: w('Evidence for doctors'), blog: w('Blog posts from the last 6 months'),
+  };
   const name = (p: { id: string; kind: string; title: string }) => {
     const lang = LANG[langOfPack(p.id)];
-    if (p.kind === 'core') return `${w('Guides, calculators and trackers')} · <span lang="${lang.html}">${lang.name}</span>`;
-    if (p.kind === 'blog') return `${w('Blog posts from the last 6 months')} · <span lang="${lang.html}">${lang.name}</span>`;
+    if (KIND[p.kind]) return `${KIND[p.kind]} · <span lang="${lang.html}">${lang.name}</span>`;
     return `<span lang="en">${esc(p.title)}</span>`;
   };
 
@@ -46,14 +48,5 @@ const L = (href: string) => localHref(langOf(path), href);
       document.getElementById('off-saved')!.innerHTML = `<ul>${saved.map((p) =>
         `<li><a href="${esc(p.open)}">${name(p)}</a>${p.done ? '' : ` <span class="muted small">${w('(partly saved)')}</span>`}</li>`).join('')}</ul>`;
     }
-    const pages = await caches.open('pages');
-    const keys = [...(await pages.keys())].reverse().filter((r) => !/\/offline\/$/.test(new URL(r.url).pathname)).slice(0, 20);
-    const items: string[] = [];
-    for (const k of keys) {
-      const text = (await (await pages.match(k))?.text()) ?? '';
-      const title = (text.match(/<title>([^<]*)<\/title>/)?.[1] ?? esc(new URL(k.url).pathname)).replace(/\s*·\s*[^·]*$/, '');
-      items.push(`<li><a href="${esc(new URL(k.url).pathname)}">${title}</a></li>`);
-    }
-    if (items.length) document.getElementById('off-recent')!.innerHTML = `<ul>${items.join('')}</ul>`;
   }
 </script>
