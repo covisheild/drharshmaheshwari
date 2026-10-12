@@ -19,10 +19,10 @@ const build = Date.now().toString(36);
 export default defineConfig({
   site: 'https://drharshmaheshwari.com',
   trailingSlash: 'ignore',
-  // Private pages (one person's readings, a doctor's shared view) and the app's offline page stay out of the sitemap; they are also noindex.
+  // Private pages (one person's readings, a doctor's shared view) and the offline fallback stay out of the sitemap; they are also noindex.
   // Hindi pages (src/i18n/) are listed with hreflang alternates beside their English pages.
   integrations: [
-    sitemap({ filter: (page) => !/\/trackers\/(person|view)\//.test(page) && !/\/offline\/$/.test(page), i18n: { defaultLocale: 'en', locales: { en: 'en-IN', hi: 'hi-IN' } } }),
+    sitemap({ filter: (page) => !/\/trackers\/(person|view)\//.test(page) && !page.endsWith('/offline/'), i18n: { defaultLocale: 'en', locales: { en: 'en-IN', hi: 'hi-IN', mr: 'mr-IN', bn: 'bn-IN', or: 'or-IN', ta: 'ta-IN', te: 'te-IN', kn: 'kn-IN', ml: 'ml-IN', ur: 'ur-IN' } } }),
     ogImages({ theme: json('./src/data/theme.json'), palettes: json('./src/data/palettes.json') }),
     // The installable app. Emergency only: pwa({ build, kill: true }) removes the app's worker and offline copies on every device.
     pwa({ build }),

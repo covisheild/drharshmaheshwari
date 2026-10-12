@@ -19,3 +19,15 @@
 /* Noto Sans Devanagari 100 900, Devanagari only, 118 KB: Hindi pages. The unicode-range means English pages never download it
    (the rupee sign is left to DM Sans). */
 @font-face { font-family: 'Noto Sans Devanagari'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/fonts/noto-sans-devanagari-wght.woff2') format('woff2'); unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF; }
+
+/* Phase 2 languages (src/i18n/languages.ts): one variable Noto font per script, each downloaded only by pages with that script (unicode-range).
+   Marathi uses Noto Sans Devanagari above. SIL OFL. */
+@font-face { font-family: 'Noto Sans Tamil'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/fonts/noto-sans-tamil-wght.woff2') format('woff2'); unicode-range: U+0B82-0BFA, U+200C-200D, U+25CC; }
+@font-face { font-family: 'Noto Sans Telugu'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/fonts/noto-sans-telugu-wght.woff2') format('woff2'); unicode-range: U+0C00-0C7F, U+1CDA, U+1CF2, U+200C-200D, U+25CC; }
+@font-face { font-family: 'Noto Sans Kannada'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/fonts/noto-sans-kannada-wght.woff2') format('woff2'); unicode-range: U+0C80-0CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+25CC, U+A830-A835; }
+@font-face { font-family: 'Noto Sans Malayalam'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/fonts/noto-sans-malayalam-wght.woff2') format('woff2'); unicode-range: U+0D00-0D7F, U+1CDA, U+1CF2, U+200C-200D, U+25CC, U+A830-A832; }
+@font-face { font-family: 'Noto Sans Bengali'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/fonts/noto-sans-bengali-wght.woff2') format('woff2'); unicode-range: U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+25CC, U+A8F1; }
+@font-face { font-family: 'Noto Sans Oriya'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/fonts/noto-sans-oriya-wght.woff2') format('woff2'); unicode-range: U+0B01-0B77, U+1CDA, U+1CF2, U+200C-200D, U+25CC; }
+
+/* Urdu: Noto Nastaliq Urdu 400-700, Arabic script only (234 KB), downloaded only by Urdu pages. SIL OFL. */
+@font-face { font-family: 'Noto Nastaliq Urdu'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/fonts/noto-nastaliq-urdu-wght.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF; }

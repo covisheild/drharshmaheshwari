@@ -1,0 +1,280 @@
+{
+  "about": "Bengali (Bangla, as read in West Bengal) glossary for drharshmaheshwari.com. Every Bengali translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Bengali has one of the accepted forms (substring match, so a stem shared by every inflection is listed). Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "register": "Everyday spoken (chalit) Bangla that a family in Kolkata would use, not sadhu bhasha or textbook Sanskritised words. Common English health words that people say in Bangla stay as they are said (BMI, ব্লাড সুগার, ডায়াবেটিস, ব্লাড প্রেশার). Polite আপনি form. Short sentences ending in '।'. Numbers in 0-9, never Bengali digits. Units as in English (cm, kg).",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "tr": [
+        "স্থূলতা"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "tr": [
+        "পেটের স্থূলতা"
+      ]
+    },
+    {
+      "en": "overweight",
+      "tr": [
+        "অতিরিক্ত ওজন",
+        "বেশি ওজন",
+        "ওজন বেশি"
+      ]
+    },
+    {
+      "en": "underweight",
+      "tr": [
+        "কম ওজন",
+        "ওজন কম"
+      ]
+    },
+    {
+      "en": "weight",
+      "tr": [
+        "ওজন"
+      ]
+    },
+    {
+      "en": "height",
+      "tr": [
+        "উচ্চতা",
+        "লম্বা"
+      ]
+    },
+    {
+      "en": "waist",
+      "tr": [
+        "কোমর"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "tr": [
+        "কোমর-উচ্চতা অনুপাত",
+        "কোমর ও উচ্চতার অনুপাত",
+        "কোমর আর উচ্চতার অনুপাত"
+      ]
+    },
+    {
+      "en": "body fat",
+      "tr": [
+        "চর্বি",
+        "মেদ"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "tr": [
+        "ডায়াবেটিস"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "tr": [
+        "হাই ব্লাড প্রেশার",
+        "উচ্চ রক্তচাপ"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "tr": [
+        "হৃদরোগ",
+        "হার্টের অসুখ",
+        "হার্টের রোগ"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "tr": [
+        "ব্লাড সুগার"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "tr": [
+        "কোলেস্টেরল"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "tr": [
+        "ফ্যাটি লিভার"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": [
+        "ঝুঁকি"
+      ]
+    },
+    {
+      "en": "doctor",
+      "tr": [
+        "ডাক্তার"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "tr": [
+        "কাট-অফ"
+      ]
+    },
+    {
+      "en": "guideline",
+      "tr": [
+        "নির্দেশিকা",
+        "গাইডলাইন"
+      ]
+    },
+    {
+      "en": "screening",
+      "tr": [
+        "স্ক্রিনিং",
+        "পরীক্ষা"
+      ]
+    },
+    {
+      "en": "muscle",
+      "tr": [
+        "পেশি",
+        "পেশী"
+      ]
+    },
+    {
+      "en": "calculator",
+      "tr": [
+        "ক্যালকুলেটর"
+      ]
+    },
+    {
+      "en": "evidence",
+      "tr": [
+        "প্রমাণ"
+      ]
+    },
+    {
+      "en": "public health",
+      "tr": [
+        "জনস্বাস্থ্য"
+      ]
+    },
+    {
+      "en": "contribution",
+      "tr": [
+        "অবদান"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "tr": [
+        "ডিসক্লেমার"
+      ]
+    },
+    {
+      "en": "privacy",
+      "tr": [
+        "গোপনীয়তা"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "tr": [
+        "জোরালো"
+      ]
+    },
+    {
+      "en": "energetic",
+      "tr": [
+        "জোরদার"
+      ]
+    },
+    {
+      "en": "percentile",
+      "tr": [
+        "পার্সেন্টাইল"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "tr": [
+        "স্লিপ অ্যাপনিয়া"
+      ]
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ],
+  "banned": [
+    {
+      "pattern": "(?<![\\u0980-\\u09FF])দান",
+      "why": "means donation (দান as a word; অবদান = contribution and প্রদান are fine); the site says support (সহায়তা) and contribution (অবদান)"
+    },
+    {
+      "pattern": "অনুদান|চাঁদা|ডোনেশন",
+      "why": "donation / grant"
+    },
+    {
+      "pattern": "দাতব্য|চ্যারিটি|পরোপকার",
+      "why": "charity"
+    },
+    {
+      "pattern": "[০-৯]",
+      "why": "Bengali digits: numbers stay 0-9"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "বিনামূল্যে|বিনা মূল্যে|বিনা খরচে|বিনা পয়সায়|নিখরচায়|ফ্রি",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "script": "\\u0980-\\u09FF",
+  "negations": [
+    "না ",
+    "না।",
+    "না,",
+    "না:",
+    "না;",
+    "নয়",
+    "নেই",
+    "নি ",
+    "নি।",
+    "নি;",
+    "নি,",
+    "নই",
+    "ছাড়া"
+  ]
+}

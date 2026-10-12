@@ -1,0 +1,278 @@
+{
+  "about": "Kannada glossary for drharshmaheshwari.com. Every Kannada translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Kannada has one of the accepted forms (a substring match, so most entries are stems that every inflection contains: ಬೊಜ್ಜ covers ಬೊಜ್ಜು, ಬೊಜ್ಜಿನ, ಬೊಜ್ಜನ್ನು). Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "register": "Everyday spoken Kannada that a family in Bengaluru or Mysuru would use, not heavy Sanskritised (grānthika) Kannada. Common English health words that people say in Kannada stay as they are said, in Kannada script (BMI, ಬ್ಲಡ್ ಶುಗರ್, ಡಯಾಬಿಟಿಸ್, ಡಾಕ್ಟರ್, ಫ್ಯಾಟಿ ಲಿವರ್). Short sentences, polite plural (ನೀವು, ಮಾಡಿ). Numbers in 0-9, never Kannada digits. Units as in English (cm, kg). Vigorous = ತೀವ್ರ; moderate = ಮಧ್ಯಮ; energetic (moderate to vigorous) = ಚುರುಕಾದ, never ತೀವ್ರ alone.",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "tr": [
+        "ಬೊಜ್ಜ"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "tr": [
+        "ಹೊಟ್ಟೆಯ ಬೊಜ್ಜ",
+        "ಹೊಟ್ಟೆ ಬೊಜ್ಜ"
+      ]
+    },
+    {
+      "en": "overweight",
+      "tr": [
+        "ಅಧಿಕ ತೂಕ",
+        "ಹೆಚ್ಚು ತೂಕ",
+        "ಹೆಚ್ಚಿನ ತೂಕ"
+      ]
+    },
+    {
+      "en": "underweight",
+      "tr": [
+        "ಕಡಿಮೆ ತೂಕ"
+      ]
+    },
+    {
+      "en": "weight",
+      "tr": [
+        "ತೂಕ"
+      ]
+    },
+    {
+      "en": "height",
+      "tr": [
+        "ಎತ್ತರ"
+      ]
+    },
+    {
+      "en": "waist",
+      "tr": [
+        "ಸೊಂಟ"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "tr": [
+        "ಸೊಂಟ-ಎತ್ತರ ಅನುಪಾತ",
+        "ಸೊಂಟ ಮತ್ತು ಎತ್ತರದ ಅನುಪಾತ"
+      ]
+    },
+    {
+      "en": "body fat",
+      "tr": [
+        "ಕೊಬ್ಬ"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "tr": [
+        "ಡಯಾಬಿಟಿಸ್"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "tr": [
+        "ಹೈ ಬ್ಲಡ್ ಪ್ರೆಶರ್",
+        "ಅಧಿಕ ರಕ್ತದೊತ್ತಡ"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "tr": [
+        "ಹೃದಯ ಕಾಯಿಲೆ",
+        "ಹೃದಯದ ಕಾಯಿಲೆ"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "tr": [
+        "ಬ್ಲಡ್ ಶುಗರ್"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "tr": [
+        "ಕೊಲೆಸ್ಟ್ರಾಲ್"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "tr": [
+        "ಫ್ಯಾಟಿ ಲಿವರ್"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": [
+        "ಅಪಾಯ",
+        "ರಿಸ್ಕ್"
+      ]
+    },
+    {
+      "en": "doctor",
+      "tr": [
+        "ಡಾಕ್ಟರ",
+        "ವೈದ್ಯ"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "tr": [
+        "ಕಟ್-ಆಫ್"
+      ]
+    },
+    {
+      "en": "guideline",
+      "tr": [
+        "ಮಾರ್ಗಸೂಚಿ"
+      ]
+    },
+    {
+      "en": "screening",
+      "tr": [
+        "ತಪಾಸಣೆ",
+        "ಸ್ಕ್ರೀನಿಂಗ್"
+      ]
+    },
+    {
+      "en": "muscle",
+      "tr": [
+        "ಸ್ನಾಯು"
+      ]
+    },
+    {
+      "en": "calculator",
+      "tr": [
+        "ಕ್ಯಾಲ್ಕುಲೇಟರ್"
+      ]
+    },
+    {
+      "en": "evidence",
+      "tr": [
+        "ಪುರಾವೆ"
+      ]
+    },
+    {
+      "en": "public health",
+      "tr": [
+        "ಸಾರ್ವಜನಿಕ ಆರೋಗ್ಯ"
+      ]
+    },
+    {
+      "en": "contribution",
+      "tr": [
+        "ಕೊಡುಗೆ"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "tr": [
+        "ಹಕ್ಕು ನಿರಾಕರಣೆ"
+      ]
+    },
+    {
+      "en": "privacy",
+      "tr": [
+        "ಗೌಪ್ಯತ"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "tr": [
+        "ತೀವ್ರ"
+      ]
+    },
+    {
+      "en": "energetic",
+      "tr": [
+        "ಚುರುಕಾದ",
+        "ಚುರುಕಿನ"
+      ]
+    },
+    {
+      "en": "percentile",
+      "tr": [
+        "ಪರ್ಸೆಂಟೈಲ್"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "tr": [
+        "ಸ್ಲೀಪ್ ಆಪ್ನಿಯಾ"
+      ]
+    }
+  ],
+  "banned": [
+    {
+      "pattern": "(?<![\\u0C80-\\u0CFF])ದಾನ",
+      "why": "means donation (ದಾನ as a word); the site says support (ಬೆಂಬಲ) and contribution (ಕೊಡುಗೆ)"
+    },
+    {
+      "pattern": "ದೇಣಿಗೆ|ವಂತಿಗೆ",
+      "why": "donation"
+    },
+    {
+      "pattern": "ದತ್ತಿ|ಧರ್ಮಾರ್ಥ|ಪರೋಪಕಾರ",
+      "why": "charity"
+    },
+    {
+      "pattern": "[೦-೯]",
+      "why": "Kannada digits: numbers stay 0-9"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "(?<![\\u0C80-\\u0CFF])ಉಚಿತ|ಪುಕ್ಕಟೆ|ಫ್ರೀ|ಮುಫತ್ತ",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ],
+  "script": "\\u0C80-\\u0CFF",
+  "negations": [
+    "ಇಲ್ಲ",
+    "ಿಲ್ಲ",
+    "ಅಲ್ಲ",
+    "ಬೇಡ",
+    "ಬಾರದು",
+    "ಲಾಗದು",
+    "ಎಂದಿಗೂ",
+    "ಯಾವತ್ತೂ",
+    "ಯಾವುದೇ",
+    "ದಿದ್ದರೆ",
+    "ಸದೆ",
+    "ಆಗದ",
+    "ವಲ್ಲ",
+    "ಲಾರದು"
+  ]
+}

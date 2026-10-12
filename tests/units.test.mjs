@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { KINDS, nextUnit, toDisplay, fromDisplay, toFtIn, show, unitFieldHTML } from '../src/lib/units.ts';
 
 test('each kind starts with its base unit and a click cycles through its units', () => {
-  assert.deepEqual(Object.fromEntries(Object.entries(KINDS).map(([k, u]) => [k, u[0]])), { height: 'cm', length: 'cm', weight: 'kg', minutes: 'min', hours: 'h', pressure: 'mmHg', glucose: 'mgdl' });
+  assert.deepEqual(Object.fromEntries(Object.entries(KINDS).map(([k, u]) => [k, u[0]])), { height: 'cm', length: 'cm', weight: 'kg', minutes: 'min', hours: 'h', pressure: 'mmHg', glucose: 'mgdl', platelets: 'g9l' });
   assert.equal(nextUnit('height', 'cm'), 'ftin'); assert.equal(nextUnit('height', 'ftin'), 'cm');
   assert.equal(nextUnit('minutes', 'min'), 'h'); assert.equal(nextUnit('hours', 'h'), 'min');
 });
@@ -44,6 +44,9 @@ test('trackers: blood pressure mmHg <-> kPa, blood sugar mg/dL <-> mmol/L', () =
   assert.deepEqual(toDisplay(70, 'glucose', 'mmol'), ['3.9']);
   assert.equal(Math.round(fromDisplay(['7'], 'glucose', 'mmol')), 126);
   assert.deepEqual(toDisplay(fromDisplay(['5.6'], 'glucose', 'mmol'), 'glucose', 'mmol'), ['5.6'], 'no drift back and forth');
+  assert.deepEqual(toDisplay(220, 'platelets', 'lakh'), ['2.2'], '220 × 10⁹/L is 2.2 lakh/mm³');
+  assert.equal(fromDisplay(['2.5'], 'platelets', 'lakh'), 250);
+  assert.deepEqual(toDisplay(fromDisplay(['1.85'], 'platelets', 'lakh'), 'platelets', 'lakh'), ['1.85'], 'no drift back and forth');
 });
 
 test('empty stays empty; shown values have no trailing zeros', () => {

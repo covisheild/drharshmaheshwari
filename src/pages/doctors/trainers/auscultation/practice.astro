@@ -1,11 +1,13 @@
 ---
 import TrainerShell from '../../../../layouts/TrainerShell.astro';
 import Credits from '../../../../trainers/auscultation/Credits.astro';
+import Notes from '../../../../trainers/auscultation/Notes.astro';
 import { trainer } from '../../../../trainers/registry';
 ---
 <TrainerShell trainer={trainer('auscultation')} section="practice" heading="Practice" title="Practice · Auscultation Trainer" description="Practise heart and lung sounds with the waveform shown, no score and no levels.">
   <p slot="intro">Open-ended practice with the waveform visible. Nothing here counts towards quiz levels.</p>
   <div id="app"><noscript><p>This section needs JavaScript.</p></noscript></div>
+  <Notes />
   <Fragment slot="credits"><Credits /></Fragment>
 </TrainerShell>
 

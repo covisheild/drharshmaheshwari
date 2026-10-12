@@ -1,5 +1,5 @@
-// Translations (src/i18n/, docs/translation.md). Source checks always run; checks on the built Hindi pages run when the
-// build has them (Hindi is built on preview builds until it is live: `WORKERS_CI_BRANCH=preview npm run build && npm test`).
+// Translations (src/i18n/, docs/translation.md). Source checks always run; checks on built pages run for every language the
+// build has (a language that is not live yet is built on preview builds only: `WORKERS_CI_BRANCH=preview npm run build && npm test`).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
@@ -12,7 +12,11 @@ import { MODES } from '../src/lib/modes.ts';
 
 const ROOT = new URL('../', import.meta.url).pathname;
 const DIST = join(ROOT, 'dist/client/');
-const glossary = JSON.parse(readFileSync(join(ROOT, 'src/i18n/glossary/hi.json'), 'utf8'));
+const glossaryOf = (code) => JSON.parse(readFileSync(join(ROOT, `src/i18n/glossary/${code}.json`), 'utf8'));
+const dictOf = (code) => JSON.parse(readFileSync(join(ROOT, `src/i18n/${code}.json`), 'utf8'));
+const glossary = glossaryOf('hi');
+// Languages whose translation has begun (a glossary exists): they must pass every source check.
+const STARTED = LANGS.filter((l) => l.code !== 'en' && existsSync(join(ROOT, `src/i18n/glossary/${l.code}.json`)));
 
 test('every translation passes the automated checks (numbers, links, glossary, structure, banned words, untranslated English)', () => {
   const failed = runChecks().filter((r) => r.errors.length);
@@ -49,9 +53,9 @@ test('every translated guide was made from the current English (fingerprints mat
   }
 });
 
-test('the dictionary has no empty entries, and every glossary term is used consistently', () => {
-  const dict = JSON.parse(readFileSync(join(ROOT, 'src/i18n/hi.json'), 'utf8'));
-  assert.deepEqual(Object.entries(dict).filter(([, v]) => !v).map(([k]) => k), []);
+test('the dictionaries have no empty entries, and the language of a URL is read correctly', () => {
+  for (const l of STARTED) assert.deepEqual(Object.entries(dictOf(l.code)).filter(([, v]) => !v).map(([k]) => k), [], `${l.code}.json`);
+  assert.equal(langOf('/ta/learn/x/'), 'ta');
   assert.equal(langOf('/hi/learn/x/'), 'hi');
   assert.equal(langOf('/learn/x/'), 'en');
   assert.equal(langOf('/doctors/'), 'en');
@@ -60,7 +64,6 @@ test('the dictionary has no empty entries, and every glossary term is used consi
 });
 
 // ---------- built pages ----------
-const built = existsSync(join(DIST, 'hi/index.html'));
 const pages = (dir, out = []) => {
   for (const name of readdirSync(dir)) {
     const p = join(dir, name);
@@ -69,112 +72,124 @@ const pages = (dir, out = []) => {
   return out;
 };
 const urlOf = (f) => '/' + f.slice(DIST.length).replace(/index\.html$/, '');
+// The language menu is left out: each language's entry is written in that language.
 const visible = (html) => html
-  .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<head>[\s\S]*?<\/head>/g, ' ')
+  .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<head>[\s\S]*?<\/head>|<ul class="lang-list"[\s\S]*?<\/ul>/g, ' ')
   .replace(/<(\w+)[^>]*\blang="en(-IN)?"[^>]*>[\s\S]*?<\/\1>/g, ' ')
   .replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/g, ' ');
+// The languages this build has (all live ones; every one on a preview build) whose translation has begun.
+const BUILT = existsSync(DIST) ? STARTED.filter((l) => existsSync(join(DIST, l.code, 'index.html'))) : [];
 
-test('built Hindi pages: Hindi throughout, nothing left untranslated, linked to their English pages', { skip: !built && 'no Hindi pages in this build (preview builds only)' }, () => {
-  const hi = pages(join(DIST, 'hi')).map((f) => [urlOf(f), readFileSync(f, 'utf8')]);
-  assert.ok(hi.length >= 10, `only ${hi.length} Hindi pages`);
-  for (const [url, doc] of hi) {
-    assert.match(doc, /<html lang="hi-IN"/, `${url} lang`);
-    assert.doesNotMatch(doc, /⁣|i18n-missing/, `${url} shows English where the dictionary has no Hindi (npm run i18n:missing)`);
-    const en = basePath(url);
-    assert.match(doc, new RegExp(`<link rel="alternate" hreflang="en-IN" href="https://drharshmaheshwari.com${en}"`), `${url} hreflang to English`);
-    assert.match(doc, new RegExp(`<link rel="alternate" hreflang="hi-IN" href="https://drharshmaheshwari.com${url}"`), `${url} hreflang to itself`);
-    assert.match(doc, /class="tr-note[^"]*"/, `${url} lacks the translation note`);
-    assert.match(doc, new RegExp(`class="tr-note[\\s\\S]*?href="${en}"`), `${url}: the note links to the English page`);
-    const text = visible(doc);
-    const runs = [...text.matchAll(/(?:\b[A-Za-z][A-Za-z'’-]+\b[ ,]+){3,}[A-Za-z][A-Za-z'’-]+/g)].map((m) => m[0].trim());
-    assert.deepEqual(runs, [], `${url} has English text outside lang="en"`);
-    for (const ban of glossary.banned) assert.doesNotMatch(text, new RegExp(ban.pattern), `${url}: ${ban.why}`);
-    // Header: the mode switch in Hindi, For Everyone pointing to the Hindi home; the language menu offers English.
-    const sw = doc.match(/<nav class="mode-switch"[\s\S]*?<\/nav>/)[0];
-    const links = [...sw.matchAll(/<a href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)].map((m) => [m[1], m[2].replace(/<[^>]+>/g, '')]);
-    assert.deepEqual(links, [['/hi/', 'सबके लिए'], ['/doctors/', 'डॉक्टरों के लिए']], url);
-    assert.match(doc, new RegExp(`class="lang-list"[\\s\\S]*?href="${en}"[^>]*hreflang="en-IN"`), `${url}: language menu links to the English page`);
-    const nav = [...(doc.match(/<ul class="nav-links"[\s\S]*?<\/ul>/)?.[0] ?? '').matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
-    assert.deepEqual(nav, MODES.everyone.nav.map((n) => `/hi${n.href}`), `${url} nav stays in Hindi`);
-  }
-  // Book pages never call the books free, in Hindi either.
-  const books = readFileSync(join(DIST, 'hi/books/index.html'), 'utf8');
-  for (const ban of glossary.bannedOnBookPages) assert.doesNotMatch(visible(books), new RegExp(ban.pattern), `/hi/books/: ${ban.why}`);
-  // The guides and blog post are in Hindi, with the English references kept in English.
-  for (const url of ['/hi/learn/bmi-cut-offs-for-indians/', '/hi/learn/waist-to-height-ratio/', '/hi/blog/interpretation-of-the-world/']) {
-    if (!existsSync(join(DIST, url, 'index.html'))) continue; // a draft guide is built on preview builds only
-    const doc = readFileSync(join(DIST, url, 'index.html'), 'utf8');
-    assert.match(doc, /<h1>[^<]*[ऀ-ॿ]/, `${url} title in Hindi`);
-    assert.match(doc, /"inLanguage":"hi-IN"/, `${url} schema.org language`);
-    if (url.includes('/learn/')) assert.match(doc, /<ol lang="en">/, `${url} references kept in English`);
-  }
-});
-
-test('built English pages offer Hindi when it is built, and are otherwise unchanged by it', { skip: !built && 'no Hindi pages in this build' }, () => {
-  const home = readFileSync(join(DIST, 'index.html'), 'utf8');
-  assert.match(home, /<html lang="en-IN"/);
-  assert.match(home, /<link rel="alternate" hreflang="hi-IN" href="https:\/\/drharshmaheshwari\.com\/hi\/"/);
-  assert.match(home, /class="lang-list"[\s\S]*?href="\/hi\/"[^>]*hreflang="hi-IN"/);
-  assert.doesNotMatch(home, /class="tr-note/, 'English pages carry no translation note');
-  // For Doctors stays English: no language menu, no Hindi alternates.
-  const doc = readFileSync(join(DIST, 'doctors/index.html'), 'utf8');
-  assert.doesNotMatch(doc, /class="lang-menu"/);
-  assert.doesNotMatch(doc, /hreflang="hi-IN"/);
-  // A page without a Hindi version (the account page, English on purpose) offers the Hindi home page instead.
-  const calc = readFileSync(join(DIST, 'account/index.html'), 'utf8');
-  assert.match(calc, /class="lang-list"[\s\S]*?href="\/hi\/"[^>]*hreflang="hi-IN"/);
-  assert.doesNotMatch(calc, /hreflang="hi-IN" href=/);
-});
-
-test('production builds carry no Hindi until it is live', { skip: built && 'this is a preview build' }, () => {
-  const hiLive = LANGS.find((l) => l.code === 'hi').live;
-  if (hiLive) return;
-  const home = readFileSync(join(DIST, 'index.html'), 'utf8');
-  assert.doesNotMatch(home, /class="lang-menu"|hreflang="hi-IN"/, 'no language menu or Hindi links while Hindi is not live');
-});
-
-// Every For Everyone page has a Hindi version, so a visitor reading in Hindi never falls back to English halfway through.
+// Every For Everyone page has a version in each language, so a reader never falls back to English halfway through.
 // The exceptions are deliberate (docs/translation.md): the account page (it belongs to the trainers and the book reader,
 // which are English) and single book pages (books are always in English). A new For Everyone page must either be added
 // to LOCAL_PAGES (src/i18n/routes.ts) with its words translated, or be listed here with the reason.
 // /trackers/view/ is the doctor's view of a shared link: read by a doctor, so it stays English like the rest of For Doctors.
 const ENGLISH_ONLY = [/^\/account\/$/, /^\/books\/[^/]+\/$/, /^\/404\//, /^\/trackers\/view\//];
-test('every For Everyone page has a Hindi page', { skip: !built && 'no Hindi pages in this build' }, () => {
-  const missing = pages(DIST).map(urlOf)
-    .filter((u) => !u.startsWith('/doctors/') && !u.startsWith('/hi/') && !u.startsWith('/og/') && !ENGLISH_ONLY.some((r) => r.test(u)))
-    .filter((u) => !existsSync(join(DIST, 'hi', u, 'index.html')));
-  assert.deepEqual(missing, [], 'For Everyone pages without a Hindi version');
+const LANG_DIR = new RegExp(`^/(${LANGS.filter((l) => l.code !== 'en').map((l) => l.code).join('|')})/`);
+
+for (const l of BUILT) {
+  const code = l.code, g = glossaryOf(code), dict = dictOf(code), own = new RegExp(`[${g.script}]`);
+
+  test(`built ${l.english} pages: ${l.english} throughout, nothing left untranslated, linked to their English pages`, () => {
+    const all = pages(join(DIST, code)).map((f) => [urlOf(f), readFileSync(f, 'utf8')]);
+    assert.ok(all.length >= 10, `only ${all.length} ${l.english} pages`);
+    for (const [url, doc] of all) {
+      assert.match(doc, new RegExp(`<html lang="${l.html}"`), `${url} lang`);
+      // The language menu writes each language's note in that language, so it is checked on that language's own pages.
+      assert.doesNotMatch(doc.replace(/<ul class="lang-list"[\s\S]*?<\/ul>/, ''), /\u2063|i18n-missing/, `${url} shows English where the dictionary has no translation (npm run i18n:missing -- ${code})`);
+      const en = basePath(url);
+      assert.match(doc, new RegExp(`<link rel="alternate" hreflang="en-IN" href="https://drharshmaheshwari.com${en}"`), `${url} hreflang to English`);
+      assert.match(doc, new RegExp(`<link rel="alternate" hreflang="${l.html}" href="https://drharshmaheshwari.com${url}"`), `${url} hreflang to itself`);
+      assert.match(doc, new RegExp(`class="tr-note[\\s\\S]*?href="${en}"`), `${url}: the translation note links to the English page`);
+      const text = visible(doc);
+      const runs = [...text.matchAll(/(?:\b[A-Za-z][A-Za-z'’-]+\b[ ,]+){3,}[A-Za-z][A-Za-z'’-]+/g)].map((m) => m[0].trim());
+      assert.deepEqual(runs, [], `${url} has English text outside lang="en"`);
+      for (const ban of g.banned) assert.doesNotMatch(text, new RegExp(ban.pattern), `${url}: ${ban.why}`);
+      // Header: the mode switch in the language, For Everyone pointing to this language's home; the language menu offers English.
+      const sw = doc.match(/<nav class="mode-switch"[\s\S]*?<\/nav>/)[0];
+      const links = [...sw.matchAll(/<a href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)].map((m) => [m[1], m[2].replace(/<span class="short"[^>]*>[\s\S]*?<\/span>/, '').replace(/<[^>]+>/g, '')]); // a short phone label is left out
+      assert.deepEqual(links, [[`/${code}/`, dict['For Everyone']], ['/doctors/', dict['For Doctors']]], url);
+      assert.match(doc, new RegExp(`class="lang-list"[\\s\\S]*?href="${en}"[^>]*hreflang="en-IN"`), `${url}: language menu links to the English page`);
+      const nav = [...(doc.match(/<ul class="nav-links"[\s\S]*?<\/ul>/)?.[0] ?? '').matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
+      assert.deepEqual(nav, MODES.everyone.nav.map((n) => `/${code}${n.href}`), `${url} nav stays in ${l.english}`);
+    }
+    // Book pages never call the books free, in any language.
+    const books = readFileSync(join(DIST, code, 'books/index.html'), 'utf8');
+    for (const ban of g.bannedOnBookPages ?? []) assert.doesNotMatch(visible(books), new RegExp(ban.pattern), `/${code}/books/: ${ban.why}`);
+    // Guides and blog posts are translated, with the English references kept in English.
+    for (const url of [`/${code}/learn/bmi-cut-offs-for-indians/`, `/${code}/learn/waist-to-height-ratio/`, `/${code}/blog/interpretation-of-the-world/`]) {
+      if (!existsSync(join(DIST, url, 'index.html'))) continue; // a draft guide is built on preview builds only
+      const doc = readFileSync(join(DIST, url, 'index.html'), 'utf8');
+      assert.match(doc, new RegExp(`<h1>[^<]*[${g.script}]`), `${url} title in ${l.english}`);
+      assert.match(doc, new RegExp(`"inLanguage":"${l.html}"`), `${url} schema.org language`);
+      if (url.includes('/learn/')) assert.match(doc, /<ol lang="en">/, `${url} references kept in English`);
+    }
+    assert.ok(own.test(visible(readFileSync(join(DIST, code, 'index.html'), 'utf8'))), `/${code}/ is in its own script`);
+  });
+
+  test(`every For Everyone page has a ${l.english} page`, () => {
+    const missing = pages(DIST).map(urlOf)
+      .filter((u) => !u.startsWith('/doctors/') && !LANG_DIR.test(u) && !u.startsWith('/og/') && !ENGLISH_ONLY.some((r) => r.test(u)))
+      .filter((u) => !existsSync(join(DIST, code, u, 'index.html')));
+    assert.deepEqual(missing, [], `For Everyone pages without a ${l.english} version`);
+  });
+
+  // A page links to the same language's version of every page that has one: a reader who chose a language stays in it.
+  // Only the translation note's "Read in English" and the language menu point elsewhere on purpose.
+  test(`${l.english} pages link to ${l.english} pages wherever one exists`, () => {
+    const wrong = [];
+    for (const f of pages(join(DIST, code))) {
+      const doc = readFileSync(f, 'utf8').replace(/<aside class="tr-note[\s\S]*?<\/aside>|<ul class="lang-list"[\s\S]*?<\/ul>|<link [^>]*>/g, '');
+      for (const [, href] of doc.matchAll(/href="(\/[^"#?]*)/g)) {
+        if (href.startsWith(`/${code}/`) || href.startsWith('/_astro/') || href.startsWith('/og/') || /\.\w+$/.test(href)) continue;
+        if (existsSync(join(DIST, code, href, 'index.html'))) wrong.push(`${urlOf(f)} -> ${href}`);
+      }
+    }
+    assert.deepEqual([...new Set(wrong)], []);
+  });
+}
+
+test('built English pages offer every built language, and For Doctors stays English', { skip: !BUILT.length && 'no other language in this build' }, () => {
+  const home = readFileSync(join(DIST, 'index.html'), 'utf8');
+  assert.match(home, /<html lang="en-IN"/);
+  assert.doesNotMatch(home, /class="tr-note/, 'English pages carry no translation note');
+  for (const l of BUILT) {
+    assert.match(home, new RegExp(`<link rel="alternate" hreflang="${l.html}" href="https://drharshmaheshwari\\.com/${l.code}/"`));
+    assert.match(home, new RegExp(`class="lang-list"[\\s\\S]*?href="/${l.code}/"[^>]*hreflang="${l.html}"`));
+  }
+  const doc = readFileSync(join(DIST, 'doctors/index.html'), 'utf8');
+  assert.doesNotMatch(doc, /class="lang-menu"/);
+  assert.doesNotMatch(doc, /hreflang="(?!en-IN|x-default)/);
+  // A page without translations (the account page, English on purpose) offers each language's home page instead.
+  const acct = readFileSync(join(DIST, 'account/index.html'), 'utf8');
+  for (const l of BUILT) assert.match(acct, new RegExp(`class="lang-list"[\\s\\S]*?href="/${l.code}/"[^>]*hreflang="${l.html}"`));
+  assert.doesNotMatch(acct, /<link rel="alternate" hreflang="(?!en-IN)/);
 });
 
-// A Hindi page links to the Hindi version of every page that has one: a reader who chose Hindi stays in Hindi.
-// Only the translation note's "Read in English" and the language menu point to English on purpose.
-test('Hindi pages link to Hindi pages wherever one exists', { skip: !built && 'no Hindi pages in this build' }, () => {
-  const wrong = [];
-  for (const f of pages(join(DIST, 'hi'))) {
-    const doc = readFileSync(f, 'utf8').replace(/<aside class="tr-note[\s\S]*?<\/aside>|<ul class="lang-list"[\s\S]*?<\/ul>|<link [^>]*>/g, '');
-    for (const [, href] of doc.matchAll(/href="(\/[^"#?]*)/g)) {
-      if (href.startsWith('/hi/') || href.startsWith('/_astro/') || href.startsWith('/og/') || /\.\w+$/.test(href)) continue;
-      if (existsSync(join(DIST, 'hi', href, 'index.html'))) wrong.push(`${urlOf(f)} -> ${href}`);
-    }
-  }
-  assert.deepEqual([...new Set(wrong)], []);
+test('a production build carries only the live languages', { skip: existsSync(DIST) ? false : 'no build' }, () => {
+  const preview = LANGS.some((l) => !l.live && existsSync(join(DIST, l.code, 'index.html')));
+  if (preview) return; // a preview build carries every language
+  const home = readFileSync(join(DIST, 'index.html'), 'utf8');
+  for (const l of LANGS.filter((x) => !x.live)) assert.doesNotMatch(home, new RegExp(`hreflang="${l.html}"`), `${l.english} is not live yet`);
 });
 
 // The calculators show texts that their calculation libraries write in English (verdicts, labels); the page translates them
-// as it shows them. Every such text needs a Hindi entry, or the Hindi page would show it in English.
+// as it shows them. Every such text needs a translation in each language, or that language's page would show it in English.
 // Internal values (ids, not shown) are listed here.
 const INTERNAL = new Set(['half height', ' (above the range)']);
-test('every text a calculation library shows has a Hindi translation', () => {
-  const dict = JSON.parse(readFileSync(join(ROOT, 'src/i18n/hi.json'), 'utf8'));
+test('every text a calculation library shows has a translation in every language', () => {
   const libs = new Set();
   for (const f of readdirSync(join(ROOT, 'src/pages/tools'))) {
     for (const m of readFileSync(join(ROOT, 'src/pages/tools', f), 'utf8').matchAll(/'(\/src\/lib\/[\w-]+\.ts)'/g)) libs.add(m[1]);
   }
   assert.ok(libs.size >= 4, `only ${libs.size} calculation libraries found`);
-  const missing = [];
-  for (const lib of libs) {
-    const src = readFileSync(join(ROOT, lib), 'utf8');
-    for (const [, s] of src.matchAll(/'((?:\\.|[^'\\\n])*)'/g)) if (/[A-Za-z]{3,} [A-Za-z]/.test(s) && !INTERNAL.has(s) && !(s in dict)) missing.push(`${lib}: ${s}`);
+  for (const l of STARTED) {
+    const dict = dictOf(l.code), missing = [];
+    for (const lib of libs) {
+      const src = readFileSync(join(ROOT, lib), 'utf8');
+      for (const [, s] of src.matchAll(/'((?:\\.|[^'\\\n])*)'/g)) if (/[A-Za-z]{3,} [A-Za-z]/.test(s) && !INTERNAL.has(s) && !(s in dict)) missing.push(`${lib}: ${s}`);
+    }
+    assert.deepEqual([...new Set(missing)], [], l.code);
   }
-  assert.deepEqual([...new Set(missing)], []);
 });

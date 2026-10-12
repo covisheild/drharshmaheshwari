@@ -4,6 +4,7 @@ import { Engine } from '../core/engine';
 import { SyncedProgressStore } from '../core/sync';
 import type { TrainerAdapter } from '../core/types';
 import { trainer } from '../registry';
+import { listenFor } from './notes';
 import { BY_ID, FINDING, LEVELS, NORMAL, OPTIONS, PRACTICE, RECORDINGS, VERSION, examples, media, type Recording } from './config';
 
 const pick = <T,>(xs: T[]): T | undefined => xs[Math.floor(Math.random() * xs.length)];
@@ -20,7 +21,7 @@ export const adapter: TrainerAdapter<Recording> = {
 
   explain(r, part) {
     const f = FINDING.get(findingFor(r, part.ask.key))!;
-    return { title: f.label, body: f.listen };
+    return { title: f.label, body: listenFor(f.id) };
   },
 
   compare(r, parts) {

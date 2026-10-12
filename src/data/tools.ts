@@ -9,5 +9,5 @@ export const TOOLS: Tool[] = [
   { mode: 'everyone', href: '/tools/indian-diabetes-risk-score/', title: 'Indian Diabetes Risk Score (IDRS)', text: 'Four questions that estimate your risk of type 2 diabetes.' },
   { mode: 'everyone', href: '/tools/stop-bang/', title: 'STOP-Bang', text: 'Eight yes/no questions that estimate your risk of obstructive sleep apnoea.' },
   { mode: 'doctors', href: '/tools/activity-check/', title: 'Activity check: IPAQ-SF and ICMR-NIN targets', text: 'IPAQ short form (MET-min/week, Low/Moderate/High by the 2005 protocol) beside the ICMR-NIN 2024 targets (WHO under 5 and in pregnancy).' },
-  { mode: 'doctors', title: 'FIB-4 for fatty liver', text: 'Estimate liver fibrosis risk from routine blood tests.' },
+  { mode: 'doctors', href: '/doctors/tools/fib-4/', title: 'FIB-4 for fatty liver', text: 'Rule advanced fibrosis in or out in MASLD/NAFLD from age, AST, ALT and platelets (10⁹/L or lakh/mm³), with the age-65 cut-off.' },
 ];

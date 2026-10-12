@@ -1,0 +1,281 @@
+{
+  "about": "Marathi glossary for drharshmaheshwari.com. Every Marathi translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Marathi has one of the accepted forms (a substring match, so stems such as लठ्ठपण and पुराव cover the inflected forms; nukta and chandrabindu are ignored when comparing). Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "register": "Everyday spoken Marathi that a family in Pune or Nagpur would use, not textbook Sanskritised Marathi, and Marathi grammar and words (आहे, नाही, साठी, वजन), never Hindi. Common English health words that people say in Marathi stay as they are said (BMI, ब्लड शुगर, डायबिटीस, ब्लड प्रेशर). Polite plural for the reader (तुम्ही) and for doctors (डॉक्टरांना). Short sentences. Numbers in 0-9, never Devanagari digits. Units as in English (cm, kg). Full stop is '.'.",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "tr": [
+        "लठ्ठपण"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "tr": [
+        "पोटाचा लठ्ठपण",
+        "पोटाच्या लठ्ठपण",
+        "पोटावरील लठ्ठपण"
+      ]
+    },
+    {
+      "en": "overweight",
+      "tr": [
+        "जास्त वजन",
+        "अधिक वजन"
+      ]
+    },
+    {
+      "en": "underweight",
+      "tr": [
+        "कमी वजन"
+      ]
+    },
+    {
+      "en": "weight",
+      "tr": [
+        "वजन"
+      ]
+    },
+    {
+      "en": "height",
+      "tr": [
+        "उंची"
+      ]
+    },
+    {
+      "en": "waist",
+      "tr": [
+        "कंबर"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "tr": [
+        "कंबर-उंची गुणोत्तर",
+        "कंबर आणि उंचीचे गुणोत्तर",
+        "कंबर आणि उंची यांचे गुणोत्तर"
+      ]
+    },
+    {
+      "en": "body fat",
+      "tr": [
+        "चरबी"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "tr": [
+        "डायबिटीस",
+        "मधुमेह"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "tr": [
+        "हाय ब्लड प्रेशर",
+        "उच्च रक्तदाब"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "tr": [
+        "हृदयविकार",
+        "हृदयरोग"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "tr": [
+        "ब्लड शुगर"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "tr": [
+        "कोलेस्टेरॉल",
+        "कोलेस्ट्रॉल"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "tr": [
+        "फॅटी लिव्हर"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": [
+        "धोका",
+        "धोक्या",
+        "धोके"
+      ]
+    },
+    {
+      "en": "doctor",
+      "tr": [
+        "डॉक्टर"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "tr": [
+        "कट-ऑफ"
+      ]
+    },
+    {
+      "en": "guideline",
+      "tr": [
+        "मार्गदर्शक"
+      ]
+    },
+    {
+      "en": "screening",
+      "tr": [
+        "तपासणी",
+        "तपासण"
+      ]
+    },
+    {
+      "en": "muscle",
+      "tr": [
+        "स्नायू"
+      ]
+    },
+    {
+      "en": "calculator",
+      "tr": [
+        "कॅल्क्युलेटर"
+      ]
+    },
+    {
+      "en": "evidence",
+      "tr": [
+        "पुरावा",
+        "पुराव्या",
+        "पुरावे"
+      ]
+    },
+    {
+      "en": "public health",
+      "tr": [
+        "सार्वजनिक आरोग्य"
+      ]
+    },
+    {
+      "en": "contribution",
+      "tr": [
+        "योगदान"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "tr": [
+        "अस्वीकरण"
+      ]
+    },
+    {
+      "en": "privacy",
+      "tr": [
+        "गोपनीयता"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "tr": [
+        "जोरदार"
+      ]
+    },
+    {
+      "en": "energetic",
+      "tr": [
+        "ऊर्जावान"
+      ]
+    },
+    {
+      "en": "percentile",
+      "tr": [
+        "पर्सेंटाइल"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "tr": [
+        "स्लीप ॲप्निया"
+      ]
+    }
+  ],
+  "banned": [
+    {
+      "pattern": "(?<![\\u0900-\\u097F])दान",
+      "why": "means donation (दान as a word; योगदान, निदान and प्रदान are fine); the site says support (पाठिंबा) and contribution (योगदान)"
+    },
+    {
+      "pattern": "देणगी",
+      "why": "donation"
+    },
+    {
+      "pattern": "वर्गणी",
+      "why": "donation / subscription collection"
+    },
+    {
+      "pattern": "धर्मादाय|परोपकार|धर्मार्थ",
+      "why": "charity"
+    },
+    {
+      "pattern": "[०-९]",
+      "why": "Devanagari digits: numbers stay 0-9"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "मोफत|फुकट|विनामूल्य|निःशुल्क|फ्री",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ],
+  "script": "\\u0900-\\u097F",
+  "negations": [
+    "नाही",
+    "नका",
+    "नये",
+    "नस",
+    "न ",
+    "विना",
+    "शिवाय",
+    "नव्हे",
+    "नव्हत"
+  ]
+}
