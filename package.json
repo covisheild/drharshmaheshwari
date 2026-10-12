@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "node --import ./tests/ts-hooks.mjs --test tests/site.test.mjs tests/upi.test.mjs tests/bmi.test.mjs tests/idrs.test.mjs tests/fib4.test.mjs tests/theme.test.mjs tests/schedule.test.mjs tests/stopbang.test.mjs tests/activity.test.mjs tests/units.test.mjs tests/anchor.test.mjs tests/ai.test.mjs tests/booksync.test.mjs tests/trackers.test.mjs tests/i18n.test.mjs tests/api.test.mjs",
+    "test": "node --import ./tests/ts-hooks.mjs --test tests/site.test.mjs tests/upi.test.mjs tests/bmi.test.mjs tests/idrs.test.mjs tests/fib4.test.mjs tests/theme.test.mjs tests/schedule.test.mjs tests/stopbang.test.mjs tests/activity.test.mjs tests/units.test.mjs tests/anchor.test.mjs tests/ai.test.mjs tests/booksync.test.mjs tests/trackers.test.mjs tests/i18n.test.mjs tests/api.test.mjs tests/pwa.test.mjs",
     "test:e2e": "node tests/e2e.mjs",
     "i18n:missing": "node scripts/i18n/missing.mjs",
     "i18n:status": "node --import ./tests/ts-hooks.mjs scripts/i18n/status.mjs",

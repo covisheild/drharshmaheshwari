@@ -1,0 +1,7 @@
+---
+// /<lang>/offline/: the English page, in the page's language (src/i18n/).
+import Page from '../offline.astro';
+import { langPaths } from '../../i18n/routes';
+export const getStaticPaths = () => langPaths();
+---
+<Page />

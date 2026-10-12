@@ -1,0 +1,124 @@
+---
+// Install the site as an app (PWA), and manage what is saved for offline. Linked from every footer ("Install the app").
+// No banner or pop-up anywhere asks people to install: this page is the only place, and only when they come to it.
+// Also /<lang>/app/: the page through the dictionary (t, <T>), its script's words through w() (src/i18n/client.ts).
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+import ClientWords from '../components/ClientWords.astro';
+import { langOf } from '../i18n/languages';
+import { localHref } from '../i18n/routes';
+import { useT } from '../i18n/t';
+import '../styles/offline.css';
+const t = useT(Astro.url.pathname);
+const L = (href: string) => localHref(langOf(Astro.url.pathname), href);
+---
+<Base title={t('Install the app')} description={t('Install drharshmaheshwari.com as an app on your phone or computer in one tap. It updates itself, and books and trainers can be saved to use without internet.')}>
+  <ClientWords sources={['/src/pages/app.astro', '/src/pwa/ui.ts']} />
+  <div class="prose-wrap prose" style="padding-block:3rem 4rem">
+    <img class="app-icon" src="/icons/icon-192.png" alt="" width="88" height="88" />
+    <h1>{t('The DrHM app')}</h1>
+    <p>{t('This website, as an app: its own icon on your phone or computer, full screen, one tap to open. Because the app is the website, it is always the latest version. There is nothing to update.')}</p>
+
+    <div class="app-install" id="app-install">
+      <div data-show="installed" hidden>
+        <p><T><b>You are using the app.</b> It updates itself each time it opens with internet.</T></p>
+      </div>
+      <div data-show="prompt" hidden>
+        <button type="button" class="btn btn-primary btn-lg" id="app-install-btn">{t('Install the app')}</button>
+        <p class="muted small">{t('Your browser asks you to confirm. The app then appears with your other apps.')}</p>
+      </div>
+      <div data-show="ios" hidden>
+        <p><T><b>On iPhone and iPad</b> (Apple allows apps from websites only this way):</T></p>
+        <ol>
+          <li><T>Tap the <b>Share</b> button</T> <svg class="app-share" viewBox="0 0 24 24" width="18" height="18" aria-label={t('(square with an arrow pointing up)')} role="img"><path d="M12 3v12M8 7l4-4 4 4M6 11H5v10h14V11h-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> {t('(in Safari at the bottom of the screen, in Chrome at the top right).')}</li>
+          <li><T>Scroll down and tap <b>Add to Home Screen</b>.</T></li>
+          <li><T>Tap <b>Add</b>. The DrHM icon appears on your home screen.</T></li>
+        </ol>
+      </div>
+      <div data-show="other">
+        <p><T>Open your browser's menu and choose <b>Install app</b> or <b>Add to Home screen</b>. Chrome, Edge and Samsung Internet offer it on Android phones and on computers. On an iPhone, use Safari's <b>Share</b> button, then <b>Add to Home Screen</b>.</T></p>
+      </div>
+    </div>
+
+    <h2>{t('Updates')}</h2>
+    <p>{t('Nothing to download or approve. Whenever the app opens with internet it shows the site as it is today. Books and trainers you saved for offline update themselves in the background, downloading only what changed.')}</p>
+
+    <h2 id="offline">{t('Save for offline')}</h2>
+    <p><T>Books and trainers can be kept on this device, to read and practise without internet. Nothing is downloaded until you tap <b>Save for offline</b>, one book or trainer at a time, and you can remove any of them here.</T></p>
+    <div id="app-packs" aria-live="polite"><p class="muted">{t('Loading…')}</p></div>
+    <p class="muted small" id="app-storage"></p>
+    <noscript><p>{t('Saving for offline needs JavaScript.')}</p></noscript>
+
+    <h2>{t('What stays on this device')}</h2>
+    <ul>
+      <li>{t('The last pages you opened, so they open without internet (about 60 pages, the oldest dropped first).')}</li>
+      <li>{t('Books and trainers only when you save them.')}</li>
+      <li>{t('Your reading places, highlights and trainer progress, as before. Sign in to keep them on every device.')} <a href={L('/privacy/') + '#app'}>{t('Privacy')}</a></li>
+    </ul>
+  </div>
+</Base>
+
+<style is:global>
+  .app-icon { display: block; width: 88px; height: 88px; border-radius: 22px; margin-bottom: 1rem; }
+  .app-install { margin: 1.5rem 0 .5rem; padding: 1.25rem 1.4rem; border: 1px solid var(--line-2); border-radius: 18px; background: var(--surface); }
+  .app-install p:last-child, .app-install ol:last-child { margin-bottom: 0; }
+  .app-share { vertical-align: -3px; }
+  .app-packs { list-style: none; padding: 0 !important; margin: 1rem 0; display: grid; gap: .75rem; }
+  .app-packs li { margin: 0 !important; padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 14px; }
+  .app-pack-t { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .25rem 1rem; }
+  .app-pack-t a { font-weight: 600; }
+  .app-packs .ofl { margin-top: .6rem; }
+</style>
+
+<script>
+  import { mountOfflineSave } from '../pwa/ui';
+  import { offlineSaveHtml } from '../pwa/markup';
+  import { formatBytes, packIndex, supported } from '../pwa/packs';
+  import { w } from '../i18n/client';
+
+  // ---- install
+  const box = document.getElementById('app-install')!;
+  const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const installed = () => matchMedia('(display-mode: standalone)').matches || (navigator as Navigator & { standalone?: boolean }).standalone === true;
+  const pick = () => {
+    const which = installed() ? 'installed' : window.drhmInstall ? 'prompt' : ios ? 'ios' : 'other';
+    box.querySelectorAll<HTMLElement>('[data-show]').forEach((el) => { el.hidden = el.dataset.show !== which; });
+  };
+  addEventListener('drhm:installable', pick);
+  addEventListener('drhm:installed', pick);
+  document.getElementById('app-install-btn')!.addEventListener('click', async () => {
+    const p = window.drhmInstall;
+    if (!p) return;
+    await p.prompt();
+    await p.userChoice.catch(() => null);
+    window.drhmInstall = null;
+    pick();
+  });
+  pick();
+
+  // ---- save for offline
+  const list = document.getElementById('app-packs')!;
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  const storage = async () => {
+    const est = await navigator.storage?.estimate?.().catch(() => null);
+    const el = document.getElementById('app-storage')!;
+    if (est?.usage != null) el.textContent = w('This site uses {size} on this device in all.', { size: formatBytes(est.usage) });
+  };
+  if (!supported()) {
+    list.innerHTML = `<p>${w('This browser cannot keep books for offline use. Chrome, Edge, Firefox and Safari can.')}</p>`;
+  } else {
+    try {
+      const { packs } = await packIndex();
+      const kinds: [string, string][] = [['book', w('Books')], ['trainer', w('Trainers')]];
+      list.innerHTML = kinds.map(([k, label]) => {
+        const ps = packs.filter((p) => p.kind === k);
+        return ps.length ? `<h3>${label}</h3><ul class="app-packs">${ps.map((p) => `<li><div class="app-pack-t"><a href="${esc(p.open)}">${esc(p.title)}</a></div>${offlineSaveHtml({ id: p.id, title: p.title, root: p.open, kind: p.kind })}</li>`).join('')}</ul>` : '';
+      }).join('');
+      mountOfflineSave(list);
+      list.addEventListener('click', () => setTimeout(storage, 1500));
+    } catch {
+      list.innerHTML = `<p>${w('The list did not load. Check your internet connection and reload the page.')}</p>`;
+    }
+    void storage();
+  }
+</script>

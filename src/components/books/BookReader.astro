@@ -7,6 +7,7 @@ import '../../styles/reader.css';
 import Base from '../../layouts/Base.astro';
 import ModeBar from '../site/ModeBar.astro';
 import ThemeToggle from '../ThemeToggle.astro';
+import OfflineSave from '../OfflineSave.astro';
 import { SITE } from '../../consts';
 import type { Book } from '../../reader/types';
 
@@ -129,6 +130,7 @@ const colours = ['Yellow', 'Green', 'Blue', 'Pink'];
           <p class="rd-meta">{book.author} · Version {book.version} · updated {date} · {book.licence}</p>
           <p class="rd-resume" id="rd-resume" hidden></p>
           <a class="btn btn-primary" href={book.pdf} download rel="noopener">Download the PDF <span aria-hidden="true">↓</span></a>
+          <OfflineSave id={`book-${book.id.toLowerCase()}`} title={title} root={book.url} kind="book" />
           <slot name="links" />
         </div>
       </header>

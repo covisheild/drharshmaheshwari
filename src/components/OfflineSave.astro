@@ -1,0 +1,20 @@
+---
+// "Save for offline" for one book or trainer (src/pwa/ui.ts, packs.ts). Placing it on a page also declares the pack:
+// scripts/pwa/integration.mjs reads these attributes after the build and lists every file under `root`.
+// Invisible (its space kept) until the script finds the browser can keep files; removed where it cannot.
+import '../styles/offline.css';
+import { offlineSaveHtml } from '../pwa/markup';
+interface Props {
+  id: string;            // permanent: it names the cache on people's devices
+  title: string;
+  root: string;          // URL folder that holds the pack's pages and files
+  kind: 'book' | 'trainer';
+}
+const { id, title, root, kind } = Astro.props;
+---
+<Fragment set:html={offlineSaveHtml({ id, title, root, kind })} />
+
+<script>
+  import { mountOfflineSave } from '../pwa/ui';
+  mountOfflineSave();
+</script>

@@ -1,0 +1,149 @@
+// The app's service worker (template). scripts/pwa/integration.mjs fills in BUILD and SHELL and writes it to /sw.js
+// after every build; a new build is a new file, so every installed copy picks it up by itself and takes over at once.
+//
+// What it does, and what it never does:
+// - Pages: network first, so the app always shows the latest site when online. A copy of each page opened is kept
+//   (the last RUNTIME_MAX) for when there is no network; with a slow network a kept copy is shown after SLOW_MS.
+// - /_astro/ and /fonts/ files have hashed or fixed names: served from the device once kept.
+// - /api/ (sign-in, sync) is never touched or cached.
+// - Books, figures and trainer audio are never downloaded here. They are kept only when someone taps "Save for
+//   offline" (src/pwa/packs.ts, one cache per book or trainer); this file only reads those caches.
+// - With no network and no kept copy: the offline page, which lists what is saved on the device.
+
+const BUILD = '__BUILD__';
+const SHELL = __SHELL__;
+const SHELL_CACHE = `shell-${BUILD}`;
+const PAGES = 'pages';
+const ASSETS = 'assets';
+const FONTS = 'fonts';
+const RUNTIME_MAX = 60;   // pages kept from browsing
+const ASSETS_MAX = 250;   // scripts, styles and images of those pages
+const SLOW_MS = 4000;
+const MEDIA_HOST = 'files.drharshmaheshwari.com';
+const MATCH = { ignoreVary: true };
+
+self.addEventListener('install', (e) => {
+  e.waitUntil(caches.open(SHELL_CACHE)
+    .then((c) => c.addAll(SHELL.map((u) => new Request(u, { cache: 'reload' }))))
+    .then(() => self.skipWaiting()));
+});
+
+self.addEventListener('activate', (e) => {
+  e.waitUntil((async () => {
+    for (const k of await caches.keys()) if (k.startsWith('shell-') && k !== SHELL_CACHE) await caches.delete(k);
+    if (self.registration.navigationPreload) await self.registration.navigationPreload.enable();
+    await self.clients.claim();
+  })());
+});
+
+self.addEventListener('fetch', (e) => {
+  const req = e.request;
+  if (req.method !== 'GET') return;
+  const url = new URL(req.url);
+  if (url.origin === location.origin) {
+    const p = url.pathname;
+    if (p.startsWith('/api/') || p === '/sw.js' || p.startsWith('/offline/packs')) return;
+    if (req.mode === 'navigate') { e.respondWith(page(e)); return; }
+    if (p.startsWith('/_astro/') || p.startsWith('/fonts/') || p.startsWith('/icons/')) { e.respondWith(asset(req)); return; }
+    e.respondWith(networkFirst(req));
+    return;
+  }
+  if (url.hostname === MEDIA_HOST) { e.respondWith(media(req)); return; }
+  if (url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com') e.respondWith(font(req));
+});
+
+/** A kept copy of a page, wherever it is (a saved book or trainer, pages opened before, the shell). */
+async function keptPage(href) {
+  const u = new URL(href);
+  u.hash = ''; u.search = '';
+  const tries = [u.href];
+  if (!u.pathname.endsWith('/') && !/\.[a-z0-9]+$/i.test(u.pathname)) tries.push(`${u.href}/`);
+  for (const t of tries) {
+    const hit = await caches.match(t, { ...MATCH, ignoreSearch: true });
+    if (hit) return hit;
+  }
+  return null;
+}
+
+async function page(e) {
+  const req = e.request;
+  const kept = keptPage(req.url);
+  const net = (async () => {
+    const res = (await e.preloadResponse) || (await fetch(req));
+    if (res.ok && res.type === 'basic' && (res.headers.get('content-type') || '').includes('text/html')) {
+      e.waitUntil(keep(PAGES, req.url, res.clone(), RUNTIME_MAX));
+    }
+    return res;
+  })();
+  // Slow network and a copy on the device: show the copy; the network answer still refreshes it for next time.
+  const slow = new Promise((resolve) => setTimeout(() => kept.then((c) => c && resolve(c)), SLOW_MS));
+  try {
+    return await Promise.race([net, slow]);
+  } catch {
+    return (await kept) || (await caches.match('/offline/', { cacheName: SHELL_CACHE })) || Response.error();
+  }
+}
+
+async function asset(req) {
+  const hit = await caches.match(req, MATCH);
+  if (hit) return hit;
+  const res = await fetch(req);
+  if (res.ok && res.type === 'basic') keep(ASSETS, req.url, res.clone(), ASSETS_MAX);
+  return res;
+}
+
+/** Section text, covers, data files: always fresh when online; from a saved book when not. */
+async function networkFirst(req) {
+  try {
+    return await fetch(req);
+  } catch (err) {
+    const hit = await caches.match(req, { ...MATCH, ignoreSearch: true });
+    if (hit) return ranged(req, hit);
+    throw err;
+  }
+}
+
+/** Figures and trainer audio on R2: from a saved book or trainer if there, else straight from the network (not kept). */
+async function media(req) {
+  const hit = await caches.match(req.url, MATCH);
+  return hit ? ranged(req, hit) : fetch(req);
+}
+
+/** Reader fonts (Google Fonts): small, kept once used, so a saved book looks the same offline. */
+async function font(req) {
+  const hit = await caches.match(req.url, { ...MATCH, cacheName: FONTS });
+  if (hit) return hit;
+  // Fetched with CORS so the copy is readable (an opaque copy would count as megabytes against the device's quota).
+  const res = await fetch(req.url, { mode: 'cors', credentials: 'omit' });
+  if (res.ok) { const c = await caches.open(FONTS); await c.put(req.url, res.clone()); }
+  return res;
+}
+
+async function keep(name, url, res, max) {
+  const c = await caches.open(name);
+  await c.put(url, res);
+  const keys = await c.keys();
+  for (let i = 0; i < keys.length - max; i++) await c.delete(keys[i]);
+}
+
+/** Audio players ask for byte ranges; a kept file answers them itself (206), as the server would. */
+async function ranged(req, res) {
+  const range = req.headers.get('range');
+  const m = range && /^bytes=(\d*)-(\d*)$/.exec(range.trim());
+  if (!m) return res;
+  const buf = await res.arrayBuffer();
+  const size = buf.byteLength;
+  let start, end;
+  if (m[1] === '') { start = Math.max(0, size - Number(m[2])); end = size - 1; }
+  else { start = Number(m[1]); end = m[2] === '' ? size - 1 : Math.min(Number(m[2]), size - 1); }
+  if (start >= size || start > end) return new Response(null, { status: 416, headers: { 'Content-Range': `bytes */${size}` } });
+  return new Response(buf.slice(start, end + 1), {
+    status: 206,
+    headers: {
+      'Content-Type': res.headers.get('content-type') || 'application/octet-stream',
+      'Content-Range': `bytes ${start}-${end}/${size}`,
+      'Content-Length': String(end - start + 1),
+      'Accept-Ranges': 'bytes',
+    },
+  });
+}

@@ -12,3 +12,16 @@
 
 /books/*.pdf
   Cache-Control: public, max-age=86400
+
+/sw.js
+  Cache-Control: no-cache
+
+/manifest.webmanifest
+  Content-Type: application/manifest+json
+  Cache-Control: public, max-age=3600
+
+/offline/packs.json
+  Cache-Control: no-cache
+
+/offline/packs/*
+  Cache-Control: no-cache
