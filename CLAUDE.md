@@ -8,7 +8,9 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 - The URL decides the mode: `/` and everything not under `/doctors/` is **For Everyone**; `/doctors/...` is **For Doctors**.
   Nothing about the mode is stored in the browser. Use these exact labels; never "General".
 - `src/lib/modes.ts` holds each mode's label, home, navigation and footer. `Base.astro` sets `<html data-mode>` from the URL.
-- Each mode has its own Books, Videos, Tools and Trainers. Content carries its mode: books have `mode:` in frontmatter
+- Each mode has its own Books, Videos, Tools and Trainers. Books and Videos are not in the header (Harsh, 11 Oct 2026): they are reached from cards at the top of
+  Learn (`/learn/`) and Evidence (`/doctors/evidence/`), `MoreCards.astro`, and from the footer. Both home pages show a Blog card instead of books; the
+  For Everyone home lists the tools in a box that scrolls inside its card. Content carries its mode: books have `mode:` in frontmatter
   (`everyone` → `/books/<slug>/`, `doctors` → `/doctors/books/<slug>/`); videos have `mode` in `src/data/videos.json`;
   tools are listed in `src/data/tools.ts`; trainers in `src/trainers/registry.ts`. Evidence articles (`src/content/clinicians/`)
   are published at `/doctors/evidence/<slug>/`.
@@ -43,6 +45,23 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 - R2 files are saved with CORS (`mode: 'cors'`): the bucket's CORS policy must allow GET from the site's origins (it already does for peaks).
 - `/offline/` (noindex, not in the sitemap) is shown when offline and the page is not on the device; it lists saved packs and recent pages.
 - Tests: `tests/pwa.test.mjs` (manifest, icons, worker, packs); `tests/e2e.mjs` installs, saves a book, reads it offline, removes it.
+
+## Languages (`/hi/`): plan and pipeline in `docs/translation.md`
+
+- The URL decides the language like the mode: `/hi/...` is Hindi (`src/i18n/languages.ts`, `langOf`). **Every For Everyone page has a Hindi page**,
+  calculators included (`tests/i18n.test.mjs` fails on one without; exceptions: account page, single book pages). For Doctors, books and
+  references stay English. Language button in the header (`LangSwitch.astro`). On a Hindi page every link to a page that has a Hindi version
+  goes to it (`localHref()`; tested).
+- Hindi is live (Harsh, 11 Oct 2026). A new language starts `live: false` (built only on preview builds) until Harsh says to make it live.
+  Harsh reads Hindi; every other language relies on the AI pipeline only (automated checks + independent back-translation), never on colleagues.
+- Words: `src/i18n/hi.json` (English text → Hindi; `t()` / `<T>` on the page; in a page script `w('Whole sentence with {placeholders}', vars)`
+  from `src/i18n/client.ts`, with `<ClientWords sources={[page, lib]} />` on the page: never build a shown sentence from pieces or template literals).
+  A calculation library's English texts are translated where the page shows them; each needs a dictionary entry (tested). `npm run test:e2e`
+  fills every Hindi calculator and fails on English in the results. Guides: `src/content/i18n/hi/<collection>/<slug>.md` with the English
+  file's fingerprint (`npm run i18n:status`). Changed English shows as English until retranslated; never ship a stale medical translation.
+- **Whenever English text on a For Everyone page changes, update its translations in the same commit**: `WORKERS_CI_BRANCH=preview npm run build`,
+  `npm run i18n:missing -- hi --json`, translate with the glossary (`src/i18n/glossary/hi.json`), `npm run i18n:check`, back-translate
+  what changed, then `npm test` on the preview build.
 
 ## Support this project (`/support/`)
 
@@ -94,8 +113,9 @@ is where Harsh writes drafts and instructions. Never edit Notion content to matc
    - Page update / Site change → edit the named page or `src/consts.ts`
    - Stage = Remove from site → delete the file/entry
 3. Apply `Voice & rules`: key points, question headings, references (open every one; PubMed tool for PMIDs), `reviewed` date. Download Notion images/attachments into the repo — Notion file URLs expire.
-4. `npm run build` must pass; screenshot mobile (390px) and desktop; check no horizontal overflow.
-5. Commit, push to `main`. Then in Notion: untick `🚀 Publish`, Stage = Live, fill Live URL (the site page, not the PDF link) and Last published, write what changed in Claude notes. Add a line to Publish log. Update Site map if a section changed.
+4. Translate what the row adds or changes on a For Everyone page, once the English is final (Languages, above).
+5. `npm run build` must pass; screenshot mobile (390px) and desktop; check no horizontal overflow.
+6. Commit, push to `main`. Then in Notion: untick `🚀 Publish`, Stage = Live, fill Live URL (the site page, not the PDF link) and Last published, write what changed in Claude notes. Add a line to Publish log. Update Site map if a section changed.
 
 Questions for Harsh go in the row's **Claude notes** with Stage = Needs your input.
 
@@ -142,7 +162,7 @@ local devDependency. Change production settings only on purpose; preview-only se
   `src/data/book-shelves.ts` (Public Health, Clinical Medicine), all drawn by `CollectionCard.astro`. A book joins a shelf with `shelf: <slug>` in its
   `src/content/books/<slug>.md`; the shelf card then opens `/doctors/books/<shelf>/` (`ShelfPage.astro`, covers in a row, same layout as the series page)
   and the cover opens the reader. A shelf with no book yet shows "In preparation" and no link; its first book turns it on. Shelf slugs are permanent
-  and must differ from every book slug (the build stops if not). The home page's For Doctors section shows the same shelves. New subject = add one entry.
+  and must differ from every book slug (the build stops if not). New subject = add one entry.
 - **Never write "free" about the books, datasets or PDFs** (Harsh, 6 Oct 2026: it should feel premium). Say "Read online", "Download the PDF". The licence
   line ("CC BY-NC-SA 4.0 ... free to copy, share and adapt") and `/disclaimer/` and `/support/` keep their wording; `tests/site.test.mjs` checks the book pages.
 - **One reader for every book, no landing page in front of it.** A book with text on the site opens straight in the reader from its card;
@@ -245,9 +265,44 @@ local devDependency. Change production settings only on purpose; preview-only se
 
 - One page for every age (For Everyone; For Doctors > Tools lists the same page). Plan, sources and settled decisions:
   `docs/activity-check-plan.md`. Engine `src/lib/activity.ts` (no page code), tests `tests/activity.test.mjs` (boundary examples).
-- WHO 2020 targets (WHO 2019 for under-5s) for each age; IPAQ short form scored by its Nov 2005 protocol from 15 years.
-  Walking counts towards WHO minutes; the 10-minute rule applies only to the IPAQ score; screen time and sleep are checked only under 5.
+- Targets: ICMR-NIN Dietary Guidelines 2024, Guideline 10, from 5 years (5–19, 20–60, over 60); WHO 2019 under 5 and WHO 2020 in
+  pregnancy, where ICMR-NIN gives no numbers (the page says so). IPAQ short form scored by its Nov 2005 protocol from 15 years.
+  Walking counts towards the target minutes; the 10-minute rule applies only to the IPAQ score; screen time and sleep are checked only under 5.
   Words: "Reached" / "Not yet", never "inactive". Clinical wording: Harsh reviews before `main`.
+
+## Trackers: BP and blood sugar (`/trackers/`)
+
+- Plan, sources and settled decisions: `docs/trackers-plan.md`. For Everyone only (a menu item; not under For Doctors). Google sign-in is required
+  to save. One account keeps readings for the holder and **adult (18+) family members** (a tick that they agreed). Readings: BP (clinic or home/work,
+  1-3 readings per sitting averaged, pulse optional), sugar (FBS, PPBS, RBS from lab or glucometer; HbA1c), weight. Medicines, reminders and other
+  markers are parked.
+- Rules in `src/lib/trackers.ts` (tested in `tests/trackers.test.mjs`). **Log + soft alerts only** (Harsh, 11 Oct 2026): SBP >= 180 or DBP >= 110
+  (judged on the sitting's average; a very high first reading asks for a repeat), sugar < 70 (< 54 severely low) and >= 300 mg/dL; no low-BP alert,
+  no HbA1c alert. The alert is a note on the patient's own screen only: never sent anywhere, no sound or pop-up, not on the doctor's view.
+  Faint unlabelled chart lines: BP 140/90 and 135/85, FBS 126, HbA1c 6.5. Alert numbers and wording are clinical content: Harsh reviews before `main`.
+- Pages: `src/pages/trackers/` (home, `person/#<id>`, `view/#<token>`); code `src/trackers/` (`store.ts` TrackerStore, `person.ts`, `render.ts`,
+  `chart.ts`). Server `src/server/trackers.ts`, D1 migration 5. The person and doctor pages are noindex and out of the sitemap.
+- **Doctor share link**: `/trackers/view/#<token>`, live (fetched on every opening), read-only, one person, scope BP/sugar/weight, 30 or 90 days or
+  until stopped; the owner sees when it was last opened and can stop it. The token stays after `#` and goes to `/api/trackers/shared` in a header.
+  Removing a person or deleting the account stops every link. Keep `/privacy/#trackers` in step with what is stored and shown.
+
+## Units everywhere: tools, calculators, trainers, trackers (Harsh, 11 Oct 2026)
+
+- **Every number a person types that has a unit converts on a click of its unit**, so nobody calculates by hand. This applies to
+  every calculator, tool, trainer and tracker, present and future, For Everyone and For Doctors alike.
+- On a built page use `src/components/UnitField.astro`; on a screen built in the browser (a trainer question, a tracker entry) use
+  `createUnitField()` from `src/scripts/unit-fields.ts`. Both come from one markup source (`unitFieldHTML()` in `src/lib/units.ts`)
+  and one stylesheet (`src/styles/units.css`, loaded on every page by `Base.astro`), so they look and behave the same.
+- Kinds (`src/lib/units.ts`): `height` cm ⇄ ft + in, `length` (waist, neck) cm ⇄ in, `weight` kg ⇄ lb, `minutes` min ⇄ h,
+  `hours` h ⇄ min, `pressure` mmHg ⇄ kPa and `glucose` mg/dL ⇄ mmol/L (trackers; base mmHg and mg/dL); `per="/day"` adds a suffix. The first unit is the base: the page reads `unitValue(id)` and always gets cm, kg, min
+  or h, whatever the person chose. Switching back and forth keeps the exact value (no rounding drift). A measure not yet covered
+  (temperature °C ⇄ °F, distance km ⇄ miles...) is added to `units.ts` as a new
+  kind, with tests in `tests/units.test.mjs`, before the tool that needs it is built.
+- The unit last chosen for each kind is remembered in the browser (`localStorage` `units:v1`, only the unit, never a number;
+  `/privacy/` says so), so every tool, trainer and tracker opens in it next time.
+- A number with nothing to convert (age in years, days, a count, rupees, a percentage, a score) gets `data-unitless`.
+  Two guards: `tests/units.test.mjs` scans all of `src/` (including number boxes made in scripts) and `tests/site.test.mjs` scans
+  every built page; both fail on a number box that is neither a unit field nor `data-unitless`.
 
 ## Drafts
 
@@ -267,8 +322,11 @@ via `WORKERS_CI_BRANCH`, read in `astro.config.mjs`) and hides it on production.
 ## Rules
 
 - NMC conduct: no testimonials, patient details, fees, appointment booking, superlatives, or "specialist" claims.
+- **Units convert on a click** everywhere a number with a unit is typed (see "Units everywhere" above).
 - **India first** (Harsh, 11 Oct 2026): every tool and article uses Indian cut-offs and Indian charts; WHO or other international ones only where no Indian one exists, and the page says so.
 - Indian cut-offs: BMI overweight 23–24.9, obesity ≥25; waist ≥90 cm men / ≥80 cm women; WHtR risk from 0.5.
-- Never change a published URL (slug). Hindi pages will live under `/hi/` (Phase 2).
+- Never change a published URL (slug). Hindi pages live under `/hi/` with the English slug (`docs/translation.md`).
 - SEO/AEO plumbing is automatic: sitemap, `robots.txt` (AI crawlers allowed), `/llms.txt`, `/llms-full.txt`, RSS, schema.org JSON-LD in `Base.astro` / `Article.astro`.
 - Respect `prefers-reduced-motion`; animations use the `.reveal` class.
+- **Sources and references are folded** (Harsh, 12 Oct 2026): every list of sources or references sits under a small heading that opens on a click
+  (`Sources.astro`, `details.refs`; in the book reader `details.rd-refs`), never under a big heading.

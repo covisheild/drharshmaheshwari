@@ -1,16 +1,20 @@
 ---
+// Also /<lang>/tools/ (src/pages/[lang]/tools/index.astro). The calculators themselves are English only for now (docs/translation.md).
 import Base from '../../layouts/Base.astro';
 import CardList from '../../components/lists/CardList.astro';
+import T from '../../components/T.astro';
 import { TOOLS } from '../../data/tools';
+import { useT } from '../../i18n/t';
+const t = useT(Astro.url.pathname);
 ---
-<Base title="Tools" description="Free health calculators built on Indian cut-offs: BMI, waist-to-height ratio, and risk scores for diabetes and sleep apnoea.">
+<Base title={t('Tools')} description={t('Free health calculators built on Indian cut-offs: BMI, waist-to-height ratio, and risk scores for diabetes and sleep apnoea.')}>
   <header class="page-head wrap">
-    <span class="eyebrow">Tools</span>
-    <h1>Tools</h1>
-    <p>Calculators built on Indian cut-offs, each with its sources listed. They run on your device, and nothing you type is stored.</p>
+    <span class="eyebrow">{t('Tools')}</span>
+    <h1>{t('Tools')}</h1>
+    <p>{t('Calculators built on Indian cut-offs, each with its sources listed. They run on your device, and nothing you type is stored.')}</p>
   </header>
   <div class="wrap" style="padding-bottom:4rem">
     <CardList items={TOOLS.filter((t) => t.mode === 'everyone')} />
-    <p class="muted" style="margin-top:2rem">Clinical scores and trainers for doctors are in <a href="/doctors/tools/">For Doctors · Tools</a>.</p>
+    <p class="muted" style="margin-top:2rem"><T>Clinical scores and trainers for doctors are in <a href="/doctors/tools/">For Doctors · Tools</a>.</T></p>
   </div>
 </Base>

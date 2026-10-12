@@ -3,28 +3,36 @@ import Base from '../layouts/Base.astro';
 import ArticleCard from './ArticleCard.astro';
 import { articles, SECTION, type ArticleCollection } from '../lib/content';
 import { SITE } from '../consts';
+import { langOf, inLang } from '../i18n/languages';
+import { articleCard, localArticles, type TranslatedCollection } from '../i18n/routes';
+import { translate } from '../i18n/t';
 
 interface Props { collection: ArticleCollection; title: string; intro: string; empty: string; }
-const { collection, title, intro, empty } = Astro.props;
-const list = await articles(collection);
+const lang = langOf(Astro.url.pathname);
+const t = (s: string) => translate(lang, s);
+const { collection } = Astro.props;
+const title = t(Astro.props.title), intro = t(Astro.props.intro), empty = t(Astro.props.empty);
 const base = SECTION[collection].base;
+// On a translated page, guides with a translation link to it; the others are listed in English, marked as such.
+const cards = lang === 'en'
+  ? (await articles(collection)).map((e) => ({ href: `${base}${e.id}/`, title: e.data.title, description: e.data.description, date: e.data.published, topic: e.data.topic[0], draft: e.data.draft, english: false }))
+  : (await localArticles(collection as TranslatedCollection, lang)).map((a) => articleCard(lang, base, a));
 const jsonld = [{
-  '@type': 'CollectionPage', name: title, description: intro, url: new URL(base, SITE.url).href,
-  hasPart: list.map((e) => ({ '@type': 'CreativeWork', name: e.data.title, url: new URL(`${base}${e.id}/`, SITE.url).href })),
+  '@type': 'CollectionPage', name: title, description: intro, url: new URL(inLang(lang, base), SITE.url).href,
+  hasPart: cards.map((c) => ({ '@type': 'CreativeWork', name: c.title, url: new URL(c.href, SITE.url).href })),
 }];
 ---
 <Base title={title} description={intro} jsonld={jsonld}>
   <header class="page-head wrap">
-    <span class="eyebrow">{SECTION[collection].label}</span>
+    <span class="eyebrow">{t(SECTION[collection].label)}</span>
     <h1>{title}</h1>
     <p>{intro}</p>
   </header>
+  <slot />
   <div class="wrap" style="padding-bottom:4rem">
-    {list.length ? (
+    {cards.length ? (
       <div class="grid">
-        {list.map((e, i) => (
-          <ArticleCard href={`${base}${e.id}/`} title={e.data.title} description={e.data.description} date={e.data.published} topic={e.data.topic[0]} draft={e.data.draft} delay={(i % 3) * 0.08} />
-        ))}
+        {cards.map((c, i) => <ArticleCard {...c} delay={(i % 3) * 0.08} />)}
       </div>
     ) : <p class="empty">{empty}</p>}
   </div>

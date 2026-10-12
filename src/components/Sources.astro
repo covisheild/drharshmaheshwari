@@ -1,0 +1,12 @@
+---
+// A page's sources or references, folded under a small heading that opens on a click (Harsh, 12 Oct 2026).
+// Used on every page that lists sources: the tools, and guides, evidence and blog posts (Article.astro).
+interface Props { label: string; id?: string }
+const { label, id } = Astro.props;
+const html = await Astro.slots.render('default');
+const n = (html.match(/<li[\s>]/g) ?? []).length;
+---
+<details class="refs" id={id}>
+  <summary>{label}{n > 0 && <span class="refs-n">{n}</span>}</summary>
+  <Fragment set:html={html} />
+</details>

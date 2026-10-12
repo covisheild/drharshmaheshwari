@@ -101,6 +101,48 @@ export const MIGRATIONS: string[][] = [
     )`,
     `CREATE INDEX IF NOT EXISTS highlights_sync ON highlights(user_id, book_id, received_at)`,
   ],
+  // 5: BP and blood sugar trackers (docs/trackers-plan.md, Harsh, 11 Oct 2026). People (the account holder and adult family
+  // members) and their readings; `data` is the JSON the browser sent, checked by src/lib/trackers.ts. Newest `updated_at` wins;
+  // a deleted row is kept so the deletion reaches every device. `received_at` (server clock) serves "what is new since".
+  // A share link lets a doctor read one person's readings without signing in: `token` is the secret in the link,
+  // `id` is how the owner lists and stops it. Deleting the account removes all of it (ON DELETE CASCADE).
+  [
+    `CREATE TABLE IF NOT EXISTS tracker_people (
+      user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      id TEXT NOT NULL,
+      data TEXT NOT NULL,
+      updated_at INTEGER NOT NULL,
+      deleted_at INTEGER,
+      received_at INTEGER NOT NULL,
+      PRIMARY KEY (user_id, id)
+    )`,
+    `CREATE TABLE IF NOT EXISTS tracker_readings (
+      user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      id TEXT NOT NULL,
+      person_id TEXT NOT NULL,
+      kind TEXT NOT NULL,
+      at INTEGER NOT NULL,
+      data TEXT NOT NULL,
+      updated_at INTEGER NOT NULL,
+      deleted_at INTEGER,
+      received_at INTEGER NOT NULL,
+      PRIMARY KEY (user_id, id)
+    )`,
+    `CREATE INDEX IF NOT EXISTS tracker_readings_sync ON tracker_readings(user_id, received_at)`,
+    `CREATE INDEX IF NOT EXISTS tracker_readings_person ON tracker_readings(user_id, person_id, at)`,
+    `CREATE TABLE IF NOT EXISTS tracker_shares (
+      token TEXT PRIMARY KEY,
+      id TEXT NOT NULL,
+      user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      person_id TEXT NOT NULL,
+      scope TEXT NOT NULL,
+      created_at INTEGER NOT NULL,
+      expires_at INTEGER,
+      stopped_at INTEGER,
+      opened_at INTEGER
+    )`,
+    `CREATE INDEX IF NOT EXISTS tracker_shares_user ON tracker_shares(user_id, person_id)`,
+  ],
 ];
 
 let applied: Promise<void> | null = null;

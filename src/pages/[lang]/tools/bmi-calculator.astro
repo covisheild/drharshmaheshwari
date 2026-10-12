@@ -1,0 +1,7 @@
+---
+// /<lang>/tools/bmi-calculator/: the English page, in the page's language (src/i18n/).
+import Page from '../../tools/bmi-calculator.astro';
+import { langPaths } from '../../../i18n/routes';
+export const getStaticPaths = () => langPaths();
+---
+<Page />

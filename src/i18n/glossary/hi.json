@@ -1,0 +1,259 @@
+{
+  "about": "Hindi glossary for drharshmaheshwari.com. Every Hindi translation must use these terms: tests/i18n.test.mjs checks that when an English text contains a term, its Hindi has one of the accepted forms (nukta and chandrabindu are ignored when comparing). Change a term here, then retranslate what uses it. docs/translation.md has the rules.",
+  "register": "Everyday spoken Hindi (Hindustani) that a family in Lucknow, Raipur or Delhi would use, not textbook Sanskritised Hindi. Common English health words that people say in Hindi stay as they are said (BMI, ब्लड शुगर, डायबिटीज़). Short sentences. Numbers in 0-9, never Devanagari digits. Units as in English (cm, kg).",
+  "keepLatin": [
+    "BMI",
+    "WHO",
+    "UPI",
+    "QR",
+    "ID",
+    "RSS",
+    "PDF",
+    "AI",
+    "IPAQ",
+    "STOP-Bang",
+    "IDRS",
+    "MD",
+    "MBBS",
+    "AIIMS",
+    "KGMU",
+    "NICE",
+    "CC BY-NC-SA 4.0",
+    "CC BY 4.0",
+    "cm",
+    "kg",
+    "kg/m²",
+    "Google",
+    "Cloudflare",
+    "Zenodo",
+    "WAV",
+    "MP3",
+    "D1"
+  ],
+  "terms": [
+    {
+      "en": "obesity",
+      "hi": [
+        "मोटापा",
+        "मोटापे"
+      ]
+    },
+    {
+      "en": "abdominal obesity",
+      "hi": [
+        "पेट का मोटापा",
+        "पेट के मोटापे"
+      ]
+    },
+    {
+      "en": "overweight",
+      "hi": [
+        "अधिक वज़न",
+        "ज़्यादा वज़न"
+      ]
+    },
+    {
+      "en": "underweight",
+      "hi": [
+        "कम वज़न"
+      ]
+    },
+    {
+      "en": "weight",
+      "hi": [
+        "वज़न"
+      ]
+    },
+    {
+      "en": "height",
+      "hi": [
+        "लंबाई"
+      ]
+    },
+    {
+      "en": "waist",
+      "hi": [
+        "कमर"
+      ]
+    },
+    {
+      "en": "waist-to-height ratio",
+      "hi": [
+        "कमर-लंबाई अनुपात",
+        "कमर और लंबाई का अनुपात"
+      ]
+    },
+    {
+      "en": "body fat",
+      "hi": [
+        "चर्बी"
+      ]
+    },
+    {
+      "en": "diabetes",
+      "hi": [
+        "डायबिटीज़"
+      ]
+    },
+    {
+      "en": "high blood pressure",
+      "hi": [
+        "हाई ब्लड प्रेशर"
+      ]
+    },
+    {
+      "en": "heart disease",
+      "hi": [
+        "दिल की बीमारी",
+        "दिल की बीमारियों",
+        "दिल की बीमारियाँ"
+      ]
+    },
+    {
+      "en": "blood sugar",
+      "hi": [
+        "ब्लड शुगर"
+      ]
+    },
+    {
+      "en": "cholesterol",
+      "hi": [
+        "कोलेस्ट्रॉल"
+      ]
+    },
+    {
+      "en": "fatty liver",
+      "hi": [
+        "फैटी लिवर"
+      ]
+    },
+    {
+      "en": "risk",
+      "hi": [
+        "जोखिम"
+      ]
+    },
+    {
+      "en": "doctor",
+      "hi": [
+        "डॉक्टर"
+      ]
+    },
+    {
+      "en": "cut-off",
+      "hi": [
+        "कट-ऑफ़"
+      ]
+    },
+    {
+      "en": "guideline",
+      "hi": [
+        "दिशानिर्देश"
+      ]
+    },
+    {
+      "en": "screening",
+      "hi": [
+        "जाँच",
+        "जांच"
+      ]
+    },
+    {
+      "en": "muscle",
+      "hi": [
+        "मांसपेश",
+        "माँसपेश"
+      ]
+    },
+    {
+      "en": "calculator",
+      "hi": [
+        "कैलकुलेटर"
+      ]
+    },
+    {
+      "en": "evidence",
+      "hi": [
+        "प्रमाण"
+      ]
+    },
+    {
+      "en": "public health",
+      "hi": [
+        "जन-स्वास्थ्य"
+      ]
+    },
+    {
+      "en": "contribution",
+      "hi": [
+        "योगदान"
+      ]
+    },
+    {
+      "en": "disclaimer",
+      "hi": [
+        "अस्वीकरण"
+      ]
+    },
+    {
+      "en": "privacy",
+      "hi": [
+        "गोपनीयता"
+      ]
+    },
+    {
+      "en": "vigorous",
+      "hi": [
+        "ज़ोरदार"
+      ]
+    },
+    {
+      "en": "energetic",
+      "hi": [
+        "ऊर्जावान"
+      ]
+    },
+    {
+      "en": "percentile",
+      "hi": [
+        "परसेंटाइल"
+      ]
+    },
+    {
+      "en": "sleep apnoea",
+      "hi": [
+        "स्लीप एपनिया"
+      ]
+    }
+  ],
+  "banned": [
+    {
+      "pattern": "(?<![\\u0900-\\u097F])दान",
+      "why": "means donation (दान as a word; योगदान, निदान and प्रदान are fine); the site says support (सहयोग) and contribution (योगदान)"
+    },
+    {
+      "pattern": "चंदा",
+      "why": "donation"
+    },
+    {
+      "pattern": "धर्मार्थ|परोपकार",
+      "why": "charity"
+    },
+    {
+      "pattern": "[०-९]",
+      "why": "Devanagari digits: numbers stay 0-9"
+    }
+  ],
+  "bannedOnBookPages": [
+    {
+      "pattern": "मुफ़्त|मुफ्त|निःशुल्क|फ्री",
+      "why": "never call the books, datasets or PDFs free (Harsh, 6 Oct 2026)"
+    }
+  ],
+  "names": [
+    "Indian Diabetes Risk Score",
+    "Madras Diabetes Research Foundation",
+    "Chennai Urban Rural Epidemiology Study",
+    "WHO Child Growth Standards"
+  ]
+}

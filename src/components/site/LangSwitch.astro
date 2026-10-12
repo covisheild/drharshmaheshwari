@@ -1,0 +1,31 @@
+---
+// The language menu: each built language (src/i18n/routes.ts), each linking to this page in that language, or to that language's
+// home page when this page has not been translated. A <details> menu, so it works without JavaScript; Base.astro closes it on
+// a click elsewhere or Esc. Shown only when the build has more than one language (Hindi is on preview builds until approved).
+import { LANG, basePath, inLang, langOf } from '../../i18n/languages';
+import { builtLangs, hasPage } from '../../i18n/routes';
+import { translate } from '../../i18n/t';
+
+const path = Astro.url.pathname;
+const lang = langOf(path);
+const base = basePath(path);
+const langs = builtLangs();
+---
+{langs.length > 1 && (
+  <details class="lang-menu">
+    <summary class="lang-btn" aria-label={translate(lang, 'Language: {name}. Change the language', { name: LANG[lang].name })}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5z"/></svg>
+      <span>{LANG[lang].short}</span>
+    </summary>
+    <ul class="lang-list">
+      {langs.map((l) => {
+        const here = !/^\/404\/?$/.test(base) && hasPage(l.code, base); // the 404 page has no address of its own
+        return (
+          <li><a href={inLang(l.code, here ? base : '/')} lang={l.html} hreflang={l.html} aria-current={l.code === lang ? 'true' : undefined}>
+            {l.name}{!here && <small>{translate(l.code, 'This page is not in {name} yet: opens the home page', { name: l.name })}</small>}
+          </a></li>
+        );
+      })}
+    </ul>
+  </details>
+)}

@@ -153,7 +153,16 @@ a.card:hover { transform: translateY(-3px); border-color: color-mix(in oklab, va
 .prose th { background: var(--surface-2); }
 .prose blockquote { margin: 1.5rem 0; padding: .5rem 1.25rem; border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 10px 10px 0; }
 .author-box { display: flex; gap: 1rem; align-items: center; padding: 1.25rem; border: 1px solid var(--line); border-radius: var(--radius); margin: 2.5rem 0 1.5rem; background: var(--surface); }
-.refs ol { font-size: .92rem; color: var(--ink-2); padding-left: 1.3rem; } .refs li { margin: .4rem 0; overflow-wrap: anywhere; }
+/* Sources and references: a small heading that opens the list (Sources.astro). */
+.refs { margin-top: 2rem; padding-top: .9rem; border-top: 1px solid var(--line); }
+.refs > summary, .rd-refs > summary { display: inline-flex; align-items: center; gap: .5rem; cursor: pointer; list-style: none; padding: .35rem 0;
+  font: 500 .74rem/1.2 var(--font-mono); letter-spacing: var(--eyebrow-tracking); text-transform: uppercase; color: var(--ink-2); }
+.refs > summary::-webkit-details-marker, .rd-refs > summary::-webkit-details-marker { display: none; }
+.refs > summary::before, .rd-refs > summary::before { content: ""; width: .42em; height: .42em; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(-45deg); transition: transform .2s; margin-right: .15rem; }
+.refs[open] > summary::before, .rd-refs[open] > summary::before { transform: rotate(45deg); }
+.refs > summary:hover, .rd-refs > summary:hover { color: var(--ink); }
+.refs-n { font-size: .9em; padding: .1em .5em; border-radius: 99px; background: var(--surface-2); border: 1px solid var(--line); letter-spacing: 0; }
+.refs ol { font-size: .92rem; color: var(--ink-2); padding-left: 1.3rem; margin-top: .8rem; } .refs li { margin: .4rem 0; overflow-wrap: anywhere; }
 .disclaimer { font-size: .88rem; color: var(--ink-3); border-top: 1px solid var(--line); padding-top: 1rem; margin-top: 2rem; }
 .draft-banner { background: var(--accent-soft); color: var(--ink); padding: .75rem 1rem; border-radius: 12px; font-size: .92rem; margin-bottom: 1rem; }
 .faq details { border-bottom: 1px solid var(--line); padding: .9rem 0; }
@@ -196,3 +205,32 @@ a.card:hover { transform: translateY(-3px); border-color: color-mix(in oklab, va
 .psub { font-size: .8rem; color: var(--ink-2); font-weight: 600; }
 .pbar { height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
 .pbar i { display: block; height: 100%; background: var(--brand); }
+
+/* Hindi pages (Devanagari, src/i18n/): taller lines for the vowel signs above and below the letters, and no tight or wide
+   letter-spacing, which pulls the joined letters apart. Labels stay small but are not spaced out. */
+:root:lang(hi) { --leading: 1.8; --h-tracking: 0; --eyebrow-tracking: .03em; }
+:lang(hi) h1, :lang(hi) h2, :lang(hi) h3 { line-height: 1.38; }
+:lang(hi) .bm-tag, :lang(hi) .keypoints h2, :lang(hi) .footer-grid h4, :lang(hi) .bm-fld-l, :lang(hi) .mode-badge, :lang(hi) .brand-name { letter-spacing: .02em; }
+:lang(hi) .eyebrow, :lang(hi) .bm-tag, :lang(hi) .keypoints h2, :lang(hi) .footer-grid h4 { font-size: .82rem; }
+/* The monospace label font has no Devanagari and wide spaces: Hindi labels use the text font. */
+:lang(hi) .eyebrow, :lang(hi) .bm-tag, :lang(hi) .keypoints h2, :lang(hi) .footer-grid h4, :lang(hi) .bm-fld-l, :lang(hi) .bm-win-bar span, :lang(hi) .mode-badge { font-family: var(--font-body); }
+
+/* Language menu (src/components/site/LangSwitch.astro): For Everyone pages only, when the build has more than one language. */
+.lang-menu { position: relative; flex: none; }
+.lang-btn { list-style: none; display: inline-flex; align-items: center; gap: .3rem; height: 38px; padding: 0 .65rem; border-radius: 999px; border: 1px solid var(--header-line); color: var(--header-ink-2); cursor: pointer; font: 500 .8rem/1 var(--font-body); user-select: none; transition: background .2s, color .2s; }
+.lang-btn::-webkit-details-marker { display: none; }
+.lang-btn:hover, .lang-menu[open] .lang-btn { background: color-mix(in oklab, var(--header-ink) 9%, transparent); color: var(--header-ink); }
+.lang-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.lang-list { position: absolute; right: 0; top: calc(100% + 12px); z-index: 60; min-width: 12rem; margin: 0; padding: .4rem; list-style: none; border-radius: 18px; background: var(--surface); border: 1px solid var(--line-2); box-shadow: 0 18px 50px rgb(0 0 0 / .35); }
+.lang-list a { display: block; padding: .65rem .85rem; border-radius: 12px; color: var(--ink); text-decoration: none; font-size: 1rem; }
+.lang-list a:hover { background: var(--surface-2); }
+.lang-list a[aria-current='true'] { background: var(--brand-soft); color: var(--brand); font-weight: 600; }
+.lang-list small { display: block; margin-top: .15rem; color: var(--ink-3); font-size: .78rem; font-weight: 400; }
+@media (max-width: 640px) { .lang-btn { padding: 0 .55rem; } .lang-btn svg { display: none; } }
+
+/* The line on every translated page saying how it was translated (src/components/site/TranslationNote.astro). */
+.tr-note { margin: 2.5rem auto 0; max-width: var(--prose, 72ch); padding: .9rem 1.1rem; border-radius: var(--radius-sm); background: var(--surface-2); color: var(--ink-2); font-size: .92rem; }
+.tr-note.top { margin: 0 0 1.5rem; }
+.tr-note p { margin: 0; }
+.tr-note p + p { margin-top: .4rem; }
+.wrap > .tr-note, main > .tr-note { width: min(72ch, calc(100% - 32px)); margin-bottom: 3rem; }

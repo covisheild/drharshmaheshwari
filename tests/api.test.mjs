@@ -288,3 +288,91 @@ test('a delta download of highlights reads only the new rows', async () => {
   const delta = await rows('SELECT id FROM highlights WHERE user_id = ? AND book_id = ? AND received_at > ?', 40_000);
   assert.ok(delta <= 5, `a delta with nothing new reads next to nothing (${delta})`);
 });
+
+// ---------- trackers (src/server/trackers.ts) ----------
+const NOW = Date.UTC(2026, 9, 11, 6, 0);
+const person = (id, extra = {}) => ({ id, label: 'Me', born: '1990-05', sex: 'm', heightCm: 170, self: true, created: NOW, updated: NOW, ...extra });
+const bp = (id, extra = {}) => ({ id, person: 'person-1', kind: 'bp', setting: 'home', values: [{ s: 132, d: 84, p: 72 }], at: NOW - 3600_000, tz: 330, created: NOW, updated: NOW, ...extra });
+const sugar = (id, extra = {}) => ({ id, person: 'person-1', kind: 'sugar', test: 'fbs', sample: 'lab', value: 112, unit: 'mgdl', at: NOW - 86_400_000, tz: 330, created: NOW, updated: NOW, ...extra });
+const get = async (path, sid, headers = {}) => handleApi(req(path, { headers: { cookie: sid ?? '', ...headers } }), env);
+
+test('trackers: signed-in only; readings saved, newest edit wins, deletion sticks, delta brings only new rows', async () => {
+  assert.equal((await get('/api/trackers')).status, 401);
+  const { sid } = await signIn({ sub: 'google-t', email: 't@example.org' });
+  assert.equal((await post('/api/trackers', sid, { people: [person('person-1')], readings: [bp('reading-1'), sugar('reading-2')] })).status, 200);
+  const all = await (await get('/api/trackers', sid)).json();
+  assert.deepEqual(all.people, [{ ...person('person-1'), deleted: null }]);
+  assert.equal(all.readings.length, 2);
+  const since = all.now;
+  // An older edit from an offline device does not overwrite a newer one; a newer one does.
+  await post('/api/trackers', sid, { readings: [bp('reading-1', { values: [{ s: 150, d: 95 }], updated: NOW - 1 })] });
+  assert.deepEqual((await (await get('/api/trackers', sid)).json()).readings.find((r) => r.id === 'reading-1').values, [{ s: 132, d: 84, p: 72 }]);
+  await post('/api/trackers', sid, { readings: [bp('reading-1', { values: [{ s: 150, d: 95 }], updated: NOW + 1 })] });
+  const delta = await (await get(`/api/trackers?since=${since}`, sid)).json();
+  assert.deepEqual(delta.readings.map((r) => r.id), ['reading-1'], 'only the changed reading comes in a delta');
+  assert.deepEqual(delta.readings[0].values, [{ s: 150, d: 95 }]);
+  await post('/api/trackers', sid, { readings: [sugar('reading-2', { deleted: NOW + 5, updated: NOW + 5 })] });
+  await post('/api/trackers', sid, { readings: [sugar('reading-2', { updated: NOW + 9 })] });
+  assert.equal((await (await get('/api/trackers', sid)).json()).readings.find((r) => r.id === 'reading-2').deleted, NOW + 5, 'a deletion is never undone');
+});
+
+test('trackers: bad readings, children and other accounts are refused', async () => {
+  const { sid } = await signIn({ sub: 'google-t2', email: 't2@example.org' });
+  for (const bad of [bp('r-bad-01', { values: [{ s: 80, d: 90 }] }), bp('r-bad-02', { values: [{ s: 300, d: 90 }] }), bp('r-bad-03', { values: [] }),
+    sugar('r-bad-04', { value: 5 }), sugar('r-bad-05', { test: 'hba1c', value: 7, unit: 'mgdl' }), { ...bp('r-bad-06'), kind: 'lipids' }, bp('x')]) {
+    assert.equal((await post('/api/trackers', sid, { readings: [bad] })).status, 400, JSON.stringify(bad));
+  }
+  assert.equal((await post('/api/trackers', sid, { people: [person('child-01', { born: '2012-01' })] })).status, 400, 'under 18 refused');
+  // Another account cannot see the first account's readings.
+  const mine = await (await get('/api/trackers', sid)).json();
+  assert.equal(mine.readings.length, 0);
+  assert.equal((await post('/api/trackers', sid, { people: [person('p')] }, 'https://evil.example')).status, 403, 'cross-site refused');
+});
+
+test('share links: live, read-only, scoped, stoppable, expiring; the token never needs a sign-in', async () => {
+  const { sid } = await signIn({ sub: 'google-s', email: 's@example.org' });
+  await post('/api/trackers', sid, { people: [person('person-1')], readings: [bp('share-r1'), sugar('share-r2', { note: 'after a wedding meal' })] });
+  const make = async (body) => handleApi(req('/api/trackers/shares', { method: 'POST', headers: { cookie: sid, origin: ORIGIN }, body: JSON.stringify(body) }), env);
+  assert.equal((await make({ person: 'person-1', scope: {}, days: 90 })).status, 400, 'something must be shared');
+  assert.equal((await make({ person: 'nobody-1', scope: { bp: true }, days: 90 })).status, 404, 'only your own people');
+  assert.equal((await make({ person: 'person-1', scope: { bp: true }, days: 7 })).status, 400, 'only 30, 90 or until stopped');
+  const { share } = await (await make({ person: 'person-1', scope: { bp: true, sugar: false, weight: false }, days: 90 })).json();
+  assert.ok(share.token.length >= 32);
+  const view = async (token, q = '') => handleApi(req(`/api/trackers/shared${q}`, { headers: { 'x-share-token': token } }), env);
+  let res = await view(share.token);
+  assert.equal(res.status, 200);
+  assert.equal(res.headers.get('referrer-policy'), 'no-referrer');
+  let body = await res.json();
+  assert.deepEqual(body.readings.map((r) => r.id), ['share-r1'], 'only BP was shared');
+  assert.equal(body.person.label, 'Patient', '"Me" reads as Patient to the doctor'); assert.equal(body.person.age, 36);
+  assert.equal(body.person.born, undefined, 'no month of birth');
+  // Live: a reading added later shows on the next opening of the same link.
+  await post('/api/trackers', sid, { readings: [bp('share-r3', { at: NOW })] });
+  body = await (await view(share.token)).json();
+  assert.deepEqual(body.readings.map((r) => r.id), ['share-r1', 'share-r3']);
+  // The owner sees when it was opened, and can stop it.
+  const list = await (await get('/api/trackers/shares', sid)).json();
+  assert.ok(list.shares[0].opened);
+  assert.equal((await view('not-a-real-token-at-all-xx')).status, 404);
+  await handleApi(req(`/api/trackers/shares/${share.id}`, { method: 'DELETE', headers: { cookie: sid, origin: ORIGIN } }), env);
+  assert.equal((await view(share.token)).status, 404, 'a stopped link shows nothing');
+  // Expiry.
+  const { share: s2 } = await (await make({ person: 'person-1', scope: { sugar: true }, days: 30 })).json();
+  assert.equal((await handleApi(req('/api/trackers/shared', { headers: { 'x-share-token': s2.token } }), env, { fetch, now: () => Date.now() + 31 * 86_400_000 })).status, 404, 'expired after 30 days');
+  // Removing the person stops every link to them.
+  const { share: s3 } = await (await make({ person: 'person-1', scope: { sugar: true }, days: 0 })).json();
+  assert.equal((await view(s3.token)).status, 200);
+  await post('/api/trackers', sid, { people: [person('person-1', { deleted: Date.now(), updated: Date.now() })] });
+  assert.equal((await view(s3.token)).status, 404);
+});
+
+test('deleting the account deletes tracker people, readings and share links', async () => {
+  const { sid } = await signIn({ sub: 'google-del-t', email: 'dt@example.org' });
+  await post('/api/trackers', sid, { people: [person('person-del')], readings: [bp('del-r1', { person: 'person-del' })] });
+  const { share } = await (await handleApi(req('/api/trackers/shares', { method: 'POST', headers: { cookie: sid, origin: ORIGIN }, body: JSON.stringify({ person: 'person-del', scope: { bp: true }, days: 0 }) }), env)).json();
+  assert.equal((await handleApi(req('/api/account', { method: 'DELETE', headers: { cookie: sid, origin: ORIGIN } }), env)).status, 200);
+  for (const t of ['tracker_people', 'tracker_readings', 'tracker_shares']) {
+    assert.equal((await env.DB.prepare(`SELECT COUNT(*) AS n FROM ${t} WHERE ${t === 'tracker_shares' ? 'person_id' : 'id'} IN ('person-del', 'del-r1')`).first()).n, 0, `${t} emptied`);
+  }
+  assert.equal((await handleApi(req('/api/trackers/shared', { headers: { 'x-share-token': share.token } }), env)).status, 404);
+});

@@ -1,40 +1,46 @@
 ---
+// Also /<lang>/about/. Publications stay in English (citations).
 import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
 import { SITE, PERSON_JSONLD } from '../consts';
 import timeline from '../data/timeline.json';
 import publications from '../data/publications.json';
+import { LANG, inLang, langOf } from '../i18n/languages';
+import { fmtDateIn, useT } from '../i18n/t';
 
-const fmt = (s: string) => (s ? new Date(`${s}-01`).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' }) : '');
-const jsonld = [{ '@type': 'ProfilePage', url: `${SITE.url}/about/`, mainEntity: { '@id': PERSON_JSONLD['@id'] } }];
+const lang = langOf(Astro.url.pathname);
+const t = useT(Astro.url.pathname);
+const fmt = (s: string) => (s ? fmtDateIn(lang, new Date(`${s}-01`), { month: 'short', year: 'numeric' }) : '');
+const jsonld = [{ '@type': 'ProfilePage', url: `${SITE.url}${inLang(lang, '/about/')}`, mainEntity: { '@id': PERSON_JSONLD['@id'] } }];
 ---
-<Base title="About" description={`About ${SITE.name}: training, research, publications and the mission to reverse obesity in India.`} jsonld={jsonld}>
+<Base title={t('About')} description={t('About {name}: training, research, publications and the mission to reverse obesity in India.', { name: t(SITE.name) })} jsonld={jsonld}>
   <header class="page-head wrap">
-    <span class="eyebrow">About</span>
-    <h1>Dr. Harsh Maheshwari</h1>
-    <p>{SITE.tagline}.</p>
+    <span class="eyebrow">{t('About')}</span>
+    <h1>{t(SITE.name)}</h1>
+    <p>{t(SITE.tagline)}{LANG[lang].stop}</p>
   </header>
   <div class="prose-wrap prose">
-    <p>I trained in medicine at King George's Medical University, Lucknow, and am completing an MD in Community Medicine at AIIMS Raipur. My work sits where clinical medicine meets public health: obesity, and the diseases it drives — type 2 diabetes, fatty liver, high blood pressure and heart disease.</p>
-    <p>I reason from first principles and check claims against their sources. This site is where I publish what I learn, in two registers: plain guides for families, and evidence syntheses for doctors. The books and tools are open to everyone.</p>
+    <p><T>I trained in medicine at King George's Medical University, Lucknow, and am completing an MD in Community Medicine at AIIMS Raipur. My work sits where clinical medicine meets public health: obesity, and the diseases it drives — type 2 diabetes, fatty liver, high blood pressure and heart disease.</T></p>
+    <p><T>I reason from first principles and check claims against their sources. This site is where I publish what I learn, in two registers: plain guides for families, and evidence syntheses for doctors. The books and tools are open to everyone.</T></p>
 
-    <h2>Timeline</h2>
+    <h2>{t('Timeline')}</h2>
     <ol class="timeline">
-      {timeline.map((t) => (
+      {timeline.map((e) => (
         <li class="reveal">
-          <div class="when">{t.date ? `${fmt(t.date)}${t.end ? ` – ${fmt(t.end)}` : ''} · ` : ''}{t.category}</div>
-          <b>{t.title}</b>
-          <div class="muted">{t.place}</div>
-          {t.details && <p class="small muted" style="margin:.25rem 0 0">{t.details}</p>}
+          <div class="when">{e.date ? `${fmt(e.date)}${e.end ? ` – ${fmt(e.end)}` : ''} · ` : ''}{t(e.category)}</div>
+          <b>{t(e.title)}</b>
+          <div class="muted">{t(e.place)}</div>
+          {e.details && <p class="small muted" style="margin:.25rem 0 0">{t(e.details)}</p>}
         </li>
       ))}
     </ol>
 
-    <h2>Publications</h2>
+    <h2>{t('Publications')}</h2>
     {publications.length ? (
-      <ol>{publications.map((p: { citation: string; url?: string }) => <li>{p.url ? <a href={p.url}>{p.citation}</a> : p.citation}</li>)}</ol>
-    ) : <p class="muted">Publication list coming soon.</p>}
+      <ol lang="en">{publications.map((p: { citation: string; url?: string }) => <li>{p.url ? <a href={p.url}>{p.citation}</a> : p.citation}</li>)}</ol>
+    ) : <p class="muted">{t('Publication list coming soon.')}</p>}
 
-    <h2>Contact</h2>
-    <p>For collaboration, teaching or media: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. I don't give individual medical advice by email.</p>
+    <h2>{t('Contact')}</h2>
+    <p><T>For collaboration, teaching or media: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. I don't give individual medical advice by email.</T></p>
   </div>
 </Base>

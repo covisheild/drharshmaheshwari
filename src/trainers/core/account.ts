@@ -22,10 +22,10 @@ export const signInHref = (returnTo = location.pathname) => `/api/auth/google?re
 const send = (method: string, path: string) =>
   fetch(path, { method, credentials: 'same-origin', headers: { 'content-type': 'application/json' }, body: method === 'POST' ? '{}' : undefined });
 
-/** Removes this browser's copies of trainer and book-reader progress (they stay in the account). */
+/** Removes this browser's copies of trainer and book-reader progress and tracker readings (they stay in the account). */
 export function clearLocalProgress() {
   try {
-    for (const k of Object.keys(localStorage)) if (k.startsWith('trainer:') || k.startsWith('book:')) localStorage.removeItem(k);
+    for (const k of Object.keys(localStorage)) if (k.startsWith('trainer:') || k.startsWith('book:') || k.startsWith('tracker:')) localStorage.removeItem(k);
     localStorage.removeItem(OWNER_KEY);
   } catch { /* storage unavailable */ }
 }

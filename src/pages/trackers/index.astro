@@ -1,0 +1,185 @@
+---
+// Trackers home (For Everyone): the people this account keeps BP and blood sugar readings for. Signing in with Google is
+// needed to save anything (Harsh, 11 Oct 2026); signed out, the page explains the tracker and shows a sample chart.
+// Plan and settled decisions: docs/trackers-plan.md.
+// Also /<lang>/trackers/: the page through the dictionary (t, <T>), the page script through w() (src/i18n/client.ts).
+import Base from '../../layouts/Base.astro';
+import T from '../../components/T.astro';
+import ClientWords from '../../components/ClientWords.astro';
+import { langOf } from '../../i18n/languages';
+import { localHref } from '../../i18n/routes';
+import { useT } from '../../i18n/t';
+import { chartSvg } from '../../trackers/chart';
+import '../../styles/trackers.css';
+
+const lang = langOf(Astro.url.pathname);
+const t = useT(Astro.url.pathname);
+const L = (href: string) => localHref(lang, href);
+
+// The sample chart: made-up home readings, drawn at build time with the same code as the real charts.
+const day = 86_400_000, t0 = Date.UTC(2026, 8, 1, 2, 0);
+const sample = [[142, 92], [138, 90], [140, 88], [136, 86], [134, 86], [131, 84], [133, 82], [128, 82], [130, 80], [127, 80]]
+  .map(([s, d], i) => ({ t: t0 + i * 3 * day, v: s, v2: d, hollow: i === 4 }));
+const sampleSvg = chartSvg({ label: t('Sample blood pressure chart'), unit: 'mmHg', floor: [70, 150], lines: [140, 90, 135, 85], points: sample, words: t });
+---
+<Base title={t('Trackers: BP and blood sugar')} description={t('Keep your blood pressure, blood sugar and HbA1c readings in one place, for yourself and adult family members, and share a live link with your doctor.')}>
+  <ClientWords sources={['/src/pages/trackers/index.astro', '/src/trackers/render.ts', '/src/lib/trackers.ts']} />
+  <header class="page-head wrap">
+    <span class="eyebrow">{t('Trackers')}</span>
+    <h1>{t('BP and blood sugar tracker')}</h1>
+    <p>{t('Write down each blood pressure and blood sugar reading, for yourself or an adult in your family, and see them over time. When you see your doctor, share a link that always shows the latest readings.')}</p>
+  </header>
+
+  <div class="wrap tk-wrap">
+    <div id="tk-app" aria-live="polite"><p class="muted">{t('Loading…')}</p></div>
+    <noscript><p>{t('This page needs JavaScript.')}</p></noscript>
+
+    <section class="tk-card" id="tk-about" style="padding-block:1.25rem">
+      <h2>{t('How it works')}</h2>
+      <figure class="tk-chart">
+        <Fragment set:html={sampleSvg} />
+        <figcaption><span class="tk-key"><i class="dot"></i> {t('Home or work')}</span> <span class="tk-key"><i class="dot hollow"></i> {t('Clinic')}</span> <span class="tk-key">{t('A sample chart with made-up readings')}</span></figcaption>
+      </figure>
+      <ul>
+        <li><T><b>Blood pressure:</b> enter the top (systolic) and bottom (diastolic) numbers, and whether it was measured at a doctor's clinic or at home or work. Up to three readings at one sitting are averaged.</T></li>
+        <li><T><b>Blood sugar:</b> fasting (FBS), 2 hours after a meal (PPBS), random (RBS), or HbA1c, and whether it was a lab test or a glucometer.</T></li>
+        <li><T><b>Weight</b> (optional): with your height it shows your BMI over time.</T></li>
+        <li><T><b>For adults (18 and over).</b> You can keep readings for adult family members too, with their agreement.</T></li>
+        <li><T><b>Very high or very low readings</b> show a short note on your screen with what to do. Nothing is sent to anyone.</T></li>
+        <li><T><b>Share with your doctor:</b> a link (and QR code) that shows the latest readings each time it is opened. You choose what it includes and how long it lasts, and you can stop it at any time.</T></li>
+      </ul>
+      <p class="small muted">{t('Only you can see your readings, unless you share a link. You can delete them, or your whole account, at any time.')} <a href={L('/privacy/#trackers')}>{t('What is stored')}</a> · <a href={L('/disclaimer/')}>{t('Disclaimer')}</a></p>
+    </section>
+  </div>
+</Base>
+
+<script>
+  import { account, claimLocalProgress, signInHref, signInResult } from '../../trainers/core/account';
+  import { TrackerStore, newId } from '../../trackers/store';
+  import { ageOn, isAdult, bpOf, sugarOf, latest, bpAverage, bpShown, sugarShown, LIMITS, RANGE, TEST_NAME, type Person } from '../../lib/trackers';
+  import { esc, whenText } from '../../trackers/render';
+  import { unitFieldHTML } from '../../lib/units';
+  import { initUnitFields, unitValue } from '../../scripts/unit-fields';
+  import { w } from '../../i18n/client';
+  import { langOf } from '../../i18n/languages';
+
+  // One person's page in this page's language (/hi/trackers/person/ from /hi/trackers/).
+  const PERSON = `${langOf(location.pathname) === 'en' ? '' : `/${langOf(location.pathname)}`}/trackers/person/`;
+  // The default name for "Me" (a person's name is theirs to change; this is only what the box starts with).
+  const ME = w('Me');
+  // Short test names (TEST_NAME from src/lib/trackers.ts without the bracket): w('Fasting') w('2 h after a meal') w('Random') w('HbA1c')
+
+  const el = document.getElementById('tk-app')!;
+  const result = signInResult();
+  const a = await account();
+
+  if (!a.enabled) {
+    el.innerHTML = `<div class="tk-card"><p>${w('The trackers need an account to keep your readings, and accounts are switched off on this site right now. Please try again later.')}</p></div>`;
+  } else if (!a.user) {
+    el.innerHTML = `<div class="tk-card">
+      ${result === 'error' ? `<p class="tk-err" role="alert">${w('Sign-in did not complete. Please try again.')}</p>` : ''}
+      <p>${w('Sign in with Google to start. Your readings are kept in your account, so they are there on your phone and your computer, and only you can see them.')}</p>
+      <div class="tk-row-btns"><a class="btn btn-primary" href="${esc(signInHref())}">${w('Sign in with Google')}</a></div>
+    </div>`;
+  } else {
+    claimLocalProgress(a.user.email);
+    const store = new TrackerStore();
+    let adding = false;
+
+    const STATUS = { syncing: w('Saving…'), synced: w('Saved to your account.'), offline: w('Not connected: saved on this device and will upload when you are back online.') };
+
+    function card(p: Person) {
+      const rs = store.readings(p.id);
+      const b = latest(bpOf(rs)), s = latest(sugarOf(rs));
+      const age = ageOn(p.born, new Date());
+      return `<a class="tk-card tk-person" href="${PERSON}#${esc(p.id)}">
+        <b>${esc(p.label)}</b>
+        <span>${w('{age} years', { age: String(age) })} · ${p.sex === 'm' ? w('Male') : w('Female')}</span>
+        <span>${b ? w('BP: {bp} on {date}', { bp: bpShown(bpAverage(b.values)), date: esc(whenText(b.at, b.tz, false)) }) : w('BP: —')}</span>
+        <span>${s ? w('Sugar: {value} {test} on {date}', { value: esc(sugarShown(s)), test: esc(w(TEST_NAME[s.test].replace(/ \(.*\)$/, ''))), date: esc(whenText(s.at, s.tz, false)) }) : w('Sugar: —')}</span>
+      </a>`;
+    }
+
+    function form(first: boolean) {
+      const years = new Date().getFullYear();
+      const months = [w('January'), w('February'), w('March'), w('April'), w('May'), w('June'), w('July'), w('August'), w('September'), w('October'), w('November'), w('December')];
+      const hasSelf = store.people().some((p) => p.self);
+      return `<form class="tk-card tk-form" id="tk-person-form" novalidate>
+        <h2>${first ? w('Who is this for?') : w('Add a person')}</h2>
+        <fieldset><legend>${w('Whose readings are these?')}</legend>
+          <div class="tk-seg">
+            <label><input type="radio" name="who" value="me" ${hasSelf ? 'disabled' : 'checked'}><span>${ME}</span></label>
+            <label><input type="radio" name="who" value="family" ${hasSelf ? 'checked' : ''}><span>${w('Someone in my family')}</span></label>
+          </div>
+        </fieldset>
+        <label class="tk-f">${w('Name')} <span class="tk-hint">${w('(as you want to see it, e.g. "Papa"; a doctor you share a link with sees it too)')}</span><input name="label" maxlength="${LIMITS.label}" value="${hasSelf ? '' : esc(ME)}" autocomplete="off" required></label>
+        <fieldset><legend>${w('Month and year of birth')} <span class="tk-hint">${w('(for adults, 18 and over)')}</span></legend>
+          <div class="tk-grid">
+            <label class="tk-f">${w('Month')}<select name="month" required><option value="">${w('Month')}</option>${months.map((m, i) => `<option value="${String(i + 1).padStart(2, '0')}">${m}</option>`).join('')}</select></label>
+            <label class="tk-f">${w('Year')}<input name="year" type="number" data-unitless inputmode="numeric" min="${years - 120}" max="${years - 18}" placeholder="${years - 40}" required></label>
+          </div>
+        </fieldset>
+        <fieldset><legend>${w('Sex')}</legend>
+          <div class="tk-seg"><label><input type="radio" name="sex" value="m"><span>${w('Male')}</span></label><label><input type="radio" name="sex" value="f"><span>${w('Female')}</span></label></div>
+        </fieldset>
+        <div class="tk-f"><span>${w('Height')} <span class="tk-hint">${w('(optional; with weight it shows BMI)')}</span></span>${unitFieldHTML({ id: 'tk-height', kind: 'height', label: w('Height'), placeholder: 165 }, w)}</div>
+        <details><summary>${w('Optional: health history (shown to your doctor if you share a link)')}</summary>
+          <div class="tk-grid" style="margin-top:.75rem">
+            ${[['htn', w('Known high BP?')], ['dm', w('Known diabetes?')], ['meds', w('On medicines for either?')]].map(([n, l]) => `<label class="tk-f">${l}<select name="${n}"><option value="">—</option><option value="yes">${w('Yes')}</option><option value="no">${w('No')}</option><option value="unsure">${w('Not sure')}</option></select></label>`).join('')}
+          </div>
+        </details>
+        <label class="tk-check" id="tk-consent" ${hasSelf ? '' : 'hidden'}><input type="checkbox" name="consent"> <span>${w('This person has agreed that I keep their readings here.')}</span></label>
+        <p class="tk-err" id="tk-perr" role="alert" hidden></p>
+        <div class="tk-row-btns"><button class="btn btn-primary" type="submit">${w('Save')}</button>${first ? '' : `<button class="btn btn-ghost" type="button" data-cancel>${w('Cancel')}</button>`}</div>
+      </form>`;
+    }
+
+    function draw() {
+      const people = store.people();
+      const first = people.length === 0;
+      el.innerHTML = `
+        ${people.length ? `<div class="tk-people">${people.map(card).join('')}</div>` : ''}
+        ${first || adding ? form(first) : people.length < LIMITS.people ? `<div class="tk-row-btns" style="margin-top:1rem"><button class="btn btn-ghost" type="button" data-add>${w('+ Add a person')}</button></div>` : ''}
+        <p class="tk-status" style="margin-top:.75rem">${STATUS[store.state]}</p>`;
+      el.querySelector('[data-add]')?.addEventListener('click', () => { adding = true; draw(); el.querySelector<HTMLInputElement>('input[name=label]')?.focus(); });
+      el.querySelector('[data-cancel]')?.addEventListener('click', () => { adding = false; draw(); });
+      const f = el.querySelector<HTMLFormElement>('#tk-person-form');
+      if (!f) return;
+      initUnitFields(f);
+      f.addEventListener('change', (e) => {
+        const t = e.target as HTMLInputElement;
+        if (t.name === 'who') {
+          el.querySelector<HTMLElement>('#tk-consent')!.hidden = t.value === 'me';
+          const label = f.elements.namedItem('label') as HTMLInputElement;
+          if (t.value === 'me' && !label.value) label.value = ME;
+          if (t.value === 'family' && label.value === ME) label.value = '';
+        }
+      });
+      f.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const fd = new FormData(f);
+        const err = (m: string) => { const p = el.querySelector<HTMLElement>('#tk-perr')!; p.textContent = m; p.hidden = false; };
+        const who = fd.get('who'), label = String(fd.get('label') ?? '').trim(), born = `${fd.get('year')}-${fd.get('month')}`;
+        const h = unitValue('tk-height'), height = Number.isFinite(h) ? Math.round(h * 10) / 10 : null; // cm, whatever unit was shown
+        if (!label) return err(w('Please enter a name.'));
+        if (!/^\d{4}-\d{2}$/.test(born)) return err(w('Please choose the month and year of birth.'));
+        if (!isAdult(born, new Date())) return err(w('The tracker is for adults, 18 and over. Children’s blood pressure needs different charts.'));
+        if (!fd.get('sex')) return err(w('Please choose male or female.'));
+        if (height !== null && !(height >= RANGE.heightCm[0] && height <= RANGE.heightCm[1])) return err(w('Height should be between {lo} and {hi} cm.', { lo: RANGE.heightCm[0], hi: RANGE.heightCm[1] }));
+        if (who === 'family' && !fd.get('consent')) return err(w('Please confirm that this person has agreed.'));
+        const yn = (n: string) => (['yes', 'no', 'unsure'].includes(String(fd.get(n))) ? String(fd.get(n)) as 'yes' : null);
+        const now = Date.now();
+        const p: Person = { id: newId(), label, born, sex: fd.get('sex') as 'm', heightCm: height, htn: yn('htn'), dm: yn('dm'), meds: yn('meds'),
+          self: who === 'me', consent: who === 'family' ? now : null, created: now, updated: now };
+        store.putPerson(p);
+        location.href = `${PERSON}#${p.id}`;
+      });
+    }
+
+    // A new browser has no copy yet: wait for the account's people before offering "Who is this for?".
+    if (!store.people().length) await store.sync();
+    store.subscribe(() => { if (!el.querySelector('#tk-person-form')) draw(); else el.querySelector('.tk-status')!.textContent = STATUS[store.state]; });
+    draw();
+    if (store.state === 'syncing') await store.sync();
+  }
+</script>
