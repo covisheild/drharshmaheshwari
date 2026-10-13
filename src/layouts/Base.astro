@@ -100,6 +100,34 @@ const graph = {
     <slot name="head" />
     <script type="application/ld+json" set:html={JSON.stringify(graph)} />
     <script is:inline>
+      // The language the reader chose (Harsh, 13 Oct 2026: "I have to select the language again and again"). Before first paint: when
+      // this page is in another language than the one chosen in the language menu and also exists in the chosen one (hreflang below),
+      // show that one instead, if the reader came here by Back/Forward, from another page of this site, or by opening the installed
+      // app. A link from outside (WhatsApp, search) still opens in the language it was sent in. Only the language code is stored.
+      (function () {
+        function go(type) {
+          try {
+            var want = localStorage.getItem('lang'), here = (document.documentElement.lang || 'en').slice(0, 2);
+            if (!want || want === here || location.pathname.indexOf('/doctors/') === 0) return;
+            var fromSite = false;
+            try { fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (e) {}
+            var app = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+            if (!(type === 'back_forward' || (type !== 'reload' && (fromSite || app)))) return;
+            var alt = document.querySelector('link[rel="alternate"][hreflang^="' + want + '-"]');
+            if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+          } catch (e) {}
+        }
+        var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+        go(nav ? nav.type : 'navigate');
+        addEventListener('pageshow', function (e) { if (e.persisted) go('back_forward'); });
+        // A link that names its language (the language menu, "Read in English") is the reader's choice.
+        addEventListener('click', function (e) {
+          var a = e.target && e.target.closest && e.target.closest('a[hreflang]');
+          if (a && a.origin === location.origin) try { localStorage.setItem('lang', a.hreflang.slice(0, 2)); } catch (err) {}
+        }, true);
+      })();
+    </script>
+    <script is:inline>
       // Runs before first paint: stored choice, else the system setting. Prevents a flash of the wrong theme.
       (function () {
         var r = document.documentElement, t = null;
@@ -139,6 +167,8 @@ const graph = {
           fromHere = !!document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1
             && sessionStorage.getItem('backTo') !== location.pathname;
         } catch {}
+        // ...but not into another language: the step back would land on the page in the language the reader just left.
+        try { if (fromHere && (new URL(document.referrer).pathname.match(/^\/([a-z]{2})\//)?.[1] ?? 'en') !== (document.documentElement.lang || 'en').slice(0, 2) && !/^\/doctors\//.test(new URL(document.referrer).pathname)) fromHere = false; } catch {}
         if (fromHere) { e.preventDefault(); history.back(); return; }
         try { sessionStorage.setItem('backTo', new URL(backLink.href).pathname); } catch {}
       });

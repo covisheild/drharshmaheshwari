@@ -4,8 +4,13 @@ Plan agreed with Harsh on 11 Oct 2026. Phase 1 (Hindi) is built; other languages
 
 ## Settled decisions
 
-- **The URL decides the language**, as it decides the mode: `/hi/...` is Hindi, everything else English. Nothing is stored in the
-  browser, and there is no automatic redirect by browser language. A shared link opens in the language it was sent in.
+- **The URL decides the language**, as it decides the mode: `/hi/...` is Hindi, everything else English. There is no automatic redirect
+  by browser language. A shared link from outside opens in the language it was sent in.
+- **The chosen language holds** (Harsh, 13 Oct 2026, from readers: "I have to select the language again and again"). Choosing a language
+  in the language menu (or "Read in English") saves only that code in the browser (`localStorage` `lang`; `/privacy/#language`). A tiny
+  script in `Base.astro`, before first paint, shows a page in the chosen language when it has a version in it (its `hreflang` link) and the
+  reader came by Back/Forward, from another page of this site, or by opening the installed app; a link from outside is left as sent. The site's
+  Back button never steps back into the language the reader just left. For Doctors stays English. Tested in `tests/e2e.mjs`.
 - **One small language button** in the header (globe + `EN` / `हिं`), on For Everyone pages only. It opens a list of languages in
   their own script; each links to the same page in that language, or to that language's home page when the page is not translated.
 - **English is the original.** Every translated page says so, links to the English page, and offers "Report a translation error".
@@ -56,15 +61,21 @@ never shown.**
    language's pages still show; add each to `src/i18n/<lang>.json`. For a guide, write `src/content/i18n/<lang>/<coll>/<slug>.md`
    (same structure, same numbers, links to translated pages get `/<lang>`), then `npm run i18n:status -- --stamp <file>`.
    Use the glossary terms; keep every number, unit and link exactly; keep the meaning, hedges ("on average", "may") and every "not".
+   **Write it natively, not word for word** (Harsh, 13 Oct 2026: readers found the first translations "correct but literal, not
+   engaging"): start from the meaning, restructure freely, use the language's own particles, word order and everyday words, and the warm
+   voice of a family doctor; it must read as if written in that language first. Each language keeps its voice notes in its QA report.
 3. **Automated checks:** `npm run i18n:check` (also in `npm test`). Fails on: a number changed, added or dropped; a link changed;
    a placeholder or inline tag lost; a glossary term not used; an untranslated English sentence; a banned word (दान = donation,
    Devanagari digits, "free" on book pages); a guide whose headings, list items, table rows, quotes, bold spans or paragraphs differ
    in count from the English. Warns on a length ratio out of range and on fewer negations than the English.
 4. **Back-translation (meaning).** Two separate agents: the first sees only the translation and translates it back to English
-   (with notes on anything unnatural); the second compares that with the original English and grades every change in meaning
+   (with notes on anything unnatural, and a naturalness grade for every string: does it read as written in the language, or as translated?);
+   the second compares that with the original English and grades every change in meaning
    CRITICAL (a clinical fact, number, threshold, negation, who it applies to, risk, action, certainty), MODERATE (a non-clinical
-   claim, a dropped or added qualifier or sentence) or MINOR. **Fix every CRITICAL and MODERATE finding**, re-run steps 3-4 on what
-   changed, and record the result in `docs/translation-qa/<lang>-<date>.md`.
+   claim, a dropped or added qualifier or sentence) or MINOR, and rewrites every string graded as reading translated. **Fix every
+   CRITICAL and MODERATE finding**, re-run steps 3-4 on what changed, and record the result in `docs/translation-qa/<lang>-<date>.md`.
+4b. **Clinical safety sweep:** the alert, first-aid, threshold, pregnancy and children's strings get one more blind back-translation and
+   comparison of their own (it caught errors the full comparison missed).
 5. **Build and look.** `WORKERS_CI_BRANCH=preview npm run build && npm test` (the built-page checks run when the language is
    built), screenshots at 390 px and desktop, no sideways scroll.
 6. **Human check where possible.** Hindi: Harsh reads the preview and his corrections go into the calibration log

@@ -130,6 +130,36 @@ try {
     await ctx.close();
   }
 
+  // ---------- The chosen language holds: Back, the site's own links and the app keep it; a link from outside opens as sent ----------
+  if (BUILT_LANGS.includes('hi')) {
+    const ctx = await context({ width: 390, height: 844 });
+    const page = await ctx.newPage();
+    const errs = errorsOf(page);
+    const at = () => new URL(page.url()).pathname;
+    await page.goto(BASE + '/tools/');
+    await page.click('.site-header .lang-btn');
+    await page.click('.site-header .lang-list a[hreflang="hi-IN"]');
+    await page.waitForURL(/\/hi\/tools\/$/);
+    check(await page.evaluate(() => localStorage.getItem('lang')) === 'hi', 'language menu: the choice is remembered (language only)');
+    await page.goto(BASE + '/learn/', { referer: BASE + '/hi/tools/' });
+    await page.waitForURL(/\/hi\/learn\/$/);
+    check(at() === '/hi/learn/', 'an English page reached from this site opens in the chosen language');
+    await page.goBack();
+    await page.waitForLoadState();
+    check(at() === '/hi/tools/', `Back stays in the chosen language (${at()})`);
+    await page.goto(BASE + '/about/');
+    check(at() === '/about/', 'a link from outside opens in the language it was sent in');
+    await page.goto(BASE + '/hi/about/');
+    await page.click('.site-header .lang-btn');
+    await page.click('.site-header .lang-list a[hreflang="en-IN"]');
+    await page.waitForURL(/\/about\/$/);
+    await page.goBack();
+    await page.waitForURL(/\/about\/$/);
+    check(at() === '/about/' && await page.evaluate(() => localStorage.getItem('lang')) === 'en', `after choosing English, Back to a Hindi page shows it in English (${at()})`);
+    check(errs.length === 0, `language memory: no script errors (${errs.join('; ')})`);
+    await ctx.close();
+  }
+
   // ---------- Calculators in every built language: the results the scripts write are in that language too ----------
   // Fills each calculator with cases that reach every kind of result, then looks for any English sentence (3+ English words in a row).
   // A case is a list of steps: ['#id', 'value'] fills a box, ['name', 'value'] picks a radio button.

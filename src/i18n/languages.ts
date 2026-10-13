@@ -1,5 +1,5 @@
 // The site's languages. The URL decides the language, like the mode: /hi/... is Hindi, everything else is English.
-// Nothing about the language is stored in the browser, so a shared link always opens in the language it was sent in.
+// The language the reader chooses in the menu is remembered (only its code, Base.astro); a link from outside opens in the language it was sent in.
 // Only For Everyone pages are translated; For Doctors, the books and the calculators stay in English (docs/translation.md).
 // Pure data, no build-time imports: tests import this file directly.
 

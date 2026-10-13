@@ -31,7 +31,10 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 - The URL decides the language like the mode: `/hi/...` is Hindi (`src/i18n/languages.ts`, `langOf`). **Every For Everyone page has a Hindi page**,
   calculators included (`tests/i18n.test.mjs` fails on one without; exceptions: account page, single book pages). For Doctors, books and
   references stay English. Language button in the header (`LangSwitch.astro`). On a Hindi page every link to a page that has a Hindi version
-  goes to it (`localHref()`; tested).
+  goes to it (`localHref()`; tested). **The chosen language holds** (Harsh, 13 Oct 2026): the menu choice is saved (`localStorage` `lang`, code only);
+  Back/Forward, the site's links and the installed app show pages in it; a link from outside opens as sent (docs/translation.md; tested in e2e).
+- **Translations are written natively, not word for word** (Harsh, 13 Oct 2026: readers found them "correct but literal, not engaging"; one literal
+  line means many): every language was rewritten in the voice of a family doctor writing in that language, then re-checked blind.
 - Live: Hindi (Harsh, 11 Oct 2026); Marathi, Bengali, Odia, Tamil, Telugu, Kannada, Malayalam and Urdu (right to left) (Harsh, 12 Oct 2026);
   Gujarati, Assamese and Punjabi (12 Oct 2026, after passing every check).
   A new language starts `live: false` (preview builds only); Harsh's standing instruction (12 Oct 2026) for Gujarati, Punjabi and Assamese:
