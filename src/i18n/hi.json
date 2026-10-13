@@ -1096,5 +1096,8 @@
   "{size}. {what}": "{size}। {what}",
   "{source} targets, {who}": "{source} लक्ष्य, {who}",
   "{src}: {need} or more days a week.": "{src}: हफ़्ते में {need} या ज़्यादा दिन।",
-  "−2 to +1 SD": "−2 से +1 SD"
+  "−2 to +1 SD": "−2 से +1 SD",
+  "Tap the Share button {icon}. In Safari it is at the bottom; if you see <b>⋯</b> there instead, tap ⋯ first, then <b>Share</b>. In Chrome it is at the top right.": "शेयर बटन {icon} पर टैप करें। Safari में यह नीचे होता है; अगर वहाँ इसकी जगह <b>⋯</b> दिखे, तो पहले ⋯ पर टैप करें, फिर <b><span lang=\"en\">Share</span></b> पर। Chrome में यह ऊपर दाईं ओर होता है।",
+  "Scroll down and tap <b>Add to Home Screen</b> (if it is not in the list, tap <b>View More</b>). Keep <b>Open as Web App</b> on, then tap <b>Add</b>.": "नीचे स्क्रॉल करके <b><span lang=\"en\">Add to Home Screen</span></b> पर टैप करें (अगर यह सूची में न दिखे, तो <b><span lang=\"en\">View More</span></b> पर टैप करें)। <b><span lang=\"en\">Open as Web App</span></b> चालू ही रहने दें, फिर <b><span lang=\"en\">Add</span></b> पर टैप करें।",
+  "Still no <b>Add to Home Screen</b>? The page may have opened inside another app, such as WhatsApp, Gmail or Instagram. Open it in Safari first (the compass button, or <b>Open in Safari</b> in that app's menu), then try again.": "अब भी <b><span lang=\"en\">Add to Home Screen</span></b> नहीं दिख रहा? हो सकता है पेज किसी दूसरे ऐप के अंदर खुला हो, जैसे WhatsApp, Gmail या Instagram। पहले इसे Safari में खोलें (कम्पास वाला बटन दबाकर, या उस ऐप के मेन्यू में <b><span lang=\"en\">Open in Safari</span></b> चुनकर), फिर दोबारा कोशिश करें।"
 }

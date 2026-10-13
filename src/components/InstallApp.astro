@@ -1,7 +1,8 @@
 ---
 // "Install the app" (home pages and /app/). One tap where the browser can install apps by itself (Chrome, Edge, Samsung
 // Internet, Opera: the browser's own offer, held back in src/pwa/client.ts, opens on the tap). Where it cannot, the same tap
-// shows the two or three steps for this browser: iPhone and iPad (Apple allows only Share > Add to Home Screen), Safari on a
+// shows the two or three steps for this browser: iPhone and iPad (Apple allows only Share > Add to Home Screen; on iOS 26 Safari, Share sits inside the ⋯ menu, and
+// a page opened inside another app's browser has no Add to Home Screen), Safari on a
 // Mac (File > Add to Dock), Firefox on Android (menu > Install), Opera on Android (menu > Add to > Home screen), Firefox on a computer (cannot install apps: use Chrome or
 // Edge, or keep the site as a bookmark). Hidden inside the app itself. Never a pop-up or banner.
 import '../styles/install.css';
@@ -35,9 +36,10 @@ const share = '<svg class="inst-share" viewBox="0 0 24 24" width="18" height="18
     <div class="inst-steps" data-for="ios" hidden>
       <p><b>{t('On iPhone and iPad')}</b> <T>(Apple allows apps from websites only this way):</T></p>
       <ol>
-        <li><Fragment set:html={t('Tap the Share button {icon} (in Safari at the bottom, in Chrome at the top right).', { icon: share })} /></li>
-        <li><T>Scroll down and tap <b>Add to Home Screen</b>, then <b>Add</b>.</T></li>
+        <li><Fragment set:html={t('Tap the Share button {icon}. In Safari it is at the bottom; if you see <b>⋯</b> there instead, tap ⋯ first, then <b>Share</b>. In Chrome it is at the top right.', { icon: share })} /></li>
+        <li><T>Scroll down and tap <b>Add to Home Screen</b> (if it is not in the list, tap <b>View More</b>). Keep <b>Open as Web App</b> on, then tap <b>Add</b>.</T></li>
       </ol>
+      <p class="inst-note"><T>Still no <b>Add to Home Screen</b>? The page may have opened inside another app, such as WhatsApp, Gmail or Instagram. Open it in Safari first (the compass button, or <b>Open in Safari</b> in that app's menu), then try again.</T></p>
     </div>
     <div class="inst-steps" data-for="mac-safari" hidden>
       <p><T>In Safari, open the <b>File</b> menu and choose <b>Add to Dock</b>.</T></p>

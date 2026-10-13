@@ -1096,5 +1096,8 @@
   "{size}. {what}": "{size}। {what}",
   "{source} targets, {who}": "{source} লক্ষ্য, {who}",
   "{src}: {need} or more days a week.": "{src}: সপ্তাহে {need} বা তার বেশি দিন।",
-  "−2 to +1 SD": "−2 থেকে +1 SD"
+  "−2 to +1 SD": "−2 থেকে +1 SD",
+  "Tap the Share button {icon}. In Safari it is at the bottom; if you see <b>⋯</b> there instead, tap ⋯ first, then <b>Share</b>. In Chrome it is at the top right.": "শেয়ার বোতাম {icon} টিপুন। Safari-তে এটা নিচে থাকে; সেখানে এর বদলে <b>⋯</b> দেখলে আগে ⋯ টিপুন, তারপর <b><span lang=\"en\">Share</span></b>। Chrome-এ এটা ওপরে ডানদিকে থাকে।",
+  "Scroll down and tap <b>Add to Home Screen</b> (if it is not in the list, tap <b>View More</b>). Keep <b>Open as Web App</b> on, then tap <b>Add</b>.": "নিচে স্ক্রল করে <b><span lang=\"en\">Add to Home Screen</span></b> টিপুন (তালিকায় না পেলে <b><span lang=\"en\">View More</span></b> টিপুন)। <b><span lang=\"en\">Open as Web App</span></b> চালুই রাখুন, তারপর <b><span lang=\"en\">Add</span></b> টিপুন।",
+  "Still no <b>Add to Home Screen</b>? The page may have opened inside another app, such as WhatsApp, Gmail or Instagram. Open it in Safari first (the compass button, or <b>Open in Safari</b> in that app's menu), then try again.": "তালিকায় এখনও <b><span lang=\"en\">Add to Home Screen</span></b> নেই? হয়তো পেজটা অন্য কোনো অ্যাপের ভেতরে খুলেছে, যেমন WhatsApp, Gmail বা Instagram। আগে এটা Safari-তে খুলুন (কম্পাসের ছবি দেওয়া বোতাম টিপে, বা সেই অ্যাপের মেনুতে <b><span lang=\"en\">Open in Safari</span></b> বেছে নিয়ে), তারপর আবার চেষ্টা করুন।"
 }

@@ -57,7 +57,7 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
   `public/icons/app-icon.svg` (not the photo, not "HM"); every PNG size is drawn from it after each build. `public/favicon.svg` is the same mark.
 - **Install** (Harsh, 12 Oct 2026: one-click on the home page, any browser): `InstallApp.astro`, a card on `/` (+ languages), `/doctors/` and `/app/`.
   One tap opens the browser's own install where it has one (Chrome, Edge, Samsung; its banner is held back in `src/pwa/client.ts`); elsewhere the same
-  tap shows that browser's steps: iPhone/iPad Share → Add to Home Screen, Mac Safari File → Add to Dock, Firefox Android menu → Install, **Opera Android
+  tap shows that browser's steps: iPhone/iPad Share → Add to Home Screen (iOS 26 Safari: ⋯ → Share; keep "Open as Web App" on; in another app's browser, open in Safari first), Mac Safari File → Add to Dock, Firefox Android menu → Install, **Opera Android
   menu → Add to… → Home screen** (Opera gives sites no install event), Firefox on a computer cannot install. Hidden inside the app. No install pop-ups.
 - **Header** (Harsh, 12 Oct 2026): photo, mode switch, language, ☰. No theme button and no gear in the header (they pushed the switch onto the photo).
   **Settings** is the last item of the ☰ menu (`.nav-settings`; a gear at the end of the links on wide screens) and in every footer.

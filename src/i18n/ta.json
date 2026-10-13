@@ -1098,5 +1098,8 @@
   "{size}. {what}": "{size}. {what}",
   "{source} targets, {who}": "{source} இலக்குகள், {who}",
   "{src}: {need} or more days a week.": "{src}: வாரத்தில் {need} அல்லது அதற்கு மேற்பட்ட நாட்கள்.",
-  "−2 to +1 SD": "−2 முதல் +1 SD வரை"
+  "−2 to +1 SD": "−2 முதல் +1 SD வரை",
+  "Tap the Share button {icon}. In Safari it is at the bottom; if you see <b>⋯</b> there instead, tap ⋯ first, then <b>Share</b>. In Chrome it is at the top right.": "{icon} என்ற ஷேர் பட்டனைத் தொடுங்கள். Safari-யில் இது கீழே இருக்கும்; அங்கே அதற்குப் பதிலாக <b>⋯</b> தெரிந்தால், முதலில் ⋯-ஐத் தொட்டு, பிறகு <b><span lang=\"en\">Share</span></b>-ஐத் தொடுங்கள். Chrome-இல் இது மேலே வலது பக்கம் இருக்கும்.",
+  "Scroll down and tap <b>Add to Home Screen</b> (if it is not in the list, tap <b>View More</b>). Keep <b>Open as Web App</b> on, then tap <b>Add</b>.": "கீழே ஸ்க்ரோல் செய்து <b><span lang=\"en\">Add to Home Screen</span></b>-ஐத் தொடுங்கள் (பட்டியலில் அது இல்லையென்றால் <b><span lang=\"en\">View More</span></b>-ஐத் தொடுங்கள்). <b><span lang=\"en\">Open as Web App</span></b> ஆனிலேயே இருக்கட்டும்; பிறகு <b><span lang=\"en\">Add</span></b>-ஐத் தொடுங்கள்.",
+  "Still no <b>Add to Home Screen</b>? The page may have opened inside another app, such as WhatsApp, Gmail or Instagram. Open it in Safari first (the compass button, or <b>Open in Safari</b> in that app's menu), then try again.": "இன்னும் <b><span lang=\"en\">Add to Home Screen</span></b> தெரியவில்லையா? இந்தப் பக்கம் WhatsApp, Gmail அல்லது Instagram போன்ற வேறொரு ஆப்பின் உள்ளேயே திறந்திருக்கலாம். முதலில் இதை Safari-யில் திறங்கள் (காம்பஸ் பட்டனைத் தொட்டு, அல்லது அந்த ஆப்பின் மெனுவில் <b><span lang=\"en\">Open in Safari</span></b>-ஐத் தேர்ந்தெடுத்து), பிறகு மீண்டும் முயலுங்கள்."
 }

@@ -892,6 +892,14 @@ try {
     await p3.click('.app-sec .inst-btn');
     check(await p3.locator('.app-sec .inst-steps[data-for="android-opera"]:not([hidden])').count() === 1, 'Install in Opera on Android shows Opera\'s steps');
     await opera.close();
+    // iPhone Safari cannot install from a page: the tap shows Share (inside ⋯ on iOS 26) > Add to Home Screen, and what to do inside another app.
+    const iphone = await browser.newContext({ viewport: { width: 390, height: 844 }, userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1' });
+    const p4 = await iphone.newPage();
+    await p4.goto(`${BASE}/`);
+    await p4.click('.app-sec .inst-btn');
+    const ios = p4.locator('.app-sec .inst-steps[data-for="ios"]:not([hidden])');
+    check(await ios.count() === 1 && /⋯/.test(await ios.innerText()) && await ios.locator('.inst-note').count() === 1, 'Install on iPhone Safari shows the Share steps, the ⋯ menu of iOS 26 and the in-app-browser note');
+    await iphone.close();
   }
 
 } finally {
