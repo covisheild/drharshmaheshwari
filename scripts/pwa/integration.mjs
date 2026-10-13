@@ -1,5 +1,5 @@
 // The installable app (PWA), written after every build:
-//   /icons/*.png            every icon size, drawn from public/icons/app-icon.svg
+//   /icons/*.png            every icon size, drawn from the logo src/assets/brand/app-icon-dark.png (Harsh, 13 Oct 2026: the dark one is the default)
 //   /offline/packs.json     what can be saved for offline: one pack per book in the reader and per trainer
 //   /offline/packs/<id>.json  each pack's files, with a content hash per site file so an update downloads only what changed
 //   /sw.js                  the service worker (scripts/pwa/sw.js) with this build's id and its offline shell
@@ -15,7 +15,9 @@ import { join, posix } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-const ICON = fileURLToPath(new URL('../../public/icons/app-icon.svg', import.meta.url));
+const ICON = fileURLToPath(new URL('../../src/assets/brand/app-icon-dark.png', import.meta.url));
+// The logo's own dark green, behind the Apple icon.
+const ICON_BG = '#022a1e';
 const SW = fileURLToPath(new URL('./sw.js', import.meta.url));
 // Estimates for files on R2, whose size the build cannot see. Shown as "about".
 const FIGURE_BYTES = 120_000;
@@ -41,19 +43,22 @@ export default function pwa({ build, kill = false }) {
 }
 
 async function icons(root) {
-  const svg = readFileSync(ICON);
   const out = join(root, 'icons');
   mkdirSync(out, { recursive: true });
-  const png = (size) => sharp(svg, { density: 300 }).resize(size, size).png({ compressionLevel: 9 });
-  // "any": rounded corners, for desktop and launchers that show the icon as it is. "maskable" and Apple: full square,
-  // the system cuts its own shape.
+  const png = (size) => sharp(ICON).resize(size, size, { kernel: 'lanczos3' }).png({ compressionLevel: 9, palette: true, quality: 92, dither: 1 });
+  // "any" and the favicons: rounded corners, for desktops and launchers that show the icon as it is. "maskable" and Apple:
+  // the full square; the phone cuts its own shape (the figure sits well inside the circle Android keeps).
   const rounded = async (size) => {
     const mask = Buffer.from(`<svg width="${size}" height="${size}"><rect width="${size}" height="${size}" rx="${Math.round(size * 0.22)}"/></svg>`);
     return png(size).composite([{ input: mask, blend: 'dest-in' }]).toBuffer();
   };
+  for (const s of [32, 48]) writeFileSync(join(out, `favicon-${s}.png`), await rounded(s));
   for (const s of [96, 192, 512]) writeFileSync(join(out, `icon-${s}.png`), await rounded(s));
   for (const s of [192, 512]) await png(s).toFile(join(out, `maskable-${s}.png`));
-  await png(180).flatten({ background: '#07090d' }).toFile(join(out, 'apple-touch-icon.png'));
+  await png(180).flatten({ background: ICON_BG }).toFile(join(out, 'apple-touch-icon.png'));
+  // /favicon.svg (the address browsers and old links know): the same logo, as a 64 px picture inside an SVG.
+  const fav = (await rounded(64)).toString('base64');
+  writeFileSync(join(root, 'favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><image width="64" height="64" href="data:image/png;base64,${fav}"/></svg>`);
 }
 
 /** url -> file for everything the site serves. */
