@@ -53,6 +53,17 @@ test('every translated guide was made from the current English (fingerprints mat
   }
 });
 
+// The activity check shows a big number followed directly by these texts ("3 of 7 days…"). A translation that starts with a
+// digit would show "3 7 …", readable as 37 (found by back-translation, 12 Oct 2026): every one must start with a word.
+test('texts shown right after a big number start with a word, not a digit, in every language', () => {
+  const units = [...readFileSync(join(ROOT, 'src/lib/activity.ts'), 'utf8').matchAll(/unit: [`'"]([^`'"]+)[`'"]/g)].map((m) => m[1]);
+  assert.ok(units.length >= 1, 'no unit texts found in activity.ts');
+  for (const l of STARTED) {
+    const dict = dictOf(l.code);
+    for (const u of units) if (dict[u]) assert.doesNotMatch(dict[u], /^[\s/(]*\d/, `${l.code}: "${u}" starts with a digit`);
+  }
+});
+
 test('the dictionaries have no empty entries, and the language of a URL is read correctly', () => {
   for (const l of STARTED) assert.deepEqual(Object.entries(dictOf(l.code)).filter(([, v]) => !v).map(([k]) => k), [], `${l.code}.json`);
   assert.equal(langOf('/ta/learn/x/'), 'ta');
