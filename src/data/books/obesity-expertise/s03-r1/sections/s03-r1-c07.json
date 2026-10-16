@@ -1,0 +1,218 @@
+{
+ "format": 1,
+ "id": "s03-r1-c07",
+ "label": "7",
+ "title": "Natural frequencies: Bayes by counting people",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"500\">Natural frequencies</dfn> are counts of people, got by following one group through each split in turn. Start with a group of a stated size. Split it by the condition, using the <dfn data-g=\"592\">prevalence</dfn>. Split each part by the test result, using the <dfn data-g=\"713\">sensitivity</dfn> among those with the condition and the <dfn data-g=\"279\">false-positive rate</dfn> among those without. The four counts at the end are the true positives, false negatives, false positives and true negatives.</p>\n<p>Laid out as a diagram that branches at each split, the counts form a <dfn data-g=\"316\">frequency tree</dfn>.</p>\n<p>Write TP for the count of true positives, FP for false positives, TN for true negatives and FN for false negatives.</p>\n<div class=\"working\">\n<p>PPV = TP ÷ (TP + FP)<br />\nNPV = TN ÷ (TN + FN)</p>\n</div>\n<p>This is the same arithmetic as Bayes’ theorem, with the multiplying already done.</p>",
+   "refs": [
+    47,
+    48,
+    48,
+    49,
+    50,
+    51
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Instead of three percentages, count people. Take 1,000 people. Then look at everyone who tested positive and ask how many of them have it.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c07-mammography-counts.png",
+   "alt": "Two bars: 8 women with cancer and a positive mammogram, 99 without cancer and a positive mammogram. Together they make 107.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Eddy’s mammography problem as natural frequencies: the 107 of 1,000 women of 40 who have a positive mammogram. 8 have breast cancer and 99 do not. Of the 107 positives, 8 have cancer: about 7.5 per cent."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c07-formats-correct.png",
+   "alt": "Paired bars for five groups. Probabilities then natural frequencies: breast cancer 8 and 46, colorectal cancer 4 and 67, phenylketonuria 21 and 42, ankylosing spondylitis 8 and 29, all four 10 and 46.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Hoffrage and Gigerenzer, 1998: per cent of cases in which 48 physicians reasoned correctly, with the same information given as probabilities (left bar of each pair) or as natural frequencies (right bar). Natural frequencies won in every problem. Breast cancer 8 against 46, colorectal cancer 4 against 67, phenylketonuria 21 against 42, ankylosing spondylitis 8 against 29; all four, 10 against 46."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Try this first, the way Hoffrage and Gigerenzer gave it to physicians in “Using natural frequencies to improve diagnostic inferences”, <em>Academic Medicine</em>, 1998 (https://doi.org/10.1097/00001888-199805000-00024). The numbers are from David Eddy’s 1982 study, rounded, as Hoffrage and Gigerenzer report them.</p>\n<blockquote>\n<p>For a woman at age 40 who participates in routine screening, the probability of breast cancer is 1%. If a woman has breast cancer, the probability is 80% that she will have a positive mammogram. If a woman does not have breast cancer, the probability is 10% that she will still have a positive mammogram.</p>\n</blockquote>\n<p>A woman of 40 has a positive mammogram. What is the chance she has breast cancer? Write your answer down before you read on.</p>\n<p>In Eddy’s study, 95 of 100 physicians said between 70 and 80 per cent. Eddy concluded they had confused the sensitivity, 80 per cent, with the PPV. The correct answer is 7.5 per cent.</p>\n<p>Now read the same information the way the 1998 paper rewrote it.</p>\n<blockquote>\n<p>Ten out of every 1,000 women at age 40 who participate in routine screening have breast cancer. Of these ten women with breast cancer, eight will have a positive mammogram. Of the remaining 990 women without breast cancer, 99 will still have a positive mammogram.</p>\n</blockquote>\n<p>Every number is a count of women. Get the four counts at the ends of the frequency tree.</p>\n<div class=\"working\">\n<p>0.01 times 1000 = 10<br />\n1000 minus 10 = 990<br />\n0.80 times 10 = 8<br />\n10 minus 8 = 2<br />\n0.10 times 990 = 99<br />\n990 minus 99 = 891</p>\n</div>\n<table style=\"width:96%;\">\n\n<thead>\n<tr>\n<th></th>\n<th>positive mammogram</th>\n<th>negative mammogram</th>\n<th>total</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>breast cancer</td>\n<td>8</td>\n<td>2</td>\n<td>10</td>\n</tr>\n<tr>\n<td>no breast cancer</td>\n<td>99</td>\n<td>891</td>\n<td>990</td>\n</tr>\n<tr>\n<td>total</td>\n<td>107</td>\n<td>893</td>\n<td>1,000</td>\n</tr>\n</tbody>\n</table>\n<p>Now ask the question of the positives only.</p>\n<div class=\"working\">\n<p>8 plus 99 = 107<br />\n8 divided by 107 is about 0.0748</p>\n</div>\n<p>107 women test positive, and 8 of them have cancer: about 7.5 per cent. The negative results are as quick.</p>\n<div class=\"working\">\n<p>2 plus 891 = 893<br />\n891 divided by 893 is about 0.998</p>\n</div>\n<p>The NPV is about 99.8 per cent. Compare the work with the formula of section 5. There you multiply the prevalence into each term to put the <dfn data-g=\"54\">base rate</dfn> back. Here the counts 8 and 99 already carry it. Whether 1,000 women or one <dfn data-g=\"602\">probability</dfn>, the answer is the same 7.5 per cent.</p>\n<p>Does the rewrite help real doctors? Hoffrage and Gigerenzer gave 48 physicians in Munich and Düsseldorf four such problems. Each physician had two in probabilities and two in natural frequencies, with the formats and order varied. An answer counted as correct only if it was within five <dfn data-g=\"555\">percentage</dfn> points and the physician’s notes and interview showed it was not a guess.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>problem</th>\n<th>correct with probabilities (%)</th>\n<th>correct with natural frequencies (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>breast cancer</td>\n<td>8</td>\n<td>46</td>\n</tr>\n<tr>\n<td>colorectal cancer</td>\n<td>4</td>\n<td>67</td>\n</tr>\n<tr>\n<td>phenylketonuria</td>\n<td>21</td>\n<td>42</td>\n</tr>\n<tr>\n<td>ankylosing spondylitis</td>\n<td>8</td>\n<td>29</td>\n</tr>\n<tr>\n<td>all four</td>\n<td>10</td>\n<td>46</td>\n</tr>\n</tbody>\n</table>\n<p>Hoffrage and colleagues restated the colorectal row in <em>Science</em> in 2000: “Only 1 out of 24 physicians” was correct with probabilities, and 16 out of 24 others with natural frequencies.</p>\n<p>With probabilities, the commonest wrong answers were the sensitivity itself, or the sensitivity minus the false-positive rate. Both ignore the prevalence. With natural frequencies, the commonest wrong answers ignored the test and gave a base rate instead.</p>",
+   "numberRefs": [
+    52,
+    53,
+    54
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 46 per cent is a share of cases, not of physicians, among 48 German physicians given written problems. More than half the answers were still wrong. Nothing here measures what those physicians then did with a patient.</p>\n<p>The physicians in the study did not turn probabilities into counts on their own. The paper says so: they “did not spontaneously translate”. The benefit came from being handed counts, or from being taught to make them.</p>\n<p>The counts describe what would happen on average among 1,000 women. A real group of 1,000 would not give exactly 8 and 99: draw group after group, and the counts would scatter around them.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Counting people has one trap: people come whole, and the arithmetic does not. Here it is in its plainest form. Take the Casscells question of section 6, at a prevalence of 1 in 1,000, and count only 100 people.</p>\n<div class=\"working\">\n<p>100 divided by 1000 = 0.1</p>\n</div>\n<p>One tenth of a person has the disease. Round it to zero and nobody has it, so a positive result means a 0 per cent chance. That is wrong. The fix is a bigger group: with 1,000 people the smallest count is 1.</p>\n<p>The papers that made these trees met the same problem and rounded. Gigerenzer and Hoffrage’s version of the mammography problem, in “How to improve Bayesian reasoning without instruction: frequency formats”, <em>Psychological Review</em>, 1995 (https://doi.org/10.1037/0033-295X.102.4.684), <dfn data-g=\"822\">used</dfn> a false-positive rate of 9.6 per cent. Search it for “95 out of every 990”.</p>\n<div class=\"working\">\n<p>0.096 times 990 = 95.04</p>\n</div>\n<p>They printed 95. The 2000 <em>Science</em> paper’s colorectal tree used a false-positive rate of 3 per cent among 9,970 people.</p>\n<div class=\"working\">\n<p>0.03 times 9970 = 299.1</p>\n</div>\n<p>They printed 300. Of its 10,000 people, 30 have colorectal cancer and 15 of them test positive. Neither <dfn data-g=\"690\">rounding</dfn> moves the answer much.</p>\n<div class=\"working\">\n<p>15 divided by 315 is about 0.0476<br />\n15 divided by 314.1 = 0.0478</p>\n</div>\n<p>About 4.8 per cent either way.</p>\n<p>Rounding can do more harm in the other direction: building counts back from rounded percentages. The arm-circumference table of Book 0, D3 took Kiran’s printed sensitivity of 86 per cent and <dfn data-g=\"742\">specificity</dfn> of 74 per cent and rebuilt 36, 23, 6 and 66 men from them. Those are whole numbers, and they look like data. They are a reconstruction. Of the two group sizes Book 0 tried, only one rounds back to both percentages.</p>\n<p>Book 0 also built a 1,000-man version at one in five. Read it now as a frequency tree, from the top.</p>\n<div class=\"working\">\n<p>0.20 times 1000 = 200<br />\n1000 minus 200 = 800<br />\n0.86 times 200 = 172<br />\n200 minus 172 = 28<br />\n0.74 times 800 = 592<br />\n800 minus 592 = 208</p>\n</div>\n<table style=\"width:94%;\">\n\n<tbody>\n<tr>\n<td></td>\n<td>arm 31.3 cm or more</td>\n<td>arm under 31.3 cm</td>\n<td>total</td>\n</tr>\n<tr>\n<td>in the band</td>\n<td>172</td>\n<td>28</td>\n<td>200</td>\n</tr>\n<tr>\n<td>not in the band</td>\n<td>208</td>\n<td>592</td>\n<td>800</td>\n</tr>\n<tr>\n<td>total</td>\n<td>380</td>\n<td>620</td>\n<td>1,000</td>\n</tr>\n</tbody>\n</table>\n<p>The PPV is 172 of 380, the 45 per cent Book 0 reached. Now read off the NPV, which section 5 reached by formula.</p>\n<div class=\"working\">\n<p>28 plus 592 = 620<br />\n592 divided by 620 is about 0.955</p>\n</div>\n<p>Of 620 men the tape clears, 592 are outside the band: about 95.5 per cent.</p>",
+   "numberRefs": [
+    53,
+    54,
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Choose a group large enough that the smallest count is at least a few whole people, round only at the last split, and say that you rounded. A count made from a percentage is an expected number, not a count anyone made.</p>\n<p>The 1,000-man table uses Kiran’s sensitivity and specificity, which come from 131 medical students in one college, and a prevalence of one in five that was stated for the example. Its 45 and 95.5 per cent hold for that stated group only.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>When you need a PPV or NPV in your head or on a whiteboard, count 1,000 people (or 10,000).</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Split by the condition first, never by the test. Sensitivity applies only to the people with the condition and the false-positive rate only to the people without.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When you explain a positive result to a patient, or write a handout, give counts: “of 1,000 people like you who test positive, about this many have it”. In Hoffrage and Gigerenzer’s study the same physicians got the PPV right in 10 per cent of cases from probabilities and 46 per cent from natural frequencies.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Do not expect colleagues to translate on their own. Hand them the counts, or teach the four steps.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Pick a group size that makes the smallest count at least a few whole people, round only at the end, and say that the counts are expected numbers.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Counts rebuilt from rounded percentages look like data and are not. Never cite a rebuilt count as if a study measured it.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Natural frequencies make the arithmetic easy. They do not make the inputs right.</p>",
+     "tag": "boundary",
+     "bearing": "clinical"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Natural frequencies give a different, more realistic answer than Bayes’ theorem.” They give the same answer. Eight out of 107 is the 7.5 per cent the formula gives. What changes is how easy the answer is to reach and to explain. A wrong prevalence or a misapplied sensitivity gives a wrong count just as surely as it gives a wrong probability.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Of every 1,000 people tested in this setting, about (the true positives plus the false positives) will have a positive result, and about (the true positives) of those will have the condition. A positive result therefore means about a (the true positives divided by all the positives, as a per cent) per cent chance of the condition, and is a reason for a confirmatory test, not a diagnosis.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: list the four steps that turn a prevalence, a sensitivity and a false-positive rate into a PPV by counting. Then say what result Hoffrage and Gigerenzer found when 48 physicians were given the same problems as probabilities and as natural frequencies.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>Choose a group, say 1,000 people, and use the prevalence to find how many have the condition.</li>\n<li>Use the sensitivity on those people to find how many have the condition and test positive.</li>\n<li>Use the false-positive rate on everyone else to find how many test positive without the condition.</li>\n<li>Divide the count from step 2 by the sum of the counts from steps 2 and 3.</li>\n</ol>\n<p>Hoffrage and Gigerenzer: with probabilities the physicians reasoned correctly in 10 per cent of cases; with natural frequencies, 46 per cent.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A journalist, three minutes, no jargon. She is writing about a screening camp and asks: “If the test is 80 per cent accurate and I test positive, I’ve probably got it, right?” Use Eddy’s mammography numbers as your example. Give her one sentence she can quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start by unpacking “80 per cent accurate”: it is the share of women with cancer whom the test catches. It says nothing about the women without cancer.</p>\n<p>Then count. Picture 1,000 women of 40 at routine screening. About 10 have breast cancer, and 8 of those test positive. Of the 990 without cancer, about 99 also test positive. So 107 women walk out with a positive result, and 8 of them have cancer.</p>\n<p>The quotable sentence: “Of every 107 women of 40 who test positive at routine screening, about 8 have breast cancer; a positive result means more tests, not a diagnosis.”</p>\n<p>Calibrate: these are rounded teaching numbers from a 1982 study, not today’s Indian figures. The pattern, not the 8, is the point.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Draft the frequency-tree panel of your clinic handout. Choose a test used in your clinic, with a published sensitivity and specificity, and a prevalence for your patients. Write the 1,000-person counts as a table, the two sentences a patient will read, and one line saying where each input came from.</p>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>A good panel has four parts.</p>\n<p>The table: 1,000 patients split by the condition (from your prevalence), then each part by the test (sensitivity on those with it, the false-positive rate on those without). All four cells and the totals, rounded to whole people only at the last split.</p>\n<p>Two sentences, for example: “Of 1,000 patients like you tested here, about X test positive. About Y of those X have the condition.” And the same for a negative result.</p>\n<p>The sources line: the paper and table the sensitivity and specificity came from, and the population they were measured in; the prevalence, with its source and period. If the prevalence is a guess, the handout says so.</p>\n<p><dfn data-g=\"104\">Check</dfn> the panel: every count is a whole person, the four cells add to 1,000, and Y ÷ X matches the PPV from the formula of section 5 to the rounding.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A condition has a prevalence of 10 per cent. A test has a sensitivity of 90 per cent and a false-positive rate of 20 per cent. Count 1,000 people and give the four counts at the end of the frequency tree.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>0.10 times 1000 = 100<br />\n1000 minus 100 = 900<br />\n0.90 times 100 = 90<br />\n100 minus 90 = 10<br />\n0.20 times 900 = 180<br />\n900 minus 180 = 720</p>\n</div>\n<p>True positives 90, false negatives 10, false positives 180, true negatives 720. Check: 90 plus 10 plus 180 plus 720 is 1,000.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>From the counts in problem 1 (true positives 90, false negatives 10, false positives 180, true negatives 720), work out the PPV and the NPV.</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>90 plus 180 = 270<br />\n90 divided by 270 is about 0.333<br />\n720 plus 10 = 730<br />\n720 divided by 730 is about 0.986</p>\n</div>\n<p>PPV about 33 per cent: one positive in three is right. NPV about 98.6 per cent.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Of 2,000 people, 40 have a condition. 30 of those 40 test positive. 98 of the people without it also test positive. Work out the prevalence, sensitivity, specificity, PPV and NPV.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>40 divided by 2000 = 0.02<br />\n30 divided by 40 = 0.75<br />\n2000 minus 40 = 1960<br />\n1960 minus 98 = 1862<br />\n1862 divided by 1960 = 0.95<br />\n30 plus 98 = 128<br />\n30 divided by 128 is about 0.234<br />\n40 minus 30 = 10<br />\n1862 plus 10 = 1872<br />\n1862 divided by 1872 is about 0.995</p>\n</div>\n<p>Prevalence 2 per cent, sensitivity 75 per cent, specificity 95 per cent, PPV about 23 per cent, NPV about 99.5 per cent. The same counts give all five: this is the reverse of problem 1.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Gigerenzer and Hoffrage’s 1995 mammography problem gives a prevalence of 1 per cent, a sensitivity of 80 per cent and a false-positive rate of 9.6 per cent. Turn it into natural frequencies on 10,000 women and give the chance that a woman who tests positive has breast cancer.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>0.01 times 10000 = 100<br />\n10000 minus 100 = 9900<br />\n0.80 times 100 = 80<br />\n0.096 times 9900 = 950.4<br />\n80 plus 950.4 = 1030.4<br />\n80 divided by 1030.4 is about 0.0776</p>\n</div>\n<p>100 women have breast cancer and 80 of them test positive. About 950 of the 9,900 without it test positive. The chance is about 7.8 per cent, the .078 the paper gives. The 10,000 avoids the 95.04 that 1,000 women would give.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>An arm circumference of 31.3 cm or more had sensitivity 86 per cent and specificity 74 per cent for the body-mass index band 25 to 29.9 in Kiran’s young men. A camp screens men among whom you expect 1 in 10 to be in the band. Build the 1,000-man frequency tree and give the PPV and the NPV, each with what it is a share of.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>0.10 times 1000 = 100<br />\n1000 minus 100 = 900<br />\n0.86 times 100 = 86<br />\n100 minus 86 = 14<br />\n1 minus 0.74 = 0.26<br />\n0.26 times 900 = 234<br />\n900 minus 234 = 666<br />\n86 plus 234 = 320<br />\n86 divided by 320 is about 0.269<br />\n666 plus 14 = 680<br />\n666 divided by 680 is about 0.979</p>\n</div>\n<p>Of 320 men flagged by the tape, 86 are in the band: a PPV of about 27 per cent of flagged men. Of 680 men the tape clears, 666 are outside the band: an NPV of about 98 per cent of cleared men. At one in five, Book 0 found a PPV of about 45 per cent; halving the prevalence cut it to 27.</p>\n<p>The 1 in 10 is stated for this problem, not measured. Kiran’s figures come from 131 medical students in one college.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<p>A condition has a prevalence of 1 per cent. A test has a sensitivity of 90 per cent and a false-positive rate of 9 per cent.</p>\n<div class=\"working\">\n<p>take 1,000 people<br />\ntrue positives: 0.90 times 1000 = 900<br />\nfalse positives: 0.09 times 1000 = 90<br />\nPPV: 900 divided by 990 = 0.91</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second and third lines broke: the worker never split by the condition. Sensitivity applies only to the people who have the condition, and the false-positive rate only to those who do not.</p>\n<div class=\"working\">\n<p>0.01 times 1000 = 10<br />\n1000 minus 10 = 990<br />\n0.90 times 10 = 9<br />\n0.09 times 990 = 89.1<br />\n9 plus 89.1 = 98.1<br />\n9 divided by 98.1 = 0.0917</p>\n</div>\n<p>The PPV is about 9 per cent, not 91.</p>\n<p>Why the wrong answer looks reasonable: it does count people, and the arithmetic in each line is right. But 900 true positives from a group in which only 10 have the condition is impossible. Check every count against the count above it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer to the Casscells question: prevalence 1 in 1,000, a test that catches everyone with the disease, false-positive rate 5 per cent. Find the step that broke.</p>\n<div class=\"working\">\n<p>take 100 people<br />\nwith the disease: 100 divided by 1000 = 0.1, rounded to 0<br />\nfalse positives: 0.05 times 100 = 5<br />\ntrue positives: 0<br />\nchance of disease after a positive result: 0 divided by 5 = 0</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line broke, at the rounding. A tenth of a person cannot be rounded to nobody without changing the question: the disease has vanished from the group. The group is too small for its smallest count. Take 1,000 people instead.</p>\n<div class=\"working\">\n<p>1000 divided by 1000 = 1<br />\n0.05 times 999 = 49.95<br />\n1 plus 49.95 = 50.95<br />\n1 divided by 50.95 = 0.0196</p>\n</div>\n<p>About 2 per cent, not 0. Note too that the wrong working took 5 per cent of all 100 people, not of those without the disease.</p>\n<p>Why the wrong answer looks reasonable: rounding to whole people is usually right, and here it looks like the method’s own rule. Round only when the count is large enough that rounding cannot remove a whole group.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A screening leaflet, made up for this problem, says: “This test picks up 90 per cent of people with the condition and gives a false alarm in only 9 per cent of people without it. So if your result is positive, you very likely have the condition.” The condition affects 1 in 100 of the people screened.</p>\n<p>Decide what to compute, compute it, rewrite the last sentence as counts, and say what your rewrite does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the PPV by counting 1,000 people.</p>\n<div class=\"working\">\n<p>0.01 times 1000 = 10<br />\n0.90 times 10 = 9<br />\n1000 minus 10 = 990<br />\n0.09 times 990 = 89.1<br />\n9 plus 89.1 = 98.1<br />\n9 divided by 98.1 = 0.0917</p>\n</div>\n<p>About 98 of every 1,000 people screened test positive, and about 9 of them have the condition. The rewrite: “Of every 1,000 people screened, about 98 get a positive result. About 9 of those 98 have the condition. A positive result means you need a further test; most people with a positive result do not have the condition.”</p>\n<p>What it does not establish. The 1 in 100 is for the people screened as a whole; a person with symptoms or a family history comes from a group where the condition is commoner. The test’s 90 and 9 per cent were measured somewhere else and are carried over. The rewrite says nothing about whether screening is worth doing.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A conference slide says: “Natural frequencies made doctors almost five times better at Bayes’ theorem.”</p>\n<p>Decide what to compute or check, do it, and say what the <dfn data-g=\"114\">claim</dfn> does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Check the <dfn data-g=\"640\">ratio</dfn> against Hoffrage and Gigerenzer’s results, overall and by problem.</p>\n<div class=\"working\">\n<p>46 divided by 10 = 4.6<br />\n46 divided by 8 = 5.75<br />\n67 divided by 4 = 16.75<br />\n42 divided by 21 = 2<br />\n29 divided by 8 = 3.625</p>\n</div>\n<p>Overall, 46 per cent correct against 10 per cent is 4.6 times, so “almost five times” matches the headline result. By problem it ranged from twice to about 17 times.</p>\n<p>What it does not establish. These were 48 German physicians, and the percentages are shares of cases, not of doctors. “Five times better” hides that 54 per cent of the answers with natural frequencies were still wrong. A ratio of two small percentages swings a lot: the colorectal 4 per cent was 1 of 24 physicians, as Hoffrage and colleagues later restated it. It was written problems, not patients, and it does not show that patients understood better.</p>"
+  }
+ ]
+}

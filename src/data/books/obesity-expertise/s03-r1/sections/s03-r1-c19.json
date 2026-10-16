@@ -1,0 +1,176 @@
+{
+ "format": 1,
+ "id": "s03-r1-c19",
+ "label": "19",
+ "title": "Parameter, statistic, estimator, estimate",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A parameter is a number that describes a whole population (Book 0, D6) or a <dfn data-g=\"602\">probability</dfn> model, such as the binomial’s p (section 12). It is fixed, and usually unknown.</p>\n<p>An <dfn data-g=\"258\">estimator</dfn> is a rule that turns a sample into a number meant to stand for a parameter. Before the sample is drawn, the estimator’s result is a <dfn data-g=\"632\">random variable</dfn> (Book 2, section 13): it depends on which members the <dfn data-g=\"102\">chance process</dfn> picks, so it has a <dfn data-g=\"604\">probability distribution</dfn>, an expected value and a spread.</p>\n<p>An estimate is the number the rule gives on the one sample you actually drew. Once the sample is in hand, the estimate is a fixed number, not a random one.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>parameter</td>\n<td>estimator, as a rule</td>\n<td>estimate, read as</td>\n</tr>\n<tr>\n<td>μ, the population mean</td>\n<td>add the n values and divide by n</td>\n<td>x-bar</td>\n</tr>\n<tr>\n<td>σ, the population standard deviation (SD)</td>\n<td>the sample SD, dividing by n − 1</td>\n<td>s</td>\n</tr>\n<tr>\n<td>p, the population share</td>\n<td>count the members with the feature and divide by n</td>\n<td>p-hat</td>\n</tr>\n</tbody>\n</table>\n<p>The estimates x-bar and p-hat are written x̄ and p̂. The sample SD divides by n − 1, as in Book 0, D5.</p>\n<p>A bar over a letter marks a sample mean: X̄, a capital, is the estimator before the sample is drawn; x̄, a small letter, is the estimate you got. A hat over a letter marks an estimate of the parameter written with that letter, as p̂ estimates p. The capital T of section 18 is a sum, not the rule for s.</p>\n<p>A probability belongs to the estimator, not to the estimate. “In 95 per cent of samples, the rule lands within a stated distance of μ” is a statement about the rule over all the samples it could meet. Once the sample is drawn, the estimate either is within that distance of μ or it is not. Nothing random is left to give that a probability of 95 per cent.</p>",
+   "refs": [
+    171,
+    172,
+    173,
+    174,
+    175
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>There is a true number for the whole population. You almost never know it. That is the parameter.</p>\n<p>You pick a rule, such as “average the people you measured”. The rule is the estimator. Before you draw the sample, you cannot say what the rule will give, because you do not know who will be picked. So the rule’s answer is a chance quantity.</p>\n<p>Then you draw the sample and use the rule. You get one number. That number is the estimate. It is fixed now, and it is either close to the truth or not.</p>\n<p>So a “95 per cent” describes how often the rule does well. It never describes the one number you got.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c19-estimator-distribution.png",
+   "alt": "Nine bars at averages 21 to 29: 0.0625 at 21, 23, 27 and 29; 0.125 at 22, 24, 26 and 28; 0.25 at 25. A dashed line at 25 marks μ and a second at 26 marks the one estimate.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The rule ‘pick two of the four made-up adults with replacement and average them’ has a distribution before any sample is drawn: averages of 21 to 29 kg/m<sup>2</sup>, with probabilities from 0.0625 to 0.25. Its expected value is 25, the population mean μ. One sample, 23 and 29, gave the estimate 26."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a population small enough to know completely. It is made up. Four adults in a family have a body-mass index of 21, 23, 27 and 29 kg/m<sup>2</sup>. The population mean μ is a parameter.</p>\n<div class=\"working\">\n<p>21 plus 23 plus 27 plus 29 = 100<br />\n100 divided by 4 = 25</p>\n</div>\n<p>μ is 25. Now pretend you do not know it. Your rule: pick one adult <dfn data-g=\"40\">at random</dfn>, put them back, pick again at random, and average the two values. Putting each one back makes the two picks independent, as in section 3.</p>\n<p>Before you pick, the result of the rule is a random variable, X̄. There are 4 times 4 = 16 equally likely ordered <dfn data-g=\"546\">pairs</dfn>. Work out the average for each pair, and count how often each average turns up.</p>\n<table style=\"width:92%;\">\n\n<tbody>\n<tr>\n<td>average of the two (kg/m<sup>2</sup>)</td>\n<td>pairs that give it</td>\n<td>probability</td>\n</tr>\n<tr>\n<td>21</td>\n<td>1</td>\n<td>0.0625</td>\n</tr>\n<tr>\n<td>22</td>\n<td>2</td>\n<td>0.125</td>\n</tr>\n<tr>\n<td>23</td>\n<td>1</td>\n<td>0.0625</td>\n</tr>\n<tr>\n<td>24</td>\n<td>2</td>\n<td>0.125</td>\n</tr>\n<tr>\n<td>25</td>\n<td>4</td>\n<td>0.25</td>\n</tr>\n<tr>\n<td>26</td>\n<td>2</td>\n<td>0.125</td>\n</tr>\n<tr>\n<td>27</td>\n<td>1</td>\n<td>0.0625</td>\n</tr>\n<tr>\n<td>28</td>\n<td>2</td>\n<td>0.125</td>\n</tr>\n<tr>\n<td>29</td>\n<td>1</td>\n<td>0.0625</td>\n</tr>\n</tbody>\n</table>\n<p>That table is the distribution of the estimator. Each probability is the count divided by 16. Its expected value is the average of the 16 averages.</p>\n<div class=\"working\">\n<p>21 times 1 plus 22 times 2 plus 23 times 1 plus 24 times 2 plus 25 times 4 = 236<br />\n26 times 2 plus 27 times 1 plus 28 times 2 plus 29 times 1 = 164<br />\n236 plus 164 = 400<br />\n400 divided by 16 = 25</p>\n</div>\n<p>The expected value of X̄ is 25, the same as μ. On average over all the samples it could meet, the rule lands on the parameter.</p>\n<p>Now draw one sample. Say the picks are 23 and 29.</p>\n<div class=\"working\">\n<p>23 plus 29 = 52<br />\n52 divided by 2 = 26</p>\n</div>\n<p>Your estimate is x̄ = 26. It is one value from the table, and it misses μ by 1.</p>\n<p>Ask a question about the rule. How often does it land within 2 of μ, that is, between 23 and 27? Add the probabilities for 23, 24, 25, 26 and 27.</p>\n<div class=\"working\">\n<p>0.0625 plus 0.125 plus 0.25 plus 0.125 plus 0.0625 = 0.625</p>\n</div>\n<p>The rule lands within 2 of μ in 62.5 per cent of samples. That is a true statement about X̄.</p>\n<p>Being within 2 of μ is the same as μ being within 2 of the estimate. So you might rewrite the 62.5 per cent as a range round your 26: “There is a 62.5 per cent chance that μ is between 24 and 28.” It sounds the same. It is not. μ is 25, so it is between 24 and 28 for certain. Had your picks been 21 and 21, your estimate would be 21. Then μ would be outside 19 to 23 for certain. Either way the 62.5 per cent has nothing left to describe: the picks are made, and μ never moved.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The four adults are made up, and the population is tiny so that every sample can be listed. A real population is too large to list, and μ stays unknown. Then the rule’s behaviour comes from the formulas of section 18 or from a simulation, not from a table.</p>\n<p>Picking with replacement keeps the two picks independent. A real survey picks without replacement, which changes the spread a little when the sample is a large part of the population (section 13).</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a real sample. Kiran and colleagues measured 131 men, medical students at one college in Mangaluru, in 2019. Open their paper, “Mid-upper arm circumference and neck circumference to screen for overweight-obesity in young adults in South India”, in <em>Heliyon</em> at https://pmc.ncbi.nlm.nih.gov/articles/PMC9791811/. Table 1 gives the men’s mid-upper arm circumference as a mean of 30.9 cm with an SD of 3.4 cm.</p>\n<p>Sort the three words.</p>\n<div class=\"working\">\n<p>the word    in this study<br />\nparameter    the mean arm circumference μ of the population these men stand for: unknown<br />\nestimator    “add the 131 measurements and divide by 131”<br />\nestimate    x̄ = 30.9 cm, and s = 3.4 cm for σ</p>\n</div>\n<p>Table 2 gives counts by body-mass index. Among the men, 42 were in the band 25 to 29.9 kg/m<sup>2</sup> and 10 were 30 or more. Use the share rule for p, the share of the population with an index of 25 or more.</p>\n<div class=\"working\">\n<p>42 plus 10 = 52<br />\n52 divided by 131 is about 0.397</p>\n</div>\n<p>p̂ = 0.397, or 39.7 per cent.</p>\n<p>Which population? The rule is only as good as the sample it was fed. These men came forward when the study was announced on campus. They were not picked at random from all medical students, let alone all young men in India. The estimate 0.397 stands for whatever population these volunteers resemble, and the paper cannot tell you which one that is (Book 0, D6).</p>\n<p>The same three words fit the national figure. The India fact <dfn data-g=\"722\">sheet</dfn> of the sixth National Family Health Survey (NFHS-6, 2023-24) gives indicator 76: 30.7% of women aged 15 to 49 had a body-mass index of 25.0 or more. Its <dfn data-g=\"306\">footnote</dfn> 15 says the figure excludes pregnant women and women with a birth in the two months before. The parameter is the true share in that group of Indian women. The 30.7 is an estimate. The estimator is the survey’s own rule, which this book does not cover.</p>",
+   "numberRefs": [
+    10,
+    32
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table sorts words for one study. It says nothing about whether 30.9 cm or 0.397 is close to its parameter. That needs the estimator’s spread and its bias, which the next section works out.</p>\n<p>The counts <dfn data-g=\"822\">used</dfn> here are Table 2’s own.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“There is a 95 per cent probability that the true value lies in our range” is the error. The 95 per cent describes the rule over all the samples it could meet; say that, never the sentence in quotes.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you quote a number from a paper, name three things. Name the parameter it stands for, the rule that made it, and the sample the rule was fed.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never write μ or p for a number you computed from data. Write x̄, s or p̂.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An estimator is only as good as the sample it is fed. Before you quote an estimate, name the population the sample was actually drawn from. For volunteers, that is whoever they resemble, and the estimate stands for nothing wider.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A patient or a journalist may ask “so what is the real figure?” Give the estimate. Say it is an estimate from a sample, and say from whom.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A Greek letter is a fixed unknown, and a capital with a bar is a rule. A small letter with a bar or a hat is a number from the data.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“We found 30.7 per cent, so the true figure is 30.7 per cent, give or take.” The 30.7 is one value of a rule. It is an estimate. How far it sits from the true share depends on the rule’s spread and its bias. The number on its own shows neither. Write the estimate with its symbol and its sample, never as the parameter.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Of 131 male medical students who volunteered at one college, 52 (39.7 per cent) had a body-mass index of 25 kg/m<sup>2</sup> or more. The sample was not drawn at random. This is an estimate of the share in a population like these volunteers.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what is the difference between an estimator and an estimate? When is each a random variable? And what can a “95 per cent” ever be about?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>An estimator is a rule that turns a sample into a number meant to stand for a parameter. An estimate is the number the rule gives on the one sample you drew.</p>\n<p>The estimator is a random variable before the sample is drawn, because its result depends on who is picked. The estimate is a fixed number once the sample is in hand.</p>\n<p>A “95 per cent” is about the rule: how often it does something over all the samples it could meet. It is never about the one estimate.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A district report says this.</p>\n<blockquote>\n<p>A survey of 600 randomly chosen women aged 15 to 49 in the district found that 31.5% had a body-mass index of 25 or more. NFHS-6 reports 30.7% for India. The district’s women are at higher risk than the national average.</p>\n</blockquote>\n<p>The district figures are made up. For each of the four numbers in the report (600, 31.5%, 30.7%, 25), say whether it is a parameter, an estimate, a sample size or a definition. Then say what the last sentence would need before you could accept it.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>600 is the sample size, the n the rule was fed.</p>\n<p>31.5% is an estimate, p̂, of the district’s parameter p. That parameter is the true share of the district’s women aged 15 to 49 with an index of 25 or more.</p>\n<p>30.7% is also an estimate. It is NFHS-6’s estimate of the national share for the same age group, excluding pregnant women and women with a birth in the two months before.</p>\n<p>25 is a definition: the cut-off in kg/m<sup>2</sup> that sorts women into the two groups. It is not estimated from anything.</p>\n<p>The last sentence compares two estimates as if they were two parameters. Before accepting it you need each estimate’s spread, so you can tell whether the gap is larger than samples of these sizes usually produce. The next rung teaches how. You also need to know that the two used the same definition and comparable women. And “at higher risk” is a further <dfn data-g=\"114\">claim</dfn>. A higher share of women with a high index is not, by itself, a measure of anyone’s risk of anything.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A sample has five values: 4, 6, 7, 9 and 9.</p>\n<p>Work out x̄. Then work out p̂, the share of values that are 7 or more.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>4 plus 6 plus 7 plus 9 plus 9 = 35<br />\n35 divided by 5 = 7</p>\n</div>\n<p>x̄ = 7. Three of the five values are 7 or more.</p>\n<div class=\"working\">\n<p>3 divided by 5 = 0.6</p>\n</div>\n<p>p̂ = 0.6.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A sample has three values: 5, 8 and 11. Work out s, the sample <dfn data-g=\"747\">standard deviation</dfn>.</p>",
+   "level": 2,
+   "answer": "<p>The mean first.</p>\n<div class=\"working\">\n<p>5 plus 8 plus 11 = 24<br />\n24 divided by 3 = 8</p>\n</div>\n<p>The squared deviations, added, divided by n − 1, which is 2.</p>\n<div class=\"working\">\n<p>(5 minus 8) squared = 9<br />\n(8 minus 8) squared = 0<br />\n(11 minus 8) squared = 9<br />\n9 plus 0 plus 9 = 18<br />\n18 divided by 2 = 9</p>\n</div>\n<p>s is the <dfn data-g=\"743\">square root</dfn> of 9, so s = 3.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Write, as a rule in words, the estimator of the share of a population with some feature. Then look at these two: “p̂ = 0.18”, and “the number in the sample with the feature, divided by the sample size”. Say which is the estimator and which the estimate.</p>",
+   "level": 3,
+   "answer": "<p>The rule: count the members of the sample who have the feature, and divide by the number of members in the sample.</p>\n<p>“The number in the sample with the feature, divided by the sample size” is the same rule, so it is the estimator. “p̂ = 0.18” is an estimate: the value the rule gave on one sample.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Kiran and colleagues’ Table 2 counts 151 women. Of these, 41 had a body-mass index of 25 to 29.9 kg/m<sup>2</sup> and 5 had 30 or more.</p>\n<p>Work out p̂ for the share of women with an index of 25 or more. Name the parameter it estimates, and say what you would need to know before calling it an estimate for young Indian women.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>41 plus 5 = 46<br />\n46 divided by 151 is about 0.305</p>\n</div>\n<p>p̂ = 0.305, or 30.5 per cent.</p>\n<p>The parameter is the true share with an index of 25 or more in the population these women stand for.</p>\n<p>Before calling it an estimate for young Indian women, you would need the women to have been picked at random from that population. They were not. They were medical students at one college who came forward when the study was announced. So 0.305 estimates the share in some population that resembles these volunteers, and the paper cannot say which.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Kiran’s Table 1 gives, for the 131 men, a mean body-fat <dfn data-g=\"555\">percentage</dfn> of 22.1 with an SD of 7.3, and a <dfn data-g=\"474\">median</dfn> of 20.3.</p>\n<p>For each of the three numbers, name the parameter it estimates and the rule that made it. Then write the three with the right symbols where one exists.</p>",
+   "level": 5,
+   "answer": "<p>22.1 per cent estimates μ, the population mean body-fat percentage. Its rule: add the 131 values and divide by 131. Written x̄ = 22.1 per cent.</p>\n<p>7.3 per cent estimates σ, the population SD. Its rule, if the paper divided by n − 1 as Book 0, D5 does (the paper does not say): the sample standard deviation, with n − 1 = 130. Written s = 7.3 per cent.</p>\n<p>20.3 per cent estimates the population median. Its rule: sort the 131 values and take the middle one, the 66th. This book gives that estimate no symbol; write “sample median, 20.3 per cent”.</p>\n<p>All three are estimates. None is the population’s value, and the population is whatever these 131 volunteers resemble.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>Kiran 2022: 52 of 131 men had a body-mass index of 25 or more<br />\np = 52 divided by 131 is about 0.397<br />\nso the proportion of young Indian men with an index of 25 or more is 0.397</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The arithmetic is right. Two steps broke.</p>\n<p>The second line writes p, the parameter, for a number computed from the sample. It should be p̂ = 0.397, an estimate.</p>\n<p>The third line then treats that estimate as the parameter, and for a population the sample was never drawn from. The 131 men are volunteers at one college. The sentence should read: “Of 131 male medical students at one college who volunteered, 52, or 39.7 per cent, had an index of 25 or more.”</p>\n<p>Why it looks reasonable: the symbol p is the one used in every binomial formula, so it is the first letter to hand. Writing it erases the difference between the number you know and the number you want.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Go back to the four made-up adults with indices of 21, 23, 27 and 29 kg/m<sup>2</sup>. The rule is “pick two with replacement and average them”. A colleague draws one sample, gets 23 and 27, and says:</p>\n<blockquote>\n<p>My average is 25. The rule lands within 2 of the true mean 62.5 per cent of the time. So there is a 62.5 per cent chance that the true mean is between 23 and 27.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what the colleague’s last sentence gets wrong.</p>",
+   "level": 10,
+   "answer": "<p>Compute the true mean, and then <dfn data-g=\"104\">check</dfn> the colleague’s range against it.</p>\n<div class=\"working\">\n<p>21 plus 23 plus 27 plus 29 = 100<br />\n100 divided by 4 = 25</p>\n</div>\n<p>μ is 25. The colleague’s range, 23 to 27, holds it. So the statement “μ is between 23 and 27” is simply true. Its probability is 1, not 0.625.</p>\n<p>The 62.5 per cent is right about the rule: 10 of the 16 equally likely pairs give an average between 23 and 27.</p>\n<div class=\"working\">\n<p>10 divided by 16 = 0.625</p>\n</div>\n<p>What the last sentence gets wrong: it moves the 62.5 per cent from the rule to the one range. Another colleague might draw 29 and 29. They would say “a 62.5 per cent chance that μ is between 27 and 31”. For that range the truth is 0. Both used the same rule and the same reasoning. Only a statement about the rule over all samples can carry the 0.625.</p>\n<p>In real work μ is unknown, so you cannot check the range as you can here. That does not make the range’s probability 0.625. It means you do not know whether this range is one of the 62.5 per cent.</p>"
+  }
+ ]
+}

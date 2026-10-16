@@ -1,0 +1,237 @@
+{
+ "format": 1,
+ "id": "s03-r1-c13",
+ "label": "13",
+ "title": "The geometric and hypergeometric distributions: waiting for the first success, and drawing without replacement",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The binomial of section 12 fixes the number of trials and assumes independent trials with one p. Each distribution here relaxes one of those.</p>\n<p><strong>Geometric.</strong> Run independent trials, each a <dfn data-g=\"767\">success</dfn> with the same <dfn data-g=\"602\">probability</dfn> p, and stop at the first success. Let X be the number of trials up to and including the first success.</p>\n<div class=\"working\">\n<p>P(X = k) = (1 − p)<sup>(k − 1)</sup> × p</p>\n</div>\n<p>The chance that more than k trials are needed is the chance that the first k all fail.</p>\n<div class=\"working\">\n<p>P(X &gt; k) = (1 − p)<sup>k</sup></p>\n</div>\n<p>The expected value is 1 ÷ p. One argument: the first <dfn data-g=\"805\">trial</dfn> is <dfn data-g=\"822\">used</dfn> either way. With probability 1 − p it fails, and the wait starts again from nothing, because the trials are independent and p does not change. So E[X] = 1 + (1 − p) × E[X]. Take (1 − p) × E[X] from both sides: p × E[X] = 1.</p>\n<p>Some books count instead the failures before the first success, which is X − 1. Its probabilities are shifted down by one and its mean is (1 − p) ÷ p.</p>\n<p><strong>Hypergeometric.</strong> A group of N people contains K with some feature. Draw n of them <dfn data-g=\"40\">at random</dfn> without replacement: once drawn, a person cannot be drawn again. Let X be the number with the feature among the n. Every set of n people is equally likely, and there are N choose n sets.</p>\n<div class=\"working\">\n<p>P(X = k) = (K choose k) × (N − K choose n − k) ÷ (N choose n)</p>\n</div>\n<p>The draws are <dfn data-g=\"208\">dependent</dfn>, as section 3 showed for drawing without replacement. But each single draw, looked at alone, is a person with the feature with probability K ÷ N. This is because, before anything is seen, every person is equally likely to be the one drawn first, second, or at any place in the order. Expected values add with no condition (Book 2, section 14), so the mean is n × K ÷ N. That is the binomial’s mean, with p = K ÷ N. The spread is smaller than the binomial’s, because each draw removes someone from the group.</p>\n<div class=\"working\">\n<p>Var(X) = n × (K ÷ N) × (1 − K ÷ N) × (N − n) ÷ (N − 1)</p>\n</div>\n<p>The last <dfn data-g=\"274\">factor</dfn>, (N − n) ÷ (N − 1), is below 1 and is what makes the spread smaller.</p>\n<p>When N is large against n, removing a few people barely changes the share of the rest. The hypergeometric then comes close to the binomial with n and p = K ÷ N. A common rule of thumb: draws of under a tenth of the group behave nearly as independent.</p>",
+   "refs": [
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>You keep going until you find the first one you are looking for, and count how many it took. That count is geometric.</p>\n<p>In the second you draw from a small group, and each person drawn leaves the group. The count is hypergeometric.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c13-geometric-first-case.png",
+   "alt": "Ten falling bars for 1 to 10 women measured: 0.3070, 0.2128, 0.1474, 0.1022, 0.0708 and down to 0.0113 at 10. A dashed line at 3.26 marks the mean.",
+   "w": 1360,
+   "h": 656,
+   "caption": "How many randomly picked women aged 15-49 must be measured to find the first with a body-mass index of 25 or more, when each has a chance of 0.307 (NFHS-6, 2023-24, India). The first woman is the most likely place, at 0.307; each later bar is 0.693 times the one before. The mean, 3.26, sits to the right of the most likely value."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c13-ward-without-replacement.png",
+   "alt": "Paired bars for counts 0 to 3. Hypergeometric: 0.2545, 0.5091, 0.2182, 0.0182. Binomial: 0.2963, 0.4444, 0.2222, 0.0370.",
+   "w": 1357,
+   "h": 656,
+   "caption": "A made-up ward of 12 patients, 4 with a body-mass index of 25 or more, and an audit of 3 picked at random. Drawing without replacement (left bar of each pair) against the binomial with p = 1/3 (right bar), which wrongly treats the picks as independent. The binomial is too high at the ends: 0.2963 against 0.2545 for none, 0.0370 against 0.0182 for all three. Both have mean 1."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c13-kiran-limit.png",
+   "alt": "Paired bars for counts 0 to 10, nearly equal in height, peaking at 4 with 0.2609 (hypergeometric) and 0.2508 (binomial).",
+   "w": 1360,
+   "h": 656,
+   "caption": "Ten men drawn at random from Kiran and colleagues’ 131, of whom 52 had a body-mass index of 25 or more. The draw is 7.6 per cent of the group, and the hypergeometric (left bar of each pair) and the binomial with p = 0.397 (right bar) differ by about 0.01 at most. Both have mean 3.97."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>A health worker goes through a list of women aged 15 to 49, picked at random from all of India, measuring each until she finds the first with a body-mass index (BMI) of 25 or more. Take p as the 30.7% of the National Family Health Survey (NFHS-6, 2023-24), so p = 0.307. Let X be the number of women she measures, counting the one she finds.</p>\n<p>The tempting reading: “nearly one in three, so it will be the third woman”. Work out the chances and see.</p>\n<div class=\"working\">\n<p>P(X = 1) = 0.307<br />\n0.693 times 0.307 = 0.2128<br />\n0.693<sup>2</sup> times 0.307 = 0.1474</p>\n</div>\n<p>Those are the chances that the first case is the first, second and third woman. The third is less likely than the first. The first woman is the single most likely place to find the first case, as it is for every <dfn data-g=\"329\">geometric distribution</dfn>. Here are the first ten.</p>\n<div class=\"working\">\n<p>women measured, k    P(X = k)<br />\n1    0.3070<br />\n2    0.2128<br />\n3    0.1474<br />\n4    0.1022<br />\n5    0.0708<br />\n6    0.0491<br />\n7    0.0340<br />\n8    0.0236<br />\n9    0.0163<br />\n10    0.0113</p>\n</div>\n<p>So where does “one in three” belong? In the mean.</p>\n<div class=\"working\">\n<p>1 divided by 0.307 = 3.26</p>\n</div>\n<p>On average she measures about 3.26 women to find the first case. The <dfn data-g=\"450\">long tail</dfn> of slow searches pulls the average past the most likely value.</p>\n<p>Two more questions a supervisor asks. What is the chance she finds one within five women, and the chance she measures ten and finds none?</p>\n<div class=\"working\">\n<p>0.693<sup>5</sup> = 0.159833<br />\n1 minus 0.159833 = 0.840167<br />\n0.693<sup>10</sup> = 0.0255</p>\n</div>\n<p>About 0.84 within five. And about 0.026 for none in ten, which is the binomial chance of 0 out of 10 in section 12. It is the same event: ten failures in a row.</p>",
+   "numberRefs": [
+    32
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The geometric needs the same p for every woman, and independence. A health worker going door to door in one lane meets women who share a place; one who stops at the houses that look well-off first changes p as she goes. Then the shape and the mean 3.26 no longer hold.</p>\n<p>The 0.307 is a national survey estimate for women aged 15 to 49, used here as if exact.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a small group, and a mistake first. A made-up ward has 12 patients, and 4 of them have a body-mass index of 25 or more. An audit picks 3 patients at random. A trainee writes: “p is 4 out of 12, a third. The count is binomial with n = 3, so the chance of none is (2/3) cubed, 0.296.”</p>\n<p>The trainee broke condition 3 of section 12. The audit cannot pick a patient twice, so each pick changes who is left. Count sets instead. There are 12 choose 3 possible sets of 3.</p>\n<div class=\"working\">\n<p>12 choose 3 = 220<br />\n8 choose 3 = 56<br />\n56 divided by 220 is about 0.2545</p>\n</div>\n<p>No patient at 25 or more means all 3 come from the other 8. The chance is about 0.2545, not 0.296. Now every count, the same way: choose k of the 4 and 3 − k of the 8.</p>\n<div class=\"working\">\n<p>4 choose 1 times 8 choose 2 = 4 times 28 = 112<br />\n4 choose 2 times 8 choose 1 = 6 times 8 = 48<br />\n4 choose 3 times 8 choose 0 = 4 times 1 = 4<br />\n56 plus 112 plus 48 plus 4 = 220</p>\n</div>\n<p>The four counts cover all 220 sets, as they must.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>patients with BMI 25 or more, k</td>\n<td>hypergeometric</td>\n<td>binomial (wrong here)</td>\n</tr>\n<tr>\n<td>0</td>\n<td>0.2545</td>\n<td>0.2963</td>\n</tr>\n<tr>\n<td>1</td>\n<td>0.5091</td>\n<td>0.4444</td>\n</tr>\n<tr>\n<td>2</td>\n<td>0.2182</td>\n<td>0.2222</td>\n</tr>\n<tr>\n<td>3</td>\n<td>0.0182</td>\n<td>0.0370</td>\n</tr>\n</tbody>\n</table>\n<p>The mean is the same for both: n × K ÷ N.</p>\n<div class=\"working\">\n<p>3 times 4 divided by 12 = 1</p>\n</div>\n<p>One patient on average either way. The spread is not the same. The binomial puts more weight on the ends, 0 and 3. Drawing without replacement pulls the count towards the middle: after one patient at 25 or more is drawn, fewer are left to draw. Work out the hypergeometric <dfn data-g=\"829\">variance</dfn> from its table, as in Book 2, section 15: each count’s squared distance from the mean 1, which is (k − 1)², that is 1, 0, 1 and 4, times its chance.</p>\n<div class=\"working\">\n<p>1 times 0.2545 plus 0 times 0.5091 plus 1 times 0.2182 plus 4 times 0.0182 = 0.5455</p>\n</div>\n<p>The formula in the definition gives the same, with last factor 9 ÷ 11. The binomial’s is np(1 − p), the formula of section 12.</p>\n<div class=\"working\">\n<p>3 times 1/3 times 2/3 times 9/11 is about 0.5455<br />\n3 times 4 divided by 12 times 8 divided by 12 is about 0.6667</p>\n</div>\n<p>A variance of about 0.545 without replacement, against 0.667 for the binomial.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The ward is made up. The hypergeometric is exact here because you know N, K and n and the 3 are picked at random from the 12. In real work K is usually the very thing you do not know. The formula then gives the chance of a count for each possible K, which is the start of <dfn data-g=\"375\">inference</dfn>, not the end of it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Last, a bigger group, where the two distributions meet. Kiran and colleagues measured 131 men, medical students in Mangaluru. In their Table 2, 42 men had a body-mass index of 25 to 29.9, and 10 had 30 or more. So 52 of the 131 had 25 or more.</p>\n<p>Draw 10 of the 131 men at random, without replacement. The draw is about a thirteenth of the group.</p>\n<div class=\"working\">\n<p>10 divided by 131 is about 0.0763<br />\n52 divided by 131 is about 0.3969</p>\n</div>\n<p>About 7.6 per cent of the group, under the rule-of-thumb tenth. The hypergeometric has N = 131, K = 52 and n = 10. The binomial stand-in has n = 10 and p = 52 ÷ 131, about 0.397.</p>\n<table style=\"width:79%;\">\n\n<tbody>\n<tr>\n<td>men with BMI 25 or more, k</td>\n<td>hypergeometric</td>\n<td>binomial</td>\n</tr>\n<tr>\n<td>0</td>\n<td>0.0050</td>\n<td>0.0064</td>\n</tr>\n<tr>\n<td>1</td>\n<td>0.0371</td>\n<td>0.0419</td>\n</tr>\n<tr>\n<td>2</td>\n<td>0.1199</td>\n<td>0.1240</td>\n</tr>\n<tr>\n<td>3</td>\n<td>0.2221</td>\n<td>0.2177</td>\n</tr>\n<tr>\n<td>4</td>\n<td>0.2609</td>\n<td>0.2508</td>\n</tr>\n<tr>\n<td>5</td>\n<td>0.2031</td>\n<td>0.1981</td>\n</tr>\n<tr>\n<td>6</td>\n<td>0.1061</td>\n<td>0.1087</td>\n</tr>\n<tr>\n<td>7</td>\n<td>0.0367</td>\n<td>0.0409</td>\n</tr>\n<tr>\n<td>8</td>\n<td>0.0080</td>\n<td>0.0101</td>\n</tr>\n<tr>\n<td>9</td>\n<td>0.0010</td>\n<td>0.0015</td>\n</tr>\n<tr>\n<td>10</td>\n<td>0.0001</td>\n<td>0.0001</td>\n</tr>\n</tbody>\n</table>\n<p>No row differs by more than about 0.01. Both means are the same.</p>\n<div class=\"working\">\n<p>10 times 52 divided by 131 is about 3.97</p>\n</div>\n<p>About 3.97 men either way. With a tenth of the group or less drawn, the binomial is close enough for most purposes. With a quarter drawn, as in the ward, it is not.</p>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 0.01 is for these numbers. The gap grows as the draw becomes a larger share of the group, and it is largest in the tails, where a rare count is exactly what you may want to judge.</p>\n<p>Kiran’s 52 is a count from one college. The paper’s printed “<dfn data-g=\"543\">overweight</dfn>” count is the 25 to 29.9 band only; 52 adds the 10 men at 30 or more from the same table.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“One in three, so the third person” is the error. In a geometric wait the first person is always the single most likely place for the first success; 1 ÷ p is only the average.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Is the number of people fixed, or do you stop at the first success? Are people drawn from a group they then leave, and is the draw more than about a tenth of it? Fixed and a small share: binomial. Stop at first: geometric. Fixed and a large share of a known group: hypergeometric.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The binomial used on a draw from a small group gets the mean right and the spread too wide.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The geometric holds only while p stays the same and the trials stay independent.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The chance of no success in the first k trials is (1 − p)<sup>k</sup>, whatever you call the distribution.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The hypergeometric needs K, the number with the feature in the group. When K is the unknown, use the formula to ask how likely your count would be under each K you are weighing, not to state the count’s chance.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Counting trials including the success, the mean is 1 ÷ p. Counting failures before it, the mean is (1 − p) ÷ p.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The mean wait is 1 ÷ p, so the first success comes at about the 1 ÷ p-th person.” The mean is an average over many searches, pulled up by a long tail of slow ones. The most likely place for the first success is always the first person. And with p = 0.307, about one search in forty still finds none in ten (0.026).</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: write P(X = k) and the mean for the geometric distribution, counting trials up to and including the first success. Then write P(X = k) and the mean for the hypergeometric, and say when the binomial can stand in for it.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Geometric, p the chance of success on each independent trial:</p>\n<div class=\"working\">\n<p>P(X = k) = (1 − p)<sup>(k − 1)</sup> × p<br />\nE[X] = 1 ÷ p</p>\n</div>\n<p>Hypergeometric, n drawn without replacement from N of whom K have the feature:</p>\n<div class=\"working\">\n<p>P(X = k) = (K choose k) × (N − K choose n − k) ÷ (N choose n)<br />\nE[X] = n × K ÷ N</p>\n</div>\n<p>The binomial with n and p = K ÷ N stands in when N is large against n. A rule of thumb is a draw of under a tenth of the group.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident, ten minutes, a whiteboard. She is planning a record audit of 20 files from a ward register of 60. She wants to use the binomial for the number of files with an error. Explain whether she can, and what changes if she cannot.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start from the conditions. She draws 20 of 60 files without putting any back. That is a third of the register, well over a tenth, so the draws are not nearly independent. The binomial is the wrong model.</p>\n<p>Draw the small ward on the board: 12 patients, 4 at 25 or more, 3 picked. The binomial says 0.296 for none; counting sets says 0.2545. Show why: after each draw, the pool changes.</p>\n<p>Then say what stays and what changes. The mean is the same, n × K ÷ N, because expected values add with or without independence. The spread is smaller than the binomial’s. So the binomial would overstate how often she sees no errors or very many.</p>\n<p>End with the catch. The hypergeometric needs K, the number of files with errors, which is the thing she wants to learn. She can use it to ask: if K were 6, how likely is what I found? That question is where the next rung, inference, begins.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>X is geometric, counting trials up to and including the first success, with p = 0.2. Work out P(X = 3) and E[X].</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>0.8<sup>2</sup> times 0.2 = 0.128<br />\n1 divided by 0.2 = 5</p>\n</div>\n<p>P(X = 3) is 0.128 and E[X] is 5.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>X is geometric with p = 0.1. Work out P(X &gt; 4) and P(X ≤ 4).</p>",
+   "level": 2,
+   "answer": "<p>More than 4 trials are needed exactly when the first 4 all fail.</p>\n<div class=\"working\">\n<p>0.9<sup>4</sup> = 0.6561<br />\n1 minus 0.6561 = 0.3439</p>\n</div>\n<p>P(X &gt; 4) is 0.6561 and P(X ≤ 4) is 0.3439.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A group of 10 has 3 with a feature. Four are drawn at random without replacement. Work out the chance that exactly 1 of the 4 has the feature, and the expected number.</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>3 choose 1 = 3<br />\n7 choose 3 = 35<br />\n10 choose 4 = 210<br />\n3 times 35 divided by 210 = 0.5<br />\n4 times 3 divided by 10 = 1.2</p>\n</div>\n<p>The chance is 0.5, and the expected number is 1.2.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A geometric count of trials has mean 8. Work out p, and the chance that the first trial is a success.</p>",
+   "level": 3,
+   "answer": "<p>The mean is 1 ÷ p, so p is 1 ÷ 8.</p>\n<div class=\"working\">\n<p>1 divided by 8 = 0.125</p>\n</div>\n<p>p is 0.125. The first trial is a success with probability p, 0.125.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>In the Chennai Urban Rural Epidemiology Study (CURES), 17.0% of people with an Indian Diabetes Risk Score of 60 or more had undiagnosed diabetes (the <dfn data-g=\"576\">positive predictive value</dfn>). A clinic confirms such people one at a time with a blood test. Work out the expected number tested to find the first confirmed case, and the chance that the first 5 are all negative.</p>",
+   "level": 4,
+   "answer": "<p>Take p = 0.17, each person independent.</p>\n<div class=\"working\">\n<p>1 divided by 0.17 = 5.88<br />\n0.83<sup>5</sup> = 0.3939</p>\n</div>\n<p>About 5.9 people on average, and a chance of about 0.39 that the first 5 confirm none. That holds only if the clinic’s people with a score of 60 or more are like those in CURES.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Kiran and colleagues measured 131 men. Of them, 52 had a body-mass index of 25 or more: 42 at 25 to 29.9 and 10 at 30 or more. Three men are picked at random. Work out the chance that all three have an index of 25 or more, without replacement, and compare it with the binomial answer.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>52 choose 3 = 22100<br />\n131 choose 3 = 366145<br />\n22100 divided by 366145 is about 0.0604<br />\n52 divided by 131 is about 0.3969<br />\n0.3969<sup>3</sup> = 0.0625</p>\n</div>\n<p>About 0.060 without replacement, against 0.063 from the binomial. Three is a small share of 131, so the two are close. The binomial is a little higher, as it always is for “all”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Choose the distribution for each situation, and give the expected count. (a) A district survey picks 50 women aged 15 to 49 at random from lakhs and counts those with a body-mass index of 25 or more. (b) A health worker measures randomly picked women from the same population. She stops at the first with an index of 25 or more and counts the women she measured. (c) A teacher picks 10 of Kiran’s 131 men at random and counts those with an index of 25 or more. Take p as NFHS-6’s 30.7% for (a) and (b).</p>",
+   "level": 6,
+   "answer": "<ol type=\"a\">\n<li>A fixed 50, a tiny share of lakhs: binomial, n = 50, p = 0.307. (b) Stop at the first: geometric, p = 0.307. (c) A fixed 10 from a known group of 131 with 52 at 25 or more: hypergeometric.</li>\n</ol>\n<div class=\"working\">\n<p>50 times 0.307 = 15.35<br />\n1 divided by 0.307 = 3.26<br />\n10 times 52 divided by 131 is about 3.97</p>\n</div>\n<p>Expected counts: 15.35 women; 3.26 women measured; 3.97 men. In (c) the draw is about 7.6 per cent of the group, so the binomial with p = 0.397 would be close as well.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>first woman with BMI 25 or more, p = 0.307<br />\nthe chance it is the fourth woman = 0.693<sup>4</sup> times 0.307<br />\n= 0.230639 times 0.307 = 0.0708</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. The first success on the fourth trial means three failures, then the success: (1 − p)<sup>(k − 1)</sup> p with k = 4.</p>\n<div class=\"working\">\n<p>0.693<sup>3</sup> times 0.307 = 0.1022</p>\n</div>\n<p>The chance is about 0.102. The working gave the chance that the first case is the fifth woman.</p>\n<p>Why the wrong answer looks reasonable: k appears as the <dfn data-g=\"268\">exponent</dfn> in the binomial, so it is natural to write it there again. The trial that succeeds is not a failure, and the second form in the definition, which counts the failures, adds to the muddle.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a ward of 12 patients, 4 with BMI 25 or more; an audit picks 3 at random<br />\np = 4 divided by 12 = 0.3333<br />\nchance all 3 have BMI 25 or more = 0.3333<sup>3</sup> = 0.0370</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line broke. The audit picks 3 different patients, so it draws without replacement from a small group. After one patient at 25 or more is drawn, 3 of the 11 left are at 25 or more. Count sets.</p>\n<div class=\"working\">\n<p>4 choose 3 = 4<br />\n12 choose 3 = 220<br />\n4 divided by 220 is about 0.0182</p>\n</div>\n<p>The chance is about 0.018, half the binomial’s 0.037.</p>\n<p>Why the wrong answer looks reasonable: p = 4 ÷ 12 is right for the first pick. And the binomial is the distribution the reader has just learned. The draw is a quarter of the ward, far over a tenth, and the binomial doubles the chance of “all three”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A programme note says: “Nearly one woman in three aged 15 to 49 is overweight or obese. So a health worker visiting homes will find one by the third woman she measures at the latest.” Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the chance of no case in three, with p = 0.307 from NFHS-6 and the women as independent.</p>\n<div class=\"working\">\n<p>0.693<sup>3</sup> = 0.3328<br />\n1 minus 0.3328 = 0.6672</p>\n</div>\n<p>Under those assumptions, about a third of such searches find no case in the first three women. “At the latest” is wrong; there is no latest. The mean, 3.26 women, is not a ceiling.</p>\n<p>What it does not establish. Houses in one lane are not random picks from India: neighbours share income, food and work, so p varies from lane to lane. A house may hold several women, or none aged 15 to 49. And 30.7% counts a body-mass index of 25 or more, overweight and obesity together. A better line: “On average she will measure about three women to find one, and some searches will take much longer.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A colleague draws 10 of the 131 men’s records from Kiran and colleagues’ study at random. She finds none with a body-mass index of 25 or more, and says: “The paper’s 52 must be wrong.” Decide what to compute, compute it, and say what the answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Compute the chance of no man at 25 or more in 10 drawn without replacement, if 52 of the 131 really are.</p>\n<div class=\"working\">\n<p>131 minus 52 = 79<br />\n79 choose 10 = 1440680596355<br />\n131 choose 10 = 288417894029200<br />\n1440680596355 divided by 288417894029200 is about 0.0050</p>\n</div>\n<p>About 0.005, one draw in two hundred. So the colleague’s result would be rare if the 52 were right. It is a reason to <dfn data-g=\"104\">check</dfn>, not a proof.</p>\n<p>What it does not establish. A rare result happens; one draw cannot settle it. The draw may not have been random: records filed by <dfn data-g=\"197\">date</dfn> or by hostel can cluster. The colleague may have used a different cut-off, or read the paper’s “overweight” count, which is the 25 to 29.9 band only. The way to settle it is to recount Table 2, not to argue from one sample of 10.</p>"
+  }
+ ]
+}

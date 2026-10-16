@@ -3283,7 +3283,7 @@
    "senses": [
     {
      "term": "correlation",
-     "plain": "a number worked out from paired measurements; this book does not teach it",
+     "plain": "1. a number worked out from paired measurements (Book 9); 2. the covariance divided by both standard deviations: it has no unit, lies between −1 and 1, and measures only a straight-line tie (Book 12)",
      "where": "Book 9, section 8"
     }
    ]

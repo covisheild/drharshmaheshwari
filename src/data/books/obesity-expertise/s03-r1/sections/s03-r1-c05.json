@@ -1,0 +1,227 @@
+{
+ "format": 1,
+ "id": "s03-r1-c05",
+ "label": "5",
+ "title": "Bayes’ theorem, from the multiplication rule, on a diagnostic test",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Let A and B be events, with P(B) above 0. The <dfn data-g=\"326\">general multiplication rule</dfn> of section 2 builds the <dfn data-g=\"405\">joint probability</dfn> P(A and B) in two orders.</p>\n<div class=\"working\">\n<p>P(A and B) = P(B) × P(A | B)<br />\nP(A and B) = P(A) × P(B | A)</p>\n</div>\n<p>The two right-hand sides are the same number, so they are equal. Divide both by P(B).</p>\n<div class=\"working\">\n<p>P(A | B) = P(B | A) × P(A) ÷ P(B)</p>\n</div>\n<p>This is Bayes’ theorem. It turns a conditional <dfn data-g=\"602\">probability</dfn> round.</p>\n<p>P(A) is the <dfn data-g=\"598\">prior probability</dfn> of A: its probability before you learn whether B happened. P(A | B) is the <dfn data-g=\"578\">posterior probability</dfn>: the same probability, revised once you know that B happened.</p>\n<p>For a test, let A be “has the condition” and B be “tests positive”. The prior is the <dfn data-g=\"592\">prevalence</dfn>. P(B | A) is the <dfn data-g=\"713\">sensitivity</dfn>. P(B | not A) is the <dfn data-g=\"279\">false-positive rate</dfn>, 1 minus the <dfn data-g=\"742\">specificity</dfn>. The posterior is the <dfn data-g=\"576\">positive predictive value</dfn>, PPV, the share of positive results that are right (Book 0, D3). Put these into Bayes’ theorem.</p>\n<div class=\"working\">\n<p>PPV = sensitivity × prevalence ÷ [sensitivity × prevalence + (1 − specificity) × (1 − prevalence)]</p>\n</div>\n<p>The square brackets group everything inside them, as round brackets do.</p>\n<p>The same steps, with “does not have the condition” in place of “has the condition” and “tests negative” in place of “tests positive”, give the <dfn data-g=\"504\">negative predictive value</dfn>, NPV, the share of negative results that are right.</p>\n<div class=\"working\">\n<p>NPV = specificity × (1 − prevalence) ÷ [(1 − sensitivity) × prevalence + specificity × (1 − prevalence)]</p>\n</div>",
+   "refs": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A test result does not tell you the chance a person has the condition. It changes the chance they already had.</p>\n<p>Bayes’ theorem does the moving. It needs three numbers: how common the condition is, how often the test is positive in people who have it, and how often in people who do not.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c05-ppv-npv-prevalence.png",
+   "alt": "Two curves against prevalence from 0.05 to 0.75. PPV rises: 0.148, 0.269, 0.453, 0.609, 0.768, 0.908. NPV falls: 0.990, 0.979, 0.955, 0.918, 0.841, 0.638.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The arm tape’s positive and negative predictive values against the share of men in the 25-to-29.9 band, with sensitivity 0.86 and specificity 0.74 held fixed. The PPV climbs from 0.148 at a prevalence of 0.05 to 0.908 at 0.75; the NPV falls from 0.990 to 0.638. At 0.2 the PPV is 0.453, Book 0’s 45 per cent; at 0.32 it is 0.609, Book 0’s 61 per cent."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c05-ppv-parts.png",
+   "alt": "Three bars from zero: men in the band and flagged 0.172, men outside the band and flagged 0.208, all men flagged 0.38.",
+   "w": 1360,
+   "h": 656,
+   "caption": "At a prevalence of 0.2, the share of all men flagged, 0.38, is made of two parts: 0.172 from men in the band (0.86 times 0.2) and 0.208 from men outside it (0.26 times 0.8). The PPV is the first part’s share of the whole: 0.172 divided by 0.38, about 0.4526."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c05-negative-result.png",
+   "alt": "Two bars from zero: 0.4 before the test, 0.3294 after a negative result.",
+   "w": 1360,
+   "h": 656,
+   "caption": "A made-up test with sensitivity 0.3 and specificity 0.95, used where 0.4 of people have the condition. A negative result moves the probability only from 0.4 to about 0.3294, because the test misses seven in ten of the people who have it. One person in three who tests negative still has the condition."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Book 0 found by counting that the arm-circumference test of Kiran and colleagues (Heliyon 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9791811/) has a positive predictive value of about 45 per cent in a group of 1,000 young men where one in five has a body-mass index from 25 to 29.9. A man is flagged when his arm measures 31.3 cm or more. The sensitivity is 86 per cent and the specificity 74 per cent. Now get the same answer with no table, from the formula.</p>\n<p>Write down the three inputs first, and say each one aloud as a conditional.</p>\n<div class=\"working\">\n<p>prevalence = 0.2<br />\nsensitivity = 0.86<br />\n1 minus 0.74 = 0.26<br />\n1 minus 0.2 = 0.8</p>\n</div>\n<p>The 0.26 is the false-positive rate, the share of men outside the band whom the tape wrongly flags. Work out the top line, then the bottom line, then divide.</p>\n<div class=\"working\">\n<p>0.86 times 0.2 = 0.172<br />\n0.26 times 0.8 = 0.208<br />\n0.172 plus 0.208 = 0.38<br />\n0.172 divided by 0.38 = 0.4526</p>\n</div>\n<p>The PPV is about 0.45, Book 0’s 45 per cent. The bottom line, 0.38, is the share of all men flagged, which the last section worked out. The top line is the part of it made of men in the band.</p>\n<p>Do the NPV the same way. The top line is the men outside the band whom the tape clears. The bottom line is every man it clears.</p>\n<div class=\"working\">\n<p>0.74 times 0.8 = 0.592<br />\n1 minus 0.86 = 0.14<br />\n0.14 times 0.2 = 0.028<br />\n0.592 plus 0.028 = 0.62<br />\n0.592 divided by 0.62 = 0.9548</p>\n</div>\n<p>The NPV is about 0.95. Of the men the tape clears, 95 in 100 are outside the band.</p>\n<p>Now change only the prevalence. Among Kiran’s 131 medical students, 42 were in the band, about 0.32. The same formulas, worked the same way at each prevalence, give this.</p>\n<table style=\"width:40%;\">\n\n<thead>\n<tr>\n<th>prevalence</th>\n<th>PPV</th>\n<th>NPV</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0.05</td>\n<td>0.148</td>\n<td>0.990</td>\n</tr>\n<tr>\n<td>0.1</td>\n<td>0.269</td>\n<td>0.979</td>\n</tr>\n<tr>\n<td>0.2</td>\n<td>0.453</td>\n<td>0.955</td>\n</tr>\n<tr>\n<td>0.32</td>\n<td>0.609</td>\n<td>0.918</td>\n</tr>\n<tr>\n<td>0.5</td>\n<td>0.768</td>\n<td>0.841</td>\n</tr>\n<tr>\n<td>0.75</td>\n<td>0.908</td>\n<td>0.638</td>\n</tr>\n</tbody>\n</table>\n<p>At 0.32 the PPV is about 0.61. That is Book 0’s 61 per cent for the medical students, recovered by the formula. Book 0’s table gave 36 divided by 59, which is 0.610; the small gap is the table’s <dfn data-g=\"690\">rounding</dfn> to whole men. The tape is the same tape in every row. Only the prevalence moved, and the PPV went from about one in seven to about nine in ten.</p>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Every row uses the sensitivity and specificity measured on 131 medical students in one college, and they fit the 42 men in the 25-to-29.9 band, not every man at 25 or more. The table assumes the tape flags men in and out of the band at those same rates in every group. In a group with heavier men, or a different measurer, it may not, and then the row for that prevalence is wrong even though the arithmetic is right.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>A negative result moves the probability too, and how far depends on the sensitivity. Take a made-up test with sensitivity 0.3 and specificity 0.95, <dfn data-g=\"822\">used</dfn> on people of whom 0.4 have the condition. All three numbers are made up. A person tests negative. What is the probability they have the condition now?</p>\n<p>That is 1 minus the NPV: the condition and a negative result, divided by all negative results.</p>\n<div class=\"working\">\n<p>1 minus 0.3 = 0.7<br />\n0.7 times 0.4 = 0.28<br />\n1 minus 0.4 = 0.6<br />\n0.95 times 0.6 = 0.57<br />\n0.28 plus 0.57 = 0.85<br />\n0.28 divided by 0.85 = 0.3294</p>\n</div>\n<p>Before the test the probability was 0.40. After a negative result it is about 0.33. The test missed seven in ten of the people with the condition, so a negative result is common among them, and it says little. Saying “the test was negative, so it is ruled out” would discharge a group of whom about one in three has the condition, and would send home seven in ten of everyone who has it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The test is made up, to show the shape of the result. A real test’s sensitivity is an estimate from one study, and it can be lower in early or mild disease, which is where a negative result is most often relied on.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Sensitivity is P(positive | condition). The patient’s question is P(condition | positive).</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Never quote a PPV or NPV without the prevalence it was worked out at. Recompute it from the sensitivity, the specificity and your own prevalence before you tell a patient what a positive result means.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>When the condition is rare, a positive result from a good test can still be wrong more often than right. Plan a confirming measurement for every positive before anyone is labelled.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A negative result from a test with low sensitivity barely moves the probability. Do not write “ruled out” after a negative result unless the sensitivity is high.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Bayes’ theorem is exact. Its answer is only as good as its three inputs, and each is an estimate from some group.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you substitute, say each number as a conditional aloud: “positive given the condition”, “positive given no condition”.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The test is 86 per cent sensitive and 74 per cent specific, so its results are right about eight times in ten.” Neither number is the chance that a result is right. That chance is the PPV for a positive result and the NPV for a negative one, and both move with the prevalence. The same tape’s positive results are right about 15 times in 100 at one man in twenty, and about 91 times in 100 at three in four.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Kiran and colleagues report sensitivity 86 per cent and specificity 74 per cent for the 31.3 cm arm cut-off in medical students. Where 20 per cent of men have a body-mass index of 25 to 29.9, about 45 in every 100 men it flags would be in that range. The rest would be outside that range, some of them above it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: derive Bayes’ theorem from the two ways of writing P(A and B). Then write the PPV in terms of the sensitivity, the specificity and the prevalence, and say which of the four quantities, sensitivity, specificity, PPV and NPV, change when the prevalence changes.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The general multiplication rule gives P(A and B) two ways.</p>\n<div class=\"working\">\n<p>P(A and B) = P(B) × P(A | B) = P(A) × P(B | A)</p>\n</div>\n<p>Divide both sides by P(B).</p>\n<div class=\"working\">\n<p>P(A | B) = P(B | A) × P(A) ÷ P(B)</p>\n</div>\n<p>For a test, with P(B) from the <dfn data-g=\"424\">law of total probability</dfn>:</p>\n<div class=\"working\">\n<p>PPV = sensitivity × prevalence ÷ [sensitivity × prevalence + (1 − specificity) × (1 − prevalence)]</p>\n</div>\n<p>The PPV and NPV change with the prevalence. The sensitivity and specificity do not, as long as the test behaves the same way in the new group, because each is worked out inside one group.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident, ten minutes, a whiteboard. She says: “The tape has 86 per cent sensitivity, so a man it flags is 86 per cent likely to be <dfn data-g=\"543\">overweight</dfn>.” Plan what you will draw and say, so that she can work out the right number herself at a camp where one man in five is in the band.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>A good plan has her do the work, in this order.</p>\n<p>First, name her number. Write P(positive | in the band) = 0.86 and read the bar as “given”. Ask her which way round her question runs. It is P(in the band | positive). Then say what “overweight” means here: the tape was checked against the 25-to-29.9 band.</p>\n<p>Second, draw 1,000 men split by the band: 200 in, 800 out. Have her flag 86 per cent of the 200 and 26 per cent of the 800, which is 172 and 208.</p>\n<p>Third, ask “out of whom?” Of the 380 flagged, 172 are in the band. Have her divide: about 0.45.</p>\n<p>Fourth, write the formula beside the counts, and show that each count is one term of it. Then change the 200 to 50 and let her rework it: the PPV falls to about 0.15 while the 86 per cent stays.</p>\n<p>What she should leave with: the 86 per cent describes the tape among men in the band. The number for the man in front of her needs the prevalence.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>P(A) is 0.3, P(B | A) is 0.6 and P(B) is 0.25.</p>\n<p>Work out P(A | B).</p>",
+   "level": 1,
+   "answer": "<p>Use Bayes’ theorem: P(A | B) = P(B | A) × P(A) ÷ P(B).</p>\n<div class=\"working\">\n<p>0.6 times 0.3 = 0.18<br />\n0.18 divided by 0.25 = 0.72</p>\n</div>\n<p>P(A | B) is 0.72.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>P(A) is 0.4, P(B | A) is 0.5 and P(B | not A) is 0.2.</p>\n<p>Work out P(A | B).</p>",
+   "level": 2,
+   "answer": "<p>P(B) is not given, so build it first with the law of total probability.</p>\n<div class=\"working\">\n<p>1 minus 0.4 = 0.6<br />\n0.5 times 0.4 = 0.2<br />\n0.2 times 0.6 = 0.12<br />\n0.2 plus 0.12 = 0.32</p>\n</div>\n<p>P(B) is 0.32. Now Bayes’ theorem.</p>\n<div class=\"working\">\n<p>0.2 divided by 0.32 = 0.625</p>\n</div>\n<p>P(A | B) is 0.625.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A test has sensitivity 0.9 and specificity 0.8. The prevalence is 0.1.</p>\n<p>Work out the PPV and the NPV.</p>",
+   "level": 2,
+   "answer": "<p>PPV first.</p>\n<div class=\"working\">\n<p>0.9 times 0.1 = 0.09<br />\n1 minus 0.8 = 0.2<br />\n1 minus 0.1 = 0.9<br />\n0.2 times 0.9 = 0.18<br />\n0.09 plus 0.18 = 0.27<br />\n0.09 divided by 0.27 = 0.3333</p>\n</div>\n<p>The PPV is about 0.33. Now the NPV.</p>\n<div class=\"working\">\n<p>0.8 times 0.9 = 0.72<br />\n1 minus 0.9 = 0.1<br />\n0.1 times 0.1 = 0.01<br />\n0.72 plus 0.01 = 0.73<br />\n0.72 divided by 0.73 = 0.9863</p>\n</div>\n<p>The NPV is about 0.99. A positive result is right one time in three; a negative result is right 99 times in 100.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Among Kiran and colleagues’ 131 men, 42 had a body-mass index from 25 to 29.9. The 31.3 cm arm cut-off has sensitivity 86 per cent and specificity 74 per cent.</p>\n<p>Work out the PPV and the NPV among these men from the formulas. Compare them with Book 0’s rebuilt table, which has 36 of 59 flagged men in the band and 66 of 72 cleared men outside it.</p>",
+   "level": 4,
+   "answer": "<p>The prevalence is 42 of 131.</p>\n<div class=\"working\">\n<p>42 divided by 131 = 0.3206…<br />\n1 minus 0.3206 = 0.6794<br />\n0.86 times 0.3206 = 0.2757<br />\n0.26 times 0.6794 = 0.1766<br />\n0.2757 plus 0.1766 = 0.4523<br />\n0.2757 divided by 0.4523 = 0.6096</p>\n</div>\n<p>The PPV is about 0.61. Now the NPV.</p>\n<div class=\"working\">\n<p>0.74 times 0.6794 = 0.5028<br />\n0.14 times 0.3206 = 0.0449<br />\n0.5028 plus 0.0449 = 0.5477<br />\n0.5028 divided by 0.5477 = 0.918</p>\n</div>\n<p>The NPV is about 0.92. The table gives these.</p>\n<div class=\"working\">\n<p>36 divided by 59 = 0.6102…<br />\n66 divided by 72 = 0.9167…</p>\n</div>\n<p>The two ways agree to two <dfn data-g=\"200\">decimal</dfn> places. The table rounded each cell to whole men; the formula did not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A test has sensitivity 0.8 and specificity 0.9. In some group its PPV is 0.5.</p>\n<p>Work out the prevalence in that group.</p>",
+   "level": 5,
+   "answer": "<p>Call the prevalence p. The false-positive rate is 1 minus 0.9, which is 0.1. A PPV of 0.5 means the positives who have the condition are half of all positives, so the top line equals the other term of the bottom line.</p>\n<div class=\"working\">\n<p>0.8 × p = 0.1 × (1 − p)<br />\n0.8 × p = 0.1 − 0.1 × p</p>\n</div>\n<p>Add 0.1 × p to both sides, as in Book 0, C2.</p>\n<div class=\"working\">\n<p>0.8 plus 0.1 = 0.9<br />\n0.9 × p = 0.1<br />\n0.1 divided by 0.9 = 0.1111</p>\n</div>\n<p>The prevalence is about 0.11. <dfn data-g=\"104\">Check</dfn> it.</p>\n<div class=\"working\">\n<p>0.8 times 0.1111 = 0.0889<br />\n0.1 times 0.8889 = 0.0889<br />\n0.0889 divided by 0.1778 = 0.5</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Altman and Bland’s note on predictive values (BMJ 1994) uses a liver scan with sensitivity 0.895 and specificity 0.628, in patients of whom 0.75 had abnormal pathology.</p>\n<p>Work out the PPV at that prevalence. Then work out the PPV and NPV at a prevalence of 0.25, and compare them with the note’s printed 0.45 and 0.95.</p>",
+   "level": 5,
+   "answer": "<p>At 0.75:</p>\n<div class=\"working\">\n<p>0.895 times 0.75 = 0.67125<br />\n1 minus 0.628 = 0.372<br />\n0.372 times 0.25 = 0.093<br />\n0.67125 plus 0.093 = 0.76425<br />\n0.67125 divided by 0.76425 = 0.8783</p>\n</div>\n<p>The PPV is about 0.88. At 0.25:</p>\n<div class=\"working\">\n<p>0.895 times 0.25 = 0.22375<br />\n0.372 times 0.75 = 0.279<br />\n0.22375 plus 0.279 = 0.50275<br />\n0.22375 divided by 0.50275 = 0.4451<br />\n0.628 times 0.75 = 0.471<br />\n1 minus 0.895 = 0.105<br />\n0.105 times 0.25 = 0.02625<br />\n0.471 plus 0.02625 = 0.49725<br />\n0.471 divided by 0.49725 = 0.9472</p>\n</div>\n<p>A PPV of about 0.45 and an NPV of about 0.95, as the note prints. The same scan’s positive results go from right nearly nine times in ten to right fewer than half the time.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Suppose the arm tape, with sensitivity 86 per cent and specificity 74 per cent, is used where one man in twenty is in the 25-to-29.9 band. The one in twenty is made up.</p>\n<p>Work out the PPV and the NPV, and say in one sentence what a positive result means there.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>0.86 times 0.05 = 0.043<br />\n1 minus 0.05 = 0.95<br />\n0.26 times 0.95 = 0.247<br />\n0.043 plus 0.247 = 0.29<br />\n0.043 divided by 0.29 = 0.1483<br />\n0.74 times 0.95 = 0.703<br />\n0.14 times 0.05 = 0.007<br />\n0.703 plus 0.007 = 0.71<br />\n0.703 divided by 0.71 = 0.9901</p>\n</div>\n<p>The PPV is about 0.15 and the NPV about 0.99. There, about six flagged men in seven are not in the band, so a positive result means “measure his weight and height”, not “he is in the band”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Mohan and colleagues’ Indian Diabetes Risk Score (J Assoc Physicians India 2005), at a score of 80 or more, has sensitivity 15.1 per cent and specificity 95.0 per cent for undiagnosed diabetes (Table 2). The paper’s discussion takes the prevalence of undiagnosed diabetes as 10.1 per cent.</p>\n<p>A man scores below 80. Work out the probability that he has undiagnosed diabetes, and compare it with the prior.</p>",
+   "level": 6,
+   "answer": "<p>Scoring below 80 is a negative result. The probability of diabetes after it is the diabetic negatives divided by all negatives.</p>\n<div class=\"working\">\n<p>1 minus 0.151 = 0.849<br />\n0.849 times 0.101 = 0.085749<br />\n1 minus 0.101 = 0.899<br />\n0.95 times 0.899 = 0.85405<br />\n0.085749 plus 0.85405 = 0.939799<br />\n0.085749 divided by 0.939799 = 0.0912</p>\n</div>\n<p>About 9.1 per cent, against a prior of 10.1 per cent. At this cut-off a negative score barely moves the probability, because the score misses about 85 in every 100 people with undiagnosed diabetes. A score below 80 does not clear him.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>arm tape: sensitivity 0.86, specificity 0.74, prevalence 0.2<br />\nPPV = 0.74 times 0.2 divided by (0.74 times 0.2 plus 0.14 times 0.8)<br />\n= 0.148 divided by (0.148 plus 0.112)<br />\n= 0.148 divided by 0.26 = 0.569</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. It swapped the sensitivity and the specificity: it used 0.74 where the sensitivity belongs, and 1 minus 0.86 where 1 minus the specificity belongs. The top line must be P(positive | in the band) times the prevalence.</p>\n<div class=\"working\">\n<p>0.86 times 0.2 = 0.172<br />\n0.26 times 0.8 = 0.208<br />\n0.172 plus 0.208 = 0.38<br />\n0.172 divided by 0.38 = 0.4526</p>\n</div>\n<p>The PPV is about 0.45, not 0.57.</p>\n<p>Why the wrong answer looks reasonable: the formula has the right shape, every number in it came from the problem, and 0.57 is a believable PPV. Only saying each number as a conditional catches it: 0.74 is “negative given not in the band”, which has no place in the top line.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>among Kiran’s medical students the arm tape’s PPV was about 0.61<br />\nour camp uses the same tape on young men, of whom about one in five is in the band<br />\nthe tape is the same, so its PPV is the same<br />\nso about 61 in every 100 men we flag will be in the band</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line broke. The tape is the same, so its sensitivity and specificity may carry over. Its PPV does not, because the PPV depends on the prevalence, and the camp’s is 0.2, not the students’ 0.32. Recompute at 0.2.</p>\n<div class=\"working\">\n<p>0.86 times 0.2 = 0.172<br />\n0.26 times 0.8 = 0.208<br />\n0.172 divided by 0.38 = 0.4526</p>\n</div>\n<p>About 45 in every 100 flagged men, not 61.</p>\n<p>Why the wrong answer looks reasonable: “the same test gives the same results” is true of the sensitivity and specificity, which describe the tape. The PPV sounds like a property of the tape too, and papers print it beside the other two. It describes the tape and the group together.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A patient leaflet for a screening camp says this.</p>\n<blockquote>\n<p>The arm tape finds 86 per cent of young men who are overweight. If your result is positive, you are overweight.</p>\n</blockquote>\n<p>The camp expects about one man in five to be in the 25-to-29.9 band; that figure is made up. The tape’s specificity is 74 per cent. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the leaflet’s second sentence is a <dfn data-g=\"114\">claim</dfn> about P(in the band | positive), the PPV. Work it out at the camp’s prevalence.</p>\n<div class=\"working\">\n<p>0.86 times 0.2 = 0.172<br />\n0.26 times 0.8 = 0.208<br />\n0.172 plus 0.208 = 0.38<br />\n0.172 divided by 0.38 = 0.4526</p>\n</div>\n<p>About 45 in 100 positive men are in the band. The leaflet is wrong for more than half of the men it speaks to.</p>\n<p>A sentence the leaflet could use: “If your result is positive, about 45 in 100 men like you turn out to have a body-mass index from 25 to 29.9. We will measure your weight and height to find out.”</p>\n<p>What this does not establish. The 0.86 and 0.74 come from medical students in one college and fit the 25-to-29.9 band, so the 0.45 is no more certain than they are. The one in five is an assumption about this camp; at another prevalence the answer moves. And the band leaves out men at 30 or more, so “overweight” in the leaflet does not match what the tape was checked against.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A colleague planning a rural camp says this.</p>\n<blockquote>\n<p>In the sixth National Family Health Survey, NFHS-6 (2023-24), 23.0 per cent of rural men aged 15 to 49 were overweight or obese. The arm tape has a PPV of 61 per cent in Kiran’s study, so about 61 per cent of the men it flags at our camp will be overweight.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the 61 per cent belongs to the students’ prevalence, about 0.32. Use the survey figure as the camp’s prior, and recompute the PPV from the tape’s sensitivity and specificity.</p>\n<div class=\"working\">\n<p>0.86 times 0.23 = 0.1978<br />\n1 minus 0.23 = 0.77<br />\n0.26 times 0.77 = 0.2002<br />\n0.1978 plus 0.2002 = 0.398<br />\n0.1978 divided by 0.398 = 0.497</p>\n</div>\n<p>About 50 per cent, not 61.</p>\n<p>What this does not establish. The survey’s figure counts a body-mass index of 25 or more. The tape’s 86 and 74 per cent fit the 25-to-29.9 band. So the prior and the test do not measure the same thing, and 0.50 mixes them. The survey figure is for rural men in all of India, aged 15 to 49; the men who come to one camp may differ. And the tape’s rates come from medical students. Say “about half, and we will confirm every positive”, and ask which prior fits the men you expect.</p>"
+  }
+ ]
+}

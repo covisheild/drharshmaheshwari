@@ -1,0 +1,227 @@
+{
+ "format": 1,
+ "id": "s03-r1-c06",
+ "label": "6",
+ "title": "The base-rate case that defeats most clinicians",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The base-rate case is a measured <dfn data-g=\"289\">finding</dfn> about how clinicians read a positive test. The <dfn data-g=\"54\">base rate</dfn> is the <dfn data-g=\"592\">prevalence</dfn> of the condition in the group being tested, before any test is done: the <dfn data-g=\"598\">prior probability</dfn> of section 5.</p>\n<p>In 1978 Casscells, Schoenberger and Graboys put one question to 60 students and doctors met in hallway encounters at four Harvard teaching hospitals. A test for a disease whose prevalence is 1/1000 has a <dfn data-g=\"279\">false-positive rate</dfn> of 5 per cent. What is the chance that a person with a positive result has the disease, knowing nothing else about them?</p>\n<p>If the test catches everyone who has the disease, Bayes’ theorem gives about 2 per cent: one person with the disease among about 51 positives. 11 of the 60 gave that answer. The commonest answer, given by 27, was 95 per cent.</p>\n<p>The answer 95 per cent is 1 minus the false-positive rate. That is P(test negative | no disease), the <dfn data-g=\"742\">specificity</dfn>. Given as the answer, it is read as P(disease | test positive). The prevalence has dropped out of the reasoning altogether.</p>",
+   "refs": [
+    39,
+    40,
+    41,
+    42,
+    42,
+    43,
+    43,
+    44,
+    44
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Most doctors asked this question give an answer near 95 per cent. The right answer is about 2 per cent. The disease is so rare that the few ill people who test positive are swamped by the many healthy people who test positive too.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c06-count-positives.png",
+   "alt": "Two bars from zero: 1 person with the disease who tests positive, beside 49.95 healthy people who test positive.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The Casscells question counted in 1,000 people. The 1 person with the disease tests positive, and so do 5 per cent of the 999 without it, 49.95 people. One person with the disease among about 51 positives: a chance of 0.0196, about 2 per cent, not 95."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c06-ppv-by-prevalence.png",
+   "alt": "Bars rising with prevalence: 2.0 at 1 in 1,000, 16.8 at 1 in 100, 51.3 at 1 in 20, 69.0 at 1 in 10, 83.3 at 1 in 5 and 95.2 at 1 in 2. A dashed line at 95 is reached only by the last bar.",
+   "w": 1360,
+   "h": 663,
+   "caption": "The same test at each prevalence of the table. It catches everyone with the disease and wrongly flags 5 per cent of the rest. The chance of disease after a positive result is 2.0 per cent at 1 in 1,000, the Casscells question, 16.8 per cent at 1 in 100, and reaches 95.2 per cent only at 1 in 2. The dashed line marks 95, the commonest answer."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c06-answers-two-studies.png",
+   "alt": "Paired bars for the two studies. Answered about 2 per cent: 11 and 14. Answered 95 per cent: 27 and 27. Any other answer: 22 and 20.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Answers to the same question in two studies. In 1978 Casscells and colleagues found 11 of 60 answering about 2 per cent and 27 answering 95 per cent. Manrai and colleagues, 2014 (surveyed 2013), found 14 of 61 and 27. The rest, 22 and 20, gave other answers."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Answer the question yourself before you read on. Write your answer down, and how sure you are of it, as a per cent. This is the question exactly as Casscells and colleagues put it in the <em>New England Journal of Medicine</em> in 1978 (https://doi.org/10.1056/NEJM197811022991808):</p>\n<blockquote>\n<p>If a test to detect a disease whose prevalence is 1/1000 has a false positive rate of 5 per cent, what is the chance that a person found to have a positive result actually has the disease, assuming that you know nothing about the person’s symptoms or signs?</p>\n</blockquote>\n<p>If your answer is near 95 per cent, you are in good company. 27 of their 60 students and doctors said exactly that. Now count it. Take 1,000 people like the person in the question.</p>\n<div class=\"working\">\n<p>1000 divided by 1000 = 1<br />\n1000 minus 1 = 999<br />\n0.05 times 999 = 49.95</p>\n</div>\n<p>One person has the disease. The question does not say how often the test catches it, so assume, as the authors did, that it always does. That one person tests positive. Of the 999 without the disease, 5 per cent test positive anyway: about 50 people.</p>\n<div class=\"working\">\n<p>1 plus 49.95 = 50.95<br />\n1 divided by 50.95 = 0.0196</p>\n</div>\n<p>About 51 people test positive, and one of them has the disease. The chance is about 2 per cent, the authors’ “one in 51”. Only 11 of the 60 gave it.</p>\n<p>The same answer comes from Bayes’ theorem in section 5, with <dfn data-g=\"713\">sensitivity</dfn> 1, prevalence 0.001 and specificity 0.95.</p>\n<div class=\"working\">\n<p>1 times 0.001 = 0.001<br />\n0.05 times 0.999 = 0.04995<br />\n0.001 plus 0.04995 = 0.05095<br />\n0.001 divided by 0.05095 = 0.0196</p>\n</div>\n<p>The <dfn data-g=\"207\">denominator</dfn>, 0.05095, is the share of all people tested who come back positive. That is the <dfn data-g=\"424\">law of total probability</dfn> of section 4.</p>",
+   "numberRefs": [
+    45,
+    46
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 2 per cent holds only for a person about whom nothing else is known, drawn from a group where 1 in 1,000 has the disease. Casscells and colleagues say so themselves: if the person were known to have symptoms, the chance “would be higher”. A patient with symptoms belongs to a group with a higher prevalence.</p>\n<p>It also assumes the test catches everyone with the disease. The question does not say so. A test that missed half the cases would give about 1 per cent, not 2. That is still nowhere near 95.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Where does 95 per cent come from? Take 1 from the false-positive rate.</p>\n<div class=\"working\">\n<p>1 minus 0.05 = 0.95</p>\n</div>\n<p>That is the specificity: P(test negative | no disease). It is a share of the 999 healthy people. The question asked for a share of the 51 people who tested positive. The two share no denominator at all. This is the trap of Book 0’s <dfn data-g=\"809\">two-way table</dfn>, Book 0, D3, in its most costly form.</p>\n<p>Here is a second way to see it. Ask what prevalence would make 95 per cent the right answer. Keep the test the same, and work out the chance of disease after a positive result at several prevalences.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>prevalence</th>\n<th>prevalence (%)</th>\n<th>chance of disease after a positive result (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1 in 1,000</td>\n<td>0.1</td>\n<td>2.0</td>\n</tr>\n<tr>\n<td>1 in 100</td>\n<td>1</td>\n<td>16.8</td>\n</tr>\n<tr>\n<td>1 in 20</td>\n<td>5</td>\n<td>51.3</td>\n</tr>\n<tr>\n<td>1 in 10</td>\n<td>10</td>\n<td>69.0</td>\n</tr>\n<tr>\n<td>1 in 5</td>\n<td>20</td>\n<td>83.3</td>\n</tr>\n<tr>\n<td>1 in 2</td>\n<td>50</td>\n<td>95.2</td>\n</tr>\n</tbody>\n</table>\n<p>Work one row to see the pattern. At 1 in 100, count 1,000 people again.</p>\n<div class=\"working\">\n<p>0.01 times 1000 = 10<br />\n1000 minus 10 = 990<br />\n0.05 times 990 = 49.5<br />\n10 plus 49.5 = 59.5<br />\n10 divided by 59.5 = 0.168</p>\n</div>\n<p>About 16.8 per cent. The test has not changed. Only the group has.</p>\n<p>The answer of 95 per cent is right only when about half the people tested have the disease. Read that way, the commonest answer quietly assumed a prevalence near 50 per cent. The question said 1 in 1,000.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Every row assumes the test catches everyone with the disease and wrongly flags 5 per cent of the rest. Those two numbers are carried unchanged from one group to the next. That is itself an assumption: a test can behave differently in a group with more advanced disease.</p>\n<p>The table describes this made-up test, as the question did. It says nothing about any real test.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Is this a quirk of a few hallways in 1978? Manrai and colleagues asked the same question in 2013. Their report is “Medicine’s uncomfortable relationship with math”, in <em>JAMA Internal Medicine</em>, 2014 (https://pmc.ncbi.nlm.nih.gov/articles/PMC4955674/).</p>\n<p>They asked a <dfn data-g=\"168\">convenience sample</dfn> of 61 people at one Boston-area hospital: 24 attending physicians, 26 house officers, 10 medical students and one retired physician. A convenience sample is whoever was easy to reach, not a random draw.</p>\n<table style=\"width:97%;\">\n\n<tbody>\n<tr>\n<td>study</td>\n<td>answered about 2%</td>\n<td>answered 95%</td>\n<td>any other answer</td>\n<td>asked</td>\n</tr>\n<tr>\n<td>Casscells, 1978</td>\n<td>11</td>\n<td>27</td>\n<td>22</td>\n<td>60</td>\n</tr>\n<tr>\n<td>Manrai, 2014 (surveyed 2013)</td>\n<td>14</td>\n<td>27</td>\n<td>20</td>\n<td>61</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>60 minus 11 minus 27 = 22<br />\n61 minus 14 minus 27 = 20<br />\n14 divided by 61 is about 0.230<br />\n11 divided by 60 is about 0.183</p>\n</div>\n<p>About 23 per cent right in 2013, against about 18 per cent in 1978. In both studies the commonest answer was 95 per cent, given by 27 people each time. Thirty-five years on, the error had barely moved.</p>\n<p>Read what some of the 2013 respondents wrote beside their answers. Search the report for “prevalence”.</p>\n<blockquote>\n<p>one attending cardiologist wrote that “PPV does not depend on prevalence,” and a resident wrote “better PPV when prevalence is low.”</p>\n</blockquote>\n<p>PPV is the <dfn data-g=\"576\">positive predictive value</dfn> of Book 0, the share of positive results that are right. Both remarks are false, and section 5 shows why. These respondents knew the name of the quantity. They did not know what it depends on.</p>\n<p>What would overturn the finding? A fresh sample of clinicians, given the same question, in which most give an answer near 2 per cent. Neither study found that.</p>",
+   "numberRefs": [
+    46,
+    45
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Both studies are small, and neither drew its people <dfn data-g=\"40\">at random</dfn>: hallway encounters at four Harvard teaching hospitals in 1978, a convenience sample at one Boston-area hospital in 2013. Neither was done in India. The 18 and 23 per cent describe those 60 and 61 people. They are not the share of all doctors who can do this.</p>\n<p>Both <dfn data-g=\"822\">used</dfn> one <dfn data-g=\"5\">abstract</dfn> question with no patient, no time pressure and no consequence. They show that the mistake is common. They do not show how often it changes what a doctor does with a real patient. Casscells and colleagues say that “is less clear”.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The 95 per cent is a share of the healthy people. The question is about a share of the positives.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>You cannot say what a positive result means without a prevalence.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Expect this mistake from most of the people around you, including senior ones. Do not take a confident number from a ward round as a <dfn data-g=\"104\">check</dfn> on your own working.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Knowing the name of a quantity is not knowing what it depends on. When you teach this, make the trainee count a group of people, not recite a definition.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>The 2 per cent is for a person about whom nothing else is known. A patient with symptoms comes from a group where the disease is commoner, and the same positive result means more.</p>",
+     "tag": "boundary",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>These two studies were small, in two American teaching settings, on one abstract question. They do not measure how often it harms a patient, and neither was done in India.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The test has a false-positive rate of only 5 per cent, so a positive result is 95 per cent likely to be right.” The 5 per cent is a share of the people without the disease. The question is about the people with a positive result. At a prevalence of 1 in 1,000, about 50 well people test positive for every one ill person, so a positive result means about a 2 per cent chance of disease. A rate that ignores the prevalence cannot answer a question that depends on it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>In a group where 1 in 1,000 people has the disease, a positive result on a test with a 5 per cent false-positive rate means about a 2 per cent chance of disease, not 95 per cent: about 50 healthy people test positive for every one person who has it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: state the Casscells question in your own words. Give the right answer and the commonest wrong one. Say what the wrong answer actually is, written as a conditional <dfn data-g=\"602\">probability</dfn>.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>A test for a disease with a prevalence of 1 in 1,000 has a false-positive rate of 5 per cent. What is the chance that a person who tests positive has the disease, knowing nothing else about them?</p>\n<p>Right answer: about 2 per cent, assuming the test catches everyone with the disease. Of 1,000 people, 1 is ill and tests positive; about 50 of the 999 well people test positive too. One in about 51.</p>\n<p>Commonest wrong answer: 95 per cent. That is 1 minus the false-positive rate, the specificity, P(test negative | no disease). It is given as if it were P(disease | test positive).</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident, ten minutes, a whiteboard. She has just said in a ward round that a positive result on a test with a 5 per cent false-positive rate means “95 per cent he has it”. Plan what you draw and say. Use the Casscells numbers.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw 1,000 people as a box. Split off the one person with the disease, and the 999 without.</p>\n<p>Ask her: of the one who is ill, how many test positive? Assume all, so one. Of the 999 who are well, how many test positive? Five per cent: about 50. Write 1 and 50 side by side under the word “positive”.</p>\n<p>Now ask her question again, pointing at those two numbers: of the people who test positive, how many are ill? One of about 51. About 2 per cent.</p>\n<p>Then show where her 95 per cent lives. Circle the 999 well people: 95 per cent of them test negative. That is the specificity, a share of the well. Her question was a share of the positives. Write the two conditionals one above the other: P(negative | well) and P(ill | positive). Same words, different order, different denominator.</p>\n<p>End with the move she can use next time: before answering, ask how common the disease is in the group the patient comes from. If no one can say, no one can answer.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>You want to know whether the residents in your own department do better than the clinicians in these two studies. Specify a small survey: who you ask, the exact question, what counts as correct, and what your result could and could not show.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Who: every resident and faculty member who attends one departmental meeting, or a list drawn at random from the department’s roster. Say which, because a convenience sample, like Manrai’s, describes only the people who were there.</p>\n<p>The question: use the Casscells wording unchanged, so your result can be set beside the two studies. Ask each person to answer alone, on paper, in a few minutes.</p>\n<p>Correct: decide before you look at the answers. Manrai counted “2%”, “1.96%” or “&lt;2%”. Write your rule down first, so it cannot drift to fit the answers.</p>\n<p>Record: the answer, and the person’s training <dfn data-g=\"435\">level</dfn>. Count the share correct and the share answering 95 per cent.</p>\n<p>What it could show: how common the error is among those people, on that day, on that question. What it could not show: whether the error changes what they do with real patients, or how the whole profession in India would answer. A few dozen people give a rough share, not a precise one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A condition has a prevalence of 1 in 500. A test for it catches everyone who has it and has a false-positive rate of 2 per cent. Count 10,000 people. How many test positive, and what is the chance that a person who tests positive has the condition?</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>10000 divided by 500 = 20<br />\n10000 minus 20 = 9980<br />\n0.02 times 9980 = 199.6<br />\n20 plus 199.6 = 219.6<br />\n20 divided by 219.6 = 0.0911</p>\n</div>\n<p>20 people have the condition and all test positive. About 200 of the 9,980 without it test positive. Of about 220 positives, 20 have the condition: a chance of about 9.1 per cent.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A test catches everyone with a condition and has a false-positive rate of 5 per cent. At what prevalence is the chance of the condition after a positive result exactly 50 per cent?</p>",
+   "level": 3,
+   "answer": "<p>Call the prevalence p. Out of everyone tested, a share p have the condition and test positive, and a share 0.05 × (1 − p) test positive without it. The chance is 50 per cent when the two are equal.</p>\n<div class=\"working\">\n<p>p = 0.05 × (1 − p)<br />\np = 0.05 − 0.05 × p</p>\n</div>\n<p>Add 0.05 × p to both sides.</p>\n<div class=\"working\">\n<p>1.05 × p = 0.05<br />\n0.05 divided by 1.05 = 0.0476</p>\n</div>\n<p>A prevalence of about 4.8 per cent, about 1 in 21. Check: of 1,000 people, about 48 have it; 0.05 times 952 is about 48 false positives. Equal, so a positive is right half the time.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Take the Casscells test: it catches everyone with the disease and has a false-positive rate of 5 per cent. It is now used in a clinic where 1 in 20 patients tested has the disease. Count 1,000 patients and give the chance of disease after a positive result.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>1000 divided by 20 = 50<br />\n1000 minus 50 = 950<br />\n0.05 times 950 = 47.5<br />\n50 plus 47.5 = 97.5<br />\n50 divided by 97.5 = 0.513</p>\n</div>\n<p>50 patients have the disease and all test positive. About 48 of the 950 without it test positive too. The chance is about 51 per cent, about 26 times the 2 per cent of the Casscells question, with the same test. The prevalence rose fifty-fold; the chance rose about 26-fold.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Kiran and colleagues report that an arm circumference of 31.3 cm or more had sensitivity 86 per cent and specificity 74 per cent for a body-mass index from 25 to 29.9 in young men. Use it in a stated group where one man in five is in that band. A colleague asked “what does a positive tape mean?” answers “74 per cent”. Count 1,000 men in that group, work out the right answer, and name the quantity the colleague gave.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>0.20 times 1000 = 200<br />\n1000 minus 200 = 800<br />\n0.86 times 200 = 172<br />\n1 minus 0.74 = 0.26<br />\n0.26 times 800 = 208<br />\n172 plus 208 = 380<br />\n172 divided by 380 is about 0.453</p>\n</div>\n<p>Of 380 men flagged by the tape, 172 are in the band: about 45 per cent, the figure Book 0 reached for the same group. The colleague’s 74 per cent is the specificity, P(tape negative | not in the band): a share of the 800 men outside the band. It is the Casscells error with a real test.</p>\n<p>The 45 per cent holds for a group where one man in five is in the band. Kiran’s figures come from 131 medical students in one college, printed to whole per cents.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Here is a worked answer to the Casscells question. Find the step that broke.</p>\n<div class=\"working\">\n<p>false-positive rate = 5 per cent<br />\nso the test is right 95 per cent of the time<br />\nthe person tested positive, and the test is right 95 per cent of the time<br />\nso the chance the person has the disease = 95 per cent</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. “Right 95 per cent of the time” is true only of the people without the disease: 95 per cent of them test negative. That is P(test negative | no disease). It says nothing about how often a positive result is right.</p>\n<p>The third line then applies the 95 per cent to the positives, a different group. Count it:</p>\n<div class=\"working\">\n<p>0.05 times 999 = 49.95<br />\n1 divided by 50.95 = 0.0196</p>\n</div>\n<p>About 2 per cent. Why the wrong answer looks reasonable: “<dfn data-g=\"8\">accuracy</dfn>” sounds like one property of the test that applies to every result. It is not. A share of the healthy and a share of the positives are different fractions, and only the prevalence connects them. The prevalence never appears in the wrong working, which is the tell.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a second worked answer to the Casscells question. It does count people. Find the step that broke.</p>\n<div class=\"working\">\n<p>take 1,000 people: 1 has the disease, 999 do not<br />\nthe false-positive rate is 5 per cent<br />\nso 5 per cent of the positive results are false<br />\nso 95 per cent of the positive results are true: the chance is 95 per cent</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line broke. A false-positive rate of 5 per cent means 5 per cent of the people without the disease test positive: 5 per cent of the 999. It is not 5 per cent of the positives. The worker took the right <dfn data-g=\"522\">numerator</dfn>, false positives, and divided by the wrong group.</p>\n<div class=\"working\">\n<p>0.05 times 999 = 49.95<br />\n1 plus 49.95 = 50.95<br />\n49.95 divided by 50.95 = 0.980<br />\n1 divided by 50.95 = 0.0196</p>\n</div>\n<p>About 98 per cent of the positive results are false, and about 2 per cent are true.</p>\n<p>Why it looks reasonable: the first line set up the right group of 1,000, so the answer feels counted. But the 999 were never used. The name “false-positive rate” invites reading it as “the share of positives that are false”. Say out loud what the rate is a share of before you use it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>At a screening camp a colleague says: “Our test has a false-positive rate of only 5 per cent, so 95 per cent of the people we flag really have it. Refer them all straight to the specialist clinic.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the chance of the condition after a positive result. That needs the prevalence in the camp’s population, which the colleague did not give. So compute it at a few prevalences, assuming the test catches everyone who has the condition.</p>\n<div class=\"working\">\n<p>0.01 times 1000 = 10<br />\n0.05 times 990 = 49.5<br />\n10 divided by 59.5 = 0.168<br />\n0.10 times 1000 = 100<br />\n0.05 times 900 = 45<br />\n100 divided by 145 is about 0.690</p>\n</div>\n<p>At 1 per cent prevalence, about 17 per cent of those flagged have the condition. At 10 per cent, about 69 per cent. It reaches 95 per cent only when about half the people screened have it, which is not a screening camp.</p>\n<p>What this does not establish. It does not say the referrals are wrong: a 17 per cent chance may be worth a specialist visit, and that is a clinical and cost judgement. It does not give the camp’s real figure, which needs the camp’s own prevalence and the test’s real sensitivity. And it says nothing about the people the test missed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A newspaper story says: “Doctors can’t do maths. When asked what a positive test meant, only 18 per cent of doctors got it right.”</p>\n<p>Decide what to compute or check, do it, and say what the 18 per cent does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Check where 18 per cent comes from and what it is a share of.</p>\n<div class=\"working\">\n<p>11 divided by 60 is about 0.183<br />\n14 divided by 61 is about 0.230</p>\n</div>\n<p>18 per cent is Casscells’ 11 of 60 in 1978. The later study, Manrai’s 14 of 61 in 2013, gave 23 per cent. Both are shares of about 60 people.</p>\n<p>What it does not establish. “Doctors” in the story means 60 students, house officers and attending physicians met in Harvard hallways for a study published in 1978, not doctors in general, and not Indian doctors. It was one abstract question with no patient. It shows that this one question was answered wrongly by most of them. It does not show they “can’t do maths”. Many could compute but ignored the prevalence. It does not show how often the error changed care for a real patient: the authors themselves call that “less clear”. A fair line would be: “in two small studies, at Harvard teaching hospitals in 1978 and a Boston-area hospital in 2013, about four in five clinicians gave a wrong answer, most often 95 per cent when the answer was 2.”</p>"
+  }
+ ]
+}

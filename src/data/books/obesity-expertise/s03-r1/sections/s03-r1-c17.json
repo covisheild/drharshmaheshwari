@@ -1,0 +1,218 @@
+{
+ "format": 1,
+ "id": "s03-r1-c17",
+ "label": "17",
+ "title": "Covariance and correlation of two random variables",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Let X and Y be two <dfn data-g=\"219\">discrete</dfn> random variables on the same <dfn data-g=\"102\">chance process</dfn>. Their <dfn data-g=\"404\">joint distribution</dfn> lists every pair of values (x, y) the two can take together, with the <dfn data-g=\"602\">probability</dfn> P(X = x and Y = y) of each pair. Adding a row or a column gives the distribution of X or of Y alone.</p>\n<p>The covariance of X and Y, written Cov(X, Y) and read “the covariance of X and Y”, is the expected value of the product of their deviations from their own expected values.</p>\n<div class=\"working\">\n<p>Cov(X, Y) = E[(X − E[X])(Y − E[Y])]</p>\n</div>\n<p>It carries the unit of X times the unit of Y. The covariance of X with itself is Var(X).</p>\n<p>Multiplying out the bracket gives a shorter form. E[XY] is the expected value of the product X times Y. E[X] and E[Y] are fixed numbers, so they come outside an expected value, as in Book 2, section 14.</p>\n<div class=\"working\">\n<p>(X − E[X])(Y − E[Y]) = XY − X E[Y] − E[X] Y + E[X] E[Y]<br />\nCov(X, Y) = E[XY] − E[X] E[Y] − E[X] E[Y] + E[X] E[Y]<br />\nCov(X, Y) = E[XY] − E[X] × E[Y]</p>\n</div>\n<p>The <dfn data-g=\"829\">variance</dfn> of a sum or a difference of any two random variables, independent or not, is:</p>\n<div class=\"working\">\n<p>Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y)<br />\nVar(X − Y) = Var(X) + Var(Y) − 2 Cov(X, Y)</p>\n</div>\n<p>The <dfn data-g=\"171\">correlation</dfn> of X and Y, written with the Greek letter rho, ρ, is the covariance divided by both standard deviations.</p>\n<div class=\"working\">\n<p>ρ = Cov(X, Y) ÷ [SD(X) × SD(Y)]</p>\n</div>\n<p>It has no unit. It always lies between −1 and 1 (stated here, not proved; the proof is beyond this book). It measures only how closely the two follow a straight line.</p>\n<p>If X and Y are independent, then E[XY] = E[X] × E[Y], so their covariance and correlation are 0. The reverse is false: a covariance of 0 does not make X and Y independent.</p>",
+   "refs": [
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The covariance measures how two quantities move together. When one is above its average, is the other usually above its average too? Then the covariance is positive, and the sum spreads more than the adding rule says.</p>\n<p>The correlation is the same measure with the units taken out.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c17-couple-count.png",
+   "alt": "Paired bars at counts 0, 1 and 2. Tied couple: 0.54, 0.22, 0.24. Independent: 0.42, 0.46, 0.12.",
+   "w": 1360,
+   "h": 656,
+   "caption": "How many of a made-up couple have overweight or obesity. With the tie between spouses (covariance 0.12), the count is 0 with probability 0.54, 1 with 0.22 and 2 with 0.24: variance 0.69. If the two were independent with the same 0.30 and 0.40, it would be 0.42, 0.46 and 0.12: variance 0.45. The tie moves probability from one to both or neither."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c17-variance-pieces.png",
+   "alt": "Four bars from zero: Var(X) 0.21, Var(Y) 0.24, 2 Cov(X, Y) 0.24, and their total Var(X + Y) 0.69.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The variance of the couple’s count, 0.69, is Var(X), 0.21, plus Var(Y), 0.24, plus 2 Cov(X, Y), 0.24. The adding rule keeps only the first two and gives 0.45."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c17-u-shape.png",
+   "alt": "Three points, at minus 1 and 1, at 0 and 0, and at 1 and 1, joined by the curve y equals x squared.",
+   "w": 1360,
+   "h": 656,
+   "caption": "X is minus 1, 0 or 1, each with probability one third, and Y is X squared. The three points lie on a U. The covariance and correlation are 0, yet X fixes Y: a correlation sees only a straight-line tilt."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start where the adding rule breaks. In Book 2, section 14 a made-up day-1 energy surplus X was minus 300, 0, 200 or 500 kcal a day, with probabilities 0.2, 0.3, 0.4 and 0.1, and E[X] was 70. Day 2’s surplus Y was always 140 minus day 1’s. So E[Y] was 70 too, and X + Y was 140 on every row.</p>\n<p>First find Var(X), as in Book 2, section 15. Take each value’s deviation from 70, square it, weight it by its probability and add.</p>\n<table style=\"width:96%;\">\n\n<tbody>\n<tr>\n<td>x (kcal/day)</td>\n<td>x − 70</td>\n<td>(x − 70)²</td>\n<td>probability</td>\n<td>(x − 70)² × probability</td>\n</tr>\n<tr>\n<td>-300</td>\n<td>-370</td>\n<td>136900</td>\n<td>0.2</td>\n<td>27380</td>\n</tr>\n<tr>\n<td>0</td>\n<td>-70</td>\n<td>4900</td>\n<td>0.3</td>\n<td>1470</td>\n</tr>\n<tr>\n<td>200</td>\n<td>130</td>\n<td>16900</td>\n<td>0.4</td>\n<td>6760</td>\n</tr>\n<tr>\n<td>500</td>\n<td>430</td>\n<td>184900</td>\n<td>0.1</td>\n<td>18490</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>27380 plus 1470 plus 6760 plus 18490 = 54100</p>\n</div>\n<p>Var(X) is 54,100, in the unit (kcal a day) squared. Y’s deviations are X’s with the sign turned round, so its squared deviations are the same, and Var(Y) is 54,100 too.</p>\n<p>Now try the adding rule on X + Y.</p>\n<div class=\"working\">\n<p>54100 plus 54100 = 108200</p>\n</div>\n<p>That says X + Y spreads a great deal. But X + Y is 140 on every row. It never varies. Its variance is 0. The adding rule is wrong here, because the two days are not independent.</p>\n<p>The missing piece is the covariance. On each row, multiply X’s deviation by Y’s, weight the product by the row’s probability, and add. Y’s deviation is minus X’s: on the first row, Y is 440 and 440 minus 70 is 370.</p>\n<div class=\"working\">\n<p>-370 times 370 times 0.2 = -27380<br />\n-70 times 70 times 0.3 = -1470<br />\n130 times -130 times 0.4 = -6760<br />\n430 times -430 times 0.1 = -18490<br />\n-27380 plus -1470 plus -6760 plus -18490 = -54100</p>\n</div>\n<p>Cov(X, Y) is minus 54,100. Every row has one day above 70 and the other below, so every product is negative. Put it into the full rule.</p>\n<div class=\"working\">\n<p>54100 plus 54100 plus 2 times -54100 = 0</p>\n</div>\n<p>Var(X + Y) is 0, as it must be. The correlation is the covariance divided by both standard deviations. Each <dfn data-g=\"747\">standard deviation</dfn> is the <dfn data-g=\"743\">square root</dfn> of 54,100, so their product is 54,100.</p>\n<div class=\"working\">\n<p>-54100 divided by 54100 = -1</p>\n</div>\n<p>A correlation of minus 1: Y is an exact falling straight line in X, Y = 140 − X.</p>\n<p>Where does the 2 Cov(X, Y) come from? Write the deviation of X + Y from its expected value as (X − E[X]) plus (Y − E[Y]). Square that sum. (a + b) times (a + b) is a(a + b) plus b(a + b), the multiplying out of Book 0, C1 done twice. That is a² + ab + ba + b², or a² + b² + 2ab. Take the expected value of each piece. The squares give Var(X) and Var(Y). The cross term gives 2 times E[(X − E[X])(Y − E[Y])], which is 2 Cov(X, Y). Nothing in those steps asked whether X and Y were independent.</p>\n<p>And why does independence make the covariance 0? Multiply out (X − E[X])(Y − E[Y]) and take expected values: Cov(X, Y) = E[XY] − E[X] × E[Y]. For independent X and Y, in the sense of Book 2, section 15, each cell of the joint table is P(X = x) times P(Y = y), the product rule of section 3 applied to each pair of values. E[XY] is the sum over cells of x times y times that product. For each x, the inner sum over y is the same E[Y].</p>\n<div class=\"working\">\n<p>Σ over x and y of x y P(X = x) P(Y = y) = Σ over x of x P(X = x) × E[Y] = E[X] × E[Y]</p>\n</div>\n<p>The two terms cancel, and the covariance is 0.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The two days are made up and as tied together as two days can be, to show the full size of the error. Real days are tied more loosely, with a correlation somewhere between −1 and 1, and the covariance then corrects the adding rule by less. A variance in (kcal a day) squared is an awkward unit; that awkwardness is why the correlation, which has none, is the number people quote.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a sum whose parts move together. Take a married couple aged 15 to 49 and count how many of the two have <dfn data-g=\"543\">overweight</dfn> or obesity. Let X be 1 if the husband does and 0 if not, and Y the same for the wife. The count is X + Y. Couples share meals, a kitchen and a neighbourhood, so there is no reason to expect X and Y to be independent.</p>\n<p>Here is a joint table. Its numbers are made up.</p>\n<table style=\"width:85%;\">\n\n<tbody>\n<tr>\n<td></td>\n<td>wife: Y = 1</td>\n<td>wife: Y = 0</td>\n<td>husband total</td>\n</tr>\n<tr>\n<td>husband: X = 1</td>\n<td>0.24</td>\n<td>0.06</td>\n<td>0.30</td>\n</tr>\n<tr>\n<td>husband: X = 0</td>\n<td>0.16</td>\n<td>0.54</td>\n<td>0.70</td>\n</tr>\n<tr>\n<td>wife total</td>\n<td>0.40</td>\n<td>0.60</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<p>The row totals give X alone: P(X = 1) is 0.30. The column totals give Y: P(Y = 1) is 0.40. Each is a Bernoulli variable (section 12), so its expected value is p and its variance is p(1 − p).</p>\n<div class=\"working\">\n<p>0.30 times 0.70 = 0.21<br />\n0.40 times 0.60 = 0.24</p>\n</div>\n<p>Var(X) is 0.21 and Var(Y) is 0.24. The quick route makes the mistake first: treat the two as independent, and add.</p>\n<div class=\"working\">\n<p>0.21 plus 0.24 = 0.45</p>\n</div>\n<p>Now the covariance, by the short form. XY is 1 only when both have overweight or obesity, so E[XY] is the top-left cell, 0.24.</p>\n<div class=\"working\">\n<p>0.30 times 0.40 = 0.12<br />\n0.24 minus 0.12 = 0.12</p>\n</div>\n<p>Cov(X, Y) is 0.12. <dfn data-g=\"104\">Check</dfn> it by the definition, cell by cell: the deviations are 1 − 0.30 or 0 − 0.30 for X, and 1 − 0.40 or 0 − 0.40 for Y.</p>\n<div class=\"working\">\n<p>0.70 times 0.60 times 0.24 = 0.1008<br />\n0.70 times -0.40 times 0.06 = -0.0168<br />\n-0.30 times 0.60 times 0.16 = -0.0288<br />\n-0.30 times -0.40 times 0.54 = 0.0648<br />\n0.1008 plus -0.0168 plus -0.0288 plus 0.0648 = 0.12</p>\n</div>\n<p>The same 0.12. Now the variance of the count.</p>\n<div class=\"working\">\n<p>0.21 plus 0.24 plus 2 times 0.12 = 0.69</p>\n</div>\n<p>Var(X + Y) is 0.69, not 0.45. Check it straight from the count. The count is 2 with probability 0.24, 1 with probability 0.06 plus 0.16, which is 0.22, and 0 with probability 0.54. Its expected value is 0.70.</p>\n<div class=\"working\">\n<p>2 times 0.24 plus 1 times 0.22 = 0.70<br />\n4 times 0.24 plus 1 times 0.22 = 1.18<br />\n1.18 minus 0.70 times 0.70 = 0.69</p>\n</div>\n<p>The second line is E[(X + Y)²], and the third uses Var = E[square] minus the square of E, the short form with Y set equal to X. It agrees.</p>\n<p>If the two really were independent, with the same 0.30 and 0.40, the count would be 2 with probability 0.30 times 0.40, which is 0.12, 0 with probability 0.70 times 0.60, which is 0.42, and 1 with the rest, 0.46. Its variance would be 0.45. The tie between spouses moves probability from “one of the two” to “both” and “neither”, and that widens the spread.</p>\n<p>The correlation:</p>\n<div class=\"working\">\n<p>0.21 times 0.24 = 0.0504<br />\nsquare root of 0.0504 = 0.2245<br />\n0.12 divided by 0.2245 = 0.53</p>\n</div>\n<p>About 0.53: a moderate positive tie, with no unit.</p>\n<p>This is why a survey that samples whole households, as the National Family Health Survey (NFHS) does, cannot treat its people as independent draws. Adults in one household are positively tied, so a count from households spreads more than the binomial of section 12 would say.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table is made up, with round margins; they are not survey figures. It says nothing about how strongly real spouses’ weights are tied. The covariance describes a tie; it does not say what causes it, whether shared food, shared surroundings, or people choosing partners like themselves.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Now the trap the other way. Let X take the values minus 1, 0 and 1, each with probability one third, and let Y be X squared. Y is decided completely by X.</p>\n<div class=\"working\">\n<p>x    y = x² probability x times y<br />\n-1 1    1/3    -1<br />\n0    0    1/3    0<br />\n1    1    1/3    1</p>\n</div>\n<div class=\"working\">\n<p>E[X] = -1 times 1/3 plus 0 times 1/3 plus 1 times 1/3 = 0<br />\nE[XY] = -1 times 1/3 plus 0 times 1/3 plus 1 times 1/3 = 0</p>\n</div>\n<p>E[Y] is 2/3. The covariance is E[XY] − E[X] × E[Y].</p>\n<div class=\"working\">\n<p>0 minus 0 times 2/3 = 0</p>\n</div>\n<p>The covariance is 0, so the correlation is 0. Yet X and Y are as <dfn data-g=\"208\">dependent</dfn> as can be: knowing X fixes Y. Check it with the rule of section 3. P(X = 1) is 1/3 and P(Y = 0) is 1/3, so independence would need P(X = 1 and Y = 0) to be 1/9. It is 0, because X = 1 forces Y = 1.</p>\n<p>The three points lie on a U, not on a line. The two arms of the U cancel. The covariance sees only a straight-line tilt, and a U has none.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The numbers are bare and chosen for a perfect U. Real U-shaped patterns are noisier, and their correlation comes out near 0 rather than exactly 0. The lesson holds either way: a correlation near 0 rules out a straight-line tie and nothing else.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The correlation is 0, so the two are unrelated” is the error. A U-shaped pattern can have a correlation of exactly 0 while one variable fixes the other. Before you accept “no relation”, look at the scatter plot.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you add variances, ask whether the parts are independent. If they share a household, a clinic, a measurer or a scale, add 2 Cov(X, Y) as well.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a paper argues “uncorrelated, so independent”, ask for the joint table or the scatter plot. A covariance of 0 cannot show independence; only those can.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Quote a correlation, not a covariance, when you compare the strength of two ties. A covariance changes with the units; the same tie in centimetres has a covariance 100 times the one in metres. The correlation does not change.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A difference between two positively tied measurements spreads less than the adding rule says, because 2 Cov(X, Y) is taken away.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a journalist reports that two things are “strongly correlated”, say what the number does: it measures how closely the two follow a straight line together.</p>",
+     "tag": "boundary",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The correlation is near zero, so the two have nothing to do with each other.” A correlation measures only how closely two quantities follow a straight line. A U-shaped tie can give a correlation of exactly 0 while one quantity fixes the other. Near 0 rules out a straight-line tie, and nothing more.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: write the variance of X + Y for any two random variables, and say when the last term is 0. What does a correlation of 0 tell you, and what does it not?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y). The last term is 0 when X and Y are independent, and also in some cases where they are not.</p>\n<p>A correlation of 0 says there is no straight-line tie between the two. It does not say they are independent: a U-shaped tie, such as Y = X² with X balanced around 0, has a correlation of exactly 0 while X fixes Y.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A thesis protocol reads: “Each household contributes two adults. Each adult has a 0.3 probability of hypertension, so the number with hypertension in 200 households (400 adults) has variance 400 times 0.3 times 0.7, which is 84.”</p>\n<p>Find the flaw, and say which way it pushes the answer.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The 400 times 0.3 times 0.7 is the binomial variance. It needs the 400 adults to be independent. Two adults in one household share food, salt, a home and often family. So their results are likely to be tied, and in the same direction. Each household’s count is then X + Y, with variance Var(X) + Var(Y) + 2 Cov(X, Y). A positive covariance adds to every household’s share. So the true variance is larger than 84. The protocol understates the spread. Any <dfn data-g=\"587\">precision</dfn> worked out from it will look better than it is.</p>\n<p>The fix is to find out how strongly two adults in one house are tied, from a pilot or an earlier survey. Then carry the covariance into the sum. Doing that in full belongs to the later book on study design and sample size.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>X and Y each take the values 0 and 1. Here are their joint probabilities.</p>\n<table style=\"width:33%;\">\n\n<tbody>\n<tr>\n<td></td>\n<td>Y = 0</td>\n<td>Y = 1</td>\n</tr>\n<tr>\n<td>X = 0</td>\n<td>0.4</td>\n<td>0.1</td>\n</tr>\n<tr>\n<td>X = 1</td>\n<td>0.2</td>\n<td>0.3</td>\n</tr>\n</tbody>\n</table>\n<p>Work out E[X], E[Y], E[XY] and Cov(X, Y).</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>E[X] = 0.2 plus 0.3 = 0.5<br />\nE[Y] = 0.1 plus 0.3 = 0.4<br />\nE[XY] = 1 times 1 times 0.3 = 0.3<br />\nCov(X, Y) = 0.3 minus 0.5 times 0.4 = 0.1</p>\n</div>\n<p>Cov(X, Y) is 0.1. Only the cell with X = 1 and Y = 1 has a product XY that is not 0.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Var(X) = 4, Var(Y) = 9 and Cov(X, Y) = 3. Work out Var(X + Y) and Var(X − Y).</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>4 plus 9 plus 2 times 3 = 19<br />\n4 plus 9 minus 2 times 3 = 7</p>\n</div>\n<p>Var(X + Y) is 19 and Var(X − Y) is 7. With a positive covariance, the sum spreads more than the 13 the adding rule gives, and the difference spreads less.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>First: Cov(X, Y) = −6, SD(X) = 3 and SD(Y) = 4. Work out the correlation.</p>\n<p>Second, the other way round: the correlation of U and V is 0.8, SD(U) = 2 and SD(V) = 5. Work out Cov(U, V).</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>3 times 4 = 12<br />\n-6 divided by 12 = -0.5</p>\n</div>\n<p>The correlation of X and Y is minus 0.5. For the second, multiply both sides of the definition by the two standard deviations: the covariance is the correlation times SD(U) times SD(V).</p>\n<div class=\"working\">\n<p>0.8 times 2 times 5 = 8</p>\n</div>\n<p>Cov(U, V) is 8.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>You weigh dal by difference, as in Book 2, section 15: the katori with dal, minus the empty katori. Each reading has a variance of 50 square grams. This scale’s errors are tied: a reading that is high tends to be followed by another high one, with a covariance of 30 square grams between the two readings. These numbers are made up.</p>\n<p>Work out the variance and the standard deviation of the dal’s weight error, with the tie and without it.</p>",
+   "level": 4,
+   "answer": "<p>The dal’s error is the second reading’s error minus the first’s. Use the rule for a difference.</p>\n<div class=\"working\">\n<p>50 plus 50 minus 2 times 30 = 40<br />\nsquare root of 40 = 6.32<br />\n50 plus 50 = 100<br />\nsquare root of 100 = 10</p>\n</div>\n<p>With the tie, the variance is 40 square grams and the standard deviation about 6.32 grams. Without it, 100 square grams and 10 grams. The shared part of the error cancels when you subtract, so a positive tie helps a difference.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>In a made-up group, weight has an SD of 10 kg, height has an SD of 0.1 m, and the covariance of weight and height is 0.5 kg·m (kilogram-metres).</p>\n<p>Work out the correlation. Then restate height in centimetres and work out the new SD, the new covariance and the new correlation.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>10 times 0.1 = 1<br />\n0.5 divided by 1 = 0.5</p>\n</div>\n<p>The correlation is 0.5. In centimetres every height is multiplied by 100. Its SD becomes 0.1 times 100, which is 10 cm. Every height deviation is 100 times larger, so the covariance is too.</p>\n<div class=\"working\">\n<p>0.5 times 100 = 50<br />\n10 times 10 = 100<br />\n50 divided by 100 = 0.5</p>\n</div>\n<p>The covariance becomes 50 kg·cm, a hundred times larger, and the correlation is still 0.5. The units changed the covariance and left the correlation alone.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>In a made-up diet record, breakfast energy has an SD of 150 kcal. Lunch energy has an SD of 200 kcal. The correlation between them is −0.3: people who eat a larger breakfast tend to eat a smaller lunch.</p>\n<p>Work out the SD of breakfast plus lunch. Compare it with the SD you would get if the two were independent.</p>",
+   "level": 6,
+   "answer": "<p>First the covariance, from the correlation.</p>\n<div class=\"working\">\n<p>-0.3 times 150 times 200 = -9000</p>\n</div>\n<p>The covariance is minus 9,000, in kcal squared. Now the variance of the sum.</p>\n<div class=\"working\">\n<p>150 times 150 = 22500<br />\n200 times 200 = 40000<br />\n22500 plus 40000 plus 2 times -9000 = 44500<br />\nsquare root of 44500 = 210.95</p>\n</div>\n<p>The SD of the two meals together is about 211 kcal. If they were independent:</p>\n<div class=\"working\">\n<p>22500 plus 40000 = 62500<br />\nsquare root of 62500 = 250</p>\n</div>\n<p>250 kcal. The negative tie makes the total steadier than the parts suggest.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>X and Y each 1 or 0; P(X = 1) = 0.5, P(Y = 1) = 0.2, P(X = 1 and Y = 1) = 0.15<br />\nVar(X) = 0.5 times 0.5 = 0.25<br />\nVar(Y) = 0.2 times 0.8 = 0.16<br />\nVar(X + Y) = 0.25 plus 0.16 = 0.41</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The last line broke. It adds the variances as if X and Y were independent. The first line shows they are not. Independence would need P(X = 1 and Y = 1) to be 0.5 times 0.2, which is 0.1, and it is 0.15.</p>\n<div class=\"working\">\n<p>0.15 minus 0.5 times 0.2 = 0.05<br />\n0.25 plus 0.16 plus 2 times 0.05 = 0.51</p>\n</div>\n<p>Var(X + Y) is 0.51, not 0.41.</p>\n<p>Why the wrong answer looks reasonable: Book 2’s adding rule is the first one learned, and the two variances were right. The <dfn data-g=\"405\">joint probability</dfn> that settles independence was given, and the working never compared it with the product.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>X is -1, 0 or 1 with probabilities 0.25, 0.5 and 0.25; Y = X squared<br />\nE[X] = 0, E[XY] = E[X cubed] = 0<br />\nCov(X, Y) = 0 minus 0 times E[Y] = 0<br />\nso X and Y are independent, and P(X = 1 and Y = 1) = 0.25 times 0.5 = 0.125</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The fourth line broke. The covariance is 0, which the first three lines get right. But a covariance of 0 does not make two variables independent. Here Y is fixed by X. When X is 1, Y is 1, so P(X = 1 and Y = 1) is P(X = 1), which is 0.25. P(Y = 1) is 0.25 plus 0.25, which is 0.5.</p>\n<div class=\"working\">\n<p>0.25 times 0.5 = 0.125</p>\n</div>\n<p>Independence would need the joint probability to be 0.125. It is 0.25, so X and Y are dependent.</p>\n<p>Why the wrong answer looks reasonable: “independent gives zero covariance” is true and easy to remember, and the reverse sounds like the same sentence. It is not.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A made-up pilot study of three people gives sleep of 5, 7 and 9 hours a night and BMI of 27, 23 and 27 kg/m² in the same order. A note says: “The correlation between sleep and BMI was zero, so sleep has nothing to do with BMI in this group.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the covariance of the three <dfn data-g=\"546\">pairs</dfn>. Read the three people as a <dfn data-g=\"632\">random variable</dfn> that takes each person’s pair with probability one third. A correlation worked from data does the same sums. A covariance of 0 gives a correlation of 0 either way.</p>\n<div class=\"working\">\n<p>(5 plus 7 plus 9) divided by 3 = 7<br />\n(27 plus 23 plus 27) divided by 3 is about 25.67<br />\n-2 times 1.33 = -2.67<br />\n0 times -2.67 = 0<br />\n2 times 1.33 = 2.67<br />\n-2.67 plus 0 plus 2.67 = 0</p>\n</div>\n<p>The covariance, and so the correlation, is 0. The note’s number is right.</p>\n<p>What it does not establish. The pattern is a U: both the short and the long sleeper have the higher BMI. A correlation of 0 rules out only a straight-line tie. With three people it rules out very little at all. And a tie, if one were found, would not show that sleep changes BMI.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A thesis builds a total score by adding two subscores. The protocol says: “Subscore A has an SD of 10 and subscore B an SD of 15, so the total has an SD of 25.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>The protocol has added standard deviations. Compute the total’s SD for the possible ties between the subscores: none, a moderate one, and a perfect one.</p>\n<div class=\"working\">\n<p>10 times 10 plus 15 times 15 = 325<br />\nsquare root of 325 = 18.03<br />\n0.4 times 10 times 15 = 60<br />\n325 plus 2 times 60 = 445<br />\nsquare root of 445 = 21.10<br />\n1 times 10 times 15 = 150<br />\n325 plus 2 times 150 = 625<br />\nsquare root of 625 = 25</p>\n</div>\n<p>Independent subscores give an SD of about 18.0. A correlation of 0.4 gives about 21.1. Only a correlation of exactly 1 gives the protocol’s 25. Adding SDs assumes the two subscores are locked together.</p>\n<p>What it does not establish. The correct SD depends on the correlation, which the protocol does not give; it has to be measured, in a pilot or from the instrument’s own validation. And nothing here says whether adding the two subscores makes a sensible score at all.</p>"
+  }
+ ]
+}

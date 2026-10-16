@@ -1,0 +1,279 @@
+{
+ "format": 1,
+ "id": "s03-r1-c09",
+ "label": "9",
+ "title": "The prosecutor’s fallacy: P(evidence | innocent) is not P(innocent | evidence)",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In this section only, let H be a <dfn data-g=\"363\">hypothesis</dfn> and E the evidence. P(E | H) is the <dfn data-g=\"602\">probability</dfn> of the evidence if the hypothesis is true. P(H | E) is the probability of the hypothesis once the evidence is known. The <dfn data-g=\"803\">transposed conditional</dfn> is the error of reading one as the other: the two conditions are swapped, so the bottom of the <dfn data-g=\"312\">fraction</dfn> changes (section 2).</p>\n<p>In a trial, let H be “the accused is innocent” and E the evidence against them. Reading a small P(E | innocent) as a small P(innocent | E) is called the prosecutor’s fallacy. The Royal Statistical Society <dfn data-g=\"822\">used</dfn> that name for it in 2001, of the Sally Clark case, a case told below.</p>\n<p>The same error takes other forms. In a clinic it reads the <dfn data-g=\"279\">false-positive rate</dfn>, P(positive | no disease), as P(no disease | positive), the case of section 6. In research it reads a p-value, which has the shape P(data like these | no effect), as P(no effect | data).</p>\n<p>The mirror error is made by the defence. It counts how many other people the evidence would also fit, concludes the evidence is nearly worthless, and forgets that the other evidence in the case may already have shut most of those people out. It ignores the prior in the other direction.</p>\n<p>Four steps correct the transposition on the spot.</p>\n<ol type=\"1\">\n<li>Say both conditionals in words: “the chance of this evidence if innocent” and “the chance of innocence given this evidence”.</li>\n<li>Ask of each: “out of whom?”</li>\n<li>Count a population, 1,000 or 10 <dfn data-g=\"420\">lakh</dfn> people, through both splits (section 7).</li>\n<li>Say which number answers the question being asked.</li>\n</ol>",
+   "refs": [
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>“If he were innocent, this evidence would be very unlikely” sounds the same as “given this evidence, he is very unlikely to be innocent”. It is not the same. The first counts among innocent people. The second counts among everyone the evidence fits.</p>\n<p>The fix is to count. Take a large group of people, follow them through the evidence, and look at who is left.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c09-pool-size.png",
+   "alt": "Four bars. Pool of 10,00,000: 0.0909. Pool of 1,00,000: 0.5000. Pool of 1,000: 0.9901. Pool of 50: 0.9995.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The same random match probability, 1 in 1,00,000, gives very different answers depending on how many men besides the source could have left the stain. With 10,00,000 the matching man is the source with probability 0.0909; with 1,00,000, 0.5000; with 1,000, 0.9901; with 50, 0.9995. The pools are made up."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c09-hill-ratios.png",
+   "alt": "Three bars. One death: 17. Two deaths: 9. Three deaths: 2.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Hill’s estimates of how much more common sudden infant death syndrome (SIDS) was than homicide among families with one, two and three sudden infant deaths: about 17 to 1, 9 to 1 and 2 to 1. Hill put the true two-death ratio between 4.5 to 1 and 9 to 1. Suspicion rises with each death, but SIDS stays the likelier explanation. The figures are rough estimates from small counts, for England in the 1990s."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a <dfn data-g=\"221\">DNA</dfn> match, in the words an Indian court has used. In <em>Manoj v State of Madhya Pradesh</em> (2022) the Supreme Court quoted the Law Commission of India’s 185th Report. A match “does not mean the identity is conclusively proved”. The expert, the Report says, gives a number for how often a profile like this turns up, and gives an example: “the relevant profile is found in 1 person in every 100,000” (1,00,000 in Indian grouping). The Supreme Court’s quoted laboratory article calls this kind of figure the <dfn data-g=\"630\">Random Match Probability</dfn> (RMP): “the frequency of the particular DNA profile in a population”.</p>\n<p>An RMP of 1 in 1,00,000 is P(match | not the source). Here is the transposition. “The chance of a match if he is not the source is 1 in 1,00,000” becomes “the chance he is not the source is 1 in 1,00,000”. Count to see what the second sentence needs.</p>\n<p>Suppose, as a made-up case, that 10 lakh men in a district besides the source could have left the stain, and nothing else in the case points to any of them. How many would match by chance?</p>\n<div class=\"working\">\n<p>10,00,000 divided by 1,00,000 = 10</p>\n</div>\n<p>About 10 innocent men match, and one man who is the source. The man in the dock is one of about 11 who match. If nothing else tells them apart, the chance that he is the source is about 1 in 11, not 99,999 in 1,00,000.</p>\n<div class=\"working\">\n<p>1 divided by 11 ≈ 0.0909</p>\n</div>\n<p>Stephen Watkins made the same count for the United Kingdom in the <em>BMJ</em> in 2000 (https://pmc.ncbi.nlm.nih.gov/articles/PMC1117305/). A chance match was “quoted as 20 million to one”. The accurate statement, he wrote, was “that the defendant or two other unknown people in the United Kingdom could have committed the offence”.</p>\n<p>Now the mirror error. The defence says: “10 men in the district match, so the match is worth no more than a 1 in 11 chance.” That is right only if nothing else narrows the field. Suppose the other evidence, such as who was in the village that night, leaves 50 men who could have left the stain.</p>\n<div class=\"working\">\n<p>50 divided by 1,00,000 = 0.0005<br />\n1 divided by 1.0005 ≈ 0.9995</p>\n</div>\n<p>Now an innocent chance match among the 50 is very unlikely, and the probability that the matching man is the source is about 0.9995. The table runs the same count over four sizes of pool. The figure draws it.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>men who could have left the stain, besides the source</th>\n<th>innocent men expected to match</th>\n<th>probability the matching man is the source</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>10,00,000</td>\n<td>10</td>\n<td>0.0909</td>\n</tr>\n<tr>\n<td>1,00,000</td>\n<td>1</td>\n<td>0.5000</td>\n</tr>\n<tr>\n<td>1,000</td>\n<td>0.01</td>\n<td>0.9901</td>\n</tr>\n<tr>\n<td>50</td>\n<td>0.0005</td>\n<td>0.9995</td>\n</tr>\n</tbody>\n</table>\n<p>This is the <dfn data-g=\"527\">odds</dfn> form of section 8. If the source always matches, the <dfn data-g=\"438\">likelihood ratio</dfn> of a match is 1 divided by 1 in 1,00,000, which is 1,00,000. The prior odds come from the rest of the case: 1 to 10 lakh in a whole district, 1 to 50 in the village. The RMP fixes the likelihood ratio. It never fixes the answer on its own.</p>",
+   "numberRefs": [
+    87,
+    88
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The district of 10 lakh and the village of 50 are made up, and so is the assumption that every man in the pool was equally likely to be the source before the DNA. Real pools are not even: relatives share more of their DNA, and a stain can come from a source unconnected with the crime.</p>\n<p>The count also takes the laboratory’s report as correct. A sample mixed up or contaminated gives a match that no RMP describes. <em>Manoj</em> gave the report little weight partly for that reason.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>The same error is common in a clinic. In the Casscells question of section 6, a test has a false-positive rate of 5 per cent, for a disease with a <dfn data-g=\"592\">prevalence</dfn> of 1/1000. A doctor says: “The chance that this positive is a false positive is 5 per cent.” That sentence has transposed the conditional. The 5 per cent is P(positive | no disease). The sentence states it as P(no disease | positive).</p>\n<p>Count 1,00,000 people. Assume, as the usual answer to the question does, that the test catches everyone who has the disease.</p>\n<div class=\"working\">\n<p>1,00,000 divided by 1,000 = 100<br />\n1,00,000 minus 100 = 99,900<br />\n99,900 times 0.05 = 4,995<br />\n100 plus 4,995 = 5,095<br />\n4,995 divided by 5,095 ≈ 0.98</p>\n</div>\n<p>Of 5,095 positive results, 4,995 are false. The chance that a positive is a false positive is about 98 per cent, not 5 per cent.</p>\n<p>Research has its own version. A study reports p = 0.03, and someone writes “there is only a 3 per cent chance that the drug does not work”. A p-value is computed by assuming that the drug does not work, so it has the shape P(data like these | no effect). The sentence turns it into P(no effect | data). The next book of this subject defines the p-value and works this through. For now, notice that the sentence has the same shape as the two above.</p>",
+   "numberRefs": [
+    45
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 98 per cent assumes a test that misses nobody. With a test that misses some cases, the true positives are fewer than 100, and the share of false positives is higher still.</p>\n<p>The p-value paragraph only names the shape of the error. How far apart the two quantities are in research depends on things this book does not cover.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Here is the case where the error went to a jury. In 1999 Sally Clark, a solicitor in Cheshire, England, was convicted of murdering her two baby sons. Both had died suddenly. The defence said both deaths were sudden infant death syndrome (SIDS): “the sudden death of a baby that is unexpected by history and in whom a thorough post-mortem examination fails to demonstrate an adequate cause of death”, in the definition Ray Hill quotes in “Multiple sudden infant deaths – coincidence or beyond coincidence?” (<em>Paediatric and Perinatal Epidemiology</em>, 2004, https://doi.org/10.1111/j.1365-3016.2004.00560.x).</p>\n<p>A paediatrician, Professor Meadow, gave the jury a figure of 1 in 8,543 for a SIDS death in a family like the Clarks’. Then, in the words the Court of Appeal later set out (<em>R v Clark</em> [2003] EWCA Crim 1020, para 96):</p>\n<blockquote>\n<p>Yes, you have to multiply 1 in 8,543 times 1 in 8,543 and I think it gives that in the penultimate paragraph. It points out that it’s approximately a chance of 1 in 73 million.</p>\n</blockquote>\n<p><dfn data-g=\"104\">Check</dfn> the arithmetic first.</p>\n<div class=\"working\">\n<p>8,543 times 8,543 = 7,29,82,849</p>\n</div>\n<p>About 73 million. The arithmetic is right. Three steps were wrong.</p>\n<p>First, <dfn data-g=\"745\">squaring</dfn> assumed independence (section 3). Multiplying two probabilities is only as good as the <dfn data-g=\"114\">claim</dfn> that knowing one tells you nothing about the other. The Royal Statistical Society said the squaring “would only be valid if SIDS cases arose independently within families”. Families share genes and homes. From the published studies, Hill estimated that the risk of SIDS “is between 5 and 10 times greater” for a baby whose brother or sister died of SIDS. Undo the squaring with a <dfn data-g=\"274\">factor</dfn> of 5 and with 10.</p>\n<div class=\"working\">\n<p>7,29,82,849 divided by 5 ≈ 1,45,96,570<br />\n7,29,82,849 divided by 10 ≈ 72,98,285</p>\n</div>\n<p>About 1 in 15 million, or 1 in 7 million: five to ten times less rare, from this step alone. Hill also objected that 1 in 8,543 picked out low-risk features of the family, and that such a family is “atypical for murder” too.</p>\n<p>Second, the transposition. Some press reports took 1 in 73 million as the chance that the two deaths were accidental. The Royal Statistical Society called this the Prosecutor’s Fallacy. 1 in 73 million, even if it were right, is P(two deaths | SIDS). The jury’s question was P(SIDS | two deaths).</p>\n<p>Third, the comparison that was missing. Two deaths by murder are also very rare. What matters, the Society wrote, is “the relative likelihood of the deaths under each explanation”. Hill made that comparison from the Care of Next Infant study. Among families with two sudden infant deaths, he found 18 with both deaths SIDS against 2 with both deaths homicide.</p>\n<div class=\"working\">\n<p>18 divided by 2 = 9<br />\n18 divided by 20 = 0.9</p>\n</div>\n<p>Among families with two such deaths, double SIDS outnumbered double homicide by about 9 to 1, in Hill’s estimate from small counts. Hill thought this might be too high, and put the true <dfn data-g=\"640\">ratio</dfn> between 4.5 to 1 and 9 to 1. For one death his estimate was about 17 to 1, and for three about 2 to 1. The figure draws the three. More deaths do raise suspicion, but nowhere near what 1 in 73 million suggested.</p>\n<p>The convictions were quashed in 2003. The main ground was medical evidence that had never been disclosed to the defence. But the Court of Appeal wrote of the 1 in 73 million that “it grossly overstates the chance of two sudden deaths within the same family from unexplained but natural causes”. Had there been a challenge, “the wisest course would have been to exclude it altogether”.</p>",
+   "numberRefs": [
+    89,
+    88,
+    90
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Hill’s 9 to 1 rests on 18 and 2 families, and his 17 to 1 and 2 to 1 on his own estimates; he calls such figures rough. They compare double SIDS with double homicide only, leaving out accidents, explained natural deaths and mixtures. They describe families in England in the 1990s, not any family today or in India.</p>\n<p>None of these numbers says whether any one mother is guilty. The point is narrower: a probability of the evidence under one explanation, standing alone, cannot say that.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 4",
+   "role": "illustration",
+   "html": "<p>Now the Indian setting. Since 1 July 2024 the law of evidence in Indian courts is the Bharatiya Sakshya Adhiniyam, 2023 (BSA), the <dfn data-g=\"10\">Act</dfn> that repealed the Indian Evidence Act, 1872 (s.170). Read three of its sections in the <dfn data-g=\"322\">Gazette</dfn> copy (https://www.mha.gov.in/sites/<dfn data-g=\"202\">default</dfn>/files/2024-04/250882_english_01042024_0.pdf).</p>\n<p>Section 39(1) makes the opinions of persons “specially skilled” in a science relevant facts, and calls such persons experts. A DNA analyst giving a match and its RMP is one. Section 45 makes the grounds of an opinion relevant too. Section 2(1)(j) says a fact is proved when, “after considering the matters before it, the Court either believes it to exist, or considers its existence so probable that a prudent man ought, under the circumstances of the particular case, to act upon the supposition that it exists”.</p>\n<p>Read that definition as this book would. It asks how probable the fact is after “the matters before it”, the whole of the evidence. That is a P(fact | evidence). An RMP is a P(evidence | the fact is false). The Act asks the court the first question. The expert’s number answers the second. The transposition is the step that turns one into the other without the prior.</p>\n<p>The Supreme Court’s own words point the same way. In <em>Pattu Rajan v State of Tamil Nadu</em> (2019), it held that “opinion evidence is advisory in nature, and the Court is not bound by the evidence of the experts”. The expert must give reasons “so that the Court may form its independent judgment”. In <em>Manoj</em> (2022), it faulted the expert for not choosing “to elaborate on the random occurrence ratio”. It held that the DNA report there “cannot have a clinching, or high degree of probative value”, for reasons that included doubts about how the samples were recovered and kept. Both judgments were decided under the 1872 Act.</p>\n<p>No Indian judgment or official report held for this book names the prosecutor’s fallacy, and this book does not say that any Indian court has made it. What you can do is spot its shape. When a report, a chargesheet or a news story says “there is a 1 in 1,00,000 chance that the accused is not the source”, run the four steps. Out of whom is the 1 in 1,00,000? Out of people who are not the source. That sentence needs a count of who else could have left the stain before it can be said at all.</p>",
+   "numberRefs": [
+    91,
+    92,
+    93
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This book reads “so probable that a prudent man ought … to act” as a probability given the evidence. That is a reading of the words for teaching, not a holding of any court, and the Act sets no number. How Indian courts weigh a DNA match in a given case is for a lawyer.</p>\n<p>The BSA sections quoted are as enacted in 2023. Check the current text before you rely on one in a report or in court.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The chance of this evidence if he were innocent is 1 in a million, so the chance he is innocent is 1 in a million” is the error. Before you repeat any small probability, say aloud whose probability it is and “out of whom”.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>In clinic, never say “the chance this is a false positive is 5 per cent” from a false-positive rate of 5 per cent. That rate is out of people without the disease. Out of people who test positive, the share of false positives can be 98 per cent when the disease is rare. Give the patient the second number.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>To correct a colleague on the spot, use four steps. Keep it to three sentences when you say it aloud.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A very small probability built by multiplying should make you ask what ties the events together, as in section 3. Refuse to repeat a product until someone has shown the parts are independent.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Weigh the evidence under both explanations, never under one. The question is which is less rare, and by how much: the likelihood ratio, with a prior.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The defence’s mirror error is as wrong as the prosecutor’s. Count the pool the rest of the evidence leaves, not the whole country.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>If you give expert evidence, give your number with what it is conditional on, and do not state the probability of guilt or innocence: that question is the court’s, and your number does not answer it.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Counting a population exposes the transposition. It does not supply the prior. Say the pool you assumed.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“A random match probability of 1 in 1,00,000 means a 99,999 in 1,00,000 chance that the accused is the source.” The RMP is out of people who are not the source. How likely the accused is to be the source depends on how many such people could have left the stain, which the RMP does not tell you. In a district of 10 lakh with nothing else to go on, about 10 innocent men would match, and the chance is about 1 in 11.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>The DNA profile found at the scene matched the accused. The laboratory reports that such a profile is found in about 1 in 1,00,000 unrelated persons. This is the probability of a match if the accused is not the source. It is not the probability that the accused is not the source, which depends on how many other persons could have left the sample.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what is the prosecutor’s fallacy, written with the bar of conditional probability? Name the four steps that correct it, and say what the defence’s mirror error leaves out.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>It reads P(evidence | innocent) as P(innocent | evidence). The first is out of innocent people; the second is out of everyone the evidence fits.</p>\n<p>The four steps: say both conditionals in words; ask “out of whom?” for each; count a population, such as 1,000 or 10 lakh, through both splits; say which number answers the question being asked.</p>\n<p>The mirror error counts everyone in a large population the evidence would also fit, and leaves out the other evidence that may have already narrowed the field. Both errors leave out the prior: one ignores it, the other uses the wrong one.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a made-up sentence from a case summary. “The DNA expert deposed that the profile occurs in 1 in 10 lakh persons. Therefore there is only a one in ten lakh chance that the accused is not the person who left the stain.”</p>\n<p>Find the specific flaw, and rewrite the sentence so that it says only what the expert’s number supports.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The flaw is the “therefore”. 1 in 10 lakh is P(match | not the source): out of people who are not the source, about 1 in 10 lakh would match. The sentence turns it into P(not the source | match). That needs a count of who else could have left the stain. If 50 lakh men could have, about 5 would match by chance, and a matching man is the source with probability about 1 in 6. If the other evidence leaves 20, a chance match among them is very unlikely.</p>\n<p>A rewrite: “The DNA expert deposed that the profile is found in about 1 in 10 lakh persons who are not related to the source. How much this tells us about the accused depends on how many other persons could have left the stain, which the rest of the evidence must settle.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist asks you, three minutes before a deadline, why the “1 in 73 million” in the Sally Clark case was wrong if the multiplication was right. Answer without jargon, and give one sentence they can quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Two things went wrong, and neither was the multiplication.</p>\n<p>First, it treated two deaths in one family as if they were two unconnected events, like two coin tosses. Brothers share genes and homes, so after one sudden death a second is several times more likely. Squaring threw that away.</p>\n<p>Second, it answered the wrong question. 1 in 73 million was a guess at how rare two natural deaths are. The jury needed to know whether two natural deaths or two murders were more likely, given that two deaths had happened. Two murders in one family are rarer still. One later estimate put double natural deaths about nine times more common than double murders.</p>\n<p>A sentence to quote: “A rare event under one explanation is not evidence for the other explanation, unless the other is less rare.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>In a group of 1,000 people, 900 have H. Among the 900, the event E happens to 9. Among the 100 without H, it happens to 90. Find P(E | H) and P(H | E).</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>9 divided by 900 = 0.01<br />\n9 plus 90 = 99<br />\n9 divided by 99 ≈ 0.0909</p>\n</div>\n<p>P(E | H) is 0.01: out of the 900 with H. P(H | E) is about 0.091: out of the 99 with E. The same 9 people sit on top of both. The bottoms differ.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>In 10,000 people, P(B) is 0.02, P(A | B) is 0.95 and P(A | not B) is 0.10. A colleague says that P(B | A) must therefore be 0.95. Count the people and find P(B | A).</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>10,000 times 0.02 = 200<br />\n10,000 minus 200 = 9,800<br />\n200 times 0.95 = 190<br />\n9,800 times 0.10 = 980<br />\n190 plus 980 = 1,170<br />\n190 divided by 1,170 ≈ 0.162</p>\n</div>\n<p>P(B | A) is about 0.16, not 0.95. Of the 1,170 people with A, only 190 have B.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>One event has a probability of 1 in 1,000. A second event of the same kind is 8 times as likely after the first has happened. Find the probability of both, and compare it with the probability you get by squaring 1 in 1,000.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>1,000 times 1,000 = 10,00,000<br />\n1,000 divided by 8 = 125<br />\n1,000 times 125 = 1,25,000<br />\n10,00,000 divided by 1,25,000 = 8</p>\n</div>\n<p>The second event has a probability of 8 in 1,000, which is 1 in 125. Both happen with probability 1 in 1,000 times 1 in 125, which is 1 in 1,25,000. Squaring gives 1 in 10 lakh, 8 times too rare.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Watkins quotes 1 in 2.75 million, the population risk of a cot death squared: the chance that two babies in one family both die of it, if the deaths were independent. He also gives 3,78,000 second or later births a year in England. Find how often such a pair of deaths would turn up somewhere in England. Then do it again if a second death is 5 times as likely after a first.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>27,50,000 divided by 3,78,000 ≈ 7.3<br />\n7.3 divided by 5 ≈ 1.5</p>\n</div>\n<p>About once every 7 years if the deaths were independent; about once every year and a half if a second death is 5 times as likely. Watkins gives “once every seven years” and “about once every year and a half”. Either way, somewhere in England a family will suffer two, and its rarity in one family says nothing about guilt in that family.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A DNA profile is found, in the Law Commission’s example quoted in <em>Manoj</em>, in 1 person in every 1,00,000. In a made-up case, 5 lakh men besides the source could have left the stain, and nothing else distinguishes them. Find the expected number of innocent matches, and the probability that a matching man is the source. Then do the same if other evidence leaves 50 men besides the source.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>5,00,000 divided by 1,00,000 = 5<br />\n1 divided by 6 ≈ 0.167<br />\n50 divided by 1,00,000 = 0.0005<br />\n1 divided by 1.0005 ≈ 0.9995</p>\n</div>\n<p>With 5 lakh men, about 5 innocent men match, and a matching man is the source with probability about 1 in 6. With 50 men, about 0.9995. The RMP did not change. The pool did.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Hill counts, in the Care of Next Infant study, 18 families in which both of two sudden infant deaths were SIDS and 2 in which both were homicide. He also puts the chance of one SIDS death at about 1 in 1300, and the risk of a second at between 5 and 10 times that. Find the odds of double SIDS against double homicide in those families. Find the probability that a double death was SIDS, among the two explanations. Then find the probability of two SIDS deaths in one family, taking the second death as 5 times as likely.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>18 divided by 2 = 9<br />\n18 plus 2 = 20<br />\n18 divided by 20 = 0.9<br />\n1,300 times 1,300 = 16,90,000<br />\n16,90,000 divided by 5 = 3,38,000</p>\n</div>\n<p>Odds of 9 to 1, a probability of 0.9 among the two explanations, and a probability of about 1 in 3,38,000 for two SIDS deaths in a family. The last number is very small and the first is large. That is not a contradiction: they answer different questions. The small one is P(two deaths | SIDS). The 9 to 1 compares the two explanations once two deaths have happened.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>test for a disease with prevalence 1 in 1,000<br />\nfalse-positive rate 5 per cent, so specificity 95 per cent<br />\na person tests positive<br />\nthe chance this positive is a false positive is 5 per cent<br />\nso the chance the person has the disease is 95 per cent</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The fourth line broke. 5 per cent is P(positive | no disease). The line states it as P(no disease | positive). Count 1,00,000 people, assuming the test catches everyone with the disease.</p>\n<div class=\"working\">\n<p>1,00,000 divided by 1,000 = 100<br />\n1,00,000 minus 100 = 99,900<br />\n99,900 times 0.05 = 4,995<br />\n100 plus 4,995 = 5,095<br />\n100 divided by 5,095 ≈ 0.0196</p>\n</div>\n<p>The chance the person has the disease is about 2 per cent, and the chance the positive is false is about 98 per cent. Why the wrong answer looks reasonable: both lines use the right numbers, and “5 per cent false positives” sounds like a fact about positive results. It is a fact about people without the disease.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer, from the expert evidence at Sally Clark’s trial as the Court of Appeal set it out. Find the step that broke.</p>\n<div class=\"working\">\n<p>chance of two SIDS deaths in a family like the Clarks’ = 1 in 73 million<br />\nabout 7,00,000 live births a year in England, Wales and Scotland<br />\n7,30,00,000 divided by 7,00,000 = about 104<br />\nso by chance this happens about once every hundred years</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The arithmetic in the third line is right.</p>\n<div class=\"working\">\n<p>7,30,00,000 divided by 7,00,000 ≈ 104</p>\n</div>\n<p>Two steps broke. The first line squared 1 in 8,543 as if two deaths in one family were independent; they are not. And the third line divided by every birth in the country, though the 1 in 8,543 applied only to families with the Clarks’ low-risk features. Hill calls the deduction “complete nonsense” for that reason.</p>\n<p>Why it looks reasonable: dividing a rate into births is the right move for an event that could happen in any family at the stated rate. Here the rate belonged to a small group, and the pair was not independent. Watkins put a double cot death at about once every year and a half somewhere in England. Hill put second cot deaths at “perhaps four or five times a year in the UK”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A news story on a made-up case says: “The forensic report found a random match probability of one in ten lakh. In other words, there is a 99.9999 per cent chance the accused left the stain.” Decide what to compute, compute it for a pool of 20 lakh men and for a pool of 20 men besides the source, and say what the story does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the probability that a matching man is the source for each pool.</p>\n<div class=\"working\">\n<p>20,00,000 divided by 10,00,000 = 2<br />\n1 divided by 3 ≈ 0.333<br />\n20 divided by 10,00,000 = 0.00002<br />\n1 divided by 1.00002 ≈ 0.99998</p>\n</div>\n<p>With 20 lakh men who could have left the stain, about 2 innocent men match, and the accused is the source with probability about 1 in 3. With 20, about 0.99998. The story’s 99.9999 per cent is 1 minus the RMP: it has transposed the conditional and assumed no one else could have left the stain.</p>\n<p>What it does not establish. Even a man who left the stain may not have committed the crime. The report could be wrong through contamination or a mix-up, which the RMP does not cover. Relatives match more often than unrelated men. And the right pool comes from the rest of the evidence, which the story does not give.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>In a ward round a colleague says: “Her Indian Diabetes Risk Score is 60 or more. Only about 40 per cent of people without diabetes score that high, so there’s about a 60 per cent chance she has undiagnosed diabetes.”</p>\n<p>At 60 or more, Mohan and colleagues report a <dfn data-g=\"713\">sensitivity</dfn> of 72.5 per cent and a <dfn data-g=\"742\">specificity</dfn> of 60.1 per cent. Their discussion takes a prevalence of undiagnosed diabetes of 10.1 per cent. Decide what to compute, compute it, correct the colleague in three sentences, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>The 40 per cent is P(score 60 or more | no diabetes), 1 minus the specificity. The colleague took 1 minus it as P(diabetes | score 60 or more). Compute the <dfn data-g=\"576\">positive predictive value</dfn> (PPV) by counting 1,000 people.</p>\n<div class=\"working\">\n<p>1,000 times 0.101 = 101<br />\n1,000 minus 101 = 899<br />\n101 times 0.725 = 73.225<br />\n1 minus 0.601 = 0.399<br />\n899 times 0.399 = 358.701<br />\n73.225 plus 358.701 = 431.926<br />\n73.225 divided by 431.926 ≈ 0.170</p>\n</div>\n<p>About 17 per cent, as the paper’s own PPV of 17.0 per cent says. In three sentences: “The 40 per cent is out of people without diabetes, not out of people who score 60. Out of 1,000 people like those in the study, about 432 score 60 or more and about 73 of them have diabetes. So her chance is about 17 per cent, and the score tells us to test her <dfn data-g=\"333\">glucose</dfn>, not that she has diabetes.”</p>\n<p>What it does not establish. The 10.1 per cent is a Chennai prevalence; your clinic’s may differ, and the answer moves with it. The sensitivity and specificity come from one study. And a score is not a diagnosis: only a glucose test settles it.</p>"
+  }
+ ]
+}
