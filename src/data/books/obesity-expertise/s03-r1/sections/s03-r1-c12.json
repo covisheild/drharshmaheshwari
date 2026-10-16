@@ -1,0 +1,233 @@
+{
+ "format": 1,
+ "id": "s03-r1-c12",
+ "label": "12",
+ "title": "The Bernoulli and binomial distributions: counting successes in independent trials",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"805\">trial</dfn> is one run of a <dfn data-g=\"102\">chance process</dfn> whose result is sorted into two kinds. The kind being counted is called a <dfn data-g=\"767\">success</dfn> and the other a failure.</p>\n<p>A <dfn data-g=\"60\">Bernoulli random variable</dfn> takes the value 1 for a success, with <dfn data-g=\"602\">probability</dfn> p, and 0 for a failure, with probability 1 − p. For trial j, call it Xj.</p>\n<div class=\"working\">\n<p>E[Xj] = 0 × (1 − p) + 1 × p = p<br />\nVar(Xj) = (0 − p)<sup>2</sup> × (1 − p) + (1 − p)<sup>2</sup> × p = p(1 − p)</p>\n</div>\n<p>The second line simplifies because p<sup>2</sup> (1 − p) + (1 − p)<sup>2</sup> p takes out the common <dfn data-g=\"274\">factor</dfn> p(1 − p), leaving p + (1 − p), which is 1.</p>\n<p>Now run n trials. The count of successes, X, has a <dfn data-g=\"67\">binomial distribution</dfn> with parameters n and p when four conditions hold:</p>\n<ol type=\"1\">\n<li>the number of trials, n, is fixed before you start;</li>\n<li>each trial is a success or a failure;</li>\n<li>the trials are independent, in the sense of section 3;</li>\n<li>the probability of a success, p, is the same on every trial.</li>\n</ol>\n<p>A model’s parameters are the fixed numbers that pick out one distribution: here n and p.</p>\n<p>Any one order of k successes and n − k failures has probability p<sup>k</sup> (1 − p)<sup>(n − k)</sup>, by multiplying across independent trials. There are <dfn data-g=\"498\">n choose k</dfn> such orders (section 11), and no two orders can both happen, so their probabilities add (rule 3, for any number of pieces, as in section 1).</p>\n<div class=\"working\">\n<p>P(X = k) = (n choose k) × p<sup>k</sup> × (1 − p)<sup>(n − k)</sup></p>\n</div>\n<p>The count X is the sum of n Bernoulli variables, one per trial: X = X1 + X2 + … + Xn. The expected value of a sum is the sum of the expected values, with no condition. The <dfn data-g=\"829\">variance</dfn> of a sum of independent variables is the sum of their variances (Book 2, section 15). SD(X) is the <dfn data-g=\"747\">standard deviation</dfn> of X, called σ in Book 2, section 15: the <dfn data-g=\"743\">square root</dfn>, written √, of Var(X). So:</p>\n<div class=\"working\">\n<p>E[X] = p + p + … + p = np<br />\nVar(X) = p(1 − p) + … + p(1 − p) = np(1 − p)<br />\nSD(X) = √(np(1 − p))</p>\n</div>\n<p>The mean np needs only conditions 1, 2 and 4. The variance np(1 − p) needs independence too.</p>",
+   "refs": [
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Ask ten women, picked <dfn data-g=\"40\">at random</dfn>, one question with a yes-or-no answer. Count the yeses. Suppose every woman has the same chance of a yes. Suppose too that no answer tells you anything about another. Then the count follows a fixed pattern: the binomial.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c12-binomial-ten-women.png",
+   "alt": "A bar for each count from 0 to 10. The bars rise from 0.0255 at 0 to a peak of 0.2665 at 3, then fall: 0.2066 at 4, 0.1098 at 5, 0.0405 at 6 and near zero from 8 on. A dashed line at 3.07 marks the mean.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The binomial distribution of how many of 10 randomly picked women aged 15-49 have a body-mass index of 25 or more, when each has a chance of 0.307 (NFHS-6, 2023-24, India). Exactly 3, the count nearest the mean, has a chance of about 0.27; nearly three times in four the count is something else. The expected count is 3.07, a long-run average, not a count any group can have."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c12-households-tied.png",
+   "alt": "Paired bars for counts 0 to 10. Separate women: a single hump peaking at 0.2665 at 3. Tied houses: bars only at even counts, 0.1598 at 0, 0.3540 at 2, 0.3137 at 4, 0.1390 at 6, and smaller after.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The same 10 women, two ways. Left bar of each pair: 10 separate women, each with a chance of 0.307. Right bar: 5 houses of 2 women whose statuses always match, a made-up extreme. The mean is 3.07 either way. Tied women spread the count wider, and make a count of 0 about six times as likely: 0.1598 against 0.0255."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>The national figure first. Open the India fact <dfn data-g=\"722\">sheet</dfn> of the National Family Health Survey’s sixth round (NFHS-6, 2023-24), from https://www.nfhsiips.in, and find indicator 76. In it, 30.7% of women aged 15 to 49 had a body-mass index (BMI) of 25.0 kg/m<sup>2</sup> or more: <dfn data-g=\"543\">overweight</dfn> or obesity.</p>\n<p>Take that as p for one woman picked at random from India’s women aged 15 to 49. So p = 0.307 and 1 − p = 0.693. Now pick 10 women at random, and let X be how many of them have a body-mass index of 25 or more.</p>\n<p>A colleague says: “Nearly one in three. So in any 10 women, 3 will be overweight.” Test that before you agree.</p>\n<p><dfn data-g=\"104\">Check</dfn> the four conditions. The 10 is fixed. Each woman’s index is 25 or more, or it is not. Women picked at random from a population of crores do not inform on each other, so treat them as independent. And each has the same chance, 0.307. The count is binomial, with n = 10 and p = 0.307.</p>\n<p>Work out P(X = 3). The number of orders is 10 choose 3. One order has three successes and seven failures.</p>\n<div class=\"working\">\n<p>10 choose 3 = 120<br />\n0.307<sup>3</sup> = 0.028934<br />\n0.693<sup>7</sup> = 0.076760<br />\n120 times 0.028934 times 0.076760 = 0.2665</p>\n</div>\n<p>About 0.27. About three in four random groups of 10 have some other count. Here is the whole distribution, every value worked the same way.</p>\n<div class=\"working\">\n<p>women with BMI 25 or more, k    P(X = k)<br />\n0    0.0255<br />\n1    0.1132<br />\n2    0.2256<br />\n3    0.2665<br />\n4    0.2066<br />\n5    0.1098<br />\n6    0.0405<br />\n7    0.0103<br />\n8    0.0017<br />\n9    0.0002<br />\n10    0.0000</p>\n</div>\n<p>The last is not zero. It is below 0.00005, so it rounds to 0.0000.</p>\n<p>Now the mean and spread, from the sum of 10 Bernoulli variables.</p>\n<div class=\"working\">\n<p>10 times 0.307 = 3.07<br />\n10 times 0.307 times 0.693 = 2.1275<br />\n√2.1275 = 1.459</p>\n</div>\n<p>The expected count is 3.07 women. No group of 10 can have 3.07 women; the expected value is a long-run average over many groups (Book 2, section 14). The standard deviation is about 1.46 women.</p>\n<p>The chance of at least one is fastest through the complement (Book 0, D2): one minus the chance of none.</p>\n<div class=\"working\">\n<p>0.693<sup>10</sup> = 0.0255<br />\n1 minus 0.0255 = 0.9745</p>\n</div>\n<p>About one random group of 10 in forty has no woman with an index of 25 or more.</p>",
+   "numberRefs": [
+    32
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 0.307 is itself a survey estimate for all of India’s women aged 15 to 49, with pregnant women and those who gave birth in the last two months left out (<dfn data-g=\"306\">footnote</dfn> 15 of the fact sheet). Treating it as the fixed p of the model is a choice, and every probability above inherits it. For urban women alone NFHS-6 gives 42.8%, and for rural women 25.5%: a group drawn from one of those has a different p.</p>\n<p>The binomial also needs the 10 to be picked at random from that whole population. Ten women who came to one clinic, or who live in one lane, are not.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now break condition 3 and watch what changes. A survey team, for convenience, picks 5 households at random and measures 2 women in each, 10 women in all. Two women who cook from one kitchen and live in one house are not independent.</p>\n<p>How strongly tied they are is not known. So take the extreme, as a made-up model: in every house, the two women either both have an index of 25 or more, or neither does. Each house is then one trial with p = 0.307, and the count of women is twice the count of houses. Call the count of houses Y. It is binomial with n = 5 and p = 0.307.</p>\n<div class=\"working\">\n<p>5 choose 1 = 5<br />\n5 choose 2 = 10<br />\n0.693<sup>5</sup> = 0.1598<br />\n5 times 0.307 times 0.693<sup>4</sup> = 0.3540<br />\n10 times 0.307<sup>2</sup> times 0.693<sup>3</sup> = 0.3137<br />\n10 times 0.307<sup>3</sup> times 0.693<sup>2</sup> = 0.1390<br />\n5 times 0.307<sup>4</sup> times 0.693 = 0.0308<br />\n0.307<sup>5</sup> = 0.0027</p>\n</div>\n<p>Those are P(Y = 0) to P(Y = 5), so the chances of 0, 2, 4, 6, 8 and 10 women. Set them beside 10 separate women.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>women with BMI 25 or more</td>\n<td>10 separate women</td>\n<td>5 houses of 2 tied women</td>\n</tr>\n<tr>\n<td>0</td>\n<td>0.0255</td>\n<td>0.1598</td>\n</tr>\n<tr>\n<td>1</td>\n<td>0.1132</td>\n<td>0</td>\n</tr>\n<tr>\n<td>2</td>\n<td>0.2256</td>\n<td>0.3540</td>\n</tr>\n<tr>\n<td>3</td>\n<td>0.2665</td>\n<td>0</td>\n</tr>\n<tr>\n<td>4</td>\n<td>0.2066</td>\n<td>0.3137</td>\n</tr>\n<tr>\n<td>5</td>\n<td>0.1098</td>\n<td>0</td>\n</tr>\n<tr>\n<td>6</td>\n<td>0.0405</td>\n<td>0.1390</td>\n</tr>\n<tr>\n<td>7</td>\n<td>0.0103</td>\n<td>0</td>\n</tr>\n<tr>\n<td>8</td>\n<td>0.0017</td>\n<td>0.0308</td>\n</tr>\n<tr>\n<td>9</td>\n<td>0.0002</td>\n<td>0</td>\n</tr>\n<tr>\n<td>10</td>\n<td>0.0000</td>\n<td>0.0027</td>\n</tr>\n</tbody>\n</table>\n<p>The mean has not moved. Each woman still has a 0.307 chance, and the sum rule for expected values needs no independence.</p>\n<div class=\"working\">\n<p>2 times 5 times 0.307 = 3.07</p>\n</div>\n<p>The spread has. The count is 2Y, and Var(2Y) is 4 times Var(Y) (Book 2, section 15).</p>\n<div class=\"working\">\n<p>5 times 0.307 times 0.693 = 1.0638<br />\n4 times 1.0638 = 4.2552<br />\n√4.2552 = 2.063</p>\n</div>\n<p>A standard deviation of 2.06 women, against 1.46 for separate women. A group with nobody at 25 or more is now far more likely.</p>\n<div class=\"working\">\n<p>0.1598 divided by 0.0255 = 6.27</p>\n</div>\n<p>About six times as likely: 0.1598 against 0.0255.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Real women in one house are tied, but not completely. The truth lies between the two columns, and the size of the tie is something data must show. At the fully tied extreme the spread grows. With weaker ties it grows less, and it still grows while the pair’s statuses go together. The mean stays where it was.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Nearly one in three, so 3 in any 10” is the error. Before you predict a count for one group, give the chance of a range.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Check the four conditions before you use the formula: fixed n, two outcomes, independent trials, the same p.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>People drawn from one household, one clinic, one school or one measurer are not independent trials. The binomial then understates the spread, though it gets the mean right.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The binomial gives the chance of each count when p is known. It cannot tell you whether the p you put in is right for your group.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>For “at least one”, work out the chance of none, (1 − p)<sup>n</sup>, and take it from 1.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A survey figure <dfn data-g=\"822\">used</dfn> as p is an estimate of a population number, treated as if it were the model’s fixed p. Say so when you quote a binomial chance built on it: “if the share is 30.7%, then …”. The “if” is part of the answer.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>When you teach this, say out loud that “success” means only “the outcome we count”.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The expected count is 3.07, so a group of 10 will have 3.” The expected value is the average count over many random groups. Any one group can have 1, 2, 4 or 5, and together those are more than twice as likely as 3. When you predict for one group, give the chance of a range of counts, not the mean.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: state the four conditions for a count to be binomial. Write the probability of exactly k successes in n trials, and say what each of its three parts counts. Then give the mean and the variance, and say which condition the variance needs that the mean does not.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The four conditions: a fixed number of trials, n; each trial a success or a failure; the trials independent; the same probability of success, p, on every trial.</p>\n<div class=\"working\">\n<p>P(X = k) = (n choose k) × p<sup>k</sup> × (1 − p)<sup>(n − k)</sup></p>\n</div>\n<p>n choose k is the number of orders in which k successes and n − k failures can fall. In one given order, p<sup>k</sup> is the chance of the k successes. (1 − p)<sup>(n − k)</sup> is the chance of the failures. Both come from multiplying across independent trials.</p>\n<p>The mean is np and the variance np(1 − p). Both come from adding n Bernoulli variables. The mean needs no independence, because expected values always add. The variance needs it, because variances add only for independent variables.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident, ten minutes, a whiteboard. She knows E[X] and Var(X) from a single variable and has seen the binomial formula. She asks why the mean of a binomial count is np and its variance np(1 − p). Plan what you write on the board, line by line.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with one trial. Write X1 as 1 for a success and 0 for a failure. Work out its expected value from the definition: 0 × (1 − p) + 1 × p = p. Then its variance: the squared distance from p, weighted by probability, which simplifies to p(1 − p). Try p = 0.307 and get 0.307 and 0.2128.</p>\n<p>Then write the count of n trials as X1 + X2 + … + Xn, one Bernoulli per trial. Expected values add, always, so the mean is n times p. Variances add when the trials are independent, so the variance is n times p(1 − p).</p>\n<p>End with the warning that makes it stick. If the women come in <dfn data-g=\"546\">pairs</dfn> from one house, the mean is still np. The variance is not, because the step “variances add” used independence. Show the 1.46 against 2.06 from the household example.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>X is a Bernoulli random variable with p = 0.3. Work out E[X], Var(X) and SD(X).</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>0 times 0.7 plus 1 times 0.3 = 0.3<br />\n0.3 times 0.7 = 0.21<br />\n√0.21 = 0.458</p>\n</div>\n<p>E[X] is 0.3, Var(X) is 0.21 and SD(X) is about 0.458.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>X is binomial with n = 5 and p = 0.4. Work out P(X = 2).</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>5 choose 2 = 10<br />\n0.4<sup>2</sup> = 0.16<br />\n0.6<sup>3</sup> = 0.216<br />\n10 times 0.16 times 0.216 = 0.3456</p>\n</div>\n<p>P(X = 2) is 0.3456.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>X is binomial with n = 6 and p = 0.1. Work out the probability that X is at least 1.</p>",
+   "level": 2,
+   "answer": "<p>Work out the chance of none, then take it from 1.</p>\n<div class=\"working\">\n<p>0.9<sup>6</sup> = 0.531441<br />\n1 minus 0.531441 = 0.468559</p>\n</div>\n<p>About 0.469.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>X is binomial with n = 50 and p = 0.2. Work out its mean, variance and standard deviation.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>50 times 0.2 = 10<br />\n50 times 0.2 times 0.8 = 8<br />\n√8 = 2.828</p>\n</div>\n<p>Mean 10, variance 8, standard deviation about 2.83.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A binomial count has mean 6 and variance 4.2. Work out n and p.</p>",
+   "level": 3,
+   "answer": "<p>The variance is the mean times (1 − p). So divide the variance by the mean.</p>\n<div class=\"working\">\n<p>4.2 divided by 6 = 0.7<br />\n1 minus 0.7 = 0.3<br />\n6 divided by 0.3 = 20</p>\n</div>\n<p>1 − p is 0.7, so p is 0.3. The mean np is 6, so n is 20.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>In NFHS-6, 27.3% of men aged 15 to 49 in India had overweight or obesity (indicator 77). Eight men are picked at random from that population. Work out the chance that none of them has a body-mass index of 25 or more, and the chance that exactly 2 do.</p>",
+   "level": 4,
+   "answer": "<p>Take p = 0.273, so 1 − p = 0.727. The count is binomial with n = 8.</p>\n<div class=\"working\">\n<p>0.727<sup>8</sup> = 0.0780<br />\n8 choose 2 = 28<br />\n0.273<sup>2</sup> = 0.074529<br />\n0.727<sup>6</sup> = 0.147641<br />\n28 times 0.074529 times 0.147641 = 0.3081</p>\n</div>\n<p>About 0.078 for none, and about 0.308 for exactly 2 men.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A survey picks 50 women aged 15 to 49 at random from all of India. Take p as NFHS-6’s 30.7% for a body-mass index of 25 or more. Work out the expected number with an index of 25 or more and the standard deviation. The survey finds 25. How many standard deviations above the mean is that?</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>50 times 0.307 = 15.35<br />\n50 times 0.307 times 0.693 = 10.6376<br />\n√10.6376 = 3.262<br />\n25 minus 15.35 = 9.65<br />\n9.65 divided by 3.262 = 2.96</p>\n</div>\n<p>The expected count is 15.35 women, with a standard deviation of about 3.26 women. A count of 25 is 9.65 women above the mean, about 2.96 standard deviations. That is far out for a <dfn data-g=\"631\">random sample</dfn> from this population, and worth checking: was the sample random, and from where?</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A study picks 5 urban women and 5 rural women aged 15 to 49 at random. In NFHS-6, 42.8% of urban and 25.5% of rural women had a body-mass index of 25 or more. Is the count of all 10 women with an index of 25 or more binomial? Work out its expected value and its variance.</p>",
+   "level": 6,
+   "answer": "<p>Not binomial with n = 10: condition 4 fails, because p is 0.428 for five of the women and 0.255 for the other five. But each group of five is binomial, and the two groups are independent. So add expected values, and add variances.</p>\n<div class=\"working\">\n<p>5 times 0.428 = 2.14<br />\n5 times 0.255 = 1.275<br />\n2.14 plus 1.275 = 3.415<br />\n5 times 0.428 times 0.572 = 1.22408<br />\n5 times 0.255 times 0.745 = 0.949875<br />\n1.22408 plus 0.949875 = 2.173955<br />\n√2.173955 = 1.474</p>\n</div>\n<p>The expected count is about 3.42 women, the variance about 2.17 and the standard deviation about 1.47 women. The single binomial formula for P(X = k) does not apply. You would have to combine the two groups’ distributions count by count.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>In the Chennai Urban Rural Epidemiology Study (CURES), an Indian Diabetes Risk Score of 60 or more had a <dfn data-g=\"713\">sensitivity</dfn> of 72.5% for undiagnosed diabetes. Eight people with undiagnosed diabetes, unknown to each other, are scored. Work out the expected number the score misses and the chance it flags all eight.</p>",
+   "level": 6,
+   "answer": "<p>A miss is a score under 60 in a person with diabetes. Its chance is 1 minus the sensitivity.</p>\n<div class=\"working\">\n<p>1 minus 0.725 = 0.275<br />\n8 times 0.275 = 2.2<br />\n0.725<sup>8</sup> = 0.0763</p>\n</div>\n<p>The score is expected to miss 2.2 of the 8, and flags all eight with a chance of about 0.076. Treating the eight as independent trials with one sensitivity assumes people like those in the CURES study.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>10 women picked at random, p = 0.307<br />\nP(exactly 2 with BMI 25 or more) = 0.307<sup>2</sup> times 0.693<sup>8</sup><br />\n= 0.094249 times 0.053194 = 0.0050<br />\nso a group of 10 with exactly 2 is rare, about 1 in 200</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. It works out the chance of one particular order: the first two women at 25 or more and the other eight under. Any two of the ten could be the two. There are 10 choose 2 such orders.</p>\n<div class=\"working\">\n<p>45 times 0.0050 = 0.225</p>\n</div>\n<p>The chance is about 0.23, nearly one group in four.</p>\n<p>Why the wrong answer looks reasonable: the multiplication rule is right, and every number in it is right. It answers a narrower question, about one order, than the one asked.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>10 women picked at random, p = 0.307<br />\nthe chance of at least one with BMI 25 or more = 10 times 0.307 = 3.07<br />\n3.07 is more than 1, so at least one is certain</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. 10 × 0.307 is the expected count, not a probability. Adding the ten 0.307s would be adding the chances of events that can happen together, which the addition rule forbids. Use the complement.</p>\n<div class=\"working\">\n<p>0.693<sup>10</sup> = 0.0255<br />\n1 minus 0.0255 = 0.9745</p>\n</div>\n<p>The chance of at least one is about 0.97, not certainty.</p>\n<p>Why the wrong answer looks reasonable: for one or two rare events, adding the chances gives nearly the right answer. It fails as the chances grow, and a probability above 1 is the signal.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a team visits 5 households at random and measures 2 women aged 15-49 in each<br />\nthe count of the 10 with BMI 25 or more is binomial, n = 10, p = 0.307<br />\nSD = √(10 times 0.307 times 0.693) = 1.46<br />\nso a count of 0 is very unlikely: 0.693<sup>10</sup> = 0.026</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line broke. The 10 women come in pairs from 5 houses. Two women who share a house and a kitchen are not independent trials, so condition 3 fails. The mean, 3.07, is still right. The standard deviation and the chance of 0 are not.</p>\n<p>How far off they are depends on how tied the pairs are. In the extreme case, where each pair always matches, the count is twice a binomial with n = 5.</p>\n<div class=\"working\">\n<p>4 times 5 times 0.307 times 0.693 = 4.2550<br />\n√4.2550 = 2.063<br />\n0.693<sup>5</sup> = 0.1598</p>\n</div>\n<p>The standard deviation could be as large as 2.06, and the chance of 0 as large as 0.16.</p>\n<p>Why the wrong answer looks reasonable: n is fixed, each answer is yes or no, and each woman alone has the same p. Three conditions plainly hold, and the fourth is the one nobody looks at.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>A district training slide says: “Nationally nearly one woman in three is overweight or obese. So in any group of 10 women, 3 will be overweight.” Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the binomial chance of exactly 3 in 10, with p = 0.307 from NFHS-6.</p>\n<div class=\"working\">\n<p>120 times 0.028934 times 0.076760 = 0.2665</p>\n</div>\n<p>About 0.27. “In any group” is wrong: nearly three random groups of 10 in four hold some other count, and about 0.026 hold none.</p>\n<p>What it does not establish. The 0.27 holds for 10 women picked at random from all of India’s women aged 15 to 49, taking the survey estimate as exact. A real group is a ward, a self-help group or a clinic queue. Its women share a place and a way of life. Their p may be nearer the urban 42.8% or the rural 25.5% than to 30.7%. And “overweight” on the slide means a body-mass index of 25 or more, overweight and obesity together.</p>\n<p>A better line: “Nearly one woman in three aged 15 to 49 has a BMI of 25 or more. In a random group of 10, expect about 3 on average, and anywhere from 1 to 5 is common.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A medical officer measures 20 women at one <dfn data-g=\"31\">anganwadi</dfn> (a government child-care centre under the Integrated Child Development Services scheme) and finds 11 with a body-mass index of 25 or more. She writes: “Against the national 30.7%, this centre clearly has a problem.” Decide what to compute, compute it, and say what the answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Compute what 20 random women would give if p were 0.307: the mean, the standard deviation, and the chance of 11 or more.</p>\n<div class=\"working\">\n<p>20 times 0.307 = 6.14<br />\n20 times 0.307 times 0.693 = 4.2550<br />\n√4.2550 = 2.063<br />\n11 minus 6.14 = 4.86<br />\n4.86 divided by 2.063 = 2.36</p>\n</div>\n<p>Eleven is 4.86 women above the expected 6.14, about 2.4 standard deviations. For the chance of 11 or more, add the binomial chances of 11, 12, … up to 20: no group can have two counts.</p>\n<div class=\"working\">\n<p>167960 times 0.307<sup>11</sup> times 0.693<sup>9</sup> = 0.0141<br />\n125970 times 0.307<sup>12</sup> times 0.693<sup>8</sup> = 0.0047<br />\n77520 times 0.307<sup>13</sup> times 0.693<sup>7</sup> = 0.0013<br />\n14 to 20 together = 0.0003<br />\n0.0141 plus 0.0047 plus 0.0013 plus 0.0003 = 0.020</p>\n</div>\n<p>The first numbers are 20 choose 11, 20 choose 12 and 20 choose 13. So 11 or more would be uncommon for 20 random women from the national population.</p>\n<p>What it does not establish. The 20 women were not picked at random from India. They came to one centre, and they share a place, its food and its income. The national 30.7% is the wrong comparison for them. If the centre is urban, the comparison is 42.8%. If rural, 25.5%. One count of 20 does not show that the centre differs from its own district, nor why. Get the district or block figure, and a sample whose picking you can describe, before writing “problem”.</p>"
+  }
+ ]
+}

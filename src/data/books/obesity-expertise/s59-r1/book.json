@@ -2223,7 +2223,7 @@
    "senses": [
     {
      "term": "base rate",
-     "plain": "how often claims of one kind have turned out true when they were tested; the evidence particular to a new claim of that kind then moves you from there",
+     "plain": "how often claims of one kind have turned out true when they were tested; the evidence particular to a new claim of that kind then moves you from there (Book 10)",
      "where": "Book 10, section 14"
     }
    ]
@@ -3338,7 +3338,7 @@
    "senses": [
     {
      "term": "correlation",
-     "plain": "a number worked out from paired measurements; this book does not teach it",
+     "plain": "1. a number worked out from paired measurements (Book 9); 2. the covariance divided by both standard deviations: it has no unit, lies between −1 and 1, and measures only a straight-line tie (Book 12)",
      "where": "Book 9, section 8"
     }
    ]
@@ -3643,7 +3643,7 @@
    "senses": [
     {
      "term": "degree of belief",
-     "plain": "a number from 0 to 1 that states how strongly one person holds one claim to be true, given what that person knows; it obeys the same arithmetic as a probability",
+     "plain": "a number from 0 to 1 that states how strongly one person holds one claim to be true, given what that person knows; it obeys the same arithmetic as a probability (Book 10)",
      "where": "Book 10, section 10"
     }
    ]
@@ -6403,7 +6403,7 @@
    "senses": [
     {
      "term": "natural frequencies",
-     "plain": "whole counts of imagined cases, out of 1,000, or out of 100,000 when the base rate is rare, so every count stays whole",
+     "plain": "whole counts of imagined cases, out of 1,000, or out of 100,000 when the base rate is rare, so every count stays whole (Book 10)",
      "where": "Book 10, section 15"
     }
    ]
@@ -7218,7 +7218,7 @@
    "senses": [
     {
      "term": "prediction",
-     "plain": "a statement of the form &quot;if the hypothesis is true, then this observable result will follow&quot;, fixed before the result is seen",
+     "plain": "a statement of the form &quot;if the hypothesis is true, then this observable result will follow&quot;, fixed before the result is seen (Book 10)",
      "where": "Book 10, section 2"
     }
    ]

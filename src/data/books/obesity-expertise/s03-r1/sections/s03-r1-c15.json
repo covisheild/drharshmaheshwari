@@ -1,0 +1,300 @@
+{
+ "format": 1,
+ "id": "s03-r1-c15",
+ "label": "15",
+ "title": "The normal distribution: what generates it, and areas under it",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The normal distribution is a family of <dfn data-g=\"165\">continuous</dfn> distributions (Book 2, section 13) with two parameters: the mean μ, the Greek letter mu, and the <dfn data-g=\"747\">standard deviation</dfn> σ, the Greek letter <dfn data-g=\"725\">sigma</dfn>. It is written N(μ, σ). Its <dfn data-g=\"603\">probability density</dfn> is a symmetric bell centred on μ:</p>\n<div class=\"working\">\n<p>height at x = [1 ÷ (σ × √(2π))] × e<sup>(−(x − μ)² ÷ (2σ²))</sup></p>\n</div>\n<p>Here π, the Greek letter pi, is 3.14159, and e is the number of Book 2, section 4. You will not work out areas from this formula.</p>\n<p>The <dfn data-g=\"857\">z-score</dfn> of a value x is its distance from the mean in standard deviations:</p>\n<div class=\"working\">\n<p>z = (x − μ) ÷ σ</p>\n</div>\n<p>If X is N(μ, σ), then Z = (X − μ) ÷ σ is N(0, 1), the <dfn data-g=\"750\">standard normal distribution</dfn>. Subtracting μ slides the bell to centre on 0, and dividing by σ rescales its width to 1; neither changes the shape. So one table of areas, for N(0, 1), serves every normal distribution. In a spreadsheet, NORM.S.DIST(z, TRUE) gives the area to the left of z, and NORM.S.INV(share) gives the z-score with that share to its left. This book states every area it uses.</p>\n<p>The p-th percentile of a distribution is the value with p per cent of the distribution below it; the <dfn data-g=\"474\">median</dfn> is the 50th.</p>\n<p>About 68 per cent of the area lies within one standard deviation of the mean, about 95 per cent within two, and about 99.7 per cent within three. 95 per cent lies within 1.96 standard deviations (to two decimals).</p>\n<p>A binomial count with n trials and <dfn data-g=\"602\">probability</dfn> p is close to N(np, √[np(1 − p)]) when np and n(1 − p) are both at least 10. For a range of whole counts, widen the range by 0.5 at each end before taking the area, because the bar for the count k stands over the interval from k − 0.5 to k + 0.5.</p>\n<p>No measured quantity is exactly normal. A <dfn data-g=\"515\">normal probability plot</dfn> shows how far a data set departs from normal. Sort the n values from smallest to largest. Give the i-th sorted value the share (i − 0.5) ÷ n, and plot it against the z-score that has that share of a normal distribution’s area to its left. Near-normal data fall close to a straight line.</p>\n<p>On a histogram, near-normal data make one hump, roughly symmetric, with tails thinning at the same rate on both sides; a long right tail, or a mean well above the median, says right skew. With few values a histogram is bumpy, and its shape depends on the bar width, so read it with the normal probability plot, not alone.</p>",
+   "refs": [
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Add up many small pieces that each push a little, up or down, independently. The total lands near the middle most of the time and far out only rarely. Its distribution is a bell, the same on both sides. That bell is the normal distribution.</p>\n<p>Two numbers fix it: where the middle is, the mean, and how wide the bell is, the standard deviation.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c15-binomial-bell.png",
+   "alt": "Symmetric bars for 2 to 14 heads, peaking at 0.1964 at 8. A bell-shaped curve runs through the tops of the bars, peaking at 0.1995.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Heads in 16 tosses of a fair coin, a sum of 16 small independent pieces (bars), beside the normal curve with mean 8 and standard deviation 2 (line). They agree to about 0.003 at every count: the height at 8 is 0.1964 for the bars and 0.1995 for the curve."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c15-body-fat-quartiles.png",
+   "alt": "Three pairs of bars from zero. Lower quartile: 17.18 if normal, 16.7 reported. Median: 22.1 if normal, 20.3 reported. Upper quartile: 27.02 if normal, 28.8 reported.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Body fat in Kiran 2022’s 131 men. Left bars: the lower quartile, median and upper quartile a normal distribution with mean 22.1 and standard deviation 7.3 would give (17.18, 22.1, 27.02). Right bars: what the paper reports (16.7, 20.3, 28.8). The reported upper quartile sits 8.5 above the median, the lower only 3.6 below: a long right tail."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c15-qq-near-normal.png",
+   "alt": "Nine points rising from 22 at z = −1.59 to 38 at z = 1.59, all close to a straight line.",
+   "w": 1360,
+   "h": 656,
+   "caption": "A normal probability plot of the made-up near-normal set: nine sorted values against their z-scores. The points sit close to the line 30 + 5 × z."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c15-qq-right-skew.png",
+   "alt": "Nine points that rise slowly and then steeply, from 24 to 44, all below a straight line joining the first and last points.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Right skew on a normal probability plot. The line runs from the first point (24 at z = −1.59) to the last (44 at z = 1.59). Every point in between lies below it, the signature NIST names for a right-skewed data set."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c15-qq-long-tails.png",
+   "alt": "Nine points: seven in the middle close to a straight line, the lowest point well below the line at the left end and the highest well above it at the right end.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Long tails on a normal probability plot. The middle seven points sit on the line 30 + 5 × z; the lowest, 14, falls far below it and the highest, 46, rises far above it."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c15-qq-outlier.png",
+   "alt": "Eight points on a straight line from 22 to 35, and a ninth point at 58, far above the line at z = 1.59.",
+   "w": 1360,
+   "h": 656,
+   "caption": "One outlier on a normal probability plot. Eight points sit on the line 30 + 5 × z; one value, 58, stands far above the end of it."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Watch a bell build up from small pieces. Toss a fair coin 16 times and count the heads. Each toss adds 1 or 0, with equal chance, independently of the rest. The count is binomial (section 12), with n = 16 and p = 0.5.</p>\n<div class=\"working\">\n<p>16 times 0.5 = 8<br />\n16 times 0.5 times 0.5 = 4</p>\n</div>\n<p>The mean is 8 and the <dfn data-g=\"829\">variance</dfn> is 4, so the standard deviation is √4, which is 2. Now set the binomial chances beside the height of the normal curve with μ = 8 and σ = 2.</p>\n<div class=\"working\">\n<p>heads k binomial chance normal height, μ = 8 and σ = 2<br />\n2    0.0018    0.0022<br />\n3    0.0085    0.0088<br />\n4    0.0278    0.0270<br />\n5    0.0667    0.0648<br />\n6    0.1222    0.1210<br />\n7    0.1746    0.1760<br />\n8    0.1964    0.1995<br />\n9    0.1746    0.1760<br />\n10    0.1222    0.1210<br />\n11    0.0667    0.0648<br />\n12    0.0278    0.0270<br />\n13    0.0085    0.0088<br />\n14    0.0018    0.0022</p>\n</div>\n<p>Work out the height at the centre, k = 8, where x − μ is 0 and the power of e is 0.</p>\n<div class=\"working\">\n<p>2 times 3.14159 = 6.28318<br />\n√6.28318 = 2.5066<br />\n2 times 2.5066 = 5.0132<br />\n1 divided by 5.0132 = 0.1995</p>\n</div>\n<p>The bars and the curve agree to about 0.003 everywhere. Sixteen pieces is not many. The more pieces, and the smaller each one, the closer the match.</p>\n<p>Here is the point for health data. OpenIntro notes that the heights of adult men in the United States closely follow the normal distribution. The usual explanation is that height sums many small contributions: many genes, many years of food and illness. So adult height within one sex is close to normal. A quantity driven by one big <dfn data-g=\"274\">factor</dfn>, or by pieces that multiply, is not.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The coin’s pieces are identical and equal in size. Real contributions differ in size, and the total is near-normal only if none of them dominates. One big factor, such as sex for height, gives two overlapping bells, one for men and one for women, not one.</p>\n<p>The table compares a chance with a height of a density. They can be set side by side here only because the counts are one unit apart, so each bar has width 1.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now use the bell to get an area. Take the National Family Health Survey’s figure (NFHS-6, 2023-24): 30.7% of women aged 15 to 49 in India had <dfn data-g=\"543\">overweight</dfn> or obesity. Pick 100 women <dfn data-g=\"40\">at random</dfn>, and count those with overweight or obesity. How likely is a count of 21 or fewer?</p>\n<p>The count is binomial with n = 100 and p = 0.307. <dfn data-g=\"104\">Check</dfn> the condition first.</p>\n<div class=\"working\">\n<p>100 times 0.307 = 30.7<br />\n100 times 0.693 = 69.3</p>\n</div>\n<p>Both are at least 10, so the normal approximation may be <dfn data-g=\"822\">used</dfn>. Its mean is 30.7. Its standard deviation is the <dfn data-g=\"743\">square root</dfn> of np(1 − p).</p>\n<div class=\"working\">\n<p>100 times 0.307 times 0.693 = 21.2751<br />\n√21.2751 = 4.612</p>\n</div>\n<p>“21 or fewer” counts the whole numbers up to 21. Widen by a half: take the area below 21.5. Turn 21.5 into a z-score.</p>\n<div class=\"working\">\n<p>21.5 minus 30.7 = −9.2<br />\n−9.2 divided by 4.612 = −1.99</p>\n</div>\n<p>The area to the left of z = −1.99 is 0.0233, from software or a table. So about 2 per cent of such samples would hold 21 or fewer women with overweight or obesity. The exact binomial answer, adding the 22 chances from 0 to 21, is 0.0204. The bell is close but a little high here: with np = 30.7, the binomial is still slightly lopsided.</p>\n<p>Now use the 68-95-99.7 rule, with two standard deviations either side of 30.7. They run from 30.7 − 9.22 to 30.7 + 9.22.</p>\n<div class=\"working\">\n<p>2 times 4.612 = 9.22<br />\n30.7 minus 9.22 = 21.48<br />\n30.7 plus 9.22 = 39.92</p>\n</div>\n<p>About 95 per cent of random samples of 100 would hold between 22 and 39 such women.</p>",
+   "numberRefs": [
+    32
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The binomial needs independent picks. A survey that samples whole households or villages picks women who are alike, so its counts spread more than this (section 12), and the 95 per cent range is too narrow for it.</p>\n<p>The 30.7 per cent is NFHS-6’s estimate for all of India. A district’s share can be quite different, and this calculation says nothing about any district.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Now a measured quantity that is not normal. Open Kiran, Harshitha and Bhargava’s study of medical students in Mangaluru (https://pmc.ncbi.nlm.nih.gov/articles/PMC9791811/) and find Table 1. For the 131 men, body fat had a mean of 22.1 per cent and a standard deviation of 7.3. The median was 20.3, and the quartiles were 16.7 and 28.8.</p>\n<p>Suppose you take the mean and standard deviation and treat body fat as N(22.1, 7.3). That is the move to test. A normal distribution puts its median at its mean, and its quartiles at z = −0.674 and z = 0.674, the points with a quarter of the area beyond them.</p>\n<div class=\"working\">\n<p>0.674 times 7.3 = 4.92<br />\n22.1 minus 4.92 = 17.18<br />\n22.1 plus 4.92 = 27.02</p>\n</div>\n<p>The normal model says: median 22.1, quartiles about 17.2 and 27.0, each 4.92 from the middle. The paper says: median 20.3, quartiles 16.7 and 28.8.</p>\n<div class=\"working\">\n<p>20.3 minus 16.7 = 3.6<br />\n28.8 minus 20.3 = 8.5</p>\n</div>\n<p>The upper half of the middle spreads 8.5 points, the lower half only 3.6. The mean sits 1.8 above the median. Body fat in these men has a long right tail. It is not normal.</p>\n<p>See what the normal model does to a cut-off. It puts 2.5 per cent of men below 22.1 − 1.96 × 7.3, which is 7.8 per cent body fat. With a long right tail and a short left one, that lower figure is misplaced, and so is the upper one, 22.1 plus 1.96 times 7.3 = 36.4. A “normal range” of mean plus or minus two standard deviations, worked out on a skewed quantity, is wrong at both ends.</p>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The study is 131 medical students at one college, not men in general. The skew is a fact about these numbers. It shows that body fat need not be normal, not how body fat is distributed in Indian men.</p>\n<p>The table gives a mean, a standard deviation and three quartiles. You cannot draw the shape from five numbers, only see that it is lopsided.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 4",
+   "role": "illustration",
+   "html": "<p>A table of summaries hides the shape. With the raw values in hand, draw a normal probability plot. Here is how, by hand, for 9 values.</p>\n<p>Sort the values from smallest to largest. Give the i-th value the share (i − 0.5) ÷ 9. That is the share of a normal distribution’s area that should lie to its left. Turn each share into a z-score with NORM.S.INV. For the first value:</p>\n<div class=\"working\">\n<p>1 minus 0.5 = 0.5<br />\n0.5 divided by 9 = 0.0556</p>\n</div>\n<p>The z-score with 0.0556 of the area to its left is −1.59. The nine z-scores run −1.59, −0.97, −0.59, −0.28, 0.00, 0.28, 0.59, 0.97 and 1.59. The US National Institute of Standards and Technology’s <em>Engineering Statistics Handbook</em> (NIST) uses a slightly different rule for the shares; the plot looks almost the same.</p>\n<p>Plot each sorted value, up the side, against its z-score, along the bottom. If the data are normal, each value is about μ + z × σ. So the points fall near a straight line, with height μ where z is 0 and <dfn data-g=\"733\">slope</dfn> σ. Four made-up data sets show the four patterns you will meet.</p>\n<table style=\"width:86%;\">\n\n<thead>\n<tr>\n<th>z</th>\n<th>near-normal</th>\n<th>right skew</th>\n<th>long tails</th>\n<th>one outlier</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>−1.59</td>\n<td>22</td>\n<td>24</td>\n<td>14</td>\n<td>22</td>\n</tr>\n<tr>\n<td>−0.97</td>\n<td>25</td>\n<td>25</td>\n<td>25</td>\n<td>25</td>\n</tr>\n<tr>\n<td>−0.59</td>\n<td>27</td>\n<td>26</td>\n<td>27</td>\n<td>27</td>\n</tr>\n<tr>\n<td>−0.28</td>\n<td>29</td>\n<td>27</td>\n<td>29</td>\n<td>29</td>\n</tr>\n<tr>\n<td>0.00</td>\n<td>30</td>\n<td>28</td>\n<td>30</td>\n<td>30</td>\n</tr>\n<tr>\n<td>0.28</td>\n<td>31</td>\n<td>30</td>\n<td>31</td>\n<td>31</td>\n</tr>\n<tr>\n<td>0.59</td>\n<td>33</td>\n<td>32</td>\n<td>33</td>\n<td>33</td>\n</tr>\n<tr>\n<td>0.97</td>\n<td>35</td>\n<td>36</td>\n<td>35</td>\n<td>35</td>\n</tr>\n<tr>\n<td>1.59</td>\n<td>38</td>\n<td>44</td>\n<td>46</td>\n<td>58</td>\n</tr>\n</tbody>\n</table>\n<p>Near-normal. The points sit on the line 30 + 5 × z, with height 30 at z = 0 and slope 5. The set’s mean is 30.</p>\n<p>Right skew. Draw the line from the first point to the last: from 24 at z = −1.59 to 44 at z = 1.59. Its slope is 20 divided by 3.18, which is 6.29, and it crosses z = 0 at 34. Every point in between lies below it, so the points bend upward. NIST calls this pattern “the signature of a significantly right-skewed data set”. The values bunch low and stretch out high: 28 is the median, the mean is 30.2.</p>\n<p>Left skew is the mirror: every point lies above the line from the first point to the last.</p>\n<p>Long tails. The middle seven points sit on the line 30 + 5 × z. The lowest point, 14, lies far below it and the highest, 46, far above. Both ends peel away, in opposite directions. The set is symmetric, with mean 30 and median 30, but it has more extreme values than a normal set. Short tails peel the other way: the lowest point above the line, the highest below.</p>\n<p>One outlier. Eight points sit on the line 30 + 5 × z, and one, 58, stands far above the end. The rest of the data are normal-looking. That one value needs checking: a mistyped 38, or a real person who is not like the others.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The four sets are made up, and nine points is few. Even data drawn from a true normal distribution wobble about the line, most at the ends, and with ten or twenty points the wobble can look like a pattern. Reading the plot is a judgement, not a test. OpenIntro puts it plainly: “There is no perfect way to check the normality condition”.</p>\n<p>The plot tests one shape, the normal. A straight line does not show the values are independent, or that they came from the population you meant.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Two standard deviations above the mean means abnormal” is the error. Rare in a distribution is not the same as disease. A clinical cut-off is set from outcomes, not from a spread.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Before you use a z-score, a percentile or a mean plus or minus two standard deviations, look at the data’s shape. Compare the mean with the median, and the two quartiles with the median.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Read a normal probability plot by its shape. Points bending below the line from the first point to the last mean right skew; above it, left skew. A single point off the end is an outlier. Say “no clear departure”, never “the data are normal”.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Use the normal approximation to a binomial count only when np and n(1 − p) are both at least 10.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>For 95 per cent, the normal multiplier is 1.96, not 2. Two standard deviations hold 95.45 per cent. The difference is small.</p>",
+     "tag": "number",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Before you assume a quantity is near-normal, ask what builds it. A sum of many small independent pieces gives a bell; one <dfn data-g=\"225\">dominant</dfn> factor (sex, for height) gives two bells, and pieces that multiply give a right tail (section 16).</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The data passed a normality check, so they are normal.” No data set is exactly normal. A straight-enough plot, or a test that did not reject, says only that this sample showed no clear departure. With few points, large departures go unseen; with many, trivial ones get flagged. So ask a different question. Is the departure big enough to change the answer you are about to work out, such as a share in a tail?</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what generates a near-normal distribution? Write the z-score. What share of a normal distribution lies within one, two and three standard deviations of the mean, and what multiplier gives 95 per cent? What does a normal probability plot put on each axis?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>A sum of many small independent contributions, none dominating, is near-normal: the <dfn data-g=\"96\">central limit theorem</dfn>.</p>\n<p>z = (x − μ) ÷ σ, the distance from the mean in standard deviations.</p>\n<p>About 68, 95 and 99.7 per cent (0.6827, 0.9545 and 0.9973). 95 per cent lies within 1.96 standard deviations (to two decimals).</p>\n<p>The sorted data values go up the side. Along the bottom go z-scores. Each is the point with the same share of a normal distribution’s area to its left as the value has in the data. Near-normal data fall near a straight line.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A thesis draft has a normal probability plot of waist circumference for 160 women. Here is what the text says.</p>\n<blockquote>\n<p>“Most points lie on the line, but the top ten points rise further and further above it, while the bottom points stay on the line. The data are therefore normally distributed, and we report mean ± SD.”</p>\n</blockquote>\n<p>Say what the plot does show, what the authors should have done, and what sentence they should write instead.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The plot shows the top end peeling away above the line while the bottom end stays on it. The largest values are larger than a normal distribution would give: a long right tail. With 160 points, a run of ten rising steadily away from the line is not wobble. It is a pattern.</p>\n<p>What to do: look at the histogram and compare the mean with the median. If the median sits clearly below the mean, report the median with its quartiles, or work on the log scale. Do not use mean ± 2 SD as a range for these women.</p>\n<p>A sentence: “Waist circumference was right-skewed (mean 84.1 cm, median 81.0 cm), so we report the median and <dfn data-g=\"394\">interquartile range</dfn>.” The two numbers here are placeholders for the authors’ own.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>X is N(120, 8). Work out the z-score of x = 130.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>130 minus 120 = 10<br />\n10 divided by 8 = 1.25</p>\n</div>\n<p>z is 1.25: 130 lies 1.25 standard deviations above the mean.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>The area to the left of z = 1.25 under the standard normal curve is 0.8944. Work out the area to the right of 1.25, the area to the left of −1.25, and the area between −1.25 and 1.25.</p>",
+   "level": 2,
+   "answer": "<p>The whole area is 1. The curve is symmetric about 0, so the area left of −1.25 equals the area right of 1.25.</p>\n<div class=\"working\">\n<p>1 minus 0.8944 = 0.1056<br />\n1 minus 0.1056 minus 0.1056 = 0.7888</p>\n</div>\n<p>Right of 1.25: 0.1056. Left of −1.25: 0.1056. Between them: 0.7888.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>X is N(50, 6). Between what values do about 68, 95 and 99.7 per cent of the values lie?</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>50 minus 6 = 44<br />\n50 plus 6 = 56<br />\n50 minus 12 = 38<br />\n50 plus 12 = 62<br />\n50 minus 18 = 32<br />\n50 plus 18 = 68</p>\n</div>\n<p>About 68 per cent lie between 44 and 56. About 95 per cent lie between 38 and 62. About 99.7 per cent lie between 32 and 68.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>X is N(100, 15). The z-score with 0.90 of the area to its left is 1.2816. Find the 90th percentile of X.</p>",
+   "level": 3,
+   "answer": "<p>Turn z = (x − μ) ÷ σ around: x = μ + z × σ.</p>\n<div class=\"working\">\n<p>1.2816 times 15 = 19.224<br />\n100 plus 19.224 = 119.224</p>\n</div>\n<p>The 90th percentile is about 119.2.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>The area to the left of z = 2 is 0.9772 and to the left of z = −1 is 0.1587. Work out the chance that a standard normal value lies between −1 and 2.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>0.9772 minus 0.1587 = 0.8185</p>\n</div>\n<p>About 0.8185. The area between two points is the area left of the upper one minus the area left of the lower one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Five values: 17, 12, 23, 15, 18. Set them up for a normal probability plot, using the share (i − 0.5) ÷ 5 for the i-th sorted value. The z-scores for the shares 0.1, 0.3, 0.5, 0.7 and 0.9 are −1.28, −0.52, 0.00, 0.52 and 1.28. List the five points.</p>",
+   "level": 3,
+   "answer": "<p>Sort first: 12, 15, 17, 18, 23. The shares:</p>\n<div class=\"working\">\n<p>0.5 divided by 5 = 0.1<br />\n1.5 divided by 5 = 0.3<br />\n2.5 divided by 5 = 0.5<br />\n3.5 divided by 5 = 0.7<br />\n4.5 divided by 5 = 0.9</p>\n</div>\n<p>The points, as (z, value): (−1.28, 12), (−0.52, 15), (0.00, 17), (0.52, 18), (1.28, 23).</p>\n<p>The step from 18 to 23 is larger than the others. With five points that is not evidence of anything; it is what a plot of five values looks like.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>OpenStax <em>Introductory Statistics</em> 2e, §6.1, gives the heights of 15-to-18-year-old males in Chile in 2009-10 as N(170, 6.28), in centimetres. Work out the z-score of a height of 168 cm, and the height with a z-score of 1.27.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>168 minus 170 = −2<br />\n−2 divided by 6.28 = −0.32<br />\n1.27 times 6.28 = 7.98<br />\n170 plus 7.98 = 177.98</p>\n</div>\n<p>168 cm is 0.32 standard deviations below the mean. A z-score of 1.27 is 177.98 cm, about 178 cm. These match OpenStax’s answers.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>OpenIntro <em>Statistics</em>, §4.1.4, models the heights of adult men in the United States as N(70.0, 3.3), in inches, from a sample of 100 men. The area to the left of z = 1.21 is 0.8869. Work out the chance that a man picked at random is at least 74 inches tall.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>74 minus 70.0 = 4.0<br />\n4.0 divided by 3.3 = 1.21<br />\n1 minus 0.8869 = 0.1131</p>\n</div>\n<p>About 0.113, or 11 per cent, as OpenIntro gives it. The model is fitted to 100 men; the answer is only as good as the bell’s fit at the upper tail.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Pick 200 women aged 15 to 49 at random in India, with NFHS-6’s 30.7% as the chance that each has overweight or obesity. Use the normal approximation to work out the chance that 75 or more of them do. The area to the left of z = 2.01 is 0.9778.</p>",
+   "level": 5,
+   "answer": "<p>Check the condition, then find the mean and standard deviation.</p>\n<div class=\"working\">\n<p>200 times 0.307 = 61.4<br />\n200 times 0.693 = 138.6<br />\n200 times 0.307 times 0.693 = 42.5502<br />\n√42.5502 = 6.523</p>\n</div>\n<p>Both 61.4 and 138.6 are at least 10. “75 or more” starts at the whole number 75, so widen by a half: take the area above 74.5.</p>\n<div class=\"working\">\n<p>74.5 minus 61.4 = 13.1<br />\n13.1 divided by 6.523 = 2.01<br />\n1 minus 0.9778 = 0.0222</p>\n</div>\n<p>About 0.022. The exact binomial answer is about 0.024.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>In Kiran 2022, Table 1, the 131 men’s body fat had mean 22.1 per cent, standard deviation 7.3, and quartiles 16.7 and 28.8. If body fat were N(22.1, 7.3), what share of men would lie below 16.7, and what share above 28.8? The area to the left of z = −0.74 is 0.2296 and to the left of z = 0.92 is 0.8212. Compare with what the quartiles say.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>16.7 minus 22.1 = −5.4<br />\n−5.4 divided by 7.3 = −0.74<br />\n28.8 minus 22.1 = 6.7<br />\n6.7 divided by 7.3 = 0.92<br />\n1 minus 0.8212 = 0.1788</p>\n</div>\n<p>The normal model puts about 23 per cent below 16.7 and about 18 per cent above 28.8. The quartiles say a quarter of the men lie below 16.7 and a quarter above 28.8.</p>\n<p>The model is close at the bottom and misses at the top, where it puts 18 per cent where the data have 25. That is the right tail the model does not have.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>exam scores are N(63, 5); find the chance a student scored more than 65<br />\nz = (65 − 63) ÷ 5 = 0.4<br />\nthe area to the left of z = 0.4 is 0.6554<br />\nso the chance of scoring more than 65 is 0.6554</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The last line broke. Software and tables give the area to the left. The question asks for the area to the right.</p>\n<div class=\"working\">\n<p>1 minus 0.6554 = 0.3446</p>\n</div>\n<p>The chance is 0.3446, as OpenStax §6.2 gives it.</p>\n<p>Why the wrong answer looks reasonable: every step before the last is right, and 0.6554 is a real area under the curve. A sketch would have caught it: 65 is just above the mean, so less than half the area lies beyond it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a rare finding: 20 patients, each with chance 0.05, independently<br />\ncount X is binomial; use the normal approximation<br />\nmean = 20 × 0.05 = 1; SD = √(20 × 0.05 × 0.95) = 0.975<br />\nP(X = 0): area below 0.5, z = (0.5 − 1) ÷ 0.975 = −0.51, area 0.305<br />\nso the chance of no patient with the finding is about 0.31</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. np is 1, far below 10. The normal approximation does not apply. Work out the binomial chance directly.</p>\n<div class=\"working\">\n<p>1 minus 0.05 = 0.95<br />\n0.95<sup>20</sup> = 0.3585</p>\n</div>\n<p>The chance of none is about 0.36, not 0.31. With np = 1 the binomial is piled up against 0 and cannot go below it, and a symmetric bell cannot copy that shape.</p>\n<p>Why it looks reasonable: the mean and standard deviation are right, and the half-unit widening is right. The answer is even in the right region. Only the condition was skipped.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 13,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>nine sorted values: 16, 24, 28, 30, 32, 33, 34, 35, 36<br />\ntheir z-scores: −1.59, −0.97, −0.59, −0.28, 0.00, 0.28, 0.59, 0.97, 1.59<br />\nthe line from the first point to the last: 26 + 6.29 × z<br />\nthe middle points all lie above that line, and the lowest point stands far below the rest<br />\na bend away from a straight line is right skew, so the values have a long right tail</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The last line broke. Points above the end-to-end line are the signature of left skew, not right. Check two points against the line.</p>\n<div class=\"working\">\n<p>26 minus 6.29 times 0.97 = 19.90<br />\n26 plus 6.29 times 0.28 = 27.76</p>\n</div>\n<p>The values there are 24 and 33, both above the line. The low end stretches out: 16 is 8 below the next value, while the top values are 1 apart. The tail is on the left. The median, 32, is above the mean, which is about 29.8.</p>\n<div class=\"working\">\n<p>16 plus 24 plus 28 plus 30 plus 32 plus 33 plus 34 plus 35 plus 36 = 268<br />\n268 divided by 9 is about 29.8</p>\n</div>\n<p>Why it looks reasonable: “the plot bends, so it is skewed” is right. Which way it is skewed comes from which side of the line the points fall, and that is easy to get backwards.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 14,
+   "prompt": "<p>A hostel medical officer writes: “In our students, BMI averages 24.2 with an SD of 3.9. Any student above two SDs, that is above 32.0, has abnormal BMI and should be referred. That will be about 2.5 per cent of students.”</p>\n<p>The 24.2 and 3.9 are the men’s figures from Kiran 2022, Table 1, used here as if they were the hostel’s. Decide what to compute, compute it, and say what the answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Check the cut-off, and the share above it if BMI were normal.</p>\n<div class=\"working\">\n<p>2 times 3.9 = 7.8<br />\n24.2 plus 7.8 = 32.0</p>\n</div>\n<p>The cut-off is right. Above z = 2, a normal distribution has 1 − 0.9772 of its area, which is 0.0228: about 2.3 per cent, not 2.5. The 2.5 is the share above 1.96.</p>\n<p>What this does not establish. “Above two SDs” defines rare in this group, not abnormal. The share flagged is about 2.3 per cent in any group, healthy or not. A group where many students have obesity would flag the same few. A referral threshold should come from outcomes, as BMI cut-offs do.</p>\n<p>And the 2.3 per cent assumes BMI is normal. The paper gives a median of 23.8, below the mean of 24.2. That hints at a right tail, so more than 2.3 per cent may lie above 32.0.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 15,
+   "prompt": "<p>A district officer says: “NFHS-6 found 30.7% of women aged 15 to 49 overweight or obese. Our district survey of 400 women found only 104. Fewer than 105 out of 400 would almost never happen by chance, so our district is genuinely better.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish. The area to the left of z = −1.98 is 0.0239.</p>",
+   "level": 10,
+   "answer": "<p>Ask how often a <dfn data-g=\"631\">random sample</dfn> of 400 at p = 0.307 gives 104 or fewer.</p>\n<div class=\"working\">\n<p>400 times 0.307 = 122.8<br />\n400 times 0.693 = 277.2<br />\n400 times 0.307 times 0.693 = 85.1004<br />\n√85.1004 = 9.225<br />\n104.5 minus 122.8 = −18.3<br />\n−18.3 divided by 9.225 = −1.98</p>\n</div>\n<p>The area to the left is about 0.024. The exact binomial gives about 0.022. Suppose the district’s share were 30.7 per cent and the survey picked women independently. Then a count this low would come in about 1 survey in 45. Unusual, not “almost never”.</p>\n<p>What this does not establish. District surveys usually sample villages or households, then women within them. Women in one cluster are alike, so the count spreads more than the binomial says, and 104 is less surprising than 0.024 suggests. The national 30.7 per cent is not the district’s own past figure, so this is not a change over time. And a lower share of overweight is not by itself “better”. It may reflect more undernutrition, an older or younger sample, or a different measuring team.</p>"
+  }
+ ]
+}

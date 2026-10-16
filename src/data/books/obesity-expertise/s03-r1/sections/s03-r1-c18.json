@@ -1,0 +1,228 @@
+{
+ "format": 1,
+ "id": "s03-r1-c18",
+ "label": "18",
+ "title": "Sums and averages of many independent draws, simulated by hand",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Let X1, X2, …, Xn be n independent random variables, each with the same distribution, with expected value μ, the Greek letter mu, and <dfn data-g=\"829\">variance</dfn> σ², where σ, the Greek letter <dfn data-g=\"725\">sigma</dfn>, is the <dfn data-g=\"747\">standard deviation</dfn> (SD). Call each one a draw.</p>\n<p>Their sum, T = X1 + X2 + … + Xn, has:</p>\n<div class=\"working\">\n<p>E[T] = nμ<br />\nVar(T) = nσ²<br />\nSD(T) = σ × √n</p>\n</div>\n<p>Their average, written X̄ and read “X-bar”, is T divided by n.</p>\n<div class=\"working\">\n<p>E[X̄] = μ<br />\nVar(X̄) = σ² ÷ n<br />\nSD(X̄) = σ ÷ √n</p>\n</div>\n<p>A binomial count is the sum of n Bernoulli draws (section 12). Divide it by n, and the share of successes has expected value p and standard deviation √[p(1 − p) ÷ n].</p>\n<p>The <dfn data-g=\"423\">law of large numbers</dfn>: as n grows, the chance that X̄ lies further than any fixed distance from μ tends to 0: it can be made as small as you like by taking n large enough.</p>\n<p>The <dfn data-g=\"96\">central limit theorem</dfn>: as n grows, the distribution of T, and of X̄, comes closer and closer to a normal distribution (section 15), whatever the shape of one draw. It needs the draws to be independent and σ to be finite: the spread of one draw must be a fixed number, not one that grows without limit. A strongly skewed draw needs a much larger n.</p>\n<p>The distribution of X̄ over all the samples of size n that could be drawn is called the <dfn data-g=\"696\">sampling distribution of the mean</dfn>.</p>",
+   "refs": [
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>One person’s value can land almost anywhere. The average of many people’s values is much steadier, because their highs and lows partly cancel.</p>\n<p>Four times as many people halve the spread of the average.</p>\n<p>Roll dice, write the results down, and watch it happen on paper.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c18-one-die-two-dice.png",
+   "alt": "Paired bars at values 1.0 to 6.0 in steps of 0.5. One die: 6 at each whole number, 0 at the halves. Average of two: 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1.",
+   "w": 1360,
+   "h": 656,
+   "caption": "All 36 ways two dice can land. One die puts 6 ways on each face from 1 to 6, a flat spread. The average of two puts 1 way on 1.0, rising to 6 ways on 3.5 and falling back to 1 way on 6.0. The extremes are six times rarer for the average, and the shape is already peaked."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c18-twenty-rolls.png",
+   "alt": "Paired bars at values 1.0 to 6.0 in steps of 0.5. First die, at whole numbers only: 1, 5, 4, 3, 2, 5. Averages, at 1.5 to 5.5: 1, 2, 3, 4, 1, 3, 2, 2, 2.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The record of 20 throws, tabulated. The first die (left bar of each pair) lands on all six faces, 5 times each on 2 and on 6. The 20 averages of two dice (right bars) crowd towards the middle, and none is 1 or 6. Their SD is about 1.21, against about 1.68 for one die."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c18-running-average.png",
+   "alt": "A line through running averages of 3.0, 2.5, 2.8, 3.1, 3.3 and 3.525 after 1, 2, 5, 10, 20 and 40 rolls, approaching a dashed line at 3.5.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The running average of the 40 single rolls in the record. It swings while the rolls are few, from 3.0 after one roll to 2.5 after two, and settles as they pile up, reaching 3.525 after 40. The dashed line is the true mean, 3.5."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c18-sd-shrinks.png",
+   "alt": "Four points falling along a curve: 1.708 at n of 1, 1.208 at 2, 0.854 at 4 and 0.427 at 16.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The SD of the average of n rolls of a fair die is 1.708 divided by the square root of n: 1.708 for one roll, 1.208 for two, 0.854 for four and 0.427 for sixteen. Each fourfold increase in n halves the spread."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is the mistake to watch for first. A resident says: “One die can land anywhere from 1 to 6. So the average of two dice can land anywhere from 1 to 6 just as easily.” Both ranges are 1 to 6. The resident’s mistake is in “just as easily”. <dfn data-g=\"104\">Check</dfn> it with dice and a pen.</p>\n<p>Get two ordinary dice. Throw both. Write down the first die, the second die, and their average. Do it 20 times. That is the whole method of <dfn data-g=\"731\">simulation by hand</dfn>: draw, record, repeat, tabulate.</p>\n<p>Here is one record of 20 throws, made with a random-number generator in place of real dice. Yours will differ, and that is part of the lesson.</p>\n<table style=\"width:60%;\">\n\n<thead>\n<tr>\n<th>throw</th>\n<th>first die</th>\n<th>second die</th>\n<th>average</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>3</td>\n<td>2</td>\n<td>2.5</td>\n</tr>\n<tr>\n<td>2</td>\n<td>1</td>\n<td>5</td>\n<td>3.0</td>\n</tr>\n<tr>\n<td>3</td>\n<td>3</td>\n<td>3</td>\n<td>3.0</td>\n</tr>\n<tr>\n<td>4</td>\n<td>2</td>\n<td>1</td>\n<td>1.5</td>\n</tr>\n<tr>\n<td>5</td>\n<td>5</td>\n<td>6</td>\n<td>5.5</td>\n</tr>\n<tr>\n<td>6</td>\n<td>3</td>\n<td>4</td>\n<td>3.5</td>\n</tr>\n<tr>\n<td>7</td>\n<td>2</td>\n<td>3</td>\n<td>2.5</td>\n</tr>\n<tr>\n<td>8</td>\n<td>3</td>\n<td>5</td>\n<td>4.0</td>\n</tr>\n<tr>\n<td>9</td>\n<td>2</td>\n<td>2</td>\n<td>2.0</td>\n</tr>\n<tr>\n<td>10</td>\n<td>6</td>\n<td>5</td>\n<td>5.5</td>\n</tr>\n<tr>\n<td>11</td>\n<td>6</td>\n<td>4</td>\n<td>5.0</td>\n</tr>\n<tr>\n<td>12</td>\n<td>4</td>\n<td>2</td>\n<td>3.0</td>\n</tr>\n<tr>\n<td>13</td>\n<td>6</td>\n<td>2</td>\n<td>4.0</td>\n</tr>\n<tr>\n<td>14</td>\n<td>6</td>\n<td>4</td>\n<td>5.0</td>\n</tr>\n<tr>\n<td>15</td>\n<td>4</td>\n<td>2</td>\n<td>3.0</td>\n</tr>\n<tr>\n<td>16</td>\n<td>2</td>\n<td>6</td>\n<td>4.0</td>\n</tr>\n<tr>\n<td>17</td>\n<td>2</td>\n<td>2</td>\n<td>2.0</td>\n</tr>\n<tr>\n<td>18</td>\n<td>4</td>\n<td>1</td>\n<td>2.5</td>\n</tr>\n<tr>\n<td>19</td>\n<td>5</td>\n<td>4</td>\n<td>4.5</td>\n</tr>\n<tr>\n<td>20</td>\n<td>6</td>\n<td>3</td>\n<td>4.5</td>\n</tr>\n</tbody>\n</table>\n<p>Tabulate. Count how often each value turns up in the first-die column, and in the average column.</p>\n<table style=\"width:58%;\">\n\n<tbody>\n<tr>\n<td>first die</td>\n<td>1</td>\n<td>2</td>\n<td>3</td>\n<td>4</td>\n<td>5</td>\n<td>6</td>\n</tr>\n<tr>\n<td>count</td>\n<td>1</td>\n<td>5</td>\n<td>4</td>\n<td>3</td>\n<td>2</td>\n<td>5</td>\n</tr>\n</tbody>\n</table>\n<table style=\"width:89%;\">\n\n<tbody>\n<tr>\n<td>average</td>\n<td>1.5</td>\n<td>2.0</td>\n<td>2.5</td>\n<td>3.0</td>\n<td>3.5</td>\n<td>4.0</td>\n<td>4.5</td>\n<td>5.0</td>\n<td>5.5</td>\n</tr>\n<tr>\n<td>count</td>\n<td>1</td>\n<td>2</td>\n<td>3</td>\n<td>4</td>\n<td>1</td>\n<td>3</td>\n<td>2</td>\n<td>2</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>\n<p>The first die is spread across all six faces, with plenty at 2 and at 6. The averages crowd towards the middle. None of the 20 averages is 1 or 6.</p>\n<p>Measure the spread, as in Book 0, D5. For the first-die column the mean is 75 divided by 20, which is 3.75. The squared deviations from it add to 53.75. Divide by one less than the count.</p>\n<div class=\"working\">\n<p>53.75 divided by 19 = 2.829<br />\nsquare root of 2.829 = 1.682</p>\n</div>\n<p>For the average column the mean is 70.5 divided by 20, which is 3.525. Its squared deviations add to 27.7375.</p>\n<div class=\"working\">\n<p>27.7375 divided by 19 = 1.460<br />\nsquare root of 1.460 = 1.208</p>\n</div>\n<p>The averages spread with an SD of about 1.21, against about 1.68 for one die.</p>\n<p>Now the theory. One fair die has μ = 3.5. Its variance is the average of the squared deviations from 3.5: 6.25, 2.25, 0.25, 0.25, 2.25 and 6.25.</p>\n<div class=\"working\">\n<p>6.25 plus 2.25 plus 0.25 plus 0.25 plus 2.25 plus 6.25 = 17.5<br />\n17.5 divided by 6 = 2.917<br />\nsquare root of 2.917 = 1.708<br />\n1.708 divided by square root of 2 = 1.208</p>\n</div>\n<p>So σ is about 1.708, and the average of two dice should have an SD of σ ÷ √2, about 1.208. The record gave 1.682 and 1.208. Another record would give other numbers near these.</p>\n<p>The exact shapes come from listing all 36 ways two dice can land, as in section 1. One die puts 6 of the 36 ways on each face. The average of two puts 1 way on 1.0, 2 on 1.5, and so on, rising to 6 ways on 3.5 and falling back to 1 way on 6.0.</p>\n<table style=\"width:85%;\">\n\n<tbody>\n<tr>\n<td>value</td>\n<td>one die (ways of 36)</td>\n<td>average of two (ways of 36)</td>\n</tr>\n<tr>\n<td>1.0</td>\n<td>6</td>\n<td>1</td>\n</tr>\n<tr>\n<td>1.5</td>\n<td>0</td>\n<td>2</td>\n</tr>\n<tr>\n<td>2.0</td>\n<td>6</td>\n<td>3</td>\n</tr>\n<tr>\n<td>2.5</td>\n<td>0</td>\n<td>4</td>\n</tr>\n<tr>\n<td>3.0</td>\n<td>6</td>\n<td>5</td>\n</tr>\n<tr>\n<td>3.5</td>\n<td>0</td>\n<td>6</td>\n</tr>\n<tr>\n<td>4.0</td>\n<td>6</td>\n<td>5</td>\n</tr>\n<tr>\n<td>4.5</td>\n<td>0</td>\n<td>4</td>\n</tr>\n<tr>\n<td>5.0</td>\n<td>6</td>\n<td>3</td>\n</tr>\n<tr>\n<td>5.5</td>\n<td>0</td>\n<td>2</td>\n</tr>\n<tr>\n<td>6.0</td>\n<td>6</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<p>An average of 1 needs both dice to show 1: one way in 36. One die shows 1 in 6 ways of 36. So the resident was wrong: the extremes are six times rarer for the average. With more dice the peak narrows further and its sides round into the bell of the normal distribution. That is the central limit theorem, seen in miniature.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 20-throw record is one record, from a random-number generator. Its SDs of 1.682 and 1.208 landed close to theory; a record of 20 can land well away, and that wobble is itself what the next rung studies. Two dice are a long way from “many”. The triangle is not yet a bell, and the theorem says nothing about how close to normal an average of two is.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>The same record shows the law of large numbers. Read the 40 single rolls in order, first die then second die, throw by throw: 3, 2, 1, 5, 3, 3, and so on. After each roll, work out the average of all the rolls so far.</p>\n<table style=\"width:57%;\">\n\n<thead>\n<tr>\n<th>rolls so far</th>\n<th>total</th>\n<th>running average</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>3</td>\n<td>3.0</td>\n</tr>\n<tr>\n<td>2</td>\n<td>5</td>\n<td>2.5</td>\n</tr>\n<tr>\n<td>5</td>\n<td>14</td>\n<td>2.8</td>\n</tr>\n<tr>\n<td>10</td>\n<td>31</td>\n<td>3.1</td>\n</tr>\n<tr>\n<td>20</td>\n<td>66</td>\n<td>3.3</td>\n</tr>\n<tr>\n<td>40</td>\n<td>141</td>\n<td>3.525</td>\n</tr>\n</tbody>\n</table>\n<p>After one roll the running average is 3.0. After two it is 2.5. It swings while there are few rolls, and settles as they pile up: after 40 it is 3.525, close to the true 3.5.</p>\n<p>The law of large numbers says this settling is what tends to happen. It does not say the average of 40 rolls will be 3.5, and it does not say that later rolls “make up” for early ones. A die has no memory. The early swings are simply outweighed by the growing number of rolls.</p>\n<p>How fast does it settle? The SD of an average of n rolls is σ ÷ √n. Work it out for a few n.</p>\n<table style=\"width:47%;\">\n\n<thead>\n<tr>\n<th>n</th>\n<th>SD of the average (σ ÷ √n)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>1.708</td>\n</tr>\n<tr>\n<td>2</td>\n<td>1.208</td>\n</tr>\n<tr>\n<td>4</td>\n<td>0.854</td>\n</tr>\n<tr>\n<td>16</td>\n<td>0.427</td>\n</tr>\n</tbody>\n</table>\n<p>Going from 1 roll to 4 halves the SD. Going from 4 to 16 halves it again.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table of SDs assumes independent rolls of a fair die. A loaded die, or rolls that depend on each other, breaks it. The running average of 3.525 is this record’s; another record will cross 3.5 at different points.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Now a real quantity. In the sixth National Family Health Survey (NFHS-6, 2023-24), 30.7 per cent of women aged 15 to 49 in India had a body-mass index (BMI) of 25 or more. Open the NFHS-6 India fact <dfn data-g=\"722\">sheet</dfn> at https://www.nfhsiips.in and find indicator 76. Treat 0.307 as p, the chance that one woman picked <dfn data-g=\"40\">at random</dfn> from that population is in this group.</p>\n<p>One woman is a Bernoulli draw: 1 or 0. Her SD is √[p(1 − p)].</p>\n<div class=\"working\">\n<p>0.307 times 0.693 = 0.2128<br />\nsquare root of 0.2128 = 0.4613</p>\n</div>\n<p>Now pick 100 women at random and take the share among them with a BMI of 25 or more. That share is the average of 100 Bernoulli draws. Its expected value is 0.307 and its SD is 0.4613 ÷ √100.</p>\n<div class=\"working\">\n<p>0.4613 divided by 10 = 0.04613</p>\n</div>\n<p>About 0.046, or 4.6 <dfn data-g=\"555\">percentage</dfn> points. With 400 women:</p>\n<div class=\"working\">\n<p>0.4613 divided by 20 = 0.0231</p>\n</div>\n<p>About 2.3 percentage points. Four times the women, half the spread.</p>\n<p>The trap is to use the SD of one woman, 0.46 or 46 points, as the spread of the share.</p>\n<div class=\"working\">\n<p>31 minus 46 = -15<br />\n31 plus 46 = 77</p>\n</div>\n<p>Even one SD either way would run from 0 (nothing can be below it) to about 77 per cent. Picked at random, a sample of 100 gives a share within a few points of 31 per cent nearly every time.</p>\n<p>NFHS itself does not pick women one at a time. It picks households, and women in one household are positively tied (section 17). So a real survey’s share spreads more than this formula says, and the formula here is a floor, not the survey’s own figure.</p>",
+   "numberRefs": [
+    32
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 4.6 and 2.3 points describe simple random samples from a population whose true share is exactly 30.7 per cent. They do not describe NFHS’s own <dfn data-g=\"587\">precision</dfn>, which is set by how it picks households and is wider. They also say nothing about bias: a sample of 400 from one college is precise about that college and may be far from India’s figure (Book 0, D6).</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The SD of an average is the SD of one person divided by the <dfn data-g=\"743\">square root</dfn> of n. Never use the SD of individuals as the uncertainty of a mean; divide first.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Halving the spread of an average costs four times the people. Doubling a sample cuts the spread by only about 29 per cent.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>In a classroom simulation of 50 averages of 4 dice, the spread of each average uses n = 4.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>The σ ÷ √n rule needs independent draws. People from one household, one cluster or one clinic day are tied, and their average spreads more than the rule says. Before you quote σ ÷ √n for a survey, ask how it was sampled.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The central limit theorem promises a normal shape only as n grows, and how fast depends on the shape of one draw. For a strongly skewed quantity, such as one where most people have 0 and a few have a very large value, an average of 30 can still be far from normal. Look at the data before you lean on the normal shape.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>After a run of high values, the next value is no more likely to be low.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Teach the <dfn data-g=\"744\">square-root law</dfn> with dice before you teach the formula.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The sample has a mean of 22.1 and an SD of 7.3, so the true mean could be anywhere within 7.3 of 22.1.” The SD in a table of results describes how the people differ from each other. The spread of their mean is that SD divided by the square root of n. For 131 people that is about 0.64, not 7.3. And it holds only if they were drawn independently at random.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: for n independent draws, each with mean μ and SD σ, give the mean and SD of their sum and of their average. What does the central limit theorem say, and what does it need?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The sum has mean nμ and SD σ times √n. The average has mean μ and SD σ divided by √n.</p>\n<p>The central limit theorem says that as n grows, the distribution of the sum and of the average comes closer to normal, whatever the shape of one draw. It needs independent draws and a finite SD, and the n needed depends on how skewed one draw is.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Plan a 30-minute <dfn data-g=\"715\">session</dfn> in which residents simulate by hand the average of four dice. Say what each resident does, what is recorded, how the records are pooled, and what the group should see at the end.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A good plan has these parts.</p>\n<p>Each resident rolls four dice, writes the four faces and their average, and repeats this 10 times. That gives 10 averages each. Twelve residents give 120 averages.</p>\n<p>Pool the averages on the board as a <dfn data-g=\"780\">tally</dfn>, in steps of 0.25 from 1 to 6. Beside it, pool the first die of every set as a tally from 1 to 6.</p>\n<p>What the group should see: the single dice spread flat across 1 to 6; the averages crowd near 3.5 in a rounded hump. Work out the SD of each pool. The averages’ should be near σ ÷ √4, about 0.854, against about 1.708 for one die.</p>\n<p>End by naming what was built: the distribution of an average over many samples, the sampling distribution of the mean. Make clear that n is 4, the dice in one average, not 120, the number of averages.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Each of 25 independent draws has mean 5 and variance 4. Work out the mean, variance and SD of their sum, and of their average.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>25 times 5 = 125<br />\n25 times 4 = 100<br />\nsquare root of 100 = 10<br />\n4 divided by 25 = 0.16<br />\nsquare root of 0.16 = 0.4</p>\n</div>\n<p>The sum has mean 125, variance 100 and SD 10. The average has mean 5, variance 0.16 and SD 0.4. Check: the SD of one draw is 2, and 2 divided by the square root of 25 is 0.4.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>One draw has an SD of 12. How many independent draws must be averaged to bring the SD of the average down to 3? To 1?</p>",
+   "level": 3,
+   "answer": "<p>The SD of the average is 12 divided by √n. Set it to 3: √n must be 12 divided by 3.</p>\n<div class=\"working\">\n<p>12 divided by 3 = 4<br />\n4 times 4 = 16<br />\n12 divided by 1 = 12<br />\n12 times 12 = 144</p>\n</div>\n<p>16 draws for an SD of 3, and 144 for an SD of 1. <dfn data-g=\"186\">Cutting</dfn> the SD to a quarter took 16 times the draws; to a twelfth, 144 times.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>OpenIntro’s <em>Statistics</em> (4th edition), §3.4.4, gives John’s daily commute an SD of 4 minutes, and takes the five days of a week as independent. Work out the SD of his total commute time for the week, and of his average daily time over the week.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>4 times 4 = 16<br />\n5 times 16 = 80<br />\nsquare root of 80 = 8.94<br />\n4 divided by square root of 5 = 1.79</p>\n</div>\n<p>The weekly total has an SD of about 8.94 minutes, as OpenIntro gives. The average day of the week has an SD of about 1.79 minutes.</p>\n<p>Both rest on the five days being independent. OpenIntro’s own follow-up asks whether that holds: if Fridays are always worse, the days are tied, and the weekly SD is larger.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Take NFHS-6’s 30.7 per cent of women aged 15-49 with a BMI of 25 or more as the true share. Draw a simple <dfn data-g=\"631\">random sample</dfn> of 400 such women. Work out the SD of the sample share. Then work out the range in which the normal distribution puts about 95 per cent of such samples’ shares.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>0.307 times 0.693 = 0.2128<br />\n0.2128 divided by 400 = 0.000532<br />\nsquare root of 0.000532 = 0.02306<br />\n1.96 times 0.02306 = 0.0452<br />\n0.307 minus 0.0452 = 0.262<br />\n0.307 plus 0.0452 = 0.352</p>\n</div>\n<p>The SD of the share is about 0.023, or 2.3 percentage points. About 95 per cent of such samples would give shares between about 26.2 and 35.2 per cent. The normal shape is fair here because np is 400 times 0.307, which is about 123, and n(1 − p) is about 277, both well above 10 (section 15).</p>\n<p>This is a statement about samples drawn from a population whose share is known. Turning one sample’s share into a statement about an unknown share is the next rung’s work.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Kiran and colleagues measured body fat in 131 men, medical students in Mangaluru, and give an SD of 7.3 per cent. Suppose the men’s body fat in the population they came from has an SD of 7.3. Work out the SD of the mean of 131 men drawn at random from it. Say what the answer assumes.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>square root of 131 = 11.45<br />\n7.3 divided by 11.45 = 0.638</p>\n</div>\n<p>About 0.64 percentage points.</p>\n<p>It assumes the 131 men are independent random draws from one population. They are one college’s students who agreed to take part, so this is the spread of their mean only if they behave like a random sample. It also borrows the sample’s own 7.3 as if it were σ. And it says nothing about whether the college’s men resemble any wider group.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>one man’s body fat: SD 7.3 percentage points<br />\na sample of 131 men has mean 22.1<br />\nthe sample mean could be off by about 7.3 points either way<br />\nso the population mean could be anywhere from 14.8 to 29.4</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The third line broke. It uses the SD of one man as the spread of the mean of 131. The mean of 131 independent draws spreads with SD 7.3 divided by √131.</p>\n<div class=\"working\">\n<p>7.3 divided by square root of 131 = 0.638</p>\n</div>\n<p>About 0.64 points, not 7.3. The fourth line inherits the error and is about eleven times too wide.</p>\n<p>Why the wrong answer looks reasonable: 7.3 is printed right beside 22.1 in the paper’s table, and “mean (SD)” looks like “a value and its uncertainty”. The SD in that table describes how the men differ from each other, not how far their mean might be from the population’s.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a class rolls 4 dice, takes the average, and does this 50 times<br />\none die has SD 1.708<br />\nso the averages should spread with SD 1.708 divided by square root of 50 = 0.24</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line broke. The n in σ ÷ √n is the number of values in one average, which is 4, not the number of averages, which is 50.</p>\n<div class=\"working\">\n<p>1.708 divided by square root of 4 = 0.854</p>\n</div>\n<p>The averages should spread with an SD of about 0.854. Fifty repeats make the <dfn data-g=\"116\">class</dfn>’s tally of averages look smoother. They do not make each average steadier.</p>\n<p>Why the wrong answer looks reasonable: 50 is the biggest number in the problem and “more makes it steadier” is true of something here. It is true of how well the 50 averages show their own distribution, not of the spread of that distribution.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A research <dfn data-g=\"611\">proposal</dfn> says: “The pilot had 200 participants. The main study will have 400, so its estimate will be twice as precise.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>First pin down “precise”. If it means the SD of the estimate, which sets the width of any interval built on it, compute how much that SD shrinks when n doubles. It goes as 1 divided by √n.</p>\n<div class=\"working\">\n<p>square root of 2 = 1.414<br />\n1 divided by 1.414 = 0.707<br />\n1 minus 0.707 = 0.293</p>\n</div>\n<p>Doubling n cuts the SD to about 0.707 of what it was: about 29 per cent smaller, not half. To halve it, the study needs 4 times 200, which is 800 participants.</p>\n<p>If “precise” means 1 divided by the variance, doubling n does double it. The interval still narrows by only 29 per cent. So the proposal should say which it means, and quote the interval width.</p>\n<p>What this does not establish. The rule holds only for independent draws; a clustered design shrinks less. And more people make the estimate steadier around whatever the sampling method actually measures. If the way people were recruited is biased, 400 or 800 do not remove the bias (Book 0, D6).</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A health economist says: “Thirty patients is enough for the central limit theorem. So the average cost in our sample of 30 is normal, and I will use plus or minus 1.96 SD.”</p>\n<p>Use a made-up cost. Each patient has a 1 in 100 chance of a hospital stay that costs 1,000 units. Otherwise the cost is 0. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Compute the mean and SD of one patient and the SD of the average of 30. Then compute the normal range, and the chance that the average is exactly 0.</p>\n<div class=\"working\">\n<p>0.01 times 1000 = 10<br />\n1000 times 1000 times 0.01 times 0.99 = 9900<br />\nsquare root of 9900 = 99.5<br />\n99.5 divided by square root of 30 = 18.17<br />\n10 minus 1.96 times 18.17 = -25.6<br />\n0.99 to the power 30 = 0.740</p>\n</div>\n<p>One patient has mean 10 and SD about 99.5 units. The average of 30 has SD about 18.2. The normal range would run from about minus 25.6, which is impossible, upwards. And three times in four, none of the 30 has an admission, so the average is exactly 0. A distribution with three quarters of its <dfn data-g=\"602\">probability</dfn> on one value is not close to normal.</p>\n<p>What this does not establish. The cost model is made up; real costs have their own shape. The point is that “30 is enough” is a rule of thumb for mild skew. For rare, large values the n needed is far larger, and no single n works for every quantity.</p>"
+  }
+ ]
+}

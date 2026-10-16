@@ -1,0 +1,189 @@
+{
+ "format": 1,
+ "id": "s03-r1-c11",
+ "label": "11",
+ "title": "Counting arrangements: factorials and “n choose k”",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The <dfn data-g=\"174\">counting rule</dfn>. Suppose a task is done in stages, and the number of ways to do each stage does not depend on how the earlier stages were done. Then the number of ways to do the whole task is the product of the numbers of ways for each stage.</p>\n<p>For a whole number n, n factorial, written n! and read “n factorial”, is the product of the whole numbers from n down to 1.</p>\n<div class=\"working\">\n<p>n! = n × (n − 1) × (n − 2) × … × 2 × 1</p>\n</div>\n<p>By the counting rule, n different things can be put in a row in n! orders. The choices go down by 1 to a single one for the last. 0! is defined to be 1, which makes the formulas below hold when k is 0 or n.</p>\n<p>An ordered selection of k things from n different things, with k from 0 to n, can be made in n × (n − 1) × … × (n − k + 1) ways: k factors, starting at n and going down by 1. This equals n! ÷ (n − k)!, because the factors from (n − k) down to 1 cancel top and bottom.</p>\n<p>A choice of k things from n when order does not matter, a set rather than a row, is counted by “<dfn data-g=\"498\">n choose k</dfn>”. Each set of k can be put in a row in k! ways. So every set is counted k! times among the ordered selections. Divide by k!.</p>\n<div class=\"working\">\n<p>n choose k = [n! ÷ (n − k)!] ÷ k! = n! ÷ [k! (n − k)!]</p>\n</div>\n<p>Choosing which k to take is the same as choosing which n − k to leave, so n choose k equals n choose (n − k).</p>\n<p>Its main use in this book: take n trials, n runs of a <dfn data-g=\"102\">chance process</dfn> each sorted into one of two kinds, a <dfn data-g=\"767\">success</dfn> (the kind being counted) or a failure. The number of different orders in which exactly k successes and n − k failures can fall is n choose k, because an order is fixed by choosing which k of the n trials are the successes.</p>",
+   "refs": [
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Count the ways to do something in steps by multiplying the number of choices at each step.</p>\n<p>If the order matters, that product is your answer. If it does not, you have counted every group several times, once for each order it can be put in. Divide by that number.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c11-ten-choose-k.png",
+   "alt": "Eleven bars from zero, symmetric about 5: 1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The number of orders in which k positives can turn up among 10 people screened, for k from 0 to 10: 10 choose k. The counts are 1, 10, 45, 120, 210, 252, 210, 120, 45, 10 and 1, and they add up to 1,024, every order of positive and negative among 10 people. The row reads the same from both ends, because choosing k positives is choosing 10 − k negatives."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>You must choose 3 of the 5 subcentres in your block for a supervision visit this month. Call them A, B, C, D and E. How many different choices are there?</p>\n<p>Any of 5 can be first, any of the 4 left can be second, any of the 3 left can be third.</p>\n<div class=\"working\">\n<p>5 times 4 times 3 = 60</p>\n</div>\n<p>That gives 60, and it is the answer to a different question. It counts routes: A then B then C is one, and C then B then A is another. For the visit list, those are the same three subcentres. List the choices themselves, keeping each set in alphabetical order so none is written twice.</p>\n<table style=\"width:74%;\">\n\n<tbody>\n<tr>\n<td>sets with A</td>\n<td>ABC</td>\n<td>ABD</td>\n<td>ABE</td>\n<td>ACD</td>\n<td>ACE</td>\n<td>ADE</td>\n</tr>\n<tr>\n<td>sets without A</td>\n<td>BCD</td>\n<td>BCE</td>\n<td>BDE</td>\n<td>CDE</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<p>Ten sets. Take one set, A, B and C. It can be visited in 3 × 2 × 1 orders: 3 choices for the first stop, 2 for the second, 1 for the last.</p>\n<div class=\"working\">\n<p>3 times 2 times 1 = 6</p>\n</div>\n<p>Every one of the 10 sets turns up 6 times among the 60 routes.</p>\n<div class=\"working\">\n<p>60 divided by 6 = 10</p>\n</div>\n<p>That is the whole method. Count in order, then divide by the number of orders each set has.</p>\n<p>Four people are screened, and each is positive (+) or negative (−). In how many orders can exactly 2 positives turn up? Choose which 2 of the 4 places hold the +. That is 4 choose 2.</p>\n<div class=\"working\">\n<p>4 times 3 = 12<br />\n2 times 1 = 2<br />\n12 divided by 2 = 6</p>\n</div>\n<p>The six are ++−−, +−+−, +−−+, −++−, −+−+ and −−++. When the next section works out the chance of exactly 2 positives, it adds up the chance of each of these six orders.</p>\n<p>For large numbers, cancel before you multiply. In Book 0’s rebuilt table of Kiran and colleagues’ study, the arm tape missed 6 of the 42 men in the band. In how many ways could 6 of 42 men be the ones missed? That is 42 choose 6. The factors of 36! cancel from top and bottom, leaving 6 factors on top.</p>\n<div class=\"working\">\n<p>42 times 41 times 40 times 39 times 38 times 37 = 3776965920<br />\n6 times 5 times 4 times 3 times 2 times 1 = 720<br />\n3776965920 divided by 720 = 5245786</p>\n</div>\n<p>5,245,786 different sets of six men.</p>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The counts hold only when the things are all different and each is <dfn data-g=\"822\">used</dfn> at most once.</p>\n<p>The 6 missed men are Book 0’s rebuilt count, not a number the paper prints.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Multiply the choices at each step” counts ordered arrangements. Before you multiply, ask aloud: is A then B different from B then A here? If not, divide by k!.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p><dfn data-g=\"104\">Check</dfn> a counting formula on a case small enough to list. Write out every set for 3 from 5, or every order of 2 positives among 4 people.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Cancel before you multiply. For 42 choose 6, keep six factors on top and 6! below.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>n choose k equals n choose (n − k).</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A count of ways is not a <dfn data-g=\"602\">probability</dfn>. It becomes one only if every way is equally likely, or after each way is weighted by its own chance.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The formulas assume the n things are all different and none is used twice.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what does n! mean, and what is 0!? Write the formula for n choose k, and explain in two sentences why it divides by k!.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>n! is the product of the whole numbers from n down to 1. 0! is defined to be 1.</p>\n<div class=\"working\">\n<p>n choose k = n! ÷ [k! (n − k)!]</p>\n</div>\n<p>Counting k things from n in order gives n! ÷ (n − k)! arrangements. Each set of k turns up in that count once for every order it can be put in. There are k! such orders, so dividing by k! counts each set once.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A first-year resident asks: “Isn’t the chance of exactly 2 positives among 4 people just p times p times (1 − p) times (1 − p)?”</p>\n<p>Answer in about ten minutes at a whiteboard. Use the four-person example and list what you need to list.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>A good answer builds it from a list.</p>\n<p>Write the four people as four places. One way to get 2 positives is ++−−, writing + for positive and − for negative. If each person is positive with chance p, independently, the chance of exactly that order is p × p × (1 − p) × (1 − p). The resident has worked out the chance of one order.</p>\n<p>Now ask: is ++−− the only way to get 2 positives? List them: ++−−, +−+−, +−−+, −++−, −+−+, −−++. Six orders. Each has the same two p’s and two (1 − p)’s, just in different places, so each has the same chance. “Exactly 2 positives” happens if any one of them happens, and they cannot happen together, so their chances add.</p>\n<p>So the chance of exactly 2 positives is 6 times the chance of one order. The 6 is the number of ways to choose which 2 of the 4 places are positive: 4 choose 2. Check it on the board.</p>\n<div class=\"working\">\n<p>4 times 3 = 12<br />\n12 divided by 2 = 6</p>\n</div>\n<p>End with the rule: one order’s chance, times the number of orders. Leaving out the count answers “the first two positive and the last two negative”, which nobody asked.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Work out 5!, 0! and 6!.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>5 times 4 times 3 times 2 times 1 = 120<br />\n6 times 120 = 720</p>\n</div>\n<p>5! is 120. 0! is 1, by definition. 6! is 6 × 5!, which is 720.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Four things are labelled A, B, C and D. List every way to choose 2 of them when order does not matter. Then check your count with the formula for 4 choose 2.</p>",
+   "level": 2,
+   "answer": "<p>Keep each pair in alphabetical order: AB, AC, AD, BC, BD, CD. Six <dfn data-g=\"546\">pairs</dfn>.</p>\n<div class=\"working\">\n<p>4 times 3 times 2 times 1 = 24<br />\n2 times 1 = 2<br />\n24 divided by 2 = 12<br />\n12 divided by 2 = 6</p>\n</div>\n<p>4! ÷ (2! × 2!) is 24 ÷ 4, which is 6, as listed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Work out 8! ÷ 5! without working out 8!.</p>",
+   "level": 2,
+   "answer": "<p>Every <dfn data-g=\"274\">factor</dfn> of 5! is also a factor of 8!, so they cancel. What is left is 8 × 7 × 6.</p>\n<div class=\"working\">\n<p>8 times 7 times 6 = 336</p>\n</div>\n<p>8! ÷ 5! is 336.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Work out 9 choose 2 and 9 choose 7.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>9 times 8 = 72<br />\n2 times 1 = 2<br />\n72 divided by 2 = 36</p>\n</div>\n<p>9 choose 2 is 36. 9 choose 7 is also 36: choosing 7 of 9 to take is choosing 2 of 9 to leave. In full, 9! ÷ (7! × 2!) cancels the 7! and leaves the same 9 × 8 ÷ 2.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>The counts of ways to choose k from 5, for k from 0 to 5, are 1, 5, 10, 10, 5, 1.</p>\n<p>Write the counts for 6, for k from 0 to 6. Use only those six numbers and addition, then check 6 choose 3 with the formula. Hint: a set of k from 6 either leaves out the sixth thing or includes it.</p>",
+   "level": 3,
+   "answer": "<p>Each count for 6 is the count above it plus the one above and to its left. A set of k from 6 either leaves out the sixth thing or includes it. If it leaves it out, it is a choice of k from the first 5. If it includes it, it is a choice of k − 1 from the first 5. The two ends are 1.</p>\n<div class=\"working\">\n<p>1 plus 5 = 6<br />\n5 plus 10 = 15<br />\n10 plus 10 = 20<br />\n10 plus 5 = 15<br />\n5 plus 1 = 6</p>\n</div>\n<p>The counts for 6 are 1, 6, 15, 20, 15, 6, 1. Check 6 choose 3.</p>\n<div class=\"working\">\n<p>6 times 5 times 4 = 120<br />\n3 times 2 times 1 = 6<br />\n120 divided by 6 = 20</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Your block has 12 subcentres. This week you can visit 3.</p>\n<p>How many different sets of 3 subcentres could you choose? How many different routes, if the order of visits matters? Give each with its unit.</p>",
+   "level": 4,
+   "answer": "<p>Routes first, in order.</p>\n<div class=\"working\">\n<p>12 times 11 times 10 = 1320</p>\n</div>\n<p>Each set of 3 has 3! orders.</p>\n<div class=\"working\">\n<p>3 times 2 times 1 = 6<br />\n1320 divided by 6 = 220</p>\n</div>\n<p>220 sets of 3 subcentres, and 1,320 routes.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Ten people are screened at a camp. Each result is positive or negative.</p>\n<p>In how many different orders can exactly 2 positives turn up? What share of all possible orders of results is that?</p>",
+   "level": 5,
+   "answer": "<p>Choose which 2 of the 10 places hold the positives: 10 choose 2.</p>\n<div class=\"working\">\n<p>10 times 9 = 90<br />\n2 times 1 = 2<br />\n90 divided by 2 = 45</p>\n</div>\n<p>45 orders. The total number of orders of positives and negatives among 10 people is 2 to the power 10, as in Book 0, D2.</p>\n<div class=\"working\">\n<p>2<sup>10</sup> = 1024<br />\n45 divided by 1024 = 0.0439…</p>\n</div>\n<p>About 4.4 per cent of the orders. That share is a share of orders, not a probability of 2 positives: the orders are equally likely only if each person is positive with chance one half, independently.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>In Book 0’s rebuilt table of Kiran and colleagues’ study, the arm tape caught 36 of the 42 men in the 25 to 29.9 band.</p>\n<p>In how many different ways could 36 of 42 men be the ones caught? Give the count with its unit, and say which smaller choose count gives the same number.</p>",
+   "level": 6,
+   "answer": "<p>Choosing the 36 caught is choosing the 6 missed, so 42 choose 36 is 42 choose 6.</p>\n<div class=\"working\">\n<p>42 times 41 times 40 times 39 times 38 times 37 = 3776965920<br />\n6 times 5 times 4 times 3 times 2 times 1 = 720<br />\n3776965920 divided by 720 = 5245786</p>\n</div>\n<p>5,245,786 different sets of 36 men. Working out 42 choose 36 directly would need 36 factors on top and 36! below, all to cancel to the same six.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a review committee of 3 is to be chosen from 8 medical officers<br />\nfirst member: 8 choices<br />\nsecond member: 7 choices<br />\nthird member: 6 choices<br />\nnumber of committees = 8 times 7 times 6 = 336</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The last line broke. The three members of a committee have no order: Dr X, Dr Y and Dr Z chosen in any order are the same committee. The product counts each committee once for each of its 3! orders.</p>\n<div class=\"working\">\n<p>3 times 2 times 1 = 6<br />\n336 divided by 6 = 56</p>\n</div>\n<p>There are 56 committees.</p>\n<p>Why it looks reasonable: the stages are real, and the counting rule is right for them. It answers “chair, then secretary, then member”, which is a different question with 336 answers.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>number of ways to choose 3 of 10 = 10! divided by 3!<br />\n10! = 3628800<br />\n3! = 6<br />\n3628800 divided by 6 = 604800</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The first line broke. It divides by k! but not by (n − k)!. The formula is 10! ÷ (3! × 7!). The 7! cancels the bottom seven factors of 10!.</p>\n<div class=\"working\">\n<p>10 times 9 times 8 = 720<br />\n720 divided by 6 = 120</p>\n</div>\n<p>There are 120 ways.</p>\n<p>Why it looks reasonable: “divide by k! because order does not matter” is the right idea. But 10! counts all 10 things in a row, not 3 chosen from 10. A count of 604,800 sets is more than the 720 ordered choices of 3 from 10. There can never be more sets than ordered choices, so it should have looked too large.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A district officer says this about a pilot.</p>\n<blockquote>\n<p>We picked 3 of our 6 primary health centres (PHCs) for the pilot. There are only 20 possible sets of three, so the chance that we happened to pick the three best-run PHCs was 1 in 20. The pilot’s good results are not about which PHCs we chose.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what the answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: the number of sets of 3 from 6.</p>\n<div class=\"working\">\n<p>6 times 5 times 4 = 120<br />\n3 times 2 times 1 = 6<br />\n120 divided by 6 = 20</p>\n</div>\n<p>20 sets, as the officer says. If one set had been drawn <dfn data-g=\"40\">at random</dfn>, each set equally likely, the chance of any one particular set would be 1 in 20, or 0.05.</p>\n<p>What it does not establish. The 1 in 20 is a probability only if the set was drawn at random. Suppose the district picked PHCs for being willing, near or well staffed. Then there is no chance in the choice at all, and the count of possible sets says nothing about it. And even after a random draw, a 1 in 20 chance of picking exactly the best three says nothing about how many good PHCs ended up in the pilot. Ask how the three were chosen before anyone uses the 20.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 12,
+   "prompt": "<p>A report on a screening camp says this.</p>\n<blockquote>\n<p>Each person screened has a 0.2 chance of a positive result. So the chance that exactly 2 of 10 people are positive is 0.2 times 0.2 times 0.8 to the power 8, about 0.007. Two positives among ten would be very unusual.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the report found the chance of one order, two positives first and eight negatives after. Count the orders, and multiply.</p>\n<div class=\"working\">\n<p>0.2 times 0.2 = 0.04<br />\n0.8<sup>8</sup> = 0.16777…<br />\n0.04 times 0.16777 = 0.0067108…<br />\n10 times 9 = 90<br />\n90 divided by 2 = 45<br />\n45 times 0.0067108 = 0.30198…</p>\n</div>\n<p>About 0.30. Two positives among ten is the most common single outcome at this chance, not an unusual one. The report left out the 45.</p>\n<p>What it does not establish. The 0.30 needs each person to have the same 0.2 chance, independently of the others, which is what the next section names as the binomial conditions. Ten people from one household or one workplace may not be independent. And 0.2 is a stated chance in the report; where it came from decides whether 0.30 applies to this camp.</p>"
+  }
+ ]
+}

@@ -1,0 +1,228 @@
+{
+ "format": 1,
+ "id": "s03-r1-c08",
+ "label": "8",
+ "title": "The odds form of Bayes’ theorem and the likelihood ratio",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The <dfn data-g=\"527\">odds</dfn> of an event A are its <dfn data-g=\"602\">probability</dfn> divided by the probability that it does not happen, as in Book 0, D1: odds = P(A) ÷ (1 − P(A)). Going back, P(A) = odds ÷ (1 + odds).</p>\n<p>Let A be a <dfn data-g=\"363\">hypothesis</dfn>, such as “has the condition”, and B the evidence, such as a test result. Write Bayes’ theorem of section 5 twice: once for A, once for “not A”.</p>\n<div class=\"working\">\n<p>P(A | B) = P(B | A) × P(A) ÷ P(B)<br />\nP(not A | B) = P(B | not A) × P(not A) ÷ P(B)</p>\n</div>\n<p>Divide the first line by the second. P(B) is on the bottom of both, so it cancels.</p>\n<div class=\"working\">\n<p>P(A | B) ÷ P(not A | B) = [P(B | A) ÷ P(B | not A)] × [P(A) ÷ P(not A)]</p>\n</div>\n<p>The left side is the posterior odds of A, also called the <dfn data-g=\"577\">post-test</dfn> odds: its odds once you know B. The last bracket is the prior odds, also called the <dfn data-g=\"584\">pre-test</dfn> odds: the odds before you knew B. The middle bracket is the <dfn data-g=\"438\">likelihood ratio</dfn> (LR) of the evidence B.</p>\n<div class=\"working\">\n<p>LR = P(B | A) ÷ P(B | not A)<br />\nposterior odds = prior odds × LR</p>\n</div>\n<p>The <dfn data-g=\"575\">positive likelihood ratio</dfn>, LR+, uses “tests positive” as B. The <dfn data-g=\"502\">negative likelihood ratio</dfn>, LR−, uses “tests negative”.</p>\n<div class=\"working\">\n<p>LR+ = sensitivity ÷ (1 − specificity)<br />\nLR− = (1 − sensitivity) ÷ specificity</p>\n</div>\n<p>An LR above 1 raises the odds, an LR below 1 lowers them, and an LR of 1 leaves them where they were.</p>\n<p>Two results B and C can be applied one after the other, each multiplying the odds by its own LR. This is allowed only if B and C are <dfn data-g=\"147\">conditionally independent</dfn> given A and given not A (section 3).</p>",
+   "refs": [
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Odds say how many times more likely something is than not. A test result multiplies those odds by a fixed number, its likelihood ratio.</p>\n<p>Turn the probability you start with into odds. Multiply by the likelihood ratio. Then turn the odds back into a probability.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c08-prior-to-posterior.png",
+   "alt": "Two curves against the prior probability. After a positive tape: 0.148, 0.269, 0.453, 0.609, 0.768, 0.885, 0.930. After a negative tape: 0.010, 0.021, 0.045, 0.082, 0.159, 0.306, 0.431. A solid diagonal line marks no change.",
+   "w": 1360,
+   "h": 656,
+   "caption": "What the arm tape does to the probability that a man is in the 25 to 29.9 band, from priors between 0.05 and 0.8. A positive tape multiplies the odds by about 3.31, a negative one by about 0.19. From 0.2, a positive tape gives 0.453 and a negative one 0.045. The solid diagonal line is a result with an LR of 1, which changes nothing."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Take the arm tape of Book 0, Book 0, D3, again. In Kiran and colleagues’ study of medical students in Mangaluru, a mid-upper arm circumference of 31.3 cm or more had a <dfn data-g=\"713\">sensitivity</dfn> of 86 per cent and a <dfn data-g=\"742\">specificity</dfn> of 74 per cent for men in the body-mass index band 25 to 29.9. Work out the two likelihood ratios.</p>\n<div class=\"working\">\n<p>1 minus 0.74 = 0.26<br />\n0.86 divided by 0.26 ≈ 3.3077<br />\n1 minus 0.86 = 0.14<br />\n0.14 divided by 0.74 ≈ 0.1892</p>\n</div>\n<p>So LR+ is about 3.31: a positive tape is about 3.3 times as common among men in the band as among men outside it. LR− is about 0.19.</p>\n<p>Now use them. Start with the 131 men of the study, 42 of them in the band. The <dfn data-g=\"598\">prior probability</dfn> is 42 divided by 131. The prior odds are the men in the band against the men outside it, 42 against 89.</p>\n<div class=\"working\">\n<p>131 minus 42 = 89<br />\n42 divided by 89 ≈ 0.4719<br />\n0.4719 times 3.3077 = 1.5609<br />\n1.5609 divided by 2.5609 = 0.6095</p>\n</div>\n<p>The last line turns odds back into a probability: odds divided by (1 plus the odds). After a positive tape the probability is about 0.61. That is Book 0’s 61 per cent, reached without the table. Book 0’s 36 of 59 gives 0.6102, a shade higher, because its counts were rounded to whole men.</p>\n<p>Move the tape to a group of men in which one in five is in the band, as Book 0 did. The prior odds are 1 against 4.</p>\n<div class=\"working\">\n<p>0.2 divided by 0.8 = 0.25<br />\n0.25 times 3.3077 = 0.8269<br />\n0.8269 divided by 1.8269 = 0.4526<br />\n0.25 times 0.1892 = 0.0473<br />\n0.0473 divided by 1.0473 = 0.0452</p>\n</div>\n<p>A positive result raises the probability from 0.2 to about 0.45, Book 0’s 45 per cent. A negative result lowers it from 0.2 to about 0.045. The likelihood ratios did not change between the two groups. Only the prior did.</p>\n<p>The table below runs the same two multiplications from a range of priors. The figure draws it.</p>\n<table style=\"width:94%;\">\n\n<thead>\n<tr>\n<th>prior probability</th>\n<th>after a positive tape</th>\n<th>after a negative tape</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0.05</td>\n<td>0.148</td>\n<td>0.010</td>\n</tr>\n<tr>\n<td>0.1</td>\n<td>0.269</td>\n<td>0.021</td>\n</tr>\n<tr>\n<td>0.2</td>\n<td>0.453</td>\n<td>0.045</td>\n</tr>\n<tr>\n<td>0.32</td>\n<td>0.609</td>\n<td>0.082</td>\n</tr>\n<tr>\n<td>0.5</td>\n<td>0.768</td>\n<td>0.159</td>\n</tr>\n<tr>\n<td>0.7</td>\n<td>0.885</td>\n<td>0.306</td>\n</tr>\n<tr>\n<td>0.8</td>\n<td>0.930</td>\n<td>0.431</td>\n</tr>\n</tbody>\n</table>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The likelihood ratios stay fixed only while the sensitivity and specificity do. They were measured on 131 young men in one medical college. On older men, or men measured by someone else, the tape may behave differently, and then so do its likelihood ratios.</p>\n<p>The 86 and 74 are rounded and, as Book 0 found, fit the men in the 25 to 29.9 band, not everyone at 25 or more. The likelihood ratios inherit both limits.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>A likelihood ratio does not need a test with only two results. Deeks and Altman show this in their note “Diagnostic tests 4: likelihood ratios” in the <em>BMJ</em> (https://pmc.ncbi.nlm.nih.gov/articles/PMC478236/). They took a study of smoking history in people tested for obstructive airway disease, and gave each band of pack-years its own likelihood ratio. A pack-year is a pack of cigarettes a day for a year.</p>\n<p>Start with the band of 40 or more pack-years. Its LR is 20.4 in their table. Their worked box carries more digits, 20.43, and takes a prior probability of 0.1. Do it yourself.</p>\n<div class=\"working\">\n<p>0.1 divided by 0.9 = 0.1111<br />\n0.1111 times 20.43 = 2.27<br />\n2.27 divided by 3.27 = 0.6942</p>\n</div>\n<p>The probability rises from 0.1 to about 0.69, as the note says. Now look at their box’s last line as printed: “2.27/3.37 = 0.69”. That division gives 0.674, not 0.69. The 3.37 is a slip for 3.27, the 1 plus the odds. Their answer is right and one figure on the way is not. <dfn data-g=\"104\">Check</dfn> the arithmetic in a published <dfn data-g=\"848\">worked example</dfn>, as you would your own.</p>\n<p>Now the band of 20 to 40 pack-years. Its LR is 1.01.</p>\n<div class=\"working\">\n<p>0.1111 times 1.01 = 0.1122<br />\n0.1122 divided by 1.1122 = 0.1009</p>\n</div>\n<p>The probability goes from 0.1 to 0.1009. Asking this question moved nothing. A likelihood ratio near 1 is a result that turns up about as often with the disease as without it, and it carries almost no information.</p>",
+   "numberRefs": [
+    62
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Deeks and Altman count an LR above 10 or below 0.1 as strong evidence “in most circumstances”. That is a convention, not a law. An LR of 20 still leaves a probability of only about 0.17 if the prior was 0.01: the prior odds are about 0.0101, times 20 is 0.202, and 0.202 divided by 1.202 is about 0.168. Always finish the multiplication before you call a result decisive.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Here is the trap with two tests in a row. A man’s arm tape is positive in a camp where one man in five is in the band. A colleague, unsure, measures the same arm again with the same tape, gets a positive again, and multiplies by LR+ a second time.</p>\n<div class=\"working\">\n<p>0.25 times 3.3077 times 3.3077 = 2.7352<br />\n2.7352 divided by 3.7352 = 0.7323</p>\n</div>\n<p>About 0.73. It is wrong. The second reading is the same arm, the same tape and the same hands. Among men in the band, a man whose first reading was positive is very likely to read positive again. The same holds among men outside it. The two readings are not conditionally independent (section 3). The second one adds almost nothing, and the probability stays near 0.45.</p>\n<p>The rule needs a second test whose errors have nothing to do with the first one’s, inside each group. Suppose, as a made-up case, a second test exists whose results are independent of the tape’s among men in the band and among men outside it, with an LR+ of 4. Then the multiplication is allowed.</p>\n<div class=\"working\">\n<p>0.25 times 3.3077 times 4 = 3.3077<br />\n3.3077 divided by 4.3077 = 0.7679</p>\n</div>\n<p>Two positives now take the probability from 0.2 to about 0.77. Two measures of the same thing, such as an arm tape and a neck tape, both read body size. Do not assume they are independent inside each group. Ask for a study that reports both results on the same people.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The second test with an LR+ of 4 is made up, and its independence is assumed, not measured. Real paired tests are rarely fully independent inside each group. Then the true combined likelihood ratio lies below the product, and only a study that applied both tests to the same people can give it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“An LR of 3 triples the chance” is the error. A likelihood ratio multiplies the odds, not the probability. Turn the probability into odds before you multiply, and back after.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When you read a test’s <dfn data-g=\"8\">accuracy</dfn> in a paper, write down LR+ and LR− from its sensitivity and specificity.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A result whose LR is near 1 changes almost nothing, whatever its sensitivity sounds like.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Multiply the likelihood ratios of two tests only when their results are independent among people with the condition and among people without it. Two measures of the same thing, or the same measure repeated, fail this.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An LR of 10 on a prior of 0.01 still leaves the probability under 0.1. Say the <dfn data-g=\"578\">posterior probability</dfn>, not just the size of the LR.</p>",
+     "tag": "boundary",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A likelihood ratio is built from a sensitivity and a specificity measured on one group of people. Say which study the LR came from.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The tape’s LR+ is 3.3, so a positive tape makes a man 3.3 times as likely to be in the band.” The LR multiplies the odds. From a probability of 0.2 the positive tape gives 0.45, which is about 2.3 times the prior, not 3.3 times. From 0.5 it gives 0.77, about 1.5 times. The higher the prior, the less a fixed LR can add to the probability, because the probability cannot pass 1.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>At a cut-off of 31.3 cm, the arm tape’s positive likelihood ratio is about 3.3. Its negative likelihood ratio is about 0.19. Both come from the sensitivity of 86% and specificity of 74% found in 131 male medical students. Where one man in five is in the band, a positive result raises the probability to about 0.45, and a negative result lowers it to about 0.05.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: write the odds form of Bayes’ theorem, and the formulas for LR+ and LR− in terms of sensitivity and specificity. Then say when you may multiply two likelihood ratios together.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Posterior odds = prior odds × LR, where the LR of a result is P(result | condition) ÷ P(result | no condition).</p>\n<p>LR+ = sensitivity ÷ (1 − specificity). LR− = (1 − sensitivity) ÷ specificity.</p>\n<p>You may multiply two likelihood ratios only when the two results are conditionally independent: independent among people with the condition, and independent among people without it. Odds go in and come out; turn a probability into odds first, with odds = p ÷ (1 − p), and back after, with p = odds ÷ (1 + odds).</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>In a clinic you estimate that one adult man in ten has a body-mass index in the band 25 to 29.9. The arm tape’s sensitivity is 86 per cent and its specificity 74 per cent. Find the probability that a man is in the band after a positive tape, and after a negative tape, by the odds form. Say before you start how sure you are that the positive result lifts the probability above one half.</p>",
+   "type": "calculation",
+   "confidence": true,
+   "answer": "<p>The prior odds are 0.1 against 0.9.</p>\n<div class=\"working\">\n<p>0.1 divided by 0.9 = 0.1111<br />\n0.1111 times 3.3077 = 0.3675<br />\n0.3675 divided by 1.3675 = 0.2687<br />\n0.1111 times 0.1892 = 0.0210<br />\n0.0210 divided by 1.0210 = 0.0206</p>\n</div>\n<p>After a positive tape, about 0.27. After a negative tape, about 0.02. The positive result does not reach one half: at a prior of one in ten, most positive tapes are in men outside the band. The ten per cent is your estimate for the exercise, not a measured figure.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist has read that a new screening question “has a likelihood ratio of 2, so a positive answer doubles your risk”. In three minutes and without jargon, explain what is right and wrong in that sentence, and give one sentence they can quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>What is right: a positive answer makes the condition more likely, and the 2 says how much more often that answer turns up in people who have the condition than in people who do not.</p>\n<p>What is wrong: the 2 multiplies the odds, not the risk. When the condition is rare, odds and risk are almost the same, so a rare risk roughly doubles: one in a hundred becomes about two in a hundred. When it is common, it does not: a half becomes two thirds, not one.</p>\n<p>A sentence to quote: “A positive answer roughly doubles a small risk, but it cannot double a large one. And it tells you nothing about your own risk until you know how common the condition is in people like you.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Turn a probability of 0.2 into odds. Turn odds of 1.5 into a probability.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>1 minus 0.2 = 0.8<br />\n0.2 divided by 0.8 = 0.25<br />\n1 plus 1.5 = 2.5<br />\n1.5 divided by 2.5 = 0.6</p>\n</div>\n<p>Odds of 0.25, which is 1 to 4. A probability of 0.6.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A test has a sensitivity of 0.9 and a specificity of 0.8. Find LR+ and LR−.</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>1 minus 0.8 = 0.2<br />\n0.9 divided by 0.2 = 4.5<br />\n1 minus 0.9 = 0.1<br />\n0.1 divided by 0.8 = 0.125</p>\n</div>\n<p>LR+ is 4.5 and LR− is 0.125.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>The prior probability is 0.1 and the result has an LR of 6. Find the posterior probability.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>0.1 divided by 0.9 = 0.1111<br />\n0.1111 times 6 = 0.6667<br />\n0.6667 divided by 1.6667 = 0.4</p>\n</div>\n<p>The posterior probability is 0.4. Exactly: prior odds of 1 to 9 times 6 give 6 to 9, which is 2 to 3, and 2 out of 5 is 0.4.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>The prior probability is 0.05. What likelihood ratio would a result need to bring the posterior probability to 0.5?</p>",
+   "level": 3,
+   "answer": "<p>A probability of 0.5 is odds of 1. So the LR must take the prior odds up to 1.</p>\n<div class=\"working\">\n<p>0.05 divided by 0.95 = 0.05263<br />\n1 divided by 0.05263 = 19.0</p>\n</div>\n<p>An LR of 19. Exactly: the prior odds are 1 to 19, and 19 times that is 1.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Mohan and colleagues built the Indian Diabetes Risk Score in Chennai. At a score of 60 or more, it had a sensitivity of 72.5 per cent and a specificity of 60.1 per cent for undiagnosed diabetes. The paper’s discussion assumes a <dfn data-g=\"592\">prevalence</dfn> of undiagnosed diabetes of 10.1 per cent. Find LR+ and LR−, and the probability of undiagnosed diabetes after a score of 60 or more and after a lower score, at that prevalence.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>1 minus 0.601 = 0.399<br />\n0.725 divided by 0.399 = 1.8170<br />\n1 minus 0.725 = 0.275<br />\n0.275 divided by 0.601 = 0.4576<br />\n0.101 divided by 0.899 = 0.11235<br />\n0.11235 times 1.8170 = 0.20414<br />\n0.20414 divided by 1.20414 = 0.1695<br />\n0.11235 times 0.4576 = 0.05141<br />\n0.05141 divided by 1.05141 = 0.0489</p>\n</div>\n<p>LR+ is about 1.82 and LR− about 0.46. A score of 60 or more takes the probability from about 0.10 to about 0.17, or 17 per cent of people. A lower score takes it to about 0.05. Neither moves it far: this is a score for deciding whom to test with blood <dfn data-g=\"333\">glucose</dfn>, not one that diagnoses.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>In Deeks and Altman’s smoking example, people with fewer than 20 pack-years had an LR of 0.55 for obstructive airway disease, and people who had never smoked had an LR of 0.76. Starting from a prior probability of 0.1, find the posterior probability for each. Do either rule the disease out?</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>0.1 divided by 0.9 = 0.1111<br />\n0.1111 times 0.55 = 0.0611<br />\n0.0611 divided by 1.0611 = 0.0576<br />\n0.1111 times 0.76 = 0.0844<br />\n0.0844 divided by 1.0844 = 0.0778</p>\n</div>\n<p>About 0.058 and about 0.078. Neither rules the disease out: both LRs are far above the 0.1 that Deeks and Altman name for strong evidence, and the probability barely falls. Their own note says these bands “are not small enough to rule out the disease with <dfn data-g=\"149\">confidence</dfn>”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Altman and Bland’s liver scan had a sensitivity of 0.895 and a specificity of 0.628, in a sample where the prevalence of abnormal pathology was 0.75. Find LR+, the pre-test odds, the post-test odds after a positive scan and the post-test probability. Then compare the probability with what the scan’s LR+ suggests about how useful it is.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>1 minus 0.628 = 0.372<br />\n0.895 divided by 0.372 = 2.406<br />\n0.75 divided by 0.25 = 3.0<br />\n3.0 times 2.406 = 7.218<br />\n7.218 divided by 8.218 = 0.8783</p>\n</div>\n<p>LR+ is about 2.41, the pre-test odds 3.0, the post-test odds about 7.22 and the probability about 0.878, as Altman and Bland print it. The probability after a positive scan looks high, but most of it was there before the scan: the prior was already 0.75. An LR+ of 2.41 is a modest test. As they write, a high likelihood ratio does not by itself make a positive test a good indicator, and the reverse holds too: a high post-test probability does not make a test good.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>arm tape: sensitivity 0.86, specificity 0.74, so LR+ = 0.86 divided by 0.26 = 3.31<br />\none man in five is in the band, so the prior is 0.2<br />\nafter a positive tape: 0.2 times 3.31 = 0.66</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The third line broke. An LR multiplies the odds, not the probability. Turn 0.2 into odds first.</p>\n<div class=\"working\">\n<p>0.2 divided by 0.8 = 0.25<br />\n0.25 times 3.3077 = 0.8269<br />\n0.8269 divided by 1.8269 = 0.4526</p>\n</div>\n<p>The answer is about 0.45, not 0.66. Why the wrong answer looks reasonable: at small probabilities, odds and probability are nearly equal, so multiplying the probability gives nearly the right answer. At 0.2 they have already parted. At a prior of 0.4 the same mistake would give 1.32, a probability above 1, which shows at once that the method is wrong.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>arm tape: sensitivity 0.86, specificity 0.74<br />\nLR− = specificity divided by (1 − sensitivity) = 0.74 divided by 0.14 = 5.29<br />\na negative tape multiplies the odds by 5.29<br />\nso a negative tape makes being in the band more likely</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line broke. LR− is P(negative | in the band) ÷ P(negative | not in the band). A man in the band tests negative with probability 1 − sensitivity; a man outside it with probability equal to the specificity.</p>\n<div class=\"working\">\n<p>1 minus 0.86 = 0.14<br />\n0.14 divided by 0.74 = 0.1892</p>\n</div>\n<p>LR− is about 0.19, and a negative tape lowers the odds. The worked answer turned the <dfn data-g=\"640\">ratio</dfn> upside down. Why it looks reasonable: both numbers in it are the right two numbers. Only their order is wrong. Say each one as a conditional aloud before you divide: “negative given in the band” goes on top. The last line should have been a warning in itself: a negative test that raises the probability is a sign the arithmetic, not the test, is wrong.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A health app says of a made-up screening question: “Our question has a likelihood ratio of 2. Answer yes, and your chance of having the condition doubles.” Decide what to compute, compute it for a person whose chance before the question was 0.01, for one at 0.5 and for one at 0.6, and say what the <dfn data-g=\"114\">claim</dfn> does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the posterior probability from each prior, and divide it by the prior.</p>\n<div class=\"working\">\n<p>0.01 divided by 0.99 = 0.010101<br />\n0.010101 times 2 = 0.020202<br />\n0.020202 divided by 1.020202 = 0.0198<br />\n0.0198 divided by 0.01 = 1.98<br />\n0.5 divided by 0.5 = 1<br />\n1 times 2 = 2<br />\n2 divided by 3 ≈ 0.6667<br />\n0.6667 divided by 0.5 = 1.333<br />\n0.6 divided by 0.4 = 1.5<br />\n1.5 times 2 = 3<br />\n3 divided by 4 = 0.75<br />\n0.75 divided by 0.6 = 1.25</p>\n</div>\n<p>From 0.01 the chance almost doubles, to about 0.02. From 0.5 it rises by a third, and from 0.6 by a quarter. “Doubles” is true of the odds, and of the chance only when it is small.</p>\n<p>What it does not establish. The 2 itself is an estimate from whatever group the app’s makers tested, and may not hold for you. A doubled small chance is still small: 0.02 means 98 people in 100 who answer yes do not have the condition. And the claim says nothing about your own prior, without which no posterior can be stated.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A colleague in a screening camp says: “His arm tape was positive, and the neck tape was positive too. The arm tape’s LR+ is 3.3 and the neck tape’s is about 4.5. Multiply: nearly 15. With one man in five in the band, he’s almost certainly in it.”</p>\n<p>Decide what to compute, compute it, and say what the answer does not establish. Treat the 4.5 as the colleague’s figure, not one you have checked.</p>",
+   "level": 10,
+   "answer": "<p>Compute the posterior the colleague has in mind, then ask whether the multiplication was allowed.</p>\n<div class=\"working\">\n<p>0.25 times 3.3077 times 4.5 = 3.7212<br />\n3.7212 divided by 4.7212 = 0.7882</p>\n</div>\n<p>Even on the colleague’s own terms the probability is about 0.79, not “almost certainly”. About one such man in five would still be outside the band.</p>\n<p>And the multiplication is not allowed as it stands. Both tapes read the same thing, body size. Among men in the band, a man with a large arm is likely to have a large neck too, and the same outside it. The two results are not conditionally independent, so the combined LR is less than 15 by an unknown amount. What you can say is the arm tape’s result alone, about 0.45, and that the neck tape adds something, but less than the product suggests.</p>\n<p>What it does not establish. No combined likelihood ratio can be stated without a study that measured both tapes on the same men. Neither tape measures body fat; both stand in for the body-mass index band, which is itself a stand-in.</p>"
+  }
+ ]
+}
