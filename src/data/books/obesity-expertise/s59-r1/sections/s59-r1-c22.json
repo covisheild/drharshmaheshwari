@@ -1,0 +1,216 @@
+{
+ "format": 1,
+ "id": "s59-r1-c22",
+ "label": "22",
+ "title": "Worked journey: One claim, from a belief to a dated line: “eating breakfast helps you lose weight”",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In this book, a <dfn data-g=\"107\">claim</dfn>’s <dfn data-g=\"383\">journey</dfn> is the order of work that takes one claim from the moment you meet it to a dated line in your register, and to saying so out loud.</p>\n<ol type=\"1\">\n<li>Sort it: <dfn data-g=\"341\">hypothesis</dfn>, <dfn data-g=\"274\">finding</dfn> or <dfn data-g=\"57\">belief</dfn>. Read its <dfn data-g=\"775\">verb</dfn> for a <dfn data-g=\"88\">causal claim</dfn>.</li>\n<li>Find what it rests on, and list the explanations of that evidence besides the one claimed.</li>\n<li>Ask the two questions of a causal claim: is there a measured <dfn data-g=\"202\">difference between groups</dfn>, and is there a shown mechanism? Say which leg is weak.</li>\n<li>Before reading the trials, set a starting <dfn data-g=\"141\">confidence</dfn> from the <dfn data-g=\"53\">base rate</dfn> of claims like it, and say how well the <dfn data-g=\"604\">reference class</dfn> fits.</li>\n<li>Read each trial for what it found and what it could not show.</li>\n<li>Read the body of trials for its estimate and its certainty, and put the certainty into its words.</li>\n<li>Update the starting confidence on that evidence, once, with a <dfn data-g=\"754\">two-way table</dfn> in <dfn data-g=\"467\">natural frequencies</dfn> (whole counts out of 1,000, as the section on <dfn data-g=\"763\">updating</dfn> taught).</li>\n<li>Write a <dfn data-g=\"143\">confidence statement</dfn> in its four parts: the claim, a word from a named scale with its number, the grounds and their certainty, and what would change your mind.</li>\n<li>Enter it as a dated line in your register.</li>\n<li>If you taught or published the old view, change it out loud.</li>\n<li>Say what the case does not show.</li>\n</ol>",
+   "refs": [
+    360,
+    3,
+    4,
+    77,
+    357,
+    287,
+    361,
+    53,
+    54,
+    362,
+    352,
+    363,
+    179,
+    364,
+    365,
+    366,
+    43,
+    367,
+    368,
+    369,
+    355
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Each earlier section taught one tool. Real work uses them one after another, on one claim.</p>\n<p>The claim is one you have heard on a ward round and in a newspaper column: eating breakfast helps you lose weight.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c22-confidence-moves.png",
+   "alt": "Three bars from zero: 40 at the start, 25 after the trials, 31 after the trials read as weaker evidence, with a shaded band from 20 to 45 marking ICD 203's \"unlikely\".",
+   "w": 1360,
+   "h": 788,
+   "caption": "Confidence that eating breakfast helps adults lose weight: 40 per cent from the base rate, 25 per cent after the trials, or 31 per cent if the trials are read as weaker evidence. The shaded band is “unlikely” on the ICD 203 scale, 20 to 45 per cent. All three are judgements, not measurements."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c22-grade-steps.png",
+   "alt": "Three bars from zero: 4 for randomised trials at the start, 3 after one step down for risk of bias, 2 after one step down for indirectness.",
+   "w": 1360,
+   "h": 656,
+   "caption": "This book’s GRADE-style reading of the review’s certainty, in filled circles. Randomised trials start at 4, high. One step down for risk of bias, one for indirectness (trials of a few weeks, a claim about losing weight): 2, low. The authors did not use GRADE."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c22-update-counts.png",
+   "alt": "Four bars from zero. Main reading: claim true 40, claim false 120. Weaker reading: claim true 40, claim false 90.",
+   "w": 1492,
+   "h": 656,
+   "caption": "The update in natural frequencies, out of 1,000 claims like this one. In the row of claims whose trials come out like these, 40 are true and 120 false: 40 of 160, 25 per cent. Read the trials as weaker, so that 90 false claims give such trials, and it is 40 of 130, about 31 per cent. Behind the counts are judged chances of such trials: 10 in 100 if the claim is true; 20 in 100 if it is false, or 15 in 100 on the weaker reading. They are judgements, not measured rates."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Suppose a colleague’s postgraduate (PG) lecture slide on obesity prevention says, in bold, “Never skip breakfast: eating breakfast helps you lose weight.” The slide is made up. The claim is not; Brown and colleagues found it recommended by popular health figures, on health websites and even by the United States Surgeon General.</p>\n<p><strong>Sort it.</strong> It names no study and no people, so it is not a finding. Nobody is offering it to be tested, so it is not a hypothesis. It is a belief, stated in the <dfn data-g=\"779\">voice</dfn> of a finding. Now read the verb. “Helps you lose” says that eating breakfast changes weight: it is a causal claim.</p>\n<p><strong>What it rests on.</strong> Brown and colleagues pooled the observational studies, which watch people as they are. The <dfn data-g=\"39\">association</dfn> is firm: people who skip breakfast more often have <dfn data-g=\"506\">overweight</dfn> or obesity. In Brown’s words, “this association supports the PEBO but does not show causation”. Write the five explanations beside it, as the section on one finding with several explanations taught. Repetition makes chance a weak explanation. Bias, a third <dfn data-g=\"261\">factor</dfn> and the <dfn data-g=\"635\">reverse direction</dfn> are not, because every one of those studies shares the same design. Only the proposed cause is the claim.</p>\n<p><strong>The two legs.</strong> Ask the two questions of a causal claim. Was a difference in weight measured between groups formed by chance? Brown found very few trials and no consistent effect. Is there a shown mechanism? Brown again: “there is currently no clearly and consistently shown physiologic mechanism to explain the PEBO”. Both legs are weak. In 2013 the claim was, in their phrase, “only presumed true”.</p>\n<p><strong>Start from the base rate.</strong> Before you read the trials, ask how often claims of this kind hold up. Advice to eat breakfast was an established practice, recommended for weight. The nearest measured <dfn data-g=\"109\">class</dfn> is established practices tested in trials. Prasad and colleagues read one journal’s decade of them.</p>\n<div class=\"working\">\n<p>146 divided by 363 is about 0.402<br />\n138 divided by 363 = 0.3801652893<br />\n138 divided by (146 plus 138) = 0.4859154930</p>\n</div>\n<p>Of 363 tests of an established practice, 146 reversed it and 138 upheld it; the rest gave no clear answer. A claim counts as true, for this purpose, if a trial would uphold it. A test that settled nothing did not uphold it, so count it against, as the section on base rates did: about 38 per cent. On clear answers only it would be 49; write which you <dfn data-g=\"765\">used</dfn>. For the table, round it: about 40 per cent (38, rounded), <dfn data-g=\"491\">odds</dfn> of 2 to 3.</p>\n<p>Two cautions go beside that number. The class is a poor fit: one American journal, and mostly drugs and procedures, not food. And think before you move up for the observational studies. They show an association, not a cause, so they would move you little at most. Judge, too, that most practices in Prasad’s count already had support of this kind when they were tested; moving up for it could count it twice. This journey leaves the start at 40 per cent and says so.</p>",
+   "numberRefs": [
+    258
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 40 per cent is a starting point taken from a different class of claims. A reader who moves up for the observational studies, to 50 per cent say, will end somewhere else after the same trials. Write down which start you used, and why, so that a reader can redo the work with another.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p><strong>The trial.</strong> Now read the first large trial. Dhurandhar and colleagues randomly assigned 309 adults with overweight or obesity who were trying to lose weight, in the United States and Denmark. One group was advised to eat breakfast, one to skip it, and one got general advice only. Over 16 weeks the advice changed what people said they ate at breakfast. It made no detectable difference to weight.</p>\n<p>Read that without overreach, as the section on no evidence of an effect taught. The paper gives no <dfn data-g=\"142\">confidence interval</dfn> for the difference between the groups. So it does not show that breakfast has no effect on weight. It shows that this advice, in these adults, over 16 weeks, did not produce a difference the trial could detect.</p>\n<p><strong>The body of trials.</strong> Then read a 2019 review that pooled the trials then published. Sievert and colleagues (2019) found seven randomised trials of breakfast and weight, with 486 people, all in high-income countries. Pooled, those assigned to eat breakfast ended slightly heavier. The <dfn data-g=\"439\">mean difference</dfn> was 0.44 kg, favouring skipping, with a 95 per cent confidence interval of 0.07 to 0.82 kg. The interval excludes zero, and it holds only differences of under 1 kg. Follow-up averaged seven weeks.</p>\n<p>Now rate the certainty, as <dfn data-g=\"315\">GRADE</dfn> does. Randomised trials start at high, four filled circles. The authors judged the quality of the <dfn data-g=\"68\">body of evidence</dfn> low. They gave two reasons: every trial was at high or unclear <dfn data-g=\"639\">risk of bias</dfn> in at least one respect, and every trial was short. Take the first as risk of bias. Take the second as <dfn data-g=\"351\">indirectness</dfn>: Cochrane’s handbook calls trials indirect when they answer “a restricted version of the main review question”. The claim is about losing weight that lasts; trials of a few weeks answer a restricted version.</p>\n<div class=\"working\">\n<p>4 minus 1 minus 1 = 2</p>\n</div>\n<p>Two filled circles is low. The authors did not use GRADE; these steps are this book’s reading of the two reasons they gave. Put low certainty into its words, as the section on certainty words taught: low takes “may”. Eating breakfast may not help adults lose weight.</p>",
+   "numberRefs": [
+    33,
+    167
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The step count is a reading of the authors’ two reasons, not their own GRADE table. The authors reported some <dfn data-g=\"349\">inconsistency</dfn> across the trials’ results; a rater who counted it as serious would rate it very low. It is hard to see a case for rating it higher.</p>\n<p>The 0.44 kg is an average over short trials. It is not a forecast of what one person will gain over a year by eating breakfast.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p><strong>Update, once.</strong> You started at about 40 per cent (38, rounded). Now move by as much as the trials warrant, with a two-way table in natural frequencies, as the section on updating taught: whole counts of 1,000 imagined claims like this one.</p>\n<p>First, a trap. The 2014 trial is one of the seven trials Sievert pooled. Update on the review only. If you update on the trial and then again on the review, you count the same adults twice.</p>\n<p>Fill the table from three numbers. Two of them are judgements, and you must say so.</p>\n<ul>\n<li>Of 1,000 claims like this, 400 are true. That is the starting 40 per cent. These are the two columns.</li>\n<li>If the claim were true, how often would a body of trials like this come out favouring skipping, with an interval that excludes zero? Seldom. Judge 10 in 100.</li>\n<li>If the claim were false, how often? More often, but far from always, because short trials with a high risk of bias can miss or blur a difference. Judge 20 in 100. These two rates give the rows.</li>\n</ul>\n<div class=\"working\">\n<p>400 times 0.10 = 40<br />\n600 times 0.20 = 120<br />\n40 plus 120 = 160<br />\n40 divided by 160 = 0.25</p>\n</div>\n<table style=\"width:98%;\">\n\n<thead>\n<tr>\n<th></th>\n<th>the claim is true</th>\n<th>the claim is false</th>\n<th>total</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>trials come out like these</td>\n<td>40</td>\n<td>120</td>\n<td>160</td>\n</tr>\n<tr>\n<td>trials do not</td>\n<td>360</td>\n<td>480</td>\n<td>840</td>\n</tr>\n<tr>\n<td>total</td>\n<td>400</td>\n<td>600</td>\n<td>1,000</td>\n</tr>\n</tbody>\n</table>\n<p>Take the row of claims whose trials come out like these: 160. Of them, 40 are true. Your confidence moves from 40 to 25 per cent. A result like this turns up twice as often among false claims as among true ones, 20 in 100 against 10 in 100. That is why it counts against the claim. It is low-certainty evidence, so you judged it only twice as common, and it moves you some way, not all the way.</p>\n<p>Now test how much hangs on your judgement. Suppose you read the trials as weaker still, so that a result like this would turn up only 15 times in 100 if the claim were false.</p>\n<div class=\"working\">\n<p>600 times 0.15 = 90<br />\n40 plus 90 = 130<br />\n40 divided by 130 = 0.3076923077</p>\n</div>\n<p>Then you move only from 40 to about 31 per cent. Weak evidence moves you a little. Both answers say the claim is less likely than not. Neither says it is settled.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 10 in 100, 20 in 100 and 15 in 100 are judgements, not measured rates. No study has counted how often bodies of trials like this one come out this way for true and for false claims. The table makes the judgements visible so another reader can change them and redo the arithmetic.</p>\n<p>A body of trials is not a laboratory test with a known catch rate. The table borrows the form of Book 0’s two-way table, and its numbers are only as good as the judgements put into it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 4",
+   "role": "illustration",
+   "html": "<p><strong>The confidence statement.</strong> Choose one scale and name it. The register of the section before this one uses <dfn data-g=\"342\">ICD 203</dfn>, whose bands meet but do not overlap. On it, “unlikely” runs from 20 to 45 per cent, and 25 per cent falls inside. Now write the four parts, as the section on stating confidence taught, with the grounds in a sentence of their own.</p>\n<blockquote>\n<p>I think it “unlikely” (about 25 per cent, on the ICD 203 scale) that eating breakfast helps adults lose weight. Randomised trials have compared eating breakfast with skipping it in adults in high-income countries, over seven weeks on average. The difference in weight favoured skipping breakfast, by a mean of 0.44 kg (Sievert and colleagues, 2019). The authors judged the quality of this evidence low. A well-run trial of a year or more, ideally in Indian adults, in which those advised to eat breakfast lost clearly more weight would change my mind.</p>\n</blockquote>\n<p>Give the complement too: about a 3 in 4 chance that breakfast does not help, odds of 3 to 1 against.</p>\n<p><strong>The register.</strong> Enter it as a new line in your own register; here it is your first. The <dfn data-g=\"728\">tally</dfn> that will one day count these lines takes each claim on the side you lean to, so turn the claim round. A 25 per cent chance that breakfast helps is a 75 per cent chance that it does not. On ICD 203, “likely” runs from 55 to 80 per cent, so 75 per cent is “likely”.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>no.</td>\n<td>date</td>\n<td>claim</td>\n<td>confidence (ICD 203)</td>\n<td>grounds and their certainty</td>\n<td>what would change my mind</td>\n<td>review</td>\n</tr>\n<tr>\n<td>1</td>\n<td>2026-10-25</td>\n<td>In adults in high-income countries, eating breakfast does not lead to more weight loss than skipping it, over weeks to months</td>\n<td>“likely” (75%)</td>\n<td>Base rate from tested established practices (poor fit), then 7 trials in high-income countries: 0.44 kg (0.07 to 0.82) favouring skipping, mean 7 weeks; quality judged low by the authors</td>\n<td>A well-run trial of 12 months or more showing clearly more weight loss with breakfast</td>\n<td>When a new review of breakfast trials appears, or 2028-10-25</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Out loud.</strong> Your colleague taught the old view, in bold, to a room of residents, last year. First sort it, as the section on saying “I was wrong” taught: <dfn data-g=\"97\">check</dfn> the dates. The 2014 trial and the 2019 review were both out before her lecture, so the evidence did not move after she spoke. She overstated. The right instrument is a sentence to the same class, not a letter to a journal, because the claim was made in a lecture. She has read your working and adopts it. At the next lecture she says the four sentences of the section on changing a stated position:</p>\n<blockquote>\n<p>In my lecture on obesity prevention last year, I told you that eating breakfast helps you lose weight, and I said it as a fact. That went beyond the evidence even then: trials published in 2014 and 2019 did not find that adults assigned to eat breakfast lost more weight; over a few weeks they ended slightly heavier, at low certainty. I now think it “unlikely”, about 25 per cent on the ICD 203 scale, that breakfast helps weight loss; the evidence is low certainty, short and from high-income countries. I have changed the slide, and from now on I will not give breakfast as weight-loss advice.</p>\n</blockquote>\n<p>She adds two sentences on what was reasonable and what was not. The association is real, repeated in many studies, and public health authorities commonly recommended breakfast. Teaching it as a cause was never supported by those studies, and teaching it as fact after the trials was not reasonable. That is not an apology for honest work. It is “I was wrong about that”, said with its reasons.</p>\n<p><strong>What the case does not show.</strong> Say these in the same breath as the conclusion.</p>\n<ul>\n<li>It is about adults. Sievert’s review left out children and adolescents.</li>\n<li>It is about high-income countries. The weight trials were from the UK and the US, and the 2014 trial also had a site in Denmark; none was from India. The authors themselves call for studies in low- and middle-income countries, where undernutrition and obesity can sit side by side.</li>\n<li>It is about the short term: seven weeks on average, 16 weeks at the longest. It says nothing about a year.</li>\n<li>It is about weight. It says nothing about the other reasons people eat or skip breakfast.</li>\n<li>It does not show that breakfast causes weight gain. The 0.44 kg is small, and its certainty is low.</li>\n<li>The 25 per cent is a judgement, built from a borrowed base rate and two judged numbers. It is not a measurement.</li>\n</ul>",
+   "numberRefs": [
+    230,
+    167
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The lecture, the slide and the register line are made up; the trials and their numbers are real. A lecturer who taught the old view in a paper, not a lecture, needs a different instrument, chosen as the section on saying “I was wrong” set out.</p>\n<p>The confidence word fits ICD 203, and the weaker reading of 31 per cent gets the same word. The word hides the difference between the two readings; the number shows it. Write both, and name the scale every time.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Work in order.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Set your starting confidence before you read the trials.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Count each piece of evidence once.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never write “breakfast does not matter for weight” or “skipping breakfast makes you thinner”.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Mark every judgement in your working as a judgement.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>No trial in this review was done in India, and none lasted longer than 16 weeks.</p>",
+     "tag": "india_deviation",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>If you taught the old view, say so to the same audience, in the four sentences.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>The journey gives you a defensible number, not a true one.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“So the journey proved that breakfast does not help weight loss.” It did not. It moved one person’s confidence from 40 to 25 per cent, on low-certainty evidence from short trials in high-income countries. That is a statement about how sure to be, with its grounds. Three in four is not 100 per cent. A long, well-run trial could still move the number back up, and the line says so.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>I think it “unlikely” (about 25 per cent, on the ICD 203 scale) that eating breakfast helps adults lose weight. Randomised trials have compared eating breakfast with skipping it in adults in high-income countries, over seven weeks on average. The difference in weight favoured skipping breakfast, by a mean of 0.44 kg (Sievert and colleagues, 2019). The authors judged the quality of this evidence low, so eating breakfast may increase weight slightly compared with skipping it. A good trial of a year or more could change my mind, if those told to eat breakfast lost clearly more weight.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, list the steps of a claim’s journey in order, from first hearing the claim to what the case does not show. For each step, name the one question you ask.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<ol type=\"1\">\n<li>Sort it: hypothesis, finding or belief? Is the verb causal?</li>\n<li>What does it rest on, and what other explanations fit that evidence?</li>\n<li>The two legs: is there a measured difference between groups made by chance, and a shown mechanism? Which is weak?</li>\n<li>Base rate: how often do claims of this kind hold up, and how well does the class fit?</li>\n<li>Each trial: what did it find, and what could it not show?</li>\n<li>The body of trials: what is the estimate, and what is its certainty, in words?</li>\n<li>Update: how far should this evidence move me, counted once, in a two-way table?</li>\n<li>The confidence statement: claim, word and number on a named scale, grounds and certainty, what would change my mind.</li>\n<li>The register: a dated line, never edited.</li>\n<li>Out loud: did I teach or publish the old view, and to whom do I say so?</li>\n<li>What does it not show: people, place, time, outcome, cause?</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A newspaper health column reads: “New research proves skipping breakfast is the secret to weight loss.” The column cites Sievert and colleagues’ 2019 review. Name what the column gets wrong, using the steps of the journey, and write one sentence it could have printed.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Four faults.</p>\n<ul>\n<li>“Proves”: evidence supports a claim more or less strongly; it never proves one. Here the certainty is low.</li>\n<li>“Skipping breakfast is the secret to weight loss”: the trials compared eating breakfast with skipping it. Those who ate it ended a mean of 0.44 kg heavier, with an interval of 0.07 to 0.82 kg. That does not show skipping causes weight loss of any useful size.</li>\n<li>The few weeks behind it: the trials averaged seven weeks and none ran past 16. A column read by people planning for a year is reading a few weeks of evidence.</li>\n<li>It says nothing of who was studied: adults in the UK and the US (one trial also in Denmark), none in India.</li>\n</ul>\n<p>A sentence it could have printed:</p>\n<blockquote>\n<p>Short trials in adults in rich countries did not find that eating breakfast helped people lose weight. The evidence is weak, and none of the trials was done in India.</p>\n</blockquote>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>For a journalist, three minutes. She asks: “Should people skip breakfast to lose weight?” Give her one quotable sentence, and tell her how sure you are without becoming useless to her.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Correct the question gently. The trials compared eating breakfast with skipping it. Skippers ended a little lighter over a few weeks, at low certainty, which is not evidence that skipping is a way to lose weight. Then give her the sentence.</p>\n<blockquote>\n<p>The trials suggest that eating breakfast does not help adults lose weight. But skipping it is not a proven way to lose weight either.</p>\n</blockquote>\n<p>Then how sure, in plain words: “I’d put it at about one in four that breakfast helps. The trials are short, a few weeks, and none was done in India, so I hold that loosely.” If she asks what would change your mind, say: a well-run trial lasting a year or more.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Take a claim you have heard stated with confidence in your own department, such as on a ward round or in a lecture. Run it through the eleven steps on one <dfn data-g=\"674\">sheet</dfn>. End with a register line, and, if you have taught the claim, the four sentences you will say.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Judge your sheet by four tests.</p>\n<ul>\n<li>Did you set the starting confidence before reading the trials, and say how well the reference class fits?</li>\n<li>Is every judgement marked as one, with its number, so another reader could change it and redo the table?</li>\n<li>Did you count each piece of evidence once? Check whether any trial you read is inside a review you also used.</li>\n<li>Does your “does not show” list name the people, the place, the time, the outcome and the cause?</li>\n</ul>\n<p>If your claim has no trials at all, steps 5 to 7 have nothing to work on. Then the line should say so. Give the starting confidence from the base rate and its certainty. Put the trial that would settle it under “what would change my mind”.</p>"
+  }
+ ]
+}

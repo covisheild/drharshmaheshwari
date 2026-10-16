@@ -1,0 +1,254 @@
+{
+ "format": 1,
+ "id": "s59-r1-c07",
+ "label": "7",
+ "title": "GRADE certainty: four levels, where you start, and moving down or up",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-10.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"315\">GRADE</dfn> (Grading of Recommendations Assessment, Development and Evaluation) is a scheme for rating a <dfn data-g=\"68\">body of evidence</dfn>.</p>\n<p>GRADE calls its rating the <dfn data-g=\"93\">certainty of the evidence</dfn>. Older texts, including GRADE’s own 2013 Handbook, call it the quality of evidence. In a <dfn data-g=\"725\">systematic review</dfn>, certainty is a judgement of how sure one can be that an estimate of an effect is close to the true effect. It is rated for each outcome, across all the studies that measured it.</p>\n<p>GRADE has four levels.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>level</td>\n<td>printed as</td>\n<td>GRADE’s meaning, in short</td>\n</tr>\n<tr>\n<td>high</td>\n<td>⊕⊕⊕⊕</td>\n<td>very confident that the true effect lies close to the estimate</td>\n</tr>\n<tr>\n<td>moderate</td>\n<td>⊕⊕⊕◯</td>\n<td>the true effect is likely to be close to the estimate, but may be substantially different</td>\n</tr>\n<tr>\n<td>low</td>\n<td>⊕⊕◯◯</td>\n<td>the true effect may be substantially different from the estimate</td>\n</tr>\n<tr>\n<td>very low</td>\n<td>⊕◯◯◯</td>\n<td>the true effect is likely to be substantially different from the estimate</td>\n</tr>\n</tbody>\n</table>\n<p>This book counts each <dfn data-g=\"410\">level</dfn> by its filled circles: high 4, moderate 3, low 2, very low 1.</p>\n<p>A body of randomised trials starts at high. A body of observational studies starts at low. An uncontrolled <dfn data-g=\"85\">case series</dfn> is observational, so it starts at low. With a newer bias tool, ROBINS-I (<dfn data-g=\"639\">Risk Of Bias</dfn> In Non-randomised Studies of Interventions), non-randomised studies may start at high. They are then generally rated down two levels for having no randomisation, so they land at low as before.</p>\n<p>Five reasons can lower the level: risk of bias, <dfn data-g=\"349\">inconsistency</dfn>, <dfn data-g=\"351\">indirectness</dfn>, <dfn data-g=\"346\">imprecision</dfn> and <dfn data-g=\"572\">publication bias</dfn>. A reason judged serious lowers it by one level; judged very serious, by two. Nothing goes below very low. Publication bias is suspected, for example, when the evidence is a number of small studies, all paid for by industry: studies that find no effect are less often reported.</p>\n<p>A <dfn data-g=\"640\">risk ratio</dfn> is the risk (the share of a group who have the outcome over a set time) in one group divided by the risk in another; 1 means no difference. Three reasons can raise the level, mostly for observational evidence; the first, a large effect, comes in two strengths:</p>\n<table>\n\n<thead>\n<tr>\n<th>reason to rate up</th>\n<th>how far</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>a large effect: a risk ratio above 2 or below 0.5</td>\n<td>up 1</td>\n</tr>\n<tr>\n<td>a very large effect: a risk ratio above 5 or below 0.2</td>\n<td>up 2</td>\n</tr>\n<tr>\n<td>a dose-response gradient</td>\n<td>up 1</td>\n</tr>\n<tr>\n<td>all plausible bias works against the result: it would shrink an effect that was found, or would have made one appear where none was found</td>\n<td>up 1</td>\n</tr>\n</tbody>\n</table>\n<p>If the estimate passes 2 but its <dfn data-g=\"142\">confidence interval</dfn> reaches appreciably below 2, Cochrane says some would hesitate to rate up.</p>\n<p>Two careful raters can end one level apart. So GRADE asks raters to explain every step down or up in a <dfn data-g=\"291\">footnote</dfn>.</p>",
+   "refs": [
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>GRADE is a set of rules, agreed by a group of researchers, for saying how much to trust the evidence on one question. It gives one of four labels: high, moderate, low or very low.</p>\n<p>You start from how the studies were done. If chance decided who got the treatment, start at high. If the researchers only watched what people did, start at low.</p>\n<p>Then you look for problems. Five kinds of problem can take any body of studies down. For watched groups, a few things can take you up.</p>\n<p>Each step is a judgement, so the rater writes down why.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c07-two-rows-two-levels.png",
+   "alt": "Lines over three steps: start, risk of bias, imprecision. Both rows share the first segment, 4 to 3. Children under 5 then stay at 3; children over 5 fall to 2. A dashed line, had the start been low: 2, 1, 0. A dashed rule at 1 marks very low, the floor.",
+   "w": 1502,
+   "h": 681,
+   "caption": "Counting the steps for the two rows of the Handbook’s example table (Figure 14.1.b), with high as 4 and each step down taking 1 away. Both rows start at high (4) and lose one level for risk of bias (3). Only the row for children over 5 loses a second, for imprecision, and ends at low (2). Had the rows started at low, two steps would reach 0, below the floor of very low (1); so both started at high, as randomised trials do."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c07-two-intervals.png",
+   "alt": "Two horizontal intervals with a dot on each. At 1474 children: 0.41, from 0.29 to 0.55. At 624 children: 0.81, from 0.53 to 1.21. A dashed vertical line at 1 marks no difference; only the lower interval crosses it.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Why only the row for children over 5 lost a step for imprecision. Each dot is a risk ratio and each line its 95 per cent confidence interval, placed at the number of children in the row. Children under 5 (1474): 0.41, 0.29 to 0.55, wholly below 1. Children over 5 (624): 0.81, 0.53 to 1.21, which holds 1, no difference. The axis is plain; on the ratio (logarithmic) scale each interval sits about evenly around its dot. Numbers from the Cochrane Handbook’s example table, Figure 14.1.b."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a mistake you will hear at journal clubs. The presenter points at a table of results and says: “These are randomised trials, so the evidence is high certainty.” The presenter is made up; the table is real.</p>\n<p>Open chapter 14 of the Cochrane Handbook for Systematic Reviews of Interventions, at https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-14, and find Figure 14.1.b. It is an example ‘Summary of findings’ table. It compares probiotics with no probiotics in children given antibiotics. The outcome is how many children get diarrhoea.</p>\n<p>Read the column headed “Certainty of the evidence (GRADE)”. The row for children under 5 says moderate, due to risk of bias. The row for children over 5 says low, due to risk of bias and imprecision. The footnotes give the reasons: a high loss to follow-up (many children not followed to the end), then few events and a wide confidence interval. None says “very serious”, so each reason cost one level.</p>\n<p>Now count, with high as 4 and each step down taking 1 away.</p>\n<div class=\"working\">\n<p>children under 5: 4 minus 1 = 3, moderate<br />\nchildren over 5: 4 minus 1 minus 1 = 2, low</p>\n</div>\n<p><dfn data-g=\"97\">Check</dfn> the start by trying the other one. If the rating had started at low, two steps down would give this.</p>\n<div class=\"working\">\n<p>2 minus 1 minus 1 = 0</p>\n</div>\n<p>There is no level 0. The rating would stop at very low, not low. So both rows started at high, the start GRADE gives to randomised trials.</p>\n<table style=\"width:89%;\">\n\n<tbody>\n<tr>\n<td>step</td>\n<td>reason considered</td>\n<td>children under 5</td>\n<td>children over 5</td>\n</tr>\n<tr>\n<td>0</td>\n<td>start</td>\n<td>4</td>\n<td>4</td>\n</tr>\n<tr>\n<td>1</td>\n<td>risk of bias</td>\n<td>3</td>\n<td>3</td>\n</tr>\n<tr>\n<td>2</td>\n<td>imprecision</td>\n<td>3</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>\n<p>Now look at why the second row lost a step for imprecision. Its risk ratio is 0.81, from 624 children in 4 studies. Its 95 per cent confidence interval (CI) runs from 0.53 to 1.21. That is from about half the risk to about a fifth more risk, and 1, no difference for a <dfn data-g=\"594\">ratio</dfn>, sits inside it. The first row’s risk ratio is 0.41, from 1474 children in 7 studies, with an interval from 0.29 to 0.55. The whole of that range lies below 1.</p>\n<p>So the presenter had the design right and the level wrong, for both rows. Randomised trials only start at high. And one table gave the same outcome two levels, in two groups of children. Certainty belongs to each row, not to the review.</p>",
+   "numberRefs": [
+    148
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Counting back to the start works only when you know how many levels each reason cost. A footnote that says “very serious” costs two, and a footnote can be silent on it. When the footnotes do not say, you cannot work back.</p>\n<p>The figure is an example the Handbook prints to show the format. Another review team, rating the same studies, could land a level apart. The counts 4 to 1 are this book’s device for counting steps. GRADE adds no scores.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a rating that goes up. It comes from the GRADE Handbook, and the Cochrane chapter repeats it.</p>\n<p>A systematic review of observational studies covered 38 million patients. Death rates were higher in private for-profit hospitals than in private not-for-profit hospitals. The studies are observational, so the rating starts at low: 2.</p>\n<p>Ask which way the plausible biases push. First, the patients in the not-for-profit hospitals were probably sicker. Sicker patients die more, so that bias makes the not-for-profit hospitals look worse. Second, well-insured patients bring money that can help a hospital’s other patients too. For-profit hospitals probably admit more of them, so that bias favours the for-profit hospitals.</p>\n<p>Both biases push against the result that was found. Remove them, and the gap in death rates would most likely grow, not shrink. That is GRADE’s third reason to rate up.</p>\n<div class=\"working\">\n<p>2 plus 1 = 3</p>\n</div>\n<p>The Handbook says one might rate this evidence moderate rather than low.</p>\n<p>Two rules come with rating up. Weigh every reason to rate down first: rating up should be rare when any of them is serious. And use it for observational evidence. GRADE’s authors write that they have not yet found a convincing case for rating up randomised trials.</p>\n<p>Take the same question to any observational result you read. Which way would each bias push? If every plausible one pushes against the <dfn data-g=\"274\">finding</dfn>, say so, and say that it raises your rating.</p>",
+   "numberRefs": [
+    149
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>“All plausible biases push against the result” is a judgement about direction, made by the raters. It is not a measurement. If one plausible bias pushes the other way, this reason does not apply.</p>\n<p>The Handbook’s words are “one might consider”, not “must”. A rater who doubted that the patients were sicker would leave the rating at low.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“These are randomised trials, so the evidence is high certainty” is wrong. Trials only start at high. Read the rating, never infer it from the design.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you read a ‘Summary of findings’ table, read the certainty column and its footnotes before the size of the effect. Count back from the start: the footnotes should account for every step.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A large effect raises observational evidence by one level when the risk ratio is above 2 or below 0.5. Check the confidence interval as well as the estimate. If the interval reaches appreciably below 2, Cochrane says some would hesitate to rate up.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“Non-randomised studies, starting at high” in a newer review is not a promotion. Such studies may start at high, but they are generally rated down two levels for having no randomisation. They usually land at low, as before.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you rate evidence yourself, write the reason for every step, and expect to defend each one.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Certainty says how sure we can be of an estimate. It does not say whether to act.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Teach “certainty” and “quality of evidence” as two names for one GRADE rating.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Low certainty means the treatment does not work.” Low certainty is about how sure anyone can be of the estimate. GRADE’s meaning for low is that the true effect may be substantially different from the estimate. It may be larger or smaller. A low rating on a promising estimate says that the estimate cannot yet be trusted. It says nothing about which way it will move.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>For diarrhoea in children over 5, the certainty of the evidence is low (GRADE). The randomised trials start at high and are rated down one level for risk of bias and one for imprecision.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name GRADE’s four levels in order and give each one’s meaning in a few words. Say where a body of randomised trials starts and where a body of observational studies starts. Name the five reasons to rate down and the three to rate up, and say how many levels each can move the rating.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>High: the true effect lies close to the estimate. Moderate: it is likely to be close, but may be far off. Low: it may be far off. Very low: it is likely to be far off.</p>\n<p>Randomised trials start at high; observational studies start at low.</p>\n<p>Down: risk of bias, inconsistency, indirectness, imprecision, publication bias. Each moves the rating down one level if serious and two if very serious. Usually the total is three at most, and nothing goes below very low.</p>\n<p>Up, mostly for observational evidence, there are three reasons. A large effect gives one level, and a very large effect two. A <dfn data-g=\"214\">dose-response gradient</dfn> gives one. All plausible bias working against the result gives one.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>The <dfn data-g=\"5\">abstract</dfn> of a made-up review reads:</p>\n<blockquote>\n<p>Twelve randomised trials (3,400 adults) found that a meal-replacement programme lowered body weight at 8 weeks. Certainty of the evidence: low. Downgraded for risk of bias and for indirectness. All trials were in adults in high-income countries. None followed people beyond 8 weeks.</p>\n</blockquote>\n<p>Count the steps from the start to the rating. Then write one sentence for a district health officer that states the certainty in words and says why. Last, say what would have to change for the rating to rise.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Randomised trials start at high. Two reasons, each costing one level:</p>\n<div class=\"working\">\n<p>4 minus 1 minus 1 = 2</p>\n</div>\n<p>That is low, as the abstract says.</p>\n<p>A sentence for the officer: “The trials suggest the programme lowers weight over 8 weeks, but we are not very sure of it. The true effect may be quite different. The trials had flaws, and they were all in adults in rich countries, followed for only 8 weeks.”</p>\n<p>The rating would rise if trials with fewer flaws were done. It would also rise if trials followed people for longer, in people like those the officer serves. Each would remove a step down. The rating cannot rise for these trials by rating up: GRADE has not found a convincing case for rating up randomised trials.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>For a first-year resident, ten minutes with a whiteboard. She has seen “⊕⊕◯◯ low” in a review and asks what it means and how anyone arrives at it. Teach her.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw a ladder of four rungs: high, moderate, low, very low. Write the circles beside them: four filled for high, down to one for very low. Tell her the circles count rungs, nothing more.</p>\n<p>Draw two starting points: randomised trials at the top rung, observational studies at the second from the bottom. Ask her why. Chance made the groups in a trial, so a third <dfn data-g=\"261\">factor</dfn> is less likely to explain the result.</p>\n<p>Draw five arrows down: risk of bias, inconsistency, indirectness, imprecision, publication bias. One rung for a serious problem, two for a very serious one. Nothing below the bottom rung.</p>\n<p>Draw three short arrows up, beside the observational start only: a large effect, a dose-response gradient, and bias that all pushes against the result.</p>\n<p>Then her table: “⊕⊕◯◯ low” from trials means two rungs were lost. Send her to the footnotes to find which two. Finish with what low means: the true effect may be substantially different from the estimate, larger or smaller.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A body of evidence starts at high. It is rated down for one serious reason and one very serious reason, and for nothing else. Give the final level.</p>",
+   "level": 1,
+   "answer": "<p>A serious reason costs one level; a very serious reason costs two.</p>\n<div class=\"working\">\n<p>4 minus 1 minus 2 = 1</p>\n</div>\n<p>Level 1 is very low.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A body of evidence starts at low. Give the final level in each case.</p>\n<ol type=\"a\">\n<li><p>It is rated up one level for a dose-response gradient, and nothing else moves it.</p></li>\n<li><p>It is rated down one level for imprecision, and nothing else moves it.</p></li>\n<li><p>It is rated down two levels for very serious risk of bias and one level for inconsistency.</p></li>\n</ol>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>part (a): 2 plus 1 = 3<br />\npart (b): 2 minus 1 = 1<br />\npart (c): 2 minus 2 minus 1 = -1</p>\n</div>\n<p>Part (a) ends at moderate and part (b) at very low. In part (c) the count falls below 1, but nothing goes below very low, so the rating stops at very low.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Work backwards.</p>\n<ol type=\"a\">\n<li><p>A body of randomised trials is rated low, and nothing rated it up. How many levels was it rated down in all?</p></li>\n<li><p>A body of observational studies is rated high, and nothing rated it down. How many levels was it rated up in all?</p></li>\n<li><p>A body of randomised trials is rated very low. What is the smallest number of reasons that could have taken it there?</p></li>\n</ol>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>part (a): 4 minus 2 = 2<br />\npart (b): 4 minus 2 = 2<br />\npart (c): 4 minus 1 = 3</p>\n</div>\n<p>In part (a), two levels down: two serious reasons, or one very serious one.</p>\n<p>In part (b), two levels up: a very large effect alone, or two one-level reasons together.</p>\n<p>In part (c), three levels down. One reason can cost at most two levels, so one reason is not enough. Two reasons can do it: one very serious (two levels) and one serious (one level).</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Metformin is a drug for diabetes. A related drug, phenformin, causes lactic acidosis, a build-up of lactic acid in the blood. So metformin was suspected of the same harm. Very large observational studies found no link between metformin and lactic acidosis. Because of the suspicion, clinicians were likely to be on the alert and to over-report the harm in patients on metformin.</p>\n<p>Give the level this evidence starts at. Name the reason that could move it, and say which way. Then give the level it ends at if nothing else moves it.</p>",
+   "level": 4,
+   "answer": "<p>The studies are observational, so the rating starts at low.</p>\n<p>Over-reporting would make a link appear where there is none. Every plausible bias here would have produced a link, and still none was found. That is GRADE’s third reason to rate up: all plausible bias works against the result.</p>\n<div class=\"working\">\n<p>2 plus 1 = 3</p>\n</div>\n<p>Moderate. The Cochrane chapter calls this “moderate, or even high certainty” evidence against a causal link at typical doses. It does not show that metformin is safe at every dose, or for every other harm.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A <dfn data-g=\"448\">meta-analysis</dfn> of observational studies found that bicycle helmets lower the risk of head injury in cyclists. The <dfn data-g=\"492\">odds ratio</dfn> was 0.31, with a 95 per cent confidence interval of 0.26 to 0.37. An odds ratio is the <dfn data-g=\"491\">odds</dfn> of an outcome in one group divided by the odds in another. Odds are the chance an outcome happens divided by the chance it does not.</p>\n<p>Decide whether the effect counts as large, very large or neither on GRADE’s thresholds, checking the interval as well as the estimate. Then give the final level if nothing else moves the rating.</p>",
+   "level": 5,
+   "answer": "<p>Compare each number with the thresholds: below 0.5 for large, below 0.2 for very large.</p>\n<table style=\"width:60%;\">\n\n<tbody>\n<tr>\n<td>value</td>\n<td>below 0.5?</td>\n<td>below 0.2?</td>\n</tr>\n<tr>\n<td>estimate 0.31</td>\n<td>yes</td>\n<td>no</td>\n</tr>\n<tr>\n<td>lower end 0.26</td>\n<td>yes</td>\n<td>no</td>\n</tr>\n<tr>\n<td>upper end 0.37</td>\n<td>yes</td>\n<td>no</td>\n</tr>\n</tbody>\n</table>\n<p>The whole interval lies below 0.5, so the effect is large even at the end nearest no effect. No part of it reaches below 0.2, so it is not very large. Rate up one level.</p>\n<div class=\"working\">\n<p>2 plus 1 = 3</p>\n</div>\n<p>Moderate, for the outcome head injury. The Cochrane chapter reaches the same rating. One caution: the GRADE Handbook writes these thresholds for risk ratios and says they cannot always be applied to an odds ratio. It suggests converting an odds ratio to a risk ratio first. Cochrane applies them here directly.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>In Figure 14.1.b of the Cochrane Handbook, chapter 14, the outcome “duration of diarrhoea” is rated low. Its footnotes report serious unexplained inconsistency and serious imprecision.</p>\n<ol type=\"a\">\n<li><p>Work back to the starting level.</p></li>\n<li><p>A second rater judges the imprecision very serious. Where does the row end?</p></li>\n<li><p>Suppose the studies had been observational, with the same two serious reasons. Where would the row end?</p></li>\n</ol>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>part (a): 2 plus 1 plus 1 = 4<br />\npart (b): 4 minus 1 minus 2 = 1<br />\npart (c): 2 minus 1 minus 1 = 0</p>\n</div>\n<p>In part (a), adding back the two one-level steps gives 4: the rating started at high, the start for randomised trials.</p>\n<p>In part (b), very low. One rater’s “serious” against another’s “very serious” is the difference of a level, which is why GRADE asks for the reason in a footnote.</p>\n<p>In part (c), the count falls below 1, so the row would stop at very low, not low.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>A colleague rates a body of observational studies. Find the step that broke.</p>\n<div class=\"working\">\n<p>start: 4 (high)<br />\nthe studies disagree and nobody can explain why: serious inconsistency, down 1<br />\n4 minus 1 = 3<br />\nfinal: moderate</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The start broke. Observational studies start at low, not high.</p>\n<div class=\"working\">\n<p>2 minus 1 = 1</p>\n</div>\n<p>The rating is very low.</p>\n<p>Why the wrong start looks reasonable: with the newer ROBINS-I tool, non-randomised studies may start at high. But they are then generally rated down two levels for having no randomisation, and the colleague left that out.</p>\n<div class=\"working\">\n<p>4 minus 2 minus 1 = 1</p>\n</div>\n<p>Either way, the evidence ends at very low.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A systematic review of observational studies looked at the drug rofecoxib and cardiovascular events (harms to the heart and blood vessels). A mg is a milligram, a thousandth of a gram. At doses under 25 mg a day, the risk ratio was 1.33 (95 per cent CI 1.00 to 1.79). At doses above 25 mg a day, it was 2.19 (95 per cent CI 1.64 to 2.91). Here is a worked rating. Find the step that broke.</p>\n<div class=\"working\">\n<p>start: observational studies, low = 2<br />\nhigher dose: risk ratio 2.19, above 2, a large effect, up 1<br />\n2 plus 1 = 3<br />\nrisk rises with the dose, a dose-response gradient, up 1<br />\n3 plus 1 = 4<br />\nfinal: high</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The step up for a large effect is the one that breaks. It needs the absence of plausible confounders. The Cochrane chapter discusses this very case and says that residual confounding, a third factor the studies could not fully remove, is likely here. A second reason: the estimate, 2.19, is above 2, but the interval runs down to 1.64, appreciably below 2. There, the chapter says, some would hesitate to rate up. And GRADE says to rate up only rarely when a serious limitation is present.</p>\n<p>The step for the gradient holds: the risk ratio rises from 1.33 to 2.19 as the dose rises.</p>\n<div class=\"working\">\n<p>2 plus 1 = 3</p>\n</div>\n<p>A rater who takes the gradient alone ends at moderate. A rater who also takes the large effect must defend it against the interval.</p>\n<p>Why the wrong answer looks reasonable: 2.19 really is above 2, and the rule is often quoted without its caution about the interval.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A newspaper health column says: “A meta-analysis of 14 studies has shown that flavonoid tablets shrink haemorrhoids (piles). A meta-analysis is the highest level of evidence, so the question is settled.” The Cochrane Handbook describes the same 14 studies. They show what look like large benefits. They took in only 1432 patients in all. The companies paying for them were closely involved in most of them. Neither the column nor the Handbook says whether the studies were trials. Decide what to compute, compute it, and say what the <dfn data-g=\"107\">claim</dfn> does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Find the average size of a study.</p>\n<div class=\"working\">\n<p>1432 divided by 14 is about 102.3</p>\n</div>\n<p>About 100 patients a study: many small studies, most with heavy sponsor involvement. The Cochrane chapter gives this as the typical picture that may raise a suspicion of publication bias. Small studies that found nothing may never have been published.</p>\n<p>So a rater may lower the rating one level for suspected publication bias. If the studies were trials, the best this evidence could then reach is moderate, before the other four reasons are even checked.</p>\n<div class=\"working\">\n<p>4 minus 1 = 3</p>\n</div>\n<p>A strong suspicion could cost two levels: low.</p>\n<p>What the claim does not establish. “Meta-analysis” names a way of pooling studies, not a level of certainty, and pooling cannot bring back studies that were never published. The suspicion is a suspicion: it does not prove that unpublished studies exist. And nothing here says how large the benefit really is.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>On a ward round a senior colleague says: “I have put hundreds of patients with obesity on a high-protein breakfast plan. Nearly all of them lose weight. The evidence is clear.” Decide what to rate, rate it, and say what your rating does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Rate the experience, not the opinion. Every patient got the plan, and there is no <dfn data-g=\"131\">comparison group</dfn>. That is an uncontrolled case series, an observational design, so it starts at low.</p>\n<p>Then risk of bias. With no comparison, weight could have changed for other reasons. Memory may keep the patients who did well and lose those who did not come back. Rate down one level.</p>\n<div class=\"working\">\n<p>2 minus 1 = 1</p>\n</div>\n<p>Very low. Balshem and colleagues rate a clinician’s report of his own experience the same way.</p>\n<p>“Hundreds” does not help. A larger case series is still a case series: more patients shrink the chance error, not the bias.</p>\n<p>What the rating does not establish. Very low certainty does not show that the plan fails. It shows that this experience cannot tell whether it works. A trial that compared the plan with usual care could.</p>"
+  }
+ ]
+}

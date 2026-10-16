@@ -1,0 +1,165 @@
+{
+ "format": 1,
+ "id": "s59-r1-c02",
+ "label": "2",
+ "title": "A hypothesis is testable: the prediction, and the result that would count against it",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"341\">hypothesis</dfn> is <dfn data-g=\"734\">testable</dfn> when a <dfn data-g=\"548\">prediction</dfn> follows from it: a statement of the form “if the hypothesis is true, then this observable result will follow”, fixed before the result is seen. It is <dfn data-g=\"265\">falsifiable</dfn> when some possible result would count against it.</p>\n<p>A test the hypothesis survives supports it and does not prove it.</p>\n<p>A <dfn data-g=\"107\">claim</dfn> can be held in three different stances, which do not imply one another. It is <dfn data-g=\"6\">accepted</dfn> when it is taken as the best available description of what it describes. It is <dfn data-g=\"765\">used</dfn> when it is taken as an adequate tool for a practical job. It is <dfn data-g=\"573\">pursued</dfn> when it is thought worth developing and testing further.</p>",
+   "refs": [
+    16,
+    17,
+    2,
+    2,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Turn it into an “if… then…” sentence: if this is true, then we should see that. Then name, before you look, the result that would count against it.</p>\n<p>If you cannot name such a result, the hypothesis can never be caught out, and so it tells you nothing.</p>\n<p>When the predicted result fails to show up in a fair test, that counts against the hypothesis. When it does show up, that supports the hypothesis but does not prove it, because something else could have produced the same result.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a hypothesis that cannot fail. It is made up for this section, but you will have heard its shape. A colleague says:</p>\n<blockquote>\n<p>Breakfast helps weight control, as long as it is the right breakfast eaten the right way.</p>\n</blockquote>\n<p>Try to catch it out. Suppose a trial finds that people told to eat breakfast lose no more weight than people told nothing. He answers that they ate the wrong breakfast. Suppose a survey finds that breakfast eaters weigh more. He answers that they ate it the wrong way. Every result fits, because “right” is decided after the result is in.</p>\n<p>So ask him one question: what result would make you drop it? If he cannot say, his sentence is not a hypothesis. It is a <dfn data-g=\"57\">belief</dfn>, and no study can touch it.</p>\n<p>Now repair it. Fix in advance who, what, compared with what, measured how, and over how long:</p>\n<blockquote>\n<p>Adults trying to lose weight who are advised to eat breakfast lose more weight over 16 weeks than adults given the same advice on healthy eating with nothing said about breakfast.</p>\n</blockquote>\n<p>Write the prediction as an “if… then…” sentence:</p>\n<blockquote>\n<p>If this is true, then at 16 weeks the group advised to eat breakfast will, on average, have lost more weight than the group told nothing about breakfast.</p>\n</blockquote>\n<p>And name the result that would count against it: the two groups lose about the same, or the group told nothing loses more. The hypothesis can now be caught out. That is what makes it worth testing.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The repaired hypothesis is testable, which does not make it true or even likely. It also does not settle how big a difference would count as “more”, or how many people a trial needs to see it. A test too small to see a real difference is not a fair test, and the book returns to that.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is a real hypothesis that was put to a test. Dhurandhar and colleagues’ 2014 trial is at https://pmc.ncbi.nlm.nih.gov/articles/PMC4095657/. It took adults with <dfn data-g=\"506\">overweight</dfn> or obesity who were trying to lose weight, at five research centres in the United States and Denmark. Chance put 309 of them into three groups. One was advised to eat breakfast, one to skip it, and a control group was given neither piece of advice. The trial ran for 16 weeks.</p>\n<p>An earlier small trial had suggested that changing your usual breakfast habit, either way, helps weight loss. So the authors state this hypothesis in their introduction:</p>\n<blockquote>\n<p>[we] hypothesized that individuals who were advised to switch their usual breakfast eating habits due to their group assignment would lose more weight than the control group.</p>\n</blockquote>\n<p>Write it as a prediction yourself. If the hypothesis is true, then people told to switch lose more weight than the control group. The result that counts against it: they lose about the same.</p>\n<p>The <dfn data-g=\"5\">abstract</dfn> reports:</p>\n<blockquote>\n<p>Treatment assignment did not have a significant effect on weight loss, and there was no interaction between initial breakfast eating status and treatment.</p>\n</blockquote>\n<p>“Not <dfn data-g=\"679\">significant</dfn>” is a statistical test’s verdict: roughly, no difference too large to put down to chance. “Significant” means unlikely to be produced by chance alone, not large. The number behind it comes in section 4.</p>\n<p>The trial sorted people by habit before assigning them. Usual eaters ate breakfast four or more times a week; usual skippers, three or fewer. Switchers were usual eaters told to skip and usual skippers told to eat. “No interaction” means the advice’s effect on weight did not differ between usual eaters and usual skippers.</p>\n<p>Switchers lost a little more than the control group: 0.05 kg more among usual skippers, 0.18 kg among usual eaters. But the authors’ test found no difference beyond what chance easily produces. The predicted result did not clearly appear.</p>\n<p>Set it out as an argument, as Book 0, F4 taught:</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td></td>\n<td>The test that carries</td>\n<td>The test that does not</td>\n</tr>\n<tr>\n<td>First premise</td>\n<td>if the hypothesis, then switchers lose more</td>\n<td>if the hypothesis, then switchers lose more</td>\n</tr>\n<tr>\n<td>Second premise</td>\n<td>switchers did not lose clearly more</td>\n<td>switchers lost clearly more</td>\n</tr>\n<tr>\n<td>Conclusion</td>\n<td>so the hypothesis is counted against</td>\n<td>so the hypothesis is true</td>\n</tr>\n</tbody>\n</table>\n<p>The left column is what happened. The <dfn data-g=\"353\">inference</dfn> is valid. But the conclusion is only as good as the first premise, and that premise quietly assumes a fair test: that people followed the advice, and that the trial was long enough and large enough to see a difference. The authors name two doubts themselves. Sixteen weeks “may not have been long enough” to see a very small effect. And some usual skippers in the control group began eating breakfast on their own, which “may have weakened our power to detect differences”. So the result counts against the hypothesis, in adults like these, over 16 weeks. It does not abolish it.</p>\n<p>The right column is the trap, and it is worth seeing although it did not happen. Had switchers lost more, the hypothesis would have passed a test. It would not have been proved, because something else could also predict that result. The next section lists what.</p>",
+   "numberRefs": [
+    33
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This trial tested advice about breakfast, in adults in the United States and Denmark who were trying to lose weight, for 16 weeks. It did not test what breakfast does in children, in India, or over years. Reading its result as “breakfast does not matter” goes beyond it. How far a result like this one reaches is a question this book takes up later.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Last, separate testing a claim from believing it. An open textbook by Barseghyan, Overgaard and Rupik, Introduction to History and Philosophy of Science, names three stances towards a claim. Its section 1.3 is at https://human.libretexts.org/Bookshelves/Philosophy/Philosophy_of_Science/Introduction_to_History_and_Philosophy_of_Science_(Barseghyan_Overgaard_and_Rupik).</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Stance</td>\n<td>What it means</td>\n<td>The question that shows it</td>\n</tr>\n<tr>\n<td>Accepted</td>\n<td>taken as the best available description</td>\n<td>Is this our best account of how things are?</td>\n</tr>\n<tr>\n<td>Used</td>\n<td>taken as an adequate tool for a practical job</td>\n<td>Does this work well enough for the task in hand?</td>\n</tr>\n<tr>\n<td>Pursued</td>\n<td>thought worth developing and testing further</td>\n<td>Is this worth more work?</td>\n</tr>\n</tbody>\n</table>\n<p>The textbook writes of a scientific community’s stances towards a theory. The same three fit one person and one claim.</p>\n<p>The book’s own example of use without acceptance is engineering. Physicists no longer accept classical physics (Newton’s) as the best description of the world; general relativity replaced it. Bridges are still built with its equations, because they are simpler and good enough for a bridge. In its words, “It is possible to accept one theory but use another unaccepted theory in practice.”</p>\n<p>Now picture a resident who chooses breakfast skipping and weight as her thesis question. She is pursuing the hypothesis: she thinks it worth testing. She need not accept it, and she may privately doubt it. The book is plain on this: “a pursued theory is not necessarily accepted or useful.” If her result counts against the hypothesis, she has not failed. She has done what pursuing a hypothesis is for.</p>\n<p>The stances can be combined in any way. The textbook says they “are not <dfn data-g=\"465\">mutually exclusive</dfn>”. So when someone asks whether you believe your own hypothesis, answer the question they asked. “I am testing it” is a stance. “I think it is the best account we have” is a different one.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The three stances describe how a claim is held, not how good the evidence for it is. Accepting a claim as the best available does not make it true. In the textbook’s words, a fallibilist community, one that holds any accepted claim may turn out wrong, “only accepts theories as the best on the market, not as infallibly true”. The bridge example is the textbook’s, from physics. In medicine, using a rule you do not accept needs the same honesty about why it is good enough for the job.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Write every hypothesis with its prediction, as “if this is true, then we will see that”.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“The result matched the prediction, so the hypothesis is proved” is the error. Write “supports” or “is consistent with”, never “proves”.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a claim is rescued after every result (“it was the wrong breakfast”), ask its owner what result would make them drop it.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A result against the prediction counts against the hypothesis only as far as the test was fair. Before you write “the trial disproved it”, <dfn data-g=\"97\">check</dfn> that people followed the advice.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Tell a resident that pursuing a thesis hypothesis does not oblige her to believe it.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When a committee asks whether you “believe in” a measure, say which stance you hold.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A testable hypothesis need not be testable by experiment. When no one can assign the <dfn data-g=\"257\">exposure</dfn>, the thing whose effect is in question, test it by what it predicts you will observe.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Falsifiable” sounds like “probably false”, and “the hypothesis was counted against” sounds like “the researcher failed”. Both readings are wrong.</p>\n<p>A hypothesis is falsifiable when some possible result would count against it. That is the property that makes a test worth running. It says nothing about whether the hypothesis is false. And a result against a hypothesis is a <dfn data-g=\"274\">finding</dfn> like any other. Their trial counted against Dhurandhar and colleagues’ hypothesis, and their report of that is what made the trial useful.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>We hypothesise that [exposure, the thing whose effect is in question] leads to [outcome, what is measured to see the effect] in [people] over [time]. If this is true, then [the predicted result]. A result of [the result named in advance] would count against it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what makes a hypothesis testable, and why does a result that matches the prediction not prove it? Then name the three stances towards a claim, with one line each.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>A hypothesis is testable when a prediction follows from it: “if it is true, then this result”. Some possible result, named in advance, must count against it.</p>\n<p>A matching result does not prove it because the argument “if the hypothesis, then the result; the result; so the hypothesis” does not carry. Other explanations can predict the same result.</p>\n<p>Accepted: taken as the best available description. Used: taken as an adequate tool for a practical job. Pursued: thought worth developing and testing further.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A newspaper health column, made up for this exercise, says:</p>\n<blockquote>\n<p>Breakfast switches on your metabolism, so people who skip it gain weight. Some studies find that skippers do not gain weight. That is because they make up for it with extra snacks later in the day.</p>\n</blockquote>\n<p>Find the step that stops this claim from ever being caught out. Then rewrite the core claim as a hypothesis with a prediction and a result that would count against it.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The second sentence is the escape. Whatever a study finds, the claim survives: if skippers gain weight, breakfast was the cause; if they do not, snacks hid the cause. No result is allowed to count against it, so it predicts nothing.</p>\n<p>Here is a testable version. The snacks become part of the test rather than an excuse.</p>\n<blockquote>\n<p>Adults told to skip breakfast gain more weight over 16 weeks than adults told to eat it, whatever they eat later in the day.</p>\n</blockquote>\n<p>Prediction: if this is true, then at 16 weeks the group told to skip has gained more weight, on average, than the group told to eat. Result that would count against it: the groups change by about the same, or the group told to eat breakfast gains more.</p>\n<p>“Switches on your <dfn data-g=\"450\">metabolism</dfn>” is a proposed mechanism, a different claim. It needs its own test.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Take the main hypothesis of your own thesis, or of a study you would like to do. Write it in one sentence. Write its prediction as “if… then…”. Write the result that would count against it. Then write which stance you hold towards it today, accepted, used or pursued, and one sentence on why.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Check your four lines this way.</p>\n<ul>\n<li>The hypothesis names who, what, compared with what, and over how long.</li>\n<li>The prediction is something you could see in your data, not a feeling.</li>\n<li>The result against it is specific enough that you would recognise it in your tables. “No difference” needs a definition: no difference in what, measured how.</li>\n<li>Your stance is almost certainly “pursued”. If you wrote “accepted”, ask what you will do with a result against it. If the honest answer is “explain it away”, rewrite the stance.</li>\n</ul>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>For a journalist, three minutes. She asks: “So the breakfast trial proved that breakfast makes no difference to weight?” Answer her, and give her one sentence she can quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>No. The trial tested a clear prediction and the prediction failed. Adults trying to lose weight who were told to switch their breakfast habit did not lose clearly more weight than those who were not. That counts against the idea that breakfast advice helps weight loss, in adults like these, over 16 weeks.</p>\n<p>It did not prove that breakfast never matters. The trial was in the United States and Denmark, in adults, for 16 weeks. The authors themselves say a very small effect could need longer to show.</p>\n<p>Quotable sentence:</p>\n<blockquote>\n<p>In a 16-week trial, advice to eat or skip breakfast made no clear difference to weight loss in adults trying to lose weight.</p>\n</blockquote>"
+  }
+ ]
+}

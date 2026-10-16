@@ -1,0 +1,252 @@
+{
+ "format": 1,
+ "id": "s59-r1-c15",
+ "label": "15",
+ "title": "Updating: changing your confidence by as much as the evidence warrants",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"763\">Updating</dfn> is changing your <dfn data-g=\"141\">confidence</dfn> in a <dfn data-g=\"107\">claim</dfn> when new evidence arrives, by as much as that evidence warrants and no more.</p>\n<p>How far one piece of evidence should move you depends on two rates: how often that evidence turns up when the claim is true, and how often it turns up when the claim is false. Weak evidence turns up about as often either way.</p>\n<p>Work it in Book 0’s <dfn data-g=\"754\">two-way table</dfn> (Book 0, D3), filled with <dfn data-g=\"467\">natural frequencies</dfn>: whole counts of imagined cases, out of 1,000. The columns sort the 1,000 by whether the claim is true, using the <dfn data-g=\"53\">base rate</dfn>. The rows sort them by whether the evidence turns up, using its two rates. Take the row of cases in which the evidence turned up. Your confidence after the evidence is the count in that row where the claim is true, divided by the row’s total. When the base rate is rare, such as 1 in 1,000, imagine 100,000 cases instead, so every count stays whole. The figures here do.</p>\n<p>For a diagnostic test, the base rate is the <dfn data-g=\"551\">prevalence</dfn>. The first rate is the <dfn data-g=\"665\">sensitivity</dfn>, and the second is 1 minus the <dfn data-g=\"693\">specificity</dfn>.</p>\n<p>A second piece of evidence starts from the confidence the first one left you with: not from the base rate, and not from zero.</p>",
+   "refs": [
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Start from the base rate. Imagine 1,000 cases like this one (100,000 if the claim is rare).</p>\n<p>Strong evidence moves you far. Weak evidence moves you a little.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c15-same-test-two-starts.png",
+   "alt": "Four bars from zero, in two pairs. Starting at 0.3 per cent: 270 women with cancer and 4,985 false alarms among those with a positive result. Starting at 5 per cent: 4,500 with cancer and 4,750 false alarms.",
+   "w": 1360,
+   "h": 661,
+   "caption": "The same made-up test, run on 100,000 women from two starting points (illustration 3). From a start of 0.3 per cent, a positive result is right for 270 women and a false alarm for 4,985: about 5.1 per cent. From a start of 5 per cent, it is right for 4,500 and a false alarm for 4,750: about 48.6 per cent. Same test, same arithmetic; the start decides the end."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c15-positive-row.png",
+   "alt": "Two bars from zero among the 5,095 people with a positive result: 100 who have the disease, a thin bar, beside 4,995 who do not.",
+   "w": 964,
+   "h": 656,
+   "caption": "Morgan’s question worked on 100,000 people (illustration 1). The positive row holds 100 people with the disease and 4,995 false alarms: 100 of 5,095 is about 2 per cent. The practitioners’ median answer, 95 per cent, was the specificity. The false alarms win because people without the disease outnumber those with it almost a thousand to one."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c15-updating-steps.png",
+   "alt": "Five bars from zero on a 0 to 100 per cent axis: 10 at the start, 14 after a positive Test B alone, 67 after a positive Test A, then 75 after a positive Test B or 57 after a negative one.",
+   "w": 1360,
+   "h": 661,
+   "caption": "Updating with made-up round numbers (illustration 2). From a start of 10 per cent, a positive weak Test B moves you only to 14 per cent; a positive strong Test A moves you to 67. From 67, a second, weak result moves you a little either way: to 75 if Test B is positive, to 57 if it is negative. It does not undo the strong one."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>This section stands on the last one, where the base rate gave you a place to start. Here you move from it when evidence arrives. Start with a question that most practitioners got wrong when it was put to them.</p>\n<p>Morgan and colleagues put it to 553 practitioners in primary care in the United States. Their paper is at https://pmc.ncbi.nlm.nih.gov/articles/PMC8022260/. Search it for “1 out of 1000”.</p>\n<blockquote>\n<p>A test to detect a disease for which prevalence is 1 out of 1000 has a sensitivity of 100% and specificity of 95%. What is the chance that a person found to have a positive result actually has the disease?</p>\n</blockquote>\n<p>Write your own answer down before you read on.</p>\n<p>The <dfn data-g=\"444\">median</dfn> answer was 95 per cent, and at least three in four answered 95 or more. The correct answer is about 2 per cent. Here is how to see it without any formula.</p>\n<p>Imagine people, not percentages. The disease is rare, so imagine 100,000 people rather than 1,000; then every count stays a whole person. One in 1,000 have the disease.</p>\n<div class=\"working\">\n<p>100000 divided by 1000 = 100<br />\n100000 minus 100 = 99900</p>\n</div>\n<p>So 100 people have the disease and 99,900 do not. These are the two columns of Book 0’s two-way table (Book 0, D3). Now the rows. A sensitivity of 100 per cent means the test catches all 100 people with the disease. A specificity of 95 per cent means it clears 95 in 100 of the people without it, so it wrongly flags the other 5 in 100.</p>\n<div class=\"working\">\n<p>100 times 1 = 100<br />\n99900 times 0.05 = 4995<br />\n99900 minus 4995 = 94905<br />\n100 plus 4995 = 5095</p>\n</div>\n<table style=\"width:79%;\">\n\n<thead>\n<tr>\n<th></th>\n<th>has the disease</th>\n<th>does not</th>\n<th>total</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>positive result</td>\n<td>100</td>\n<td>4,995</td>\n<td>5,095</td>\n</tr>\n<tr>\n<td>negative result</td>\n<td>0</td>\n<td>94,905</td>\n<td>94,905</td>\n</tr>\n<tr>\n<td>total</td>\n<td>100</td>\n<td>99,900</td>\n<td>100,000</td>\n</tr>\n</tbody>\n</table>\n<p>Now the question asked. Take the row of positive results, 5,095 people. Of them, 100 have the disease.</p>\n<div class=\"working\">\n<p>100 divided by 5095 is about 0.0196</p>\n</div>\n<p>About 2 per cent. Of every 51 people with a positive result, about 1 has the disease and about 50 are false alarms. The false alarms win because the people without the disease outnumber the people with it by almost a thousand to one. Even a small false-alarm rate, applied to that many people, swamps the few true cases.</p>\n<p>Where did 95 per cent come from? It is the specificity, or 100 minus the false-alarm rate. It answers a different question: of people without the disease, how many test negative? The answer reached for a number in the question. It skipped the base rate.</p>",
+   "numberRefs": [
+    272
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Here the test’s two rates were given exactly. For a real test, they are measured in some group, and carrying them to your patients is an assumption, as Book 0 warned. For a study’s <dfn data-g=\"274\">finding</dfn> about a claim, the two rates are rarely known at all. The next illustration shows what to do with them when you have them.</p>\n<p>The practitioners in this survey worked in the United States. Nobody has asked Indian doctors this question in the sources this book holds.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now see how far a result should move you. The numbers in this illustration are made up and round, so that the arithmetic shows. Your starting confidence that a patient has a condition is 10 per cent. Two tests are on offer.</p>\n<ul>\n<li>Test A turns positive in 90 of 100 people with the condition, and in 5 of 100 without it.</li>\n<li>Test B turns positive in 60 of 100 people with the condition, and in 40 of 100 without it.</li>\n</ul>\n<p>Imagine 1,000 patients like this one. At 10 per cent, 100 have the condition and 900 do not. Now take each test’s two rates.</p>\n<div class=\"working\">\n<p>100 times 0.9 = 90<br />\n900 times 0.05 = 45<br />\n90 divided by (90 plus 45) is about 0.6667<br />\n100 times 0.6 = 60<br />\n900 times 0.4 = 360<br />\n60 divided by (60 plus 360) is about 0.1429</p>\n</div>\n<p>A positive Test A moves you from 10 per cent to 67 per cent. A positive Test B moves you to 14 per cent. The difference lies in how much more often each test turns positive with the condition than without it.</p>\n<div class=\"working\">\n<p>90 divided by 5 = 18<br />\n60 divided by 40 = 1.5</p>\n</div>\n<p>Test A turns positive 18 times as often in people with the condition. Test B does so only 1.5 times as often. That <dfn data-g=\"594\">ratio</dfn> is the strength of the evidence. Ask for both rates before you react to any result.</p>\n<p>Now a second result. Suppose Test A came back positive, so you stand at 67 per cent. You do not go back to 1,000 patients. You keep only the 135 with a positive Test A: 90 with the condition, 45 without. Then you run Test B on them.</p>\n<div class=\"working\">\n<p>90 times 0.6 = 54<br />\n45 times 0.4 = 18<br />\n54 divided by (54 plus 18) = 0.75<br />\n90 times 0.4 = 36<br />\n45 times 0.6 = 27<br />\n36 divided by (36 plus 27) is about 0.5714</p>\n</div>\n<p>A positive Test B moves you from 67 to 75 per cent. A negative Test B moves you down to 57 per cent. The weak result moves you a little, either way. It does not undo the strong one. Updating is not swinging to the newest result: the newest result counts for as much as its strength, and no more.</p>\n<p>Run it backwards too. At 67 per cent you hold 90 with the condition for 45 without, 2 to 1. To end at 75 per cent you need 3 to 1.</p>\n<div class=\"working\">\n<p>90 divided by 45 = 2<br />\n100 minus 75 = 25<br />\n75 divided by 25 = 3<br />\n3 divided by 2 = 1.5</p>\n</div>\n<p>To turn 2 to 1 into 3 to 1, the second result must turn up 1.5 times as often with the condition as without it. That is Test B.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The second step treats Test B’s rates as the same among the 135 people as in everyone. That holds only if the two tests do not share a cause of error. Two results from the same sample, the same laboratory or the same flawed method are closer to one piece of evidence than two. Updating twice on them moves you too far.</p>\n<p>For a study about a claim, you seldom know the two rates. Then judge them, keep them round, and say that they are judgements: the table works the same way, and a reader can change your rates and redo it. Or judge in words whether the result would turn up far more often if the claim were true, and move by a little or a lot. Do not print a precise rate you cannot back.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Morgan and colleagues measured two faults in practitioners. They started too high, and they moved too far. Here is the first fault in one of their four cases.</p>\n<p>The scenario: a 45-year-old woman comes for an annual visit with no risk factors for breast cancer. The study’s expert panel put her chance of breast cancer before a mammogram at 0.2 to 0.3 per cent. The practitioners’ median starting estimate was 5 per cent. After a positive mammogram, the panel’s range was 3 to 9 per cent; the practitioners’ median was 50 per cent.</p>\n<p>To see what the starting point alone does, take one made-up test and run it from both starts. It catches 90 of 100 cancers and wrongly flags 5 of 100 women without cancer. These round numbers are chosen for the arithmetic; they are not mammography’s measured figures. Imagine 100,000 women.</p>\n<div class=\"working\">\n<p>100000 times 0.003 = 300<br />\n300 times 0.9 = 270<br />\n100000 minus 300 = 99700<br />\n99700 times 0.05 = 4985<br />\n270 divided by (270 plus 4985) is about 0.0514<br />\n100000 times 0.05 = 5000<br />\n5000 times 0.9 = 4500<br />\n100000 minus 5000 = 95000<br />\n95000 times 0.05 = 4750<br />\n4500 divided by (4500 plus 4750) is about 0.4865</p>\n</div>\n<p>From a start of 0.3 per cent, a positive result takes you to about 5.1 per cent, inside the panel’s range. From a start of 5 per cent, the same result takes you to about 48.6 per cent, close to the practitioners’ 50. Same test, same arithmetic, and a tenfold difference at the end. It all came from the start.</p>\n<p>The paper found both faults. The overestimates were “mostly associated with overestimates of pretest <dfn data-g=\"559\">probability</dfn>”, their name for the starting confidence. For a positive exercise stress test (a heart tracing taken while the patient walks or runs on a treadmill) and a positive or negative mammogram, their answers after the test were also far too high. For the positive results, the paper’s own measure shows they moved too far. So write your starting number down before you see the result, and say where it came from.</p>",
+   "numberRefs": [
+    272
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The test here is made up, so the 5.1 and 48.6 per cent show the effect of the start, not what a real mammogram does. The panel’s ranges are its own judgement from the literature, for one described patient. They are not a measured rate in any Indian clinic.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The test catches 90 in 100 cases, so a positive result means 90 per cent” is the error. Fill in the two-way table before you say a number.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Morgan and colleagues asked 553 primary care practitioners in the United States about a disease in 1 of 1,000 people. Their median answer for a positive result was 95 per cent. The correct answer is about 2 per cent.</p>",
+     "tag": "number",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Write your starting confidence down before you see a result, and say where it came from.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Evidence that turns up almost as often either way should barely move you, however striking it looks.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A new result moves you from where you stood. It does not replace where you stood.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The table needs the evidence’s two rates. Do not print an exact number you cannot back.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Two results that share a sample, a laboratory or a flaw are closer to one piece of evidence than two.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Counts may teach this better than formulas (Morgan and colleagues suggest it; they did not test it): “imagine 1,000 patients like her”.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Updating means going with the latest study.” That is swinging, not updating. A new result moves you from where you stood, by as much as its strength allows. A weak result against a well-founded view moves you a little. A strong result moves you far, but still from your starting point.</p>\n<p>The opposite error is holding the starting number fixed whatever comes in. Both errors skip the same step. Ask how much more often this evidence turns up when the claim is true than when it is false.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Before this result I put the chance at about 10 per cent, from [the base rate and its source]. This kind of result turns up about 90 times in 100 when the condition is present, and 5 times in 100 when it is not. So after a positive result I put it at about two in three, not at 100 per cent.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: set out the steps for updating a confidence with a two-way table out of 1,000. Then say what makes one piece of evidence strong and another weak.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Start from the base rate: of 1,000 cases, that many have the claim true, the rest false. Split each column by how often the evidence turns up in it: the first rate for the true column, the second for the false column. Take the row where the evidence turned up. Divide the count with the claim true by the row total. That is your new confidence.</p>\n<p>Evidence is strong when it turns up far more often when the claim is true than when it is false. It is weak when it turns up about as often either way. Strong evidence moves you far; weak evidence moves you a little.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A senior resident says at a journal club: “We <dfn data-g=\"765\">used</dfn> to think this practice worked. A trial last month found no benefit, so now we know it does not. Science updates.” Find what is right in this, and the specific flaw.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>What is right: a trial that finds no benefit is evidence, and confidence should move when it arrives.</p>\n<p>The flaw: the resident swung to the latest result. Updating moves you from where you stood by as much as the trial’s strength allows.</p>\n<p>How strong is it? A large, well-run trial would seldom miss a real benefit, so its null result moves you a long way. A small trial could miss a real benefit often, so it moves you a little. And “now we know it does not” claims more than any single result can show. The fair sentence is: “This trial lowers my confidence that the practice works, from about X per cent to about Y. A trial like it would usually have found a benefit if there were one.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident asks you: “If a test is 95 per cent specific, why can most of its positive results be wrong?” You have ten minutes and a whiteboard. Give your answer.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw a two-way table and fill it with people. Take a disease in 1 of 1,000, and imagine 100,000 people: 100 with the disease, 99,900 without. A test that catches all 100 and flags 5 in 100 of the others flags 4,995 healthy people.</p>\n<div class=\"working\">\n<p>99900 times 0.05 = 4995<br />\n100 divided by (100 plus 4995) is about 0.0196</p>\n</div>\n<p>Of 5,095 positive results, 100 are right: about 2 per cent. Specificity is about the people without the disease. When those people outnumber the sick ones a thousand to one, even a small false-alarm rate makes most positive results false.</p>\n<p>Then the habit to keep: before you read a positive result, say the base rate out loud. When a result comes in, change your view out loud too. “I started at 1 in 1,000. After this positive result I am at about 2 in 100, not 95.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Out of 1,000 cases, the base rate is 20 per cent. The evidence turns up in 80 of 100 cases where the claim is true and in 10 of 100 where it is false. Fill in the two-way table: claim true or false across the top, evidence or no evidence down the side, with every total.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>1000 times 0.2 = 200<br />\n1000 minus 200 = 800<br />\n200 times 0.8 = 160<br />\n200 minus 160 = 40<br />\n800 times 0.1 = 80<br />\n800 minus 80 = 720<br />\n160 plus 80 = 240<br />\n40 plus 720 = 760</p>\n</div>\n<table style=\"width:76%;\">\n\n<thead>\n<tr>\n<th></th>\n<th>claim true</th>\n<th>claim false</th>\n<th>total</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>evidence turns up</td>\n<td>160</td>\n<td>80</td>\n<td>240</td>\n</tr>\n<tr>\n<td>no evidence</td>\n<td>40</td>\n<td>720</td>\n<td>760</td>\n</tr>\n<tr>\n<td>total</td>\n<td>200</td>\n<td>800</td>\n<td>1000</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>From the table of the last problem, give your confidence that the claim is true after the evidence turns up, and after it does not.</p>",
+   "level": 2,
+   "answer": "<p>Divide by the row you are in.</p>\n<div class=\"working\">\n<p>160 divided by 240 is about 0.6667<br />\n40 divided by 760 is about 0.0526</p>\n</div>\n<p>After the evidence turns up, about 67 per cent. After it does not, about 5 per cent. You started at 20 per cent, so the evidence moves you up a long way, and its absence moves you down.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Here is a two-way table of 1,000 cases.</p>\n<table style=\"width:64%;\">\n\n<thead>\n<tr>\n<th></th>\n<th>claim true</th>\n<th>claim false</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>evidence present</td>\n<td>45</td>\n<td>95</td>\n</tr>\n<tr>\n<td>evidence absent</td>\n<td>5</td>\n<td>855</td>\n</tr>\n</tbody>\n</table>\n<p>Give the base rate. Give the share of true claims that show the evidence. Then give the share of cases with the evidence in which the claim is true.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>45 plus 5 = 50<br />\n50 divided by 1000 = 0.05<br />\n45 divided by 50 = 0.9<br />\n45 plus 95 = 140<br />\n45 divided by 140 is about 0.3214</p>\n</div>\n<p>The base rate is 5 per cent. The evidence shows in 90 per cent of true claims. But among cases with the evidence, the claim is true in only 32 per cent. The same top count, 45, is divided by two different totals.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Morgan and colleagues set practitioners this question.</p>\n<blockquote>\n<p>A test to detect a disease for which prevalence is 1 out of 1000 has a sensitivity of 100% and specificity of 95%.</p>\n</blockquote>\n<p>What is the chance that a person with a positive result has the disease? And a person with a negative result? Work it out of 100,000 people. Then compare with the practitioners’ median answers, 95 per cent and 5 per cent.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>100000 divided by 1000 = 100<br />\n100000 minus 100 = 99900<br />\n99900 times 0.05 = 4995<br />\n100 plus 4995 = 5095<br />\n100 divided by 5095 is about 0.0196<br />\n99900 minus 4995 = 94905<br />\n0 divided by 94905 = 0</p>\n</div>\n<p>After a positive result, about 2 per cent. After a negative result, 0. The test catches every case, so no one with the disease tests negative. The practitioners’ 95 per cent is the specificity. It answers another question. Their 5 per cent for a negative result reuses the false-alarm rate. That rate is about people without the disease, not about the negatives.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>In Morgan and colleagues’ heart case, a 43-year-old woman has atypical chest pain and no risk factors. Cardiac ischaemia is a reduced blood supply to the heart muscle. The study’s expert panel put her chance of it at 1 to 4.4 per cent before an exercise stress test. The practitioners’ median was 10 per cent.</p>\n<p>Suppose the test turns positive in 70 of 100 people with ischaemia and in 30 of 100 without; these are round numbers for the arithmetic. Work out of 1,000. Find the chance of ischaemia after a positive test from a start of 4 per cent. Then find it from a start of 10 per cent. Compare with the practitioners’ median after a positive test, 70 per cent, and the panel’s range, 2 to 11 per cent.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>1000 times 0.04 = 40<br />\n40 times 0.7 = 28<br />\n1000 minus 40 = 960<br />\n960 times 0.3 = 288<br />\n28 divided by (28 plus 288) is about 0.0886<br />\n1000 times 0.1 = 100<br />\n100 times 0.7 = 70<br />\n1000 minus 100 = 900<br />\n900 times 0.3 = 270<br />\n70 divided by (70 plus 270) is about 0.2059</p>\n</div>\n<p>From 4 per cent, about 8.9 per cent: inside the panel’s range. From the practitioners’ own start of 10 per cent, about 20.6 per cent. Even their too-high start, updated correctly, gives about 21 per cent, not 70. So they made both errors: they started too high, and they moved too far. The paper names the positive stress test as one of the results where the move was much too large.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Your starting confidence in a claim is 30 per cent. A first piece of evidence turns up. It appears in 80 of 100 cases where such a claim is true, and 20 of 100 where it is false. Then a second, separate piece of evidence fails to turn up. It would have appeared in 60 of 100 true cases and 30 of 100 false ones. Work out of 1,000. Give your confidence after each step.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>1000 times 0.3 = 300<br />\n300 times 0.8 = 240<br />\n1000 minus 300 = 700<br />\n700 times 0.2 = 140<br />\n240 divided by (240 plus 140) is about 0.6316<br />\n240 times 0.4 = 96<br />\n140 times 0.7 = 98<br />\n96 divided by (96 plus 98) is about 0.4948</p>\n</div>\n<p>After the first piece, about 63 per cent. For the second step keep only the 380 cases with the first piece of evidence. The second piece fails to appear in 40 of 100 true cases and 70 of 100 false ones. You end at about 49 per cent: close to evens. The second step started from 63 per cent, not from 30.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke, and say why it looks reasonable.</p>\n<blockquote>\n<p>“Two per cent of patients like this one have the condition. The test turns positive in 90 of 100 people with the condition and in 10 of 100 without it. She tested positive. The test catches 90 per cent, so she is 90 per cent likely to have it.”</p>\n</blockquote>",
+   "level": 7,
+   "answer": "<p>The last sentence broke. It skipped the base rate. It also took the chance of a positive result given the condition for the chance of the condition given a positive result. Fill in the table.</p>\n<div class=\"working\">\n<p>1000 times 0.02 = 20<br />\n20 times 0.9 = 18<br />\n1000 minus 20 = 980<br />\n980 times 0.1 = 98<br />\n18 divided by (18 plus 98) is about 0.1552</p>\n</div>\n<p>About 16 per cent, not 90. Of 116 positive results, 98 are false alarms.</p>\n<p>Why it looks reasonable: 90 per cent is a real property of the test, and it is printed right there. It answers “of people with the condition, how many test positive?”, which is not the question.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>The question: “The base rate is 30 per cent. The test turns positive in 90 of 100 people with the condition and in 10 of 100 without. What is the chance of the condition after a positive result?” Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>1000 times 0.3 = 300<br />\n300 times 0.9 = 270<br />\n1000 times 0.1 = 100<br />\n270 divided by (270 plus 100) is about 0.7297</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line broke. The false-alarm rate, 10 in 100, applies only to people without the condition: 700 of the 1,000, not all 1,000.</p>\n<div class=\"working\">\n<p>1000 minus 300 = 700<br />\n700 times 0.1 = 70<br />\n270 divided by (270 plus 70) is about 0.7941</p>\n</div>\n<p>About 79 per cent, not 73. Why the wrong answer looks reasonable: “10 in 100 positive” sounds like a rate for everyone tested. Say which column each rate belongs to before you multiply.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>On a ward round, a colleague talks about a 45-year-old woman. She has no risk factors and a positive screening mammogram. He says: “The mammogram is positive, so it is certain she has cancer.” Morgan and colleagues’ expert panel put the chance for such a woman at 0.2 to 0.3 per cent before testing. After a positive result, they put it at 3 to 9 per cent. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute how far the positive result moved her chance, and where it left her.</p>\n<div class=\"working\">\n<p>3 divided by 0.3 = 10<br />\n9 divided by 0.2 = 45<br />\n1 minus 0.09 = 0.91</p>\n</div>\n<p>The positive result raised her chance roughly 10- to 45-fold. That is strong evidence. But from a start of 0.2 to 0.3 per cent, it leaves her at 3 to 9 per cent. Even at the top of that range, the chance that she has no cancer is 91 per cent. That is <dfn data-g=\"491\">odds</dfn> of about 10 to 1 against cancer.</p>\n<p>What it does not establish. It does not establish that she is well: a 3 to 9 per cent chance calls for the next step of work-up, not for reassurance. The ranges are the panel’s judgement for one described patient in the United States. Strong evidence from a low start still ends low. “Certain” is wrong by a <dfn data-g=\"261\">factor</dfn> of more than ten.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>At a journal club a colleague says: “I used to be about 30 per cent sure that skipping breakfast causes weight gain. Then I read an <dfn data-g=\"490\">observational study</dfn> that found skippers more often had <dfn data-g=\"506\">overweight</dfn>. Now I am 90 per cent sure.” Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Compute how strong the study would have to be to justify that move. Imagine 1,000 claims held at 30 per cent: 300 true, 700 false. To end at 90 per cent, the cases with such a finding must be 9 true for every 1 false.</p>\n<div class=\"working\">\n<p>300 divided by 9 is about 33.33<br />\n33.33 divided by 700 = 0.0476</p>\n</div>\n<p>Suppose every true claim produced such a finding, all 300. Then the finding could turn up in at most about 33 of the 700 false claims: fewer than 5 in 100. Would an <dfn data-g=\"39\">association</dfn> like this turn up in fewer than 5 in 100 cases where skipping does not cause weight gain? No. A third factor or the <dfn data-g=\"635\">reverse direction</dfn>, rivals named in section 3, would produce the association in many of the 700 false claims. Such a finding turns up often when the <dfn data-g=\"88\">causal claim</dfn> is false, so it is weak evidence for it. A small move up is warranted; 30 to 90 is not.</p>\n<p>What this does not establish. It does not give a correct final number: nobody has measured how often such associations turn up when the causal claim is false. It shows only that the jump needs evidence far stronger than one observational study.</p>"
+  }
+ ]
+}

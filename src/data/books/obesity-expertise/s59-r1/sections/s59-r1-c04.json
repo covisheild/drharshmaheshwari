@@ -1,0 +1,189 @@
+{
+ "format": 1,
+ "id": "s59-r1-c04",
+ "label": "4",
+ "title": "Belief beyond the evidence",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-10.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"57\">belief</dfn> goes beyond its evidence when it is held or stated as a stronger kind of <dfn data-g=\"107\">claim</dfn> than the evidence can carry.</p>\n<p>Brown, Bohan Brown and Allison (2013) measured this in one literature: the claim that skipping breakfast causes weight gain. They pooled 88 estimates from 58 observational studies and found the <dfn data-g=\"39\">association</dfn> between skipping breakfast and <dfn data-g=\"506\">overweight</dfn> or obesity firmly established. By 2011 the pooled <dfn data-g=\"507\">P value</dfn>, the number a statistical test prints beside a comparison, was below 10<sup>-42</sup>. A P value that small means that if there were no association at all, results like these would almost never turn up by chance. They also found few randomised trials and no consistent evidence from them that breakfast affects weight. Their conclusion was that the claim is “only presumed true”.</p>\n<p>They named four ways the literature reported more than its evidence showed. Two are in how authors described their own results: a biased reading of them, and causal language for an observational <dfn data-g=\"274\">finding</dfn>. Two are in how authors cited other people’s work: misleading <dfn data-g=\"103\">citation</dfn> of a trial’s result, and causal language for another study’s association.</p>",
+   "refs": [
+    3,
+    39,
+    40,
+    41,
+    5,
+    5,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Suppose many studies find that people who skip breakfast more often have overweight or obesity. That is an association: two things found together. It does not show that skipping breakfast causes the weight.</p>\n<p>Now suppose people repeat the claim as a cause. Brown and colleagues suggest, without having tested it, that a claim met everywhere comes to feel proven. The evidence underneath has not changed.</p>\n<p>Brown and colleagues measured it for breakfast and weight in 2013. Then a trial tested advice based on the claim and found no detectable effect of the advice on weight.</p>\n<p>Your defence is two questions for any claim. What kind of statement is this? And what does it rest on?</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c04-abstract-conclusions.png",
+   "alt": "Three bars from zero. Unqualified causal claim: 11 abstracts. Softened causal claim: 10. Association only: 21, the tallest bar.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Brown and colleagues (2013): how 42 abstracts of observational studies of breakfast and obesity worded their conclusion. 11 made an unqualified causal claim, 10 a causal claim softened by “may” or “suggests”, and 21 kept to an association. The authors judged causal language unwarranted for these designs, so between 26 and 50 per cent claimed more than their studies could show."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c04-schlundt-misreadings.png",
+   "alt": "Two bars from zero: 28 misreadings toward breakfast, 1 against.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Brown and colleagues (2013) on citations of Schlundt’s 1992 trial, which found no main effect of breakfast. Of 46 papers that cited it about breakfast and weight, 29 misread it, and 28 of those 29 leaned toward breakfast."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with sentences you could meet in any health column. Brown and colleagues collected them in 2013. Their article is at https://pmc.ncbi.nlm.nih.gov/articles/PMC3798081/. Find Table 2. These three come from the Mayo Clinic, the Academy of Nutrition and Dietetics, and the US Surgeon General.</p>\n<blockquote>\n<p>In fact, skipping breakfast actually increases your risk of obesity.</p>\n</blockquote>\n<blockquote>\n<p>Want to trim your waist? Try eating breakfast!</p>\n</blockquote>\n<blockquote>\n<p>Eating a healthy breakfast is a good way to start the day and may be important in achieving and maintaining a healthy weight.</p>\n</blockquote>\n<p>Put the two questions to each one. First, what kind of statement is it? The first two are stated as facts. The third is softer: “may be important”. Second, what does each rest on? None of them says. Each claims a cause, though: change what you eat in the morning, and your weight will change.</p>\n<p>Now look at what was underneath. Brown and colleagues gathered the studies that earlier reviews had found. Search their Methods for “58 of 92”.</p>\n<blockquote>\n<p>In total, 58 of 92 studies fit these criteria with a total of 88 independent OR estimates.</p>\n</blockquote>\n<p>OR stands for <dfn data-g=\"492\">odds ratio</dfn>, one way of measuring how strongly two things go together. Independent means each estimate comes from a separate group of people, such as the men and the women of one study.</p>\n<p>Every one of these studies was observational. The researchers watched what people already did and measured their weight. Nobody was given breakfast or asked to skip it. The studies came from 30 countries on 5 continents, and together they showed the association again and again.</p>\n<p>Now search for “42 abstracts”. Brown and colleagues also rated the abstracts of the articles they had gathered: 88 had one, and 42 of those drew a conclusion about breakfast and obesity.</p>\n<blockquote>\n<p>of the 42 abstracts that included conclusions about breakfast and obesity, 11 abstracts made unqualified causal claims about breakfast consumption and obesity, whereas an additional 10 abstracts used qualifiers to introduce uncertainty into the causal statements; 21 articles limited the abstract conclusions to noncausal language</p>\n</blockquote>\n<table style=\"width:85%;\">\n\n<thead>\n<tr>\n<th>conclusion of the abstract</th>\n<th>abstracts</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>an unqualified causal claim</td>\n<td>11</td>\n</tr>\n<tr>\n<td>a causal claim softened by “may” or “suggests”</td>\n<td>10</td>\n</tr>\n<tr>\n<td>an association only</td>\n<td>21</td>\n</tr>\n<tr>\n<td>total</td>\n<td>42</td>\n</tr>\n</tbody>\n</table>\n<p>Work out the two shares the authors report as a range.</p>\n<div class=\"working\">\n<p>11 divided by 42 = 0.262, about 26 per cent<br />\ncausal claims, flat or softened: 11 plus 10 = 21<br />\n21 divided by 42 = 0.5, which is 50 per cent</p>\n</div>\n<p>So between 26 and 50 per cent of these abstracts claimed more than their designs could show. Brown and colleagues judged causal language unwarranted for every one of these observational studies. The lower figure counts only the flat causal claims. The upper one adds the softened ones.</p>\n<p>The trap is that the causal word sits in the <dfn data-g=\"5\">abstract</dfn>, where a reader who reads only the abstract meets it. A reader who sees 21 abstracts saying “causes” or “may cause” counts 21 votes for a cause. In fact, those 21 studies showed one association, measured many times.</p>\n<p>A biased reading leans the conclusion towards the answer the authors favoured. Of the studies with a result favouring breakfast, 65 per cent put it in the abstract’s conclusion. Of the studies without one, only 39 per cent did.</p>",
+   "numberRefs": [
+    14
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The counts describe one literature, breakfast and obesity, in the studies four earlier reviews had found, up to 2011. They show that causal language for an association happened and how often it happened there. They are not a rate for nutrition research as a whole, or for any Indian journal.</p>\n<p>Two of the authors rated the abstracts separately and settled disagreements by discussion. The authors call the softened claims a judgement, which is why they give a range, not one figure.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>The second kind of overstatement happens one step later, when a paper cites another. Brown and colleagues followed the citations of one small trial, by Schlundt and colleagues in 1992. It was one of very few trials on the question.</p>\n<p>First find out what the trial found. Women on a 12-week weight-loss plan were told to eat breakfast or to skip it. They were also split by whether they usually ate breakfast before the study. Search Brown’s Table 3 for “Schlundt”.</p>\n<blockquote>\n<p>Habitual breakfast eaters assigned to skip breakfast and habitual breakfast skippers assigned to eat breakfast lost more weight than subjects who maintained their breakfast habits; no main effect of breakfast on weight loss.</p>\n</blockquote>\n<p>“No main effect” means this: eating breakfast, taken across everyone, did not change weight loss. The women who changed their usual habit, in either direction, lost more. That hint was weak. Brown reports its P value as below 0.06. The later trial’s authors give it as 0.06 and call it “only suggestive of significance”. Either way, it was not shown to fall below the usual cut-off of 0.05.</p>\n<p>Now see how others cited it. Search Brown’s Results for “only 17%”.</p>\n<blockquote>\n<p>Of the PEBO-relevant citations, only 17% of articles cited the results accurately. Of the 29 articles that misleadingly cited Schlundt et al (10), 28 articles mildly or explicitly cited Schlundt et al (10) positively toward breakfast with only 1 article that cited Schlundt et al (10) negatively toward breakfast</p>\n</blockquote>\n<p>(“PEBO” is the authors’ short name for the claim that eating breakfast protects against obesity. “(10)” is the number of Schlundt’s paper in Brown’s <dfn data-g=\"605\">reference list</dfn>.) Of 46 papers that cited the trial about breakfast and weight, only 17 per cent cited it accurately, and 29 misread it. The rest cited it in other ways. All but one of those misreadings leaned the same way: towards breakfast. A trial that found no main effect of breakfast was cited, again and again, as support for breakfast.</p>\n<p>This is the failure Book 0’s section on <dfn data-g=\"98\">checking a reference</dfn> (Book 0, F3) warned about: a citation that opens and is real, and does not say what it was cited for. You catch it only by the fourth act of that section, reading the passage.</p>\n<p>Nor had anyone shown how breakfast could change weight. Brown and colleagues found “no clearly and consistently shown physiologic mechanism” for the claim.</p>\n<p>Now the test. Brown and colleagues found one registered trial of the claim in October 2012: a trial whose plan was recorded in a public list of trials before it began. It was published in 2014 by Dhurandhar and colleagues, with David Allison, one of Brown’s co-authors, among them (https://pmc.ncbi.nlm.nih.gov/articles/PMC4095657/). Chance decided which advice each person got: eat breakfast, skip it, or general advice on healthy eating alone. Search its abstract for “283 of the 309”.</p>\n<blockquote>\n<p>A total of 283 of the 309 participants who were randomly assigned completed the intervention. Treatment assignment did not have a significant effect on weight loss</p>\n</blockquote>\n<p>The advice worked on behaviour. People reported following it on 93.6 per cent of days in the breakfast group and 92.4 per cent in the skipping group. It made no detectable difference to weight over 16 weeks. The authors offer two readings of the earlier hint. It may have been a chance finding. Or Schlundt’s tighter weight-loss plan left people less free to make up later in the day for what they did at breakfast.</p>",
+   "numberRefs": [
+    14,
+    33
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The trial tested advice, not breakfast itself. Its 309 adults had overweight or obesity, were trying to lose weight, were recruited at sites in the United States and Denmark, and were followed for 16 weeks. It says nothing directly about children, about Indian adults, about longer periods, or about what kind of breakfast is eaten. And a trial that finds no clear effect has not shown that there is none; a later section of this book reads this result with care.</p>\n<p>The citation counts cover one trial’s citations, found in two citation databases in May 2012.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Dozens of studies agree, so it must be true” is the error. Repeating a study of the same kind makes chance a weaker explanation of the association. It does not turn it into evidence of a cause.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Read the <dfn data-g=\"775\">verb</dfn> before you read the number. “Increases your risk”, “protects against”, “leads to” and “helps you lose” all claim a cause. Over an observational finding, write “people who skip breakfast more often have overweight or obesity” instead.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>“May cause” is still a causal claim. It does not turn an association into evidence of a cause.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a slide or a paper cites a study for a claim, open the study and read what it found before you repeat the claim.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When a causal claim turns out to rest only on observational studies, say so out loud: “that is an association; nobody has shown the cause yet”.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Showing that a belief went beyond its evidence does not show that the belief is false. Until Dhurandhar’s 2014 trial, the right answer was “we do not know”, not “it is a myth”.</p>",
+     "tag": "boundary",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Brown’s counts come from one question, breakfast and weight. They are not a rate for nutrition research in general.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Brown and colleagues proved that breakfast does not matter for weight.” They did not try to. They showed that the belief was stronger than its evidence: the association was firmly established, and the cause was not. The trial that followed tested one thing: advice to eat or skip breakfast, in adults trying to lose weight. Over 16 weeks the advice had no detectable effect on weight. Replacing “breakfast helps you lose weight” with “breakfast is useless” swaps one belief beyond the evidence for another.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Observational studies have repeatedly found that people who skip breakfast more often have overweight or obesity. This is an association. One large trial gave adults trying to lose weight advice to eat or skip breakfast. Over 16 weeks the advice made no detectable difference to weight (Dhurandhar <dfn data-g=\"246\">et al.</dfn>, 2014).</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the four ways Brown and colleagues found the breakfast literature stating more than its evidence showed. Which two are about authors’ own results, and which two about citing others?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>About their own results:</p>\n<ol type=\"1\">\n<li>A biased reading of their own results.</li>\n<li>Causal language to describe their own observational finding.</li>\n</ol>\n<p>About other people’s work:</p>\n<ol start=\"3\" type=\"1\">\n<li>Citing another study’s result in a misleading way.</li>\n<li>Causal language when citing another study’s association.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A slide in a postgraduate lecture reads (made up for this exercise):</p>\n<blockquote>\n<p>Skipping breakfast causes weight gain (Schlundt 1992). Eating breakfast helps people keep weight off: 78% of the National Weight Control Registry eat it daily (Wyatt 2002).</p>\n</blockquote>\n<p>Brown and colleagues describe both studies. The registry study, by Wyatt and colleagues, is a <dfn data-g=\"85\">case series</dfn>. A case series describes one group of people who share something, here weight lost and kept off. It has no <dfn data-g=\"131\">comparison group</dfn>. So it can show only that two things occur together in these people, not that they go together more than they do in others. Say what each cited study found, what is wrong with how the slide uses it, and rewrite the slide.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>First citation. Schlundt and colleagues ran a 12-week trial in women on a weight-loss plan. It found no main effect of breakfast on weight loss. Women who changed their usual habit, either way, lost more, and that hint was weak (P &lt; 0.06). The slide cites a trial for something it did not find. Brown counted this exact error: 29 of 46 papers citing the trial about weight misread it, 28 of them towards breakfast.</p>\n<p>Second citation. In the registry, 78 per cent reported eating breakfast every day. With no comparison group, that shows only that breakfast and kept-off weight occur together in these people. It is not even an association, because nobody without weight loss was measured. “Causes” and “helps people keep weight off” read a cause into a description.</p>\n<p>A fair slide:</p>\n<blockquote>\n<p>Many observational studies find that people who skip breakfast more often have overweight or obesity. This is an association. In one trial (Schlundt 1992), breakfast had no main effect on weight loss.</p>\n</blockquote>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Brown and colleagues followed 72 papers that cited the registry study by Wyatt and colleagues about breakfast and weight. By their count, 29 per cent of these papers described breakfast and kept-off weight as “simply co-occurring”. Another 26 per cent called them “associated”. And 22 per cent linked them as cause and effect. The rest <dfn data-g=\"765\">used</dfn> softened wording. What does each wording claim, and which is right for a case series?</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>“Co-occurring” claims only that both are present in the same people. That is all a case series with no comparison group can show, so it is the right wording.</p>\n<p>“Associated” claims that the two go together more than they would by chance. That needs a comparison: people without the kept-off weight loss, to see whether they eat breakfast less often. The registry has none.</p>\n<p>A causal statement claims that breakfast helped keep the weight off. That needs a comparison in which something other than the people’s own habits decided who ate breakfast.</p>\n<p>So only 29 per cent of these 72 papers matched the study’s design. Brown counts the “associated” and causal wordings together, 48 per cent of the citations, as claiming more than was warranted.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>For a journalist, three minutes, no jargon. She is writing a column for a Sunday paper and asks: “Is it true that skipping breakfast makes you fat?” Give her one quotable sentence, say how sure you are in plain words, and say why.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>A quotable sentence: “People who skip breakfast tend to weigh more. But when a trial told people to eat or skip it, the advice made no clear difference to how much weight they lost.”</p>\n<p>How sure, in words: fairly sure that the link seen in surveys is real; not convinced that breakfast itself changes weight.</p>\n<p>Why: the link comes from many observational studies. They watch what people already do. They cannot tell whether breakfast, or something else about people who eat it, is behind the link. The largest single trial, in adults in the United States and Denmark trying to lose weight, found no detectable effect of the advice over 16 weeks. A 2019 review of the trials, which a later section reads, points the same way.</p>\n<p>What would change your mind: longer trials, in other groups, showing a difference.</p>\n<p>Leave out “myth”. The evidence says the cause is unproven, not that it is disproved.</p>"
+  }
+ ]
+}

@@ -1,0 +1,248 @@
+{
+ "format": 1,
+ "id": "s59-r1-c12",
+ "label": "12",
+ "title": "Calibrated scales: fixing what the words mean, and putting the number beside the word",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-10.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"76\">calibrated scale</dfn> of <dfn data-g=\"559\">probability</dfn> words is a published table that fixes, for each word, the range of degrees of <dfn data-g=\"57\">belief</dfn> it stands for. It is not a fact about the words, and two bodies can fix the same word differently.</p>\n<p>Sherman Kent, of the US Board of National Estimates, set out a five-band chart (Kent 1964). Each band is a centre with a margin, “give or take”, in per cent. The band runs from the centre minus the margin to the centre plus the margin.</p>\n<table style=\"width:92%;\">\n\n<thead>\n<tr>\n<th>Kent’s word</th>\n<th>centre (%)</th>\n<th>give or take (%)</th>\n<th>band (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>almost certain</td>\n<td>93</td>\n<td>6</td>\n<td>87 to 99</td>\n</tr>\n<tr>\n<td>probable</td>\n<td>75</td>\n<td>12</td>\n<td>63 to 87</td>\n</tr>\n<tr>\n<td>chances about even</td>\n<td>50</td>\n<td>10</td>\n<td>40 to 60</td>\n</tr>\n<tr>\n<td>probably not</td>\n<td>30</td>\n<td>10</td>\n<td>20 to 40</td>\n</tr>\n<tr>\n<td>almost certainly not</td>\n<td>7</td>\n<td>5</td>\n<td>2 to 12</td>\n</tr>\n</tbody>\n</table>\n<p>The Intergovernmental Panel on Climate Change (IPCC) gave the authors of its Fifth Assessment Report a <dfn data-g=\"413\">likelihood scale</dfn> (Mastrandrea and colleagues, 2010, Table 1). Its ranges overlap by design: each range above or below the middle one reaches to the end of the scale on its side. Its note calls the boundaries “fuzzy”.</p>\n<table style=\"width:79%;\">\n\n<thead>\n<tr>\n<th>IPCC term</th>\n<th>likelihood of the outcome (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>virtually certain</td>\n<td>99 to 100</td>\n</tr>\n<tr>\n<td>very likely</td>\n<td>90 to 100</td>\n</tr>\n<tr>\n<td>likely</td>\n<td>66 to 100</td>\n</tr>\n<tr>\n<td>about as likely as not</td>\n<td>33 to 66</td>\n</tr>\n<tr>\n<td>unlikely</td>\n<td>0 to 33</td>\n</tr>\n<tr>\n<td>very unlikely</td>\n<td>0 to 10</td>\n</tr>\n<tr>\n<td>exceptionally unlikely</td>\n<td>0 to 1</td>\n</tr>\n</tbody>\n</table>\n<p>The note allows three more terms in limited cases; this book uses the seven.</p>\n<p>The IPCC keeps a second, separate scale, which it calls <dfn data-g=\"141\">confidence</dfn>. It has five words, from “very low” to “very high”, and authors choose one from the evidence (“limited”, “medium” or “robust”) and from how far the studies or experts agree (“low”, “medium” or “high”). The note says this confidence should not be read as a probability. It is a judgement of the grounds, close to <dfn data-g=\"315\">GRADE</dfn>’s certainty. It is not a <dfn data-g=\"193\">degree of belief</dfn>, which is what this book calls confidence.</p>\n<p>US Intelligence Community Directive 203 (<dfn data-g=\"342\">ICD 203</dfn>), signed in January 2015 and amended in January 2022, fixes seven bands that run end to end, from 1 to 99 per cent. It gives no word for below 1 or above 99. Each band starts where the one below it stops, so the bands share only their end points.</p>\n<table style=\"width:46%;\">\n\n<tbody>\n<tr>\n<td>ICD 203 word</td>\n<td>band (%)</td>\n</tr>\n<tr>\n<td>almost certain</td>\n<td>95 to 99</td>\n</tr>\n<tr>\n<td>very likely</td>\n<td>80 to 95</td>\n</tr>\n<tr>\n<td>likely</td>\n<td>55 to 80</td>\n</tr>\n<tr>\n<td>roughly even chance</td>\n<td>45 to 55</td>\n</tr>\n<tr>\n<td>unlikely</td>\n<td>20 to 45</td>\n</tr>\n<tr>\n<td>very unlikely</td>\n<td>5 to 20</td>\n</tr>\n<tr>\n<td>almost no chance</td>\n<td>1 to 5</td>\n</tr>\n</tbody>\n</table>\n<p>ICD 203 also allows a second set of words for the same bands, such as “probable” or “probably” for 55 to 80 per cent. It asks you not to mix the two sets.</p>\n<p>ICD 203 also has a confidence <dfn data-g=\"410\">level</dfn>, such as “high confidence”: a judgement of the logic and evidence behind an assessment, like the IPCC’s confidence. ICD 203 forbids putting a confidence level and a likelihood in the same sentence.</p>\n<p>A scale fixes a word only for a reader who sees it.</p>",
+   "refs": [
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    189,
+    190,
+    226,
+    227,
+    228
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A word like “likely” has no fixed number. So some bodies publish a table that fixes one.</p>\n<p>Different bodies fixed it differently. For the US intelligence services, “likely” means 55 to 80 per cent. For the climate scientists of the IPCC, it means 66 to 100 per cent.</p>\n<p>So pick one table, say which one, and put the number in brackets every time.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c12-brackets-gain.png",
+   "alt": "Four bars from zero on a 0 to 100 per cent axis: 32 with no range shown, 39 with a link to the full table, 40 with a box on mouse-over, and 66 with the range in brackets beside the word.",
+   "w": 1228,
+   "h": 659,
+   "caption": "Wintle’s experiment: how far 924 readers’ ranges overlapped ICD 203’s, by how the range was shown. A link to the table gained 7 points over showing nothing, a mouse-over box 8, and the range in brackets beside the word 34: about twice the overlap. Even in brackets, a third of the overlap was missing."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>The last section showed that readers turn one word into many numbers. A scale is the fix that bodies have tried. Build three of them, then watch one number change its word.</p>\n<p>Start with Kent’s chart. Open <em>Words of Estimative Probability</em> (1964), at https://www.cia.gov/resources/csi/static/Words-of-Estimative-Probability.pdf, and find the chart under “An <dfn data-g=\"491\">Odds</dfn> Table”. Each row gives a centre and a margin. The band is the centre minus the margin, up to the centre plus the margin.</p>\n<div class=\"working\">\n<p>93 minus 6 = 87 and 93 plus 6 = 99<br />\n75 minus 12 = 63 and 75 plus 12 = 87<br />\n50 minus 10 = 40 and 50 plus 10 = 60<br />\n30 minus 10 = 20 and 30 plus 10 = 40<br />\n7 minus 5 = 2 and 7 plus 5 = 12</p>\n</div>\n<p>Look at what the chart leaves out. No word covers 12 to 20 per cent, 60 to 63, below 2 or above 99. Kent fixed five words, not every number.</p>\n<p>Now the IPCC scale, in Table 1 of the guidance note at https://www.ipcc.ch/site/assets/uploads/2017/08/AR5_Uncertainty_Guidance_Note.pdf. Its “likely” runs from 66 to 100 per cent. Its “very likely” runs from 90 to 100. So every number that is “very likely” is also “likely”. The writer is meant to pick the narrower word when it fits.</p>\n<p>Last, ICD 203, at https://www.dni.gov/files/documents/ICD/ICD-203.pdf. Search for “01-05%”. The row of bands sits under the words. Its “likely” runs from 55 to 80 per cent, and “very likely” starts where it stops.</p>\n<p>Now take one judgement. A colleague tells you she is 70 per cent sure that a new weight-management clinic will cut the hospital’s referrals. The colleague is made up. Find the band that holds 70 on each scale.</p>\n<table style=\"width:64%;\">\n\n<tbody>\n<tr>\n<td>scale</td>\n<td>band that holds 70 (%)</td>\n<td>word</td>\n</tr>\n<tr>\n<td>Kent</td>\n<td>63 to 87</td>\n<td>probable</td>\n</tr>\n<tr>\n<td>IPCC</td>\n<td>66 to 100</td>\n<td>likely</td>\n</tr>\n<tr>\n<td>ICD 203</td>\n<td>55 to 80</td>\n<td>likely</td>\n</tr>\n</tbody>\n</table>\n<p>So far the word travels well. Now she becomes less sure, and says 58 per cent.</p>\n<table style=\"width:83%;\">\n\n<tbody>\n<tr>\n<td>scale</td>\n<td>band that holds 58 (%)</td>\n<td>word</td>\n</tr>\n<tr>\n<td>Kent</td>\n<td>40 to 60</td>\n<td>chances about even</td>\n</tr>\n<tr>\n<td>IPCC</td>\n<td>33 to 66</td>\n<td>about as likely as not</td>\n</tr>\n<tr>\n<td>ICD 203</td>\n<td>55 to 80</td>\n<td>likely</td>\n</tr>\n</tbody>\n</table>\n<p>Here is the trap. Suppose she wrote “likely” in a note that follows ICD 203. Someone copies that word into a report written to the IPCC scale. The reader of that report now hears 66 per cent or more. Her 58 per cent has been raised by the copying, and no number was ever written down to show it.</p>\n<p>The safe route between two scales always goes through the number. Turn the word back into its number on the first scale. Then find that number’s word on the second.</p>\n<p>For the clinic there is a fourth scale. Hashim’s 2024 review, which the last section met, proposes five words for talking with patients, each with a number “per 100 cases”. It gives “likely” as 70 in 100, with a range of 60 to 80. That is one author’s <dfn data-g=\"568\">proposal</dfn> from the studies he reviewed. No body has adopted it.</p>",
+   "numberRefs": [
+    15,
+    229,
+    230,
+    186
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The bands are conventions with soft edges. Kent writes “give or take”, and the IPCC calls its boundaries fuzzy. ICD 203 does not say which word a number exactly on a shared edge takes, such as 80. So the table above is a lookup, not a measurement. A judgement of 81 per cent and one of 79 per cent are not really different kinds of thing.</p>\n<p>None of the three scales was written for medicine. Kent and ICD 203 were written for intelligence analysts, and the IPCC scale for climate assessments. Borrowing one for a district report is a choice you make, and the reader can follow it only if you name it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>The IPCC published its scale, and readers still misread it. Here is how badly, and what fixed most of it.</p>\n<p>Open Wintle and colleagues’ 2019 paper at https://pmc.ncbi.nlm.nih.gov/articles/PMC6469752/ and search for “1 in 8”. It reports an earlier online survey by Budescu and colleagues. Readers met sentences from IPCC reports, with a link to the IPCC table. They clicked the link only 1 in 8 times. Now search for “18.5%”.</p>\n<blockquote>\n<p>They reported an improvement in mean percentage overlap with prescribed ranges in the IPCC conversion table from 18.5% in their equivalent to our Table condition to 33.6% in their equivalent to our Brackets condition.</p>\n</blockquote>\n<p>With the table a click away, readers’ ranges overlapped the IPCC’s by 18.5 per cent on average. Even with the range in brackets, they reached only 33.6 per cent. Wintle’s team suggests the overlapping bands may be part of the reason. Search for “not intuitive”.</p>\n<blockquote>\n<p>E.g., is the range for ‘Likely’ supposed to mean 67–90%, or 67–100%? The latter is the intended meaning, but this is not intuitive.</p>\n</blockquote>\n<p>Readers expect each word to stop where the next begins.</p>\n<p>Wintle’s own experiment <dfn data-g=\"765\">used</dfn> ICD 203, whose bands do stop where the next begins. Its 924 readers were split into four groups. Each group saw the same sentences, shown in one way. Put the four results side by side, in per cent of overlap with ICD 203’s ranges. Wintle’s overlap is the shared part of the two ranges as a share of the whole stretch they cover together: 1 to 15 against 5 to 20 shares 10 points of 19, about 53 per cent.</p>\n<table>\n\n<thead>\n<tr>\n<th>how the range was shown</th>\n<th>average overlap (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>not at all</td>\n<td>32</td>\n</tr>\n<tr>\n<td>a link to the full table</td>\n<td>39</td>\n</tr>\n<tr>\n<td>a small box that appears when the mouse is over the word</td>\n<td>40</td>\n</tr>\n<tr>\n<td>in brackets beside the word</td>\n<td>66</td>\n</tr>\n</tbody>\n</table>\n<p>Work out what each format gained over showing nothing, in <dfn data-g=\"518\">percentage</dfn> points.</p>\n<div class=\"working\">\n<p>39 minus 32 = 7<br />\n40 minus 32 = 8<br />\n66 minus 32 = 34<br />\n66 divided by 32 is about 2.06</p>\n</div>\n<p>The link and the box gained 7 and 8 points. The brackets gained 34, about twice the overlap of showing nothing. The table existed in every case. What changed was whether the number sat where the reader’s eye already was.</p>\n<p>Now use it. Here is a made-up line from a district report.</p>\n<blockquote>\n<p>It is likely that the school canteen scheme will reach its target this year.</p>\n</blockquote>\n<p>Choose a scale, name it once, and bracket the range.</p>\n<blockquote>\n<p>We judge it “likely” (55 to 80 per cent, on the scale of US Intelligence Community Directive 203) that the school canteen scheme will reach its target this year.</p>\n</blockquote>\n<p>If you mean a single number, give that instead: “likely (about 70 per cent)”.</p>",
+   "numberRefs": [
+    196
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Wintle’s readers were members of the public, mostly in Australia, reading sentences from intelligence reports online. The 66 per cent measures how far their ranges overlapped ICD 203’s, not whether they then made better decisions. It is the best evidence here that brackets help, and it was not measured on patients, doctors or officers in India.</p>\n<p>Even with brackets, a third of the overlap was missing. The number beside the word narrows the readings; it does not make every reader read the same.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“A scale makes the word precise” is the error. A scale fixes a word only for a reader who sees it. Put the range in brackets beside the word, every time.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never move a probability word from one scale to another as it stands. Turn the word back into its number, then find that number’s word on the new scale.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Name your scale the first time you use one of its words, and keep to that one scale through the whole document.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“High confidence” in an IPCC report is not a probability. It judges the evidence and the agreement behind a <dfn data-g=\"274\">finding</dfn>.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>On the IPCC scale “likely” runs from 66 to 100 per cent, so it covers everything “very likely” covers.</p>",
+     "tag": "number",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A scale fixes what your word means. It cannot make your judgement right.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The evidence that brackets help comes from members of the public, mostly in Australia, reading intelligence sentences. Nobody has measured it in Indian clinics or district offices.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Official reports use official words, so ‘likely’ means the same in all of them.” It does not. Likely is 55 to 80 per cent in a report written to ICD 203. It is 66 to 100 per cent in one written to the IPCC scale. A report that names no scale fixes nothing at all. Read the report’s own scale, or its bracketed number, before you repeat its word.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>We judge it “likely” (55 to 80 per cent, on the scale of US Intelligence Community Directive 203) that the scheme will reach its target this year.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what range does “likely” cover on the IPCC scale, and on ICD 203? Which of the two scales has overlapping ranges? What did Wintle and colleagues find when the range was printed in brackets beside the word? Last, give the three things to do when you write a probability word.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>“Likely” is 66 to 100 per cent on the IPCC scale and 55 to 80 per cent on ICD 203. The IPCC’s ranges overlap; ICD 203’s run end to end.</p>\n<p>With the range in brackets, readers’ ranges overlapped the intended ones by 66 per cent on average, against 32 per cent with no range shown. A link to the table or a box under the mouse did little better than nothing.</p>\n<p>Choose one scale. Name it the first time. Print the range, or your own number, in brackets beside the word every time.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Here is a made-up sentence from the discussion of a thesis on a school nutrition programme.</p>\n<blockquote>\n<p>It is very likely, with high confidence, that the programme would work equally well in other districts.</p>\n</blockquote>\n<p>Find what is wrong with how it states its probability. Then rewrite it.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Three faults.</p>\n<p>First, no scale is named. “Very likely” is 80 to 95 per cent on ICD 203 and 90 to 100 per cent on the IPCC scale. Kent’s chart has no “very likely” at all. The reader has to guess.</p>\n<p>Second, “with high confidence” mixes two scales in one sentence. On the IPCC’s terms, high confidence is a judgement of the evidence and agreement, not a probability. ICD 203 forbids putting a confidence level and a likelihood in the same sentence, “to avoid confusion”.</p>\n<p>Third, the sentence gives no number the reader can hold the writer to.</p>\n<p>A rewrite with one scale and the grounds in their own sentence:</p>\n<blockquote>\n<p>We judge it “likely” (55 to 80 per cent, on the scale of US Intelligence Community Directive 203) that the programme would work as well in other districts. We studied one district, so this rests on our judgement of how alike the districts are, not on a test in them.</p>\n</blockquote>\n<p>The writer may have meant a different number. The point of the rewrite is that the number is now on the page, where an examiner can ask about it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>The health secretary of your state asks you for one page. Her department’s reports use words like “likely” and “unlikely” with no numbers, and two districts have read the same report in opposite ways. She wants a rule for all reports. Write the page, answer first.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer: adopt one published word scale for all department reports, and print the number in brackets beside every probability word.</p>\n<p>Why. A word like “likely” carries no fixed number. Readers turn it into very different numbers, which is how two districts read one report two ways. Published scales fix this on paper, but readers seldom look up a table. In a large online experiment, printing the range beside the word roughly doubled the overlap of readers’ ranges with the intended ones. It was 66 per cent against 32. Showing the table one click away barely helped.</p>\n<p>Which scale. Two published scales are easy to borrow and they disagree. The US intelligence directive, ICD 203, has seven bands that do not overlap: “likely” is 55 to 80 per cent. The climate panel’s scale (IPCC) has overlapping bands: “likely” is 66 to 100. Either can work. ICD 203 is easier, because each number has one word.</p>\n<p>What it costs. One page of instructions, and a line in each report naming the scale. No new staff.</p>\n<p>What it does not do. It does not make the department’s judgements more accurate. It makes them readable, and so open to checking later.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Each band is given as a centre, give or take a margin. Write each as a range from its lowest number to its highest.</p>\n<table style=\"width:33%;\">\n\n<thead>\n<tr>\n<th>centre</th>\n<th>give or take</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>60</td>\n<td>15</td>\n</tr>\n<tr>\n<td>85</td>\n<td>5</td>\n</tr>\n<tr>\n<td>10</td>\n<td>8</td>\n</tr>\n<tr>\n<td>45</td>\n<td>20</td>\n</tr>\n</tbody>\n</table>",
+   "level": 1,
+   "answer": "<p>The band runs from the centre minus the margin to the centre plus the margin.</p>\n<div class=\"working\">\n<p>60 minus 15 = 45 and 60 plus 15 = 75<br />\n85 minus 5 = 80 and 85 plus 5 = 90<br />\n10 minus 8 = 2 and 10 plus 8 = 18<br />\n45 minus 20 = 25 and 45 plus 20 = 65</p>\n</div>\n<p>45 to 75; 80 to 90; 2 to 18; 25 to 65.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A scale has seven bands, in per cent.</p>\n<table style=\"width:28%;\">\n\n<thead>\n<tr>\n<th>letter</th>\n<th>band</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>A</td>\n<td>1 to 5</td>\n</tr>\n<tr>\n<td>B</td>\n<td>5 to 20</td>\n</tr>\n<tr>\n<td>C</td>\n<td>20 to 45</td>\n</tr>\n<tr>\n<td>D</td>\n<td>45 to 55</td>\n</tr>\n<tr>\n<td>E</td>\n<td>55 to 80</td>\n</tr>\n<tr>\n<td>F</td>\n<td>80 to 95</td>\n</tr>\n<tr>\n<td>G</td>\n<td>95 to 99</td>\n</tr>\n</tbody>\n</table>\n<p>Give the letter for each number: 12, 50, 72, 88, 97, 30.</p>",
+   "level": 2,
+   "answer": "<p>Find the band whose lowest number is at or below the value and whose highest is above it.</p>\n<table style=\"width:40%;\">\n\n<thead>\n<tr>\n<th>number</th>\n<th>band</th>\n<th>letter</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>12</td>\n<td>5 to 20</td>\n<td>B</td>\n</tr>\n<tr>\n<td>50</td>\n<td>45 to 55</td>\n<td>D</td>\n</tr>\n<tr>\n<td>72</td>\n<td>55 to 80</td>\n<td>E</td>\n</tr>\n<tr>\n<td>88</td>\n<td>80 to 95</td>\n<td>F</td>\n</tr>\n<tr>\n<td>97</td>\n<td>95 to 99</td>\n<td>G</td>\n</tr>\n<tr>\n<td>30</td>\n<td>20 to 45</td>\n<td>C</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>For each pair of ranges, give the numbers both share. Then say how many percentage points wide that shared part is. The ranges are in per cent.</p>\n<table style=\"width:40%;\">\n\n<thead>\n<tr>\n<th>first range</th>\n<th>second range</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>55 to 80</td>\n<td>66 to 100</td>\n</tr>\n<tr>\n<td>20 to 45</td>\n<td>0 to 33</td>\n</tr>\n<tr>\n<td>40 to 60</td>\n<td>45 to 55</td>\n</tr>\n<tr>\n<td>63 to 87</td>\n<td>80 to 95</td>\n</tr>\n<tr>\n<td>2 to 12</td>\n<td>20 to 40</td>\n</tr>\n</tbody>\n</table>",
+   "level": 3,
+   "answer": "<p>The shared part starts at the larger of the two lowest numbers and stops at the smaller of the two highest. If the start is above the stop, the ranges share nothing.</p>\n<div class=\"working\">\n<p>55 to 80 and 66 to 100: from 66 to 80, and 80 minus 66 = 14<br />\n20 to 45 and 0 to 33: from 20 to 33, and 33 minus 20 = 13<br />\n40 to 60 and 45 to 55: from 45 to 55, and 55 minus 45 = 10<br />\n63 to 87 and 80 to 95: from 80 to 87, and 87 minus 80 = 7<br />\n2 to 12 and 20 to 40: start 20, stop 12, nothing shared</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A colleague gives three degrees of belief: 70 per cent, 85 per cent and 58 per cent. For each, give the word on Kent’s chart, on the IPCC likelihood scale and on ICD 203.</p>",
+   "level": 4,
+   "answer": "<p>Kent’s bands are 2 to 12, 20 to 40, 40 to 60, 63 to 87 and 87 to 99. ICD 203’s are 1 to 5, 5 to 20, 20 to 45, 45 to 55, 55 to 80, 80 to 95 and 95 to 99. On the IPCC scale, give the narrowest range that holds the number.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>belief (%)</td>\n<td>Kent</td>\n<td>IPCC</td>\n<td>ICD 203</td>\n</tr>\n<tr>\n<td>70</td>\n<td>probable (63 to 87)</td>\n<td>likely (66 to 100)</td>\n<td>likely (55 to 80)</td>\n</tr>\n<tr>\n<td>85</td>\n<td>probable (63 to 87)</td>\n<td>likely (66 to 100)</td>\n<td>very likely (80 to 95)</td>\n</tr>\n<tr>\n<td>58</td>\n<td>chances about even (40 to 60)</td>\n<td>about as likely as not (33 to 66)</td>\n<td>likely (55 to 80)</td>\n</tr>\n</tbody>\n</table>\n<p>85 per cent is not “very likely” on the IPCC scale, which starts at 90. Only 70 per cent gets the same kind of word on all three.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>“Likely” is 55 to 80 per cent on ICD 203 and 66 to 100 per cent on the IPCC scale. Which degrees of belief are “likely” on both? What share of ICD 203’s “likely” band does that shared part make up, and what share of the IPCC’s?</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>shared part: from 66 to 80<br />\n80 minus 66 = 14<br />\nwidth of ICD 203’s band: 80 minus 55 = 25<br />\nwidth of the IPCC’s band: 100 minus 66 = 34<br />\n14 divided by 25 = 0.56<br />\n14 divided by 34 is about 0.41</p>\n</div>\n<p>Only 66 to 80 per cent is “likely” on both. That is 56 per cent of ICD 203’s band and 41 per cent of the IPCC’s. A reader who knows only ICD 203 will misread most of the IPCC’s “likely” (80 to 100 is 20 of its 34 points). One who knows only the IPCC will misread 55 to 66, nearly half of ICD 203’s.</p>\n<p>This is not Wintle’s overlap, which divides by the whole stretch: 14 divided by 45 is about 0.31.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>In Wintle and colleagues’ experiment, about half the readers given the link or the box never used it. Take only the readers who did use it. Their average overlap with ICD 203’s ranges was 44 per cent with the link to the table. With the box under the mouse it was 49. With nothing shown it was 32, and with the range in brackets 66.</p>\n<p>Give the link’s and the box’s gain over nothing for these readers, in percentage points. Compare each with the gain from brackets. What does this say about brackets?</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>44 minus 32 = 12<br />\n49 minus 32 = 17<br />\n66 minus 32 = 34<br />\n12 divided by 34 is about 0.35<br />\n17 divided by 34 = 0.5</p>\n</div>\n<p>Readers who used the link or the box gained 12 and 17 points. That is a third to a half of the 34 points from brackets. So the brackets’ lead is not only that some readers never clicked: even readers who looked did less well.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke, and say why it looks reasonable.</p>\n<blockquote>\n<p>An IPCC report calls a change “very likely”. A colleague needs it in the words of ICD 203.</p>\n</blockquote>\n<div class=\"working\">\n<p>IPCC “very likely” = ICD 203 “very likely”<br />\nICD 203 “very likely” = 80 to 95 per cent<br />\nso the IPCC report means 80 to 95 per cent</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The first line broke. It matched the word, not the number. On the IPCC scale “very likely” is 90 to 100 per cent. Find where that range falls on ICD 203.</p>\n<div class=\"working\">\n<p>90 to 95 falls in ICD 203’s “very likely”, 80 to 95<br />\n95 to 99 falls in ICD 203’s “almost certain”, 95 to 99<br />\n99 to 100 has no word on ICD 203</p>\n</div>\n<p>So no single ICD 203 word fits. Write the number: “90 to 100 per cent (IPCC: very likely)”. The answer as given lowers the <dfn data-g=\"107\">claim</dfn>, letting in 80 to 90 per cent, which the IPCC authors had ruled out.</p>\n<p>Why it looks reasonable: the two scales use the same words, so a word looks like a fixed thing that can be carried across.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<blockquote>\n<p>A reviewer is 95 per cent sure of a finding and must use the IPCC scale.</p>\n</blockquote>\n<div class=\"working\">\n<p>IPCC “likely” starts at 66 and “very likely” starts at 90<br />\nso “likely” runs from 66 to 90<br />\n95 is above 90, so the finding cannot be called likely<br />\nso the only word left is “virtually certain”</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line broke. On the IPCC scale the ranges overlap. “Likely” runs from 66 to 100, and “very likely” from 90 to 100. So 95 is both “likely” and “very likely”.</p>\n<p>It is not “virtually certain”, which needs 99 to 100.</p>\n<div class=\"working\">\n<p>95 is at or above 90, so it is very likely<br />\n95 is below 99, so it is not virtually certain</p>\n</div>\n<p>The right word is “very likely (90 to 100 per cent)”, the narrowest of the seven main terms that holds 95.</p>\n<p>Why it looks reasonable: on Kent’s chart and on ICD 203 each word stops where the next begins. Wintle’s team notes that readers expect the same of the IPCC scale.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A made-up district report says: “It is very likely that the school canteen scheme will halve sugary drink sales this year.” It names no scale. Decide what to compute, compute it, and say what the sentence does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the range of numbers a reader could take from “very likely”, scale by scale.</p>\n<div class=\"working\">\n<p>ICD 203 “very likely”: 80 to 95<br />\nIPCC “very likely”: 90 to 100<br />\nHashim’s proposal “very likely”: 80 to 95<br />\nlowest reading: 80, highest reading: 100<br />\n100 minus 80 = 20</p>\n</div>\n<p>Kent’s chart has no “very likely”. It lists “highly likely” under “almost certain”, 87 to 99. So a reader could take anything from 80 to 100 per cent, a spread of 20 percentage points. The report gives no way to say which.</p>\n<p>What the sentence does not establish. It gives no grounds: no study, no past result, nothing to judge the “very likely” by. Even with a scale named, the number would be the writer’s judgement, not a measured chance. And “halve” is a separate claim about size. A scheme can very likely cut sales by some amount and still be unlikely to halve them.</p>\n<p>A fair rewrite asks the writer for a number and a scale, and for the grounds in a second sentence.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A newspaper health column says: “A study of 924 people found that putting a number beside words like ‘likely’ doubles how well people understand risk.” Decide what to compute, compute it, and say what the claim does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Find the “doubles”. Wintle’s average overlap was 66 per cent with the range in brackets and 32 per cent with none. The paper also measured how often readers’ best single number fell inside the intended range. It was 59 per cent with none and 82 per cent with brackets.</p>\n<div class=\"working\">\n<p>66 divided by 32 is about 2.06<br />\n82 divided by 59 is about 1.39</p>\n</div>\n<p>On the overlap measure the gain is about two times. On the best-number measure it is about 1.4 times. “Doubles” holds for one of the two measures the paper used.</p>\n<p>What the claim does not establish. The study measured how far readers’ ranges matched one scale’s ranges, ICD 203’s. That is not how well they understood a risk, or whether they made better decisions. The readers were members of the public, mostly in Australia, reading sentences from intelligence reports. The result says nothing yet about patients reading a consent form in India. And “putting a number beside the word” meant the scale’s range, not any number.</p>"
+  }
+ ]
+}

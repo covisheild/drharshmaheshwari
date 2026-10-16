@@ -1,0 +1,165 @@
+{
+ "format": 1,
+ "id": "s59-r1-c17",
+ "label": "17",
+ "title": "Changing a stated position out loud",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Changing a stated position out loud means telling the people who heard your old position that you now hold a different one, and why. It takes four sentences, in this order.</p>\n<ol type=\"1\">\n<li>What I said, to whom, and when.</li>\n<li>What new evidence has appeared since.</li>\n<li>What I now think, how confident I am, and on what grounds.</li>\n<li>What I will do differently.</li>\n</ol>\n<p>Two rules go with them. First, say whether the old position was reasonable on the evidence of its time, and name separately any part of it that was not reasonable even then. Second, move as far as the new evidence warrants (section 15) and no further.</p>\n<p>The four sentences are an argument laid out in time (Book 0, F4). Sentence 1 gives the old conclusion. Sentence 2 adds a premise the old argument did not have. Sentence 3 gives the new conclusion, with its grounds, so the listener can <dfn data-g=\"97\">check</dfn> the <dfn data-g=\"353\">inference</dfn>. Sentence 4 gives the action that follows from it. A position changed in silence leaves the old conclusion with everyone who heard it.</p>",
+   "refs": [
+    282,
+    283,
+    284,
+    285,
+    286,
+    3,
+    287,
+    53,
+    288,
+    289,
+    290,
+    291,
+    291
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Suppose you taught something, and the evidence has since moved. Changing your slides is not enough. The people you taught still carry the old version.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c17-confidence-steps.png",
+   "alt": "A step line of confidence against year: 40 per cent at 2012, dropping to 25 at 2019.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The made-up lecturer’s confidence that eating breakfast helps adults lose weight, as she would have written it at each date. Her feeling in 2012 might have been 90 per cent, but a fair start was about 40: the 38 per cent of tested practices that trials upheld, rounded. After the 2019 review, which pooled the 2014 trial with the others, about 25 per cent, which is 75 per cent that it does not help. One update, dated, and neither end reaches 0 or 100."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is a case of the kind this book has followed from its early sections. A lecturer in community medicine taught her postgraduate batch in 2012. She is made up for this section, and so are her slides and her numbers. Her slide said:</p>\n<blockquote>\n<p>Skipping breakfast leads to weight gain. Advise every patient who is trying to lose weight to eat breakfast.</p>\n</blockquote>\n<p>In 2019 she reads the review by Sievert and colleagues and decides the slide is wrong. Here are three ways she could respond, all of them common. Read each and say what is wrong with it before you read on.</p>\n<blockquote>\n<p>Version A. (She deletes the slide and says nothing.)</p>\n</blockquote>\n<blockquote>\n<p>Version B. “I owe you an apology. I taught you nonsense about breakfast, and I should never have done it.”</p>\n</blockquote>\n<blockquote>\n<p>Version C. “As I always said, breakfast is no magic bullet. In fact the 2019 review shows that skipping breakfast is better for weight loss.”</p>\n</blockquote>\n<p>Version A leaves the old advice with every batch that heard it. They will repeat it to patients for years.</p>\n<p>Version B is self-abasement. It gives the batch no new fact, no new position and no reason. It also calls the old view nonsense, which it was not.</p>\n<p>Version C does two things wrong. “As I always said” rewrites what she said. “Skipping is better” swings to a new <dfn data-g=\"107\">claim</dfn> that the evidence does not carry, as you will see below.</p>\n<p>Now build the statement she should make, one sentence at a time.</p>\n<ol type=\"1\">\n<li><p>What I said, and when. “In my nutrition lecture to the 2012 batch, I said that skipping breakfast leads to weight gain. I told you to advise every patient trying to lose weight to eat breakfast, and I said it as a fact.”</p></li>\n<li><p>What new evidence has appeared. “Since then, two kinds of evidence have come out. In 2014, a trial in the United States and Denmark randomly assigned 309 adults who were trying to lose weight to advice to eat breakfast, advice to skip it, or general advice. Over 16 weeks the advice changed what they ate in the morning and made no detectable difference to their weight. In 2019, a review in the BMJ (British Medical Journal) pooled seven trials that measured weight, that one among them. People assigned to eat breakfast ended up 0.44 kg heavier on average (95 per cent <dfn data-g=\"142\">confidence interval</dfn> 0.07 to 0.82 kg) than people assigned to skip it. The trials were short, all in high-income countries, and the reviewers judged their quality mostly low.”</p></li>\n<li><p>What I now think, how confident, and why. “I think it”likely” (about 75 per cent, on the <dfn data-g=\"342\">ICD 203</dfn> scale) that eating breakfast does not help adults lose weight. ICD 203 is the US Intelligence Community Directive 203; on it, “likely” runs from 55 to 80 per cent. My grounds are trials that point the same way, but low-certainty ones: few, short, at <dfn data-g=\"639\">risk of bias</dfn>, and none done in India.”</p></li>\n<li><p>What I will do differently. “I have taken the advice off my slides. When a patient trying to lose weight asks about breakfast, I now say that eating it or skipping it can follow what suits them. I will look again when longer trials report.”</p></li>\n</ol>\n<p>Then the first rule: was the old view reasonable? Partly. In 2012 many observational studies agreed that people who skip breakfast more often have <dfn data-g=\"506\">overweight</dfn> or obesity. Public health authorities were commonly recommending breakfast to reduce obesity, as the 2014 trial’s authors put it, and no trial had yet reported: the one registered trial was published in 2014. Teaching that <dfn data-g=\"39\">association</dfn>, and the advice that went with it, was reasonable on the evidence of its time. Teaching it as a cause was not, even then, because observational studies show an association only. Brown and colleagues’ review of those same studies, published in 2013, called the <dfn data-g=\"88\">causal claim</dfn> “only presumed true” (the section on <dfn data-g=\"57\">belief</dfn> beyond the evidence). So she adds one sentence:</p>\n<blockquote>\n<p>The studies I relied on showed an association, and I taught it as a cause. That part I should have taught differently even in 2012.</p>\n</blockquote>\n<p>Now the second rule: how far to move. The review’s 0.44 kg favours skipping. Does she now teach “skip breakfast to lose weight”? No. The evidence is low certainty, the trials were a few weeks long, and the 2014 trial found no detectable difference. Moving from “eat breakfast to lose weight” to “skip breakfast to lose weight” swaps one belief beyond the evidence for another. Low-certainty evidence earns “may not help”, not a new rule.</p>\n<p>Put numbers on her <dfn data-g=\"515\">path</dfn>. Had she written down, at each <dfn data-g=\"186\">date</dfn>, how sure she was that eating breakfast helps adults lose weight, her feeling in 2012 might have read 90 per cent. That is a feeling, not a count. A fair start was about 40 per cent (38, rounded): the share of tested established practices that trials upheld (section 14). The 2019 review pooled the 2014 trial with the others, so she updates once, on the review. <dfn data-g=\"763\">Updating</dfn> on the trial as well would count it twice. After the review, about 25 per cent (section 22): several trials point the same way, but at low certainty. Twenty-five per cent that it helps is 75 per cent that it does not, which is her sentence 3. Each step is dated, and neither end reaches 0 or 100.</p>",
+   "numberRefs": [
+    33,
+    167,
+    230
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The lecturer and her 75 per cent are made up. Another careful reader could put the number at 70 or 80 on the same trials; what must not change is that she states one, with its grounds.</p>\n<p>All the trials behind the case were in high-income countries, mostly short, in adults. The case says nothing about breakfast in Indian adults, in children, or about anything except weight. Her new position is about weight loss only, and she should say so if asked about breakfast in general.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Researchers have written statements like these about their own published findings. Rohrer and colleagues collected 13 of them, from psychologists, in the Loss-of-Confidence Project (2021). Their paper is at https://pmc.ncbi.nlm.nih.gov/articles/PMC8564260/. Find the statement by Raphael Silberzahn and Eric Uhlmann, and match four of its sentences to the four.</p>\n<p>Sentence 1, what we said and when:</p>\n<blockquote>\n<p>In 2013, we published an article providing evidence that the meaning of a person’s name might affect the person’s career outcomes.</p>\n</blockquote>\n<p>The article was about names that sound noble, such as Kaiser or König.</p>\n<p>Sentence 2, what new evidence appeared:</p>\n<blockquote>\n<p>A postpublication reanalysis by Uri Simonsohn using an expanded version of our data set identified a curvilinear name-frequency confound in the data</p>\n</blockquote>\n<p>That is, another researcher, using more data, found a third <dfn data-g=\"261\">factor</dfn> (how common each name is) that the authors’ analysis had not handled. Curvilinear: the link with name frequency bends rather than runs straight, and the authors had allowed only for a straight one.</p>\n<p>Sentence 3, what we now think:</p>\n<blockquote>\n<p>Germans with noble and nonnoble names are equally well represented in managerial positions.</p>\n</blockquote>\n<p>Sentence 4, what we did:</p>\n<blockquote>\n<p>We subsequently coauthored a collaborative commentary (Silberzahn et al., 2014) reporting the new results.</p>\n</blockquote>\n<p>Now a sentence from another statement, by Christopher Chabris, about a 1992 study of chess masters. He no longer thinks his experiment supports its claims, and he says how far he has moved:</p>\n<blockquote>\n<p>These claims may be true, but not because of our experiment.</p>\n</blockquote>\n<p>That is the second rule in one line. He has not swung to “the claims are false”. He has withdrawn his evidence for them, which is as far as his re-reading of his own analysis carries him. It is the move from the section on <dfn data-g=\"2\">absence of evidence</dfn>, said about your own work.</p>\n<p>Last, what a <dfn data-g=\"682\">silent update</dfn> costs. Rohrer and colleagues tell how a major German weekly newspaper, in January 2018, cited the 2013 name <dfn data-g=\"274\">finding</dfn> without question. The finding had been corrected in 2014. When the journalist was told, she published her own correction within a month. The authors had changed their position out loud, in print. It still took years to reach one reader who had relied on the old version.</p>",
+   "numberRefs": [
+    292
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Rohrer’s project took only statements in which the author owned an error in their own study. Most of the 13 are about mistakes, not about new evidence from elsewhere. The authors single out one, about pigeons choosing between rewards, as closest to the usual picture: new experiments led to a revised conclusion. The breakfast lecturer’s case is of that kind. The four sentences fit both, but sentence 2 differs. For an error, it says what you found wrong; for new evidence, it says what appeared.</p>\n<p>These are psychologists’ statements about published papers. A change of position in a lecture or on a ward reaches a smaller audience, and the channel is different.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Changing my mind in public will make people trust me less” is the fear to set aside. Change your position anyway, because the people you taught are acting on the old one.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Use the four sentences, in order. Say them to the people who heard the old position.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Changing your slides without saying so is a silent update. It protects the next batch and leaves every earlier one with the old advice.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Move only as far as the new evidence carries you.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Say what was reasonable then, and what was not even then, as two separate sentences. Do not abase yourself (“I taught you nonsense”), and do not rewrite your past (“as I always said”).</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>To a patient you advised, the four sentences fit in a minute: “Some years ago I told you to eat breakfast to help your weight. Newer trials, though few and short, suggest it does not help weight loss. So eat breakfast if it suits you, and skip it if it does not. The trials so far suggest your weight will not hang on that choice.”</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>If the error is in your own published data or analysis, a sentence to the <dfn data-g=\"109\">class</dfn> is not enough. The journal’s record needs correcting too, and a later section of this book sets out how journals do that.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Your new position is a dated belief like the old one, held at a stated <dfn data-g=\"141\">confidence</dfn>. Do not present it as final.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Changing my position means admitting I was wrong.” Not always. If the old position was reasonable on the evidence of its time, changing it is updating: the evidence moved, and you moved with it. Saying “I was wrong about that” is for a position that was not supported even when you held it. A later section of this book is about saying it.</p>\n<p>The two are often mixed in one case, as in the breakfast lecture. The association was fair to teach; the causal claim was not. Say which part is which. Lumping them together either over-apologises for the fair part or hides the unfair one.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>In [where] on [date], I said that [old position]. Since then, [new evidence, with its size and its certainty]. I now think that [new position]; I am about [number] per cent sure (“[word]” on the [named] scale), because [grounds]. From now on I will [action].</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: give the four sentences of a change of position, in order. Then give the two rules that go with them.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<ol type=\"1\">\n<li>What I said, to whom, and when.</li>\n<li>What new evidence has appeared since.</li>\n<li>What I now think, how confident I am, and on what grounds.</li>\n<li>What I will do differently.</li>\n</ol>\n<p>The rules. Say whether the old position was reasonable on the evidence of its time, and name separately any part that was not reasonable even then. And move only as far as the new evidence warrants, no further.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A senior resident posts this in the department’s WhatsApp group. It is made up for this exercise.</p>\n<blockquote>\n<p>Folks, ignore what I said about breakfast last year. Turns out skipping breakfast is better for weight loss: a BMJ meta-analysis proved it. My bad!</p>\n</blockquote>\n<p>Find what is wrong with it, and rewrite it.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Sentence 1 is too vague. “What I said about breakfast last year” does not say what was said, where or when, so a reader cannot tell which advice to drop.</p>\n<p>Sentence 2 overstates. A <dfn data-g=\"448\">meta-analysis</dfn> of a few short trials, judged mostly low in quality by its own authors, does not prove anything. “Proved” turns low-certainty evidence into a fact.</p>\n<p>Sentence 3 swings too far. The review found people assigned to breakfast ended up 0.44 kg heavier, from low-certainty evidence. That supports “breakfast may not help weight loss”, not “skipping is better”.</p>\n<p>“Turns out” also says the evidence changed after he spoke. It did not: the review came out in 2019, before last year’s talk. He claimed more than the evidence carried even then, and a later section of this book is about saying so.</p>\n<p>It gives no confidence and no grounds, and no action. “My bad” is harmless, but it is not a reason anyone can check.</p>\n<p>A rewrite:</p>\n<blockquote>\n<p>At the journal club on [date] last year, I said eating breakfast helps people lose weight, and that we should advise it. That went beyond the evidence even then. A 2019 review had pooled seven trials. People assigned to eat breakfast weighed slightly more, by 0.44 kg, than those assigned to skip it. The trials were short, and their authors judged the quality mostly low.</p>\n</blockquote>\n<blockquote>\n<p>I think it “likely” (about 75 per cent, on the ICD 203 scale) that breakfast does not help weight loss. The evidence is too weak to say that skipping it helps. I will stop advising breakfast for weight loss and will check again when longer trials report.</p>\n</blockquote>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist rings you. “In 2012 you told our readers to eat breakfast to lose weight. Were you wrong?” You have three minutes. Give one quotable sentence, and say how sure the evidence lets you be.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The quotable sentences: “I advised breakfast for weight loss because many studies found that people who eat breakfast weigh less. The trials done since then suggest that eating breakfast does not help people lose weight, so I no longer advise it for that.”</p>\n<p>Then the honest part. “Was I wrong? About the cause, yes: those studies showed a link, and I treated it as a cause. About the link itself, no: it is still there.”</p>\n<p>Then how sure. “The trials are few and short, and none was done in India. So I would put it this way: breakfast may not help weight loss, and the evidence is too weak to say that skipping it helps. In numbers: about 75 per cent that it does not help weight loss,”likely” on the ICD 203 scale. If longer trials show otherwise, I will say so again, in your paper.”</p>\n<p>Do not let the sentence become “breakfast is bad for you”. The trials measured weight, not health in general.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Choose one thing you have taught, written or posted that the evidence has since moved on. Write your four sentences for it, add the sentence on what was reasonable then, and name who needs to hear it and where.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Check your draft five ways.</p>\n<ul>\n<li>Sentence 1 names the place and the date, and quotes or closely states what you said, including how sure you sounded.</li>\n<li>Sentence 2 names the new evidence specifically enough to find: who, when, what kind of study, what it found, and how strong it is.</li>\n<li>Sentence 3 gives a confidence, as a number and a word from a named scale, with its grounds. If your new confidence is low, it says so.</li>\n<li>Sentence 4 names an action you will take and, if it applies, when you will look again.</li>\n<li>Your sentence on the old view separates what was fair then from what was not.</li>\n</ul>\n<p>Then the audience. The people who heard the old version are the ones who need the new one: the same batch, the same group, the same readers. If what you changed is in a published paper, note it for the later section on how journals correct the record.</p>"
+  }
+ ]
+}

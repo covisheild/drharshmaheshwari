@@ -1,0 +1,168 @@
+{
+ "format": 1,
+ "id": "s59-r1-c18",
+ "label": "18",
+ "title": "How science corrects its record: correction, expression of concern, retraction, republication",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-10.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A journal can change what it has already published with four instruments. The International Committee of Medical Journal Editors (ICMJE), a group of medical journal editors, sets them out in its Recommendations (updated January 2026), Sections III.A and III.B. The Committee on Publication Ethics (COPE), a body that advises editors and publishers, sets out the same tools in its <dfn data-g=\"631\">Retraction</dfn> Guidelines (version 3, August 2025).</p>\n<p>ICMJE asks for a correction for “errors of fact that should have been recognized at the time of publication”. The mistake was in the paper when it appeared. New evidence did not show it up later. It is <dfn data-g=\"765\">used</dfn> when the error does not change the direction or implications of the results, interpretations and conclusions. Citations should go to the most recent version.</p>\n<p>An <dfn data-g=\"258\">expression of concern</dfn> is a notice an editor may publish while a question about a paper is open: while an investigation runs, or while the editor lacks the information to decide.</p>\n<p>A retraction is published when a paper’s findings and conclusions can no longer be relied on. The cause may be honest error, a naive mistake or misconduct.</p>\n<p><dfn data-g=\"632\">Retraction with republication</dfn>, which COPE calls retraction with replacement, is used when an honest error changes the results or conclusions substantially but the underlying study stands. The original is retracted and a corrected version is published beside it, with an explanation.</p>\n<p>None of the four is for a disagreement, or for evidence that has moved on since publication. The decision is the editor’s.</p>",
+   "refs": [
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A correction fixes an honest mistake that leaves the conclusion standing. A retraction withdraws a paper whose findings cannot be relied on.</p>\n<p>An expression of concern is a warning flag. Something may be wrong, and nobody knows yet.</p>\n<p>Retraction with republication withdraws a paper whose honest mistake changed its result, and publishes the fixed version beside it.</p>\n<p>None of these is a punishment. A paper that newer evidence contradicts stays as it is. The newer studies are the correction.</p>\n<p>So before you cite a paper, look at its page for any of these notices. Then cite the latest version.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c18-fang-table3-corrected.png",
+   "alt": "Four bars. Fraud as first published (2012) 12, Fraud as corrected (2013) 13, Error as first published 8, Error as corrected 7.",
+   "w": 1536,
+   "h": 656,
+   "caption": "A correction in action. Fang, Steen and Casadevall (2012) listed the 20 most-cited retracted articles with the reason for each: 12 for fraud and 8 for error as first published. Their 2013 correction changed one row, giving 13 and 7. The counts describe 20 papers chosen for their citations, not a rate."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a paper about retractions that was itself corrected. Fang, Steen and Casadevall (2012) studied all 2,047 English-language articles PubMed listed as retracted on 3 May 2012. PubMed is the index of medical journals. The paper appeared in the Proceedings of the National Academy of Sciences of the USA (PNAS). It is free to read at https://pmc.ncbi.nlm.nih.gov/articles/PMC3479492/.</p>\n<p>Find Table 3. It lists the 20 most-cited retracted articles, with the reason each was retracted. Read the last row: Hwang, in Science, published 2005, retracted 2006, cited 234 times. The reason given is “Error”.</p>\n<p>Now count the reasons as printed. You get 12 rows that say “Fraud” and 8 that say “Error”.</p>\n<p>Suppose you stop there and put “8 of the 20 most-cited retracted papers were retracted for error” on a slide. You have quoted a number the authors themselves withdrew.</p>\n<p>Here is how you would find out. Look up the paper’s record in Europe PMC, a free index of the medical literature (https://europepmc.org/article/MED/23027971). Its list of comments and corrections has an entry labelled “<dfn data-g=\"243\">Erratum</dfn> in”. It points to Proc Natl Acad Sci U S A. 2013 Jan 15;110(3):1137. That is the journal’s short name, the <dfn data-g=\"186\">date</dfn> of the issue, volume 110, issue 3, page 1137.</p>\n<p>“Erratum” is an older word for a correction. Open it, at https://pmc.ncbi.nlm.nih.gov/articles/PMC3549137/. The whole notice is two sentences and a table:</p>\n<blockquote>\n<p>The authors note that Table 3 appeared incorrectly. The corrected table appears below.</p>\n</blockquote>\n<p>In the corrected table, the last row is the same paper, with the same years and citations. Its reason now reads “Fraud”. Count again.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>reason for retraction</td>\n<td>as first published (2012)</td>\n<td>as corrected (2013)</td>\n</tr>\n<tr>\n<td>Fraud</td>\n<td>12</td>\n<td>13</td>\n</tr>\n<tr>\n<td>Error</td>\n<td>8</td>\n<td>7</td>\n</tr>\n</tbody>\n</table>\n<p>Now name the instrument. One entry in one table was wrong, the authors reported it, and the notice replaces that table. The ICMJE Recommendations call for a correction for an error of fact, as long as it does not change the direction of the conclusions. So a correction is the fitting tool, not a retraction.</p>\n<p>Last, which table do you quote? The Recommendations say that “the <dfn data-g=\"103\">citation</dfn> should be to the most recent version”. So if you use Table 3, take it from the 2013 correction, and say so.</p>",
+   "numberRefs": [
+    317
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This correction was easy to judge: one cell in one table, reported by the authors, with the notice saying exactly what changed. Many are harder. A correction can change a number that the conclusion leans on. Then whether it “changes the direction or implications” of the conclusions is a judgement, and the editor makes it.</p>\n<p>The counts of 12 and 13 describe 20 heavily cited papers chosen by citation count. They are not a rate of fraud among retractions. The paper’s main counts, over all 2,047 articles, are the subject of the next section.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now a retracted paper from the obesity literature, and a habit that keeps it alive.</p>\n<p>Go back to Table 3 in Fang and colleagues’ paper and find Fukuhara. The paper appeared in Science in 2005 and was retracted in 2007, for error. By June 2012 it had been cited 686 times. Now search their Discussion for “visfatin”:</p>\n<blockquote>\n<p>Many scientists continue to cite the article by Fukuhara et al. for its initial identification of visfatin as an adipocytokine, even though the article was retracted because of concerns about the cytokine’s reported insulin mimetic properties</p>\n</blockquote>\n<p>An adipocytokine is a signalling <dfn data-g=\"569\">protein</dfn> released by fat tissue. A cytokine is a signalling protein; “<dfn data-g=\"365\">insulin</dfn> mimetic” means acting like insulin. The sentence before says both the web page and the PDF of the article “are clearly marked as retracted”. So the <dfn data-g=\"394\">label</dfn> was there, and people cited the paper anyway.</p>\n<p>COPE’s Retraction Guidelines give two reasons this happens. Search them for “did not verify”:</p>\n<blockquote>\n<p>the article was downloaded before it was retracted and the authors who cited it did not verify its status, or the authors did not notice that it was retracted</p>\n</blockquote>\n<p>Think of the PDFs in your thesis folder. Each one shows the paper as it was on the day you saved it. A retraction published after that day is not on your copy.</p>\n<p>So <dfn data-g=\"97\">check</dfn> each reference where it lives today. Open the article’s page on the journal’s site and its record in PubMed or Europe PMC. Look for four things. “Retracted” in front of the <dfn data-g=\"743\">title</dfn>, or a “RETRACTED” stamp across the pages; COPE calls both best practice. A linked notice of retraction. A linked expression of concern. A correction, which may be labelled “Erratum”.</p>\n<p>If you find a retraction and still need the paper, for its history or its method, COPE allows it. You cite it with the retraction: “Authors should not cite retracted papers without acknowledging the retraction.”</p>",
+   "numberRefs": [
+    317
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The four checks find only what an editor has acted on and a database has recorded. A paper can be wrong with no notice on it, and a notice can take years to appear. Fang and colleagues found that retractions for fraud took a mean of 46.8 months.</p>\n<p>Fang’s Discussion does not say whether those who cite Fukuhara for visfatin’s discovery are right to. It says only that they do, and that the retraction concerned another <dfn data-g=\"107\">claim</dfn> in the same paper. COPE allows such a citation when the retraction is acknowledged.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“It was retracted, so the authors cheated” is the error. Read the notice’s stated reason before you say anything about the people.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Before you cite a paper in a thesis, a slide or a <dfn data-g=\"321\">guideline</dfn>, open its page and its database record on the day you write. Look for a correction, an expression of concern or a retraction.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>An expression of concern is not a verdict. Do not quote the paper as sound, and do not call it fraud.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A clean status tells you that no editor has acted. It does not tell you the <dfn data-g=\"274\">finding</dfn> still holds. To know whether a finding stands, read a current review, not the article’s page.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The tool follows from one question: does the error change what the paper concludes? If not, a correction. If it does and the study is sound, retraction with republication. If the findings cannot be relied on at all, retraction. If nobody knows yet, an expression of concern.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>If you confirm an error in your own published paper, write to the journal’s editor and publisher. The editor then decides.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The paper has not been retracted, so it is sound.” A retraction marks only what an editor has acted on. Fang and colleagues give an example from nutrition. Two journals, The Lancet and the British Medical Journal, “expressed serious reservations” about the Indo-Mediterranean Diet Heart Study. Its main author could not show the original records of ethics review and consent. Yet in 2012 the papers had not been retracted.</p>\n<p>A paper can also be wrong because better evidence came later, and that never earns a notice. No notice means no editor has acted, nothing more.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>The figures from Table 3 are taken from the authors’ 2013 correction (Proc Natl Acad Sci USA 2013;110:1137), which replaced that table.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, name the four instruments a journal uses to change a published paper, and say in one line when each is used. Then name the kind of problem that gets none of them, and where it goes instead.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>A correction: an honest mistake of fact that does not change what the paper concludes.</p>\n<p>An expression of concern: a question is open. An inquiry may be running, or the editor may not yet know enough to decide.</p>\n<p>A retraction: the findings can no longer be trusted. The cause may be an honest mistake or misconduct.</p>\n<p>Retraction with republication (COPE calls it retraction with replacement): an honest mistake changes the result a lot, but the study itself is sound. The original is withdrawn, and the fixed paper comes out with a note on what changed.</p>\n<p>None of them is used for debate, or for evidence that has moved on. Those go to letters to the editor or to new papers.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Five situations, all made up. For each, name the instrument the ICMJE Recommendations and the COPE guidelines point to, or say that none applies.</p>\n<p>(a) In a published survey from a district hospital, two column headings in Table 2 were swapped. The text, the <dfn data-g=\"5\">abstract</dfn> and the conclusions use the right figures.</p>\n<p>(b) A reader writes that an observational paper on breakfast used causal words. A later trial found that advice about breakfast made no detectable difference to weight.</p>\n<p>(c) A coding error swapped the two study groups. Corrected, the main difference points the other way. The data and the design are sound.</p>\n<p>(d) A university is investigating claims that images in a paper were altered. The investigation has not finished.</p>\n<p>(e) The investigation in (d) finds that the images were fabricated.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>(a) A correction. It is an honest error of fact, and it does not change the direction or implications of the conclusions.</p>\n<p>(b) None of the four. ICMJE says matters of debate and evolving science are not errors. A letter to the editor, or a new publication, is the place for it. The section on <dfn data-g=\"57\">belief</dfn> beyond the evidence showed that causal words over an <dfn data-g=\"39\">association</dfn> overstate. That is a fault in the writing. It is not an error of fact in the data.</p>\n<p>(c) Retraction with republication. An honest error leads to a major change in the results, and the underlying study appears valid. The corrected paper is published with an explanation, beside the retracted original.</p>\n<p>(d) An expression of concern, if the editor judges one warranted. The question is open, and ICMJE allows one “pending the outcomes of those procedures”.</p>\n<p>(e) A retraction. The findings cannot be relied on. ICMJE says that if an investigation proves misconduct, the journal publishes a retraction. The notice should say why. COPE adds that it should stay factual and not attack the people.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A slide in a journal club on fat tissue reads (made up for this exercise):</p>\n<blockquote>\n<p>Visfatin, a fat-tissue hormone, mimics insulin (Fukuhara et al., Science 2005).</p>\n</blockquote>\n<p>Say what is wrong with the citation, and rewrite the slide so it can stand.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The paper was retracted in 2007. Fang and colleagues report that it was retracted “because of concerns about the cytokine’s reported insulin mimetic properties”. That is exactly the claim the slide cites it for. So the slide rests on the part of the paper that was withdrawn, and it does not say the paper was retracted. COPE: “Authors should not cite retracted papers without acknowledging the retraction.”</p>\n<p>A slide that can stand says what the record says:</p>\n<blockquote>\n<p>Fukuhara et al. (Science 2005) reported visfatin as a product of fat tissue that mimics insulin. The paper was retracted in 2007 over the insulin-like claim.</p>\n</blockquote>\n<p>If the presenter wants a current claim about visfatin, they need a current source for it. A retracted paper cannot carry it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>For a first-year resident, ten minutes, a whiteboard. She has found that one number in a table of her published paper is wrong. She asks: “Will they retract it? Will everyone think I cheated?” Answer her.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with the question that decides the tool. Does the wrong number change what the paper concludes? Draw two boxes: “conclusion stands” and “conclusion changes”.</p>\n<p>If the conclusion stands, the tool is a correction. ICMJE calls honest errors “a part of science and publishing”. The journal publishes a short notice and a corrected version. Show her a real one: the 2013 correction to Fang and colleagues’ paper on retractions. It is two sentences and a table.</p>\n<p>If the conclusion changes but the study is sound, the tool is retraction with republication. The corrected paper comes out with an explanation. Retraction alone is for findings that cannot be relied on at all.</p>\n<p>Then the fear. COPE says the purpose of retraction is to correct the literature, “not to punish the authors”. A correction is not a retraction in any case.</p>\n<p>Then what to do this week. Confirm the error, and tell her co-authors. Write to the editor: what is wrong, how she found it, the correct figure, and whether the conclusion changes. COPE says authors must raise a confirmed error. The editor decides the tool, not her.</p>"
+  }
+ ]
+}
