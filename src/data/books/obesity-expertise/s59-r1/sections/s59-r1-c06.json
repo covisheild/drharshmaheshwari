@@ -1,0 +1,161 @@
+{
+ "format": 1,
+ "id": "s59-r1-c06",
+ "label": "6",
+ "title": "Why evidence comes in strengths",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Evidence supports a conclusion by <dfn data-g=\"352\">inductive reasoning</dfn>: it goes from particular observations to a general conclusion. An inductive conclusion can be supported more strongly or less strongly. No amount of evidence makes it certain, because what is known can change with further information.</p>\n<p>A <dfn data-g=\"68\">body of evidence</dfn> is all the studies that address one question for one outcome. How far a body of evidence can be trusted is judged for each outcome separately.</p>\n<p>Six features decide how far a body of evidence for one outcome can be trusted. The last five are named by the Grading of Recommendations Assessment, Development and Evaluation (<dfn data-g=\"315\">GRADE</dfn>) Working Group, whose scheme is taught in the next section. In GRADE, design sets where the rating starts; the other five can lower it.</p>\n<table>\n\n<tbody>\n<tr>\n<td>feature</td>\n<td>the question to ask</td>\n</tr>\n<tr>\n<td>design</td>\n<td>Were the groups made by chance (a randomised controlled trial) or observed as they came (an observational study)?</td>\n</tr>\n<tr>\n<td>risk of bias</td>\n<td>Do flaws in how the studies were run push the estimate one way, such as many people lost before the end?</td>\n</tr>\n<tr>\n<td>inconsistency</td>\n<td>Do the studies give widely different results that nobody can explain?</td>\n</tr>\n<tr>\n<td>indirectness</td>\n<td>Do the studies answer a nearby question: other people, another version of the treatment, another comparison, or a stand-in outcome?</td>\n</tr>\n<tr>\n<td>imprecision</td>\n<td>Did the studies include few people or few events, so that the range of values the data allow is wide?</td>\n</tr>\n<tr>\n<td>publication bias</td>\n<td>Are studies missing because their results were never published?</td>\n</tr>\n</tbody>\n</table>\n<p>A <dfn data-g=\"721\">surrogate outcome</dfn> is a measurement that stands in for the outcome that matters to patients. A <dfn data-g=\"142\">confidence interval</dfn> is the range of values the data still allow, at a stated <dfn data-g=\"410\">level</dfn> such as 95 per cent.</p>\n<p>Some features can raise trust in observational evidence. Two are taught here. One is a large effect, which bias is unlikely to explain in full. The other is a <dfn data-g=\"214\">dose-response gradient</dfn>: more of the <dfn data-g=\"257\">exposure</dfn> goes with more of the effect. GRADE adds a third, taught in the next section.</p>\n<p>Expert opinion is not a kind of evidence.</p>",
+   "refs": [
+    83,
+    84,
+    85,
+    86,
+    75,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    105,
+    106,
+    107,
+    108,
+    109,
+    109,
+    109,
+    110,
+    111
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A study shows you something that happened in some people. A conclusion says it will happen in people in general. That step from some to all is never certain. So evidence makes a conclusion stronger or weaker, never proven.</p>\n<p>How strong? Take all the studies on one question, for one result you care about, and ask six things.</p>\n<p>The name of the journal, the fame of the study and the seniority of the speaker are not on the list.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c06-nnt-interval.png",
+   "alt": "One dot at 6 on a number-needed-to-treat axis, with a horizontal line through it from 4 to 13, the 95 per cent confidence interval.",
+   "w": 1360,
+   "h": 480,
+   "caption": "Balshem and colleagues’ worked example: a number needed to treat of 6, with a 95 per cent confidence interval from 4 to 13. The upper end is 3.25 times the lower: one person helped in every 4 treated at one end, one in every 13 at the other."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with two beliefs that doctors held strongly and that turned out wrong. Both are told by Guyatt and colleagues, in the first of a series of papers in the BMJ (the British Medical Journal) explaining GRADE, in 2008.</p>\n<p>For a decade, organisations told clinicians to encourage women past the menopause to take <dfn data-g=\"334\">hormone</dfn> replacement therapy (HRT). The <dfn data-g=\"57\">belief</dfn> behind the advice was that HRT substantially lowered the risk of heart and blood-vessel disease. Then randomised controlled trials (a way to test a treatment in which chance decides who gets it, and then the groups are compared) were done. They showed that HRT fails to reduce that risk and may even increase it.</p>\n<p>Take the six questions to the evidence as it stood before the trials.</p>\n<p>Design. The studies were observational. The women chose whether to take HRT. Whatever led a woman to choose it could also affect her heart, which is the third <dfn data-g=\"261\">factor</dfn> of the section on one <dfn data-g=\"274\">finding</dfn> with several explanations. That question fails.</p>\n<p><dfn data-g=\"349\">Inconsistency</dfn>. Guyatt and colleagues say the observational results were inconsistent. That question fails too.</p>\n<p>Their verdict: had the evidence been rated at the time, it would have been rated very low, the lowest of GRADE’s four levels, taught in the next section. A strong belief stood on weak evidence, and nobody had rated the evidence by a system like GRADE.</p>\n<p>Now the second case. The United States Food and Drug Administration licensed two heart drugs, encainide and flecainide. It did so because they reduced an irregular heart rhythm that is linked with sudden death. Ask the directness question. What did the studies measure? The rhythm. What mattered to patients? Death. The rhythm was a surrogate outcome. A later randomised trial showed that the two drugs increase the risk of sudden death.</p>\n<p>So the two failures broke on different questions: HRT on design and consistency, the heart drugs on directness. Neither would have been caught by asking whether the studies were published in good journals.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Both cases are read with hindsight, by authors who were arguing for GRADE. The paper’s own competing-interests statement says all its authors help spread GRADE and gain from its success. Weak evidence is not always wrong. Evidence that fails these questions has not been shown false; it has not been shown true either. A belief can rest on weak evidence and still turn out right.</p>\n<p>Guyatt and colleagues also say that attention to the low quality of the evidence on the heart drugs would have saved thousands of lives. That is their estimate, and they give no count.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>The six questions are not an arbitrary checklist. You can rebuild them yourself. Balshem and colleagues, writing for the GRADE Working Group in 2011, set up the test.</p>\n<p>Suppose you are told that a Cochrane review (a <dfn data-g=\"725\">systematic review</dfn>, a study of studies that collects and combines the results already published on one question, in a planned and careful way) has a result for people with long-lasting pain. A salicylate cream rubbed on the skin, against a dummy cream, gives a <dfn data-g=\"485\">number needed to treat</dfn> of 6. The number needed to treat (NNT) is how many people must be treated for one more of them to do well. Its 95 per cent confidence interval runs from 4 to 13.</p>\n<p>Before you read on, write down what you would want to know before you believe that 6.</p>\n<p>Here are the questions Balshem and colleagues list. How many studies were pooled, and how many patients? How wide is the range around the 6? Were the studies randomised? Did they have flaws, such as no <dfn data-g=\"64\">blinding</dfn> or many people lost before the end? Blinding means that the people in the study, or those measuring them, do not know who got which cream.</p>\n<p>Then more. Were other studies done that the reviewers could not get? Did the trials give similar results or very different ones? Was the outcome measured at a sensible time, or were the studies too short? On what part of the body was the cream <dfn data-g=\"765\">used</dfn>?</p>\n<p>The first questions, they say, belong to <dfn data-g=\"346\">imprecision</dfn> and <dfn data-g=\"639\">risk of bias</dfn>. The later ones belong to <dfn data-g=\"572\">publication bias</dfn>, inconsistency and <dfn data-g=\"351\">indirectness</dfn>.</p>\n<p>Now see why each belongs. Each is a way the 6 could be wrong. Chance could have produced it: that is the width of the range. Look at how far apart the two ends are.</p>\n<div class=\"working\">\n<p>13 divided by 4 = 3.25</p>\n</div>\n<p>At one end, one person in 4 is helped who would not otherwise be. At the other end it is one in 13, about a third as many. Bias in how the studies were run could have produced it: that is design, which sets the start, and risk of bias. Studies that found nothing may be missing: publication bias. The studies may disagree: inconsistency. And the 6 may be the right answer to a different question: indirectness.</p>\n<p>So the list is what you get when you ask, for one estimate, every way it could be wrong. Ask it of every result you are about to repeat.</p>",
+   "numberRefs": [
+    112
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Balshem and colleagues say the five named categories cover “nearly all” the issues, and that they were narrowed to five by discussion and agreement among GRADE’s members. So the list was agreed, not proved complete. The rebuilding shows why each question belongs. It does not show that nothing else could ever matter.</p>\n<p>The example is theirs, told as “suppose you are told”. Treat the 6 and its range as a <dfn data-g=\"788\">worked example</dfn>, not as a finding about salicylate creams.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Strong evidence” belongs to a body of evidence for one outcome. When someone calls evidence strong, ask: for which outcome, and which of the six questions does it pass?</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you put a finding on a slide or into your thesis, answer the six questions in one line each. They are design, risk of bias, inconsistency, indirectness, imprecision and publication bias (missing studies).</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A surrogate outcome can move the right way while the outcome that matters moves the wrong way. Ask what was measured before you ask how much it changed.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Do not say that evidence “proves” a <dfn data-g=\"107\">claim</dfn>, and correct a trainee who does. Say how strongly, and why.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>One set of studies can give strong evidence on one outcome and weak evidence on another. So say which outcome you mean whenever you say how strong the evidence is.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Ask the indirectness question of every such body of evidence: were these the people, the food and the setting you are talking about? Say so in the sentence when they were not.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The six questions tell you how far an estimate can be trusted. They do not tell you whether to act on it, which also needs the harms, the costs and what people value.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“I have twenty years of experience with these patients, and that is my evidence.” Balshem and colleagues take this case apart with an endocrinologist on a ward round. He says patients feel better soon after he starts treatment, and that his patients whose <dfn data-g=\"65\">blood sugar</dfn> is kept close to normal (tight control) have little of the eye, kidney and nerve damage that diabetes causes (complications).</p>\n<p>The opinion he forms is not evidence at all. The experience behind it is evidence, but of the weakest kind. It is an uncontrolled <dfn data-g=\"85\">case series</dfn>, and they rate it very low.</p>\n<p>His memory may be wrong. He may forget the patients who did not improve. People may get better on their own, or say what they think the doctor wants. Respect the experience and ask what it rests on.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the six features that decide how far a body of evidence can be trusted, with the question each one asks. Then name the two features that can raise trust in observational evidence. Last, say in one sentence why no amount of evidence makes a conclusion certain.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Design: were the groups made by chance, or watched as they came?</p>\n<p>Risk of bias: do flaws in how the studies were run tilt the answer?</p>\n<p>Inconsistency: do the studies disagree, with no reason found?</p>\n<p>Indirectness: do they answer a nearby question? Other people, another form of the treatment, another comparison, or a stand-in outcome all count.</p>\n<p>Imprecision: were there few people or few events, so the range is wide?</p>\n<p>Publication bias: are studies missing because nobody published them?</p>\n<p>The two that can raise trust: a large effect, and an effect that grows with the dose.</p>\n<p>No amount makes a conclusion certain. Evidence goes from some cases to a general claim, and new facts can always change what we know.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up slide from a postgraduate lecture reads:</p>\n<blockquote>\n<p>Skipping breakfast causes obesity. Strong evidence: 20 studies agree, published in leading journals.</p>\n</blockquote>\n<p>Find each thing wrong with the claim of strength. Then write what the slide would have to say before you could judge it.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>“Published in leading journals” says nothing about strength. Strength belongs to the body of evidence for one outcome.</p>\n<p>“20 studies agree” answers only the inconsistency question. Twenty studies with the same design can share the same weakness. If they are observational, the people chose whether to skip breakfast. Whatever led them to skip it could also affect their weight, so agreement does not remove the third factor.</p>\n<p>“Causes” is a claim about cause, and observational studies alone cannot carry it far.</p>\n<p>“Obesity” is the outcome, but measured how, in whom, and over what time? That is the indirectness question.</p>\n<p>The slide is silent on the rest: risk of bias, imprecision, and whether studies that found nothing went unpublished.</p>\n<p>Before you could judge it, the slide would need five things. The design of the studies. The outcome and how it was measured. The people studied, and where. The size of the effect, with its range. The main flaws. Then a word for how strong the evidence is, with the reason.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist rings you about a new study reporting that people who eat late at night gain more weight. She asks: “So is it proven?” You have three minutes and no jargon. Give the answer you would say, ending in one sentence she can quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>No study proves a thing like this. A study shows what happened in some people; the claim is about people in general, and that step is never certain. The useful question is how strong the evidence is.</p>\n<p>Then ask her what the study was. Did the researchers decide who ate late, by chance, and compare the groups? Or did they watch people who already ate late? If they watched, the people who eat late may differ in other ways, such as their work hours or their sleep. Those could explain the weight.</p>\n<p>How many people, and how big was the difference? Is it one study, or do others agree? Who were they, and where? A result from one country’s night-shift workers may not hold for students in Raipur.</p>\n<p>The sentence to quote: “One study is a clue, not proof. How far to trust it depends on how it was done, and on whether other studies find the same.”</p>\n<p>Until you have read the study, that is all you can honestly say.</p>"
+  }
+ ]
+}

@@ -1,0 +1,164 @@
+{
+ "format": 1,
+ "id": "s59-r1-c09",
+ "label": "9",
+ "title": "No evidence of an effect is not evidence of no effect",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A comparison that finds no clear difference between two groups has shown an <dfn data-g=\"2\">absence of evidence</dfn> of a difference. It has not shown evidence that there is no difference. Altman and Bland (1995) call these “quite different statements”.</p>\n<p>A study can miss a real difference because it is too small.</p>\n<p>“Not <dfn data-g=\"679\">significant</dfn>”, as earlier sections <dfn data-g=\"765\">used</dfn> it, is a statistical test’s verdict that the difference is not too large to put down to chance. The verdict does not say how large a difference the data still allow.</p>\n<p>The <dfn data-g=\"142\">confidence interval</dfn> does. It is the range of values the data still allow, at a stated <dfn data-g=\"410\">level</dfn> (section 6). For a 95 per cent confidence interval, if the study were repeated many times, 95 per cent of such ranges would contain the true value.</p>\n<p>Read a confidence interval for a difference against two marks. One is zero, no difference. (For a <dfn data-g=\"594\">ratio</dfn>, such as a <dfn data-g=\"640\">risk ratio</dfn>, the no-difference mark is 1.) The other is the <dfn data-g=\"686\">smallest difference that matters</dfn>: the smallest difference that would change what someone does, decided before the result is seen.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td></td>\n<td>interval includes differences that matter</td>\n<td>interval holds only differences too small to matter</td>\n</tr>\n<tr>\n<td>interval excludes zero</td>\n<td>evidence of a difference that may matter, or does</td>\n<td>evidence of a real but unimportant difference</td>\n</tr>\n<tr>\n<td>interval includes zero</td>\n<td>absence of evidence: the study cannot tell</td>\n<td>evidence of little or no difference</td>\n</tr>\n</tbody>\n</table>\n<p>Only the bottom-right case supports saying there is little or no difference.</p>",
+   "refs": [
+    168,
+    168,
+    169,
+    170,
+    171,
+    172,
+    53,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A study that finds no difference has not shown that there is no difference. It may simply have been too small to see one.</p>\n<p>Picture two groups whose true averages differ a little. Measure ten people in each, and chance can swamp that small gap. Measure thousands, and the gap shows.</p>\n<p>To learn more, look at the confidence interval: the range of differences the data still allow. If that range runs from a real benefit to a real harm, the study cannot tell you which.</p>\n<p>The reverse holds too. “There is no evidence that it harms” can mean nobody has looked.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c09-three-intervals.png",
+   "alt": "Three horizontal intervals, one row each, narrowest at the bottom. Row 1, width 0.75: estimate 0.44, from 0.07 to 0.82. Row 2, width 0.86: estimate 0.42, from −0.01 to 0.85. Row 3, width 1.14: estimate 0.54, from −0.03 to 1.11. Dashed lines at 0, no difference, and at 0.5 kg, the smallest difference that matters; only the two wider intervals cross 0.",
+   "w": 1363,
+   "h": 656,
+   "caption": "Nearly the same estimate, three different verdicts by zero alone. Each dot is a mean difference in weight, breakfast minus no breakfast (kg), and each line its 95 per cent confidence interval, one row each; height only separates the rows. All trials: 0.44, 0.07 to 0.82, 0.75 wide, clear of zero. Normal weight or overweight: 0.42, −0.01 to 0.85, 0.86 wide. Overweight or obesity: 0.54, −0.03 to 1.11, 1.14 wide. The wider intervals reach across zero; the estimates barely move. All three hold 0.5 kg, the smallest difference that matters chosen in this section’s example. Sievert and colleagues (2019)."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the breakfast trial, read in its authors’ own words. Dhurandhar and colleagues (2014) randomly assigned 309 adults who were trying to lose weight to advice to eat breakfast, advice to skip it, or general advice alone, for 16 weeks. The paper is at https://pmc.ncbi.nlm.nih.gov/articles/PMC4095657/.</p>\n<p>Read the Conclusions of the <dfn data-g=\"5\">abstract</dfn>. The advice “had no discernable effect on weight loss”. Now search the Discussion for “only suggest”. The same authors write that their findings “only suggest that in a free-living less controlled setting, breakfast eating habits do not influence weight loss”. The same sentence keeps open an effect in a more controlled clinical setting.</p>\n<p>Put the two sentences side by side. The first says the trial could not see an effect. The second, softened by “only suggest”, still says there is no effect. That second <dfn data-g=\"107\">claim</dfn> needs more evidence than the first. It needs a confidence interval for the difference, narrow enough to rule out any difference that would matter.</p>\n<p>So look for one. Search the Results for “P = 0.77”: the advice had no effect on weight loss that the test could detect. Now search the whole paper for “confidence interval”. The paper gives none for the difference in weight between the groups.</p>\n<p>What it does give is each group’s mean change in weight, which you met in the section on two kinds of support. Among people who usually skipped breakfast, those told to eat it lost 0.15 kg more than those told to skip it. Among people who usually ate breakfast, the gap was 0.12 kg the other way. Those are the differences that were observed. They are not a confidence interval, so they do not tell you how large a true difference the data still allow. The authors themselves note that 16 weeks “may not have been long enough to detect an effect on body weight” if the change in <dfn data-g=\"238\">energy intake</dfn> is very small.</p>\n<p>So here is what you may say: “In a 16-week trial of 309 adults trying to lose weight, advice to eat or skip breakfast made no detectable difference to weight. The paper reports no confidence interval for the difference, so it does not show that breakfast has no effect.”</p>",
+   "numberRefs": [
+    33
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The <dfn data-g=\"507\">P value</dfn> of 0.77 is from the 283 people who finished. The authors also analysed all 309, estimating the missing weights from the data that were recorded (multiple imputation), and found comparable results.</p>\n<p>The trial tested advice, not breakfast itself, in adults trying to lose weight, at several sites, one of them in Copenhagen. It says nothing about children, or about Indian adults.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now read confidence intervals for yourself. Sievert and colleagues (2019) pooled the randomised trials of eating against skipping breakfast in adults (https://pmc.ncbi.nlm.nih.gov/articles/PMC6352874/). The breakfast trial above is one of them. Their pooled answer and two smaller answers are below. Each is the <dfn data-g=\"439\">mean difference</dfn> in weight, the mean of the breakfast groups minus the mean of the skipping groups, in kg. A positive number means the breakfast eaters ended heavier.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>trials pooled</td>\n<td>mean difference, kg</td>\n<td>95% confidence interval, kg</td>\n</tr>\n<tr>\n<td>all trials of weight</td>\n<td>0.44</td>\n<td>0.07 to 0.82</td>\n</tr>\n<tr>\n<td>trials in people with normal weight or overweight</td>\n<td>0.42</td>\n<td>−0.01 to 0.85</td>\n</tr>\n<tr>\n<td>trials in people with overweight or obesity</td>\n<td>0.54</td>\n<td>−0.03 to 1.11</td>\n</tr>\n</tbody>\n</table>\n<p>The two smaller answers group trials by the people they enrolled, so people with <dfn data-g=\"506\">overweight</dfn> appear in both.</p>\n<p>The sign − (minus) marks a difference in favour of eating breakfast. So −0.01 means the breakfast eaters ended 0.01 kg lighter.</p>\n<p>First, decide your smallest difference that matters, before you read any interval. Suppose you decide that 0.5 kg over a few weeks is the smallest gap that would change your advice. That is your judgement, not the review’s, and another reader may set it elsewhere.</p>\n<p>Now sort each row into the four cases.</p>\n<p>All trials: 0.07 to 0.82. Zero is outside, so there is evidence of a difference, favouring skipping. The interval holds values below 0.5 and above it, so the difference may or may not matter.</p>\n<p>Normal weight or overweight: −0.01 to 0.85. Zero is inside, and so is 0.5 and more. This set of trials cannot tell: absence of evidence.</p>\n<p>Overweight or obesity: −0.03 to 1.11. The same case.</p>\n<p>Here is the trap. Sort the rows only by whether zero is inside, and the table seems to say: a difference overall, and none in either group. A careless reader then writes: “Breakfast makes no difference to weight in people of normal weight or overweight, or in people with obesity.” Look at the estimates: 0.42 and 0.54 kg, close to the pooled 0.44. The estimates barely moved. Each smaller answer pools only some of the trials, so its interval is wider.</p>\n<div class=\"working\">\n<p>all trials: 0.82 minus 0.07 = 0.75 kg wide<br />\nnormal weight or overweight: 0.85 minus −0.01 = 0.86 kg wide<br />\noverweight or obesity: 1.11 minus −0.03 = 1.14 kg wide</p>\n</div>\n<p>Wider intervals reach across zero more easily. Sievert and colleagues report that the effect did not differ between the two groups of trials. The article text does not print their test.</p>\n<p>Notice too that the breakfast trial, which on its own detected no effect, is part of the pooled answer that did find a difference. One trial’s absence of evidence did not settle the question.</p>",
+   "numberRefs": [
+    167
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 0.5 kg is a choice made for this exercise, not a published threshold. Move it and the sorting of the first row changes.</p>\n<p>These intervals measure only the scatter of chance. They say nothing about bias in the trials, which the review’s authors judged mostly of low quality, and they hold for adults in short trials in high-income countries.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Not statistically significant, so no effect” is the error. Say “no clear difference”, and give the estimate with its confidence interval.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you claim that something has little or no effect, fix the smallest difference that matters, and then read the confidence interval.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Small trials that each miss a real effect can long delay its recognition. Altman and Bland describe trials of a clot-dissolving treatment after a heart attack. Pooled together, they showed that deaths fell by 22 per cent. Yet only five of the 24 trials had shown a significant effect on their own.</p>",
+     "tag": "number",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Significant in one group and not significant in another does not mean the effect differs between the groups. Compare the estimates, not the verdicts.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Watch for one-sided reading: a wide interval called “promising” when the estimate favours the treatment, and “no effect” when it points to harm. Test your own conclusion by reversing the direction of the result and asking whether you would still write it the same way.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>“There is no evidence that it harms” may mean nobody has looked.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A confidence interval measures only the scatter of chance. So “evidence of little or no effect” also needs a study whose design you trust.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>To a reporter, say “this trial could not detect a difference”, not “breakfast does not matter”.</p>",
+     "tag": "move",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>It is tempting to read a large P value as strong evidence of no effect. P = 0.77 is far above 0.05, so surely the answer is “no effect”? That reading is wrong. A P value, large or small, does not tell you how big a difference the data still allow. Only the estimate and its confidence interval do. Altman and Bland’s advice is to look for the size of the <dfn data-g=\"39\">association</dfn>, not just a P value. The breakfast trial printed P = 0.77 and no interval, so it cannot say how large an effect it rules out.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>A 16-week trial randomly assigned 309 adults trying to lose weight to advice about breakfast (Dhurandhar and colleagues, 2014). Advice to eat or to skip breakfast made no detectable difference to weight. The trial reports no confidence interval for the difference, so it does not show that breakfast has no effect on weight.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what is the difference between “no evidence of an effect” and “evidence of no effect”? Then name the two marks you read a confidence interval against, and the four cases they give.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>“No evidence of an effect” means the study did not find a clear difference. It may have been too small to see one. “Evidence of no effect” means the data rule out any difference that would matter. They are different statements.</p>\n<p>The two marks are zero, no difference, and the smallest difference that matters, fixed before you see the result.</p>\n<p>Then the four cases.</p>\n<ul>\n<li>Zero is outside, and big differences are inside: a difference that may matter, or does.</li>\n<li>Zero is outside, and only small differences are inside: a real difference, too small to matter.</li>\n<li>Zero is inside, and big differences are inside too: the study cannot tell.</li>\n<li>Zero is inside, and only small differences are inside: little or no difference.</li>\n</ul>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Five comparisons, with made-up numbers. Each gives a 95 per cent confidence interval for a difference between two groups. You have decided beforehand that the smallest difference that matters is 2, in either direction. Sort each into one of the four cases.</p>\n<p>(a) 0.5 to 4.5</p>\n<p>(b) −3.0 to 5.0</p>\n<p>(c) −0.8 to 1.2</p>\n<p>(d) 0.3 to 1.1</p>\n<p>(e) 2.5 to 6.0</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>(a) Zero is outside, and the interval reaches past 2. Evidence of a difference, which may matter: the true value could be under 2 or over it.</p>\n<p>(b) Zero is inside, and the interval reaches past 2 on one side and past −2 on the other. Absence of evidence: the data allow a real benefit, a real harm or nothing.</p>\n<p>(c) Zero is inside, and the whole interval lies between −2 and 2. Evidence of little or no difference. This is the only one of the five that supports that statement.</p>\n<p>(d) Zero is outside, but the whole interval lies below 2. A real difference, too small to matter.</p>\n<p>(e) Zero is outside, and the whole interval lies above 2. Evidence of a difference that matters.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journal club slide reads:</p>\n<blockquote>\n<p>Breakfast trial (309 adults, 16 weeks, P = 0.77): breakfast has no effect on weight. So we should stop telling patients that breakfast matters for weight.</p>\n</blockquote>\n<p>Rewrite the first sentence so that it says what the trial showed, and say what is wrong with the second.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The trial found no detectable difference in weight between the advice groups. With P = 0.77 and no confidence interval reported for the difference, it cannot show that there is no effect. Rewritten: “In a 16-week trial of 309 adults trying to lose weight, advice to eat or skip breakfast made no detectable difference to weight.”</p>\n<p>The second sentence jumps from one trial to a <dfn data-g=\"601\">recommendation</dfn>. One trial’s absence of evidence is not enough. The pooled trials found a small difference that favoured skipping. Their authors judged the trials mostly of low quality, so the better summary is that eating breakfast may not help weight loss. And what to tell patients is a recommendation, which also weighs harms, what people value and cost, as the previous section showed.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>For a journalist, three minutes. A reporter calls: “That big breakfast trial found nothing. So breakfast doesn’t matter for weight, right?” Answer with one sentence she can quote, and say how sure you are without becoming useless to her.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Quotable sentence: “That trial could not detect an effect of breakfast advice on weight over 16 weeks. That is not the same as showing breakfast has no effect.”</p>\n<p>Then the rest. The trial was large for its field, and it found no sign that telling adults to eat breakfast helps them lose weight over 16 weeks. It reported no confidence interval for the difference, so it cannot rule out a small effect. When the randomised trials are pooled, the difference slightly favours skipping, but those trials were short and mostly of low quality. So: breakfast advice may not help weight loss, and nobody should promise that it does. Whether to eat breakfast for other reasons is a different question.</p>"
+  }
+ ]
+}

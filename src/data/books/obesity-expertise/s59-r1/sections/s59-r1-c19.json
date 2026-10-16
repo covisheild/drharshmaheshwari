@@ -1,0 +1,195 @@
+{
+ "format": 1,
+ "id": "s59-r1-c19",
+ "label": "19",
+ "title": "Being wrong in public is common, and owning it costs less than hiding it",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-10.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Being publicly wrong is a measured, common event in medicine and science. Four sets of measurements show its shape.</p>\n<p>Established practices are often overturned. Of 363 articles that tested an established practice, 146 (40.2 per cent) found it no better than a lesser or earlier standard.</p>\n<p><dfn data-g=\"631\">Retraction</dfn> is rare, and most of it is for misconduct. Lu and colleagues (2013) found 0.14 retractions for every 1,000 papers in biology and medicine journals in the Web of Science, a large index of journals. Fang, Steen and Casadevall (2012) classified all 2,047 retracted biomedical and life-science articles in PubMed in May 2012. Error accounted for 21.3 per cent of them. Misconduct accounted for 67.4 per cent: fraud or suspected fraud 43.4, duplicate publication 14.2 and plagiarism 9.8 per cent.</p>\n<p>Owning an error is associated with a smaller cost than leaving it to others. Where the authors reported the error themselves, which was true of 21.9 per cent of retractions, their earlier papers showed no statistically <dfn data-g=\"679\">significant</dfn> loss of citations.</p>\n<p>Private doubt is common and seldom made public. In an online survey, 44 per cent of 316 researchers said they had lost <dfn data-g=\"141\">confidence</dfn> in at least one of their own published findings (Rohrer and colleagues, 2021). Most were recruited through psychology groups and mailing lists.</p>\n<p>Each figure comes from particular journals, databases or volunteers, mostly in high-income countries, and none was measured in India.</p>",
+   "refs": [
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Being wrong in public is normal in medicine. Take one leading journal over ten years. About four in ten of its articles that tested an established practice found it no better than a lesser or earlier standard.</p>\n<p>Retraction, the formal withdrawal of a paper, is different. It is rare: about 0.14 papers in every 1,000 in biology and medicine. And most retractions are for misconduct, not for honest mistakes.</p>\n<p>When authors report their own error, they seem to pay less for it.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c19-why-retracted.png",
+   "alt": "Five bars, in per cent of retractions: error 21.3, fraud or suspected fraud 43.4 (the tallest), duplicate publication 14.2, plagiarism 9.8, other or unknown 11.3.",
+   "w": 1668,
+   "h": 656,
+   "caption": "Why 2,047 biomedical and life-science articles in PubMed had been retracted, as classified by Fang, Steen and Casadevall (2012): error 21.3 per cent; fraud or suspected fraud 43.4; duplicate publication 14.2; plagiarism 9.8; other or unknown 11.3 (worked out as the remainder). Shares of retractions, not of all research: retractions were about 0.14 per 1,000 papers in biology and medicine."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c19-citation-loss.png",
+   "alt": "Three bars, per cent fall in yearly citations: retracted paper, not reported by the authors, 81.5; retracted paper, reported by the authors, 86.2; each earlier paper, not reported, 12.5. A note says earlier papers after a self-reported retraction showed no statistically significant loss.",
+   "w": 1536,
+   "h": 700,
+   "caption": "What a retraction cost in citations, five or more years on (Lu and colleagues, 2013). The retracted paper lost most of its yearly citations whether or not the authors had reported the error: 81.5 against 86.2 per cent. Each earlier paper by the same authors lost 12.5 per cent after a retraction they had not reported, and showed no statistically significant loss after one they had. An association: the errors people report may be milder ones."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c19-why-silent.png",
+   "alt": "Six bars, in per cent: not sure enough 68, finding drew little attention 46, co-authors' feelings 33, no suitable place to publish 25, unsure how to say it 25, how it would be seen 24.",
+   "w": 1668,
+   "h": 656,
+   "caption": "Why researchers in Rohrer and colleagues’ survey kept a loss of confidence in their own finding private. The commonest reason, given by 68 per cent, was not being sure enough. Each person could give several reasons, so the bars add to more than 100. The respondents were volunteers, not a representative sample."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a retraction notice that said “error”, and was wrong.</p>\n<p>Open Fang, Steen and Casadevall (2012) at https://pmc.ncbi.nlm.nih.gov/articles/PMC3479492/. In the Results, search for “FOXO1a”. A retraction notice in the Journal of Cell Biology, written by the paper’s own authors, read as an honest correction:</p>\n<blockquote>\n<p>a retraction notice published by the authors of a manuscript in the Journal of Cell Biology stated that “In follow-up experiments . . . we have shown that the lack of FOXO1a expression reported in figure 1 is not correct” (11). A subsequent report from the Office of Research Integrity states that the first author committed “research misconduct</p>\n</blockquote>\n<p>The Office of Research Integrity is the US government office that oversees misconduct allegations in federally funded research. Fang and colleagues did not take notices at their word. They checked them against such reports, the news and other public records. Search for “118 of 742”:</p>\n<blockquote>\n<p>Use of these additional sources of information resulted in the reclassification of 118 of 742 (15.9%) retractions in an earlier study (4) from error to fraud.</p>\n</blockquote>\n<p><dfn data-g=\"97\">Check</dfn> the share.</p>\n<div class=\"working\">\n<p>118 divided by 742 = 0.159, which is 15.9 per cent</p>\n</div>\n<p>So 118 of the earlier study’s 742 retractions, about one in six of all of them, moved from error to fraud.</p>\n<p>Now read their own count, for all 2,047 retracted articles. Search the <dfn data-g=\"5\">abstract</dfn> for “21.3%”.</p>\n<table style=\"width:88%;\">\n\n<tbody>\n<tr>\n<td>reason for retraction</td>\n<td>per cent of the 2,047 retractions</td>\n</tr>\n<tr>\n<td>error</td>\n<td>21.3</td>\n</tr>\n<tr>\n<td>fraud or suspected fraud</td>\n<td>43.4</td>\n</tr>\n<tr>\n<td>duplicate publication</td>\n<td>14.2</td>\n</tr>\n<tr>\n<td>plagiarism</td>\n<td>9.8</td>\n</tr>\n<tr>\n<td>other or unknown</td>\n<td>11.3</td>\n</tr>\n</tbody>\n</table>\n<p>The last row is not printed as a number. The paper says “miscellaneous reasons or unknown causes accounted for the remainder”, so work it out.</p>\n<div class=\"working\">\n<p>43.4 plus 14.2 plus 9.8 = 67.4, the share for misconduct<br />\n21.3 plus 67.4 = 88.7<br />\n100 minus 88.7 = 11.3, the share for other or unknown reasons</p>\n</div>\n<p>The paper also says that where the reason is known, “three-quarters” were for misconduct. Check that too. Leave out the other-or-unknown share and divide.</p>\n<div class=\"working\">\n<p>67.4 divided by 88.7 = 0.760, about three-quarters<br />\n21.3 divided by 88.7 = 0.240, about one-quarter</p>\n</div>\n<p>Two lessons sit in this table. A notice’s stated reason is where you start, not the verdict. And retraction for honest error is the smaller part of all retraction, which is why the word “retracted” sounds like an accusation.</p>",
+   "numberRefs": [
+    317,
+    343
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These are shares of retractions, not of research. Lu and colleagues found about 0.14 retractions per 1,000 papers in biology and medicine. So 43.4 per cent of retractions is a small <dfn data-g=\"296\">fraction</dfn> of all papers. Fang and colleagues add that “only a fraction of fraudulent articles are retracted”, so it is also an undercount of fraud.</p>\n<p>The 2,047 were English-language articles in PubMed up to May 2012. Retraction practice has changed since; COPE’s 2025 guidelines, for instance, describe batch retractions of many papers from paper mills, people or groups who repeatedly cheat the publishing process, for example to publish fabricated research. Do not carry these shares to a later year or another database without a newer count.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the cost of owning an error. Lu, Jin, Uzzi and Jones (2013) asked what a retraction does to the citations of an author’s earlier papers, the ones nobody retracted. Their paper is at https://pmc.ncbi.nlm.nih.gov/articles/PMC3818648/.</p>\n<p>Read the method first. For each earlier paper they found papers in the same field and year that had been cited in the same way before the retraction. Then they compared what happened after it. They kept only authors with a single retraction: 667 retracted papers, 1,737 authors, 45,039 earlier papers.</p>\n<p>Then they split the retractions in two. Across all 1,423 retractions in the database, 312 had been reported by the authors themselves. Check the share.</p>\n<div class=\"working\">\n<p>312 divided by 1,423 = 0.219, which is 21.9 per cent</p>\n</div>\n<p>The <dfn data-g=\"103\">citation</dfn> results below come from the 667 papers. Lu and colleagues do not say how many of those were self-reported.</p>\n<p>Now read two results side by side, from the Results section.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>what lost citations, five or more years after retraction</th>\n<th>not reported by the authors</th>\n<th>reported by the authors</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>the retracted paper itself</td>\n<td>81.5 per cent</td>\n<td>86.2 per cent</td>\n</tr>\n<tr>\n<td>each earlier paper by the same authors</td>\n<td>12.5 per cent</td>\n<td>no statistically significant loss</td>\n</tr>\n</tbody>\n</table>\n<p>The retracted paper loses most of its citations either way. Reporting your own error does not save the paper. The difference is in the earlier work. After a retraction the authors did not report, each earlier paper lost 12.5 per cent of its yearly citations, five years on. After one they reported, Lu and colleagues found no statistically significant loss.</p>\n<p>Earlier papers are many. On average each author had 25.9 of them. Lu and colleagues also give the loss as a count. Five or more years after a retraction the authors did not report, each earlier paper lost about 0.208 citations a year. Multiply by 25.9 for a typical author’s total.</p>\n<div class=\"working\">\n<p>0.208 times 25.9 = 5.39 citations a year</p>\n</div>\n<p>Now say what this does not show. The authors were not assigned <dfn data-g=\"40\">at random</dfn> to report or to stay silent. Lu and colleagues give two readings themselves. Self-reported errors “may reflect more innocuous or explainable errors”. Or readers may reward people who correct their own mistakes. The study cannot tell these apart.</p>",
+   "numberRefs": [
+    343
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This is an <dfn data-g=\"39\">association</dfn> between self-reporting and later citations. It is not a measured effect of choosing to self-report, because the errors people choose to report may be milder ones.</p>\n<p>Citations are one cost. The study did not measure jobs, grants or how colleagues treat you.</p>\n<p>It covers retractions in the Web of Science from 2000 onwards, across all fields. It does not cover corrections, which are smaller events, and it measured nothing in India.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Last, the errors that never reach a journal. Rohrer and colleagues (2021) asked researchers whether they had ever lost confidence in one of their own published findings. Their paper is at https://pmc.ncbi.nlm.nih.gov/articles/PMC8564260/. Search for “316 scientists”.</p>\n<p>Of 316 who answered, 44 per cent said yes, at least once. Another 14 per cent were not sure. Each was then asked about the one case they felt most responsible for. In 17 per cent of those cases, the <dfn data-g=\"424\">loss of confidence</dfn> was a matter of public record.</p>\n<p>Then read why the rest stayed silent. Each reason could be given alongside others.</p>\n<table style=\"width:81%;\">\n\n<thead>\n<tr>\n<th>reason given for not making it public</th>\n<th>per cent</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>not sure enough about the loss of confidence</td>\n<td>68</td>\n</tr>\n<tr>\n<td>the finding had not attracted much attention</td>\n<td>46</td>\n</tr>\n<tr>\n<td>worry about hurting co-authors’ feelings</td>\n<td>33</td>\n</tr>\n<tr>\n<td>no suitable place to publish it</td>\n<td>25</td>\n</tr>\n<tr>\n<td>unsure how best to say it</td>\n<td>25</td>\n</tr>\n<tr>\n<td>worry about how it would be seen</td>\n<td>24</td>\n</tr>\n</tbody>\n</table>\n<p>Look at the first row. Two in three waited to be sure. But a loss of confidence is a change in how sure you are, and it can be said as one: “I am now much less sure of this than I was, and here is why.” Waiting to be sure that you were wrong holds your doubt to a standard the original <dfn data-g=\"274\">finding</dfn> never met.</p>",
+   "numberRefs": [
+    292
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The authors warn that “our respondents do not constitute a representative sample of researchers”. They answered a link posted in online groups, 37 per cent from psychology departments, nearly all in Europe or the United States. People who care about self-correction may have been more likely to answer. Read 44 per cent as “common among these volunteers”, not as a rate for medicine or for India.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Tell trainees that being overturned is ordinary.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>“Owning a mistake will finish my career” is the fear. One large study points the other way. When authors reported the error themselves, their earlier papers showed no statistically significant loss of citations. The study prints no interval in its text. When they had not, each earlier paper lost 12.5 per cent of its citations a year, five years on. The two groups were not made by chance: the errors people report may be milder.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A retraction notice may give the wrong reason.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>You do not need to be sure you were wrong before you say your confidence has dropped. Say how sure you now are, and why, in the words the section on stating confidence taught.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>These numbers come from high-income-country journals (92 per cent of Herrera-Perez’s reversals were tested in high-income populations), English-language databases and a volunteer survey. None was measured in India. Use them to show that being wrong is common, not to put a figure on how often Indian research is wrong.</p>",
+     "tag": "boundary",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A reversal and a retraction are different events with different denominators. Never set the two side by side as if they measured the same thing.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Two-thirds of retracted papers involve misconduct, so most research cannot be trusted.” The 67.4 per cent is a share of retractions. And retractions are rare: about 0.14 in every 1,000 papers in biology and medicine. Fang and colleagues say that papers retracted for fraud are “a very small <dfn data-g=\"518\">percentage</dfn> of the scientific literature”. They also say only some fraudulent papers are ever retracted, so the true share is larger than the count. Still, neither point makes most research false. The common way to be wrong is the other one: honest work that later evidence overturns.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what share of 363 tests of an established practice in one journal reversed it? Of 2,047 retracted articles, roughly what share was retracted for error, and what share for misconduct? What did Lu and colleagues find about the earlier papers of authors who reported their own error?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>146 of 363, about 40 per cent (New England Journal of Medicine, 2001-2010).</p>\n<p>About a fifth (21.3 per cent) were for error. About two-thirds (67.4 per cent) were for misconduct: fraud or suspected fraud, duplicate publication and plagiarism.</p>\n<p>Their earlier papers showed no statistically significant loss of citations. When authors did not report the error, each earlier paper lost 12.5 per cent of its citations a year, five years on. This is a link seen in the data, not proof that reporting protects you.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague reads Lu and colleagues’ table of results and says: “So if I report my own error, my retracted paper will keep its citations.” Use the two rows of the table in this section to say what the study shows and what it does not.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>The first row says the opposite. Five or more years on, the retracted paper itself lost 86.2 per cent of its yearly citations when the authors reported the error. It lost 81.5 per cent when they did not. Reporting your own error does not rescue the paper.</p>\n<p>The second row is where the two differ. After an unreported retraction, each of the authors’ earlier papers lost 12.5 per cent of its yearly citations five years on. After a self-reported one there was no statistically significant loss.</p>\n<p>What it does not show: that reporting causes the protection. Authors chose whether to report, and Lu and colleagues say self-reported errors “may reflect more innocuous or explainable errors”. And it measures citations only, not jobs, grants or reputation.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A newspaper health column reads (made up for this exercise):</p>\n<blockquote>\n<p>Two-thirds of medical papers that get withdrawn turn out to be fraud. And 40 per cent of what doctors do is later found to be useless. You cannot trust medical research.</p>\n</blockquote>\n<p>Find each step that does not follow from the studies behind these figures.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>First sentence. Fang and colleagues found 67.4 per cent of 2,047 retractions attributed to misconduct, which includes duplicate publication and plagiarism as well as fraud. Fraud or suspected fraud alone was 43.4 per cent. And these are shares of retractions, which are rare: about 0.14 per 1,000 papers in biology and medicine.</p>\n<p>Second sentence. Prasad and colleagues looked at one journal over ten years. Of 363 articles that tested an established practice, 146 found it no better than a lesser or earlier standard. That is a share of practices someone chose to test, and tested practices may be the doubtful ones. It is not 40 per cent of “what doctors do”, and “no better than a lesser standard” is not “useless” in every case.</p>\n<p>Third sentence. The conclusion does not follow. The figures show that medicine finds and corrects its errors: the reversals were found mostly by trials, and the retractions by editors. A fair version: “Medical practice is often overturned by better trials, and a small number of papers are withdrawn, most of them for misconduct. That is how errors get found.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>For a health secretary, one page, answer first. After a news story on retracted papers, she asks: “Should the department stop relying on published research?”</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer first: No. Retraction is rare, and medicine’s usual way of being wrong is the one that research itself corrects.</p>\n<p>The numbers. About 0.14 papers in every 1,000 in biology and medicine journals are retracted (Lu and colleagues, 2013). Of retracted biomedical papers up to 2012, two-thirds were withdrawn for misconduct and a fifth for honest error (Fang and colleagues, 2012).</p>\n<p>The commoner kind of wrong is different. Prasad and colleagues (2013) read ten years of one leading journal. About four in ten of its articles that tested an established practice found it no better than a lesser or earlier standard. Most of those reversals came from randomised trials.</p>\n<p>What to do. Rely on reviews of many studies rather than single papers. Ask that each policy note says when its evidence was last checked. Ask that it be checked again when a new review appears.</p>\n<p>The limit. These counts come from journals and databases outside India. They show that errors are found and corrected. They do not measure how often Indian research is wrong.</p>"
+  }
+ ]
+}

@@ -1,0 +1,167 @@
+{
+ "format": 1,
+ "id": "s59-r1-c20",
+ "label": "20",
+ "title": "Saying “I was wrong about that”",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Saying “I was wrong about that” is a procedure of five steps.</p>\n<ol type=\"1\">\n<li>Find. List the confident claims you have made in public. For each, say what kind of statement it was and what it rested on. Then <dfn data-g=\"97\">check</dfn> it against a recent <dfn data-g=\"725\">systematic review</dfn> of the question, and that review’s certainty of evidence.</li>\n<li>Sort. Decide which of three things happened. The evidence moved: your <dfn data-g=\"107\">claim</dfn> fitted what was known when you made it, and later work changed the picture. You overstated: the evidence of the time did not carry the claim. Or you made an error of fact or analysis in your own work.</li>\n<li>Choose the instrument. Correct the claim where its audience met it. A confirmed error in your own published work goes to the journal’s editor, who decides between a correction, a <dfn data-g=\"632\">retraction with republication</dfn> and a <dfn data-g=\"631\">retraction</dfn>.</li>\n<li>Say it, in the four sentences of the section on changing a stated position out loud. What I said, to whom, and when. What new evidence has appeared since. What I now think, how confident I am, and on what grounds. What I will do differently.</li>\n<li><dfn data-g=\"186\">Date</dfn> it and keep it, so that you, and anyone who asks, can see when you changed your mind and why.</li>\n</ol>\n<p>In 2021 Rohrer and colleagues found no standard protocol for what to do when you lose <dfn data-g=\"141\">confidence</dfn> in your own <dfn data-g=\"274\">finding</dfn>; these steps are this book’s.</p>",
+   "refs": [
+    2,
+    344,
+    345,
+    294,
+    295,
+    310,
+    346,
+    310,
+    347,
+    348,
+    349,
+    337,
+    350,
+    351,
+    3,
+    53,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    330
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Sooner or later something you taught or published will turn out to be wrong.</p>\n<p>When it does, put the correction where people met the claim. Tell the same <dfn data-g=\"109\">class</dfn>. Change the slides.</p>\n<p>This is not an apology for honest work, and it is not a confession of cheating. It is how science stays right.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c20-direction-flips.png",
+   "alt": "Three bars: earlier survey 17.0, published 18.5, corrected 15.5, with a dashed line at 17.0. The published bar is above the line, the corrected bar below it.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The made-up waist survey: the numbers are invented. The published 18.5 per cent (62 of 335) sits 1.5 percentage points above the earlier survey’s 17.0 per cent: a rise. The corrected 15.5 per cent (62 of 400) sits 1.5 points below it: a fall. The same error leaves “a large share” standing and reverses “the share has gone up”."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is a slide from a postgraduate lecture on obesity, given in 2016. The slide is made up for this section. The studies named after it are real.</p>\n<blockquote>\n<p>Breakfast skipping causes weight gain. Advise every patient to eat breakfast.</p>\n</blockquote>\n<p><strong>Find.</strong> You search your old lecture files for “breakfast” and this slide comes up. Put the two questions from the section on <dfn data-g=\"57\">belief</dfn> beyond the evidence. What kind of statement is it? A cause, stated as fact. What did it rest on? Observational studies, which show only that people who skip breakfast more often have <dfn data-g=\"506\">overweight</dfn> or obesity.</p>\n<p>Now check it against a systematic review. Sievert and colleagues (2019) pooled the randomised trials. Their paper is at https://pmc.ncbi.nlm.nih.gov/articles/PMC6352874/. They found a small difference in weight that favoured the people who skipped breakfast: a <dfn data-g=\"439\">mean difference</dfn> of 0.44 kg, with a 95 per cent <dfn data-g=\"142\">confidence interval</dfn> of 0.07 to 0.82 kg. They also wrote that the trials were short and “the quality of the included studies was mostly low”. So the review does not support the slide.</p>\n<p><strong>Sort.</strong> Here is the trap. It is tempting to say “the evidence changed”. Check the dates. In 2013, Brown and colleagues had already called the <dfn data-g=\"88\">causal claim</dfn> “only presumed true”. In 2014 a trial of 309 adults had found that advice to eat or skip breakfast made no detectable difference to weight over 16 weeks. By 2016 the slide went beyond the evidence of its own time. The honest sort is “I overstated”, with later evidence on top. The same slide shown in 2012, before both, would sort differently: the advice fitted the evidence of its time and the evidence moved, though the causal wording went too far even then (the section on changing a stated position).</p>\n<p><strong>Choose the instrument.</strong> The claim was taught, so correct it to the people who were taught it. Say it at the next <dfn data-g=\"667\">session</dfn> of the same course. Ask whoever runs the course to pass a note to the batch that heard it. Then change the slide.</p>\n<p><strong>Say it.</strong> One version, in its four sentences. Its confidence uses this book’s scale for the breakfast claim, Intelligence Community Directive 203 (<dfn data-g=\"342\">ICD 203</dfn>):</p>\n<blockquote>\n<ol type=\"1\">\n<li><p>In my 2016 lecture on obesity, I said that skipping breakfast causes weight gain, and that every patient should be told to eat breakfast.</p></li>\n<li><p>That rested on observational studies, and it went further than the evidence even then: a 2014 trial found that advice to eat or skip breakfast made no detectable difference to weight over 16 weeks. Since then, a 2019 review of trials found a small difference of 0.44 kg in favour of skipping, from short trials of mostly low quality.</p></li>\n<li><p>I now think it “unlikely” (about 25 per cent, on the ICD 203 scale) that eating breakfast helps adults lose weight; my grounds are the 2019 review’s trials, short and mostly of low quality.</p></li>\n<li><p>I have changed the slide, and for advice about meals I will cite trials, not associations.</p></li>\n</ol>\n</blockquote>\n<p>Notice what is missing. There is no apology for teaching, and no claim that you always knew. Sentence 2 says plainly that the claim went too far. Sentence 3 gives a word, its scale and a number, so a listener knows how sure you now are. On ICD 203, “unlikely” runs from 20 to 45 per cent.</p>\n<p><strong>Date it.</strong> Write one line in the notebook where you keep such changes:</p>\n<blockquote>\n<p>10 October 2026. Corrected the breakfast claim in my 2016 obesity lecture. Told the current course; note sent to the 2016 batch; slide changed. Now “unlikely” (ICD 203), about 25 per cent.</p>\n</blockquote>",
+   "numberRefs": [
+    167,
+    33,
+    230
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The confidence in sentence 3 is one reader’s judgement from this evidence, not a number any study gives. Another careful reader might put it at 30 or 35. What the procedure requires is that a word, its scale and a number are stated, with the grounds beside them.</p>\n<p>All the trials behind this case were in high-income countries; Sievert and colleagues’ review was limited to them. Sentence 3 is about adults like those trial participants. It says nothing about children, or about settings where a missed meal means too little food.</p>\n<p>Correcting a talk is easier than correcting a paper. Nobody keeps a public record of your old lecture, so the correction reaches only the people you can still reach.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now an error in your own published paper. The paper and its numbers are made up.</p>\n<p>Your paper reported that 62 of 335 women screened at an urban health centre had a waist above the clinic’s cut-off. Reusing the data for a new project, you find a filter in your analysis that wrongly left out 65 women who were measured. None of the 65 was above the cut-off. So the right count is 62 of 400.</p>\n<div class=\"working\">\n<p>335 plus 65 = 400<br />\n62 divided by 335 = 0.185, which is 18.5 per cent (published)<br />\n62 divided by 400 = 0.155, which is 15.5 per cent (correct)</p>\n</div>\n<p><strong>Sort.</strong> This is an error in your own analysis. It is not evidence moving on.</p>\n<p><strong>Choose the instrument.</strong> The question that decides it: does the error change what the paper concludes? Take two versions of the paper.</p>\n<p>In the first, the conclusion is that a large share of women at the centre had a waist above the cut-off, and that the centre should measure waists routinely. At 15.5 per cent instead of 18.5, that still stands. The tool is a correction.</p>\n<p>In the second, the main claim is a rise. An earlier survey at the same centre had found 17.0 per cent, and the paper concluded that the share had gone up. Compare both figures with it.</p>\n<div class=\"working\">\n<p>18.5 minus 17.0 = 1.5 percentage points: a rise (published)<br />\n15.5 minus 17.0 = minus 1.5 percentage points: a fall (correct)</p>\n</div>\n<p>The direction of the main result has flipped, though the study itself is sound. That is the case the International Committee of Medical Journal Editors (ICMJE) describes for retraction with republication.</p>\n<p>In both versions, the editor decides, not you. The Committee on Publication Ethics (COPE) asks you to raise a confirmed error with the editor and publisher, and to give “sufficient explanation and documentation” so that the editor can judge it.</p>\n<p><strong>Say it.</strong> Write to the editor. Give the <dfn data-g=\"103\">citation</dfn> of your article. Say which figure is wrong, how you found the error, and what the right figure is. Say whether the conclusion changes, and which instrument you think fits. Attach the corrected analysis.</p>\n<p>Keep the notice you hope for as short as the real one you met in the section on correcting the record: Fang and colleagues’ 2013 correction was two sentences and a table.</p>\n<p><strong>Date it.</strong> Note when you found the error and when you wrote to the journal.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Real errors rarely sort this cleanly. An error may change a secondary result and leave the main one standing, or shift a number the conclusion leans on without reversing it. Then whether it “changes the conclusion” is a judgement. Say in your letter what you think and why, and leave the decision to the editor.</p>\n<p>Some errors are not honest. If you suspect that data were altered or made up, by anyone, this is no longer a matter for four sentences. COPE says misconduct “should also be raised with the institution”.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Look for your own errors before someone else finds them. Once a year, search your slides, lecture notes, papers and posts for your confident claims.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Do not write “the evidence has changed” when the evidence of the time already failed to carry your claim. Check the dates of the studies against the date of your claim.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>“Saying I was wrong is admitting I am careless” is the error. ICMJE calls honest errors “a part of science and publishing”.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Put the correction where the claim’s audience met it: the same class, the same ward, the same journal.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Ask the deciding question of a published error: does it change what the paper concludes? If not, ask the editor for a correction. If it flips or substantially changes the result of a sound study, ask for retraction with republication.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>This procedure covers honest error and changed evidence. It stops working the moment you suspect that data were altered or invented, by you or by a co-author. Then the matter goes to the journal and to the institution, and four sentences are the wrong tool.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you write to an editor, read that journal’s own policy on corrections and retractions, and follow it where it differs from these steps.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Saying I was wrong means saying the claim is false.” It means saying the claim was not supported as strongly as you said. Christopher Chabris, withdrawing confidence in his own 1992 experiment, put it exactly: “These claims may be true, but not because of our experiment.” You met the line in the section on changing a stated position. Your new position can be “we do not know”, stated with its confidence and its grounds. It does not have to be the opposite of the old one.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>In my 2016 lecture I said that skipping breakfast causes weight gain. That went beyond the evidence even then. Trials in adults in high-income countries, one published before that lecture, did not find that eating breakfast helped weight loss. The trials were mostly of low quality. So I have withdrawn the slide.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the five steps for saying “I was wrong about that”. Then name the three things that can have happened to a claim, and the four sentences of the statement itself.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Five steps: find, sort, choose the instrument, say it, date it.</p>\n<p>Three things that can have happened. The evidence moved after you spoke. You claimed more than the evidence of the time could carry. Or you made a mistake in your own work.</p>\n<p>Four sentences:</p>\n<ol type=\"1\">\n<li>What I said, to whom, and when.</li>\n<li>What new evidence has appeared since (or, for an overstatement or an error, what I now see).</li>\n<li>What I now think, how confident I am, and on what grounds.</li>\n<li>What I will do differently.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Do it once, for real. Find one claim you have published or taught that current evidence no longer supports, or never did. Sort it. Choose the instrument. Write the four sentences, with a confidence word from a named scale and its number. Write the dated line. Then deliver it: say it to the audience, or send the letter.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>Check your work against six tests.</p>\n<ul>\n<li>The claim is your own and was public: a paper, thesis chapter, lecture, ward teaching, poster or post. A claim you only thought does not count.</li>\n<li>You checked it against a source newer than the claim, preferably a systematic review, and you can name that source.</li>\n<li>Your sort is honest. If studies that already undercut the claim were published before you made it, you wrote “I overstated”, not “the evidence changed”.</li>\n<li>The correction reaches the people who met the claim. A spoken claim goes back to the same class or ward. An error in your published work goes to the editor. A published claim that later evidence has overtaken gets a letter or a new paper.</li>\n<li>Sentence 3 names a word, its scale and a number (“unlikely”, ICD 203, about 25 per cent), and its grounds.</li>\n<li>The dated line has the date you said it, not the date you wrote the draft.</li>\n</ul>\n<p>The statement contains no apology for honest work and no claim that you always knew.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Two attempts to correct the same lecture claim about breakfast. Both are made up. Say what is wrong with each, and say which of the four sentences each one leaves out.</p>\n<blockquote>\n<ol type=\"a\">\n<li>I am ashamed to say that everything I taught about breakfast was rubbish. I should never have been allowed to teach it. Please ignore my lectures.</li>\n</ol>\n</blockquote>\n<blockquote>\n<ol start=\"2\" type=\"a\">\n<li>As research in this area has evolved, guidance on breakfast and weight has been updated in line with emerging evidence.</li>\n</ol>\n</blockquote>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>(a) The statement abases the speaker and gives the listener nothing to use. It does not say what exactly was claimed or when (sentence 1). It names no evidence (sentence 2). “Rubbish” is not a new position with a confidence (sentence 3). “Ignore my lectures” throws out every claim, right or wrong, instead of changing this one (sentence 4). An honest error does not call for shame.</p>\n<p>(b) The statement hides who was wrong. It has no “I”, no claim and no date (sentence 1). “Evolving research” names no study (sentence 2) and quietly says the evidence changed, which for a 2016 slide was not the case. There is no new position and no confidence (sentence 3), and nothing will be done differently (sentence 4).</p>\n<p>A version that works is the four sentences in this section’s first illustration.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>For a first-year resident, ten minutes. He realises a slide he presented at a departmental seminar last year cited a study that has since been retracted. He asks: “If I correct it now, won’t the faculty think less of me?” Answer him.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with what the faculty already saw. The slide is out there either way. The question is whether the correction comes from him or from someone else.</p>\n<p>Then the evidence about cost. Being wrong in public is common: in one leading journal over ten years, 146 of 363 tests of an established practice reversed it.</p>\n<p>In Lu and colleagues’ study, when authors reported their own retraction, the loss of citations to their earlier work disappeared. When others reported it, their earlier work lost citations. That is an <dfn data-g=\"39\">association</dfn>, and it is about papers, not seminars. Rohrer and colleagues argue that admitting an error is not a reliable sign of being error-prone.</p>\n<p>Then the procedure, on the whiteboard. Find: he has. Sort: he did not check the reference’s status (or it was retracted after his talk; the dates will tell).</p>\n<p>Instrument: the same audience, so a short note to the department, or two minutes at the next seminar. Then the four sentences. What he said, and when. That the study was retracted, and why. What he now thinks, with a confidence. That he now checks each reference’s status on the day he presents. Then date it.</p>\n<p>End with the habit from the section on correcting the record: check a paper’s page on the day you cite it.</p>"
+  }
+ ]
+}

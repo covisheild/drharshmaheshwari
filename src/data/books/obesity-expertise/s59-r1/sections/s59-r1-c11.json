@@ -1,0 +1,178 @@
+{
+ "format": 1,
+ "id": "s59-r1-c11",
+ "label": "11",
+ "title": "The same word read as different numbers",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-10.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"776\">verbal probability</dfn> is a word or phrase that states a <dfn data-g=\"193\">degree of belief</dfn> without a number: “likely”, “unlikely”, “possible”, “a serious possibility”. Different people turn the same word into different numbers. The writer of a sentence and its reader may do so too.</p>\n<p>This is measured, not assumed. In an online experiment with 924 people, Wintle and colleagues (2019) asked readers for a range of numbers for each word. The spread between readers was larger for “unlikely” than for “likely”. Readings also move with <dfn data-g=\"155\">context</dfn>, including how severe the outcome would be.</p>\n<p>The cost falls on the reader. A reader who acts on a word acts on the number they read into it, which may not be the number the writer meant.</p>\n<p>None of the studies here was done in India.</p>",
+   "refs": [
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>You say “unlikely”. In one study, doctors read that word as about 16 in 100, and mothers as about 27 in 100. Neither side can see the gap from the word alone.</p>\n<p>People agree on the order of the words: “likely” is more than “possible”. They do not agree on the numbers.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c11-mothers-and-doctors.png",
+   "alt": "Four points against a diagonal line of equal readings. Very likely: mothers 86, doctors 91. Likely: 66 and 77. Possible: 62 and 46. Unlikely: 27 and 16. The first two lie above the diagonal, the last two below.",
+   "w": 1184,
+   "h": 964,
+   "caption": "Four probability words, as read by 100 mothers and 50 doctors and medical students in one UK study (Shaw and Dear 1990, reported in Hashim 2024, Table 2): central estimates in per cent, the mothers’ along the bottom and the doctors’ up the side. On the diagonal line both groups would read a word alike. “Very likely” and “likely” sit above it: the doctors read them higher, “likely” by 11 points. “Possible” and “unlikely” sit below: the doctors read them lower, by 16 and 11 points. Both groups keep the words in the same order."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c11-spread-by-word.png",
+   "alt": "Four bars: very unlikely 21.1, unlikely 20.7, likely 13.0, very likely 12.9.",
+   "w": 1360,
+   "h": 746,
+   "caption": "How far readers’ best numbers for one word spread, in Wintle and colleagues’ online experiment (2019), across all four groups, some of whom had been shown the standard’s numbers: the standard deviation of the best estimates, in percentage points. The two negative words spread more, 21.1 for “very unlikely” and 20.7 for “unlikely”, than “likely” (13.0) and “very likely” (12.9)."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c11-one-phrase-three-numbers.png",
+   "alt": "Three bars: lowest board member 20, Kent 65, highest board member 80 per cent.",
+   "w": 1360,
+   "h": 656,
+   "caption": "One phrase, “a serious possibility”, signed by one board in 1951, held as three different degrees of belief that an attack would come: 20 per cent for the lowest member, 65 for Kent and 80 for the highest. The words recorded none of this spread. Kent (1964)."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>The last section turned a degree of belief into a per cent and into <dfn data-g=\"491\">odds</dfn>. Here is what happens when nobody writes the number down.</p>\n<p>In March 1951 the US intelligence services issued a forecast, a National Intelligence Estimate, on whether the Soviet Union and its allies would attack Yugoslavia that year. Its <dfn data-g=\"385\">key</dfn> sentence ended: an attack “should be considered a serious possibility.” Sherman Kent, a member of the board that oversaw its drafting, tells what happened next in <em>Words of Estimative <dfn data-g=\"559\">Probability</dfn></em> (1964), at https://www.cia.gov/resources/csi/static/Words-of-Estimative-Probability.pdf. Search for “serious possibility”.</p>\n<p>A few days later, the chairman of a State Department planning staff asked him:</p>\n<blockquote>\n<p>“By the way, what did you people mean by the expression `serious possibility’? What kind of odds did you have in mind?”</p>\n</blockquote>\n<p>Kent’s own answer was “the odds were around 65 to 35 in favor of an attack.” The chairman “was somewhat jolted by this”. He and his colleagues “had read”serious possibility” to mean odds very considerably lower.”</p>\n<p>So Kent asked his fellow board members what odds they had held when they agreed to the phrase.</p>\n<blockquote>\n<p>each Board member had had somewhat different odds in mind and the low man was thinking of about 20 to 80, the high of 80 to 20.</p>\n</blockquote>\n<p>Turn those odds into degrees of <dfn data-g=\"57\">belief</dfn>, as in the last section.</p>\n<div class=\"working\">\n<p>20 divided by (20 plus 80) = 0.2<br />\n65 divided by (65 plus 35) = 0.65<br />\n80 divided by (80 plus 20) = 0.8</p>\n</div>\n<p>The men who signed one sentence held anything from 20 to 80 per cent. The phrase did not record a disagreement that big. It hid it. And the readers of the sentence read a number lower than Kent’s own.</p>\n<p>Notice what went wrong. Nobody misused arithmetic. Each person turned the phrase into a number in his own head, and nobody said his number out loud.</p>",
+   "numberRefs": [
+    15
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This is one phrase, one board and one planning staff, told by one of the people involved. It shows that the spread can be very wide among experts who worked on the text together. It does not show how wide it usually is. That needs the counted studies in the next two illustrations.</p>\n<p>“Serious possibility” is also an unusual phrase. Kent’s own diagnosis was that “possible” should mark something whose odds cannot be estimated at all. Adding “serious” to it was, in his words, the team’s “particular error”.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now the clinic. A 2024 <dfn data-g=\"725\">systematic review</dfn> by Hashim collected studies that asked people to put a number on probability words. Open it at https://pmc.ncbi.nlm.nih.gov/articles/PMC11067312/ and find Table 2.</p>\n<p>One of the six studies, by Shaw and Dear in the UK in 1990, asked 100 mothers and 50 doctors and medical students the same thing. Here are the central estimates the review reports for each group, for four words. Read the table as Book 0 taught (Book 0, F1): one row is one word, and each column is one group’s central number for it, in per cent.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>word</th>\n<th>mothers (per cent)</th>\n<th>doctors and medical students (per cent)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>very likely</td>\n<td>86</td>\n<td>91</td>\n</tr>\n<tr>\n<td>likely</td>\n<td>66</td>\n<td>77</td>\n</tr>\n<tr>\n<td>possible</td>\n<td>62</td>\n<td>46</td>\n</tr>\n<tr>\n<td>unlikely</td>\n<td>27</td>\n<td>16</td>\n</tr>\n</tbody>\n</table>\n<p>Work out each gap in <dfn data-g=\"518\">percentage</dfn> points, as in Book 0, A4.</p>\n<div class=\"working\">\n<p>91 minus 86 = 5<br />\n77 minus 66 = 11<br />\n62 minus 46 = 16<br />\n27 minus 16 = 11</p>\n</div>\n<p>The doctors put “very likely” and “likely” higher than the mothers did. They put “possible” and “unlikely” lower. Both groups kept the four words in the same order.</p>\n<p>Now picture it on a ward. The case is made up. You tell a mother that a complication after her child’s minor operation is “unlikely”. You have in mind something like the doctors’ figure, 16 per cent. If she reads the word as the mothers in this study did, she hears 27 per cent. For “possible”, the gap runs the other way, and she may hear more than you meant.</p>\n<p>The review also prints a lower and an upper figure for each group, without saying how they were made. For “likely” they were 49 and 83 for the mothers and 64 and 90 for the doctors, evenly either side of the central figure.</p>",
+   "numberRefs": [
+    186
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Shaw and Dear’s is one small study from 1990, and the review calls the quality of its six studies “generally low”. It does not tell you what a mother in an Indian district hospital hears, in English or in any other language. No study in the review was done in India.</p>\n<p>The review itself reads the evidence more hopefully than this section does. It stresses that the order of the words is stable, and proposes fixing a number to each of five words. That is a scale, and scales are the subject of the next section.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>One board and one small study could be flukes. So look at a large count. Wintle and colleagues reported an online experiment with 924 people in 2019. Open it at https://pmc.ncbi.nlm.nih.gov/articles/PMC6469752/.</p>\n<p>Each person read sentences taken from intelligence reports, each holding one word such as “likely”. For each sentence they gave their lowest, best and highest number for the word. The team compared each person’s range with the range that a US government standard fixes for that word, Intelligence Community Directive 203 (ICD 203). The section after this one sets out that standard. The score was the overlap: the stretch of numbers both ranges share, as a per cent of the whole stretch the two cover together. Ranges that do not meet at all score below zero.</p>\n<p>One group saw the sentences with no numbers anywhere. Search for “control group”.</p>\n<blockquote>\n<p>Participants in the control group specified ranges with, on average, 32% overlap (29, 35) (95% confidence interval) with the ranges specified in the guidelines.</p>\n</blockquote>\n<p>On average, the readers’ ranges and the intended ranges overlapped by 32 per cent. Two ranges that matched exactly would score 100.</p>\n<p>Now search for “standard deviations”. The <dfn data-g=\"698\">standard deviation</dfn> is the typical distance from the average, as built in Book 0, D5. Here it measures how far people’s best numbers for one word spread out, across all four groups, some of whom had been shown the standard’s numbers.</p>\n<blockquote>\n<p>with the standard deviations for participants’ best estimates being: Very Unlikely (21.1), Unlikely (20.7), for Likely (13.0), and for Very Likely (12.9).</p>\n</blockquote>\n<p>The negative words spread more. Readers disagreed about “unlikely” more than about “likely”.</p>\n<p>Last, the same word in two studies. Search for “mean best estimates”.</p>\n<blockquote>\n<p>Our participants’ mean best estimates of … 73 and 75 for Likely … were substantially more extreme than those reported in Budescu et al.: … 54 for Likely</p>\n</blockquote>\n<p>Budescu’s study <dfn data-g=\"765\">used</dfn> sentences from climate reports. Wintle’s 73 was with sentences from intelligence reports, 75 with the word on its own. Many readers in both studies had been shown a standard’s numbers. The average reading of “likely” was 54 in one and 73 to 75 in the other.</p>\n<div class=\"working\">\n<p>73 minus 54 = 19<br />\n75 minus 54 = 21</p>\n</div>\n<p>About 20 percentage points apart, for one word read in two studies. Wintle’s team offers several reasons, including the different settings and the way the numbers were shown. They also report, from earlier studies, that readings move with how severe the outcome is.</p>",
+   "numberRefs": [
+    196
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Wintle’s readers were members of the public who had signed up to a research project, mostly in Australia. Only 2 per cent were in India. Their numbers describe that group reading English sentences from intelligence reports. They are not a measure of how a district health officer or a patient in India reads a medical report.</p>\n<p>The 32 per cent is an average overlap with one particular standard. A different standard, with different ranges for each word, would give a different score. What survives the change is the <dfn data-g=\"274\">finding</dfn> that the same word carried very different numbers for different readers.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Agreeing on a word is not agreeing on a number. Before you sign a jointly written sentence that says “likely” or “a serious possibility”, ask each author for the number they have in mind.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“A word is safer than a number because it does not over-commit” is the error. The word still lands as a number, but the reader chooses it.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you tell a family a complication is “unlikely”, they may hear a larger chance than you mean. In one study, mothers read it as about 27 in 100, and doctors as 16. If the number matters to their decision, say the number.</p>",
+     "tag": "number",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>People agree on the order of the words far better than on their numbers.</p>",
+     "tag": "boundary",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Negative words spread most.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>None of these studies was done in India, and none tested Hindi or any other Indian language.</p>",
+     "tag": "india_deviation",
+     "bearing": "clinical"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Only patients misread these words; doctors all mean the same thing by ‘likely’.” The doctors and medical students in Shaw and Dear’s study gave lower and upper figures of 64 and 90 per cent for “likely”. Kent’s board were experts who had worked on the very sentence, and they spread from 20 to 80 per cent.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what happened to the phrase “a serious possibility” in 1951, and what range of degrees of belief did Kent’s board hold? Then give one measured finding about how readers turn probability words into numbers, and one thing readers do agree on.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>A US intelligence estimate called an attack on Yugoslavia “a serious possibility”. Kent meant odds of about 65 to 35 for an attack; the reader who asked him had taken the phrase to mean much lower odds. The board members who agreed on the phrase had held a wide range of odds. They ran from about 20 to 80 to about 80 to 20: from 20 to 80 per cent.</p>\n<p>One measured finding will do. Wintle and colleagues tested 924 people. Readers shown no numbers gave ranges that overlapped the intended ranges by only 32 per cent on average. Another: readers disagreed more about “unlikely” than about “likely”.</p>\n<p>What readers agree on: the order of the words. “Very likely” is above “likely”, above “possible”, above “unlikely”.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>The 2024 review’s Table 2 gives estimates for the word “possible” from Shaw and Dear’s 1990 study. All are in per cent.</p>\n<table style=\"width:79%;\">\n\n<thead>\n<tr>\n<th>group</th>\n<th>lower</th>\n<th>central</th>\n<th>upper</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>mothers</td>\n<td>45</td>\n<td>62</td>\n<td>79</td>\n</tr>\n<tr>\n<td>doctors and medical students</td>\n<td>27</td>\n<td>46</td>\n<td>65</td>\n</tr>\n</tbody>\n</table>\n<p>Say what the rows show, and what they do not show.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>What they show: the two groups read “possible” differently. The mothers’ central figure is 62 per cent and the doctors’ is 46, a gap of 16 percentage points (62 minus 46). The lower and upper figures sit 34 points apart for the mothers (79 minus 45) and 38 for the doctors (65 minus 27). For the mothers, “possible” sat above an even chance; for the doctors, just below it.</p>\n<p>What they do not show. They do not show what any one mother or doctor meant. They do not show how people read the word now, or in India, or in another language. Nor do they show whether the gap changed anyone’s decision. It is one small UK study from 1990, in a review its author calls generally low in quality. It also does not tell you what “possible” should mean. That is a matter of fixing a scale, which is the next section’s subject.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Here is a made-up line from a district report on a school screening programme.</p>\n<blockquote>\n<p>There is a serious possibility that the programme will reduce overweight among the children screened.</p>\n</blockquote>\n<p>The district health officer will use it to decide whether to fund a second year. Find the flaw. Then rewrite the line so the officer reads what the writer meant.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The flaw: “serious possibility” carries no number. Kent’s board agreed on that very phrase while holding anything from 20 to 80 per cent. The planning staff who read it took it as lower odds than the writer meant. The officer will fund or not fund on a number she has chosen herself.</p>\n<p>The rewrite asks the writer for the number and puts it in. Suppose the writer’s degree of belief is 30 per cent. Then: “We judge the chance at about 30 per cent, roughly 1 in 3, that the programme will reduce <dfn data-g=\"506\">overweight</dfn> among the children screened.” The writer should also say why, which later sections teach. If the writer has no evidence either way, the rewrite says so in words rather than in a phrase that sounds like a judgement.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A journalist asks you: “Doctors say a side effect is ‘unlikely’. Isn’t that clear enough?” You have three minutes and no jargon. Give your answer, ending with one sentence she can quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>It is clear about direction. It is not clear about size. Ask people to put a number on “unlikely” and different people give very different answers. In one British study, mothers read it as about 27 in 100, and doctors as about 16 in 100. In a large online study, people disagreed more about “unlikely” than about “likely”. Everyone agrees that “unlikely” is less than “likely”; they do not agree on how much less.</p>\n<p>So when a decision depends on it, ask for the number: “How many in 100 people like me get this side effect?”</p>\n<p>The sentence to quote: “‘Unlikely’ tells you the side effect is less likely than not; only a number tells you how unlikely.”</p>"
+  }
+ ]
+}

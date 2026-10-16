@@ -1,0 +1,225 @@
+{
+ "format": 1,
+ "id": "s59-r1-c10",
+ "label": "10",
+ "title": "Confidence as a probability: putting a number on how sure you are of one claim",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In this book, a <dfn data-g=\"559\">probability</dfn> can also be a <dfn data-g=\"193\">degree of belief</dfn>: a number from 0 to 1 that states how strongly one person holds one <dfn data-g=\"107\">claim</dfn> to be true, given what that person knows.</p>\n<p>A degree of belief of 0 says the person is sure the claim is false. A degree of belief of 1 says they are sure it is true. Between them, it obeys the same arithmetic as Book 0’s probability. The degree of belief that the claim is false is its complement: 1 minus the degree of belief that it is true.</p>\n<p>The <dfn data-g=\"491\">odds</dfn> that a claim is true are the degree of belief, p, divided by its complement: p divided by (1 minus p), as in Book 0. This book writes odds as two whole numbers joined by “to”, with the claim’s side first. A degree of belief of 0.8 gives 0.8 divided by 0.2, which is 4, written “4 to 1”. Odds “against” put the other side first: 4 to 1 for is 1 to 4 against. Odds of a to b, with a and b standing for any two counts, turn back into a degree of belief as a divided by (a plus b).</p>\n<p>A degree of belief of 0.5 (odds of 1 to 1) states no lean either way. It is not a statement of moderate <dfn data-g=\"141\">confidence</dfn>.</p>",
+   "refs": [
+    180,
+    181,
+    182,
+    183,
+    184,
+    185
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Here you use the same kind of number for something else: how sure you are that one claim is true.</p>\n<p>Say it as a per cent. “I am 80 per cent sure.” Then you are 20 per cent sure it is false.</p>\n<p>Fifty per cent means you lean neither way. It does not mean “fairly sure”.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c10-odds-and-percent.png",
+   "alt": "Seven points on a rising curve, degree of belief along the bottom from 0.2 to 0.9 and odds up the side: 0.25 at 0.2, 0.667 at 0.4, 1 at 0.5, 1.5 at 0.6, 3 at 0.75, 4 at 0.8 and 9 at 0.9. A dashed line marks odds of 1, evens.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The same degree of belief as a probability and as odds: odds are p divided by (1 minus p). At 50 per cent the odds are 1 to 1, evens, the one point with no lean. At 40 per cent they are about 0.667 (2 to 3); at 60 per cent, 1.5 (3 to 2). At 20 per cent, 0.25, or 1 to 4. At 75 per cent, 3 to 1; at 80 per cent, 4 to 1; at 90 per cent, 9 to 1. The odds climb faster and faster as p nears 1: from 0.8 to 0.9 they more than double."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>This section stands on the first one in this book, where a <dfn data-g=\"57\">belief</dfn> is what a person holds true, held with some strength. Here you put a number on that strength.</p>\n<p>Start at a journal club. A colleague says: “Eating breakfast helps people lose weight. I am fairly sure of it.” Ask her: “How sure? Give me a number.” She thinks, and says “80 per cent.”</p>\n<p>Now try to read her number the way Book 0 reads a probability (Book 0, D1). There, 0.8 would mean that a chance process, repeated many times, gives this outcome 8 times in 10. What is the process here? The claim is either true or false. Nobody can rerun the world a thousand times and count the worlds in which breakfast helps. So her 80 per cent is not a frequency. It is a fact about her: how strongly she holds the claim, given what she has read.</p>\n<p>That second use of the word is old. In 1847 De Morgan wrote, as the <em>Stanford Encyclopedia of Philosophy</em> reports: “By degree of probability, we really mean, or ought to mean, degree of belief”. Its entry on probability calls this the <dfn data-g=\"711\">subjective</dfn> reading, in which probabilities are “degrees of confidence, or credences, or partial beliefs”. This book calls it a degree of belief, or your confidence in a claim.</p>\n<p>The arithmetic does not change. Write her number three ways, as Book 0 did for percentages (Book 0, A4).</p>\n<div class=\"working\">\n<p>80 divided by 100 = 0.8</p>\n</div>\n<p>And 0.8 is 8 in 10, which is 4 in 5.</p>\n<p>Next, the complement. If she is 0.8 sure the claim is true, she is 1 minus 0.8 sure it is false.</p>\n<div class=\"working\">\n<p>1 minus 0.8 = 0.2</p>\n</div>\n<p>She is 20 per cent sure it is false. Say both halves out loud. “80 per cent sure it is true” sounds like a firm view. “One chance in five that I am wrong” is the same number, and it is the half that a listener forgets.</p>\n<p>Now the odds. Book 0 defined them as p divided by (1 minus p), where p stands for the probability. Here p is her degree of belief, 0.8.</p>\n<div class=\"working\">\n<p>0.8 divided by 0.2 = 4</p>\n</div>\n<p>The odds are 4. This book writes that as “4 to 1”: for every 4 chances that the claim is true, 1 that it is false. The claim’s side always comes first.</p>\n<p>Go back the other way. Odds of a to b, where a and b stand for any two counts, give a degree of belief of a divided by (a plus b). Here a is 4 and b is 1, so 4 + 1 = 5 chances in all.</p>\n<div class=\"working\">\n<p>4 divided by 5 = 0.8</p>\n</div>\n<p>You are back at 80 per cent. Run that <dfn data-g=\"97\">check</dfn> every time you convert. It catches the commonest slip, which is to swap the two sides.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The number belongs to the person, not to the claim. A second colleague who has read different papers may say 40 per cent about the same sentence, and neither number is a mistake in arithmetic. The number also says nothing about how large any effect of breakfast is. It is confidence that the claim is true, not a size of weight change.</p>\n<p>Her 80 per cent cannot be shown right or wrong by this one claim. If breakfast turns out not to help, she had said there was a 1 in 5 chance of that. A degree of belief is checked only across many claims held at the same <dfn data-g=\"410\">level</dfn>, which a later section on <dfn data-g=\"77\">calibration</dfn> does.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is a real case of one judgement written three ways, on purpose. Sherman Kent sat on the US Board of National Estimates, which oversaw the government’s intelligence forecasts. In a 1964 article he drafted a note addressed to the readers of those forecasts. Open his article <em>Words of Estimative Probability</em> at https://www.cia.gov/resources/csi/static/Words-of-Estimative-Probability.pdf and search for “Important note to consumers”.</p>\n<blockquote>\n<p>when we say .such and such is unlikely” we mean that the chances of its NOT happening are in our judgment about three to one. Another, and to you critically important, way of saying the same thing is that the chances of its HAPPENING are about one in four.</p>\n</blockquote>\n<p>(The stray full stop before “such” is in the printed copy.) In the example that follows, he writes the same judgement as “around a 25-percent chance”.</p>\n<p>Check that his three forms agree. “Three to one” that it does NOT happen puts the not-happening side first. Turned round, with the happening side first, that is 1 to 3.</p>\n<div class=\"working\">\n<p>1 divided by (1 plus 3) = 0.25<br />\n0.25 times 100 = 25</p>\n</div>\n<p>Odds of 1 to 3 that it happens give 0.25, which is 1 in 4, which is 25 per cent. Kent’s three forms are one number.</p>\n<p>Why did he write it three ways? Because a reader who hears “three to one” without its side can take it either way round. One reading gives a 25 per cent chance of the event; the other gives 75 per cent. When you quote odds, say whose side comes first, or add “against”.</p>\n<p>Now a trap that even careful writers fall into. A 2024 review by Hashim of how clinicians and patients read probability words lists formats it advises against, among them “odds (one in three)”. By the definitions you are using, “one in three” is a chance, not odds.</p>\n<div class=\"working\">\n<p>1 divided by 3 is about 0.333<br />\n0.333 divided by (1 minus 0.333) = 0.5</p>\n</div>\n<p>A chance of 1 in 3 is odds of 1 to 2: one chance for, two against. “In” counts the whole; “to” sets one side against the other. Read which word the writer <dfn data-g=\"765\">used</dfn> before you convert.</p>",
+   "numberRefs": [
+    15,
+    186
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Kent’s note fixes what his own team meant by “unlikely”. It does not tell you what any other writer means by the word. How different readers turn such words into numbers is the subject of the next section.</p>\n<p>The 2024 review’s point is about which format patients understand, and it recommends “X in 100” for that reason. Its use of “odds” is loose; its advice may still be sound.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Now the number that is easiest to misread. A district health officer asks you whether a planned school nutrition talk will lower the share of children with <dfn data-g=\"506\">overweight</dfn> in her district. You reply, “Fifty-fifty.” The case is made up.</p>\n<p>Convert it first.</p>\n<div class=\"working\">\n<p>0.5 divided by (1 minus 0.5) = 1</p>\n</div>\n<p>Odds of 1 to 1, or “evens”. Fifty per cent is the one point at which you lean neither way. Move a little either side and you have a lean.</p>\n<div class=\"working\">\n<p>0.6 divided by 0.4 = 1.5<br />\n0.4 divided by 0.6 is about 0.667</p>\n</div>\n<p>Sixty per cent is odds of 1.5 to 1, which is 3 to 2 in whole numbers. Forty per cent is 2 to 3.</p>\n<p>So “fifty-fifty” is not “moderately sure”. A person who is fairly sure leans clearly one way, so any number they have in mind is above 50. Fifty per cent is no lean at all, not a middling lean.</p>\n<p>Now ask what you meant. There are two very different reasons to say 50. One is that you know a great deal, and the evidence points both ways about equally. The other is that you know nothing at all. The number is the same, and the officer cannot tell which you meant.</p>\n<p>Bodies that write probabilities for a living keep the two apart. The guidance note for authors of the Fifth Assessment Report of the Intergovernmental Panel on Climate Change (IPCC) says its phrase for a middle probability, “about as likely as not”, “should not be used to express a lack of knowledge”. If you mean “I don’t know”, say that, and say why: “I have seen no study of a talk like this one.” A later section shows how to state your grounds beside your number.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>“Fifty-fifty” has a real use: two outcomes that the evidence shows to be about equally likely. The point is not to avoid 50 per cent. It is to say whether it comes from evidence or from its absence.</p>\n<p>How far different people’s readings of words such as “fairly sure” spread is measured in the next section.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“Fifty per cent” is not “fairly sure”. It is the one point at which you lean neither way, odds of 1 to 1.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Give the complement with the number: “80 per cent sure it is true, so a 1 in 5 chance I am wrong.”</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>“1 in 4” and “1 to 4” are different numbers. The first is a 25 per cent chance; the second is a 20 per cent chance.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Do not say 0 or 100 per cent about a claim that rests on evidence. Evidence never puts a claim beyond correction.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>One outcome cannot show a single degree of belief wrong. To learn whether your numbers mean anything, write them down and count how often claims held at each level turn out true.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Your number describes you and what you have read, not the patient or the world. Two honest colleagues can hold 80 and 40 per cent on the same claim.</p>",
+     "tag": "boundary",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“A probability is how often something happens over many tries. So a probability that this one claim is true means nothing.” That is Book 0’s frequency reading, and for a one-off claim it has no long run to count.</p>\n<p>The degree-of-belief reading is a second use of the same number. It is at least as old as De Morgan’s remark of 1847, and it obeys the same arithmetic. Bodies such as the IPCC use it for a single event. So say which you mean. “About 40 in 100 children like these” is a frequency. “I am 40 per cent sure the scheme works” is a degree of belief.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>I am about 80 per cent confident that this claim is true, which is odds of about 4 to 1. That is my judgement on the evidence I have read, not a measured rate.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: say what a degree of belief is, and how it differs from the probability defined in Book 0. Then write 80 per cent as a <dfn data-g=\"189\">decimal</dfn>, as a chance “in 5”, and as odds. Last, say what a stated 50 per cent does and does not tell a listener.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>A degree of belief is a number from 0 to 1. It says how strongly one person holds one claim to be true, given what they know. Book 0’s probability is a long-run frequency: how often an outcome turns up when a chance process is repeated many times. A one-off claim has no long run, so a number on it is a degree of belief. Both obey the same arithmetic.</p>\n<p>80 per cent is 0.8, a chance of 4 in 5, and odds of 4 to 1 (0.8 divided by 0.2 = 4).</p>\n<p>A stated 50 per cent says the speaker leans neither way: odds of 1 to 1. It does not say they are fairly sure. Nor does it say whether the 50 comes from evidence that points both ways, or from no evidence at all.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A senior colleague speaks at a journal club. “Book 0 is right that a probability describes a group, not the one person in front of you. So when you say you are 70 per cent sure that this trial’s result will hold up, you are talking nonsense.” Find what is right in this, and the specific flaw.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>What is right: Book 0’s frequency reading describes a group or a repeated process. Read that way, a probability says nothing about one person, and a one-off claim such as “this trial’s result will hold up” has no long run to count.</p>\n<p>The flaw: the colleague assumes the frequency reading is the only one. “70 per cent sure” uses the other reading, a degree of belief. It describes how strongly the speaker believes, given what they know. It is not a rate in a group of people. The <em>Stanford Encyclopedia of Philosophy</em> calls this the subjective reading, in which probabilities are “degrees of confidence”. The arithmetic is the same. Being 70 per cent sure it holds is being 30 per cent sure it does not, odds of 7 to 3.</p>\n<p>The useful reply is to say which reading you meant. Then add that the number is a commitment. It can be checked across many such claims, though not by this one trial alone.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident asks you a question on a ward round. “If I am 75 per cent sure of a diagnosis, what are the odds? And why does it matter which way round I say them?” You have ten minutes and a whiteboard. Give your answer.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Write the three forms on the board.</p>\n<div class=\"working\">\n<p>75 divided by 100 = 0.75<br />\n1 minus 0.75 = 0.25<br />\n0.75 divided by 0.25 = 3</p>\n</div>\n<p>You are 75 per cent sure it is this diagnosis, so 25 per cent sure it is not. That is a chance of 3 in 4, and odds of 3 to 1 that it is this diagnosis. Check by going back: 3 divided by (3 plus 1) is 0.75.</p>\n<p>Now turn the odds round: 1 to 3 that it is this diagnosis, or “3 to 1 against”. If you say “3 to 1” to a colleague without saying which side, they may hear 25 per cent where you meant 75. So say the side first: “3 to 1 that it is this”, or say “75 per cent” instead.</p>\n<p>Last, say what the 75 per cent is. It is your degree of belief, given what you have found so far. It is not a rate measured in patients like this one, and it should move when the next test comes back.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Write each degree of belief as a decimal. Then write it as a chance “in” a whole number, in lowest terms. The four are 90 per cent, 25 per cent, 60 per cent and 5 per cent.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>90 divided by 100 = 0.9<br />\n25 divided by 100 = 0.25<br />\n60 divided by 100 = 0.6<br />\n5 divided by 100 = 0.05</p>\n</div>\n<p>0.9 is 9 in 10. 0.25 is 1 in 4. 0.6 is 3 in 5. 0.05 is 1 in 20.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>For each degree of belief that a claim is true, give the degree of belief that it is false: 0.85, 0.3, 0.5, 0.99.</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>1 minus 0.85 = 0.15<br />\n1 minus 0.3 = 0.7<br />\n1 minus 0.5 = 0.5<br />\n1 minus 0.99 = 0.01</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Give the odds that the claim is true, in whole numbers with the claim’s side first, for each degree of belief: 0.75, 0.2, 0.9, 0.6.</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>0.75 divided by 0.25 = 3<br />\n0.2 divided by 0.8 = 0.25<br />\n0.9 divided by 0.1 = 9<br />\n0.6 divided by 0.4 = 1.5</p>\n</div>\n<p>0.75 is 3 to 1.</p>\n<p>0.2 is 0.25 to 1, which is 1 to 4.</p>\n<p>0.9 is 9 to 1.</p>\n<p>0.6 is 1.5 to 1, which is 3 to 2.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Each pair of odds is for a claim being true. Turn each into a degree of belief, as a per cent: 3 to 2, 1 to 9, 7 to 3, 1 to 1.</p>",
+   "level": 3,
+   "answer": "<p>Add the two sides to get all the chances, then divide the claim’s side by that total.</p>\n<div class=\"working\">\n<p>3 divided by (3 plus 2) = 0.6<br />\n1 divided by (1 plus 9) = 0.1<br />\n7 divided by (7 plus 3) = 0.7<br />\n1 divided by (1 plus 1) = 0.5</p>\n</div>\n<p>60 per cent, 10 per cent, 70 per cent and 50 per cent.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>In 1951 Sherman Kent was asked what his board had meant by calling an attack “a serious possibility”. His answer was that “the odds were around 65 to 35 in favor of an attack.” Give his degree of belief in an attack as a per cent. Give his degree of belief that there would be none. Then give his odds in the smallest whole numbers.</p>",
+   "level": 4,
+   "answer": "<p>His side comes first: 65 for an attack, 35 against.</p>\n<div class=\"working\">\n<p>65 divided by (65 plus 35) = 0.65<br />\n1 minus 0.65 = 0.35<br />\n65 divided by 5 = 13<br />\n35 divided by 5 = 7</p>\n</div>\n<p>He was 65 per cent sure there would be an attack and 35 per cent sure there would not. In the smallest whole numbers his odds were 13 to 7 for an attack. Because his two sides add to 100, each side is already a per cent.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A 2024 review proposes that clinicians use “unlikely” to mean a 20 per cent chance, written as 20 in 100. Give the chance that the event does not happen, the odds that it happens, and the odds against it.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>20 divided by 100 = 0.2<br />\n1 minus 0.2 = 0.8<br />\n0.2 divided by 0.8 = 0.25</p>\n</div>\n<p>The event fails to happen with a chance of 0.8, or 80 in 100. The odds that it happens are 0.25 to 1, which is 1 to 4. The odds against it are 4 to 1.</p>\n<p>The 20 per cent is the review’s proposed meaning for the word, not a measured rate of any event.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Kent asked the members of his board what odds they had had in mind for that “serious possibility”. He wrote that “the low man was thinking of about 20 to 80, the high of 80 to 20.” Give each member’s degree of belief as a per cent, and his odds in the smallest whole numbers. Then say how many times larger the high member’s odds were than the low member’s.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>20 divided by (20 plus 80) = 0.2<br />\n80 divided by (80 plus 20) = 0.8<br />\n20 divided by 80 = 0.25<br />\n80 divided by 20 = 4<br />\n4 divided by 0.25 = 16</p>\n</div>\n<p>The low member was 20 per cent sure of an attack, odds of 1 to 4. The high member was 80 per cent sure, odds of 4 to 1. The high member’s odds were 16 times the low member’s.</p>\n<p>In per cent, the gap looks like 60 points. In odds, it is a <dfn data-g=\"261\">factor</dfn> of 16. Both describe the same two men, who had agreed on one phrase.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke, and say why it looks reasonable.</p>\n<blockquote>\n<p>“I am 30 per cent sure the claim is false. So my odds that it is true are 3 to 7, and I am 30 per cent sure it is true.”</p>\n</blockquote>\n<div class=\"working\">\n<p>0.3 divided by 0.7 is about 0.43, so 3 to 7</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The first step broke. The 30 per cent was for “false”, and the writer used it as the degree of belief that the claim is true. Take the complement first.</p>\n<div class=\"working\">\n<p>1 minus 0.3 = 0.7<br />\n0.7 divided by 0.3 is about 2.33<br />\n7 divided by (7 plus 3) = 0.7</p>\n</div>\n<p>The writer is 70 per cent sure the claim is true. The odds that it is true are 7 to 3, not 3 to 7.</p>\n<p>Why it looks reasonable: the division is correct, and 3 to 7 does go with 30 per cent. It just belongs to the other side of the claim. Naming the side before each number prevents it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Here is a worked answer to “A patient information leaflet says the chance of a side effect is 1 in 4. What are the odds?” Find the step that broke.</p>\n<div class=\"working\">\n<p>1 in 4 means odds of 1 to 4<br />\n1 divided by (1 plus 4) = 0.2<br />\nso the chance of the side effect is 20 per cent</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The first line broke. “1 in 4” is already a chance, not odds. It counts 1 out of all 4.</p>\n<div class=\"working\">\n<p>1 divided by 4 = 0.25<br />\n0.25 divided by (1 minus 0.25) is about 0.333</p>\n</div>\n<p>The chance is 25 per cent, and the odds are 1 to 3: one for, three against. The worked answer turned a 25 per cent chance into 20 per cent by reading “in” as “to”.</p>\n<p>Why it looks reasonable: both forms use the same two numbers, and even a published review lists “odds (one in three)” among its formats. Read the joining word before you convert.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A made-up meeting is discussing a new weight-management clinic. A consultant says: “Whether it will cut referrals to the hospital is fifty-fifty, so it is a coin toss either way.” The administrator concludes: “Then the evidence must be evenly balanced.” Decide what to compute, compute it, and say what the statement does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the odds.</p>\n<div class=\"working\">\n<p>0.5 divided by (1 minus 0.5) = 1</p>\n</div>\n<p>Fifty-fifty is odds of 1 to 1. The consultant leans neither way.</p>\n<p>What it does not establish. It does not say the evidence is evenly balanced. A 50 can come from many studies pointing both ways, or from no studies at all, and the number looks the same. The IPCC’s guidance for its authors says its middle phrase “should not be used to express a lack of knowledge” for exactly this reason. Ask the consultant: “Is that because the studies disagree, or because there are none?” It also says nothing about how large a fall in referrals might be, if there is one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 11,
+   "prompt": "<p>A made-up newspaper health column says: “Experts put the odds at 3 to 1 that skipping breakfast makes you gain weight. So skippers will put on three times as much weight.” Decide what to compute, compute it, and say what the claim does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Turn the odds into a degree of belief.</p>\n<div class=\"working\">\n<p>3 divided by (3 plus 1) = 0.75<br />\n1 minus 0.75 = 0.25</p>\n</div>\n<p>Odds of 3 to 1 are a degree of belief of 75 per cent that the claim is true. That leaves 25 per cent that it is false.</p>\n<p>What it does not establish. First, the “three” in the odds is not a size of effect. Odds of 3 to 1 say how sure the experts are that skipping causes some weight gain. They say nothing about how much; “three times as much weight” misreads a confidence as a quantity. Second, it is a degree of belief, so ask whose: which experts, and on what evidence? Third, 75 per cent also means a 1 in 4 chance, on the experts’ own number, that skipping breakfast causes no gain at all.</p>"
+  }
+ ]
+}

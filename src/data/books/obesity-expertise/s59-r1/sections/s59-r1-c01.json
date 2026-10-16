@@ -1,0 +1,139 @@
+{
+ "format": 1,
+ "id": "s59-r1-c01",
+ "label": "1",
+ "title": "Three kinds of statement: a hypothesis, a finding and a belief",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"341\">hypothesis</dfn> is a proposed explanation, stated so that a study can be designed to support or refute it.</p>\n<p>A <dfn data-g=\"274\">finding</dfn> is what a particular study observed, stated with the people and setting it was observed in and with the uncertainty that comes with it. It reports; it does not on its own reach beyond the study.</p>\n<p>A <dfn data-g=\"57\">belief</dfn> is a statement a person holds to be true, held with some strength, on whatever grounds that person has.</p>\n<p>The three are uses of a statement, not kinds of sentence.</p>\n<p>Sherman Kent, writing in 1964 for intelligence analysts, sorted statements on a second axis, by how close they come to what is known. The first kind states something known, as close to indisputable fact as one can come. The second is a <dfn data-g=\"384\">judgement on evidence</dfn>, which the evidence makes likely but cannot make certain. The third is a judgement made almost without evidence. The two sortings ask different questions and cross each other.</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Take one sentence: skipping breakfast makes people put on weight.</p>\n<p>Offered to be tested, it is a hypothesis. Reporting what a study saw, in certain people, it is a finding. Simply held true, it is a belief.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>This book follows one <dfn data-g=\"107\">claim</dfn> from start to finish: eating breakfast helps you keep weight off, and skipping it puts weight on. Here it is three times. Sort each one before you read on.</p>\n<p>The first is made up for this section. A resident writes in her thesis protocol:</p>\n<blockquote>\n<p>We propose that students who skip breakfast on most days gain more weight over one year than students who eat it.</p>\n</blockquote>\n<p>The second is real. Brown and colleagues’ 2013 paper “Belief beyond the evidence” is at https://pmc.ncbi.nlm.nih.gov/articles/PMC3798081/. They pooled the observational studies of breakfast and weight that four earlier reviews had gathered — studies that watch people as they are, without changing anything. They took 88 estimates from 58 studies, done in 30 countries. Pooling like this is a <dfn data-g=\"448\">meta-analysis</dfn>: a study that combines the results of earlier studies of the same question into one answer. In their Results they write:</p>\n<blockquote>\n<p>There is a clear association between breakfast omission and excess weight as summarized in our cumulative meta-analysis (see RLPV below), and this association supports the PEBO but does not show causation.</p>\n</blockquote>\n<p>An <dfn data-g=\"39\">association</dfn> means the two things go together: excess weight is found more often among people who skip breakfast. PEBO is their short name for the claim that eating breakfast protects against obesity. A cumulative meta-analysis pools the estimates again each time a new year’s studies are added, here year by year from 1994 to 2011. RLPV is their short name for “research lacking probative value”: studies that cannot add to what is known, such as repeats of a question already answered.</p>\n<p>The third is a line Brown and colleagues quote from the Mayo Clinic. It sits in their table of public statements, whose sources include health websites, a newspaper and the US Surgeon General:</p>\n<blockquote>\n<p>In fact, skipping breakfast actually increases your risk of obesity.</p>\n</blockquote>\n<p>Now sort them with three questions.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td></td>\n<td>Hypothesis</td>\n<td>Finding</td>\n<td>Belief</td>\n</tr>\n<tr>\n<td>What it does</td>\n<td>offers an explanation to be tested</td>\n<td>reports what one study saw</td>\n<td>states what someone holds true</td>\n</tr>\n<tr>\n<td>Its grounds</td>\n<td>a reason to think it worth testing</td>\n<td>the study’s own data, in its own people</td>\n<td>whatever persuaded the person</td>\n</tr>\n<tr>\n<td>A result against it</td>\n<td>is what the test is for</td>\n<td>is another finding to set beside it</td>\n<td>ought to change how strongly it is held</td>\n</tr>\n</tbody>\n</table>\n<p>The protocol sentence is a hypothesis. Its job is to be tested, and it is useful even if it turns out wrong. Ask of it: what result would count against it?</p>\n<p>Brown’s sentence is a finding. It is about an association, seen in the people those studies measured. Notice that it says so itself: “does not show causation”. Ask of it: who was studied, and what exactly was seen?</p>\n<p>The Mayo Clinic line is a belief. It reaches further than the finding: it says skipping breakfast increases the risk, which is a claim about cause. As Brown and colleagues quote it, it names no study. Its words “in fact” and “actually” dress it as a finding. Ask of it: what is it resting on? Brown and colleagues’ own answer, in their <dfn data-g=\"5\">abstract</dfn>, is that this claim “is only presumed true”. (An abstract is the short summary printed before a paper.)</p>",
+   "numberRefs": [
+    14
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The three kinds are uses, not fixed labels. One person can believe a claim and still test it as a hypothesis. And a hypothesis that passes many fair tests comes to be held as a belief, on good grounds. The sorting tells you what a statement is doing, not whether it is true.</p>\n<p>Brown’s finding covers the studies they pooled, published up to 2011. This book has not checked which countries those 30 were, so it says nothing here about Indian studies.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Kent’s essay “Words of estimative <dfn data-g=\"559\">probability</dfn>” is at https://www.cia.gov/resources/csi/static/Words-of-Estimative-Probability.pdf. It opens with an officer reporting a reconnaissance photograph. Read his three statements and sort them by how much the officer actually knows.</p>\n<blockquote>\n<p>Its longest runway is 10,000 feet.</p>\n</blockquote>\n<blockquote>\n<p>It is almost certainly a military airfield.</p>\n</blockquote>\n<blockquote>\n<p>It is possible that they will.</p>\n</blockquote>\n<p>The last one answers whether the other side will lengthen the runways and make the field a base.</p>\n<p>Here is Kent’s own sorting. The first statement is, in his words, “as close as one can come to a statement of indisputable fact”: the photograph shows it. The second is a judgement on evidence. The aircraft on the field are all military, and the support buildings look like other military bases. Kent says that evidence “makes the case, say, 90 percent of the way”. It “cannot justify a flat assertion”, so the officer adds “almost certainly”. The third is a judgement made almost without evidence. Kent calls it “an estimate of something that no man alive can know”: the other side may not have decided yet.</p>\n<p>Now carry Kent’s sorting to breakfast. Here are three sentences a presenter might say at a journal club; the last one is made up.</p>\n<ul>\n<li>“This paper pooled 88 estimates from 58 studies.” You can <dfn data-g=\"97\">check</dfn> it by opening the paper: Kent’s first kind.</li>\n<li>“In the countries these studies came from, people who skip breakfast more often have <dfn data-g=\"506\">overweight</dfn>.” Many studies support it. But it reaches beyond the people counted, so it is a judgement on evidence, Kent’s second kind.</li>\n<li>“Indian schoolchildren who skip breakfast today will have more obesity in 2040.” No study in hand speaks to it: Kent’s third kind.</li>\n</ul>\n<p>The two sortings ask different questions, so use both. The first asks what a statement is doing. Kent’s asks how close it sits to what is known. A finding usually holds a first-kind part, what was counted, and a second-kind part, what it means beyond the people counted. A belief can sit at either of Kent’s last two kinds. The words a speaker chooses should show which.</p>",
+   "numberRefs": [
+    15
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Kent’s “indisputable fact” is the closest a statement comes, not a guarantee. A photograph can be misread and a count can be wrong, as Book 0’s section on random and <dfn data-g=\"724\">systematic error</dfn> showed. His 90 per cent is an example he gives to show a judgement has a degree, not a measured figure. How to put such numbers on your own judgements comes later in this book.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A finding is what one study saw, in its own people, with its own uncertainty. When you quote one, say whose it is and whom it was seen in, in the same sentence.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you agree or disagree with a claim, sort it: hypothesis, finding or belief. Then ask the question that kind needs. For a hypothesis, what result would count against it. For a finding, who was studied and what was seen. For a belief, what it rests on.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Watch for a belief dressed as a finding: “in fact”, “studies show”, “research proves”, with no study named.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>When a resident’s protocol says “this study will prove that…”, have her rewrite it as a hypothesis: “we will test whether…”.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When a district health officer asks what is known, separate your sentences the way Kent did. Say what was counted, what the evidence makes likely, and what is a guess.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Sorting a statement tells you what it is doing and what to ask next. It does not tell you whether it is true.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>It is tempting to read the three as steps on one ladder of sureness. A hypothesis is a guess, a belief is firmer, and a finding is proven. That reading is wrong.</p>\n<p>They differ in what the statement is doing, not in how sure anyone is. A hypothesis can rest on strong earlier evidence and still be a hypothesis, because it is offered to be tested. A finding is limited to its study, however large. And a belief can be held very strongly on almost no evidence. Brown and colleagues found the breakfast claim “only presumed true”, although health websites stated it as fact. How sure to be is a separate question, and Kent’s sorting is a first step towards it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: in one sentence each, what are a hypothesis, a finding and a belief? Then name Kent’s three kinds of statement. Before you check, say how sure you are.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>A hypothesis is a proposed explanation, stated so that a study can be designed to support or refute it. A finding is what a particular study observed, in its own people and setting, with its uncertainty. A belief is what a person holds to be true, held with some strength, on whatever grounds they have.</p>\n<p>Kent’s three kinds. First, a statement of something known, as close to indisputable fact as one can come. Second, a judgement on evidence, which the evidence makes likely but cannot make certain. Third, a judgement made almost without evidence.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Sort each statement as a hypothesis, a finding or a belief. Then write the one question you would ask of it next. All four are made up.</p>\n<ol type=\"1\">\n<li>A newspaper health column: “Studies prove that children who skip breakfast develop obesity.”</li>\n<li>A thesis protocol: “We hypothesise that a school breakfast programme lowers the share of children with overweight over two years, compared with schools without one.”</li>\n<li>A results section: “Of 412 students surveyed, 127 said they skipped breakfast on most days.”</li>\n<li>A district health officer at a review meeting: “Breakfast skipping is surely behind the rise in obesity in our district.”</li>\n</ol>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>A belief, dressed as a finding. “Studies prove” names no study, and no study can prove. Ask: which studies, in which children, and did they show that skipping caused the weight, or only that the two go together?</li>\n<li>A hypothesis. It is offered to be tested, and it names what to compare. Ask: what result would count against it? For example, no difference in the share with overweight between the two groups of schools.</li>\n<li>A finding: a count from one survey, in its own students. In Kent’s terms it is close to his first kind. Ask: who were the 412, and how were they chosen?</li>\n<li>A belief. “Surely” carries the strength; nothing in the sentence carries grounds. Ask: what is it resting on? Then ask what else has changed in the district at the same time.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>For a first-year resident, ten minutes with a whiteboard. Her draft protocol says:</p>\n<blockquote>\n<p>This study will prove that skipping breakfast causes obesity in medical students.</p>\n</blockquote>\n<p>Tell her what kind of statement she has written, and help her rewrite it.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw three columns: hypothesis, finding, belief. Ask her which column her sentence belongs in.</p>\n<p>It is written as a finding, before there are any data. That makes it a belief: it states the answer and gives no grounds. “Prove” makes it worse, because no study proves anything. A study supports or counts against.</p>\n<p>Rewrite it with her as a hypothesis, something to test:</p>\n<blockquote>\n<p>We will test whether students who skip breakfast on most days have a higher share with overweight than students who eat it.</p>\n</blockquote>\n<p>Then ask her for the result that would count against it. Write that under the hypothesis.</p>\n<p>Last, tell her what her sentence may become if the study goes well: a finding, about her students, with its uncertainty. Whether it can ever show cause depends on the design. The book comes to that, and she does not need it yet.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>In Kent’s airfield passage, the officer says the field is “almost certainly” military. Why does he not say “it is a military airfield”? And which of your own sentences, in your last lecture or journal club, should have carried a word like his?</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Because the evidence is circumstantial. The aircraft are military and the buildings look like other bases, which makes the case, in Kent’s words, “say, 90 percent of the way”. It “cannot justify a flat assertion”. The qualifier tells the listener the statement is a judgement, not a count.</p>\n<p>For your own sentences, look for any claim that reached beyond what was counted. A typical one says what a treatment does, built from studies that only watched people. Each of those was a judgement on evidence. Spoken flat, it sounded like a fact.</p>"
+  }
+ ]
+}

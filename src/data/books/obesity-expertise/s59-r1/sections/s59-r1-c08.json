@@ -1,0 +1,155 @@
+{
+ "format": 1,
+ "id": "s59-r1-c08",
+ "label": "8",
+ "title": "Certainty of the evidence is not the strength of a recommendation, and certainty has words",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-10.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In the <dfn data-g=\"315\">GRADE</dfn> (Grading of Recommendations Assessment, Development and Evaluation) approach of the previous section, the <dfn data-g=\"93\">certainty of the evidence</dfn> answers one question about one outcome. How sure can we be that the estimate of the effect is close to the true effect?</p>\n<p>A <dfn data-g=\"601\">recommendation</dfn> answers a different question: what should be done? GRADE offers two grades, strong and weak; some panels write “conditional” or “discretionary” for weak.</p>\n<p>Certainty is one input to strength, and only one. Guyatt and colleagues (2008) list three more: the balance between desirable and undesirable effects, the <dfn data-g=\"771\">values and preferences</dfn> of the people affected, and whether the action is a wise use of resources. High certainty does not by itself make a recommendation strong, and a strong recommendation can rest on low or even very low certainty.</p>\n<p>Each <dfn data-g=\"410\">level</dfn> of certainty also has its words. At high certainty the statement carries no hedge: the treatment reduces, or increases, the outcome. At moderate certainty it adds “probably” or “likely”. At low certainty it uses “may”, or opens with “The evidence suggests”. At very low certainty it reads “The evidence is very uncertain about the effect of X on outcome”, with the treatment in place of X.</p>\n<p>The size has its own words: “large”; none for a moderate effect; “slightly” for a small effect that matters; and “little to no difference” for one too small to matter.</p>",
+   "refs": [
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Two different questions get asked about any treatment or programme. How sure are we about what it does? And should we do it?</p>\n<p>A strong recommendation says: do this, nearly everyone would choose it. A weak one says: most people would choose it, but many would not, so decide with the person.</p>\n<p>The two answers can point different ways.</p>\n<p>Keep the word when you repeat a <dfn data-g=\"274\">finding</dfn>, and your listener hears how sure the evidence is.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>A slide in a postgraduate teaching <dfn data-g=\"667\">session</dfn> reads: “Strong recommendation means high-quality evidence. <dfn data-g=\"782\">Weak recommendation</dfn> means low-quality evidence.” It looks tidy. Test it against four cases that GRADE’s own authors use to teach.</p>\n<p>Draw a grid of two rows and two columns. Across the top, write the certainty of the evidence: high, or low. Down the side, write the strength of the recommendation: strong, or weak. Then place each case in its cell.</p>\n<p>Case 1. A short course of steroid tablets in a flare of asthma. Guyatt and colleagues use it as the plain case: large, rigorous trials show consistent benefits, with few side effects and little inconvenience or cost. Clinicians can offer it to almost all their patients “with little or no hesitation”. That is evidence GRADE would rate high: high certainty, strong recommendation. Here the slide works.</p>\n<p>Case 2. Warfarin, a medicine that slows blood clotting, after a first clot in a deep vein with no obvious cause. Trials of high quality show that taking it long term lowers the chance of another clot. It also raises the chance of bleeding, and it is a nuisance to take. Patients weigh these differently. So GRADE’s Handbook says the panel should give a weak recommendation, despite the high-quality evidence. High certainty, weak recommendation.</p>\n<p>Case 3. Antibiotics given fast in severe infection, or sepsis. No randomised trial has compared giving them fast with giving them slowly. The evidence comes from observational studies and is rated low. Yet the Handbook says a panel would very likely recommend fast antibiotics strongly, because the benefits clearly outweigh the downsides in most patients. Low certainty, strong recommendation.</p>\n<p>Case 4. Fever in a child with chickenpox: aspirin or paracetamol? Observational studies link aspirin to an illness called Reye’s syndrome, and that evidence is of low quality. But the two medicines relieve fever and pain about equally well. Guyatt and colleagues say the low-quality evidence does not stop a strong recommendation for paracetamol. Low certainty, strong recommendation.</p>\n<p>Now fill in the grid.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th></th>\n<th>high certainty</th>\n<th>low certainty</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>strong recommendation</td>\n<td>case 1, steroids in asthma</td>\n<td>case 3, fast antibiotics; case 4, paracetamol</td>\n</tr>\n<tr>\n<td>weak recommendation</td>\n<td>case 2, long-term warfarin</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<p>Two of the three filled cells break the slide. Ask what moved cases 2, 3 and 4. It was not the evidence. Case 2 moved on harm, and on how differently patients value bleeding against a second clot. Cases 3 and 4 moved on a clear balance: much to gain, little or nothing to lose.</p>\n<p>Guyatt and colleagues list four things that set the <dfn data-g=\"706\">strength of a recommendation</dfn>. The certainty of the evidence is one. The others are the balance of benefits against harms, the values and preferences of the people affected, and whether the action is a wise use of resources. So rewrite the slide: “Strength depends on certainty, on the balance of benefit and harm, on what people value, and on cost. Certainty is one input of four.”</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These are teaching cases, chosen by GRADE’s authors in 2008 and 2013 to make the point. They may not be current clinical advice, so <dfn data-g=\"97\">check</dfn> a current <dfn data-g=\"321\">guideline</dfn> before you act on any of them.</p>\n<p>The grid has only two levels of certainty. Real evidence also sits at moderate and very low, and a panel’s reasons for a strength are a judgement it should publish. Two panels can grade the same evidence differently.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now use the words. Sievert and colleagues (2019) pooled the randomised trials that compared eating breakfast with skipping it in adults. Their review is free to read at https://pmc.ncbi.nlm.nih.gov/articles/PMC6352874/. Search its Results for “favouring participants who skipped breakfast”. The difference in weight favoured those who skipped breakfast, by a mean of 0.44 kg. The trials followed people for seven weeks on average. Then find the heading “Quality of evidence”. The authors judge its quality low, for <dfn data-g=\"639\">risk of bias</dfn> and short follow-up. They did not use GRADE, so treat “low” as their own judgement, made on GRADE-like grounds. The word for it is still “may”.</p>\n<p>A newspaper health column could turn this into: “Breakfast makes you gain weight, a major review proves.” Hold that sentence against the review. It has dropped the hedge, so it reads as high certainty when the review’s authors judged the evidence low. And “proves” is a word no level of certainty earns.</p>\n<p>Write the sentence yourself, in three steps.</p>\n<ol type=\"1\">\n<li>Take the certainty word. The evidence is low, so the word is “may”.</li>\n<li>Decide the size. Is a 0.44 kg difference over a few weeks a small effect that matters, or too small to matter? That is your judgement, and Cochrane’s statements differ for the two. If you judge it small but important, write “eating breakfast may increase weight slightly”. If you judge it too small to matter, write “eating breakfast may make little to no difference to weight”. Either way, “may” carries the low certainty.</li>\n<li>Say who and how long: adults in trials in high-income countries, over weeks, not years.</li>\n</ol>\n<p>Here is one version: “In short trials of adults in high-income countries, eating breakfast may increase weight slightly compared with skipping it.”</p>\n<p>Notice what the sentence does not say. A district health officer who reads it may ask whether the district’s nutrition talks should stop telling people to eat breakfast to control weight. That is a recommendation question. The review answers how sure we can be. The officer still needs the other three inputs: what else the advice does, what people value, and what it costs to change the message.</p>",
+   "numberRefs": [
+    167
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The words carry the level only to a reader who knows the convention. They are Cochrane’s suggested statements for a review’s conclusions. Other bodies use other words, and a reader who has never met the convention may read “may” as “might or might not”, with no sense of how sure. So in writing for readers outside the field, name the level as well: “low-certainty evidence suggests”.</p>\n<p>The breakfast trials were run in high-income countries. None was in India, so the sentence is not a statement about Indian adults.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“A strong recommendation means strong evidence” is the error.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Read every recommendation for two labels: its strength, and the certainty of the evidence behind it. If a guideline prints only one, ask for the other.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A weak, or conditional, recommendation does not mean weak evidence, and it does not mean “optional”. In clinic it means you make the choice with the patient, and it takes more time.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Drop the “may” from a low-certainty finding, on a slide or to a reporter, and you have raised it to high without saying so.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A <dfn data-g=\"725\">systematic review</dfn> tells you how sure; it does not tell you what to do. You still need the harms, the costs and what the people affected value.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When you adapt a guideline written for another country, do not copy its strength. The certainty may carry over if the trials fit your people. The strength also rests on cost, on what can be done, and on what people value. These can be different in an Indian district.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>In anything written for readers outside the field, name the level beside the word: “low-certainty evidence suggests that …”.</p>",
+     "tag": "move",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>It is tempting to read the certainty word as a size: “may” for a small effect, no hedge for a big one. That reading is wrong. In Cochrane’s suggested statements the certainty word and the size word are separate parts of the sentence. A large effect known with moderate certainty takes “probably” and “large”. A slight effect known with high certainty takes no hedge and “slightly”. So read the sentence twice: once for how sure, once for how big.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Randomised trials have compared eating breakfast with skipping it in adults in high-income countries, over seven weeks on average. The difference in weight favoured skipping breakfast, by a mean of 0.44 kg (Sievert and colleagues, 2019). The authors judged the quality of this evidence low, so eating breakfast may increase weight slightly compared with skipping it.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what word or phrase does each of the four levels of certainty put into a conclusion, in Cochrane’s suggested statements? And what four things set the strength of a recommendation, in Guyatt and colleagues’ list?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>High certainty: no hedge, a plain <dfn data-g=\"775\">verb</dfn> such as “reduces”. Moderate: “probably” or “likely”. Low: “may”, or “The evidence suggests”. Very low: “The evidence is very uncertain about the effect of X on outcome”.</p>\n<p>Four things set the strength of a recommendation. The first is the certainty of the evidence. The second is the balance of good effects against bad ones. The third is what the people affected value. The fourth is whether the action is a wise use of money and staff.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Each sentence below is the conclusion of a review, written to Cochrane’s convention. The treatments are left unnamed. Say what level of certainty each sentence signals, and what it says about the size of the effect.</p>\n<p>(a) Treatment A probably reduces hospital admissions.</p>\n<p>(b) Treatment B reduces pain slightly.</p>\n<p>(c) The evidence is very uncertain about the effect of treatment C on falls.</p>\n<p>(d) Treatment D may result in little to no difference in weight.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>(a) Moderate certainty: the word is “probably”. The size is not marked as large or slight, so it is a moderate effect in Cochrane’s terms.</p>\n<p>(b) High certainty: there is no hedge. The size is small but important: “slightly”.</p>\n<p>(c) Very low certainty. At this level the sentence makes no <dfn data-g=\"107\">claim</dfn> about size at all.</p>\n<p>(d) Low certainty: the word is “may”. The size is trivial or none: “little to no difference”. Note that (b) is more certain than (a), although its effect is smaller.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A resident ends a journal club on a systematic review with this slide. The review rated the evidence for its main outcome as low certainty.</p>\n<blockquote>\n<p>The review shows that the programme reduces readmissions. Every district should adopt it: this should be a strong recommendation.</p>\n</blockquote>\n<p>Find the faults, and rewrite the first sentence.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>There are three faults.</p>\n<p>First, the verb. “Reduces”, with no hedge, is the wording for high certainty. The review rated the evidence low, so the sentence should say “may reduce”.</p>\n<p>Second, the jump from review to recommendation. A systematic review rates certainty. It does not recommend; Cochrane asks review authors not to.</p>\n<p>Third, the strength. Low certainty alone does not decide that a recommendation is weak, and the slide gives no other reason why it should be strong. A strong recommendation on low certainty needs a clear balance, with much to gain and little to lose. The slide says nothing about harms, about what people value, or about the cost to a district.</p>\n<p>Rewritten: “Low-certainty evidence suggests that the programme may reduce readmissions.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>For a health secretary, one page. The secretary has read that a guideline makes a strong recommendation based on low-certainty evidence, and asks whether that is a mistake. Answer first.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer: not necessarily. It can be the right call, and the guideline should say why.</p>\n<p>Certainty and strength answer different questions. Certainty says how sure we are of what the action does. Strength says how confident the panel is that the good outweighs the bad, for the people it is meant for. Strength also depends on harms, on what people value and on cost.</p>\n<p>A strong recommendation on low certainty is reasonable when the balance is clear even with the uncertainty. GRADE’s own example is giving antibiotics fast in severe infection. No trial has tested it, yet the benefit so clearly outweighs the downside that panels would very likely recommend it strongly.</p>\n<p>So ask the guideline two things. Which input made the recommendation strong? And does that input hold in our state: the same harms, the same costs, the same capacity to deliver?</p>"
+  }
+ ]
+}

@@ -1,0 +1,170 @@
+{
+ "format": 1,
+ "id": "s59-r1-c21",
+ "label": "21",
+ "title": "The dated belief register: what you believe, how sure you are, and when you said it",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"187\">dated belief register</dfn> is a written list of claims one person holds, one numbered line for each, kept so that each <dfn data-g=\"107\">claim</dfn> can be checked later against what happened. Each line records six things.</p>\n<ol type=\"1\">\n<li>Its number, and the <dfn data-g=\"186\">date</dfn> it was written.</li>\n<li>The claim, worded so that someone else could later judge it true or false: about what, in whom, measured how, and by when.</li>\n<li>The person’s <dfn data-g=\"141\">confidence</dfn>, as a word from one named scale with the number beside it.</li>\n<li>The grounds: the kind of evidence the confidence rests on, and, where it has been rated, its certainty; where it has not, how directly it bears on the claim.</li>\n<li>What would change the person’s mind: a result or event named in advance.</li>\n<li>A date to review the line.</li>\n</ol>\n<p>A line is never edited once written. The register is only added to. A changed <dfn data-g=\"57\">belief</dfn> is a new dated line that names the line it revises, and the old line stays as it was. When a claim can be judged, its outcome is also added as a new dated line.</p>",
+   "refs": [
+    180,
+    231,
+    358,
+    359,
+    355
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A belief you never wrote down cannot be checked.</p>\n<p>So keep a register. On each line write the date and the claim. Write how sure you are, as a word and a number. Write why, and what would make you change your mind. Write when you will look at it again.</p>\n<p>Then never change a line. If your view changes, write a new line with a new date, and say which old line it replaces.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c21-number-moves-word-stays.png",
+   "alt": "Two bars: line 1, 2026-10-12, at 60; line 3, 2026-10-20, at 70. A shaded band from 55 to 80 marks ICD 203's \"likely\"; both bars end inside it.",
+   "w": 1228,
+   "h": 656,
+   "caption": "The made-up resident’s confidence in her line 1 claim, then in line 3, which revises it. The number moved from 60 to 70 per cent; both sit inside ICD 203’s “likely” band, 55 to 80 per cent, so the word stayed “likely”. Only the number shows how far the new count moved her. Both numbers are her judgements."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the way most of us keep beliefs. Here is a line from a resident’s journal-club notebook. It is made up for this section.</p>\n<blockquote>\n<p>Reversals - probably rare. Most of what we teach is solid.</p>\n</blockquote>\n<p>Try to <dfn data-g=\"97\">check</dfn> it in ten years. You cannot. It has no date, so you cannot tell what she had read when she wrote it. “Rare” names no count and no time. “Probably” is a word with no scale, and the section on how one word is read as different numbers showed that readers turn such words into very different numbers. It gives no grounds, so you cannot tell whether she had looked at a count. Nothing in it could turn out false.</p>\n<p>Now write it as a register line. Take the parts in order.</p>\n<p><strong>The claim.</strong> Make it something a stranger could judge. “Reversals are rare” cannot be judged. Pick something countable, with a date. Here is one: “At least one practice in my current postgraduate (PG) lecture slides will be reversed by a published randomised trial by 10 October 2036.” Use Prasad and colleagues’ meaning of a reversal, so the word is fixed: an established practice found to be no better than a lesser treatment.</p>\n<p><strong>The grounds.</strong> The section on base rates gave you a count. In one journal’s decade, 2001-2010, 146 of 363 tests of an established practice reversed it.</p>\n<div class=\"working\">\n<p>146 divided by 363 is about 0.402</p>\n</div>\n<p>That is about 40 per cent of the tests. Write its limits beside it. It is one journal, and most of its practices were drugs and procedures. And it is a rate per test, not a rate per practice that you teach. So it is the nearest <dfn data-g=\"604\">reference class</dfn>, not a close one.</p>\n<p><strong>The word and the number.</strong> Pick one scale for the whole register and name it. This resident uses the seven bands of Intelligence Community Directive 203 (<dfn data-g=\"342\">ICD 203</dfn>), the US intelligence standard of the section on <dfn data-g=\"75\">calibrated</dfn> scales. Its bands meet but do not overlap; avoid a number on a band’s edge. On that scale “likely” runs from 55 to 80 per cent. She judges 60 per cent, so she writes “likely”. That is a judgement, not a calculation. Many practices in her slides could be reversed, which pushes her above 40. But each needs a trial published within ten years, which pulls her down. She settles on 60. She writes the claim on the side she leans to, so the number is 50 per cent or more, because that is how the section on <dfn data-g=\"77\">calibration</dfn> counts claims.</p>\n<p><strong>What would change her mind.</strong> Name it now, before anything happens. Here it is a <dfn data-g=\"274\">finding</dfn> that every practice in her slides has already been tested in a randomised trial and held up.</p>\n<p><strong>The <dfn data-g=\"637\">review date</dfn>.</strong> One year on, to look again, and the claim’s own date, 10 October 2036, to close it.</p>\n<p>Here is the line, with a second one she wrote the same week.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>no.</td>\n<td>date</td>\n<td>claim</td>\n<td>confidence (ICD 203)</td>\n<td>grounds and their certainty</td>\n<td>what would change my mind</td>\n<td>review</td>\n</tr>\n<tr>\n<td>1</td>\n<td>2026-10-12</td>\n<td>At least one practice in my current PG lecture slides will be reversed by a published randomised trial by 2036-10-10</td>\n<td>“likely” (60%)</td>\n<td>One journal’s decade: 146 of 363 tests of an established practice reversed it. A measured rate, but for a different class of practice</td>\n<td>Finding that every practice in my slides has been tested and held up</td>\n<td>2027-10-12; closes 2036-10-10</td>\n</tr>\n<tr>\n<td>2</td>\n<td>2026-10-14</td>\n<td>If I write “unlikely” with no number in a patient leaflet, more than half of the next 20 patients I ask will read it as a larger chance than the 25% I mean</td>\n<td>“likely” (65%)</td>\n<td>One UK study: mothers read “unlikely” as 27%, doctors as 16%. Indirect for my patients, none studied in India</td>\n<td>Patients reading “unlikely” as doctors do</td>\n<td>2027-01-31 (review and close)</td>\n</tr>\n</tbody>\n</table>\n<p>Read across line 2. The claim names who, what and by when. Its grounds are one study in another country, so they are weak, and the line says so.</p>",
+   "numberRefs": [
+    258,
+    230,
+    186
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Both lines are made up, and so are the resident’s numbers, 60 and 65 per cent. They are judgements, not measurements. The counts in their grounds are real: Prasad and colleagues’ for line 1, and Shaw and Dear’s, as Hashim reports them, for line 2.</p>\n<p>Line 1 borrows a rate from one American journal’s trials of mostly drugs and procedures. It does not tell you how often a lecture on nutrition will be overturned.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>A week later the resident reads Herrera-Perez and colleagues. Across more than 3,000 randomised trials in three journals, they found 396 reversals. Their count is of all trials, not only tests of an established practice, so it is no rate to set beside her 40 per cent. What it adds is breadth. Reversals turn up across three journals, so it is more likely that some practice in her slides is among them. She moves up a little.</p>\n<p>The tempting move is to cross out “60%” and write “70%”. Do not. Then the register would say she believed 70 per cent on 12 October, which is false. Instead she adds a line.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>no.</td>\n<td>date</td>\n<td>claim</td>\n<td>confidence (ICD 203)</td>\n<td>grounds and their certainty</td>\n<td>what would change my mind</td>\n<td>review</td>\n</tr>\n<tr>\n<td>3</td>\n<td>2026-10-20</td>\n<td>Revises line 1. Same claim</td>\n<td>“likely” (70%)</td>\n<td>As line 1, and: 396 reversals among more than 3,000 trials in three journals. Reversals are not one journal’s quirk; still mostly drugs and procedures</td>\n<td>As line 1</td>\n<td>2027-10-12; closes 2036-10-10</td>\n</tr>\n</tbody>\n</table>\n<p>Notice what the number did that the word could not. The word stayed “likely”. The number moved from 60 to 70, and it shows by how much the new evidence moved her.</p>\n<p>Now suppose it is 31 January 2027, and line 2 can be judged. She adds the outcome as line 4, with its date: true or false, and how many of the 20 patients read “unlikely” as more than 25 per cent. Line 2 stays as written. The pair of lines is what the <dfn data-g=\"728\">tally</dfn> of stated confidence against outcome counts.</p>",
+   "numberRefs": [
+    259
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The move from 60 to 70 per cent is her judgement of how much a second count should move her. The register records the judgement. It does not show that the judgement was right.</p>\n<p>A line about an event, like line 2, closes on its date. A line about an effect, such as “this diet lowers weight”, may never close cleanly. Judge it at its review date against the best review then available, and say in the outcome line which review you <dfn data-g=\"765\">used</dfn>.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Write the date and the number on every line, before you know the outcome.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never edit a line. If your view changes, add a new dated line that names the line it revises.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Word each claim so that a stranger could judge it: about what, in whom, measured how, by when. If no result could make the line false, it is not yet a claim.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Use one named scale for the whole register, and write the number beside the word.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write what would change your mind before anything happens. Written later, it bends to fit what did happen.</p>",
+     "tag": "consequence",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before a committee or a departmental meeting discusses a question, write your own line first.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Five lines cannot tell you whether you are well calibrated.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A register shows what you believed and when. It does not show that you were right, or that your grounds were sound.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When you ask residents to keep a register, review the closed lines together without blame.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“A register is a list of my opinions, so I can tidy it as my opinions change.” That reading turns the register into a summary of what you think now. A summary is useful, but it cannot be checked.</p>\n<p>The register’s whole value is that its old lines are untouched. They are the only record of what you believed before you knew the outcome. Tidy a line, and you have destroyed the one thing the tally of stated confidence against outcome (the section on calibration) needs.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>On [date] I recorded that [claim, with who, what and by when] was “[word]” ([number] per cent, on the [named] scale). My grounds were [kind of evidence and its certainty]. I said I would change my mind if [result or event], and I will review it on [date].</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, list what goes on one line of a dated belief register, in order. Then state the one rule about changing a line, and why it exists.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<ol type=\"1\">\n<li>The number and the date.</li>\n<li>The claim, worded so that someone else could judge it: what, in whom, measured how, by when.</li>\n<li>The confidence: a word from one named scale, with its number.</li>\n<li>The grounds: the kind of evidence, and, where it has been rated, its certainty; where it has not, how directly it bears on the claim.</li>\n<li>What would change your mind, named in advance.</li>\n<li>A review date.</li>\n</ol>\n<p>The rule: a line is never edited. A changed view, or an outcome, is a new dated line that names the line it refers to. It exists because the tally of stated confidence against outcome needs the <dfn data-g=\"410\">level</dfn> you held before you knew the outcome. An edited line no longer shows that.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague shows you the first line of her register. It is made up for this exercise.</p>\n<blockquote>\n<p>2026-10-15. Intermittent fasting probably works. Very confident. Review: sometime next year.</p>\n</blockquote>\n<p>Name every fault, and rewrite the line in register form. Leave a marked gap for anything you would have to look up.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Five faults.</p>\n<ul>\n<li>“Works” for what, in whom, over what time? Nobody could judge the claim true or false.</li>\n<li>“Probably” and “very confident” are two words from no scale, and they may not agree. There is no number.</li>\n<li>No grounds: no kind of evidence and no certainty.</li>\n<li>Nothing says what would change her mind.</li>\n<li>“Sometime next year” is not a date.</li>\n</ul>\n<p>A rewrite, with gaps marked:</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>no.</td>\n<td>date</td>\n<td>claim</td>\n<td>confidence (ICD 203)</td>\n<td>grounds and their certainty</td>\n<td>what would change my mind</td>\n<td>review</td>\n</tr>\n<tr>\n<td>1</td>\n<td>2026-10-15</td>\n<td>In adults with obesity, [a named fasting schedule] produces more weight loss at 12 months than [the comparison]</td>\n<td>[word] ([number]%)</td>\n<td>[kind of evidence, and its certainty, from a review she has read]</td>\n<td>[a named result, such as a large trial at 12 months showing no difference]</td>\n<td>[a date]</td>\n</tr>\n</tbody>\n</table>\n<p>The gaps are hers to fill from the evidence. Do not fill the grounds from memory.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>For a first-year resident, ten minutes with a whiteboard. She says: “Why write my beliefs down? I know what I think.” Explain what a register does that her memory cannot.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw two columns: “what I thought then” and “what happened”.</p>\n<p>Start with her own example. Ask her how sure she was, on her first day, of something she has since learned. Whatever number she gives now is a number she gives knowing the answer. There is no way to show it was the number she held then. That is the gap the register closes.</p>\n<p>Then show one line, with its date and number. Show a second line that revises it, and point out that the first line stays. Explain the goal. After a few years she can count how often her “70 per cent” lines came true. That count is the only way to learn whether her 70 means 70. Memory cannot give her that count, because it holds what she thinks now, not what she wrote then.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>This book’s build: a written record of five current beliefs about your own field, with confidence levels, dated.</p>\n<ol type=\"1\">\n<li>Choose five beliefs you would state to a resident, a district health officer or a reporter. Include at least two that will close on a date you name.</li>\n<li>Word each as a claim someone else could judge: what, in whom, measured how, by when.</li>\n<li>Choose one scale and name it at the top of the page. For each line, write the word and the number.</li>\n<li>For each, write the grounds: the kind of evidence and its certainty, from a source you have opened. Say so where the evidence is from people unlike yours.</li>\n<li>For each, write what would change your mind, and a review date.</li>\n<li>Date the page. Then do not edit it. Add lines.</li>\n</ol>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>Check your page against this list.</p>\n<ul>\n<li>Every line has a number and a date, and the page names one scale.</li>\n<li>Every claim could be judged true or false by a stranger. Read each aloud and ask: what result would make this false? If you cannot say, rewrite it.</li>\n<li>Every confidence has a word and a number of 50 per cent or more, and the number falls in that word’s band on your scale.</li>\n<li>Every line’s grounds name a kind of evidence and its certainty. None says only “I have seen it” or “everyone knows”.</li>\n<li>At least one line has grounds you judge weak, and its number says so. A register of five certainties is a register that has not looked at its evidence.</li>\n<li>At least two lines close on a date.</li>\n<li>Nothing has been crossed out. Any change is a new dated line.</li>\n</ul>\n<p>Your register meets the standard when all seven hold.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 5,
+   "prompt": "<p>You are asked to start registers for the six residents in your department. Design how they will be kept and reviewed for two years, so that the lines can later be counted. Say where the lines live, who can change what, and when they are reviewed.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A workable design:</p>\n<ul>\n<li><strong>Where.</strong> One file or bound notebook per resident, with numbered lines. If it is a shared spreadsheet, keep its version history switched on, so any edit to an old line can be seen.</li>\n<li><strong>Who changes what.</strong> Only the owner adds lines. Nobody, the owner included, edits an old line. A revision or an outcome is a new line that names the old one.</li>\n<li><strong>One scale.</strong> The department picks one scale, names it at the top of every register, and keeps it for the two years. Changing scales midway makes the old lines hard to count.</li>\n<li><strong>Reviews.</strong> Twice a year, each resident closes the lines whose date has passed and adds the outcomes. At the review meeting, the group reads closed lines without blame.</li>\n<li><strong>Before discussions.</strong> At journal club, each resident writes a line before the discussion, as the Intergovernmental Panel on Climate Change (IPCC) suggests its authors do.</li>\n</ul>\n<p>Say what the design cannot do. Six residents over two years will close too few lines to tell one person’s 60 from their 70. That count needs years of lines and a scoring method beyond this book. The design makes the count possible later.</p>"
+  }
+ ]
+}

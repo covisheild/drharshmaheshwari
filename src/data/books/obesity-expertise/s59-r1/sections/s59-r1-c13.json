@@ -1,0 +1,167 @@
+{
+ "format": 1,
+ "id": "s59-r1-c13",
+ "label": "13",
+ "title": "Stating how confident you are, and saying why",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"143\">confidence statement</dfn> says how sure you are of one <dfn data-g=\"107\">claim</dfn>, and why, in a form that someone else can <dfn data-g=\"97\">check</dfn>. It has four parts.</p>\n<table>\n\n<tbody>\n<tr>\n<td>part</td>\n<td>what it says</td>\n</tr>\n<tr>\n<td>the claim</td>\n<td>one claim, worded so that it could later be found true or false: in whom, what, compared with what, over what time</td>\n</tr>\n<tr>\n<td>the confidence</td>\n<td>your degree of belief in the claim, as a word from a named scale with its number</td>\n</tr>\n<tr>\n<td>the grounds</td>\n<td>the kind of evidence the belief rests on and, where the evidence has been rated, its certainty</td>\n</tr>\n<tr>\n<td>what would change it</td>\n<td>a finding that could turn up and would move your number, and which way it would move it</td>\n</tr>\n</tbody>\n</table>\n<p>The <dfn data-g=\"141\">confidence</dfn> belongs to the person who states it. Two people with the same grounds can state different numbers. The grounds are what let a reader see why, and argue with the step from grounds to number.</p>\n<p>The <dfn data-g=\"93\">certainty of the evidence</dfn>, rated with <dfn data-g=\"315\">GRADE</dfn> (Grading of Recommendations Assessment, Development and Evaluation), belongs among them. It is not the confidence. GRADE gives no number for its levels, so the step from a <dfn data-g=\"410\">level</dfn> to a <dfn data-g=\"193\">degree of belief</dfn> is the writer’s judgement.</p>\n<p>The Intergovernmental Panel on Climate Change (IPCC) and Intelligence Community Directive 203 (<dfn data-g=\"342\">ICD 203</dfn>) both use the word confidence for the strength of the grounds. This book calls that the grounds, and keeps confidence for the degree of belief. The IPCC asks for a “<dfn data-g=\"748\">traceable account</dfn>”: a description of the evidence and agreement behind each <dfn data-g=\"274\">finding</dfn>.</p>\n<p>A claim about an effect says what something does on average in a group of people: “probiotics given with antibiotics lower the share of young children who get diarrhoea”. A claim about a single event says what will happen once: “this child will not get diarrhoea”. Even an effect you are very confident of leaves a single event uncertain, because people in a group do not all respond alike.</p>",
+   "refs": [
+    180,
+    231,
+    232,
+    233,
+    234,
+    220,
+    134,
+    142,
+    235,
+    139,
+    236,
+    237,
+    202,
+    238,
+    239
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The number is yours. Someone else could look at the same evidence and pick another. That is why you give the reasons: they let the listener see how you got there.</p>\n<p>The listener decides the form. A resident wants the reasons in full. A journalist wants one clear sentence. A health secretary wants the answer first.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c13-one-child.png",
+   "alt": "Two bars, with children per 100 up the side as far as 100: 22.3 without probiotics and 8.9 with probiotics. Both bars are short; most of the axis above them is children who stayed free of diarrhoea.",
+   "w": 964,
+   "h": 656,
+   "caption": "Children under 5 on antibiotics in the trials behind the Cochrane example row (numbers from the Cochrane Handbook’s example table): 22.3 in 100 got diarrhoea without probiotics and 8.9 in 100 with them, 13.4 fewer. You can be about 75 per cent sure of the effect on the group (the worked choice below) and still not promise one child anything: most stay free either way (77.7 and 91.1 in 100), and some get it even with the probiotic."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is a sentence from a journal club. The speaker is made up; the evidence behind it is real.</p>\n<blockquote>\n<p>Probiotics probably prevent diarrhoea in kids on antibiotics.</p>\n</blockquote>\n<p>Ask four questions of it. Which claim, exactly? Which children, compared with what? How sure, as a number, and on what scale? On what grounds? What would change the speaker’s mind? The sentence answers none of them.</p>\n<p>Worse, “probably” can be read two ways. It is Cochrane’s word for moderate certainty of the evidence, from the section on certainty words. It is also an everyday word for a degree of belief. And ICD 203 allows “probably” for its 55 to 80 per cent band. The listener cannot tell which the speaker meant.</p>\n<p>Now rebuild it. Go back to Figure 14.1.b in chapter 14 of the Cochrane Handbook, at https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-14, the table you met in the section on GRADE. Take the row for children under 5.</p>\n<p>The claim. Write it so that a later study could show it false.</p>\n<blockquote>\n<p>In children under 5 who are given antibiotics, giving probiotics as well lowers the share who get diarrhoea.</p>\n</blockquote>\n<p>This claims a direction, a fall, and not a size. A claim about the size, “by about 13 in 100”, would need more confidence in the estimate than a claim about its direction.</p>\n<p>The grounds. Randomised trials, pooled in the table. Certainty moderate (GRADE), down one level for <dfn data-g=\"639\">risk of bias</dfn>. <dfn data-g=\"291\">Footnote</dfn> b says why: many children were lost to follow-up.</p>\n<p>The confidence. This is your judgement, and nothing in the table makes it for you. The whole range of the <dfn data-g=\"640\">risk ratio</dfn> lies below 1, so the trials point one way. But many children were lost, and the missing ones could change the picture. Say you settle on 75 per cent. On ICD 203 that is “likely”, 55 to 80 per cent.</p>\n<p>What would change it. A large trial in such children, with few lost, that found no difference would lower your number. Another such trial that found the same fall would raise it.</p>\n<p>Now write it, in two sentences so the certainty and the likelihood do not share one.</p>\n<blockquote>\n<p>I judge it “likely” (about 75 per cent, ICD 203 scale) that, in children under 5 given antibiotics, adding probiotics lowers the share who get diarrhoea. This rests on randomised trials rated moderate certainty (GRADE), down for children lost to follow-up; a large trial with few losses and no difference would lower my number.</p>\n</blockquote>\n<p>Every part can now be checked. A colleague who reads the same table and says 60 per cent can see exactly where you differ: in the step from the grounds to the number.</p>",
+   "numberRefs": [
+    148
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 75 per cent is a worked choice, not the right answer. GRADE gives no number for moderate certainty, and a careful reader of the same row could defend 65 or 85. The statement does not make your number correct. It makes it open to argument.</p>\n<p>The table is an example in a handbook chapter, not a full review. Its row tells you about the children in those trials, given those probiotics, followed for 10 days to 3 months. A claim about other children or other products needs grounds of its own.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Same row, a different question. On the children’s ward, a mother whose son is under 5 and has just started antibiotics asks you: “If he takes the probiotic, will he be all right?” She is made up.</p>\n<p>Your 75 per cent does not answer her. It is your degree of belief that probiotics lower the share of such children who get diarrhoea. She is asking about one event: her son.</p>\n<p>Look at the table’s middle columns. Without probiotics, 22.3 in 100 such children got diarrhoea. With them, 8.9 in 100. Work out how many stayed free of it.</p>\n<div class=\"working\">\n<p>100 minus 22.3 = 77.7<br />\n100 minus 8.9 = 91.1<br />\n22.3 minus 8.9 = 13.4</p>\n</div>\n<p>So about 78 in 100 children like her son stayed free of diarrhoea without probiotics, and about 91 in 100 with them. The difference is about 13 children in 100. Those are the table’s estimates from the trials: the risk in the control groups, and that risk with the pooled effect applied. They are the best starting point for one child. A later section takes up how a frequency in a group becomes a degree of belief about one case.</p>\n<p>Now answer her in four parts too.</p>\n<blockquote>\n<p>Most children his age on antibiotics do not get diarrhoea. With the probiotic, about 9 in 100 do; without it, about 22 in 100. The trials behind those numbers had problems, so the true numbers could be somewhat different. If he gets loose stools anyway, it does not mean the probiotic failed.</p>\n</blockquote>\n<p>The effect claim got a likelihood word. Her question got frequencies “in 100”, which she can picture. Both are honest. They answer different questions.</p>",
+   "numberRefs": [
+    148
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The frequencies come from the trials’ children. If her son differs from them in a way that matters, such as being very ill or on a different antibiotic, the numbers fit him less well. And they rest on moderate-certainty evidence, so they are estimates, not counts from her hospital.</p>\n<p>Some single events have no group to borrow from. Then the degree of belief rests on judgement alone, and the grounds should say so.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>One statement, three readers. Take the under-5 row once more, and write it for each of the three people this course keeps returning to.</p>\n<p><strong>A first-year resident</strong>, ten minutes and a whiteboard. Give all four parts, in full, and show the step from grounds to number. Draw the table’s row. Show the risk ratio’s range lying wholly below 1, and the footnote that cost one level. Say: “Moderate certainty, so I land at about 75 per cent, ‘likely’ on ICD 203. You might land at 65. Tell me why, and we can argue about the step.” Then say what would change it.</p>\n<p><strong>A journalist</strong>, three minutes, no jargon. Lead with the frequencies, then your confidence as chances, then why it is not higher.</p>\n<blockquote>\n<p>On the trials’ estimates, giving young children probiotics with their antibiotics cut diarrhoea from about 22 in 100 children to about 9 in 100. I’d put the chance that the benefit is real at about 3 in 4. Not higher, because many children dropped out of the trials.</p>\n</blockquote>\n<p>That last sentence sets how sure she should be. It tells her the evidence is decent, not settled, and still gives her something to print.</p>\n<p><strong>A health secretary</strong>, one page, answer first, no methods. She is asking a different question: should the state do it? The section on recommendations showed that certainty of the evidence is one input of four.</p>\n<p>The same table has a row for side effects: 1.8 in 100 children without probiotics and 2.3 in 100 with them, rated low certainty, with Cochrane’s <dfn data-g=\"127\">comment</dfn> that there may be little or no difference.</p>\n<blockquote>\n<p>Answer: it is likely (about 75 per cent, ICD 203 scale) that probiotics given with antibiotics reduce diarrhoea in children under 5: about 13 fewer cases in every 100 children treated. The evidence is moderate certainty (GRADE). Side effects: there may be little or no difference (low certainty). The cost of the product is not in this evidence and is needed before deciding. A large trial with few children lost would settle the benefit either way.</p>\n</blockquote>\n<p>The order changed three times. The four parts did not. Drop the grounds for the journalist, and she cannot tell your 3 in 4 from a guess. Drop the number for the secretary, and she cannot weigh the benefit against a cost.</p>",
+   "numberRefs": [
+    148
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The three forms are trimmed to their readers, and trimming has a floor. If a journalist’s space allows only one sentence, keep the number and one reason, and drop the rest. If a secretary’s page cannot hold the grounds, give them in an attached note. A statement that has lost its grounds has become a bare assertion.</p>\n<p>The secretary’s page reports evidence. It is not a <dfn data-g=\"601\">recommendation</dfn>. A recommendation also needs the cost, what can be delivered in her districts, and what families value.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>A number with no grounds cannot be argued with, and a word with no number cannot be checked.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Keep the certainty of the evidence and your confidence in separate sentences, each named. Write “moderate certainty (GRADE)” for the grounds and “likely (about 75 per cent, ICD 203)” for the confidence.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“Moderate certainty means about 60 per cent” is the error. GRADE puts no number on its levels. Choose the number, and show the step.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>For one person, give the frequency in people like them, as a number in 100.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Before a meeting that will agree a judgement, write your own number down. The IPCC’s guidance warns that groups tend to converge on one view and become overconfident in it.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“What would change my mind” must name a finding that could actually turn up. “If new evidence emerges” names nothing.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Change the order and the words for each reader, never the parts. Give a journalist chances “in 100” and say plainly why your number is not higher.</p>",
+     "tag": "move",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Giving a number makes me sound more certain than saying ‘probably’.” It does the opposite. “75 per cent” says, out loud, that you think there is a 1 in 4 chance you are wrong. “Probably” hides how unsure you are, and lets each listener choose their own number for it. A number with its grounds is the most modest way to state a <dfn data-g=\"57\">belief</dfn>, because it can be checked.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>I judge it “likely” (about 75 per cent, ICD 203 scale) that, in children under 5 given antibiotics, adding probiotics lowers the share who get diarrhoea. This rests on randomised trials rated moderate certainty (GRADE), down for children lost to follow-up. A large trial with few losses and no difference would lower my number.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the four parts of a confidence statement. Say what the IPCC calls the written description of the grounds. Then say why your degree of belief in an effect is not the chance that one patient will benefit.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>The claim, worded so it could be shown false. The confidence, as a word from a named scale with its number. The grounds: the kind of evidence and, where rated, its certainty. What would change it: a finding that could turn up, and which way it would move the number.</p>\n<p>The IPCC calls the description of the grounds a traceable account.</p>\n<p>A claim about an effect is about the average in a group. One patient may or may not have the outcome whatever the average does, because people in a group respond differently. For one patient, start from the frequency in people like them.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>At a made-up district meeting on a community yoga programme, an officer says:</p>\n<blockquote>\n<p>We are 100 per cent confident the yoga programme will reduce obesity in the district. Everyone in the team agrees.</p>\n</blockquote>\n<p>Find what is missing or wrong. Then rewrite the statement, leaving a blank wherever you would need a fact the officer has not given.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The claim is loose. Reduce obesity in whom, by how much, compared with what, by when? As written, almost any result could be read as success.</p>\n<p>The confidence is 100 per cent, which says no study could change it. Nothing that rests on evidence earns that, and no scale is named.</p>\n<p>There are no grounds. “Everyone agrees” is not evidence about yoga and weight. A team that agrees may only have converged on one view in the room.</p>\n<p>Nothing is said about what would change their minds.</p>\n<p>A rewrite, with blanks for what is not known:</p>\n<blockquote>\n<p>We judge it ____ (about ____ per cent, ICD 203 scale) that adults who join the programme will have a lower average weight after 12 months than similar adults who do not. Our grounds are ____ (the kind of study, and its certainty if rated). A trial in our district that found no difference at 12 months would lower our number.</p>\n</blockquote>\n<p>If the team has no study at all to put in the blank, the honest number is low, and the honest grounds sentence says “none yet”.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist rings you about the same Cochrane example table, the row for children over 5. In those trials, diarrhoea went from about 11 in 100 children without probiotics to about 9 in 100 with them. The difference could be anywhere from about 5 fewer to about 2 more in 100. The certainty is low, for risk of bias and <dfn data-g=\"346\">imprecision</dfn>. She asks: “So do probiotics work for older kids?” You have three minutes and no jargon. Give your answer, ending with one sentence she can quote.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with what the trials saw: a small drop, from about 11 children in 100 to about 9. Then the range: the true effect could be a drop of about 5 in 100, or a rise of about 2. So the trials cannot tell a small benefit from none, or even from slight harm. Then why: few children had diarrhoea, and the trials had flaws, so the evidence is weak.</p>\n<p>Give your number, and say it is yours. For example: “I’d put it at a bit better than even, perhaps 6 in 10, that it helps at all” (about 60 per cent; “likely” on ICD 203 would start at 55). Someone could reasonably say evens. What would change it: a bigger, better trial in older children.</p>\n<p>The sentence to quote: “For older children the trials are too small and too flawed to say; probiotics might help a little, or not at all.”</p>\n<p>Well judged: the evidence is weak, and the sentence says so without becoming useless to her.</p>"
+  }
+ ]
+}

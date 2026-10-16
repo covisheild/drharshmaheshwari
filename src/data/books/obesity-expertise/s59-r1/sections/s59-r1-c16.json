@@ -1,0 +1,254 @@
+{
+ "format": 1,
+ "id": "s59-r1-c16",
+ "label": "16",
+ "title": "Confidence is not accuracy: what being calibrated means",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A person is <dfn data-g=\"75\">calibrated</dfn> at a <dfn data-g=\"410\">level</dfn> of <dfn data-g=\"141\">confidence</dfn> when, of all the claims they have stated at that level, the <dfn data-g=\"566\">proportion</dfn> that turn out true is about that level. Of all the claims they gave 80 per cent, about 80 in 100 turn out true. <dfn data-g=\"77\">Calibration</dfn> is a property of many claims checked over time, never of one <dfn data-g=\"107\">claim</dfn>, because one outcome cannot show a single <dfn data-g=\"193\">degree of belief</dfn> wrong (section 10). The word has another use: a “<dfn data-g=\"76\">calibrated scale</dfn>” (section 12) is a table that fixes each word’s numbers. That is a property of a scale; this section’s sense is a property of a person.</p>\n<p>Calibration is checked with a <dfn data-g=\"728\">tally</dfn>. Each claim is written before its outcome is known, with its <dfn data-g=\"186\">date</dfn> and a degree of belief, on the side the person leans to. A claim held at 30 per cent is written as its opposite held at 70 per cent, the complement (section 10), so every stated level is 50 per cent or more. A claim at exactly 50 per cent leans neither way: it is written as first phrased. When the outcomes are known, the claims are grouped by stated level. For each level, the number of claims and the number that turned out true are counted, and the second is divided by the first: the proportion true. That proportion is compared with the level.</p>\n<p>At a level above 50 per cent, a proportion true below the level is <dfn data-g=\"504\">over-confidence</dfn>: the person was right less often than they said. A proportion true above the level is <dfn data-g=\"759\">under-confidence</dfn>. At 50 per cent, any proportion true far from 50, high or low, is under-confidence: the person had a lean and did not state it.</p>\n<p>Confidence and <dfn data-g=\"8\">accuracy</dfn> are measured separately. How sure a person feels is evidence about the person, not about the claim.</p>\n<p>A tally is itself a sample, and chance moves it (Book 0, D6). Take a person calibrated at one level. Over a number of claims at that level, their proportion true has a spread. To find it, divide the <dfn data-g=\"694\">square root</dfn> of the level times (1 minus the level) by the square root of the number of claims. Ten claims at 80 per cent scatter by about 13 <dfn data-g=\"518\">percentage</dfn> points, so they cannot tell 80 per cent from 70.</p>",
+   "refs": [
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Every time you say “I am 80 per cent sure”, you take a reading. One reading cannot be checked. So write them down, with the date, before you know the answer. Later, gather all the claims you gave 80 per cent and count how many came true. If about 8 in 10 did, your 80 means what it says. If only 6 in 10 did, you are more sure than you have reason to be.</p>\n<p>Feeling sure is not the same as being right.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c16-tally.png",
+   "alt": "Four points, stated level along the bottom from 60 to 90 and proportion true up the side: 62.5 at 60, 60 at 70, 58.3 at 80 and 60 at 90. A diagonal line from 50 to 100 marks proportion true equal to stated level; the points fall further below it as the level rises.",
+   "w": 1357,
+   "h": 656,
+   "caption": "The made-up resident’s tally from illustration 1, below. Each point is one level she wrote, against the proportion of those claims that turned out true. The straight line is perfect calibration: proportion true equals stated level. At 60 per cent she sits near the line, at 62.5. At 90 per cent she is far below it, at 60. Her proportion true is about 60 per cent whatever level she wrote."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c16-spread.png",
+   "alt": "A falling curve from about 12.6 percentage points at 10 claims down towards 4 at 100 claims, with two marked points: 12.65 at 10 claims and 5 at 64 claims. A dashed horizontal line at 5 marks half the 10-point gap.",
+   "w": 1360,
+   "h": 697,
+   "caption": "How far chance alone moves the tally of a person calibrated at 80 per cent, against the number of claims at that level. The spread is 0.4 divided by the square root of the number of claims. At 10 claims it is 12.65 percentage points, more than the whole 10-point gap between 80 and 70 per cent. It comes down to 5 points, half that gap, only at 64 claims."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c16-pneumonia-estimate.png",
+   "alt": "One bar from zero to 80 on an axis of patients per 100, up to 100, for the median practitioner. A shaded band from 25 to 42 marks the expert panel's range from the published evidence.",
+   "w": 1008,
+   "h": 832,
+   "caption": "Morgan’s pneumonia scenario (illustration 3), read as a tally of 100 patients like her. Before any test, the median practitioner expected 80 to have pneumonia; the expert panel, from the published evidence, put it at 25 to 42. The estimate was 38 to 55 percentage points too high."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is the trap with feeling sure. A second-year resident says she is “usually right” on ward rounds. She is made up for this section, and so are all her numbers. She means it, and she may be right. But she cannot say how often, because she has never written anything down.</p>\n<p>So she starts. For three months, before each test result comes back, she writes one line in a notebook: the date, the claim, and how sure she is as a per cent.</p>\n<blockquote>\n<p>12 March. Bed 7’s urine culture will grow bacteria. 80%.</p>\n</blockquote>\n<p>When the result comes back, she ticks the line or crosses it out.</p>\n<p>Some lines lean the other way.</p>\n<blockquote>\n<p>14 March. Bed 3’s chest X-ray will show pneumonia. 30%.</p>\n</blockquote>\n<p>Before counting, she rewrites each of these on the side she leans to, using the complement from the section on putting a number on one claim: “Bed 3’s chest X-ray will not show pneumonia. 70%.” Now every line is 50 per cent or more. A tick means she was right the way she leaned.</p>\n<p>After three months she has 40 lines. She sorts them by the level she wrote, and counts.</p>\n<table style=\"width:94%;\">\n\n<thead>\n<tr>\n<th>stated level (%)</th>\n<th>claims</th>\n<th>turned out true</th>\n<th>proportion true (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>60</td>\n<td>8</td>\n<td>5</td>\n<td>62.5</td>\n</tr>\n<tr>\n<td>70</td>\n<td>10</td>\n<td>6</td>\n<td>60</td>\n</tr>\n<tr>\n<td>80</td>\n<td>12</td>\n<td>7</td>\n<td>58.3</td>\n</tr>\n<tr>\n<td>90</td>\n<td>10</td>\n<td>6</td>\n<td>60</td>\n</tr>\n</tbody>\n</table>\n<p>Work one row yourself. At 80 per cent she wrote 12 claims and 7 came true. Divide, then turn the <dfn data-g=\"296\">fraction</dfn> into a per cent (Book 0, A4).</p>\n<div class=\"working\">\n<p>7 divided by 12 = 0.583333333<br />\n0.5833 times 100 = 58.33<br />\n58.33 minus 80 = -21.67</p>\n</div>\n<p>She was right 58.3 per cent of the time when she said 80: about 22 percentage points below.</p>\n<p>Now read the whole table. The proportion true sits near 60 per cent at every level. When she wrote 60, she was right about 6 times in 10. When she wrote 90, she was still right about 6 times in 10. Her 90 told her nothing more than her 60.</p>\n<p>Now the overall count, and the average level she stated.</p>\n<div class=\"working\">\n<p>5 plus 6 plus 7 plus 6 = 24<br />\n24 divided by 40 = 0.6<br />\n8 times 60 = 480<br />\n10 times 70 = 700<br />\n12 times 80 = 960<br />\n10 times 90 = 900<br />\n480 plus 700 plus 960 plus 900 = 3040<br />\n3040 divided by 40 = 76</p>\n</div>\n<p>“Usually right” was true: 24 of 40, or 60 per cent. But the levels she wrote averaged 76 per cent. At her higher levels she is over-confident. Her feeling of being sure did not show her this. Only the notebook did.</p>\n<p>Keep one doubt for the next illustration. Ten or twelve claims at one level is a small tally. Is a gap of 10 points at 70 per cent real?</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The resident and her 40 claims are made up. A real notebook is rarely this tidy: some results never come back, and those lines can be neither ticked nor crossed. Leave them out and say how many you left out.</p>\n<p>Her claims are all about test results on one ward. A tally of one kind of claim tells her about that kind only. It says nothing about how well calibrated she is about prognosis, or about which trial will show an effect.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Take the smallest case. Suppose you are calibrated at 80 per cent: over a long run, 8 in 10 of your 80 per cent claims come true. You write ten such claims. How many come true?</p>\n<p>Not always 8. Seven is no surprise, nor is nine. Two things make ten claims a weak test.</p>\n<p>First, each claim is a big step. With ten claims, one claim moves the proportion true by 10 percentage points.</p>\n<div class=\"working\">\n<p>1 divided by 10 = 0.1</p>\n</div>\n<p>The whole gap between 80 and 70 per cent is one claim.</p>\n<p>Second, chance scatters a tally the way it scatters the average of a sample. Book 0’s <dfn data-g=\"695\">square-root law</dfn> gives the size (Book 0, D6). Score each claim 1 if it came true and 0 if it did not. The proportion true is then the mean of those scores.</p>\n<p>Find the spread of one score first. Over a long run at a calibrated 80 per cent, 8 in 10 scores are 1 and 2 in 10 are 0, so take ten scores in that <dfn data-g=\"594\">ratio</dfn>. Their mean is 0.8. Work out the <dfn data-g=\"698\">standard deviation</dfn> as Book 0 did (Book 0, D5), dividing by the count, because these ten stand for the whole long run.</p>\n<div class=\"working\">\n<p>1 minus 0.8 = 0.2<br />\n0 minus 0.8 = -0.8<br />\n0.2 times 0.2 = 0.04<br />\n-0.8 times -0.8 = 0.64<br />\n8 times 0.04 = 0.32<br />\n2 times 0.64 = 1.28<br />\n0.32 plus 1.28 = 1.6<br />\n1.6 divided by 10 = 0.16<br />\n0.4 times 0.4 = 0.16</p>\n</div>\n<p>The <dfn data-g=\"772\">variance</dfn> is 0.16, so the standard deviation is its square root, 0.4. Notice that 0.16 is 0.8 times 0.2: the level times (1 minus the level). The same steps at any level give the same pattern. At 90 per cent, nine scores of 1 and one of 0 give 0.09, which is 0.9 times 0.1, and a standard deviation of 0.3.</p>\n<p>Now the square-root law. The spread of the proportion true over a number of claims is the spread of one score divided by the square root of the number of claims.</p>\n<div class=\"working\">\n<p>3.162 times 3.162 = 9.998<br />\n0.4 divided by 3.162 = 0.1265</p>\n</div>\n<p>That is 12.65 percentage points, about 13. So a calibrated 80 per cent person’s tally of ten claims commonly lands anywhere from about 67 to 93 per cent. Seven out of ten is ordinary for them. It is just as ordinary for a person whose true level is 70. Ten claims cannot tell the two apart.</p>\n<p>How many could? Use a rough rule: the spread should be no more than half the gap you want to see. Chance alone often moves a tally by one spread and seldom by two; exactly how seldom is beyond this book. To see a 10-point gap, the spread must come down to 5 points, which is 0.05. Use the spread at the level you stated, because the question is whether your tally fits that level.</p>\n<div class=\"working\">\n<p>0.4 divided by 0.05 = 8<br />\n8 times 8 = 64</p>\n</div>\n<p>The square root of the number of claims must be 8, so the number of claims must be about 64, all at that one level. That is many months of a notebook.</p>\n<p>Go back to the resident. At 90 per cent she wrote 10 claims.</p>\n<div class=\"working\">\n<p>0.3 divided by 3.162 = 0.0949<br />\n30 divided by 9.49 = 3.16</p>\n</div>\n<p>The spread is about 9.5 points. Her gap there, 30 points, is more than three spreads. Chance alone seldom does that: her 90 really is too high. Now her row at 70 per cent.</p>\n<div class=\"working\">\n<p>0.7 times 0.3 = 0.21<br />\n0.4583 times 0.4583 = 0.21<br />\n0.4583 divided by 3.162 = 0.1449</p>\n</div>\n<p>The spread is about 14.5 points, larger than her gap of 10. That row tells her nothing yet.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The square-root law treats each claim as a separate chance, like a member of a <dfn data-g=\"585\">random sample</dfn>. Claims that share a cause rise and fall together: ten predictions about one trial, or ten culture results from one laboratory with one faulty method. Then the tally scatters more than the rule says, and you need more claims than it says.</p>\n<p>“Half the gap” is a rough rule for deciding whether to look harder, not a test. Scoring a whole list of claims in one number is beyond this book.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>A related error can be measured in groups: estimates set against the published evidence rather than against outcomes. It is not calibration as defined above, but it shows the same direction of error. Morgan and colleagues (2021) gave written scenarios to 723 practitioners at primary care clinics in eight US states, and 553 answered every question. Their paper is at https://pmc.ncbi.nlm.nih.gov/articles/PMC8022260/.</p>\n<p>One scenario describes a previously healthy 35-year-old woman who smokes. She has had five days of fatigue and a productive cough, a temperature of 38.9 degrees Celsius, and fewer breath sounds at the lower right of the chest. How likely is pneumonia, before any test? The <dfn data-g=\"444\">median</dfn> answer was 80 per cent. An expert panel, working from the published evidence, put it at 25 to 42 per cent.</p>\n<p>Read it as a tally. Of 100 patients like her, the median practitioner expects 80 to have pneumonia. The evidence says 25 to 42.</p>\n<div class=\"working\">\n<p>80 minus 42 = 38<br />\n80 minus 25 = 55</p>\n</div>\n<p>The median estimate was 38 to 55 percentage points too high. Before testing, estimates were too high in every scenario. The authors sum it up as 2 to 10 times the evidence, before and after testing. One participant told them that estimating the <dfn data-g=\"559\">probability</dfn> of disease “isn’t how you do medicine.”</p>\n<p>That remark is the whole problem of this section. If you never write the number, nobody can <dfn data-g=\"97\">check</dfn> it, including you.</p>",
+   "numberRefs": [
+    272
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These were written scenarios, not the practitioners’ own patients. The evidence range was set by the study’s expert panel from the literature, and the authors say the survey’s reliability was not assessed. More than half the respondents were residents, in US clinics. No study held for this book has measured how Indian clinicians’ estimates compare with the evidence.</p>\n<p>The study shows over-estimates of disease, in one direction, for one kind of claim. It does not show that every clinician is over-confident about everything.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“I am usually right, so my confidence is about right” is the error. Being right often and being calibrated are different things.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Write the number before the answer is known, with the date, on the side you lean to. A number remembered after the result is not a reading.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>One overall proportion hides miscalibration. Tally level by level.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you act on your sense of how likely a diagnosis is, ask how common it is in patients like this one.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A small tally says little. Ten claims at 80 per cent scatter by about 13 percentage points by chance alone, so they cannot tell 80 from 70. To see a gap of 10 points you need roughly 64. Below that, report the counts and say they cannot yet tell.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Calibration is not the whole of good judgement. Someone who says 50 per cent on every claim can be calibrated and tell you nothing.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a trainee says “I knew it would be positive”, ask what number they wrote down before the result. If they wrote none, the claim cannot be checked.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>An expert in a committee says they are “90 per cent sure the programme will meet its target”. Ask whether they have ever counted how often their 90s came true.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Being calibrated means being right.” It does not. A calibrated person is wrong often, and by the amount they said. At 70 per cent, they are wrong about 3 times in 10. When one of your 70 per cent claims turns out false, that is what calibration predicts, not a sign that it failed.</p>\n<p>The reverse error is as common. A person who is right 9 times in 10 can still be badly calibrated, if they said 60 per cent each time. Calibration asks whether the numbers match the record. It does not ask how often you were right.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Between [first date] and [last date] I wrote [number] claims at [level] per cent, and [count] turned out true ([proportion] per cent). With that many claims, chance alone moves the proportion by about [spread] percentage points. So the gap of [gap] points [does / does not yet] show that I am over-confident at this level.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: say what it means to be calibrated at 80 per cent. Describe the tally in four steps, including what you do with a claim stated at 30 per cent. Then say why ten claims cannot show that you are over-confident at 80 per cent.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Calibrated at 80 per cent: of all the claims you stated at 80 per cent, about 80 in 100 turn out true.</p>\n<p>The tally. Write each claim before its outcome is known, with the date and a per cent. Write it on the side you lean to, so a claim at 30 per cent becomes its opposite at 70. When outcomes are known, group the claims by stated level. At each level, divide the number true by the number of claims. Compare that proportion with the level. Below it is over-confidence; above it is under-confidence.</p>\n<p>Ten claims are too few because chance moves the tally. At 80 per cent the spread over ten claims is about 13 percentage points, more than the 10-point gap between 80 and 70. And one claim alone moves the proportion by 10 points.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague hands you her tally, made up for this exercise, and asks what it shows.</p>\n<table style=\"width:64%;\">\n\n<thead>\n<tr>\n<th>stated level (%)</th>\n<th>claims</th>\n<th>turned out true</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>60</td>\n<td>20</td>\n<td>15</td>\n</tr>\n<tr>\n<td>75</td>\n<td>16</td>\n<td>12</td>\n</tr>\n<tr>\n<td>95</td>\n<td>20</td>\n<td>15</td>\n</tr>\n</tbody>\n</table>\n<p>Say, level by level, what the tally does and does not show.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Work out the proportion true and the spread at each level.</p>\n<div class=\"working\">\n<p>15 divided by 20 = 0.75<br />\n0.6 times 0.4 = 0.24<br />\n0.4899 times 0.4899 = 0.24<br />\n4.472 times 4.472 = 19.999<br />\n0.4899 divided by 4.472 = 0.1095<br />\n12 divided by 16 = 0.75<br />\n0.75 times 0.25 = 0.1875<br />\n0.433 times 0.433 = 0.1875<br />\n0.433 divided by 4 = 0.1083<br />\n0.95 times 0.05 = 0.0475<br />\n0.2179 times 0.2179 = 0.0475<br />\n0.2179 divided by 4.472 = 0.0487</p>\n</div>\n<p>Every level came out at 75 per cent true.</p>\n<p>At 60 per cent, 75 per cent came true: 15 points above her level, about 1.4 spreads of 11 points. That hints at under-confidence but does not show it.</p>\n<p>At 75 per cent she matched her level exactly. That fits calibration, but with a spread of about 11 points, it would also fit a true level of 65 or 85.</p>\n<p>At 95 per cent, 75 per cent came true: 20 points below, with a spread of about 4.9 points, so about four spreads. That row does show over-confidence. When she writes 95, she is right about 3 times in 4, which is the same as her other levels.</p>\n<p>What it does not show. It cannot say whether her claims at each level were of the same kind. Nor can it say whether claims that share a cause made the counts scatter more than the spreads say.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>For a first-year resident, ten minutes with a whiteboard. She says: “When I am sure, I am right. I can feel the difference.” Teach her the difference between confidence and accuracy, and leave her with something to do.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Start with what she has right. Feelings of being sure are real, and they carry some information. The question is how much, and nobody can answer it from the feeling.</p>\n<p>Draw two columns on the board: “what I said” and “what happened”. Confidence lives in the first column, accuracy in the second. A feeling is a reading in the first column only. To check it, you need the second column, filled in later, line by line.</p>\n<p>Then draw the made-up resident’s tally from this section: four levels, from 60 to 90 per cent, and about 6 in 10 true at every one. Ask her what the 90s were worth. They were worth no more than the 60s, and the resident who wrote them felt sure every time.</p>\n<p>Give her the task. A notebook, starting today. One line per claim, before the result: date, claim, per cent, on the side she leans to. Tick or cross when the answer comes. Tally in three months, level by level. Warn her that ten claims at a level will not tell her much. She should look first at the row with the biggest gap and the most claims.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Design the tally <dfn data-g=\"674\">sheet</dfn> you will use for your own dated claims. Say what each column holds and the rule for claims under 50 per cent. Then say when you will tally, and how many claims you need at a level before you act on it.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A workable sheet has six columns.</p>\n<ul>\n<li>The date written.</li>\n<li>The claim, in words that can later be checked as true or false.</li>\n<li>The stated per cent.</li>\n<li>The date the outcome is expected.</li>\n<li>The outcome: true, false, or unknown.</li>\n<li>The date it was settled.</li>\n</ul>\n<p>Rules. Write every claim on the side you lean to, so every per cent is 50 or more. Never edit a line after the outcome is known; a change of mind is a new dated line. Leave unknown outcomes out of the tally, and say how many you left out.</p>\n<p>When to tally. At fixed dates, for example every three months, not when a striking result reminds you.</p>\n<p>How many before acting. Use the spread: the square root of the level times (1 minus the level), divided by the square root of the count. <dfn data-g=\"10\">Act</dfn> on a row only when its gap is at least two spreads. As a guide, telling 80 from 70 needs about 64 claims at that level, and 90 from 80 about 36. Use a few levels only, such as 60, 70, 80 and 90, so each one fills faster.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>At one level, 20 claims were stated at 70 per cent and 13 turned out true. At another, 10 claims were stated at 90 per cent and 7 turned out true. For each level, give the proportion true as a per cent and the gap from the stated level in percentage points. Say whether each gap points to over-confidence or under-confidence.</p>",
+   "level": 1,
+   "answer": "<p>Divide the true claims by all the claims, then compare with the level.</p>\n<div class=\"working\">\n<p>13 divided by 20 = 0.65<br />\n0.65 times 100 = 65<br />\n65 minus 70 = -5<br />\n7 divided by 10 = 0.7<br />\n0.7 times 100 = 70<br />\n70 minus 90 = -20</p>\n</div>\n<p>At 70 per cent: 65 per cent true, 5 points below. At 90 per cent: 70 per cent true, 20 points below. Both point to over-confidence, because each proportion true is below its level.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Here are four claims, each with its stated degree of belief. Claim A is at 30 per cent, B at 10 per cent, C at 55 per cent and D at 50 per cent. A turned out false, B true, C true and D false. Rewrite each claim on the side leaned to, give its level, and say whether the rewritten claim turned out true.</p>",
+   "level": 2,
+   "answer": "<p>A claim below 50 per cent is rewritten as its opposite, at the complement.</p>\n<div class=\"working\">\n<p>100 minus 30 = 70<br />\n100 minus 10 = 90</p>\n</div>\n<p>A becomes “not A” at 70 per cent. A was false, so “not A” was true.</p>\n<p>B becomes “not B” at 90 per cent. B was true, so “not B” was false.</p>\n<p>C stays as it is, at 55 per cent. It turned out true.</p>\n<p>D is at 50 per cent, which leans neither way. Either side gives 50, so keep it as written. It turned out false.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>For a person calibrated at 90 per cent, find the spread of the proportion true over 25 claims and over 100 claims, in percentage points.</p>",
+   "level": 3,
+   "answer": "<p>The spread of one score at 90 per cent is the square root of 0.9 times 0.1.</p>\n<div class=\"working\">\n<p>0.9 times 0.1 = 0.09<br />\n0.3 times 0.3 = 0.09<br />\n5 times 5 = 25<br />\n0.3 divided by 5 = 0.06<br />\n10 times 10 = 100<br />\n0.3 divided by 10 = 0.03</p>\n</div>\n<p>The spread of one score is 0.3. Over 25 claims the spread is 6 percentage points; over 100 claims it is 3. Four times as many claims halve the spread.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A 2021 survey gave US primary care practitioners a written case of a 35-year-old woman with cough and fever. Before any test, the median answer from resident doctors put her chance of pneumonia at 80 per cent. The expert panel’s range from the published evidence was 25 to 42 per cent. For 50 patients like her, how many patients would the resident expect to have pneumonia, and how many does the evidence range give? Give the gap in percentage points.</p>",
+   "level": 4,
+   "answer": "<p>Multiply the number of patients by each chance.</p>\n<div class=\"working\">\n<p>50 times 0.8 = 40<br />\n50 times 0.25 = 12.5<br />\n50 times 0.42 = 21<br />\n80 minus 42 = 38<br />\n80 minus 25 = 55</p>\n</div>\n<p>The resident expects 40 of the 50 patients to have pneumonia. The evidence range gives 12.5 to 21, so about 13 to 21 patients. The gap is 38 to 55 percentage points, every bit of it in the direction of too high.</p>\n<p>The 80 is a median across residents answering a written scenario, not one resident’s tally of her own patients.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>You keep a register: a dated list of your claims and their outcomes. It holds your claims at journal club, and many of them are at 90 per cent. Roughly how many claims at that level do you need? The tally should be able to tell a true 90 per cent from a true 80 per cent. Give the answer as a number of claims.</p>",
+   "level": 5,
+   "answer": "<p>The gap you want to see is 10 points, so the spread must be at most 5 points, 0.05. The spread of one score at 90 per cent is 0.3.</p>\n<div class=\"working\">\n<p>0.3 divided by 0.05 = 6<br />\n6 times 6 = 36</p>\n</div>\n<p>About 36 claims, all at 90 per cent. Fewer are needed than at 80 per cent (64), because scores near the top of the scale scatter less.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A colleague’s list of dated claims is made up for this problem. It has 10 claims at 50 per cent, of which 8 turned out true. It has 10 claims at 90 per cent, of which 6 turned out true. She writes: “20 claims, 14 true, 70 per cent. My average stated level was 70 per cent, so I am calibrated.” Work out the tally level by level, give the spread at each level, and say what the tally shows.</p>",
+   "level": 6,
+   "answer": "<p>First her overall figures, which are right as arithmetic.</p>\n<div class=\"working\">\n<p>8 plus 6 = 14<br />\n14 divided by 20 = 0.7<br />\n50 plus 90 = 140<br />\n140 divided by 2 = 70</p>\n</div>\n<p>Now each level, with its spread over 10 claims.</p>\n<div class=\"working\">\n<p>8 divided by 10 = 0.8<br />\n0.5 times 0.5 = 0.25<br />\n0.5 divided by 3.162 = 0.1581<br />\n6 divided by 10 = 0.6<br />\n0.3 divided by 3.162 = 0.0949</p>\n</div>\n<p>At 50 per cent, 80 per cent came true: 30 points above, about 15.8 points of spread, so nearly two spreads. At 90 per cent, 60 per cent came true: 30 points below, with a spread of about 9.5 points, so more than three spreads.</p>\n<p>The tally shows a person who is under-confident at her low level and over-confident at her high one. Her levels point the wrong way. The overall 70 against 70 hid both, because the two errors cancel in the average. The 90 row is the one to act on first: its gap is several spreads.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke, and say why it looks reasonable.</p>\n<div class=\"working\">\n<p>I wrote 10 claims at 30 per cent; 4 came true<br />\n4 divided by 10 = 0.4, which is 40 per cent<br />\n40 is above my 30, so at this level I am under-confident<br />\nso I can afford to be bolder with my low numbers: say 20 per cent instead of 30</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The step that broke is the third. A claim at 30 per cent leans against itself. Rewrite each one on the side leaned to, “not X” at 70 per cent, before reading the tally.</p>\n<div class=\"working\">\n<p>100 minus 30 = 70<br />\n10 minus 4 = 6<br />\n6 divided by 10 = 0.6<br />\n60 minus 70 = -10</p>\n</div>\n<p>The rewritten claims were stated at 70 per cent and 60 per cent came true. That points to over-confidence in the writer’s lean, not under-confidence. The fix runs the other way: move towards 50 per cent, say 40 rather than 30, not out to 20. With ten claims, though, a 10-point gap is less than one spread (about 14.5 points at 70 per cent), so the tally cannot yet tell.</p>\n<p>Why the wrong answer looks reasonable. “More came true than I said” sounds like under-confidence, and for claims above 50 per cent it would be. Below 50, saying 30 per cent is a confident claim that the thing will not happen. Turning every claim to the side you lean to removes the trap.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>I wrote 10 claims at 80 per cent; 7 came true<br />\n7 divided by 10 = 0.7, which is 70 per cent<br />\n70 minus 80 = -10, so I am over-confident by 10 points<br />\nfrom now on I will write 70 where I used to write 80</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The arithmetic in the first three lines is right. The step that broke is the fourth: it acts on a gap that ten claims cannot show. Work out the spread at 80 per cent over ten claims.</p>\n<div class=\"working\">\n<p>0.8 times 0.2 = 0.16<br />\n0.4 times 0.4 = 0.16<br />\n0.4 divided by 3.162 = 0.1265</p>\n</div>\n<p>About 12.6 points. The gap of 10 points is less than one spread. Seven out of ten is ordinary for a person who is truly calibrated at 80 per cent. The honest reading is “no sign yet either way”; keep writing and tally again near 64 claims.</p>\n<p>Why the wrong answer looks reasonable. The tally does say 70, and acting on data feels responsible. But a proportion from ten claims moves 10 points with a single claim. So the size of the tally decides, not the gap.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>On a ward round, a senior colleague says: “When I tell a family I am 90 per cent sure, I am right. In thirty years I can hardly remember being wrong.” Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: what a calibrated 90 per cent would look like, and how many recorded claims it would take to check.</p>\n<div class=\"working\">\n<p>100 times 0.1 = 10<br />\n0.3 divided by 0.05 = 6<br />\n6 times 6 = 36</p>\n</div>\n<p>A calibrated 90 per cent is wrong about 10 times in every 100. Thirty years of 90 per cent statements should hold many wrong ones. To tell a true 90 from a true 80, he would need about 36 claims at 90 per cent. Each would have to be written down before its outcome was known.</p>\n<p>What this does not establish. It does not show he is over-confident. “Hardly remember being wrong” is memory, not a tally, and people may remember what happened more than what did not. If he truly is almost never wrong, his 90s are too low, which is under-confidence. The sentence cannot tell which, and neither can you, until the claims are written down. Being right often, even if it is true, is not the same as being calibrated.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A newspaper health column says: “A study found doctors overestimate disease 2 to 10 times. So when your doctor gives you a chance, halve it.” Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the <dfn data-g=\"261\">factor</dfn> in two of the study’s scenarios before testing, and whether one rule such as halving fits both. In the survey, the median estimate for pneumonia was 80 per cent against evidence of 25 to 42 per cent. For cardiac ischaemia, reduced blood flow to the heart muscle, it was 10 per cent against 1 to 4.4 per cent.</p>\n<div class=\"working\">\n<p>80 divided by 42 = 1.904761905<br />\n80 divided by 25 = 3.2<br />\n10 divided by 4.4 = 2.273<br />\n10 divided by 1 = 10<br />\n80 divided by 2 = 40<br />\n10 divided by 2 = 5</p>\n</div>\n<p>The factor is about 1.9 to 3.2 for pneumonia and 2.3 to 10 for cardiac ischaemia, so “2 to 10 times” fits these. Halving gives 40 for pneumonia, inside the evidence range of 25 to 42, but 5 for cardiac ischaemia, still above the top of 4.4. No single factor corrects both.</p>\n<p>What this does not establish. The study <dfn data-g=\"765\">used</dfn> written scenarios with US practitioners, not your doctor and your illness. Its evidence ranges were set by a panel from the literature, and the survey’s reliability was not assessed. No held study has measured Indian doctors this way. And a fixed correction cannot repair a number nobody has tallied. What the study supports is narrower and still useful: ask your doctor how common the condition is in people like you, before any test.</p>"
+  }
+ ]
+}

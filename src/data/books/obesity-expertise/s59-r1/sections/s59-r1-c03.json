@@ -1,0 +1,133 @@
+{
+ "format": 1,
+ "id": "s59-r1-c03",
+ "label": "3",
+ "title": "One finding, several explanations",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>An <dfn data-g=\"39\">association</dfn> is a <dfn data-g=\"274\">finding</dfn> that two things go together: one is found more often, or in larger amounts, where the other is present. An association observed in a study has several rival explanations, any of which can produce it.</p>\n<p>Chance: <dfn data-g=\"649\">sampling variation</dfn> (Book 0, D6) produced a pattern in the sample that is not present in the population.</p>\n<p>Bias: a <dfn data-g=\"724\">systematic error</dfn> (Book 0, D7) in how people were chosen or measured pushed the result one way.</p>\n<p>A third <dfn data-g=\"261\">factor</dfn>: something else is linked to both, and produces the association although neither causes the other. Epidemiologists call it a <dfn data-g=\"148\">confounder</dfn>.</p>\n<p><dfn data-g=\"635\">Reverse direction</dfn>: the second thing causes the first, not the first the second.</p>\n<p>The proposed cause: the first thing changes the second.</p>",
+   "refs": [
+    34,
+    2,
+    4,
+    35,
+    5,
+    36,
+    37,
+    38
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Suppose a study finds that people who skip breakfast more often have <dfn data-g=\"506\">overweight</dfn>. Before you conclude that skipping breakfast puts weight on, ask what else could have produced the same pattern.</p>\n<p>Write all five down. Then cross off only the ones the evidence actually rules out. Whatever is left is still a live explanation, however many studies found the pattern.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c03-one-design-repeated.png",
+   "alt": "Three bars of rated abstracts, by the design of the study each reported: 76 cross-sectional, 11 longitudinal and 1 case-control, together 88 abstracts.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The breakfast studies repeated one kind of design. Brown and colleagues (2013) rated 88 abstracts, all of observational studies. Of these abstracts, 76 reported a study that measured breakfast habits and weight at the same visit, 11 a study that followed people over time and 1 a case-control study. Repeating a design makes chance a weaker explanation; it leaves the third factor and the reverse direction where they were."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>Brown and colleagues’ 2013 paper, at https://pmc.ncbi.nlm.nih.gov/articles/PMC3798081/, collected public statements about breakfast. One is from a newspaper, the Daily Mail:</p>\n<blockquote>\n<p>Skipping breakfast to lose weight makes you fatter - and far more likely to raid the vending machine.</p>\n</blockquote>\n<p>That is a <dfn data-g=\"107\">claim</dfn> about cause. Now look at what the evidence under it was. Brown and colleagues pooled the studies of breakfast and weight, and found:</p>\n<blockquote>\n<p>There is a clear association between breakfast omission and excess weight as summarized in our cumulative meta-analysis […], and this association supports the PEBO but does not show causation.</p>\n</blockquote>\n<p>PEBO, as the first section said, is their name for the claim that eating breakfast protects against obesity.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Explanation</td>\n<td>The question to ask</td>\n<td>What these studies let you say</td>\n</tr>\n<tr>\n<td>Chance</td>\n<td>Could sampling variation alone have made it?</td>\n<td>Hardly: it held in study after study</td>\n</tr>\n<tr>\n<td>Bias</td>\n<td>Were people picked or measured in a way that pushes one way?</td>\n<td>Not settled by repeating the study; a bias the studies share repeats with them</td>\n</tr>\n<tr>\n<td>A third factor</td>\n<td>Does something else go with both breakfast and weight?</td>\n<td>Open</td>\n</tr>\n<tr>\n<td>Reverse direction</td>\n<td>Could weight, or trying to lose it, change breakfast habits?</td>\n<td>Open: most studies measured both at one visit</td>\n</tr>\n<tr>\n<td>The proposed cause</td>\n<td>Does skipping breakfast put weight on?</td>\n<td>Open, until the three above are dealt with</td>\n</tr>\n</tbody>\n</table>\n<p>Chance first. Brown and colleagues added the studies year by year. Their pooled association was already clear after the first year, from only 3 groups of people, and stayed clear every year to 2011. A pattern made by luck shrinks as more samples are pooled (Book 0, D6); this one did not. So chance is a weak explanation.</p>\n<p>Now the third factor. You can supply candidates yourself, as questions to <dfn data-g=\"97\">check</dfn> rather than facts: a regular daily routine, or how much sleep a person gets.</p>\n<p>Then reverse direction. Brown and colleagues had gathered 92 articles. 88 of them had an <dfn data-g=\"5\">abstract</dfn> in English, and they rated those. This 88 is a different count from the 88 pooled estimates of the first section; the match is chance. Of those 88 abstracts, 76 reported a <dfn data-g=\"171\">cross-sectional study</dfn> and 11 a study that followed people over time. The last 1 reported a <dfn data-g=\"86\">case-control study</dfn>, which starts from people with and without the condition and looks back.</p>\n<p>A cross-sectional study measures both things at the same time: one visit, one count. It cannot show which came first. So a person who has put on weight and starts skipping breakfast to lose it would produce exactly the same pattern.</p>\n<p>Brown and colleagues write: “All identified studies were observational.” Repeating that design study after study made chance a poor explanation. It did nothing to the third factor or the reverse direction, because every repeat carried the same weakness.</p>\n<p>In a <dfn data-g=\"587\">randomised controlled trial</dfn>, chance decides who is told to eat breakfast and who is not, and then the groups are compared. Chance spreads routines, sleep and everything else evenly between the groups, apart from chance differences. And the advice comes before the weight change, so the direction is fixed.</p>\n<p>Randomising decides who gets which advice. It does nothing about how weight is measured or who drops out, so bias can remain. Trials guard against it by keeping the people who weigh participants unaware of their group.</p>",
+   "numberRefs": [
+    14
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table is a checklist of rivals, not a ranking of how likely each is.</p>\n<p>And a randomised trial deals with the third factor and the reverse direction, but chance stays. Any one trial can mislead by luck, which is one reason trials are repeated.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Before you accept that one thing causes another, write down the five explanations: chance, bias, a third factor, reverse direction and the proposed cause. Beside each, write what rules it out. Accept the cause only when the other four have something written beside them.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“Dozens of studies agree, so it must be causal” is the error. Repeating the same design makes chance a weaker explanation and leaves every rival the design shares.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A cross-sectional survey measures both things at one visit, so it cannot tell you which came first.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a resident presents an association at journal club as a cause, stop the discussion of mechanism. Ask her first to name one third factor and the reverse direction.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>To a journalist, say “people who skip breakfast more often have overweight, but these studies cannot tell us whether skipping breakfast is the reason”.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The list tells you which rivals are still open, not which is most likely. Do not treat the one with most studies behind it as the winner.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>It is tempting to think a third factor or a reverse direction means the study was done badly. It does not.</p>\n<p>A survey can pick its people <dfn data-g=\"40\">at random</dfn>, measure them perfectly and count without a slip. Its association can still come from a third factor. The rival lives in the world the study watched, not in a mistake the researchers made. That is why Brown and colleagues could call the association “clear” and, in the same sentence, say it “does not show causation”. Better measurement of the same design does not remove the rival. A different design does.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Across many observational studies, people who skip breakfast more often have overweight than people who eat it. These studies show that the two go together; they cannot show that skipping breakfast is the cause.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the five explanations for an association. Which one does repeating a study with the same design make weaker, and which ones does it leave standing?</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Chance, bias, a third factor, reverse direction and the proposed cause.</p>\n<p>Repeating the same design makes chance weaker, because a pattern made by luck would come and go. It leaves standing every rival the design shares. For observational studies these are usually a third factor, reverse direction and any bias they have in common.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A resident’s survey, made up for this exercise, reports:</p>\n<blockquote>\n<p>We surveyed first-year medical students in one college. Those who usually slept after midnight more often had overweight than those who slept earlier. We conclude that late sleep causes weight gain in medical students.</p>\n</blockquote>\n<p>List the rivals to her conclusion. For each, write one question you would ask her or one thing you would check.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<ul>\n<li>Chance: how many students were surveyed? A small survey can show a pattern by luck. Has anyone else found the same?</li>\n<li>Bias: how were students chosen, and was weight measured or self-reported? A <dfn data-g=\"160\">convenience sample</dfn>, or weights that some groups under-report, can push the result one way.</li>\n<li>A third factor: what goes with both late sleep and weight? Candidates to check include late-night eating, screen time, hostel life and exam stress. Each is a question, not a fact.</li>\n<li>Reverse direction: the survey measured both at one visit. Could weight, or something linked to it, affect sleep timing?</li>\n<li>The proposed cause: late sleep putting weight on. It stays possible.</li>\n</ul>\n<p>The conclusion should read “late sleep was associated with overweight in these students”. A claim about cause needs a design in which the order of events is known. It also needs the third factors made even between the groups.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Brown and colleagues write that the observational association between skipping breakfast and excess weight “supports the PEBO but does not show causation”. A randomised trial is then run. Which of the five explanations can such a trial remove, and which can it not? Say why for each.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>A third factor: largely removed. Chance decides who is told to eat breakfast, so routines, sleep and everything else end up spread between the groups, apart from chance differences.</p>\n<p>Reverse direction: removed. The advice comes first and the weight change after it.</p>\n<p>Chance: not removed. Any one trial can mislead by luck, so a single trial’s result is still a finding, and trials are repeated.</p>\n<p>Bias: not removed by randomisation on its own. If weight is measured badly, or many people drop out of one group, the trial can still be pushed one way.</p>\n<p>The proposed cause: that is what the trial is testing.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>For a health secretary, one page. An official proposes a state campaign telling adults to eat breakfast to prevent obesity. The note supporting it says “dozens of studies show breakfast eaters weigh less”. Answer first: can the note’s evidence carry the campaign’s message?</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Answer: no, not as worded. The studies show that people who skip breakfast more often have overweight. They do not show that changing breakfast changes weight, which is what the campaign would claim.</p>\n<p>Why: every one of those studies watched people as they were. Something else that goes with eating breakfast, such as a regular routine, could explain the pattern. Or weight could change breakfast habits rather than the reverse. More studies of the same kind do not settle either.</p>\n<p>What would settle it: trials in which people are assigned, by chance, to advice to eat breakfast or not, and their weight is followed.</p>\n<p>What to ask the note’s authors: which trials, in which people, and what they found.</p>"
+  }
+ ]
+}

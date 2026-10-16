@@ -1,0 +1,251 @@
+{
+ "format": 1,
+ "id": "s59-r1-c14",
+ "label": "14",
+ "title": "The base rate: how often claims like this one hold up",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-10.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"53\">base rate</dfn> is how often claims of one kind have turned out true when they were tested. The kind is the <dfn data-g=\"604\">reference class</dfn>: the group of past claims, alike in what matters, among which you count the present <dfn data-g=\"107\">claim</dfn>. The evidence particular to that claim then moves you from there.</p>\n<p>A <dfn data-g=\"445\">medical reversal</dfn> is an established practice found by a later study to be no better than a lesser or earlier standard of care.</p>\n<p>Prasad and colleagues (2013) read every original article in the New England Journal of Medicine (NEJM) from 2001 to 2010: 2044 articles, of which 1344 concerned a medical practice. Of these, 363 tested an established practice: 146 (40.2 per cent) reversed it, 138 upheld it and 79 reached no clear answer.</p>\n<p>Herrera-Perez and colleagues (2019) read the randomised trials of a medical practice in three journals. Of 3017 such trials, 396 were reversals, 13 per cent of all the trials.</p>\n<p>A rate measured in one <dfn data-g=\"109\">class</dfn> does not carry over to another.</p>",
+   "refs": [
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Which claims count as “like it” is a choice, and the number changes with the choice. Pick the group that matches your claim in what matters, and say which group you picked.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c14-four-base-rates.png",
+   "alt": "Four bars from zero: 40.2, 10.9, 13.1 and 24.1 per cent, one for each group of studies counted.",
+   "w": 1360,
+   "h": 656,
+   "caption": "One question, four answers. “How often is a medical practice reversed?” gives 40.2 per cent among tests of an established practice in the New England Journal of Medicine, 2001 to 2010; 10.9 per cent among all its articles on a practice; 13.1 per cent among randomised trials of any practice in three journals; and 24.1 per cent among those trials that tested an established practice. Each is right for its own group. The base rate depends on the reference class you choose."
+  },
+  {
+   "t": "figure",
+   "src": "s59-r1-c14-prasad-split.png",
+   "alt": "Three bars from zero: 146 tests reversed the practice, 138 upheld it and 79 gave no clear answer, out of 363.",
+   "w": 1140,
+   "h": 656,
+   "caption": "What became of the 363 tests of an established practice in the New England Journal of Medicine, 2001 to 2010: 146 reversed it (about 40 per cent), 138 upheld it (about 38 per cent) and 79 gave no clear answer (about 22 per cent). The three add back to 363. Of the 284 clear answers, about 49 per cent upheld the practice."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>This section stands on the last one, where you put a number on how sure you are of one claim. Here you find where that number should start.</p>\n<p>Go back to the time before the 2014 trial’s result. “Eat breakfast to lose weight” was standard advice, as the first section of this book showed. A large trial of the advice was under way. Before its result came out, how sure should you have been that it would support the advice?</p>\n<p>Here is the tempting answer. The advice was everywhere, and there was a story of how it might work. It felt like 90 per cent. Nothing in that feeling was counted.</p>\n<p>Now count. Ask what kind of claim this was: an established practice, about to be tested again in a large study. That group of past claims is the reference class. Prasad and colleagues counted it in ten years of one journal, the New England Journal of Medicine (NEJM), from 2001 to 2010. Their <dfn data-g=\"5\">abstract</dfn> is at https://pubmed.ncbi.nlm.nih.gov/23871230/. Search it for 363.</p>\n<table style=\"width:96%;\">\n\n<thead>\n<tr>\n<th>what the study found about the established practice</th>\n<th>articles</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>no better than a lesser or earlier standard: a reversal</td>\n<td>146</td>\n</tr>\n<tr>\n<td>upheld it</td>\n<td>138</td>\n</tr>\n<tr>\n<td>no clear answer</td>\n<td>79</td>\n</tr>\n<tr>\n<td>all tests of an established practice</td>\n<td>363</td>\n</tr>\n</tbody>\n</table>\n<p>Turn each count into a share of the 363, as Book 0 did with any <dfn data-g=\"566\">proportion</dfn> (Book 0, A5). Then <dfn data-g=\"97\">check</dfn> that the three counts add back to the total.</p>\n<div class=\"working\">\n<p>146 divided by 363 is about 0.4022<br />\n138 divided by 363 is about 0.3802<br />\n79 divided by 363 is about 0.2176<br />\n146 plus 138 plus 79 = 363</p>\n</div>\n<p>About 40 per cent of these tests reversed the practice, 38 per cent upheld it, and 22 per cent settled nothing. Now leave out the tests with no clear answer.</p>\n<div class=\"working\">\n<p>146 plus 138 = 284<br />\n138 divided by 284 is about 0.4859</p>\n</div>\n<p>Of the tests that gave a clear answer, about 49 per cent upheld the practice. That is close to evens: <dfn data-g=\"491\">odds</dfn> of 138 to 146, or 69 to 73, that a clear answer would uphold it.</p>\n<p>A test with no clear answer does not support the advice either, so count all 363: 138 of 363. Among clear answers only it would be 49; say which you <dfn data-g=\"765\">used</dfn>.</p>\n<p>So a fair starting <dfn data-g=\"141\">confidence</dfn> that the trial would support the advice was about 38 per cent, not 90. That number is a base rate: a frequency counted over a group of past claims, used as your <dfn data-g=\"193\">degree of belief</dfn> in one new claim. A base rate is a share, not a rate in Book 0’s sense; the name is the usual one. It is where you start, not where you finish. The advice also had evidence of its own: studies that watched people and found that skippers more often had <dfn data-g=\"506\">overweight</dfn>. The next section shows how evidence for one claim moves you from the base rate. It moves you from 38 per cent, not from 90.</p>\n<p>When the trial came out in 2014, it found that the advice made no detectable difference to weight, as an earlier section described.</p>",
+   "numberRefs": [
+    258
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The class is a loose fit. Prasad’s articles are mostly drugs, procedures and tests in one leading medical journal. The breakfast trial tested advice about eating, and appeared in a nutrition journal. Nobody in the sources this book holds has counted how often advice about food is reversed when it is tested.</p>\n<p>The class is also chosen by someone else’s doubt. A practice is tested again mostly when someone doubts it, and Prasad and colleagues write that “testing of standard of care is rarely done”. So 40 per cent is a rate among practices doubted enough to be tested. For a practice nobody has questioned, it may be too high a start.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is the trap with base rates. Ask “how often is medicine wrong?” and you can get any of several numbers. Each one is right for the group it counted. Work them out.</p>\n<p>Prasad and colleagues give two. Their 146 reversals were out of 363 tests of an established practice. They were also out of all 1344 articles on any practice, old or new.</p>\n<p>Herrera-Perez and colleagues read the randomised trials of a medical practice in three leading journals (open their paper at https://pmc.ncbi.nlm.nih.gov/articles/PMC6559784/). They found 396 reversals among 3017 trials. They also say that 1373 of the 3017 tested a new practice, used only inside research. A new practice cannot be a reversal, because a reversal is an established practice found no better. So take those trials out.</p>\n<div class=\"working\">\n<p>146 divided by 363 is about 0.4022<br />\n146 divided by 1344 is about 0.1086<br />\n396 divided by 3017 is about 0.1313<br />\n3017 minus 1373 = 1644<br />\n396 divided by 1644 is about 0.2409</p>\n</div>\n<table style=\"width:98%;\">\n\n<thead>\n<tr>\n<th>the group counted</th>\n<th>reversals</th>\n<th>out of</th>\n<th>share, %</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>tests of an established practice, NEJM 2001-2010</td>\n<td>146</td>\n<td>363</td>\n<td>40.2</td>\n</tr>\n<tr>\n<td>all articles on a practice, NEJM 2001-2010</td>\n<td>146</td>\n<td>1344</td>\n<td>10.9</td>\n</tr>\n<tr>\n<td>randomised trials of any practice, three journals</td>\n<td>396</td>\n<td>3017</td>\n<td>13.1</td>\n</tr>\n<tr>\n<td>randomised trials of an established practice, three journals</td>\n<td>396</td>\n<td>1644</td>\n<td>24.1</td>\n</tr>\n</tbody>\n</table>\n<p>The same question gives 10.9 per cent, 13.1, 24.1 or 40.2, from two careful studies. The 13 per cent that Herrera-Perez and colleagues print (13.1 to one <dfn data-g=\"189\">decimal</dfn>) is right for its group. It is the wrong base rate for a trial of an established practice, because almost half its <dfn data-g=\"196\">denominator</dfn> is trials that could never have been reversals.</p>\n<p>So choose the class the way you choose a denominator (Book 0, A5). Ask what your claim is, and count only past claims of that kind. For “this established practice will hold up when a large trial tests it”, the closest counts give a reversal rate of about 24 to 40 per cent.</p>\n<p>These counts include practices close to this course. Among Herrera-Perez’s examples is a weight-loss programme with a wearable activity tracker added. After 24 months, the group without the tracker had lost significantly more weight: 5.9 kg against 3.5 kg (difference 2.4 kg, 95 per cent interval 1.0 to 3.7).</p>",
+   "numberRefs": [
+    258,
+    259
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 24.1 per cent is this book’s arithmetic, not a number the authors print. Here is where the 1644 trials went.</p>\n<div class=\"working\">\n<p>3017 minus 1373 = 1644<br />\n1229 plus 415 = 1644<br />\n415 minus 19 = 396</p>\n</div>\n<p>So the 1644 holds the 396 reversals, 19 trials first called reversals and then dropped after a search of systematic reviews, and 1229 trials that upheld the practice or settled nothing. The 24.1 counts the 19 as tests that did not reverse. The two studies also define their groups differently: Prasad counted every design, while Herrera-Perez counted randomised trials only.</p>\n<p>None of these classes was measured in India. Of Herrera-Perez’s 396 reversals, 92 per cent came from studies in high-income countries. No source this book holds gives a reversal rate for practice in India.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Before you judge one claim, name its reference class out loud. Then look for a count of how often claims of that class held up. Start your confidence there.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Of 363 established practices tested again in one leading journal, 138 were upheld: about 38 per cent.</p>",
+     "tag": "number",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>“Forty per cent of medicine is wrong” is the error. Quote the class with the number every time.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A count of reversals by <dfn data-g=\"755\">type</dfn> is not a rate.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Check the denominator before you use a base rate. The 13 per cent of trials that were reversals counts trials of new practices, which could never be reversals.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>These counts come from leading journals, and 92 per cent of Herrera-Perez’s reversal trials were in high-income countries. When you start from them for a practice in an Indian district, say that you are borrowing the number, and from where.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A small class swings. Prefer the pooled count, and distrust a base rate built on a few dozen claims.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A base rate is where you start, not where you end.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“A decade of research found that 40 per cent of medicine is wrong.” The 40.2 per cent is not a share of medicine. It is a share of the 363 established practices that someone chose to test again and that one leading journal published.</p>\n<p>Practices get tested again mostly when someone doubts them, and the authors say such testing is rare. Of all 1344 articles on a practice in the same ten years, 146 were reversals: 10.9 per cent. Neither number tells you what share of everyday practice would fail a test, because most of it has never had one.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Before this trial, my starting confidence that it would uphold the practice was about 38 per cent. In one count, 138 of 363 tests of an established practice in a leading journal upheld it, and 146 reversed it [ref]. That count comes from one leading American journal, and a later count found most reversal trials were in high-income countries. I have adjusted from it for the evidence below.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: say what a base rate is and what a reference class is. Then give the count Prasad and colleagues found for tests of an established practice, and the group it was counted in.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>A base rate is how often claims of one kind have turned out true when they were tested. The reference class is the group of past claims, alike in what matters, that you count the present claim among. The base rate of that class is your starting confidence.</p>\n<p>In the New England Journal of Medicine from 2001 to 2010, 363 articles tested an established practice. Of these, 146 (40.2 per cent) reversed it. Another 138 upheld it, and 79 gave no clear answer. The group is practices tested again and published in one leading journal, not medicine as a whole.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>At a district review meeting, an officer says: “This practice is in the national guidelines and every doctor here uses it. So I am 99 per cent sure it works.” Find the specific flaw, and say what you would ask for.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The flaw: the confidence comes from how established the practice is, and being established is not evidence that it works. Established practices that were tested again were often found no better: 146 of 363 such tests in one leading journal reversed the practice. From that class, a fairer start is about 38 to 49 per cent that a tested practice holds up, not 99. Which end depends on whether you count the tests that settled nothing.</p>\n<p>What to ask for: has this practice been tested against a lesser or earlier standard, in a trial? If yes, what did the trial find? If no, say that its standing rests on use, not on a test. Do not call the practice wrong either: the base rate is only where judgement starts.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A journalist rings you: “Is it true that medicine keeps changing its mind?” You have three minutes. Give one quotable sentence, a number with its group, and say what the number does not show.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>The quotable sentence: “When doctors test a treatment they already use, it often turns out no better than the simpler option. In one leading journal, it was about four times in ten.”</p>\n<p>Then the number with its group. In one leading journal, 363 articles over ten years tested a treatment doctors already used. In 146 of them, it did no better than the simpler or older option.</p>\n<p>What it does not show: that four in ten of all treatments are wrong. A treatment is tested again mostly when someone doubts it, and such tests are rare. So the honest summary is this. Being in use is no guarantee. And when medicine finds its own errors, the system is working.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Pick one plan of your own. It might be a thesis finishing on time, a paper <dfn data-g=\"6\">accepted</dfn> at the first journal you send it to, or a programme you are planning. Write down its reference class, where you would find a count for it, and what you would do if no count exists.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A <dfn data-g=\"788\">worked example</dfn>, for “my paper will be accepted at the first journal I send it to”.</p>\n<p>The reference class: papers of this kind (an <dfn data-g=\"490\">observational study</dfn> from one Indian college) sent to journals of this standing. Where to find a count: the journal’s own published acceptance rate, if it gives one; or your own department’s record, counted from its last ten submissions.</p>\n<p>If no count exists, say so. Then use the nearest count you can find, and name its group. “The journal says it accepts about one in five. I have no figure for papers like mine.” Then write your starting confidence beside the plan, dated, so you can check it later. Do not let the plan’s appeal set the number.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Of 48 tests, 14 gave result A, 20 gave result B and 14 gave result C. Give each as a per cent of the 48, to one decimal place. Check that the three counts add to 48.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>14 divided by 48 is about 0.2917<br />\n20 divided by 48 is about 0.4167<br />\n14 plus 20 plus 14 = 48</p>\n</div>\n<p>A is 29.2 per cent, B 41.7 per cent and C 29.2 per cent. The per cents add to 100.1, not 100, because each was rounded. Check the counts, which add exactly.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>In a class of 80 past claims, 20 held up when tested. Give the base rate as a per cent, the chance that a claim of this class fails, and the odds that one holds up.</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>20 divided by 80 = 0.25<br />\n1 minus 0.25 = 0.75<br />\n0.25 divided by 0.75 = 0.3333</p>\n</div>\n<p>The base rate is 25 per cent. A claim of this class fails with a chance of 75 per cent, or 3 in 4. The odds that it holds up are 1 to 3.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Of 50 tests, 18 reversed a practice, 22 upheld it and 10 gave no clear answer. Give the share reversed of all 50, and of the tests with a clear answer. Say which is larger, and why.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>18 divided by 50 = 0.36<br />\n18 plus 22 = 40<br />\n18 divided by 40 = 0.45</p>\n</div>\n<p>36 per cent of all tests reversed the practice, and 45 per cent of the tests with a clear answer. The second is larger because its denominator is smaller: the 10 unclear tests are left out. Say which you used.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Prasad and colleagues counted the articles in the New England Journal of Medicine, 2001 to 2010, that tested an established practice. There were 363. 146 reversed it, 138 upheld it and 79 gave no clear answer. Give each as a per cent. Then give the odds, among the tests with a clear answer, that a test upheld the practice.</p>",
+   "level": 4,
+   "answer": "<div class=\"working\">\n<p>146 divided by 363 is about 0.4022<br />\n138 divided by 363 is about 0.3802<br />\n79 divided by 363 is about 0.2176<br />\n146 plus 138 = 284<br />\n138 divided by 284 is about 0.4859</p>\n</div>\n<p>40.2 per cent reversed, 38.0 per cent upheld, 21.8 per cent unclear. Among the 284 clear answers, the odds of “upheld” are 138 to 146, which is 69 to 73: a little worse than evens. As a starting confidence, that is about 49 per cent that a clear answer upholds the practice.</p>\n<p>The paper itself prints the 79 as 27.3 per cent in one place, 21.8 in another and 21.7 in a third. Work it out from the counts.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Herrera-Perez and colleagues found 396 reversals among 3017 trials in three journals. Of the 3017, 1373 tested a new practice. Give the reversals as a share of all the trials. Then give them as a share of the trials of an old, established practice. Which share would you start from, for a trial that tests an established practice?</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>396 divided by 3017 is about 0.1313<br />\n3017 minus 1373 = 1644<br />\n396 divided by 1644 is about 0.2409</p>\n</div>\n<p>13.1 per cent of all the trials, 24.1 per cent of the trials of an established practice. Use 24.1. The 13.1 per cent counts trials of new practices, and by definition a new practice cannot be reversed. The authors print 13 per cent; the 24.1 is your own arithmetic from their counts, so say so when you quote it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Prasad and colleagues give their count year by year. In 2006, 12 of 20 tests of an established practice reversed it. In 2001, 14 of 48 did. In 2009, 16 of 35 did. Over the whole decade, 146 of 363 did. A colleague takes 2006 alone as her base rate. Give all four as per cents and say which you would use.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>12 divided by 20 = 0.6<br />\n14 divided by 48 is about 0.2917<br />\n16 divided by 35 is about 0.4571<br />\n146 divided by 363 is about 0.4022</p>\n</div>\n<p>60.0, 29.2, 45.7 and 40.2 per cent. Single years run from about 29 to 60 per cent, because each rests on a few dozen tests. Use the decade’s 40.2 per cent, which pools 363. The authors also found no trend across the decade, so pooling the years is fair.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke, and say why it looks reasonable.</p>\n<blockquote>\n<p>“A large trial has just found a new drug better than the standard treatment. Prasad found that 40.2 per cent of practices are reversed. So I start at 59.8 per cent that this benefit will hold up.”</p>\n</blockquote>\n<div class=\"working\">\n<p>1 minus 0.402 = 0.598</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The class broke. The 40.2 per cent is a share of tests of an established practice. This claim is a new drug’s first positive trial, a different kind of claim. The 40.2 per cent is also a share of tests, not of all practices.</p>\n<p>A closer class appears in the same paper, in the authors’ own report of an earlier review. Of 45 highly cited studies that claimed a benefit, 7 were later contradicted.</p>\n<div class=\"working\">\n<p>7 divided by 45 is about 0.1556<br />\n1 minus 0.1556 = 0.8444</p>\n</div>\n<p>About 16 per cent were contradicted. So at most 84 per cent held up. That is a ceiling, not an estimate: studies that were weakened but not contradicted are inside the 84.</p>\n<p>Why it looks reasonable: both numbers are about medical findings being overturned, and the subtraction is right. Only the group is wrong.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<blockquote>\n<p>“Herrera-Perez and colleagues found that 53 of their 396 reversals were vitamins, supplements or food. So 13.4 per cent of supplement trials end in reversal.”</p>\n</blockquote>\n<div class=\"working\">\n<p>53 divided by 396 is about 0.1338</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second sentence broke. 53 divided by 396 is the share of the reversals that were supplements: about 13 per cent of the reversals. It is not the share of supplement trials that were reversals. That needs the number of supplement trials as its denominator, and the paper does not print it. With the counts given, no base rate for supplement trials can be worked out.</p>\n<p>Why it looks reasonable: the division is right, and 13.4 per cent sits close to the study’s headline 13 per cent. The two numbers answer different questions. Before you use any share, say what it is a share of.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A newspaper column says: “Most medical advice is later overturned, a study of a decade of research has found.” The study is Prasad and colleagues’ count in the New England Journal of Medicine. Decide what to compute, compute it, and say what the claim does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute the reversal share in each group the study gives.</p>\n<div class=\"working\">\n<p>146 divided by 363 is about 0.4022<br />\n146 divided by 1344 is about 0.1086</p>\n</div>\n<p>Even in the narrowest group, tests of an established practice, 40.2 per cent were reversed. That is under half, so “most” is wrong on the study’s own numbers. Of all the articles on a practice, 10.9 per cent were reversals.</p>\n<p>What the claim does not establish. The study counted practices tested again and published in one leading journal. It did not count “medical advice” in general, and most practice is never tested again. And “not reversed” is not “upheld”: 79 of the 363 tests gave no clear answer.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A fellow resident plans a thesis that will test a new school nutrition programme in Raipur. She says: “Prasad found that 756 of 981 new practices tested were better than the standard. So I am 77 per cent sure my programme will work.” Decide what to compute, compute it, and say what her number does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Check her arithmetic first.</p>\n<div class=\"working\">\n<p>756 divided by 981 is about 0.7706</p>\n</div>\n<p>77.1 per cent: her arithmetic is right.</p>\n<p>What it does not establish. The class does not match her claim. The 981 were new practices that one leading journal, the New England Journal of Medicine, chose to publish. A thesis programme in a district school is not in that group, and no source this book holds counts her group.</p>\n<p>So she has no measured base rate. What she can say: “No count exists for programmes like mine. The nearest one I know, from new practices published in one leading journal, is about 77 per cent. I take my start to be lower, because my class is less filtered.” Saying the class out loud is the part that matters.</p>"
+  }
+ ]
+}
