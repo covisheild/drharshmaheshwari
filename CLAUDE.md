@@ -53,8 +53,8 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
 ## The app (PWA): install, auto-update, offline
 
 - One installable app for both modes: name "Dr. Harsh Maheshwari", short name **DrHM** (Harsh, 11 Oct 2026), `public/manifest.webmanifest`
-  (start `/`, shortcuts For Doctors, Books, Trainers, BMI). **Logo** (Harsh, 13 Oct 2026; the dark version is the default): `src/assets/brand/app-icon-dark.png`
-  (`app-icon-light.png` kept for later use). After each build `scripts/pwa/integration.mjs` draws from it every app icon (rounded, maskable, Apple),
+  (start `/`, shortcuts For Doctors, Books, Trainers, BMI). **Logo** (Harsh, 16 Oct 2026: the blue and orange swirl; before that the green one of 13 Oct): `src/assets/brand/app-icon-dark.png`
+  (`app-icon-light.png` is the same picture, kept so a light version can be added later). After each build `scripts/pwa/integration.mjs` draws from it every app icon (rounded, maskable, Apple),
   the favicons (`/icons/favicon-32|48.png`) and `/favicon.svg`. The header keeps Harsh's round photo; the logo is the app's and the browser tab's.
 - **Install** (Harsh, 12 Oct 2026: one-click on the home page, any browser): `InstallApp.astro`, a card on `/` (+ languages), `/doctors/` and `/app/`.
   One tap opens the browser's own install where it has one (Chrome, Edge, Samsung; its banner is held back in `src/pwa/client.ts`); elsewhere the same

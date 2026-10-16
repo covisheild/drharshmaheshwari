@@ -16,8 +16,8 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const ICON = fileURLToPath(new URL('../../src/assets/brand/app-icon-dark.png', import.meta.url));
-// The logo's own dark green, behind the Apple icon.
-const ICON_BG = '#022a1e';
+// The logo's own dark edge, behind the Apple icon (the logo is a full square, so this only shows if a file ever has transparency).
+const ICON_BG = '#030303';
 const SW = fileURLToPath(new URL('./sw.js', import.meta.url));
 // Estimates for files on R2, whose size the build cannot see. Shown as "about".
 const FIGURE_BYTES = 120_000;
