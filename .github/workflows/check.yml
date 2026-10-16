@@ -1,0 +1,34 @@
+# Build and test every pull request, so a change by any agent (Claude, Jules, Gemini, a person) shows a green tick or a red cross
+# before Harsh merges. Same commands as AGENTS.md. Changes nothing; deploys nothing (Cloudflare Workers Builds does that).
+name: Check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      # The preview build (drafts and not-yet-live languages included), as a branch deploys; the tests expect it.
+      - run: npm run build
+        env:
+          WORKERS_CI_BRANCH: preview
+          WRANGLER_SEND_METRICS: 'false'
+      - run: npm test
+        env:
+          WRANGLER_SEND_METRICS: 'false'

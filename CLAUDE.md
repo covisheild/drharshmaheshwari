@@ -3,6 +3,13 @@
 Personal site of Dr. Harsh Maheshwari: obesity education for the public and for clinicians.
 Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; other branches get Preview deployments. The owner is not a coder; Claude does all code work.
 
+## Other coding agents (Gemini Jules, Antigravity, Gemini CLI) (Harsh, 16 Oct 2026)
+
+- Harsh's Claude subscription was ending, so the repo is set up for other agents: `AGENTS.md` (Jules reads it; the summary, the differences and the pull-request layout),
+  `GEMINI.md` (Gemini CLI and Antigravity; loads `AGENTS.md` and this file), `docs/working-with-other-agents.md` (Harsh's guide), and `.github/workflows/check.yml`
+  (builds on the preview setting and runs `npm test` on every pull request). **This file stays the one rulebook**: new standing decisions go here, and `AGENTS.md`
+  only holds what differs for an agent without Notion and without push rights to `main` (pull request into `main`; Harsh merges).
+
 ## Two modes: For Everyone and For Doctors
 
 - The URL decides the mode: `/` and everything not under `/doctors/` is **For Everyone**; `/doctors/...` is **For Doctors**.
