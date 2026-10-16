@@ -1,0 +1,159 @@
+{
+ "format": 1,
+ "id": "s61-r1-c14",
+ "label": "14",
+ "title": "Running an institution: service rules, accounts and audit, public procurement, contracts",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-16.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Running anything beyond your own team brings four kinds of question, each with its own <dfn data-g=\"545\">owner</dfn>.</p>\n<p>What a hire requires is set by <dfn data-g=\"722\">service rules</dfn> and labour law; the owner is the institution’s administrative officer. How money is recorded and checked is a matter of accounts and <dfn data-g=\"45\">audit</dfn>. Inside your institution the owner is the finance officer. The auditor of the Union’s and the States’ accounts is the Comptroller and Auditor-General of India (CAG), appointed under Article 148 of the <dfn data-g=\"163\">Constitution</dfn>, whose duties over the accounts of the Union, the States and other bodies are those Parliament’s laws prescribe (Article 149). How a government body buys is set by <dfn data-g=\"617\">public procurement</dfn> rules; the owner is the purchase (stores) officer. The Union’s General Financial Rules 2017 ask for legal and financial advice in drafting a contract that does not use a standard form (Rule 225); this book holds no rule on memoranda of understanding. For both, the owner is a lawyer, reached through the institution’s legal cell.</p>",
+   "refs": [
+    253,
+    254,
+    255,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    262,
+    263,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Running anything bigger than your own team brings legal and money questions. Leading the team itself is taught in Book 69, <em>Teaching, mentorship and coalition building</em> (Rung 2).</p>\n<p>There are four fields.</p>\n<p>First, a hire. Service rules — the rules that set a government post’s pay, leave, conduct and the rest — and labour law decide what a hire requires: what kind of post, what process, and what the person may be promised. No source this book holds sets these out, so this section says nothing about their content. The owner is the institution’s administrative officer.</p>\n<p>Second, accounts and audit. Accounts are the record of money received and spent. Audit — a <dfn data-g=\"103\">check</dfn>, by someone other than the spender, that money was spent and recorded as the rules and the accounts say — is the other half of the job. <dfn data-g=\"763\">Statutory accounts</dfn> — accounts a law or a rule requires a body to keep — are part of this. Inside your institution, questions about them go to the finance officer.</p>\n<p>For the accounts of the Union and the States, the auditor is the Comptroller and Auditor-General of India (CAG).</p>\n<p>The Union’s own rulebook for money is the General Financial Rules 2017 (GFR), taught below. Rule 236 covers a body that gets a government grant.</p>\n<p>The rule gives two separate tests for when the CAG audits a grantee. First, the CAG “shall” audit it when the grants or loans in a year are at least Rs 25 <dfn data-g=\"426\">lakh</dfn> and also “not less than seventy-five percent of the total expenditure of the Institution”, so 75 per cent or more of its spending. Both conditions must hold. Second, the CAG “may also” audit it when the grants or loans in a year are “not less than Rupees one <dfn data-g=\"182\">crore</dfn>”, which is Rs 1 crore, whatever share of its spending that is. In all other cases the institution has its accounts audited by chartered accountants of its own choice (Rule 236(3)). These figures are as printed in the GFR updated up to 31 January 2026.</p>\n<p>The CAG, or the chartered accountant, is the auditor, not someone you ask. The person inside your institution who can tell you what audit will check is the finance officer. That is this book’s advice, like every owner named here by kind.</p>\n<p>Third, public procurement — a government body buying goods or services under its financial rules. For the Union government’s offices, those rules are the GFR. The owner is the purchase (stores) officer — the person in charge of your institution’s purchase or stores section.</p>\n<p>The copy this book holds is “Updated up to 31.01.2026”. The GFR are “applicable to all Central Government Ministries / Departments, attached and subordinate bodies” (Rule 1).</p>\n<p>Rule 144 makes whoever holds the power to buy responsible for bringing “efficiency, economy, and transparency”, and for “fair and equitable treatment of suppliers and promotion of competition”. The same rule says what the description of the thing to be bought must be: “objective, functional, generic and measurable”. It must not “indicate a requirement for a particular trade mark, trade name or brand”. This is the part a health person can do well. You can say what the item must do.</p>\n<p>The <dfn data-g=\"337\">Government e-Marketplace</dfn> (GeM) is the government’s online market for common goods and services. Union ministries and departments must use it for what it offers, and State offices may use it. Buying by ministries or departments “will be mandatory for Goods or Services available on GeM” (Rule 149).</p>\n<p>A State’s own offices buy under the State’s own financial rules, which this book does not hold. That is why, in the scene below, the first answer you need is which rule book applies.</p>\n<p>Fourth, contracts and memoranda of understanding. A <dfn data-g=\"482\">memorandum of understanding</dfn> — a written agreement between two bodies about what each will do — is not covered by any rule this book holds.</p>\n<p>For contracts, the GFR themselves send the drafting to advisers (Rule 225). For both, the owner is a lawyer, reached through the institution’s legal cell.</p>\n<p>Here are the four owners, and where to look for each.</p>\n<table style=\"width:100%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Where to look</td>\n</tr>\n<tr>\n<td>Service rules and labour law for a hire</td>\n<td>the administrative officer</td>\n<td>your institution’s administration office</td>\n</tr>\n<tr>\n<td>Statutory accounts and audit</td>\n<td>the finance officer; for public bodies, the CAG as auditor</td>\n<td>your institution’s finance or accounts office; the CAG audits, and you do not write to the CAG yourself</td>\n</tr>\n<tr>\n<td>Public procurement</td>\n<td>the purchase (stores) officer</td>\n<td>your institution’s purchase or stores section</td>\n</tr>\n<tr>\n<td>Contracts and memoranda of understanding</td>\n<td>a lawyer, through the institution’s legal cell</td>\n<td>your institution’s legal cell, through the administration office if there is no cell</td>\n</tr>\n</tbody>\n</table>\n<p>These are kinds of places, given as advice.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s61-r1-c14-rule-149-limits.png",
+   "alt": "Three bars in lakh rupees: the first limit 0.5, the first limit for bodies the footnote lists 1, and the limit above which bids are needed, 10.",
+   "w": 1340,
+   "h": 654,
+   "caption": "The value limits of Rule 149 of the General Financial Rules, in lakh rupees. Up to Rs 50,000, any available supplier on GeM; above it and up to Rs 10 lakh, the lowest price among sellers of at least three different manufacturers; above Rs 10 lakh, bids. A footnote replaces the first limit with Rs 1 lakh for the bodies it lists, twice the general one. Which limit covers your institution is the purchase officer’s answer."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a purchase and the rule that governs it, and see how much of it you can read.</p>\n<p>Open the General Financial Rules 2017 on the Department of Expenditure’s website (https://doe.gov.in/files/circulars_document/GFRupdatedupto31012026.pdf). Search for “Rule 149”. Read the routes by value, then set them out in a table. The figures are as printed in the GFR updated up to 31 January 2026.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Value of the purchase on GeM</td>\n<td>How Rule 149 says to buy</td>\n</tr>\n<tr>\n<td>up to Rs 50,000</td>\n<td>through any available supplier on GeM that meets the quality, specification and delivery period</td>\n</tr>\n<tr>\n<td>above Rs 50,000 and up to Rs 10 lakh</td>\n<td>through the GeM seller with the lowest price among at least three different manufacturers</td>\n</tr>\n<tr>\n<td>above Rs 10 lakh</td>\n<td>through the supplier with the lowest price, after obtaining bids by online bidding or reverse auction on GeM</td>\n</tr>\n</tbody>\n</table>\n<p>The rule prints the middle limit as “Rs.10,00,000/-”. That is ten lakh, and the table writes it that way. Bids are priced offers that suppliers send in answer to a call for them; that call is what people mean by “a tender”. How GeM’s online bidding and reverse-auction tools run is the purchase officer’s work, and this book does not teach it.</p>\n<p>Now read the footnotes under the rule. One replaces the first limit with “Rs. 1,00,000/-” (Rs 1 lakh; the rules print “/-” after whole-rupee amounts) for scientific ministries, and for “Educational and Research Institutes” that run post-graduate and doctoral courses or research. Ask yourself: is my institution one of these? You may not know.</p>\n<p>Read Rule 149(viii). A demand for goods “shall not be divided into small quantities to make piecemeal purchases” to avoid the bidding <dfn data-g=\"696\">route</dfn>. Then read Rule 145. Who may sanction a purchase is set by “the <dfn data-g=\"207\">Delegation</dfn> of Financial Powers Rules”, which this book does not hold.</p>\n<p>Last, list what you would need to know to say how this purchase must be made. Does the GFR apply to your body at all (Rule 1)? Is the item on GeM? Which <dfn data-g=\"310\">footnote</dfn> covers your institution? Who holds the power to sanction it? Does the whole year’s demand count as one purchase? That list is the purchase (stores) officer’s daily work. You can read the rule. You cannot apply it.</p>",
+   "numberRefs": [
+    281
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The GFR are the Union government’s rules (Rule 1). A district programme run by a State government buys under that State’s own financial rules, which this book does not hold, though GeM is open to State offices.</p>\n<p>The limits are the amended figures as printed in the consolidation updated to 31 January 2026. The footnotes show that office orders change them, so the figure you read may not be the figure that applies on the day you buy. Nothing here says what audit has found about any purchase.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>A made-up meeting: the district NCD programme review. The district NCD officer holds up a supplier’s catalogue.</p>\n<blockquote>\n<p>“The screening money has come. We need weighing scales for the camps. You’re the community medicine person: pick a model from this catalogue and we’ll send the order today.”</p>\n</blockquote>\n<p>Start with what you can do, there and then. Write what the scale must do for screening. It must weigh the heaviest adult who will come to a camp. It must read finely enough for the camp’s purpose. It must be open to <dfn data-g=\"81\">calibration</dfn> — measuring a machine against something already known, so its readings mean something. It must survive being carried between camps. Write all of this with no brand name. Rule 144 asks exactly this of a description: “objective, functional, generic and measurable”, with no brand. That page is yours.</p>\n<p>Now the signal. <strong>About to act</strong> fires first, because the order goes today. Behind it is <strong>Unknown standard</strong>. You do not know which rule book governs this purchase, whether the GFR or the State’s, or which route its value requires.</p>\n<p>You might say: “I’ll write the specification now, without a brand. Which route the rules require for this purchase, and what audit will check, is a different question. That is outside what I can assess, and here is who can: the purchase (stores) officer. Can we send it to them today, with the specification, and place the order once they <dfn data-g=\"666\">reply</dfn>?”</p>\n<p>The curriculum this book follows gives the question in these words.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Your question</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>Whether, how and when the district buys weighing scales for its screening camps. The district NCD officer decides; the camps are waiting for the scales.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>A purchase of weighing scales for adult screening, paid from the screening budget (the amount and the number of scales are attached). Our specification, with no brand, is attached. We do not know whether the item is on GeM or which rules govern this purchase.</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>“what does this hire, contract or purchase require, and what will audit check?”, fitted: “What does this purchase of weighing scales require, and what will audit check in its file?”</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>The route to buy by (GeM or another, and which rule), the steps and papers needed, the authority who must sanction it, and what audit will look for in the file. I cannot judge public procurement rules; tell me how sure you are and on what, and where the answer depends on facts you need from us.</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Before the next camp schedule is fixed, in two weeks. If it comes later, the camps start without the scales, or the order is placed without the rules checked.</td>\n</tr>\n</tbody>\n</table>\n<p>The same question fits the other three owners. Each of these is one you would send in the same five parts when you write it in full. They are this book’s wording, not the curriculum’s.</p>\n<ul>\n<li>To the administrative officer, for a hire: “What does it take to engage a data-entry person for six months from the screening budget, and what may we promise them?”</li>\n<li>To the finance officer, for accounts and audit: “Which accounts must we keep for the screening grant, and what will audit check in them?”</li>\n<li>To the legal cell, for a memorandum of understanding: “Can you draft or check our memorandum with the college that will lend us staff for the camps, and what must it contain?”</li>\n</ul>\n<p>Add the four rows to your <dfn data-g=\"166\">contact list</dfn> now; a later section shows how to keep it.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Name and institution</td>\n<td>How you know them</td>\n<td>Last question asked</td>\n<td>Asked on</td>\n<td>Checked on</td>\n</tr>\n<tr>\n<td>Service rules and labour law for a hire</td>\n<td>the administrative officer</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>what this hire requires, and what may be promised</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Statutory accounts and audit</td>\n<td>the finance officer; for public bodies, the CAG as auditor</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>which accounts this grant needs, and what audit will check</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Public procurement</td>\n<td>the purchase (stores) officer</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>what this purchase requires, and what audit will check</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Contracts and memoranda of understanding</td>\n<td>a lawyer, through the institution’s legal cell</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>what this memorandum must contain</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The specification is yours, and routing it away would be a failure of the other kind: nobody else in the room knows what a screening scale must do.</p>\n<p>Routing is also the wrong frame once the officer has replied. A reply that names the rule and the route is not something you second-guess. You check it with the five checks (Asked: is it about this purchase; How sure: does it say how sure, and on what; Own field: does it name what lies outside public procurement, such as the State’s own rules; References: does the rule it cites say what the reply says; Decision: does it settle whether, how and when to buy), and then you act on it.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Do not tell a meeting ‘it is under fifty thousand, so buy it from any supplier’. Whether the General Financial Rules apply at all, which limit covers your institution (a footnote raises the first limit to Rs 1 lakh for listed bodies), whether the item is on GeM, and whether the year’s demand counts as one purchase are each the purchase (stores) officer’s answer. Rule 149(viii) forbids splitting a demand to stay under a limit.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not tell a committee that ‘audit won’t look at something this small’. Ask the finance officer what audit will check.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not promise anyone a post, a term or a pay in a meeting. What a hire requires is set by service rules and labour law that this book does not hold; the administrative officer answers it before anyone is told anything.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not agree to a contract’s or a memorandum’s wording ‘in principle’ across a table. For contracts, the General Financial Rules ask for legal and financial advice before clauses are drafted outside a standard form, or a standard form is changed; for a memorandum, ask the legal cell.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>In every purchase, write the specification yourself: what the item must do, measurably, with no brand.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The General Financial Rules you can read are the Union government’s, updated to 31 January 2026, and they are changed by office orders. Quote a GFR limit only with the words ‘for Union bodies, as of’ and its <dfn data-g=\"198\">date</dfn>, and let the purchase (stores) officer say which rules apply.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>Reading the GFR’s rupee limits as the rule for every government purchase in India. They are the Union government’s rules, updated to 31 January 2026; a State’s offices buy under the State’s own rules, and a footnote changes the first limit for some bodies.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the owner of each of these questions. What does a hire require? What will audit check in a grant’s accounts? How must a purchase be made? What must a memorandum of understanding contain? Then give the curriculum’s question for this field in its words.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>The administrative officer. The finance officer (the CAG is the auditor for public accounts, not someone you write to). The purchase (stores) officer. A lawyer, through the institution’s legal cell. “What does this hire, contract or purchase require, and what will audit check?”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up request: at the district NCD meeting, the district NCD officer asks you to take on a person for six months. The person will enter screening data, paid from the screening budget, starting next month. Write the question you would ask, in the five parts, and say who gets it.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Your question</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>Whether, and how, the district engages a data-entry person for six months; the district NCD officer decides; the screening data are waiting.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>Six months’ work entering screening data; paid from the screening budget (amount attached); the work, hours and place described (attached).</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>“what does this hire, contract or purchase require, and what will audit check?”, fitted: “What does this hire require — post, process, papers — and what will audit check in it?”</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>The route (post, contract or another), the steps and approvals, what may be promised to the person, and what audit looks for; I cannot judge service rules, so tell me how sure you are and on what.</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Two weeks before next month’s start; later, the person is engaged without the rules checked, or the work starts late.</td>\n</tr>\n</tbody>\n</table>\n<p>It goes to the administrative officer, with a copy to the finance officer for the audit half. What stays yours: what the work is, how much of it there is, and how you will check the data entered.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A made-up line at the district NCD meeting (the price is made up): ‘The scale costs Rs 45,000, so no tender is needed. Just buy it from the shop near the office.’ Name the signal that should have stopped the speaker, say what the speaker could not know, and rewrite the line.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p><strong>Unknown standard</strong> fires first: the speaker does not know which rules govern this purchase or what they require. <strong>About to act</strong> follows: the purchase is about to be made.</p>\n<p>What the speaker could not know: three things. First, whether the GFR apply. They are the Union’s rules; a State programme follows the State’s. Second, whether the scale is on GeM. If it is, Rule 149 makes buying through GeM mandatory for bodies under the GFR, and “the shop near the office” is not a route the rule names. Third, whether the year’s demand for scales is one purchase that must not be split.</p>\n<p>Rewrite: “Here is the specification, without a brand. Which route the rules require is a different question. That is outside what I can assess, and here is who can: the purchase (stores) officer. Let’s send it to them today and place the order once they reply.” Notice the rewrite does not say the shop is wrong either: that is the officer’s answer.</p>"
+  }
+ ]
+}

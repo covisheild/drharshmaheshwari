@@ -1,0 +1,128 @@
+{
+ "format": 1,
+ "id": "s61-r1-c01",
+ "label": "1",
+ "title": "The edge of your competence: four depths, and where routing sits",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>To <dfn data-g=\"696\">route</dfn> a question is to notice that it has left what you can assess, name its <dfn data-g=\"545\">owner</dfn>, and send it to them as a question they can answer. The owner is the person or office whose job it is to answer it.</p>\n<p>Knowing a field has four depths, each defined by what you can do. At the route <dfn data-g=\"210\">depth</dfn> you recognise a question as the field’s and name its owner. At the read depth you follow a paper in the field and say what it claims. At the critique depth you judge whether the paper’s methods support its claims. At the do depth you produce the field’s work yourself. The depths are always named in that order.</p>\n<p>The <dfn data-g=\"237\">edge</dfn> of your competence is set one question at a time. A question is inside your edge when you can say what result would show your answer wrong, and can <dfn data-g=\"103\">check</dfn> that result yourself. When you cannot do both, the question is past your edge, whatever your depth in the field as a whole.</p>",
+   "refs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>You will be asked questions that belong to someone else. A reporter asks whether a <dfn data-g=\"326\">gene</dfn> test can say which children will develop obesity.</p>\n<p>You can answer part of some such questions and none of others. The person asking is waiting while you decide.</p>\n<p>Knowing a field is not one thing. It has depths — how far you can go in a field, judged by what you can do. There are four.</p>\n<table style=\"width:97%;\">\n\n<tbody>\n<tr>\n<td>Depth</td>\n<td>What you can do</td>\n</tr>\n<tr>\n<td>route</td>\n<td>Recognise a question as this field’s, and name its owner</td>\n</tr>\n<tr>\n<td>read</td>\n<td>Follow a paper in the field and say what it claims</td>\n</tr>\n<tr>\n<td>critique</td>\n<td>Judge whether the paper’s methods support its claims</td>\n</tr>\n<tr>\n<td>do</td>\n<td>Produce the field’s work yourself</td>\n</tr>\n</tbody>\n</table>\n<p>You already stand at the do depth in parts of your own field, and the guidelines you trained under say so. The National Medical Commission’s postgraduate guidelines for MD Community Medicine, an undated document on its website, say the student “should be able to perform independently” a list of tasks. The list opens with “Conduct community surveys for assessment of health &amp; morbidity profile”. So a survey’s <dfn data-g=\"595\">prevalence</dfn> is a question you can usually take at the do depth.</p>\n<p>In most of the fields this book names, you start at the route depth. Statistical genetics, trade law and town planning are three.</p>\n<p>Routing is a competence of its own, and it is not the absence of the others. To route a question is to notice that it has left what you can assess, name the person or office whose job it is to answer it, and send it to them as a question they can answer.</p>\n<p>That person or office is the owner of the question — the one whose job it is to answer it. Routing has four skills, in this order. You notice the edge, you name the owner, you write a question the owner can answer, and you judge the reply.</p>\n<p>Whether a question is inside your edge is decided by two questions you ask yourself. First, can you say what result would show your answer wrong? Second, can you check that result yourself?</p>\n<p>Together they give the edge of your competence — for one question, the point past which you cannot say what would show your answer wrong and check it yourself.</p>\n<p>The edge moves from question to question, even inside your own field and even inside one conversation. Take two questions that arrive in the same epidemiological words. “What share of adults in this survey have a waist above the survey’s cut-off?” is inside your edge. “Does this paper’s genetic method hold for people in India?” is past it.</p>\n<p>Routing ends in words you say and a list you keep. The words are a sentence you will say in every setting — a meeting, a lecture, an interview, a reporter’s call, and with a patient: “That is outside what I can assess, and here is who can.” This book calls it the <dfn data-g=\"618\">public sentence</dfn>. Each time you say it, you also say the part you can answer, name the owner and say the next step. With a patient, also say what they should keep doing meanwhile.</p>\n<p>The list is a <dfn data-g=\"166\">contact list</dfn> — your own list of owners, one row per field. Start it today, with one row for each field this book names. The last section but one builds it properly, with a column for how you know each person.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>A made-up exchange: A colleague stops you in the corridor with a printout. “You did epidemiology. This paper says a gene score predicts obesity in children. Is it sound?” The paper is made up, and so is everything in it. You read the <dfn data-g=\"5\">abstract</dfn>. It names a cohort, children followed for years, and <dfn data-g=\"529\">odds</dfn> ratios (a way of comparing how common an outcome is in two groups; Book 9 teaches them). You use those words every week. You say: “Yes, it’s a solid <dfn data-g=\"129\">cohort study</dfn>.”</p>\n<p>Now run the edge test on what you said. Ask the first question: what result would show your answer wrong? For the cohort, you can name some. Children may have been lost to follow-up — dropped out before the end, so their outcome is unknown. An outcome may have been measured differently at the end. For the gene score, you can name none. You do not know how such a score is built or tested, so you cannot say what would show it unsound. The second question fails with it. Your sentence joined two answers, and only one was inside your edge.</p>\n<p>Here is the clean version, filled in for five made-up questions.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Question</td>\n<td>Depth it needs</td>\n<td>What would show your answer wrong?</td>\n<td>Can you check that yourself?</td>\n<td>Inside or past your edge?</td>\n</tr>\n<tr>\n<td>What share of adults in this district survey have a waist above the cut-off the survey used?</td>\n<td>do</td>\n<td>A recount from the data gives a different share</td>\n<td>Yes: recount it</td>\n<td>Inside</td>\n</tr>\n<tr>\n<td>Was each waist measured the way the survey’s own protocol says?</td>\n<td>do</td>\n<td>The field records and the protocol disagree</td>\n<td>Yes: compare them</td>\n<td>Inside</td>\n</tr>\n<tr>\n<td>What does this paper on a gene variant claim, and in whom?</td>\n<td>read</td>\n<td>The paper’s own text says something else</td>\n<td>Yes: reread it</td>\n<td>Inside</td>\n</tr>\n<tr>\n<td>Do that paper’s genetic methods support its claim for people in India?</td>\n<td>critique</td>\n<td>You cannot name it</td>\n<td>No</td>\n<td>Past</td>\n</tr>\n<tr>\n<td>Can the district buy weighing scales from a local shop without a tender (a formal call for written offers from sellers)?</td>\n<td>route</td>\n<td>You cannot name it</td>\n<td>No</td>\n<td>Past: the purchase (stores) officer, who handles buying for the office, owns it (section 14)</td>\n</tr>\n</tbody>\n</table>\n<p>In the model table, three of the five questions were inside your edge and two were past it. That is normal. The gene question and the purchase question are the ones you route. You still answer the other three.</p>\n<p>Now fill in the same table for five questions you were asked in your own last month. Write the depth each one needs before you decide whether it was inside your edge.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The test runs on your own answers, and your own judgement is the thing in doubt. The next section shows how loosely <dfn data-g=\"151\">confidence</dfn> follows <dfn data-g=\"8\">accuracy</dfn>. The test works only when you answer each part with something specific: a named result and a named check. “I would look into it” is not a check. The test also cannot tell you that a check you named is the wrong one. And the person you route to has an edge of their own. Goldman, Lee and Rudd, in “Ten commandments for effective consultations” (1983), told the doctors who answer such requests to “address the problem for which they were called”, and to avoid arguments with other services “especially if the problem lies outside their domain”.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Open the National Medical Commission’s Guidelines for <dfn data-g=\"142\">Competency Based</dfn> Medical Education (CBME) Curriculum 2024 at https://nmc.org.in/storage/cms/rules-regulation-nmc/YTW423v3EsCFdtPv3I5qZkaNNhuXfub42UZITDRM.pdf. Search for “identify and refer”. Read competency 3.1.14. It asks the graduate to “identify and refer patients who may require specialized or advanced tertiary care”. Then search for “objective self-assessment” and read competency 3.4.1.</p>\n<p>Now open the Core Competencies of the Interprofessional Education Collaborative (IPEC), version 3 (2023), at https://www.ipecollaborative.org/assets/core-competencies/IPEC_Core_Competencies_Version_3_2023.pdf. The front matter says the group was made up of 22 professional associations. Find the section on Roles and Responsibilities. Read RR3 and RR4.</p>\n<p>Now the trap. Search the same PDF for “limitations in skills”. It is there, in Table A7, in the left-hand column headed Version 2 (2016). Look across the row. The 2023 column beside it reads “Practice cultural humility in interprofessional teamwork”. So “Recognize one’s limitations” is the 2016 wording. If you quote it as a 2023 competency, anyone who opens the table can correct you. Book 0’s section on <dfn data-g=\"104\">checking a reference</dfn> made the same point: <dfn data-g=\"292\">finding</dfn> a line is not the same as confirming what it is.</p>\n<p>Each document states the duty in one line. None of the lines you have just read says how to notice the edge in the middle of a sentence. Write down the line you would cite if a committee asked why you are routing a question. Competency 3.1.14 is written for the <dfn data-g=\"377\">Indian Medical Graduate</dfn>, so it is the natural one for an Indian room.</p>",
+   "numberRefs": [
+    14
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These are curricula and a competency statement, not evidence that routing improves outcomes, and none of the passages measures anything. The CBME Curriculum 2024 binds the MBBS course. It says what a graduate should be able to do, not what an MD resident must do in a committee. Competency 3.1.14 speaks of referring patients for tertiary care, so it is the same duty at a different step: it is not a rule about routing a question. IPEC is a United States body. Its statement shows how one group of professions words the duty, not what Indian bodies require.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Do not treat routing as what you do when you are not good enough. Routing is a competence with four skills: noticing the edge, naming the owner, writing a question the owner can answer, and judging the reply.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Before you answer a question someone will act on, run the edge test in your head. Name the result that would show your answer wrong, and name how you would check it.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Depth in a field does not put a question inside your edge. Test the question, not the vocabulary.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Do not quote “Recognize one’s limitations” as a 2023 IPEC competency.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>When you route part of a question, say the part you can answer as well.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The edge test runs on your own judgement, and your own judgement is the thing in doubt. It catches the question where you cannot name a check. It does not catch the one where you name a check that is wrong.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The four depths are a ladder, and I stand on one step for each field.” You stand on different steps for different questions in the same field, sometimes in the same conversation. The depth tells you where to start looking. The edge test settles each question.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, name the four depths of knowing a field, in order, and say what you can do at each. Then state the two parts of the edge test.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Route: recognise a question as the field’s and name its owner. Read: follow a paper in the field and say what it claims. Critique: judge whether the paper’s methods support its claims. Do: produce the field’s work yourself.</p>\n<p>The edge test, for one question, has two parts. Can you say what result would show your answer wrong? And can you check that result yourself? If you cannot do both, the question is past your edge.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up line from a meeting. A resident says: “I’m trained in community medicine, so I can tell you this genetic risk score is valid for our district.” Find the flaw, and rewrite the line so it says what the resident can and cannot answer.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The flaw is reasoning from depth in a field to the edge for one question. Training in community medicine puts the resident at the do depth for surveys, not at the critique depth for a genetic method. Run the test. What result would show that the score is not valid in this district? The resident cannot name one for the genetic method, so cannot check it.</p>\n<p>What the resident can answer is how the district’s own data could be <dfn data-g=\"829\">used</dfn>. Once someone who owns the method says what to compare, the data can show whether the score’s predictions match what happens.</p>\n<p>A rewrite: “I can tell you what our district data would let us check. Whether the score’s genetic method holds for our population, I cannot judge. That is outside what I can assess, and here is who can: a statistical geneticist, and I will send them the question.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Audience: a first-year resident. A first-year resident tells you: “I’ve read three papers on the gut microbiome, so I can answer the patient’s question about probiotics.” You have ten minutes and a whiteboard. Explain the difference between the read depth and the edge for one question, using the two-part test.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw the four depths as four rows. Reading three papers puts the resident at the read depth: they can say what each paper claims. The patient’s question asks for more, which is whether a product will help this patient.</p>\n<p>Ask the resident the two questions on the board. What result would show “it will help her” wrong? They may name one, such as “her symptoms do not change”. But they cannot check in advance which product, dose and patient the papers’ results apply to. That needs the critique depth and clinical judgement in that field. So that part is past their edge.</p>\n<p>What they can do is say what the papers <dfn data-g=\"114\">claim</dfn>, and route the clinical question to its owner. For this patient, the owner is the treating clinician who knows the field. Close with the rule: depth says where to start looking, and the test settles the question in front of you.</p>"
+  }
+ ]
+}

@@ -1,0 +1,206 @@
+{
+ "format": 1,
+ "id": "s61-r1-c11",
+ "label": "11",
+ "title": "Economists of work and of firms: labour economics, and advertising research",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-16.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"424\">Labour economics</dfn> studies work and pay: who is employed, at what wage, and why. Its question about obesity is whether body weight changes a person’s employment, wages or productivity and, if it does, whether through lower productivity or through employers’ discrimination. The <dfn data-g=\"545\">owner</dfn> of this question is a labour economist.</p>\n<p>Advertising research studies what adverts do. Experiments on food advertising measure how much people eat after seeing it. The owner of this question is a marketing scientist.</p>\n<p>In economically developed countries, Cawley’s 2015 review reports that weight lowers wages, by amounts that differ by gender and race. No study we hold in full measures obesity’s effect on pay in India; one comparative study’s <dfn data-g=\"5\">abstract</dfn> reports excess weight rewarded, not penalised, in Indian wages. Boyland and colleagues’ 2016 <dfn data-g=\"485\">meta-analysis</dfn> found that seeing food adverts in an experiment raised how much children ate soon afterwards, and found no evidence of an effect in adults.</p>",
+   "refs": [
+    186,
+    187,
+    188,
+    188,
+    189,
+    190,
+    190,
+    191,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    196,
+    196,
+    196,
+    186,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    190,
+    186
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>This section uses the <dfn data-g=\"237\">edge</dfn>, the five signals and the five-part question from the sections before it. It applies them to two fields that sound close to yours and are not. A reporter asks whether workers with obesity earn less. A committee asks whether a snack brand’s hoardings — the large advertising boards beside a road — make children eat more. Both questions sound like yours, because they mention obesity. Neither is. The first is about pay. The second is about what adverts do.</p>\n<p>Nobody can assign weight to people <dfn data-g=\"40\">at random</dfn>. So these economists look for natural experiments — situations in which something outside a person’s own choice shifts their weight.</p>\n<p>A marketing scientist works in advertising research, the study of what adverts do. <dfn data-g=\"369\">Impact</dfn> is how quickly the audience receives the advert’s message. <dfn data-g=\"256\">Engagement</dfn> is any interaction with the advert, such as a click on an internet advert.</p>\n<p>Here is who owns each question, and where to start looking in India.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Where to look</td>\n</tr>\n<tr>\n<td>Labour economics of obesity</td>\n<td>a labour economist</td>\n<td>an economics department of a university; the authors of the papers a search finds, such as those in this section</td>\n</tr>\n<tr>\n<td>Advertising research</td>\n<td>a marketing scientist</td>\n<td>the marketing faculty of a management institute</td>\n</tr>\n</tbody>\n</table>\n<p>These are kinds of places, not named offices; no source we hold lists the people.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s61-r1-c11-search-counts.png",
+   "alt": "Four bars: 602 records for title or abstract with broad terms, 135 for title or abstract with wage terms, 15 for title only with wide terms, 1 for title only.",
+   "w": 1360,
+   "h": 654,
+   "caption": "This book’s own search, not a published study: the same question, asked of OpenAlex with four search strings on 10 Oct 2026: 602, 135, 15 and 1 records found. Records found are not studies of the question; reading the titles shows which are. The same broad string over full texts found 99,812 records, left out because nobody can screen them."
+  },
+  {
+   "t": "figure",
+   "src": "s61-r1-c11-boyland-children.png",
+   "alt": "One bar at 0.56 for children, inside a shaded band from 0.5 to 0.8 marked moderate, with a dashed line at 0.8 (large).",
+   "w": 1360,
+   "h": 656,
+   "caption": "Boyland and colleagues’ pooled result for children aged 5 to 12, eating soon after television or internet food adverts in experiments: a standardised mean difference (SMD) of 0.56. The authors read 0.2 as small, 0.5 as moderate and 0.8 as large, so 0.56 is moderate. It is not weight, and in adults the experiments found no evidence of an effect."
+  },
+  {
+   "t": "figure",
+   "src": "s61-r1-c11-rooth-interviews.png",
+   "alt": "Two bars: 8 percentage points fewer interview calls for women, 6 for men.",
+   "w": 1360,
+   "h": 654,
+   "caption": "Rooth’s experiment in Sweden: paired job applications to 989 real job openings, alike except that one photo was altered to make the applicant look as if they had obesity. That applicant was called to interview 8 percentage points less often among women and 6 percentage points less often among men."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the kind of answer a labour economist can give you and you cannot.</p>\n<p>Open Cawley’s review, “An economy of scales”, in the Journal of Health Economics, 2015 (https://doi.org/10.1016/j.jhealeco.2015.03.001). Find the part on wages and read its summary. It says: “In summary, there is evidence that weight lowers wages in economically developed countries.” The next sentence adds: “Studies have found this effect for both women and men, but the magnitude of the effects differs by gender and race.” That is the field’s kind of answer: an estimate of what weight does to pay, with its setting.</p>\n<p>Now see the craft on one study you can follow. It is not a <dfn data-g=\"504\">natural experiment</dfn>: it changes how heavy job applicants look, not their weight. Cawley’s review reports it. In Sweden, a researcher named Rooth sent paired job applications to 989 real job openings. The two applications in each pair were as alike as possible. In one of them, the photo was altered by software so the applicant looked as if they had obesity. The applicant whose photo was altered was called to interview less often: 8 <dfn data-g=\"558\">percentage</dfn> points less for women, and 6 percentage points less for men. The review gives these gaps, not how often the other applicant was called.</p>\n<p>Read next what the review does not tell you. Its evidence is from economically developed countries. In its own list of work still to do, it says that whether the <dfn data-g=\"846\">wage penalty</dfn> comes from lower productivity or from discrimination is still to be estimated. A wage penalty is lower pay for one group than for otherwise similar workers. The review also says that “there is little evidence on the causal effect of weight on productivity.”</p>\n<p>Now the curriculum’s <dfn data-g=\"114\">claim</dfn> about India, and what was measured. The curriculum this book follows says the field has “a real Indian literature gap”. No published study we hold measures this. What was measured is this book’s own search, run on 9 and 10 Oct 2026. It is a search, not a published study.</p>\n<p>The search ran in PubMed on 9 Oct 2026 and in OpenAlex on 10 Oct 2026. OpenAlex is a free index of research papers. It was <dfn data-g=\"829\">used</dfn> because economics papers may sit outside PubMed. PubMed is the free index of medical journals run by the US National Library of Medicine. Its four strings found 332, 86, 23 and 1 records; of the 86 and 23 whose titles were all read, the one Indian economics paper is “Labor market engagement and the <dfn data-g=\"70\">body mass index</dfn> of working adults: Evidence from India.” (https://doi.org/10.1016/j.ehb.2019.01.006) It studies how the sector and the physical intensity of the work people do go with their BMI. That is work affecting weight, not weight affecting pay.</p>\n<p>OpenAlex was not given the PubMed strings. It was given four strings of its own, written in its search syntax. Here is how many records each found on 10 Oct 2026.</p>\n<table style=\"width:68%;\">\n\n<tbody>\n<tr>\n<td>Search (OpenAlex, 10 Oct 2026)</td>\n<td>Records found</td>\n</tr>\n<tr>\n<td>broad, title or abstract</td>\n<td>602</td>\n</tr>\n<tr>\n<td>main, title or abstract</td>\n<td>135</td>\n</tr>\n<tr>\n<td>wide, title only</td>\n<td>15</td>\n</tr>\n<tr>\n<td>title only</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<p>The four strings are below. Each is something you can <dfn data-g=\"819\">type</dfn> into a search box that takes AND and OR. AND keeps only records that match both sides; OR keeps records that match either. Brackets group the words an OR joins, and <dfn data-g=\"628\">quotation</dfn> marks keep a phrase together.</p>\n<ol type=\"1\">\n<li>Broad, in <dfn data-g=\"804\">title</dfn> or abstract: (obesity OR <dfn data-g=\"544\">overweight</dfn> OR “body mass index” OR BMI) AND (India OR Indian) AND (wage OR wages OR earnings OR employment OR productivity OR “labour market” OR “labor market”)</li>\n<li>Main, in title or abstract: (obesity OR overweight OR “excess weight” OR “body mass index” OR BMI) AND (India OR Indian) AND (wage OR wages OR earnings OR “labour market” OR “labor market” OR “labour markets” OR “labor markets”)</li>\n<li>Wide, in the title only: (obesity OR overweight OR weight OR “body mass index” OR BMI OR height OR anthropometric) AND (India OR Indian) AND (wage OR wages OR earnings OR employment OR labour OR labor OR productivity)</li>\n<li>In the title only: (obesity OR overweight OR “body mass index” OR BMI OR “body weight”) AND (India OR Indian) AND (wage OR wages OR earnings OR employment OR productivity OR labour OR labor)</li>\n</ol>\n<p>The same question, asked four ways, gives very different counts. A count is not a list of studies. The broad string run over the full text of papers found 99,812 records; nobody can read that many titles, so it is left out of the figure of search counts at the start of this section. That figure draws the other four counts as bars.</p>\n<p>Now read the titles. The titles show a thin Indian literature. A few economics papers study body size and earnings, mostly, from their titles, at the undernourished end. Two are “Height, weight and earnings among coalminers in India” (2005, https://doi.org/10.1016/j.ehb.2005.10.003) and a study of BMI and earnings under the National Rural Employment Guarantee Scheme in Rajasthan (2013, https://doi.org/10.1016/j.asieco.2013.03.001). The wage-penalty question asked elsewhere has hardly been asked in India.</p>\n<p>One comparative study includes India: “Is Excess Weight Penalised or Rewarded in Middle-Income Countries’ Labour Markets? Comparative Evidence from China, India and Mexico” (Kyklos, 2020, https://doi.org/10.1111/kykl.12220). Its abstract, as the search record holds it, reports that in India excess weight went with higher hourly wages, not lower. The full paper was not read, and this book gives no number from it.</p>\n<p>You can rerun the search. An API is the web address a program, or you, can send a search to. OpenAlex says: “OpenAlex data is free, and so is casual use of the API — you can make basic queries with no <dfn data-g=\"414\">key</dfn> at all.” The references after section 17 list it as “Search record: Indian studies of obesity and employment, wages, earnings or productivity in PubMed and OpenAlex”, with OpenAlex’s search address, https://api.openalex.org/works. To rerun the main search, type that address into a browser’s address bar, follow it at once with ?filter=title_and_abstract.search: and then string 2 above, and read the count near the top of the <dfn data-g=\"666\">reply</dfn>. EconLit and IDEAS/RePEc, two indexes of economics papers, were not searched. Hindi-language papers and government reports were not searched either.</p>\n<p>Now the second field, advertising research, and its kind of answer about eating. Open Boyland and colleagues, “Advertising as a cue to consume”, in the American Journal of Clinical Nutrition, 2016 (https://doi.org/10.3945/ajcn.115.120022). It is a meta-analysis — a study that combines the results of earlier studies of the same question into one answer. The studies it combines exposed people to food adverts on television or the internet, or to a control — an advert for something other than food, or no advert — and then measured how much they ate. Twenty-two articles qualified. Of these, 18 gave data for the pooled result — the results of the separate experiments combined into one number. Those 18 gave 20 comparisons.</p>\n<p>Read the children’s result with the authors’ scale. Here the <dfn data-g=\"473\">mean difference</dfn> (MD) is the gap between the average amount eaten after food adverts and after the control. The <dfn data-g=\"755\">standard deviation</dfn> (SD) measures how spread out the amounts were. The paper reports a <dfn data-g=\"757\">standardised mean difference</dfn> (SMD): the MD divided by the SD, which gives the MD as a number of standard deviations. Which SD is used is part of the definition, and the part of the paper this book holds does not say which. For children, the pooled SMD was 0.56. Children ate more after food adverts than after the control. The authors read 0.2 as small, 0.5 as moderate and 0.8 as large. On that reading, 0.56 is a moderate effect. Its 95% <dfn data-g=\"152\">confidence interval</dfn> ran from 0.18 to 0.94, so the data fit anything from a small to a large effect. In adults, the experiments found no evidence of an effect: the pooled SMD was 0.00.</p>\n<p>Last, read what 0.56 does not tell you. It is eating soon after adverts, in experiments. It is not weight, and it is not hoardings. Only acute <dfn data-g=\"275\">exposure</dfn> was studied: the studies looked at a short exposure and eating soon after. Whether the extra eating is later made up for, and so leads to weight gain, was not tested. The studies with children ran almost entirely in schools, and the children were aged 5 to 12 years. The adverts were on television or the internet. This book has not checked in which countries the studies were run.</p>",
+   "numberRefs": [
+    219,
+    220,
+    221
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Cawley’s review settles the direction of an effect in economically developed countries, not its size or cause in India, and the one comparative study that included India reported the opposite in its abstract. The counts from this book’s own search, not a published study, say what OpenAlex matched on 10 Oct 2026 for four strings; run them later and the counts will differ, and a matched record is not a study of the question. Boyland’s 0.56 holds for children aged 5 to 12, eating soon after television or internet adverts in experiments; it says nothing about weight, adults, hoardings or the months after.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Start with the first field. A made-up call: a reporter from a Hindi daily phones you at six in the evening. “We are running a story tonight. The headline says: ‘Obese workers cost India crores.’ Can you confirm it?”</p>\n<p>The sentence on the tip of your tongue is: “Yes. Studies show that obesity lowers productivity and wages.” Stop and name the first signal that fires. It is <strong>One source</strong>. Your answer would rest on one review you cannot judge, and that review is of other countries. Then <strong>About to act</strong> joins it, because the reporter will print your words tonight. <strong>One source</strong> says you are past the edge; <strong>About to act</strong> says stop now.</p>\n<p>Next, say the part that is yours. The headline’s words are yours to fix. “Obese workers” puts the condition before the person; write “workers with obesity”. Naming the person first keeps a condition from standing for the whole person; this course writes it that way throughout, and Book 48, <em>Eating behaviour, mental health and weight stigma</em>, teaches why. And “cost India crores” is a figure with no source given. Offer the reporter this headline: “Workers with obesity and pay in India: what is known, and what is not”. Then say the <dfn data-g=\"618\">public sentence</dfn>, followed by the owner:</p>\n<blockquote>\n<p>“That is outside what I can assess, and here is who can: a labour economist. I will send one the question tonight. Meanwhile I can tell you what a search of two research indexes on 9 and 10 October found: the question has hardly been asked in India. That was a search, not a published study.”</p>\n</blockquote>\n<p>Here is the question you would send to a labour economist.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Your question</td>\n</tr>\n<tr>\n<td><strong>Decision</strong></td>\n<td>Whether a Hindi daily runs the claim that workers with obesity cost Indian employers crores, and whether my name appears beside it. The reporter is waiting tonight.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>The claim’s source is not given. I hold a 2015 review of studies from economically developed countries, and this book’s own search, run on 9 and 10 Oct 2026 and not a published study, which found the question hardly studied in India, with one comparative study whose abstract reports excess weight rewarded, not penalised, in Indian wages. I have not read that study in full.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>Is there an Indian estimate of what obesity does to workers’ pay, employment or productivity, or what it costs employers? If so, which study, and how much weight can it bear?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>Yes or no; if yes, the study and one line on how far it can be trusted. I cannot judge the method; tell me how sure you are and on what.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>Tonight, before the story is filed. If it comes later, the story runs without my comment.</td>\n</tr>\n</tbody>\n</table>\n<p>Now the second field, where a different signal fires first. A made-up meeting: at the district NCD review, a member says, “A snack company has put up hoardings outside three schools. Its agency’s report says the hoardings have high impact. So they must be making children eat more?”</p>\n<p>The tempting reply is: “Yes. High impact means children eat more, and a meta-analysis shows advertising increases eating.” The first signal is <strong>Loose word</strong>. You are about to use “impact” in its everyday sense, and you could not say what the agency meant by it. In marketing, impact is how quickly the audience receives the message.</p>\n<p>Now say the part you can read. The meta-analysis measured whether children in experiments ate more soon after food adverts on television or the internet. It did not measure hoardings, and it did not measure weight. Whether these hoardings change what these children eat, you cannot say. So you say: “That is outside what I can assess, and here is who can: a marketing scientist. I will send them the question this week and bring the reply to the next review.” Here is the question you would send.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Your question</td>\n</tr>\n<tr>\n<td><strong>Decision</strong></td>\n<td>Whether the district NCD programme raises the hoardings near schools with the district administration, and whether it spends survey money measuring their effect. The district NCD officer is waiting for advice at the next review meeting.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>Hoardings for one snack brand stand outside three schools. The agency’s report calls them “high impact”; I have not seen what it measured. The children are of school age. I hold one meta-analysis of experiments with television and internet adverts, which measured eating soon afterwards.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>For hoardings outside schools, what can be measured — what children remember of them, what they buy — and has any study measured whether such hoardings change what children eat?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>A list of what can be measured and how, with a reference for any study that exists. Tell me how sure you are and on what; I cannot judge the methods.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>Before the next review meeting. If it comes later, the meeting discusses the hoardings on the agency’s word alone.</td>\n</tr>\n</tbody>\n</table>\n<p>Add these two rows to your <dfn data-g=\"166\">contact list</dfn>. Its full columns come in the section on keeping the list; for now fill Field, Owner and the question.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Name and institution</td>\n<td>How you know them</td>\n<td>Last question asked</td>\n<td>Asked on</td>\n<td>Checked on</td>\n</tr>\n<tr>\n<td>Labour economics of obesity</td>\n<td>a labour economist</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>Is there an Indian estimate of what obesity does to pay, employment or productivity?</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Advertising research</td>\n<td>a marketing scientist</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>What can be measured about hoardings outside schools, and has any study measured their effect on eating?</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p><dfn data-g=\"696\">Route</dfn> the question only when it really is about pay or about what adverts do. If the reporter asks how many adults in a district have obesity, or how BMI is measured, the question is yours: answer it. And if the decision cannot wait for a reply, say what the evidence you hold covers, say what it does not, and name the owner; do not fill the gap yourself.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Do not tell a reporter that obesity lowers wages or productivity in India. The wage evidence you can cite comes from economically developed countries. Say what the evidence covers, then name the labour economist.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Do not say that food advertising makes people eat more, as if that settled a decision. The meta-analysis found children ate more soon after television or internet adverts in experiments, and found no evidence that adults did.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“High impact” in an agency’s report does not mean the advert changed what anyone ate or bought. In marketing, impact is how quickly the audience receives the message.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The curriculum’s “real Indian literature gap” is not settled. It would be settled by searching EconLit, IDEAS/RePEc and Indian working-paper series with the same strings, and by reading the Kyklos 2020 study in full. Until then, name the indexes and say: “A search of two research indexes on 9 and 10 Oct 2026 found the question hardly asked in India. It was a search, not a published study.”</p>",
+     "tag": "dispute",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A count of records is not a count of studies. This book’s own search, run on 9 and 10 Oct 2026, is a search, not a published study: it shows what one index matched, for one string, on one day.</p>",
+     "tag": "boundary",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“A search found almost nothing, so Indian workers with obesity are not paid less.” A search that finds little has measured the literature, not the labour market. It means the question is open in India, not that the answer is no; the one comparative study found reports, in its abstract, excess weight rewarded in Indian wages.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the owner of a question about obesity and wages, and the owner of a question about what food adverts do. For each, give one kind of answer they can produce that you cannot.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>A labour economist: an estimate of whether weight changes employment, wages or productivity, from natural experiments, and whether any gap comes from productivity or discrimination. A marketing scientist: measures of how quickly an audience receives an advert, how people interact with it, what they remember of it and what they buy after it; experiments on food adverts measure eating soon after.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up request: the medical superintendent of a district hospital wants to start a weight programme for staff, and asks you whether staff with obesity take more sick leave, so that she can justify its cost. Write the question you would send to a labour economist, in five parts.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Your question</td>\n</tr>\n<tr>\n<td><strong>Decision</strong></td>\n<td>Whether the medical superintendent funds a staff weight programme on the grounds that it will reduce sick leave. She is waiting for advice before the next budget.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>One district hospital’s staff. The hospital holds its own leave records; I do not know whether staff weights are recorded. The studies I know of come from economically developed countries.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>Is there a sound estimate, from India or a similar setting, of whether obesity causes more sick leave? Could this hospital’s own records answer it, and if not, why not?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>Yes or no for each half, with the study or the reason. Tell me how sure you are and on what; I cannot judge the methods.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>Before the budget is drafted. If it comes later, the programme is decided without it.</td>\n</tr>\n</tbody>\n</table>\n<p>Cawley’s review lists the causal effect of obesity on absenteeism as still needing estimates, so expect the answer to be that little is known. The question still has to be asked, because the decision is about money.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A made-up request: the ward’s cricket tournament is sponsored by a soft-drink brand, whose banners line the ground and whose stall sells its drinks. The councillor asks whether the sponsorship makes the children who play buy more of the drink. Write the question for a marketing scientist, in five parts.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Your question</td>\n</tr>\n<tr>\n<td><strong>Decision</strong></td>\n<td>Whether the councillor asks the organisers to refuse drink sponsorship next season. The councillor is waiting before the organisers sign the next sponsor.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>One ward tournament; banners round the ground and a stall selling the brand’s drinks. Players are children and teenagers. I hold an experimental meta-analysis of television and internet food adverts, not of sponsorship or banners.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>What could be measured here — what the children recall, what they buy at the stall — and has any study measured whether sports sponsorship changes what children buy?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>A list of measures and how to take them, and a reference for any study. Tell me how sure you are and on what; I cannot judge the methods.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>Before the sponsor for next season is signed. If it comes later, the decision is made without it.</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A made-up line from a district meeting: “Indian studies prove that obesity cuts productivity, so a workplace weight programme will pay for itself.” Name the first signal that should have stopped the speaker, and rewrite the line.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p><strong>One source</strong> (and with it <strong>No test</strong>): the speaker cannot name the Indian study, and could not say what would show the claim wrong. This book’s own search ran on 9 and 10 Oct 2026, and it is not a published study. It found the question hardly asked in India, and Cawley’s review notes little evidence on weight’s causal effect on productivity even elsewhere. Rewrite: “I do not know of an Indian study of obesity and productivity. Whether a workplace programme would pay for itself is outside what I can assess, and here is who can: a labour economist. I will ask one before we decide.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 5,
+   "prompt": "<p>A made-up line: an agency’s report says, “The campaign’s hoardings achieved high impact and strong engagement among children.” A colleague reads it out at a meeting as, “The hoardings changed what children eat.” Find the signal and rewrite the colleague’s line.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p><strong>Loose word</strong>: “impact” and “engagement” are marketing terms. Impact is how quickly the audience receives the message; engagement is any interaction with the advert, such as a click. Neither is a measure of eating. Rewrite: “The agency says children saw the hoardings quickly and interacted with them. It has not said whether anyone’s eating changed. That is outside what I can assess, and here is who can: a marketing scientist. I will ask them what was measured.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 6,
+   "prompt": "<p>Rerun the main search. Run string 2 in OpenAlex, as Illustration 1 shows, read the count near the top of the reply, and compare it with 135 on 10 Oct 2026. Then read the first twenty titles and mark each: does it study whether body weight changes pay or employment in India? Say what your count tells you and what it does not.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Your count may differ from 135: OpenAlex adds and corrects records, so a count belongs to its <dfn data-g=\"198\">date</dfn>. Write yours down with today’s date. The count tells you how many records matched the words. It does not tell you how many study the question: most titles will be about other things (<dfn data-g=\"595\">prevalence</dfn>, clinics, workplaces, other countries), and only reading them shows which do. A mark of “yes” on a title is a reason to read the abstract, not a <dfn data-g=\"292\">finding</dfn>. Nothing here searched EconLit, IDEAS/RePEc or Indian reports, so a short list is not proof that no study exists.</p>"
+  }
+ ]
+}

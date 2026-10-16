@@ -1,0 +1,172 @@
+{
+ "format": 1,
+ "id": "s61-r1-c15",
+ "label": "15",
+ "title": "Campaign production and media buying",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-16.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Campaign production makes the advertising message: the visual or spoken information that informs or persuades an audience, usually in five parts — headline, subheading, copy, images and a call to action. <dfn data-g=\"478\">Media buying</dfn> chooses and pays for the media that carry the message, usually a mix of them. A media plan states what a budget buys in two quantities. <dfn data-g=\"645\">Reach</dfn> is the estimated number of people in the audience who will see the message. <dfn data-g=\"318\">Frequency</dfn> is the number of times each of them will see it in a stated period. Together they set the schedule, and, in the words of OpenStax’s open textbook <em>Principles of Marketing</em>, “there are trade-offs between reach and frequency”.</p>\n<p>In India, television rating agencies must register with the Ministry of Information and Broadcasting. Its TV Ratings Policy 2026 replaced the guidelines of 16 January 2014. A rating agency measures viewing in a panel — a fixed sample of homes chosen for audience measurement; the 2026 policy calls them metered homes, and raises the number it requires from 50,000 to 80,000. In a written <dfn data-g=\"666\">reply</dfn> in the Rajya Sabha (the upper house of Parliament), posted on 24 July 2026, the Ministry said that no entity was yet registered under the new policy.</p>\n<p>The National Health Mission (NHM) funds the States’ information, education and communication (IEC) and behaviour change communication (BCC). Its <dfn data-g=\"414\">key</dfn> programme management staff, as a 2019 benchmark document lists them, include a State IEC officer or State BCC officer, who prepares the State’s IEC/BCC plan each year and evaluates it. The owners of a campaign’s reach and of how its <dfn data-g=\"275\">exposure</dfn> is measured are a communications or social-marketing agency, and the State IEC officer.</p>",
+   "refs": [
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    287,
+    288,
+    289,
+    290,
+    291,
+    291,
+    292,
+    293,
+    294,
+    295,
+    295,
+    296,
+    295,
+    297,
+    297,
+    298,
+    190,
+    190,
+    299,
+    299,
+    300,
+    301,
+    302,
+    302,
+    303,
+    303,
+    190,
+    304,
+    305,
+    191,
+    306,
+    307,
+    307,
+    308,
+    309,
+    310
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A campaign is made by two trades, and neither is yours.</p>\n<p>Making the advert is campaign production (the curriculum’s list also calls it creative production).</p>\n<p>The message is the picture or words that inform or persuade the audience. It usually has five parts: headline, subheading, copy — the text that answers the audience’s first questions — images, and a call to action — the line that tells the audience what to do now.</p>\n<p>Getting the message seen is media buying, and it starts with a media plan. The planner picks the media after the message is settled, and usually picks a mix of them, “that are most likely to reach the target audience”. Media buying — paying for the space or airtime in which a message runs — is what the budget goes on.</p>\n<p>A planner answers in two numbers, and you must know them before anyone uses them. Reach — the estimated number of people in the audience who will see the message. Frequency — how many times each of them sees it in a stated period. A planner has to choose, in OpenStax’s words, “whether reaching the most people or reaching the same people the most is more beneficial”.</p>\n<p>A planner usually works forward: price the tasks, estimate the reach and frequency they need, and set the budget from that (the first illustration below quotes the method). When a budget already exists, you ask the same thing the other way: what reach and frequency does this sum buy?</p>\n<p>Exposure — in a media plan, a person seeing or hearing the message. In your own studies, an exposure is what differs between the groups compared; the two words are not the same. For television, counting exposure is a regulated trade. The 2014 guidelines for television rating agencies said the panel homes for measuring audiences had to be “drawn from the pool of households selected through an establishment survey”. They said every agency had to register with the Ministry of Information and Broadcasting (MIB), and had to publish its method.</p>\n<p>The MIB released the TV Ratings Policy 2026, which replaced them. Under the new policy, any entity in the business of television ratings has to register.</p>\n<p>As on 24 July 2026, the Ministry told the Rajya Sabha that no entity was registered under the new policy. Which agency produces India’s television ratings today, and on what panel, this book does not hold. Ask the planner.</p>\n<p>For internet adverts, ask how the platform counted views; this book holds no source on how platforms count.</p>\n<p>After a campaign launches, post-tests <dfn data-g=\"103\">check</dfn> what people took in. OpenStax defines post-testing as “testing the effectiveness of a campaign after it has launched”. Designing and testing campaigns belongs to Book 37, <em>Behavioural theory, choice architecture and <dfn data-g=\"401\">intervention</dfn> design</em>.</p>\n<p>The National Health Mission (NHM) does its awareness work through information, education and communication (IEC) and behaviour change communication (BCC) campaigns. A benchmark document of April 2019, for NHM’s key programme management staff, lists a “State IEC officer/ State BCC officer”.</p>\n<p>That officer prepares an “IEC/ BCC strategy plan” for the State each year, with measurable indicators, by November. The officer evaluates the BCC strategy once a year and reports to the NHM Mission Director.</p>\n<p>The document is from 2019 and does not describe any one State’s office. Check the post’s present name with your State’s NHM office.</p>\n<p>Here is the row for your list of owners.</p>\n<table style=\"width:100%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Where to look</td>\n</tr>\n<tr>\n<td>Campaign production and media buying</td>\n<td>a communications or social-marketing agency; the State IEC officer</td>\n<td>the State IEC officer/ State BCC officer at your State’s NHM office; an agency your state or district has used before, which that officer can name</td>\n</tr>\n</tbody>\n</table>\n<p>These are kinds of places; this book holds no list of agencies.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s61-r1-c15-metered-homes.png",
+   "alt": "Two bars: 50,000 metered homes under the 2014 guidelines, 80,000 under the TV Ratings Policy 2026.",
+   "w": 1360,
+   "h": 654,
+   "caption": "Metered homes the rules require in a television audience panel in India: 50,000 under the 2014 guidelines (the size the panel was to reach) and 80,000 under the TV Ratings Policy 2026, as a written reply in the Rajya Sabha gave them on 24 July 2026. The figures say nothing about who measures today: as on that date, no entity was registered under the new policy."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with how a planner works, and read it yourself.</p>\n<p>Open OpenStax, <em>Principles of Marketing</em>, section 13.4 (https://openstax.org/books/principles-marketing/pages/13-4-steps-in-the-imc-planning-process). Find “Objective and Task” and read it. It says:</p>\n<blockquote>\n<p>The tasks are priced, and the level of reach (number of consumers who will see the message) and the frequency (the number of times the consumer will see the message) are estimated. Based on the tasks necessary to achieve the campaign objectives, the budget is established.</p>\n</blockquote>\n<p>This is the answer you cannot give: for each medium, how many people in your audience will see the message, and how often, for the money.</p>\n<p>Now read what campaigns have changed. Open Wakefield, Loken and Hornik, “Use of mass media campaigns to change health behaviour”, <em>The Lancet</em>, 2010 (https://pmc.ncbi.nlm.nih.gov/articles/PMC4248563/). Find three findings.</p>\n<ul>\n<li>Campaigns “can produce positive changes or prevent negative changes in health-related behaviours across large populations”.</li>\n<li>For nutrition and physical activity, “short-term changes can be achieved, sustained effects are difficult to maintain after campaigns end”.</li>\n<li>Success is likelier “when the target behaviour is one-off or episodic … rather than habitual or ongoing (eg, food choices, sun exposure, physical activity)”.</li>\n</ul>\n<p>Now link them to reach and frequency. The review’s policy panel asks for funding to “enable frequent and widespread exposure to campaign messages continuously over time, especially for ongoing behaviours”. It also notes that a cluttered media world makes adequate exposure harder.</p>\n<p>Ask what the review does not tell you. It does not say what your campaign will do in your district. Almost all the campaigns it assessed came with other programme parts, so a campaign’s own effect is hard to isolate. It gives no reach or frequency for any budget. This book has not checked whether any of the campaigns it reviews were Indian.</p>\n<p>Last, read the rules on counting television audiences. Under the 2014 guidelines, the panel was to grow by 10,000 homes a year until it reached 50,000. The 2026 policy raises the figure for metered homes from 50,000 to 80,000. The figure shows both. These figures are the size of the panel the rules require. They are not the number of people any campaign reaches, and they do not tell you who is measuring today: as on 24 July 2026, no entity was registered under the new policy.</p>",
+   "numberRefs": [
+    311
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>OpenStax describes how a commercial marketer sets a budget; a health campaign has the same arithmetic of reach and frequency but a different aim, and the review shows aims about habits are the hardest to meet. Wakefield and colleagues summarise campaigns mostly run elsewhere, with other programmes beside them. The panel figures are the rules’ requirement as reported on 24 July 2026, not a measured audience.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>A made-up meeting: at the district NCD review, the district NCD officer turns to the budget for the obesity awareness campaign. “The agency’s draft says this budget gives us a reach of most adults in the district. Is that good value?”</p>\n<p>The tempting reply is “Yes. If it reaches most adults, that is excellent coverage.” The first signal is <strong>Loose word</strong>. You would be using “reach” in its everyday sense, “gets to”. To the planner it is an estimate of how many people in a stated audience will see the message, and it means little without its frequency, its period and how it was estimated. You could not say which of these the draft meant.</p>\n<p>Say the part you can. You can say what the review found about campaigns on eating and activity: short-term change, hard to keep, and likelier with other programmes beside them. You can ask what the campaign is for. Then say: “Whether this budget buys the reach the draft claims is a different question. That is outside what I can assess, and here is who can: the agency that wrote the draft, and the State IEC officer. I will send them the question this week.”</p>\n<p>The curriculum this book follows gives the question in these words.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Your question</td>\n</tr>\n<tr>\n<td><strong>Decision</strong></td>\n<td>Whether the district NCD review approves the obesity awareness campaign budget as drafted, or asks for a different mix of media. The district NCD officer is waiting; the budget is decided at the next review.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>The audience is the adults the district’s NCD programme serves, in towns and villages. The draft names television, radio, hoardings and social media. The aim is that adults know where to get screened. The draft says the budget reaches “most adults” and gives no frequency, period or source.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>“what reach and frequency will this budget buy in this audience, and how will exposure be measured?”</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>For each medium: an estimated reach (people in this audience) and frequency (times each sees it) over the campaign’s weeks, the source of each estimate, and how exposure will be counted afterwards. I cannot judge your planning method; tell me how sure you are and on what.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>A week before the next review. If it comes later, the budget is approved on the draft’s word.</td>\n</tr>\n</tbody>\n</table>\n<p>The question goes to the agency that wrote the draft, with a copy to the State IEC officer, who can say whether the campaign sits in the State’s IEC/BCC plan.</p>\n<p>Add the row to your <dfn data-g=\"166\">contact list</dfn> now; a later section shows how to keep it.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Name and institution</td>\n<td>How you know them</td>\n<td>Last question asked</td>\n<td>Asked on</td>\n<td>Checked on</td>\n</tr>\n<tr>\n<td>Campaign production and media buying</td>\n<td>a communications or social-marketing agency; the State IEC officer</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>what reach and frequency this budget buys in this audience, and how exposure will be measured</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p><dfn data-g=\"696\">Route</dfn> only the planning. What a sum buys in reach and frequency is this section’s question; what adverts do to what people eat or buy is the marketing scientist’s, in the section on economists of work and of firms. Whether people in the district have obesity, who the campaign should be for and what it should ask them to do are questions you can help answer. And if the question is whether the campaign changed anyone’s eating, that is an evaluation, not a media plan: it needs its own design.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Do not promise a committee that a campaign will reach everyone or change how people eat. Reach is a planner’s estimate for a stated audience and period.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>“Exposure” in a media plan is not the exposure of your own studies. There it means a person seeing or hearing the message; in a study it is what differs between the groups compared.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The TV Ratings Policy 2026 raised the number of metered homes a rating panel must have from 50,000 to 80,000 (Ministry of Information and Broadcasting, reply of 24 July 2026). That is a requirement, not a panel anyone is measuring with: no agency was registered under it on that <dfn data-g=\"198\">date</dfn>.</p>",
+     "tag": "number",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>This book cannot tell you who measures India’s television audiences today: as on 24 July 2026, no entity was registered under the new policy, and it holds no source on how platforms count online views. Ask the planner which measurement each figure comes from, and its date.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Where no agency has yet been engaged, ask the State IEC officer before you call one. The benchmark document is from 2019: check the post’s present name first.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“A big reach means the campaign worked.” Reach says how many people in the audience the planner estimates will see the message. Whether they took it in is a <dfn data-g=\"582\">post-test</dfn>, and whether they changed what they do is an evaluation.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what are reach and frequency, and who owns the question of what a campaign budget buys?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Reach: the estimated number of people in the audience who will see the message. Frequency: how many times each of them sees it in a stated period. Owners: a communications or social-marketing agency, and the State IEC officer under the National Health Mission.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up request: the medical officer of an urban primary health centre wants posters on the city’s buses for one month. They would tell people that the centre checks weight and blood pressure. She has a fixed sum and asks you whether it is enough. Write the question for a communications or social-marketing agency, in five parts.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Your question</td>\n</tr>\n<tr>\n<td><strong>Decision</strong></td>\n<td>Whether the medical officer spends the fixed sum on bus posters for one month, or on something else. She is waiting before she places the order.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>Adults in the area the centre serves. Posters on city buses for one month. The aim is that adults know the centre checks weight and blood pressure. The sum is fixed.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>What reach and frequency will this sum buy, in this audience, on these buses, over one month, and how will exposure be measured?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>An estimated reach and frequency with the source of each, and how you would count exposure afterwards. Tell me how sure you are and on what; I cannot judge your method.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>Before the order is placed. If it comes later, she decides without it.</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A made-up line from a review meeting: ‘The hoardings went up on forty main roads, so the campaign reached the whole city.’ (The number is made up.) Find the signal and rewrite the line.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p><strong>Loose word</strong>: ‘reached’ is <dfn data-g=\"829\">used</dfn> in its everyday sense. Reach is an estimate of how many people in the audience saw the message; a count of roads is a count of places. Rewrite: ‘The hoardings went up on forty main roads. How many people in our audience saw them, and how often, is an estimate for the agency to give us, with its source.’</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Read the figure and the reply of 24 July 2026. A district NCD officer says, ‘Now that the panel has 80,000 homes, the ratings will tell us how many people saw our television spot.’ What does the figure support, and what does it not?</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>It supports one thing: the rules now require a panel of 80,000 metered homes, up from 50,000. It does not say any agency is measuring under those rules: as on that date, none was registered. It does not say how many people saw any spot. A panel is a sample of homes. Turning it into an audience for one district is the rating agency’s and the planner’s work. Ask the planner which measurement the figure for your spot comes from.</p>"
+  }
+ ]
+}
