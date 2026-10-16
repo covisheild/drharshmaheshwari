@@ -1,0 +1,244 @@
+{
+ "format": 1,
+ "id": "s03-r1-c16",
+ "label": "16",
+ "title": "Skewed quantities and the log scale: when effects multiply",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A positive <dfn data-g=\"632\">random variable</dfn> X is <dfn data-g=\"447\">log-normal</dfn> when ln X, its <dfn data-g=\"501\">natural logarithm</dfn> (Book 2, section 4), has a normal distribution (section 15). A log-normal quantity can take only values above zero, and its distribution has a long right tail.</p>\n<p>Where it comes from. Multiplicative effects give a log-normal shape: many small independent factors, multiplied.</p>\n<p>Three numbers describe a log-normal quantity on its own scale.</p>\n<ul>\n<li>The <dfn data-g=\"474\">median</dfn> of X is e<sup>μ</sup>, where μ, the Greek letter mu, is the mean of ln X.</li>\n<li>The <dfn data-g=\"496\">multiplicative standard deviation</dfn> is e<sup>σ</sup>, where σ, the Greek letter <dfn data-g=\"725\">sigma</dfn>, is the <dfn data-g=\"747\">standard deviation</dfn> of ln X. It is a <dfn data-g=\"274\">factor</dfn>, with no unit, and it is always above 1.</li>\n<li>About 68.3 per cent of values lie between the median divided by the multiplicative standard deviation and the median multiplied by it. About 95.5 per cent lie between the median divided by the square of the multiplicative standard deviation and the median multiplied by that square.</li>\n</ul>\n<p>Here μ and σ are the mean and standard deviation of ln X, not of X as in section 15.</p>\n<p>From a sample of n positive values x1 to xn, the <dfn data-g=\"330\">geometric mean</dfn> is the mean of the logarithms, back-transformed: take ln of each value, average them, and raise e to that average. It estimates the median of a log-normal quantity, not its mean.</p>",
+   "refs": [
+    144,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Some quantities grow by adding pieces.</p>\n<p>Other quantities grow by multiplying. Each step multiplies what is already there. The result is lopsided: a crowd of modest values and a <dfn data-g=\"450\">long tail</dfn> of big ones.</p>\n<p>The fix is a <dfn data-g=\"448\">logarithm</dfn>. A logarithm turns multiplying into adding (Book 0, A7). So take the logarithm of every value. When you are done, turn the answer back with e to the power.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c16-dice-products.png",
+   "alt": "Bars at each possible product from 1 to 36, tallest at 6 and 12 with 4 ways each, and single bars out at 25, 30 and 36. Dashed lines mark the median at 10 and the mean at 12.25.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The 36 ways two dice can land, multiplied. The products bunch at the low end and thin out towards 36. The median product is 10 and the mean is 12.25: the few large products pull the mean up and leave the median where it is."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c16-culture-counts.png",
+   "alt": "Five bars at counts of 0.0625, 0.25, 1, 4 and 16 million cells, with probabilities 0.0625, 0.25, 0.375, 0.25 and 0.0625. The first three crowd together at the left and the last stands alone at 16.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The made-up culture after four steps, each doubling or halving 1 million cells. On the original scale the five possible counts, 0.0625 to 16 million, bunch low with one far out at 16: a long right tail. The first three bars, at 0.0625, 0.25 and 1 million, stand at 0.0625, 0.25 and 0.375. The mean is about 2.44 million; the median is 1 million."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c16-culture-logs.png",
+   "alt": "Five bars at natural logarithms of minus 2.77, minus 1.39, 0, 1.39 and 2.77, with heights 0.0625, 0.25, 0.375, 0.25 and 0.0625: a balanced shape centred on 0.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The same five counts on the log scale. Each doubling adds ln 2, 0.693, and each halving takes it away, so the logarithms sit at minus 2.77, minus 1.39, 0, 1.39 and 2.77, the same distance either side of 0. The skew has gone."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with two ordinary dice, as Limpert, Stahel and Abbt do in “Log-normal distributions across the sciences: keys and clues” (<em>BioScience</em>, 2001), at https://stat.ethz.ch/~stahel/lognormal/bioscience.pdf. List all 36 ways the two can land.</p>\n<p>First add the two numbers. The totals run from 2 to 12. Count how many of the 36 ways give each total: one way gives 2, two give 3, and so on up to six ways for 7, then down again to one way for 12. The shape is the same on both sides of 7. The mean is 7 and the median is 7.</p>\n<p>Now multiply the two numbers instead. The products run from 1 to 36, and they bunch at the low end.</p>\n<table style=\"width:85%;\">\n\n<tbody>\n<tr>\n<td>product</td>\n<td>1</td>\n<td>2</td>\n<td>3</td>\n<td>4</td>\n<td>5</td>\n<td>6</td>\n<td>8</td>\n<td>9</td>\n<td>10</td>\n<td>12</td>\n<td>15</td>\n<td>16</td>\n<td>18</td>\n<td>20</td>\n<td>24</td>\n<td>25</td>\n<td>30</td>\n<td>36</td>\n</tr>\n<tr>\n<td>ways</td>\n<td>1</td>\n<td>2</td>\n<td>2</td>\n<td>3</td>\n<td>2</td>\n<td>4</td>\n<td>2</td>\n<td>1</td>\n<td>2</td>\n<td>4</td>\n<td>2</td>\n<td>1</td>\n<td>2</td>\n<td>2</td>\n<td>2</td>\n<td>1</td>\n<td>2</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<p>Find the median. Order the 36 products from smallest to largest. The 18th and 19th are both 10, so the median is 10. Now the mean. Multiply each product by its number of ways and add. The 36 products together come to 441. Each of the 36 ways is equally likely.</p>\n<div class=\"working\">\n<p>441 divided by 36 = 12.25</p>\n</div>\n<p>The mean, 12.25, sits above the median, 10. The few large products, 25, 30 and 36, pull the mean up. They leave the median where it is. The dice are the same dice. Only the way their effects combine changed.</p>\n<p>Limpert and colleagues put it in one line.</p>\n<blockquote>\n<p>Adding the two numbers, which is the principle of most games, leads to values from 2 to 12, with a mean of 7, and a symmetrical frequency distribution.</p>\n</blockquote>\n<blockquote>\n<p>Multiplying the two numbers, however, leads to values between 1 and 36 with a highly skewed distribution.</p>\n</blockquote>",
+   "numberRefs": [
+    153
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Two dice give neither a normal nor a log-normal distribution; the authors say so themselves. The dice show only the direction: adding gives a balanced shape, multiplying gives a long right tail. The near-normal shapes need many pieces, not two.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now watch the logarithm undo the skew. Limpert and colleagues describe a culture of about 10<sup>6</sup> bacteria, a million cells. One cell division more doubles it, to 2 × 10<sup>6</sup>. One division fewer halves it, to 5 × 10<sup>5</sup>. Search their paper for “one cell division more” to see the sentence.</p>\n<p>Build a made-up model from that. Start with 1 million cells. In each of four time steps the count doubles or halves, each with <dfn data-g=\"602\">probability</dfn> one half, and each step is independent of the others. After four steps there are 16 equally likely paths, section 1’s outcomes. Count them by the number of doublings: four doublings happen one way, three happen four ways, two happen six ways.</p>\n<table style=\"width:76%;\">\n\n<thead>\n<tr>\n<th>cells (millions)</th>\n<th>ln of cells</th>\n<th>paths</th>\n<th>probability</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0.0625</td>\n<td>-2.77</td>\n<td>1</td>\n<td>0.0625</td>\n</tr>\n<tr>\n<td>0.25</td>\n<td>-1.39</td>\n<td>4</td>\n<td>0.25</td>\n</tr>\n<tr>\n<td>1</td>\n<td>0</td>\n<td>6</td>\n<td>0.375</td>\n</tr>\n<tr>\n<td>4</td>\n<td>1.39</td>\n<td>4</td>\n<td>0.25</td>\n</tr>\n<tr>\n<td>16</td>\n<td>2.77</td>\n<td>1</td>\n<td>0.0625</td>\n</tr>\n</tbody>\n</table>\n<p>Look at the first column. Three of the five values sit below 2. The last one is 16. That is a long right tail.</p>\n<p>Now take the natural logarithm of each count, the second column. Each doubling adds ln 2 to the logarithm, and each halving takes it away.</p>\n<div class=\"working\">\n<p>ln 2 = 0.693<br />\n4 times 0.693 = 2.77</p>\n</div>\n<p>So the logarithm of the final count is a sum of four pieces, each plus or minus 0.693. The second column is the same distance either side of 0, with the same probabilities. The skew has gone. With many more steps, that sum would be close to normal, by the reasoning of section 15, and the count would be close to log-normal.</p>\n<p>The median count is 1 million: the middle <dfn data-g=\"552\">path</dfn>. Find the mean count: each value times its probability, added up, as in Book 2, section 14.</p>\n<div class=\"working\">\n<p>0.0625 times 0.0625 = 0.0039<br />\n0.25 times 0.25 = 0.0625<br />\n1 times 0.375 = 0.375<br />\n4 times 0.25 = 1<br />\n16 times 0.0625 = 1<br />\n0.0039 plus 0.0625 plus 0.375 plus 1 plus 1 = 2.441</p>\n</div>\n<p>The mean is about 2.44 million, more than twice the median. The single path to 16 million contributes as much to the mean as the four paths to 4 million. On the log scale the mean of the second column is 0, and e<sup>0</sup> is 1: the back-transformed mean of the logarithms is the median, 1 million, not the mean.</p>",
+   "numberRefs": [
+    153
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The four-step model is made up, and its numbers hold only for it. Real cultures do not double or halve in lockstep. The point that survives is the arithmetic: repeated multiplying gives a right tail on the original scale and a balanced shape on the log scale.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Now a real measured quantity. Kiran and colleagues measured <dfn data-g=\"555\">percentage</dfn> body fat by bioimpedance in 131 men and 151 women, medical students in Mangaluru. Their Table 1 is at https://pmc.ncbi.nlm.nih.gov/articles/PMC9791811/. Book 0, D5 <dfn data-g=\"822\">used</dfn> the men’s figures to show a mean above a median. Read the median and the two quartiles for each sex.</p>\n<table style=\"width:96%;\">\n\n<thead>\n<tr>\n<th>group</th>\n<th>first quartile (%)</th>\n<th>median (%)</th>\n<th>third quartile (%)</th>\n<th>mean (%)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>men</td>\n<td>16.7</td>\n<td>20.3</td>\n<td>28.8</td>\n<td>22.1</td>\n</tr>\n<tr>\n<td>women</td>\n<td>28.1</td>\n<td>34.0</td>\n<td>39.2</td>\n<td>33.8</td>\n</tr>\n</tbody>\n</table>\n<p>For the men, measure how far each <dfn data-g=\"624\">quartile</dfn> sits from the median, first in percentage points.</p>\n<div class=\"working\">\n<p>20.3 minus 16.7 = 3.6<br />\n28.8 minus 20.3 = 8.5</p>\n</div>\n<p>The upper quarter-band is more than twice as wide as the lower one. That is a right tail. Now ask the log-normal question: is the lopsidedness one of ratios? Divide instead of subtracting.</p>\n<div class=\"working\">\n<p>20.3 divided by 16.7 = 1.216<br />\n28.8 divided by 20.3 = 1.419</p>\n</div>\n<p>Compare like with like: take logs of the ratios, then divide the wider side by the narrower.</p>\n<div class=\"working\">\n<p>ln 1.216 = 0.196<br />\nln 1.419 = 0.350<br />\n0.350 divided by 0.196 = 1.79<br />\n8.5 divided by 3.6 = 2.36</p>\n</div>\n<p>In logs the upper side is 1.79 times the lower; in percentage points, 2.36 times. The gap narrows. It does not close. Taking logs moves the men’s body fat towards balance. It does not make it balanced.</p>\n<p>Now the women.</p>\n<div class=\"working\">\n<p>34.0 minus 28.1 = 5.9<br />\n39.2 minus 34.0 = 5.2<br />\n34.0 divided by 28.1 = 1.210<br />\n39.2 divided by 34.0 = 1.153<br />\nln 1.210 = 0.191<br />\nln 1.153 = 0.142<br />\n0.191 divided by 0.142 = 1.35<br />\n5.9 divided by 5.2 = 1.13</p>\n</div>\n<p>The women’s quartiles are nearly balanced as they stand, 5.9 below and 5.2 above. Their mean, 33.8, sits beside their median, 34.0. In logs the wider side is 1.35 times the narrower; in percentage points, 1.13 times. For the women, logs would make the shape worse.</p>\n<p>So the log scale is not a cure to apply to every positive quantity. It is a <dfn data-g=\"114\">claim</dfn> that the effects behind a quantity multiply. <dfn data-g=\"104\">Check</dfn> that claim on the quartiles before you rely on it.</p>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Three numbers per group cannot show a whole shape. The quartile check flags the direction of a tail; it cannot prove a quantity is log-normal. The figures are for one college’s medical students. They say nothing about body fat in other groups, and nothing about what body fat means for health.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 4",
+   "role": "illustration",
+   "html": "<p>Here is why the choice matters wherever a range is reported. Limpert and colleagues quote a paper whose data were log-normal but were summarised as a mean and standard deviation, 4.1 ± 3.7. Read ± as “plus or minus”.</p>\n<p>Work out the usual “mean plus or minus two standard deviations”.</p>\n<div class=\"working\">\n<p>3.7 times 2 = 7.4<br />\n4.1 minus 7.4 = -3.3<br />\n4.1 plus 7.4 = 11.5</p>\n</div>\n<p>A range from minus 3.3 to 11.5. The quantity can only be positive, so nearly half of the range below the mean (3.3 of its 7.4) is impossible. Even the plus-or-minus-one band misleads. In their words, x̄ ± s is the mean plus or minus one standard deviation.</p>\n<blockquote>\n<p>the probability of the corresponding x̄ ± s interval (0.4 to 7.8) turns out to be 88.4% instead of 68.3%.</p>\n</blockquote>\n<p>The band that should hold about two thirds of values holds 88.4 per cent. Limpert and colleagues give the same data on the log scale as a geometric mean of 3.0 and a multiplicative standard deviation of 2.2. Divide and multiply.</p>\n<div class=\"working\">\n<p>3.0 divided by 2.2 = 1.36<br />\n3.0 times 2.2 = 6.6</p>\n</div>\n<p>About 68 per cent of the values lie between 1.36 and 6.6. For about 95.5 per cent, use the square of 2.2.</p>\n<div class=\"working\">\n<p>2.2 times 2.2 = 4.84<br />\n3.0 divided by 4.84 = 0.62<br />\n3.0 times 4.84 = 14.5</p>\n</div>\n<p>From 0.62 to 14.5. The range is lopsided around 3.0, as the data are, and it never goes below zero.</p>",
+   "numberRefs": [
+    153
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 88.4 and 68 per cent figures are Limpert’s, for one data set that fitted a log-normal shape well. On a quantity that is not log-normal, the times-or-divided-by range is as wrong as the plus-or-minus one. A range holding 95.5 per cent of values is a description of a group. It is not, by itself, a line between healthy and unwell.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“A long right tail means something is wrong with the data, so drop the big values” is the error. When effects multiply, a long right tail is the expected shape. Keep them, and analyse on the log scale.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Never set a range as mean plus or minus two standard deviations on a skewed positive quantity.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>To average a quantity whose effects multiply, take logs, average, and turn the answer back with e. The result is the geometric mean.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Before you log a variable, take each quartile’s distance from the median twice: in its own units, and as the logarithm of the <dfn data-g=\"640\">ratio</dfn> to the median. If the two log distances are no closer to equal than the two plain distances, logging will not help.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a journalist asks for the typical value of a skewed quantity, give the median and say it is the middle person.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Teach the difference with two dice in a resident <dfn data-g=\"715\">session</dfn>. Add them, then multiply them, and <dfn data-g=\"780\">tally</dfn> both.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Turn the mean of the logs back, and you have the mean.” You have the geometric mean. For a log-normal quantity that is the median, the middle value, and it lies below the ordinary mean, sometimes far below. A paper that reports a back-transformed mean as “the mean” has reported the middle and called it the average. Ask which one a table means before you compare it with another study.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Body fat was skewed to the right in men. We therefore report the median, 20.3 per cent, with first and third quartiles of 16.7 and 28.8, rather than the mean and standard deviation.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what kind of effects give a normal shape, and what kind give a log-normal one? How do you work out a geometric mean, and which number of a log-normal quantity does it estimate?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Many small independent effects that add give a near-normal shape. Many small independent effects that multiply give a near-log-normal shape, because the logarithm turns their product into a sum.</p>\n<p>To get a geometric mean, take the log of every value. Average the logs. Then raise e to that average. It is the same as multiplying the n values and taking the n-th root. For a log-normal quantity it estimates the median. It lies below the ordinary mean.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Table 1 of Kiran and colleagues gives the men’s body fat as a mean of 22.1 per cent with a standard deviation of 7.3. Their median is 20.3 per cent, with quartiles 16.7 and 28.8. The women’s mean is 33.8, with a standard deviation of 7.8. Their median is 34.0, with quartiles 28.1 and 39.2.</p>\n<p>For each sex, say which summary you would quote, and why. Say what the table does not show.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>For the men, quote the median and quartiles. The mean sits 1.8 points above the median, and the upper quarter-band, 8.5 points, is more than twice the lower one, 3.6. A mean and standard deviation would describe both sides as equally spread, and they are not.</p>\n<p>For the women, either summary will do. The mean, 33.8, and the median, 34.0, nearly agree, and the quarter-bands, 5.9 and 5.2, are close.</p>\n<p>What the table does not show: the whole shape. Three numbers per group can flag a tail and its direction; they cannot show how long it is. Nor does it say whether these medical students resemble any other group.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. Explain why a skewed quantity can become balanced on the log scale. Use the doubling-and-halving culture, and end with what the log scale cannot do.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>A strong answer draws the 16 paths of four doubling-or-halving steps from 1 million cells. It lists the five end counts: 0.0625, 0.25, 1, 4 and 16 million, with 1, 4, 6, 4 and 1 paths. On the board the counts bunch low with one far out at 16. That is the long right tail.</p>\n<p>Then take ln of each. Each doubling adds 0.693 and each halving takes it away, so the logarithms sit at minus 2.77, minus 1.39, 0, 1.39 and 2.77: balanced around 0. Multiplying became adding, and adding gives balance.</p>\n<p>It shows that the mean count, about 2.44 million, sits far above the median, 1 million.</p>\n<p>It ends on the limit. Logging balances a quantity only if its effects multiply. Kiran’s women’s body fat was nearly balanced already and logging would unbalance it. And zero or a negative value cannot be logged at all.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Work out ln 8 and ln 0.125. Then find the number whose natural logarithm is 1.5.</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>ln 8 = 2.079<br />\nln 0.125 = -2.079<br />\ne<sup>1.5</sup> = 4.482</p>\n</div>\n<p>The two logarithms are equal and opposite, because 0.125 is 1 divided by 8. The number whose logarithm is 1.5 is about 4.482.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Work out the geometric mean and the ordinary mean of 2, 8 and 32.</p>",
+   "level": 2,
+   "answer": "<p>Take ln of each value, average them, and turn the average back.</p>\n<div class=\"working\">\n<p>ln 2 = 0.693<br />\nln 8 = 2.079<br />\nln 32 = 3.466<br />\n0.693 plus 2.079 plus 3.466 = 6.238<br />\n6.238 divided by 3 = 2.079<br />\ne<sup>2.079</sup> = 8.0</p>\n</div>\n<p>The geometric mean is 8. Check it as the cube root of the product: 2 times 8 times 32 is 512, and 8 times 8 times 8 is 512.</p>\n<div class=\"working\">\n<p>2 plus 8 plus 32 = 42<br />\n42 divided by 3 = 14</p>\n</div>\n<p>The ordinary mean is 14. The geometric mean is the lower of the two.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Seven values are 1, 2, 4, 8, 16, 32 and 64. Work out their median, their ordinary mean and their geometric mean.</p>",
+   "level": 3,
+   "answer": "<p>They are already in order, so the median is the fourth value, 8.</p>\n<div class=\"working\">\n<p>1 plus 2 plus 4 plus 8 plus 16 plus 32 plus 64 = 127<br />\n127 divided by 7 is about 18.14</p>\n</div>\n<p>The ordinary mean is about 18.14. For the geometric mean, use log<sub>10</sub>, since each value is 2 to a power and any base gives the same answer.</p>\n<div class=\"working\">\n<p>log<sub>10</sub> of 1 plus log<sub>10</sub> of 2 plus log<sub>10</sub> of 4 plus log<sub>10</sub> of 8 plus log<sub>10</sub> of 16 plus log<sub>10</sub> of 32 plus log<sub>10</sub> of 64 = 6.32<br />\n6.32 divided by 7 = 0.903<br />\n10<sup>0.903</sup> = 8.0</p>\n</div>\n<p>The geometric mean is 8, the same as the median. Each value is the one before times 2, so the logarithms are evenly spaced and balanced around the middle one. The ordinary mean, pulled by 64, is more than twice the median.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Limpert and colleagues report the age at onset of Alzheimer’s disease from one study. It can be described by a geometric mean of 60 years and a multiplicative standard deviation of 1.16.</p>\n<p>Work out the range of ages expected to hold about 68 per cent of onsets, and the range for about 95.5 per cent.</p>",
+   "level": 5,
+   "answer": "<p>Divide and multiply the geometric mean by 1.16 for the first range.</p>\n<div class=\"working\">\n<p>60 divided by 1.16 = 51.7<br />\n60 times 1.16 = 69.6</p>\n</div>\n<p>About 68 per cent of onsets between about 51.7 and 69.6 years. For the second range, use 1.16 squared.</p>\n<div class=\"working\">\n<p>1.16 times 1.16 = 1.3456<br />\n60 divided by 1.3456 = 44.6<br />\n60 times 1.3456 = 80.7</p>\n</div>\n<p>About 95.5 per cent between about 44.6 and 80.7 years. Each range is wider above 60 than below it, but only a little, because a factor as small as 1.16 makes a log-normal shape almost balanced.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Kiran and colleagues’ Table 1 gives the men’s waist circumference as a median of 83.5 cm with quartiles 77.0 and 92.0 cm.</p>\n<p>Work out how far each quartile sits from the median in centimetres, and as a ratio. Say whether the log scale would balance the waist figures.</p>",
+   "level": 6,
+   "answer": "<div class=\"working\">\n<p>83.5 minus 77.0 = 6.5<br />\n92.0 minus 83.5 = 8.5<br />\n83.5 divided by 77.0 = 1.084<br />\n92.0 divided by 83.5 = 1.102</p>\n</div>\n<p>In centimetres the upper band, 8.5 cm, is wider than the lower, 6.5 cm. As ratios, 1.084 and 1.102, they are closer but still a little lopsided. The log scale would move the men’s waist towards balance without reaching it, as it did for their body fat.</p>\n<p>Three numbers cannot show the whole shape. This is a direction, not a verdict.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>three counts: 1, 10 and 100<br />\nlog<sub>10</sub> of each: 0, 1, 2<br />\nmean of the logs: (0 plus 1 plus 2) divided by 3 = 1<br />\ngeometric mean = e<sup>1</sup> = 2.72</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The last line broke. The logarithms were taken to base 10, so the average must be turned back with 10, not with e.</p>\n<div class=\"working\">\n<p>10<sup>1</sup> = 10</p>\n</div>\n<p>The geometric mean is 10. Check it with natural logarithms all the way through.</p>\n<div class=\"working\">\n<p>ln 1 plus ln 10 plus ln 100 = 6.908<br />\n6.908 divided by 3 = 2.303<br />\ne<sup>2.303</sup> = 10.0</p>\n</div>\n<p>Why the wrong answer looks reasonable: “back-transform with e” is the usual instruction, because most software uses natural logarithms. The base you take logs with is the base you must turn back with. A geometric mean of 2.72 for three counts of at least 1 is a warning in itself: it sits nearer the smallest value than the middle one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a skewed positive quantity: mean 4.1, standard deviation 3.7<br />\nlogs taken, averaged, and turned back: 3.0<br />\nso the mean of the quantity is 3.0, not 4.1<br />\nthe earlier 4.1 was an error</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line broke. The back-transformed mean of the logarithms is the geometric mean. It estimates the median of a log-normal quantity, not its mean. The ordinary mean really is 4.1, and it is not an error. Both numbers are right; they answer different questions.</p>\n<p>Why the wrong answer looks reasonable: the working did take a mean, of the logarithms, and it feels as if turning it back should give a mean. It gives the middle value instead, because the long right tail pulls the ordinary mean up and does not move the middle. <dfn data-g=\"418\">Label</dfn> 3.0 as the geometric mean every time it is printed.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A colleague prepares a reference range for a skewed positive quantity from a paper that reports only “4.1 ± 3.7”. She writes: “The normal range is the mean plus or minus two standard deviations. Values above 11.5 are abnormal, and no value can be abnormally low.”</p>\n<p>Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Compute her range, then a range that respects the skew. If the quantity is log-normal, a mean and standard deviation can be converted to the log scale. First the coefficient of variation: the standard deviation divided by the mean.</p>\n<div class=\"working\">\n<p>3.7 divided by 4.1 = 0.902<br />\n1 plus 0.902 times 0.902 = 1.814<br />\nsquare root of 1.814 = 1.347<br />\n4.1 divided by 1.347 = 3.04<br />\nln 1.814 = 0.596<br />\nsquare root of 0.596 = 0.772<br />\ne<sup>0.772</sup> = 2.16</p>\n</div>\n<p>The median is about 3.04 and the multiplicative standard deviation about 2.16. These match Limpert’s 3.0 and 2.2, which the rest uses.</p>\n<div class=\"working\">\n<p>4.1 minus 7.4 = -3.3<br />\n4.1 plus 7.4 = 11.5</p>\n</div>\n<p>Her range runs from minus 3.3 to 11.5. Its lower end is impossible for a positive quantity. That is why she concluded that nothing can be too low; the method made it so.</p>\n<div class=\"working\">\n<p>2.2 times 2.2 = 4.84<br />\n3.0 divided by 4.84 = 0.62<br />\n3.0 times 4.84 = 14.5</p>\n</div>\n<p>On the log scale, about 95.5 per cent of values lie from 0.62 to 14.5. Values below 0.62 are as unusual as values above 14.5. Her upper limit, 11.5, is too low, and she has no lower limit at all.</p>\n<p>What this does not establish. The 0.62 to 14.5 range assumes the quantity is log-normal; a paper that gives only a mean and a standard deviation does not show that. And a range that holds 95.5 per cent of a group describes the group. Whether a value outside it matters for a patient is a clinical question, and the range cannot answer it.</p>"
+  }
+ ]
+}

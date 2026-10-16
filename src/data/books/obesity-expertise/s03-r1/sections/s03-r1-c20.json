@@ -1,0 +1,218 @@
+{
+ "format": 1,
+ "id": "s03-r1-c20",
+ "label": "20",
+ "title": "How good is an estimator: bias and spread, found by listing every sample",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>The <dfn data-g=\"62\">bias</dfn> of an <dfn data-g=\"258\">estimator</dfn> is its expected value minus the parameter it stands for. An estimator is <dfn data-g=\"812\">unbiased</dfn> when its bias is 0: averaged over every sample it could meet, it lands on the parameter.</p>\n<div class=\"working\">\n<p>bias = E[estimator] − parameter</p>\n</div>\n<p>The <dfn data-g=\"748\">standard error</dfn> (SE) of an estimator is its <dfn data-g=\"747\">standard deviation</dfn> over every sample it could meet.</p>\n<p>For the sample mean of n independent draws, each with standard deviation σ, section 18 gave the standard error.</p>\n<div class=\"working\">\n<p>E[X̄] = μ, so the bias is 0<br />\nSE of X̄ = σ ÷ √n</p>\n</div>\n<p>The sample <dfn data-g=\"829\">variance</dfn> divides the squared deviations by n − 1, as Book 0, D5 did. With independent draws, it is an unbiased estimator of σ². Dividing by n instead gives an estimator whose expected value is σ² × (n − 1) ÷ n, too small by σ² ÷ n. Here is why. Write each draw’s distance from μ as its distance from X̄ plus X̄’s distance from μ. Square it.</p>\n<div class=\"working\">\n<p>(Xi − μ)² = (Xi − X̄)² + 2(Xi − X̄)(X̄ − μ) + (X̄ − μ)²</p>\n</div>\n<p>Add over all n draws. The middle terms add to 2(X̄ − μ) × Σ (Xi − X̄), which is 0, because deviations from the sample mean always add to 0.</p>\n<div class=\"working\">\n<p>Σ (Xi − μ)² = Σ (Xi − X̄)² + n × (X̄ − μ)²</p>\n</div>\n<p>Take expected values. Each (Xi − μ)² has expected value σ², so the left side gives nσ². The last term gives n × Var(X̄), which is n × σ² ÷ n = σ².</p>\n<div class=\"working\">\n<p>nσ² = E[Σ (Xi − X̄)²] + σ²<br />\nE[Σ (Xi − X̄)²] = (n − 1)σ²</p>\n</div>\n<p>So dividing the sum of squared deviations by n − 1 gives σ² on average. Dividing by n gives less. The sum of squared distances is smallest when measured from the sample’s own mean. So measuring from X̄ never makes that sum larger than measuring from μ, and usually smaller.</p>\n<p>Bias is the systematic part: it points one way and a bigger sample does not shrink it. The standard error is the random part: it shrinks as n grows.</p>",
+   "refs": [
+    176,
+    177,
+    178,
+    179,
+    180
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>A rule for guessing a true number can go wrong in two ways.</p>\n<p>It can aim off. Then even the average of all its guesses misses the truth. That is bias, and a bigger sample does not fix it.</p>\n<p>It can scatter. Then its guesses jump about from one sample to the next. That scatter is the standard error, and a bigger sample shrinks it.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c20-average-of-each-rule.png",
+   "alt": "Three bars from zero: the population variance σ² at 10, the average of the 'divide by n − 1' estimates at 10, and the average of the 'divide by n' estimates at 5.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Over all 16 samples of two from the four made-up adults, dividing by n − 1 averages 10, the population variance σ²: unbiased. Dividing by n averages 5: biased low by σ² ÷ n, which is 10 divided by 2."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c20-variance-estimates.png",
+   "alt": "Five bars: 0.25 at 0, 0.25 at 2, 0.125 at 8, 0.25 at 18 and 0.125 at 32. A dashed line at 10 marks σ².",
+   "w": 1360,
+   "h": 656,
+   "caption": "The ‘divide by n − 1’ rule is unbiased but scatters widely. Over the 16 samples of two it gives 0 with probability 0.25 and 32 with probability 0.125; its expected value is 10, the population variance."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c20-biased-and-random-rule.png",
+   "alt": "Bars at averages 21 to 29 for the random rule, from 0.0625 to 0.25, centred on 25. A single bar of height 1 at 28 for the willing-adults rule. A dashed line at 25 marks μ.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Two rules for μ = 25 in the made-up family. The random pair of two scatters from 21 to 29 but averages 25: bias 0, standard error about 2.236. The rule that averages only the two willing adults, 27 and 29, gives 28 every time: standard error 0, bias 3. Precise and always wrong."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c20-se-shrinks.png",
+   "alt": "A falling curve from n = 131 to n = 524, with a point at 131 and 0.638 and a point at 524 and 0.319, on an axis from zero.",
+   "w": 1360,
+   "h": 707,
+   "caption": "Four times the men halves the standard error. With Kiran’s body-fat SD of 7.3 percentage points, 131 men give an estimated standard error of the mean of about 0.638; 524 men, four times as many, give about 0.319. The curve is 7.3 ÷ √n."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Go back to the four made-up adults of the last section, with body-mass indices of 21, 23, 27 and 29 kg/m<sup>2</sup>. Their mean μ is 25. Their variance σ² is the mean squared distance from 25.</p>\n<div class=\"working\">\n<p>(21 minus 25) squared = 16<br />\n(23 minus 25) squared = 4<br />\n(27 minus 25) squared = 4<br />\n(29 minus 25) squared = 16<br />\n16 plus 4 plus 4 plus 16 = 40<br />\n40 divided by 4 = 10</p>\n</div>\n<p>σ² is 10, so σ is the <dfn data-g=\"743\">square root</dfn> of 10, about 3.162 kg/m<sup>2</sup>. These are the parameters.</p>\n<p>The rule is the same: pick two with replacement. Now give it three jobs. The average estimates μ. Two rival rules estimate σ²: add the squared deviations from the sample’s own average, then divide by n, which is 2, or by n − 1, which is 1.</p>\n<p>For a pair a and b, the average is halfway, so each value sits half the gap from it. The two squared deviations add to (a − b)² ÷ 2. So the “divide by n” rule gives (a − b)² ÷ 4, and the “divide by n − 1” rule gives (a − b)² ÷ 2. List all 16 ordered <dfn data-g=\"546\">pairs</dfn>.</p>\n<table style=\"width:96%;\">\n\n<tbody>\n<tr>\n<td>first pick</td>\n<td>second pick</td>\n<td>average</td>\n<td>divide by n</td>\n<td>divide by n − 1</td>\n</tr>\n<tr>\n<td>21</td>\n<td>21</td>\n<td>21</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>21</td>\n<td>23</td>\n<td>22</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>21</td>\n<td>27</td>\n<td>24</td>\n<td>9</td>\n<td>18</td>\n</tr>\n<tr>\n<td>21</td>\n<td>29</td>\n<td>25</td>\n<td>16</td>\n<td>32</td>\n</tr>\n<tr>\n<td>23</td>\n<td>21</td>\n<td>22</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>23</td>\n<td>23</td>\n<td>23</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>23</td>\n<td>27</td>\n<td>25</td>\n<td>4</td>\n<td>8</td>\n</tr>\n<tr>\n<td>23</td>\n<td>29</td>\n<td>26</td>\n<td>9</td>\n<td>18</td>\n</tr>\n<tr>\n<td>27</td>\n<td>21</td>\n<td>24</td>\n<td>9</td>\n<td>18</td>\n</tr>\n<tr>\n<td>27</td>\n<td>23</td>\n<td>25</td>\n<td>4</td>\n<td>8</td>\n</tr>\n<tr>\n<td>27</td>\n<td>27</td>\n<td>27</td>\n<td>0</td>\n<td>0</td>\n</tr>\n<tr>\n<td>27</td>\n<td>29</td>\n<td>28</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>29</td>\n<td>21</td>\n<td>25</td>\n<td>16</td>\n<td>32</td>\n</tr>\n<tr>\n<td>29</td>\n<td>23</td>\n<td>26</td>\n<td>9</td>\n<td>18</td>\n</tr>\n<tr>\n<td>29</td>\n<td>27</td>\n<td>28</td>\n<td>1</td>\n<td>2</td>\n</tr>\n<tr>\n<td>29</td>\n<td>29</td>\n<td>29</td>\n<td>0</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>\n<p>Every pair has <dfn data-g=\"602\">probability</dfn> 1 in 16, so each rule’s expected value is its column’s total divided by 16.</p>\n<div class=\"working\">\n<p>average column: 400 divided by 16 = 25<br />\ndivide by n column: 80 divided by 16 = 5<br />\ndivide by n − 1 column: 160 divided by 16 = 10</p>\n</div>\n<p>The average is unbiased: 25 against μ = 25. Dividing by n − 1 is unbiased: 10 against σ² = 10. Dividing by n is biased: 5 against 10, a bias of minus 5. That is σ² ÷ n, as the <dfn data-g=\"209\">derivation</dfn> said.</p>\n<div class=\"working\">\n<p>10 divided by 2 = 5</p>\n</div>\n<p>Now the spread of the average. Its 16 values sit at distances from 25 of −4 once, −3 twice, −2 once, −1 twice, 0 four times, 1 twice, 2 once, 3 twice and 4 once.</p>\n<div class=\"working\">\n<p>16 times 1 plus 9 times 2 plus 4 times 1 plus 1 times 2 = 40<br />\n0 times 4 plus 1 times 2 plus 4 times 1 plus 9 times 2 plus 16 times 1 = 40<br />\n40 plus 40 = 80<br />\n80 divided by 16 = 5</p>\n</div>\n<p>The variance of the average is 5, and its standard error is the square root of 5, about 2.236 kg/m<sup>2</sup>. The formula gives the same.</p>\n<div class=\"working\">\n<p>σ² ÷ n = 10 divided by 2 = 5</p>\n</div>\n<p>You have found by counting what section 18 found by algebra.</p>\n<p>The “divide by n − 1” rule scatters too. Its 16 values take only five different sizes.</p>\n<table style=\"width:56%;\">\n\n<tbody>\n<tr>\n<td>divide by n − 1</td>\n<td>pairs</td>\n<td>probability</td>\n</tr>\n<tr>\n<td>0</td>\n<td>4</td>\n<td>0.25</td>\n</tr>\n<tr>\n<td>2</td>\n<td>4</td>\n<td>0.25</td>\n</tr>\n<tr>\n<td>8</td>\n<td>2</td>\n<td>0.125</td>\n</tr>\n<tr>\n<td>18</td>\n<td>4</td>\n<td>0.25</td>\n</tr>\n<tr>\n<td>32</td>\n<td>2</td>\n<td>0.125</td>\n</tr>\n</tbody>\n</table>\n<p>One sample in four gives a variance estimate of 0, and one in eight gives 32. The rule is right on average and wildly wrong on many single samples. Unbiased is not the same as close.</p>\n<p>Take the square root of each “divide by n − 1” value and average: about 2.47, below σ = 3.16. The square root of an unbiased estimator is not unbiased.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The population is made up and tiny, so that all 16 samples fit in a table. Real populations cannot be listed; the formulas, or a simulation, take the table’s place.</p>\n<p>The listing picks with replacement, so the two picks are independent and the formulas hold exactly. Picking without replacement from four people would give twelve ordered pairs, not sixteen, and a smaller spread. The n − 1 rule is then no longer exactly unbiased for this σ². With a population thousands of times the sample, the difference is too small to matter.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Now set a biased rule beside an unbiased one. Suppose that, in the same made-up family, only the two adults with indices 27 and 29 ever agree to be measured. A rule that averages whoever agrees gives the same answer every time.</p>\n<div class=\"working\">\n<p>27 plus 29 = 56<br />\n56 divided by 2 = 28</p>\n</div>\n<p>Its expected value is 28, so its bias is 28 minus 25, which is 3. Its standard error is 0, because it never varies. It is perfectly precise and always wrong, the instrument of Book 0, D7 that agrees with itself and not with the truth.</p>\n<p>The random rule has bias 0 and a standard error of about 2.236. On a single sample it may miss by more than 3; its pair 21 and 21 misses by 4. But on average it is right, and a larger <dfn data-g=\"631\">random sample</dfn> shrinks its misses. A larger sample of willing people only repeats the 3.</p>\n<p>Real studies face this choice. Kiran and colleagues measured 131 male medical students who came forward when the study was announced on campus. Open their paper in <em>Heliyon</em> at https://pmc.ncbi.nlm.nih.gov/articles/PMC9791811/. Table 1 gives the men’s mean mid-upper arm circumference as 30.9 cm with an SD of 3.4 cm. Use s in place of the unknown σ, and work out the estimated standard error of their mean.</p>\n<div class=\"working\">\n<p>the square root of 131 = 11.45<br />\n3.4 divided by 11.45 = 0.297</p>\n</div>\n<p>About 0.3 cm. That is how far the mean would typically move between random samples of 131 from the population these men were drawn from. It says nothing about how far volunteers sit from all students, or from young men in India. That gap is bias, and no standard error shows it.</p>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The two willing adults are made up. Real volunteers are not always the heaviest or the lightest. The point is only that whatever pulls them in pulls every sample the same way.</p>\n<p>The 0.297 cm uses s for σ, so it is itself an estimate of the standard error. Kiran’s paper has some numbers that disagree with each other; the Table 1 figures <dfn data-g=\"822\">used</dfn> here are its own.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“A bigger sample, so the estimate is right” is the error. A bigger sample shrinks the standard error and leaves the bias exactly where it was.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A standard error describes only the scatter between random samples from the population the sample actually came from. It is silent on bias.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Unbiased does not mean close. An unbiased rule can miss badly on the one sample you have.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Divide by n − 1 when you estimate a variance from a sample; <dfn data-g=\"104\">check</dfn> which divisor any tool used before you copy its variance.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The sample standard deviation s is biased low even though s² is unbiased, because a square root does not pass through an expected value (Book 2, section 14). For large samples the bias is small; for a sample of a handful, do not treat s as σ.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A protocol that promises twice the <dfn data-g=\"587\">precision</dfn> is promising four times the participants; cost it that way.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A trainee who already knows a precise, wrong weighing scale already knows a biased estimator with a small standard error.</p>",
+     "tag": "move",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The standard error is small, so the estimate is close to the truth.” The standard error measures only how much the estimate would scatter between random samples from the population actually sampled. A precise rule fed a biased sample gives a small standard error around the wrong value. Read a standard error as precision, never as <dfn data-g=\"8\">accuracy</dfn>.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>The mean mid-upper arm circumference was 30.9 cm (SD 3.4 cm; estimated standard error 0.30 cm; n = 131). The standard error reflects random <dfn data-g=\"697\">sampling variation</dfn> only. The participants were volunteers, and the standard error does not measure how far they may differ from the wider population.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: define the bias and the standard error of an estimator. Which one shrinks as the sample grows? Why does the sample variance divide by n − 1?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The bias is the estimator’s expected value minus the parameter. The standard error is the estimator’s standard deviation over all the samples it could meet.</p>\n<p>The standard error shrinks as the sample grows: for a mean it is σ ÷ √n. The bias does not.</p>\n<p>Squared deviations measured from the sample’s own mean are smaller, on average, than squared deviations from μ. That is why the sample variance divides by n − 1. Their sum has expected value (n − 1)σ², so dividing by n − 1 gives σ² on average.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A thesis protocol says this.</p>\n<blockquote>\n<p>We will measure waist circumference in 2,000 adults attending the medicine outpatient department. The large sample ensures that the prevalence of abdominal obesity we report will be accurate for the district.</p>\n</blockquote>\n<p>Name the two kinds of error the sentence runs together. Say which one the 2,000 controls. Then say what the protocol would need before it could <dfn data-g=\"114\">claim</dfn> “accurate for the district”.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The sentence runs together <dfn data-g=\"629\">random error</dfn>, the standard error, and <dfn data-g=\"776\">systematic error</dfn>, the bias.</p>\n<p>The 2,000 controls the standard error. With that many people, the estimated <dfn data-g=\"592\">prevalence</dfn> will move little from one random sample of attenders to the next.</p>\n<p>It does nothing for bias. Outpatient attenders are not the district’s adults. They are people who are unwell, or live near the hospital, or can get there. Whatever makes them attend pulls every sample of attenders the same way, and 2,000 of them carry that pull as surely as 200.</p>\n<p>To claim accuracy for the district, the protocol needs one of two things. One is a sample drawn <dfn data-g=\"40\">at random</dfn> from the district’s adults. The other is evidence that attenders do not differ from the district’s adults in waist size. It should then say “precise” for what the sample size buys, and keep “accurate” for what the sampling method buys.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A population has three values: 2, 4 and 6. List every ordered sample of size 2 picked with replacement, and its average. Work out the expected value of the average.</p>",
+   "level": 1,
+   "answer": "<p>There are 3 times 3 = 9 ordered samples.</p>\n<table style=\"width:26%;\">\n\n<thead>\n<tr>\n<th>sample</th>\n<th>average</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>2, 2</td>\n<td>2</td>\n</tr>\n<tr>\n<td>2, 4</td>\n<td>3</td>\n</tr>\n<tr>\n<td>2, 6</td>\n<td>4</td>\n</tr>\n<tr>\n<td>4, 2</td>\n<td>3</td>\n</tr>\n<tr>\n<td>4, 4</td>\n<td>4</td>\n</tr>\n<tr>\n<td>4, 6</td>\n<td>5</td>\n</tr>\n<tr>\n<td>6, 2</td>\n<td>4</td>\n</tr>\n<tr>\n<td>6, 4</td>\n<td>5</td>\n</tr>\n<tr>\n<td>6, 6</td>\n<td>6</td>\n</tr>\n</tbody>\n</table>\n<div class=\"working\">\n<p>2 plus 3 plus 4 plus 3 plus 4 plus 5 plus 4 plus 5 plus 6 = 36<br />\n36 divided by 9 = 4<br />\n2 plus 4 plus 6 = 12<br />\n12 divided by 3 = 4</p>\n</div>\n<p>The expected value of the average is 4, the same as μ. The average is unbiased.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>A sample has two values, 3 and 7. Work out the variance estimate dividing by n, and the one dividing by n − 1.</p>",
+   "level": 2,
+   "answer": "<div class=\"working\">\n<p>3 plus 7 = 10<br />\n10 divided by 2 = 5<br />\n(3 minus 5) squared = 4<br />\n(7 minus 5) squared = 4<br />\n4 plus 4 = 8<br />\n8 divided by 2 = 4<br />\n8 divided by 1 = 8</p>\n</div>\n<p>Dividing by n gives 4. Dividing by n − 1 gives 8.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Draws are independent with σ = 12. Work out the <dfn data-g=\"749\">standard error of the mean</dfn> for n = 36 and for n = 144.</p>",
+   "level": 3,
+   "answer": "<div class=\"working\">\n<p>the square root of 36 = 6<br />\n12 divided by 6 = 2<br />\nthe square root of 144 = 12<br />\n12 divided by 12 = 1</p>\n</div>\n<p>2 for n = 36, and 1 for n = 144. Four times the sample halves the standard error.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Kiran and colleagues report, for 131 men, a mean mid-upper arm circumference of 30.9 cm with an SD of 3.4 cm. Work out the estimated standard error of the mean, with its unit, and say what it describes.</p>",
+   "level": 4,
+   "answer": "<p>Use s = 3.4 cm in place of σ.</p>\n<div class=\"working\">\n<p>the square root of 131 = 11.45<br />\n3.4 divided by 11.45 = 0.297</p>\n</div>\n<p>About 0.30 cm. It describes how far the mean of 131 would typically move between random samples of that size from the population the men came from. It does not describe how far these volunteers’ mean sits from that of all medical students.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Kiran’s Table 1 gives the 131 men’s body-fat <dfn data-g=\"555\">percentage</dfn> with an SD of 7.3. Work out the estimated standard error of the mean. Then work out how many men a study would need to halve it, and check the new standard error.</p>",
+   "level": 5,
+   "answer": "<div class=\"working\">\n<p>the square root of 131 = 11.45<br />\n7.3 divided by 11.45 = 0.638</p>\n</div>\n<p>About 0.64 percentage points. To halve a standard error, multiply n by 4.</p>\n<div class=\"working\">\n<p>4 times 131 = 524<br />\nthe square root of 524 = 22.89<br />\n7.3 divided by 22.89 = 0.319</p>\n</div>\n<p>524 men give about 0.32 points, half of 0.638.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Go back to the four made-up adults with indices of 21, 23, 27 and 29 kg/m<sup>2</sup>. A new rule estimates the largest index in the population: pick two with replacement and take the larger. List how often each answer comes up over the 16 ordered pairs, and work out the rule’s bias.</p>",
+   "level": 6,
+   "answer": "<p>The larger of the two is 21 only for the pair 21, 21. It is 23 for 21-23, 23-21 and 23-23. It is 27 for the five pairs that hold a 27 and no 29. It is 29 for the seven pairs that hold a 29.</p>\n<div class=\"working\">\n<p>1 plus 3 plus 5 plus 7 = 16<br />\n21 times 1 plus 23 times 3 plus 27 times 5 plus 29 times 7 = 428<br />\n428 divided by 16 = 26.75<br />\n26.75 minus 29 = -2.25</p>\n</div>\n<p>The rule’s expected value is 26.75 kg/m<sup>2</sup> against a largest index of 29. Its bias is minus 2.25. It can never overshoot, so it can only miss low.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>131 men, mid-upper arm circumference SD 3.4 cm<br />\nstandard error of the mean = SD divided by n<br />\n= 3.4 divided by 131 = 0.026 cm</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The second line broke. The standard error of a mean is σ ÷ √n, not σ ÷ n.</p>\n<div class=\"working\">\n<p>the square root of 131 = 11.45<br />\n3.4 divided by 11.45 = 0.297</p>\n</div>\n<p>The estimated standard error is about 0.30 cm, more than eleven times the 0.026.</p>\n<p>Why it looks reasonable: “the average of n things is n times more stable” sounds right, and dividing by n is what makes an average. But variances divide by n, so standard deviations divide by √n. The wrong answer makes a study look eleven times more precise than it is.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer about the four made-up adults, whose σ is about 3.162 kg/m<sup>2</sup>. Find the step that broke.</p>\n<div class=\"working\">\n<p>the sample variance, dividing by n − 1, is unbiased for σ²<br />\nso its square root, s, is unbiased for σ<br />\nso the average of s over the 16 samples is 3.162</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line broke. A square root does not pass through an expected value, as Book 2, section 14 warned for squares and ratios. Check it by listing. For a pair a and b, s is the gap between them divided by the square root of 2. The gaps are 0 for four pairs, 2 for four, 4 for two, 6 for four and 8 for two.</p>\n<div class=\"working\">\n<p>0 divided by 1.414 = 0<br />\n2 divided by 1.414 = 1.414<br />\n4 divided by 1.414 = 2.828<br />\n6 divided by 1.414 = 4.243<br />\n8 divided by 1.414 = 5.657<br />\n0 times 4 plus 1.414 times 4 plus 2.828 times 2 plus 4.243 times 4 plus 5.657 times 2 = 39.598<br />\n39.598 divided by 16 = 2.475</p>\n</div>\n<p>The average of s is about 2.475, against σ of about 3.162. s is biased low.</p>\n<p>Why it looks reasonable: the first line is true, and “the square root of an unbiased thing is unbiased” sounds like a rule of arithmetic. It is not one. The small values of s, including the four zeros, pull its average down more than the square root lets the large ones pull it up.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Two made-up surveys of the same city’s women aged 15 to 49 report the share with a body-mass index of 25 or more. One measured 10,000 women at shopping malls and found 35 per cent. One measured 400 women from a random sample of households and found 28 per cent. A colleague says:</p>\n<blockquote>\n<p>The mall survey is 25 times larger, so its figure is the more reliable one.</p>\n</blockquote>\n<p>Decide what to compute, compute it, and say what the comparison does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Compute each share’s standard error. For a share, section 18 gives the SD as the square root of p(1 − p) ÷ n. Use each survey’s own p̂ in place of p.</p>\n<div class=\"working\">\n<p>0.35 times 0.65 = 0.2275<br />\n0.2275 divided by 10000 = 0.00002275<br />\nthe square root of 0.00002275 = 0.0048<br />\n0.28 times 0.72 = 0.2016<br />\n0.2016 divided by 400 = 0.000504<br />\nthe square root of 0.000504 = 0.0224</p>\n</div>\n<p>The mall survey’s standard error is about 0.5 percentage points. The household survey’s is about 2.2 points. So the mall figure is far more precise.</p>\n<p>What this does not establish: that it is more accurate. The two estimates differ by 7 points, more than three of the household survey’s standard errors. That gap is more than random sampling usually produces. The mall survey is the one with a reason to be off, because women at malls are not the city’s women. Its standard error says nothing about that bias. The household figure is less precise and has no such built-in pull. Neither number shows how large the mall’s bias is; only a comparison like this one hints that it exists.</p>"
+  }
+ ]
+}

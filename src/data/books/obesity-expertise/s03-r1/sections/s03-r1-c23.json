@@ -1,0 +1,181 @@
+{
+ "format": 1,
+ "id": "s03-r1-c23",
+ "label": "23",
+ "title": "Worked journey: One clinic test, from the question to a handout a patient can read",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>In this book, a test’s <dfn data-g=\"407\">journey</dfn> is the order of work that takes one clinic test from the question a patient asks to a one-page handout that answers it.</p>\n<ol type=\"1\">\n<li>The question: what a positive or a negative result tells a person like this patient, in this clinic, about one stated condition.</li>\n<li>The test’s figures: its <dfn data-g=\"713\">sensitivity</dfn> and <dfn data-g=\"742\">specificity</dfn>, read from the paper with the condition, the cut-off and the people they were measured on.</li>\n<li>The prior: the <dfn data-g=\"592\">prevalence</dfn> of the same condition among the people the test will be <dfn data-g=\"822\">used</dfn> on, counted from your own register and passed through the four checks of section 10.</li>\n<li>The calculation, three ways that must agree: a <dfn data-g=\"316\">frequency tree</dfn> of 1,000 people (section 7), Bayes’ theorem as a formula (section 5), and the <dfn data-g=\"527\">odds</dfn> form with the likelihood ratios (section 8).</li>\n<li>The prior moved: the same calculation at the other priors someone will offer, and the reason each one does or does not belong.</li>\n<li>The sentence a colleague will say, which transposes the conditional (section 9), and its correction.</li>\n<li>The checks: counts that add up, routes that agree, and no more digits than the inputs hold.</li>\n<li>The handout, and a statement of what it does not establish.</li>\n</ol>",
+   "refs": [
+    185,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Each earlier section taught one tool. Here the test is the arm tape of Book 0. The patient is a young man at your clinic whose arm measures over the cut-off. The work ends in a handout he can read.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c23-thousand-men.png",
+   "alt": "Four bars: 172 in the band with a high tape, 28 in the band with a low tape, 208 not in the band with a high tape, 592 not in the band with a low tape.",
+   "w": 1360,
+   "h": 656,
+   "caption": "1,000 young men at the clinic, with a prior of 0.2. The tape flags 380: 172 in the 25 to 29.9 band and 208 not in it, so a high reading is right about 45 times in 100. Of the 620 with a low reading, 592 are not in the band."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c23-three-priors.png",
+   "alt": "Paired bars for three priors. Positive predictive value: 45.3, 55.4, 61.0. Negative predictive value: 95.5, 93.4, 91.8.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The same tape at three priors. From your register (0.2), a high reading is right 45.3 times in 100 and a low one 95.5. NFHS-6’s men (0.273) would give 55.4 and 93.4, and the study’s own students (about 0.32) 61.0 and 91.8. Only the register passes the four checks for the man’s question."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p><strong>The question.</strong> A man of 24 at your urban health centre asks why the nurse measured his arm, and what it means that it came out “high”. Choose the test you will write the handout for. Here it is the arm tape of Book 0, D3: a mid-upper arm circumference (MUAC) of 31.3 cm or more counts as positive. The Indian Diabetes Risk Score of section 10 would do as well. For your own handout, take a test your clinic actually uses.</p>\n<p>Write the question down in one sentence before you look up any number.</p>\n<blockquote>\n<p>Of young men at this clinic whose arm measures 31.3 cm or more, how many have a body mass index in the band 25 to 29.9? And of those whose arm measures less?</p>\n</blockquote>\n<p>The condition is named exactly. The question is about men like him, in this clinic. It asks for P(in the band | tape positive), the <dfn data-g=\"602\">probability</dfn> of being in the band given a positive tape, and the same for a negative tape.</p>\n<p><strong>The test’s figures.</strong> Open “Mid-upper arm circumference and neck circumference to screen for overweight-obesity in young adults in South India” by Kiran and colleagues, at https://pmc.ncbi.nlm.nih.gov/articles/PMC9791811/. Search for “31.3cm”.</p>\n<blockquote>\n<p>The MUAC cut-off was 31.3cm for men (sensitivity: 86%; specificity: 74%) to detect overweight</p>\n</blockquote>\n<p>The <dfn data-g=\"418\">label</dfn> says “<dfn data-g=\"543\">overweight</dfn>”, a <dfn data-g=\"72\">body mass index</dfn> of 25 or more. Book 0 divided the percentages back and found they fit the 42 men in the 25 to 29.9 band, against the 89 outside it. So the condition this test was measured against is the band. Your question already says so.</p>\n<p>Now say what kind of number each figure is (section 22). The 86 per cent is 36 of 42 men, and the 74 per cent is 66 of 89, in one sample of medical students in one college. Each is an estimate of a parameter, the tape’s sensitivity or specificity among young men like them (section 19). A different sample of students would have given slightly different counts. As section 10 showed, one man more or less among the 42 moves the final answer by about a <dfn data-g=\"557\">percentage point</dfn>.</p>\n<p>Write down three more limits now, before you calculate.</p>\n<ul>\n<li><p>The men were medical students. Search for “single centre”.</p>\n<blockquote>\n<p>The study use single centre measurements consisting of only young adults and this is the most important limitation.</p>\n</blockquote></li>\n<li><p>The cut-off was chosen in the same sample. Search for “maximum values of Youden”.</p>\n<blockquote>\n<p>After defining the Youden index for all points of the ROC curve, the maximum values of Youden index were utilized to guide the best cut-off of MUAC and NC.</p>\n</blockquote>\n<p>ROC means receiver operating characteristic. The ROC curve is the list of sensitivity and specificity <dfn data-g=\"546\">pairs</dfn> the tape gives at every possible cut-off; the series’ book on screening teaches it. The <dfn data-g=\"856\">Youden index</dfn> is sensitivity plus specificity minus 1. The authors tried every cut-off and kept the one that scored best on these same men. Some of that score was luck in this sample. In a new sample the same cut-off will tend to do a little worse. How much worse is a question for the series’ book on screening.</p></li>\n<li><p>The paper’s label and its numbers disagree, as Book 0 found. Any handout built on it must say it uses the 25 to 29.9 band.</p></li>\n</ul>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The arm tape is used here because Book 0 rebuilt its table and this book’s Bayes sections used it. It is not a <dfn data-g=\"647\">recommendation</dfn> to screen with it. Whether arm circumference is a good screening test for anything is a question this book does not answer.</p>\n<p>The man of 24 is made up.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p><strong>The prior.</strong> Count it from your own register, as section 10 set out. Here, as there, a made-up register stands in for yours. Your centre weighed and measured every man aged 18 to 29 who came to the outpatient clinic from April to September: 480 men, 96 of them in the 25 to 29.9 band.</p>\n<div class=\"working\">\n<p>96 divided by 480 = 0.2</p>\n</div>\n<p>Run the four checks before you use it. The condition is the band, as in the study. The <dfn data-g=\"207\">denominator</dfn> is the men the tape will be used on. The men are young outpatients, like the man of 24. Every man in the period was measured, not only those who looked heavy. All four pass, so the prior is 0.2. Altman and Bland give the prior its name in their note “Diagnostic tests 2: predictive values”, at https://pmc.ncbi.nlm.nih.gov/articles/PMC2540558/.</p>\n<blockquote>\n<p>The prevalence can be interpreted as the probability before the test is carried out that the subject has the disease, known as the prior probability of disease.</p>\n</blockquote>\n<p><strong>First route: count 1,000 men (section 7).</strong> Split by the prior, then each part by the test.</p>\n<div class=\"working\">\n<p>0.2 times 1000 = 200<br />\n1000 minus 200 = 800<br />\n0.86 times 200 = 172<br />\n200 minus 172 = 28<br />\n0.26 times 800 = 208<br />\n800 minus 208 = 592<br />\n172 plus 208 = 380<br />\n28 plus 592 = 620</p>\n</div>\n<table style=\"width:97%;\">\n\n<tbody>\n<tr>\n<td>1,000 young men at your clinic</td>\n<td>in the band</td>\n<td>not in the band</td>\n<td>total</td>\n</tr>\n<tr>\n<td>tape 31.3 cm or more</td>\n<td>172</td>\n<td>208</td>\n<td>380</td>\n</tr>\n<tr>\n<td>tape under 31.3 cm</td>\n<td>28</td>\n<td>592</td>\n<td>620</td>\n</tr>\n<tr>\n<td>total</td>\n<td>200</td>\n<td>800</td>\n<td>1,000</td>\n</tr>\n</tbody>\n</table>\n<p>Read the two answers off the rows.</p>\n<div class=\"working\">\n<p>172 divided by 380 ≈ 0.4526<br />\n592 divided by 620 ≈ 0.9548</p>\n</div>\n<p>Of 380 men with a high tape, 172 are in the band: a <dfn data-g=\"576\">positive predictive value</dfn> (PPV) of about 45 per cent. Of 620 men with a low tape, 592 are not: a <dfn data-g=\"504\">negative predictive value</dfn> (NPV) of about 95.5 per cent.</p>\n<p><strong>Second route: the formula (section 5).</strong></p>\n<div class=\"working\">\n<p>0.86 times 0.2 = 0.172<br />\n0.26 times 0.8 = 0.208<br />\n0.172 plus 0.208 = 0.38<br />\n0.172 divided by 0.38 = 0.4526<br />\n0.74 times 0.8 = 0.592<br />\n0.14 times 0.2 = 0.028<br />\n0.592 plus 0.028 = 0.62<br />\n0.592 divided by 0.62 = 0.9548</p>\n</div>\n<p>The same two numbers. The formula is the frequency tree with 1,000 divided out.</p>\n<p><strong>Third route: odds and likelihood ratios (section 8).</strong> Deeks and Altman, in “Diagnostic tests 4: likelihood ratios”, at https://pmc.ncbi.nlm.nih.gov/articles/PMC478236/, give the rule.</p>\n<blockquote>\n<p>The post-test odds that the patient has the disease are estimated by multiplying the pretest odds by the likelihood ratio.</p>\n</blockquote>\n<p>The <dfn data-g=\"575\">positive likelihood ratio</dfn>, LR+, is sensitivity ÷ (1 − specificity). The negative one, LR−, is (1 − sensitivity) ÷ specificity.</p>\n<div class=\"working\">\n<p>0.86 divided by 0.26 = 3.3077<br />\n0.14 divided by 0.74 = 0.1892<br />\n0.2 divided by 0.8 = 0.25<br />\n0.25 times 3.3077 = 0.8269<br />\n0.8269 divided by 1.8269 = 0.4526<br />\n0.25 times 0.1892 = 0.0473<br />\n0.0473 divided by 1.0473 = 0.0452<br />\n1 minus 0.0452 = 0.9548</p>\n</div>\n<p>After a positive tape the odds are 0.8269, a probability of 0.4526. After a negative tape the probability of being in the band is 0.0452, so the NPV is 0.9548. Three routes, one answer. If one of them had disagreed, you would have a slip to find before you wrote a word of the handout.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The three routes agree because they are one theorem written three ways. Their agreement checks your arithmetic. It does not <dfn data-g=\"104\">check</dfn> the inputs: a wrong prior or a sensitivity from the wrong group gives the same wrong answer by all three.</p>\n<p>The register is made up. Use your own.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p><strong>The prior moved.</strong> Someone at the meeting will offer a different prior. Run the same formula at each, then decide which belongs.</p>\n<p>The national survey. The National Family Health Survey (NFHS-6, 2023-24) India fact <dfn data-g=\"722\">sheet</dfn> gives this for men aged 15 to 49.</p>\n<blockquote>\n<p>77. Men who are overweight or obese (BMI ≥25.0 kg/m2) (%) 36.3 23.0 27.3 22.9</p>\n</blockquote>\n<p>The columns are NFHS-6 urban, rural and total, then NFHS-5’s total (2019-21). The India total is 27.3 per cent, a prior of 0.273.</p>\n<div class=\"working\">\n<p>0.86 times 0.273 = 0.23478<br />\n1 minus 0.273 = 0.727<br />\n0.26 times 0.727 = 0.18902<br />\n0.23478 plus 0.18902 = 0.4238<br />\n0.23478 divided by 0.4238 = 0.554<br />\n0.74 times 0.727 = 0.53798<br />\n0.14 times 0.273 = 0.03822<br />\n0.53798 plus 0.03822 = 0.5762<br />\n0.53798 divided by 0.5762 = 0.9337</p>\n</div>\n<p>The study’s own men: 42 of 131, a prior of about 0.32.</p>\n<div class=\"working\">\n<p>42 divided by 131 ≈ 0.3206<br />\n0.86 times 0.3206 = 0.275716<br />\n1 minus 0.3206 = 0.6794<br />\n0.26 times 0.6794 = 0.176644<br />\n0.275716 plus 0.176644 = 0.45236<br />\n0.275716 divided by 0.45236 = 0.6095<br />\n0.74 times 0.6794 = 0.502756<br />\n0.14 times 0.3206 = 0.044884<br />\n0.502756 plus 0.044884 = 0.54764<br />\n0.502756 divided by 0.54764 = 0.918</p>\n</div>\n<table style=\"width:97%;\">\n\n<thead>\n<tr>\n<th>where the prior came from</th>\n<th>prior</th>\n<th>PPV (%)</th>\n<th>NPV (%)</th>\n<th>passes the four checks?</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>your register</td>\n<td>0.2</td>\n<td>45.3</td>\n<td>95.5</td>\n<td>yes</td>\n</tr>\n<tr>\n<td>NFHS-6, men 15-49, India</td>\n<td>0.273</td>\n<td>55.4</td>\n<td>93.4</td>\n<td>no: a different condition and different men</td>\n</tr>\n<tr>\n<td>Kiran’s 131 students</td>\n<td>about 0.32</td>\n<td>61.0</td>\n<td>91.8</td>\n<td>no: students in one college</td>\n</tr>\n</tbody>\n</table>\n<p>The NFHS-6 row counts a body mass index of 25 or more, not the band, and all of India’s men aged 15 to 49, not your clinic’s. It is a survey estimate of a different parameter (section 22). The study’s 0.32 belongs to medical students in Mangaluru. Only your register answers the man’s question. The table also shows the size of the mistake: the wrong prior would print a PPV up to 16 <dfn data-g=\"555\">percentage</dfn> points too high. Altman and Bland put the rule in one line: “Predictive values observed in one study do not apply universally.”</p>\n<p><strong>The sentence a colleague will say.</strong> A senior resident reads the handout draft and says:</p>\n<blockquote>\n<p>The tape is 86 per cent sensitive. So a man with a high tape is 86 per cent likely to be overweight.</p>\n</blockquote>\n<p>That is the <dfn data-g=\"803\">transposed conditional</dfn> of section 9. Correct it on the spot, in the four steps of that section.</p>\n<ol type=\"1\">\n<li>Restate both in words. 86 per cent is P(tape positive | in the band): of men in the band, how many the tape catches. The man’s question is P(in the band | tape positive).</li>\n<li>Ask “out of whom?” The 86 per cent is out of men in the band. His answer is out of men with a high tape.</li>\n<li>Count 1,000 men: 200 in the band, 172 caught. But 208 men outside the band are caught too.</li>\n<li>Say which number answers the question: 172 of 380, about 45 per cent.</li>\n</ol>\n<p>And “overweight” has slipped from the band to the word on the paper’s label. Keep the band.</p>\n<p><strong>The checks.</strong> The four cells add to 1,000. The three routes agree to four <dfn data-g=\"200\">decimal</dfn> places. The inputs are whole per cents from 42 and 89 men, and one man moves the PPV by about a point. So print “about 45 in 100” and “about 95 in 100”, and nothing after a decimal point.</p>",
+   "numberRefs": [
+    32
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The table’s PPVs and NPVs are arithmetic on the stated priors. Only the first row is a prior for your clinic, and even it is an estimate of next month’s share from the last six months’ (section 22).</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 4",
+   "role": "illustration",
+   "html": "<p><strong>The handout.</strong> Put it together. The prior line follows the template of section 10. The counts are the frequency tree, because counts are what patients read best (section 7).</p>\n<blockquote>\n<p><strong>Your arm measurement: what a high reading means</strong></p>\n<p>The nurse measured round your upper arm. For young men, 31.3 cm or more counts as a high reading. It is a quick check, not a diagnosis.</p>\n<p>Think of 1,000 young men who come to this clinic. About 200 of them have a body mass index (weight for height) between 25 and 29.9.</p>\n<ul>\n<li>About 380 of the 1,000 have a high arm reading. About 172 of those 380 have a body mass index in that range: roughly 45 in 100.</li>\n<li>About 620 have a reading under 31.3 cm. About 592 of those 620 do not have a body mass index in that range: roughly 95 in 100.</li>\n</ul>\n<p>So a high reading means the next step is to check your weight and height. On its own, it is not the answer.</p>\n<p>Where these numbers come from: 96 of 480 young men measured at this clinic from April to September were in the 25 to 29.9 range. The arm check’s accuracy comes from one study of 131 male medical students in Mangaluru (Kiran and colleagues, 2022). Both figures are estimates; treat them as approximate.</p>\n</blockquote>\n<p><strong>What it does not establish.</strong> Write these in a box at the foot of the staff copy.</p>\n<ul>\n<li>It answers a question about the 25 to 29.9 band only. A man with a body mass index of 30 or more counts as outside the band here, because that is how the study’s figures fit. For “25 or more” the paper’s figures cannot be rebuilt.</li>\n<li>The sensitivity and specificity come from young medical students in one college, measured by one observer, with the cut-off chosen on those same men. Your patients are not that sample.</li>\n<li>Both inputs and the prior are estimates. The 45 is “about 45”, give or take a few points.</li>\n<li>It says nothing about whether a high body mass index in this man carries any risk to his health, or whether screening with an arm tape does any good. Those are questions for the books on screening and on risk.</li>\n<li>It describes men like the clinic’s last six months of patients. If the clinic changes, such as a new outreach camp in a richer ward, count the prior again.</li>\n</ul>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A handout is tested by a reader, not by its author. Give it to two patients who have not seen it and ask each to say what a high reading means. If either says “it means I am overweight”, the counts are not doing their work, and the first two lines need rewriting.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Write the question before you look up a number: what a result tells a person like this patient, in this clinic, about one named condition.</p>",
+     "tag": "move",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Take the prior from your own register, passed through the four checks. Never take it from a national survey or the study’s own sample. At this clinic’s prior of 0.2, a high reading means about 45 in 100.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Work the PPV and NPV three ways: frequency tree, formula, and likelihood ratios. If one route disagrees, find the slip before you write the handout. Agreement checks the arithmetic, never the inputs.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>“The tape is 86 per cent sensitive, so a man with a high tape is 86 per cent likely to be overweight” is the transposed conditional. Correct it with counts: of 380 men with a high tape, 172 are in the 25 to 29.9 band, and the band, not “overweight”, is what the 86 per cent was measured against.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>A cut-off chosen as the best one in a sample will tend to do a little worse in the next sample. Check whether the paper picked its cut-off on the same people it reports.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Print “about 45 in 100”, not “45.26 per cent”.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Three routes gave the same 45 per cent, so the handout’s number is right.” The three routes are one theorem written three ways, so they always agree when the arithmetic is right. They check the arithmetic. A prior from the wrong group, or a sensitivity measured on the wrong condition, gives the same wrong answer by all three. Check the inputs against the question separately.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p><dfn data-g=\"585\">Pre-test probability</dfn>: 96 of 480 men aged 18 to 29, examined at [clinic] from April to September, had a body mass index of 25 to 29.9 (20 per cent). Kiran and colleagues (2022) report a sensitivity of 86 per cent and a specificity of 74 per cent for an arm circumference of 31.3 cm or more. With these, a high reading raises the probability to about 45 per cent. A low reading lowers it to about 5 per cent. All three inputs are estimates; treat the results as approximate.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, list the steps of a test’s journey in order, from the question to what the handout does not establish. For each, name the earlier section whose tool it uses, or the check you make before moving on.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<ol type=\"1\">\n<li>The question: one condition, people like this patient, this clinic.</li>\n<li>The test’s figures, read with their condition, cut-off and sample. They are estimates (section 19, section 22).</li>\n<li>The prior, from your own register, through the four checks of section 10.</li>\n<li>The calculation three ways: frequency tree (section 7), formula (section 5), odds and likelihood ratios (section 8). They must agree.</li>\n<li>The prior moved: the other priors on offer, and why each does or does not pass the checks.</li>\n<li>The colleague’s transposed sentence, corrected in four steps (section 9).</li>\n<li>The checks: cells add up, routes agree, digits no finer than the inputs.</li>\n<li>The handout, and what it does not establish.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague’s draft handout for the Indian Diabetes Risk Score (IDRS) says this.</p>\n<blockquote>\n<p>A score of 60 or more means you have a 72.5% chance of having diabetes. We used the national prevalence of diabetes as our starting point.</p>\n</blockquote>\n<p>Find every fault, and say what the line should say instead. Use only figures you can trace to section 10.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Two faults, one per sentence.</p>\n<ul>\n<li>“72.5% chance of having diabetes” is the transposed conditional. 72.5 per cent is the sensitivity, P(score 60 or more | undiagnosed diabetes). The patient’s question is P(undiagnosed diabetes | score 60 or more), the PPV. In Mohan and colleagues’ study, at its prior of about 10 per cent, that was 17.0 per cent.</li>\n<li>“The national prevalence” fails the checks of section 10. The score was tested against diabetes not yet diagnosed, by a 2-hour <dfn data-g=\"333\">glucose</dfn> test, in people not known to have diabetes. A national figure that includes known cases counts a different condition in different people. The prior must come from a register of people screened at your clinic who were not already known to have diabetes.</li>\n</ul>\n<p>Count your own prior first. Then the line should read: “Of 100 people like you with a score of 60 or more, about [your PPV] have diabetes that has not been found yet. A blood test will tell.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident has ten minutes and a whiteboard. Explain why a high arm reading at your clinic means “about 45 in 100”, when the paper says the tape is 86 per cent sensitive.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw the 1,000-man frequency tree. Start with 1,000 young men at the clinic, 200 in the band and 800 not. Of the 200, the tape catches 172: that is the 86 per cent, and it is out of men in the band. Of the 800, it wrongly flags 208, because its specificity is 74 per cent.</p>\n<p>Now circle the men with a high reading: 172 plus 208, 380 men. Only 172 of them are in the band, about 45 in 100. The 86 per cent and the 45 per cent share the same top count, 172. They divide it by different totals, the 200 in the band and the 380 flagged.</p>\n<p>Then rub out the 200 and write 100, for a clinic where one man in ten is in the band. The tape catches 86 of the 100 and wrongly flags 234 of the other 900.</p>\n<div class=\"working\">\n<p>0.86 times 100 = 86<br />\n0.26 times 900 = 234<br />\n86 plus 234 = 320<br />\n86 divided by 320 ≈ 0.269</p>\n</div>\n<p>About 27 in 100. The PPV fell with the prior while the 86 per cent stayed. Leave them with the question to ask of any percentage: out of whom?</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>This book’s build: a one-page handout on Bayes’ theorem for one diagnostic test used in your own clinic.</p>\n<ol type=\"1\">\n<li>Write the question, naming the condition exactly as the test’s paper defines it.</li>\n<li>Read the sensitivity and specificity from the paper, with their sample and cut-off, and write down every limit the paper states.</li>\n<li>Count the prior from your clinic’s register, and pass it through the four checks.</li>\n<li>Work the PPV and NPV by a 1,000-person frequency tree, by formula and by likelihood ratios.</li>\n<li>Work them again at the national figure and at the study’s own prevalence, and say why your register’s prior is the one used.</li>\n<li>Write the patient’s page in counts, with a sources line.</li>\n<li>Write the transposed sentence a colleague is most likely to say, and your correction, in the four steps of section 9.</li>\n<li>List what the handout does not establish.</li>\n<li>Give the page to two patients who have not seen it, and revise it if either misreads it.</li>\n</ol>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>Check your handout against this list.</p>\n<ul>\n<li>The condition is the same in the question, the paper’s figures and the register. If the paper’s label and its numbers disagree, as Kiran’s do, the handout names the one the numbers fit.</li>\n<li>The register’s prior names its count, its denominator, its period and who was left out. Every person in the denominator was tested.</li>\n<li>The three routes agree to the <dfn data-g=\"690\">rounding</dfn>. The patient’s page carries whole numbers out of 1,000 or 100, never decimals.</li>\n<li>The national and study priors are shown on the staff copy, with the check each fails.</li>\n<li>The correction of the transposed sentence restates both conditionals in words, asks “out of whom?”, counts, and names the number that answers the question.</li>\n<li>The “does not establish” box names the sample the test was measured in, and how the cut-off was chosen. It says that all inputs are estimates. It says that nothing is claimed about whether the test or the condition matters for the patient’s health.</li>\n<li>Two patients read it, and the page was changed for anything either one misread.</li>\n</ul>\n<p>If your clinic has no register in which everyone was tested by the reference test, the handout cannot be finished honestly. Say so on the page and start the count.</p>"
+  }
+ ]
+}

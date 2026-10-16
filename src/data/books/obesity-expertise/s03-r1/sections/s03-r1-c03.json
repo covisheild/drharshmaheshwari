@@ -1,0 +1,207 @@
+{
+ "format": 1,
+ "id": "s03-r1-c03",
+ "label": "3",
+ "title": "Independence given a condition, and where it fails",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Two events A and B, each with <dfn data-g=\"602\">probability</dfn> above 0, are independent when knowing that one happened leaves the probability of the other unchanged.</p>\n<div class=\"working\">\n<p>P(A | B) = P(A)</p>\n</div>\n<p>Put this into the multiplication rule of the last section, P(A and B) = P(B) × P(A | B), and it becomes the <dfn data-g=\"104\">check</dfn> of Book 0, D2: P(A and B) = P(A) × P(B). Going back: divide P(A and B) = P(A) × P(B) by P(B), and the definition of section 2 gives P(A | B) = P(A). So checking one form is enough. Events that are not independent are <dfn data-g=\"208\">dependent</dfn>.</p>\n<p>Independent is not <dfn data-g=\"497\">mutually exclusive</dfn>. If A and B are mutually exclusive and each has probability above 0, then knowing B happened makes A impossible: P(A | B) is 0, not P(A). So such events are always dependent.</p>\n<p>Independence can hold inside groups and fail across them. A and B are <dfn data-g=\"147\">conditionally independent</dfn> given C when the definition holds among the outcomes in C:</p>\n<div class=\"working\">\n<p>P(A | B and C) = P(A | C)</p>\n</div>\n<p>The commonest case is two tests on one person. Among people who have the condition, one test’s result may tell you nothing more about the other’s. The same may hold among people who do not. Across everyone together, the two results are still dependent, because a positive first result makes it more likely the person has the condition, and so more likely the second test is positive.</p>",
+   "refs": [
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Two things are independent if learning one tells you nothing about the other.</p>\n<p>“Cannot both happen” is a different idea, and it forces dependence. If two things cannot both happen, learning one tells you a great deal about the other: it did not happen.</p>\n<p>Two tests on the same patient are a trap. Among the sick they may behave independently, and among the well too. Put everyone together and a positive first test makes a positive second test more likely, because it points to a sick person.</p>\n<p>People who share a household, a clinic or a measurer are tied together. So are people drawn one after another from a small group. Before you multiply two chances, ask what ties them.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c03-two-tests.png",
+   "alt": "Grouped bars for three groups. With the condition: 0.8 and 0.8. Without: 0.1 and 0.1. Everyone: 0.31 overall and 0.6419 given a positive first test.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Two made-up tests, each catching 0.8 of people with a condition and wrongly flagging 0.1 of people without it, in 1,000 people of whom 300 have it. Within each group a positive first test leaves the second test’s chance unchanged: 0.8 and 0.8 among the 300, 0.1 and 0.1 among the 700. Across all 1,000 it does not: 0.31 overall, 0.6419 given a positive first test."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c03-kiran-dependent.png",
+   "alt": "Two pairs of bars from zero. Chance of being flagged among men in the band: 0.4504 if independent, 0.8571 in the table. Share of men both flagged and in the band: 0.1444 if independent, 0.2748 in the table.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Kiran’s 131 men. If being flagged were independent of being in the band, the chance of being flagged would be 0.4504 among men in the band too, and 0.4504 times 0.3206, about 0.1444, of the men would be both. In the table it is 0.8571 among men in the band, and 0.2748 of the men are both. The two events are dependent."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c03-with-without-replacement.png",
+   "alt": "Two lines of three points over picks 1 to 3. Without replacement: 0.9333, 0.8667, 0.8. With replacement: 0.9333, 0.8711, 0.813.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The chance that one patient’s file is still unpicked as the auditor draws from the ward’s 15 files. Without replacement the chain 14 in 15, 13 in 14, 12 in 13 ends at 0.8 after 3 picks. With replacement every pick misses it with 14 in 15, and the chance ends at 0.813. Three files of 15 is 20 per cent of the ward, so the gap shows."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with a check you can do on Kiran’s table, rebuilt in Book 0, D3 for 131 men. Is “flagged by the arm tape” independent of “in the 25-29.9 band”? Compare the chance of being flagged overall with the chance among men in the band.</p>\n<div class=\"working\">\n<p>59 divided by 131 ≈ 0.4504<br />\n36 divided by 42 ≈ 0.8571</p>\n</div>\n<p>0.45 overall, 0.86 in the band. Knowing a man is in the band changes the chance he is flagged, so the two are dependent. That is what you want from a test. Check the product form too.</p>\n<div class=\"working\">\n<p>0.4504 times 0.3206 = 0.1444<br />\n36 divided by 131 ≈ 0.2748</p>\n</div>\n<p>If they were independent, about 0.14 of the men would be both. In fact 0.27 are.</p>\n<p>Now a trap that looks like the opposite. Suppose two quick tests for the same condition are <dfn data-g=\"822\">used</dfn> one after the other on each person. The numbers are made up. In 1,000 people, 300 have the condition. Each test catches 80 per cent of people with it, and wrongly flags 10 per cent of people without it. Among people with the condition, the second test’s result does not depend on the first’s, and the same among people without it. That is conditional independence.</p>\n<p>Count the people the first test flags, then the second.</p>\n<div class=\"working\">\n<p>1000 minus 300 = 700<br />\n0.8 times 300 = 240<br />\n0.8 times 240 = 192<br />\n0.1 times 700 = 70<br />\n0.1 times 70 = 7<br />\n240 plus 70 = 310<br />\n192 plus 7 = 199</p>\n</div>\n<p>Among the 300 with the condition, 240 are flagged by the first test and 192 by both. Among the 700 without, 70 by the first and 7 by both. In all, 310 people are flagged by the first test and 199 by both. The second test flags 310 too, by the same counting, so P(second positive) is 0.31. Now take the people the first test flagged.</p>\n<div class=\"working\">\n<p>310 divided by 1000 = 0.31<br />\n199 divided by 310 ≈ 0.6419</p>\n</div>\n<p>Overall, P(second positive) is 0.31. Given a positive first test, it is 0.64. Inside each group the two tests were independent, 0.8 and 0.8 among the sick, 0.1 and 0.1 among the well. Across everyone, they are strongly dependent. The first positive mostly picks out people with the condition, and among them the second test is positive far more often.</p>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The two tests and their numbers are made up. Real tests on one person are often not independent even within the sick, because they respond to the same thing: two tape measures of body size both miss the person whose fat is not where they measure. Then the count above overstates what the second test adds, and a later section, on likelihood ratios, needs that warning.</p>\n<p>Kiran’s table is rebuilt from the paper’s rounded percentages, for 131 men at one college.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Dependence also comes from how people are picked. A ward has 15 patients, and an auditor picks 3 files, one after another, never the same file twice. This is drawing without replacement. What is the chance that one particular patient’s file is not picked?</p>\n<p>The first pick misses it with probability 14 in 15. If it was missed, 14 files remain, so the second pick misses it with probability 13 in 14. Then 12 in 13. The multiplication rule chains these conditionals.</p>\n<div class=\"working\">\n<p>P(A and B and C) = P(A) × P(B | A) × P(C | A and B)</p>\n</div>\n<p>This is the rule of section 2 used twice: first for A and B, then for that pair and C.</p>\n<div class=\"working\">\n<p>14 divided by 15 ≈ 0.9333<br />\n13 divided by 14 ≈ 0.9286<br />\n12 divided by 13 ≈ 0.9231<br />\n0.9333 times 0.9286 times 0.9231 = 0.8</p>\n</div>\n<p>Now suppose the auditor puts each file back, so the same file can be picked again. This is drawing with replacement, and each pick is independent.</p>\n<div class=\"working\">\n<p>0.93333 times 0.93333 times 0.93333 = 0.8130</p>\n</div>\n<p>0.800 against 0.813. OpenIntro Statistics works the same case with a professor and 15 students, in §3.3 (https://www.openintro.org/book/os/). Its rule of thumb: when the sample is under 10 per cent of the population, draws without replacement are nearly independent. Three of 15 is 20 per cent, so here the difference shows.</p>\n<p>Shared circumstances tie observations the same way. Kiran and colleagues report, in their strengths and limitations, that “The strength of the study was single observer measurements”. One observer means less scatter between measurers. It also means any habit of that one person, pulling the tape a little tight say, is in every one of the 131 men’s arm measurements. Their errors share a cause, so they are not independent of one another. A second study with another measurer would not carry the same shift.</p>",
+   "numberRefs": [
+    10,
+    27
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The ward and the auditor are made up, and the arithmetic is OpenIntro’s example in another setting. The 10 per cent rule of thumb is OpenIntro’s cut-off for when the difference starts to matter, not a law: how much it matters depends on what you then do with the answer.</p>\n<p>Kiran’s paper does not say its observer had any habit. The point is only that a shared measurer is a shared cause, the <dfn data-g=\"776\">systematic error</dfn> of Book 0, D7.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Two events that cannot both happen, each possible on its own, are always dependent: knowing one happened tells you the other did not. Before you multiply, ask “does knowing one change the chance of the other?”, not “can they both happen?”.</p>",
+     "tag": "misconception",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Never compute “the chance both tests are positive” by multiplying the two tests’ overall positive rates. Work inside each group, then add the groups.</p>",
+     "tag": "trap",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Two tests that respond to the same thing, such as two tape measures of body size, are probably not independent even among the sick. A second positive from such a test adds less than its numbers suggest.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>People in one household, one clinic, one school or measured by one person share causes. Before you multiply their probabilities, or count them as separate pieces of evidence, ask what ties them, and say so in your methods. Count the joint outcome from your own data rather than multiplying, and treat the household or clinic, not the person, as the unit when you work out how sure you can be.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Drawing without replacement from a small group makes each draw depend on the ones before.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>A very small product, such as “one in many millions”, should send you looking for what ties the events together before anyone quotes it.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The two tests are independent, so the chance both are positive is the product of their positive rates.” In the made-up example each test flags 0.31 of the 1,000 people, and the product is about 0.096. In fact 199 of the 1,000, 0.199, are flagged by both. The tests were independent only within the sick and within the well. Across everyone, a positive first result picks out the sick, and the second result follows.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: give the definition of independence as a conditional probability, and the check that follows from it. Then explain in two sentences why two mutually exclusive events, each possible, cannot be independent.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>A and B are independent when P(A | B) = P(A): knowing B leaves the chance of A unchanged. Then the multiplication rule gives the check P(A and B) = P(A) × P(B).</p>\n<p>If A and B cannot both happen, P(A and B) is 0. But P(A) × P(B) is above 0 when each is possible, so the check fails: knowing B happened makes A impossible.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A protocol for a made-up screening study says: “Two family members were enrolled from each household. Since each person has a 25 per cent chance of having <dfn data-g=\"543\">overweight</dfn>, the chance that both members of a household have overweight is 0.25 × 0.25, about 6 per cent.” Find the flaw, and say what the protocol should do instead.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The flaw is the independence assumption. Two people from one household share meals, income, habits and often genes. Knowing one has overweight raises the chance the other does, so P(second has overweight | first has overweight) is likely above 0.25, and the product understates the chance that both are.</p>\n<div class=\"working\">\n<p>0.25 times 0.25 = 0.0625</p>\n</div>\n<p>The 6 per cent is right only if household members are independent, which is exactly what is in doubt.</p>\n<p>The protocol should not assume it. It should count, from its own data, how many households have both members with overweight, and compare that with 0.0625 of the households. It should also treat the household, not the person, as the unit when it works out how sure it can be. Two people from one house carry less information than two strangers.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>P(A) is 0.4, P(B) is 0.5 and P(A and B) is 0.2. Are A and B independent? Work out P(A | B).</p>",
+   "level": 1,
+   "answer": "<div class=\"working\">\n<p>0.4 times 0.5 = 0.2<br />\n0.2 divided by 0.5 = 0.4</p>\n</div>\n<p>P(A) × P(B) is 0.2, which equals P(A and B), so A and B are independent. P(A | B) is 0.4, the same as P(A).</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>P(A) is 0.3 and P(B) is 0.2, and A and B are mutually exclusive. Work out P(A and B), P(A) × P(B) and P(A | B). Are A and B independent?</p>",
+   "level": 2,
+   "answer": "<p>Mutually exclusive means no outcome is in both, so P(A and B) is 0.</p>\n<div class=\"working\">\n<p>0.3 times 0.2 = 0.06<br />\n0 divided by 0.2 = 0</p>\n</div>\n<p>P(A) × P(B) is 0.06, not 0. P(A | B) is 0, not 0.3. A and B are dependent.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>A box holds 5 slips, 2 of them marked. Two slips are drawn. Work out the probability that both are marked when the first is not put back, and when it is put back before the second draw.</p>",
+   "level": 3,
+   "answer": "<p>Without replacement: after one marked slip is drawn, 1 marked slip is left among 4.</p>\n<div class=\"working\">\n<p>2 divided by 5 = 0.4<br />\n1 divided by 4 = 0.25<br />\n0.4 times 0.25 = 0.1</p>\n</div>\n<p>With replacement, each draw is independent.</p>\n<div class=\"working\">\n<p>0.4 times 0.4 = 0.16</p>\n</div>\n<p>0.1 without replacement and 0.16 with it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>In Kiran’s rebuilt table of 131 men, 42 are in the 25-29.9 band, 59 are flagged by the arm tape, and 36 are both. Test, by both forms of the definition, whether “flagged” and “in the band” are independent.</p>",
+   "level": 4,
+   "answer": "<p>The conditional form: compare P(flagged | in the band) with P(flagged).</p>\n<div class=\"working\">\n<p>36 divided by 42 ≈ 0.8571<br />\n59 divided by 131 ≈ 0.4504</p>\n</div>\n<p>The product form: compare P(flagged and in the band) with P(flagged) × P(in the band).</p>\n<div class=\"working\">\n<p>36 divided by 131 ≈ 0.2748<br />\n42 divided by 131 ≈ 0.3206<br />\n0.4504 times 0.3206 = 0.1444</p>\n</div>\n<p>0.857 against 0.450, and 0.275 against 0.144. Both forms say the two are dependent. A man in the band is about twice as likely to be flagged as a man picked <dfn data-g=\"40\">at random</dfn> from the 131.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A made-up ward has 12 patients, 3 of them with diabetes. An auditor picks 2 patients’ files for review, without picking the same file twice. Work out the probability that both files belong to patients with diabetes. Then work it out as if the two picks were independent, and say why the two answers differ.</p>",
+   "level": 5,
+   "answer": "<p>Without replacement, the second pick depends on the first.</p>\n<div class=\"working\">\n<p>3 divided by 12 = 0.25<br />\n2 divided by 11 ≈ 0.1818<br />\n0.25 times 0.1818 = 0.0455</p>\n</div>\n<p>As if independent:</p>\n<div class=\"working\">\n<p>0.25 times 0.25 = 0.0625</p>\n</div>\n<p>0.045 against 0.063. Once one file of a patient with diabetes is picked, only 2 of the 11 files left belong to such patients. So the chance for the second pick falls from 0.25 to 0.18. Two files are 17 per cent of the ward, well above OpenIntro’s 10 per cent rule of thumb, so the difference shows.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>In a made-up group of 1,000 people, 200 have a condition. Two tests are used on everyone. Each catches 90 per cent of people with the condition and wrongly flags 20 per cent of people without it. Within each group, the two tests’ results are independent.</p>\n<p>Work out how many people the first test flags, how many both tests flag, and P(second test positive | first test positive). Compare it with P(second test positive).</p>",
+   "level": 6,
+   "answer": "<p>Count within each group, then add.</p>\n<div class=\"working\">\n<p>1000 minus 200 = 800<br />\n0.9 times 200 = 180<br />\n0.9 times 180 = 162<br />\n0.2 times 800 = 160<br />\n0.2 times 160 = 32<br />\n180 plus 160 = 340<br />\n162 plus 32 = 194<br />\n194 divided by 340 ≈ 0.5706<br />\n340 divided by 1000 = 0.34</p>\n</div>\n<p>The first test flags 340 people and both tests flag 194. Given a positive first test, the second is positive with probability about 0.57. Overall it is positive with probability 0.34, by the same count as the first. The two tests are dependent across everyone, though independent inside each group.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>the arm tape misses 14 per cent of men in the 25-29.9 band (sensitivity 86 per cent)<br />\na man in the band is measured twice, on two days, by the same observer<br />\nP(missed both times) = 0.14 times 0.14 = 0.0196<br />\nso measuring twice cuts the chance of a miss to about 2 per cent</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The third line broke. It treats the two measurements as independent. They are of the same man, with the same arm, by the same observer. A man missed the first time was missed mostly because his arm is below 31.3 cm, and it will still be below 31.3 cm the next day. So P(missed second time | missed first time) is close to 1, not 0.14, and the chance of being missed both times is close to 0.14.</p>\n<div class=\"working\">\n<p>0.14 times 1 = 0.14</p>\n</div>\n<p>Measuring twice catches only the misses that came from measurement scatter, not the ones that came from the man’s own body.</p>\n<p>Why the wrong answer looks reasonable: the 14 per cent is a share of different men. Read as a chance that each measurement fails at random, it invites multiplying. It describes which men the tape misses, and the same men are missed again.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>A and B are independent, with P(A) = 0.3 and P(B) = 0.4<br />\nindependent events do not overlap, so P(A and B) = 0<br />\nP(A or B) = 0.3 plus 0.4 = 0.7</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The second line broke. Independent events do overlap: their overlap is P(A) × P(B), not 0. It is mutually exclusive events whose overlap is 0.</p>\n<div class=\"working\">\n<p>0.3 times 0.4 = 0.12<br />\n0.3 plus 0.4 minus 0.12 = 0.58</p>\n</div>\n<p>P(A or B) is 0.58, not 0.7.</p>\n<p>Why the wrong answer looks reasonable: “independent” sounds like “separate”, and separate sounds like “no overlap”. The two words name different ideas. Independent is about whether one tells you about the other; mutually exclusive is about whether both can happen.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A district note says: “NFHS-6 (2023-24) finds 30.7% of women and 27.3% of men aged 15-49 overweight or obese. So in about 8.4 per cent of married couples, both partners have overweight or obesity.”</p>\n<p>Decide what to compute, compute it, and say what the note’s number does not establish.</p>",
+   "level": 10,
+   "answer": "<p>The note multiplies the two shares, which is the check for independent events used as if independence were known.</p>\n<div class=\"working\">\n<p>0.307 times 0.273 = 0.083811</p>\n</div>\n<p>About 8.4 per cent. That is the share of couples in which both partners have overweight or obesity only if a wife’s status tells you nothing about her husband’s.</p>\n<p>What the number does not establish. Partners share a kitchen, an income and a neighbourhood, so their weights are likely to go together, and the true share could be well above 8.4 per cent. The two figures are shares of all women and all men aged 15-49, not of married couples. The women’s figure also leaves out pregnant women and women who gave birth in the last two months. To know the share of couples, you need data on couples: the survey’s couple records, not its two separate rows.</p>"
+  }
+ ]
+}

@@ -1,0 +1,181 @@
+{
+ "format": 1,
+ "id": "s03-r1-c22",
+ "label": "22",
+ "title": "Parameter, estimate or prediction: what a reported number is a number of",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A reported number about health is one of four kinds.</p>\n<ol type=\"1\">\n<li>A <dfn data-g=\"172\">count of everyone</dfn>. The number is the group’s parameter, in the sense of section 19, with no sampling error.</li>\n<li>A survey estimate. A sample was drawn from a population and measured, and a rule turned the sample into a number meant to stand for a parameter of that population. It is conditional on the sample and the survey’s design.</li>\n<li>A <dfn data-g=\"487\">model-based estimate</dfn>. A model combines many sources of data, of different kinds and quality, and fills the gaps between them with assumptions. It is conditional on the data that went in and on the model.</li>\n<li>A <dfn data-g=\"589\">prediction</dfn>. The number is about something not yet observed: a future value, or one person. A <dfn data-g=\"307\">forecast</dfn> is a prediction about a population in the future, conditional on a scenario for how the future goes. A risk score’s output for one person, such as a <dfn data-g=\"576\">positive predictive value</dfn> (section 5), is a share of a group like that person. It is then applied to that person. It is conditional on the group the score was built on.</li>\n</ol>\n<p>An <dfn data-g=\"813\">uncertainty interval</dfn> printed beside a model-based estimate or a forecast describes the spread of the model’s own output. It is conditional on the model being right, and says nothing about errors the model does not contain.</p>",
+   "refs": [
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Before you use a number, ask what it is a number of.</p>\n<p>The four can look the same on a slide: one figure, a per cent sign, perhaps a range in brackets. They are not the same, and each one can be wrong in its own way.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c22-gbd-intervals.png",
+   "alt": "Two columns of three points. At 2021: 167, 180 and 194 million. At 2050: 359, 450 and 535 million. The 2050 points are spread much wider.",
+   "w": 1360,
+   "h": 920,
+   "caption": "GBD 2021’s numbers for India, adults aged 25 and over with overweight and obesity, in millions. In 2021 a model-based estimate of 180 (95% UI 167 to 194, 27 wide). In 2050 a forecast of 450 under the reference scenario (359 to 535, 176 wide). The intervals are ranges of the model’s own draws; neither is a measurement."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c22-interval-share.png",
+   "alt": "Two bars from zero: 0.15 for the 2021 model-based estimate and 0.391 for the 2050 forecast.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Each interval’s width as a share of its own number. The 2021 model-based estimate’s interval is 27 million wide, 0.15 of 180 million; the 2050 forecast’s is 176 million wide, about 0.391 of 450 million. Twenty-nine years of forecasting forward widen the range, and even the wider range holds only the model’s spread under one scenario."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Here is a made-up slide of the kind a district meeting sees. Its numbers are real, quoted from the sources below; its last line is the slide-maker’s.</p>\n<blockquote>\n<p>Overweight and obesity in India: 30.7% of women (NFHS-6). 180 million adults (Lancet, 2025). 450 million by 2050. So the problem will more than double.</p>\n</blockquote>\n<p>Start with the last line, because it is the one people will repeat. Work out the <dfn data-g=\"640\">ratio</dfn> it rests on.</p>\n<div class=\"working\">\n<p>450 divided by 180 = 2.5</p>\n</div>\n<p>The arithmetic is right. Now find out what each number is a number of. The last line will not survive it.</p>\n<p><strong>The first number.</strong> Open the <em>National Family Health Survey (NFHS-6), 2023-24: India and State/UT Fact Sheets</em>, from https://www.nfhsiips.in. Find indicator 76.</p>\n<blockquote>\n<p>76. Women who are overweight or obese (BMI ≥25.0 kg/m2)15 (%) 42.8 25.5 30.7 24.0</p>\n</blockquote>\n<p>The four columns are NFHS-6 urban, rural and total, and NFHS-5’s total; the 15 printed after the unit is a <dfn data-g=\"306\">footnote</dfn> mark, not part of the value. The third column, 30.7 per cent, is the India total. The survey weighed and measured a sample of women aged 15 to 49. A rule turned that sample into one number. So it is a survey estimate. The parameter it stands for is the share of all women aged 15 to 49 in India with a <dfn data-g=\"72\">body mass index</dfn> of 25 or more, in 2023-24. How the survey’s rule weights each woman is beyond this book (section 19). A second sample drawn the same way would have given a slightly different number.</p>\n<p><strong>The second number.</strong> Open “Global, regional, and national <dfn data-g=\"592\">prevalence</dfn> of adult <dfn data-g=\"543\">overweight</dfn> and obesity, 1990-2021, with forecasts to 2050”, by the GBD 2021 Adult BMI Collaborators, in <em>The Lancet</em> (2025), at https://doi.org/10.1016/S0140-6736(25)00355-1. Search for “followed by India”.</p>\n<blockquote>\n<p>followed by India (180 million [167–194])</p>\n</blockquote>\n<p>That is 180 million adults in 2021, with an interval from 167 to 194 million. Now find out how it was made. Search for “1350”.</p>\n<blockquote>\n<p>Retrospective and current prevalence trends were derived based on both self-reported and measured anthropometric data extracted from 1350 unique sources</p>\n</blockquote>\n<p>Nobody counted 180 million people, and no single survey measured them. A model took 1,350 sources from many countries, some of them people’s own reports of their weight, and produced a number for every country and year. So this is a model-based estimate. It is about the present, like the survey’s, but it rests on the model as well as the data.</p>\n<p>Read who it covers. The paper counts adults aged 25 years and older, in 2021. NFHS-6 counts women and men aged 15 to 49, in 2023-24. The two numbers are about different people. Neither can <dfn data-g=\"104\">check</dfn> the other.</p>\n<p><strong>The interval.</strong> Search for “posterior distribution”.</p>\n<blockquote>\n<p>95% uncertainty intervals (UIs) for the final estimates were derived based on the 2·5th and the 97·5th percentiles of 1000 draws from the posterior distribution of ST-GPR.</p>\n</blockquote>\n<p>The journal prints a raised dot as its <dfn data-g=\"200\">decimal</dfn> point, so 2·5 is 2.5. The 2.5th percentile is the value with 2.5 per cent of the draws below it. ST-GPR (spatiotemporal Gaussian process regression) is the paper’s model; how it works is beyond this book. A posterior is a model’s own <dfn data-g=\"602\">probability</dfn> for the unknown number, built from the data and the model’s assumptions; a later book teaches it.</p>\n<p>The model produced 1,000 plausible values for India. Put them in order and cut off the lowest 25 and the highest 25. The 95 per cent uncertainty interval (UI) is the range that holds the middle 950. Within the model, 95 per cent of its draws fall inside the interval.</p>\n<div class=\"working\">\n<p>1000 times 0.025 = 25<br />\n1000 minus 25 minus 25 = 950<br />\n194 minus 167 = 27</p>\n</div>\n<p>The interval is 27 million wide. It shows how much the model’s own output varies. It cannot show an error the model has built in, such as a wrong assumption about how people’s own reports of their weight differ from measurements.</p>\n<p>Look back at the slide. Its first two numbers sit side by side as if one confirmed the other. One is a survey estimate for women aged 15 to 49 in 2023-24. The other is a model-based estimate for adults aged 25 and over in 2021.</p>",
+   "numberRefs": [
+    32,
+    199
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The kinds shade into each other. NFHS-6 is a survey, but a survey’s rule is itself a small model, with weights and adjustments. A model-based estimate for a country with many good surveys sits close to them. The test is not which word the paper uses. Ask how much of the number came from measuring the people it describes, and how much was filled in.</p>\n<p>The slide is made up. The four numbers on it are real.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p><strong>The third number.</strong> Go back to the GBD paper and search for “India (450”.</p>\n<blockquote>\n<p>India (450 million [359–535])</p>\n</blockquote>\n<p>Read the start of the same sentence: “Assuming a <dfn data-g=\"653\">reference scenario</dfn> in which historical trends and patterns continue into the future”. This number is about 2050. Nobody has measured it, because 2050 has not happened. It is a forecast, a prediction about a population in the future. Search for “reference scenario, which” to see what the scenario is.</p>\n<blockquote>\n<p>a reference scenario, which is a probabilistic forecast of the most likely future based on past trends and relationships</p>\n</blockquote>\n<p>Then search for “GLP1”.</p>\n<blockquote>\n<p>we have not built mass scale-up of GLP1 agonists or other rapid advancements in obesity prevention or treatment into our forecast</p>\n</blockquote>\n<p>So the forecast assumes the past goes on. It leaves out new medicines for obesity and anything else that changes the trend. If a programme works, the forecast was not wrong. Its condition stopped holding.</p>\n<p>Compare its interval with the 2021 one.</p>\n<div class=\"working\">\n<p>535 minus 359 = 176<br />\n27 divided by 180 = 0.15<br />\n176 divided by 450 ≈ 0.391</p>\n</div>\n<p>The 2021 interval is 27 million wide, 0.15 of its estimate. The 2050 interval is 176 million wide, about 0.39 of its estimate. Twenty-nine years of forecasting forward widen the range. Even that range holds only the model’s spread under one scenario.</p>\n<p>Now the slide’s last line. “Will more than double” turns a forecast under one scenario into a fact about the future. The paper says how many people would have overweight and obesity if the trend goes on. It counts adults aged 25 and over, and it counts overweight and obesity together. Search for “classified as obese”.</p>\n<blockquote>\n<p>A BMI of 25·0 or higher but less than 30·0 is classified as overweight, while a BMI of 30·0 or higher is classified as obese.</p>\n</blockquote>\n<p>The 180 and the 450 are not counts of people with obesity. They count everyone with a body mass index of 25 or more.</p>\n<p><strong>The fourth kind: a prediction for one person.</strong> A man of 52 at your clinic scores 60 or more on the Indian Diabetes Risk Score (IDRS) of section 10. You tell him there is about a one in six chance that he has diabetes that has not been found. Where did that come from? Mohan and colleagues, at https://repository.ias.ac.in/80170/, report it.</p>\n<blockquote>\n<p>An IDRS value ≥ 60 had the optimum sensitivity (72.5%) and specificity (60.1%) for determining diabetes. The positive predictive value was 17.0%</p>\n</blockquote>\n<p>The 17.0 per cent is the share with undiagnosed diabetes among people scoring 60 or more in one Chennai study. Said to one man, it becomes a prediction about him. It holds for him only as far as he is like the people in that study, and as far as your clinic’s prior is like theirs, which section 10 showed was about 10 per cent. He either has diabetes or he does not. The 17 per cent describes how often people like him do.</p>",
+   "numberRefs": [
+    199,
+    98
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A forecast’s interval is not the range the future must fall in. It is the range of the model’s draws, under a scenario the authors chose. The paper itself says its estimates for some countries “rely more heavily on extrapolations influenced by the covariates in the model”, and that they “do not reflect subnational variations”. So no state or district can read its own number off the national one.</p>\n<p>The man of 52 is made up. The IDRS figures are the study’s.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p><strong>The first kind: a count of everyone.</strong> Your urban health centre weighed and measured every man aged 18 to 29 who came to its outpatient clinic from April to September. Suppose, as in the made-up register of section 10, that 96 of the 480 men were in the 25 to 29.9 band.</p>\n<div class=\"working\">\n<p>96 divided by 480 = 0.2</p>\n</div>\n<p>For those 480 men, in those six months, 0.2 is not an estimate. Every one of them was counted. It is the parameter of that group, with no sampling error at all.</p>\n<p>It can still be wrong. A scale that reads 1 kg heavy moves men across the line at 25. A man whose height was copied wrongly lands in the wrong band. A man who came but was never measured is missing from the 480. These are the errors of counting and measuring, the systematic and random errors of Book 0, D7. Counting everyone removes only the error of sampling.</p>\n<p>Now use the 0.2 for next month’s patients, as section 10 does. It has changed kind. Next month’s men were not in the register. The 0.2 is now an estimate of the share among the men who will come, and it is only as good as the guess that they resemble the last six months’.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A count of everyone is a parameter only for the group and period it counted. The moment it is <dfn data-g=\"822\">used</dfn> for anyone else, including the same clinic next month, it is an estimate.</p>\n<p>The register is made up.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“It has a 95 per cent interval in brackets, so somebody measured it” is the error. Before you quote a number, find the sentence in the methods that says how it was made.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Ask one question of each kind before you use it. A count: who was missed, and how was each person measured? A survey estimate: which population, in which years, from what sample? A model-based estimate: which data went in, and what did the model fill in? A prediction: under what scenario, and for people like whom?</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Do not set a survey estimate beside a model-based estimate as if one confirmed the other. Check the age range, the cut-off and the method first.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>An uncertainty interval shows the spread of the model’s own output, under the model’s own assumptions. Do not say there is a 95 per cent chance the true number lies inside it. The 95 per cent belongs to the model’s draws and holds only if the model is right. The interval cannot show an error the model has built in.</p>",
+     "tag": "boundary",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A forecast says what would happen if its scenario held. Quote the scenario with the number. Never present a forecast as what will happen, or use it to judge a programme designed to change the trend.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A risk score’s output for one person is a share of a group like that person. Tell the man with an IDRS of 60 or more “about 17 in 100 people like you, in the study, had diabetes not yet found”. Do not say “you are 17 per cent diabetic”.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>A national figure, whether survey or model, is not a figure for your state or district. Find the state or district fact <dfn data-g=\"722\">sheet</dfn>, or your own register, before you plan for a district.</p>",
+     "tag": "india_deviation",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“GBD 2021 gives India 180 million adults with overweight and obesity, 95 per cent UI 167 to 194 million. So there is a 95 per cent chance that the true number lies between 167 and 194 million.” The interval is the range of the middle 950 of 1,000 values drawn from the model. It is a statement about the model’s output, made on the assumption that the model is right. Suppose the model corrects people’s own reports of their weight wrongly. Then the true number can lie outside the interval, and the interval would not show it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>The Global Burden of Disease 2021 study used a model built on 1,350 data sources. It estimated that 180 million adults aged 25 and over in India had overweight or obesity in 2021 (95% uncertainty interval 167 to 194 million). This is a model’s estimate, not a count. It cannot be compared with NFHS-6 (2023-24), which measured women and men aged 15 to 49.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the four kinds of reported number, say what each is conditional on, and give the one question you ask of each.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<ol type=\"1\">\n<li>A count of everyone: conditional on the group and period counted. Ask who was missed and how each person was measured.</li>\n<li>A survey estimate: conditional on the sample and the survey’s design. Ask which population, in which years, from what sample.</li>\n<li>A model-based estimate: conditional on the data that went in and on the model. Ask which data went in and what the model filled in.</li>\n<li>A prediction: a forecast about a future population, or a risk for one person. It is conditional on a scenario, or on the group the score was built on. Ask under what scenario, and for people like whom.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A district health report, made up for this exercise, contains these five sentences. For each number, say which of the four kinds it is, and what it is conditional on.</p>\n<ol type=\"1\">\n<li>“Of the 1,212 schoolchildren weighed in our district’s school health camp this year, 97 had a body mass index above the cut-off.”</li>\n<li>“NFHS-6 found 27.3% of men aged 15-49 in India overweight or obese.”</li>\n<li>“By 2050, 450 million Indian adults will have overweight or obesity (Lancet).”</li>\n<li>“A woman with an IDRS of 60 or more has a 17% chance of undiagnosed diabetes.”</li>\n<li>“In 2021, India had 180 million adults with overweight or obesity (95% UI 167-194 million).”</li>\n</ol>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<ol type=\"1\">\n<li>A count of everyone, but only of the children weighed at the camp this year. It is the parameter of that group. It is not the district’s prevalence: children absent on camp day, and children not in school, are missing. It carries the scale’s and the tape’s errors.</li>\n<li>A survey estimate of a parameter: the share of all men aged 15 to 49 in India with a body mass index of 25 or more, in 2023-24. Conditional on NFHS-6’s sample and design.</li>\n<li>A prediction, a forecast. GBD 2021 gives it under a reference scenario in which past trends go on. “Will have” drops the scenario. It counts adults aged 25 and over, and overweight and obesity together.</li>\n<li>A prediction for one person, built from a group share. It is the positive predictive value of IDRS 60 or more in the Chennai study, at its prior of about 10 per cent. It holds for this woman only as far as your clinic’s patients resemble that study’s.</li>\n<li>A model-based estimate of a 2021 parameter, for adults aged 25 and over. The interval is the range of the model’s draws, conditional on the model.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A newspaper headline reads: “India will have 450 million obese adults by 2050, says Lancet study”. Say everything that is wrong with it, using only what the paper itself says.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>Four things.</p>\n<ul>\n<li>“Obese”: the 450 million counts overweight and obesity together, a body mass index of 25 or more. The paper defines obese as 30 or more.</li>\n<li>“Adults”: the paper counts adults aged 25 years and older, not all adults.</li>\n<li>“Will have”: the figure is a forecast under a reference scenario, in which past trends and patterns continue. The paper says it has not built in wide use of new obesity medicines or other rapid advances in prevention or treatment. It is what would happen if nothing changes the trend.</li>\n<li>No range: the paper gives 359 to 535 million, and even that is the model’s spread under one scenario. A single number with no range claims more certainty than the authors do.</li>\n</ul>\n<p>A fair headline: “If past trends continue, about 450 million Indians aged 25 and over could have overweight or obesity by 2050, a Lancet model forecasts.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A journalist rings. “One survey says three in ten Indian women are overweight. A Lancet paper says 180 million Indians. Which is right?” You have three minutes. Give her one sentence she can quote, and say how sure you are.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Tell her both can be right, because they count different people in different ways. The national survey weighed and measured women aged 15 to 49 in 2023-24. The Lancet number is a model’s estimate for all adults aged 25 and over in 2021, built from many surveys, including some where people reported their own weight.</p>\n<p>The sentence to quote: “The survey found about three women in ten aged 15 to 49 with overweight or obesity. The Lancet model estimates 180 million Indian adults aged 25 and over. They are not measuring the same thing.”</p>\n<p>How sure: the survey’s figure is a direct measurement of a large sample. The model’s figure is a careful estimate whose range, 167 to 194 million, shows the model’s own spread. It cannot show what the model got wrong. Neither says anything about a single state or district.</p>"
+  }
+ ]
+}

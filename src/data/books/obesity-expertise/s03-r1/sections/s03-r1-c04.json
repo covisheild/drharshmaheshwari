@@ -1,0 +1,201 @@
+{
+ "format": 1,
+ "id": "s03-r1-c04",
+ "label": "4",
+ "title": "The law of total probability: a probability as a weighted average over groups",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Split a population into groups that do not overlap and that between them take in everyone. Call the groups group 1, group 2, and so on up to group m. Let B be any event.</p>\n<p>The <dfn data-g=\"424\">law of total probability</dfn> says that the <dfn data-g=\"602\">probability</dfn> of B is a sum with one term for each group. Each term is the probability of B given that group, times the probability of that group.</p>\n<div class=\"working\">\n<p>P(B) = P(B | group 1) × P(group 1) + P(B | group 2) × P(group 2) + … + P(B | group m) × P(group m)</p>\n</div>\n<p>It follows from two rules already in hand. First, B splits into “B and group 1”, “B and group 2”, and so on. No two of these pieces overlap, because no two groups do. Together they make up all of B, because the groups take in everyone. Pieces that cannot happen together add, however many there are. That is the third rule of section 1.</p>\n<div class=\"working\">\n<p>P(B) = P(B and group 1) + P(B and group 2) + … + P(B and group m)</p>\n</div>\n<p>Second, the <dfn data-g=\"326\">general multiplication rule</dfn> of section 2 writes each piece as a conditional probability times a group’s probability: P(B and group 1) = P(B | group 1) × P(group 1). Put each of these into the sum, and the law appears.</p>\n<p>The group probabilities P(group 1) to P(group m) are never negative and add to 1. So P(B) is a <dfn data-g=\"841\">weighted average</dfn> of the groups’ own probabilities of B, each weighted by the group’s share of the population. With every group the same size, it is their plain average. Otherwise it generally is not.</p>\n<p>For a test and a condition the groups are two: the people with the condition and the people without it. Their shares are the <dfn data-g=\"592\">prevalence</dfn> and 1 minus the prevalence. The probability of a positive result given the condition is the <dfn data-g=\"713\">sensitivity</dfn> of Book 0, D3. The probability of a positive result given no condition is 1 minus the <dfn data-g=\"742\">specificity</dfn>, as in section 2. It is called the <dfn data-g=\"279\">false-positive rate</dfn>: the share of people without the condition whom the test wrongly flags.</p>\n<div class=\"working\">\n<p>P(positive) = sensitivity × prevalence + (1 − specificity) × (1 − prevalence)</p>\n</div>",
+   "refs": [
+    28,
+    29,
+    30,
+    31
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Some people are in one group and the rest are in another. Each group has its own chance of something, such as a positive test. The chance for everyone together is a mix of the two.</p>\n<p>It is not the halfway point. It sits nearer the group that has more people in it.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c04-positive-share-line.png",
+   "alt": "A straight rising line from 0.26 at prevalence 0 to 0.86 at prevalence 1, with points at 0.38 for 0.2, 0.452 for 0.32 and 0.56 for 0.5. A dashed line at 0.56 marks the plain average.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The share of all men the arm tape flags, against the share of men in the 25-to-29.9 band. With sensitivity 0.86 and a false-positive rate of 0.26 fixed, the share flagged is 0.26 plus 0.60 times the prevalence: 0.38 at one man in five, 0.452 at about 0.32 as among the 131 students. The plain average of the two rates, 0.56, is right only at a prevalence of 0.5."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c04-nfhs-weighted.png",
+   "alt": "Four bars from zero: urban 42.8, rural 25.5, India 30.7 per cent, and the plain average of urban and rural, 34.15, which the survey does not print.",
+   "w": 1343,
+   "h": 656,
+   "caption": "Women aged 15-49 who have overweight or obesity, NFHS-6 (2023-24): 42.8% urban, 25.5% rural, 30.7% for India. The India figure is a weighted average of the other two and sits nearer the rural one. The plain average, 34.15% (right-hand bar), is not what the survey prints. The three figures imply that about 0.30 of the women were urban."
+  },
+  {
+   "t": "figure",
+   "src": "s03-r1-c04-nfhs-weight-line.png",
+   "alt": "A straight rising line from 25.5 at w = 0 to 42.8 at w = 1, with points at 30.7 for w = 0.3006 and 34.15 for w = 0.5.",
+   "w": 1360,
+   "h": 657,
+   "caption": "Running the rule backwards. If w is the urban share of the women (NFHS-6), the India figure is 25.5 plus 17.3 times w: a straight line from the rural 25.5 per cent at w = 0 to the urban 42.8 per cent at w = 1. The printed 30.7 sits on it at w = 0.3006, about 30 per cent. The plain average, 34.15, would need w = 0.5."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Book 0 took the arm-circumference test of Kiran and colleagues (Heliyon 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9791811/) to a stated group of 1,000 young men, one in five of them with a body-mass index from 25 to 29.9. A man whose arm measures 31.3 cm or more is flagged. The paper gives sensitivity 86 per cent and specificity 74 per cent. Book 0 counted 380 of the 1,000 flagged. Now find that share without the table.</p>\n<p>Before you work it, here is the move most people reach for. Take the two rates the test has, the 86 per cent of men in the band it flags and the share of men outside the band it flags, and average them. The second rate is the false-positive rate.</p>\n<div class=\"working\">\n<p>1 minus 0.74 = 0.26<br />\n0.86 plus 0.26 = 1.12<br />\n1.12 divided by 2 = 0.56</p>\n</div>\n<p>That says 56 per cent of men are flagged. It is wrong, and Book 0’s table says 38 per cent. The plain average treats the two groups as the same size. They are not: 200 men are in the band and 800 are not.</p>\n<p>Weight each rate by its group’s share instead.</p>\n<div class=\"working\">\n<p>0.86 times 0.2 = 0.172<br />\n0.26 times 0.8 = 0.208<br />\n0.172 plus 0.208 = 0.38</p>\n</div>\n<p>The share flagged is 0.38, which is 380 of 1,000, as the table had it. The 0.38 sits much nearer 0.26 than 0.86, because four men in five are outside the band.</p>\n<p>Now let the share in the band change and keep the test the same. The weights move, and the share flagged moves with them. Among the 131 medical students themselves, 42 were in the band. That is a prevalence of about 0.32, so about 0.68 were outside it.</p>\n<div class=\"working\">\n<p>42 divided by 131 = 0.3206…<br />\n0.86 times 0.32 = 0.2752<br />\n0.26 times 0.68 = 0.1768<br />\n0.2752 plus 0.1768 = 0.452<br />\n0.452 times 131 = 59.21</p>\n</div>\n<p>About 59 of the 131 men flagged. Book 0’s rebuilt table for these men has 59 in its flagged row: 36 in the band and 23 outside it.</p>\n<p>Do it for a few prevalences, and a pattern shows. Each 0.1 added to the prevalence moves one tenth of the men from the 0.26 group to the 0.86 group. So the share flagged rises by 0.1 times 0.60 each time, where 0.60 is 0.86 minus 0.26.</p>\n<table style=\"width:56%;\">\n\n<thead>\n<tr>\n<th>prevalence</th>\n<th>share of all men flagged</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>0</td>\n<td>0.26</td>\n</tr>\n<tr>\n<td>0.2</td>\n<td>0.38</td>\n</tr>\n<tr>\n<td>0.32</td>\n<td>0.452</td>\n</tr>\n<tr>\n<td>0.5</td>\n<td>0.56</td>\n</tr>\n<tr>\n<td>1</td>\n<td>0.86</td>\n</tr>\n</tbody>\n</table>\n<p>The share flagged is 0.26 plus 0.60 times the prevalence: a straight line from the false-positive rate to the sensitivity. The plain average, 0.56, is right at one prevalence only, a half.</p>",
+   "numberRefs": [
+    10
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The sensitivity and specificity were measured on 131 medical students in one college, and they fit the 42 men in the 25-to-29.9 band, not every man at 25 or more. Carrying them to 1,000 other young men is an assumption, as Book 0 said. The straight line holds only while the two rates stay fixed as the prevalence changes. A test whose sensitivity is higher in a group with more severe disease breaks it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>The same rule works on a survey table. The National Family Health Survey 2023-24 (NFHS-6) India fact <dfn data-g=\"722\">sheet</dfn> (https://www.nfhsiips.in), indicator 76, gives the share of women aged 15 to 49 with a body-mass index of 25 or more, which the survey calls <dfn data-g=\"543\">overweight</dfn> or obese. It gives three figures.</p>\n<table style=\"width:62%;\">\n\n<tbody>\n<tr>\n<td>women aged 15-49</td>\n<td>overweight or obese (%)</td>\n</tr>\n<tr>\n<td>urban</td>\n<td>42.8</td>\n</tr>\n<tr>\n<td>rural</td>\n<td>25.5</td>\n</tr>\n<tr>\n<td>India</td>\n<td>30.7</td>\n</tr>\n</tbody>\n</table>\n<p>The groups are urban and rural women. They do not overlap, and between them they take in every woman the indicator covers. So the India figure must be a weighted average of the other two. <dfn data-g=\"104\">Check</dfn> that it is not the plain average.</p>\n<div class=\"working\">\n<p>42.8 plus 25.5 = 68.3<br />\n68.3 divided by 2 = 34.15</p>\n</div>\n<p>The plain average is 34.15 per cent, and the survey prints 30.7. The India figure sits nearer the rural one, because more of the women the indicator covers are rural.</p>\n<p>Now run the rule backwards and find the weight. Call the urban share of the women w. Then the rural share is 1 minus w, and the law of total probability says this.</p>\n<div class=\"working\">\n<p>30.7 = 42.8 × w + 25.5 × (1 − w)<br />\n30.7 = 42.8 × w + 25.5 − 25.5 × w</p>\n</div>\n<p>The two terms in w combine: 42.8 × w minus 25.5 × w is (42.8 − 25.5) × w.</p>\n<div class=\"working\">\n<p>30.7 = 25.5 + (42.8 − 25.5) × w</p>\n</div>\n<p>Take 25.5 from both sides, then divide by the gap between the two groups.</p>\n<div class=\"working\">\n<p>30.7 minus 25.5 = 5.2<br />\n42.8 minus 25.5 = 17.3<br />\n5.2 divided by 17.3 = 0.3006</p>\n</div>\n<p>The three printed figures imply that about 0.30 of the women, 30 per cent, were urban. Check it by putting the weight back.</p>\n<div class=\"working\">\n<p>42.8 times 0.3006 = 12.8657<br />\n25.5 times 0.6994 = 17.8347<br />\n12.8657 plus 17.8347 = 30.7004</p>\n</div>\n<p>That rounds to 30.7. The weight is only as good as the <dfn data-g=\"690\">rounding</dfn>, though. Each printed figure could be up to 0.05 away from its true value. The weight is (India minus rural) divided by (urban minus rural). So it is largest with the India figure at its highest and the other two at their lowest, and smallest the other way round. The figures 30.75, 25.45 and 42.75 give 5.3 divided by 17.3, which is 0.306. The figures 30.65, 25.55 and 42.85 give 5.1 divided by 17.3, which is 0.295. So say “about 30 per cent”, not 30.06 per cent.</p>",
+   "numberRefs": [
+    32
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The weight found is the urban share that the three printed percentages imply among the women the indicator covers. It is not a count of India’s urban women, and the indicator leaves out pregnant women and women who gave birth in the two months before. The backwards step inherits the printed figures’ rounding: a gap of 17.3 points in the bottom line turns a rounding of 0.05 in each figure into about 0.006 in the weight.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>“The positive rate is somewhere between the sensitivity and the false-positive rate, so call it the middle” is the error. Where it sits depends on the prevalence. When most people are well, most positive results come from the false-positive rate, however good the sensitivity.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The groups you split by must not overlap and must take in everyone. Write the groups down and check both conditions before you multiply anything.</p>",
+     "tag": "trap",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a national figure is quoted beside its urban and rural figures, the national one is a weighted average and must lie between them. If it does not, one of the three is wrong or they cover different people.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A national rate can rise when no group’s rate rises, because the weights moved: more people in the group with the higher rate.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Working backwards, from a total and two group rates to the weight, divides by the gap between the group rates. When that gap is small, a rounding of the last digit can move the answer a great deal.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The positive rate of a test in a camp tells you the workload of confirming the positives. It is not the prevalence.</p>",
+     "tag": "consequence",
+     "bearing": "clinical"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The test flags 86 per cent of those with the condition and 26 per cent of those without, so it flags about 56 per cent of everyone.” That averages the two rates as if the two groups were the same size. Weight each rate by its group’s share. At one man in five in the band, the tape flags 38 per cent, not 56.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: state the law of total probability in words, for groups that do not overlap and take in everyone. Then write the share of all tests that come back positive in terms of the sensitivity, the specificity and the prevalence, and say what makes it a weighted average.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>The probability of an event is the sum, over the groups, of the probability of the event in that group times the probability of being in that group. It needs groups that do not overlap and that take in everyone.</p>\n<p>For a test:</p>\n<div class=\"working\">\n<p>P(positive) = sensitivity × prevalence + (1 − specificity) × (1 − prevalence)</p>\n</div>\n<p>The two weights, the prevalence and 1 minus the prevalence, are never negative and add to 1. So the positive share is a weighted average of the sensitivity and the false-positive rate, 1 minus the specificity. It lies between them, nearer the rate of the larger group.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A district report gives the share of women aged 15 to 49 who have overweight or obesity as 31 per cent in urban areas, 18 per cent in rural areas, and 33 per cent for the whole district. These figures are made up. Say what is wrong, and what you would ask before quoting any of them.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Urban and rural women do not overlap, and together they take in every woman. So the district figure is a weighted average of 31 and 18 per cent, and it must lie between them. 33 per cent is above both, which a weighted average can never be.</p>\n<p>So one of three things is true. One figure is a misprint. Or the three were measured on different groups of women, for example different ages or years. Or the “whole district” row counts something else, such as a different body-mass index cut-off.</p>\n<p>Ask which table each figure came from, what population and cut-off each covers, and how many women were measured in each group. Quote none of them until the three agree.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>A population is split into two groups that do not overlap and take in everyone. Group 1 holds 0.3 of the population and group 2 the rest. P(B | group 1) is 0.9 and P(B | group 2) is 0.2.</p>\n<p>Work out P(B).</p>",
+   "level": 1,
+   "answer": "<p>Group 2 holds 1 minus 0.3 of the population.</p>\n<div class=\"working\">\n<p>1 minus 0.3 = 0.7<br />\n0.9 times 0.3 = 0.27<br />\n0.2 times 0.7 = 0.14<br />\n0.27 plus 0.14 = 0.41</p>\n</div>\n<p>P(B) is 0.41.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Three groups that do not overlap take in everyone. Their shares are 0.5, 0.3 and 0.2. The probability of B in each is 0.1, 0.4 and 0.7.</p>\n<p>Work out P(B), and compare it with the plain average of 0.1, 0.4 and 0.7.</p>",
+   "level": 2,
+   "answer": "<p>Check the shares first.</p>\n<div class=\"working\">\n<p>0.5 plus 0.3 plus 0.2 = 1.0</p>\n</div>\n<p>They add to 1. Now weight each probability by its group’s share.</p>\n<div class=\"working\">\n<p>0.1 times 0.5 = 0.05<br />\n0.4 times 0.3 = 0.12<br />\n0.7 times 0.2 = 0.14<br />\n0.05 plus 0.12 plus 0.14 = 0.31</p>\n</div>\n<p>P(B) is 0.31. The plain average is higher.</p>\n<div class=\"working\">\n<p>0.1 plus 0.4 plus 0.7 = 1.2<br />\n1.2 divided by 3 = 0.4</p>\n</div>\n<p>The plain average, 0.4, gives the smallest group as much say as the largest. The largest group has the lowest rate, so the weighted answer is lower.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Two groups that do not overlap take in everyone. P(B | group 1) is 0.8 and P(B | group 2) is 0.1. P(B) for everyone is 0.24.</p>\n<p>Work out the share of the population in group 1.</p>",
+   "level": 3,
+   "answer": "<p>Call the share in group 1 w. Group 2 then holds 1 − w.</p>\n<div class=\"working\">\n<p>0.24 = 0.8 × w + 0.1 × (1 − w)<br />\n0.24 = 0.8 × w + 0.1 − 0.1 × w<br />\n0.24 = 0.1 + (0.8 − 0.1) × w</p>\n</div>\n<p>Take 0.1 from both sides, then divide by the gap.</p>\n<div class=\"working\">\n<p>0.24 minus 0.1 = 0.14<br />\n0.8 minus 0.1 = 0.7<br />\n0.14 divided by 0.7 = 0.2</p>\n</div>\n<p>Group 1 holds 0.2 of the population. Check it.</p>\n<div class=\"working\">\n<p>0.8 times 0.2 plus 0.1 times 0.8 = 0.24</p>\n</div>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>In Kiran and colleagues’ study, 42 of the 131 men had a body-mass index from 25 to 29.9. The 31.3 cm arm cut-off has sensitivity 86 per cent and specificity 74 per cent against that band.</p>\n<p>Use the law of total probability to work out how many of the 131 men you expect the cut-off to flag. Do not build the table.</p>",
+   "level": 4,
+   "answer": "<p>The groups are the men in the band and the men outside it.</p>\n<div class=\"working\">\n<p>131 minus 42 = 89<br />\n42 divided by 131 = 0.3206…<br />\n89 divided by 131 = 0.6794…<br />\n1 minus 0.74 = 0.26<br />\n0.86 times 0.3206 = 0.2757<br />\n0.26 times 0.6794 = 0.1766<br />\n0.2757 plus 0.1766 = 0.4523<br />\n0.4523 times 131 = 59.25</p>\n</div>\n<p>About 59 men, which is 45 per cent of the 131. You can also work in counts and skip the shares.</p>\n<div class=\"working\">\n<p>0.86 times 42 = 36.12<br />\n0.26 times 89 = 23.14<br />\n36.12 plus 23.14 = 59.26</p>\n</div>\n<p>The rebuilt table in Book 0 has 59 men in its flagged row, 36 and 23, the same counts rounded to whole men. The 59 is what the printed percentages imply, not a row the paper prints.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>The NFHS-6 India fact sheet, indicator 77, gives the share of men aged 15 to 49 who have overweight or obesity: 36.3 per cent urban, 23.0 per cent rural and 27.3 per cent for India.</p>\n<p>Work out the urban share of the men that these three figures imply. Then say how far the rounding of the printed figures lets that share move.</p>",
+   "level": 5,
+   "answer": "<p>Call the urban share w.</p>\n<div class=\"working\">\n<p>27.3 = 36.3 × w + 23.0 × (1 − w)<br />\n27.3 minus 23.0 = 4.3<br />\n36.3 minus 23.0 = 13.3<br />\n4.3 divided by 13.3 = 0.323</p>\n</div>\n<p>About 0.32 of the men. Put it back to check.</p>\n<div class=\"working\">\n<p>36.3 times 0.323 plus 23.0 times 0.677 = 27.2959</p>\n</div>\n<p>That rounds to 27.3.</p>\n<p>Move each printed figure by up to 0.05. The weight is largest when the India figure is highest, and the urban and rural figures are lowest.</p>\n<div class=\"working\">\n<p>27.35 minus 22.95 = 4.4<br />\n36.25 minus 22.95 = 13.3<br />\n4.4 divided by 13.3 = 0.331<br />\n27.25 minus 23.05 = 4.2<br />\n36.35 minus 23.05 = 13.3<br />\n4.2 divided by 13.3 = 0.316</p>\n</div>\n<p>So the share lies somewhere from about 0.32 to 0.33. Say “about 0.32”, not 0.3233.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a test has sensitivity 0.86 and specificity 0.74<br />\nin a group of 1,000 men, 200 have the condition<br />\nfalse-positive rate = 1 minus 0.74 = 0.26<br />\nshare flagged = (0.86 plus 0.26) divided by 2 = 0.56<br />\nso about 560 of the 1,000 men will be flagged</p>\n</div>",
+   "level": 7,
+   "answer": "<p>The fourth line broke. It takes the plain average of the two rates, as if the two groups were the same size. They are 200 men and 800 men. Weight each rate by its group’s share.</p>\n<div class=\"working\">\n<p>200 divided by 1000 = 0.2<br />\n800 divided by 1000 = 0.8<br />\n0.86 times 0.2 = 0.172<br />\n0.26 times 0.8 = 0.208<br />\n0.172 plus 0.208 = 0.38</p>\n</div>\n<p>About 380 of the 1,000 men will be flagged, not 560.</p>\n<p>Why the wrong answer looks reasonable: the share flagged really is a mix of the two rates, and a plain average is the first mix anyone reaches for. It is right at one prevalence only, a half. The working was given the prevalence in the second line and never <dfn data-g=\"822\">used</dfn> it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a worked answer. Find the step that broke.</p>\n<div class=\"working\">\n<p>a test has sensitivity 0.86 and specificity 0.74<br />\nprevalence 0.2<br />\nP(positive) = 0.86 times 0.2 plus 0.74 times 0.8<br />\n= 0.172 plus 0.592 = 0.764<br />\nso about three in four people tested will be positive</p>\n</div>",
+   "level": 8,
+   "answer": "<p>The third line broke. For the 0.8 without the condition, it uses the specificity, 0.74. The specificity is the share of them the test clears, so 0.74 times 0.8 counts true negatives, not positives. The share of them the test flags is 1 minus the specificity.</p>\n<div class=\"working\">\n<p>1 minus 0.74 = 0.26<br />\n0.86 times 0.2 = 0.172<br />\n0.26 times 0.8 = 0.208<br />\n0.172 plus 0.208 = 0.38</p>\n</div>\n<p>P(positive) is 0.38.</p>\n<p>Why the wrong answer looks reasonable: sensitivity and specificity are the two numbers a test is sold on, so they feel like the two numbers to weight. The check is to say each term’s event aloud: “positive and has it”, then “positive and has it not”. The 0.74 is “negative and has it not”, the wrong event.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>A screening-camp summary says this.</p>\n<blockquote>\n<p>Of the 500 young men screened with the arm tape, 190 were positive. So 38 per cent of young men in this area are overweight.</p>\n</blockquote>\n<p>The tape is the 31.3 cm cut-off, with sensitivity 86 per cent and specificity 74 per cent against a body-mass index of 25 to 29.9. The camp’s counts are made up. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 9,
+   "answer": "<p>What to compute: 38 per cent is the share who tested positive, not the share in the band. The law of total probability links the two, so run it backwards for the prevalence. Call the prevalence p.</p>\n<div class=\"working\">\n<p>190 divided by 500 = 0.38<br />\n0.38 = 0.86 × p + 0.26 × (1 − p)<br />\n0.38 = 0.26 + (0.86 − 0.26) × p<br />\n0.38 minus 0.26 = 0.12<br />\n0.86 minus 0.26 = 0.60<br />\n0.12 divided by 0.60 = 0.2</p>\n</div>\n<p>If the tape’s rates hold here, about 20 per cent of these men are in the band, not 38.</p>\n<p>What this does not establish. The sensitivity and specificity come from 131 medical students in one college. Carrying them to this camp is an assumption, and the answer moves with them. The 0.60 gap at the bottom also magnifies any error in the top line. The band is 25 to 29.9, so the answer says nothing about men at 30 or more. And it is a prevalence among the men who came to the camp, not among all young men in the area. To know the prevalence, weigh and measure a sample of the men.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A press line says this.</p>\n<blockquote>\n<p>The share of women who are overweight rose in the district between the two surveys. So it must have risen in the towns, or in the villages, or in both.</p>\n</blockquote>\n<p>Take a made-up district where the share is 30 per cent in towns and 15 per cent in villages in both surveys, and towns hold 0.3 of the women in the first survey and 0.4 in the second. Decide what to compute, compute it, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>What to compute: the district share in each survey, as a weighted average of the town and village shares.</p>\n<div class=\"working\">\n<p>1 minus 0.3 = 0.7<br />\n30 times 0.3 plus 15 times 0.7 = 19.5<br />\n1 minus 0.4 = 0.6<br />\n30 times 0.4 plus 15 times 0.6 = 21.0</p>\n</div>\n<p>The district share rises from 19.5 to 21.0 per cent. Neither the towns nor the villages changed. Only the weights did: more of the women now live in towns, where the share is higher.</p>\n<p>So the press line is false as logic. A rise in the total can come from the rates, from the weights, or from both.</p>\n<p>What this does not establish. The district is made up, so it shows only that the press line’s “must” fails. It does not say what happened in any real district. To find out, ask for the town and village shares in both surveys, and for the share of women in each. Then you can split the rise into the part from the rates and the part from the weights.</p>"
+  }
+ ]
+}
