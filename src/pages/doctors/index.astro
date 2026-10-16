@@ -5,7 +5,6 @@ import Base from '../../layouts/Base.astro';
 import { articles, SECTION, fmtDate } from '../../lib/content';
 import { TOOLS } from '../../data/tools';
 import { TRAINERS, trainerBase } from '../../trainers/registry';
-import { SERIES_URL } from '../../lib/obesity-books';
 import { wave, WAVE_LABELS } from '../../lib/wave';
 
 const evidence = (await articles('clinicians')).slice(0, 3);
@@ -31,7 +30,7 @@ const side = [['Home', '', '<path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a
       <p class="lede">For doctors and medical students. Evidence syntheses with effect sizes, apps that train clinical skills on real recordings, and books on public health, statistics and research methods.</p>
       <div class="cta">
         <a class="btn btn-primary btn-lg" href={T}>Open the {trainer.title} <span class="arrow" aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost btn-lg" href={SERIES_URL}>Obesity Expertise books</a>
+        <a class="btn btn-ghost btn-lg" href="/doctors/books/">Open Books</a>
       </div>
 
       <div class="bm-window reveal" aria-label={`A picture of the ${trainer.title}`}>
