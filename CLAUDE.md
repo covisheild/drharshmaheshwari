@@ -71,7 +71,7 @@ Astro static site, deployed as a Cloudflare Worker (static assets) from `main`; 
   **Settings** is the last item of the ☰ menu (`.nav-settings`; a gear at the end of the links on wide screens) and in every footer.
 - **Auto-update**: `scripts/pwa/integration.mjs` writes `/sw.js` (template `scripts/pwa/sw.js`) with a new build id each build; it takes over at once.
   Pages are network first; offline, only what Settings keep is there: **pages just opened are not kept**, and the offline page lists no "recent pages"
-  (Harsh, 12 Oct 2026). `/api/` is never touched. Emergency: `pwa({ build, kill: true })` in `astro.config.mjs` unregisters it everywhere.
+  (Harsh, 12 Oct 2026). `/api/` is never touched. **Icons are never served from a kept copy** (16 Oct 2026: after the logo change the PC's desktop and taskbar icon stayed the old one, because the worker served `/icons/*` cache-first under unchanged file names; they go network first now, and activation drops icons kept earlier). Emergency: `pwa({ build, kill: true })` in `astro.config.mjs` unregisters it everywhere.
 - **Settings** `/settings/` (+ every language): a phone-style settings screen (grouped lists, a switch per row, sizes shown). **The main list stays
   short** (Harsh, 12 Oct 2026): Appearance (theme System / Light / Dark, inline), then one row per category with a one-line summary ("3 of 5 on this
   device · 450 KB") that opens **its own screen** (`#content`, `#books`, `#trainers`, `#storage`; the phone's Back returns): Guides, calculators and more

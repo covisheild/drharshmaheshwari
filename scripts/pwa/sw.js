@@ -5,7 +5,8 @@
 // - Pages: network first, so the app always shows the latest site when online. Without network, the copy kept on the
 //   device (only what Settings keep: nothing else is stored, not even pages just opened); with a slow network that copy
 //   is shown after SLOW_MS.
-// - /_astro/ and /fonts/ files have hashed or fixed names: served from the device once kept.
+// - /_astro/ and /fonts/ files have hashed or fixed names: served from the device once kept. Icons are not (the logo can
+//   change under the same file name): network first, like everything else.
 // - /api/ (sign-in, sync) is never touched or cached.
 // - Books, figures and trainer audio are never downloaded here. They are kept only when someone taps "Save for
 //   offline" (src/pwa/packs.ts, one cache per book or trainer); this file only reads those caches.
@@ -35,6 +36,9 @@ self.addEventListener('activate', (e) => {
       // 'pages': copies of opened pages, kept by earlier versions; pages are now kept only as Settings say.
       if ((k.startsWith('shell-') && k !== SHELL_CACHE) || k === 'pages') await caches.delete(k);
     }
+    // Icons kept by earlier versions of this worker (see the fetch handler): drop them, so the current logo is fetched.
+    const assets = await caches.open(ASSETS);
+    for (const r of await assets.keys()) if (new URL(r.url).pathname.startsWith('/icons/')) await assets.delete(r);
     if (self.registration.navigationPreload) await self.registration.navigationPreload.enable();
     await self.clients.claim();
   })());
@@ -48,7 +52,9 @@ self.addEventListener('fetch', (e) => {
     const p = url.pathname;
     if (p.startsWith('/api/') || p === '/sw.js' || p.startsWith('/offline/packs')) return;
     if (req.mode === 'navigate') { e.respondWith(page(e)); return; }
-    if (p.startsWith('/_astro/') || p.startsWith('/fonts/') || p.startsWith('/icons/')) { e.respondWith(asset(req)); return; }
+    // Not /icons/: those keep their file names when the logo changes, so a kept copy would show the old logo for ever
+    // (16 Oct 2026: the desktop and taskbar icon stayed the old one after a reinstall). Icons go network first, below.
+    if (p.startsWith('/_astro/') || p.startsWith('/fonts/')) { e.respondWith(asset(req)); return; }
     e.respondWith(networkFirst(req));
     return;
   }

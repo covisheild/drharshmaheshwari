@@ -53,6 +53,13 @@ test('service worker: never touches /api/, its offline shell exists, and it is n
   assert.match(headers, /\/offline\/packs\/\*\n\s+Cache-Control: no-cache/);
 });
 
+test('service worker: icons are never served from a kept copy, and old kept icons are dropped (a new logo must reach every device)', () => {
+  const sw = read('sw.js');
+  const cacheFirst = sw.match(/if \(p\.startsWith\('\/_astro\/'\)[^\n]*respondWith\(asset\(req\)\)/)[0];
+  assert.doesNotMatch(cacheFirst, /\/icons\//, 'a fixed icon file name served cache-first shows the old logo for ever');
+  assert.match(sw, /startsWith\('\/icons\/'\)\) await assets\.delete\(r\)/, 'activation drops icons kept by earlier workers');
+});
+
 test('offline packs: one per reader book and per trainer; site files exist with matching hashes; no PDFs or zips', () => {
   const { packs } = JSON.parse(read('offline/packs.json'));
   const ids = packs.map((p) => p.id);
