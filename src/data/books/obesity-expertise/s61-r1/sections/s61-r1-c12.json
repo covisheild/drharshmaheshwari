@@ -1,0 +1,143 @@
+{
+ "format": 1,
+ "id": "s61-r1-c12",
+ "label": "12",
+ "title": "Planetary health: diet, climate and land use",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-16.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"572\">Planetary health</dfn> is the health of people together with the natural systems they depend on. The EAT–Lancet Commission of 2019 described a universal healthy reference diet.</p>\n<p>The Commission set scientific targets for six Earth system processes that food production pushes: climate change, biodiversity loss, freshwater use, the nitrogen cycle, the phosphorus cycle and land-system change.</p>\n<p>A Lancet Commission report on obesity, undernutrition and climate change, of the same year, framed them as one Global <dfn data-g=\"783\">Syndemic</dfn>: epidemics that occur together, interact, and share drivers in food and agriculture, transportation, urban design and land use.</p>\n<p>A sustainability scientist owns the question of what a diet does to emissions, water and land.</p>",
+   "refs": [
+    222,
+    222,
+    222,
+    223,
+    224,
+    224,
+    225,
+    226,
+    226,
+    226,
+    226,
+    227,
+    226,
+    228,
+    229,
+    230,
+    230,
+    228,
+    226,
+    231,
+    232
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Nutrition tells you whether a diet is healthy for people. Whether a diet stays within the planet’s limits is a different calculation, done by a different <dfn data-g=\"545\">owner</dfn>.</p>\n<p>Start with two words. Planetary health — the health of people together with the natural systems they depend on — is how a Lancet Commission report describes what climate change threatens. The same report calls obesity, undernutrition and climate change three pandemics — epidemics that, in its words, affect “most people in every country and region worldwide”. It says they make up a syndemic — epidemics that occur together in time and place, interact, and share underlying causes.</p>\n<p>The report says linking the three “emphasises the need for common solutions”.</p>\n<p>A second report, from the EAT–Lancet Commission, gives the field its most quoted idea. The reference diet — the Commission’s diet meant to be healthy for people and within the planet’s limits — is described by the Commission in numbers. This book gives it in words only. It largely consists of vegetables, fruits, whole grains, legumes, nuts and unsaturated oils. It includes a low to moderate amount of seafood and poultry. It includes no or a low quantity of red meat, processed meat, added sugar, refined grains and starchy vegetables. The Commission calls it a reference diet, “a basis for estimating the health and environmental effects” of changing diets.</p>\n<p>It sets no targets for any country, sector or business. It gives no plan for turning global targets into national or local ones. And it says the reference diet can be adapted to the food cultures of every region.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Where to look</td>\n</tr>\n<tr>\n<td>Planetary health: diet, climate and land use</td>\n<td>a sustainability scientist</td>\n<td>an environmental-science department; the Indian authors of papers on the Commission’s diet that you have read</td>\n</tr>\n</tbody>\n</table>\n<p>How planetary health enters Indian food policy is taught in Book 125, <em>Food systems, value chains and Indian food policy</em>.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Start with the report itself. Open the EAT–Lancet Commission report, Willett and colleagues, <em>The Lancet</em> 2019, at https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(18)31788-4/fulltext. The site may ask you to register before it shows the full text.</p>\n<p>Search for <em>six <dfn data-g=\"414\">key</dfn> Earth system processes</em>.</p>\n<blockquote>\n<p>Scientific targets for the safe operating space of food systems were established for six key Earth system processes.</p>\n</blockquote>\n<p>Then search for <em>biodiversity loss, freshwater use</em>.</p>\n<blockquote>\n<p>food production is among the largest drivers of global environmental change by contributing to climate change, biodiversity loss, freshwater use, interference with the global nitrogen and phosphorus cycles, and land-system change</p>\n</blockquote>\n<p>In plain words: food production pushes on six of the planet’s systems, and the Commission set a limit for each. Its “safe operating space” is the room left inside those limits and inside the healthy ranges of the diet.</p>\n<p>Search for <em>about 10 billion</em>.</p>\n<blockquote>\n<p>food systems can provide healthy diets (ie, reference diet) for an estimated global population of about 10 billion people by 2050 and remain within a safe operating space.</p>\n</blockquote>\n<p>Read the next sentence too.</p>\n<blockquote>\n<p>However, even small increases in consumption of red meat or dairy foods would make this goal difficult or impossible to achieve.</p>\n</blockquote>\n<p>In plain words: the Commission’s model says the reference diet fits within those limits for about 10 billion people by 2050, and that even small increases in red meat or dairy would make that goal difficult or impossible to reach.</p>\n<p>This is the sustainability scientist’s kind of answer: a diet, run through a model of the <dfn data-g=\"308\">food system</dfn>, checked against limits for climate, water, land, nitrogen, phosphorus and biodiversity. You cannot run that model, and you cannot judge it.</p>\n<p>Now see what the answer does not settle. Search for <em>uncertainty range</em>.</p>\n<blockquote>\n<p>However, the uncertainty range for these food boundaries remains high because of the inherent complexity in Earth system dynamics.</p>\n</blockquote>\n<p>Search for <em>does not provide a plan</em>.</p>\n<blockquote>\n<p>this framework does not provide a plan for translating global targets to national and subnational governments, businesses, and other local actors</p>\n</blockquote>\n<p>Search for <em>nor does it have a mandate</em>.</p>\n<blockquote>\n<p>This Commission is not setting actionable science-based targets (panel 1) on behalf of any country, sector, or business, nor does it have a mandate to do so.</p>\n</blockquote>",
+   "numberRefs": [
+    233
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The Commission’s limits are global, and it says itself that their uncertainty is high. It sets no target for any country and gives no plan for turning its global targets into national or local ones. So the report alone cannot tell you what a change in an Indian family’s diet would do to emissions, water or land. Whether the diet meets Indian nutritional needs is a separate question again.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>A made-up call. The reporter from the Hindi daily again. “A big international report says the whole world must eat one planetary diet, with almost no meat, to save the climate. Should Indian families change what they eat? I need your line by eight.”</p>\n<p>The first signal is <strong>One source</strong>. Any answer you give would rest on one report whose modelling you cannot judge.</p>\n<p>Start with what you can answer, because it is reading. You can tell her what the report itself says. It calls its diet a reference diet, a basis for estimating effects. It says the diet can be adapted to the food cultures of every region. It says traditional diets “such as those in Indonesia, Mexico, India, China, and West Africa, also include little red meat”, and that “Legume consumption has traditionally been high in many cultures, such as Mexico, India, and Rwanda.” It sets no targets for any country. All of that is reading, and it is yours. For the rest, you say: “That is outside what I can assess, and here is who can: a sustainability scientist. I will send one the question tonight; for now, quote only what the report says.”</p>\n<p>Two lines tempt you, and both are <dfn data-g=\"373\">improvising</dfn>. “Indian diets are already planet-friendly, so nothing needs to change.” That claims an environmental result you cannot compute. “Yes, every family should switch to this diet.” That claims the diet suits Indian nutrition, which is another book’s question, and it claims more than the report’s own word “reference”.</p>\n<p>So write the question you would ask a sustainability scientist, in the five parts.</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>What you write</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Decision</td>\n<td>What I say on the record tonight about whether Indian families should change their diet for the climate. The reporter files at 8 pm; the story reaches a Hindi-reading public.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>The 2019 EAT–Lancet Commission report. Its reference diet and its limits are global; it sets no target for any country and says its diet can be adapted to food cultures. I can say what the report says. I cannot judge its environmental modelling.</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>For the diets Indian families commonly eat, which changes would matter most for greenhouse-gas emissions, water and land use, and how sure can anyone be of that for India from this report?</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>Two or three changes, largest first, each in one plain sentence I may quote, and how sure you are. If this report cannot answer it for India, say so in one sentence I may quote.</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Today, 8 pm. If later, I say only what the report itself says.</td>\n</tr>\n</tbody>\n</table>\n<p>Last, the row for your <dfn data-g=\"166\">contact list</dfn>. Put it in now and leave the name for you to fill.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Name and institution</td>\n<td>How you know them</td>\n<td>Last question asked</td>\n<td>Asked on</td>\n<td>Checked on</td>\n</tr>\n<tr>\n<td>Planetary health: diet, climate and land use</td>\n<td>a sustainability scientist</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>Which diet changes matter most for emissions, water and land in India, and how sure is that?</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>If she only asks what the report recommends, read it to her; that is yours. If she asks whether the diet is healthy for Indians, the owner is a nutrition expert, not a sustainability scientist, and the question belongs with Book 151, <em>Indian dietary patterns, guidelines, food composition and diet cost</em>.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Do not tell a reporter that Indian diets are “already planet-friendly”, or that Indian families “must” switch to the reference diet. Say what the report says, and <dfn data-g=\"696\">route</dfn> the rest.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The “planetary diet” is not a prescription for each person. The Commission calls it a reference diet, a basis for estimating the health and environmental effects of changing diets.</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>The Commission’s targets are global, and it says their uncertainty is high and that it gives no plan for countries. Route the question to a sustainability scientist before anyone quotes a global number as a local target.</p>",
+     "tag": "boundary",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>When an obesity <dfn data-g=\"613\">proposal</dfn> touches food supply, transport, urban design or land use, ask whether it could also serve undernutrition or climate.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>If you propose adding sustainability to a dietary <dfn data-g=\"344\">guideline</dfn>, expect opposition. The Syndemic report says many countries’ attempts failed under pressure from food industry lobbies.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Science has found the one diet that is healthy and saves the planet, so everyone should eat it.” The Commission describes a reference diet as a basis for estimating effects, says it can be adapted to every region’s food, and sets no target for any country. Its limits are global and, in its own words, highly uncertain.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>What is a syndemic? Which three conditions does the Lancet report <dfn data-g=\"410\">join</dfn> into the Global Syndemic? Who owns the question of what a diet does to emissions, water and land?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Two or more epidemics that occur together in time and place, interact, and share underlying drivers. Obesity, undernutrition and climate change. A sustainability scientist.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Name the six Earth system processes for which the EAT–Lancet Commission set targets.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Climate change, biodiversity loss, freshwater use, the nitrogen cycle, the phosphorus cycle, and land-system change.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A made-up request. The district collector’s office plans to change part of the grain in a school meal scheme “for health and for the climate”, and asks you for the climate case before a meeting in three weeks. Write the question you would send to a sustainability scientist, in the five parts.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>What you write</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>Whether the district changes part of the grain in the school meal scheme; the collector’s office decides at its meeting in three weeks.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>The scheme’s current grain and the proposed one, the quantities per child and the number of schools (attach the office’s figures). The climate case is the office’s claim, not yet checked. The nutrition side is a separate question.</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>Would this change lower the scheme’s greenhouse-gas emissions, water use or land use, by roughly how much, and how sure can you be for this district?</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>Yes, no or “cannot tell”, with a rough size if there is one and what it rests on. Tell me how sure you are. I cannot judge the modelling.</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Ten days from today, so I can brief the office before the meeting. If it comes later, the office decides without the climate case.</td>\n</tr>\n</tbody>\n</table>\n<p>Whether the new grain meets the children’s nutritional needs is a separate question for a nutrition owner. Whether it is affordable and available is for the scheme’s administrators.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A made-up line from a district meeting: “One report settles it: the EAT–Lancet report. Our district diet plan should copy its amounts exactly.” Name the first signal that should fire in the speaker, and rewrite the line.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p><strong>One source</strong> fires first. The speaker’s whole plan rests on one report they cannot judge. The report itself sets no target for any country and gives no plan for turning its global targets into local ones.</p>\n<p>A rewrite: “The EAT–Lancet Commission gives a global reference diet, which it says can be adapted to local food cultures. What it would mean for our district is outside what I can assess, and here is who can: a nutrition owner for our people’s needs, and a sustainability scientist for the climate. We will ask both before we use it in a district plan.”</p>"
+  }
+ ]
+}

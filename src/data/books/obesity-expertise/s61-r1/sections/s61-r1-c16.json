@@ -1,0 +1,122 @@
+{
+ "format": 1,
+ "id": "s61-r1-c16",
+ "label": "16",
+ "title": "The contact list, and saying it in public",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"166\">contact list</dfn> is your own list of owners: one row for each field whose questions you <dfn data-g=\"696\">route</dfn>, in seven columns — Field, <dfn data-g=\"545\">Owner</dfn>, Name and institution, How you know them, Last question asked, Asked on, Checked on. How you know them takes one of three values. Worked with: you have asked them a question and <dfn data-g=\"829\">used</dfn> their <dfn data-g=\"666\">reply</dfn>, or done a piece of work together. Met: you have spoken with them but not yet worked on a question together. Found: you have located them and not yet made contact.</p>\n<p>The <dfn data-g=\"618\">public sentence</dfn> is what you say, in any setting, when a question asked of you has left what you can assess: “That is outside what I can assess, and here is who can.” It comes after the part you can answer, and the owner comes after it.</p>",
+   "refs": [
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Each field section before this one ended on a row for your list. This section stands on all of them. Now the rows become a list you keep.</p>\n<p>The curriculum this book follows sets the target in these words: “A maintained contact list of named specialists in each adjacent field, with at least three of them people you have actually worked with.” So the list has a row for every field, and at least three rows must say worked with. Only that value counts toward the three. A row moves from found to met when you first speak to them. It moves from met to worked with when you ask a real question and use the reply.</p>\n<p><strong>Four ways to fill a row.</strong> A name comes from one of four places.</p>\n<ol type=\"1\">\n<li>A department. Each field section named the kind of university or government department to look in.</li>\n<li>A <dfn data-g=\"608\">professional society</dfn> — a body of people in that field.</li>\n<li>The author of a paper you have read. The corresponding author’s address is printed on the paper.</li>\n<li>An introduction from a colleague. Ask someone who has worked with an owner to introduce you.</li>\n</ol>\n<p><strong>Keeping it alive.</strong> A list goes stale unless you <dfn data-g=\"103\">check</dfn> it on a <dfn data-g=\"198\">date</dfn>. Write the <dfn data-g=\"689\">review date</dfn> in your diary, six months from today, and every six months after. At each review, for each row, ask two things: is the person still there, and still doing this work? If yes, write today’s date under Checked on. If not, find their successor. A row whose Checked on date is more than six months old does not count toward the three until you check it again. A row still at found after one review needs a decision: make contact, or delete it. Six months is this book’s rule, not a <dfn data-g=\"292\">finding</dfn>.</p>\n<p><strong>The public sentence.</strong> The sentence has a shape: what you can say, then the sentence, then the owner, then what happens next. Here is the sentence, in its exact words: “That is outside what I can assess, and here is who can.”</p>\n<p>Before it, say the part of the question you can answer, plainly. After it, name the owner. Use their name if they are on your list as worked with or met, and their kind if not. Then give the next step: “I will ask them this week”, or “I can put you in touch”.</p>\n<p><strong>Where, and how it gets easier.</strong> You say it wherever you route a question: in a lecture, a committee, an interview on the record, and with a patient, where you also say what they should keep doing meanwhile. This section practises the three public settings because they are the hardest. Say the same words each time. Saying it without embarrassment is practice, not temperament. Say it first where little rides on it, such as a <dfn data-g=\"116\">class</dfn> you teach.</p>\n<p>No study this book holds measures how listeners judge someone who says this sentence. What you control is what they leave with: the part you could answer, an owner, and a next step. A confident answer that is acted on cannot be taken back from everyone who acted on it.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>A made-up list: a resident spent one evening on department websites and wrote five rows.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Name and institution</td>\n<td>How you know them</td>\n<td>Last question asked</td>\n<td>Asked on</td>\n<td>Checked on</td>\n</tr>\n<tr>\n<td>Circuit neuroscience of appetite</td>\n<td>a systems neuroscientist</td>\n<td>a teacher in a university physiology department</td>\n<td>found</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Statistical genetics</td>\n<td>a statistical geneticist</td>\n<td>a teacher in a university genetics department</td>\n<td>found</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Labour economics of obesity</td>\n<td>a labour economist</td>\n<td>an author of an Indian economics paper on work and BMI</td>\n<td>found</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Public procurement</td>\n<td>the purchase (stores) officer</td>\n<td>the purchase (stores) officer, this institute</td>\n<td>found</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Ayush systems</td>\n<td>a qualified Ayush practitioner; for the State’s arrangements, the State’s Ayush directorate</td>\n<td>the Ayush medical officer, co-located PHC</td>\n<td>found</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<p>Check it. Count the rows that say worked with: none. Look at Checked on: it is blank everywhere, so you cannot say any of them is still there. Look at Last question asked: it is blank, so none of them has been tested. The list looks full and does no work.</p>\n<p>Make it work. The next move for each row is a real question.</p>\n<ol type=\"1\">\n<li>Start with the rows nearest your own work. The purchase (stores) officer is in your own institute. Send the question the section on running an institution gave you (made up: a purchase of weighing scales for screening), and use the reply. The row becomes worked with.</li>\n<li>The <dfn data-g=\"52\">Ayush</dfn> medical officer at the co-located PHC: go and introduce yourself. The row becomes met.</li>\n<li>The author of the paper: write to the corresponding author with one five-part question. When the reply comes and you use it, the row becomes worked with.</li>\n<li>Ask the genetics teacher whether they would answer a short question from you. If they introduce you to a statistical geneticist they work with, the new person goes in the row. That is the fourth way.</li>\n</ol>\n<p>Here is the same list some weeks later. The dates are made up.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Field</th>\n<th>Owner</th>\n<th>Name and institution</th>\n<th>How you know them</th>\n<th>Last question asked</th>\n<th>Asked on</th>\n<th>Checked on</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Circuit neuroscience of appetite</td>\n<td>a systems neuroscientist</td>\n<td>a teacher in a university physiology department</td>\n<td>met</td>\n<td></td>\n<td></td>\n<td>20 Nov 2026</td>\n</tr>\n<tr>\n<td>Statistical genetics</td>\n<td>a statistical geneticist</td>\n<td>a statistical geneticist in a university genetics department, introduced by a colleague</td>\n<td>worked with</td>\n<td>Can a child gene test predict obesity in Indian children well enough to act on?</td>\n<td>2 Nov 2026</td>\n<td>20 Nov 2026</td>\n</tr>\n<tr>\n<td>Labour economics of obesity</td>\n<td>a labour economist</td>\n<td>an author of an Indian economics paper on work and BMI</td>\n<td>worked with</td>\n<td>Is there an Indian estimate of what obesity does to pay, employment or productivity?</td>\n<td>28 Oct 2026</td>\n<td>20 Nov 2026</td>\n</tr>\n<tr>\n<td>Public procurement</td>\n<td>the purchase (stores) officer</td>\n<td>the purchase (stores) officer, this institute</td>\n<td>worked with</td>\n<td>What does this purchase of weighing scales require, and what will audit check?</td>\n<td>21 Oct 2026</td>\n<td>20 Nov 2026</td>\n</tr>\n<tr>\n<td>Ayush systems</td>\n<td>a qualified Ayush practitioner; for the State’s arrangements, the State’s Ayush directorate</td>\n<td>the Ayush medical officer, co-located PHC</td>\n<td>met</td>\n<td></td>\n<td></td>\n<td>20 Nov 2026</td>\n</tr>\n</tbody>\n</table>\n<p>Count again: three rows say worked with. Three worked-with rows meet the curriculum’s number, though the list has only five rows. A full list has a row for every field the book names. Write the next review date: 20 May 2027.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Three rows marked worked with meet the curriculum’s count, not the purpose. A list is only as good as its next check: a person who has moved on, or stopped doing the work, makes a row wrong without changing a word in it. And worked with means you used a reply once. It does not mean the next reply will be right, which the five checks on a reply still decide.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>A made-up call: a reporter from a Hindi daily phones you, on the record.</p>\n<blockquote>\n<p>“A company is selling a gene test online. It says it can tell parents whether their child will have obesity. Does it work?”</p>\n</blockquote>\n<p>Here are three weak answers. Each fails in its own way.</p>\n<ol type=\"1\">\n<li>“I’m not the right person to ask.” It ends the call. The reporter still needs an answer and will find someone who gives one. You have said nothing you could have said, and named no owner.</li>\n<li>“That’s not really my area, but these tests are mostly useless.” This is a made-up example of <dfn data-g=\"373\">improvising</dfn>, not a <dfn data-g=\"114\">claim</dfn> about any test. The first half is true. The second half is the improvising the first half should have stopped. The reporter will print the second half.</li>\n<li>“Nobody really knows.” It is a claim about a whole field, made by someone who cannot assess that field.</li>\n</ol>\n<p>Now the strong answer.</p>\n<blockquote>\n<p>“Here is what I can tell you. I can tell you how we judge any screening test in children: we ask how often it is right in children like the ones it will be used on. Whether this gene test is right that often is a different question. That is outside what I can assess, and here is who can: a statistical geneticist. I have worked with one at a university genetics department, and I can put you in touch today.”</p>\n</blockquote>\n<p>Check it against the shape given above: what you can say, the sentence, the owner, the next step. The part you can say is how a screening test is judged, which is your own field. The sentence is in its exact words. The owner comes from your list. This book invents no names, so it gives a kind; on a real call, with a row that says worked with, you would give the person’s name. The next step is today.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The sentence is for a question that has left you. If the reporter had asked how common obesity is in Indian children by a national survey, or how it is measured, the question is yours, and the sentence would be a refusal dressed as modesty. And the sentence without an owner after it is only half done. If you have no one on your list, say you will find the owner and by when.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Say the public sentence in its exact words, after the part you can answer and before the owner. Without the owner it is a refusal.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>“I’m not the right person” ends the call and sends the reporter to whoever will improvise. “Not my area, but…” is worse: the improvising follows the disclaimer that was meant to stop it.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Only rows marked worked with count toward the three the curriculum asks for, and a row with no Checked on date may already be wrong.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>A row stops being trustworthy when its Checked on date is more than six months old: do not count it toward the three until you have checked it again.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>No study this book holds measures how listeners judge someone who says the sentence. What you control is what they leave with: the part you could answer, an owner and a next step.</p>",
+     "tag": "consequence",
+     "bearing": "public"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Say it in these words, after the part you can answer, and follow it with the owner.</p>\n<p>“That is outside what I can assess, and here is who can.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the seven columns of the contact list in order, the three values of How you know them, and the four ways to fill a row.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Field, Owner, Name and institution, How you know them, Last question asked, Asked on, Checked on. Worked with, met, found. A department, a professional society, the author of a paper you have read, an introduction from a colleague.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Build your contact list. Make one row for each of the 18 fields the field sections named, in the seven columns. Fill every row you can today, mark How you know them honestly, and send a five-part question to at least one owner this week. Keep going until at least three rows say worked with. Write your next review date at the top.</p>",
+   "type": "build",
+   "confidence": false,
+   "answer": "<p>There is no single right list. Check yours against this:</p>\n<ol type=\"1\">\n<li>Eighteen rows, one per field: <dfn data-g=\"109\">circuit neuroscience</dfn> of appetite; cell and molecular biology of fat; <dfn data-g=\"761\">statistical genetics</dfn>; <dfn data-g=\"93\">causal discovery</dfn> algorithms; <dfn data-g=\"396\">interference</dfn> and spillover; <dfn data-g=\"203\">deep learning</dfn> and <dfn data-g=\"124\">cloud</dfn> infrastructure; endoscopic and device therapies; Ayush systems; trade, investment and intellectual property law; <dfn data-g=\"424\">labour economics</dfn> of obesity; advertising research; <dfn data-g=\"572\">planetary health</dfn>: diet, climate and land use; urban and transport planning; <dfn data-g=\"722\">service rules</dfn> and labour law for a hire; <dfn data-g=\"763\">statutory accounts</dfn> and <dfn data-g=\"45\">audit</dfn>; <dfn data-g=\"617\">public procurement</dfn>; contracts and memoranda of understanding; campaign production and <dfn data-g=\"478\">media buying</dfn>.</li>\n<li>Every Owner cell in its section’s words.</li>\n<li>Every Name and institution cell is a real person and a place, or says “(yours to fill)”. No invented names.</li>\n<li>How you know them is one of worked with, met, found, and each worked with row has a Last question asked and an Asked on date.</li>\n<li>At least three rows say worked with.</li>\n<li>Every filled row has a Checked on date, and the next review date is six months away.</li>\n</ol>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A first-year resident says, “If I tell a committee ‘that is outside what I can assess’, they will think I don’t know my subject.” You have ten minutes and a whiteboard. Teach the shape of the public sentence, and have the resident say it once.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Draw four boxes in a row: What I can say · The sentence · The owner · The next step. Fill them with one example from the resident’s own week (a question they were asked and could only half answer).</p>\n<p>Point out that the first box is where they show their subject: the sentence never comes alone. Write the sentence in the second box in its exact words, “That is outside what I can assess, and here is who can.” Then the owner, from their own list if they have one, and a next step with a day attached.</p>\n<p>Say honestly that no study we hold measures how listeners judge it. What the resident controls is that the committee leaves with an answer, an owner and a next step.</p>\n<p>Have them say the four boxes aloud once, then once more without looking.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Three made-up answers, each said in public. Name what is wrong with each, and rewrite it.</p>\n<ol type=\"a\">\n<li><p>In a lecture, a student asks whether a new appetite drug works through the brain: “I’m not the right person for that.”</p></li>\n<li><p>In a committee, asked whether a sugar tax would break trade rules: “That’s not my area, but I’m sure it’s fine.”</p></li>\n<li><p>To a reporter, asked about a “planetary diet”: “Nobody really knows what diet is good for the planet.”</p></li>\n</ol>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<ol type=\"a\">\n<li><p>A refusal: no part answered, no owner. Rewrite: “I can tell you how we would judge its trials. How it acts in the brain is a different question. That is outside what I can assess, and here is who can: a systems neuroscientist. I’ll bring you a name next week.”</p></li>\n<li><p>Improvising after the disclaimer: the second half is a confident answer the speaker cannot check. Rewrite: “Why the committee is looking at a sugar tax is a health question, and I can speak to that. Whether the tax breaks trade rules is a different question. That is outside what I can assess, and here is who can: a trade lawyer. I’ll put it to one before the next meeting.”</p></li>\n<li><p>A claim about a whole field, by someone who cannot assess it. Rewrite: “I can tell you how the diet’s effects on health would be judged. What it does for the planet is a different question. That is outside what I can assess, and here is who can: a sustainability scientist. I can send you the name of one by tomorrow.”</p></li>\n</ol>"
+  }
+ ]
+}

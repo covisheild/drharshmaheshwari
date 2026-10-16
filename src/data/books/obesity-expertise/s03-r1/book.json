@@ -1499,6 +1499,16 @@
    ]
   },
   {
+   "term": "audit",
+   "senses": [
+    {
+     "term": "audit",
+     "plain": "a check, by someone other than the spender, that money was spent and recorded as the rules and the accounts say",
+     "where": "Book 11, section 14"
+    }
+   ]
+  },
+  {
    "term": "average rate of change",
    "senses": [
     {
@@ -1565,6 +1575,26 @@
      "term": "axis title",
      "plain": "the words on an axis that name its quantity and its unit; an axis of categories needs no unit",
      "where": "Book 9, section 20"
+    }
+   ]
+  },
+  {
+   "term": "Ayush",
+   "senses": [
+    {
+     "term": "Ayush",
+     "plain": "the Ministry of Ayush&#x27;s name for Ayurveda, Yoga and Naturopathy, Unani, Siddha, Sowa-Rigpa and Homoeopathy",
+     "where": "Book 11, section 9"
+    }
+   ]
+  },
+  {
+   "term": "bariatric",
+   "senses": [
+    {
+     "term": "bariatric",
+     "plain": "to do with treating obesity",
+     "where": "Book 11, section 8"
     }
    ]
   },
@@ -1814,6 +1844,16 @@
    ]
   },
   {
+   "term": "brainstem",
+   "senses": [
+    {
+     "term": "brainstem",
+     "plain": "a part of the brain whose nerve cells, with the hypothalamus&#x27;s, trade signals with the gut, the pancreas and fat tissue",
+     "where": "Book 11, section 6"
+    }
+   ]
+  },
+  {
    "term": "brand owner",
    "senses": [
     {
@@ -1999,6 +2039,26 @@
    ]
   },
   {
+   "term": "causal discovery",
+   "senses": [
+    {
+     "term": "causal discovery (algorithm)",
+     "plain": "a computer method that tries to work out, from data, which variables cause which",
+     "where": "Book 11, section 7"
+    }
+   ]
+  },
+  {
+   "term": "causal graph",
+   "senses": [
+    {
+     "term": "causal graph",
+     "plain": "a drawing of variables joined by arrows from cause to effect",
+     "where": "Book 11, section 7"
+    }
+   ]
+  },
+  {
    "term": "cause question",
    "senses": [
     {
@@ -2159,6 +2219,16 @@
    ]
   },
   {
+   "term": "circuit neuroscience",
+   "senses": [
+    {
+     "term": "circuit neuroscience",
+     "plain": "the study of which groups of nerve cells, connected to which, produce a behaviour such as eating",
+     "where": "Book 11, section 6"
+    }
+   ]
+  },
+  {
    "term": "citation",
    "senses": [
     {
@@ -2299,6 +2369,26 @@
    ]
   },
   {
+   "term": "cloud",
+   "senses": [
+    {
+     "term": "cloud (computing)",
+     "plain": "running an analysis on remote computers, which you reach by uploading your data",
+     "where": "Book 11, section 7"
+    }
+   ]
+  },
+  {
+   "term": "co-location",
+   "senses": [
+    {
+     "term": "co-location (Ayush)",
+     "plain": "an Ayush facility placed inside a primary health centre, community health centre or district hospital, so patients choose in one place",
+     "where": "Book 11, section 9"
+    }
+   ]
+  },
+  {
    "term": "coefficients",
    "senses": [
     {
@@ -2335,6 +2425,16 @@
      "term": "cohort study",
      "plain": "a study that starts from the exposure: it starts with people who do not yet have the outcome, records who is exposed and who is not, follows both groups over time and counts who develops the outcome",
      "where": "Book 7, section 3"
+    }
+   ]
+  },
+  {
+   "term": "colocalisation",
+   "senses": [
+    {
+     "term": "colocalisation",
+     "plain": "testing whether a trait and a gene&#x27;s activity are driven by the same variant",
+     "where": "Book 11, section 6"
     }
    ]
   },
@@ -2689,12 +2789,32 @@
    ]
   },
   {
+   "term": "consultation",
+   "senses": [
+    {
+     "term": "consultation",
+     "plain": "asking a colleague in another field for an opinion on one question, and their answer; the consultation papers call the owner the &quot;consultant&quot;",
+     "where": "Book 11, section 4"
+    }
+   ]
+  },
+  {
    "term": "consumer unit",
    "senses": [
     {
      "term": "consumer unit",
      "plain": "the survey&#x27;s per-head measure that allows for age and sex, as against a plain count per person",
      "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "contact list",
+   "senses": [
+    {
+     "term": "contact list",
+     "plain": "your own list of owners, one row per field; kept in seven columns, with how you know each owner and when you last checked (Book 11, section 16)",
+     "where": "Book 11, section 1, Book 11, section 16"
     }
    ]
   },
@@ -3089,6 +3209,16 @@
    ]
   },
   {
+   "term": "deep learning",
+   "senses": [
+    {
+     "term": "deep learning",
+     "plain": "models that learn complex patterns from very large amounts of data",
+     "where": "Book 11, section 7"
+    }
+   ]
+  },
+  {
    "term": "default",
    "senses": [
     {
@@ -3170,6 +3300,16 @@
      "term": "dependent",
      "plain": "not independent: knowing one changes the chance of the other",
      "where": "Book 12, section 3"
+    }
+   ]
+  },
+  {
+   "term": "depth",
+   "senses": [
+    {
+     "term": "depth (of knowing a field)",
+     "plain": "how far you can go in a field, judged by what you can do: route, read, critique or do",
+     "where": "Book 11, section 1"
     }
    ]
   },
@@ -3434,6 +3574,16 @@
    ]
   },
   {
+   "term": "edge",
+   "senses": [
+    {
+     "term": "edge (of your competence)",
+     "plain": "for one question, the point past which you cannot say what would show your answer wrong and check it yourself",
+     "where": "Book 11, section 1"
+    }
+   ]
+  },
+  {
    "term": "editorial",
    "senses": [
     {
@@ -3534,6 +3684,26 @@
    ]
   },
   {
+   "term": "endoscope",
+   "senses": [
+    {
+     "term": "endoscope",
+     "plain": "a thin, flexible tube passed down the throat to see and work inside the gut",
+     "where": "Book 11, section 8"
+    }
+   ]
+  },
+  {
+   "term": "endoscopic sleeve gastroplasty",
+   "senses": [
+    {
+     "term": "endoscopic sleeve gastroplasty (ESG)",
+     "plain": "stitching through the full thickness of the stomach wall, from inside, through an endoscope, to make the stomach a narrow tube",
+     "where": "Book 11, section 8"
+    }
+   ]
+  },
+  {
    "term": "endothermic",
    "senses": [
     {
@@ -3590,6 +3760,16 @@
      "term": "energy intake",
      "plain": "the energy a person eats in a day",
      "where": "Book 1, section 3"
+    }
+   ]
+  },
+  {
+   "term": "engagement",
+   "senses": [
+    {
+     "term": "engagement (of an advert)",
+     "plain": "in marketing, any interaction with the advert, such as a click on an internet advert",
+     "where": "Book 11, section 11"
     }
    ]
   },
@@ -3788,8 +3968,13 @@
    "senses": [
     {
      "term": "exposure",
-     "plain": "what differs between the people being compared: something they have, do or meet",
+     "plain": "what differs between the people being compared: something they have, do or meet (Book 7)",
      "where": "Book 7, section 2"
+    },
+    {
+     "term": "exposure",
+     "plain": "in a media plan, a person seeing or hearing the message (Book 11)",
+     "where": "Book 11, section 15"
     }
    ]
   },
@@ -3980,6 +4165,16 @@
      "term": "finding",
      "plain": "what a particular study observed, in its own people and setting, with its uncertainty",
      "where": "Book 10, section 1"
+    }
+   ]
+  },
+  {
+   "term": "fine-mapping",
+   "senses": [
+    {
+     "term": "fine-mapping",
+     "plain": "narrowing a stretch of DNA linked to a trait down to the variant most likely to cause the signal",
+     "where": "Book 11, section 6"
     }
    ]
   },
@@ -4234,6 +4429,16 @@
    ]
   },
   {
+   "term": "frequency",
+   "senses": [
+    {
+     "term": "frequency (of a campaign)",
+     "plain": "how many times each person in the audience sees the message in a stated period",
+     "where": "Book 11, section 15"
+    }
+   ]
+  },
+  {
    "term": "frequency table",
    "senses": [
     {
@@ -4354,12 +4559,32 @@
    ]
   },
   {
+   "term": "genome-wide association study",
+   "senses": [
+    {
+     "term": "genome-wide association study (GWAS)",
+     "plain": "a scan of the whole of many people&#x27;s DNA for variants that go with a trait",
+     "where": "Book 11, section 6"
+    }
+   ]
+  },
+  {
    "term": "genotype",
    "senses": [
     {
      "term": "genotype",
      "plain": "what a person actually carries in their DNA, including the alleles that are not showing",
      "where": "Book 0, E7"
+    }
+   ]
+  },
+  {
+   "term": "genotype imputation",
+   "senses": [
+    {
+     "term": "genotype imputation",
+     "plain": "filling in DNA letters a test did not read, using a reference panel of fully read genomes",
+     "where": "Book 11, section 6"
     }
    ]
   },
@@ -4440,6 +4665,16 @@
      "term": "Government Bill",
      "plain": "a Bill introduced by a Minister",
      "where": "Book 5, section 6"
+    }
+   ]
+  },
+  {
+   "term": "Government e-Marketplace",
+   "senses": [
+    {
+     "term": "Government e-Marketplace (GeM)",
+     "plain": "the government&#x27;s online market for common goods and services, which Union offices must use for what it offers, and which State offices may use",
+     "where": "Book 11, section 14"
     }
    ]
   },
@@ -4629,6 +4864,16 @@
    ]
   },
   {
+   "term": "hoarding",
+   "senses": [
+    {
+     "term": "hoarding",
+     "plain": "a large advertising board beside a road",
+     "where": "Book 11, section 11"
+    }
+   ]
+  },
+  {
    "term": "honest broker",
    "senses": [
     {
@@ -4719,6 +4964,16 @@
    ]
   },
   {
+   "term": "hypothalamus",
+   "senses": [
+    {
+     "term": "hypothalamus",
+     "plain": "a part of the brain whose nerve cells, with the brainstem&#x27;s, trade signals with the gut, the pancreas and fat tissue; some of its cells sense leptin",
+     "where": "Book 11, section 6"
+    }
+   ]
+  },
+  {
    "term": "hypothesis",
    "senses": [
     {
@@ -4749,6 +5004,16 @@
    ]
   },
   {
+   "term": "impact",
+   "senses": [
+    {
+     "term": "impact (of an advert)",
+     "plain": "in marketing, how quickly the audience receives the advert&#x27;s message; not a change in anyone&#x27;s behaviour",
+     "where": "Book 11, section 11"
+    }
+   ]
+  },
+  {
    "term": "implementation money",
    "senses": [
     {
@@ -4775,6 +5040,16 @@
      "term": "imprecision",
      "plain": "few people or few events in the studies, so the range of values the data allow is wide",
      "where": "Book 10, section 6"
+    }
+   ]
+  },
+  {
+   "term": "improvising",
+   "senses": [
+    {
+     "term": "improvising",
+     "plain": "giving a confident answer to a question past your edge, where you cannot check your own reasoning",
+     "where": "Book 11, section 2"
     }
    ]
   },
@@ -4999,6 +5274,16 @@
    ]
   },
   {
+   "term": "interference",
+   "senses": [
+    {
+     "term": "interference (spillover)",
+     "plain": "one person&#x27;s treatment changing another person&#x27;s outcome",
+     "where": "Book 11, section 7"
+    }
+   ]
+  },
+  {
    "term": "interleaving",
    "senses": [
     {
@@ -5045,6 +5330,16 @@
      "term": "intervention",
      "plain": "an exposure a researcher or a programme gives on purpose, as the thing being tested",
      "where": "Book 7, section 2"
+    }
+   ]
+  },
+  {
+   "term": "intragastric balloon",
+   "senses": [
+    {
+     "term": "intragastric balloon (IGB)",
+     "plain": "one or more silicone balloons placed in the stomach empty through an endoscope, filled there, and taken out, typically within six months",
+     "where": "Book 11, section 8"
     }
    ]
   },
@@ -5284,6 +5579,16 @@
    ]
   },
   {
+   "term": "labour economics",
+   "senses": [
+    {
+     "term": "labour economics",
+     "plain": "the study of work and pay: who is employed, at what wage, and why",
+     "where": "Book 11, section 11"
+    }
+   ]
+  },
+  {
    "term": "lacteals",
    "senses": [
     {
@@ -5449,6 +5754,16 @@
    ]
   },
   {
+   "term": "leptin",
+   "senses": [
+    {
+     "term": "leptin",
+     "plain": "a hormone made mainly in fat tissue; how much there is reflects how much fat the body holds",
+     "where": "Book 11, section 6"
+    }
+   ]
+  },
+  {
    "term": "level",
    "senses": [
     {
@@ -5599,6 +5914,16 @@
    ]
   },
   {
+   "term": "logistic regression",
+   "senses": [
+    {
+     "term": "logistic regression",
+     "plain": "the ordinary statistical way to predict whether a person has, or will get, a condition",
+     "where": "Book 11, section 7"
+    }
+   ]
+  },
+  {
    "term": "long tail",
    "senses": [
     {
@@ -5655,6 +5980,16 @@
      "term": "lurking variable",
      "plain": "anything other than the method that affects the score",
      "where": "Book 8, section 2"
+    }
+   ]
+  },
+  {
+   "term": "machine learning",
+   "senses": [
+    {
+     "term": "machine learning",
+     "plain": "computer methods, such as artificial neural networks, support vector machines and random forests, offered as alternatives to logistic regression",
+     "where": "Book 11, section 7"
     }
    ]
   },
@@ -5759,6 +6094,16 @@
    ]
   },
   {
+   "term": "master plan",
+   "senses": [
+    {
+     "term": "master plan",
+     "plain": "a city&#x27;s plan for how its land is used and where its roads and transport go as it grows",
+     "where": "Book 11, section 13"
+    }
+   ]
+  },
+  {
    "term": "matrix",
    "senses": [
     {
@@ -5839,6 +6184,16 @@
    ]
   },
   {
+   "term": "media buying",
+   "senses": [
+    {
+     "term": "media buying",
+     "plain": "paying for the space or airtime in which a message runs",
+     "where": "Book 11, section 15"
+    }
+   ]
+  },
+  {
    "term": "median",
    "senses": [
     {
@@ -5865,6 +6220,26 @@
      "term": "megajoule",
      "plain": "a million joules, a thousand kilojoules; mega means 10^6, a million",
      "where": "Book 1, section 2"
+    }
+   ]
+  },
+  {
+   "term": "memorandum of understanding",
+   "senses": [
+    {
+     "term": "memorandum of understanding (MoU)",
+     "plain": "a written agreement between two bodies about what each will do",
+     "where": "Book 11, section 14"
+    }
+   ]
+  },
+  {
+   "term": "Mendelian randomisation",
+   "senses": [
+    {
+     "term": "Mendelian randomisation (MR)",
+     "plain": "a way of using genes to test whether an exposure causes an outcome (named only; taught in Book 40)",
+     "where": "Book 11, section 6"
     }
    ]
   },
@@ -6095,6 +6470,16 @@
      "term": "narrative review",
      "plain": "a summary of published work on a topic",
      "where": "Book 9, section 1"
+    }
+   ]
+  },
+  {
+   "term": "natural experiment",
+   "senses": [
+    {
+     "term": "natural experiment",
+     "plain": "a situation in which something outside a person&#x27;s own choice shifts the thing being studied, such as their weight",
+     "where": "Book 11, section 11"
     }
    ]
   },
@@ -6549,6 +6934,16 @@
    ]
   },
   {
+   "term": "owner",
+   "senses": [
+    {
+     "term": "owner (of a question)",
+     "plain": "the person or office whose job it is to answer it",
+     "where": "Book 11, section 1"
+    }
+   ]
+  },
+  {
    "term": "P value",
    "senses": [
     {
@@ -6629,6 +7024,16 @@
    ]
   },
   {
+   "term": "patent",
+   "senses": [
+    {
+     "term": "patent",
+     "plain": "a time-limited right to stop others making or selling an invention",
+     "where": "Book 11, section 10"
+    }
+   ]
+  },
+  {
    "term": "path",
    "senses": [
     {
@@ -6685,6 +7090,16 @@
      "term": "percentage point",
      "plain": "the plain difference between two percentages, as against per cent, which divides",
      "where": "Book 0, A4"
+    }
+   ]
+  },
+  {
+   "term": "percentile",
+   "senses": [
+    {
+     "term": "percentile",
+     "plain": "where a score stands among others: the 12th percentile is above 12 in every 100",
+     "where": "Book 11, section 2"
     }
    ]
   },
@@ -6789,6 +7204,26 @@
    ]
   },
   {
+   "term": "planetary health",
+   "senses": [
+    {
+     "term": "planetary health",
+     "plain": "the health of people together with the natural systems they depend on",
+     "where": "Book 11, section 12"
+    }
+   ]
+  },
+  {
+   "term": "planetary health diet",
+   "senses": [
+    {
+     "term": "planetary health diet (reference diet)",
+     "plain": "the EAT–Lancet Commission&#x27;s diet meant to be healthy for people and within the planet&#x27;s limits",
+     "where": "Book 11, section 12"
+    }
+   ]
+  },
+  {
    "term": "planning and budgeting",
    "senses": [
     {
@@ -6835,6 +7270,16 @@
      "term": "policy analyst",
      "plain": "the OpenStax textbook&#x27;s word for someone who informs policy: sets out the options, the evidence on each and how uncertain it is, without choosing",
      "where": "Book 5, section 17"
+    }
+   ]
+  },
+  {
+   "term": "polygenic score",
+   "senses": [
+    {
+     "term": "polygenic score",
+     "plain": "a number that adds up a person&#x27;s risk variants, each weighted by its effect in a GWAS",
+     "where": "Book 11, section 6"
     }
    ]
   },
@@ -7189,6 +7634,16 @@
    ]
   },
   {
+   "term": "professional society",
+   "senses": [
+    {
+     "term": "professional society",
+     "plain": "a body of people in one field",
+     "where": "Book 11, section 16"
+    }
+   ]
+  },
+  {
    "term": "project folder",
    "senses": [
     {
@@ -7275,6 +7730,26 @@
      "term": "public policy",
      "plain": "what public bodies do about matters of concern to some part of society, including the outcomes their action creates and a choice not to act",
      "where": "Book 5, section 1"
+    }
+   ]
+  },
+  {
+   "term": "public procurement",
+   "senses": [
+    {
+     "term": "public procurement",
+     "plain": "a government body buying goods or services under its financial rules; for the Union government&#x27;s offices, the General Financial Rules 2017",
+     "where": "Book 11, section 14"
+    }
+   ]
+  },
+  {
+   "term": "public sentence",
+   "senses": [
+    {
+     "term": "public sentence (the)",
+     "plain": "the sentence &quot;That is outside what I can assess, and here is who can.&quot;, said in public after the part you can answer and before the owner",
+     "where": "Book 11, section 1"
     }
    ]
   },
@@ -7469,6 +7944,16 @@
    ]
   },
   {
+   "term": "rare-variant burden test",
+   "senses": [
+    {
+     "term": "rare-variant burden test",
+     "plain": "adding up the rare changes in one gene across people and testing them together against a trait",
+     "where": "Book 11, section 6"
+    }
+   ]
+  },
+  {
    "term": "rate constant",
    "senses": [
     {
@@ -7549,6 +8034,16 @@
    ]
   },
   {
+   "term": "reach",
+   "senses": [
+    {
+     "term": "reach (of a campaign)",
+     "plain": "the estimated number of people in the audience who will see the message",
+     "where": "Book 11, section 15"
+    }
+   ]
+  },
+  {
    "term": "readability formula",
    "senses": [
     {
@@ -7565,6 +8060,16 @@
      "term": "README",
      "plain": "a short plain-text file at the top of the project folder that says what the project is and where the data came from, and gives the one command that reruns the analysis and the folder to run it from",
      "where": "Book 6, section 10, Book 6, section 7"
+    }
+   ]
+  },
+  {
+   "term": "recall test",
+   "senses": [
+    {
+     "term": "recall test",
+     "plain": "asking a sample of people what they remember of an advert, with cues (aided) or without (unaided)",
+     "where": "Book 11, section 11"
     }
    ]
   },
@@ -7749,6 +8254,16 @@
    ]
   },
   {
+   "term": "reply",
+   "senses": [
+    {
+     "term": "reply",
+     "plain": "what the owner sends back",
+     "where": "Book 11, section 5"
+    }
+   ]
+  },
+  {
    "term": "report of activities",
    "senses": [
     {
@@ -7855,6 +8370,16 @@
      "term": "response variable",
      "plain": "the thing the teaching is meant to change; each Kirkpatrick level names a different one",
      "where": "Book 8, section 13"
+    }
+   ]
+  },
+  {
+   "term": "responsive",
+   "senses": [
+    {
+     "term": "responsive (reply)",
+     "plain": "a reply you can use for the decision the question served, because it passes the five checks: asked, how sure, own field, references, decision",
+     "where": "Book 11, section 5"
     }
    ]
   },
@@ -7984,7 +8509,7 @@
     {
      "term": "risk of bias",
      "plain": "flaws in how the studies were run that push the estimate one way",
-     "where": "Book 10, section 6"
+     "where": "Book 10, section 6, Book 11, section 7"
     }
    ]
   },
@@ -8025,6 +8550,26 @@
      "term": "rounding",
      "plain": "choosing which place to stop at, and adjusting the last kept digit for what follows it",
      "where": "Book 0, A3"
+    }
+   ]
+  },
+  {
+   "term": "route",
+   "senses": [
+    {
+     "term": "route (a question)",
+     "plain": "notice that a question has left what you can assess, name the person or office whose job it is to answer it, and send it to them as a question they can answer",
+     "where": "Book 11, section 1"
+    }
+   ]
+  },
+  {
+   "term": "routed question",
+   "senses": [
+    {
+     "term": "routed question",
+     "plain": "a question written in five parts (decision, context, question, form, deadline) so that its owner can answer it in a form you can use",
+     "where": "Book 11, section 4"
     }
    ]
   },
@@ -8199,6 +8744,16 @@
    ]
   },
   {
+   "term": "self-assessment",
+   "senses": [
+    {
+     "term": "self-assessment",
+     "plain": "your own judgement of how good you are at something",
+     "where": "Book 11, section 2"
+    }
+   ]
+  },
+  {
    "term": "self-citation",
    "senses": [
     {
@@ -8265,6 +8820,16 @@
      "term": "sequential colour scale",
      "plain": "colours running from light to dark, for a value that runs from low to high",
      "where": "Book 9, section 19"
+    }
+   ]
+  },
+  {
+   "term": "service rules",
+   "senses": [
+    {
+     "term": "service rules",
+     "plain": "the rules that set a government post&#x27;s pay, leave, conduct and the rest",
+     "where": "Book 11, section 14"
     }
    ]
   },
@@ -8435,6 +9000,16 @@
      "term": "simulation by hand",
      "plain": "draw, record, repeat, tabulate, with dice or a random-number table",
      "where": "Book 12, section 18"
+    }
+   ]
+  },
+  {
+   "term": "single-cell atlas",
+   "senses": [
+    {
+     "term": "single-cell atlas",
+     "plain": "a map of a tissue&#x27;s kinds of cell, made by reading which genes each cell, or its nucleus, is using",
+     "where": "Book 11, section 6"
     }
    ]
   },
@@ -8669,12 +9244,42 @@
    ]
   },
   {
+   "term": "statistical genetics",
+   "senses": [
+    {
+     "term": "statistical genetics",
+     "plain": "finding, with statistics on many people&#x27;s DNA, which variants go with a trait and which gene they act through",
+     "where": "Book 11, section 6"
+    }
+   ]
+  },
+  {
    "term": "statute",
    "senses": [
     {
      "term": "statute",
      "plain": "a law enacted by Parliament or a State Legislature, each called an Act",
      "where": "Book 0, F5"
+    }
+   ]
+  },
+  {
+   "term": "statutory accounts",
+   "senses": [
+    {
+     "term": "statutory accounts",
+     "plain": "accounts a law or a rule requires a body to keep",
+     "where": "Book 11, section 14"
+    }
+   ]
+  },
+  {
+   "term": "statutory commission",
+   "senses": [
+    {
+     "term": "statutory commission",
+     "plain": "a body a statute sets up",
+     "where": "Book 11, section 9"
     }
    ]
   },
@@ -8870,6 +9475,16 @@
      "term": "syllable",
      "plain": "one beat of a spoken word",
      "where": "Book 9, section 11"
+    }
+   ]
+  },
+  {
+   "term": "syndemic",
+   "senses": [
+    {
+     "term": "syndemic",
+     "plain": "epidemics that occur together in time and place, interact, and share underlying causes",
+     "where": "Book 11, section 12"
     }
    ]
   },
@@ -9134,6 +9749,16 @@
    ]
   },
   {
+   "term": "trademark",
+   "senses": [
+    {
+     "term": "trademark",
+     "plain": "a brand&#x27;s name or mark",
+     "where": "Book 11, section 10"
+    }
+   ]
+  },
+  {
    "term": "Transaction of Business Rules",
    "senses": [
     {
@@ -9150,6 +9775,16 @@
      "term": "transcript",
      "plain": "a written version of an interview recording, made by a person or a program; the text that analysis works on",
      "where": "Book 3, section 10"
+    }
+   ]
+  },
+  {
+   "term": "transcriptome-wide association study",
+   "senses": [
+    {
+     "term": "transcriptome-wide association study (TWAS)",
+     "plain": "testing whether a gene&#x27;s predicted activity goes with a trait",
+     "where": "Book 11, section 6"
     }
    ]
   },
@@ -9190,6 +9825,16 @@
      "term": "triglyceride",
      "plain": "the molecule fat is made of, in food and in a body alike",
      "where": "Book 0, E6"
+    }
+   ]
+  },
+  {
+   "term": "TRIPS Agreement",
+   "senses": [
+    {
+     "term": "TRIPS Agreement",
+     "plain": "the WTO&#x27;s agreement on intellectual property, which its members must give effect to in their own legal systems",
+     "where": "Book 11, section 10"
     }
    ]
   },
@@ -9424,6 +10069,16 @@
    ]
   },
   {
+   "term": "variant",
+   "senses": [
+    {
+     "term": "variant (genetic)",
+     "plain": "a place where people&#x27;s DNA differs, often by one letter",
+     "where": "Book 11, section 6"
+    }
+   ]
+  },
+  {
    "term": "vector",
    "senses": [
     {
@@ -9484,6 +10139,16 @@
    ]
   },
   {
+   "term": "vignette",
+   "senses": [
+    {
+     "term": "vignette (case vignette)",
+     "plain": "a written patient case given to doctors to diagnose, standing in for a real patient",
+     "where": "Book 11, section 2"
+    }
+   ]
+  },
+  {
    "term": "villi",
    "senses": [
     {
@@ -9510,6 +10175,26 @@
      "term": "voice",
      "plain": "which of the doer and the thing acted on is the subject: whether the subject did the action or received it; tense says when",
      "where": "Book 9, section 6"
+    }
+   ]
+  },
+  {
+   "term": "wage penalty",
+   "senses": [
+    {
+     "term": "wage penalty",
+     "plain": "lower pay for one group than for otherwise similar workers",
+     "where": "Book 11, section 11"
+    }
+   ]
+  },
+  {
+   "term": "Wards Committee",
+   "senses": [
+    {
+     "term": "Wards Committee",
+     "plain": "a committee for one ward or several, which the Constitution requires in a municipality of three lakh people or more; for one ward, the ward&#x27;s councillor chairs it",
+     "where": "Book 11, section 3"
     }
    ]
   },

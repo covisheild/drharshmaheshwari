@@ -1,0 +1,189 @@
+{
+ "format": 1,
+ "id": "s61-r1-c02",
+ "label": "2",
+ "title": "Improvising, not ignorance: confidence that does not follow accuracy",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-16.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"373\">Improvising</dfn> is giving a confident answer to a question past your <dfn data-g=\"237\">edge</dfn>, where you cannot <dfn data-g=\"103\">check</dfn> your own reasoning. It is possible because <dfn data-g=\"151\">confidence</dfn> does not reliably follow <dfn data-g=\"8\">accuracy</dfn>. Three findings show this, each in its own sample and setting.</p>\n<p>In 2013 Meyer and colleagues gave 118 general internists — doctors of adult internal medicine — in the United States four written patient cases to diagnose online, two easier and two more difficult. The physicians diagnosed 55.3% of the easier cases correctly and 5.8% of the more difficult ones. Their mean confidence, on a scale from 0 to 10, was 7.2 for the easier cases and 6.4 for the more difficult ones.</p>\n<p>In 2006 Davis and colleagues reviewed 17 studies, limited to five English-speaking countries, that compared doctors’ judgements of their own competence with an outside measure. Of 20 such comparisons, 13 found little, no or an inverse relationship (the higher the self-rating, the lower the measured skill), and 7 found a positive one (the two rose together).</p>\n<p>In 1999 Kruger and Dunning ran four studies, on tests of humour, grammar and logic; the first was of 65 Cornell University undergraduates. Those who scored in the bottom quarter scored, on average, at the 12th <dfn data-g=\"561\">percentile</dfn> (above 12 in every 100 people tested) and placed themselves at the 62nd.</p>\n<p>The curriculum this book follows says “the commonest failure at this boundary is not ignorance but improvisation”. No study we hold measures this. None of these counts which failure is commonest. Each shows confidence that does not follow accuracy, which is what makes improvising possible.</p>",
+   "refs": [
+    15,
+    15,
+    16,
+    15,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    25,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    26,
+    31,
+    31,
+    32,
+    33,
+    33,
+    34,
+    34,
+    34,
+    35,
+    34,
+    34,
+    36,
+    35
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>At the edge of what you know, you can fail in two ways. You can say “I don’t know”. Or you can answer anyway.</p>\n<p>Answering anyway is improvising — giving a confident answer to a question past your edge, where you cannot check your own reasoning. It sounds like an answer. So the listener cannot see the gap.</p>\n<p>Why not just feel for the gap? Because the feeling of being sure moves much less than accuracy does. Meyer and colleagues gave United States physicians written cases to diagnose. The physicians were right about half the time on the easier cases (55.3%) and fewer than one time in ten on the harder ones (5.8%). Their confidence moved only from 7.2 to 6.4 out of 10.</p>\n<p>If your sense of certainty barely drops when you are mostly wrong, it cannot be the alarm that tells you to stop.</p>\n<p>Davis and colleagues made a <dfn data-g=\"786\">systematic review</dfn> of this in 2006 — a study of studies. In 13 of 20 comparisons, doctors’ own ratings of their skill had little, no or an inverse relationship with an outside measure — an inverse relationship meaning the higher the self-rating, the lower the measured skill.</p>\n<p>The curriculum this book follows — the written plan this course is built from — says “the commonest failure at this boundary is not ignorance but improvisation”. No study we hold measures this. What is measured is three findings: Meyer’s and Davis’s above, and one by Kruger and Dunning below.</p>\n<p>None of these counts which failure is commonest. Each shows confidence that does not follow accuracy, which is what makes improvising possible.</p>\n<p>Kruger and Dunning argue that the danger zone is the field you know a little of. They say their “data do not speak to this issue directly”, so this is their reasoning, not a result. They write that “most people have no trouble identifying their inability to translate Slovenian proverbs, reconstruct an 8-cylinder engine, or diagnose acute disseminated encephalomyelitis”. In such fields, “without even an intuition of how to respond, people do not overestimate their ability”. To overestimate, “they must satisfy a minimal threshold of knowledge, theory, or experience”.</p>\n<p>The fields this book routes are ones a community medicine doctor knows a little of. If Kruger and Dunning are right, that is the zone where improvising happens.</p>\n<p>Since the feeling will not warn you, use rules. Run the edge test on any question someone will act on.</p>\n<p>Kruger and Dunning’s own result points the same way. Skill in a field is what lets you judge answers in it. In their fourth study, the lowest-scoring quarter, after a short training packet, graded their own answers far more accurately than those who were not given it; Illustration 2 below gives the numbers. You will not gain that skill in every field this book names. So for most of them you <dfn data-g=\"696\">route</dfn>.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s61-r1-c02-meyer-accuracy.png",
+   "alt": "Two bars: easier cases, 55.3% diagnosed correctly; more difficult cases, 5.8%.",
+   "w": 1360,
+   "h": 656,
+   "caption": "Cases diagnosed correctly by 118 general internists in the United States, who each diagnosed four written cases (vignettes) online, two easier and two more difficult: 55.3% of the easier cases and 5.8% of the more difficult. These were written cases, not real patients."
+  },
+  {
+   "t": "figure",
+   "src": "s61-r1-c02-meyer-confidence.png",
+   "alt": "Two bars: easier cases, mean confidence 7.2 out of 10; more difficult cases, 6.4.",
+   "w": 1360,
+   "h": 656,
+   "caption": "The same 118 physicians’ mean confidence in their diagnosis, on a scale of 0 to 10: 7.2 for the easier cases and 6.4 for the more difficult, while accuracy fell from 55.3% to 5.8%."
+  },
+  {
+   "t": "figure",
+   "src": "s61-r1-c02-davis-comparisons.png",
+   "alt": "Two bars: 13 comparisons with little, no or inverse relationship; 7 with a positive relationship.",
+   "w": 1360,
+   "h": 760,
+   "caption": "Davis and colleagues’ systematic review of 17 studies limited to five English-speaking countries: of 20 comparisons between doctors’ self-assessment and an outside measure, 13 found little, no or an inverse relationship and 7 found a positive one."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Before you read on, write down two guesses. A group of practising general internists is given hard written cases and gets almost all of them wrong. On a scale of 0 to 10, how confident do you think they say they are? And when the cases get harder, do you think they ask colleagues for more help?</p>\n<p>Now open Meyer and colleagues, “Physicians’ diagnostic accuracy, confidence, and resource requests: a <dfn data-g=\"842\">vignette</dfn> study”, <em>JAMA Internal Medicine</em> 2013, at https://doi.org/10.1001/jamainternmed.2013.10081. Read the <dfn data-g=\"5\">abstract</dfn>. The study <dfn data-g=\"829\">used</dfn> case vignettes — written patient cases given to doctors to diagnose, standing in for real patients. The authors “recruited general internists from an online physician community”. The 118 physicians each diagnosed four cases, two easier and two more difficult. They rated their confidence in each diagnosis on a scale of 0 to 10.</p>\n<p>Here are the results.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Cases</td>\n<td>Diagnosed correctly (%)</td>\n<td>Mean confidence (out of 10)</td>\n</tr>\n<tr>\n<td>easier</td>\n<td>55.3</td>\n<td>7.2</td>\n</tr>\n<tr>\n<td>more difficult</td>\n<td>5.8</td>\n<td>6.4</td>\n</tr>\n</tbody>\n</table>\n<p>Work out how far each column moved. Use <dfn data-g=\"558\">percentage</dfn> points for the first column, because it is a difference between two percentages. Book 0’s section on percentages explains the difference between a <dfn data-g=\"560\">percentage point</dfn> and a per cent.</p>\n<div class=\"working\">\n<p>55.3 minus 5.8 = 49.5 percentage points fewer cases right<br />\n7.2 minus 6.4 = 0.8 points less confident, on a scale of 10</p>\n</div>\n<p>Compare with your guesses. Accuracy fell from about half to fewer than one in ten. Confidence fell by less than one point out of ten.</p>\n<p>Now the second guess. Search the article for “second opinions”. Confidence went with fewer requests for one thing only: “additional diagnostic tests”. When confidence or accuracy was lower, or the case was harder, “physicians did not request more second opinions, curbside consultations, or referrals”. A curbside consultation is informal advice asked of a colleague in passing. Fewer second opinions went with more years of experience, not with confidence: the authors write that “increased experience was associated with decreased likelihood to request second opinions”. Read that sentence twice, because it is easy to misquote.</p>\n<p>Why this matters for routing. The authors’ own line is that “This mismatch might prevent physicians from reexamining difficult cases where their diagnosis may be incorrect”. At the edge of your competence, the hard case is the question from another field.</p>",
+   "numberRefs": [
+    37
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>These were written cases on a website, not patients. The authors say their “methods of case delivery limit real-world validity of the study”. The physicians were United States general internists who chose to take part: 118 of the 658 who viewed the invitation, a recruitment rate of 17.9%. They answered inside their own field. Nobody tested doctors answering questions from another field, which is this book’s case, and nobody tested Indian doctors. What would overturn the <dfn data-g=\"292\">finding</dfn> is a study in real clinical settings in which confidence fell as far as accuracy did. The authors themselves write “If confirmed in real clinical settings”.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Open Davis and colleagues, “Accuracy of physician <dfn data-g=\"714\">self-assessment</dfn> compared with observed measures of competence: a systematic review”, <em>JAMA</em> 2006, at https://doi.org/10.1001/jama.296.9.1094. The search found 725 articles, and 17 met all the inclusion criteria. Each compared physicians’ “self-rated assessments with external observations”, in studies from the United Kingdom, Canada, the United States, Australia and New Zealand. Of 20 comparisons, 13 showed little, no or an inverse relationship, and 7 showed a positive one. Some studies made more than one comparison, so 17 studies gave 20. That is 13 and 7 out of 20.</p>\n<p>Here is one example of an inverse relationship from the review: “physicians who believed themselves to be better at detecting hidden emotions were in fact less accurate than their colleagues”.</p>\n<p>Who was worst? “A number of studies found” it was “the least skilled and those who were the most confident”. In the studies that found poor self-assessment, the finding did not depend on “<dfn data-g=\"441\">level</dfn> of training, specialty”.</p>\n<p>Now open Kruger and Dunning, “Unskilled and unaware of it”, <em>Journal of Personality and Social Psychology</em> 1999, at https://doi.org/10.1037/0022-3514.77.6.1121. They ran four studies, on tests of humour, grammar and logic. Study 1 had 65 Cornell University undergraduates. The abstract reports percentiles. A percentile is where a score stands among others: the 12th percentile is above 12 in every 100. The participants in the bottom quarter — the lowest-scoring quarter of the group — scored at the 12th percentile on average and placed themselves at the 62nd.</p>\n<p>Then read the passage that matters most for this book. It is an argument, not a result: the authors say their “data do not speak to this issue directly”. In fields where people have no idea at all, they argue, people do not overestimate themselves. To overestimate, “they must satisfy a minimal threshold of knowledge, theory, or experience”. Ask yourself which of the fields in this book’s contents you know a little of. Those are your danger zone.</p>\n<p>Last, what fixed it in their experiment. After a short training packet in logic, the bottom group graded their own answers far better. They identified 9.3 of the 10 problems accurately as right or wrong, on average, against 3.5 for bottom-quarter participants who were not given the packet. Skill in the field gave them the means to judge themselves in it. You will not gain that skill in every field this book names, which is why you route.</p>",
+   "numberRefs": [
+    38,
+    39
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Davis and colleagues call their evidence “suboptimal in quality”, and the studies were too varied to pool — to combine into one estimate, which is what a <dfn data-g=\"485\">meta-analysis</dfn> does — “precluding a meta-analytic approach”. Seven of the 20 comparisons did find a positive relationship, so self-assessment is poor, not worthless. Kruger and Dunning tested people on jokes, grammar and logic (Study 1’s were undergraduates), not doctors on medicine. They raise themselves that part of the bottom group’s overestimate is a statistical artefact: scoring near the bottom, “it was nearly impossible for them to underestimate their performance”. They judge the rest “more psychological than artifactual”. They also say they do not mean to imply that people are “always unaware of their incompetence”. Neither paper studied anyone answering a question from another field.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Do not expect to feel unsure when you are wrong. Use the edge test, not the feeling.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>Never say that confident physicians asked for fewer second opinions. In Meyer and colleagues’ study, higher confidence went with fewer requests for additional diagnostic tests.</p>",
+     "tag": "trap",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Expect to improvise in the field you know a little of. Kruger and Dunning argue, without having tested it, that people with no idea of a field do not overestimate themselves in it.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not assume seniority fixes this. In Davis and colleagues’ review, where self-assessment was poor, it was poor at every level of training and in every specialty studied.</p>",
+     "tag": "consequence",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Do not state that improvising is the commonest failure at the edge. The curriculum this book follows says so, and no study this book holds measures it. A study would settle it. It would take errors made at the edge of professionals’ competence and classify each by cause. It would count answers given anyway against gaps the person knew and said. Until then, cite the three findings, not the <dfn data-g=\"114\">claim</dfn>.</p>",
+     "tag": "dispute",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Do not quote these findings as a measured error rate for yourself or for doctors in India. None studied Indian doctors, and none studied anyone answering outside their own field.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“These studies show that confident people are usually wrong.” They do not. Meyer and colleagues’ physicians were right about half the time on the easier cases, at a confidence of 7.2 out of 10. The finding is that confidence barely moved when accuracy fell a long way. Confidence is a poor guide to accuracy, not a reverse one.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: what is improvising, and why is it possible? Name the three findings, each with its sample and setting and the one number or result you would quote.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Improvising is giving a confident answer to a question past your edge, where you cannot check your own reasoning. It is possible because confidence does not reliably follow accuracy.</p>\n<p>Meyer and colleagues (2013) studied 118 general internists in the United States. They diagnosed four written cases online. Accuracy was 55.3% on easier and 5.8% on harder cases. Confidence was 7.2 and 6.4 out of 10.</p>\n<p>Davis and colleagues (2006) made a systematic review of 17 studies limited to five English-speaking countries. In 13 of 20 comparisons, doctors’ self-assessment had little, no or an inverse relationship with an outside measure.</p>\n<p>Kruger and Dunning (1999) ran four studies, the first with undergraduates. The bottom quarter scored at the 12th percentile and placed themselves at the 62nd.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A colleague shows you Meyer and colleagues’ table of accuracy and confidence. It is the table with two rows in this section. The colleague says: “So doctors are overconfident about everything.” Say what the table shows, and three things it does not show.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>It shows that, on four written cases, general internists in the United States became 0.8 points less confident out of 10. Their accuracy fell by 49.5 percentage points. Confidence moved little when accuracy moved a lot.</p>\n<p>It does not show these things. First, it does not show that doctors are overconfident about everything. It covers four written cases in one field. On those cases the authors report miscalibration “in the overconfident direction”, larger on the harder cases. Second, it says nothing about real patients, since the authors say their methods of case delivery limit real-world validity. Third, it says nothing about doctors answering outside their own field, or about Indian doctors.</p>\n<p>Also, the 118 were volunteers: 17.9% of the 658 who viewed the invitation.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A made-up line from a trainee’s seminar slide: “Meyer <dfn data-g=\"264\">et al.</dfn> (2013) showed that confident doctors do not seek second opinions.” Find the error and rewrite the line.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p>The study found that higher confidence went with fewer requests for additional diagnostic tests. Fewer requests for second opinions went with more years of experience, not with confidence.</p>\n<p>A correct line: “In Meyer et al. (2013), physicians in the United States diagnosed written cases. They asked for fewer extra tests when they were more confident. They did not ask for more second opinions when they were less confident or less accurate, or when the cases were harder.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>Audience: a journalist, three minutes. A reporter from a Hindi daily asks: “Why do experts sound so sure even when they turn out to be wrong?” Answer without jargon, give one sentence they can quote, and say how strong the evidence is.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Say that feeling sure and being right are less connected than people think. In one study in the United States, doctors given hard written cases got fewer than one in ten right. They still rated their confidence at 6.4 out of 10. That is not far below the 7.2 they gave easier cases, which they got right about half the time. A review of studies of doctors judging their own skill finds the same weak link.</p>\n<p>Then give the strength of the evidence. These are several studies, mostly in the United States and other English-speaking countries, on test cases rather than real patients. They show the pattern, not how often it happens in Indian clinics.</p>\n<p>Quotable sentence: “Feeling sure is not a sign of being right, so a good expert tells you which part they can check and which part they cannot.”</p>"
+  }
+ ]
+}

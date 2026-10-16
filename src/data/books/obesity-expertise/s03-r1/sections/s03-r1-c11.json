@@ -9,7 +9,7 @@
    "t": "prose",
    "label": "Definition",
    "role": "definition",
-   "html": "<p>The <dfn data-g=\"174\">counting rule</dfn>. Suppose a task is done in stages, and the number of ways to do each stage does not depend on how the earlier stages were done. Then the number of ways to do the whole task is the product of the numbers of ways for each stage.</p>\n<p>For a whole number n, n factorial, written n! and read “n factorial”, is the product of the whole numbers from n down to 1.</p>\n<div class=\"working\">\n<p>n! = n × (n − 1) × (n − 2) × … × 2 × 1</p>\n</div>\n<p>By the counting rule, n different things can be put in a row in n! orders. The choices go down by 1 to a single one for the last. 0! is defined to be 1, which makes the formulas below hold when k is 0 or n.</p>\n<p>An ordered selection of k things from n different things, with k from 0 to n, can be made in n × (n − 1) × … × (n − k + 1) ways: k factors, starting at n and going down by 1. This equals n! ÷ (n − k)!, because the factors from (n − k) down to 1 cancel top and bottom.</p>\n<p>A choice of k things from n when order does not matter, a set rather than a row, is counted by “<dfn data-g=\"498\">n choose k</dfn>”. Each set of k can be put in a row in k! ways. So every set is counted k! times among the ordered selections. Divide by k!.</p>\n<div class=\"working\">\n<p>n choose k = [n! ÷ (n − k)!] ÷ k! = n! ÷ [k! (n − k)!]</p>\n</div>\n<p>Choosing which k to take is the same as choosing which n − k to leave, so n choose k equals n choose (n − k).</p>\n<p>Its main use in this book: take n trials, n runs of a <dfn data-g=\"102\">chance process</dfn> each sorted into one of two kinds, a <dfn data-g=\"767\">success</dfn> (the kind being counted) or a failure. The number of different orders in which exactly k successes and n − k failures can fall is n choose k, because an order is fixed by choosing which k of the n trials are the successes.</p>",
+   "html": "<p>The <dfn data-g=\"186\">counting rule</dfn>. Suppose a task is done in stages, and the number of ways to do each stage does not depend on how the earlier stages were done. Then the number of ways to do the whole task is the product of the numbers of ways for each stage.</p>\n<p>For a whole number n, n factorial, written n! and read “n factorial”, is the product of the whole numbers from n down to 1.</p>\n<div class=\"working\">\n<p>n! = n × (n − 1) × (n − 2) × … × 2 × 1</p>\n</div>\n<p>By the counting rule, n different things can be put in a row in n! orders. The choices go down by 1 to a single one for the last. 0! is defined to be 1, which makes the formulas below hold when k is 0 or n.</p>\n<p>An ordered selection of k things from n different things, with k from 0 to n, can be made in n × (n − 1) × … × (n − k + 1) ways: k factors, starting at n and going down by 1. This equals n! ÷ (n − k)!, because the factors from (n − k) down to 1 cancel top and bottom.</p>\n<p>A choice of k things from n when order does not matter, a set rather than a row, is counted by “<dfn data-g=\"535\">n choose k</dfn>”. Each set of k can be put in a row in k! ways. So every set is counted k! times among the ordered selections. Divide by k!.</p>\n<div class=\"working\">\n<p>n choose k = [n! ÷ (n − k)!] ÷ k! = n! ÷ [k! (n − k)!]</p>\n</div>\n<p>Choosing which k to take is the same as choosing which n − k to leave, so n choose k equals n choose (n − k).</p>\n<p>Its main use in this book: take n trials, n runs of a <dfn data-g=\"108\">chance process</dfn> each sorted into one of two kinds, a <dfn data-g=\"827\">success</dfn> (the kind being counted) or a failure. The number of different orders in which exactly k successes and n − k failures can fall is n choose k, because an order is fixed by choosing which k of the n trials are the successes.</p>",
    "refs": [
     99,
     100,
@@ -48,7 +48,7 @@
    "t": "prose",
    "label": "Where this picture breaks",
    "role": "breaks",
-   "html": "<p>The counts hold only when the things are all different and each is <dfn data-g=\"822\">used</dfn> at most once.</p>\n<p>The 6 missed men are Book 0’s rebuilt count, not a number the paper prints.</p>"
+   "html": "<p>The counts hold only when the things are all different and each is <dfn data-g=\"886\">used</dfn> at most once.</p>\n<p>The 6 missed men are Book 0’s rebuilt count, not a number the paper prints.</p>"
   },
   {
    "t": "mustknow",
@@ -59,7 +59,7 @@
      "bearing": "methodological"
     },
     {
-     "html": "<p><dfn data-g=\"104\">Check</dfn> a counting formula on a case small enough to list. Write out every set for 3 from 5, or every order of 2 positives among 4 people.</p>",
+     "html": "<p><dfn data-g=\"110\">Check</dfn> a counting formula on a case small enough to list. Write out every set for 3 from 5, or every order of 2 positives among 4 people.</p>",
      "tag": "move",
      "bearing": "teaching"
     },
@@ -74,7 +74,7 @@
      "bearing": "methodological"
     },
     {
-     "html": "<p>A count of ways is not a <dfn data-g=\"602\">probability</dfn>. It becomes one only if every way is equally likely, or after each way is weighted by its own chance.</p>",
+     "html": "<p>A count of ways is not a <dfn data-g=\"646\">probability</dfn>. It becomes one only if every way is equally likely, or after each way is weighted by its own chance.</p>",
      "tag": "boundary",
      "bearing": "methodological"
     },
@@ -113,14 +113,14 @@
    "n": 2,
    "prompt": "<p>Four things are labelled A, B, C and D. List every way to choose 2 of them when order does not matter. Then check your count with the formula for 4 choose 2.</p>",
    "level": 2,
-   "answer": "<p>Keep each pair in alphabetical order: AB, AC, AD, BC, BD, CD. Six <dfn data-g=\"546\">pairs</dfn>.</p>\n<div class=\"working\">\n<p>4 times 3 times 2 times 1 = 24<br />\n2 times 1 = 2<br />\n24 divided by 2 = 12<br />\n12 divided by 2 = 6</p>\n</div>\n<p>4! ÷ (2! × 2!) is 24 ÷ 4, which is 6, as listed.</p>"
+   "answer": "<p>Keep each pair in alphabetical order: AB, AC, AD, BC, BD, CD. Six <dfn data-g=\"585\">pairs</dfn>.</p>\n<div class=\"working\">\n<p>4 times 3 times 2 times 1 = 24<br />\n2 times 1 = 2<br />\n24 divided by 2 = 12<br />\n12 divided by 2 = 6</p>\n</div>\n<p>4! ÷ (2! × 2!) is 24 ÷ 4, which is 6, as listed.</p>"
   },
   {
    "t": "practice",
    "n": 3,
    "prompt": "<p>Work out 8! ÷ 5! without working out 8!.</p>",
    "level": 2,
-   "answer": "<p>Every <dfn data-g=\"274\">factor</dfn> of 5! is also a factor of 8!, so they cancel. What is left is 8 × 7 × 6.</p>\n<div class=\"working\">\n<p>8 times 7 times 6 = 336</p>\n</div>\n<p>8! ÷ 5! is 336.</p>"
+   "answer": "<p>Every <dfn data-g=\"292\">factor</dfn> of 5! is also a factor of 8!, so they cancel. What is left is 8 × 7 × 6.</p>\n<div class=\"working\">\n<p>8 times 7 times 6 = 336</p>\n</div>\n<p>8! ÷ 5! is 336.</p>"
   },
   {
    "t": "practice",

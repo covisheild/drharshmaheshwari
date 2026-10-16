@@ -1,0 +1,215 @@
+{
+ "format": 1,
+ "id": "s61-r1-c07",
+ "label": "7",
+ "title": "Methods you consult before you design: causal discovery, interference, deep learning",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-16.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"93\">Causal discovery</dfn> algorithms are computer methods that try to work out, from data, which variables cause which, and in what direction, and draw the result as a <dfn data-g=\"94\">causal graph</dfn>. A 2026 <dfn data-g=\"708\">scoping review</dfn> of their use in medical research found a critical gap in systematic assessments of how well they perform there. A causal <dfn data-g=\"380\">inference</dfn> methodologist owns this field.</p>\n<p><dfn data-g=\"396\">Interference</dfn> is present when one person’s treatment changes another person’s outcome. A methodologist owns this field, and is asked before the design is fixed.</p>\n<p><dfn data-g=\"203\">Deep learning</dfn> models learn complex patterns from very large amounts of data. A 2019 <dfn data-g=\"786\">systematic review</dfn> found that, where comparisons were at low <dfn data-g=\"691\">risk of bias</dfn>, <dfn data-g=\"460\">machine learning</dfn> and <dfn data-g=\"453\">logistic regression</dfn> predicted clinical outcomes about equally well. Building and running these systems is the job of a machine-learning engineer or data scientist, whom you work with as a collaborator.</p>",
+   "refs": [
+    107,
+    108,
+    109,
+    109,
+    110,
+    111,
+    112,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    120,
+    120,
+    121,
+    121,
+    122,
+    121,
+    122,
+    123,
+    124,
+    117,
+    125,
+    126,
+    127,
+    127,
+    128,
+    128,
+    129,
+    129,
+    128,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    132,
+    136,
+    137,
+    138,
+    139
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The last section’s fields were in the laboratory. This section’s three are methods: the kind of thing a committee is offered, or needs, before it designs a study or buys a tool. Two of them, causal discovery and interference, must be raised before the purchase or the design is fixed. The third <dfn data-g=\"545\">owner</dfn> you work with throughout. Afterwards the owner can only tell you what your data cannot show.</p>\n<p>The first field is <strong>causal discovery</strong> — a computer method that tries to work out, from data, which variables cause which. You give the algorithm a table of variables, and it returns arrows: this causes that. The arrows make up a <strong>causal graph</strong> — a drawing of variables joined by arrows from cause to effect. The owner of this field is a causal inference methodologist.</p>\n<p>The second field is <strong>interference</strong> — also called spillover: one person’s treatment changes another person’s outcome. The owner of this field is a methodologist, and you ask them before the design is fixed. Often it is the same causal inference methodologist, because the paper that names the problem treats it as part of causal inference.</p>\n<p>The third field starts with a baseline. <strong>Logistic regression</strong> — the ordinary statistical way to predict whether a person has, or will get, a condition — is the usual method. <strong>Machine learning</strong> covers other methods, such as artificial neural networks, support <dfn data-g=\"838\">vector</dfn> machines and random forests, offered as alternatives to it.</p>\n<p>Two more words come with it. <strong>Deep learning</strong> — newer machine-learning models that learn complex patterns from very large amounts of data. Naito and Okada set them apart from “conventional machine learning” methods, meaning the older ones. <strong>The <dfn data-g=\"124\">cloud</dfn></strong> — running an analysis on remote computers, which you reach by uploading your data. The owner of this field is a machine-learning engineer or data scientist, and you work with them as a collaborator.</p>\n<p>Here is who owns each field, and where to look.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Where to look</td>\n</tr>\n<tr>\n<td>Causal discovery algorithms</td>\n<td>a causal inference methodologist</td>\n<td>a biostatistics department; the authors of methods papers you have read</td>\n</tr>\n<tr>\n<td>Interference and spillover</td>\n<td>a methodologist, asked before the design is fixed</td>\n<td>a biostatistics department; the authors of methods papers you have read</td>\n</tr>\n<tr>\n<td>Deep learning and cloud infrastructure</td>\n<td>a machine-learning engineer or data scientist, as a collaborator</td>\n<td>a computer-science or data-science department; your institution’s IT office</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "figure",
+   "src": "s61-r1-c07-cholera-coverage.png",
+   "alt": "Grouped bars. Under 28% coverage: placebo recipients 7.01, vaccine recipients 2.66 cases per 1,000 per year. Over 50% coverage: placebo recipients 1.47, vaccine recipients 1.27.",
+   "w": 1360,
+   "h": 654,
+   "caption": "Cholera cases per 1,000 people per year in an individually randomised, placebo-controlled trial of killed oral cholera vaccines, by the vaccine coverage of the residential area (bari), as Hudgens and Halloran report. Where under 28% were vaccinated, vaccine recipients had 4.35 fewer cases per 1,000 than placebo recipients (7.01 against 2.66); where over 50% were vaccinated, the gap was 0.20 (1.47 against 1.27). Read group A alone and the vaccine would look as if it had little effect."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Open the 2026 scoping review by Liu and colleagues in <em>JMIR Medical Informatics</em>, at https://pmc.ncbi.nlm.nih.gov/articles/PMC13032097/. A scoping review is a map of what has been studied on a question, not a pooled analysis. Search the page for <em>met the inclusion criteria</em>.</p>\n<blockquote>\n<p>Out of 2296 identified publications, 72 (3.1%) met the inclusion criteria.</p>\n</blockquote>\n<p>So 72 studies out of 2,296 records made it into the review.</p>\n<p>Now the <dfn data-g=\"114\">claim</dfn> the curriculum makes about this field. The curriculum this book follows says that causal discovery algorithms “underperform on real epidemiological data”. No study we hold measures this. What is measured is narrower. Liu and colleagues report “a critical gap in systematic assessments of performance in medical research settings”. Zhu, Benos and Chikina say that evaluation “is typically performed on synthetic datasets”, and on their own benchmark of real biological data an algorithm called PC (the Peter-Clark algorithm, one of the commonest causal discovery methods) was “particularly accurate”. So performance on real health data is largely unmeasured, and the one real-data benchmark whose results we hold, Zhu’s on <dfn data-g=\"326\">gene</dfn> measurements in cells, does not show underperformance.</p>\n<p><dfn data-g=\"103\">Check</dfn> the second paper for yourself, so you can see what “real” meant there. Open Zhu, Benos and Chikina’s 2024 paper in <em>Bioinformatics</em>, at https://pmc.ncbi.nlm.nih.gov/articles/PMC11373380/. Search for <em>direct genetic manipulation</em>.</p>\n<blockquote>\n<p>we compile a series of biological benchmarks consisting of causal graphs inferred from direct genetic manipulation experiments and context-matched, large-scale datasets</p>\n</blockquote>\n<p>In plain words: their real data were measurements of genes in cells, and the true causes were taken from experiments in which genes were changed on purpose. They are careful about this. They write that the “ground truth”, the answer they treat as known, “is not absolute”. Now search for <em>do not meet such requirements</em>.</p>\n<blockquote>\n<p>biological datasets, frequently, do not meet such requirements</p>\n</blockquote>\n<p>Synthetic data are made to meet the requirements the methods need. Real biological data often do not.</p>\n<p>Last, ask what would settle the curriculum’s claim. Liu and colleagues say they “strongly recommend the curation of medical benchmark datasets derived from gold-standard sources, such as large-scale RCTs or well-validated longitudinal cohorts”. RCTs are randomised controlled trials: chance decides who gets the treatment, and a <dfn data-g=\"141\">comparison group</dfn> does not get it.</p>\n<p>This is the field’s kind of answer: whether an algorithm has been tested on data whose true causes were known, and what it assumes.</p>",
+   "numberRefs": [
+    140
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Zhu and colleagues tested gene measurements in cells, not records of people. Liu and colleagues found that systematic tests in medical research are missing. Neither tells you how an algorithm would do on a district’s screening records. Neither shows that the algorithms fail there, and neither shows that they work.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>A made-up meeting. At the district NCD programme review, the district NCD officer reads out a vendor’s offer. “Their AI reads our screening records and finds the causes of obesity in the district. They want an answer by Friday.”</p>\n<p>The first signal is <strong>No test</strong>. You cannot say what result would show the vendor’s arrows wrong. Nobody has told you whether the software was ever run on data where the true causes were known.</p>\n<p>Here is what you <strong>can</strong> answer. You can say what the records hold: one visit per person, and which measurements were taken. You can say that nothing in them came from an experiment. That is your own field.</p>\n<p>The tempting line is: “If the software finds it in our own data, that is real evidence.” That line improvises. It treats the software’s arrows as evidence before anyone has said what result would show them wrong.</p>\n<p>What you say to the meeting: “That is outside what I can assess, and here is who can: a causal inference methodologist. I will send one the question today and report by Thursday.” Here is the question you would ask a causal inference methodologist.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>What you write</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>Whether the district signs the vendor’s offer. The district NCD officer decides on Friday.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>The district’s NCD screening records: one visit per person, with age, sex, weight, height, waist, blood pressure and blood sugar. No data from any experiment or trial. The vendor says its software “finds the causes” from these records.</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>Can a causal discovery algorithm find causes of obesity in one-visit screening records like ours, and has the vendor’s algorithm been tested on data where the true causes were known?</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>Yes, no, or “only if these assumptions hold”, with the assumptions in plain words and the test result you would want the vendor to show. Tell me how sure you are and on what; I cannot judge the algorithm.</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Thursday, so the officer has it before Friday. If later, the district defers the offer.</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>If the vendor only wants to describe the records (how many people, how many with obesity), that is ordinary counting and yours to check. <dfn data-g=\"696\">Route</dfn> the question when the claim is about causes.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>Open Hudgens and Halloran’s 2008 paper in the <em>Journal of the American Statistical <dfn data-g=\"39\">Association</dfn></em>, at https://pmc.ncbi.nlm.nih.gov/articles/PMC2600548/. Search for <em>bari</em>.</p>\n<blockquote>\n<p>we consider data from an individually randomized, placebo-controlled trial of killed oral cholera vaccines</p>\n</blockquote>\n<blockquote>\n<p>whether the level of vaccine coverage in a residential area, called a bari, was related to the incidence of cholera in individual vaccine recipients or placebo recipients residing in the bari</p>\n</blockquote>\n<p>In plain words (incidence is the rate of new cases): it was an individually randomised trial of a cholera vaccine, and the authors looked again at its results by how many people in each residential area, called a bari, had been vaccinated. That share is the area’s coverage. Now search for <em>groups A and B</em>.</p>\n<blockquote>\n<p>For illustration, we consider the groups with more than 50% and less than 28% coverage, which we denote as groups A and B.</p>\n</blockquote>\n<p>So group A had high coverage, and group B had low coverage.</p>\n<p>The paper counts cases of cholera per 1,000 people per year. It compares vaccine recipients with placebo recipients inside each group (the paper calls the second group “unvaccinated”), and calls the gap the direct effect. A placebo is a dummy dose with no vaccine in it; placebo-controlled means the comparison group got one. In each line below, the first figure is the placebo recipients’ rate and the second the vaccine recipients’. Work out what the paper reports, one group at a time.</p>\n<div class=\"working\">\n<p>Group B, low coverage: 7.01 minus 2.66 = 4.35 fewer cases per 1,000 among the vaccinated<br />\nGroup A, high coverage: 1.47 minus 1.27 = 0.20 fewer cases per 1,000 among the vaccinated</p>\n</div>\n<p>Check each line against the paper. Search for <em>estimated direct effect</em>. The paper prints the second figure as .20.</p>\n<blockquote>\n<p>the estimated direct effect in group B is 7.01-2.66 = 4.35</p>\n</blockquote>\n<blockquote>\n<p>The estimated direct effect in group A is 1.47-1.27 = .20, considerably lower than in group B.</p>\n</blockquote>\n<p>The gap is 4.35 fewer cases per 1,000 where under 28% were vaccinated, and 0.20 where over 50% were. Now read what the authors make of it.</p>\n<blockquote>\n<p>If an analysis were limited to group A only, the evidence would suggest that the vaccine has little effect.</p>\n</blockquote>\n<p>In group A alone, the vaccine would look as if it had little effect. Search for <em>indirect protection</em>. The authors cite another analysis that concluded the vaccines “provide <dfn data-g=\"735\">significant</dfn> indirect protection to nonvaccinated individuals”. Where most neighbours are vaccinated, the people who are not vaccinated are protected too, so the gap between the two shrinks.</p>\n<p>In trials of whole groups, this leak across groups has its own name. Search for <em>contamination</em>.</p>\n<blockquote>\n<p>In the literature of group-randomized studies, violation of no interference across groups is called contamination.</p>\n</blockquote>\n<p>Why must you ask before the design is fixed? Search for <em>two-stage randomization</em>.</p>\n<blockquote>\n<p>Using an experimental design with a two-stage randomization procedure (first at the group level, then at the individual level within groups)</p>\n</blockquote>\n<p>The paper’s methods give unbiased answers only under this design: groups randomised first, then people within groups. It calls that Assumption 1. The cholera trial was randomised person by person, so the paper uses it only to illustrate. Of Assumption 1 it says:</p>\n<blockquote>\n<p>Assumption 1 is determined by the experimental design and, thus, should be under control of the investigator.</p>\n</blockquote>\n<p>So the choice is the investigator’s, and it is made when the study is designed.</p>\n<p>This is the field’s kind of answer: whether people’s outcomes depend on each other’s treatment, and which design can still separate the effects.</p>\n<p>A made-up meeting. At the <dfn data-g=\"847\">Wards Committee</dfn>, the councillor proposes a nutrition programme. Families in half the lanes of the ward, chosen by lottery, get cooking sessions and counselling for a year. The other half wait and are the comparison.</p>\n<p>The first signal is <strong>Unknown standard</strong>. You know the standard way to test a programme: chance decides who gets it, then you compare. You do not know the standard method when families in the two halves share a market, a school and recipes.</p>\n<p>Here is what you <strong>can</strong> answer. You can say how the ward would measure change: weight and waist in both halves at the start and after a year. That part is yours.</p>\n<p>The tempting line is: “The lottery takes care of it; any difference will be the programme’s.” That line improvises. It assumes the families in the comparison lanes are untouched by the programme, and you do not know that they are.</p>\n<p>What you say to the committee: “That is outside what I can assess, and here is who can: a methodologist. I will ask one before we fix the lanes.” Here is the question you would ask a methodologist.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>What you write</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>Whether the committee approves this design for the ward’s nutrition programme. The councillor and the committee decide at their next meeting.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>Families in neighbouring lanes share a market, a school and recipes. The programme gives cooking sessions and counselling to families in half the lanes, chosen by lottery. We would measure weight and waist in both halves at the start and after a year.</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>If families in programme lanes share what they learn with families in comparison lanes, what design would still let us tell whether the programme worked, and is this design one?</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>A recommendation: keep this design, change it (and how), or do not compare lane against lane. Tell me how sure you are and on what. I cannot judge the statistics of the design.</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Before the committee meets in three weeks. After that the lanes are fixed and the design cannot change.</td>\n</tr>\n</tbody>\n</table>",
+   "numberRefs": [
+    141
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Cholera spreads from person to person, so a vaccine protects neighbours by biology. A nutrition programme can spread only if people share food, recipes or advice. The trial shows that spillover can hide a real effect; it does not tell you whether, or how much, a ward nutrition programme would spill over.</p>\n<p>If the programme reached every family in the ward and nobody was compared, there would be no comparison for spillover to blur. Then the methodologist’s question changes, and so does the design.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 4",
+   "role": "illustration",
+   "html": "<p>Open the 2019 systematic review by Christodoulou and colleagues in the <em>Journal of Clinical Epidemiology</em>, at https://doi.org/10.1016/j.jclinepi.2019.02.004. It is behind a paywall, so your library may hold it. A systematic review is a study of studies. Search for <em>71 of 927</em>.</p>\n<blockquote>\n<p>We included 71 of 927 studies.</p>\n</blockquote>\n<p>Then search for <em>282 comparisons</em>.</p>\n<blockquote>\n<p>We identified 282 comparisons between an LR and ML model</p>\n</blockquote>\n<p>LR is logistic regression, and ML is machine learning. The review compared the two in 282 <dfn data-g=\"548\">pairs</dfn>.</p>\n<p><strong>Risk of bias</strong>, met in Book 10, means flaws in how the studies were run that push the estimate one way. The authors scored five warning signs in each comparison: unclear or biased checking of how well the models performed; variables picked by the data for one method and not the other; <dfn data-g=\"169\">continuous</dfn> measurements handled differently for the two; different predictors given to each; and a correction for rare outcomes <dfn data-g=\"829\">used</dfn> for only one. A comparison counted as at low risk of bias only if all five were scored absent; “unclear” on any one counted as high risk.</p>\n<p>Search for <em>similar when comparisons were at low risk of bias</em>.</p>\n<blockquote>\n<p>The AUC of logistic regression and machine learning models for clinical risk prediction were similar when comparisons were at low risk of bias; machine learning (ML) performance was higher in comparisons that were at high risk of bias.</p>\n</blockquote>\n<p>In plain words: where the comparison was done carefully, the two methods did about equally well. Machine learning came out ahead only where the comparison was done less carefully. AUC, the area under the receiver operating characteristic curve, is the measure 64 of the 71 studies used to assess discrimination: how well a model separates people who have the outcome from people who do not. It runs from 0.50, no better than tossing a coin, to 1.0, perfect <dfn data-g=\"592\">prediction</dfn>. Now search for <em>do not automatically lead</em>.</p>\n<blockquote>\n<p>ML models do not automatically lead to improved performance over traditional methods.</p>\n</blockquote>\n<p>Why might that be? The review says machine learning “tends to work well for problems with a strong signal-to-noise <dfn data-g=\"642\">ratio</dfn>”, for example “handwriting recognition, gaming, or electric <dfn data-g=\"448\">load</dfn> forecasting”. A strong signal means the pattern stands out clearly from the random scatter.</p>\n<p>Now deep learning, from a second source. Open Naito and Okada’s 2024 review, at https://doi.org/10.1038/s10038-023-01213-6. It is about filling in missing <dfn data-g=\"223\">DNA</dfn> letters, which you met in the last section. Search for <em>modest <dfn data-g=\"8\">accuracy</dfn> improvement</em>.</p>\n<blockquote>\n<p>the current deep learning-based genotype imputation methods do have certain limitations and have not yet become standard. These limitations include the modest accuracy improvement over statistical and conventional machine learning-based methods.</p>\n</blockquote>\n<p>In that field, so far, deep-learning methods give a modest gain over older ones. The review says nothing about deep learning in other fields. Now search for <em>by uploading <dfn data-g=\"329\">genotype</dfn> data</em>.</p>\n<blockquote>\n<p>Genotype imputation servers enable users to perform genotype imputation remotely solely by uploading genotype data of target samples.</p>\n</blockquote>\n<p>That is what the cloud means in practice: you do the analysis remotely, by uploading your data. The review describes one such server as “a secure cloud-based imputation platform”.</p>\n<p>This is the field’s kind of answer: whether a newer method beats an older one on your kind of problem, measured fairly.</p>",
+   "numberRefs": [
+    142
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The review searched studies from January 2016 to August 2017, and its authors say new studies will have appeared since. Its machine learning includes neural networks but is not deep learning in particular. It compares predictions, not tools in use: it says nothing about cost, <dfn data-g=\"601\">privacy</dfn>, or what happens to data uploaded to someone else’s computers.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 5",
+   "role": "illustration",
+   "html": "<p>A made-up meeting. The same vendor has a second offer for the district NCD officer: a deep-learning tool that predicts who will develop diabetes. The district uploads its records to the vendor’s cloud and gets back a risk score for each person.</p>\n<p>The first signal is <strong>One source</strong>. Your only evidence is the vendor’s brochure, with one accuracy figure from one hospital. You cannot judge it.</p>\n<p>Here is what you <strong>can</strong> answer. You can say what the district would do with a score: who gets called back, by whom, and what they are offered. That decision is yours and the officer’s.</p>\n<p>The tempting line is: “Deep learning beats old statistics, so this will be better than anything we have.” That line improvises. The 2019 review found machine learning no better than logistic regression where comparisons were at low risk of bias, and a brochure figure from one hospital does not say how the tool would do on your records.</p>\n<p>What you say to the meeting: “That is outside what I can assess, and here is who can: a data scientist. I will ask one before Friday.” Here is the question you would ask a machine-learning engineer or data scientist.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>What you write</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>Whether the district pays for the tool and uploads its records to it. The district NCD officer decides on Friday.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>The vendor’s brochure gives one accuracy figure from one hospital’s data. The tool runs on the vendor’s remote computers, and the records hold patients’ personal details. A 2019 review found machine learning no better than logistic regression where comparisons were at low risk of bias.</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>Would this tool predict diabetes among our district’s people better than a simple regression model built on the same records, and what test would show it?</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>Yes, no, or “cannot tell without this test”, with who should run the test with us. Tell me how sure you are and on what. I cannot judge the model.</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Thursday, before the officer decides on Friday. If later, the district defers the offer.</td>\n</tr>\n</tbody>\n</table>\n<p>Uploading patients’ records raises questions of privacy and permission. They belong to other owners, the institution’s IT office first, and this question does not answer them.</p>\n<p>Now add three rows to your <dfn data-g=\"166\">contact list</dfn>, in the columns you met in the last section.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Name and institution</td>\n<td>How you know them</td>\n<td>Last question asked</td>\n<td>Asked on</td>\n<td>Checked on</td>\n</tr>\n<tr>\n<td>Causal discovery algorithms</td>\n<td>a causal inference methodologist</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>Can causal discovery find causes in one-visit records, and was the tool tested where causes were known?</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Interference and spillover</td>\n<td>a methodologist, before the design is fixed</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>What design still works if programme lanes share with comparison lanes?</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Deep learning and cloud infrastructure</td>\n<td>a machine-learning engineer or data scientist</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>Does this tool beat a simple regression on our records, and what test shows it?</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>If the district only needs to sort its records or draw a chart, no data scientist is needed. Route the question when someone claims a model will predict better than what you can build and check yourself.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The curriculum this book follows says causal discovery algorithms “underperform on real epidemiological data”. A benchmark would settle it. The algorithms would be run on real health data whose causes are already known, for example from large randomised trials or well-validated cohorts, as Liu and colleagues recommend. Until one is published, do not say the algorithms fail on such data, and do not say they work. Say that their performance on real health data has not been systematically tested.</p>",
+     "tag": "dispute",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Do not tell a committee that software “finds the causes” in its records. Ask whether it was ever tested on data whose true causes were known, and route that question to a causal inference methodologist before anyone signs.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not say that a lottery “takes care of it” when the people compared live, shop and eat together. Ask a methodologist before the design is fixed.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Do not tell a committee that machine learning, deep learning included, will predict better than ordinary statistics. A 2019 systematic review found machine learning and logistic regression about equal for clinical prediction where comparisons were at low risk of bias; it did not test deep learning in particular.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Asking about interference works only before the design is fixed. Whether a study can separate a programme’s effect from its spillover is decided by how groups and people are randomised. Once data are collected under a design that ignored it, the methodologist can tell you only what your data cannot show.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a vendor quotes one accuracy figure, ask how the model was validated and on whose data.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“The machine found it in our own data, so it must be true for us.” Data from your district make a result local; they do not make it causal or accurate. A causal discovery algorithm returns arrows whether or not its assumptions hold, and a prediction model returns a score whether or not it beats a simple one. Whether either has been tested where the answer was known is the question.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Name the owner of each of this section’s three fields. Then say why two of them must be asked before a design or purchase is fixed.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Causal discovery: a causal inference methodologist. Interference: a methodologist, asked before the design is fixed, because the design that can separate spillover (randomising groups, then people) is chosen at the start. Deep learning and the cloud: a machine-learning engineer or data scientist, as a collaborator.</p>\n<p>So two must be asked first: the interference methodologist before the design, and the causal inference methodologist before a purchase, because a causal discovery algorithm is usually offered for purchase. The third owner, for deep learning and the cloud, is a collaborator you work with throughout. This part is advice, not a measured <dfn data-g=\"292\">finding</dfn>. Ask before you buy, because a tool that has already been bought and fed your records is harder to question.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up request. Your medical college’s IT office says it can move all OPD records to a cloud service. A university data-science team could then “run AI on them” to predict which patients with diabetes will need admission. The medical superintendent asks you, by next Monday, whether this is worth doing. Write the question you would send to the data scientist, in the five parts.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>What you write</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>Whether the college moves OPD records to the cloud service for this project; the medical superintendent decides on Monday.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>OPD records of patients with diabetes; the outcome is admission; no model has been built yet; a 2019 review found machine learning about equal to logistic regression where comparisons were at low risk of bias.</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>Would a machine-learning model predict admission among our patients better than a logistic regression on the same records, and how would we test that fairly before relying on it?</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>Yes, no, or “only with this test”, and what the test needs from us; tell me how sure you are; I cannot judge the model.</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Friday, so I can brief the superintendent on Monday. If later, the move waits.</td>\n</tr>\n</tbody>\n</table>\n<p>Moving patients’ records to an outside service also needs the IT office and whoever handles patient consent. Name them, and do not answer for them.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A made-up line from a programme review, spoken by a programme officer: “Our school nutrition programme worked. In each of the 20 schools, children in programme classes gained less weight than children in the other classes.” The 20 schools are made up. Name the first signal that should fire in you, and rewrite the line so it claims only what the design supports.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p><strong>Unknown standard</strong> fires first. Children in one school share lunches, playgrounds and teachers, so the programme can spill across classes. You do not know the field’s standard design for that.</p>\n<p>In the cholera trial, a comparison inside the high-coverage group made the vaccine look as if it had little effect, because neighbours were protected too. Whether spillover happened here is the methodologist’s question.</p>\n<p>A rewrite: “Children in programme classes gained less weight than their schoolmates in other classes. Because the classes share a school, the programme may have reached the comparison children too. We are asking a methodologist what this design can and cannot show.”</p>"
+  }
+ ]
+}

@@ -1,0 +1,211 @@
+{
+ "format": 1,
+ "id": "s61-r1-c06",
+ "label": "6",
+ "title": "Below the clinic: circuit neuroscience, cell and molecular biology, statistical genetics",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "note",
+   "html": "<p><em>Checked against the sources as they stood on 2026-10-16.</em></p>"
+  },
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p><dfn data-g=\"109\">Circuit neuroscience</dfn> of appetite studies which groups of nerve cells, connected to which, make up the network that governs appetite and weight. A systems neuroscientist owns it.</p>\n<p>The cell and molecular biology of fat studies the kinds of cells that make up fat tissue and what each does. One of its products is a <dfn data-g=\"739\">single-cell atlas</dfn>, which sorts the cells of a tissue into types by the genes each one is using, read one cell or one cell <dfn data-g=\"522\">nucleus</dfn> at a time. A 2022 atlas of human and mouse white fat found that human fat cells, generally considered one uniform kind, fall into seven subtypes, each with its own markers: genes whose use sets it apart from the others. A metabolic biologist owns it.</p>\n<p><dfn data-g=\"761\">Statistical genetics</dfn> finds, from the <dfn data-g=\"223\">DNA</dfn> of many people, which variants go with a trait and works toward the <dfn data-g=\"326\">gene</dfn> through which they act. A statistical geneticist owns it.</p>",
+   "refs": [
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    82,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    91,
+    92,
+    82,
+    82,
+    93,
+    81,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    100,
+    102,
+    103,
+    99,
+    104
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>You now have the <dfn data-g=\"237\">edge</dfn>, the five signals and the five parts of a <dfn data-g=\"697\">routed question</dfn>. This section uses them on three fields that sit below the clinic, in the laboratory. The three share one lesson. You can read about their mechanisms, and you cannot judge them.</p>\n<p>The first field is <strong>circuit neuroscience</strong> — the study of which groups of nerve cells, connected to which, produce a behaviour such as eating. Eating is not run from one spot. Nerve cells in the <dfn data-g=\"365\">hypothalamus</dfn> and the <dfn data-g=\"74\">brainstem</dfn> — two parts of the brain — trade signals with the gut, the pancreas and fat tissue. Fat tissue and the gut report to the brain, and the brain answers through the nerves that run the organs.</p>\n<p>One of those signals is <dfn data-g=\"440\">leptin</dfn> — a <dfn data-g=\"358\">hormone</dfn> made mainly in fat tissue. One group of nerve cells in the hypothalamus senses how much leptin there is, and that amount reflects how much fat the body holds. The <dfn data-g=\"545\">owner</dfn> of this field is a systems neuroscientist.</p>\n<p>The second field is the cell and molecular biology of fat. One of its products is a <strong>single-cell atlas</strong> — a map of a tissue’s kinds of cell, made by reading which genes each cell, or its nucleus, is using. A cell uses only some of its genes, and in differing amounts; the atlas reads which, cell by cell.</p>\n<p>The atlas sorted human fat cells into seven subtypes, where they had generally been considered one uniform kind. The owner of this field is a metabolic biologist.</p>\n<p>The curriculum this book follows lists this field as “molecular and cell biology including mitochondrial bioenergetics, autophagy and single-cell adipose atlases (metabolic biologist)”. This book does not define autophagy, and it does not define what mitochondrial bioenergetics covers. (<dfn data-g=\"492\">Mitochondria</dfn>, the parts of a cell that make its energy, were met in Book 0’s section E5.) If a paper you are reading turns on one of them, do not guess. Ask: “What does autophagy mean in this paper, what did the authors measure to show it, and does the result change anything I would tell a patient or a committee?”</p>\n<p>The third field is <strong>statistical genetics</strong> — <dfn data-g=\"292\">finding</dfn>, with statistics on many people’s DNA, which variants go with a trait and which gene they act through.</p>\n<p>A <strong><dfn data-g=\"837\">variant</dfn></strong> — a place where people’s DNA differs, often by one letter — can go with a trait. A <strong><dfn data-g=\"328\">genome-wide association study</dfn> (GWAS)</strong> — a scan of the whole of many people’s DNA for variants that go with a trait — finds common variants with small effects. A <strong><dfn data-g=\"636\">rare-variant burden test</dfn></strong> adds up the rare changes in one gene across people, and so catches rare variants with large effects.</p>\n<p>Four more methods are named in the field. Each does one thing.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Method</td>\n<td>What it does, in one line</td>\n</tr>\n<tr>\n<td><strong>Genotype imputation</strong></td>\n<td>fills in DNA letters a test did not read, using a reference panel of fully read genomes</td>\n</tr>\n<tr>\n<td><strong>Fine-mapping</strong></td>\n<td>narrows a stretch of DNA linked to a trait down to the variant most likely to cause the signal, because a GWAS signal points at a region and rarely at the variant itself</td>\n</tr>\n<tr>\n<td><strong>Colocalisation</strong></td>\n<td>tests whether a trait and a gene’s activity are driven by the same variant</td>\n</tr>\n<tr>\n<td><strong>Transcriptome-wide association study (TWAS)</strong></td>\n<td>tests whether a gene’s predicted activity goes with the trait</td>\n</tr>\n</tbody>\n</table>\n<p>The curriculum this book follows names the field “statistical genetics beyond MR — imputation, <dfn data-g=\"293\">fine-mapping</dfn>, <dfn data-g=\"130\">colocalisation</dfn>, transcriptome-wide <dfn data-g=\"39\">association</dfn>, rare variant and exome work”. MR is <dfn data-g=\"483\">Mendelian randomisation</dfn> — a way of using genes to test whether an <dfn data-g=\"275\">exposure</dfn> (in a study, the thing whose effect is being tested, such as a habit or a <dfn data-g=\"441\">level</dfn> in the blood) causes an outcome. This book does not teach it; it belongs to the methods subject. The owner of this field is a statistical geneticist.</p>\n<p>Here is who owns each field, and where in India to start looking.</p>\n<table style=\"width:100%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Where to look</td>\n</tr>\n<tr>\n<td>Circuit neuroscience of appetite</td>\n<td>a systems neuroscientist</td>\n<td>a university physiology or neuroscience department; the Indian authors of papers in the field that you have read</td>\n</tr>\n<tr>\n<td>Cell and molecular biology of fat, including single-cell atlases</td>\n<td>a metabolic biologist</td>\n<td>a university biochemistry or cell-biology department</td>\n</tr>\n<tr>\n<td>Statistical genetics beyond Mendelian randomisation</td>\n<td>a statistical geneticist</td>\n<td>a university genetics or biostatistics department</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>Open the 2024 review by Gan, Cerbone and Dattani in <em><dfn data-g=\"247\">Endocrine</dfn> Reviews</em>, at https://pmc.ncbi.nlm.nih.gov/articles/PMC11074800/. It is a review of the brain circuits that govern appetite and weight. Search the page for <em>In mice, acute activation</em>.</p>\n<blockquote>\n<p>In mice, acute activation of NTS POMC neurons causes a short-term reduction in food intake with no change in body weight, while chronic activation of ARC POMC neurons is required to lead to the same effect, but additionally results in a reduction in weight.</p>\n</blockquote>\n<p>NTS and ARC are two small groups of brain cells. The NTS, the nucleus tractus solitarius, is in the brainstem, and ARC, the arcuate nucleus, is in the hypothalamus. POMC neurons are nerve cells that make a signalling <dfn data-g=\"614\">protein</dfn> called POMC (pro-opiomelanocortin). In plain words: switching on one group of cells in the brainstem cut eating for a short time and did not change weight. The same effect, with weight loss, needed a group in the hypothalamus to be switched on for a long time.</p>\n<p>This is the field’s kind of answer: which cells, where, and what happens to eating and weight when they are switched on, in mice. Now search for <em>often <dfn data-g=\"652\">redundant</dfn></em>.</p>\n<blockquote>\n<p>the complex and often redundant network</p>\n</blockquote>\n<p>The network has spare routes.</p>\n<p>Now see what the review does not tell you. It does not tell you whether any of this holds in people, whether a medicine could do it, or how much weight a person would lose. The review itself says that understanding of these circuits “remains incomplete”.</p>\n<p>A made-up call. A reporter from a Hindi daily phones you at six in the evening. Her story is due tonight. “A new study has found the hunger switch in the brain. Can a pill switch it off? I need one line from a doctor.”</p>\n<p>The first signal to fire is <strong>Loose word</strong>. You are about to repeat “hunger switch”. Could you define it if she asked? “Switch” says one place turns eating on and off. The review you could open describes a network with spare routes.</p>\n<p>Here is what you <strong>can</strong> answer, so you are not left with nothing. You can tell her what the study measured and in whom, mice or people, if you read its summary. That is reading, and it is yours.</p>\n<p>The tempting line is: “Yes, the hypothalamus is the brain’s hunger centre.” That line is <dfn data-g=\"373\">improvising</dfn>. “Hunger centre” is the same loose word in other clothes.</p>\n<p>What you say to her: “That is outside what I can assess, and here is who can: a systems neuroscientist. I will send one the question now and call you back before eight.” Here is the question you would ask a systems neuroscientist.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>What you write</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>Whether I give the reporter a line on the “hunger switch” tonight, and what it says. The reporter is waiting; the story runs tomorrow.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>A news report of a new study on brain cells and eating. I have the study’s summary only. Readers are the general public, in Hindi.</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>Does this study show one group of brain cells that controls eating on its own, or one part of a larger circuit, and would the finding be expected to hold in people?</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>Two short answers, one to each part, and one plain sentence I may quote. I cannot judge the method; tell me how sure you are and on what.</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Today, 8 pm, before the reporter files. If later, I tell her I have no comment on the mechanism.</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The finding is in mice, and the review says our understanding of these circuits remains incomplete. It does not tell you that people have the same circuit, that a medicine could act on it, or how much weight anyone would lose. A network with spare routes may not respond the way one group of cells does when it is switched on alone.</p>\n<p>Do not <dfn data-g=\"696\">route</dfn> the part you can read yourself. Whether the study was in mice or in people, and what it measured, is in its summary. Route only the part that needs the field’s method: whether the cells it found control eating on their own.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Open the 2022 atlas by Emont and colleagues in <em>Nature</em>, at https://pmc.ncbi.nlm.nih.gov/articles/PMC9504827/. Search for <em>seven subpopulations</em>.</p>\n<blockquote>\n<p>human white adipocytes cluster into seven subpopulations with distinct markers</p>\n</blockquote>\n<p>Now search for <em>generally considered to be monotypic</em>.</p>\n<blockquote>\n<p>White adipocytes are generally considered to be monotypic and essentially uniform in function, although some recent studies have begun to challenge this assumption</p>\n</blockquote>\n<p>In plain words: fat cells had been treated as one kind, and the atlas splits them into seven.</p>\n<p>Who was in it? Search for <em>9 women</em>.</p>\n<blockquote>\n<p>we collected subcutaneous WAT from 9 women</p>\n</blockquote>\n<p>WAT is white <dfn data-g=\"15\">adipose tissue</dfn>, white fat. Subcutaneous means under the skin. White adipocytes are white fat cells.</p>\n<p>Then search for <em>10 women</em>, in the same paragraph. It gives the second human group as “(10 women, 3 men)”. So the human samples came from nine women in one group, and from ten women and three men in another. Mice were studied too.</p>\n<p>This is the field’s kind of answer: which kinds of cells a tissue holds, and which genes each kind is using.</p>\n<p>Now see what it does not tell you. Search for <em>limited cohort</em>.</p>\n<blockquote>\n<p>In our limited cohort, we could not detect major effects of BMI on cell type proportions.</p>\n</blockquote>\n<p>Then search for <em>after a fast</em>.</p>\n<blockquote>\n<p>the human samples were collected after a fast, while the mice were harvested after ad libitum feeding</p>\n</blockquote>\n<p>Human and mouse samples were taken in different states, humans after a fast and mice after feeding freely, so differences between them are not all differences between species. Last, the paper reports one subtype as “a rare subpopulation associated with T2DM”, which is <dfn data-g=\"820\">type 2 diabetes</dfn>. The atlas shows a link, not a cause.</p>",
+   "numberRefs": [
+    105
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Nine women in one group, and ten women and three men in the other, are enough to find kinds of cells. They are not enough to say how body size changes the mix, and the authors say they could not detect that. A subtype “associated with” diabetes is a link, not a cause. The paper does not say that any of the people sampled was Indian, and it says nothing about Indian fat tissue.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>A made-up call. The same reporter rings a week later. “Scientists say there are seven kinds of fat cell, and one kind causes diabetes. Is that right? I need it by eight.”</p>\n<p>The first signal is <strong>Unknown standard</strong>. You do not know how this field tells one kind of cell from another, or which atlas it treats as its reference.</p>\n<p>Here is what you <strong>can</strong> answer. You can read her the paper’s own <dfn data-g=\"840\">verb</dfn>. The paper says the subtype is “associated with” type 2 diabetes. “Causes” is her word, not theirs.</p>\n<p>The tempting line is: “Yes, that is the bad fat cell behind diabetes.” That line improvises. It turns a link into a cause, it borrows a standard you do not know, and it puts a moral word on a kind of cell.</p>\n<p>What you say to her: “That is outside what I can assess, and here is who can: a metabolic biologist. Until I hear back, the paper’s own words are ‘associated with’.” Here is the question you would ask a metabolic biologist.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>What you write</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>Whether the newspaper prints “one kind of fat cell causes diabetes”. The reporter files tonight.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>A 2022 study in Nature that mapped the cells of human and mouse white fat. Its human samples came from nine women in one group and ten women and three men in another. It reports one rare subtype of fat cell as “associated with” type 2 diabetes.</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>Does this atlas show that this subtype causes diabetes, or only that it goes with it, and is this atlas the field’s usual reference for human fat?</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>Yes or no to “causes”, one sentence on what the finding does show, and whether you would call this atlas the reference. Tell me how sure you are and on what; I cannot judge the sequencing method (how the atlas read the genetic material of each cell or nucleus, letter by letter).</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Today, 8 pm. If later, the story uses the paper’s own words, “associated with”.</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>If the reporter only wants to know what the paper says, read it to her; that is yours. Route the question only when she wants to know what the finding means for people with diabetes, which needs the field’s judgement.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 4",
+   "role": "illustration",
+   "html": "<p>Open the 2022 review by Loos and Yeo in <em>Nature Reviews Genetics</em>, at https://pmc.ncbi.nlm.nih.gov/articles/PMC8459824/. Go to its glossary and search for <em>Monogenic obesity</em>.</p>\n<blockquote>\n<p>A severe, early-onset form of obesity, caused by a single-gene mutation, with little or no influence of the environment.</p>\n</blockquote>\n<p>Then search for <em>Polygenic obesity</em>.</p>\n<blockquote>\n<p>A common multifactorial form of obesity, resulting from an interaction between the obesogenic environment and hundreds of genetic variants.</p>\n</blockquote>\n<p>“Mutation” is the review’s word; this book says variant. Here it means a rare variant in one gene with a large effect. In plain words: one rare form of obesity comes from a change in a single gene. The common form comes from hundreds of variants acting together with the surroundings people live in.</p>\n<p>Now meet a <strong><dfn data-g=\"578\">polygenic score</dfn></strong> — a number that adds up a person’s risk variants, each weighted by its effect in a GWAS: how much the trait differs, on average, with each copy of the variant. The review asks how well such a score predicts obesity. Search for <em>only 43%</em>. In its own analysis the review <dfn data-g=\"829\">used</dfn> UK Biobank data. UK Biobank is one of the “large-scale cohorts and biobanks” the review names: a large British collection of people’s health records and DNA.</p>\n<blockquote>\n<p>of those who were predicted to develop obesity, only 43% actually developed obesity</p>\n</blockquote>\n<p>The “<dfn data-g=\"592\">prediction</dfn>” was a score at or above the 90th <dfn data-g=\"561\">percentile</dfn>, the top tenth. Of the people it picked out, 43% had obesity. The review does not say how common obesity was in the whole group, so you cannot tell from this line how much better than chance that is; the review’s own verdict follows. Now search for <em>does not reliably predict</em>.</p>\n<blockquote>\n<p>does not reliably predict who is at risk of developing obesity and who is not</p>\n</blockquote>\n<p>The authors also write that a score will not manage this alone, calling it unlikely that it “will ever be able to accurately predict obesity on its own”.</p>\n<p>Here is a second kind of answer, from the methods side. Open the 2024 review by Naito and Okada in the <em>Journal of Human Genetics</em>, at https://doi.org/10.1038/s10038-023-01213-6. Search for <em>same ancestral groups</em>.</p>\n<blockquote>\n<p>It is necessary to employ reference panels consisting of individuals from the same ancestral groups as the target samples due to the inter-ancestry variations in haplotype structures.</p>\n</blockquote>\n<p>A genome is all of a person’s DNA. A haplotype is a run of DNA letters passed down together. In plain words: imputation borrows patterns from reference genomes, and the reference must come from people of the same ancestry as the people being studied. Caballero and Mahjani’s 2026 review, at https://doi.org/10.1016/j.xhgg.2026.100599, makes a related point about colocalisation. It says the method’s usefulness is limited by “ancestry bias in reference cohorts”.</p>\n<p>This is the field’s kind of answer: whether a score predicts, how well, in whom, and whether the reference data fit the people you care about.</p>",
+   "numberRefs": [
+    106
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The 43% comes from one score tested in UK Biobank data. It does not tell you how any score performs in Indian children, or how a particular lab’s test was built. The ancestry point is made for imputation and for reference panels; it tells you a question to ask, not the answer for Indian samples.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 5",
+   "role": "illustration",
+   "html": "<p>A made-up call. The reporter again, a month on. “A private lab is selling a gene test that tells parents whether their child will have obesity. Should parents buy it?”</p>\n<p>The first signal is <strong>No test</strong>. You cannot say what result would show your answer wrong. You do not know which variants the test reads, how its score was built, or on whom it was checked.</p>\n<p>Here is what you <strong>can</strong> answer. You can tell her what a 2022 review found: the latest genetic score for <dfn data-g=\"70\">body mass index</dfn>, tested in UK Biobank data, did not reliably predict who developed obesity. That is reading, and it is yours. Whether this lab’s test does better is not.</p>\n<p>The tempting lines are two, and both improvise: “These tests are useless; obesity is not genetic.” and “Genes decide it, so the test is worth doing.” The review says the common form comes from hundreds of variants acting with the surroundings people live in, so neither line holds.</p>\n<p>What you say to her: “That is outside what I can assess, and here is who can: a statistical geneticist. I will send one the question tonight and tell you by eight what they say.” Here is the question you would ask a statistical geneticist.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>What you write</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>What I tell the reporter about whether parents should pay for this test. Parents may act on the story.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>A private lab advertises a gene test it says predicts obesity in children. I have the advertisement, not the method. The buyers would be Indian parents. A 2022 review reports that the latest genetic score for body mass index did not reliably predict obesity in UK Biobank data.</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>Can a gene test of this kind predict which Indian children will develop obesity well enough for parents to act on it, and what would the lab have to show for us to know?</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>Yes, no, or “cannot tell without these”, with the two or three things the lab would have to show. Tell me how sure you are and on what. I cannot judge how a score is built.</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Today, 8 pm. If later, the story says the evidence was not checked.</td>\n</tr>\n</tbody>\n</table>\n<p>Now start three rows of your <dfn data-g=\"166\">contact list</dfn>. The columns are the ones you will keep for every field. <em>Name and institution</em> is the person you find. <em>How you know them</em> takes one word: “worked with”, “met” or “found”, where found means located, not yet contacted. <em>Last question asked</em> is the <strong>Question</strong> row, shortened to one line. <em>Asked on</em> and <em>Checked on</em> are dates, and the second is the last day you confirmed the person is still there and still does this work.</p>\n<table style=\"width:98%;\">\n\n<tbody>\n<tr>\n<td>Field</td>\n<td>Owner</td>\n<td>Name and institution</td>\n<td>How you know them</td>\n<td>Last question asked</td>\n<td>Asked on</td>\n<td>Checked on</td>\n</tr>\n<tr>\n<td>Circuit neuroscience of appetite</td>\n<td>a systems neuroscientist</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>One brain-cell group controlling eating, or part of a circuit; would it hold in people?</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Cell and molecular biology of fat</td>\n<td>a metabolic biologist</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>Does the atlas show the subtype causes diabetes, or goes with it?</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Statistical genetics</td>\n<td>a statistical geneticist</td>\n<td>(yours to fill)</td>\n<td></td>\n<td>Can a child gene test predict obesity in Indian children well enough to act on?</td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>If the question is what the review says, you can answer it at the read <dfn data-g=\"210\">depth</dfn>. Route the question only when it needs the field’s own method: how a score was built, and whether it works for the children in question.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Do not call any one part of the brain the “hunger centre” or a “switch”. Say what the study measured and in whom, and route the rest: “that is a question for a systems neuroscientist”.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Do not say a kind of cell “causes” a disease because an atlas links them. Repeat the paper’s own verb, and ask a metabolic biologist whether anything more is known.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Do not tell anyone that obesity “is not genetic”, or that a gene test “works”. Whether a particular test predicts in Indian children is a statistical geneticist’s question.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>A result in mice is not yet a result in people. When a story says “scientists found”, ask first: in mice or in people?</p>",
+     "tag": "misconception",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>When a genetic result for Indian people rests on imputed data, ask which reference panel was used. If nobody can tell you, treat the result as untested in Indian people.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>Routing is the wrong move when the question is what a paper says. Send the owner only the part that needs their method, or you spend their time on your reading.</p>",
+     "tag": "boundary",
+     "bearing": "teaching"
+    },
+    {
+     "html": "<p>Autophagy and mitochondrial bioenergetics are on the curriculum’s list for this field and are not defined in this book. If your argument needs either word, you are past your edge by definition. Write the routed question before you use the word in a lecture or a note.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Scientists have found the gene, the cell or the switch for obesity.” Each of the three fields in this section produces a map of one part: one group of cells, one kind of fat cell, one variant. A map of a part is read as the cause of the whole. The reviews you can open say the opposite. The appetite network is often redundant. An atlas subtype is “associated with” a disease. The common form of obesity comes from hundreds of variants acting with the surroundings people live in.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>Name the owner of each of the three fields in this section, and one kind of answer each can give that you cannot.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Circuit neuroscience of appetite: a systems neuroscientist. Its answers say which groups of nerve cells, in which parts of the brain, sense which signal. They also say what happens to eating and weight when the cells are switched on or off, mostly in animals.</p>\n<p>Cell and molecular biology of fat: a metabolic biologist. Its answers say which kinds of cell a fat tissue holds and which genes each kind is using, as in a single-cell atlas.</p>\n<p>Statistical genetics: a statistical geneticist. Its answers say which variants go with a trait, through which gene, and whether a genetic score predicts the trait, and in whom.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>In one line each, what do <dfn data-g=\"330\">genotype imputation</dfn>, fine-mapping, colocalisation and a <dfn data-g=\"813\">transcriptome-wide association study</dfn> do?</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Genotype imputation fills in DNA letters a test did not read, using a reference panel of fully read genomes.</p>\n<p>Fine-mapping narrows a stretch of DNA linked to a trait down to the variant most likely to cause the signal. It is needed because a GWAS signal points at a region and rarely at the variant itself.</p>\n<p>Colocalisation tests whether a trait and a gene’s activity are driven by the same variant.</p>\n<p>A transcriptome-wide association study (TWAS) tests whether a gene’s predicted activity goes with the trait.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A made-up request. The district NCD officer forwards you an email from a postgraduate student. The student wants the district’s obesity screening records and blood samples from 200 people “to do a GWAS of obesity in our district”. The number 200 is made up. The officer asks whether to agree, and wants an answer before the next review meeting in a fortnight. Write the question you would send to a statistical geneticist, in the five parts.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>What you write</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>Whether the district shares its screening records and samples for this study; the district NCD officer decides at the review meeting in two weeks.</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>200 adults from one district’s screening programme; records hold weight, height and waist; no DNA has been read yet; the student has not said which test or reference panel would be used.</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>Can a genome-wide association study of obesity in 200 people find anything, and if not, what number of people or what other design would?</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>Yes, no or “only if”, with the reason in one paragraph; tell me how sure you are; I cannot judge study power.</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>Ten days from today, so the officer has it before the meeting; if later, the request waits for the next meeting.</td>\n</tr>\n</tbody>\n</table>\n<p>You do not need to know the answer to ask it. The 2026 review by Caballero and Mahjani highlights “how frequency and <dfn data-g=\"239\">effect size</dfn> interact to determine statistical power”. In plain words, how common a variant is and how large its effect is, taken together, decide what a study can find.</p>\n<p>Data protection and consent are separate questions with their own owners, and this question does not answer them.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A made-up line from a continuing-education talk: “The hypothalamus is the body’s hunger switch, so a pill that turns it off will end obesity.” Name the first signal that should fire in the speaker, and rewrite the line so it says only what the speaker can <dfn data-g=\"103\">check</dfn>.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<p><strong>Loose word</strong> fires first. “Hunger switch” is a word the speaker could not define if asked. The review literature describes a network linking the brain with the gut, the pancreas and fat tissue, often redundant. The second half then claims a treatment effect: past the edge again.</p>\n<p>A rewrite: “Appetite is governed by a network that runs between the brain and the gut, the pancreas and fat tissue. Whether a medicine can act on one part of it, and how much that would change weight, is a question for a systems neuroscientist.”</p>"
+  }
+ ]
+}

@@ -1,0 +1,177 @@
+{
+ "format": 1,
+ "id": "s61-r1-c03",
+ "label": "3",
+ "title": "Recognising, mid-conversation, that the question has left you",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>Recognising that a question has left you is noticing, while the conversation is still going, one of five signals.</p>\n<p>Four of them say the question is past your <dfn data-g=\"237\">edge</dfn>. <strong>No test</strong>: you cannot say what result would show your answer wrong. <strong>Loose word</strong>: you are using a word you could not define if asked. <strong>Unknown standard</strong>: you do not know the field’s standard reference or standard method. <strong>One source</strong>: your answer rests on one source you cannot judge.</p>\n<p>The fifth, <strong>About to act</strong>, says the person asking is about to act on what you say. It does not show that you are past your edge. It turns the other four from a private doubt into a duty to stop.</p>",
+   "refs": [
+    1,
+    40,
+    41,
+    42,
+    43,
+    44,
+    13
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>The first section gave you a test to run on a question: can you say what result would show your answer wrong, and <dfn data-g=\"103\">check</dfn> it yourself? The point where you can no longer do that is your edge.</p>\n<p>The first of the five signals below, No test, is that test noticed in conversation.</p>\n<p>Here are the five signals, in a fixed order.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>No.</th>\n<th>Signal</th>\n<th>What you notice</th>\n<th>A moment when it fires</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td><strong>No test</strong></td>\n<td>You cannot say what result would show your answer wrong</td>\n<td>A reporter asks whether a gene test can say which children will develop obesity. You start to say “not yet” and cannot name what would show that wrong.</td>\n</tr>\n<tr>\n<td>2</td>\n<td><strong>Loose word</strong></td>\n<td>You are using a word you could not define if asked</td>\n<td>In the outpatient department (OPD) a patient asks whether a product will “detox” her body. You answer using her word.</td>\n</tr>\n<tr>\n<td>3</td>\n<td><strong>Unknown standard</strong></td>\n<td>You do not know the field’s standard reference or standard method</td>\n<td>A committee member asks about a herbal tea sold at the market. You do not know how such products are tested, or what reference their own practitioners use.</td>\n</tr>\n<tr>\n<td>4</td>\n<td><strong>One source</strong></td>\n<td>Your answer rests on one source you cannot judge</td>\n<td>At the district non-communicable disease (NCD) meeting, everything you know about a vendor’s risk tool comes from its brochure.</td>\n</tr>\n<tr>\n<td>5</td>\n<td><strong>About to act</strong></td>\n<td>The person asking is about to act on what you say</td>\n<td>The district NCD officer says: “I’ll sign the order this afternoon unless you see a problem.”</td>\n</tr>\n</tbody>\n</table>\n<p>Signal 5 is different from the other four. About to act tells you nothing about your knowledge. It tells you that the cost of <dfn data-g=\"373\">improvising</dfn> is about to be paid.</p>\n<p>So when signal 5 fires together with any of signals 1 to 4, you stop. When signal 5 fires alone, run signal 1 on purpose.</p>\n<p>Silence from all five is not proof that you are inside your edge.</p>\n<p>When any of signals 1 to 4 fires, make four moves, in this order.</p>\n<ol type=\"1\">\n<li><strong>Stop</strong>, even mid-sentence.</li>\n<li><strong>Say the part you can answer.</strong></li>\n<li><strong>Say the <dfn data-g=\"618\">public sentence</dfn></strong>, in its exact words: <strong>“That is outside what I can assess, and here is who can.”</strong></li>\n<li><strong>Name the <dfn data-g=\"545\">owner</dfn> and offer to send the question.</strong></li>\n</ol>\n<p>You make these moves in every setting: a meeting, a lecture, an interview, a reporter’s call, and with a patient. With a patient, also say what they should keep doing meanwhile.</p>\n<p>Why now, and not later? Stopping before anyone acts costs one sentence. This is reasoning, not a measured fact.</p>\n<p>The last point is the other half of the skill. Routing a question that is inside your edge is also a failure: it leaves the asker without what you could have given. Every time a signal fires, look for the part that did not fire, and answer that part.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration",
+   "role": "illustration",
+   "html": "<p>A made-up meeting: you are the community medicine resident that a municipal corporation asked for health advice. The corporation has a <dfn data-g=\"847\">Wards Committee</dfn>. Article 243S of the <dfn data-g=\"163\">Constitution</dfn> of India says: “There shall be constituted Wards Committees, consisting of one or more wards, within the territorial area of a Municipality having a population of three lakhs or more.” So a Wards Committee is set up for one ward or several, in a municipality of 3,00,000 (three <dfn data-g=\"426\">lakh</dfn>) people or more. For a committee of one ward, the Constitution names “the member representing that ward in the Municipality”, the councillor, and says this member “shall be the Chairperson of that Committee.”</p>\n<p>Below is the <dfn data-g=\"812\">transcript</dfn> as it went. Read it, then cover the table that follows. Mark each line inside your edge or past it, and say which signals fire.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Line</th>\n<th>Who</th>\n<th>What is said</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Councillor</td>\n<td>“The corporation has money for an open-air gym in the park. Will it bring obesity down in this ward?”</td>\n</tr>\n<tr>\n<td>2</td>\n<td>You</td>\n<td>“Yes. Once people start using it, you will see weights come down within a year.”</td>\n</tr>\n<tr>\n<td>3</td>\n<td>A member</td>\n<td>“And the fat-cutter tea they sell at the market? The shop says it is Ayurvedic. My neighbour drinks it.”</td>\n</tr>\n<tr>\n<td>4</td>\n<td>You</td>\n<td>“I don’t know anything about that tea.”</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Councillor</td>\n<td>“Then we put up the gym, and people can decide about the tea. Minute it: health department to examine benefit of park gym.”</td>\n</tr>\n</tbody>\n</table>\n<p>Here is the marking.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Line</th>\n<th>Inside or past your edge?</th>\n<th>Signals</th>\n<th>Why</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Mixed</td>\n<td>—</td>\n<td>One part is yours: how many people use the park now, and whether that changes. One part is not: whether a gym brings obesity down.</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Past</td>\n<td>No test; About to act</td>\n<td>You cannot say what result would show “weights come down within a year” wrong, and the committee is about to spend the money on your word. This is improvising.</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Past</td>\n<td>Loose word; Unknown standard</td>\n<td>“Fat-cutter” is the shop’s word, not one you could define. You do not know how such products are tested, or what reference their practitioners use.</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Past, said, but not routed</td>\n<td>Unknown standard</td>\n<td>Honest, and it stops there. It names no owner and no question, so the committee hears “nothing to worry about”.</td>\n</tr>\n<tr>\n<td>5</td>\n<td>—</td>\n<td>About to act</td>\n<td>The committee acts on lines 2 and 4.</td>\n</tr>\n</tbody>\n</table>\n<p>Line 2 is improvising. Line 4 is ignorance, said aloud but not routed.</p>\n<p>Now rewrite your two lines. Line 2, rewritten:</p>\n<blockquote>\n<p>“Part of that I can answer. I can count how many people use the park now, mornings and evenings, and count again after the gym opens. Whether the gym will bring obesity down here, I cannot say. That is outside what I can assess, and here is who can: people who study physical activity in communities. I will write the question for them before the money is spent.”</p>\n</blockquote>\n<p>Line 4, rewritten:</p>\n<blockquote>\n<p>“I cannot tell you what is in that tea, or whether it has any effect, alone or with tablets people already take. That is outside what I can assess, and here is who can: a qualified Ayush practitioner. I will bring the committee a written question for one.”</p>\n</blockquote>\n<p>Ayush is the Ministry of Ayush’s word for a group of systems of medicine. In the Ministry’s words: “Ayush includes Ayurveda, Yoga, Naturopathy, Unani, Siddha, Sowa Rigpa and Homoeopathy.”</p>",
+   "numberRefs": [
+    45
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The public sentence does not stop a committee from deciding. It puts on record which part was answered and which was sent on.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>The error is to wait until you feel unsure. Listen for the five signals instead, and on any question someone will act on, run No test on purpose.</p>",
+     "tag": "misconception",
+     "bearing": "clinical"
+    },
+    {
+     "html": "<p>When any of signals 1 to 4 fires: stop, say the part you can answer, say “That is outside what I can assess, and here is who can”, name the kind of owner, and offer to send the question.</p>",
+     "tag": "move",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>About to act does not mean you are past your edge. It means the cost of improvising is about to be paid.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Repeating the asker’s word makes it your <dfn data-g=\"114\">claim</dfn>. Say whose word it is.</p>",
+     "tag": "trap",
+     "bearing": "public"
+    },
+    {
+     "html": "<p>Saying “I don’t know” is not routing. It names no owner and no question, and the listener often hears “nothing to worry about”.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Routing a question that is inside your edge is also a failure.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The signals tell you a question has left you. They do not tell you who owns it, or whether the answer you nearly gave was wrong.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Saying the sentence ends my usefulness to the person asking.” It does the opposite. You still say the part you can answer, and you name who can answer the rest. An improvised answer gives them less: a claim nobody can check. This is reasoning, not a measured fact.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, list the five signals in order, by their labels, with what you notice for each. Which one does not mean you are past your edge, and what does it mean instead? Write the public sentence word for word.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>1 No test: you cannot say what result would show your answer wrong. 2 Loose word: you are using a word you could not define if asked. 3 Unknown standard: you do not know the field’s standard reference or method. 4 One source: your answer rests on one source you cannot judge. 5 About to act: the person asking is about to act on what you say.</p>\n<p>Signal 5 does not mean you are past your edge. It means the cost of improvising is about to be paid, and it turns the other four into a duty to stop.</p>\n<p>The sentence: “That is outside what I can assess, and here is who can.”</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>Audience: a first-year resident, ten minutes, whiteboard. The resident says: “If I’m not sure, I just say I don’t know. Isn’t that enough?” Use line 4 of the Wards Committee transcript to explain why it is not, and what to add.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Write line 4 on the board: “I don’t know anything about that tea.” It is honest, and the signal (Unknown standard) did fire. But it stops there. The committee hears that the doctor has no concern, and decides.</p>\n<p>Ask the resident: who could answer? What would you send them? Then add the three missing moves on the board. First, the part you can answer (here, little: you can find out who sells the tea and who drinks it). Second, the public sentence, word for word. Third, the kind of owner, here a qualified Ayush practitioner, and the offer to send a written question.</p>\n<p>Close: “I don’t know” ends the conversation. Routing moves the question to someone who can end it properly.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Here are five thoughts you might have in the middle of a conversation. Name the signal each one is, by its <dfn data-g=\"423\">label</dfn>.</p>\n<ol type=\"1\">\n<li>“I’ve said ‘polygenic’ twice now, and I could not define it if she asked.”</li>\n<li>“The officer said he will sign the order this afternoon.”</li>\n<li>“Everything I know about this comes from one review I skimmed last year.”</li>\n<li>“I don’t know which document planners use to decide how wide a footpath should be.”</li>\n<li>“If I’m wrong about this, I can’t think what would show it.”</li>\n</ol>",
+   "level": 1,
+   "answer": "<table style=\"width:40%;\">\n\n<thead>\n<tr>\n<th>Thought</th>\n<th>Signal</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Loose word</td>\n</tr>\n<tr>\n<td>2</td>\n<td>About to act</td>\n</tr>\n<tr>\n<td>3</td>\n<td>One source</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Unknown standard</td>\n</tr>\n<tr>\n<td>5</td>\n<td>No test</td>\n</tr>\n</tbody>\n</table>\n<p>Thought 5 is the edge test itself. Thoughts 1, 3 and 4 are the ways the same gap shows up in talk. Thought 2 is not a gap at all: it tells you the cost of a gap is about to be paid.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>For each case, say whether it means you are past your edge, and what you do next.</p>\n<ol type=\"1\">\n<li>About to act fires, and no other signal does.</li>\n<li>Loose word fires, and no other signal does.</li>\n<li>None of the five fires.</li>\n</ol>",
+   "level": 2,
+   "answer": "<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Case</th>\n<th>Past your edge?</th>\n<th>What you do next</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Not on this signal alone</td>\n<td>Run No test on purpose. If you can say what would show your answer wrong and check it, answer. If not, stop.</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Yes</td>\n<td>Loose word alone says you are past your edge. Stop, say whose word it is, and route the question.</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Not shown either way</td>\n<td>Silence is not proof: confidence barely follows accuracy. If anyone may later act on your answer, run No test on purpose before you give it.</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Made up: write what you would say, in four sentences or fewer, using these parts. The question: “Will the new bus <dfn data-g=\"696\">route</dfn> help people in the colony walk more?” The part you can answer: how you would count people walking to the stop before and after the route opens. The owner: a transport planner.</p>",
+   "level": 3,
+   "answer": "<p>A model answer: “I can tell you how we would know: count the people walking to the stop for a week before the route opens and a week after. Whether the route will make people walk more, I cannot say. That is outside what I can assess, and here is who can: a transport planner. I will write the question for one.”</p>\n<p>Check the answer for the four moves. The part you can answer comes first. The public sentence is word for word. The owner is named as a kind. There is an offer to send the question.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>A made-up exchange in the OPD of an urban primary health centre. Your patient is a woman of 52 who teaches at a government school. She has obesity and takes tablets for diabetes from the centre.</p>\n<ol type=\"1\">\n<li>Patient: “My sister’s doctor told her obesity is in the genes, so tablets won’t help. Is it the same for me?”</li>\n<li>You: “Your weight and your sugar are things we measure here, and we can see how they change on your tablets.”</li>\n<li>You: “As for genes, I’d say they don’t matter much.”</li>\n<li>Patient: “Then if it’s in my genes, I’ll stop the tablets. Why waste them?”</li>\n</ol>\n<p>Mark each of your lines inside or past your edge, name the signals, and rewrite line 3.</p>",
+   "level": 4,
+   "answer": "<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Line</th>\n<th>Inside or past your edge?</th>\n<th>Signals</th>\n<th>Why</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Mixed</td>\n<td>—</td>\n<td>Part is about her care here, part about genetics</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Inside</td>\n<td>none</td>\n<td>Measuring her and following her on treatment is clinical care your training covers</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Past</td>\n<td>No test; Loose word</td>\n<td>You cannot say what result would show “they don’t matter much” wrong, and “matter” hides a claim you could not define</td>\n</tr>\n<tr>\n<td>4</td>\n<td>—</td>\n<td>About to act</td>\n<td>She is about to stop her tablets</td>\n</tr>\n</tbody>\n</table>\n<p>Line 4 is the urgent one. A rewrite of line 3, which also answers line 4: “Please don’t stop your tablets without talking to the doctor here who prescribes them; we can check together how they are working for you. What genes explain about weight, I cannot tell you. That is outside what I can assess, and here is who can: a doctor who works on the genetics of weight. I can find out how to ask one.”</p>\n<p>The rewrite makes no claim about genes and obesity in either direction.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A made-up call. A reporter from a Hindi daily phones you about a story due tonight.</p>\n<ol type=\"1\">\n<li>Reporter: “A company is selling a saliva test that it says tells parents whether their child will develop obesity. Does it work?”</li>\n<li>You: “What I can tell you is what a test like this would have to show: that children it flags really do develop obesity more often than children it does not, in a study others can check.”</li>\n<li>You: “These tests read a polygenic score, and the science behind them is solid.”</li>\n<li>Reporter: “Can I quote you on that? We go to print at nine.”</li>\n</ol>\n<p>Mark lines 2 to 4, name the signals, and rewrite line 3 as something you would be content to see in print.</p>",
+   "level": 5,
+   "answer": "<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Line</th>\n<th>Inside or past your edge?</th>\n<th>Signals</th>\n<th>Why</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>2</td>\n<td>Inside</td>\n<td>none</td>\n<td>What a predictive test must show is a question of study design, which is your field</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Past</td>\n<td>Loose word; No test (One source too, if your view rests on one thing you read)</td>\n<td>You could not define “polygenic score”, and you cannot say what would show “solid” wrong</td>\n</tr>\n<tr>\n<td>4</td>\n<td>—</td>\n<td>About to act</td>\n<td>Your words go to print tonight</td>\n</tr>\n</tbody>\n</table>\n<p>Rewrite: “Quote me on this: a test like this has to show, in a study others can check, that the children it flags really do develop obesity more often than those it does not. Whether this company’s test has shown that, I cannot judge. That is outside what I can assess, and here is who can: a statistical geneticist. I can suggest a university genetics department you could call before nine.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>A made-up exchange at the district NCD meeting, chaired by the district NCD officer.</p>\n<ol type=\"1\">\n<li>Officer: “We need weighing scales for every screening team. The local shop can supply them this week. Can we just buy them?”</li>\n<li>You: “For screening, each scale should be checked against a known weight, so we know its readings are right.”</li>\n<li>You: “Buying from the local shop is fine if the amount is under the limit.”</li>\n<li>Officer: “Good. I’ll sign the order today.”</li>\n</ol>\n<p>Mark lines 2 to 4, name the signals, and rewrite line 3.</p>",
+   "level": 6,
+   "answer": "<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Line</th>\n<th>Inside or past your edge?</th>\n<th>Signals</th>\n<th>Why</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>2</td>\n<td>Inside</td>\n<td>none</td>\n<td>Checking a scale against a known weight is what Book 0’s section on random and systematic error teaches</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Past</td>\n<td>Unknown standard; No test</td>\n<td>You do not know which rule sets the limit or what it is, so you cannot say what would show “fine” wrong</td>\n</tr>\n<tr>\n<td>4</td>\n<td>—</td>\n<td>About to act</td>\n<td>The order is signed today</td>\n</tr>\n</tbody>\n</table>\n<p>Rewrite: “What the scales must do for screening, I can tell you, and I’ll write it down for the order. Whether we can buy them from the shop without a tender, I cannot say. That is outside what I can assess, and here is who can: the purchase (stores) officer. Could we ask before the order is signed?”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Here is a made-up marking by a resident of a district NCD meeting. Find the line the resident marked wrongly, say what it should have been, and say why the wrong mark looked right.</p>\n<p>Transcript:</p>\n<ol type=\"1\">\n<li>Officer: “A vendor is offering a tool that picks out people at high risk of obesity from our screening data. Is it any good?”</li>\n<li>Resident: “It’s validated. The brochure shows how accurate it is.”</li>\n<li>Officer: “Then let’s take it.”</li>\n</ol>\n<p>The resident’s marking:</p>\n<table style=\"width:56%;\">\n\n<thead>\n<tr>\n<th>Line</th>\n<th>Inside or past?</th>\n<th>Signals</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>2</td>\n<td>Inside</td>\n<td>none</td>\n</tr>\n<tr>\n<td>3</td>\n<td>—</td>\n<td>About to act</td>\n</tr>\n</tbody>\n</table>",
+   "level": 7,
+   "answer": "<p>Line 2 was marked inside and is past. Corrected:</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Line</th>\n<th>Inside or past your edge?</th>\n<th>Signals</th>\n<th>Why</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>2</td>\n<td>Past</td>\n<td>Loose word; One source</td>\n<td>“Validated” is the vendor’s word, used in the vendor’s sense, and the only source is the vendor’s own brochure, which you cannot judge</td>\n</tr>\n<tr>\n<td>3</td>\n<td>—</td>\n<td>About to act</td>\n<td>The district is about to buy</td>\n</tr>\n</tbody>\n</table>\n<p>Why it looked inside: “validated” and “accurate” are words the resident uses every week in survey work, so the line felt like home ground. The words were familiar. The method behind them was not.</p>\n<p>A rewrite: “I can tell you what our own screening data would let us check once we have the tool’s predictions. Whether the vendor’s method holds, I cannot judge from a brochure. That is outside what I can assess, and here is who can: someone who builds and tests such methods. I will write the question for one before we sign.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Here is a made-up marking by a resident at the Wards Committee. The resident marked only the member’s question, line 1. Say whether that mark is right, what it should have been, and why the wrong mark looked right.</p>\n<p>Transcript:</p>\n<ol type=\"1\">\n<li>Member: “Last year’s ward survey measured people’s waists. How many adults were above the survey’s cut-off?”</li>\n<li>Resident: “I’d want a statistician to answer that.”</li>\n</ol>\n<p>The resident’s marking:</p>\n<table style=\"width:61%;\">\n\n<tbody>\n<tr>\n<td>Line</td>\n<td>Inside or past?</td>\n<td>Signals</td>\n</tr>\n<tr>\n<td>1</td>\n<td>Past</td>\n<td>Unknown standard</td>\n</tr>\n</tbody>\n</table>",
+   "level": 8,
+   "answer": "<p>Line 1 was marked past and is inside. You can say what would show your answer wrong (a recount from the survey data gives a different number) and you can check it yourself, by recounting against the cut-off the survey <dfn data-g=\"829\">used</dfn>. Running and reading a community survey is your own work. Corrected:</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Line</td>\n<td>Inside or past your edge?</td>\n<td>Signals</td>\n<td>Why</td>\n</tr>\n<tr>\n<td>1</td>\n<td>Inside</td>\n<td>none</td>\n<td>A count from survey data against the survey’s own cut-off; you can recount it yourself</td>\n</tr>\n</tbody>\n</table>\n<p>Why the wrong mark looked right: numbers from a survey can feel like someone else’s job, and routing feels safe. It is not safe here. The committee leaves without an answer you could have given that day. A better line 2: “I can count that from the survey data and bring you the number at the next meeting.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>A made-up newspaper item reads: “A community medicine doctor told this paper that the new zumba classes in the community hall will definitely reduce obesity in the area by next year.” Say which signals should have fired for the doctor, write what the doctor could have said instead, and say what your rewrite does not establish.</p>",
+   "level": 9,
+   "answer": "<p>Signals: No test (the doctor cannot say what result would show “definitely reduce obesity by next year” wrong, and check it before next year) and About to act (a newspaper prints it, and readers and organisers act on it). Possibly Loose word, if “reduce obesity” was not defined: fewer people with obesity, or a lower average weight?</p>\n<p>A rewrite: “I can tell you how the area would know: measure people’s weight and waist before the classes start and again after a year. Whether the classes will reduce obesity, I cannot say. That is outside what I can assess, and here is who can: people who study physical activity in communities. I can tell you how to reach some.”</p>\n<p>What the rewrite does not establish: that the classes will not work. It says nothing about their effect in either direction. It also does not establish that the measurement plan will show the classes’ effect, since other things change in a year. That is a question of study design, to work out before the classes start.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>A senior colleague says in a staff meeting: “A good doctor should be able to answer any health question a patient asks.” Decide what the edge test and the five signals say about this claim, and say what your answer does not establish.</p>",
+   "level": 10,
+   "answer": "<p>The claim treats being a doctor as being at the do <dfn data-g=\"210\">depth</dfn> in every field that touches health. The edge test is per question. For many questions a patient asks (whether a device suits her, what a product contains, what genes explain), a doctor cannot say what result would show their answer wrong and check it themselves, so No test fires. When the patient will act on the answer, About to act fires too. So the signals say that a good doctor answers the part inside their edge and routes the rest, with the public sentence and an owner.</p>\n<p>What this does not establish: that routing is always right (routing what is yours is also a failure); that a doctor need know nothing about the adjacent fields (you need the route depth to name the owner and recognise the question); or that the patient will be satisfied with a routed answer.</p>\n<p>The colleague’s underlying point, that a doctor should not leave a patient with nothing, holds. The four moves give the patient more than an improvised answer would.</p>"
+  }
+ ]
+}

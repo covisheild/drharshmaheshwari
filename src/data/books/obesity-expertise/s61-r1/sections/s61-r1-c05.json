@@ -1,0 +1,250 @@
+{
+ "format": 1,
+ "id": "s61-r1-c05",
+ "label": "5",
+ "title": "Judging whether a reply is responsive, without being able to give it",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"666\">reply</dfn> is <dfn data-g=\"678\">responsive</dfn> when it passes five checks, run in this order by the person who asked. Asked: it answers the question that was asked, not a neighbouring one. How sure: it says how sure the <dfn data-g=\"545\">owner</dfn> is, and on what. Own field: it stays inside the owner’s field, and names what lies outside it. References: the references it gives are real, and say what the reply says they say. Decision: it changes, or firmly confirms, the decision the question served. The asker runs these checks without judging the owner’s method, which is the one part of a reply the asker cannot assess.</p>",
+   "refs": [
+    51,
+    1,
+    58,
+    59,
+    60,
+    61,
+    51,
+    51,
+    51,
+    60,
+    62,
+    63,
+    64,
+    51,
+    65,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    49,
+    71,
+    50
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>Now a reply comes back — what the owner sends back. You routed the question because you could not answer it yourself, so you cannot <dfn data-g=\"103\">check</dfn> the answer by working it out.</p>\n<p>You can check something else: whether you can use the reply for your decision. Five checks do that, and none of them needs the owner’s skill. A reply that passes all five is responsive — a reply you can use for the decision the question served. A reply that fails one is not responsive.</p>\n<p>Run them in this order.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>No.</th>\n<th>Check</th>\n<th>What you ask</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td><strong>Asked</strong></td>\n<td>Does it answer the question asked, or a neighbouring one?</td>\n</tr>\n<tr>\n<td>2</td>\n<td><strong>How sure</strong></td>\n<td>Does it say how sure the owner is, and on what?</td>\n</tr>\n<tr>\n<td>3</td>\n<td><strong>Own field</strong></td>\n<td>Does it stay inside the owner’s field, and name what lies outside it?</td>\n</tr>\n<tr>\n<td>4</td>\n<td><strong>References</strong></td>\n<td>Are its references real, and do they say what the reply says they say?</td>\n</tr>\n<tr>\n<td>5</td>\n<td><strong>Decision</strong></td>\n<td>Does it change, or firmly confirm, your decision? If neither, why did you ask?</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Asked comes first.</strong> A sure, well-referenced reply to a different question leaves your decision where it was.</p>\n<p>Goldman and colleagues report one hospital’s series, in Boston. In it, the asker and the owner had totally different impressions of why the <dfn data-g=\"164\">consultation</dfn> was asked for in 15% of cases. In another service, among consultations before surgery for people with diabetes, no specific question was asked in 24% of cases, and the owner ignored the question in another 12%. They show that the question and the reply often fail to meet. They do not show how often it happens in India, and no study we hold counts that.</p>\n<p>Put your Question row next to the reply. Try to write the answer to your question in one sentence, using only the reply. If you can only write an answer to a different question, the reply fails <strong>Asked</strong>.</p>\n<p><strong>How sure: on what, not how it sounds.</strong> Check 2 asks for two things. One is how sure: a word, a range, or “not known”. The other is on what: a trial, a <dfn data-g=\"344\">guideline</dfn>, a study of people like yours, a series of the owner’s own patients, or the owner’s experience. Experience is an allowed answer. It has to be named as the basis.</p>\n<p>The trap is to read a confident tone as the answer to check 2. In Meyer and colleagues’ study, 118 general internists in the United States diagnosed written cases. They diagnosed 55.3% of the easier cases correctly and 5.8% of the more difficult ones. Their <dfn data-g=\"151\">confidence</dfn> moved only from 7.2 to 6.4 out of 10.</p>\n<p>What this does not mean: the cases were written, not real patients, and the authors say their method of delivering cases limits real-world validity. It shows that how sure someone sounds tells you little about whether they are right on a hard question.</p>\n<p><strong>Own field.</strong> A good reply stays in the owner’s field and says where it ends. If the question or the reply reaches past that field, the reply names what lies outside and, where it can, who owns it. A reply that touches nothing outside its field passes by staying inside.</p>\n<p><strong>References.</strong> Check 4 is Book 0’s reference check, and you can run it without the owner’s skill. You are not checking whether the study is good, because that would be judging the method. A reply with no references passes check 4 only if check 2 has told you what it rests on instead. When check 4 fails only because the reply cites nothing and names no basis, the ask-back for check 2 covers it; a second owner is for references that are given and do not hold.</p>\n<p><strong>Decision.</strong> If it moves nothing, either the reply hedged everything, or your question did not serve the decision. Go back to your Decision row.</p>\n<p><strong>When a check fails: ask back, or ask a second owner.</strong> Two moves, chosen by which check failed, and one rule for when owners still disagree.</p>\n<table>\n\n<tbody>\n<tr>\n<td>When</td>\n<td>Do</td>\n</tr>\n<tr>\n<td><strong>Asked</strong>, <strong>How sure</strong> or <strong>Own field</strong> fails</td>\n<td>Ask back: write to the same owner, quote your Question row, and name what is missing.</td>\n</tr>\n<tr>\n<td><strong>References</strong> fails, or two replies disagree</td>\n<td>Ask a second owner in the same field, and send them the same routed question.</td>\n</tr>\n<tr>\n<td><strong>Decision</strong> fails</td>\n<td>Go back to your own Decision row before you write to anyone.</td>\n</tr>\n<tr>\n<td>Two owners in the same field still disagree</td>\n<td>Say, in these words, that the field is not settled on that question. Decide with the asker what to do meanwhile. Never pick the method you prefer.</td>\n</tr>\n</tbody>\n</table>\n<p>These moves are this book’s.</p>\n<p><strong>The one thing you never judge: the method.</strong> You can see what a reply rests on. You cannot see whether the method behind it was right. If you catch yourself deciding that the owner <dfn data-g=\"829\">used</dfn> the wrong method, run the <dfn data-g=\"237\">edge</dfn> test from the first section. Can you say what result would show their method wrong, and check it yourself? If not, you are <dfn data-g=\"373\">improvising</dfn>. Write to a second owner, not a verdict.</p>\n<p><strong>The other direction: a question routed to you.</strong> Sooner or later the question comes to you. Answering well is passing the checks someone else will run on you. So the answering side has four items, and three of them carry the same labels as the checks, on purpose.</p>\n<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>No.</th>\n<th>Item</th>\n<th>When a question is routed to you</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td><strong>Asked</strong></td>\n<td>Answer the question asked. If it is unclear, ask what decision it serves.</td>\n</tr>\n<tr>\n<td>2</td>\n<td><strong>How sure</strong></td>\n<td>Say how sure you are, and on what evidence.</td>\n</tr>\n<tr>\n<td>3</td>\n<td><strong>Own field</strong></td>\n<td>Stay inside your field, and name what lies outside it and who owns that.</td>\n</tr>\n<tr>\n<td>4</td>\n<td><strong>Next step</strong></td>\n<td>Say what you would do next.</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Asked, from the answering side.</strong> Confirm the question before you answer it.</p>\n<p>In Goldman and colleagues’ own series, owners thought their recommendations were crucial to patient management in about 35% of consultations. The askers thought so “only about half as often”. Where the two disagreed on why the consultation was asked for, the owner rated their own impact higher in “more than three fourths of the cases”. This is one Boston hospital’s series, reported in 1983. It shows that people answering can misjudge their own usefulness. It does not show how often you will.</p>\n<p><strong>How sure, from the answering side.</strong> Say how sure you are and on what, because the asker cannot check your method. This item is the book’s own.</p>\n<p><strong>Own field, from the answering side.</strong> Answer your part, and name the rest and its owner.</p>\n<p><strong>Next step.</strong> End with what you would do next, including what to do if things change. Goldman and colleagues’ sixth commandment is “Provide contingency plans”: “A brief description of therapeutic options to be employed should these problems arise may save valuable time later”. In your own reply, in one line: name the next step, who takes it, and what to do if the answer turns out not to hold.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s61-r1-c05-references-useful.png",
+   "alt": "Two bars: 41% of non-surgeons and 18% of surgeons found references of value, with a dashed line at 29% for all physicians.",
+   "w": 1360,
+   "h": 656,
+   "caption": "What a real survey found (Salerno and colleagues, 2007, 323 referring physicians at three US academic centres): 29% of physicians thought literature references useful in a consultation; 41% of non-surgeons and 18% of surgeons. Practice problem 5 runs check 4 on this survey."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>A made-up meeting: at the district NCD meeting, the district NCD officer asks whether the screening camps should add a body-fat reading. The camps would use the two handheld body-fat machines the district hospital already has. Part of this is yours: what the camp form records, and how the readings would be used in the district’s reports. Whether the machines’ readings can be trusted for these adults is past your edge. You <dfn data-g=\"696\">route</dfn> it to a nutrition scientist who studies body composition, at a university nutrition department. That is a kind of person, as advice. No one is named. In the meeting you say: “That is outside what I can assess, and here is who can: a nutrition scientist who studies body composition. I will send the question this week.”</p>\n<p>Here is the question you send, in the five parts. All the details are made up.</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>Your question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Decision</strong></td>\n<td>The district NCD officer decides at the review meeting on 27 Nov 2026 whether the camp form gets a body-fat line, read from the hospital’s handheld machines. He is waiting.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>Adults screened at village camps, many with obesity. The machines are a handheld model; the maker’s leaflet is attached. We have no comparison of its readings with any other measure.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>Do this model’s readings agree closely enough with an accepted reference measure, in Indian adults with obesity, to be recorded on the camp form?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>Yes, no, or not known, with the study or standard it rests on. I cannot judge how such machines are tested; tell me how sure you are and on what.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>By 20 Nov 2026. If it comes later, the form is printed without the line.</td>\n</tr>\n</tbody>\n</table>\n<p>A made-up reply:</p>\n<blockquote>\n<p>“Yes, these machines are very reliable. We use them in our clinic every day and I am fully confident in them. Go ahead.”</p>\n</blockquote>\n<p>Here is the judgement you wrote, and sent on to the district NCD officer.</p>\n<table style=\"width:90%;\">\n\n<tbody>\n<tr>\n<td>Check</td>\n<td>Your mark</td>\n<td>Your reason</td>\n</tr>\n<tr>\n<td>Asked</td>\n<td>passes</td>\n<td>It says yes</td>\n</tr>\n<tr>\n<td>How sure</td>\n<td>passes</td>\n<td>“Fully confident”</td>\n</tr>\n<tr>\n<td>Own field</td>\n<td>passes</td>\n<td>Body composition is the owner’s field</td>\n</tr>\n<tr>\n<td>References</td>\n<td>passes</td>\n<td>None needed; the owner is sure</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>passes</td>\n<td>Confirms: add the line</td>\n</tr>\n</tbody>\n</table>\n<p>Find what broke before you read on. Here it is, check by check.</p>\n<p><strong>How sure</strong> broke first. The reply says how sure (“fully confident”) and not on what. “We use them every day” could have been a basis, the owner’s experience, if the reply had said what that experience showed about agreement with a reference measure. It says only how often the machines are used. The mark was given for tone. Recall the section on improvising: Meyer’s 118 physicians moved from 7.2 to 6.4 out of 10 in confidence, while their <dfn data-g=\"8\">accuracy</dfn> fell from 55.3% to 5.8%. A confident tone tells you little on a hard question.</p>\n<p><strong>Asked</strong> passed too easily. The question asked about agreement with a reference measure, in Indian adults with obesity. The reply answered a neighbouring question: are the machines reliable in the owner’s clinic.</p>\n<p><strong>References</strong>: “none needed” wrote a pass for something that was not there. With no references, check 4 passes only if check 2 has said what the reply rests on, and it had not.</p>\n<p><strong>Own field</strong> genuinely passes. <strong>Decision</strong> passed only because the checks before it did.</p>\n<p>Here is the repaired judgement.</p>\n<table style=\"width:100%;\">\n\n<tbody>\n<tr>\n<td>Check</td>\n<td>Mark</td>\n<td>Reason</td>\n</tr>\n<tr>\n<td>Asked</td>\n<td>fails</td>\n<td>Answers “are they reliable”, not “do readings agree with a reference measure in these adults”</td>\n</tr>\n<tr>\n<td>How sure</td>\n<td>fails</td>\n<td>Sure, but not on what</td>\n</tr>\n<tr>\n<td>Own field</td>\n<td>passes</td>\n<td>Stays in body composition</td>\n</tr>\n<tr>\n<td>References</td>\n<td>fails</td>\n<td>None, and nothing else named as the basis</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>fails</td>\n<td>It neither changes nor firmly confirms the decision, because it answered a neighbouring question; your Decision row is clear, so the ask-back the first failures call for covers it</td>\n</tr>\n</tbody>\n</table>\n<p>The move for these failures is to ask back. Here is the message.</p>\n<blockquote>\n<p>“Thank you. Our question was whether this model’s readings agree with an accepted reference measure in Indian adults with obesity. Could you say whether any study has tested that, and which one? If none has, ‘not known’ is a useful answer for us, and we will leave the line off the form.”</p>\n</blockquote>\n<p>Why the wrong judgement looked reasonable: the owner really is an expert in the field. The reply was quick, kind and certain. And it said what the meeting hoped to hear.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>Meyer’s study was of doctors diagnosing written cases. It does not show that this owner is wrong, and the machines may well be fine. The checks say whether you can use the reply, not whether it is true. And if the owner’s real basis is long clinical experience and no study exists, a reply that says exactly that passes How sure.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is a reply to the same question that passes. It is made up.</p>\n<p>A made-up reply:</p>\n<blockquote>\n<p>“Thank you for the clear question. I know of no study that has compared this handheld model with a reference measure in Indian adults with obesity. I checked the maker’s leaflet you sent: it describes how to use the machine and cites no such comparison. So my answer is ‘not known’. I am fairly sure of that, on those two grounds, though a study I have not seen could exist. Whether a body-fat reading would change what the camps do for each person is a question for your programme, not for me. If you want a reading anyway, I would record it as a trial, alongside waist, for one round of camps, and not use it in reports until a comparison has been done.”</p>\n</blockquote>\n<p>Mark it against the five checks.</p>\n<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Check</td>\n<td>Mark</td>\n<td>Reason</td>\n</tr>\n<tr>\n<td>Asked</td>\n<td>passes</td>\n<td>Answers the question asked: “not known” is an answer to it</td>\n</tr>\n<tr>\n<td>How sure</td>\n<td>passes</td>\n<td>“Fairly sure”, on two named grounds, with the limit stated</td>\n</tr>\n<tr>\n<td>Own field</td>\n<td>passes</td>\n<td>Names what lies outside it (what the camps do) and leaves it to the programme</td>\n</tr>\n<tr>\n<td>References</td>\n<td>passes</td>\n<td>Cites one document, the leaflet you sent, and says what it does and does not contain, which you can check yourself in a minute</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>passes</td>\n<td>Changes the decision: the line is left off the form, or kept as a trial and out of the reports</td>\n</tr>\n</tbody>\n</table>\n<p>A responsive reply can say “not known”. What makes it usable is that you can act on it.</p>\n<p>Notice that this reply also does the four things the answering side asks of you. It answers the question asked. It says how sure it is and on what. It names what is outside its field. And it gives a next step.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>A responsive reply is usable, not proven. If the owner missed a study, the reply is still responsive and still wrong on that point. The five checks cannot find that. Only a second owner in the field could.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 3",
+   "role": "illustration",
+   "html": "<p>A made-up email: the district NCD officer writes to you.</p>\n<blockquote>\n<p>“The camp registers show more people with obesity this year than last year. Is obesity rising in the district? I have to report to the State by the end of the month.”</p>\n</blockquote>\n<p>This one is inside your field. Book 0’s section on sampling is enough to answer it. Work through the four items.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Item</td>\n<td>What you do</td>\n</tr>\n<tr>\n<td><strong>Asked</strong></td>\n<td>Restate it: he asks whether obesity is rising in the district, judged from the camp registers. The decision is what to tell the State this month.</td>\n</tr>\n<tr>\n<td><strong>How sure</strong></td>\n<td>Sure, on one ground: the people in a camp register are whoever came to a camp, a convenience sample. More people with obesity in the register can mean more people came, or different people came. A bigger register does not fix this.</td>\n</tr>\n<tr>\n<td><strong>Own field</strong></td>\n<td>Why more people came this year (new camp sites, more publicity, a different month) is known to the officers who ran the camps, not to you. Name them as the people to ask.</td>\n</tr>\n<tr>\n<td><strong>Next step</strong></td>\n<td>For the report: say the registers show more people with obesity screened, not more obesity in the district. To know whether obesity is rising, measure a random sample of adults, drawn the same way, twice, a year apart. Offer to draft that sampling plan for the next review meeting.</td>\n</tr>\n</tbody>\n</table>\n<p>Here is the reply you send, in full. It is made up.</p>\n<blockquote>\n<p>“You asked whether the camp registers show obesity rising in the district, for this month’s report to the State. They cannot show that. The people in the registers are those who came to a camp, so a rise in the count can mean that more people, or different people, came. I am sure of this; it follows from how the people in the registers were found. Why more people came this year is something the officers who ran the camps will know, and I would ask them. For the report, I suggest this sentence: ‘More adults with obesity were screened at camps this year than last; the registers cannot show whether obesity in the district has changed.’ If you need to know whether it is rising, the next step is to measure a random sample of adults twice, a year apart, drawn the same way both times. I can draft that plan for the next review meeting.”</p>\n</blockquote>\n<p>Before you send it, run the asker’s five checks on your own reply. It passes Asked, How sure, Own field and Decision, because it changes what goes in the report. It cites nothing, and check 2 says what it rests on, so it passes References too.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>This question was inside your field, which is why you could answer it. When only part of a question routed to you is yours, answer that part and route the rest, naming its owner. The four items still hold. And a reply that passes your own checks can still be wrong: the checks make it usable, not right.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>Run Asked first. If the reply answers a neighbouring question, stop and ask back.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The error is to pass How sure on tone. In Meyer’s study, doctors’ confidence moved from 7.2 to 6.4 out of 10 while their accuracy fell from 55.3% to 5.8%. Ask for the basis.</p>",
+     "tag": "misconception",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When two replies disagree, do not settle it by deciding whose method is better. Send the same <dfn data-g=\"697\">routed question</dfn> to a second owner in the field. If two owners in the field still disagree, say the field is not settled on that question, and decide with the asker what to do meanwhile.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Check a reply’s references as Book 0 taught: find it, confirm it, find the passage, read it.</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>If a reply neither changes nor firmly confirms your decision, look at your own Decision row before you blame the owner.</p>",
+     "tag": "consequence",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The five checks tell you whether you can use a reply, never whether it is true.</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>When a question is routed to you, restate it and the decision it serves before you answer.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>In Goldman and colleagues’ series, owners thought their advice was crucial in about 35% of consultations; the doctors who asked thought so only about half as often. These are one Boston hospital’s figures, reported in 1983. They show the misjudgement happens, not how often it will happen to you.</p>",
+     "tag": "number",
+     "bearing": "teaching"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Responsive means right.” A responsive reply is one you can use: it answers your question, says how sure and on what, stays in its field, cites what it says it cites, and moves your decision. It can still be wrong, inside the owner’s method, where you cannot see. That is why a large or final decision may need a second owner even when the first reply passes every check.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>Thank you. Our question was: [the Question row, word for word]. Your reply [answers a different question / says how sure but not on what / goes beyond your field on X]. Could you [answer the question as asked / say what your answer rests on / leave X to its owner]? We decide on [<dfn data-g=\"198\">date</dfn>].</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory: name the five checks on a reply in order, the two moves when a check fails and when you use each, and the one thing you never judge.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Asked, How sure, Own field, References, Decision. Ask back (to the same owner) when Asked, How sure or Own field fails. Ask a second owner when References fails or two replies disagree. If Decision fails, go back to your own Decision row first. If two owners in the field still disagree, say the field is not settled on that question and decide with the asker what to do meanwhile. You never judge the owner’s method.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>From memory: the four items for answering a question routed to you, and which three share their labels with the checks on a reply, and why.</p>",
+   "type": "retrieval",
+   "confidence": false,
+   "answer": "<p>Asked (answer the question asked; if unclear, ask what decision it serves), How sure (how sure, on what evidence), Own field (stay inside it; name what lies outside and who owns it), Next step (what you would do next). Asked, How sure and Own field are shared, because answering well is passing the checks the asker will run on you.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>Made up: the medical officer of the urban primary health centre referred the woman of 52 who teaches at a government school, has obesity and takes tablets for diabetes from the centre, to the district hospital’s diabetes clinic. The routed question was: “She wants to start walking 30 minutes a day. Before she does, is any change to her diabetes tablets needed? A yes or no, with what you would change and why. By her next visit on 10 Nov 2026.” The clinic’s reply: “Patient seen. Weight loss is essential. Advised diet and exercise. Review in three months.” Mark the reply against the five checks and write the message you would send back.</p>",
+   "type": "critique",
+   "confidence": false,
+   "answer": "<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Check</td>\n<td>Mark</td>\n<td>Reason</td>\n</tr>\n<tr>\n<td>Asked</td>\n<td>fails</td>\n<td>The question was whether her tablets need a change before she starts walking. The reply does not say yes or no.</td>\n</tr>\n<tr>\n<td>How sure</td>\n<td>fails</td>\n<td>Nothing on how sure, or on what</td>\n</tr>\n<tr>\n<td>Own field</td>\n<td>passes</td>\n<td>It stays in the clinic’s field and touches nothing outside it</td>\n</tr>\n<tr>\n<td>References</td>\n<td>fails</td>\n<td>None given, and How sure gave no basis</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>fails</td>\n<td>The medical officer cannot decide anything from it</td>\n</tr>\n</tbody>\n</table>\n<p>The message back: “Thank you for seeing her. Our question was whether any change to her diabetes tablets is needed before she starts walking 30 minutes a day. Could you say yes or no, and if yes, what change? Her next visit is on 10 Nov 2026.”</p>\n<p>The reply’s advice may be sound. It is an answer to a neighbouring question (what should she do about her weight), not the one asked. The 30 minutes a day is the made-up patient’s plan, not advice from this book.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 4,
+   "prompt": "<p>A first-year resident says: “The specialist was very sure, so the reply passes How sure.” Explain in ten minutes, with a whiteboard, why that is not what the check asks.</p>",
+   "type": "teaching",
+   "confidence": false,
+   "answer": "<p>Write the check on the board: how sure, and on what. Point to the second half: the check is passed by a named basis, not a tone.</p>\n<p>Draw two bars: accuracy 55.3% and 5.8% on easier and harder written cases. Then draw confidence 7.2 and 6.4 out of 10 (Meyer, 118 general internists in the United States). The first pair falls a long way. The second hardly moves. So tone tells you little on a hard question.</p>\n<p>Then the move: ask back for the basis (“which study, which guideline, or your own experience?”). End with the limit. This does not mean owners are usually wrong. It means you cannot tell from how sure they sound.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Made up: the question was: “Can the camp’s handheld scales weigh adults up to 150 kg, yes or no?” Mark each first line of a reply as answering the question asked, or a neighbouring one. The figures in the lines are made up.</p>\n<ol type=\"1\">\n<li><p>“Yes: the maker states a 180 kg limit, on page 2 of the leaflet you sent.”</p></li>\n<li><p>“Scales of this <dfn data-g=\"819\">type</dfn> are widely used in camps across the country.”</p></li>\n<li><p>“No: the limit printed on the base is 120 kg.”</p></li>\n<li><p>“Weighing is only one part of a good screening programme.”</p></li>\n</ol>",
+   "level": 1,
+   "answer": "<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Line</th>\n<th>Asked?</th>\n<th>Why</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>answers it</td>\n<td>Yes, with the limit and where it is printed</td>\n</tr>\n<tr>\n<td>2</td>\n<td>neighbouring</td>\n<td>Says the scales are common, not whether they reach 150 kg</td>\n</tr>\n<tr>\n<td>3</td>\n<td>answers it</td>\n<td>No, with the limit</td>\n</tr>\n<tr>\n<td>4</td>\n<td>neighbouring</td>\n<td>Answers a question nobody asked</td>\n</tr>\n</tbody>\n</table>\n<p>A “no” answers the question as much as a “yes”.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Made up: name the check each fragment of a reply bears on, and say whether it passes or fails it.</p>\n<ol type=\"1\">\n<li><p>“I am fairly sure, on the basis of two trials in adults like yours.”</p></li>\n<li><p>“As for the cost of running the programme, I would cut the budget by half.” (from a nutrition scientist)</p></li>\n<li><p>“See Smith 2015” — and no paper of that name can be found.</p></li>\n<li><p>“This does not change my view that you should go ahead as planned.”</p></li>\n<li><p>“Whether the corporation will fund it is outside my field; the finance office would know.”</p></li>\n</ol>",
+   "level": 2,
+   "answer": "<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Fragment</th>\n<th>Check</th>\n<th>Mark</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>How sure</td>\n<td>passes: how sure, and on what</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Own field</td>\n<td>fails: a nutrition scientist advising on budget, with no edge named</td>\n</tr>\n<tr>\n<td>3</td>\n<td>References</td>\n<td>fails: the reference cannot be found, so the first of Book 0’s four acts fails</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Decision</td>\n<td>passes: it names your decision and says it stands, which is what “firmly confirms” means; what the confirmation rests on is check 2’s question, not check 5’s</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Own field</td>\n<td>passes: names what lies outside and who owns it</td>\n</tr>\n</tbody>\n</table>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Made up: a question was routed to you: “Can the ward’s <dfn data-g=\"31\">anganwadi</dfn> (childcare centre) weight records be used to see whether children’s weight changed after the new snack began?” Here is your draft reply. <dfn data-g=\"423\">Label</dfn> each sentence with the answering item it serves, and name the items that are missing.</p>\n<ol type=\"1\">\n<li><p>“You asked whether the anganwadi weight records can show a change after the new snack began.”</p></li>\n<li><p>“They can show whether the children weighed changed, if the same children were weighed the same way before and after.”</p></li>\n<li><p>“Whether the snack itself is a good one is for a nutritionist, not me.”</p></li>\n</ol>",
+   "level": 3,
+   "answer": "<table>\n\n<thead>\n<tr>\n<th>Sentence</th>\n<th>Item</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Asked</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Asked: this is the answer itself, which item 1 asks for, but it says nothing on how sure or on what</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Own field</td>\n</tr>\n</tbody>\n</table>\n<p>Missing: How sure (say how sure, and on what: here, on how the records were kept, which you have not yet seen) and Next step. A next step could be: “Send me two months of records from before and two after, and I will tell you by Friday whether they can be compared.”</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Made up: at the district NCD meeting, the question routed to a survey methodologist was: “Which items on the camp form can be cut without losing what the district’s reports need? A marked copy, keep, merge or drop against each item. I cannot judge form design; tell me how sure you are and on what. By 18 Nov 2026; the form prints on 20 Nov.” The reply: “I have marked the attached copy. Keep items 1 to 9; merge 10 and 11 (both ask about tobacco); drop 14, which no report uses — I checked the three report templates you sent. I am sure of the merges and the drop, on those templates; I am not sure whether item 12 (occupation) is used by the State, which only the State cell can tell you. If the form grows again, the same check against the templates applies.” Mark the reply against the five checks.</p>",
+   "level": 4,
+   "answer": "<table style=\"width:99%;\">\n\n<tbody>\n<tr>\n<td>Check</td>\n<td>Mark</td>\n<td>Reason</td>\n</tr>\n<tr>\n<td>Asked</td>\n<td>passes</td>\n<td>A marked copy, keep, merge or drop</td>\n</tr>\n<tr>\n<td>How sure</td>\n<td>passes</td>\n<td>Sure of named changes, on the templates; not sure about item 12, and says why</td>\n</tr>\n<tr>\n<td>Own field</td>\n<td>passes</td>\n<td>Names what lies outside (the State’s use of item 12) and who owns it (the State cell)</td>\n</tr>\n<tr>\n<td>References</td>\n<td>passes</td>\n<td>The three templates you sent, which you can check yourself</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>passes</td>\n<td>Tells the officer which form to print, with one question left to put to the State</td>\n</tr>\n</tbody>\n</table>\n<p>Responsive. Next: ask the State cell about item 12 before 20 Nov.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>A made-up reply from a colleague says: “Doctors like references in a consultation: a 2007 survey of over 300 referring physicians found most of them wanted literature references in the consult (Salerno and colleagues, Archives of Internal Medicine, 2007).” The survey is real. Its <dfn data-g=\"5\">abstract</dfn> says: “Only 29% of physicians thought literature references were useful in consultations.” Its results say that nonsurgeons were “significantly more likely than surgeons to find references of value (41% vs 18%), most providers of all specialties did not think they were a useful part of the consult.” Run check 4.</p>",
+   "level": 5,
+   "answer": "<p>Book 0’s four acts.</p>\n<p>Find it: the survey exists (Salerno, Hurst, Halvorson and Mercado, Archives of Internal Medicine, 2007).</p>\n<p>Confirm it: it is the source named, a survey of 323 referring physicians at three US academic centres.</p>\n<p>Find the passage: the abstract, and the results on references.</p>\n<p>Read it: it says the opposite of the reply. Only 29% thought references useful. Even among nonsurgeons, the group most in favour, it was 41%, against 18% of surgeons. The reference is real and does not say what it was cited for. Check 4 fails.</p>\n<p>Note what you did not do: you did not judge the survey’s method.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Made up: you sent the same routed question about the handheld body-fat machines to two owners. One replies: “Not known: no study of this model in Indian adults that I can find.” The other replies: “Yes: a 2021 study (made up for this problem) tested this model against a reference measure in Indian adults and found close agreement; the paper is attached.” What do you do, and what do you not do?</p>",
+   "level": 6,
+   "answer": "<p>First, run the checks on each. Both may pass Asked and How sure. The disagreement is about a fact the second reply claims: that a study exists and says this. That is check 4, and you can run it yourself with Book 0’s four acts. Open the attached paper. Confirm it is what it is said to be. Find the passage. Read whether it tested this model, in adults with obesity, against a reference measure.</p>\n<p>If it does, write back to the first owner with the paper and ask whether it changes their answer. If the paper does not say what the reply says, check 4 fails for the second reply.</p>\n<p>If both still stand after that — both cite real sources that say what they <dfn data-g=\"114\">claim</dfn>, and still disagree — the field is not settled on that question. Say so in those words to the district NCD officer, and decide with him what to do meanwhile: for example, leave the line off the form until it is settled.</p>\n<p>Do not decide which owner’s method is better. That is judging the method.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Made up: here is a worked judgement. Find the step that broke.</p>\n<p>The question (at the district NCD meeting): “Should the screening camps record waist as well as weight? Yes or no, and on what. By 20 Nov 2026.”</p>\n<p>The reply: three pages on why body fat around the waist matters for health, with eleven references.</p>\n<p>The judgement: “Asked: passes (long and thorough). How sure: passes (eleven references). Own field: passes. References: passes (all eleven found). Decision: confirms (record waist).”</p>",
+   "level": 7,
+   "answer": "<p>Asked broke. The judgement marked it on length, not on whether the reply answers the question. Three pages on why waist matters answer a neighbouring question (does waist matter for health?), not “should these camps record it, yes or no”.</p>\n<p>How sure broke too: it was passed on the count of references, which says nothing about how sure the owner is or on what. Everything after followed. The eleven real references were checked for being findable, not for saying that the camps should record waist. And “confirms” was read into a reply that never said yes.</p>\n<p>Repair: try to write the answer to your question in one sentence from the reply. You cannot. Ask back: “Thank you. Our question was whether the camps should record waist as well as weight, yes or no, and on what.”</p>\n<p>Why the wrong judgement looks reasonable: length and references look like care, and care looks like an answer.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Made up: here is a worked judgement. Find the step that broke.</p>\n<p>The reply (from a survey methodologist, about the camp form): “Merge items 10 and 11; drop 14. I am sure, on the three report templates you sent.”</p>\n<p>The judgement: “Asked: passes. How sure: passes. Own field: passes. References: passes. Decision: fails, because the owner should have used a pilot test of the form with camp staff instead of reading the templates, so I am not going to act on it.”</p>",
+   "level": 8,
+   "answer": "<p>The Decision step broke, and it broke by judging the method. Whether templates or a pilot test is the right way to decide which items to cut is the owner’s field. The asker cannot assess it.</p>\n<p>The four checks before it passed. Check 5 should ask only whether the reply changes or confirms the decision. It does: it says which items to cut.</p>\n<p>If the asker has a real doubt about the method, the move is a second owner, not a refusal.</p>\n<p>Why the wrong judgement looks reasonable: “a pilot test” sounds more thorough, and the asker may have read about pilot tests. Reading about a method is the read <dfn data-g=\"210\">depth</dfn>, not the critique depth.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Made up: at the district NCD meeting, a member says: “The professor was absolutely certain the new leaflet will work, so we can go ahead and print ten thousand.” Decide which checks you can run on what the member reports, run them, and say what even a full pass would not establish.</p>",
+   "level": 9,
+   "answer": "<p>You have only a report of the reply, and one word of it: “certain”. Ask for the reply itself. Then run the checks.</p>\n<p>Asked: what was the professor asked? “Will the leaflet work” is not yet a question: work at what, for whom? If the question was loose, write it in five parts first.</p>\n<p>How sure: “absolutely certain” is how sure, with no “on what”. It fails as it stands.</p>\n<p>Own field: unknown until you know the professor’s field.</p>\n<p>References: fails as it stands: none reported, and How sure names no basis.</p>\n<p>Decision: the meeting is about to act (print), which is the moment the checks matter most.</p>\n<p>What a full pass would not establish: that the leaflet will work. A responsive reply is usable, not proven, and the checks cannot see inside the professor’s method. For a print run this size, a second owner’s reply before printing costs little. The ten thousand is the made-up member’s figure.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Made up: last month a colleague in the OPD routed you this question: “Our OPD weighs every adult. Can we use the weights to tell whether the centre’s diet counselling is working?” Here is the reply you sent: “Diet counselling is very important for weight. Most patients lose weight when they follow the advice, and I strongly recommend continuing it. You should also start a yoga <dfn data-g=\"116\">class</dfn>.” This reply is the deliberately wrong material of the problem; the book does not assert any of it. Run the asker’s five checks on your own reply, rewrite it with the four answering items, and say what your rewrite still does not establish.</p>",
+   "level": 10,
+   "answer": "<p>Checks on your reply:</p>\n<ul>\n<li>Asked fails. The question was whether the OPD weights can show whether counselling works, and the reply says counselling is important.</li>\n<li>How sure fails. “Most patients lose weight” is stated with no basis.</li>\n<li>Own field fails. The yoga class is advice nobody asked for, outside the question.</li>\n<li>References fails: none given, and How sure named no basis.</li>\n<li>Decision fails. The colleague still cannot tell whether the weights can be used.</li>\n</ul>\n<p>A rewrite:</p>\n<table>\n\n<tbody>\n<tr>\n<td>Item</td>\n<td>Your rewritten reply</td>\n</tr>\n<tr>\n<td><strong>Asked</strong></td>\n<td>You asked whether the OPD’s routine weights can show whether diet counselling is working.</td>\n</tr>\n<tr>\n<td><strong>How sure</strong></td>\n<td>On their own, no, and I am sure of that: the adults weighed are whoever came to the OPD, and those who came back after counselling may differ from those who did not. I have not seen how the weights are recorded.</td>\n</tr>\n<tr>\n<td><strong>Own field</strong></td>\n<td>What the counselling should contain is for the centre’s dietitian, not me.</td>\n</tr>\n<tr>\n<td><strong>Next step</strong></td>\n<td>Send me three months of the register, and I will tell you within a week whether counselled and not-counselled adults can be compared at all, and what you would need to record to compare them.</td>\n</tr>\n</tbody>\n</table>\n<p>What the rewrite does not establish: whether the counselling works. It says only what the weights can and cannot show. Your sentence “most patients lose weight” is gone because it had no basis you could name.</p>"
+  }
+ ]
+}

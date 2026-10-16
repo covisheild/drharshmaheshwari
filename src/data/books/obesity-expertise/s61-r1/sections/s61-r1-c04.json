@@ -1,0 +1,214 @@
+{
+ "format": 1,
+ "id": "s61-r1-c04",
+ "label": "4",
+ "title": "Writing the question so the answer is usable",
+ "part": "R1",
+ "blocks": [
+  {
+   "t": "prose",
+   "label": "Definition",
+   "role": "definition",
+   "html": "<p>A <dfn data-g=\"697\">routed question</dfn> is a question written for its <dfn data-g=\"545\">owner</dfn> in five parts, always in this order. The decision: the decision the answer serves, and who is waiting for it. The <dfn data-g=\"167\">context</dfn>: what the owner needs to know to answer, such as the population, the setting and the data already in hand. The question: the question itself, narrow enough that the owner can answer it from their own field. The form: the form of answer you can use (yes or no, a range, a <dfn data-g=\"651\">recommendation</dfn>, a reference), with the limit of your own judgement stated. The deadline: when you need the answer, and what happens if it comes later. A routed question is ready to send when every part is filled from what you actually know.</p>",
+   "refs": [
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    51,
+    51,
+    51,
+    52,
+    52,
+    46,
+    53,
+    54,
+    54,
+    55,
+    56,
+    57
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "In plain terms",
+   "role": "plain",
+   "html": "<p>What you write decides what comes back. A loose question gets a loose answer, or an answer to a different question.</p>\n<p>A <dfn data-g=\"164\">consultation</dfn> — asking a colleague in another field for an opinion on one question, and their answer — is the hospital version of routing. In 1983, Goldman, Lee and Rudd published “Ten commandments for effective consultations”, ten rules for the doctor who answers. Their paper calls the person who answers the “consultant”, which is the owner in the consultation papers’ word. It calls the person who asks the “requesting physician”, which is the asker in their words.</p>\n<p>As Goldman and colleagues report from one hospital’s series, at the Brigham and Women’s Hospital in Boston, the asker and the owner had totally different ideas of why the consultation was asked for in 15% of cases. On another academic consultative service, among consultations before surgery for people with diabetes, no specific question was asked in 24% of cases. The owner ignored the question in another 12%.</p>\n<p>Do not add these percentages together. They come from two different series. The numbers come from hospital consultation services, one of them in Boston, reported in 1983. They show that questions go astray in practice. They do not show how often questions go astray in a ward committee or a district meeting in India, and no study we hold counts that.</p>\n<p>So the work of the question is yours. A routed question — a question written in five parts so that its owner can answer it in a form you can use — has these parts, in this order.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>What goes in it</td>\n</tr>\n<tr>\n<td><strong>Decision</strong></td>\n<td>The decision the answer serves, and who is waiting for it</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>What the owner needs to know: population, setting, data already in hand</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>The question itself, narrow and answerable</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>The form of answer you can use (yes or no, a range, a recommendation, a reference), and your own limit</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>When you need it, and what happens if it comes later</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Decision.</strong> Name the decision and the person waiting for it: a councillor, the district NCD officer, a patient. “To learn more about obesity” is not a decision, because nobody acts on it. If you cannot name the decision, stop. Either find out who is waiting, or do not send the question.</p>\n<p><strong>Context.</strong> Give only what changes the owner’s answer. Do not send your whole file.</p>\n<p><strong>Question.</strong> Ask one narrow question that the owner can answer from their own field. Do not hand the owner your decision (“Should we build more gyms?”). Ask the part only they can answer.</p>\n<p>Askers differ on this. In a 2007 survey by Salerno and colleagues of 323 doctors who refer patients, at 3 academic medical centres in the United States, 69% of the non-surgeons wanted the owner to focus on a narrow question, against 41% of the surgeons. The survey measured what these doctors said they preferred. It did not measure whether narrow questions got better results.</p>\n<p><strong>Form.</strong> Say what shape of answer you can use: yes or no, a range, a recommendation, or a reference you can read. Then say plainly what you cannot judge, in these words: “I cannot judge the method; tell me how sure you are and on what.”</p>\n<p><strong>Deadline.</strong> Give a <dfn data-g=\"198\">date</dfn>, and what happens if the answer comes later (“the committee decides without it”).</p>\n<p>The five parts assume you know enough to narrow the question. Sometimes you do not know the field well enough to know what to ask, and then a narrow question is a guess. When that happens, fill Decision, Context, Form and Deadline as usual, and make the Question row: “What would you need to know, and what would you ask us, to help us decide this?”</p>\n<p>The five parts also work on the phone, in the same order. They are an order of saying things, not a form to print.</p>"
+  },
+  {
+   "t": "figure",
+   "src": "s61-r1-c04-narrow-question.png",
+   "alt": "Two bars: 69% of non-surgeons and 41% of surgeons wanted the owner to focus on a narrow question.",
+   "w": 1360,
+   "h": 656,
+   "caption": "What askers said they prefer: in Salerno and colleagues’ 2007 survey of 323 doctors who refer patients, at 3 academic medical centres in the United States, 69% of the non-surgeons wanted the owner to focus on a narrow question, against 41% of the surgeons. The survey measured stated preference, not whether narrow questions got better results."
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 1",
+   "role": "illustration",
+   "html": "<p>A made-up minute: at an earlier meeting of the ward’s <dfn data-g=\"847\">Wards Committee</dfn>, the councillor asked about the open-air gym in the park. That is the meeting in the last section’s <dfn data-g=\"812\">transcript</dfn>. The minute reads, exactly: <strong>“Health dept to examine benefit of park gym.”</strong></p>\n<p>You are the community medicine resident the corporation asked for health advice. Part of this you can answer yourself, and you say so. You can find out who uses the gym, by counting users on a few mornings and evenings and asking them two or three questions. That is your own field.</p>\n<p>The rest is past your <dfn data-g=\"237\">edge</dfn>: whether the machines are safe for the people who use them. The signal that fires is <strong>Unknown standard</strong>. You do not know the standard for safe outdoor exercise equipment. You pick the owner: a sports-medicine doctor at a medical college. That is a kind of person, as advice. No one is named.</p>\n<p>A made-up email. You forward the minute as it stands:</p>\n<blockquote>\n<p>“Dear Doctor, the Wards Committee has asked us to examine the benefit of the park gym. Could you advise?”</p>\n</blockquote>\n<p>A made-up answer:</p>\n<blockquote>\n<p>“Thank you for writing. Open-air gyms are a good idea for any ward, and I would support more of them. Do let me know if I can help further.”</p>\n</blockquote>\n<p>Now mark what the email was missing, part by part.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>In the email</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>missing: no decision named, and no one named as waiting</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>missing: which park, which machines, who uses them</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>“examine the benefit”: of what, for whom, compared with what?</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>missing</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>missing</td>\n</tr>\n</tbody>\n</table>\n<p>The answer is friendly and useless to you. It answers a question nobody asked: “is a park gym a good idea?” The owner was not careless. You sent them the work of guessing your question, and they guessed. This is the 24% that Goldman and colleagues report from another service (no specific question asked), happening in a ward.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The made-up answer fails in an obvious way. Real answers to a loose question are often long, careful and well referenced, and still answer a neighbouring question. That is harder to spot, and the next section gives the checks for it. The minute is also not always the asker’s fault. A committee writes minutes for its own record, not for an owner, so the rewrite is always your job.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Illustration 2",
+   "role": "illustration",
+   "html": "<p>Here is the same request, rewritten. All the details are made up.</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>Your question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Decision</strong></td>\n<td>At its meeting on 13 Nov 2026, the Wards Committee decides whether to ask the corporation to put the same machines in two more parks in the ward. The councillor is waiting for my advice.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>The park has had these machines for about a year; the list and photographs are attached. Most of the people I saw using them on three mornings were women over fifty, and several told me they have knee pain. Some have obesity. No one supervises the machines.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>Which of these machines are safe for adults over fifty with knee pain or obesity to use without anyone supervising, and which should carry a sign or be replaced?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>A list: each machine marked safe, safe with a sign (and the sign’s words), or replace. I cannot judge the machines’ design; tell me how sure you are on each, and on what: a standard, a study, or your own clinical experience.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>By 6 Nov 2026, a week before the meeting. If it comes later, the committee decides without it.</td>\n</tr>\n</tbody>\n</table>\n<p>Three points about the table.</p>\n<ol type=\"1\">\n<li>The Question row asks only what the owner can answer. It does not ask “Should the corporation build more gyms?” That decision stays with the committee.</li>\n<li>The rewrite did not <dfn data-g=\"696\">route</dfn> “Will a park gym bring obesity down in this ward?” That is a separate question, and the last section named its owner: people who study physical activity in communities. What the evidence on activity shows is taught in Book 24, <em>Physical activity and sedentary behaviour science</em>, not here. The count of who uses the gym is yours, and you bring it to the meeting.</li>\n<li>Read the table as the owner will. They can start work without writing back to you.</li>\n</ol>"
+  },
+  {
+   "t": "prose",
+   "label": "Where this picture breaks",
+   "role": "breaks",
+   "html": "<p>The rewrite worked because you knew enough to narrow the question to safety. If you had not known what could go wrong with outdoor machines, the Question row would have been a guess. Then you would ask the owner what they would need to know to help, and keep the other four parts as they are. The rewrite also cannot make the answer right. It makes the answer usable, and the next section shows how to judge that.</p>"
+  },
+  {
+   "t": "mustknow",
+   "points": [
+    {
+     "html": "<p>If you forward a minute as it stands, you send the owner the work of guessing your question. Write the five parts before anything leaves your desk.</p>",
+     "tag": "trap",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>If you cannot fill the Decision row with a decision and a person waiting for it, do not send the question yet.</p>",
+     "tag": "move",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>The error is to put your decision in the Question row (“Should we build two more gyms?”). Ask the part only the owner can answer.</p>",
+     "tag": "misconception",
+     "bearing": "policy"
+    },
+    {
+     "html": "<p>Put your limit in the Form row, in words: “I cannot judge the method; tell me how sure you are and on what.”</p>",
+     "tag": "move",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>The five parts work only when you know enough to narrow the question. When you do not, a narrow question is a guess. Then keep Decision, Context, Form and Deadline, and make the Question row: “What would you need to know, and what would you ask us, to help us decide this?”</p>",
+     "tag": "boundary",
+     "bearing": "methodological"
+    },
+    {
+     "html": "<p>In one hospital series Goldman and colleagues report, the asker and the owner had different ideas of why a consultation was asked for in 15% of cases. That figure comes from one Boston hospital’s series, reported in 1983. It shows questions go astray in practice. It does not tell you how often they go astray in an Indian committee room, which no study we hold measures.</p>",
+     "tag": "number",
+     "bearing": "methodological"
+    }
+   ]
+  },
+  {
+   "t": "prose",
+   "label": "Common misreading",
+   "role": "misread",
+   "html": "<p>“Every row is filled, so the question is ready.” A row can be filled and still not do its job. “To learn more about obesity” fills the Decision row and names no decision. “Your recommendation” fills the Form row and states no limit. The test for each row is whether it was filled from what you actually know: a decision someone is waiting on, a context that changes the answer, one question the owner can answer, a shape you can use with your limit, and a date with its consequence.</p>"
+  },
+  {
+   "t": "prose",
+   "label": "Reporting it",
+   "role": "report",
+   "html": "<p>We must decide [the decision] by [date]; [who] is waiting. [The context, in two lines.] My question is: [one question]. A [yes or no / range / recommendation / reference] would let us act. I cannot judge [the method]; please tell me how sure you are and on what. If your answer comes after [date], [what happens].</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 1,
+   "prompt": "<p>From memory, name the five parts of a routed question in order, and say in a few words what goes in each.</p>",
+   "type": "retrieval",
+   "confidence": true,
+   "answer": "<p>Decision: the decision the answer serves, and who is waiting for it. Context: what the owner needs to know (population, setting, data already in hand). Question: the question itself, narrow and <dfn data-g=\"33\">answerable</dfn> from the owner’s field. Form: the form of answer you can use (yes or no, a range, a recommendation, a reference), and your own limit (“I cannot judge the method; tell me how sure you are and on what”). Deadline: when you need it, and what happens if it comes later.</p>\n<p>The order is the order the owner needs them in: what the answer is for comes before what you ask.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 2,
+   "prompt": "<p>A made-up request. At the district NCD meeting, the district NCD officer says: “The new screening camp form is too long. Ask someone who designs forms whether we can cut it to one page.” You decide the owner is a survey methodologist at a university statistics department. The camps restart on 1 Dec 2026, and the forms go to print on 20 Nov 2026. Write the question you would ask, in five parts.</p>",
+   "type": "design",
+   "confidence": false,
+   "answer": "<p>A model; other wordings pass if every part is filled from the facts given.</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>Your question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Decision</strong></td>\n<td>The district NCD officer decides by 20 Nov 2026 which version of the camp form goes to print. He is waiting.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>The current form and the one-page draft are attached. Camp staff fill it in by hand for each adult screened. The data are entered later for the district’s reports.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>Which items on the current form can be removed or merged without losing what the district’s reports need, and does the one-page draft lose any of those?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>A marked copy of the form: keep, merge or drop against each item, with a line on why. I cannot judge form design; tell me how sure you are about each change, and on what.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>By 18 Nov 2026. If it comes later, the current form is printed again unchanged.</td>\n</tr>\n</tbody>\n</table>\n<p>Why each row: the Decision names the decision (which version prints) and who is waiting. The Context gives only what changes the answer (hand-filled, entered later, <dfn data-g=\"829\">used</dfn> for reports). The Question is one question the owner can answer. The Form asks for a usable shape and states your limit. The Deadline gives a date before the print date and the consequence.</p>"
+  },
+  {
+   "t": "exercise",
+   "n": 3,
+   "prompt": "<p>A colleague says: “Goldman showed that one consultation in six goes wrong because the question was unclear.” Read Goldman’s figures as this section gives them and say what is wrong with the sentence.</p>",
+   "type": "interpretation",
+   "confidence": false,
+   "answer": "<p>Three things.</p>\n<p>First, the figures come from two different series, and they measure different things. In one hospital’s series the asker and the owner had different ideas of why the consultation was asked for in 15% of cases. In another service no specific question was asked in 24%, and the owner ignored the question in another 12%. None of them is “one in six”: 15% is about one in seven.</p>\n<p>Second, “goes wrong” is not what was counted. What was counted was a mismatch of understanding, or a missing or ignored question. Goldman reports that those consultations had less effect, not that each one failed.</p>\n<p>Third, the series are hospital consultation services reported in 1983, one of them in Boston, so the figures show that the failure happens, not how often it happens elsewhere.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 1,
+   "prompt": "<p>Made up: these five lines come from one routed question, in the wrong order. <dfn data-g=\"423\">Label</dfn> each line with its part and put them in order.</p>\n<ol type=\"1\">\n<li>“By 30 Nov 2026; after that the order is placed as it stands.”</li>\n<li>“Is this model of weighing scale accurate to within half a kilogram for adults up to 150 kg?”</li>\n<li>“The district NCD officer decides next month which scale the screening camps will order.”</li>\n<li>“A yes or no, with the test it rests on. I cannot judge how scales are tested; tell me how sure you are and on what.”</li>\n<li>“The camps weigh adults in village halls, on uneven floors; the maker’s leaflet is attached.”</li>\n</ol>",
+   "level": 1,
+   "answer": "<table style=\"width:25%;\">\n\n<thead>\n<tr>\n<th>Part</th>\n<th>Line</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Decision</td>\n<td>3</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>5</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>2</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>4</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<p>Order: 3, 5, 2, 4, 1. Each line answers one of the five questions in turn: what is it for, what does the owner need to know, what exactly do you ask, what shape do you want back, by when.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 2,
+   "prompt": "<p>Made up: each question below is missing exactly one part. Name it.</p>\n<ol type=\"1\">\n<li>“The councillor must decide by Friday whether to support the tender. The tender document is attached. Is the price for the equipment within the usual range? Please answer by Thursday; after that the councillor decides without it.”</li>\n<li>“Our committee decides on 1 Dec whether to fund a second walking group. Can you tell us whether the first group’s attendance register is complete enough to judge it? A yes or no with your reasons would help; I cannot judge your method of checking, so tell me how sure you are. By 25 Nov, please; after that we decide without it.”</li>\n<li>“The tank behind the community hall supplies about two hundred homes; last month’s test report is attached. Is the water safe to drink? We need a yes or no, and the test you used; I cannot judge testing methods. By Monday, as the committee meets on Tuesday.”</li>\n<li>“The district NCD officer is deciding whether to translate the camp leaflet into Chhattisgarhi. The leaflet is attached; it is read by adults at camps. Would a translation need to be checked by a second translator? A yes or no would help; I cannot judge translation, so tell me how sure you are and on what.”</li>\n</ol>",
+   "level": 2,
+   "answer": "<table style=\"width:99%;\">\n\n<thead>\n<tr>\n<th>Question</th>\n<th>Missing part</th>\n<th>Why</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Form</td>\n<td>No shape of answer is asked for, and no limit is stated</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Context</td>\n<td>Which group, which register, what is in it: the owner has nothing to look at</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Decision</td>\n<td>No decision named and no one waiting: “we need to know” is not a decision</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Deadline</td>\n<td>No date, and no consequence</td>\n</tr>\n</tbody>\n</table>\n<p>For question 3, note that Tuesday’s meeting is a date, not a decision. A decision would say what the committee will choose between.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 3,
+   "prompt": "<p>Goldman and colleagues advise the owner to begin their note by stating the specific problem they were called about, for example: “Called to see this 56-year-old woman with breast cancer for opinion on cause of leg weakness.” Read the line as if it were the whole question the asker sent. Which of the five parts does it carry, and which does it leave out?</p>",
+   "level": 3,
+   "answer": "<table style=\"width:79%;\">\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>In Goldman’s line</td>\n</tr>\n<tr>\n<td>Decision</td>\n<td>not stated</td>\n</tr>\n<tr>\n<td>Context</td>\n<td>“this 56-year-old woman with breast cancer”</td>\n</tr>\n<tr>\n<td>Question</td>\n<td>“opinion on cause of leg weakness”</td>\n</tr>\n<tr>\n<td>Form</td>\n<td>not stated</td>\n</tr>\n<tr>\n<td>Deadline</td>\n<td>not stated</td>\n</tr>\n</tbody>\n</table>\n<p>It carries Context and Question. On a hospital ward the decision, the form and the urgency are often understood by both doctors, which is why Goldman’s commandments put urgency on the owner to find out. Outside a ward, in a committee or a district meeting, nobody shares that understanding, so you write all five.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 4,
+   "prompt": "<p>Made up: at the Wards Committee’s earlier meeting, a member says: “Women in the ward say the <dfn data-g=\"555\">path</dfn> round the park is too dark to walk after six. Ask the corporation’s lighting people if it can be lit.” You decide the owner is the corporation’s street-lighting engineer. The committee meets again on 20 Nov 2026 and is drawing up its list of requests for the next year’s ward works. Write the question you would ask, in five parts.</p>",
+   "level": 4,
+   "answer": "<p>A model:</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>Your question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Decision</strong></td>\n<td>On 20 Nov 2026 the Wards Committee decides whether to put lighting for the park path on its list of requests for next year’s ward works. The councillor is waiting.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>The path runs round the park; a sketch is attached. Women who walk there say it is too dark after six in the evening. There are lamps on the road outside the park and none on the path.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>Can the path be lit from six to nine in the evening, and roughly what would that involve: new poles, or lamps on existing ones?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>Yes or no, the kind of work involved, and which list or budget it would go on. I cannot judge the electrical work; tell me how sure you are and on what.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>By 13 Nov 2026. If it comes later, the request goes on the list without detail, or not at all.</td>\n</tr>\n</tbody>\n</table>\n<p>The decision is the committee’s: put it on the list or not. The engineer is asked only what an engineer can answer. The Form asks which list or budget it goes on, because the committee’s decision depends on that.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 5,
+   "prompt": "<p>Made up: the minutes of the district NCD meeting say: “MO (NCD) to consult dietitian re: diet chart for camps.” You are the medical officer (MO) given the task. The camps restart on 1 Dec 2026. The district NCD officer tells you he will decide by 20 Nov 2026 whether the camps hand out a printed diet <dfn data-g=\"730\">sheet</dfn> to adults found to have obesity. Camp staff have about five minutes with each person, and camp leaflets are printed in Hindi. Turn the minute into the question you would ask the dietitian at the district hospital.</p>",
+   "level": 5,
+   "answer": "<p>A model:</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>Your question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Decision</strong></td>\n<td>The district NCD officer decides by 20 Nov 2026 whether the camps hand out a printed diet sheet to adults found to have obesity, and if so which one. He is waiting.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>Adults screened at village camps, many working in fields or at home; leaflets are read in Hindi. We have no sheet now. Staff have about five minutes with each person.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>Can you draft a one-page diet sheet in Hindi for these adults, suited to food they can buy locally, that camp staff can explain in five minutes?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>A draft sheet, or a reason it should not be handed out at a camp. I cannot judge the advice itself; tell me how sure you are of each line and on what.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>By 15 Nov 2026, so it can be printed. If it comes later, the camps restart without a sheet.</td>\n</tr>\n</tbody>\n</table>\n<p>The minute named an owner and a topic. The rewrite adds the decision (hand out a sheet or not), the context that changes the advice (who, what they can buy, five minutes), a question the dietitian can answer, and the deadline set by the print date. This is routing at the do <dfn data-g=\"210\">depth</dfn>: you could read a diet sheet, and the dietitian writes one.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 6,
+   "prompt": "<p>Made up: the councillor asks you, “The corporation wants a car-free street on Sunday mornings so people can walk and cycle. Ask the traffic police what we need to do.” You do not know what the traffic police would need, so you cannot write a narrow Question row. Write the routed question anyway.</p>",
+   "level": 6,
+   "answer": "<p>A model:</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>Your question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Decision</strong></td>\n<td>The Wards Committee decides on 20 Nov 2026 whether to ask the corporation to close one street to cars from six to nine on Sunday mornings. The councillor is waiting.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>A residential street of about a kilometre, with a school and a temple on it (map attached). The aim is a safe place to walk and cycle.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>What would you need from us, and what would you need to decide, before a street like this could be closed to cars on Sunday mornings?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>A list of what you would need and who would have to agree. I cannot judge traffic arrangements; tell me how sure you are and on what.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>By 13 Nov 2026. If it comes later, the committee will discuss the idea without your view.</td>\n</tr>\n</tbody>\n</table>\n<p>When you cannot narrow the question, ask the owner what they would need to know. Salerno and colleagues’ first commandment is “Determine your customer”. The other four parts stay, so the answer still serves a decision by a date.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 7,
+   "prompt": "<p>Made up: here is a worked rewrite. Find what broke.</p>\n<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Question sent</td>\n</tr>\n<tr>\n<td><strong>Decision</strong></td>\n<td>To learn more about obesity in the ward.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>The ward has about forty thousand people; many have obesity.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>What are the main causes of obesity in a ward like ours?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>A summary with references.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>When convenient.</td>\n</tr>\n</tbody>\n</table>",
+   "level": 7,
+   "answer": "<p>Every row is filled and none does its job. The Decision row names no decision and no one waiting: “to learn more” is a wish, so nothing tells the owner what kind of answer matters. That is the break, and the rest follows from it.</p>\n<p>With no decision, the Question has nothing to narrow it, so it asks for the causes of obesity in general, which no owner can answer for one ward. The Form has no limit stated, so the answer will not say how sure. “When convenient” is not a deadline.</p>\n<p>Why it looks reasonable: it is a filled table, in the right order, and it sounds earnest. The test is whether each row is filled from what you actually know. Here the asker did not yet know what decision the answer served, and should not have sent it.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 8,
+   "prompt": "<p>Made up: here is a second worked rewrite of the park-gym minute. Find what broke.</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>Question sent</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Decision</strong></td>\n<td>The Wards Committee decides on 13 Nov 2026 whether to put the same machines in two more parks. The councillor is waiting.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>List and photographs of the machines attached; users are mostly women over fifty, some with knee pain or obesity.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>Should the corporation put these machines in two more parks, and will they help people in the ward lose weight?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>Your recommendation.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>By 6 Nov 2026; after that the committee decides without it.</td>\n</tr>\n</tbody>\n</table>",
+   "level": 8,
+   "answer": "<p>Two rows broke. The Question row hands the owner the committee’s decision (“should the corporation …”) and bundles a second question that is not the owner’s, whether the machines change weight in the ward. A sports-medicine doctor can say whether the machines are safe for these users. The decision belongs to the committee, and the weight question has its own owner, people who study physical activity in communities. Book 24, <em>Physical activity and sedentary behaviour science</em>, teaches that evidence. The Form row asks for a recommendation and states no limit, so the answer will not say how sure, or on what.</p>\n<p>Repaired. Question: “Which of these machines are safe for adults over fifty with knee pain or obesity to use without anyone supervising, and which should carry a sign or be replaced?” Form: “A list, each machine marked safe, safe with a sign, or replace. I cannot judge the machines’ design; tell me how sure you are on each, and on what.”</p>\n<p>Why the wrong version looks reasonable: the Decision row is good, and the Question row simply copies it, which feels like keeping the question close to the decision.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 9,
+   "prompt": "<p>Made up: at a Wards Committee meeting a member says: “We have written to the medical college for their views on obesity in our ward. They are the experts; we will do what they say.” Is this a routed question? Write the question the committee could send instead, and say what even a good answer to it would not settle.</p>",
+   "level": 9,
+   "answer": "<p>It is not a routed question. It has an owner (the medical college, which is an institution, not a person or office whose job the question is) and a topic, and nothing else: no decision, no question, no form, no deadline.</p>\n<p>First, find the decision. Ask the member what the committee is deciding. Suppose (made up) it is whether to spend the ward’s health budget line on a weekly weight-and-waist <dfn data-g=\"103\">check</dfn> at the community hall. Then:</p>\n<table>\n\n<thead>\n<tr>\n<th>Part</th>\n<th>Your question</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>Decision</strong></td>\n<td>The Wards Committee decides on 4 Dec 2026 whether to fund a weekly weight-and-waist check at the community hall next year. The councillor is waiting.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>Adults in the ward; the hall is open on weekday evenings; two health workers could staff it.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>What would a weekly check need, in staff, equipment and records, to give results the ward could use, and what would it miss?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>A short list of what it needs and what it would miss. I cannot judge the design; tell me how sure you are and on what.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>By 27 Nov 2026; after that the committee decides without it.</td>\n</tr>\n</tbody>\n</table>\n<p>What a good answer would not settle: whether the committee should fund it (that is the committee’s decision, with the answer as one premise); whether the check will reduce obesity in the ward (no answer to this question addresses that); and whether the person who answers is right (the next section’s checks say whether an answer is usable, not whether it is true). “We will do what they say” gives the decision away, which a routed question never does.</p>"
+  },
+  {
+   "t": "practice",
+   "n": 10,
+   "prompt": "<p>Made up: an email from the district NCD officer at 6 pm: “The non-governmental organisation (NGO) wants us to sign the memorandum of understanding (MoU) tomorrow at noon. Please get the legal cell’s opinion by then.” You will route it to a lawyer through the institution’s legal cell. Write the question you would ask, and say what the deadline changes and what an answer by noon would not establish.</p>",
+   "level": 10,
+   "answer": "<table>\n\n<tbody>\n<tr>\n<td>Part</td>\n<td>Your question</td>\n</tr>\n<tr>\n<td><strong>Decision</strong></td>\n<td>The district NCD officer decides by noon tomorrow whether to sign the attached MoU with the NGO as it stands, sign with changes, or ask for more time. He is waiting.</td>\n</tr>\n<tr>\n<td><strong>Context</strong></td>\n<td>The MoU is attached. The NGO would run awareness sessions at the screening camps. No money changes hands, as far as the draft shows.</td>\n</tr>\n<tr>\n<td><strong>Question</strong></td>\n<td>Is there any clause in this MoU that the district should not sign as it stands, and if so, which and why?</td>\n</tr>\n<tr>\n<td><strong>Form</strong></td>\n<td>A list of clauses to change or drop, or “nothing that stops signing”. I cannot judge legal drafting; tell me how sure you are, and whether a fuller review would be needed.</td>\n</tr>\n<tr>\n<td><strong>Deadline</strong></td>\n<td>By 11 am tomorrow. If it comes later, the officer will ask the NGO for more time, or sign without advice.</td>\n</tr>\n</tbody>\n</table>\n<p>What the deadline changes: with less than a day, ask for what can be answered in that time (is there anything we must not sign?), not for a full review, and ask the owner to say whether a full review is needed. That puts the deadline’s cost on the page instead of hiding it.</p>\n<p>What an answer by noon would not establish: that the MoU is a good idea (that is the officer’s decision); that the partnership will work; or that nothing in the MoU will cause trouble later. A quick reading is not a full review, and the answer should say so.</p>"
+  }
+ ]
+}
